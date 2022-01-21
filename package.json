@@ -23,6 +23,7 @@
         "@angular/router": "^12.2.13",
         "@flowjs/flow.js": "^2.14.1",
         "@flowjs/ngx-flow": "~0.4.6",
+        "@fullcalendar/angular": "^4.4.5-beta",
         "@mat-datetimepicker/core": "^7.0.1",
         "@ngrx/store": "^12.5.1",
         "@ngx-translate/core": "~13.0.0",
