@@ -12,6 +12,7 @@ import { PageLink } from '@shared/models/page/page-link';
 import { EntityTableHeaderComponent } from '@home/components/entity/entity-table-header.component';
 import { ActivatedRoute } from '@angular/router';
 import { EntityTabsComponent } from '../../components/entity/entity-tabs.component';
+import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { IEntitiesTableComponent } from '@home/models/entity/entity-table-component.models';
 import { IEntityDetailsPageComponent } from '@home/models/entity/entity-details-page-component.models';
 export declare type EntityBooleanFunction<T extends BaseData<HasId>> = (entity: T) => boolean;
@@ -152,3 +153,4 @@ export declare class EntityTableConfig<T extends BaseData<HasId>, P extends Page
     getActivatedRoute(): ActivatedRoute;
 }
 export declare function checkBoxCell(value: boolean): string;
+export declare function defaultEntityTablePermissions(userPermissionsService: UserPermissionsService, entitiesTableConfig: EntityTableConfig<BaseData<HasId>>): void;

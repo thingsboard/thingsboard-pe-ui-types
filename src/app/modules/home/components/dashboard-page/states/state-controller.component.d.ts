@@ -7,10 +7,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { StatesControllerService } from '@home/components/dashboard-page/states/states-controller.service';
 import { EntityId } from '@app/shared/models/id/entity-id';
 import { StateObject, StateParams } from '@app/core/api/widget-api.models';
+import { UtilsService } from '@core/services/utils.service';
 import * as i0 from "@angular/core";
 export declare abstract class StateControllerComponent implements IStateControllerComponent, OnInit, OnDestroy {
     protected router: Router;
     protected route: ActivatedRoute;
+    protected utils: UtilsService;
+    protected window: Window;
     protected ngZone: NgZone;
     protected statesControllerService: StatesControllerService;
     private stateChangedSubject;
@@ -40,7 +43,7 @@ export declare abstract class StateControllerComponent implements IStateControll
     syncStateWithQueryParam: boolean;
     private rxSubscriptions;
     private inited;
-    protected constructor(router: Router, route: ActivatedRoute, ngZone: NgZone, statesControllerService: StatesControllerService);
+    protected constructor(router: Router, route: ActivatedRoute, utils: UtilsService, window: Window, ngZone: NgZone, statesControllerService: StatesControllerService);
     ngOnInit(): void;
     ngOnDestroy(): void;
     protected updateStateParam(newState: string, replaceCurrentHistoryUrl?: boolean): void;

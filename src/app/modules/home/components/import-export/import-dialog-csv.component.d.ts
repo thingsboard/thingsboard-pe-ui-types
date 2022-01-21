@@ -10,12 +10,15 @@ import { TranslateService } from '@ngx-translate/core';
 import { MatVerticalStepper } from '@angular/material/stepper';
 import { BulkImportResult, CSVDelimiter } from '@home/components/import-export/import-export.models';
 import { ImportExportService } from '@home/components/import-export/import-export.service';
+import { CustomerId } from '@shared/models/id/customer-id';
 import { TableColumnsAssignmentComponent } from '@home/components/import-export/table-columns-assignment.component';
 import * as i0 from "@angular/core";
 export interface ImportDialogCsvData {
     entityType: EntityType;
+    customerId: CustomerId;
     importTitle: string;
     importFileLabel: string;
+    entityGroupId: string;
 }
 export declare class ImportDialogCsvComponent extends DialogComponent<ImportDialogCsvComponent, boolean> implements AfterViewInit {
     protected store: Store<AppState>;
@@ -32,6 +35,8 @@ export declare class ImportDialogCsvComponent extends DialogComponent<ImportDial
     entityType: EntityType;
     importTitle: string;
     importFileLabel: string;
+    customerId: CustomerId;
+    entityGroupId: string;
     delimiters: {
         key: CSVDelimiter;
         value: string;

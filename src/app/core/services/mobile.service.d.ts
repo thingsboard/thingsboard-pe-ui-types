@@ -13,6 +13,7 @@ export declare class MobileService {
     private reloadUserObservable;
     private lastDashboardId;
     private toggleLayoutFunction;
+    private resetRecaptchaFunction;
     constructor(window: Window, router: Router, authService: AuthService);
     isMobileApp(): boolean;
     handleDashboardStateName(name: string): void;
@@ -22,6 +23,10 @@ export declare class MobileService {
     unregisterToggleLayoutFunction(): void;
     handleWidgetMobileAction<T extends MobileActionResult>(type: WidgetMobileActionType, ...args: any[]): Observable<WidgetMobileActionResult<T>>;
     handleMobileNavigation(path?: string, params?: Params): void;
+    onRecaptchaLoaded(): void;
+    handleReCaptchaResponse(recaptchaResponse: string): void;
+    registerResetRecaptchaFunction(resetRecaptchaFunction: () => void): void;
+    unregisterResetRecaptchaFunction(): void;
     private onWindowMessage;
     private openDashboard;
     private doDashboardNavigation;

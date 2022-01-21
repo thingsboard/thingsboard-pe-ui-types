@@ -6,7 +6,7 @@ import * as i0 from "@angular/core";
 export declare class AdminService {
     private http;
     constructor(http: HttpClient);
-    getAdminSettings<T>(key: string, config?: RequestConfig): Observable<AdminSettings<T>>;
+    getAdminSettings<T>(key: string, systemByDefault?: boolean, config?: RequestConfig): Observable<AdminSettings<T>>;
     saveAdminSettings<T>(adminSettings: AdminSettings<T>, config?: RequestConfig): Observable<AdminSettings<T>>;
     sendTestMail(adminSettings: AdminSettings<MailServerSettings>, config?: RequestConfig): Observable<void>;
     sendTestSms(testSmsRequest: TestSmsRequest, config?: RequestConfig): Observable<void>;

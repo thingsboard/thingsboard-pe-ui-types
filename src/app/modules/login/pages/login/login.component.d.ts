@@ -5,18 +5,27 @@ import { AppState } from '@core/core.state';
 import { PageComponent } from '@shared/components/page.component';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { WhiteLabelingService } from '@core/http/white-labeling.service';
+import { TranslateService } from '@ngx-translate/core';
+import { Observable } from 'rxjs';
+import { SelfRegistrationService } from '@core/http/self-register.service';
 import { OAuth2ClientInfo } from '@shared/models/oauth2.models';
 import * as i0 from "@angular/core";
 export declare class LoginComponent extends PageComponent implements OnInit {
     protected store: Store<AppState>;
     private authService;
+    wl: WhiteLabelingService;
+    selfRegistrationService: SelfRegistrationService;
+    private translateService;
     fb: FormBuilder;
     private router;
     loginFormGroup: import("@angular/forms").FormGroup;
     oauth2Clients: Array<OAuth2ClientInfo>;
-    constructor(store: Store<AppState>, authService: AuthService, fb: FormBuilder, router: Router);
+    class: string;
+    constructor(store: Store<AppState>, authService: AuthService, wl: WhiteLabelingService, selfRegistrationService: SelfRegistrationService, translateService: TranslateService, fb: FormBuilder, router: Router);
     ngOnInit(): void;
     login(): void;
+    platformNameAndVersion$(): Observable<string>;
     static ɵfac: i0.ɵɵFactoryDeclaration<LoginComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<LoginComponent, "tb-login", never, {}, {}, never, never>;
 }

@@ -11,11 +11,13 @@ import { AuditLogTableConfig } from '@home/components/audit-log/audit-log-table-
 import { EntitiesTableComponent } from '@home/components/entity/entities-table.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
+import { UtilsService } from '@core/services/utils.service';
 import { ActivatedRoute } from '@angular/router';
 import * as i0 from "@angular/core";
 export declare class AuditLogTableComponent implements OnInit {
     private auditLogService;
     private translate;
+    private utils;
     private datePipe;
     private dialog;
     private store;
@@ -33,7 +35,7 @@ export declare class AuditLogTableComponent implements OnInit {
     set customerId(customerId: CustomerId);
     entitiesTable: EntitiesTableComponent;
     auditLogTableConfig: AuditLogTableConfig;
-    constructor(auditLogService: AuditLogService, translate: TranslateService, datePipe: DatePipe, dialog: MatDialog, store: Store<AppState>, route: ActivatedRoute);
+    constructor(auditLogService: AuditLogService, translate: TranslateService, utils: UtilsService, datePipe: DatePipe, dialog: MatDialog, store: Store<AppState>, route: ActivatedRoute);
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AuditLogTableComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<AuditLogTableComponent, "tb-audit-log-table", never, { "auditLogMode": "auditLogMode"; "detailsMode": "detailsMode"; "active": "active"; "entityId": "entityId"; "userId": "userId"; "customerId": "customerId"; }, {}, never, never>;

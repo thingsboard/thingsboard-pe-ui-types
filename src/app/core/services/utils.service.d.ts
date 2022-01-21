@@ -6,24 +6,30 @@ import { DataKey, Datasource, KeyInfo } from '@shared/models/widget.models';
 import { DataKeyType } from '@app/shared/models/telemetry/telemetry.models';
 import { WidgetInfo } from '@home/models/widget-component.models';
 import { Observable } from 'rxjs';
+import { DatePipe } from '@angular/common';
 import * as i0 from "@angular/core";
 export declare class UtilsService {
     private window;
     private zone;
+    private datePipe;
     private translate;
     iframeMode: boolean;
     widgetEditMode: boolean;
     editWidgetInfo: WidgetInfo;
+    stateSelectView: boolean;
     defaultDataKey: DataKey;
     defaultDatasource: Datasource;
     defaultAlarmDataKeys: Array<DataKey>;
     materialIcons: Array<string>;
-    constructor(window: Window, zone: NgZone, translate: TranslateService);
+    constructor(window: Window, zone: NgZone, datePipe: DatePipe, translate: TranslateService);
     getPredefinedFunctionsList(): Array<string>;
     getPredefinedFunctionBody(func: string): string;
     getDefaultDatasource(dataKeySchema: any): Datasource;
     private initDefaultAlarmDataKeys;
     getDefaultAlarmDataKeys(): Array<DataKey>;
+    defaultAlarmFieldContent(key: DataKey | {
+        name: string;
+    }, value: any): string;
     generateObjectFromJsonSchema(schema: any): any;
     processWidgetException(exception: any): ExceptionData;
     parseException(exception: any, lineOffset?: number): ExceptionData;
@@ -47,6 +53,7 @@ export declare class UtilsService {
     isUndefined(value: any): boolean;
     isDefined(value: any): boolean;
     defaultValue(value: any, defaultValue: any): any;
+    translateText(text: string): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<UtilsService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<UtilsService>;
 }

@@ -19,7 +19,10 @@ export declare class EntityListComponent implements ControlValueAccessor, OnInit
     entityListFormGroup: FormGroup;
     modelValue: Array<string> | null;
     entityType: EntityType;
-    subType: string;
+    entitySubType: string;
+    entityListText: string;
+    noEntitiesText: string;
+    entitiesRequiredText: string;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
@@ -49,5 +52,5 @@ export declare class EntityListComponent implements ControlValueAccessor, OnInit
     onFocus(): void;
     clear(value?: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityListComponent, "tb-entity-list", never, { "entityType": "entityType"; "subType": "subType"; "required": "required"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityListComponent, "tb-entity-list", never, { "entityType": "entityType"; "entitySubType": "entitySubType"; "entityListText": "entityListText"; "noEntitiesText": "noEntitiesText"; "entitiesRequiredText": "entitiesRequiredText"; "required": "required"; "disabled": "disabled"; }, {}, never, never>;
 }

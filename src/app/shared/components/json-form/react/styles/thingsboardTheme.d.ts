@@ -1,3 +1,3 @@
 import { ThemeOptions } from '@material-ui/core/styles';
-declare const _default: ThemeOptions;
-export default _default;
+import { ColorPalette } from '@shared/models/material.models';
+export default function createThingsboardTheme(primaryPalette: ColorPalette, accentPalette: ColorPalette): ThemeOptions;

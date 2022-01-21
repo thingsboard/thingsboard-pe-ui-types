@@ -26,11 +26,13 @@ export declare class TelemetryWebsocketService implements TelemetryService {
     telemetryUri: string;
     dataStream: WebSocketSubject<TelemetryPluginCmdsWrapper | WebsocketDataMsg>;
     constructor(store: Store<AppState>, authService: AuthService, ngZone: NgZone, window: Window);
-    subscribe(subscriber: TelemetrySubscriber): void;
+    subscribe(subscriber: TelemetrySubscriber, skipPublish?: boolean): void;
+    batchSubscribe(subscribers: TelemetrySubscriber[]): void;
     update(subscriber: TelemetrySubscriber): void;
-    unsubscribe(subscriber: TelemetrySubscriber): void;
+    unsubscribe(subscriber: TelemetrySubscriber, skipPublish?: boolean): void;
+    batchUnsubscribe(subscribers: TelemetrySubscriber[]): void;
     private nextCmdId;
-    private publishCommands;
+    publishCommands(): void;
     private checkToClose;
     private reset;
     private closeSocket;

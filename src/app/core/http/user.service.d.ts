@@ -8,11 +8,13 @@ import * as i0 from "@angular/core";
 export declare class UserService {
     private http;
     constructor(http: HttpClient);
-    getUsers(pageLink: PageLink, config?: RequestConfig): Observable<PageData<User>>;
     getTenantAdmins(tenantId: string, pageLink: PageLink, config?: RequestConfig): Observable<PageData<User>>;
     getCustomerUsers(customerId: string, pageLink: PageLink, config?: RequestConfig): Observable<PageData<User>>;
+    getAllCustomerUsers(pageLink: PageLink, config?: RequestConfig): Observable<PageData<User>>;
     getUser(userId: string, config?: RequestConfig): Observable<User>;
-    saveUser(user: User, sendActivationMail?: boolean, config?: RequestConfig): Observable<User>;
+    getUsers(userIds: Array<string>, config?: RequestConfig): Observable<Array<User>>;
+    getUserUsers(pageLink: PageLink, config?: RequestConfig): Observable<PageData<User>>;
+    saveUser(user: User, sendActivationMail?: boolean, entityGroupId?: string, config?: RequestConfig): Observable<User>;
     deleteUser(userId: string, config?: RequestConfig): Observable<Object>;
     getActivationLink(userId: string, config?: RequestConfig): Observable<string>;
     sendActivationEmail(email: string, config?: RequestConfig): Observable<Object>;

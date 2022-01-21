@@ -1,5 +1,8 @@
+import { WhiteLabelingService } from '@core/http/white-labeling.service';
 import * as i0 from "@angular/core";
 export declare class HelpComponent {
+    wl: WhiteLabelingService;
+    constructor(wl: WhiteLabelingService);
     helpLinkId: string;
     gotoHelpPage(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<HelpComponent, never>;

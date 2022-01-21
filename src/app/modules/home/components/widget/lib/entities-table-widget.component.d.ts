@@ -16,6 +16,7 @@ import { EntityColumn, EntityData } from '@home/components/widget/lib/table-widg
 import { Overlay } from '@angular/cdk/overlay';
 import { EntityDataPageLink, KeyFilter } from '@shared/models/query/query.models';
 import { DatePipe } from '@angular/common';
+import { EntityService } from '@core/http/entity.service';
 import * as i0 from "@angular/core";
 export declare class EntitiesTableWidgetComponent extends PageComponent implements OnInit, AfterViewInit {
     protected store: Store<AppState>;
@@ -23,6 +24,7 @@ export declare class EntitiesTableWidgetComponent extends PageComponent implemen
     private ngZone;
     private overlay;
     private viewContainerRef;
+    private entityService;
     private utils;
     private datePipe;
     private translate;
@@ -60,10 +62,12 @@ export declare class EntitiesTableWidgetComponent extends PageComponent implemen
     private columnWidth;
     private columnDefaultVisibility;
     private columnSelectionAvailability;
+    private columnExportParameters;
     private rowStylesInfo;
     private searchAction;
     private columnDisplayAction;
-    constructor(store: Store<AppState>, elementRef: ElementRef, ngZone: NgZone, overlay: Overlay, viewContainerRef: ViewContainerRef, utils: UtilsService, datePipe: DatePipe, translate: TranslateService, domSanitizer: DomSanitizer, cd: ChangeDetectorRef);
+    private postProcessingFunctionMap;
+    constructor(store: Store<AppState>, elementRef: ElementRef, ngZone: NgZone, overlay: Overlay, viewContainerRef: ViewContainerRef, entityService: EntityService, utils: UtilsService, datePipe: DatePipe, translate: TranslateService, domSanitizer: DomSanitizer, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngOnDestroy(): void;
     ngAfterViewInit(): void;
@@ -82,10 +86,17 @@ export declare class EntitiesTableWidgetComponent extends PageComponent implemen
     headerStyle(key: EntityColumn): any;
     rowStyle(entity: EntityData, row: number): any;
     cellStyle(entity: EntityData, key: EntityColumn, row: number): any;
-    cellContent(entity: EntityData, key: EntityColumn, row: number): SafeHtml;
+    cellContent(entity: EntityData, key: EntityColumn, row: number, useSafeHtml?: boolean): SafeHtml;
     private defaultContent;
     onRowClick($event: Event, entity: EntityData, isDouble?: boolean): void;
     onActionButtonClick($event: Event, entity: EntityData, actionDescriptor: WidgetActionDescriptor): void;
+    customDataExport(): {
+        [key: string]: any;
+    }[] | Observable<{
+        [key: string]: any;
+    }[]>;
+    private includeColumnInExport;
+    private queryEntityDataToExportedData;
     private clearCache;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntitiesTableWidgetComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<EntitiesTableWidgetComponent, "tb-entities-table-widget", never, { "ctx": "ctx"; }, {}, never, never>;
@@ -99,6 +110,7 @@ declare class EntityDatasource implements DataSource<EntityData> {
     private entitiesSubject;
     private pageDataSubject;
     private currentEntity;
+    entities: EntityData[];
     dataLoading: boolean;
     countCellButtonAction: number;
     private appliedPageLink;

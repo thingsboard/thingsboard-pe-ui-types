@@ -11,7 +11,9 @@ export declare enum EventType {
 }
 export declare enum DebugEventType {
     DEBUG_RULE_NODE = "DEBUG_RULE_NODE",
-    DEBUG_RULE_CHAIN = "DEBUG_RULE_CHAIN"
+    DEBUG_RULE_CHAIN = "DEBUG_RULE_CHAIN",
+    DEBUG_CONVERTER = "DEBUG_CONVERTER",
+    DEBUG_INTEGRATION = "DEBUG_INTEGRATION"
 }
 export declare const eventTypeTranslations: Map<EventType | DebugEventType, string>;
 export interface BaseEventBody {
@@ -30,6 +32,11 @@ export interface StatsEventBody extends BaseEventBody {
     messagesProcessed: number;
     errorsOccurred: number;
 }
+export interface RawDataEventBody extends BaseEventBody {
+    message: string;
+    messageType: ContentType;
+    uuid: string;
+}
 export interface DebugRuleNodeEventBody extends BaseEventBody {
     type: string;
     entityId: string;
@@ -42,7 +49,23 @@ export interface DebugRuleNodeEventBody extends BaseEventBody {
     metadata: string;
     error: string;
 }
-export declare type EventBody = ErrorEventBody & LcEventEventBody & StatsEventBody & DebugRuleNodeEventBody;
+export interface DebugConverterEventBody extends BaseEventBody {
+    type: string;
+    in: string;
+    inMessageType: ContentType;
+    out: string;
+    outMessageType: ContentType;
+    metadata: string;
+    error: string;
+}
+export interface DebugIntegrationEventBody extends BaseEventBody {
+    type: string;
+    message: string;
+    messageType: ContentType;
+    status: string;
+    error: string;
+}
+export declare type EventBody = ErrorEventBody & LcEventEventBody & StatsEventBody & RawDataEventBody & DebugRuleNodeEventBody & DebugConverterEventBody & DebugIntegrationEventBody;
 export interface Event extends BaseData<EventId> {
     tenantId: TenantId;
     entityId: EntityId;

@@ -8,10 +8,14 @@ import { AppState } from '@core/core.state';
 import { MatSidenav } from '@angular/material/sidenav';
 import { AuthState } from '@core/auth/auth.models';
 import { ISearchableComponent } from '@home/models/searchable-component.models';
+import { WhiteLabelingService } from '@core/http/white-labeling.service';
+import { TranslateService } from '@ngx-translate/core';
 import * as i0 from "@angular/core";
 export declare class HomeComponent extends PageComponent implements AfterViewInit, OnInit {
     protected store: Store<AppState>;
     private window;
+    wl: WhiteLabelingService;
+    translate: TranslateService;
     breakpointObserver: BreakpointObserver;
     authState: AuthState;
     forceFullscreen: boolean;
@@ -19,7 +23,6 @@ export declare class HomeComponent extends PageComponent implements AfterViewIni
     searchableComponent: ISearchableComponent;
     sidenavMode: 'over' | 'push' | 'side';
     sidenavOpened: boolean;
-    logo: string;
     sidenav: MatSidenav;
     searchInputField: ElementRef;
     fullscreenEnabled: true;
@@ -29,7 +32,7 @@ export declare class HomeComponent extends PageComponent implements AfterViewIni
     searchEnabled: boolean;
     showSearch: boolean;
     searchText: string;
-    constructor(store: Store<AppState>, window: Window, breakpointObserver: BreakpointObserver);
+    constructor(store: Store<AppState>, window: Window, wl: WhiteLabelingService, translate: TranslateService, breakpointObserver: BreakpointObserver);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     sidenavClicked(): void;
@@ -40,6 +43,7 @@ export declare class HomeComponent extends PageComponent implements AfterViewIni
     displaySearchMode(): boolean;
     openSearch(): void;
     closeSearch(): void;
+    platformNameAndVersion$(): Observable<string>;
     private searchTextUpdated;
     static ɵfac: i0.ɵɵFactoryDeclaration<HomeComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<HomeComponent, "tb-home", never, {}, {}, never, never>;

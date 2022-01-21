@@ -8,6 +8,11 @@ import { UtilsService } from '@core/services/utils.service';
 import { TranslateService } from '@ngx-translate/core';
 declare type ColumnVisibilityOptions = 'visible' | 'hidden';
 declare type ColumnSelectionOptions = 'enabled' | 'disabled';
+export declare enum columnExportOptions {
+    always = "always",
+    onlyVisible = "onlyVisible",
+    never = "never"
+}
 export interface TableWidgetSettings {
     enableSearch: boolean;
     enableStickyAction: boolean;
@@ -26,6 +31,7 @@ export interface TableWidgetDataKeySettings {
     cellContentFunction?: string;
     defaultColumnVisibility?: ColumnVisibilityOptions;
     columnSelectionToDisplay?: ColumnSelectionOptions;
+    columnExportOption?: columnExportOptions;
 }
 export declare type ShowCellButtonActionFunction = (ctx: WidgetContext, data: EntityData | AlarmDataInfo | FormattedData) => boolean;
 export interface TableCellButtonActionDescriptor extends WidgetActionDescriptor {

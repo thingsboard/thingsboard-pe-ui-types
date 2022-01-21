@@ -111,6 +111,10 @@ export declare class WidgetSubscription implements IWidgetSubscription {
     private updateDataSubscriptions;
     private updatePaginatedDataSubscriptions;
     isDataResolved(): boolean;
+    exportData(): {
+        [key: string]: any;
+    }[];
+    private checkProperty;
     destroy(): void;
     private notifyDataLoading;
     private notifyDataLoaded;

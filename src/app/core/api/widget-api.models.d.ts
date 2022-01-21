@@ -12,6 +12,7 @@ import { EntityAliases } from '@shared/models/alias.models';
 import { EntityInfo } from '@app/shared/models/entity.models';
 import { IDashboardComponent } from '@home/models/dashboard-component.models';
 import * as moment_ from 'moment';
+import { DatePipe } from '@angular/common';
 import { AlarmData, AlarmDataPageLink, EntityData, EntityDataPageLink, EntityFilter, Filter, FilterInfo, Filters, KeyFilter } from '@shared/models/query/query.models';
 import { EntityDataService } from '@core/api/entity-data.service';
 import { PageData } from '@shared/models/page/page-data';
@@ -92,6 +93,7 @@ export interface StateParams {
     entityLabel?: string;
     targetEntityParamName?: string;
     entityId?: EntityId;
+    entityGroupType?: EntityType;
     [key: string]: any | null;
 }
 export declare type StateControllerHolder = () => IStateController;
@@ -141,6 +143,7 @@ export declare class WidgetSubscriptionContext {
     entityDataService: EntityDataService;
     alarmDataService: AlarmDataService;
     utils: UtilsService;
+    datePipe: DatePipe;
     raf: RafService;
     widgetUtils: IWidgetUtils;
     getServerTimeDiff: () => Observable<number>;
@@ -241,6 +244,9 @@ export interface IWidgetSubscription {
     subscribeForPaginatedData(datasourceIndex: number, pageLink: EntityDataPageLink, keyFilters: KeyFilter[]): Observable<any>;
     subscribeForAlarms(pageLink: AlarmDataPageLink, keyFilters: KeyFilter[]): void;
     isDataResolved(): boolean;
+    exportData(): {
+        [key: string]: any;
+    }[];
     destroy(): void;
     update(): void;
     [key: string]: any;

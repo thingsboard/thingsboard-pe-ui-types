@@ -1,0 +1,34 @@
+import { Observable } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
+import { UtilsService } from '@core/services/utils.service';
+import { EntityGroupStateConfigFactory, EntityGroupStateInfo, GroupEntityTableConfig } from '@home/models/group/group-entities-table-config.models';
+import { BroadcastService } from '@core/services/broadcast.service';
+import { EntityAction } from '@home/models/entity/entity-component.models';
+import { MatDialog } from '@angular/material/dialog';
+import { UserPermissionsService } from '@core/http/user-permissions.service';
+import { EntityGroupParams } from '@shared/models/entity-group.models';
+import { HomeDialogsService } from '@home/dialogs/home-dialogs.service';
+import { GroupConfigTableConfigService } from '@home/components/group/group-config-table-config.service';
+import { Asset } from '@shared/models/asset.models';
+import { AssetService } from '@core/http/asset.service';
+import { Router } from '@angular/router';
+import * as i0 from "@angular/core";
+export declare class AssetGroupConfigFactory implements EntityGroupStateConfigFactory<Asset> {
+    private groupConfigTableConfigService;
+    private userPermissionsService;
+    private translate;
+    private utils;
+    private dialog;
+    private homeDialogs;
+    private assetService;
+    private router;
+    private broadcast;
+    private window;
+    constructor(groupConfigTableConfigService: GroupConfigTableConfigService<Asset>, userPermissionsService: UserPermissionsService, translate: TranslateService, utils: UtilsService, dialog: MatDialog, homeDialogs: HomeDialogsService, assetService: AssetService, router: Router, broadcast: BroadcastService, window: Window);
+    createConfig(params: EntityGroupParams, entityGroup: EntityGroupStateInfo<Asset>): Observable<GroupEntityTableConfig<Asset>>;
+    importAssets($event: Event, config: GroupEntityTableConfig<Asset>): void;
+    private openAsset;
+    onAssetAction(action: EntityAction<Asset>, config: GroupEntityTableConfig<Asset>, params: EntityGroupParams): boolean;
+    static ɵfac: i0.ɵɵFactoryDeclaration<AssetGroupConfigFactory, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<AssetGroupConfigFactory>;
+}

@@ -6,6 +6,7 @@ export interface AdminSettings<T> {
 }
 export declare type SmtpProtocol = 'smtp' | 'smtps';
 export interface MailServerSettings {
+    useSystemMailSettings: boolean;
     showChangePassword: boolean;
     mailFrom: string;
     smtpProtocol: SmtpProtocol;
@@ -24,6 +25,27 @@ export interface MailServerSettings {
 }
 export interface GeneralSettings {
     baseUrl: string;
+}
+export declare enum MailTemplate {
+    test = "test",
+    activation = "activation",
+    accountActivated = "accountActivated",
+    accountLockout = "accountLockout",
+    resetPassword = "resetPassword",
+    passwordWasReset = "passwordWasReset",
+    userActivated = "userActivated",
+    userRegistered = "userRegistered",
+    apiUsageStateEnabled = "apiUsageStateEnabled",
+    apiUsageStateWarning = "apiUsageStateWarning",
+    apiUsageStateDisabled = "apiUsageStateDisabled"
+}
+export declare const mailTemplateTranslations: Map<MailTemplate, string>;
+export interface MailTemplatesSettings {
+    useSystemMailSettings?: any;
+    [mailTemplate: string]: {
+        subject: string;
+        body: string;
+    };
 }
 export interface UserPasswordPolicy {
     minimumLength: number;
@@ -60,6 +82,7 @@ export interface TwilioSmsProviderConfiguration {
 }
 export declare type SmsProviderConfigurations = AwsSnsSmsProviderConfiguration & TwilioSmsProviderConfiguration;
 export interface SmsProviderConfiguration extends SmsProviderConfigurations {
+    useSystemSmsSettings?: boolean;
     type: SmsProviderType;
 }
 export declare function smsProviderConfigurationValidator(required: boolean): ValidatorFn;

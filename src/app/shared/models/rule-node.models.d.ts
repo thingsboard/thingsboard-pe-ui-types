@@ -88,6 +88,7 @@ export declare enum RuleNodeType {
     ENRICHMENT = "ENRICHMENT",
     TRANSFORMATION = "TRANSFORMATION",
     ACTION = "ACTION",
+    ANALYTICS = "ANALYTICS",
     EXTERNAL = "EXTERNAL",
     FLOW = "FLOW",
     UNKNOWN = "UNKNOWN",
@@ -158,11 +159,17 @@ export declare enum MessageType {
     ATTRIBUTES_DELETED = "ATTRIBUTES_DELETED",
     TIMESERIES_UPDATED = "TIMESERIES_UPDATED",
     TIMESERIES_DELETED = "TIMESERIES_DELETED",
+    ADDED_TO_ENTITY_GROUP = "ADDED_TO_ENTITY_GROUP",
+    REMOVED_FROM_ENTITY_GROUP = "REMOVED_FROM_ENTITY_GROUP",
+    REST_API_REQUEST = "REST_API_REQUEST",
+    FIRMWARE_UPDATED = "FIRMWARE_UPDATED",
+    SOFTWARE_UPDATED = "SOFTWARE_UPDATED",
     RPC_QUEUED = "RPC_QUEUED",
     RPC_DELIVERED = "RPC_DELIVERED",
     RPC_SUCCESSFUL = "RPC_SUCCESSFUL",
     RPC_TIMEOUT = "RPC_TIMEOUT",
-    RPC_FAILED = "RPC_FAILED"
+    RPC_FAILED = "RPC_FAILED",
+    generateReport = "generateReport"
 }
 export declare const messageTypeNames: Map<MessageType, string>;
 export declare const ruleChainNodeClazz = "org.thingsboard.rule.engine.flow.TbRuleChainInputNode";

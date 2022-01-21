@@ -22,6 +22,8 @@ export interface WidgetActionDialogData {
     isAdd: boolean;
     callbacks: WidgetActionCallbacks;
     actionsData: WidgetActionsData;
+    actionTypes: WidgetActionType[];
+    customFunctionArgs: string[];
     action?: WidgetActionDescriptorInfo;
     widgetType: widgetType;
 }
@@ -48,9 +50,10 @@ export declare class WidgetActionDialogComponent extends DialogComponent<WidgetA
     stateDisplayTypeFormGroup: FormGroup;
     isAdd: boolean;
     action: WidgetActionDescriptorInfo;
-    widgetActionTypes: string[];
+    widgetActionTypes: WidgetActionType[];
     widgetActionTypeTranslations: Map<WidgetActionType, string>;
     widgetActionType: typeof WidgetActionType;
+    customFunctionArgs: string[];
     filteredDashboardStates: Observable<Array<string>>;
     targetDashboardStateSearchText: string;
     selectedDashboardStateIds: Observable<Array<string>>;

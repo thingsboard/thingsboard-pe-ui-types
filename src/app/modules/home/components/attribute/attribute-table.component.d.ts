@@ -21,6 +21,7 @@ import { UtilsService } from '@core/services/utils.service';
 import { DashboardUtilsService } from '@core/services/dashboard-utils.service';
 import { WidgetService } from '@core/http/widget.service';
 import { EntityService } from '@core/http/entity.service';
+import { UserPermissionsService } from '@core/http/user-permissions.service';
 import * as i0 from "@angular/core";
 export declare class AttributeTableComponent extends PageComponent implements AfterViewInit, OnInit {
     protected store: Store<AppState>;
@@ -35,6 +36,7 @@ export declare class AttributeTableComponent extends PageComponent implements Af
     private utils;
     private dashboardUtils;
     private widgetService;
+    private userPermissionsService;
     private zone;
     private cd;
     private elementRef;
@@ -71,10 +73,13 @@ export declare class AttributeTableComponent extends PageComponent implements Af
     set active(active: boolean);
     set entityId(entityId: EntityId);
     entityName: string;
+    private readonlyValue;
+    get readonly(): boolean;
+    set readonly(value: boolean);
     searchInputField: ElementRef;
     paginator: MatPaginator;
     sort: MatSort;
-    constructor(store: Store<AppState>, attributeService: AttributeService, telemetryWsService: TelemetryWebsocketService, translate: TranslateService, dialog: MatDialog, overlay: Overlay, viewContainerRef: ViewContainerRef, dialogService: DialogService, entityService: EntityService, utils: UtilsService, dashboardUtils: DashboardUtilsService, widgetService: WidgetService, zone: NgZone, cd: ChangeDetectorRef, elementRef: ElementRef);
+    constructor(store: Store<AppState>, attributeService: AttributeService, telemetryWsService: TelemetryWebsocketService, translate: TranslateService, dialog: MatDialog, overlay: Overlay, viewContainerRef: ViewContainerRef, dialogService: DialogService, entityService: EntityService, utils: UtilsService, dashboardUtils: DashboardUtilsService, widgetService: WidgetService, userPermissionsService: UserPermissionsService, zone: NgZone, cd: ChangeDetectorRef, elementRef: ElementRef);
     ngOnInit(): void;
     ngOnDestroy(): void;
     attributeScopeChanged(attributeScope: TelemetryType): void;
@@ -88,10 +93,11 @@ export declare class AttributeTableComponent extends PageComponent implements Af
     editAttribute($event: Event, attribute: AttributeData): void;
     deleteAttributes($event: Event): void;
     enterWidgetMode(): void;
+    private configureWidgetMode;
     onWidgetsCarouselIndexChanged(): void;
     onWidgetsBundleChanged(widgetsBundle: WidgetsBundle): void;
     addWidgetToDashboard(): void;
     exitWidgetMode(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AttributeTableComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AttributeTableComponent, "tb-attribute-table", never, { "disableAttributeScopeSelection": "disableAttributeScopeSelection"; "defaultAttributeScope": "defaultAttributeScope"; "active": "active"; "entityId": "entityId"; "entityName": "entityName"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AttributeTableComponent, "tb-attribute-table", never, { "disableAttributeScopeSelection": "disableAttributeScopeSelection"; "defaultAttributeScope": "defaultAttributeScope"; "active": "active"; "entityId": "entityId"; "entityName": "entityName"; "readonly": "readonly"; }, {}, never, never>;
 }

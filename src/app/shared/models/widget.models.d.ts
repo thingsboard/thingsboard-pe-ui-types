@@ -126,6 +126,7 @@ export interface KeyInfo {
 export interface DataKey extends KeyInfo {
     type: DataKeyType;
     pattern?: string;
+    title?: string;
     settings?: any;
     usePostProcessing?: boolean;
     hidden?: boolean;
@@ -205,8 +206,15 @@ export declare enum WidgetMobileActionType {
     getLocation = "getLocation",
     takeScreenshot = "takeScreenshot"
 }
+export declare const widgetActionTypes: WidgetActionType[];
 export declare const widgetActionTypeTranslationMap: Map<WidgetActionType, string>;
 export declare const widgetMobileActionTypeTranslationMap: Map<WidgetMobileActionType, string>;
+export declare enum WidgetExportType {
+    csv = "csv",
+    xls = "xls",
+    xlsx = "xlsx"
+}
+export declare const widgetExportTypeTranslationMap: Map<WidgetExportType, string>;
 export interface MobileLaunchResult {
     launched: boolean;
 }
@@ -303,6 +311,7 @@ export interface WidgetConfig {
     titleTooltip?: string;
     dropShadow?: boolean;
     enableFullscreen?: boolean;
+    enableDataExport?: boolean;
     useDashboardTimewindow?: boolean;
     displayTimewindow?: boolean;
     showLegend?: boolean;

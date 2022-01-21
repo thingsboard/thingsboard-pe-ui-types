@@ -15,6 +15,7 @@ import { IAliasController, IStateController } from '@app/core/api/widget-api.mod
 import { Widget, WidgetPosition } from '@app/shared/models/widget.models';
 import { MatMenuTrigger } from '@angular/material/menu';
 import { SafeStyle } from '@angular/platform-browser';
+import { WhiteLabelingService } from '@core/http/white-labeling.service';
 import { UtilsService } from '@core/services/utils.service';
 import { WidgetComponentAction } from '@home/components/widget/widget-container.component';
 import * as i0 from "@angular/core";
@@ -26,9 +27,11 @@ export declare class DashboardComponent extends PageComponent implements IDashbo
     private breakpointObserver;
     private differs;
     private kvDiffers;
+    private whiteLabelingService;
     private cd;
     private ngZone;
     authUser: AuthUser;
+    get backgroundColor(): string;
     widgets: Iterable<Widget>;
     widgetLayouts: WidgetLayouts;
     callbacks: DashboardCallbacks;
@@ -53,7 +56,9 @@ export declare class DashboardComponent extends PageComponent implements IDashbo
     dashboardClass: string;
     ignoreLoading: boolean;
     dashboardTimewindow: Timewindow;
+    embedded: boolean;
     parentDashboard?: IDashboardComponent;
+    embeddedDashboardBackground: string;
     dashboardTimewindowChangedSubject: Subject<Timewindow>;
     dashboardTimewindowChanged: import("rxjs").Observable<Timewindow>;
     originalDashboardTimewindow: Timewindow;
@@ -77,7 +82,7 @@ export declare class DashboardComponent extends PageComponent implements IDashbo
     breakpointObserverSubscription: Subscription;
     private optionsChangeNotificationsPaused;
     private gridsterResize$;
-    constructor(store: Store<AppState>, utils: UtilsService, timeService: TimeService, dialogService: DialogService, breakpointObserver: BreakpointObserver, differs: IterableDiffers, kvDiffers: KeyValueDiffers, cd: ChangeDetectorRef, ngZone: NgZone);
+    constructor(store: Store<AppState>, utils: UtilsService, timeService: TimeService, dialogService: DialogService, breakpointObserver: BreakpointObserver, differs: IterableDiffers, kvDiffers: KeyValueDiffers, whiteLabelingService: WhiteLabelingService, cd: ChangeDetectorRef, ngZone: NgZone);
     ngOnInit(): void;
     ngOnDestroy(): void;
     ngDoCheck(): void;
@@ -114,5 +119,5 @@ export declare class DashboardComponent extends PageComponent implements IDashbo
     private detectRowSize;
     private checkIsMobileSize;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardComponent, "tb-dashboard", never, { "widgets": "widgets"; "widgetLayouts": "widgetLayouts"; "callbacks": "callbacks"; "aliasController": "aliasController"; "stateController": "stateController"; "columns": "columns"; "margin": "margin"; "isEdit": "isEdit"; "autofillHeight": "autofillHeight"; "mobileAutofillHeight": "mobileAutofillHeight"; "mobileRowHeight": "mobileRowHeight"; "isMobile": "isMobile"; "isMobileDisabled": "isMobileDisabled"; "isEditActionEnabled": "isEditActionEnabled"; "isExportActionEnabled": "isExportActionEnabled"; "isRemoveActionEnabled": "isRemoveActionEnabled"; "disableWidgetInteraction": "disableWidgetInteraction"; "dashboardStyle": "dashboardStyle"; "backgroundImage": "backgroundImage"; "dashboardClass": "dashboardClass"; "ignoreLoading": "ignoreLoading"; "dashboardTimewindow": "dashboardTimewindow"; "parentDashboard": "parentDashboard"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardComponent, "tb-dashboard", never, { "widgets": "widgets"; "widgetLayouts": "widgetLayouts"; "callbacks": "callbacks"; "aliasController": "aliasController"; "stateController": "stateController"; "columns": "columns"; "margin": "margin"; "isEdit": "isEdit"; "autofillHeight": "autofillHeight"; "mobileAutofillHeight": "mobileAutofillHeight"; "mobileRowHeight": "mobileRowHeight"; "isMobile": "isMobile"; "isMobileDisabled": "isMobileDisabled"; "isEditActionEnabled": "isEditActionEnabled"; "isExportActionEnabled": "isExportActionEnabled"; "isRemoveActionEnabled": "isRemoveActionEnabled"; "disableWidgetInteraction": "disableWidgetInteraction"; "dashboardStyle": "dashboardStyle"; "backgroundImage": "backgroundImage"; "dashboardClass": "dashboardClass"; "ignoreLoading": "ignoreLoading"; "dashboardTimewindow": "dashboardTimewindow"; "embedded": "embedded"; "parentDashboard": "parentDashboard"; }, {}, never, never>;
 }

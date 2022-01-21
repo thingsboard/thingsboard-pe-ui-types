@@ -4,6 +4,7 @@ import { RuleChainId } from '@shared/models/id/rule-chain-id';
 import { RuleNodeId } from '@shared/models/id/rule-node-id';
 import { RuleNode, RuleNodeComponentDescriptor } from '@shared/models/rule-node.models';
 import { ComponentType } from '@shared/models/component-descriptor.models';
+import { EntityGroupParams } from '@shared/models/entity-group.models';
 export interface RuleChain extends BaseData<RuleChainId> {
     tenantId: TenantId;
     name: string;
@@ -29,6 +30,9 @@ export interface NodeConnectionInfo {
     fromIndex: number;
     toIndex: number;
     type: string;
+}
+export interface RuleChainParams extends EntityGroupParams {
+    ruleChainScope: string;
 }
 export declare const ruleNodeTypeComponentTypes: ComponentType[];
 export declare const unknownNodeComponent: RuleNodeComponentDescriptor;

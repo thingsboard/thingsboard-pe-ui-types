@@ -10,9 +10,11 @@ import { AlarmInfo, AlarmStatus } from '@app/shared/models/alarm.models';
 import { AlarmService } from '@core/http/alarm.service';
 import { DatePipe } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
+import { UtilsService } from '@core/services/utils.service';
 import * as i0 from "@angular/core";
 export interface AlarmDetailsDialogData {
-    alarmId: string;
+    alarmId?: string;
+    alarm?: AlarmInfo;
     allowAcknowledgment: boolean;
     allowClear: boolean;
     displayDetails: boolean;
@@ -21,11 +23,13 @@ export declare class AlarmDetailsDialogComponent extends DialogComponent<AlarmDe
     protected store: Store<AppState>;
     protected router: Router;
     private datePipe;
+    private utils;
     private translate;
     data: AlarmDetailsDialogData;
     private alarmService;
     dialogRef: MatDialogRef<AlarmDetailsDialogComponent, boolean>;
     fb: FormBuilder;
+    alarmId: string;
     alarmFormGroup: FormGroup;
     allowAcknowledgment: boolean;
     allowClear: boolean;
@@ -35,7 +39,7 @@ export declare class AlarmDetailsDialogComponent extends DialogComponent<AlarmDe
     alarmSeverityColorsMap: Map<import("@app/shared/models/alarm.models").AlarmSeverity, string>;
     alarmStatuses: typeof AlarmStatus;
     alarmUpdated: boolean;
-    constructor(store: Store<AppState>, router: Router, datePipe: DatePipe, translate: TranslateService, data: AlarmDetailsDialogData, alarmService: AlarmService, dialogRef: MatDialogRef<AlarmDetailsDialogComponent, boolean>, fb: FormBuilder);
+    constructor(store: Store<AppState>, router: Router, datePipe: DatePipe, utils: UtilsService, translate: TranslateService, data: AlarmDetailsDialogData, alarmService: AlarmService, dialogRef: MatDialogRef<AlarmDetailsDialogComponent, boolean>, fb: FormBuilder);
     loadAlarm(): void;
     loadAlarmFields(alarm: AlarmInfo): void;
     ngOnInit(): void;

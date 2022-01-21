@@ -22,6 +22,7 @@ export declare class JsonContentComponent implements OnInit, ControlValueAccesso
     editorStyle: {
         [klass: string]: any;
     };
+    tbPlaceholder: string;
     private readonlyValue;
     get readonly(): boolean;
     set readonly(value: boolean);
@@ -38,6 +39,8 @@ export declare class JsonContentComponent implements OnInit, ControlValueAccesso
     private propagateChange;
     constructor(elementRef: ElementRef, store: Store<AppState>, raf: RafService);
     ngOnInit(): void;
+    private createPlaceholder;
+    private updateEditorPlaceholder;
     ngOnDestroy(): void;
     private onAceEditorResize;
     ngOnChanges(changes: SimpleChanges): void;
@@ -58,5 +61,5 @@ export declare class JsonContentComponent implements OnInit, ControlValueAccesso
     minifyJSON(): void;
     onFullscreen(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<JsonContentComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<JsonContentComponent, "tb-json-content", never, { "label": "label"; "contentType": "contentType"; "disabled": "disabled"; "fillHeight": "fillHeight"; "editorStyle": "editorStyle"; "readonly": "readonly"; "validateContent": "validateContent"; "validateOnChange": "validateOnChange"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<JsonContentComponent, "tb-json-content", never, { "label": "label"; "contentType": "contentType"; "disabled": "disabled"; "fillHeight": "fillHeight"; "editorStyle": "editorStyle"; "tbPlaceholder": "tbPlaceholder"; "readonly": "readonly"; "validateContent": "validateContent"; "validateOnChange": "validateOnChange"; }, {}, never, never>;
 }

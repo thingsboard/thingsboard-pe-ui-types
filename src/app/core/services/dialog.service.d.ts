@@ -12,8 +12,9 @@ export declare class DialogService {
     alert(title: string, message: string, ok?: string, fullscreen?: boolean): Observable<boolean>;
     colorPicker(color: string): Observable<string>;
     materialIconPicker(icon: string): Observable<string>;
-    private permissionDenied;
+    permissionDenied(): void;
     forbidden(): Observable<boolean>;
+    progress<T>(progressObservable: Observable<T>, progressText: string): Observable<T>;
     todo(): Observable<any>;
     static ɵfac: i0.ɵɵFactoryDeclaration<DialogService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<DialogService>;

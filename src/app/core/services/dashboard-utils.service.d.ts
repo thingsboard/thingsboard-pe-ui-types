@@ -4,11 +4,14 @@ import { Dashboard, DashboardLayout, DashboardLayoutId, DashboardLayoutsInfo, Da
 import { Widget } from '@app/shared/models/widget.models';
 import { EntityAliasFilter } from '@app/shared/models/alias.models';
 import { EntityId } from '@app/shared/models/id/entity-id';
+import { EntityGroupService } from '@core/http/entity-group.service';
+import { Observable } from 'rxjs';
 import * as i0 from "@angular/core";
 export declare class DashboardUtilsService {
     private utils;
     private timeService;
-    constructor(utils: UtilsService, timeService: TimeService);
+    private entityGroupService;
+    constructor(utils: UtilsService, timeService: TimeService, entityGroupService: EntityGroupService);
     validateAndUpdateDashboard(dashboard: Dashboard): Dashboard;
     createSingleWidgetDashboard(widget: Widget): Dashboard;
     validateAndUpdateWidget(widget: Widget): Widget;
@@ -16,7 +19,7 @@ export declare class DashboardUtilsService {
     private createDefaultGridSettings;
     createDefaultLayouts(): DashboardStateLayouts;
     createDefaultState(name: string, root: boolean): DashboardState;
-    createSingleEntityFilter(entityId: EntityId): EntityAliasFilter;
+    createSingleEntityFilter(entityId: EntityId): Observable<EntityAliasFilter>;
     private validateAndUpdateState;
     private validateAndUpdateLayout;
     setLayouts(dashboard: Dashboard, targetState: string, newLayouts: DashboardStateLayouts): void;

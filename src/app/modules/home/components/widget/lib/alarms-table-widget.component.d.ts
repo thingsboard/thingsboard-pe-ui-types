@@ -19,7 +19,9 @@ import { DatePipe } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogService } from '@core/services/dialog.service';
 import { AlarmService } from '@core/http/alarm.service';
+import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { AlarmData, AlarmDataPageLink, KeyFilter } from '@app/shared/models/query/query.models';
+import { EntityService } from '@core/http/entity.service';
 import * as i0 from "@angular/core";
 interface AlarmWidgetActionDescriptor extends TableCellButtonActionDescriptor {
     details?: boolean;
@@ -28,10 +30,12 @@ interface AlarmWidgetActionDescriptor extends TableCellButtonActionDescriptor {
 }
 export declare class AlarmsTableWidgetComponent extends PageComponent implements OnInit, AfterViewInit {
     protected store: Store<AppState>;
+    private userPermissionsService;
     private elementRef;
     private ngZone;
     private overlay;
     private viewContainerRef;
+    private entityService;
     private utils;
     translate: TranslateService;
     private domSanitizer;
@@ -44,6 +48,7 @@ export declare class AlarmsTableWidgetComponent extends PageComponent implements
     searchInputField: ElementRef;
     paginator: MatPaginator;
     sort: MatSort;
+    readonly: boolean;
     enableSelection: boolean;
     displayPagination: boolean;
     enableStickyHeader: boolean;
@@ -76,12 +81,13 @@ export declare class AlarmsTableWidgetComponent extends PageComponent implements
     private columnWidth;
     private columnDefaultVisibility;
     private columnSelectionAvailability;
+    private columnExportParameters;
     private rowStylesInfo;
     private widgetTimewindowChanged$;
     private searchAction;
     private columnDisplayAction;
     private alarmFilterAction;
-    constructor(store: Store<AppState>, elementRef: ElementRef, ngZone: NgZone, overlay: Overlay, viewContainerRef: ViewContainerRef, utils: UtilsService, translate: TranslateService, domSanitizer: DomSanitizer, datePipe: DatePipe, dialog: MatDialog, dialogService: DialogService, alarmService: AlarmService, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, userPermissionsService: UserPermissionsService, elementRef: ElementRef, ngZone: NgZone, overlay: Overlay, viewContainerRef: ViewContainerRef, entityService: EntityService, utils: UtilsService, translate: TranslateService, domSanitizer: DomSanitizer, datePipe: DatePipe, dialog: MatDialog, dialogService: DialogService, alarmService: AlarmService, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngOnDestroy(): void;
     ngAfterViewInit(): void;
@@ -101,7 +107,7 @@ export declare class AlarmsTableWidgetComponent extends PageComponent implements
     headerStyle(key: EntityColumn): any;
     rowStyle(alarm: AlarmDataInfo, row: number): any;
     cellStyle(alarm: AlarmDataInfo, key: EntityColumn, row: number): any;
-    cellContent(alarm: AlarmDataInfo, key: EntityColumn, row: number): SafeHtml;
+    cellContent(alarm: AlarmDataInfo, key: EntityColumn, row: number, useSafeHtml?: boolean): SafeHtml;
     onRowClick($event: Event, alarm: AlarmDataInfo): void;
     onActionButtonClick($event: Event, alarm: AlarmDataInfo, actionDescriptor: AlarmWidgetActionDescriptor): void;
     actionEnabled(alarm: AlarmDataInfo, actionDescriptor: AlarmWidgetActionDescriptor): boolean;
@@ -112,6 +118,13 @@ export declare class AlarmsTableWidgetComponent extends PageComponent implements
     clearAlarms($event: Event): void;
     private defaultContent;
     private defaultStyle;
+    customDataExport(): {
+        [key: string]: any;
+    }[] | Observable<{
+        [key: string]: any;
+    }[]>;
+    private includeColumnInExport;
+    private alarmDataToExportedData;
     isSorting(column: EntityColumn): boolean;
     private clearCache;
     static ɵfac: i0.ɵɵFactoryDeclaration<AlarmsTableWidgetComponent, never>;
@@ -128,6 +141,7 @@ declare class AlarmsDatasource implements DataSource<AlarmDataInfo> {
     private selectionModeChanged;
     selectionModeChanged$: Observable<boolean>;
     private currentAlarm;
+    alarms: AlarmDataInfo[];
     dataLoading: boolean;
     countCellButtonAction: number;
     private appliedPageLink;
@@ -141,7 +155,7 @@ declare class AlarmsDatasource implements DataSource<AlarmDataInfo> {
     loadAlarms(pageLink: AlarmDataPageLink, sortOrderLabel: string, keyFilters: KeyFilter[]): void;
     private clear;
     updateAlarms(): void;
-    private alarmDataToInfo;
+    alarmDataToInfo(alarmData: AlarmData): AlarmDataInfo;
     isAllSelected(): Observable<boolean>;
     isEmpty(): Observable<boolean>;
     total(): Observable<number>;

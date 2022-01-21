@@ -4,6 +4,7 @@ export interface RequestConfig {
     ignoreLoading?: boolean;
     ignoreErrors?: boolean;
     resendRequest?: boolean;
+    loadEntityDetails?: boolean;
 }
 export declare function defaultHttpOptionsFromConfig(config?: RequestConfig): {
     headers: HttpHeaders;

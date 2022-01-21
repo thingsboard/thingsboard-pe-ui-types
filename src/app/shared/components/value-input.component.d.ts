@@ -8,6 +8,9 @@ export declare class ValueInputComponent implements OnInit, ControlValueAccessor
     disabled: boolean;
     requiredText: string;
     inputForm: NgForm;
+    private stringNotRequiredValue;
+    get stringNotRequired(): boolean;
+    set stringNotRequired(value: boolean);
     modelValue: any;
     valueType: ValueType;
     valueTypeEnum: typeof ValueType;
@@ -25,5 +28,5 @@ export declare class ValueInputComponent implements OnInit, ControlValueAccessor
     onValueTypeChanged(): void;
     onValueChanged(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ValueInputComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ValueInputComponent, "tb-value-input", never, { "disabled": "disabled"; "requiredText": "requiredText"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ValueInputComponent, "tb-value-input", never, { "disabled": "disabled"; "requiredText": "requiredText"; "stringNotRequired": "stringNotRequired"; }, {}, never, never>;
 }

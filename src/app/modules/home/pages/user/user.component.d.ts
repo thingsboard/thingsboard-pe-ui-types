@@ -12,11 +12,13 @@ export declare class UserComponent extends EntityComponent<User> {
     protected store: Store<AppState>;
     protected entityValue: User;
     protected entitiesTableConfigValue: EntityTableConfig<User>;
-    fb: FormBuilder;
+    protected fb: FormBuilder;
     protected cd: ChangeDetectorRef;
     protected translate: TranslateService;
     authority: typeof Authority;
     loginAsUserEnabled$: import("rxjs").Observable<boolean>;
+    whiteLabelingAllowed$: import("rxjs").Observable<boolean>;
+    isSysAdmin$: import("rxjs").Observable<boolean>;
     constructor(store: Store<AppState>, entityValue: User, entitiesTableConfigValue: EntityTableConfig<User>, fb: FormBuilder, cd: ChangeDetectorRef, translate: TranslateService);
     hideDelete(): boolean;
     isUserCredentialsEnabled(): boolean;

@@ -11,10 +11,6 @@ export interface Asset extends BaseData<AssetId> {
     label: string;
     additionalInfo?: any;
 }
-export interface AssetInfo extends Asset {
-    customerTitle: string;
-    customerIsPublic: boolean;
-}
 export interface AssetSearchQuery extends EntitySearchQuery {
     assetTypes: Array<string>;
 }

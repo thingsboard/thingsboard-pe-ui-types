@@ -6,6 +6,7 @@ import { EntitySearchQuery } from '@shared/models/relation.models';
 import { RuleChainId } from '@shared/models/id/rule-chain-id';
 import { BaseEventBody } from '@shared/models/event.models';
 import { EventId } from '@shared/models/id/event-id';
+import { EntityType } from "@shared/models/entity-type.models";
 export interface Edge extends BaseData<EdgeId> {
     tenantId?: TenantId;
     customerId?: CustomerId;
@@ -42,7 +43,14 @@ export declare enum EdgeEventType {
     TENANT = "TENANT",
     WIDGETS_BUNDLE = "WIDGETS_BUNDLE",
     WIDGET_TYPE = "WIDGET_TYPE",
-    ADMIN_SETTINGS = "ADMIN_SETTINGS"
+    ADMIN_SETTINGS = "ADMIN_SETTINGS",
+    ENTITY_GROUP = "ENTITY_GROUP",
+    SCHEDULER_EVENT = "SCHEDULER_EVENT",
+    WHITE_LABELING = "WHITE_LABELING",
+    LOGIN_WHITE_LABELING = "LOGIN_WHITE_LABELING",
+    CUSTOM_TRANSLATION = "CUSTOM_TRANSLATION",
+    ROLE = "ROLE",
+    GROUP_PERMISSION = "GROUP_PERMISSION"
 }
 export declare enum EdgeEventActionType {
     ADDED = "ADDED",
@@ -53,8 +61,6 @@ export declare enum EdgeEventActionType {
     ATTRIBUTES_DELETED = "ATTRIBUTES_DELETED",
     TIMESERIES_UPDATED = "TIMESERIES_UPDATED",
     CREDENTIALS_UPDATED = "CREDENTIALS_UPDATED",
-    ASSIGNED_TO_CUSTOMER = "ASSIGNED_TO_CUSTOMER",
-    UNASSIGNED_FROM_CUSTOMER = "UNASSIGNED_FROM_CUSTOMER",
     RELATION_ADD_OR_UPDATE = "RELATION_ADD_OR_UPDATE",
     RELATION_DELETED = "RELATION_DELETED",
     RPC_CALL = "RPC_CALL",
@@ -63,7 +69,11 @@ export declare enum EdgeEventActionType {
     ASSIGNED_TO_EDGE = "ASSIGNED_TO_EDGE",
     UNASSIGNED_FROM_EDGE = "UNASSIGNED_FROM_EDGE",
     CREDENTIALS_REQUEST = "CREDENTIALS_REQUEST",
-    ENTITY_MERGE_REQUEST = "ENTITY_MERGE_REQUEST"
+    ENTITY_MERGE_REQUEST = "ENTITY_MERGE_REQUEST",
+    ADDED_TO_ENTITY_GROUP = "ADDED_TO_ENTITY_GROUP",
+    REMOVED_FROM_ENTITY_GROUP = "REMOVED_FROM_ENTITY_GROUP",
+    CHANGE_OWNER = "CHANGE_OWNER",
+    RELATIONS_DELETED = "RELATIONS_DELETED"
 }
 export declare enum EdgeEventStatus {
     DEPLOYED = "DEPLOYED",
@@ -87,3 +97,4 @@ export interface EdgeEvent extends BaseData<EventId> {
     uid: string;
     body: string;
 }
+export declare const edgeEntityGroupTypes: EntityType[];

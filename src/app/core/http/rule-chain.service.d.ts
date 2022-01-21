@@ -20,6 +20,7 @@ export declare class RuleChainService {
     private translate;
     private ruleNodeComponentsMap;
     private ruleNodeConfigFactories;
+    private ruleNodeComponentsType;
     constructor(http: HttpClient, componentDescriptorService: ComponentDescriptorService, resourcesService: ResourcesService, translate: TranslateService);
     getRuleChains(pageLink: PageLink, type?: RuleChainType, config?: RequestConfig): Observable<PageData<RuleChain>>;
     getRuleChain(ruleChainId: string, config?: RequestConfig): Observable<RuleChain>;

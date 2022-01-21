@@ -48,6 +48,7 @@ export declare class WidgetConfigComponent extends PageComponent implements OnIn
     datasourceType: typeof DatasourceType;
     datasourceTypes: Array<DatasourceType>;
     datasourceTypesTranslations: Map<DatasourceType, string>;
+    widgetActionTypesList: import("@shared/models/widget.models").WidgetActionType[];
     widgetConfigCallbacks: WidgetConfigCallbacks;
     widgetEditMode: boolean;
     selectedTab: number;

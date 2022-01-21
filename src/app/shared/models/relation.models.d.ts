@@ -8,7 +8,9 @@ export declare enum RelationTypeGroup {
     ALARM = "ALARM",
     DASHBOARD = "DASHBOARD",
     RULE_CHAIN = "RULE_CHAIN",
-    RULE_NODE = "RULE_NODE"
+    RULE_NODE = "RULE_NODE",
+    FROM_ENTITY_GROUP = "FROM_ENTITY_GROUP",
+    TO_ENTITY_GROUP = "TO_ENTITY_GROUP"
 }
 export declare enum EntitySearchDirection {
     FROM = "FROM",

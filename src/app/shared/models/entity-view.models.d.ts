@@ -24,10 +24,6 @@ export interface EntityView extends BaseData<EntityViewId> {
     endTimeMs: number;
     additionalInfo?: any;
 }
-export interface EntityViewInfo extends EntityView {
-    customerTitle: string;
-    customerIsPublic: boolean;
-}
 export interface EntityViewSearchQuery extends EntitySearchQuery {
     entityViewTypes: Array<string>;
 }

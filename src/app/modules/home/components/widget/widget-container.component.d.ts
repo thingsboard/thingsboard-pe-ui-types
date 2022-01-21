@@ -4,6 +4,7 @@ import { DashboardWidget, DashboardWidgets } from '@home/models/dashboard-compon
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { SafeStyle } from '@angular/platform-browser';
+import { WidgetExportType } from '@shared/models/widget.models';
 import { GridsterItemComponent } from 'angular-gridster2';
 import * as i0 from "@angular/core";
 export declare enum WidgetComponentActionType {
@@ -40,6 +41,8 @@ export declare class WidgetContainerComponent extends PageComponent implements O
     disableWidgetInteraction: boolean;
     widgetFullscreenChanged: EventEmitter<boolean>;
     widgetComponentAction: EventEmitter<WidgetComponentAction>;
+    widgetExportType: typeof WidgetExportType;
+    widgetExportTypeTranslations: Map<WidgetExportType, string>;
     private cssClass;
     constructor(store: Store<AppState>, cd: ChangeDetectorRef, renderer: Renderer2, document: Document);
     ngOnInit(): void;

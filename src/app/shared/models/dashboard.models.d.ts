@@ -5,9 +5,11 @@ import { ShortCustomerInfo } from '@shared/models/customer.model';
 import { Widget } from './widget.models';
 import { Timewindow } from '@shared/models/time/time.models';
 import { EntityAliases } from './alias.models';
+import { CustomerId } from '@shared/models/id/customer-id';
 import { Filters } from '@shared/models/query/query.models';
 export interface DashboardInfo extends BaseData<DashboardId> {
     tenantId?: TenantId;
+    customerId?: CustomerId;
     title?: string;
     image?: string;
     assignedCustomers?: Array<ShortCustomerInfo>;

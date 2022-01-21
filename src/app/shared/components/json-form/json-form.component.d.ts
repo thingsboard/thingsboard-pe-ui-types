@@ -7,6 +7,7 @@ import { JsonFormProps } from './react/json-form.models';
 import { DialogService } from '@app/core/services/dialog.service';
 import { JsonFormComponentData } from './json-form-component.models';
 import { GroupInfo } from '@shared/models/widget.models';
+import { WhiteLabelingService } from '@core/http/white-labeling.service';
 import { TbPopoverService } from '@shared/components/popover.service';
 import * as i0 from "@angular/core";
 export declare class JsonFormComponent implements OnInit, ControlValueAccessor, Validator, OnChanges, OnDestroy {
@@ -16,6 +17,7 @@ export declare class JsonFormComponent implements OnInit, ControlValueAccessor, 
     private popoverService;
     private renderer;
     private viewContainerRef;
+    private whiteLabelingService;
     protected store: Store<AppState>;
     private cd;
     reactRootElmRef: ElementRef<HTMLElement>;
@@ -36,7 +38,7 @@ export declare class JsonFormComponent implements OnInit, ControlValueAccessor, 
     private propagateChangePending;
     private writingValue;
     private updateViewPending;
-    constructor(elementRef: ElementRef, translate: TranslateService, dialogs: DialogService, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, store: Store<AppState>, cd: ChangeDetectorRef);
+    constructor(elementRef: ElementRef, translate: TranslateService, dialogs: DialogService, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, whiteLabelingService: WhiteLabelingService, store: Store<AppState>, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngOnDestroy(): void;
     registerOnChange(fn: any): void;

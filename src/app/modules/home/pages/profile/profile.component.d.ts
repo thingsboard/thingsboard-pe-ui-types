@@ -30,7 +30,7 @@ export declare class ProfileComponent extends PageComponent implements OnInit, H
     profile: FormGroup;
     user: User;
     languageList: any;
-    private readonly authUser;
+    authState: import("../../../../core/auth/auth.models").AuthState;
     get jwtToken(): string;
     get jwtTokenExpiration(): string;
     get expirationJwtData(): string;
@@ -41,7 +41,6 @@ export declare class ProfileComponent extends PageComponent implements OnInit, H
     changePassword(): void;
     userLoaded(user: User): void;
     confirmForm(): FormGroup;
-    isSysAdmin(): boolean;
     copyToken(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ProfileComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<ProfileComponent, "tb-profile", never, {}, {}, never, never>;

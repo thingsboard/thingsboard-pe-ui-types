@@ -9,6 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { BroadcastService } from '@core/services/broadcast.service';
 import { EntityDetailsPanelComponent } from '@home/components/entity/entity-details-panel.component';
 import { DialogService } from '@core/services/dialog.service';
+import { EntityGroupStateInfo } from '@home/models/group/group-entities-table-config.models';
 import { IEntityDetailsPageComponent } from '@home/models/entity/entity-details-page-component.models';
 import * as i0 from "@angular/core";
 export declare class EntityDetailsPageComponent extends EntityDetailsPanelComponent implements IEntityDetailsPageComponent, OnInit, OnDestroy {
@@ -24,6 +25,7 @@ export declare class EntityDetailsPageComponent extends EntityDetailsPanelCompon
     headerTitle: string;
     headerSubtitle: string;
     isReadOnly: boolean;
+    entityGroup: EntityGroupStateInfo<BaseData<HasId>>;
     set entitiesTableConfig(entitiesTableConfig: EntityTableConfig<BaseData<HasId>>);
     get entitiesTableConfig(): EntityTableConfig<BaseData<HasId>>;
     'tb-absolute-fill': any;

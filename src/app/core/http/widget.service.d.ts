@@ -11,10 +11,12 @@ import { ResourcesService } from '../services/resources.service';
 import { WidgetInfo } from '@app/modules/home/models/widget-component.models';
 import { WidgetTypeId } from '@shared/models/id/widget-type-id';
 import { Router } from '@angular/router';
+import { UserPermissionsService } from '@core/http/user-permissions.service';
 import * as i0 from "@angular/core";
 export declare class WidgetService {
     private http;
     private utils;
+    private userPermissionsService;
     private resources;
     private translate;
     private router;
@@ -23,9 +25,9 @@ export declare class WidgetService {
     private allWidgetsBundles;
     private systemWidgetsBundles;
     private tenantWidgetsBundles;
+    private widgetsBundleCacheSubject;
     private widgetTypeInfosCache;
-    private loadWidgetsBundleCacheSubject;
-    constructor(http: HttpClient, utils: UtilsService, resources: ResourcesService, translate: TranslateService, router: Router);
+    constructor(http: HttpClient, utils: UtilsService, userPermissionsService: UserPermissionsService, resources: ResourcesService, translate: TranslateService, router: Router);
     getWidgetScopeVariables(): string[];
     getAllWidgetsBundles(config?: RequestConfig): Observable<Array<WidgetsBundle>>;
     getSystemWidgetsBundles(config?: RequestConfig): Observable<Array<WidgetsBundle>>;

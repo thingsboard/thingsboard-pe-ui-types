@@ -1,5 +1,6 @@
 /// <reference types="tinycolor2" />
 import { GroupInfo } from '@shared/models/widget.models';
+import { ColorPalette } from '@shared/models/material.models';
 import { MouseEvent } from 'react';
 export interface SchemaValidationResult {
     valid: boolean;
@@ -45,9 +46,12 @@ export interface JsonFormProps {
     onIconClick?: OnIconClickFn;
     onToggleFullscreen?: onToggleFullscreenFn;
     onHelpClick?: onHelpClickFn;
+    isHelpEnabled?: boolean;
     mapper?: {
         [type: string]: any;
     };
+    primaryPalette?: ColorPalette;
+    accentPalette?: ColorPalette;
 }
 export interface KeyLabelItem {
     key: string;
@@ -84,7 +88,7 @@ export interface JsonFormData {
     startEmpty?: boolean;
     [key: string]: any;
 }
-export declare type ComponentBuilderFn = (form: JsonFormData, model: any, index: number, onChange: onChangeFn, onColorClick: OnColorClickFn, onIconClick: OnIconClickFn, onToggleFullscreen: onToggleFullscreenFn, onHelpClick: onHelpClickFn, mapper: {
+export declare type ComponentBuilderFn = (form: JsonFormData, model: any, index: number, onChange: onChangeFn, onColorClick: OnColorClickFn, onIconClick: OnIconClickFn, onToggleFullscreen: onToggleFullscreenFn, onHelpClick: onHelpClickFn, isHelpEnabled: boolean, mapper: {
     [type: string]: any;
 }) => JSX.Element;
 export interface JsonFormFieldProps {
@@ -101,6 +105,7 @@ export interface JsonFormFieldProps {
     onChangeValidate?: (e: any, forceUpdate?: boolean) => void;
     onToggleFullscreen?: onToggleFullscreenFn;
     onHelpClick?: onHelpClickFn;
+    isHelpEnabled?: boolean;
     valid?: boolean;
     error?: string;
     options?: {

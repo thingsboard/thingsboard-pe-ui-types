@@ -5,6 +5,7 @@ import { AppState } from '@app/core/core.state';
 import { TranslateService } from '@ngx-translate/core';
 import { AliasEntityType, EntityType } from '@app/shared/models/entity-type.models';
 import { EntityService } from '@core/http/entity.service';
+import { Operation } from '@shared/models/security.models';
 import * as i0 from "@angular/core";
 export declare class EntityTypeSelectComponent implements ControlValueAccessor, OnInit, AfterViewInit {
     private store;
@@ -15,6 +16,7 @@ export declare class EntityTypeSelectComponent implements ControlValueAccessor, 
     modelValue: EntityType | AliasEntityType | null;
     allowedEntityTypes: Array<EntityType | AliasEntityType>;
     useAliasEntityTypes: boolean;
+    operation: Operation;
     private showLabelValue;
     get showLabel(): boolean;
     set showLabel(value: boolean);
@@ -34,5 +36,5 @@ export declare class EntityTypeSelectComponent implements ControlValueAccessor, 
     updateView(value: EntityType | AliasEntityType | null): void;
     displayEntityTypeFn(entityType?: EntityType | AliasEntityType | null): string | undefined;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityTypeSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityTypeSelectComponent, "tb-entity-type-select", never, { "allowedEntityTypes": "allowedEntityTypes"; "useAliasEntityTypes": "useAliasEntityTypes"; "showLabel": "showLabel"; "required": "required"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityTypeSelectComponent, "tb-entity-type-select", never, { "allowedEntityTypes": "allowedEntityTypes"; "useAliasEntityTypes": "useAliasEntityTypes"; "operation": "operation"; "showLabel": "showLabel"; "required": "required"; "disabled": "disabled"; }, {}, never, never>;
 }

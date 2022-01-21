@@ -9,6 +9,7 @@ export declare class TenantService {
     private http;
     constructor(http: HttpClient);
     getTenants(pageLink: PageLink, config?: RequestConfig): Observable<PageData<Tenant>>;
+    getTenantsByIds(tenantIds: Array<string>, config?: RequestConfig): Observable<Array<Tenant>>;
     getTenantInfos(pageLink: PageLink, config?: RequestConfig): Observable<PageData<TenantInfo>>;
     getTenant(tenantId: string, config?: RequestConfig): Observable<Tenant>;
     getTenantInfo(tenantId: string, config?: RequestConfig): Observable<TenantInfo>;

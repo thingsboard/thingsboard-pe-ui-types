@@ -19,8 +19,8 @@ export declare class EntitySubTypeListComponent implements ControlValueAccessor,
     translate: TranslateService;
     private assetService;
     private deviceService;
-    private edgeService;
     private entityViewService;
+    private edgeService;
     private fb;
     entitySubtypeListFormGroup: FormGroup;
     modelValue: Array<string> | null;
@@ -44,7 +44,7 @@ export declare class EntitySubTypeListComponent implements ControlValueAccessor,
     searchText: string;
     private dirty;
     private propagateChange;
-    constructor(store: Store<AppState>, broadcast: BroadcastService, translate: TranslateService, assetService: AssetService, deviceService: DeviceService, edgeService: EdgeService, entityViewService: EntityViewService, fb: FormBuilder);
+    constructor(store: Store<AppState>, broadcast: BroadcastService, translate: TranslateService, assetService: AssetService, deviceService: DeviceService, entityViewService: EntityViewService, edgeService: EdgeService, fb: FormBuilder);
     updateValidators(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

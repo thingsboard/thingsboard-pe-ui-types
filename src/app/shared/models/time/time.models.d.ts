@@ -152,6 +152,7 @@ export declare function getTimezones(): TimezoneInfo[];
 export declare function getTimezoneInfo(timezoneId: string, defaultTimezoneId?: string, userTimezoneByDefault?: boolean): TimezoneInfo;
 export declare function getDefaultTimezoneInfo(): TimezoneInfo;
 export declare function getDefaultTimezone(): string;
+export declare function getUserZone(): moment_.MomentZone;
 export declare function getCurrentTime(tz?: string): moment_.Moment;
 export declare function getTime(ts: number, tz?: string): moment_.Moment;
 export declare function getTimezone(tz: string): moment_.Moment;

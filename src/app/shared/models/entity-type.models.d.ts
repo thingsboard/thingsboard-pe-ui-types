@@ -10,14 +10,21 @@ export declare enum EntityType {
     DEVICE = "DEVICE",
     DEVICE_PROFILE = "DEVICE_PROFILE",
     ALARM = "ALARM",
+    ENTITY_GROUP = "ENTITY_GROUP",
+    CONVERTER = "CONVERTER",
+    INTEGRATION = "INTEGRATION",
     RULE_CHAIN = "RULE_CHAIN",
     RULE_NODE = "RULE_NODE",
-    EDGE = "EDGE",
+    SCHEDULER_EVENT = "SCHEDULER_EVENT",
+    BLOB_ENTITY = "BLOB_ENTITY",
     ENTITY_VIEW = "ENTITY_VIEW",
     WIDGETS_BUNDLE = "WIDGETS_BUNDLE",
     WIDGET_TYPE = "WIDGET_TYPE",
+    ROLE = "ROLE",
+    GROUP_PERMISSION = "GROUP_PERMISSION",
     API_USAGE_STATE = "API_USAGE_STATE",
     TB_RESOURCE = "TB_RESOURCE",
+    EDGE = "EDGE",
     OTA_PACKAGE = "OTA_PACKAGE",
     RPC = "RPC"
 }
@@ -37,6 +44,12 @@ export interface EntityTypeTranslation {
     noEntities?: string;
     selectedEntities?: string;
     search?: string;
+    selectGroupToAdd?: string;
+    selectGroupToMove?: string;
+    removeFromGroup?: string;
+    group?: string;
+    groupList?: string;
+    groupNameStartsWith?: string;
 }
 export interface EntityTypeResource<T> {
     helpLinkId: string;

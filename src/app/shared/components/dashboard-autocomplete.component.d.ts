@@ -8,6 +8,7 @@ import { DashboardService } from '@core/http/dashboard.service';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { TranslateService } from '@ngx-translate/core';
+import { Operation } from '@shared/models/security.models';
 import { FloatLabelType } from '@angular/material/form-field/form-field';
 import * as i0 from "@angular/core";
 export declare class DashboardAutocompleteComponent implements ControlValueAccessor, OnInit, AfterViewInit {
@@ -21,9 +22,9 @@ export declare class DashboardAutocompleteComponent implements ControlValueAcces
     useIdValue: boolean;
     selectFirstDashboard: boolean;
     placeholder: string;
-    dashboardsScope: 'customer' | 'tenant';
+    userId: string;
     tenantId: string;
-    customerId: string;
+    operation: Operation;
     floatLabel: FloatLabelType;
     private requiredValue;
     get required(): boolean;
@@ -48,5 +49,5 @@ export declare class DashboardAutocompleteComponent implements ControlValueAcces
     onFocus(): void;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardAutocompleteComponent, "tb-dashboard-autocomplete", never, { "useIdValue": "useIdValue"; "selectFirstDashboard": "selectFirstDashboard"; "placeholder": "placeholder"; "dashboardsScope": "dashboardsScope"; "tenantId": "tenantId"; "customerId": "customerId"; "floatLabel": "floatLabel"; "required": "required"; "disabled": "disabled"; }, {}, never, ["[tb-error]", "[tb-hint]"]>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardAutocompleteComponent, "tb-dashboard-autocomplete", never, { "useIdValue": "useIdValue"; "selectFirstDashboard": "selectFirstDashboard"; "placeholder": "placeholder"; "userId": "userId"; "tenantId": "tenantId"; "operation": "operation"; "floatLabel": "floatLabel"; "required": "required"; "disabled": "disabled"; }, {}, never, ["[tb-error]", "[tb-hint]"]>;
 }

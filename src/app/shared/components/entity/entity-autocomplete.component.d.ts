@@ -15,7 +15,7 @@ export declare class EntityAutocompleteComponent implements ControlValueAccessor
     private entityService;
     private fb;
     selectEntityFormGroup: FormGroup;
-    modelValue: string | null;
+    modelValue: string | EntityId | null;
     entityTypeValue: EntityType | AliasEntityType;
     entitySubtypeValue: string;
     set entityType(entityType: EntityType);
@@ -23,6 +23,7 @@ export declare class EntityAutocompleteComponent implements ControlValueAccessor
     excludeEntityIds: Array<string>;
     labelText: string;
     requiredText: string;
+    useFullEntityId: boolean;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
@@ -48,11 +49,11 @@ export declare class EntityAutocompleteComponent implements ControlValueAccessor
     writeValue(value: string | EntityId | null): Promise<void>;
     onFocus(): void;
     reset(): void;
-    updateView(value: string | null, entity: BaseData<EntityId> | null): void;
+    updateView(value: string | EntityId | null, entity: BaseData<EntityId> | null): void;
     displayEntityFn(entity?: BaseData<EntityId>): string | undefined;
     fetchEntities(searchText?: string): Observable<Array<BaseData<EntityId>>>;
     clear(): void;
     checkEntityType(entityType: EntityType | AliasEntityType): EntityType;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityAutocompleteComponent, "tb-entity-autocomplete", never, { "entityType": "entityType"; "entitySubtype": "entitySubtype"; "excludeEntityIds": "excludeEntityIds"; "labelText": "labelText"; "requiredText": "requiredText"; "required": "required"; "disabled": "disabled"; }, { "entityChanged": "entityChanged"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityAutocompleteComponent, "tb-entity-autocomplete", never, { "entityType": "entityType"; "entitySubtype": "entitySubtype"; "excludeEntityIds": "excludeEntityIds"; "labelText": "labelText"; "requiredText": "requiredText"; "useFullEntityId": "useFullEntityId"; "required": "required"; "disabled": "disabled"; }, { "entityChanged": "entityChanged"; }, never, never>;
 }

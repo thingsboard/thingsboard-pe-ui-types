@@ -14,6 +14,7 @@ export interface RelationDialogData {
     isAdd: boolean;
     direction: EntitySearchDirection;
     relation: EntityRelation;
+    readonly: boolean;
 }
 export declare class RelationDialogComponent extends DialogComponent<RelationDialogComponent, boolean> implements OnInit, ErrorStateMatcher {
     protected store: Store<AppState>;
@@ -27,6 +28,7 @@ export declare class RelationDialogComponent extends DialogComponent<RelationDia
     isAdd: boolean;
     direction: EntitySearchDirection;
     entitySearchDirection: typeof EntitySearchDirection;
+    readonly: boolean;
     additionalInfo: FormControl;
     additionalInfoEdit: JsonObjectEditComponent;
     submitted: boolean;

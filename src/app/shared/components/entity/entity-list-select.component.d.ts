@@ -6,6 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { AliasEntityType, EntityType } from '@shared/models/entity-type.models';
 import { EntityService } from '@core/http/entity.service';
 import { EntityId } from '@shared/models/id/entity-id';
+import { Operation } from '@shared/models/security.models';
 import * as i0 from "@angular/core";
 interface EntityListSelectModel {
     entityType: EntityType | AliasEntityType;
@@ -20,6 +21,7 @@ export declare class EntityListSelectComponent implements ControlValueAccessor, 
     modelValue: EntityListSelectModel;
     allowedEntityTypes: Array<EntityType | AliasEntityType>;
     useAliasEntityTypes: boolean;
+    operation: Operation;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
@@ -38,6 +40,6 @@ export declare class EntityListSelectComponent implements ControlValueAccessor, 
     compareIds(ids1: Array<string> | null, ids2: Array<string> | null): boolean;
     toEntityIds(modelValue: EntityListSelectModel): Array<EntityId>;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityListSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityListSelectComponent, "tb-entity-list-select", never, { "allowedEntityTypes": "allowedEntityTypes"; "useAliasEntityTypes": "useAliasEntityTypes"; "required": "required"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityListSelectComponent, "tb-entity-list-select", never, { "allowedEntityTypes": "allowedEntityTypes"; "useAliasEntityTypes": "useAliasEntityTypes"; "operation": "operation"; "required": "required"; "disabled": "disabled"; }, {}, never, never>;
 }
 export {};

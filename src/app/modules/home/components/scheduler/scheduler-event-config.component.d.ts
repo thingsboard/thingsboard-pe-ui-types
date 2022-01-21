@@ -1,0 +1,41 @@
+import { AfterViewInit, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { AppState } from '@app/core/core.state';
+import { TranslateService } from '@ngx-translate/core';
+import { UserPermissionsService } from '@core/http/user-permissions.service';
+import { SchedulerEventConfiguration } from '@shared/models/scheduler-event.models';
+import { SchedulerEventConfigType } from '@home/components/scheduler/scheduler-event-config.models';
+import * as i0 from "@angular/core";
+export declare class SchedulerEventConfigComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnChanges, OnDestroy {
+    private store;
+    translate: TranslateService;
+    private userPermissionsService;
+    private fb;
+    schedulerEventConfigFormGroup: FormGroup;
+    modelValue: SchedulerEventConfiguration | null;
+    disabled: boolean;
+    schedulerEventConfigTypes: {
+        [eventType: string]: SchedulerEventConfigType;
+    };
+    schedulerEventType: string;
+    useDefinedTemplate: boolean;
+    showOriginator: boolean;
+    showMsgType: boolean;
+    showMetadata: boolean;
+    private propagateChange;
+    constructor(store: Store<AppState>, translate: TranslateService, userPermissionsService: UserPermissionsService, fb: FormBuilder);
+    registerOnChange(fn: any): void;
+    registerOnTouched(fn: any): void;
+    ngOnInit(): void;
+    ngOnChanges(changes: SimpleChanges): void;
+    private buildSchedulerEventConfigForm;
+    ngAfterViewInit(): void;
+    ngOnDestroy(): void;
+    setDisabledState(isDisabled: boolean): void;
+    private updateEnabledState;
+    writeValue(value: SchedulerEventConfiguration | null): void;
+    updateView(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<SchedulerEventConfigComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SchedulerEventConfigComponent, "tb-scheduler-event-config", never, { "disabled": "disabled"; "schedulerEventConfigTypes": "schedulerEventConfigTypes"; "schedulerEventType": "schedulerEventType"; }, {}, never, never>;
+}

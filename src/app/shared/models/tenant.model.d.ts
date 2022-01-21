@@ -12,6 +12,9 @@ export interface DefaultTenantProfileConfiguration {
     maxUsers: number;
     maxDashboards: number;
     maxRuleChains: number;
+    maxIntegrations: number;
+    maxConverters: number;
+    maxSchedulerEvents: number;
     maxResourcesInBytes: number;
     maxOtaPackagesInBytes: number;
     transportTenantMsgRateLimit?: string;

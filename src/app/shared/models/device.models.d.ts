@@ -179,6 +179,7 @@ export interface DeviceProfileAlarm {
     clearRule?: AlarmRule;
     propagate?: boolean;
     propagateToOwner?: boolean;
+    propagateToOwnerHierarchy?: boolean;
     propagateToTenant?: boolean;
     propagateRelationTypes?: Array<string>;
 }
@@ -291,11 +292,6 @@ export interface Device extends BaseData<DeviceId> {
     deviceProfileId?: DeviceProfileId;
     deviceData?: DeviceData;
     additionalInfo?: any;
-}
-export interface DeviceInfo extends Device {
-    customerTitle: string;
-    customerIsPublic: boolean;
-    deviceProfileName: string;
 }
 export declare enum DeviceCredentialsType {
     ACCESS_TOKEN = "ACCESS_TOKEN",

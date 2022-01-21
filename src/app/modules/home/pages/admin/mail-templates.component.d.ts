@@ -1,0 +1,34 @@
+import { OnInit } from '@angular/core';
+import { PageComponent } from '@shared/components/page.component';
+import { HasDirtyFlag } from '@core/guards/confirm-on-exit.guard';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { ActivatedRoute } from '@angular/router';
+import { AdminService } from '@core/http/admin.service';
+import { UserPermissionsService } from '@core/http/user-permissions.service';
+import { AuthState } from '@core/auth/auth.models';
+import { AuthUser } from '@shared/models/user.model';
+import { AdminSettings, MailTemplate, MailTemplatesSettings } from '@shared/models/settings.models';
+import * as i0 from "@angular/core";
+export declare class MailTemplatesComponent extends PageComponent implements OnInit, HasDirtyFlag {
+    protected store: Store<AppState>;
+    private route;
+    private adminService;
+    private userPermissionsService;
+    authState: AuthState;
+    authUser: AuthUser;
+    adminSettings: AdminSettings<MailTemplatesSettings>;
+    mailTemplateTypes: any[];
+    mailTemplateTranslationsMap: Map<MailTemplate, string>;
+    mailTemplate: MailTemplate;
+    useSystemMailSettings: boolean;
+    readonly: boolean;
+    isDirty: boolean;
+    tinyMceOptions: Record<string, any>;
+    constructor(store: Store<AppState>, route: ActivatedRoute, adminService: AdminService, userPermissionsService: UserPermissionsService);
+    ngOnInit(): void;
+    isTenantAdmin(): boolean;
+    save(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<MailTemplatesComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MailTemplatesComponent, "tb-mail-templates", never, {}, {}, never, never>;
+}

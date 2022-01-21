@@ -26,6 +26,7 @@ import { MatMenuTrigger } from '@angular/material/menu';
 import { ItemBufferService } from '@core/services/item-buffer.service';
 import { Hotkey } from 'angular2-hotkeys';
 import { DebugEventType, EventType } from '@shared/models/event.models';
+import { UserPermissionsService } from '@core/http/user-permissions.service';
 import * as i0 from "@angular/core";
 export declare class RuleChainPageComponent extends PageComponent implements AfterViewInit, OnInit, OnDestroy, HasDirtyFlag, ISearchableComponent {
     protected store: Store<AppState>;
@@ -35,6 +36,7 @@ export declare class RuleChainPageComponent extends PageComponent implements Aft
     private authService;
     private translate;
     private itembuffer;
+    private userPermissionsService;
     dialog: MatDialog;
     dialogService: DialogService;
     fb: FormBuilder;
@@ -45,6 +47,7 @@ export declare class RuleChainPageComponent extends PageComponent implements Aft
     ruleChainCanvas: NgxFlowchartComponent;
     expansionPanels: QueryList<MatExpansionPanel>;
     ruleChainMenuTrigger: MatMenuTrigger;
+    readonly: boolean;
     eventTypes: typeof EventType;
     debugEventTypes: typeof DebugEventType;
     ruleChainMenuPosition: {
@@ -124,7 +127,7 @@ export declare class RuleChainPageComponent extends PageComponent implements Aft
     };
     private rxSubscription;
     private tooltipTimeout;
-    constructor(store: Store<AppState>, route: ActivatedRoute, router: Router, ruleChainService: RuleChainService, authService: AuthService, translate: TranslateService, itembuffer: ItemBufferService, dialog: MatDialog, dialogService: DialogService, fb: FormBuilder);
+    constructor(store: Store<AppState>, route: ActivatedRoute, router: Router, ruleChainService: RuleChainService, authService: AuthService, translate: TranslateService, itembuffer: ItemBufferService, userPermissionsService: UserPermissionsService, dialog: MatDialog, dialogService: DialogService, fb: FormBuilder);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     ngOnDestroy(): void;

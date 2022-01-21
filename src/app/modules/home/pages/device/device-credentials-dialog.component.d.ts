@@ -34,6 +34,7 @@ export declare class DeviceCredentialsDialogComponent extends DialogComponent<De
     ngOnInit(): void;
     isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     loadDeviceCredentials(): void;
+    private deviceProfileInfo;
     cancel(): void;
     save(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceCredentialsDialogComponent, [null, null, null, null, null, { skipSelf: true; }, null, null]>;

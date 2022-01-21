@@ -8,6 +8,8 @@ import { LocalStorageService } from '@app/core/local-storage/local-storage.servi
 import { TitleService } from '@app/core/services/title.service';
 import { AuthService } from '@core/auth/auth.service';
 import { UtilsService } from '@core/services/utils.service';
+import { FaviconService } from '@core/services/favicon.service';
+import { CustomTranslationService } from '@core/http/custom-translation.service';
 import * as i0 from "@angular/core";
 export declare const SETTINGS_KEY = "SETTINGS";
 export declare class SettingsEffects {
@@ -18,11 +20,14 @@ export declare class SettingsEffects {
     private router;
     private localStorageService;
     private titleService;
+    private faviconService;
     private translate;
-    constructor(actions$: Actions<SettingsActions>, store: Store<AppState>, authService: AuthService, utils: UtilsService, router: Router, localStorageService: LocalStorageService, titleService: TitleService, translate: TranslateService);
+    private customTranslationService;
+    constructor(actions$: Actions<SettingsActions>, store: Store<AppState>, authService: AuthService, utils: UtilsService, router: Router, localStorageService: LocalStorageService, titleService: TitleService, faviconService: FaviconService, translate: TranslateService, customTranslationService: CustomTranslationService);
     persistSettings: import("rxjs").Observable<[import("./settings.actions").ActionSettingsChangeLanguage, import("./settings.models").SettingsState]>;
     setTranslateServiceLanguage: import("rxjs").Observable<string>;
     setTitle: import("rxjs").Observable<import("@angular/router").Event>;
+    setFavicon: import("rxjs").Observable<never>;
     setPublicId: import("rxjs").Observable<import("@angular/router").Event>;
     static ɵfac: i0.ɵɵFactoryDeclaration<SettingsEffects, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<SettingsEffects>;

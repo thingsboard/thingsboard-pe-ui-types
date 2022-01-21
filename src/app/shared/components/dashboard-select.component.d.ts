@@ -8,17 +8,20 @@ import { AppState } from '@app/core/core.state';
 import { TooltipPosition } from '@angular/material/tooltip';
 import { CdkOverlayOrigin, Overlay } from '@angular/cdk/overlay';
 import { BreakpointObserver } from '@angular/cdk/layout';
+import { Operation } from '@shared/models/security.models';
+import { UtilsService } from '@core/services/utils.service';
 import * as i0 from "@angular/core";
 export declare class DashboardSelectComponent implements ControlValueAccessor, OnInit {
     private store;
     private dashboardService;
+    private utils;
     private overlay;
     private breakpointObserver;
     private viewContainerRef;
     private document;
     private window;
-    dashboardsScope: 'customer' | 'tenant';
-    customerId: string;
+    groupId: string;
+    operation: Operation;
     tooltipPosition: TooltipPosition;
     private requiredValue;
     get required(): boolean;
@@ -28,7 +31,7 @@ export declare class DashboardSelectComponent implements ControlValueAccessor, O
     dashboardId: string | null;
     dashboardSelectPanelOrigin: CdkOverlayOrigin;
     private propagateChange;
-    constructor(store: Store<AppState>, dashboardService: DashboardService, overlay: Overlay, breakpointObserver: BreakpointObserver, viewContainerRef: ViewContainerRef, document: Document, window: Window);
+    constructor(store: Store<AppState>, dashboardService: DashboardService, utils: UtilsService, overlay: Overlay, breakpointObserver: BreakpointObserver, viewContainerRef: ViewContainerRef, document: Document, window: Window);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -36,9 +39,10 @@ export declare class DashboardSelectComponent implements ControlValueAccessor, O
     writeValue(value: string | null): void;
     dashboardIdChanged(): void;
     openDashboardSelectPanel(): void;
+    getDashboardTitle(title: string): string;
     private _createDashboardSelectPanelInjector;
     private updateView;
     private getDashboards;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardSelectComponent, "tb-dashboard-select", never, { "dashboardsScope": "dashboardsScope"; "customerId": "customerId"; "tooltipPosition": "tooltipPosition"; "required": "required"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardSelectComponent, "tb-dashboard-select", never, { "groupId": "groupId"; "operation": "operation"; "tooltipPosition": "tooltipPosition"; "required": "required"; "disabled": "disabled"; }, {}, never, never>;
 }

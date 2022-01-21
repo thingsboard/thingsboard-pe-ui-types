@@ -17,8 +17,8 @@ export declare class EntitySubTypeAutocompleteComponent implements ControlValueA
     translate: TranslateService;
     private deviceService;
     private assetService;
-    private edgeService;
     private entityViewService;
+    private edgeService;
     private fb;
     subTypeFormGroup: FormGroup;
     modelValue: string | null;
@@ -38,7 +38,7 @@ export declare class EntitySubTypeAutocompleteComponent implements ControlValueA
     searchText: string;
     private dirty;
     private propagateChange;
-    constructor(store: Store<AppState>, broadcast: BroadcastService, translate: TranslateService, deviceService: DeviceService, assetService: AssetService, edgeService: EdgeService, entityViewService: EntityViewService, fb: FormBuilder);
+    constructor(store: Store<AppState>, broadcast: BroadcastService, translate: TranslateService, deviceService: DeviceService, assetService: AssetService, entityViewService: EntityViewService, edgeService: EdgeService, fb: FormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;

@@ -247,6 +247,11 @@ export interface AlarmData extends AlarmInfo {
         };
     };
 }
+export declare function getLatestDataValue(latest: {
+    [entityKeyType: string]: {
+        [key: string]: TsValue;
+    };
+}, entityKeyType: EntityKeyType, key: string, defaultValue?: string): string;
 export declare function entityPageDataChanged(prevPageData: PageData<EntityData>, nextPageData: PageData<EntityData>): boolean;
 export declare const entityInfoFields: EntityKey[];
 export declare function entityDataToEntityInfo(entityData: EntityData): EntityInfo;

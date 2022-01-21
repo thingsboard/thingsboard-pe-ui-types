@@ -1,4 +1,4 @@
-export declare type WindowMessageType = 'widgetException' | 'widgetEditModeInited' | 'widgetEditUpdated' | 'openDashboardMessage' | 'reloadUserMessage' | 'toggleDashboardLayout';
+export declare type WindowMessageType = 'widgetException' | 'widgetEditModeInited' | 'widgetEditUpdated' | 'dashboardStateSelected' | 'openDashboardMessage' | 'reloadUserMessage' | 'toggleDashboardLayout' | 'resetRecaptcha';
 export interface WindowMessage {
     type: WindowMessageType;
     data?: any;

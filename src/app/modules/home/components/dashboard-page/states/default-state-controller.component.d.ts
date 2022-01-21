@@ -12,14 +12,15 @@ import { MobileService } from '@core/services/mobile.service';
 import * as i0 from "@angular/core";
 export declare class DefaultStateControllerComponent extends StateControllerComponent implements OnInit, OnDestroy {
     protected router: Router;
+    protected window: Window;
     protected route: ActivatedRoute;
     protected ngZone: NgZone;
     protected statesControllerService: StatesControllerService;
-    private utils;
+    protected utils: UtilsService;
     private entityService;
     private mobileService;
     private dashboardUtils;
-    constructor(router: Router, route: ActivatedRoute, ngZone: NgZone, statesControllerService: StatesControllerService, utils: UtilsService, entityService: EntityService, mobileService: MobileService, dashboardUtils: DashboardUtilsService);
+    constructor(router: Router, window: Window, route: ActivatedRoute, ngZone: NgZone, statesControllerService: StatesControllerService, utils: UtilsService, entityService: EntityService, mobileService: MobileService, dashboardUtils: DashboardUtilsService);
     ngOnInit(): void;
     ngOnDestroy(): void;
     init(): void;

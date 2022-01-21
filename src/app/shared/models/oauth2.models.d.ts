@@ -83,6 +83,8 @@ export interface MapperConfigBasic {
     customerNamePattern?: string;
     defaultDashboardName?: string;
     alwaysFullScreen?: boolean;
+    parentCustomerNamePattern?: string;
+    userGroupsNamePattern?: string[];
 }
 export interface MapperConfigCustom {
     url: string;

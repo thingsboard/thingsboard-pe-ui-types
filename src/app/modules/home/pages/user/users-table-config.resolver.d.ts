@@ -14,6 +14,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { AuthService } from '@core/auth/auth.service';
 import { TenantService } from '@app/core/http/tenant.service';
+import { UserPermissionsService } from '@core/http/user-permissions.service';
 import * as i0 from "@angular/core";
 export interface UsersTableRouteData {
     authority: Authority;
@@ -24,6 +25,7 @@ export declare class UsersTableConfigResolver implements Resolve<EntityTableConf
     private authService;
     private tenantService;
     private customerService;
+    private userPermissionsService;
     private translate;
     private datePipe;
     private router;
@@ -33,7 +35,7 @@ export declare class UsersTableConfigResolver implements Resolve<EntityTableConf
     private customerId;
     private authority;
     private authUser;
-    constructor(store: Store<AppState>, userService: UserService, authService: AuthService, tenantService: TenantService, customerService: CustomerService, translate: TranslateService, datePipe: DatePipe, router: Router, dialog: MatDialog);
+    constructor(store: Store<AppState>, userService: UserService, authService: AuthService, tenantService: TenantService, customerService: CustomerService, userPermissionsService: UserPermissionsService, translate: TranslateService, datePipe: DatePipe, router: Router, dialog: MatDialog);
     resolve(route: ActivatedRouteSnapshot): Observable<EntityTableConfig<User>>;
     updateActionCellDescriptors(auth: AuthState): void;
     saveUser(user: User): Observable<User>;

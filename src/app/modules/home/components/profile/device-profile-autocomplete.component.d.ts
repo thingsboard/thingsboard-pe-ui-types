@@ -10,6 +10,7 @@ import { DeviceProfileId } from '@shared/models/id/device-profile-id';
 import { DeviceProfile, DeviceProfileInfo, DeviceTransportType } from '@shared/models/device.models';
 import { DeviceProfileService } from '@core/http/device-profile.service';
 import { MatAutocomplete } from '@angular/material/autocomplete';
+import { Operation, Resource } from '@shared/models/security.models';
 import * as i0 from "@angular/core";
 export declare class DeviceProfileAutocompleteComponent implements ControlValueAccessor, OnInit, OnChanges {
     private store;
@@ -19,6 +20,8 @@ export declare class DeviceProfileAutocompleteComponent implements ControlValueA
     private fb;
     private zone;
     private dialog;
+    resource: typeof Resource;
+    operation: typeof Operation;
     selectDeviceProfileFormGroup: FormGroup;
     modelValue: DeviceProfileId | null;
     selectDefaultProfile: boolean;

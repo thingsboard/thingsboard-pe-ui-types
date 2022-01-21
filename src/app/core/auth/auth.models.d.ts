@@ -3,6 +3,8 @@ export interface SysParamsState {
     userTokenAccessEnabled: boolean;
     allowedDashboardIds: string[];
     edgesSupportEnabled: boolean;
+    whiteLabelingAllowed: boolean;
+    customerWhiteLabelingAllowed: boolean;
 }
 export interface AuthPayload extends SysParamsState {
     authUser: AuthUser;

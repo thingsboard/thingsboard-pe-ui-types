@@ -11,7 +11,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { WidgetActionCallbacks, WidgetActionDescriptorInfo, WidgetActionsData, WidgetActionsDatasource } from '@home/components/widget/action/manage-widget-actions.component.models';
 import { UtilsService } from '@core/services/utils.service';
-import { widgetType } from '@shared/models/widget.models';
+import { WidgetActionType, widgetType } from '@shared/models/widget.models';
 import * as i0 from "@angular/core";
 export declare class ManageWidgetActionsComponent extends PageComponent implements OnInit, AfterViewInit, OnDestroy, ControlValueAccessor {
     protected store: Store<AppState>;
@@ -24,6 +24,8 @@ export declare class ManageWidgetActionsComponent extends PageComponent implemen
     disabled: boolean;
     widgetType: widgetType;
     callbacks: WidgetActionCallbacks;
+    actionTypes: WidgetActionType[];
+    customFunctionArgs: string[];
     innerValue: WidgetActionsData;
     displayedColumns: string[];
     pageLink: PageLink;
@@ -57,5 +59,5 @@ export declare class ManageWidgetActionsComponent extends PageComponent implemen
     writeValue(obj: WidgetActionsData): void;
     private onActionsUpdated;
     static ɵfac: i0.ɵɵFactoryDeclaration<ManageWidgetActionsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ManageWidgetActionsComponent, "tb-manage-widget-actions", never, { "disabled": "disabled"; "widgetType": "widgetType"; "callbacks": "callbacks"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ManageWidgetActionsComponent, "tb-manage-widget-actions", never, { "disabled": "disabled"; "widgetType": "widgetType"; "callbacks": "callbacks"; "actionTypes": "actionTypes"; "customFunctionArgs": "customFunctionArgs"; }, {}, never, never>;
 }

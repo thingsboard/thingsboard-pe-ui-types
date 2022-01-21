@@ -10,16 +10,18 @@ import { PageData } from '@shared/models/page/page-data';
 import { EntityId } from '@shared/models/id/entity-id';
 import { UserId } from '@shared/models/id/user-id';
 import { CustomerId } from '@shared/models/id/customer-id';
+import { UtilsService } from '@core/services/utils.service';
 export declare class AuditLogTableConfig extends EntityTableConfig<AuditLog, TimePageLink> {
     private auditLogService;
     private translate;
+    private utils;
     private datePipe;
     private dialog;
     private auditLogMode;
     entityId: EntityId;
     userId: UserId;
     customerId: CustomerId;
-    constructor(auditLogService: AuditLogService, translate: TranslateService, datePipe: DatePipe, dialog: MatDialog, auditLogMode?: AuditLogMode, entityId?: EntityId, userId?: UserId, customerId?: CustomerId, updateOnInit?: boolean, pageMode?: boolean);
+    constructor(auditLogService: AuditLogService, translate: TranslateService, utils: UtilsService, datePipe: DatePipe, dialog: MatDialog, auditLogMode?: AuditLogMode, entityId?: EntityId, userId?: UserId, customerId?: CustomerId, updateOnInit?: boolean, pageMode?: boolean);
     fetchAuditLogs(pageLink: TimePageLink): Observable<PageData<AuditLog>>;
     showAuditLogDetails(entity: AuditLog): void;
 }

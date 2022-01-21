@@ -4,6 +4,7 @@ export declare enum ComponentType {
     FILTER = "FILTER",
     TRANSFORMATION = "TRANSFORMATION",
     ACTION = "ACTION",
+    ANALYTICS = "ANALYTICS",
     EXTERNAL = "EXTERNAL",
     FLOW = "FLOW"
 }

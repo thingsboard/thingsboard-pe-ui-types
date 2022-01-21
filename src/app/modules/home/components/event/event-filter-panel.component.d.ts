@@ -21,6 +21,7 @@ export declare class EventFilterPanelComponent {
     private conditionError;
     private msgDirectionTypes;
     private statusTypes;
+    private msgTypes;
     private entityTypes;
     showColumns: FilterEntityColumn[];
     constructor(data: EventFilterPanelData, overlayRef: OverlayRef, fb: FormBuilder);

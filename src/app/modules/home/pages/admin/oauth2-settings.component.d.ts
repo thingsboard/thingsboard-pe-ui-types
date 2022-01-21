@@ -58,8 +58,8 @@ export declare class OAuth2SettingsComponent extends PageComponent implements On
     private changeMapperConfigType;
     save(): void;
     confirmForm(): FormGroup;
-    addScope(event: MatChipInputEvent, control: AbstractControl): void;
-    removeScope(i: number, control: AbstractControl): void;
+    addChipValue(event: MatChipInputEvent, control: AbstractControl, fieldName: string): void;
+    removeChipValue(i: number, control: AbstractControl, fieldName: string): void;
     addOAuth2ParamsInfo(): void;
     deleteOAuth2ParamsInfo($event: Event, index: number): void;
     clientRegistrations(control: AbstractControl): FormArray;

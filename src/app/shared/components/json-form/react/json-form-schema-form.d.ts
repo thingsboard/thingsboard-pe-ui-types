@@ -11,7 +11,7 @@ declare class ThingsboardSchemaForm extends React.Component<JsonFormProps, any> 
     onIconClick(key: (string | number)[], val: string, iconSelectedFn: (icon: string) => void): void;
     onToggleFullscreen(fullscreenFinishFn?: (el: Element) => void): void;
     onHelpClick(event: MouseEvent, helpId: string, helpVisibleFn: (visible: boolean) => void, helpReadyFn: (ready: boolean) => void): void;
-    builder(form: JsonFormData, model: any, index: number, onChange: onChangeFn, onColorClick: OnColorClickFn, onIconClick: OnIconClickFn, onToggleFullscreen: onToggleFullscreenFn, onHelpClick: onHelpClickFn, mapper: {
+    builder(form: JsonFormData, model: any, index: number, onChange: onChangeFn, onColorClick: OnColorClickFn, onIconClick: OnIconClickFn, onToggleFullscreen: onToggleFullscreenFn, onHelpClick: onHelpClickFn, isHelpEnabled: boolean, mapper: {
         [type: string]: any;
     }): JSX.Element;
     createSchema(theForm: any[]): JSX.Element;
