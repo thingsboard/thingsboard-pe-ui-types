@@ -1,0 +1,31 @@
+import { OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { PageComponent } from '@shared/components/page.component';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { MatDialog } from '@angular/material/dialog';
+import { Dashboard, WidgetLayout } from '@shared/models/dashboard.models';
+import { IAliasController } from '@core/api/widget-api.models';
+import { Widget } from '@shared/models/widget.models';
+import { WidgetComponentService } from '@home/components/widget/widget-component.service';
+import { WidgetConfigComponentData } from '../../models/widget-component.models';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import * as i0 from "@angular/core";
+export declare class EditWidgetComponent extends PageComponent implements OnInit, OnChanges {
+    protected store: Store<AppState>;
+    private dialog;
+    private fb;
+    private widgetComponentService;
+    dashboard: Dashboard;
+    aliasController: IAliasController;
+    widgetEditMode: boolean;
+    widget: Widget;
+    widgetLayout: WidgetLayout;
+    widgetFormGroup: FormGroup;
+    widgetConfig: WidgetConfigComponentData;
+    constructor(store: Store<AppState>, dialog: MatDialog, fb: FormBuilder, widgetComponentService: WidgetComponentService);
+    ngOnInit(): void;
+    ngOnChanges(changes: SimpleChanges): void;
+    private loadWidgetConfig;
+    static ɵfac: i0.ɵɵFactoryDeclaration<EditWidgetComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EditWidgetComponent, "tb-edit-widget", never, { "dashboard": "dashboard"; "aliasController": "aliasController"; "widgetEditMode": "widgetEditMode"; "widget": "widget"; "widgetLayout": "widgetLayout"; }, {}, never, never>;
+}

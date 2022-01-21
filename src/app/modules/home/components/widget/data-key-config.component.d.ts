@@ -1,0 +1,70 @@
+import { ElementRef, OnInit } from '@angular/core';
+import { PageComponent } from '@shared/components/page.component';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { DataKey } from '@shared/models/widget.models';
+import { ControlValueAccessor, FormBuilder, FormControl, FormGroup, Validator } from '@angular/forms';
+import { UtilsService } from '@core/services/utils.service';
+import { TranslateService } from '@ngx-translate/core';
+import { MatDialog } from '@angular/material/dialog';
+import { EntityService } from '@core/http/entity.service';
+import { DataKeysCallbacks } from '@home/components/widget/data-keys.component.models';
+import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
+import { Observable } from 'rxjs';
+import { JsFuncComponent } from '@shared/components/js-func.component';
+import { WidgetService } from '@core/http/widget.service';
+import * as i0 from "@angular/core";
+export declare class DataKeyConfigComponent extends PageComponent implements OnInit, ControlValueAccessor, Validator {
+    protected store: Store<AppState>;
+    private utils;
+    private entityService;
+    private dialog;
+    private translate;
+    private widgetService;
+    private fb;
+    dataKeyTypes: typeof DataKeyType;
+    entityAliasId: string;
+    callbacks: DataKeysCallbacks;
+    dataKeySettingsSchema: any;
+    showPostProcessing: boolean;
+    keyInput: ElementRef;
+    funcBodyEdit: JsFuncComponent;
+    postFuncBodyEdit: JsFuncComponent;
+    displayAdvanced: boolean;
+    modelValue: DataKey;
+    private propagateChange;
+    dataKeyFormGroup: FormGroup;
+    dataKeySettingsFormGroup: FormGroup;
+    private dataKeySettingsData;
+    private alarmKeys;
+    filteredKeys: Observable<Array<string>>;
+    private latestKeySearchResult;
+    private fetchObservable$;
+    keySearchText: string;
+    functionScopeVariables: string[];
+    constructor(store: Store<AppState>, utils: UtilsService, entityService: EntityService, dialog: MatDialog, translate: TranslateService, widgetService: WidgetService, fb: FormBuilder);
+    ngOnInit(): void;
+    registerOnChange(fn: any): void;
+    registerOnTouched(fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    writeValue(value: DataKey): void;
+    private updateModel;
+    clearKey(): void;
+    private fetchKeys;
+    private getKeys;
+    private createKeyFilter;
+    validateOnSubmit(): void;
+    validate(c: FormControl): {
+        dataKey: {
+            valid: boolean;
+        };
+        dataKeySettings?: undefined;
+    } | {
+        dataKeySettings: {
+            valid: boolean;
+        };
+        dataKey?: undefined;
+    };
+    static ɵfac: i0.ɵɵFactoryDeclaration<DataKeyConfigComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeyConfigComponent, "tb-data-key-config", never, { "entityAliasId": "entityAliasId"; "callbacks": "callbacks"; "dataKeySettingsSchema": "dataKeySettingsSchema"; "showPostProcessing": "showPostProcessing"; }, {}, never, never>;
+}

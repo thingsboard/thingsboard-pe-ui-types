@@ -1,0 +1,31 @@
+import L from 'leaflet';
+import { FormattedData, MarkerIconInfo, MarkerIconReadyFunction, MarkerSettings, UnitedMapSettings } from './map-models';
+import tinycolor from 'tinycolor2';
+import LeafletMap from './leaflet-map';
+export declare class Marker {
+    private map;
+    private location;
+    settings: UnitedMapSettings;
+    leafletMarker: L.Marker;
+    labelOffset: L.LatLngTuple;
+    tooltipOffset: L.LatLngTuple;
+    markerOffset: L.LatLngTuple;
+    tooltip: L.Popup;
+    data: FormattedData;
+    dataSources: FormattedData[];
+    constructor(map: LeafletMap, location: L.LatLng, settings: UnitedMapSettings, data?: FormattedData, dataSources?: any, onDragendListener?: any);
+    setDataSources(data: FormattedData, dataSources: FormattedData[]): void;
+    updateMarkerTooltip(data: FormattedData): void;
+    updateMarkerPosition(position: L.LatLng): void;
+    updateMarkerLabel(settings: MarkerSettings): void;
+    updateMarkerColor(color: any): void;
+    updateMarkerIcon(settings: MarkerSettings): void;
+    private createMarkerIcon;
+    createDefaultMarkerIcon(color: tinycolor.Instance, onMarkerIconReady: MarkerIconReadyFunction): void;
+    createColoredMarkerIcon(color: tinycolor.Instance): MarkerIconInfo;
+    createColorIconURI(color: tinycolor.Instance): string;
+    removeMarker(): void;
+    extendBoundsWithMarker(bounds: any): void;
+    getMarkerPosition(): L.LatLng;
+    setMarkerPosition(latLng: any): void;
+}

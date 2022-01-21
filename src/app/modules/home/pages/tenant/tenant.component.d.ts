@@ -1,0 +1,26 @@
+import { ChangeDetectorRef } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Tenant, TenantInfo } from '@app/shared/models/tenant.model';
+import { TranslateService } from '@ngx-translate/core';
+import { ContactBasedComponent } from '../../components/entity/contact-based.component';
+import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
+import * as i0 from "@angular/core";
+export declare class TenantComponent extends ContactBasedComponent<TenantInfo> {
+    protected store: Store<AppState>;
+    protected translate: TranslateService;
+    protected entityValue: TenantInfo;
+    protected entitiesTableConfigValue: EntityTableConfig<TenantInfo>;
+    protected fb: FormBuilder;
+    protected cd: ChangeDetectorRef;
+    constructor(store: Store<AppState>, translate: TranslateService, entityValue: TenantInfo, entitiesTableConfigValue: EntityTableConfig<TenantInfo>, fb: FormBuilder, cd: ChangeDetectorRef);
+    hideDelete(): boolean;
+    buildEntityForm(entity: TenantInfo): FormGroup;
+    updateEntityForm(entity: Tenant): void;
+    updateFormState(): void;
+    onTenantIdCopied(event: any): void;
+    onTenantProfileUpdated(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<TenantComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TenantComponent, "tb-tenant", never, {}, {}, never, never>;
+}

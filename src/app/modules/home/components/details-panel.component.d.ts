@@ -1,0 +1,38 @@
+import { ChangeDetectorRef, EventEmitter, OnDestroy } from '@angular/core';
+import { PageComponent } from '@shared/components/page.component';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { FormGroup } from '@angular/forms';
+import * as i0 from "@angular/core";
+export declare class DetailsPanelComponent extends PageComponent implements OnDestroy {
+    protected store: Store<AppState>;
+    private cd;
+    headerHeightPx: number;
+    headerTitle: string;
+    headerSubtitle: string;
+    isReadOnly: boolean;
+    isAlwaysEdit: boolean;
+    isShowSearch: boolean;
+    backgroundColor: string;
+    private theFormValue;
+    private formSubscription;
+    set theForm(value: FormGroup);
+    get theForm(): FormGroup;
+    closeDetails: EventEmitter<void>;
+    toggleDetailsEditMode: EventEmitter<boolean>;
+    applyDetails: EventEmitter<void>;
+    closeSearch: EventEmitter<void>;
+    isEditValue: boolean;
+    showSearchPane: boolean;
+    isEditChange: EventEmitter<boolean>;
+    get isEdit(): boolean;
+    set isEdit(val: boolean);
+    constructor(store: Store<AppState>, cd: ChangeDetectorRef);
+    ngOnDestroy(): void;
+    onCloseDetails(): void;
+    onToggleDetailsEditMode(): void;
+    onApplyDetails(): void;
+    onToggleSearch(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<DetailsPanelComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DetailsPanelComponent, "tb-details-panel", never, { "headerHeightPx": "headerHeightPx"; "headerTitle": "headerTitle"; "headerSubtitle": "headerSubtitle"; "isReadOnly": "isReadOnly"; "isAlwaysEdit": "isAlwaysEdit"; "isShowSearch": "isShowSearch"; "backgroundColor": "backgroundColor"; "theForm": "theForm"; "isEdit": "isEdit"; }, { "closeDetails": "closeDetails"; "toggleDetailsEditMode": "toggleDetailsEditMode"; "applyDetails": "applyDetails"; "closeSearch": "closeSearch"; "isEditChange": "isEditChange"; }, never, [".prefix-title-buttons", ".header-pane", ".search-pane", ".details-buttons", "*"]>;
+}

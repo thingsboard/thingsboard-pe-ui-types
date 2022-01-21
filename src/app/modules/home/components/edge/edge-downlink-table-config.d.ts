@@ -1,0 +1,35 @@
+import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
+import { EdgeEvent } from '@shared/models/edge.models';
+import { TimePageLink } from '@shared/models/page/page-link';
+import { TranslateService } from '@ngx-translate/core';
+import { DatePipe } from '@angular/common';
+import { MatDialog } from '@angular/material/dialog';
+import { EntityId } from '@shared/models/id/entity-id';
+import { DialogService } from '@core/services/dialog.service';
+import { AttributeService } from '@core/http/attribute.service';
+import { EdgeService } from '@core/http/edge.service';
+import { EntityService } from '@core/http/entity.service';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+export declare class EdgeDownlinkTableConfig extends EntityTableConfig<EdgeEvent, TimePageLink> {
+    private attributeService;
+    private datePipe;
+    private dialogService;
+    private dialog;
+    private edgeService;
+    private entityService;
+    private translate;
+    private store;
+    entityId: EntityId;
+    private queueStartTs;
+    constructor(attributeService: AttributeService, datePipe: DatePipe, dialogService: DialogService, dialog: MatDialog, edgeService: EdgeService, entityService: EntityService, translate: TranslateService, store: Store<AppState>, entityId: EntityId);
+    private fetchEvents;
+    private onUpdate;
+    private updateColumns;
+    private updateEdgeEventStatus;
+    private isPending;
+    private isEdgeEventHasData;
+    private prepareEdgeEventContent;
+    private showEdgeEventContent;
+    private showEntityNotFoundError;
+}

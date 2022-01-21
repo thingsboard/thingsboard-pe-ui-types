@@ -1,0 +1,35 @@
+import { OnInit } from '@angular/core';
+import { ControlValueAccessor, FormBuilder, FormGroup, ValidationErrors, Validator } from '@angular/forms';
+import { DynamicValueSourceType, EntityKeyValueType, FilterPredicateValue } from '@shared/models/query/query.models';
+import * as i0 from "@angular/core";
+export declare class FilterPredicateValueComponent implements ControlValueAccessor, Validator, OnInit {
+    private fb;
+    private readonly inheritModeForSources;
+    disabled: boolean;
+    set allowUserDynamicSource(allow: boolean);
+    private onlyUserDynamicSourceValue;
+    set onlyUserDynamicSource(dynamicMode: boolean);
+    get onlyUserDynamicSource(): boolean;
+    valueType: EntityKeyValueType;
+    valueTypeEnum: typeof EntityKeyValueType;
+    allow: boolean;
+    dynamicValueSourceTypes: DynamicValueSourceType[];
+    dynamicValueSourceTypeTranslations: Map<DynamicValueSourceType, string>;
+    filterPredicateValueFormGroup: FormGroup;
+    dynamicMode: boolean;
+    inheritMode: boolean;
+    private propagateChange;
+    private propagateChangePending;
+    constructor(fb: FormBuilder);
+    ngOnInit(): void;
+    registerOnChange(fn: any): void;
+    registerOnTouched(fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    validate(): ValidationErrors | null;
+    writeValue(predicateValue: FilterPredicateValue<string | number | boolean>): void;
+    private updateModel;
+    private updateShowInheritMode;
+    private updateValidationDynamicMode;
+    static ɵfac: i0.ɵɵFactoryDeclaration<FilterPredicateValueComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FilterPredicateValueComponent, "tb-filter-predicate-value", never, { "disabled": "disabled"; "allowUserDynamicSource": "allowUserDynamicSource"; "onlyUserDynamicSource": "onlyUserDynamicSource"; "valueType": "valueType"; }, {}, never, never>;
+}

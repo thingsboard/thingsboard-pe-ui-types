@@ -1,0 +1,31 @@
+import { OnDestroy } from '@angular/core';
+import { ControlValueAccessor, FormArray, FormBuilder, FormGroup, ValidationErrors, Validator } from '@angular/forms';
+import { ResourceLwM2M } from '@home/components/profile/device/lwm2m/lwm2m-profile-config.models';
+import * as i0 from "@angular/core";
+export declare class Lwm2mObserveAttrTelemetryResourcesComponent implements ControlValueAccessor, OnDestroy, Validator {
+    private fb;
+    resourcesFormGroup: FormGroup;
+    disabled: boolean;
+    private requiredValue;
+    get required(): boolean;
+    set required(value: boolean);
+    private destroy$;
+    private valueChange$;
+    private propagateChange;
+    constructor(fb: FormBuilder);
+    ngOnDestroy(): void;
+    registerOnTouched(fn: any): void;
+    registerOnChange(fn: any): void;
+    writeValue(value: ResourceLwM2M[]): void;
+    setDisabledState(isDisabled: boolean): void;
+    validate(): ValidationErrors | null;
+    get resourcesFormArray(): FormArray;
+    getNameResourceLwm2m(resourceLwM2M: ResourceLwM2M): string;
+    private updatedResources;
+    private createdResourceFormGroup;
+    private updateModel;
+    trackByParams(index: number, resource: ResourceLwM2M): number;
+    isDisabledObserve(index: number): boolean;
+    static ɵfac: i0.ɵɵFactoryDeclaration<Lwm2mObserveAttrTelemetryResourcesComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mObserveAttrTelemetryResourcesComponent, "tb-profile-lwm2m-observe-attr-telemetry-resource", never, { "disabled": "disabled"; "required": "required"; }, {}, never, never>;
+}

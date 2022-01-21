@@ -1,0 +1,38 @@
+import { OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { PageComponent } from '@shared/components/page.component';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { FcRuleNode, RuleNodeType } from '@shared/models/rule-node.models';
+import { EntityType } from '@shared/models/entity-type.models';
+import { RuleChainService } from '@core/http/rule-chain.service';
+import { RuleNodeConfigComponent } from './rule-node-config.component';
+import { Router } from '@angular/router';
+import { RuleChainType } from '@app/shared/models/rule-chain.models';
+import * as i0 from "@angular/core";
+export declare class RuleNodeDetailsComponent extends PageComponent implements OnInit, OnChanges {
+    protected store: Store<AppState>;
+    private fb;
+    private ruleChainService;
+    private router;
+    ruleNodeConfigComponent: RuleNodeConfigComponent;
+    ruleNode: FcRuleNode;
+    ruleChainId: string;
+    ruleChainType: RuleChainType;
+    isEdit: boolean;
+    isReadOnly: boolean;
+    isAdd: boolean;
+    ruleNodeType: typeof RuleNodeType;
+    entityType: typeof EntityType;
+    ruleNodeFormGroup: FormGroup;
+    private ruleNodeFormSubscription;
+    constructor(store: Store<AppState>, fb: FormBuilder, ruleChainService: RuleChainService, router: Router);
+    private buildForm;
+    private updateRuleNode;
+    ngOnInit(): void;
+    ngOnChanges(changes: SimpleChanges): void;
+    validate(): void;
+    openRuleChain($event: Event): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<RuleNodeDetailsComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RuleNodeDetailsComponent, "tb-rule-node", never, { "ruleNode": "ruleNode"; "ruleChainId": "ruleChainId"; "ruleChainType": "ruleChainType"; "isEdit": "isEdit"; "isReadOnly": "isReadOnly"; "isAdd": "isAdd"; }, {}, never, never>;
+}

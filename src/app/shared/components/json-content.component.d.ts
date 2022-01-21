@@ -1,0 +1,62 @@
+import { ElementRef, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { ControlValueAccessor, FormControl, Validator } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { ContentType } from '@shared/models/constants';
+import { RafService } from '@core/services/raf.service';
+import * as i0 from "@angular/core";
+export declare class JsonContentComponent implements OnInit, ControlValueAccessor, Validator, OnChanges, OnDestroy {
+    elementRef: ElementRef;
+    protected store: Store<AppState>;
+    private raf;
+    jsonEditorElmRef: ElementRef;
+    private jsonEditor;
+    private editorsResizeCaf;
+    private editorResize$;
+    private ignoreChange;
+    toastTargetId: string;
+    label: string;
+    contentType: ContentType;
+    disabled: boolean;
+    fillHeight: boolean;
+    editorStyle: {
+        [klass: string]: any;
+    };
+    private readonlyValue;
+    get readonly(): boolean;
+    set readonly(value: boolean);
+    private validateContentValue;
+    get validateContent(): boolean;
+    set validateContent(value: boolean);
+    private validateOnChangeValue;
+    get validateOnChange(): boolean;
+    set validateOnChange(value: boolean);
+    fullscreen: boolean;
+    contentBody: string;
+    contentValid: boolean;
+    errorShowed: boolean;
+    private propagateChange;
+    constructor(elementRef: ElementRef, store: Store<AppState>, raf: RafService);
+    ngOnInit(): void;
+    ngOnDestroy(): void;
+    private onAceEditorResize;
+    ngOnChanges(changes: SimpleChanges): void;
+    registerOnChange(fn: any): void;
+    registerOnTouched(fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    validate(c: FormControl): {
+        contentBody: {
+            valid: boolean;
+        };
+    };
+    validateOnSubmit(): void;
+    private doValidate;
+    cleanupJsonErrors(): void;
+    writeValue(value: string): void;
+    updateView(): void;
+    beautifyJSON(): void;
+    minifyJSON(): void;
+    onFullscreen(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<JsonContentComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<JsonContentComponent, "tb-json-content", never, { "label": "label"; "contentType": "contentType"; "disabled": "disabled"; "fillHeight": "fillHeight"; "editorStyle": "editorStyle"; "readonly": "readonly"; "validateContent": "validateContent"; "validateOnChange": "validateOnChange"; }, {}, never, never>;
+}

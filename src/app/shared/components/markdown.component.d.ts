@@ -1,0 +1,43 @@
+import { ChangeDetectorRef, ElementRef, EventEmitter, OnChanges, SimpleChanges, Type, ViewContainerRef } from '@angular/core';
+import { HelpService } from '@core/services/help.service';
+import { MarkdownService } from 'ngx-markdown';
+import { DynamicComponentFactoryService } from '@core/services/dynamic-component-factory.service';
+import * as i0 from "@angular/core";
+export declare class TbMarkdownComponent implements OnChanges {
+    private help;
+    private cd;
+    markdownService: MarkdownService;
+    private sharedModule;
+    private dynamicComponentFactoryService;
+    markdownContainer: ViewContainerRef;
+    fallbackElement: ElementRef<HTMLElement>;
+    data: string | undefined;
+    context: any;
+    additionalCompileModules: Type<any>[];
+    markdownClass: string | undefined;
+    style: {
+        [klass: string]: any;
+    };
+    get lineNumbers(): boolean;
+    set lineNumbers(value: boolean);
+    get fallbackToPlainMarkdown(): boolean;
+    set fallbackToPlainMarkdown(value: boolean);
+    ready: EventEmitter<void>;
+    private lineNumbersValue;
+    private fallbackToPlainMarkdownValue;
+    isMarkdownReady: boolean;
+    error: any;
+    private tbMarkdownInstanceComponentRef;
+    private tbMarkdownInstanceComponentFactory;
+    constructor(help: HelpService, cd: ChangeDetectorRef, markdownService: MarkdownService, sharedModule: Type<any>, dynamicComponentFactoryService: DynamicComponentFactoryService);
+    ngOnChanges(changes: SimpleChanges): void;
+    private render;
+    private handleError;
+    private handlePlugins;
+    private setPluginClass;
+    private handleImages;
+    private sanitizeCurlyBraces;
+    private destroyMarkdownInstanceResources;
+    static ɵfac: i0.ɵɵFactoryDeclaration<TbMarkdownComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TbMarkdownComponent, "tb-markdown", never, { "data": "data"; "context": "context"; "additionalCompileModules": "additionalCompileModules"; "markdownClass": "markdownClass"; "style": "style"; "lineNumbers": "lineNumbers"; "fallbackToPlainMarkdown": "fallbackToPlainMarkdown"; }, { "ready": "ready"; }, never, never>;
+}

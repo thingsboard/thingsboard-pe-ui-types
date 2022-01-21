@@ -1,0 +1,30 @@
+import { OnInit } from '@angular/core';
+import { ControlValueAccessor, FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { AliasEntityType, EntityType } from '@shared/models/entity-type.models';
+import { RelationEntityTypeFilter } from '@shared/models/relation.models';
+import { PageComponent } from '@shared/components/page.component';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import * as i0 from "@angular/core";
+export declare class RelationFiltersComponent extends PageComponent implements ControlValueAccessor, OnInit {
+    protected store: Store<AppState>;
+    private fb;
+    disabled: boolean;
+    allowedEntityTypes: Array<EntityType | AliasEntityType>;
+    relationFiltersFormGroup: FormGroup;
+    private propagateChange;
+    private valueChangeSubscription;
+    constructor(store: Store<AppState>, fb: FormBuilder);
+    ngOnInit(): void;
+    relationFiltersFormArray(): FormArray;
+    registerOnChange(fn: any): void;
+    registerOnTouched(fn: any): void;
+    setDisabledState?(isDisabled: boolean): void;
+    writeValue(filters: Array<RelationEntityTypeFilter>): void;
+    removeFilter(index: number): void;
+    addFilter(): void;
+    private createRelationFilterFormGroup;
+    private updateModel;
+    static ɵfac: i0.ɵɵFactoryDeclaration<RelationFiltersComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RelationFiltersComponent, "tb-relation-filters", never, { "disabled": "disabled"; "allowedEntityTypes": "allowedEntityTypes"; }, {}, never, never>;
+}

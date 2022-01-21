@@ -1,0 +1,35 @@
+import { OnInit } from '@angular/core';
+import { ControlValueAccessor, FormArray, FormBuilder, FormControl, FormGroup, ValidationErrors, Validator } from '@angular/forms';
+import { EntityKeyType, KeyFilterInfo } from '@shared/models/query/query.models';
+import { MatDialog } from '@angular/material/dialog';
+import { EntityId } from '@shared/models/id/entity-id';
+import * as i0 from "@angular/core";
+export declare class KeyFilterListComponent implements ControlValueAccessor, Validator, OnInit {
+    private fb;
+    private dialog;
+    disabled: boolean;
+    displayUserParameters: boolean;
+    allowUserDynamicSource: boolean;
+    telemetryKeysOnly: boolean;
+    entityId: EntityId;
+    keyFilterListFormGroup: FormGroup;
+    entityKeyTypeTranslations: Map<EntityKeyType, string>;
+    keyFiltersControl: FormControl;
+    private propagateChange;
+    private valueChangeSubscription;
+    constructor(fb: FormBuilder, dialog: MatDialog);
+    ngOnInit(): void;
+    keyFiltersFormArray(): FormArray;
+    registerOnChange(fn: any): void;
+    registerOnTouched(fn: any): void;
+    setDisabledState?(isDisabled: boolean): void;
+    validate(): ValidationErrors | null;
+    writeValue(keyFilters: Array<KeyFilterInfo>): void;
+    removeKeyFilter(index: number): void;
+    addKeyFilter(): void;
+    editKeyFilter(index: number): void;
+    private openKeyFilterDialog;
+    private updateModel;
+    static ɵfac: i0.ɵɵFactoryDeclaration<KeyFilterListComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<KeyFilterListComponent, "tb-key-filter-list", never, { "disabled": "disabled"; "displayUserParameters": "displayUserParameters"; "allowUserDynamicSource": "allowUserDynamicSource"; "telemetryKeysOnly": "telemetryKeysOnly"; "entityId": "entityId"; }, {}, never, never>;
+}

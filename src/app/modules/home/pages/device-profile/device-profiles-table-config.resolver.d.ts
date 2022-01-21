@@ -1,0 +1,32 @@
+import { Resolve, Router } from '@angular/router';
+import { EntityTableConfig, HeaderActionDescriptor } from '@home/models/entity/entities-table-config.models';
+import { TranslateService } from '@ngx-translate/core';
+import { DatePipe } from '@angular/common';
+import { EntityAction } from '@home/models/entity/entity-component.models';
+import { DialogService } from '@core/services/dialog.service';
+import { DeviceProfile } from '@shared/models/device.models';
+import { DeviceProfileService } from '@core/http/device-profile.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ImportExportService } from '@home/components/import-export/import-export.service';
+import * as i0 from "@angular/core";
+export declare class DeviceProfilesTableConfigResolver implements Resolve<EntityTableConfig<DeviceProfile>> {
+    private deviceProfileService;
+    private importExport;
+    private translate;
+    private datePipe;
+    private dialogService;
+    private router;
+    private dialog;
+    private readonly config;
+    constructor(deviceProfileService: DeviceProfileService, importExport: ImportExportService, translate: TranslateService, datePipe: DatePipe, dialogService: DialogService, router: Router, dialog: MatDialog);
+    resolve(): EntityTableConfig<DeviceProfile>;
+    configureAddActions(): Array<HeaderActionDescriptor>;
+    addDeviceProfile(): void;
+    setDefaultDeviceProfile($event: Event, deviceProfile: DeviceProfile): void;
+    private openDeviceProfile;
+    importDeviceProfile($event: Event): void;
+    exportDeviceProfile($event: Event, deviceProfile: DeviceProfile): void;
+    onDeviceProfileAction(action: EntityAction<DeviceProfile>): boolean;
+    static ɵfac: i0.ɵɵFactoryDeclaration<DeviceProfilesTableConfigResolver, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<DeviceProfilesTableConfigResolver>;
+}

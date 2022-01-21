@@ -1,0 +1,33 @@
+import { ChangeDetectorRef, OnDestroy, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { TranslateService } from '@ngx-translate/core';
+import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { EntityComponent } from '@home/components/entity/entity.component';
+import { Resource, ResourceType } from '@shared/models/resource.models';
+import * as i0 from "@angular/core";
+export declare class ResourcesLibraryComponent extends EntityComponent<Resource> implements OnInit, OnDestroy {
+    protected store: Store<AppState>;
+    protected translate: TranslateService;
+    protected entityValue: Resource;
+    protected entitiesTableConfigValue: EntityTableConfig<Resource>;
+    fb: FormBuilder;
+    protected cd: ChangeDetectorRef;
+    readonly resourceType: typeof ResourceType;
+    readonly resourceTypes: ResourceType[];
+    readonly resourceTypesTranslationMap: Map<ResourceType, string>;
+    private destroy$;
+    constructor(store: Store<AppState>, translate: TranslateService, entityValue: Resource, entitiesTableConfigValue: EntityTableConfig<Resource>, fb: FormBuilder, cd: ChangeDetectorRef);
+    ngOnInit(): void;
+    ngOnDestroy(): void;
+    hideDelete(): boolean;
+    buildForm(entity: Resource): FormGroup;
+    updateForm(entity: Resource): void;
+    getAllowedExtensions(): string;
+    getAcceptType(): string;
+    convertToBase64File(data: string): string;
+    onResourceIdCopied(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<ResourcesLibraryComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ResourcesLibraryComponent, "tb-resources-library", never, {}, {}, never, never>;
+}

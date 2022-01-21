@@ -1,0 +1,32 @@
+import { CollectionViewer, DataSource, SelectionModel } from '@angular/cdk/collections';
+import { Observable } from 'rxjs';
+import { PageData } from '@shared/models/page/page-data';
+import { PageLink } from '@shared/models/page/page-link';
+import { EntityId } from '@app/shared/models/id/entity-id';
+import { TranslateService } from '@ngx-translate/core';
+import { AttributeData, TelemetryType } from '@shared/models/telemetry/telemetry.models';
+import { AttributeService } from '@core/http/attribute.service';
+import { TelemetryWebsocketService } from '@core/ws/telemetry-websocket.service';
+import { NgZone } from '@angular/core';
+export declare class AttributeDatasource implements DataSource<AttributeData> {
+    private attributeService;
+    private telemetryWsService;
+    private zone;
+    private translate;
+    private attributesSubject;
+    private pageDataSubject;
+    pageData$: Observable<PageData<AttributeData>>;
+    selection: SelectionModel<AttributeData>;
+    private allAttributes;
+    private telemetrySubscriber;
+    constructor(attributeService: AttributeService, telemetryWsService: TelemetryWebsocketService, zone: NgZone, translate: TranslateService);
+    connect(collectionViewer: CollectionViewer): Observable<AttributeData[] | ReadonlyArray<AttributeData>>;
+    disconnect(collectionViewer: CollectionViewer): void;
+    loadAttributes(entityId: EntityId, attributesScope: TelemetryType, pageLink: PageLink, reload?: boolean): Observable<PageData<AttributeData>>;
+    fetchAttributes(entityId: EntityId, attributesScope: TelemetryType, pageLink: PageLink): Observable<PageData<AttributeData>>;
+    getAllAttributes(entityId: EntityId, attributesScope: TelemetryType): Observable<Array<AttributeData>>;
+    isAllSelected(): Observable<boolean>;
+    isEmpty(): Observable<boolean>;
+    total(): Observable<number>;
+    masterToggle(): void;
+}

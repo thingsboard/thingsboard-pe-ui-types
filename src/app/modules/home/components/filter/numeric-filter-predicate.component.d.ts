@@ -1,0 +1,27 @@
+import { OnInit } from '@angular/core';
+import { ControlValueAccessor, FormBuilder, FormGroup, ValidationErrors, Validator } from '@angular/forms';
+import { EntityKeyValueType, NumericFilterPredicate, NumericOperation } from '@shared/models/query/query.models';
+import * as i0 from "@angular/core";
+export declare class NumericFilterPredicateComponent implements ControlValueAccessor, Validator, OnInit {
+    private fb;
+    disabled: boolean;
+    allowUserDynamicSource: boolean;
+    onlyUserDynamicSource: boolean;
+    valueType: EntityKeyValueType;
+    numericFilterPredicateFormGroup: FormGroup;
+    valueTypeEnum: typeof EntityKeyValueType;
+    numericOperations: string[];
+    numericOperationEnum: typeof NumericOperation;
+    numericOperationTranslations: Map<NumericOperation, string>;
+    private propagateChange;
+    constructor(fb: FormBuilder);
+    ngOnInit(): void;
+    registerOnChange(fn: any): void;
+    registerOnTouched(fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    validate(): ValidationErrors | null;
+    writeValue(predicate: NumericFilterPredicate): void;
+    private updateModel;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NumericFilterPredicateComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NumericFilterPredicateComponent, "tb-numeric-filter-predicate", never, { "disabled": "disabled"; "allowUserDynamicSource": "allowUserDynamicSource"; "onlyUserDynamicSource": "onlyUserDynamicSource"; "valueType": "valueType"; }, {}, never, never>;
+}

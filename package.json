@@ -1,0 +1,18 @@
+{
+    "name": "thingsboard-types",
+    "version": "3.3.3",
+    "description": "TypeScript definitions for ThingsBoard",
+    "homepage": "https://github.com/vvlladd28/thingsboard-types",
+    "license": "MIT",
+    "main": "",
+    "types": "app/app.module.d,ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/jstree"
+    },
+    "scripts": {},
+    "dependencies": {
+    },
+    "typeScriptVersion": "4.3.5"
+}
