@@ -16,7 +16,7 @@ import { FooterFabButtons } from '@shared/components/footer-fab-buttons.componen
 import { DashboardUtilsService } from '@core/services/dashboard-utils.service';
 import { DashboardService } from '@core/http/dashboard.service';
 import { DashboardContextMenuItem, IDashboardComponent, WidgetContextMenuItem } from '../../models/dashboard-component.models';
-import { WidgetComponentService } from '../widget/widget-component.service';
+import { WidgetComponentService } from '../../components/widget/widget-component.service';
 import { FormBuilder } from '@angular/forms';
 import { ItemBufferService } from '@core/services/item-buffer.service';
 import { MatDialog } from '@angular/material/dialog';

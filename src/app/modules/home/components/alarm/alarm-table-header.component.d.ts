@@ -1,6 +1,6 @@
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { EntityTableHeaderComponent } from '../entity/entity-table-header.component';
+import { EntityTableHeaderComponent } from '../../components/entity/entity-table-header.component';
 import { AlarmInfo, AlarmSearchStatus } from '@shared/models/alarm.models';
 import { AlarmTableConfig } from './alarm-table-config';
 import * as i0 from "@angular/core";
