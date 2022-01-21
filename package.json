@@ -1,15 +1,14 @@
 {
-    "name": "thingsboard-types",
+    "name": "thingsboard-ui-types",
     "version": "3.3.3",
-    "description": "TypeScript definitions for ThingsBoard",
-    "homepage": "https://github.com/vvlladd28/thingsboard-types",
-    "license": "MIT",
+    "description": "TypeScript definitions for ThingsBoard UI",
+    "homepage": "https://github.com/thingsboard/thingsboard-ui-types",
+    "license": "Apache License 2.0",
     "main": "",
-    "types": "app/app.module.d,ts",
+    "types": "src/app/app.module.d.ts",
     "repository": {
         "type": "git",
-        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
-        "directory": "types/jstree"
+        "url": "https://github.com/thingsboard/thingsboard-ui-types"
     },
     "scripts": {},
     "dependencies": {
