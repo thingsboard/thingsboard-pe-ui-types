@@ -140,7 +140,7 @@ import * as i138 from "@app/shared/shared.module";
 import * as i139 from "@home/components/shared-home-components.module";
 import * as i140 from "@home/dialogs/home-dialogs.module";
 import * as i141 from "@home/components/profile/device/lwm2m/lwm2m-profile-components.module";
-import * as i142 from "@home/components/profile/device/snpm/snmp-device-profile-transport.module";
+import * as i142 from "@home/components/profile/device/snmp/snmp-device-profile-transport.module";
 import * as i143 from "@home/components/dashboard-page/states/states-controller.module";
 import * as i144 from "@home/components/device/device-credentials.module";
 import * as i145 from "@home/components/profile/device/common/device-profile-common.module";
