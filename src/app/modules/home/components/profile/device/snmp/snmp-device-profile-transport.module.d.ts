@@ -1,7 +1,7 @@
 import * as i0 from "@angular/core";
-import * as i1 from "@home/components/profile/device/snpm/snmp-device-profile-transport-configuration.component";
-import * as i2 from "@home/components/profile/device/snpm/snmp-device-profile-communication-config.component";
-import * as i3 from "@home/components/profile/device/snpm/snmp-device-profile-mapping.component";
+import * as i1 from "@home/components/profile/device/snmp/snmp-device-profile-transport-configuration.component";
+import * as i2 from "@home/components/profile/device/snmp/snmp-device-profile-communication-config.component";
+import * as i3 from "@home/components/profile/device/snmp/snmp-device-profile-mapping.component";
 import * as i4 from "@angular/common";
 import * as i5 from "@shared/shared.module";
 export declare class SnmpDeviceProfileTransportModule {
