@@ -3,6 +3,7 @@ import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { Dashboard } from '@shared/models/dashboard.models';
+import { IAliasController } from '@core/api/widget-api.models';
 import { WidgetContext } from '@home/models/widget-component.models';
 import { IDashboardComponent } from '@home/models/dashboard-component.models';
 import { EntityId } from '@shared/models/id/entity-id';
@@ -21,6 +22,7 @@ export declare class DashboardStateComponent extends PageComponent implements On
     currentState: string;
     dashboard: Dashboard;
     parentDashboard: IDashboardComponent;
+    parentAliasController: IAliasController;
     stateExists: boolean;
     private stateSubscription;
     constructor(store: Store<AppState>, cd: ChangeDetectorRef);

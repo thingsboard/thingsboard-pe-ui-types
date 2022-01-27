@@ -34,6 +34,7 @@ import { WhiteLabelingService } from '@core/http/white-labeling.service';
 import { SolutionsService } from '@core/http/solutions.service';
 import { MobileService } from '@core/services/mobile.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { IAliasController } from '@core/api/widget-api.models';
 import * as i0 from "@angular/core";
 export declare class DashboardPageComponent extends PageComponent implements IDashboardController, OnInit, OnDestroy {
     protected store: Store<AppState>;
@@ -79,6 +80,7 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     dashboard: Dashboard;
     dashboardConfiguration: DashboardConfiguration;
     parentDashboard?: IDashboardComponent;
+    parentAliasController?: IAliasController;
     dashboardContainer: ElementRef<HTMLElement>;
     prevDashboard: Dashboard;
     iframeMode: boolean;
@@ -211,5 +213,5 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     onCloseSearchBundle(): void;
     updateDashboardImage($event: Event): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardPageComponent, [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, { optional: true; }, null, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardPageComponent, "tb-dashboard-page", never, { "embedded": "embedded"; "currentState": "currentState"; "hideToolbar": "hideToolbar"; "syncStateWithQueryParam": "syncStateWithQueryParam"; "dashboard": "dashboard"; "parentDashboard": "parentDashboard"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardPageComponent, "tb-dashboard-page", never, { "embedded": "embedded"; "currentState": "currentState"; "hideToolbar": "hideToolbar"; "syncStateWithQueryParam": "syncStateWithQueryParam"; "dashboard": "dashboard"; "parentDashboard": "parentDashboard"; "parentAliasController": "parentAliasController"; }, {}, never, never>;
 }

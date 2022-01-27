@@ -62,6 +62,7 @@ export declare class PersistentTableComponent extends PageComponent implements O
     actionCellButtonAction: PersistentTableWidgetActionDescriptor[];
     displayedColumns: string[];
     hidePageSize: boolean;
+    hasData: boolean;
     constructor(store: Store<AppState>, elementRef: ElementRef, overlay: Overlay, viewContainerRef: ViewContainerRef, utils: UtilsService, translate: TranslateService, dialogService: DialogService, deviceService: DeviceService, dialog: MatDialog, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngOnDestroy(): void;
