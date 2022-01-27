@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 import { Polyline } from './polyline';
 import { Polygon } from './polygon';
 import { WidgetContext } from '@home/models/widget-component.models';
+import { TranslateService } from '@ngx-translate/core';
 export default abstract class LeafletMap {
     ctx: WidgetContext;
     $container: HTMLElement;
@@ -45,6 +46,7 @@ export default abstract class LeafletMap {
     }) => Observable<any>;
     saveMarkerLocation: (e: FormattedData, lat?: number, lng?: number) => Observable<any>;
     savePolygonLocation: (e: FormattedData, coordinates?: Array<any>) => Observable<any>;
+    translateService: TranslateService;
     protected constructor(ctx: WidgetContext, $container: HTMLElement, options: UnitedMapSettings);
     initSettings(options: MapSettings): void;
     private selectEntityWithoutLocationDialog;
