@@ -134,8 +134,8 @@ export declare type PolygonSettings = {
     polygonLabelText: string;
     usePolygonLabelFunction: boolean;
     showPolygonTooltip: boolean;
-    autocloseTooltip: boolean;
-    showTooltipAction: string;
+    autoClosePolygonTooltip: boolean;
+    showPolygonTooltipAction: string;
     tooltipAction: {
         [name: string]: actionsHandler;
     };
@@ -152,6 +152,33 @@ export declare type PolygonSettings = {
     polygonLabelFunction?: GenericFunction;
     editablePolygon: boolean;
 };
+export interface CircleSettings {
+    showCircle: boolean;
+    circleKeyName: string;
+    editableCircle: boolean;
+    showCircleLabel: boolean;
+    useCircleLabelFunction: boolean;
+    circleLabel: string;
+    circleLabelFunction?: GenericFunction;
+    circleFillColor: string;
+    useCircleFillColorFunction: boolean;
+    circleFillColorFunction?: GenericFunction;
+    circleFillColorOpacity: number;
+    circleStrokeColor: string;
+    useCircleStrokeColorFunction: boolean;
+    circleStrokeColorFunction: GenericFunction;
+    circleStrokeOpacity: number;
+    circleStrokeWeight: number;
+    showCircleTooltip: boolean;
+    showCircleTooltipAction: string;
+    autoCloseCircleTooltip: boolean;
+    useCircleTooltipFunction: boolean;
+    circleTooltipPattern: string;
+    circleTooltipFunction?: GenericFunction;
+    circleClick?: {
+        [name: string]: actionsHandler;
+    };
+}
 export declare type PolylineSettings = {
     usePolylineDecorator: any;
     autocloseTooltip: boolean;
@@ -219,6 +246,12 @@ export interface TripAnimationSettings extends PolygonSettings {
     colorPointFunction: GenericFunction;
 }
 export declare type actionsHandler = ($event: Event, datasource: Datasource) => void;
-export declare type UnitedMapSettings = MapSettings & PolygonSettings & MarkerSettings & PolylineSettings & TripAnimationSettings & EditorSettings;
-export declare const defaultSettings: any;
+export declare type UnitedMapSettings = MapSettings & PolygonSettings & MarkerSettings & PolylineSettings & CircleSettings & TripAnimationSettings & EditorSettings;
+export declare const defaultSettings: Partial<UnitedMapSettings>;
+export interface CircleData {
+    latitude: number;
+    longitude: number;
+    radius: number;
+}
+export declare const circleDataKeys: Array<keyof CircleData>;
 export declare const hereProviders: string[];

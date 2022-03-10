@@ -24,6 +24,7 @@ export declare class EntityGroupSelectComponent implements ControlValueAccessor,
     notFoundText: string;
     requiredText: string;
     ownerId: EntityId;
+    originator: string;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
@@ -44,5 +45,5 @@ export declare class EntityGroupSelectComponent implements ControlValueAccessor,
     getCurrentGroupType(): EntityType;
     updateView(groupId: string | null): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityGroupSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupSelectComponent, "tb-entity-group-select", never, { "allowedGroupTypes": "allowedGroupTypes"; "excludeGroupTypes": "excludeGroupTypes"; "defaultGroupType": "defaultGroupType"; "excludeGroupIds": "excludeGroupIds"; "excludeGroupAll": "excludeGroupAll"; "placeholderText": "placeholderText"; "notFoundText": "notFoundText"; "requiredText": "requiredText"; "ownerId": "ownerId"; "required": "required"; "disabled": "disabled"; }, { "currentGroupType": "currentGroupType"; "currentGroupInfo": "currentGroupInfo"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupSelectComponent, "tb-entity-group-select", never, { "allowedGroupTypes": "allowedGroupTypes"; "excludeGroupTypes": "excludeGroupTypes"; "defaultGroupType": "defaultGroupType"; "excludeGroupIds": "excludeGroupIds"; "excludeGroupAll": "excludeGroupAll"; "placeholderText": "placeholderText"; "notFoundText": "notFoundText"; "requiredText": "requiredText"; "ownerId": "ownerId"; "originator": "originator"; "required": "required"; "disabled": "disabled"; }, { "currentGroupType": "currentGroupType"; "currentGroupInfo": "currentGroupInfo"; }, never, never>;
 }

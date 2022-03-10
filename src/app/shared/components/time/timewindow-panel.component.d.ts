@@ -37,6 +37,8 @@ export declare class TimewindowPanelComponent extends PageComponent implements O
     aggregationTypesTranslations: Map<AggregationType, string>;
     constructor(data: TimewindowPanelData, overlayRef: OverlayRef, store: Store<AppState>, fb: FormBuilder, timeService: TimeService, viewContainerRef: ViewContainerRef);
     ngOnInit(): void;
+    private checkLimit;
+    private updateValidators;
     update(): void;
     cancel(): void;
     minDatapointsLimit(): number;

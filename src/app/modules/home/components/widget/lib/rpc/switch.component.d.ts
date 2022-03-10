@@ -1,12 +1,14 @@
-import { ElementRef, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, ElementRef, OnDestroy, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { WidgetContext } from '@home/models/widget-component.models';
 import { UtilsService } from '@core/services/utils.service';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { MatSlideToggle } from '@angular/material/slide-toggle';
+import { ThemePalette } from '@angular/material/core/common-behaviors/color';
 import * as i0 from "@angular/core";
-export declare class SwitchComponent extends PageComponent implements OnInit, OnDestroy {
+declare type SwitchType = 'switch' | 'slide-toggle';
+export declare class SwitchComponent extends PageComponent implements OnInit, AfterViewInit, OnDestroy {
     private utils;
     protected store: Store<AppState>;
     switchElementRef: ElementRef<HTMLElement>;
@@ -21,11 +23,14 @@ export declare class SwitchComponent extends PageComponent implements OnInit, On
     switchErrorContainerRef: ElementRef<HTMLElement>;
     switchErrorRef: ElementRef<HTMLElement>;
     ctx: WidgetContext;
+    switchType: SwitchType;
     showTitle: boolean;
     value: boolean;
     error: string;
     title: string;
     showOnOffLabels: boolean;
+    labelPosition: 'before' | 'after';
+    sliderColor: ThemePalette;
     private isSimulated;
     private requestTimeout;
     private requestPersistent;
@@ -37,7 +42,7 @@ export declare class SwitchComponent extends PageComponent implements OnInit, On
     private getValueMethod;
     private setValueMethod;
     private valueSubscription;
-    private executingUpdateValue;
+    executingUpdateValue: boolean;
     private scheduledValue;
     private rpcValue;
     private switchElement;
@@ -54,6 +59,7 @@ export declare class SwitchComponent extends PageComponent implements OnInit, On
     private switchResize$;
     constructor(utils: UtilsService, store: Store<AppState>);
     ngOnInit(): void;
+    ngAfterViewInit(): void;
     ngOnDestroy(): void;
     private init;
     private resize;
@@ -68,5 +74,6 @@ export declare class SwitchComponent extends PageComponent implements OnInit, On
     private onDataUpdated;
     private onDataUpdateError;
     static ɵfac: i0.ɵɵFactoryDeclaration<SwitchComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SwitchComponent, "tb-switch", never, { "ctx": "ctx"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SwitchComponent, "tb-switch", never, { "ctx": "ctx"; "switchType": "switchType"; }, {}, never, never>;
 }
+export {};

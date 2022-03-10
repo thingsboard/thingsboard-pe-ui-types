@@ -1,20 +1,24 @@
+/// <reference types="tooltipster" />
 import L, { FeatureGroup, LatLngBounds, LatLngTuple } from 'leaflet';
 import 'leaflet-providers';
 import { MarkerClusterGroup } from 'leaflet.markercluster/dist/leaflet.markercluster';
 import '@geoman-io/leaflet-geoman-free';
-import { FormattedData, MapSettings, MarkerIconInfo, PolygonSettings, PolylineSettings, ReplaceInfo, UnitedMapSettings } from './map-models';
+import { CircleData, FormattedData, MapSettings, MarkerIconInfo, PolygonSettings, PolylineSettings, ReplaceInfo, UnitedMapSettings } from './map-models';
 import { Marker } from './markers';
 import { Observable } from 'rxjs';
 import { Polyline } from './polyline';
 import { Polygon } from './polygon';
+import { Circle } from './circle';
 import { WidgetContext } from '@home/models/widget-component.models';
 import { TranslateService } from '@ngx-translate/core';
+import ITooltipsterInstance = JQueryTooltipster.ITooltipsterInstance;
 export default abstract class LeafletMap {
     ctx: WidgetContext;
     $container: HTMLElement;
     markers: Map<string, Marker>;
     polylines: Map<string, Polyline>;
     polygons: Map<string, Polygon>;
+    circles: Map<string, Circle>;
     map: L.Map;
     options: UnitedMapSettings;
     bounds: L.LatLngBounds;
@@ -23,22 +27,25 @@ export default abstract class LeafletMap {
     points: FeatureGroup;
     markersData: FormattedData[];
     polygonsData: FormattedData[];
+    circleData: FormattedData[];
     defaultMarkerIconInfo: MarkerIconInfo;
     loadingDiv: JQuery<HTMLElement>;
     loading: boolean;
     replaceInfoLabelMarker: Array<ReplaceInfo>;
     markerLabelText: string;
     polygonLabelText: string;
+    circleLabelText: string;
     replaceInfoLabelPolygon: Array<ReplaceInfo>;
     replaceInfoTooltipMarker: Array<ReplaceInfo>;
+    replaceInfoTooltipCircle: Array<ReplaceInfo>;
     markerTooltipText: string;
     drawRoutes: boolean;
     showPolygon: boolean;
     updatePending: boolean;
     editPolygons: boolean;
+    editCircle: boolean;
     selectedEntity: FormattedData;
-    addMarkers: L.Marker[];
-    addPolygons: L.Polygon[];
+    ignoreUpdateBounds: boolean;
     southWest: L.LatLng;
     northEast: L.LatLng;
     saveLocation: (e: FormattedData, values: {
@@ -47,6 +54,7 @@ export default abstract class LeafletMap {
     saveMarkerLocation: (e: FormattedData, lat?: number, lng?: number) => Observable<any>;
     savePolygonLocation: (e: FormattedData, coordinates?: Array<any>) => Observable<any>;
     translateService: TranslateService;
+    tooltipInstances: ITooltipsterInstance[];
     protected constructor(ctx: WidgetContext, $container: HTMLElement, options: UnitedMapSettings);
     initSettings(options: MapSettings): void;
     private selectEntityWithoutLocationDialog;
@@ -55,6 +63,7 @@ export default abstract class LeafletMap {
     addEditControl(): void;
     setLoading(loading: boolean): void;
     setMap(map: L.Map): void;
+    private createdControlButtonTooltip;
     createLatLng(lat: number, lng: number): L.LatLng;
     createBounds(): L.LatLngBounds;
     extendBounds(bounds: L.LatLngBounds, polyline: L.Polyline): void;
@@ -89,4 +98,14 @@ export default abstract class LeafletMap {
     updatePolygon(polyData: FormattedData, dataSources: FormattedData[], settings: PolygonSettings, updateBounds?: boolean): void;
     removePolygon(name: string): void;
     remove(): void;
+    isValidCircle(data: FormattedData): boolean;
+    convertCircleToCustomFormat(expression: L.LatLng, radius: number): {
+        [key: string]: CircleData;
+    };
+    convertToCircleFormat(circle: CircleData): CircleData;
+    dragCircleVertex: (e?: any, data?: FormattedData) => void;
+    updateCircle(circlesData: FormattedData[], updateBounds?: boolean): void;
+    updatedCircle(data: FormattedData, dataSources: FormattedData[], updateBounds?: boolean): void;
+    createdCircle(data: FormattedData, dataSources: FormattedData[], updateBounds?: boolean): void;
+    removeCircle(name: string): void;
 }

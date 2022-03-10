@@ -6,6 +6,7 @@ export declare class Marker {
     private map;
     private location;
     settings: UnitedMapSettings;
+    private editing;
     leafletMarker: L.Marker;
     labelOffset: L.LatLngTuple;
     tooltipOffset: L.LatLngTuple;

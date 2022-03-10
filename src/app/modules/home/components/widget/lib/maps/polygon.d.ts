@@ -4,6 +4,7 @@ export declare class Polygon {
     map: any;
     private settings;
     private onDragendListener?;
+    private editing;
     leafletPoly: L.Polygon;
     tooltip: L.Popup;
     data: FormattedData;

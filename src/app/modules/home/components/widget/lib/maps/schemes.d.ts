@@ -431,6 +431,16 @@ export declare const mapPolygonSchema: {
                 type: string;
                 default: boolean;
             };
+            showPolygonTooltipAction: {
+                title: string;
+                type: string;
+                default: string;
+            };
+            autoClosePolygonTooltip: {
+                title: string;
+                type: string;
+                default: boolean;
+            };
             polygonTooltipPattern: {
                 title: string;
                 type: string;
@@ -471,21 +481,39 @@ export declare const mapPolygonSchema: {
         condition: string;
         type?: undefined;
         helpId?: undefined;
+        multiple?: undefined;
+        items?: undefined;
     } | {
         key: string;
         type: string;
         helpId: string;
         condition: string;
+        multiple?: undefined;
+        items?: undefined;
     } | {
         key: string;
         type: string;
         condition?: undefined;
+        helpId?: undefined;
+        multiple?: undefined;
+        items?: undefined;
+    } | {
+        key: string;
+        type: string;
+        multiple: boolean;
+        items: {
+            value: string;
+            label: string;
+        }[];
+        condition: string;
         helpId?: undefined;
     } | {
         key: string;
         type: string;
         condition: string;
         helpId?: undefined;
+        multiple?: undefined;
+        items?: undefined;
     })[];
 };
 export declare const routeMapSettingsSchema: {
@@ -969,6 +997,158 @@ export declare const editorSettingSchema: {
     form: (string | {
         key: string;
         condition: string;
+    })[];
+};
+export declare const mapCircleSchema: {
+    schema: {
+        title: string;
+        type: string;
+        properties: {
+            showCircle: {
+                title: string;
+                type: string;
+                default: boolean;
+            };
+            circleKeyName: {
+                title: string;
+                type: string;
+                default: string;
+            };
+            editableCircle: {
+                title: string;
+                type: string;
+                default: boolean;
+            };
+            showCircleLabel: {
+                title: string;
+                type: string;
+                default: boolean;
+            };
+            circleLabel: {
+                title: string;
+                type: string;
+                default: string;
+            };
+            useCircleLabelFunction: {
+                title: string;
+                type: string;
+                default: boolean;
+            };
+            circleLabelFunction: {
+                title: string;
+                type: string;
+            };
+            circleFillColor: {
+                title: string;
+                type: string;
+            };
+            useCircleFillColorFunction: {
+                title: string;
+                type: string;
+                default: boolean;
+            };
+            circleFillColorFunction: {
+                title: string;
+                type: string;
+            };
+            circleFillColorOpacity: {
+                title: string;
+                type: string;
+                default: number;
+            };
+            circleStrokeColor: {
+                title: string;
+                type: string;
+            };
+            useCircleStrokeColorFunction: {
+                title: string;
+                type: string;
+                default: boolean;
+            };
+            circleStrokeColorFunction: {
+                title: string;
+                type: string;
+            };
+            circleStrokeOpacity: {
+                title: string;
+                type: string;
+                default: number;
+            };
+            circleStrokeWeight: {
+                title: string;
+                type: string;
+                default: number;
+            };
+            showCircleTooltip: {
+                title: string;
+                type: string;
+                default: boolean;
+            };
+            showCircleTooltipAction: {
+                title: string;
+                type: string;
+                default: string;
+            };
+            autoCloseCircleTooltip: {
+                title: string;
+                type: string;
+                default: boolean;
+            };
+            circleTooltipPattern: {
+                title: string;
+                type: string;
+                default: string;
+            };
+            useCircleTooltipFunction: {
+                title: string;
+                type: string;
+                default: boolean;
+            };
+            circleTooltipFunction: {
+                title: string;
+                type: string;
+            };
+        };
+        required: any[];
+    };
+    form: (string | {
+        key: string;
+        condition: string;
+        type?: undefined;
+        helpId?: undefined;
+        multiple?: undefined;
+        items?: undefined;
+    } | {
+        key: string;
+        type: string;
+        helpId: string;
+        condition: string;
+        multiple?: undefined;
+        items?: undefined;
+    } | {
+        key: string;
+        type: string;
+        condition?: undefined;
+        helpId?: undefined;
+        multiple?: undefined;
+        items?: undefined;
+    } | {
+        key: string;
+        type: string;
+        multiple: boolean;
+        items: {
+            value: string;
+            label: string;
+        }[];
+        condition: string;
+        helpId?: undefined;
+    } | {
+        key: string;
+        type: string;
+        condition: string;
+        helpId?: undefined;
+        multiple?: undefined;
+        items?: undefined;
     })[];
 };
 export {};

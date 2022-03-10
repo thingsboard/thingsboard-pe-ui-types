@@ -17,7 +17,9 @@ export declare class EntityGroupAutocompleteComponent implements ControlValueAcc
     selectEntityGroupFormGroup: FormGroup;
     modelValue: string | null;
     groupType: EntityType;
-    ownerId: EntityId;
+    private ownerIdValue;
+    get ownerId(): EntityId;
+    set ownerId(value: EntityId);
     excludeGroupIds: Array<string>;
     excludeGroupAll: boolean;
     placeholderText: string;
@@ -45,7 +47,7 @@ export declare class EntityGroupAutocompleteComponent implements ControlValueAcc
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: string | null): void;
     onFocus(): void;
-    reset(): void;
+    reset(keepEntityGroup?: boolean): void;
     updateView(value: string | null, entityGroup: EntityGroupInfo | string | null): void;
     displayEntityGroupFn(entityGroup?: EntityGroupInfo): string | undefined;
     fetchEntityGroups(searchText?: string): Observable<Array<EntityGroupInfo>>;

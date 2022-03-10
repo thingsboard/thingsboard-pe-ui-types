@@ -113,6 +113,7 @@ export declare class TbPopoverComponent implements OnDestroy, OnInit {
     onClickOutside(event: MouseEvent): void;
     onComponentChange(component: ComponentRef<any>): void;
     animationDone(): void;
+    private isTopOverlay;
     private updateVisibilityByContent;
     private isEmpty;
     static ɵfac: i0.ɵɵFactoryDeclaration<TbPopoverComponent, [null, null, { optional: true; }]>;

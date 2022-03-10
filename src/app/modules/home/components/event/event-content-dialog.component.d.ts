@@ -24,6 +24,7 @@ export declare class EventContentDialogComponent extends DialogComponent<EventCo
     contentType: ContentType;
     constructor(store: Store<AppState>, router: Router, data: EventContentDialogData, dialogRef: MatDialogRef<EventContentDialogComponent>, renderer: Renderer2);
     ngOnInit(): void;
+    isJson(str: any): boolean;
     createEditor(editorElementRef: ElementRef, content: string): void;
     updateEditorSize(editorElement: any, content: string, editor: Ace.Editor): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EventContentDialogComponent, never>;

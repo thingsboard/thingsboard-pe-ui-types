@@ -1,6 +1,6 @@
 import L, { LatLngBounds, LatLngLiteral, LatLngTuple } from 'leaflet';
 import LeafletMap from '../leaflet-map';
-import { PosFuncton, UnitedMapSettings } from '../map-models';
+import { CircleData, PosFuncton, UnitedMapSettings } from '../map-models';
 import { WidgetContext } from '@home/models/widget-component.models';
 export declare class ImageMap extends LeafletMap {
     imageOverlay: L.ImageOverlay;
@@ -28,4 +28,8 @@ export declare class ImageMap extends LeafletMap {
     convertPolygonToCustomFormat(expression: any[][]): {
         [key: string]: any;
     };
+    convertCircleToCustomFormat(expression: L.LatLng, radius: number, width?: number, height?: number): {
+        [key: string]: CircleData;
+    };
+    convertToCircleFormat(circle: CircleData, width?: number, height?: number): CircleData;
 }
