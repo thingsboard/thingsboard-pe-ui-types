@@ -1,4 +1,4 @@
-import { ElementRef, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, ElementRef, OnDestroy, OnInit } from '@angular/core';
 import { ControlValueAccessor, FormControl, Validator } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -12,6 +12,7 @@ export declare class CssComponent implements OnInit, OnDestroy, ControlValueAcce
     private translate;
     protected store: Store<AppState>;
     private raf;
+    private cd;
     cssEditorElmRef: ElementRef;
     private cssEditor;
     private editorsResizeCaf;
@@ -27,7 +28,7 @@ export declare class CssComponent implements OnInit, OnDestroy, ControlValueAcce
     modelValue: string;
     hasErrors: boolean;
     private propagateChange;
-    constructor(elementRef: ElementRef, utils: UtilsService, translate: TranslateService, store: Store<AppState>, raf: RafService);
+    constructor(elementRef: ElementRef, utils: UtilsService, translate: TranslateService, store: Store<AppState>, raf: RafService, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngOnDestroy(): void;
     private onAceEditorResize;

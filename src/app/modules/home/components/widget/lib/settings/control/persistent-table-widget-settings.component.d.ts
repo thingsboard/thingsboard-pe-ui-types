@@ -1,0 +1,52 @@
+import { ElementRef } from '@angular/core';
+import { WidgetSettings, WidgetSettingsComponent } from '@shared/models/widget.models';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { CdkDragDrop } from '@angular/cdk/drag-drop';
+import { TranslateService } from '@ngx-translate/core';
+import { Observable, Subject } from 'rxjs';
+import { TruncatePipe } from '@shared/pipe/truncate.pipe';
+import { MatChipInputEvent, MatChipList } from '@angular/material/chips';
+import { MatAutocomplete, MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
+import * as i0 from "@angular/core";
+interface DisplayColumn {
+    name: string;
+    value: string;
+}
+export declare class PersistentTableWidgetSettingsComponent extends WidgetSettingsComponent {
+    protected store: Store<AppState>;
+    translate: TranslateService;
+    truncate: TruncatePipe;
+    private fb;
+    columnsChipList: MatChipList;
+    columnAutocomplete: MatAutocomplete;
+    columnInput: ElementRef<HTMLInputElement>;
+    displayColumns: Array<DisplayColumn>;
+    separatorKeysCodes: number[];
+    persistentTableWidgetSettingsForm: FormGroup;
+    filteredDisplayColumns: Observable<Array<DisplayColumn>>;
+    columnSearchText: string;
+    columnInputChange: Subject<string>;
+    constructor(store: Store<AppState>, translate: TranslateService, truncate: TruncatePipe, fb: FormBuilder);
+    protected settingsForm(): FormGroup;
+    protected defaultSettings(): WidgetSettings;
+    protected onSettingsSet(settings: WidgetSettings): void;
+    protected validateSettings(): boolean;
+    protected validatorTriggers(): string[];
+    protected updateValidators(emitEvent: boolean): void;
+    private fetchColumns;
+    private addColumn;
+    displayColumnFromValue(columnValue: string): DisplayColumn | undefined;
+    displayColumnFn(column?: DisplayColumn): string | undefined;
+    textIsNotEmpty(text: string): boolean;
+    columnDrop(event: CdkDragDrop<string[]>): void;
+    onColumnRemoved(column: string): void;
+    onColumnInputFocus(): void;
+    addColumnFromChipInput(event: MatChipInputEvent): void;
+    columnSelected(event: MatAutocompleteSelectedEvent): void;
+    clearColumnInput(value?: string): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<PersistentTableWidgetSettingsComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PersistentTableWidgetSettingsComponent, "tb-persistent-table-widget-settings", never, {}, {}, never, never>;
+}
+export {};

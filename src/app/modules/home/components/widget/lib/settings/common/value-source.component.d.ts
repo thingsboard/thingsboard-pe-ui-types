@@ -1,0 +1,55 @@
+import { ElementRef, OnInit } from '@angular/core';
+import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { PageComponent } from '@shared/components/page.component';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { TranslateService } from '@ngx-translate/core';
+import { IAliasController } from '@core/api/widget-api.models';
+import { Observable } from 'rxjs';
+import { EntityService } from '@core/http/entity.service';
+import * as i0 from "@angular/core";
+export declare type ValueSource = 'predefinedValue' | 'entityAttribute';
+export interface ValueSourceProperty {
+    valueSource: ValueSource;
+    entityAlias?: string;
+    attribute?: string;
+    value?: number;
+}
+export declare class ValueSourceComponent extends PageComponent implements OnInit, ControlValueAccessor {
+    protected store: Store<AppState>;
+    private translate;
+    private entityService;
+    private fb;
+    display: string;
+    entityAliasInput: ElementRef;
+    keyInput: ElementRef;
+    disabled: boolean;
+    aliasController: IAliasController;
+    private modelValue;
+    private propagateChange;
+    valueSourceFormGroup: FormGroup;
+    filteredEntityAliases: Observable<Array<string>>;
+    aliasSearchText: string;
+    filteredKeys: Observable<Array<string>>;
+    keySearchText: string;
+    private latestKeySearchResult;
+    private keysFetchObservable$;
+    private entityAliasList;
+    constructor(store: Store<AppState>, translate: TranslateService, entityService: EntityService, fb: FormBuilder);
+    ngOnInit(): void;
+    registerOnChange(fn: any): void;
+    registerOnTouched(fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    writeValue(value: ValueSourceProperty): void;
+    clearEntityAlias(): void;
+    clearKey(): void;
+    private fetchEntityAliases;
+    private fetchKeys;
+    private getKeys;
+    private fetchEntityKeys;
+    private createKeyFilter;
+    private updateModel;
+    private updateValidators;
+    static ɵfac: i0.ɵɵFactoryDeclaration<ValueSourceComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ValueSourceComponent, "tb-value-source", never, { "disabled": "disabled"; "aliasController": "aliasController"; }, {}, never, never>;
+}

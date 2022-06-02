@@ -32,6 +32,7 @@ export declare class WidgetComponentService {
     private getWidgetInfoInternal;
     private loadWidget;
     private loadWidgetResources;
+    private registerWidgetSettingsForms;
     private createWidgetControllerDescriptor;
     private processWidgetLoadError;
     private resolveWidgetsInfoFetchQueue;

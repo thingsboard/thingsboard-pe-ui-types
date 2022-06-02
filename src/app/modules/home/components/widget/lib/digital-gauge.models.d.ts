@@ -1,4 +1,3 @@
-import { JsonSettingsSchema } from '@shared/models/widget.models';
 import { GaugeType } from '@home/components/widget/lib/canvas-digital-gauge';
 import { AnimationRule } from '@home/components/widget/lib/analogue-gauge.models';
 import { FontSettings } from '@home/components/widget/lib/settings.models';
@@ -58,4 +57,3 @@ export interface DigitalGaugeSettings {
     colorTicks?: string;
     tickWidth?: number;
 }
-export declare const digitalGaugeSettingsSchema: JsonSettingsSchema;

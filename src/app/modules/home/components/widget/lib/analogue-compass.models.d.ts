@@ -1,4 +1,3 @@
-import { JsonSettingsSchema } from '@shared/models/widget.models';
 import { FontSettings } from '@home/components/widget/lib/settings.models';
 import { AnimationRule, AnimationTarget } from '@home/components/widget/lib/analogue-gauge.models';
 export interface AnalogueCompassSettings {
@@ -20,4 +19,3 @@ export interface AnalogueCompassSettings {
     animationRule: AnimationRule;
     animationTarget: AnimationTarget;
 }
-export declare const analogueCompassSettingsSchema: JsonSettingsSchema;

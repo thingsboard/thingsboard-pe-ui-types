@@ -1,4 +1,4 @@
-import { AfterViewInit, EventEmitter, OnDestroy } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, EventEmitter, OnDestroy } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -18,6 +18,7 @@ export declare class ImageInputComponent extends PageComponent implements AfterV
     private sanitizer;
     private dialog;
     private fileSize;
+    private cd;
     label: string;
     accept: string;
     emptyImageText: any;
@@ -43,7 +44,7 @@ export declare class ImageInputComponent extends PageComponent implements AfterV
     flow: FlowDirective;
     autoUploadSubscription: Subscription;
     private propagateChange;
-    constructor(store: Store<AppState>, translate: TranslateService, utils: UtilsService, sanitizer: DomSanitizer, dialog: DialogService, fileSize: FileSizePipe);
+    constructor(store: Store<AppState>, translate: TranslateService, utils: UtilsService, sanitizer: DomSanitizer, dialog: DialogService, fileSize: FileSizePipe, cd: ChangeDetectorRef);
     ngAfterViewInit(): void;
     private extractType;
     ngOnDestroy(): void;

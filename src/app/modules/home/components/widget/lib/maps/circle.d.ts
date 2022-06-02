@@ -1,17 +1,18 @@
 import L from 'leaflet';
-import { FormattedData, UnitedMapSettings } from '@home/components/widget/lib/maps/map-models';
+import { WidgetCircleSettings } from '@home/components/widget/lib/maps/map-models';
 import LeafletMap from '@home/components/widget/lib/maps/leaflet-map';
+import { FormattedData } from '@shared/models/widget.models';
 export declare class Circle {
     private map;
-    data: FormattedData;
-    dataSources: FormattedData[];
+    private data;
+    private dataSources;
     private settings;
     private onDragendListener?;
     private editing;
     private circleData;
     leafletCircle: L.Circle;
     tooltip: L.Popup;
-    constructor(map: LeafletMap, data: FormattedData, dataSources: FormattedData[], settings: UnitedMapSettings, onDragendListener?: any);
+    constructor(map: LeafletMap, data: FormattedData, dataSources: FormattedData[], settings: Partial<WidgetCircleSettings>, onDragendListener?: any, snappable?: boolean);
     private createEventListeners;
     private updateLabel;
     private updateTooltip;

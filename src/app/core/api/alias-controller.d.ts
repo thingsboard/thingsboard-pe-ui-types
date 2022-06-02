@@ -47,7 +47,7 @@ export declare class AliasController implements IAliasController {
     resolveSingleEntityInfo(aliasId: string): Observable<EntityInfo>;
     private resolveDatasource;
     resolveAlarmSource(alarmSource: Datasource): Observable<Datasource>;
-    resolveDatasources(datasources: Array<Datasource>, singleEntity?: boolean): Observable<Array<Datasource>>;
+    resolveDatasources(datasources: Array<Datasource>, singleEntity?: boolean, pageSize?: number): Observable<Array<Datasource>>;
     getInstantAliasInfo(aliasId: string): AliasInfo;
     updateCurrentAliasEntity(aliasId: string, currentEntity: EntityInfo): void;
     updateUserFilter(filter: Filter): void;

@@ -1,11 +1,10 @@
 import { WidgetContext } from '@home/models/widget-component.models';
 import { attributesGaugeType, AttributeSourceProperty, ColorLevelSetting, FixedLevelColors } from '@home/components/widget/lib/digital-gauge.models';
-import { Datasource, DatasourceData, JsonSettingsSchema } from '@shared/models/widget.models';
+import { Datasource, DatasourceData } from '@shared/models/widget.models';
 import { IWidgetSubscription } from '@core/api/widget-api.models';
 import { Observable } from 'rxjs';
 export declare class TbCanvasDigitalGauge {
     protected ctx: WidgetContext;
-    static get settingsSchema(): JsonSettingsSchema;
     constructor(ctx: WidgetContext, canvasId: string);
     private localSettings;
     private levelColorsSourcesSubscription;

@@ -90,6 +90,7 @@ export declare class WidgetComponent extends PageComponent implements OnInit, Af
     widgetSizeDetected: boolean;
     widgetInstanceInited: boolean;
     dataUpdatePending: boolean;
+    latestDataUpdatePending: boolean;
     pendingMessage: SubscriptionMessage;
     cafs: {
         [cafId: string]: CancelAnimationFrame;

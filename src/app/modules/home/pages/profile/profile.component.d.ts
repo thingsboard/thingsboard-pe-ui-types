@@ -36,10 +36,10 @@ export declare class ProfileComponent extends PageComponent implements OnInit, H
     get expirationJwtData(): string;
     constructor(store: Store<AppState>, route: ActivatedRoute, userService: UserService, authService: AuthService, translate: TranslateService, dialog: MatDialog, dialogService: DialogService, fb: FormBuilder, datePipe: DatePipe, clipboardService: ClipboardService);
     ngOnInit(): void;
-    buildProfileForm(): void;
+    private buildProfileForm;
     save(): void;
     changePassword(): void;
-    userLoaded(user: User): void;
+    private userLoaded;
     confirmForm(): FormGroup;
     copyToken(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ProfileComponent, never>;

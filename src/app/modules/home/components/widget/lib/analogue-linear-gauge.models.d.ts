@@ -1,4 +1,3 @@
-import { JsonSettingsSchema } from '@shared/models/widget.models';
 import { AnalogueGaugeSettings } from '@home/components/widget/lib/analogue-gauge.models';
 export interface AnalogueLinearGaugeSettings extends AnalogueGaugeSettings {
     barStrokeWidth: number;
@@ -8,4 +7,3 @@ export interface AnalogueLinearGaugeSettings extends AnalogueGaugeSettings {
     colorBarProgress: string;
     colorBarProgressEnd: string;
 }
-export declare function getAnalogueLinearGaugeSettingsSchema(): JsonSettingsSchema;

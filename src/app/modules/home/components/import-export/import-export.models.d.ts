@@ -82,6 +82,7 @@ export interface FileType {
     mimeType: string;
     extension: string;
 }
+export declare const TEXT_TYPE: FileType;
 export declare const JSON_TYPE: FileType;
 export declare const CSV_TYPE: FileType;
 export declare const XLS_TYPE: FileType;

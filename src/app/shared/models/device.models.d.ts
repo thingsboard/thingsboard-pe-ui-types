@@ -12,6 +12,7 @@ import { TimeUnit } from '@shared/models/time/time.models';
 import { AbstractControl, ValidationErrors } from '@angular/forms';
 import { OtaPackageId } from '@shared/models/id/ota-package-id';
 import { DashboardId } from '@shared/models/id/dashboard-id';
+import { QueueId } from '@shared/models/id/queue-id';
 import { DataType } from '@shared/models/constants';
 import { PowerMode } from '@home/components/profile/device/lwm2m/lwm2m-profile-config.models';
 export declare enum DeviceProfileType {
@@ -67,6 +68,7 @@ export interface DefaultDeviceProfileTransportConfiguration {
 export interface MqttDeviceProfileTransportConfiguration {
     deviceTelemetryTopic?: string;
     deviceAttributesTopic?: string;
+    sendAckOnValidationException?: boolean;
     transportPayloadTypeConfiguration?: {
         transportPayloadType?: TransportPayloadType;
         enableCompatibilityWithJsonPayloadFormat?: boolean;
@@ -202,7 +204,7 @@ export interface DeviceProfile extends BaseData<DeviceProfileId> {
     provisionDeviceKey?: string;
     defaultRuleChainId?: RuleChainId;
     defaultDashboardId?: DashboardId;
-    defaultQueueName?: string;
+    defaultQueueId?: QueueId;
     firmwareId?: OtaPackageId;
     softwareId?: OtaPackageId;
     profileData: DeviceProfileData;

@@ -14,7 +14,7 @@ export interface EntityDataListener {
     configDatasource: Datasource;
     configDatasourceIndex: number;
     dataLoaded: (pageData: PageData<EntityData>, data: Array<Array<DataSetHolder>>, datasourceIndex: number, pageLink: EntityDataPageLink) => void;
-    dataUpdated: (data: DataSetHolder, datasourceIndex: number, dataIndex: number, dataKeyIndex: number, detectChanges: boolean) => void;
+    dataUpdated: (data: DataSetHolder, datasourceIndex: number, dataIndex: number, dataKeyIndex: number, detectChanges: boolean, isLatest: boolean) => void;
     initialPageDataChanged?: (nextPageData: PageData<EntityData>) => void;
     forceReInit?: () => void;
     updateRealtimeSubscription?: () => SubscriptionTimewindow;
@@ -38,6 +38,7 @@ export declare class EntityDataService {
     subscribeForPaginatedData(listener: EntityDataListener, pageLink: EntityDataPageLink, keyFilters: KeyFilter[], ignoreDataUpdateOnIntervalTick?: boolean): Observable<EntityDataLoadResult>;
     stopSubscription(listener: EntityDataListener): void;
     private createSubscriptionOptions;
+    private toSubscriptionDataKey;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityDataService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<EntityDataService>;
 }

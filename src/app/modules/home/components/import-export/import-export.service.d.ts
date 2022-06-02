@@ -80,6 +80,7 @@ export declare class ImportExportService {
     }[], filename: string): void;
     private formatDataAccordingToLocale;
     private validateImportedConverter;
+    exportText(data: string | Array<string>, filename: string): void;
     exportJSZip(data: object, filename: string): void;
     private prepareRuleChain;
     private prepareRuleChainMetaData;

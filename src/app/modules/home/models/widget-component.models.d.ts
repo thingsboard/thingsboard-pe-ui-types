@@ -1,5 +1,5 @@
 import { IDashboardComponent } from '@home/models/dashboard-component.models';
-import { DataSet, Datasource, DatasourceData, JsonSettingsSchema, Widget, WidgetActionDescriptor, WidgetActionSource, WidgetConfig, WidgetControllerDescriptor, WidgetType, widgetType, WidgetTypeDescriptor, WidgetTypeDetails, WidgetTypeParameters, WidgetExportType } from '@shared/models/widget.models';
+import { DataSet, Datasource, DatasourceData, FormattedData, JsonSettingsSchema, Widget, WidgetActionDescriptor, WidgetActionSource, WidgetConfig, WidgetControllerDescriptor, WidgetType, widgetType, WidgetTypeDescriptor, WidgetTypeDetails, WidgetTypeParameters, WidgetExportType } from '@shared/models/widget.models';
 import { Timewindow, WidgetTimewindow } from '@shared/models/time/time.models';
 import { IAliasController, IStateController, IWidgetSubscription, IWidgetUtils, RpcApi, StateParams, SubscriptionEntityInfo, TimewindowFunctions, WidgetActionsApi, WidgetSubscriptionApi } from '@core/api/widget-api.models';
 import { ChangeDetectorRef, ComponentFactory, Injector, NgZone, Type } from '@angular/core';
@@ -33,7 +33,6 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { catchError, map, mergeMap, switchMap } from 'rxjs/operators';
 import { EdgeService } from '@core/http/edge.service';
-import { FormattedData } from '@home/components/widget/lib/maps/map-models';
 import { TbPopoverComponent } from '@shared/components/popover.component';
 import { EntityId } from '@shared/models/id/entity-id';
 export interface IWidgetAction {
@@ -119,6 +118,7 @@ export declare class WidgetContext {
     }[]>;
     datasources?: Array<Datasource>;
     data?: Array<DatasourceData>;
+    latestData?: Array<DatasourceData>;
     hiddenData?: Array<{
         data: DataSet;
     }>;
@@ -173,6 +173,7 @@ export interface WidgetInfo extends WidgetTypeDescriptor, WidgetControllerDescri
     alias: string;
     typeSettingsSchema?: string | any;
     typeDataKeySettingsSchema?: string | any;
+    typeLatestDataKeySettingsSchema?: string | any;
     image?: string;
     description?: string;
     componentFactory?: ComponentFactory<IDynamicWidgetComponent>;
@@ -188,12 +189,17 @@ export interface WidgetConfigComponentData {
     isDataEnabled: boolean;
     settingsSchema: JsonSettingsSchema;
     dataKeySettingsSchema: JsonSettingsSchema;
+    latestDataKeySettingsSchema: JsonSettingsSchema;
+    settingsDirective: string;
+    dataKeySettingsDirective: string;
+    latestDataKeySettingsDirective: string;
 }
 export declare const MissingWidgetType: WidgetInfo;
 export declare const ErrorWidgetType: WidgetInfo;
 export interface WidgetTypeInstance {
     getSettingsSchema?: () => string;
     getDataKeySettingsSchema?: () => string;
+    getLatestDataKeySettingsSchema?: () => string;
     typeParameters?: () => WidgetTypeParameters;
     useCustomDatasources?: () => boolean;
     actionSources?: () => {
@@ -201,6 +207,7 @@ export interface WidgetTypeInstance {
     };
     onInit?: () => void;
     onDataUpdated?: () => void;
+    onLatestDataUpdated?: () => void;
     onResize?: () => void;
     onEditModeChanged?: () => void;
     onMobileModeChanged?: () => void;

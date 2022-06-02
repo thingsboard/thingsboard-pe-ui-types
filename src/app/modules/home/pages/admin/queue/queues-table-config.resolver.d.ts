@@ -1,0 +1,34 @@
+import { ActivatedRouteSnapshot, Resolve, Router } from '@angular/router';
+import { EntityTableColumn, EntityTableConfig } from '@home/models/entity/entities-table-config.models';
+import { QueueInfo, ServiceType } from '@shared/models/queue.models';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { BroadcastService } from '@core/services/broadcast.service';
+import { CustomerService } from '@core/http/customer.service';
+import { DialogService } from '@core/services/dialog.service';
+import { HomeDialogsService } from '@home/dialogs/home-dialogs.service';
+import { Observable } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
+import { QueueService } from '@core/http/queue.service';
+import { EntityAction } from '@home/models/entity/entity-component.models';
+import * as i0 from "@angular/core";
+export declare class QueuesTableConfigResolver implements Resolve<EntityTableConfig<QueueInfo>> {
+    private store;
+    private broadcast;
+    private queueService;
+    private customerService;
+    private dialogService;
+    private homeDialogs;
+    private router;
+    private translate;
+    readonly queueType = ServiceType.TB_RULE_ENGINE;
+    private readonly config;
+    constructor(store: Store<AppState>, broadcast: BroadcastService, queueService: QueueService, customerService: CustomerService, dialogService: DialogService, homeDialogs: HomeDialogsService, router: Router, translate: TranslateService);
+    resolve(route: ActivatedRouteSnapshot): Observable<EntityTableConfig<QueueInfo>>;
+    configureColumns(): Array<EntityTableColumn<QueueInfo>>;
+    configureEntityFunctions(): void;
+    onQueueAction(action: EntityAction<QueueInfo>): boolean;
+    private openQueue;
+    static ɵfac: i0.ɵɵFactoryDeclaration<QueuesTableConfigResolver, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<QueuesTableConfigResolver>;
+}

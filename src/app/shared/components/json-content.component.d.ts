@@ -1,4 +1,4 @@
-import { ElementRef, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectorRef, ElementRef, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { ControlValueAccessor, FormControl, Validator } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -9,6 +9,7 @@ export declare class JsonContentComponent implements OnInit, ControlValueAccesso
     elementRef: ElementRef;
     protected store: Store<AppState>;
     private raf;
+    private cd;
     jsonEditorElmRef: ElementRef;
     private jsonEditor;
     private editorsResizeCaf;
@@ -32,12 +33,15 @@ export declare class JsonContentComponent implements OnInit, ControlValueAccesso
     private validateOnChangeValue;
     get validateOnChange(): boolean;
     set validateOnChange(value: boolean);
+    private requiredValue;
+    get required(): boolean;
+    set required(value: boolean);
     fullscreen: boolean;
     contentBody: string;
     contentValid: boolean;
     errorShowed: boolean;
     private propagateChange;
-    constructor(elementRef: ElementRef, store: Store<AppState>, raf: RafService);
+    constructor(elementRef: ElementRef, store: Store<AppState>, raf: RafService, cd: ChangeDetectorRef);
     ngOnInit(): void;
     private createPlaceholder;
     private updateEditorPlaceholder;
@@ -61,5 +65,5 @@ export declare class JsonContentComponent implements OnInit, ControlValueAccesso
     minifyJSON(): void;
     onFullscreen(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<JsonContentComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<JsonContentComponent, "tb-json-content", never, { "label": "label"; "contentType": "contentType"; "disabled": "disabled"; "fillHeight": "fillHeight"; "editorStyle": "editorStyle"; "tbPlaceholder": "tbPlaceholder"; "readonly": "readonly"; "validateContent": "validateContent"; "validateOnChange": "validateOnChange"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<JsonContentComponent, "tb-json-content", never, { "label": "label"; "contentType": "contentType"; "disabled": "disabled"; "fillHeight": "fillHeight"; "editorStyle": "editorStyle"; "tbPlaceholder": "tbPlaceholder"; "readonly": "readonly"; "validateContent": "validateContent"; "validateOnChange": "validateOnChange"; "required": "required"; }, {}, never, never>;
 }

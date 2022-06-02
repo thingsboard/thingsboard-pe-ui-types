@@ -1,8 +1,8 @@
 import { AfterViewInit, ChangeDetectorRef, OnDestroy, OnInit } from '@angular/core';
-import { FormattedData, TripAnimationSettings } from '@home/components/widget/lib/maps/map-models';
+import { WidgetUnitedTripAnimationSettings } from '@home/components/widget/lib/maps/map-models';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { WidgetContext } from '@app/modules/home/models/widget-component.models';
-import { JsonSettingsSchema, WidgetConfig } from '@shared/models/widget.models';
+import { FormattedData, WidgetConfig } from '@shared/models/widget.models';
 import { MapWidgetInterface } from '@home/components/widget/lib/maps/map-widget.interface';
 import * as i0 from "@angular/core";
 export declare class TripAnimationComponent implements OnInit, AfterViewInit, OnDestroy {
@@ -19,8 +19,10 @@ export declare class TripAnimationComponent implements OnInit, AfterViewInit, On
         [time: number]: FormattedData;
     }[];
     formattedInterpolatedTimeData: FormattedData[][];
+    formattedCurrentPosition: FormattedData[];
+    formattedLatestData: FormattedData[];
     widgetConfig: WidgetConfig;
-    settings: TripAnimationSettings;
+    settings: WidgetUnitedTripAnimationSettings;
     mainTooltips: any[];
     visibleTooltip: boolean;
     activeTrip: FormattedData;
@@ -30,11 +32,11 @@ export declare class TripAnimationComponent implements OnInit, AfterViewInit, On
     anchors: number[];
     useAnchors: boolean;
     currentTime: number;
-    static getSettingsSchema(): JsonSettingsSchema;
     ngOnInit(): void;
     ngAfterViewInit(): void;
     ngOnDestroy(): void;
     timeUpdated(time: number): void;
+    private updateCurrentData;
     setActiveTrip(): void;
     private calculateLastPoints;
     calculateIntervals(): void;

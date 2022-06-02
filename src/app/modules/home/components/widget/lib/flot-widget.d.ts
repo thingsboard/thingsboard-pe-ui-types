@@ -1,5 +1,4 @@
 import { WidgetContext } from '@home/models/widget-component.models';
-import { JsonSettingsSchema } from '@app/shared/models/widget.models';
 import { ChartType } from './flot-widget.models';
 export declare class TbFlot {
     private ctx;
@@ -23,12 +22,15 @@ export declare class TbFlot {
     private readonly defaultBarWidth;
     private thresholdsSourcesSubscription;
     private predefinedThresholds;
+    private latestDataThresholds;
+    private attributesThresholds;
     private labelPatternsSourcesSubscription;
     private labelPatternsSourcesData;
     private plotInited;
     private plot;
     private createPlotTimeoutHandle;
     private updateTimeoutHandle;
+    private latestUpdateTimeoutHandle;
     private resizeTimeoutHandle;
     private mouseEventsEnabled;
     private isMouseInteraction;
@@ -48,13 +50,10 @@ export declare class TbFlot {
     private pieAnimationStartTime;
     private pieAnimationLastTime;
     private pieAnimationCaf;
-    static pieSettingsSchema(): JsonSettingsSchema;
-    static pieDatakeySettingsSchema(): JsonSettingsSchema;
-    static settingsSchema(chartType: ChartType): JsonSettingsSchema;
-    static datakeySettingsSchema(defaultShowLines: boolean, chartType: ChartType): JsonSettingsSchema;
     constructor(ctx: WidgetContext, chartType: ChartType);
     private init;
     update(): void;
+    latestDataUpdate(): void;
     resize(): void;
     checkMouseEvents(): void;
     destroy(): void;

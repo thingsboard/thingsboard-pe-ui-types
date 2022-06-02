@@ -19,6 +19,7 @@ import { ReportService } from '@core/http/report.service';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { MatDialog } from '@angular/material/dialog';
 import { OAuth2ClientInfo } from '@shared/models/oauth2.models';
+import { TwoFactorAuthProviderType, TwoFaProviderInfo } from '@shared/models/two-factor-auth.models';
 import * as i0 from "@angular/core";
 export declare class AuthService {
     private store;
@@ -41,6 +42,7 @@ export declare class AuthService {
     constructor(store: Store<AppState>, http: HttpClient, userService: UserService, whiteLabelingService: WhiteLabelingService, customMenuService: CustomMenuService, customTranslationService: CustomTranslationService, userPermissionsService: UserPermissionsService, reportService: ReportService, timeService: TimeService, router: Router, route: ActivatedRoute, zone: NgZone, utils: UtilsService, dashboardService: DashboardService, adminService: AdminService, translate: TranslateService, dialog: MatDialog);
     redirectUrl: string;
     oauth2Clients: Array<OAuth2ClientInfo>;
+    twoFactorAuthProviders: Array<TwoFaProviderInfo>;
     private refreshTokenSubject;
     private jwtHelper;
     private static _storeGet;
@@ -50,6 +52,7 @@ export declare class AuthService {
     static getJwtToken(): string;
     reloadUser(): void;
     login(loginRequest: LoginRequest): Observable<LoginResponse>;
+    checkTwoFaVerificationCode(providerType: TwoFactorAuthProviderType, verificationCode: number): Observable<LoginResponse>;
     publicLogin(publicId: string): Observable<LoginResponse>;
     sendResetPasswordLink(email: string): Observable<Object>;
     activate(activateToken: string, password: string, sendActivationMail: boolean): Observable<LoginResponse>;
@@ -62,6 +65,7 @@ export declare class AuthService {
     private notifyUserLoaded;
     gotoDefaultPlace(isAuthenticated: boolean): void;
     loadOAuth2Clients(): Observable<Array<OAuth2ClientInfo>>;
+    getAvailableTwoFaLoginProviders(): Observable<Array<TwoFaProviderInfo>>;
     forceDefaultPlace(authState?: AuthState, path?: string, params?: any): boolean;
     defaultUrl(isAuthenticated: boolean, authState?: AuthState, path?: string, params?: any, data?: any): UrlTree;
     private loadUser;

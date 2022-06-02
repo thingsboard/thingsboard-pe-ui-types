@@ -1,0 +1,37 @@
+import { OnDestroy } from '@angular/core';
+import { AbstractControl, ControlValueAccessor, FormArray, FormBuilder, FormGroup, ValidationErrors, Validator } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { AppState } from '@app/core/core.state';
+import { QueueInfo } from '@shared/models/queue.models';
+import { UtilsService } from '@core/services/utils.service';
+import * as i0 from "@angular/core";
+export declare class TenantProfileQueuesComponent implements ControlValueAccessor, Validator, OnDestroy {
+    private store;
+    private utils;
+    private fb;
+    tenantProfileQueuesFormGroup: FormGroup;
+    newQueue: boolean;
+    idMap: any[];
+    private requiredValue;
+    get required(): boolean;
+    set required(value: boolean);
+    disabled: boolean;
+    private valueChangeSubscription$;
+    private propagateChange;
+    constructor(store: Store<AppState>, utils: UtilsService, fb: FormBuilder);
+    registerOnChange(fn: any): void;
+    ngOnDestroy(): void;
+    registerOnTouched(fn: any): void;
+    ngOnInit(): void;
+    get queuesFormArray(): FormArray;
+    setDisabledState(isDisabled: boolean): void;
+    writeValue(queues: Array<QueueInfo> | null): void;
+    trackByQueue(index: number, queueControl: AbstractControl): any;
+    removeQueue(index: number): void;
+    addQueue(): void;
+    getTitle(value: any): string;
+    validate(c: AbstractControl): ValidationErrors | null;
+    private updateModel;
+    static ɵfac: i0.ɵɵFactoryDeclaration<TenantProfileQueuesComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TenantProfileQueuesComponent, "tb-tenant-profile-queues", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never>;
+}

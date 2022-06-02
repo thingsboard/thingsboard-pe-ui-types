@@ -1,4 +1,4 @@
-import { ElementRef, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, ElementRef, OnDestroy, OnInit } from '@angular/core';
 import { ControlValueAccessor, FormControl, Validator } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -13,18 +13,21 @@ export declare class JsFuncComponent implements OnInit, OnDestroy, ControlValueA
     private translate;
     protected store: Store<AppState>;
     private raf;
+    private cd;
     javascriptEditorElmRef: ElementRef;
     private jsEditor;
     private editorsResizeCaf;
     private editorResize$;
     private ignoreChange;
     toastTargetId: string;
+    functionTitle: string;
     functionName: string;
     functionArgs: Array<string>;
     validationArgs: Array<any>;
     resultType: string;
     disabled: boolean;
     fillHeight: boolean;
+    minHeight: string;
     editorCompleter: TbEditorCompleter;
     globalVariables: Array<string>;
     disableUndefinedCheck: boolean;
@@ -44,8 +47,8 @@ export declare class JsFuncComponent implements OnInit, OnDestroy, ControlValueA
     errorMarkers: number[];
     errorAnnotationId: number;
     private propagateChange;
-    private hasErrors;
-    constructor(elementRef: ElementRef, utils: UtilsService, translate: TranslateService, store: Store<AppState>, raf: RafService);
+    hasErrors: boolean;
+    constructor(elementRef: ElementRef, utils: UtilsService, translate: TranslateService, store: Store<AppState>, raf: RafService, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngOnDestroy(): void;
     private onAceEditorResize;
@@ -64,5 +67,5 @@ export declare class JsFuncComponent implements OnInit, OnDestroy, ControlValueA
     writeValue(value: string): void;
     updateView(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<JsFuncComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<JsFuncComponent, "tb-js-func", never, { "functionName": "functionName"; "functionArgs": "functionArgs"; "validationArgs": "validationArgs"; "resultType": "resultType"; "disabled": "disabled"; "fillHeight": "fillHeight"; "editorCompleter": "editorCompleter"; "globalVariables": "globalVariables"; "disableUndefinedCheck": "disableUndefinedCheck"; "helpId": "helpId"; "noValidate": "noValidate"; "required": "required"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<JsFuncComponent, "tb-js-func", never, { "functionTitle": "functionTitle"; "functionName": "functionName"; "functionArgs": "functionArgs"; "validationArgs": "validationArgs"; "resultType": "resultType"; "disabled": "disabled"; "fillHeight": "fillHeight"; "minHeight": "minHeight"; "editorCompleter": "editorCompleter"; "globalVariables": "globalVariables"; "disableUndefinedCheck": "disableUndefinedCheck"; "helpId": "helpId"; "noValidate": "noValidate"; "required": "required"; }, {}, never, never>;
 }

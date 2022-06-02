@@ -1,8 +1,8 @@
-import { FormattedData, MapProviders, UnitedMapSettings } from './map-models';
+import { MapProviders, UnitedMapSettings, WidgetUnitedMapSettings } from './map-models';
 import LeafletMap from './leaflet-map';
 import { MapWidgetInterface, MapWidgetStaticInterface } from './map-widget.interface';
 import { WidgetContext } from '@app/modules/home/models/widget-component.models';
-import { Datasource, DatasourceData, JsonSettingsSchema } from '@shared/models/widget.models';
+import { Datasource, DatasourceData, FormattedData, JsonSettingsSchema } from '@shared/models/widget.models';
 import { EntityDataPageLink } from '@shared/models/query/query.models';
 import { Observable } from 'rxjs';
 export declare class MapWidgetController implements MapWidgetInterface {
@@ -14,11 +14,8 @@ export declare class MapWidgetController implements MapWidgetInterface {
     provider: MapProviders;
     schema: JsonSettingsSchema;
     data: DatasourceData[];
-    settings: UnitedMapSettings;
+    settings: WidgetUnitedMapSettings;
     pageLink: EntityDataPageLink;
-    static dataKeySettingsSchema(): object;
-    static getProvidersSchema(mapProvider: MapProviders, ignoreImageMap?: boolean): JsonSettingsSchema;
-    static settingsSchema(mapProvider: MapProviders, drawRoutes: boolean): JsonSettingsSchema;
     static actionSources(): object;
     translate: (key: string, defaultTranslation?: string) => string;
     getDescriptors(name: string): {
@@ -31,8 +28,9 @@ export declare class MapWidgetController implements MapWidgetInterface {
     saveLocation(e: FormattedData, values: {
         [key: string]: any;
     }): Observable<any>;
-    initSettings(settings: UnitedMapSettings, isEditMap?: boolean): UnitedMapSettings;
+    initSettings(settings: UnitedMapSettings, isEditMap?: boolean): WidgetUnitedMapSettings;
     update(): void;
+    latestDataUpdate(): void;
     resize(): void;
     destroy(): void;
 }

@@ -3,7 +3,7 @@ import L, { FeatureGroup, LatLngBounds, LatLngTuple } from 'leaflet';
 import 'leaflet-providers';
 import { MarkerClusterGroup } from 'leaflet.markercluster/dist/leaflet.markercluster';
 import '@geoman-io/leaflet-geoman-free';
-import { CircleData, FormattedData, MapSettings, MarkerIconInfo, PolygonSettings, PolylineSettings, ReplaceInfo, UnitedMapSettings } from './map-models';
+import { CircleData, MarkerIconInfo, WidgetPolygonSettings, WidgetPolylineSettings, WidgetUnitedMapSettings } from './map-models';
 import { Marker } from './markers';
 import { Observable } from 'rxjs';
 import { Polyline } from './polyline';
@@ -12,6 +12,7 @@ import { Circle } from './circle';
 import { WidgetContext } from '@home/models/widget-component.models';
 import { TranslateService } from '@ngx-translate/core';
 import ITooltipsterInstance = JQueryTooltipster.ITooltipsterInstance;
+import { FormattedData, ReplaceInfo } from '@shared/models/widget.models';
 export default abstract class LeafletMap {
     ctx: WidgetContext;
     $container: HTMLElement;
@@ -20,7 +21,7 @@ export default abstract class LeafletMap {
     polygons: Map<string, Polygon>;
     circles: Map<string, Circle>;
     map: L.Map;
-    options: UnitedMapSettings;
+    options: WidgetUnitedMapSettings;
     bounds: L.LatLngBounds;
     datasources: FormattedData[];
     markersCluster: MarkerClusterGroup;
@@ -40,12 +41,12 @@ export default abstract class LeafletMap {
     replaceInfoTooltipCircle: Array<ReplaceInfo>;
     markerTooltipText: string;
     drawRoutes: boolean;
-    showPolygon: boolean;
     updatePending: boolean;
     editPolygons: boolean;
     editCircle: boolean;
     selectedEntity: FormattedData;
     ignoreUpdateBounds: boolean;
+    initDragModeIgnoreUpdateBoundsSet: boolean;
     southWest: L.LatLng;
     northEast: L.LatLng;
     saveLocation: (e: FormattedData, values: {
@@ -55,8 +56,8 @@ export default abstract class LeafletMap {
     savePolygonLocation: (e: FormattedData, coordinates?: Array<any>) => Observable<any>;
     translateService: TranslateService;
     tooltipInstances: ITooltipsterInstance[];
-    protected constructor(ctx: WidgetContext, $container: HTMLElement, options: UnitedMapSettings);
-    initSettings(options: MapSettings): void;
+    protected constructor(ctx: WidgetContext, $container: HTMLElement, options: WidgetUnitedMapSettings);
+    private initMarkerClusterSettings;
     private selectEntityWithoutLocationDialog;
     private selectEntityWithoutLocation;
     private toggleDrawMode;
@@ -78,7 +79,8 @@ export default abstract class LeafletMap {
     convertPolygonToCustomFormat(expression: any[][]): {
         [key: string]: any;
     };
-    updateData(drawRoutes: boolean, showPolygon: boolean): void;
+    updateData(drawRoutes: boolean): void;
+    updateFromData(drawRoutes: boolean, formattedData: FormattedData[], polyData: FormattedData[][], markerClickCallback?: any): void;
     private updateBoundsInternal;
     updateMarkers(markersData: FormattedData[], updateBounds?: boolean, callback?: any): void;
     dragMarker: (e: any, data?: FormattedData) => void;
@@ -88,14 +90,14 @@ export default abstract class LeafletMap {
     deletePolygon(key: string): L.Polygon<any>;
     updatePoints(pointsData: FormattedData[][], getTooltip: (point: FormattedData, points: FormattedData[]) => string): void;
     updatePolylines(polyData: FormattedData[][], dsData: FormattedData[], updateBounds?: boolean): void;
-    createPolyline(data: FormattedData, tsData: FormattedData[], dsData: FormattedData[], settings: PolylineSettings, updateBounds?: boolean): void;
-    updatePolyline(data: FormattedData, tsData: FormattedData[], dsData: FormattedData[], settings: PolylineSettings, updateBounds?: boolean): void;
+    createPolyline(data: FormattedData, tsData: FormattedData[], dsData: FormattedData[], settings: Partial<WidgetPolylineSettings>, updateBounds?: boolean): void;
+    updatePolyline(data: FormattedData, tsData: FormattedData[], dsData: FormattedData[], settings: Partial<WidgetPolylineSettings>, updateBounds?: boolean): void;
     removePolyline(name: string): void;
     isValidPolygonPosition(data: FormattedData): boolean;
     updatePolygons(polyData: FormattedData[], updateBounds?: boolean): void;
     dragPolygonVertex: (e?: any, data?: FormattedData) => void;
-    createPolygon(polyData: FormattedData, dataSources: FormattedData[], settings: UnitedMapSettings, updateBounds?: boolean): void;
-    updatePolygon(polyData: FormattedData, dataSources: FormattedData[], settings: PolygonSettings, updateBounds?: boolean): void;
+    createPolygon(polyData: FormattedData, dataSources: FormattedData[], settings: Partial<WidgetPolygonSettings>, updateBounds?: boolean, snappable?: boolean): void;
+    updatePolygon(polyData: FormattedData, dataSources: FormattedData[], settings: Partial<WidgetPolygonSettings>, updateBounds?: boolean): void;
     removePolygon(name: string): void;
     remove(): void;
     isValidCircle(data: FormattedData): boolean;

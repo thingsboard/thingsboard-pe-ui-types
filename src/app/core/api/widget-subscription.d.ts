@@ -23,6 +23,7 @@ export declare class WidgetSubscription implements IWidgetSubscription {
     tsOffset: number;
     hasDataPageLink: boolean;
     singleEntity: boolean;
+    pageSize: number;
     warnOnPageDataOverflow: boolean;
     ignoreDataUpdateOnIntervalTick: boolean;
     datasourcePages: PageData<Datasource>[];
@@ -30,6 +31,7 @@ export declare class WidgetSubscription implements IWidgetSubscription {
     entityDataListeners: Array<EntityDataListener>;
     configuredDatasources: Array<Datasource>;
     data: Array<DatasourceData>;
+    latestData: Array<DatasourceData>;
     datasources: Array<Datasource>;
     hiddenData: Array<DataSetHolder>;
     legendData: LegendData;
@@ -65,6 +67,7 @@ export declare class WidgetSubscription implements IWidgetSubscription {
     targetDeviceName: string;
     executingSubjects: Array<Subject<any>>;
     subscribed: boolean;
+    hasLatestData: boolean;
     widgetTimewindowChangedSubject: Subject<WidgetTimewindow>;
     widgetTimewindowChanged$: Observable<WidgetTimewindow>;
     constructor(subscriptionContext: WidgetSubscriptionContext, options: WidgetSubscriptionOptions);
@@ -78,6 +81,7 @@ export declare class WidgetSubscription implements IWidgetSubscription {
     onAliasesChanged(aliasIds: Array<string>): boolean;
     onFiltersChanged(filterIds: Array<string>): boolean;
     private onDataUpdated;
+    private onLatestDataUpdated;
     private onSubscriptionMessage;
     onDashboardTimewindowChanged(newDashboardTimewindow: Timewindow): void;
     updateDataVisibility(index: number): void;
@@ -130,6 +134,8 @@ export declare class WidgetSubscription implements IWidgetSubscription {
     private entityDataToDatasourceData;
     private entityDataToDatasource;
     private dataUpdated;
+    private processDataUpdated;
+    private processLatestDataUpdated;
     private alarmsLoaded;
     private alarmsUpdated;
     private updateLegend;

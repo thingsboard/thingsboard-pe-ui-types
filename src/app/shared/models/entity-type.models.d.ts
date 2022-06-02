@@ -26,7 +26,8 @@ export declare enum EntityType {
     TB_RESOURCE = "TB_RESOURCE",
     EDGE = "EDGE",
     OTA_PACKAGE = "OTA_PACKAGE",
-    RPC = "RPC"
+    RPC = "RPC",
+    QUEUE = "QUEUE"
 }
 export declare enum AliasEntityType {
     CURRENT_CUSTOMER = "CURRENT_CUSTOMER",

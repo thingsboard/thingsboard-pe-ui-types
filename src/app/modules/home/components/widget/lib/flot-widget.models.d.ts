@@ -1,6 +1,6 @@
 /// <reference types="flot" />
 /// <reference types="src/typings/jquery.flot.typings" />
-import { DataKey, Datasource, DatasourceData, JsonSettingsSchema } from '@shared/models/widget.models';
+import { DataKey, Datasource, DatasourceData } from '@shared/models/widget.models';
 import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
 import { ComparisonDuration } from '@shared/models/time/time.models';
 export declare type ChartType = 'line' | 'pie' | 'bar' | 'state' | 'graph';
@@ -69,8 +69,8 @@ export interface TbFlotGridSettings {
     outlineWidth: number;
     verticalLines: boolean;
     horizontalLines: boolean;
-    minBorderMargin: number;
-    margin: number;
+    minBorderMargin?: number;
+    margin?: number;
 }
 export interface TbFlotXAxisSettings {
     showLabels: boolean;
@@ -186,7 +186,8 @@ export interface TbFlotKeySettings {
     thresholds: TbFlotKeyThreshold[];
     comparisonSettings: TbFlotKeyComparisonSettings;
 }
-export declare function flotSettingsSchema(chartType: ChartType): JsonSettingsSchema;
-export declare const flotPieSettingsSchema: JsonSettingsSchema;
-export declare const flotPieDatakeySettingsSchema: JsonSettingsSchema;
-export declare function flotDatakeySettingsSchema(defaultShowLines: boolean, chartType: ChartType): JsonSettingsSchema;
+export interface TbFlotLatestKeySettings {
+    useAsThreshold: boolean;
+    thresholdLineWidth: number;
+    thresholdColor: string;
+}

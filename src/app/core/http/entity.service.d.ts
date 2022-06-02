@@ -40,6 +40,7 @@ import { OtaPackageService } from '@core/http/ota-package.service';
 import { RuleChainMetaData } from '@shared/models/rule-chain.models';
 import { WidgetService } from '@core/http/widget.service';
 import { DeviceProfileService } from '@core/http/device-profile.service';
+import { QueueService } from '@core/http/queue.service';
 import * as i0 from "@angular/core";
 export declare class EntityService {
     private http;
@@ -66,7 +67,8 @@ export declare class EntityService {
     private entityGroupService;
     private userPermissionsService;
     private utils;
-    constructor(http: HttpClient, store: Store<AppState>, deviceService: DeviceService, assetService: AssetService, entityViewService: EntityViewService, edgeService: EdgeService, tenantService: TenantService, customerService: CustomerService, userService: UserService, ruleChainService: RuleChainService, dashboardService: DashboardService, entityRelationService: EntityRelationService, attributeService: AttributeService, otaPackageService: OtaPackageService, widgetService: WidgetService, deviceProfileService: DeviceProfileService, converterService: ConverterService, integrationService: IntegrationService, schedulerEventService: SchedulerEventService, blobEntityService: BlobEntityService, roleService: RoleService, entityGroupService: EntityGroupService, userPermissionsService: UserPermissionsService, utils: UtilsService);
+    private queueService;
+    constructor(http: HttpClient, store: Store<AppState>, deviceService: DeviceService, assetService: AssetService, entityViewService: EntityViewService, edgeService: EdgeService, tenantService: TenantService, customerService: CustomerService, userService: UserService, ruleChainService: RuleChainService, dashboardService: DashboardService, entityRelationService: EntityRelationService, attributeService: AttributeService, otaPackageService: OtaPackageService, widgetService: WidgetService, deviceProfileService: DeviceProfileService, converterService: ConverterService, integrationService: IntegrationService, schedulerEventService: SchedulerEventService, blobEntityService: BlobEntityService, roleService: RoleService, entityGroupService: EntityGroupService, userPermissionsService: UserPermissionsService, utils: UtilsService, queueService: QueueService);
     private getEntityObservable;
     private saveEntityObservable;
     getEntity(entityType: EntityType, entityId: string, config?: RequestConfig): Observable<BaseData<EntityId>>;

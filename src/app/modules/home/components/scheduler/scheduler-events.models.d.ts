@@ -11,6 +11,14 @@ export declare enum schedulerCalendarView {
 }
 export declare const schedulerCalendarViewValueMap: Map<schedulerCalendarView, string>;
 export declare const schedulerCalendarViewTranslationMap: Map<schedulerCalendarView, string>;
+export interface CustomSchedulerEventType {
+    name: string;
+    value: string;
+    originator: boolean;
+    msgType: boolean;
+    metadata: boolean;
+    template: string;
+}
 export interface SchedulerEventsWidgetSettings {
     title: string;
     displayCreatedTime: boolean;
@@ -22,12 +30,5 @@ export interface SchedulerEventsWidgetSettings {
     noDataDisplayMessage: string;
     enabledViews: 'both' | 'list' | 'calendar';
     forceDefaultEventType: string;
-    customEventTypes: {
-        name: string;
-        value: string;
-        originator: boolean;
-        msgType: boolean;
-        metadata: boolean;
-        template: string;
-    }[];
+    customEventTypes: CustomSchedulerEventType[];
 }

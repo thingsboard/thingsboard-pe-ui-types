@@ -9,6 +9,15 @@ import { EntityId } from '@shared/models/id/entity-id';
 import * as moment_ from 'moment';
 import { EntityDataPageLink, EntityFilter, KeyFilter } from '@shared/models/query/query.models';
 import { PopoverPlacement } from '@shared/components/popover.models';
+import { PageComponent } from '@shared/components/page.component';
+import { AfterViewInit, EventEmitter, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { FormGroup } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { Dashboard } from '@shared/models/dashboard.models';
+import { IAliasController } from '@core/api/widget-api.models';
+import * as i0 from "@angular/core";
 export declare enum widgetType {
     timeseries = "timeseries",
     latest = "latest",
@@ -49,6 +58,10 @@ export interface WidgetTypeDescriptor {
     controllerScript: string;
     settingsSchema?: string | any;
     dataKeySettingsSchema?: string | any;
+    latestDataKeySettingsSchema?: string | any;
+    settingsDirective?: string;
+    dataKeySettingsDirective?: string;
+    latestDataKeySettingsDirective?: string;
     defaultConfig: string;
     sizeX: number;
     sizeY: number;
@@ -62,6 +75,7 @@ export interface WidgetTypeParameters {
     stateData?: boolean;
     hasDataPageLink?: boolean;
     singleEntity?: boolean;
+    hasAdditionalLatestDataKeys?: boolean;
     warnOnPageDataOverflow?: boolean;
     ignoreDataUpdateOnIntervalTick?: boolean;
 }
@@ -69,6 +83,7 @@ export interface WidgetControllerDescriptor {
     widgetTypeFunction?: any;
     settingsSchema?: string | any;
     dataKeySettingsSchema?: string | any;
+    latestDataKeySettingsSchema?: string | any;
     typeParameters?: WidgetTypeParameters;
     actionSources?: {
         [actionSourceId: string]: WidgetActionSource;
@@ -146,6 +161,7 @@ export interface Datasource {
     name?: string;
     aliasName?: string;
     dataKeys?: Array<DataKey>;
+    latestDataKeys?: Array<DataKey>;
     entityType?: EntityType;
     entityId?: string;
     entityName?: string;
@@ -163,7 +179,27 @@ export interface Datasource {
     keyFilters?: Array<KeyFilter>;
     entityFilter?: EntityFilter;
     dataKeyStartIndex?: number;
+    latestDataKeyStartIndex?: number;
     [key: string]: any;
+}
+export interface FormattedData {
+    $datasource: Datasource;
+    entityName: string;
+    deviceName: string;
+    entityId: string;
+    entityType: EntityType;
+    entityLabel: string;
+    entityDescription: string;
+    aliasName: string;
+    dsIndex: number;
+    dsName: string;
+    deviceType: string;
+    [key: string]: any;
+}
+export interface ReplaceInfo {
+    variable: string;
+    valDec?: number;
+    dataKeyName: string;
 }
 export declare type DataSet = [number, any][];
 export interface DataSetHolder {
@@ -301,6 +337,9 @@ export interface WidgetComparisonSettings {
     timeForComparison?: moment_.unitOfTime.DurationConstructor;
     comparisonCustomIntervalValue?: number;
 }
+export interface WidgetSettings {
+    [key: string]: any;
+}
 export interface WidgetConfig {
     title?: string;
     titleIcon?: string;
@@ -334,10 +373,11 @@ export interface WidgetConfig {
     units?: string;
     decimals?: number;
     noDataDisplayMessage?: string;
+    pageSize?: number;
     actions?: {
         [actionSourceId: string]: Array<WidgetActionDescriptor>;
     };
-    settings?: any;
+    settings?: WidgetSettings;
     alarmSource?: Datasource;
     alarmStatusList?: AlarmSearchStatus[];
     alarmSeverityList?: AlarmSeverity[];
@@ -389,4 +429,46 @@ export interface WidgetPosition {
 export interface WidgetSize {
     sizeX: number;
     sizeY: number;
+}
+export interface IWidgetSettingsComponent {
+    aliasController: IAliasController;
+    dashboard: Dashboard;
+    widget: Widget;
+    functionScopeVariables: string[];
+    settings: WidgetSettings;
+    settingsChanged: Observable<WidgetSettings>;
+    validate(): any;
+    [key: string]: any;
+}
+export declare abstract class WidgetSettingsComponent extends PageComponent implements IWidgetSettingsComponent, OnInit, AfterViewInit {
+    protected store: Store<AppState>;
+    aliasController: IAliasController;
+    dashboard: Dashboard;
+    widget: Widget;
+    functionScopeVariables: string[];
+    settingsValue: WidgetSettings;
+    private settingsSet;
+    set settings(value: WidgetSettings);
+    get settings(): WidgetSettings;
+    settingsChangedEmitter: EventEmitter<WidgetSettings>;
+    settingsChanged: Observable<WidgetSettings>;
+    protected constructor(store: Store<AppState>);
+    ngOnInit(): void;
+    ngAfterViewInit(): void;
+    validate(): void;
+    protected setupSettings(settings: WidgetSettings): void;
+    protected updateSettings(settings: WidgetSettings): void;
+    protected updateValidators(emitEvent: boolean, trigger?: string): void;
+    protected validatorTriggers(): string[];
+    protected onSettingsChanged(updated: WidgetSettings): void;
+    protected doUpdateSettings(settingsForm: FormGroup, settings: WidgetSettings): void;
+    protected prepareInputSettings(settings: WidgetSettings): WidgetSettings;
+    protected prepareOutputSettings(settings: any): WidgetSettings;
+    protected validateSettings(): boolean;
+    protected onValidate(): void;
+    protected abstract settingsForm(): FormGroup;
+    protected abstract onSettingsSet(settings: WidgetSettings): any;
+    protected defaultSettings(): WidgetSettings;
+    static ɵfac: i0.ɵɵFactoryDeclaration<WidgetSettingsComponent, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<WidgetSettingsComponent, never, never, {}, {}, never>;
 }

@@ -2,7 +2,7 @@ import { ElementRef, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { DataKey } from '@shared/models/widget.models';
+import { DataKey, Widget } from '@shared/models/widget.models';
 import { ControlValueAccessor, FormBuilder, FormControl, FormGroup, Validator } from '@angular/forms';
 import { UtilsService } from '@core/services/utils.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -13,6 +13,8 @@ import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
 import { Observable } from 'rxjs';
 import { JsFuncComponent } from '@shared/components/js-func.component';
 import { WidgetService } from '@core/http/widget.service';
+import { Dashboard } from '@shared/models/dashboard.models';
+import { IAliasController } from '@core/api/widget-api.models';
 import * as i0 from "@angular/core";
 export declare class DataKeyConfigComponent extends PageComponent implements OnInit, ControlValueAccessor, Validator {
     protected store: Store<AppState>;
@@ -25,7 +27,11 @@ export declare class DataKeyConfigComponent extends PageComponent implements OnI
     dataKeyTypes: typeof DataKeyType;
     entityAliasId: string;
     callbacks: DataKeysCallbacks;
+    dashboard: Dashboard;
+    aliasController: IAliasController;
+    widget: Widget;
     dataKeySettingsSchema: any;
+    dataKeySettingsDirective: string;
     showPostProcessing: boolean;
     keyInput: ElementRef;
     funcBodyEdit: JsFuncComponent;
@@ -66,5 +72,5 @@ export declare class DataKeyConfigComponent extends PageComponent implements OnI
         dataKey?: undefined;
     };
     static ɵfac: i0.ɵɵFactoryDeclaration<DataKeyConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeyConfigComponent, "tb-data-key-config", never, { "entityAliasId": "entityAliasId"; "callbacks": "callbacks"; "dataKeySettingsSchema": "dataKeySettingsSchema"; "showPostProcessing": "showPostProcessing"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeyConfigComponent, "tb-data-key-config", never, { "entityAliasId": "entityAliasId"; "callbacks": "callbacks"; "dashboard": "dashboard"; "aliasController": "aliasController"; "widget": "widget"; "dataKeySettingsSchema": "dataKeySettingsSchema"; "dataKeySettingsDirective": "dataKeySettingsDirective"; "showPostProcessing": "showPostProcessing"; }, {}, never, never>;
 }

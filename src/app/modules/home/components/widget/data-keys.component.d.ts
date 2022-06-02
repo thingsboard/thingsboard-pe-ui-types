@@ -7,7 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { MatAutocomplete } from '@angular/material/autocomplete';
 import { MatChipInputEvent, MatChipList } from '@angular/material/chips';
 import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
-import { DataKey, DatasourceType, widgetType } from '@shared/models/widget.models';
+import { DataKey, DatasourceType, Widget, JsonSettingsSchema, widgetType } from '@shared/models/widget.models';
 import { IAliasController } from '@core/api/widget-api.models';
 import { DataKeysCallbacks } from './data-keys.component.models';
 import { UtilsService } from '@core/services/utils.service';
@@ -16,6 +16,7 @@ import { TruncatePipe } from '@shared/pipe/truncate.pipe';
 import { DialogService } from '@core/services/dialog.service';
 import { MatDialog } from '@angular/material/dialog';
 import { MatChipDropEvent } from '@app/shared/components/mat-chip-draggable.directive';
+import { Dashboard } from '@shared/models/dashboard.models';
 import * as i0 from "@angular/core";
 export declare class DataKeysComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnChanges, ErrorStateMatcher {
     private store;
@@ -38,7 +39,10 @@ export declare class DataKeysComponent implements ControlValueAccessor, OnInit, 
     set maxDataKeys(value: number);
     optDataKeys: boolean;
     aliasController: IAliasController;
-    datakeySettingsSchema: any;
+    datakeySettingsSchema: JsonSettingsSchema;
+    dataKeySettingsDirective: string;
+    dashboard: Dashboard;
+    widget: Widget;
     callbacks: DataKeysCallbacks;
     entityAliasId: string;
     private requiredValue;
@@ -55,6 +59,7 @@ export declare class DataKeysComponent implements ControlValueAccessor, OnInit, 
     functionTypeKeys: Array<DataKey>;
     dataKeyType: DataKeyType;
     placeholder: string;
+    secondaryPlaceholder: string;
     requiredText: string;
     searchText: string;
     private latestSearchTextResult;
@@ -92,5 +97,5 @@ export declare class DataKeysComponent implements ControlValueAccessor, OnInit, 
     get isEntityCountDatasource(): boolean;
     private clearSearchCache;
     static ɵfac: i0.ɵɵFactoryDeclaration<DataKeysComponent, [null, { skipSelf: true; }, null, null, null, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeysComponent, "tb-data-keys", never, { "widgetType": "widgetType"; "datasourceType": "datasourceType"; "maxDataKeys": "maxDataKeys"; "optDataKeys": "optDataKeys"; "aliasController": "aliasController"; "datakeySettingsSchema": "datakeySettingsSchema"; "callbacks": "callbacks"; "entityAliasId": "entityAliasId"; "required": "required"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeysComponent, "tb-data-keys", never, { "widgetType": "widgetType"; "datasourceType": "datasourceType"; "maxDataKeys": "maxDataKeys"; "optDataKeys": "optDataKeys"; "aliasController": "aliasController"; "datakeySettingsSchema": "datakeySettingsSchema"; "dataKeySettingsDirective": "dataKeySettingsDirective"; "dashboard": "dashboard"; "widget": "widget"; "callbacks": "callbacks"; "entityAliasId": "entityAliasId"; "required": "required"; "disabled": "disabled"; }, {}, never, never>;
 }

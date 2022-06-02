@@ -31,19 +31,24 @@ interface TimeseriesHeader {
     index: number;
     dataKey: DataKey;
     sortable: boolean;
+    show: boolean;
+    styleInfo: CellStyleInfo;
+    contentInfo: CellContentInfo;
+    order?: number;
 }
 interface TimeseriesTableSource {
     keyStartIndex: number;
     keyEndIndex: number;
+    latestKeyStartIndex: number;
+    latestKeyEndIndex: number;
     datasource: Datasource;
     rawData: Array<DatasourceData>;
+    latestRawData: Array<DatasourceData>;
     data: TimeseriesRow[];
     pageLink: PageLink;
     displayedColumns: string[];
     timeseriesDatasource: TimeseriesDatasource;
     header: TimeseriesHeader[];
-    stylesInfo: CellStyleInfo[];
-    contentsInfo: CellContentInfo[];
     rowDataTemplate: {
         [key: string]: any;
     };
@@ -79,6 +84,7 @@ export declare class TimeseriesTableWidgetComponent extends PageComponent implem
     private settings;
     private widgetConfig;
     private data;
+    private latestData;
     private datasources;
     private defaultPageSize;
     private defaultSortOrder;
@@ -96,9 +102,11 @@ export declare class TimeseriesTableWidgetComponent extends PageComponent implem
     ngOnDestroy(): void;
     ngAfterViewInit(): void;
     onDataUpdated(): void;
+    onLatestDataUpdated(): void;
     private initialize;
     getTabLabel(source: TimeseriesTableSource): string;
     private updateDatasources;
+    private prepareHeader;
     private updateActiveEntityInfo;
     private initSubscriptionsToSortAndPaginator;
     onSourceIndexChanged(): void;
@@ -110,12 +118,14 @@ export declare class TimeseriesTableWidgetComponent extends PageComponent implem
     trackByActionCellDescriptionId(index: number, action: WidgetActionDescriptor): string;
     trackBySourcesIndex(index: number, source: TimeseriesTableSource): string;
     rowStyle(source: TimeseriesTableSource, row: TimeseriesRow, index: number): any;
-    cellStyle(source: TimeseriesTableSource, index: number, row: TimeseriesRow, value: any, rowIndex: number): any;
-    cellContent(source: TimeseriesTableSource, index: number, row: TimeseriesRow, value: any, rowIndex: number): SafeHtml;
+    cellStyle(source: TimeseriesTableSource, header: TimeseriesHeader, index: number, row: TimeseriesRow, value: any, rowIndex: number): any;
+    cellContent(source: TimeseriesTableSource, header: TimeseriesHeader, index: number, row: TimeseriesRow, value: any, rowIndex: number): SafeHtml;
     onRowClick($event: Event, row: TimeseriesRow): void;
     onActionButtonClick($event: Event, row: TimeseriesRow, actionDescriptor: WidgetActionDescriptor): void;
     isActiveTab(index: number): boolean;
+    private updateCurrentSourceAllData;
     private updateCurrentSourceData;
+    private updateCurrentSourceLatestData;
     private loadCurrentSourceRow;
     private clearCache;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeseriesTableWidgetComponent, never>;
@@ -139,7 +149,9 @@ declare class TimeseriesDatasource implements DataSource<TimeseriesRow> {
     connect(collectionViewer: CollectionViewer): Observable<TimeseriesRow[] | ReadonlyArray<TimeseriesRow>>;
     disconnect(collectionViewer: CollectionViewer): void;
     loadRows(): void;
+    allDataUpdated(data: DatasourceData[], latestData: DatasourceData[]): void;
     dataUpdated(data: DatasourceData[]): void;
+    latestDataUpdated(latestData: DatasourceData[]): void;
     private updateSourceData;
     private convertData;
     isEmpty(): Observable<boolean>;

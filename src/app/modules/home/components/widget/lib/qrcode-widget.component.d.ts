@@ -3,7 +3,7 @@ import { PageComponent } from '@shared/components/page.component';
 import { WidgetContext } from '@home/models/widget-component.models';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { FormattedData } from '@home/components/widget/lib/maps/map-models';
+import { FormattedData } from '@shared/models/widget.models';
 import * as i0 from "@angular/core";
 interface QrCodeWidgetSettings {
     qrCodeTextPattern: string;

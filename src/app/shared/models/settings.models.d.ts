@@ -37,7 +37,8 @@ export declare enum MailTemplate {
     userRegistered = "userRegistered",
     apiUsageStateEnabled = "apiUsageStateEnabled",
     apiUsageStateWarning = "apiUsageStateWarning",
-    apiUsageStateDisabled = "apiUsageStateDisabled"
+    apiUsageStateDisabled = "apiUsageStateDisabled",
+    twoFaVerification = "twoFaVerification"
 }
 export declare const mailTemplateTranslations: Map<MailTemplate, string>;
 export interface MailTemplatesSettings {
@@ -67,7 +68,8 @@ export declare const phoneNumberPattern: RegExp;
 export declare const phoneNumberPatternTwilio: RegExp;
 export declare enum SmsProviderType {
     AWS_SNS = "AWS_SNS",
-    TWILIO = "TWILIO"
+    TWILIO = "TWILIO",
+    SMPP = "SMPP"
 }
 export declare const smsProviderTypeTranslationMap: Map<SmsProviderType, string>;
 export interface AwsSnsSmsProviderConfiguration {
@@ -80,7 +82,76 @@ export interface TwilioSmsProviderConfiguration {
     accountToken?: string;
     numberFrom?: string;
 }
-export declare type SmsProviderConfigurations = AwsSnsSmsProviderConfiguration & TwilioSmsProviderConfiguration;
+export interface SmppSmsProviderConfiguration {
+    protocolVersion: number;
+    host: string;
+    port: number;
+    systemId: string;
+    password: string;
+    systemType?: string;
+    bindType?: string;
+    serviceType?: string;
+    sourceAddress?: string;
+    sourceTon?: number;
+    sourceNpi?: number;
+    destinationTon?: number;
+    destinationNpi?: number;
+    addressRange?: string;
+    codingScheme?: number;
+}
+export declare const smppVersions: {
+    value: number;
+}[];
+export declare enum BindTypes {
+    TX = "TX",
+    RX = "RX",
+    TRX = "TRX"
+}
+export declare const bindTypesTranslationMap: Map<BindTypes, string>;
+export declare enum TypeOfNumber {
+    Unknown = "Unknown",
+    International = "International",
+    National = "National",
+    NetworkSpecific = "NetworkSpecific",
+    SubscriberNumber = "SubscriberNumber",
+    Alphanumeric = "Alphanumeric",
+    Abbreviated = "Abbreviated"
+}
+export interface TypeDescriptor {
+    name: string;
+    value: number;
+}
+export declare const typeOfNumberMap: Map<TypeOfNumber, TypeDescriptor>;
+export declare enum NumberingPlanIdentification {
+    Unknown = "Unknown",
+    ISDN = "ISDN",
+    DataNumberingPlan = "DataNumberingPlan",
+    TelexNumberingPlan = "TelexNumberingPlan",
+    LandMobile = "LandMobile",
+    NationalNumberingPlan = "NationalNumberingPlan",
+    PrivateNumberingPlan = "PrivateNumberingPlan",
+    ERMESNumberingPlan = "ERMESNumberingPlan",
+    Internet = "Internet",
+    WAPClientId = "WAPClientId"
+}
+export declare const numberingPlanIdentificationMap: Map<NumberingPlanIdentification, TypeDescriptor>;
+export declare enum CodingSchemes {
+    SMSC = "SMSC",
+    IA5 = "IA5",
+    OctetUnspecified2 = "OctetUnspecified2",
+    Latin1 = "Latin1",
+    OctetUnspecified4 = "OctetUnspecified4",
+    JIS = "JIS",
+    Cyrillic = "Cyrillic",
+    LatinHebrew = "LatinHebrew",
+    UCS2UTF16 = "UCS2UTF16",
+    PictogramEncoding = "PictogramEncoding",
+    MusicCodes = "MusicCodes",
+    ExtendedKanjiJIS = "ExtendedKanjiJIS",
+    KoreanGraphicCharacterSet = "KoreanGraphicCharacterSet"
+}
+export declare const codingSchemesMap: Map<CodingSchemes, TypeDescriptor>;
+export declare type SmsProviderConfigurations = Partial<SmppSmsProviderConfiguration> & AwsSnsSmsProviderConfiguration & TwilioSmsProviderConfiguration;
 export interface SmsProviderConfiguration extends SmsProviderConfigurations {
     useSystemSmsSettings?: boolean;
     type: SmsProviderType;

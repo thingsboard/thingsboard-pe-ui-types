@@ -37,6 +37,7 @@ export declare class WidgetEditorComponent extends PageComponent implements OnIn
     cssInputElmRef: ElementRef;
     settingsJsonInputElmRef: ElementRef;
     dataKeySettingsJsonInputElmRef: ElementRef;
+    latestDataKeySettingsJsonInputElmRef: ElementRef;
     javascriptInputElmRef: ElementRef;
     widgetIFrameElmRef: ElementRef<HTMLIFrameElement>;
     iframe: JQuery<HTMLIFrameElement>;
@@ -55,6 +56,7 @@ export declare class WidgetEditorComponent extends PageComponent implements OnIn
     cssFullscreen: boolean;
     jsonSettingsFullscreen: boolean;
     jsonDataKeySettingsFullscreen: boolean;
+    jsonLatestDataKeySettingsFullscreen: boolean;
     javascriptFullscreen: boolean;
     iFrameFullscreen: boolean;
     aceEditors: Ace.Editor[];
@@ -65,6 +67,7 @@ export declare class WidgetEditorComponent extends PageComponent implements OnIn
     cssEditor: Ace.Editor;
     jsonSettingsEditor: Ace.Editor;
     dataKeyJsonSettingsEditor: Ace.Editor;
+    latestDataKeyJsonSettingsEditor: Ace.Editor;
     jsEditor: Ace.Editor;
     aceResize$: ResizeObserver;
     onWindowMessageListener: any;
@@ -106,6 +109,7 @@ export declare class WidgetEditorComponent extends PageComponent implements OnIn
     beautifyHtml(): void;
     beautifyJson(): void;
     beautifyDataKeyJson(): void;
+    beautifyLatestDataKeyJson(): void;
     beautifyJs(): void;
     removeResource(index: number): void;
     addResource(): void;

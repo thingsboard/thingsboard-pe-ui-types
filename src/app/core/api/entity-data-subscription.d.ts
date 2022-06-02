@@ -15,8 +15,10 @@ export interface SubscriptionDataKey {
     postFuncBody: string;
     postFunc?: DataKeyPostFunction;
     index?: number;
+    listIndex?: number;
     key?: string;
     lastUpdateTime?: number;
+    latest?: boolean;
 }
 export interface EntityDataSubscriptionOptions {
     datasourceType: DatasourceType;
@@ -56,9 +58,11 @@ export declare class EntityDataSubscription {
     private datasourceOrigData;
     private entityIdToDataIndex;
     private frequency;
+    private latestFrequency;
     private tickScheduledTime;
     private tickElapsed;
-    private timer;
+    private timeseriesTimer;
+    private latestTimer;
     private dataResolved;
     private started;
     constructor(listener: EntityDataListener, telemetryService: TelemetryService, utils: UtilsService);
@@ -80,6 +84,8 @@ export declare class EntityDataSubscription {
     private createRealtimeDataAggregator;
     private generateSeries;
     private generateLatest;
-    private onTick;
+    private generateData;
+    private onTimeseriesTick;
+    private onLatestTick;
 }
 export {};

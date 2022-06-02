@@ -1,6 +1,6 @@
 import L, { LatLngBounds, LatLngLiteral, LatLngTuple } from 'leaflet';
 import LeafletMap from '../leaflet-map';
-import { CircleData, PosFuncton, UnitedMapSettings } from '../map-models';
+import { CircleData, PosFuncton, WidgetUnitedMapSettings } from '../map-models';
 import { WidgetContext } from '@home/models/widget-component.models';
 export declare class ImageMap extends LeafletMap {
     imageOverlay: L.ImageOverlay;
@@ -9,7 +9,7 @@ export declare class ImageMap extends LeafletMap {
     height: number;
     imageUrl: string;
     posFunction: PosFuncton;
-    constructor(ctx: WidgetContext, $container: HTMLElement, options: UnitedMapSettings);
+    constructor(ctx: WidgetContext, $container: HTMLElement, options: WidgetUnitedMapSettings);
     private mapImage;
     private imageFromUrl;
     private imageFromAlias;

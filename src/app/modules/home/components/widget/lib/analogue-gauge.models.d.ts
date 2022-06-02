@@ -1,6 +1,5 @@
 import * as CanvasGauges from 'canvas-gauges';
 import { FontSettings } from '@home/components/widget/lib/settings.models';
-import { JsonSettingsSchema } from '@shared/models/widget.models';
 import { WidgetContext } from '@home/models/widget-component.models';
 import Highlight = CanvasGauges.Highlight;
 import BaseGauge = CanvasGauges.BaseGauge;
@@ -41,7 +40,6 @@ export interface AnalogueGaugeSettings {
     animationDuration: number;
     animationRule: AnimationRule;
 }
-export declare const analogueGaugeSettingsSchema: JsonSettingsSchema;
 export declare abstract class TbBaseGauge<S, O extends GenericOptions> {
     protected ctx: WidgetContext;
     private gauge;
