@@ -41,6 +41,7 @@ export declare const entityAliasFilterResultHref = "<a href=\"https://github.com
 export declare const importEntityDataHref = "<a href=\"https://github.com/thingsboard/thingsboard/blob/master/ui-ngx/src/app/shared/models/entity.models.ts#L28\">Import entity data</a>";
 export declare const importEntitiesResultInfoHref = "<a href=\"https://github.com/thingsboard/thingsboard/blob/master/ui-ngx/src/app/shared/models/entity.models.ts#L42\">Import entities result info</a>";
 export declare const customDialogComponentHref = "<a href=\"https://github.com/thingsboard/thingsboard/blob/master/ui-ngx/src/app/modules/home/components/widget/dialog/custom-dialog.component.ts#L48\">CustomDialogComponent</a>";
+export declare const resourceInfoHref = "<a https://github.com/thingsboard/thingsboard/blob/b033b51712244d08e0f5e0beb8be60c9f8fa4cd2/ui-ngx/src/app/shared/models/resource.models.ts#L51\">Resource info</a>";
 export declare const pageLinkArg: FunctionArg;
 export declare const requestConfigArg: FunctionArg;
 export declare function observableReturnType(objectType: string): FunctionArgType;

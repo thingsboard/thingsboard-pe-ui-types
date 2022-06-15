@@ -152,6 +152,10 @@ export declare enum AlarmScheduleType {
 }
 export declare const AlarmScheduleTypeTranslationMap: Map<AlarmScheduleType, string>;
 export interface AlarmSchedule {
+    dynamicValue?: {
+        sourceAttribute: string;
+        sourceType: string;
+    };
     type: AlarmScheduleType;
     timezone?: string;
     daysOfWeek?: number[];

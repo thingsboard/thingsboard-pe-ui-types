@@ -34,7 +34,7 @@ export declare class EntityGroupAutocompleteComponent implements ControlValueAcc
     filteredEntityGroups: Observable<Array<EntityGroupInfo>>;
     allEntityGroups: Observable<Array<EntityGroupInfo>>;
     searchText: string;
-    private dirty;
+    private pristine;
     private cleanFilteredEntityGroups;
     private propagateChange;
     constructor(store: Store<AppState>, translate: TranslateService, entityGroupService: EntityGroupService, fb: FormBuilder);

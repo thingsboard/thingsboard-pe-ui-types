@@ -41,6 +41,7 @@ export declare class RuleChainPageComponent extends PageComponent implements Aft
     dialogService: DialogService;
     fb: FormBuilder;
     get isDirty(): boolean;
+    set isDirty(value: boolean);
     width: string;
     height: string;
     ruleNodeSearchInputField: ElementRef;

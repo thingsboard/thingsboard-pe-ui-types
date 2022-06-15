@@ -54,6 +54,7 @@ export declare class TbFlot {
     private init;
     update(): void;
     latestDataUpdate(): void;
+    private scalingPieRadius;
     resize(): void;
     checkMouseEvents(): void;
     destroy(): void;

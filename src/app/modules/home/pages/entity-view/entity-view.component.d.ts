@@ -27,7 +27,6 @@ export declare class EntityViewComponent extends GroupEntityComponent<EntityView
     constructor(store: Store<AppState>, translate: TranslateService, entityValue: EntityView, entitiesTableConfigValue: GroupEntityTableConfig<EntityView>, fb: FormBuilder, cd: ChangeDetectorRef);
     ngOnInit(): void;
     hideDelete(): boolean;
-    hideAssignmentActions(): boolean;
     buildForm(entity: EntityView): FormGroup;
     updateForm(entity: EntityView): void;
     onEntityViewIdCopied($event: any): void;

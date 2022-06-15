@@ -11,9 +11,13 @@ export declare class CustomTranslationService {
     private updateTranslationSubjects;
     private translateLoadObservable;
     private translationMap;
+    private prevTranslationMap;
+    private modifyLang;
     constructor(window: Window, document: Document, http: HttpClient, translate: TranslateService);
     private loadCustomTranslation;
     updateCustomTranslations(forceUpdate?: boolean): Observable<any>;
+    private deletePropertyWithObject;
+    private resetTranslation;
     getCurrentCustomTranslation(): Observable<CustomTranslation>;
     saveCustomTranslation(customTranslation: CustomTranslation): Observable<any>;
     downloadLocaleJson(langKey: string): Observable<any>;

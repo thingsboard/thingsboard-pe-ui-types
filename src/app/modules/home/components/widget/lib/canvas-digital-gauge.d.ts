@@ -22,7 +22,6 @@ export interface CanvasDigitalGaugeOptions extends GenericOptions {
     gaugeColor?: string;
     levelColors?: levelColors;
     symbol?: string;
-    label?: string;
     hideValue?: boolean;
     hideMinMax?: boolean;
     fontTitle?: string;
@@ -58,6 +57,9 @@ export interface CanvasDigitalGaugeOptions extends GenericOptions {
     ticks?: number[];
     colorTicks?: string;
     tickWidth?: number;
+    labelTimestamp?: string;
+    unitTitle?: string;
+    showUnitTitle?: boolean;
     showTimestamp?: boolean;
 }
 interface FontHeightInfo {

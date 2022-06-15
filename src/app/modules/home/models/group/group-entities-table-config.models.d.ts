@@ -41,7 +41,6 @@ export declare class GroupEntityTableConfig<T extends BaseData<HasId>> extends E
     };
     onToggleEntityGroupDetails: () => void;
     onToggleEntityDetails: ($event: Event, entity: ShortEntityView) => void;
-    assignmentEnabled: EntityBooleanFunction<T | ShortEntityView>;
     loginAsUserEnabled: EntityBooleanFunction<T | ShortEntityView>;
     manageCredentialsEnabled: EntityBooleanFunction<T | ShortEntityView>;
     manageUsersEnabled: EntityBooleanFunction<T | ShortEntityView>;

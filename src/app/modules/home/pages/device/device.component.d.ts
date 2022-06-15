@@ -28,7 +28,6 @@ export declare class DeviceComponent extends GroupEntityComponent<Device> {
     constructor(store: Store<AppState>, translate: TranslateService, deviceService: DeviceService, clipboardService: ClipboardService, entityValue: Device, entitiesTableConfigValue: GroupEntityTableConfig<Device>, fb: FormBuilder, cd: ChangeDetectorRef);
     ngOnInit(): void;
     hideDelete(): boolean;
-    hideAssignmentActions(): boolean;
     hideManageCredentials(): boolean;
     buildForm(entity: Device): FormGroup;
     updateForm(entity: Device): void;

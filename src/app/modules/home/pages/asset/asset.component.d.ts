@@ -19,7 +19,6 @@ export declare class AssetComponent extends GroupEntityComponent<Asset> {
     constructor(store: Store<AppState>, translate: TranslateService, entityValue: Asset, entitiesTableConfigValue: GroupEntityTableConfig<Asset>, fb: FormBuilder, cd: ChangeDetectorRef);
     ngOnInit(): void;
     hideDelete(): boolean;
-    hideAssignmentActions(): boolean;
     buildForm(entity: Asset): FormGroup;
     updateForm(entity: Asset): void;
     onAssetIdCopied($event: any): void;

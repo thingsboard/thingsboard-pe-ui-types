@@ -97,6 +97,7 @@ export declare class AlarmsTableWidgetComponent extends PageComponent implements
     private updateTitle;
     private updateAlarmSource;
     private editColumnsToDisplay;
+    private resetPageIndex;
     private editAlarmFilter;
     private enterFilterMode;
     exitFilterMode(): void;
