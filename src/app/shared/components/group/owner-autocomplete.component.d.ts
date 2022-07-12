@@ -1,4 +1,4 @@
-import { AfterViewInit, ElementRef, OnInit } from '@angular/core';
+import { AfterViewInit, ElementRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
@@ -8,7 +8,7 @@ import { EntityService } from '@core/http/entity.service';
 import { EntityGroupService } from '@core/http/entity-group.service';
 import { ContactBased } from '@shared/models/contact-based.model';
 import * as i0 from "@angular/core";
-export declare class OwnerAutocompleteComponent implements ControlValueAccessor, OnInit, AfterViewInit {
+export declare class OwnerAutocompleteComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnChanges {
     private store;
     private entityService;
     private entityGroupService;
@@ -27,12 +27,14 @@ export declare class OwnerAutocompleteComponent implements ControlValueAccessor,
     filteredOwners: Observable<Array<ContactBased<EntityId>>>;
     searchText: string;
     private dirty;
+    private excludeOwnerIdsChanged;
     private propagateChange;
     constructor(store: Store<AppState>, entityService: EntityService, entityGroupService: EntityGroupService, fb: FormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
     ngAfterViewInit(): void;
+    ngOnChanges(changes: SimpleChanges): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: EntityId | null): void;
     onFocus(): void;

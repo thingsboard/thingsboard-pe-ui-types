@@ -25,8 +25,9 @@ import * as i23 from "@home/pages/iframe/iframe-view.module";
 import * as i24 from "@home/pages/scheduler/scheduler.module";
 import * as i25 from "@home/pages/ota-update/ota-update.module";
 import * as i26 from "@home/pages/solution-template/solution-templates.module";
+import * as i27 from "@home/pages/vc/vc.module";
 export declare class HomePagesModule {
     static ɵfac: i0.ɵɵFactoryDeclaration<HomePagesModule, never>;
-    static ɵmod: i0.ɵɵNgModuleDeclaration<HomePagesModule, never, never, [typeof i1.AdminModule, typeof i2.HomeLinksModule, typeof i3.ProfileModule, typeof i4.SecurityModule, typeof i5.TenantProfileModule, typeof i6.TenantModule, typeof i7.DeviceProfileModule, typeof i8.DeviceModule, typeof i9.AssetModule, typeof i10.EdgeModule, typeof i11.EntityViewModule, typeof i12.CustomerModule, typeof i13.RuleChainModule, typeof i14.WidgetLibraryModule, typeof i15.DashboardModule, typeof i16.AuditLogModule, typeof i17.ApiUsageModule, typeof i18.UserModule, typeof i19.RoleModule, typeof i20.ConverterModule, typeof i21.IntegrationModule, typeof i22.EntityGroupModule, typeof i23.IFrameViewModule, typeof i24.SchedulerModule, typeof i25.OtaUpdateModule, typeof i26.SolutionTemplatesModule]>;
+    static ɵmod: i0.ɵɵNgModuleDeclaration<HomePagesModule, never, never, [typeof i1.AdminModule, typeof i2.HomeLinksModule, typeof i3.ProfileModule, typeof i4.SecurityModule, typeof i5.TenantProfileModule, typeof i6.TenantModule, typeof i7.DeviceProfileModule, typeof i8.DeviceModule, typeof i9.AssetModule, typeof i10.EdgeModule, typeof i11.EntityViewModule, typeof i12.CustomerModule, typeof i13.RuleChainModule, typeof i14.WidgetLibraryModule, typeof i15.DashboardModule, typeof i16.AuditLogModule, typeof i17.ApiUsageModule, typeof i18.UserModule, typeof i19.RoleModule, typeof i20.ConverterModule, typeof i21.IntegrationModule, typeof i22.EntityGroupModule, typeof i23.IFrameViewModule, typeof i24.SchedulerModule, typeof i25.OtaUpdateModule, typeof i26.SolutionTemplatesModule, typeof i27.VcModule]>;
     static ɵinj: i0.ɵɵInjectorDeclaration<HomePagesModule>;
 }

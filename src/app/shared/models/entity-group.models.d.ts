@@ -1,6 +1,6 @@
 import { EntityType } from '@shared/models/entity-type.models';
 import { EntityId } from '@shared/models/id/entity-id';
-import { BaseData } from '@shared/models/base-data';
+import { BaseData, ExportableEntity } from '@shared/models/base-data';
 import { EntityGroupId } from '@shared/models/id/entity-group-id';
 import { WidgetActionDescriptor, WidgetActionSource, WidgetActionType } from '@shared/models/widget.models';
 import { ActivatedRouteSnapshot } from '@angular/router';
@@ -88,7 +88,7 @@ export interface EntityGroupConfiguration {
         [actionSourceId: string]: Array<WidgetActionDescriptor>;
     };
 }
-export interface EntityGroup extends BaseData<EntityGroupId> {
+export interface EntityGroup extends BaseData<EntityGroupId>, ExportableEntity<EntityGroupId> {
     type: EntityType;
     name: string;
     ownerId: EntityId;
@@ -122,7 +122,8 @@ export declare function groupEntitiesPageLinkToEntityDataPageLink(pageLink: Page
     [columnKey: string]: EntityKey;
 }): EntityDataPageLink;
 export declare function groupSettingsDefaults(entityType: EntityType, settings: EntityGroupSettings): EntityGroupSettings;
-export declare function entityGroupsTitle(groupType: EntityType): "entity-group.asset-groups" | "entity-group.device-groups" | "entity-group.customer-groups" | "entity-group.user-groups" | "entity-group.entity-view-groups" | "entity-group.dashboard-groups" | "entity-group.edge-groups" | "scheduler.scheduler" | "edge.rulechains";
+export declare function entityGroupsTitle(groupType: EntityType): "entity-group.asset-groups" | "entity-group.device-groups" | "entity-group.customer-groups" | "entity-group.user-groups" | "entity-group.entity-view-groups" | "entity-group.dashboard-groups" | "entity-group.edge-groups";
+export declare function edgeEntitiesTitle(entityType: EntityType): "entity-group.asset-groups" | "entity-group.device-groups" | "entity-group.customer-groups" | "entity-group.user-groups" | "entity-group.entity-view-groups" | "entity-group.dashboard-groups" | "entity-group.edge-groups" | "scheduler.scheduler" | "edge.rulechains" | "edge.integrations";
 export interface HierarchyCallbacks {
     groupSelected?: (parentNodeId: string, groupId: string) => void;
     customerGroupsSelected?: (parentNodeId: string, customerId: string, groupsType: EntityType) => void;
@@ -142,7 +143,6 @@ export interface HierarchyCallbacks {
 }
 export interface EntityGroupParams {
     customerId?: string;
-    customerGroupId?: string;
     entityGroupId?: string;
     childEntityGroupId?: string;
     groupType?: EntityType;
@@ -153,8 +153,8 @@ export interface EntityGroupParams {
     hierarchyCallbacks?: HierarchyCallbacks;
     edge?: Edge;
     edgeId?: string;
-    grandChildGroupType?: EntityType;
-    grandChildGroupId?: string;
+    edgeEntitiesType?: EntityType;
+    edgeEntitiesGroupId?: string;
 }
 export interface ShareGroupRequest {
     ownerId: EntityId;

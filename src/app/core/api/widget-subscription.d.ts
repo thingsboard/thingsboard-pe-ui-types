@@ -93,8 +93,6 @@ export declare class WidgetSubscription implements IWidgetSubscription {
     clearRpcError(): void;
     completedCommand(): void;
     sendCommand(oneWayElseTwoWay: boolean, method: string, params?: any, timeout?: number, persistent?: boolean, persistentPollingInterval?: number, retries?: number, additionalInfo?: any, requestUUID?: string): Observable<any>;
-    private extractRejectionErrorText;
-    private prepareMessageFromData;
     update(isTimewindowTypeChanged?: boolean): void;
     subscribe(): void;
     subscribeAllForPaginatedData(pageLink: EntityDataPageLink, keyFilters: KeyFilter[]): Observable<any>;

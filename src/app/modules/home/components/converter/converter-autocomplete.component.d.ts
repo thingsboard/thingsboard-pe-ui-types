@@ -17,6 +17,7 @@ export declare class ConverterAutocompleteComponent implements ControlValueAcces
     modelValue: ConverterId | string | null;
     converterTypeValue: ConverterType;
     useFullEntityId: boolean;
+    isEdgeTemplate: boolean;
     set converterType(converterType: ConverterType);
     excludeEntityIds: Array<string>;
     labelText: string;
@@ -50,5 +51,5 @@ export declare class ConverterAutocompleteComponent implements ControlValueAcces
     fetchEntities(searchText?: string): Observable<Array<Converter>>;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ConverterAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ConverterAutocompleteComponent, "tb-converter-autocomplete", never, { "useFullEntityId": "useFullEntityId"; "converterType": "converterType"; "excludeEntityIds": "excludeEntityIds"; "labelText": "labelText"; "requiredText": "requiredText"; "required": "required"; "disabled": "disabled"; "showDetailsPageLink": "showDetailsPageLink"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ConverterAutocompleteComponent, "tb-converter-autocomplete", never, { "useFullEntityId": "useFullEntityId"; "isEdgeTemplate": "isEdgeTemplate"; "converterType": "converterType"; "excludeEntityIds": "excludeEntityIds"; "labelText": "labelText"; "requiredText": "requiredText"; "required": "required"; "disabled": "disabled"; "showDetailsPageLink": "showDetailsPageLink"; }, {}, never, never>;
 }

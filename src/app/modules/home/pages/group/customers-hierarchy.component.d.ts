@@ -17,6 +17,7 @@ import { EntityGroupConfigResolver } from '@home/components/group/entity-group-c
 import { RuleChainsTableConfigResolver } from '@home/pages/rulechain/rulechains-table-config.resolver';
 import { EdgeService } from '@core/http/edge.service';
 import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
+import { IntegrationsTableConfigResolver } from '@home/pages/integration/integrations-table-config.resolver';
 import * as i0 from "@angular/core";
 export declare class CustomersHierarchyComponent extends PageComponent implements OnInit {
     protected store: Store<AppState>;
@@ -30,6 +31,7 @@ export declare class CustomersHierarchyComponent extends PageComponent implement
     private entityGroupsTableConfigResolver;
     private entityGroupConfigResolver;
     private ruleChainsTableConfigResolver;
+    private integrationsTableConfigResolver;
     isNavTreeOpen: boolean;
     nodeIdCounter: number;
     selectedNodeId: number;
@@ -81,7 +83,7 @@ export declare class CustomersHierarchyComponent extends PageComponent implement
     private allowedGroupTypes;
     private allowedEdgeGroupTypes;
     private edgesSupportEnabled;
-    constructor(store: Store<AppState>, cd: ChangeDetectorRef, ngZone: NgZone, entityGroupService: EntityGroupService, entityService: EntityService, edgeService: EdgeService, userPermissionsService: UserPermissionsService, translate: TranslateService, entityGroupsTableConfigResolver: EntityGroupsTableConfigResolver, entityGroupConfigResolver: EntityGroupConfigResolver, ruleChainsTableConfigResolver: RuleChainsTableConfigResolver);
+    constructor(store: Store<AppState>, cd: ChangeDetectorRef, ngZone: NgZone, entityGroupService: EntityGroupService, entityService: EntityService, edgeService: EdgeService, userPermissionsService: UserPermissionsService, translate: TranslateService, entityGroupsTableConfigResolver: EntityGroupsTableConfigResolver, entityGroupConfigResolver: EntityGroupConfigResolver, ruleChainsTableConfigResolver: RuleChainsTableConfigResolver, integrationsTableConfigResolver: IntegrationsTableConfigResolver);
     ngOnInit(): void;
     loadNodes: LoadNodesCallback;
     onNodeSelected: NodeSelectedCallback;
@@ -94,6 +96,8 @@ export declare class CustomersHierarchyComponent extends PageComponent implement
     private updateSchedulerView;
     private updateRuleChains;
     private resolveRuleChainsTableConfig;
+    private updateIntegrations;
+    private resolveIntegrationsTableConfig;
     selectRootNode(): void;
     private entityGroupsToNodes;
     private createEntityGroupNode;

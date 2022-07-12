@@ -1,6 +1,7 @@
 import { Ace } from 'ace-builds';
 import { Observable } from 'rxjs/internal/Observable';
 export declare function getAce(): Observable<any>;
+export declare function getAceDiff(): Observable<any>;
 export declare class Range implements Ace.Range {
     start: Ace.Point;
     end: Ace.Point;

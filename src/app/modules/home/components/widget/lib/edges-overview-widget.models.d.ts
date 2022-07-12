@@ -14,15 +14,13 @@ export interface BaseEdgeNodeData {
     group: BaseData<HasId>;
     groupType: EntityType;
 }
-export declare type EdgeNodeType = 'group' | 'groups' | 'edgeGroups';
+export declare type EdgeNodeType = 'group' | 'groups';
 export interface EntityGroupNodeData extends BaseEdgeNodeData {
     type: 'group';
 }
 export interface EntityGroupsNodeData extends BaseEdgeNodeData {
     type: 'groups';
-}
-export interface EdgeGroupsNodeData extends BaseEdgeNodeData {
-    type: 'edgeGroups';
+    edge?: BaseData<HasId>;
 }
 export declare function edgeGroupsNodeText(translate: TranslateService, entityType: EntityType): string;
 export declare function entityGroupNodeText(entity: any): string;

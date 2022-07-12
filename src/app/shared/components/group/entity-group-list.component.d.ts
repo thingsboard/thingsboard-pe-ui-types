@@ -10,15 +10,20 @@ import { EntityId } from '@shared/models/id/entity-id';
 import { EntityService } from '@core/http/entity.service';
 import { MatAutocomplete } from '@angular/material/autocomplete';
 import { MatChipList } from '@angular/material/chips';
+import { EntityGroupService } from '@core/http/entity-group.service';
 import * as i0 from "@angular/core";
 export declare class EntityGroupListComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnChanges {
     private store;
     translate: TranslateService;
     private entityService;
+    private entityGroupService;
     private fb;
     entityGroupListFormGroup: FormGroup;
     modelValue: Array<string> | null;
     groupType: EntityType;
+    private ownerIdValue;
+    get ownerId(): EntityId;
+    set ownerId(value: EntityId);
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
@@ -31,7 +36,7 @@ export declare class EntityGroupListComponent implements ControlValueAccessor, O
     searchText: string;
     private dirty;
     private propagateChange;
-    constructor(store: Store<AppState>, translate: TranslateService, entityService: EntityService, fb: FormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, entityService: EntityService, entityGroupService: EntityGroupService, fb: FormBuilder);
     updateValidators(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -48,5 +53,5 @@ export declare class EntityGroupListComponent implements ControlValueAccessor, O
     onFocus(): void;
     clear(value?: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityGroupListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupListComponent, "tb-entity-group-list", never, { "groupType": "groupType"; "required": "required"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupListComponent, "tb-entity-group-list", never, { "groupType": "groupType"; "ownerId": "ownerId"; "required": "required"; "disabled": "disabled"; }, {}, never, never>;
 }

@@ -8,6 +8,7 @@ export declare class DefaultTenantProfileConfigurationComponent implements Contr
     private store;
     private fb;
     defaultTenantProfileConfigurationFormGroup: FormGroup;
+    rateLimitsPattern: string;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);

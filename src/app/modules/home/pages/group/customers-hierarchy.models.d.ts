@@ -5,7 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { NavTreeNode } from '@shared/components/nav-tree.component';
 import { Edge } from '@shared/models/edge.models';
 export declare type CustomersHierarchyViewMode = 'groups' | 'group' | 'scheduler';
-export declare type CustomersHierarchyNodeType = 'group' | 'groups' | 'customer' | 'edge' | 'edgeGroups' | 'edgeGroup';
+export declare type CustomersHierarchyNodeType = 'group' | 'groups' | 'customer' | 'edge' | 'edgeEntities' | 'edgeGroup';
 export interface BaseCustomersHierarchyNodeData {
     type: CustomersHierarchyNodeType;
     parentEntityGroupId: string;
@@ -37,8 +37,8 @@ export interface EdgeNodeData extends BaseCustomersHierarchyNodeData, BaseEdgeNo
     type: 'edge';
 }
 export interface EdgeEntityGroupsNodeData extends BaseCustomersHierarchyNodeData, BaseEdgeNodeData {
-    type: 'edgeGroups';
-    groupsType: EntityType;
+    type: 'edgeEntities';
+    entityType: EntityType;
 }
 export interface EdgeEntityGroupNodeData extends BaseCustomersHierarchyNodeData, BaseEdgeNodeData {
     type: 'edgeGroup';

@@ -28,7 +28,7 @@ export interface EntityGroupStateInfo<T extends BaseData<HasId>> extends EntityG
     customerGroupsTitle?: string;
     parentEntityGroup?: EntityGroupInfo;
     entityGroupConfig?: GroupEntityTableConfig<T>;
-    edgeGroupsTitle?: string;
+    edgeEntitiesTitle?: string;
     edgeGroupName?: string;
 }
 export declare class GroupEntityTableConfig<T extends BaseData<HasId>> extends EntityTableConfig<T, PageLink, ShortEntityView> {

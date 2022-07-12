@@ -3,6 +3,8 @@ import { Type } from '@angular/core';
 import { Datasource, DatasourceData, FormattedData, ReplaceInfo } from '@app/shared/models/widget.models';
 import { EntityId } from '@shared/models/id/entity-id';
 import { EntityType } from '@shared/models/entity-type.models';
+import { HttpErrorResponse } from '@angular/common/http';
+import { TranslateService } from '@ngx-translate/core';
 export declare function onParentScrollOrWindowResize(el: Node): Observable<Event>;
 export declare function isLocalUrl(url: string): boolean;
 export declare function animatedScroll(element: HTMLElement, scrollTop: number, delay?: number): void;
@@ -64,3 +66,7 @@ export declare function validateEntityId(entityId: EntityId | null): boolean;
 export declare function isMobileApp(): boolean;
 export declare function randomAlphanumeric(length: number): string;
 export declare function getEntityDetailsPageURL(id: string, entityType: EntityType): string;
+export declare function parseHttpErrorMessage(errorResponse: HttpErrorResponse, translate: TranslateService, responseType?: string): {
+    message: string;
+    timeout: number;
+};

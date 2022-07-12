@@ -2,7 +2,6 @@ import { OnInit } from '@angular/core';
 import { ControlValueAccessor, FormBuilder, FormGroup, ValidationErrors, Validator, ValidatorFn } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { Country, CountryData } from '@shared/models/country.models';
-import { CountryCode } from 'libphonenumber-js';
 import { FloatLabelType, MatFormFieldAppearance } from '@angular/material/form-field/form-field';
 import * as i0 from "@angular/core";
 export declare class PhoneInputComponent implements OnInit, ControlValueAccessor, Validator {
@@ -10,7 +9,7 @@ export declare class PhoneInputComponent implements OnInit, ControlValueAccessor
     private fb;
     private countryCodeData;
     disabled: boolean;
-    defaultCountry: CountryCode;
+    defaultCountry: string;
     enableFlagsSelect: boolean;
     required: boolean;
     floatLabel: FloatLabelType;
@@ -21,11 +20,15 @@ export declare class PhoneInputComponent implements OnInit, ControlValueAccessor
     phonePlaceholder: string;
     flagIcon: string;
     phoneFormGroup: FormGroup;
-    phoneNumberPattern: RegExp;
+    private isLoading;
+    get isLoad(): boolean;
+    set isLoad(value: boolean);
+    private getExampleNumber;
+    private parsePhoneNumberFromString;
     private baseCode;
     private countryCallingCode;
     private modelValue;
-    private valueChange$;
+    private changeSubscriptions;
     private propagateChange;
     constructor(translate: TranslateService, fb: FormBuilder, countryCodeData: CountryData);
     ngOnInit(): void;
@@ -35,6 +38,8 @@ export declare class PhoneInputComponent implements OnInit, ControlValueAccessor
     private getPhoneNumberData;
     private getFlagIcon;
     validatePhoneNumber(): ValidatorFn;
+    private defineCountryFromNumber;
+    private getPhoneNumberPattern;
     validate(): ValidationErrors | null;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

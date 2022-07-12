@@ -10,11 +10,13 @@ import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { UtilsService } from '@core/services/utils.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ImportExportService } from '@home/components/import-export/import-export.service';
+import { HomeDialogsService } from '@home/dialogs/home-dialogs.service';
 import * as i0 from "@angular/core";
 export declare class DeviceProfilesTableConfigResolver implements Resolve<EntityTableConfig<DeviceProfile>> {
     private deviceProfileService;
     private importExport;
     private userPermissionsService;
+    private homeDialogs;
     private translate;
     private datePipe;
     private dialogService;
@@ -22,7 +24,7 @@ export declare class DeviceProfilesTableConfigResolver implements Resolve<Entity
     private router;
     private dialog;
     private readonly config;
-    constructor(deviceProfileService: DeviceProfileService, importExport: ImportExportService, userPermissionsService: UserPermissionsService, translate: TranslateService, datePipe: DatePipe, dialogService: DialogService, utils: UtilsService, router: Router, dialog: MatDialog);
+    constructor(deviceProfileService: DeviceProfileService, importExport: ImportExportService, userPermissionsService: UserPermissionsService, homeDialogs: HomeDialogsService, translate: TranslateService, datePipe: DatePipe, dialogService: DialogService, utils: UtilsService, router: Router, dialog: MatDialog);
     resolve(): EntityTableConfig<DeviceProfile>;
     configureAddActions(): Array<HeaderActionDescriptor>;
     addDeviceProfile(): void;

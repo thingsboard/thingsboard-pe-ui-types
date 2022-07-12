@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, EventEmitter, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { BaseData, HasId } from '@shared/models/base-data';
 import { EntityGroupStateInfo, GroupEntityTableConfig } from '@home/models/group/group-entities-table-config.models';
@@ -16,6 +16,7 @@ import { EntityGroupService } from '@core/http/entity-group.service';
 import { EntityGroupsTableConfig } from '@home/components/group/entity-groups-table-config';
 import { EntityGroupsTableConfigResolver } from '@home/components/group/entity-groups-table-config.resolver';
 import { EntityGroupConfigResolver } from '@home/components/group/entity-group-config.resolver';
+import { EntityDetailsPanelComponent } from '@home/components/entity/entity-details-panel.component';
 import * as i0 from "@angular/core";
 export declare class GroupEntitiesTableComponent extends PageComponent implements AfterViewInit, OnInit, OnDestroy, OnChanges {
     protected store: Store<AppState>;
@@ -31,11 +32,13 @@ export declare class GroupEntitiesTableComponent extends PageComponent implement
     private cd;
     isGroupDetailsOpen: boolean;
     entitiesTable: EntitiesTableComponent;
+    entityGroupDetailsPanel: EntityDetailsPanelComponent;
     groupParams: EntityGroupParams;
     entityGroup: EntityGroupStateInfo<BaseData<HasId>>;
     entityGroupConfig: GroupEntityTableConfig<BaseData<HasId>>;
     entityGroupDetailsConfig: EntityGroupsTableConfig;
     private rxSubscriptions;
+    updateBreadcrumbs: EventEmitter<any>;
     constructor(store: Store<AppState>, window: Window, route: ActivatedRoute, entityGroupsTableConfigResolver: EntityGroupsTableConfigResolver, entityGroupConfigResolver: EntityGroupConfigResolver, entityGroupService: EntityGroupService, userPermissionsService: UserPermissionsService, translate: TranslateService, dialog: MatDialog, dialogService: DialogService, cd: ChangeDetectorRef);
     ngOnChanges(changes: SimpleChanges): void;
     ngOnInit(): void;

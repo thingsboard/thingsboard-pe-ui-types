@@ -11,7 +11,7 @@ export declare class TbPopoverService {
     constructor(resolver: ComponentFactoryResolver, helpMarkdownComponent: ComponentType<any>);
     hasPopover(trigger: Element): boolean;
     hidePopover(trigger: Element): boolean;
-    displayPopover<T>(trigger: Element, renderer: Renderer2, hostView: ViewContainerRef, componentType: Type<T>, preferredPlacement?: PopoverPlacement, hideOnClickOutside?: boolean, injector?: Injector, context?: any, overlayStyle?: any, popoverStyle?: any, style?: any): TbPopoverComponent;
+    displayPopover<T>(trigger: Element, renderer: Renderer2, hostView: ViewContainerRef, componentType: Type<T>, preferredPlacement?: PopoverPlacement, hideOnClickOutside?: boolean, injector?: Injector, context?: any, overlayStyle?: any, popoverStyle?: any, style?: any, showCloseButton?: boolean): TbPopoverComponent;
     toggleHelpPopover(trigger: Element, renderer: Renderer2, hostView: ViewContainerRef, helpId?: string, helpContent?: string, visibleFn?: (visible: boolean) => void, readyFn?: (ready: boolean) => void, preferredPlacement?: PopoverPlacement, overlayStyle?: any, helpStyle?: any): void;
     private findPopoverByTrigger;
     private removePopoverByComponent;

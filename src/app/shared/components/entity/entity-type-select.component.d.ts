@@ -1,4 +1,4 @@
-import { AfterViewInit, OnInit } from '@angular/core';
+import { AfterViewInit, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -7,7 +7,7 @@ import { AliasEntityType, EntityType } from '@app/shared/models/entity-type.mode
 import { EntityService } from '@core/http/entity.service';
 import { Operation } from '@shared/models/security.models';
 import * as i0 from "@angular/core";
-export declare class EntityTypeSelectComponent implements ControlValueAccessor, OnInit, AfterViewInit {
+export declare class EntityTypeSelectComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnChanges {
     private store;
     private entityService;
     translate: TranslateService;
@@ -17,6 +17,8 @@ export declare class EntityTypeSelectComponent implements ControlValueAccessor, 
     allowedEntityTypes: Array<EntityType | AliasEntityType>;
     useAliasEntityTypes: boolean;
     operation: Operation;
+    filterAllowedEntityTypes: boolean;
+    overrideEntityTypeTranslations: Map<EntityType | AliasEntityType, string>;
     private showLabelValue;
     get showLabel(): boolean;
     set showLabel(value: boolean);
@@ -30,11 +32,12 @@ export declare class EntityTypeSelectComponent implements ControlValueAccessor, 
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
+    ngOnChanges(changes: SimpleChanges): void;
     ngAfterViewInit(): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: EntityType | AliasEntityType | null): void;
     updateView(value: EntityType | AliasEntityType | null): void;
     displayEntityTypeFn(entityType?: EntityType | AliasEntityType | null): string | undefined;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityTypeSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityTypeSelectComponent, "tb-entity-type-select", never, { "allowedEntityTypes": "allowedEntityTypes"; "useAliasEntityTypes": "useAliasEntityTypes"; "operation": "operation"; "showLabel": "showLabel"; "required": "required"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityTypeSelectComponent, "tb-entity-type-select", never, { "allowedEntityTypes": "allowedEntityTypes"; "useAliasEntityTypes": "useAliasEntityTypes"; "operation": "operation"; "filterAllowedEntityTypes": "filterAllowedEntityTypes"; "overrideEntityTypeTranslations": "overrideEntityTypeTranslations"; "showLabel": "showLabel"; "required": "required"; "disabled": "disabled"; }, {}, never, never>;
 }

@@ -18,7 +18,6 @@ import { DialogService } from '@core/services/dialog.service';
 import { DeviceService } from '@core/http/device.service';
 import { MatDialog } from '@angular/material/dialog';
 import { Overlay } from '@angular/cdk/overlay';
-import { HttpErrorResponse } from '@angular/common/http';
 import * as i0 from "@angular/core";
 interface PersistentTableWidgetActionDescriptor extends TableCellButtonActionDescriptor {
     details?: boolean;
@@ -97,8 +96,6 @@ declare class PersistentDatasource implements DataSource<PersistentRpcData> {
     reset(): void;
     loadPersistent(pageLink: PageLink, rpcStatusFilter: RpcStatus): ReplaySubject<PageData<PersistentRpcData>>;
     fetchEntities(pageLink: PageLink, rpcStatusFilter: RpcStatus): Observable<PageData<PersistentRpcData>>;
-    extractRejectionErrorText(rejection: HttpErrorResponse): any;
-    prepareMessageFromData(data: any): any;
     isEmpty(): Observable<boolean>;
     total(): Observable<number>;
 }

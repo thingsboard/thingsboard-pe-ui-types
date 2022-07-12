@@ -5,6 +5,7 @@ export interface SysParamsState {
     edgesSupportEnabled: boolean;
     whiteLabelingAllowed: boolean;
     customerWhiteLabelingAllowed: boolean;
+    hasRepository: boolean;
 }
 export interface AuthPayload extends SysParamsState {
     authUser: AuthUser;

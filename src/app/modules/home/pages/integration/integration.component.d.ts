@@ -26,6 +26,7 @@ export declare class IntegrationComponent extends EntityComponent<Integration> i
     integrationTypeInfos: Map<IntegrationType, IntegrationTypeInfo>;
     integrationForm: FormGroup;
     integrationInfo: IntegrationTypeInfo;
+    integrationScope: 'tenant' | 'edges' | 'edge';
     constructor(store: Store<AppState>, translate: TranslateService, entityValue: Integration, entitiesTableConfigValue: EntityTableConfig<Integration>, fb: FormBuilder, integrationService: IntegrationService, cd: ChangeDetectorRef);
     ngOnInit(): void;
     hideDelete(): boolean;
@@ -35,7 +36,9 @@ export declare class IntegrationComponent extends EntityComponent<Integration> i
     private checkIsNewIntegration;
     private integrationTypeChanged;
     private checkIsRemote;
+    get isCheckConnectionAvailable(): boolean;
     get isRemoteIntegration(): boolean;
+    get isEdgeTemplate(): boolean;
     updateForm(entity: Integration): void;
     getIntegrationForm(form: object, ignoreNonPrimitiveFields?: string[]): FormGroup;
     prepareFormValue(formValue: any): any;

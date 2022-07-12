@@ -27,6 +27,7 @@ export declare class DeviceProfileService {
     getDefaultDeviceProfileInfo(config?: RequestConfig): Observable<DeviceProfileInfo>;
     getDeviceProfileInfo(deviceProfileId: string, config?: RequestConfig): Observable<DeviceProfileInfo>;
     getDeviceProfileInfos(pageLink: PageLink, transportType?: DeviceTransportType, config?: RequestConfig): Observable<PageData<DeviceProfileInfo>>;
+    getDeviceProfilesByIds(deviceProfileIds: Array<string>, config?: RequestConfig): Observable<Array<DeviceProfileInfo>>;
     getDeviceProfileDevicesAttributesKeys(deviceProfileId?: string, config?: RequestConfig): Observable<Array<string>>;
     getDeviceProfileDevicesTimeseriesKeys(deviceProfileId?: string, config?: RequestConfig): Observable<Array<string>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceProfileService, never>;

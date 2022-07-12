@@ -73,6 +73,7 @@ export declare class TbPopoverComponent implements OnDestroy, OnInit {
     tbMouseEnterDelay?: number;
     tbMouseLeaveDelay?: number;
     tbHideOnClickOutside: boolean;
+    tbShowCloseButton: boolean;
     tbAnimationState: string;
     tbVisibleChange: Subject<boolean>;
     tbAnimationDone: Subject<void>;

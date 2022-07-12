@@ -14,7 +14,7 @@ export declare class EdgesOverviewWidgetComponent extends PageComponent implemen
     protected store: Store<AppState>;
     private entityService;
     private entityGroupService;
-    private translateService;
+    private translate;
     private utils;
     private userPermissionsService;
     ctx: WidgetContext;
@@ -25,7 +25,7 @@ export declare class EdgesOverviewWidgetComponent extends PageComponent implemen
     private datasources;
     private settings;
     private nodeIdCounter;
-    constructor(store: Store<AppState>, entityService: EntityService, entityGroupService: EntityGroupService, translateService: TranslateService, utils: UtilsService, userPermissionsService: UserPermissionsService);
+    constructor(store: Store<AppState>, entityService: EntityService, entityGroupService: EntityGroupService, translate: TranslateService, utils: UtilsService, userPermissionsService: UserPermissionsService);
     ngOnInit(): void;
     loadNodes: LoadNodesCallback;
     private initializeConfig;

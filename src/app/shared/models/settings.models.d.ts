@@ -1,4 +1,5 @@
 import { ValidatorFn } from '@angular/forms';
+import { VersionCreateConfig } from '@shared/models/vc.models';
 export declare const smtpPortPattern: RegExp;
 export interface AdminSettings<T> {
     key: string;
@@ -163,3 +164,24 @@ export interface TestSmsRequest {
     message: string;
 }
 export declare function createSmsProviderConfiguration(type: SmsProviderType): SmsProviderConfiguration;
+export declare enum RepositoryAuthMethod {
+    USERNAME_PASSWORD = "USERNAME_PASSWORD",
+    PRIVATE_KEY = "PRIVATE_KEY"
+}
+export declare const repositoryAuthMethodTranslationMap: Map<RepositoryAuthMethod, string>;
+export interface RepositorySettings {
+    repositoryUri: string;
+    defaultBranch: string;
+    authMethod: RepositoryAuthMethod;
+    username: string;
+    password: string;
+    privateKeyFileName: string;
+    privateKey: string;
+    privateKeyPassword: string;
+}
+export interface AutoVersionCreateConfig extends VersionCreateConfig {
+    branch: string;
+}
+export declare type AutoCommitSettings = {
+    [entityType: string]: AutoVersionCreateConfig;
+};

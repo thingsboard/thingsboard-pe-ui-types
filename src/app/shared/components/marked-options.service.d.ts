@@ -1,4 +1,3 @@
-/// <reference types="marked" />
 import { MarkedOptions, MarkedRenderer } from 'ngx-markdown';
 import { TranslateService } from '@ngx-translate/core';
 import { Clipboard } from '@angular/cdk/clipboard';

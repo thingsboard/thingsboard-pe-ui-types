@@ -90,9 +90,17 @@ export declare const apachePulsarCredentialsTypes: {
 };
 export declare function updateIntegrationFormState(type: IntegrationType, info: IntegrationTypeInfo, integrationForm: FormGroup, disabled: boolean): void;
 export declare function updateIntegrationFormDefaultFields(type: IntegrationType, integrationForm: FormGroup): void;
-export declare function updateIntegrationFormValidators(integrationForm: FormGroup, fieldValidators?: {
+export declare function updateIntegrationFormValidators(integrationForm: FormGroup, fieldValidators: {
     [key: string]: ValidatorFn | ValidatorFn[];
-}): void;
+}, type: IntegrationType, integrationScope: string): void;
+export declare function filterEdgeIntegrationTemplateValidators(fieldValidators: ValidatorFn | ValidatorFn[], type: IntegrationType, integrationScope: string): ValidatorFn | ValidatorFn[];
+export declare const ibmWatsonIotApiKeyPatternValidator: ValidatorFn;
+export declare const mqttClientIdPatternValidator: ValidatorFn;
+export declare const mqttClientIdMaxLengthValidator: ValidatorFn;
+export declare const edgeTemplateIntegrationIgnoredValidators: {
+    IBM_WATSON_IOT: ValidatorFn[];
+    MQTT: ValidatorFn[];
+};
 export declare const templates: {
     http: {
         baseUrl: string;
@@ -181,6 +189,7 @@ export declare const templates: {
         fieldValidators: {
             'clientConfiguration.host': (typeof Validators.required)[];
             'clientConfiguration.port': ValidatorFn[];
+            'clientConfiguration.clientId': ValidatorFn[];
             'clientConfiguration.maxBytesInMessage': ValidatorFn[];
             'clientConfiguration.connectTimeoutSec': ValidatorFn[];
             'clientConfiguration.credentials.username': (typeof Validators.required)[];

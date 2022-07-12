@@ -1,0 +1,38 @@
+import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
+import { Integration, IntegrationParams } from '@shared/models/integration.models';
+import { UserPermissionsService } from '@core/http/user-permissions.service';
+import { TranslateService } from '@ngx-translate/core';
+import { DatePipe } from '@angular/common';
+import { UtilsService } from '@core/services/utils.service';
+import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { IntegrationService } from '@core/http/integration.service';
+import { EdgeService } from '@core/http/edge.service';
+import { DialogService } from '@core/services/dialog.service';
+import { EntityAction } from '@home/models/entity/entity-component.models';
+export declare class IntegrationsTableConfig extends EntityTableConfig<Integration> {
+    private integrationService;
+    private userPermissionsService;
+    private edgeService;
+    private translate;
+    private datePipe;
+    private router;
+    private utils;
+    private dialogService;
+    private dialog;
+    private params;
+    constructor(integrationService: IntegrationService, userPermissionsService: UserPermissionsService, edgeService: EdgeService, translate: TranslateService, datePipe: DatePipe, router: Router, utils: UtilsService, dialogService: DialogService, dialog: MatDialog, params: IntegrationParams);
+    private configureEntityTableColumns;
+    private configureGroupActions;
+    private configureAddActions;
+    private configureCellActions;
+    private saveIntegration;
+    openIntegration($event: Event, integration: Integration, params?: IntegrationParams): void;
+    onIntegrationAction(action: EntityAction<Integration>, params: IntegrationParams): boolean;
+    private configureEntityFunctions;
+    private configureIntegrationScope;
+    private configureTableTitle;
+    private assignIntegrationsToEdge;
+    private unassignFromEdge;
+    private unassignIntegrationsFromEdge;
+}

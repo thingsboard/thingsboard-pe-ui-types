@@ -25,7 +25,7 @@ export declare class HomeComponent extends PageComponent implements AfterViewIni
     sidenavOpened: boolean;
     sidenav: MatSidenav;
     searchInputField: ElementRef;
-    fullscreenEnabled: true;
+    fullscreenEnabled: boolean;
     authUser$: Observable<any>;
     userDetails$: Observable<User>;
     userDetailsString: Observable<string>;

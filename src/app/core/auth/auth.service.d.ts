@@ -77,6 +77,7 @@ export declare class AuthService {
     private loadIsUserTokenAccessEnabled;
     private checkIsWhiteLabelingAllowed;
     loadIsEdgesSupportEnabled(): Observable<boolean>;
+    private loadHasRepository;
     private loadSystemParams;
     refreshJwtToken(loadUserElseStoreJwtToken?: boolean): Observable<LoginResponse>;
     private validateJwtToken;

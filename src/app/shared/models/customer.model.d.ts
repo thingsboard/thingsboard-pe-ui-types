@@ -1,7 +1,8 @@
 import { CustomerId } from '@shared/models/id/customer-id';
 import { ContactBased } from '@shared/models/contact-based.model';
 import { TenantId } from './id/tenant-id';
-export interface Customer extends ContactBased<CustomerId> {
+import { ExportableEntity } from '@shared/models/base-data';
+export interface Customer extends ContactBased<CustomerId>, ExportableEntity<CustomerId> {
     tenantId: TenantId;
     parentCustomerId?: CustomerId;
     title: string;

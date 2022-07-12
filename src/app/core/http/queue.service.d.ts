@@ -9,6 +9,7 @@ export declare class QueueService {
     private http;
     constructor(http: HttpClient);
     getQueueById(queueId: string, config?: RequestConfig): Observable<QueueInfo>;
+    getQueueByName(queueName: string, config?: RequestConfig): Observable<QueueInfo>;
     getTenantQueuesByServiceType(pageLink: PageLink, serviceType: ServiceType, config?: RequestConfig): Observable<PageData<QueueInfo>>;
     saveQueue(queue: QueueInfo, serviceType: ServiceType, config?: RequestConfig): Observable<QueueInfo>;
     deleteQueue(queueId: string): Observable<Object>;

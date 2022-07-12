@@ -9,6 +9,7 @@ export declare class ConverterService {
     private http;
     constructor(http: HttpClient);
     getConverters(pageLink: PageLink, config?: RequestConfig): Observable<PageData<Converter>>;
+    getConvertersByEdgeTemplate(pageLink: PageLink, isEdgeTemplate: boolean, config?: RequestConfig): Observable<PageData<Converter>>;
     getConvertersByIds(converterIds: Array<string>, config?: RequestConfig): Observable<Array<Converter>>;
     getConverter(converterId: string, config?: RequestConfig): Observable<Converter>;
     saveConverter(converter: Converter, config?: RequestConfig): Observable<Converter>;

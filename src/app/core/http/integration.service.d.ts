@@ -9,12 +9,16 @@ export declare class IntegrationService {
     private http;
     constructor(http: HttpClient);
     getIntegrations(pageLink: PageLink, config?: RequestConfig): Observable<PageData<Integration>>;
+    getIntegrationsByEdgeTemplate(pageLink: PageLink, isEdgeTemplate: boolean, config?: RequestConfig): Observable<PageData<Integration>>;
     getIntegrationsByIds(integrationIds: Array<string>, config?: RequestConfig): Observable<Array<Integration>>;
     getIntegration(integrationId: string, config?: RequestConfig): Observable<Integration>;
     saveIntegration(integration: Integration, config?: RequestConfig): Observable<Integration>;
     deleteIntegration(integrationId: string, config?: RequestConfig): Observable<Object>;
     getIntegrationHttpEndpointLink(configuration: any, integrationType: IntegrationType, routingKey: string): string;
     checkIntegrationConnection(value: Integration, config?: RequestConfig): Observable<string>;
+    assignIntegrationToEdge(edgeId: string, integrationId: string, config?: RequestConfig): Observable<Integration>;
+    unassignIntegrationFromEdge(edgeId: string, integrationId: string, config?: RequestConfig): Observable<Object>;
+    getEdgeIntegrations(edgeId: string, pageLink: PageLink, config?: RequestConfig): Observable<PageData<Integration>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<IntegrationService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<IntegrationService>;
 }

@@ -29,6 +29,8 @@ export declare class EdgeService {
     findMissingToRelatedRuleChains(edgeId: string, config?: RequestConfig): Observable<string>;
     findByName(edgeName: string, config?: RequestConfig): Observable<Edge>;
     bulkImportEdges(entitiesData: BulkImportRequest, config?: RequestConfig): Observable<BulkImportResult>;
+    findAllRelatedEdgesMissingAttributes(integrationId: string, config?: RequestConfig): Observable<string>;
+    findEdgeMissingAttributes(integrationIds: Array<string>, edgeId: string, config?: RequestConfig): Observable<string>;
     static ɵfac: i0.ɵɵFactoryDeclaration<EdgeService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<EdgeService>;
 }

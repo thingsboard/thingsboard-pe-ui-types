@@ -11,6 +11,7 @@ import { EdgeService } from '@core/http/edge.service';
 import { MatDialog } from '@angular/material/dialog';
 import { UtilsService } from '@core/services/utils.service';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
+import { HomeDialogsService } from '@home/dialogs/home-dialogs.service';
 import * as i0 from "@angular/core";
 export declare class RuleChainsTableConfigResolver implements Resolve<EntityTableConfig<RuleChain>> {
     private ruleChainService;
@@ -19,12 +20,13 @@ export declare class RuleChainsTableConfigResolver implements Resolve<EntityTabl
     private importExport;
     private itembuffer;
     private edgeService;
+    private homeDialogs;
     private translate;
     private datePipe;
     private router;
     private utils;
     private userPermissionsService;
-    constructor(ruleChainService: RuleChainService, dialogService: DialogService, dialog: MatDialog, importExport: ImportExportService, itembuffer: ItemBufferService, edgeService: EdgeService, translate: TranslateService, datePipe: DatePipe, router: Router, utils: UtilsService, userPermissionsService: UserPermissionsService);
+    constructor(ruleChainService: RuleChainService, dialogService: DialogService, dialog: MatDialog, importExport: ImportExportService, itembuffer: ItemBufferService, edgeService: EdgeService, homeDialogs: HomeDialogsService, translate: TranslateService, datePipe: DatePipe, router: Router, utils: UtilsService, userPermissionsService: UserPermissionsService);
     resolve(route: ActivatedRouteSnapshot): EntityTableConfig<RuleChain>;
     resolveRuleChainsTableConfig(params: ActivatedRouteSnapshot | RuleChainParams): EntityTableConfig<RuleChain>;
     static ɵfac: i0.ɵɵFactoryDeclaration<RuleChainsTableConfigResolver, never>;

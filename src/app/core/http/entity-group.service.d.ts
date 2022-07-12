@@ -33,6 +33,7 @@ export declare class EntityGroupService {
     getEntityGroupIdsForEntityId(entityType: EntityType, entityId: string, config?: RequestConfig): Observable<Array<EntityGroupId>>;
     getEntityGroupsByIds(entityGroupIds: Array<string>, config?: RequestConfig): Observable<Array<EntityGroup>>;
     getEntityGroupsByOwnerId(ownerType: EntityType, ownerId: string, groupType: EntityType, config?: RequestConfig): Observable<Array<EntityGroupInfo>>;
+    getEntityGroupsByOwnerIdAndPageLink(ownerType: EntityType, ownerId: string, groupType: EntityType, pageLink: PageLink, config?: RequestConfig): Observable<PageData<EntityGroup>>;
     getEntityGroupAllByOwnerId(ownerType: EntityType, ownerId: string, groupType: EntityType, config?: RequestConfig): Observable<EntityGroupInfo>;
     getEntityGroupsByPageLink(pageLink: PageLink, groupType: EntityType, config?: RequestConfig): Observable<PageData<EntityGroupInfo>>;
     addEntityToEntityGroup(entityGroupId: string, entityId: string, config?: RequestConfig): Observable<any>;

@@ -1,7 +1,9 @@
-import { BaseData } from '@shared/models/base-data';
+import { BaseData, ExportableEntity } from '@shared/models/base-data';
 import { TenantId } from '@shared/models/id/tenant-id';
 import { IntegrationId } from '@shared/models/id/integration-id';
 import { ConverterId } from '@shared/models/id/converter-id';
+import { EntityGroupParams } from '@shared/models/entity-group.models';
+import { ActivatedRouteSnapshot } from '@angular/router';
 export declare enum IntegrationType {
     HTTP = "HTTP",
     OCEANCONNECT = "OCEANCONNECT",
@@ -44,7 +46,7 @@ export interface IntegrationTypeInfo {
 }
 export declare const integrationTypeInfoMap: Map<IntegrationType, IntegrationTypeInfo>;
 export declare function getIntegrationHelpLink(integration: Integration): string;
-export interface Integration extends BaseData<IntegrationId> {
+export interface Integration extends BaseData<IntegrationId>, ExportableEntity<IntegrationId> {
     tenantId?: TenantId;
     defaultConverterId: ConverterId;
     downlinkConverterId?: ConverterId;
@@ -58,4 +60,13 @@ export interface Integration extends BaseData<IntegrationId> {
     secret: string;
     configuration: any;
     additionalInfo?: any;
+    edgeTemplate: boolean;
 }
+export interface IntegrationParams extends EntityGroupParams {
+    integrationScope: string;
+}
+export declare enum IntegrationSubType {
+    CORE = "CORE",
+    EDGE = "EDGE"
+}
+export declare function resolveIntegrationParams(route: ActivatedRouteSnapshot): IntegrationParams;

@@ -10,6 +10,8 @@ import { AlarmInfo, AlarmSearchStatus } from '@app/shared/models/alarm.models';
 import { AlarmService } from '@app/core/http/alarm.service';
 import { DialogService } from '@core/services/dialog.service';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
 export declare class AlarmTableConfig extends EntityTableConfig<AlarmInfo, TimePageLink> {
     private alarmService;
     private dialogService;
@@ -19,9 +21,11 @@ export declare class AlarmTableConfig extends EntityTableConfig<AlarmInfo, TimeP
     private dialog;
     entityId: EntityId;
     private defaultSearchStatus;
+    private store;
+    private authUser;
     searchStatus: AlarmSearchStatus;
     readonly: boolean;
-    constructor(alarmService: AlarmService, dialogService: DialogService, userPermissionsService: UserPermissionsService, translate: TranslateService, datePipe: DatePipe, dialog: MatDialog, entityId?: EntityId, defaultSearchStatus?: AlarmSearchStatus);
+    constructor(alarmService: AlarmService, dialogService: DialogService, userPermissionsService: UserPermissionsService, translate: TranslateService, datePipe: DatePipe, dialog: MatDialog, entityId: EntityId, defaultSearchStatus: AlarmSearchStatus, store: Store<AppState>);
     fetchAlarms(pageLink: TimePageLink): Observable<PageData<AlarmInfo>>;
     showAlarmDetails(entity: AlarmInfo): void;
 }

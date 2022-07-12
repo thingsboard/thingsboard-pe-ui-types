@@ -20,7 +20,6 @@ export declare class GlobalHttpInterceptor implements HttpInterceptor {
     private jwtIntercept;
     private handleRequest;
     private handleResponseError;
-    private prepareMessageFromData;
     private retryRequest;
     private refreshTokenAndRetry;
     private updateAuthorizationHeader;

@@ -37,7 +37,6 @@ export declare class QueueAutocompleteComponent implements ControlValueAccessor,
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
     ngAfterViewInit(): void;
-    getCurrentEntity(): BaseData<EntityId> | null;
     setDisabledState(isDisabled: boolean): void;
     textIsNotEmpty(text: string): boolean;
     writeValue(value: string | null): void;

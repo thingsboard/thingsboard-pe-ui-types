@@ -1,8 +1,8 @@
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { EntityTableHeaderComponent } from '../../components/entity/entity-table-header.component';
-import { EdgeEvent } from "@shared/models/edge.models";
-import { EdgeDownlinkTableConfig } from "@home/components/edge/edge-downlink-table-config";
+import { EdgeEvent } from '@shared/models/edge.models';
+import { EdgeDownlinkTableConfig } from '@home/components/edge/edge-downlink-table-config';
 import * as i0 from "@angular/core";
 export declare class EdgeDownlinkTableHeaderComponent extends EntityTableHeaderComponent<EdgeEvent> {
     protected store: Store<AppState>;

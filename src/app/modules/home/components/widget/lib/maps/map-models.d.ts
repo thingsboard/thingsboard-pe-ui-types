@@ -110,6 +110,7 @@ export interface CommonMapSettings {
     defaultZoomLevel: number;
     defaultCenterPosition?: string;
     disableScrollZooming: boolean;
+    disableDoubleClickZooming: boolean;
     disableZoomControl: boolean;
     fitMapBounds: boolean;
     useDefaultCenterPosition: boolean;
