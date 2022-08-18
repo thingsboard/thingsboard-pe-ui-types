@@ -37,6 +37,7 @@ import * as RxJS from 'rxjs';
 import * as RxJSOperators from 'rxjs/operators';
 import { TbPopoverComponent } from '@shared/components/popover.component';
 import { EntityId } from '@shared/models/id/entity-id';
+import { ReportService } from '@core/http/report.service';
 export interface IWidgetAction {
     name: string;
     icon: string;
@@ -91,6 +92,7 @@ export declare class WidgetContext {
     http: HttpClient;
     sanitizer: DomSanitizer;
     router: Router;
+    reportService: ReportService;
     private changeDetectorValue;
     private containerChangeDetectorValue;
     inited: boolean;

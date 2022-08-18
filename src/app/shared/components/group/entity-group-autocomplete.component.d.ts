@@ -19,7 +19,7 @@ export declare class EntityGroupAutocompleteComponent implements ControlValueAcc
     groupType: EntityType;
     private ownerIdValue;
     get ownerId(): EntityId;
-    set ownerId(value: EntityId);
+    set ownerId(value: EntityId | null);
     excludeGroupIds: Array<string>;
     excludeGroupAll: boolean;
     placeholderText: string;

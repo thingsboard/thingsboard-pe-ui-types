@@ -21,6 +21,7 @@ export declare class EntityTypesVersionLoadComponent extends PageComponent imple
     private propagateChange;
     entityTypesVersionLoadFormGroup: FormGroup;
     entityTypes: typeof EntityType;
+    loading: boolean;
     overrideEntityTypeTranslationsMap: Map<EntityType | import("@shared/models/entity-type.models").AliasEntityType, string>;
     constructor(store: Store<AppState>, translate: TranslateService, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, fb: FormBuilder);
     ngOnInit(): void;

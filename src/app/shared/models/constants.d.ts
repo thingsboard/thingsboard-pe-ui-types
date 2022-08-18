@@ -169,6 +169,7 @@ export declare const HelpLinks: {
         queue: string;
         repositorySettings: string;
         autoCommitSettings: string;
+        twoFactorAuthentication: string;
     };
 };
 export interface ValueTypeData {

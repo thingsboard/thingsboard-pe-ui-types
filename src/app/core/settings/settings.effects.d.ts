@@ -10,6 +10,7 @@ import { AuthService } from '@core/auth/auth.service';
 import { UtilsService } from '@core/services/utils.service';
 import { FaviconService } from '@core/services/favicon.service';
 import { CustomTranslationService } from '@core/http/custom-translation.service';
+import { ReportService } from '@core/http/report.service';
 import * as i0 from "@angular/core";
 export declare const SETTINGS_KEY = "SETTINGS";
 export declare class SettingsEffects {
@@ -23,7 +24,8 @@ export declare class SettingsEffects {
     private faviconService;
     private translate;
     private customTranslationService;
-    constructor(actions$: Actions<SettingsActions>, store: Store<AppState>, authService: AuthService, utils: UtilsService, router: Router, localStorageService: LocalStorageService, titleService: TitleService, faviconService: FaviconService, translate: TranslateService, customTranslationService: CustomTranslationService);
+    private reportService;
+    constructor(actions$: Actions<SettingsActions>, store: Store<AppState>, authService: AuthService, utils: UtilsService, router: Router, localStorageService: LocalStorageService, titleService: TitleService, faviconService: FaviconService, translate: TranslateService, customTranslationService: CustomTranslationService, reportService: ReportService);
     persistSettings: import("rxjs").Observable<[import("./settings.actions").ActionSettingsChangeLanguage, import("./settings.models").SettingsState]>;
     setTranslateServiceLanguage: import("rxjs").Observable<string>;
     setTitle: import("rxjs").Observable<import("@angular/router").Event>;

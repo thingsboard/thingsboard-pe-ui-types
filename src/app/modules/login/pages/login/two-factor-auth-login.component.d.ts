@@ -7,6 +7,7 @@ import { FormBuilder } from '@angular/forms';
 import { TwoFactorAuthenticationService } from '@core/http/two-factor-authentication.service';
 import { TwoFactorAuthProviderType } from '@shared/models/two-factor-auth.models';
 import { TranslateService } from '@ngx-translate/core';
+import { WhiteLabelingService } from '@core/http/white-labeling.service';
 import * as i0 from "@angular/core";
 export declare class TwoFactorAuthLoginComponent extends PageComponent implements OnInit, OnDestroy {
     protected store: Store<AppState>;
@@ -14,6 +15,8 @@ export declare class TwoFactorAuthLoginComponent extends PageComponent implement
     private authService;
     private translate;
     private fb;
+    wl: WhiteLabelingService;
+    class: string;
     private providersInfo;
     private prevProvider;
     private timer;
@@ -30,7 +33,7 @@ export declare class TwoFactorAuthLoginComponent extends PageComponent implement
     inputMode: string;
     pattern: string;
     verificationForm: import("@angular/forms").FormGroup;
-    constructor(store: Store<AppState>, twoFactorAuthService: TwoFactorAuthenticationService, authService: AuthService, translate: TranslateService, fb: FormBuilder);
+    constructor(store: Store<AppState>, twoFactorAuthService: TwoFactorAuthenticationService, authService: AuthService, translate: TranslateService, fb: FormBuilder, wl: WhiteLabelingService);
     ngOnInit(): void;
     ngOnDestroy(): void;
     sendVerificationCode(): void;

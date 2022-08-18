@@ -31,6 +31,7 @@ export declare class RuleChainsTableConfig extends EntityTableConfig<RuleChain> 
     private unassignRuleChainsFromEdge;
     private configureAddActions;
     private importRuleChain;
+    private checkMissingToRelatedRuleChains;
     private assignRuleChainsToEdge;
     private configureCellActions;
     private configureEntityFunctions;

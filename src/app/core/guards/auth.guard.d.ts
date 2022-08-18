@@ -13,6 +13,7 @@ import { SelfRegistrationService } from '@core/http/self-register.service';
 import { MenuService } from '@core/services/menu.service';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { MobileService } from '@core/services/mobile.service';
+import { ReportService } from '@core/http/report.service';
 import * as i0 from "@angular/core";
 export declare class AuthGuard implements CanActivate, CanActivateChild {
     private store;
@@ -26,8 +27,9 @@ export declare class AuthGuard implements CanActivate, CanActivateChild {
     private userPermissionsService;
     private menuService;
     private mobileService;
+    private reportService;
     private zone;
-    constructor(store: Store<AppState>, router: Router, authService: AuthService, dialogService: DialogService, utils: UtilsService, translate: TranslateService, whiteLabelingService: WhiteLabelingService, selfRegistrationService: SelfRegistrationService, userPermissionsService: UserPermissionsService, menuService: MenuService, mobileService: MobileService, zone: NgZone);
+    constructor(store: Store<AppState>, router: Router, authService: AuthService, dialogService: DialogService, utils: UtilsService, translate: TranslateService, whiteLabelingService: WhiteLabelingService, selfRegistrationService: SelfRegistrationService, userPermissionsService: UserPermissionsService, menuService: MenuService, mobileService: MobileService, reportService: ReportService, zone: NgZone);
     getAuthState(): Observable<AuthState>;
     canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | import("@angular/router").UrlTree>;
     canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | import("@angular/router").UrlTree>;

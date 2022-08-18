@@ -8,6 +8,7 @@ import { ResourcesService } from '@core/services/resources.service';
 import { Widget } from '@shared/models/widget.models';
 import { TranslateService } from '@ngx-translate/core';
 import { IModulesMap } from '@modules/common/modules-map.models';
+import { ReportService } from '@core/http/report.service';
 import * as i0 from "@angular/core";
 export declare class WidgetComponentService {
     private window;
@@ -18,6 +19,7 @@ export declare class WidgetComponentService {
     private utils;
     private resources;
     private translate;
+    private reportService;
     private cssParser;
     private widgetsInfoInMemoryCache;
     private widgetsInfoFetchQueue;
@@ -25,7 +27,7 @@ export declare class WidgetComponentService {
     private missingWidgetType;
     private errorWidgetType;
     private editingWidgetType;
-    constructor(window: Window, modulesMap: IModulesMap, homeComponentsModule: Type<any>, dynamicComponentFactoryService: DynamicComponentFactoryService, widgetService: WidgetService, utils: UtilsService, resources: ResourcesService, translate: TranslateService);
+    constructor(window: Window, modulesMap: IModulesMap, homeComponentsModule: Type<any>, dynamicComponentFactoryService: DynamicComponentFactoryService, widgetService: WidgetService, utils: UtilsService, resources: ResourcesService, translate: TranslateService, reportService: ReportService);
     private init;
     getInstantWidgetInfo(widget: Widget): WidgetInfo;
     getWidgetInfo(bundleAlias: string, widgetTypeAlias: string, isSystem: boolean): Observable<WidgetInfo>;
@@ -36,11 +38,12 @@ export declare class WidgetComponentService {
     private createWidgetControllerDescriptor;
     private processWidgetLoadError;
     private resolveWidgetsInfoFetchQueue;
+    private clearWidgetInfoInMemoryCache;
     private createWidgetInfoCacheKey;
     private getWidgetInfoFromCache;
     private putWidgetInfoToCache;
     private deleteWidgetInfoFromCache;
     private deleteWidgetsBundleFromCache;
-    static ɵfac: i0.ɵɵFactoryDeclaration<WidgetComponentService, [null, { optional: true; }, null, null, null, null, null, null]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<WidgetComponentService, [null, { optional: true; }, null, null, null, null, null, null, null]>;
     static ɵprov: i0.ɵɵInjectableDeclaration<WidgetComponentService>;
 }

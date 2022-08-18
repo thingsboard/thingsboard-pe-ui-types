@@ -66,7 +66,7 @@ export declare class SchedulerEventsComponent extends PageComponent implements O
     defaultSortOrder: string;
     defaultEventType: string;
     hidePageSize: boolean;
-    noDataDisplayMessageText: string;
+    noDataDisplayMessageText: any;
     displayedColumns: string[];
     pageLink: PageLink;
     textSearchMode: boolean;

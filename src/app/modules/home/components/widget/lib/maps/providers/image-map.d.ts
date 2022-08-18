@@ -9,6 +9,7 @@ export declare class ImageMap extends LeafletMap {
     height: number;
     imageUrl: string;
     posFunction: PosFuncton;
+    private mapUuid;
     constructor(ctx: WidgetContext, $container: HTMLElement, options: WidgetUnitedMapSettings);
     private mapImage;
     private imageFromUrl;

@@ -1,6 +1,6 @@
 {
     "name": "thingsboard-pe-ui-types",
-    "version": "3.4.0",
+    "version": "3.4.1",
     "description": "TypeScript definitions for ThingsBoard PE UI",
     "homepage": "https://github.com/thingsboard/thingsboard-pe-ui-types",
     "license": "Apache License 2.0",
@@ -39,7 +39,7 @@
         "@types/tooltipster": "^0.0.31",
         "angular-gridster2": "~12.1.1",
         "angular2-hotkeys": "^2.4.0",
-        "leaflet": "^1.7.1",
+        "leaflet": "~1.8.0",
         "leaflet-polylinedecorator": "^1.6.0",
         "leaflet.markercluster": "^1.5.3",
         "ngx-clipboard": "^14.0.2",

@@ -18,6 +18,7 @@ export declare class EntityTypesVersionCreateComponent extends PageComponent imp
     syncStrategies: SyncStrategy[];
     syncStrategyTranslations: Map<SyncStrategy, string>;
     entityTypes: typeof EntityType;
+    loading: boolean;
     overrideEntityTypeTranslationsMap: Map<EntityType | import("@shared/models/entity-type.models").AliasEntityType, string>;
     constructor(store: Store<AppState>, translate: TranslateService, fb: FormBuilder);
     ngOnInit(): void;

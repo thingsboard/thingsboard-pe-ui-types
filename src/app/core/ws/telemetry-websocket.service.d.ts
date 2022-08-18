@@ -6,11 +6,13 @@ import { AppState } from '@core/core.state';
 import { AuthService } from '@core/auth/auth.service';
 import { WebSocketSubject } from 'rxjs/webSocket';
 import Timeout = NodeJS.Timeout;
+import { ReportService } from '@core/http/report.service';
 import * as i0 from "@angular/core";
 export declare class TelemetryWebsocketService implements TelemetryService {
     private store;
     private authService;
     private ngZone;
+    private reportService;
     private window;
     isActive: boolean;
     isOpening: boolean;
@@ -25,7 +27,7 @@ export declare class TelemetryWebsocketService implements TelemetryService {
     cmdsWrapper: TelemetryPluginCmdsWrapper;
     telemetryUri: string;
     dataStream: WebSocketSubject<TelemetryPluginCmdsWrapper | WebsocketDataMsg>;
-    constructor(store: Store<AppState>, authService: AuthService, ngZone: NgZone, window: Window);
+    constructor(store: Store<AppState>, authService: AuthService, ngZone: NgZone, reportService: ReportService, window: Window);
     subscribe(subscriber: TelemetrySubscriber, skipPublish?: boolean): void;
     batchSubscribe(subscribers: TelemetrySubscriber[]): void;
     update(subscriber: TelemetrySubscriber): void;

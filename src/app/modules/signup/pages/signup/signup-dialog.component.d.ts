@@ -19,6 +19,7 @@ export declare class SignupDialogComponent extends DialogComponent<SignupDialogC
     private selfRegistrationService;
     private domSanitizer;
     dialogRef: MatDialogRef<SignupDialogComponent, boolean>;
+    class: string;
     title: string;
     dialogText: SafeHtml;
     constructor(store: Store<AppState>, router: Router, data: SignupDialogData, selfRegistrationService: SelfRegistrationService, domSanitizer: DomSanitizer, dialogRef: MatDialogRef<SignupDialogComponent, boolean>);

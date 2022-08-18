@@ -3,16 +3,17 @@ import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { DefaultTenantProfileConfiguration } from '@shared/models/tenant.model';
+import { RateLimitsType } from './rate-limits/rate-limits.models';
 import * as i0 from "@angular/core";
 export declare class DefaultTenantProfileConfigurationComponent implements ControlValueAccessor, OnInit {
     private store;
     private fb;
     defaultTenantProfileConfigurationFormGroup: FormGroup;
-    rateLimitsPattern: string;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
     disabled: boolean;
+    rateLimitsType: typeof RateLimitsType;
     private propagateChange;
     constructor(store: Store<AppState>, fb: FormBuilder);
     registerOnChange(fn: any): void;

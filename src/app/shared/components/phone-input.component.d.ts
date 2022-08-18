@@ -16,6 +16,7 @@ export declare class PhoneInputComponent implements OnInit, ControlValueAccessor
     appearance: MatFormFieldAppearance;
     placeholder: any;
     label: string;
+    get showFlagSelect(): boolean;
     allCountries: Array<Country>;
     phonePlaceholder: string;
     flagIcon: string;
@@ -23,12 +24,14 @@ export declare class PhoneInputComponent implements OnInit, ControlValueAccessor
     private isLoading;
     get isLoad(): boolean;
     set isLoad(value: boolean);
+    private isLegacy;
     private getExampleNumber;
     private parsePhoneNumberFromString;
     private baseCode;
     private countryCallingCode;
     private modelValue;
     private changeSubscriptions;
+    private validators;
     private propagateChange;
     constructor(translate: TranslateService, fb: FormBuilder, countryCodeData: CountryData);
     ngOnInit(): void;
