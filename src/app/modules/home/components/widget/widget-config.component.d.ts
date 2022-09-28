@@ -91,6 +91,8 @@ export declare class WidgetConfigComponent extends PageComponent implements OnIn
     removeAlarmType(type: string): void;
     addAlarmType(event: MatChipInputEvent): void;
     displayAdvanced(): boolean;
+    displayTimewindowConfig(): boolean;
+    onlyHistoryTimewindow(): boolean;
     onDatasourceDrop(event: CdkDragDrop<string[]>): void;
     removeDatasource(index: number): void;
     addDatasource(): void;

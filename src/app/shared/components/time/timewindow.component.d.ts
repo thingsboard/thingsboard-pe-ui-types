@@ -23,6 +23,12 @@ export declare class TimewindowComponent implements OnInit, OnDestroy, ControlVa
     historyOnlyValue: boolean;
     set historyOnly(val: boolean);
     get historyOnly(): boolean;
+    alwaysDisplayTypePrefixValue: boolean;
+    set alwaysDisplayTypePrefix(val: boolean);
+    get alwaysDisplayTypePrefix(): boolean;
+    quickIntervalOnlyValue: boolean;
+    set quickIntervalOnly(val: boolean);
+    get quickIntervalOnly(): boolean;
     aggregationValue: boolean;
     set aggregation(val: boolean);
     get aggregation(): boolean;
@@ -50,6 +56,7 @@ export declare class TimewindowComponent implements OnInit, OnDestroy, ControlVa
     ngOnDestroy(): void;
     openEditMode(): void;
     private _createTimewindowPanelInjector;
+    private onHistoryOnlyChanged;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
@@ -59,5 +66,5 @@ export declare class TimewindowComponent implements OnInit, OnDestroy, ControlVa
     hideLabel(): boolean;
     private isTimewindowDisabled;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimewindowComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimewindowComponent, "tb-timewindow", never, { "historyOnly": "historyOnly"; "aggregation": "aggregation"; "timezone": "timezone"; "isToolbar": "isToolbar"; "asButton": "asButton"; "isEdit": "isEdit"; "direction": "direction"; "tooltipPosition": "tooltipPosition"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimewindowComponent, "tb-timewindow", never, { "historyOnly": "historyOnly"; "alwaysDisplayTypePrefix": "alwaysDisplayTypePrefix"; "quickIntervalOnly": "quickIntervalOnly"; "aggregation": "aggregation"; "timezone": "timezone"; "isToolbar": "isToolbar"; "asButton": "asButton"; "isEdit": "isEdit"; "direction": "direction"; "tooltipPosition": "tooltipPosition"; "disabled": "disabled"; }, {}, never, never>;
 }

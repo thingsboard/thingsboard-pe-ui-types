@@ -10,6 +10,7 @@ import * as i0 from "@angular/core";
 export declare const TIMEWINDOW_PANEL_DATA: InjectionToken<any>;
 export interface TimewindowPanelData {
     historyOnly: boolean;
+    quickIntervalOnly: boolean;
     timewindow: Timewindow;
     aggregation: boolean;
     timezone: boolean;
@@ -23,6 +24,7 @@ export declare class TimewindowPanelComponent extends PageComponent implements O
     private timeService;
     viewContainerRef: ViewContainerRef;
     historyOnly: boolean;
+    quickIntervalOnly: boolean;
     aggregation: boolean;
     timezone: boolean;
     isEdit: boolean;
@@ -50,6 +52,8 @@ export declare class TimewindowPanelComponent extends PageComponent implements O
     maxHistoryAggInterval(): number;
     currentHistoryTimewindow(): any;
     onHideIntervalChanged(): void;
+    onHideLastIntervalChanged(): void;
+    onHideQuickIntervalChanged(): void;
     onHideAggregationChanged(): void;
     onHideAggIntervalChanged(): void;
     onHideTimezoneChanged(): void;

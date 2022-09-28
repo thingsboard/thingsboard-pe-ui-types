@@ -113,6 +113,7 @@ export declare const HelpLinks: {
         users: string;
         devices: string;
         deviceProfiles: string;
+        assetProfiles: string;
         edges: string;
         assets: string;
         entityViews: string;

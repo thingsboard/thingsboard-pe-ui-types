@@ -14,7 +14,7 @@ import { EntityType } from '@shared/models/entity-type.models';
 import { UtilsService } from '@core/services/utils.service';
 import { WidgetService } from '@core/http/widget.service';
 import { WidgetsBundle } from '@shared/models/widgets-bundle.model';
-import { ImportEntityData, ImportEntitiesResultInfo } from '@shared/models/entity.models';
+import { ImportEntitiesResultInfo, ImportEntityData } from '@shared/models/entity.models';
 import { RequestConfig } from '@core/http/http-utils';
 import { RuleChainImport, RuleChainType } from '@shared/models/rule-chain.models';
 import { RuleChainService } from '@core/http/rule-chain.service';
@@ -28,6 +28,8 @@ import { TenantProfileService } from '@core/http/tenant-profile.service';
 import { DeviceService } from '@core/http/device.service';
 import { AssetService } from '@core/http/asset.service';
 import { EdgeService } from '@core/http/edge.service';
+import { AssetProfileService } from '@core/http/asset-profile.service';
+import { AssetProfile } from '@shared/models/asset.models';
 import * as i0 from "@angular/core";
 export declare class ImportExportService {
     private window;
@@ -38,6 +40,7 @@ export declare class ImportExportService {
     private dashboardUtils;
     private widgetService;
     private deviceProfileService;
+    private assetProfileService;
     private tenantProfileService;
     private entityService;
     private ruleChainService;
@@ -48,7 +51,7 @@ export declare class ImportExportService {
     private utils;
     private itembuffer;
     private dialog;
-    constructor(window: Window, document: Document, store: Store<AppState>, translate: TranslateService, dashboardService: DashboardService, dashboardUtils: DashboardUtilsService, widgetService: WidgetService, deviceProfileService: DeviceProfileService, tenantProfileService: TenantProfileService, entityService: EntityService, ruleChainService: RuleChainService, converterService: ConverterService, deviceService: DeviceService, assetService: AssetService, edgeService: EdgeService, utils: UtilsService, itembuffer: ItemBufferService, dialog: MatDialog);
+    constructor(window: Window, document: Document, store: Store<AppState>, translate: TranslateService, dashboardService: DashboardService, dashboardUtils: DashboardUtilsService, widgetService: WidgetService, deviceProfileService: DeviceProfileService, assetProfileService: AssetProfileService, tenantProfileService: TenantProfileService, entityService: EntityService, ruleChainService: RuleChainService, converterService: ConverterService, deviceService: DeviceService, assetService: AssetService, edgeService: EdgeService, utils: UtilsService, itembuffer: ItemBufferService, dialog: MatDialog);
     exportDashboard(dashboardId: string): void;
     importDashboard(customerId: CustomerId, entityGroupId?: string): Observable<Dashboard>;
     exportWidget(dashboard: Dashboard, sourceState: string, sourceLayout: DashboardLayoutId, widget: Widget): void;
@@ -68,6 +71,8 @@ export declare class ImportExportService {
     importTenantProfile(): Observable<TenantProfile>;
     exportDeviceProfile(deviceProfileId: string): void;
     importDeviceProfile(): Observable<DeviceProfile>;
+    exportAssetProfile(assetProfileId: string): void;
+    importAssetProfile(): Observable<AssetProfile>;
     private processCSVCell;
     exportCsv(data: {
         [key: string]: any;
@@ -86,6 +91,7 @@ export declare class ImportExportService {
     private prepareRuleChainMetaData;
     private validateImportedRuleChain;
     private validateImportedDeviceProfile;
+    private validateImportedAssetProfile;
     private validateImportedTenantProfile;
     private sumObject;
     private handleExportError;

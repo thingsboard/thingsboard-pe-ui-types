@@ -209,7 +209,6 @@ export interface AlarmDataPageLink extends EntityDataPageLink {
 export declare function entityDataPageLinkSortDirection(pageLink: EntityDataPageLink): SortDirection;
 export declare function createDefaultEntityDataPageLink(pageSize: number): EntityDataPageLink;
 export declare const singleEntityDataPageLink: EntityDataPageLink;
-export declare const defaultEntityDataPageLink: EntityDataPageLink;
 export interface EntityCountQuery {
     entityFilter: EntityFilter;
     keyFilters?: Array<KeyFilter>;
@@ -227,6 +226,11 @@ export interface AlarmDataQuery extends AbstractDataQuery<AlarmDataPageLink> {
 export interface TsValue {
     ts: number;
     value: string;
+    count?: number;
+}
+export interface ComparisonTsValue {
+    current?: TsValue;
+    previous?: TsValue;
 }
 export interface EntityData {
     entityId: EntityId;
@@ -237,6 +241,9 @@ export interface EntityData {
     };
     timeseries: {
         [key: string]: Array<TsValue>;
+    };
+    aggLatest?: {
+        [id: number]: ComparisonTsValue;
     };
 }
 export interface AlarmData extends AlarmInfo {

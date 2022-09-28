@@ -9,6 +9,7 @@ export declare enum EntityType {
     ASSET = "ASSET",
     DEVICE = "DEVICE",
     DEVICE_PROFILE = "DEVICE_PROFILE",
+    ASSET_PROFILE = "ASSET_PROFILE",
     ALARM = "ALARM",
     ENTITY_GROUP = "ENTITY_GROUP",
     CONVERTER = "CONVERTER",

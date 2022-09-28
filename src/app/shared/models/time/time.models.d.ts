@@ -54,6 +54,8 @@ export interface Timewindow {
     displayValue?: string;
     displayTimezoneAbbr?: string;
     hideInterval?: boolean;
+    hideQuickInterval?: boolean;
+    hideLastInterval?: boolean;
     hideAggregation?: boolean;
     hideAggInterval?: boolean;
     hideTimezone?: boolean;
@@ -108,7 +110,7 @@ export declare enum QuickTimeInterval {
 export declare const QuickTimeIntervalTranslationMap: Map<QuickTimeInterval, string>;
 export declare function historyInterval(timewindowMs: number): Timewindow;
 export declare function defaultTimewindow(timeService: TimeService): Timewindow;
-export declare function initModelFromDefaultTimewindow(value: Timewindow, timeService: TimeService): Timewindow;
+export declare function initModelFromDefaultTimewindow(value: Timewindow, quickIntervalOnly: boolean, timeService: TimeService): Timewindow;
 export declare function toHistoryTimewindow(timewindow: Timewindow, startTimeMs: number, endTimeMs: number, interval: number, timeService: TimeService): Timewindow;
 export declare function timewindowTypeChanged(newTimewindow: Timewindow, oldTimewindow: Timewindow): boolean;
 export declare function calculateTsOffset(timezone?: string): number;

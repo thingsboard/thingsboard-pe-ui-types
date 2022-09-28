@@ -3,6 +3,7 @@ import { EntityId } from '@shared/models/id/entity-id';
 import { NavTreeNode } from '@shared/components/nav-tree.component';
 import { Datasource } from '@shared/models/widget.models';
 import { EntityRelationsQuery } from '@shared/models/relation.models';
+import { WidgetContext } from '@home/models/widget-component.models';
 export interface EntitiesHierarchyWidgetSettings {
     nodeRelationQueryFunction: string;
     nodeHasChildrenFunction: string;
@@ -35,13 +36,13 @@ export interface HierarchyNodeIconInfo {
     iconUrl?: string;
     materialIcon?: string;
 }
-export declare type NodeRelationQueryFunction = (nodeCtx: HierarchyNodeContext) => EntityRelationsQuery | 'default';
-export declare type NodeTextFunction = (nodeCtx: HierarchyNodeContext) => string;
-export declare type NodeDisabledFunction = (nodeCtx: HierarchyNodeContext) => boolean;
-export declare type NodeIconFunction = (nodeCtx: HierarchyNodeContext) => HierarchyNodeIconInfo | 'default';
-export declare type NodeOpenedFunction = (nodeCtx: HierarchyNodeContext) => boolean;
-export declare type NodeHasChildrenFunction = (nodeCtx: HierarchyNodeContext) => boolean;
-export declare type NodesSortFunction = (nodeCtx1: HierarchyNodeContext, nodeCtx2: HierarchyNodeContext) => number;
+export declare type NodeRelationQueryFunction = (widgetCtx: WidgetContext, nodeCtx: HierarchyNodeContext) => EntityRelationsQuery | 'default';
+export declare type NodeTextFunction = (widgetCtx: WidgetContext, nodeCtx: HierarchyNodeContext) => string;
+export declare type NodeDisabledFunction = (widgetCtx: WidgetContext, nodeCtx: HierarchyNodeContext) => boolean;
+export declare type NodeIconFunction = (widgetCtx: WidgetContext, nodeCtx: HierarchyNodeContext) => HierarchyNodeIconInfo | 'default';
+export declare type NodeOpenedFunction = (widgetCtx: WidgetContext, nodeCtx: HierarchyNodeContext) => boolean;
+export declare type NodeHasChildrenFunction = (widgetCtx: WidgetContext, nodeCtx: HierarchyNodeContext) => boolean;
+export declare type NodesSortFunction = (widgetCtx: WidgetContext, nodeCtx1: HierarchyNodeContext, nodeCtx2: HierarchyNodeContext) => number;
 export declare function loadNodeCtxFunction<F extends (...args: any[]) => any>(functionBody: string, argNames: string, ...args: any[]): F;
 export declare function materialIconHtml(materialIcon: string): string;
 export declare function iconUrlHtml(iconUrl: string): string;

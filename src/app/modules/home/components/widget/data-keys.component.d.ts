@@ -7,7 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { MatAutocomplete } from '@angular/material/autocomplete';
 import { MatChipInputEvent, MatChipList } from '@angular/material/chips';
 import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
-import { DataKey, DatasourceType, Widget, JsonSettingsSchema, widgetType } from '@shared/models/widget.models';
+import { DataKey, DatasourceType, JsonSettingsSchema, Widget, widgetType } from '@shared/models/widget.models';
 import { IAliasController } from '@core/api/widget-api.models';
 import { DataKeysCallbacks } from './data-keys.component.models';
 import { UtilsService } from '@core/services/utils.service';
@@ -17,6 +17,7 @@ import { DialogService } from '@core/services/dialog.service';
 import { MatDialog } from '@angular/material/dialog';
 import { MatChipDropEvent } from '@app/shared/components/mat-chip-draggable.directive';
 import { Dashboard } from '@shared/models/dashboard.models';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import * as i0 from "@angular/core";
 export declare class DataKeysComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnChanges, ErrorStateMatcher {
     private store;
@@ -26,6 +27,7 @@ export declare class DataKeysComponent implements ControlValueAccessor, OnInit, 
     private dialogs;
     private dialog;
     private fb;
+    private sanitizer;
     truncate: TruncatePipe;
     datasourceTypes: typeof DatasourceType;
     widgetTypes: typeof widgetType;
@@ -66,7 +68,7 @@ export declare class DataKeysComponent implements ControlValueAccessor, OnInit, 
     private fetchObservable$;
     private dirty;
     private propagateChange;
-    constructor(store: Store<AppState>, errorStateMatcher: ErrorStateMatcher, translate: TranslateService, utils: UtilsService, dialogs: DialogService, dialog: MatDialog, fb: FormBuilder, truncate: TruncatePipe);
+    constructor(store: Store<AppState>, errorStateMatcher: ErrorStateMatcher, translate: TranslateService, utils: UtilsService, dialogs: DialogService, dialog: MatDialog, fb: FormBuilder, sanitizer: DomSanitizer, truncate: TruncatePipe);
     updateValidators(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -89,6 +91,7 @@ export declare class DataKeysComponent implements ControlValueAccessor, OnInit, 
     editDataKey(key: DataKey, index: number): void;
     createKey(name: string, dataKeyType?: DataKeyType): void;
     displayKeyFn(key?: DataKey): string | undefined;
+    displayDataKeyNameFn(key: DataKey): SafeHtml;
     private fetchKeys;
     private getKeys;
     private createDataKeyFilter;
@@ -96,6 +99,6 @@ export declare class DataKeysComponent implements ControlValueAccessor, OnInit, 
     clear(value?: string): void;
     get isEntityCountDatasource(): boolean;
     private clearSearchCache;
-    static ɵfac: i0.ɵɵFactoryDeclaration<DataKeysComponent, [null, { skipSelf: true; }, null, null, null, null, null, null]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<DataKeysComponent, [null, { skipSelf: true; }, null, null, null, null, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<DataKeysComponent, "tb-data-keys", never, { "widgetType": "widgetType"; "datasourceType": "datasourceType"; "maxDataKeys": "maxDataKeys"; "optDataKeys": "optDataKeys"; "aliasController": "aliasController"; "datakeySettingsSchema": "datakeySettingsSchema"; "dataKeySettingsDirective": "dataKeySettingsDirective"; "dashboard": "dashboard"; "widget": "widget"; "callbacks": "callbacks"; "entityAliasId": "entityAliasId"; "required": "required"; "disabled": "disabled"; }, {}, never, never>;
 }

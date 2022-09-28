@@ -35,6 +35,7 @@ export declare enum Resource {
     ALARM = "ALARM",
     DEVICE = "DEVICE",
     DEVICE_PROFILE = "DEVICE_PROFILE",
+    ASSET_PROFILE = "ASSET_PROFILE",
     ASSET = "ASSET",
     CUSTOMER = "CUSTOMER",
     DASHBOARD = "DASHBOARD",

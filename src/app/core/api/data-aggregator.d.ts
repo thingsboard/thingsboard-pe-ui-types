@@ -1,13 +1,15 @@
-import { SubscriptionData, SubscriptionDataHolder } from '@app/shared/models/telemetry/telemetry.models';
+import { AggKey, IndexedSubscriptionData } from '@app/shared/models/telemetry/telemetry.models';
 import { SubscriptionTimewindow } from '@shared/models/time/time.models';
 import { UtilsService } from '@core/services/utils.service';
-export declare type onAggregatedData = (data: SubscriptionData, detectChanges: boolean) => void;
+export declare type onAggregatedData = (data: IndexedSubscriptionData, detectChanges: boolean) => void;
 export declare class DataAggregator {
     private onDataCb;
-    private tsKeyNames;
+    private tsKeys;
+    private isLatestDataAgg;
     private subsTw;
     private utils;
     private ignoreDataUpdateOnIntervalTick;
+    constructor(onDataCb: onAggregatedData, tsKeys: AggKey[], isLatestDataAgg: boolean, subsTw: SubscriptionTimewindow, utils: UtilsService, ignoreDataUpdateOnIntervalTick: boolean);
     private dataBuffer;
     private data;
     private readonly lastPrevKvPairData;
@@ -15,24 +17,23 @@ export declare class DataAggregator {
     private dataReceived;
     private resetPending;
     private updatedData;
-    private noAggregation;
     private aggregationTimeout;
-    private readonly aggFunction;
     private intervalTimeoutHandle;
     private intervalScheduledTime;
     private startTs;
     private endTs;
     private elapsed;
-    constructor(onDataCb: onAggregatedData, tsKeyNames: string[], subsTw: SubscriptionTimewindow, utils: UtilsService, ignoreDataUpdateOnIntervalTick: boolean);
+    private static convertValue;
+    private static getAggFunction;
     updateOnDataCb(newOnDataCb: onAggregatedData): onAggregatedData;
     reset(subsTw: SubscriptionTimewindow): void;
     destroy(): void;
-    onData(data: SubscriptionDataHolder, update: boolean, history: boolean, detectChanges: boolean): void;
+    onData(data: IndexedSubscriptionData, update: boolean, history: boolean, detectChanges: boolean): void;
     private calculateStartEndTs;
     private onInterval;
     private updateData;
     private updateStateBounds;
     private processAggregatedData;
     private updateAggregatedData;
-    private convertValue;
+    private aggKeyById;
 }

@@ -2,7 +2,7 @@ import { ElementRef, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { DataKey, Widget } from '@shared/models/widget.models';
+import { ComparisonResultType, DataKey, Widget, widgetType } from '@shared/models/widget.models';
 import { ControlValueAccessor, FormBuilder, FormControl, FormGroup, Validator } from '@angular/forms';
 import { UtilsService } from '@core/services/utils.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -15,6 +15,7 @@ import { JsFuncComponent } from '@shared/components/js-func.component';
 import { WidgetService } from '@core/http/widget.service';
 import { Dashboard } from '@shared/models/dashboard.models';
 import { IAliasController } from '@core/api/widget-api.models';
+import { AggregationType } from '@shared/models/time/time.models';
 import * as i0 from "@angular/core";
 export declare class DataKeyConfigComponent extends PageComponent implements OnInit, ControlValueAccessor, Validator {
     protected store: Store<AppState>;
@@ -25,11 +26,20 @@ export declare class DataKeyConfigComponent extends PageComponent implements OnI
     private widgetService;
     private fb;
     dataKeyTypes: typeof DataKeyType;
+    widgetTypes: typeof widgetType;
+    aggregations: string[];
+    aggregationTypes: typeof AggregationType;
+    aggregationTypesTranslations: Map<AggregationType, string>;
+    dataKeyAggregationTypeHintTranslations: Map<AggregationType, string>;
+    comparisonResultTypes: typeof ComparisonResultType;
+    comparisonResults: string[];
+    comparisonResultTypeTranslations: Map<ComparisonResultType, string>;
     entityAliasId: string;
     callbacks: DataKeysCallbacks;
     dashboard: Dashboard;
     aliasController: IAliasController;
     widget: Widget;
+    widgetType: widgetType;
     dataKeySettingsSchema: any;
     dataKeySettingsDirective: string;
     showPostProcessing: boolean;
@@ -54,6 +64,9 @@ export declare class DataKeyConfigComponent extends PageComponent implements OnI
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: DataKey): void;
+    private updateValidators;
+    private updateComparisonValues;
+    private updateComparisonValidators;
     private updateModel;
     clearKey(): void;
     private fetchKeys;
@@ -72,5 +85,5 @@ export declare class DataKeyConfigComponent extends PageComponent implements OnI
         dataKey?: undefined;
     };
     static ɵfac: i0.ɵɵFactoryDeclaration<DataKeyConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeyConfigComponent, "tb-data-key-config", never, { "entityAliasId": "entityAliasId"; "callbacks": "callbacks"; "dashboard": "dashboard"; "aliasController": "aliasController"; "widget": "widget"; "dataKeySettingsSchema": "dataKeySettingsSchema"; "dataKeySettingsDirective": "dataKeySettingsDirective"; "showPostProcessing": "showPostProcessing"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeyConfigComponent, "tb-data-key-config", never, { "entityAliasId": "entityAliasId"; "callbacks": "callbacks"; "dashboard": "dashboard"; "aliasController": "aliasController"; "widget": "widget"; "widgetType": "widgetType"; "dataKeySettingsSchema": "dataKeySettingsSchema"; "dataKeySettingsDirective": "dataKeySettingsDirective"; "showPostProcessing": "showPostProcessing"; }, {}, never, never>;
 }

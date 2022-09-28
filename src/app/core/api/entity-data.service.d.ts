@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 import * as i0 from "@angular/core";
 export interface EntityDataListener {
     subscriptionType: widgetType;
+    useTimewindow?: boolean;
     subscriptionTimewindow?: SubscriptionTimewindow;
     latestTsOffset?: number;
     configDatasource: Datasource;
@@ -33,12 +34,12 @@ export declare class EntityDataService {
     private utils;
     constructor(telemetryService: TelemetryWebsocketService, utils: UtilsService);
     private static isUnresolvedDatasource;
+    private static toSubscriptionDataKey;
     prepareSubscription(listener: EntityDataListener, ignoreDataUpdateOnIntervalTick?: boolean): Observable<EntityDataLoadResult>;
     startSubscription(listener: EntityDataListener): void;
     subscribeForPaginatedData(listener: EntityDataListener, pageLink: EntityDataPageLink, keyFilters: KeyFilter[], ignoreDataUpdateOnIntervalTick?: boolean): Observable<EntityDataLoadResult>;
     stopSubscription(listener: EntityDataListener): void;
     private createSubscriptionOptions;
-    private toSubscriptionDataKey;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityDataService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<EntityDataService>;
 }

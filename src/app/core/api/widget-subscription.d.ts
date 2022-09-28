@@ -20,6 +20,7 @@ export declare class WidgetSubscription implements IWidgetSubscription {
     timezone: string;
     subscriptionTimewindow: SubscriptionTimewindow;
     useDashboardTimewindow: boolean;
+    useTimewindow: boolean;
     tsOffset: number;
     hasDataPageLink: boolean;
     singleEntity: boolean;

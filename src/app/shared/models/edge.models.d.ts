@@ -6,7 +6,7 @@ import { EntitySearchQuery } from '@shared/models/relation.models';
 import { RuleChainId } from '@shared/models/id/rule-chain-id';
 import { BaseEventBody } from '@shared/models/event.models';
 import { EventId } from '@shared/models/id/event-id';
-import { EntityType } from "@shared/models/entity-type.models";
+import { EntityType } from '@shared/models/entity-type.models';
 export interface Edge extends BaseData<EdgeId> {
     tenantId?: TenantId;
     customerId?: CustomerId;
@@ -32,6 +32,7 @@ export declare enum EdgeEventType {
     ASSET = "ASSET",
     DEVICE = "DEVICE",
     DEVICE_PROFILE = "DEVICE_PROFILE",
+    ASSET_PROFILE = "ASSET_PROFILE",
     ENTITY_VIEW = "ENTITY_VIEW",
     ALARM = "ALARM",
     RULE_CHAIN = "RULE_CHAIN",

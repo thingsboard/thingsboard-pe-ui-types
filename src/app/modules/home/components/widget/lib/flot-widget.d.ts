@@ -24,6 +24,7 @@ export declare class TbFlot {
     private predefinedThresholds;
     private latestDataThresholds;
     private attributesThresholds;
+    private latestData;
     private labelPatternsSourcesSubscription;
     private labelPatternsSourcesData;
     private plotInited;
@@ -54,6 +55,7 @@ export declare class TbFlot {
     private init;
     update(): void;
     latestDataUpdate(): void;
+    private latestDataByDataIndex;
     private scalingPieRadius;
     resize(): void;
     checkMouseEvents(): void;

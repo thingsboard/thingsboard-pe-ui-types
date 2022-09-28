@@ -99,12 +99,32 @@ export interface TimeSeriesCmd {
     agg: AggregationType;
     fetchLatestPreviousPoint?: boolean;
 }
+export interface AggKey {
+    id: number;
+    key: string;
+    agg: AggregationType;
+    previousStartTs?: number;
+    previousEndTs?: number;
+    previousValueOnly?: boolean;
+}
+export interface AggEntityHistoryCmd {
+    keys: Array<AggKey>;
+    startTs: number;
+    endTs: number;
+}
+export interface AggTimeSeriesCmd {
+    keys: Array<AggKey>;
+    startTs: number;
+    timeWindow: number;
+}
 export declare class EntityDataCmd implements WebsocketCmd {
     cmdId: number;
     query?: EntityDataQuery;
     historyCmd?: EntityHistoryCmd;
     latestCmd?: LatestValueCmd;
     tsCmd?: TimeSeriesCmd;
+    aggHistoryCmd?: AggEntityHistoryCmd;
+    aggTsCmd?: AggTimeSeriesCmd;
     isEmpty(): boolean;
 }
 export declare class EntityCountCmd implements WebsocketCmd {
@@ -126,6 +146,7 @@ export declare class AlarmDataUnsubscribeCmd implements WebsocketCmd {
     cmdId: number;
 }
 export declare class TelemetryPluginCmdsWrapper {
+    constructor();
     attrSubCmds: Array<AttributesSubscriptionCmd>;
     tsSubCmds: Array<TimeseriesSubscriptionCmd>;
     historyCmds: Array<GetHistoryCmd>;
@@ -135,14 +156,16 @@ export declare class TelemetryPluginCmdsWrapper {
     alarmDataUnsubscribeCmds: Array<AlarmDataUnsubscribeCmd>;
     entityCountCmds: Array<EntityCountCmd>;
     entityCountUnsubscribeCmds: Array<EntityCountUnsubscribeCmd>;
-    constructor();
+    private static popCmds;
     hasCommands(): boolean;
     clear(): void;
     preparePublishCommands(maxCommands: number): TelemetryPluginCmdsWrapper;
-    private popCmds;
 }
 export interface SubscriptionData {
-    [key: string]: [number, any][];
+    [key: string]: [number, any, number?][];
+}
+export interface IndexedSubscriptionData {
+    [id: number]: [number, any, number?][];
 }
 export interface SubscriptionDataHolder {
     data: SubscriptionData;
@@ -206,15 +229,15 @@ export declare class DataUpdate<T> extends CmdUpdate implements DataUpdateMsg<T>
 }
 export declare class EntityDataUpdate extends DataUpdate<EntityData> {
     constructor(msg: EntityDataUpdateMsg);
+    private static processEntityData;
     prepareData(tsOffset: number): void;
-    private processEntityData;
 }
 export declare class AlarmDataUpdate extends DataUpdate<AlarmData> {
+    constructor(msg: AlarmDataUpdateMsg);
     allowedEntities: number;
     totalEntities: number;
-    constructor(msg: AlarmDataUpdateMsg);
+    private static processAlarmData;
     prepareData(tsOffset: number): void;
-    private processAlarmData;
 }
 export declare class EntityCountUpdate extends CmdUpdate {
     count: number;

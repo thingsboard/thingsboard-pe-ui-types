@@ -1,7 +1,7 @@
 import { BaseData } from '@shared/models/base-data';
 import { TenantId } from '@shared/models/id/tenant-id';
 import { WidgetTypeId } from '@shared/models/id/widget-type-id';
-import { Timewindow } from '@shared/models/time/time.models';
+import { AggregationType, ComparisonDuration, Timewindow } from '@shared/models/time/time.models';
 import { EntityType } from '@shared/models/entity-type.models';
 import { AlarmSearchStatus, AlarmSeverity } from '@shared/models/alarm.models';
 import { DataKeyType } from './telemetry/telemetry.models';
@@ -78,6 +78,7 @@ export interface WidgetTypeParameters {
     hasAdditionalLatestDataKeys?: boolean;
     warnOnPageDataOverflow?: boolean;
     ignoreDataUpdateOnIntervalTick?: boolean;
+    processNoDataByWidget?: boolean;
 }
 export interface WidgetControllerDescriptor {
     widgetTypeFunction?: any;
@@ -130,8 +131,19 @@ export interface LegendConfig {
     showLatest: boolean;
 }
 export declare function defaultLegendConfig(wType: widgetType): LegendConfig;
+export declare enum ComparisonResultType {
+    PREVIOUS_VALUE = "PREVIOUS_VALUE",
+    DELTA_ABSOLUTE = "DELTA_ABSOLUTE",
+    DELTA_PERCENT = "DELTA_PERCENT"
+}
+export declare const comparisonResultTypeTranslationMap: Map<ComparisonResultType, string>;
 export interface KeyInfo {
     name: string;
+    aggregationType?: AggregationType;
+    comparisonEnabled?: boolean;
+    timeForComparison?: ComparisonDuration;
+    comparisonCustomIntervalValue?: number;
+    comparisonResultType?: ComparisonResultType;
     label?: string;
     color?: string;
     funcBody?: string;
@@ -139,6 +151,7 @@ export interface KeyInfo {
     units?: string;
     decimals?: number;
 }
+export declare const dataKeyAggregationTypeHintTranslationMap: Map<AggregationType, string>;
 export interface DataKey extends KeyInfo {
     type: DataKeyType;
     pattern?: string;
@@ -183,6 +196,8 @@ export interface Datasource {
     latestDataKeyStartIndex?: number;
     [key: string]: any;
 }
+export declare function datasourcesHasAggregation(datasources?: Array<Datasource>): boolean;
+export declare function datasourcesHasOnlyComparisonAggregation(datasources?: Array<Datasource>): boolean;
 export interface FormattedData {
     $datasource: Datasource;
     entityName: string;
