@@ -11,6 +11,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { ItemBufferService } from '@app/core/services/item-buffer.service';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 import { TbCheatSheetComponent } from '@shared/components/cheatsheet.component';
+import { TbPopoverComponent } from '@shared/components/popover.component';
 import * as i0 from "@angular/core";
 export declare class DashboardLayoutComponent extends PageComponent implements ILayoutController, DashboardCallbacks, OnInit, OnDestroy {
     protected store: Store<AppState>;
@@ -32,6 +33,7 @@ export declare class DashboardLayoutComponent extends PageComponent implements I
     isMobile: boolean;
     widgetEditMode: boolean;
     parentDashboard?: IDashboardComponent;
+    popoverComponent?: TbPopoverComponent;
     dashboard: IDashboardComponent;
     private rxSubscriptions;
     constructor(store: Store<AppState>, translate: TranslateService, itembuffer: ItemBufferService, sanitizer: DomSanitizer);
@@ -56,5 +58,5 @@ export declare class DashboardLayoutComponent extends PageComponent implements I
     pasteWidget($event: Event): void;
     pasteWidgetReference($event: Event): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardLayoutComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardLayoutComponent, "tb-dashboard-layout", never, { "dashboardCheatSheet": "dashboardCheatSheet"; "layoutCtx": "layoutCtx"; "dashboardCtx": "dashboardCtx"; "isEdit": "isEdit"; "isEditingWidget": "isEditingWidget"; "isMobile": "isMobile"; "widgetEditMode": "widgetEditMode"; "parentDashboard": "parentDashboard"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardLayoutComponent, "tb-dashboard-layout", never, { "dashboardCheatSheet": "dashboardCheatSheet"; "layoutCtx": "layoutCtx"; "dashboardCtx": "dashboardCtx"; "isEdit": "isEdit"; "isEditingWidget": "isEditingWidget"; "isMobile": "isMobile"; "widgetEditMode": "widgetEditMode"; "parentDashboard": "parentDashboard"; "popoverComponent": "popoverComponent"; }, {}, never, never>;
 }

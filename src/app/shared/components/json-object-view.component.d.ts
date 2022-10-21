@@ -1,10 +1,10 @@
-import { ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { ElementRef, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { Ace } from 'ace-builds';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { RafService } from '@core/services/raf.service';
 import * as i0 from "@angular/core";
-export declare class JsonObjectViewComponent implements OnInit {
+export declare class JsonObjectViewComponent implements OnInit, OnDestroy {
     elementRef: ElementRef;
     protected store: Store<AppState>;
     private raf;
@@ -29,6 +29,7 @@ export declare class JsonObjectViewComponent implements OnInit {
     set autoHeight(value: boolean);
     constructor(elementRef: ElementRef, store: Store<AppState>, raf: RafService, renderer: Renderer2);
     ngOnInit(): void;
+    ngOnDestroy(): void;
     updateEditorSize(editorElement: any, content: string, editor: Ace.Editor): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

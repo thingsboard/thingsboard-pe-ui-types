@@ -3,6 +3,7 @@ import { Direction, Directionality } from '@angular/cdk/bidi';
 import { CdkConnectedOverlay, CdkOverlayOrigin, ConnectedOverlayPositionChange, ConnectionPositionPair } from '@angular/cdk/overlay';
 import { Subject } from 'rxjs';
 import { PopoverPlacement } from '@shared/components/popover.models';
+import { AnimationBuilder } from '@angular/animations';
 import * as i0 from "@angular/core";
 export declare type TbPopoverTrigger = 'click' | 'focus' | 'hover' | null;
 export declare class TbPopoverDirective implements OnChanges, OnDestroy, AfterViewInit {
@@ -51,9 +52,11 @@ export declare class TbPopoverDirective implements OnChanges, OnDestroy, AfterVi
 export declare class TbPopoverComponent implements OnDestroy, OnInit {
     cdr: ChangeDetectorRef;
     private renderer;
+    private animationBuilder;
     private directionality;
     overlay: CdkConnectedOverlay;
     popoverRoot: ElementRef<HTMLElement>;
+    popover: ElementRef<HTMLElement>;
     tbContent: string | TemplateRef<void> | null;
     tbComponentFactory: ComponentFactory<any> | null;
     tbComponentRef: ComponentRef<any> | null;
@@ -100,13 +103,15 @@ export declare class TbPopoverComponent implements OnDestroy, OnInit {
     positions: ConnectionPositionPair[];
     private parentScrollSubscription;
     private intersectionObserver;
-    constructor(cdr: ChangeDetectorRef, renderer: Renderer2, directionality: Directionality);
+    constructor(cdr: ChangeDetectorRef, renderer: Renderer2, animationBuilder: AnimationBuilder, directionality: Directionality);
     ngOnInit(): void;
     ngOnDestroy(): void;
     closeButtonClick($event: Event): void;
     show(): void;
     hide(): void;
     updateByDirective(): void;
+    resize(width: string, height: string, animationDurationMs?: number): void;
+    private setSize;
     updatePosition(): void;
     onPositionChange(position: ConnectedOverlayPositionChange): void;
     updateStyles(): void;
@@ -117,6 +122,6 @@ export declare class TbPopoverComponent implements OnDestroy, OnInit {
     private isTopOverlay;
     private updateVisibilityByContent;
     private isEmpty;
-    static ɵfac: i0.ɵɵFactoryDeclaration<TbPopoverComponent, [null, null, { optional: true; }]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<TbPopoverComponent, [null, null, null, { optional: true; }]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<TbPopoverComponent, "tb-popover", ["tbPopoverComponent"], {}, {}, never, never>;
 }

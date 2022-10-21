@@ -11,10 +11,12 @@ import { JsonContentComponent } from '@shared/components/json-content.component'
 import { ConverterDebugInput } from '@shared/models/converter.models';
 import { ConverterService } from '@core/http/converter.service';
 import { WhiteLabelingService } from '@core/http/white-labeling.service';
+import { ScriptLanguage } from '@shared/models/rule-node.models';
 import * as i0 from "@angular/core";
 export interface ConverterTestDialogData {
     isDecoder: boolean;
     funcBody: string;
+    scriptLang?: ScriptLanguage;
     debugIn: ConverterDebugInput;
 }
 export declare class ConverterTestDialogComponent extends DialogComponent<ConverterTestDialogComponent, string> implements AfterViewInit, ErrorStateMatcher {
@@ -41,6 +43,8 @@ export declare class ConverterTestDialogComponent extends DialogComponent<Conver
     contentType: typeof ContentType;
     contentTypes: string[];
     contentTypesInfoMap: Map<ContentType, import("@shared/models/constants").ContentTypeData>;
+    scriptLanguage: typeof ScriptLanguage;
+    scriptLang: ScriptLanguage;
     constructor(store: Store<AppState>, router: Router, data: ConverterTestDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<ConverterTestDialogComponent, string>, fb: FormBuilder, wl: WhiteLabelingService, converterService: ConverterService);
     init(): void;
     private prepareStringContent;

@@ -61,7 +61,8 @@ export declare class WidgetContext {
     private dashboardWidget;
     private widget;
     parentDashboard?: IDashboardComponent;
-    constructor(dashboard: IDashboardComponent, dashboardWidget: IDashboardWidget, widget: Widget, parentDashboard?: IDashboardComponent);
+    popoverComponent?: TbPopoverComponent;
+    constructor(dashboard: IDashboardComponent, dashboardWidget: IDashboardWidget, widget: Widget, parentDashboard?: IDashboardComponent, popoverComponent?: TbPopoverComponent);
     get stateController(): IStateController;
     get aliasController(): IAliasController;
     get dashboardTimewindow(): Timewindow;

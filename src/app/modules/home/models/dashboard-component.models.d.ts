@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { IterableDiffer, KeyValueDiffer } from '@angular/core';
 import { IAliasController, IStateController } from '@app/core/api/widget-api.models';
 import { UtilsService } from '@core/services/utils.service';
+import { TbPopoverComponent } from '@shared/components/popover.component';
 export interface WidgetsData {
     widgets: Array<Widget>;
     widgetLayouts?: WidgetLayouts;
@@ -66,6 +67,7 @@ export declare class DashboardWidgets implements Iterable<DashboardWidget> {
     widgets: Iterable<Widget>;
     widgetLayouts: WidgetLayouts;
     parentDashboard?: IDashboardComponent;
+    popoverComponent?: TbPopoverComponent;
     [Symbol.iterator](): Iterator<DashboardWidget>;
     get activeDashboardWidgets(): Array<DashboardWidget>;
     constructor(dashboard: IDashboardComponent, widgetsDiffer: IterableDiffer<Widget>, widgetLayoutsDiffer: KeyValueDiffer<string, WidgetLayout>);
@@ -87,6 +89,7 @@ export declare class DashboardWidget implements GridsterItem, IDashboardWidget {
     widget: Widget;
     widgetLayout?: WidgetLayout;
     private parentDashboard?;
+    private popoverComponent?;
     private highlightedValue;
     private selectedValue;
     isFullscreen: boolean;
@@ -130,7 +133,7 @@ export declare class DashboardWidget implements GridsterItem, IDashboardWidget {
     set highlighted(highlighted: boolean);
     get selected(): boolean;
     set selected(selected: boolean);
-    constructor(dashboard: IDashboardComponent, widget: Widget, widgetLayout?: WidgetLayout, parentDashboard?: IDashboardComponent);
+    constructor(dashboard: IDashboardComponent, widget: Widget, widgetLayout?: WidgetLayout, parentDashboard?: IDashboardComponent, popoverComponent?: TbPopoverComponent);
     gridsterItemComponent$(): Observable<GridsterItemComponentInterface>;
     updateWidgetParams(detectChanges?: boolean): void;
     exportWidgetData($event: Event, widgetExportType: WidgetExportType): void;

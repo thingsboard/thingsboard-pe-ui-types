@@ -20,7 +20,7 @@ export declare class ProfileComponent extends PageComponent implements OnInit, H
     profile: FormGroup;
     user: User;
     languageList: any;
-    authState: import("../../../../core/auth/auth.models").AuthState;
+    authState: import("../../../../core/public-api").AuthState;
     constructor(store: Store<AppState>, route: ActivatedRoute, userService: UserService, translate: TranslateService, fb: FormBuilder);
     ngOnInit(): void;
     private buildProfileForm;

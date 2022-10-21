@@ -8,6 +8,7 @@ import { Converter, ConverterDebugInput, ConverterType } from '@shared/models/co
 import { ConverterService } from '@core/http/converter.service';
 import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
 import { MatDialog } from '@angular/material/dialog';
+import { ScriptLanguage } from '@shared/models/rule-node.models';
 import * as i0 from "@angular/core";
 export declare class ConverterComponent extends EntityComponent<Converter> {
     protected store: Store<AppState>;
@@ -21,12 +22,16 @@ export declare class ConverterComponent extends EntityComponent<Converter> {
     converterType: typeof ConverterType;
     converterTypes: string[];
     converterTypeTranslations: Map<ConverterType, string>;
+    mvelEnabled: boolean;
+    scriptLanguage: typeof ScriptLanguage;
     constructor(store: Store<AppState>, translate: TranslateService, converterService: ConverterService, dialog: MatDialog, entityValue: Converter, entitiesTableConfigValue: EntityTableConfig<Converter>, fb: FormBuilder, cd: ChangeDetectorRef);
     ngOnInit(): void;
     hideDelete(): boolean;
     buildForm(entity: Converter): FormGroup;
     private checkIsNewConverter;
     private converterTypeChanged;
+    private converterScriptLangChanged;
+    private setupDefaultScriptBody;
     updateForm(entity: Converter): void;
     onConverterIdCopied($event: any): void;
     openConverterTestDialog(isDecoder: boolean): void;

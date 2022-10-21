@@ -6,7 +6,7 @@ import { PageLink } from '@shared/models/page/page-link';
 import { PageData } from '@shared/models/page/page-data';
 import { RuleChain, RuleChainMetaData, RuleChainType } from '@shared/models/rule-chain.models';
 import { ComponentDescriptorService } from './component-descriptor.service';
-import { IRuleNodeConfigurationComponent, LinkLabel, RuleNodeComponentDescriptor, RuleNodeConfiguration, TestScriptInputParams, TestScriptResult } from '@app/shared/models/rule-node.models';
+import { IRuleNodeConfigurationComponent, LinkLabel, RuleNodeComponentDescriptor, RuleNodeConfiguration, ScriptLanguage, TestScriptInputParams, TestScriptResult } from '@app/shared/models/rule-node.models';
 import { ResourcesService } from '../services/resources.service';
 import { TranslateService } from '@ngx-translate/core';
 import { DebugRuleNodeEventBody } from '@app/shared/models/event.models';
@@ -40,7 +40,7 @@ export declare class RuleChainService {
     ruleNodeAllowCustomLinks(component: RuleNodeComponentDescriptor): boolean;
     ruleNodeSourceRuleChainId(component: RuleNodeComponentDescriptor, config: RuleNodeConfiguration): string;
     getLatestRuleNodeDebugInput(ruleNodeId: string, config?: RequestConfig): Observable<DebugRuleNodeEventBody>;
-    testScript(inputParams: TestScriptInputParams, config?: RequestConfig): Observable<TestScriptResult>;
+    testScript(inputParams: TestScriptInputParams, scriptLang?: ScriptLanguage, config?: RequestConfig): Observable<TestScriptResult>;
     private loadRuleNodeComponents;
     private resolveRuleNodeComponentsUiResources;
     private resolveRuleNodeComponentUiResources;

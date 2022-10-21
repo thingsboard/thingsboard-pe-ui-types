@@ -127,6 +127,10 @@ export interface FcRuleNode extends FcRuleNodeType {
 export interface FcRuleEdge extends FcEdge {
     labels?: string[];
 }
+export declare enum ScriptLanguage {
+    JS = "JS",
+    MVEL = "MVEL"
+}
 export interface TestScriptInputParams {
     script: string;
     scriptType: string;

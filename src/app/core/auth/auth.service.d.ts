@@ -78,6 +78,7 @@ export declare class AuthService {
     private checkIsWhiteLabelingAllowed;
     loadIsEdgesSupportEnabled(): Observable<boolean>;
     private loadHasRepository;
+    private loadMvelEnabled;
     private loadSystemParams;
     refreshJwtToken(loadUserElseStoreJwtToken?: boolean): Observable<LoginResponse>;
     private validateJwtToken;

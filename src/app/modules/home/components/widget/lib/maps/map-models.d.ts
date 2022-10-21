@@ -48,6 +48,7 @@ export declare enum OpenStreetMapProvider {
     openStreetHot = "OpenStreetMap.HOT",
     esriWorldStreetMap = "Esri.WorldStreetMap",
     esriWorldTopoMap = "Esri.WorldTopoMap",
+    esriWorldImagery = "Esri.WorldImagery",
     cartoDbPositron = "CartoDB.Positron",
     cartoDbDarkMatter = "CartoDB.DarkMatter"
 }

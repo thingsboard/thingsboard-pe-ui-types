@@ -1,4 +1,4 @@
-import { ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { ElementRef, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -12,7 +12,7 @@ export interface EventContentDialogData {
     title: string;
     contentType: ContentType;
 }
-export declare class EventContentDialogComponent extends DialogComponent<EventContentDialogData> implements OnInit {
+export declare class EventContentDialogComponent extends DialogComponent<EventContentDialogData> implements OnInit, OnDestroy {
     protected store: Store<AppState>;
     protected router: Router;
     data: EventContentDialogData;
@@ -22,8 +22,10 @@ export declare class EventContentDialogComponent extends DialogComponent<EventCo
     content: string;
     title: string;
     contentType: ContentType;
+    aceEditor: Ace.Editor;
     constructor(store: Store<AppState>, router: Router, data: EventContentDialogData, dialogRef: MatDialogRef<EventContentDialogComponent>, renderer: Renderer2);
     ngOnInit(): void;
+    ngOnDestroy(): void;
     isJson(str: any): boolean;
     createEditor(editorElementRef: ElementRef, content: string): void;
     updateEditorSize(editorElement: any, content: string, editor: Ace.Editor): void;

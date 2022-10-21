@@ -1,7 +1,7 @@
-import { ElementRef, OnInit } from '@angular/core';
+import { ElementRef, OnDestroy, OnInit } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 import * as i0 from "@angular/core";
-export declare class MarkdownEditorComponent implements OnInit, ControlValueAccessor {
+export declare class MarkdownEditorComponent implements OnInit, ControlValueAccessor, OnDestroy {
     label: string;
     disabled: boolean;
     readonly: boolean;
@@ -18,6 +18,7 @@ export declare class MarkdownEditorComponent implements OnInit, ControlValueAcce
     set required(value: boolean);
     constructor();
     ngOnInit(): void;
+    ngOnDestroy(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;

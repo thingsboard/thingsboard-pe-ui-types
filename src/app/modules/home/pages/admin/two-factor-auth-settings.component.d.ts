@@ -16,7 +16,7 @@ export declare class TwoFactorAuthSettingsComponent extends PageComponent implem
     private fb;
     private readonly destroy$;
     private readonly posIntValidation;
-    authState: import("../../../../core/auth/auth.models").AuthState;
+    authState: import("../../../../core/public-api").AuthState;
     authUser: import("../../../../shared/public-api").AuthUser;
     readonly: boolean;
     twoFaFormGroup: FormGroup;

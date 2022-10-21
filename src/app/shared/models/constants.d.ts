@@ -94,6 +94,7 @@ export declare const HelpLinks: {
         ruleNodeRestApiCall: string;
         ruleNodeSendEmail: string;
         ruleNodeSendSms: string;
+        ruleNodeMath: string;
         ruleNodeIntegrationDownlink: string;
         ruleNodeAddToGroup: string;
         ruleNodeRemoveFromGroup: string;

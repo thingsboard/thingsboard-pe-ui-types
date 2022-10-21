@@ -6,7 +6,9 @@ import { EntityId } from '@shared/models/id/entity-id';
 import * as moment_ from 'moment';
 export declare enum SchedulerRepeatType {
     DAILY = "DAILY",
+    EVERY_N_DAYS = "EVERY_N_DAYS",
     WEEKLY = "WEEKLY",
+    EVERY_N_WEEKS = "EVERY_N_WEEKS",
     MONTHLY = "MONTHLY",
     YEARLY = "YEARLY",
     TIMER = "TIMER"
@@ -29,6 +31,8 @@ export interface SchedulerEventSchedule {
         type: SchedulerRepeatType;
         endsOn: number;
         repeatOn?: number[];
+        days?: number;
+        weeks?: number;
         repeatInterval?: number;
         timeUnit?: SchedulerTimeUnit;
     };
@@ -36,6 +40,7 @@ export interface SchedulerEventSchedule {
 export interface SchedulerEventInfo extends BaseData<SchedulerEventId> {
     tenantId?: TenantId;
     customerId?: CustomerId;
+    originatorId?: EntityId;
     name: string;
     type: string;
     schedule: SchedulerEventSchedule;

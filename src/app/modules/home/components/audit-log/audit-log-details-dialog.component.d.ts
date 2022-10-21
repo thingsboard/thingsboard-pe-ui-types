@@ -1,4 +1,4 @@
-import { ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { ElementRef, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -10,7 +10,7 @@ import * as i0 from "@angular/core";
 export interface AuditLogDetailsDialogData {
     auditLog: AuditLog;
 }
-export declare class AuditLogDetailsDialogComponent extends DialogComponent<AuditLogDetailsDialogComponent> implements OnInit {
+export declare class AuditLogDetailsDialogComponent extends DialogComponent<AuditLogDetailsDialogComponent> implements OnInit, OnDestroy {
     protected store: Store<AppState>;
     protected router: Router;
     data: AuditLogDetailsDialogData;
@@ -22,8 +22,10 @@ export declare class AuditLogDetailsDialogComponent extends DialogComponent<Audi
     displayFailureDetails: boolean;
     actionData: string;
     actionFailureDetails: string;
+    aceEditors: Ace.Editor[];
     constructor(store: Store<AppState>, router: Router, data: AuditLogDetailsDialogData, dialogRef: MatDialogRef<AuditLogDetailsDialogComponent>, renderer: Renderer2);
     ngOnInit(): void;
+    ngOnDestroy(): void;
     createEditor(editorElementRef: ElementRef, content: string): void;
     updateEditorSize(editorElement: any, content: string, editor: Ace.Editor): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AuditLogDetailsDialogComponent, never>;

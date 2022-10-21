@@ -13,19 +13,21 @@ interface SchedulerEventScheduleConfig {
     repeatType?: SchedulerRepeatType;
     weeklyRepeat?: boolean[];
     endsOnDate?: Date;
+    days?: number;
+    weeks?: number;
     timerRepeat?: {
         repeatInterval?: number;
         timeUnit?: SchedulerTimeUnit;
     };
 }
-export declare class endsOnDateErrorStateMatcher implements ErrorStateMatcher {
+export declare class EndsOnDateErrorStateMatcher implements ErrorStateMatcher {
     isErrorState(control: FormControl | null): boolean;
 }
 export declare class SchedulerEventScheduleComponent extends PageComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnDestroy {
     protected store: Store<AppState>;
     private fb;
     modelValue: SchedulerEventScheduleConfig | null;
-    endsOnDateMatcher: endsOnDateErrorStateMatcher;
+    endsOnDateMatcher: EndsOnDateErrorStateMatcher;
     scheduleConfigFormGroup: FormGroup;
     schedulerRepeatTypes: string[];
     schedulerRepeatType: typeof SchedulerRepeatType;

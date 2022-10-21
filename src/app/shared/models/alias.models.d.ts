@@ -22,7 +22,8 @@ export declare enum AliasFilterType {
     assetSearchQuery = "assetSearchQuery",
     deviceSearchQuery = "deviceSearchQuery",
     entityViewSearchQuery = "entityViewSearchQuery",
-    edgeSearchQuery = "edgeSearchQuery"
+    edgeSearchQuery = "edgeSearchQuery",
+    schedulerEvent = "schedulerEvent"
 }
 export declare const edgeAliasFilterTypes: string[];
 export declare const aliasFilterTypeTranslationMap: Map<AliasFilterType, string>;
@@ -121,7 +122,14 @@ export interface EntityViewSearchQueryFilter extends EntitySearchQueryFilter {
 export interface EdgeSearchQueryFilter extends EntitySearchQueryFilter {
     edgeTypes?: string[];
 }
-export declare type EntityFilters = SingleEntityFilter & EntityGroupFilter & EntityListFilter & EntityNameFilter & EntityTypeFilter & EntityGroupListFilter & EntityGroupNameFilter & EntitiesByGroupNameFilter & StateEntityFilter & StateEntityOwnerFilter & AssetTypeFilter & DeviceTypeFilter & EntityViewFilter & EdgeTypeFilter & RelationsQueryFilter & AssetSearchQueryFilter & DeviceSearchQueryFilter & EntityViewSearchQueryFilter & EntitySearchQueryFilter & EdgeSearchQueryFilter;
+export interface SchedulerEventFilter {
+    originatorStateEntity?: boolean;
+    stateEntityParamName?: string;
+    defaultStateEntity?: EntityId;
+    originator?: EntityId;
+    eventType?: string;
+}
+export declare type EntityFilters = SingleEntityFilter & EntityGroupFilter & EntityListFilter & EntityNameFilter & EntityTypeFilter & EntityGroupListFilter & EntityGroupNameFilter & EntitiesByGroupNameFilter & StateEntityFilter & StateEntityOwnerFilter & AssetTypeFilter & DeviceTypeFilter & EntityViewFilter & EdgeTypeFilter & RelationsQueryFilter & AssetSearchQueryFilter & DeviceSearchQueryFilter & EntityViewSearchQueryFilter & EntitySearchQueryFilter & EdgeSearchQueryFilter & SchedulerEventFilter;
 export interface EntityAliasFilter extends EntityFilters {
     type?: AliasFilterType;
     resolveMultiple?: boolean;
