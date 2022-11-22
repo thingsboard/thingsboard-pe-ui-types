@@ -6,7 +6,7 @@ export interface SysParamsState {
     whiteLabelingAllowed: boolean;
     customerWhiteLabelingAllowed: boolean;
     hasRepository: boolean;
-    mvelEnabled: boolean;
+    tbelEnabled: boolean;
 }
 export interface AuthPayload extends SysParamsState {
     authUser: AuthUser;

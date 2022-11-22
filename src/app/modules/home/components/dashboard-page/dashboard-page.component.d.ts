@@ -164,6 +164,7 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     mainLayoutWidth(): string;
     mainLayoutHeight(): string;
     rightLayoutWidth(): string;
+    private calculateWidth;
     rightLayoutHeight(): string;
     isPublicUser(): boolean;
     isCustomerUser(): boolean;

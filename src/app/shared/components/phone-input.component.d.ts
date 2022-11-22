@@ -40,9 +40,9 @@ export declare class PhoneInputComponent implements OnInit, ControlValueAccessor
     private getFlagAndPhoneNumberData;
     private getPhoneNumberData;
     private getFlagIcon;
+    private updateModelValueInFormat;
     validatePhoneNumber(): ValidatorFn;
     private defineCountryFromNumber;
-    private getPhoneNumberPattern;
     validate(): ValidationErrors | null;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

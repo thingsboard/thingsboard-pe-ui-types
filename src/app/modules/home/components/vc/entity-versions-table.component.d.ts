@@ -17,10 +17,12 @@ import { MatButton } from '@angular/material/button';
 import { TbPopoverComponent } from '@shared/components/popover.component';
 import { EntityType } from '@app/shared/models/entity-type.models';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
+import { AdminService } from "@core/http/admin.service";
 import * as i0 from "@angular/core";
 export declare class EntityVersionsTableComponent extends PageComponent implements OnInit, AfterViewInit, OnDestroy {
     protected store: Store<AppState>;
     private entitiesVersionControlService;
+    private adminService;
     private popoverService;
     private userPermissionsService;
     private renderer;
@@ -42,6 +44,7 @@ export declare class EntityVersionsTableComponent extends PageComponent implemen
     externalEntityIdValue: EntityId;
     viewsInited: boolean;
     readonly: boolean;
+    isReadOnly: Observable<boolean>;
     private componentResize$;
     set active(active: boolean);
     set externalEntityId(externalEntityId: EntityId);
@@ -52,7 +55,7 @@ export declare class EntityVersionsTableComponent extends PageComponent implemen
     searchInputField: ElementRef;
     paginator: MatPaginator;
     sort: MatSort;
-    constructor(store: Store<AppState>, entitiesVersionControlService: EntitiesVersionControlService, popoverService: TbPopoverService, userPermissionsService: UserPermissionsService, renderer: Renderer2, cd: ChangeDetectorRef, viewContainerRef: ViewContainerRef, elementRef: ElementRef);
+    constructor(store: Store<AppState>, entitiesVersionControlService: EntitiesVersionControlService, adminService: AdminService, popoverService: TbPopoverService, userPermissionsService: UserPermissionsService, renderer: Renderer2, cd: ChangeDetectorRef, viewContainerRef: ViewContainerRef, elementRef: ElementRef);
     ngOnInit(): void;
     ngOnDestroy(): void;
     branchChanged(newBranch: string): void;

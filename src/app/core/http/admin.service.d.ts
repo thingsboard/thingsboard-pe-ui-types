@@ -1,8 +1,9 @@
 import { RequestConfig } from './http-utils';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { AdminSettings, RepositorySettings, MailServerSettings, SecuritySettings, TestSmsRequest, UpdateMessage, AutoCommitSettings } from '@shared/models/settings.models';
+import { AdminSettings, AutoCommitSettings, JwtSettings, MailServerSettings, RepositorySettings, RepositorySettingsInfo, SecuritySettings, TestSmsRequest, UpdateMessage } from '@shared/models/settings.models';
 import { EntitiesVersionControlService } from '@core/http/entities-version-control.service';
+import { LoginResponse } from '@shared/models/login.models';
 import * as i0 from "@angular/core";
 export declare class AdminService {
     private http;
@@ -14,10 +15,13 @@ export declare class AdminService {
     sendTestSms(testSmsRequest: TestSmsRequest, config?: RequestConfig): Observable<void>;
     getSecuritySettings(config?: RequestConfig): Observable<SecuritySettings>;
     saveSecuritySettings(securitySettings: SecuritySettings, config?: RequestConfig): Observable<SecuritySettings>;
+    getJwtSettings(config?: RequestConfig): Observable<JwtSettings>;
+    saveJwtSettings(jwtSettings: JwtSettings, config?: RequestConfig): Observable<LoginResponse>;
     getRepositorySettings(config?: RequestConfig): Observable<RepositorySettings>;
     saveRepositorySettings(repositorySettings: RepositorySettings, config?: RequestConfig): Observable<RepositorySettings>;
     deleteRepositorySettings(config?: RequestConfig): Observable<Object>;
     checkRepositoryAccess(repositorySettings: RepositorySettings, config?: RequestConfig): Observable<void>;
+    getRepositorySettingsInfo(config?: RequestConfig): Observable<RepositorySettingsInfo>;
     getAutoCommitSettings(config?: RequestConfig): Observable<AutoCommitSettings>;
     autoCommitSettingsExists(config?: RequestConfig): Observable<boolean>;
     saveAutoCommitSettings(autoCommitSettings: AutoCommitSettings, config?: RequestConfig): Observable<AutoCommitSettings>;

@@ -12,6 +12,7 @@ import { MatSort } from '@angular/material/sort';
 import { WidgetActionCallbacks, WidgetActionDescriptorInfo, WidgetActionsData, WidgetActionsDatasource } from '@home/components/widget/action/manage-widget-actions.component.models';
 import { UtilsService } from '@core/services/utils.service';
 import { WidgetActionType, widgetType } from '@shared/models/widget.models';
+import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import * as i0 from "@angular/core";
 export declare class ManageWidgetActionsComponent extends PageComponent implements OnInit, AfterViewInit, OnDestroy, ControlValueAccessor {
     protected store: Store<AppState>;
@@ -34,6 +35,7 @@ export declare class ManageWidgetActionsComponent extends PageComponent implemen
     dataSource: WidgetActionsDatasource;
     viewsInited: boolean;
     dirtyValue: boolean;
+    dragDisabled: boolean;
     private widgetResize$;
     searchInputField: ElementRef;
     paginator: MatPaginator;
@@ -44,6 +46,7 @@ export declare class ManageWidgetActionsComponent extends PageComponent implemen
     ngOnDestroy(): void;
     ngAfterViewInit(): void;
     updateData(reload?: boolean): void;
+    dropAction(event: CdkDragDrop<WidgetActionsDatasource>): void;
     addAction($event: Event): void;
     editAction($event: Event, action: WidgetActionDescriptorInfo): void;
     openWidgetActionDialog($event: Event, action?: WidgetActionDescriptorInfo): void;

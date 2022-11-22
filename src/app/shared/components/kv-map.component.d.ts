@@ -13,6 +13,7 @@ export declare class KeyValMapComponent extends PageComponent implements Control
     valuePlaceholderText: string;
     noDataText: string;
     singlePredefinedKey: string;
+    isStrokedButton: boolean;
     kvListFormGroup: FormGroup;
     private propagateChange;
     private valueChangeSubscription;
@@ -36,5 +37,5 @@ export declare class KeyValMapComponent extends PageComponent implements Control
     get isSinglePredefinedKey(): boolean;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<KeyValMapComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<KeyValMapComponent, "tb-key-val-map", never, { "disabled": "disabled"; "titleText": "titleText"; "keyPlaceholderText": "keyPlaceholderText"; "valuePlaceholderText": "valuePlaceholderText"; "noDataText": "noDataText"; "singlePredefinedKey": "singlePredefinedKey"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<KeyValMapComponent, "tb-key-val-map", never, { "disabled": "disabled"; "titleText": "titleText"; "keyPlaceholderText": "keyPlaceholderText"; "valuePlaceholderText": "valuePlaceholderText"; "noDataText": "noDataText"; "singlePredefinedKey": "singlePredefinedKey"; "isStrokedButton": "isStrokedButton"; }, {}, never, never>;
 }

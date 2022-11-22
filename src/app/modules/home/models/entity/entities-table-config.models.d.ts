@@ -27,6 +27,7 @@ export declare type EntityActionFunction<T extends BaseData<HasId>> = (action: E
 export declare type CreateEntityOperation<T extends BaseData<HasId>> = () => Observable<T>;
 export declare type EntityRowClickFunction<T extends BaseData<HasId>> = (event: Event, entity: T) => boolean;
 export declare type CellContentFunction<T extends BaseData<HasId>> = (entity: T, key: string) => string;
+export declare type CellChartContentFunction<T extends BaseData<HasId>> = (entity: T, key: string) => number[];
 export declare type CellTooltipFunction<T extends BaseData<HasId>> = (entity: T, key: string) => string | undefined;
 export declare type HeaderCellStyleFunction<T extends BaseData<HasId>> = (key: string) => object;
 export declare type CellStyleFunction<T extends BaseData<HasId>> = (entity: T, key: string) => object;
@@ -40,6 +41,7 @@ export interface CellActionDescriptor<T extends BaseData<HasId>> {
     nameFunction?: (entity: T) => string;
     icon?: string;
     mdiIcon?: string;
+    mdiIconFunction?: (entity: T) => string;
     style?: any;
     isEnabled: (entity: T) => boolean;
     onAction: ($event: MouseEvent, entity: T) => any;
@@ -58,7 +60,7 @@ export interface HeaderActionDescriptor {
     isEnabled: () => boolean;
     onAction: ($event: MouseEvent) => void;
 }
-export declare type EntityTableColumnType = 'content' | 'action';
+export declare type EntityTableColumnType = 'content' | 'action' | 'chart';
 export declare class BaseEntityTableColumn<T extends BaseData<HasId>> {
     type: EntityTableColumnType;
     key: string;
@@ -92,7 +94,16 @@ export declare class EntityActionTableColumn<T extends BaseData<HasId>> extends 
 export declare class DateEntityTableColumn<T extends BaseData<HasId>> extends EntityTableColumn<T> {
     constructor(key: string, title: string, datePipe: DatePipe, width?: string, dateFormat?: string, cellStyleFunction?: CellStyleFunction<T>);
 }
-export declare type EntityColumn<T extends BaseData<HasId>> = EntityTableColumn<T> | EntityActionTableColumn<T>;
+export declare class ChartEntityTableColumn<T extends BaseData<HasId>> extends BaseEntityTableColumn<T> {
+    key: string;
+    title: string;
+    width: string;
+    cellContentFunction: CellChartContentFunction<T>;
+    chartStyleFunction: CellStyleFunction<T>;
+    cellStyleFunction: CellStyleFunction<T>;
+    constructor(key: string, title: string, width?: string, cellContentFunction?: CellChartContentFunction<T>, chartStyleFunction?: CellStyleFunction<T>, cellStyleFunction?: CellStyleFunction<T>);
+}
+export declare type EntityColumn<T extends BaseData<HasId>> = EntityTableColumn<T> | EntityActionTableColumn<T> | ChartEntityTableColumn<T>;
 export declare class EntityTableConfig<T extends BaseData<HasId>, P extends PageLink = PageLink, L extends BaseData<HasId> = T> {
     constructor();
     private table;
@@ -141,7 +152,7 @@ export declare class EntityTableConfig<T extends BaseData<HasId>, P extends Page
     entitiesFetchFunction: EntitiesFetchFunction<L, P>;
     onEntityAction: EntityActionFunction<T>;
     handleRowClick: EntityRowClickFunction<L>;
-    entityTitle: EntityStringFunction<T>;
+    entityTitle: EntityStringFunction<T | L>;
     entityAdded: EntityVoidFunction<T>;
     entityUpdated: EntityVoidFunction<T>;
     entitiesDeleted: EntityIdsVoidFunction<T>;

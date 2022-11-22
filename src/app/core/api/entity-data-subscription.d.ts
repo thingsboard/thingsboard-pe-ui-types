@@ -59,6 +59,7 @@ export declare class EntityDataSubscription {
     private aggTsComparisonValues;
     private entityDataResolveSubject;
     private pageData;
+    private prematureUpdates;
     private data;
     private subsTw;
     private latestTsOffset;

@@ -14,6 +14,7 @@ export declare class MarkerClusteringSettingsComponent extends PageComponent imp
     private fb;
     disabled: boolean;
     private modelValue;
+    functionScopeVariables: string[];
     private propagateChange;
     markerClusteringSettingsFormGroup: FormGroup;
     constructor(store: Store<AppState>, translate: TranslateService, widgetService: WidgetService, fb: FormBuilder);

@@ -11,11 +11,13 @@ import { EntityGroupInfo } from '@shared/models/entity-group.models';
 import { EntityGroupService } from '@core/http/entity-group.service';
 import { EntityId } from '@shared/models/id/entity-id';
 import { AddEntityGroupsToEdgeDialogData } from '@home/dialogs/add-entity-groups-to-edge-dialog.models';
+import { CustomerService } from '@core/http/customer.service';
 import * as i0 from "@angular/core";
 export declare class EdgeEntityGroupListComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnChanges {
     private store;
     translate: TranslateService;
     private entityGroupService;
+    private customerService;
     data: AddEntityGroupsToEdgeDialogData;
     private fb;
     edgeEntityGroupListFormGroup: FormGroup;
@@ -34,11 +36,10 @@ export declare class EdgeEntityGroupListComponent implements ControlValueAccesso
     ownerId: EntityId;
     edgeId: string;
     tenantId: string;
-    customerId: string;
     searchText: string;
     private dirty;
     private propagateChange;
-    constructor(store: Store<AppState>, translate: TranslateService, entityGroupService: EntityGroupService, data: AddEntityGroupsToEdgeDialogData, fb: FormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, entityGroupService: EntityGroupService, customerService: CustomerService, data: AddEntityGroupsToEdgeDialogData, fb: FormBuilder);
     updateValidators(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -55,9 +56,11 @@ export declare class EdgeEntityGroupListComponent implements ControlValueAccesso
     getEntityGroups(): Observable<Array<EntityGroupInfo>>;
     onFocus(): void;
     clear(value?: string): void;
+    private getHierarchyEntityIds;
+    private getCurrentUserCustomerId;
     private getEntityGroupsTasks;
-    private getOwnerGroups;
-    private getParentGroups;
+    private createEntityGroupTasks;
+    private getGroupsByOwnerId;
     static ɵfac: i0.ɵɵFactoryDeclaration<EdgeEntityGroupListComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<EdgeEntityGroupListComponent, "tb-edge-entity-group-list", never, { "groupType": "groupType"; "excludeGroupAll": "excludeGroupAll"; "required": "required"; "disabled": "disabled"; }, {}, never, never>;
 }

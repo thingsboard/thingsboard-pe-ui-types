@@ -21,6 +21,7 @@ export declare class WidgetSubscription implements IWidgetSubscription {
     subscriptionTimewindow: SubscriptionTimewindow;
     useDashboardTimewindow: boolean;
     useTimewindow: boolean;
+    onTimewindowChangeFunction: (timewindow: Timewindow) => Timewindow;
     tsOffset: number;
     hasDataPageLink: boolean;
     singleEntity: boolean;

@@ -67,6 +67,8 @@ export declare class TbFlot {
     private createYAxis;
     private subscribeForThresholdsAttributes;
     private thresholdsSourcesDataUpdated;
+    private parseThresholdData;
+    private processSingleDataValue;
     private generateThreshold;
     private subscribeForLabelPatternsSources;
     private labelPatternsParamsDataUpdated;

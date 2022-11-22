@@ -5,7 +5,7 @@ import { EntityDataSortOrder, EntityKey } from '@shared/models/query/query.model
 import { WidgetContext } from '@home/models/widget-component.models';
 import { UtilsService } from '@core/services/utils.service';
 import { TranslateService } from '@ngx-translate/core';
-declare type ColumnVisibilityOptions = 'visible' | 'hidden';
+declare type ColumnVisibilityOptions = 'visible' | 'hidden' | 'hidden-mobile';
 declare type ColumnSelectionOptions = 'enabled' | 'disabled';
 export declare enum columnExportOptions {
     always = "always",
@@ -23,6 +23,7 @@ export interface TableWidgetSettings {
     reserveSpaceForHiddenAction?: boolean;
 }
 export interface TableWidgetDataKeySettings {
+    customTitle?: string;
     columnWidth?: string;
     useCellStyleFunction: boolean;
     cellStyleFunction?: string;
@@ -95,11 +96,12 @@ export declare function getCellStyleInfo(keySettings: TableWidgetDataKeySettings
 export declare function getCellContentInfo(keySettings: TableWidgetDataKeySettings, ...args: string[]): CellContentInfo;
 export declare function getColumnWidth(keySettings: TableWidgetDataKeySettings): string;
 export declare function widthStyle(width: string): any;
-export declare function getColumnDefaultVisibility(keySettings: TableWidgetDataKeySettings): boolean;
+export declare function getColumnDefaultVisibility(keySettings: TableWidgetDataKeySettings, ctx?: WidgetContext): boolean;
 export declare function getColumnSelectionAvailability(keySettings: TableWidgetDataKeySettings): boolean;
 export declare function getTableCellButtonActions(widgetContext: WidgetContext): TableCellButtonActionDescriptor[];
 export declare function checkHasActions(cellButtonActions: TableCellButtonActionDescriptor[]): boolean;
 export declare function prepareTableCellButtonActions(widgetContext: WidgetContext, cellButtonActions: TableCellButtonActionDescriptor[], data: EntityData | AlarmDataInfo | FormattedData, reserveSpaceForHiddenAction?: boolean): TableCellButtonActionDescriptor[];
 export declare function noDataMessage(noDataDisplayMessage: string, defaultMessage: string, utils: UtilsService, translate: TranslateService): string;
 export declare function constructTableCssString(widgetConfig: WidgetConfig): string;
+export declare function getHeaderTitle(dataKey: DataKey, keySettings: TableWidgetDataKeySettings, utils: UtilsService): string;
 export {};

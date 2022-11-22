@@ -25,10 +25,11 @@ import { DialogService } from '@core/services/dialog.service';
 import { CustomDialogService } from '@home/components/widget/dialog/custom-dialog.service';
 import { AuthService } from '@core/auth/auth.service';
 import { ResourceService } from '@core/http/resource.service';
+import { TelemetryWebsocketService } from '@core/ws/telemetry-websocket.service';
 import { DatePipe } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
 import { EntityGroupService } from '@core/http/entity-group.service';
-import { PageLink } from '@shared/models/page/page-link';
+import { PageLink, TimePageLink } from '@shared/models/page/page-link';
 import { SortOrder } from '@shared/models/page/sort-order';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
@@ -38,6 +39,8 @@ import * as RxJSOperators from 'rxjs/operators';
 import { TbPopoverComponent } from '@shared/components/popover.component';
 import { EntityId } from '@shared/models/id/entity-id';
 import { ReportService } from '@core/http/report.service';
+import { AlarmQuery, AlarmSearchStatus, AlarmStatus } from '@app/shared/models/alarm.models';
+import { TelemetrySubscriber } from '@app/shared/public-api';
 export interface IWidgetAction {
     name: string;
     icon: string;
@@ -88,6 +91,8 @@ export declare class WidgetContext {
     dialogs: DialogService;
     customDialog: CustomDialogService;
     resourceService: ResourceService;
+    telemetryWsService: TelemetryWebsocketService;
+    telemetrySubscribers?: TelemetrySubscriber[];
     date: DatePipe;
     translate: TranslateService;
     http: HttpClient;
@@ -317,7 +322,10 @@ export declare class WidgetContext {
     updateWidgetParams(): void;
     updateAliases(aliasIds?: Array<string>): void;
     reset(): void;
+    closeDialog(resultData?: any): void;
     pageLink(pageSize: number, page?: number, textSearch?: string, sortOrder?: SortOrder): PageLink;
+    timePageLink(startTime: number, endTime: number, pageSize: number, page?: number, textSearch?: string, sortOrder?: SortOrder): TimePageLink;
+    alarmQuery(entityId: EntityId, pageLink: TimePageLink, searchStatus: AlarmSearchStatus, status: AlarmStatus, fetchOriginator: boolean): AlarmQuery;
 }
 export interface IDynamicWidgetComponent {
     readonly ctx: WidgetContext;

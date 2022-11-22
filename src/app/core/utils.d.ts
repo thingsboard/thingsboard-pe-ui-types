@@ -48,6 +48,7 @@ export declare function formattedDataFormDatasourceData(input: DatasourceData[],
 export declare function formattedDataArrayFromDatasourceData(input: DatasourceData[]): FormattedData[][];
 export declare function formattedDataFromDatasource(datasource: Datasource, dsIndex: number): FormattedData;
 export declare function flatFormattedData(input: FormattedData[]): FormattedData;
+export declare function flatDataWithoutOverride(input: FormattedData[]): FormattedData;
 export declare function mergeFormattedData(first: FormattedData[], second: FormattedData[]): FormattedData[];
 export declare function processDataPattern(pattern: string, data: FormattedData): Array<ReplaceInfo>;
 export declare function fillDataPattern(pattern: string, replaceInfo: Array<ReplaceInfo>, data: FormattedData): string;

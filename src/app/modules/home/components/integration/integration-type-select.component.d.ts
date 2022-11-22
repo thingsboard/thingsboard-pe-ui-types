@@ -1,0 +1,43 @@
+import { ElementRef, OnInit } from '@angular/core';
+import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { IntegrationType, IntegrationTypeInfo } from '@shared/models/integration.models';
+import { Observable } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
+import { MatAutocompleteTrigger } from '@angular/material/autocomplete';
+import * as i0 from "@angular/core";
+declare type IntegrationInfo = IntegrationTypeInfo & {
+    type: IntegrationType;
+};
+export declare class IntegrationTypeSelectComponent implements ControlValueAccessor, OnInit {
+    private fb;
+    private translate;
+    integrationTypeFormGroup: FormGroup;
+    searchText: string;
+    filteredIntegrationTypes: Observable<Array<IntegrationInfo>>;
+    modelValue: IntegrationInfo;
+    private pristine;
+    private integrationTypesInfo;
+    integrationTypeInput: ElementRef;
+    autocomplete: MatAutocompleteTrigger;
+    private requiredValue;
+    get required(): boolean;
+    set required(value: boolean);
+    disabled: boolean;
+    private propagateChange;
+    constructor(fb: FormBuilder, translate: TranslateService);
+    ngOnInit(): void;
+    registerOnChange(fn: any): void;
+    registerOnTouched(fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    writeValue(value: IntegrationType): void;
+    onFocus(): void;
+    selectedType(): void;
+    clear(): void;
+    displayIntegrationTypeFn(inegration?: IntegrationInfo): string | undefined;
+    private updateView;
+    private fetchIntegrationTypes;
+    private filterIntegrationType;
+    static ɵfac: i0.ɵɵFactoryDeclaration<IntegrationTypeSelectComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<IntegrationTypeSelectComponent, "tb-integration-type-select", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never>;
+}
+export {};

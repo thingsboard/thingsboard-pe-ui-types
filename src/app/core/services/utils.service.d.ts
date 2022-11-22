@@ -7,6 +7,9 @@ import { DataKeyType } from '@app/shared/models/telemetry/telemetry.models';
 import { WidgetInfo } from '@home/models/widget-component.models';
 import { Observable } from 'rxjs';
 import { DatePipe } from '@angular/common';
+import { WidgetContext } from '@app/modules/home/models/widget-component.models';
+import { AttributeData, TelemetryType } from '@shared/models/telemetry/telemetry.models';
+import { EntityId } from '@shared/models/id/entity-id';
 import * as i0 from "@angular/core";
 export declare class UtilsService {
     private window;
@@ -54,6 +57,8 @@ export declare class UtilsService {
     isDefined(value: any): boolean;
     defaultValue(value: any, defaultValue: any): any;
     translateText(text: string): string;
+    private getEntityIdFromDatasource;
+    subscribeToEntityTelemetry(ctx: WidgetContext, entityId?: EntityId, type?: TelemetryType, keys?: string[]): Observable<Array<AttributeData>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<UtilsService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<UtilsService>;
 }

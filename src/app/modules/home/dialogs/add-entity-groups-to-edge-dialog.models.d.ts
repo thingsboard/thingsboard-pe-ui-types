@@ -8,5 +8,4 @@ export interface AddEntityGroupsToEdgeDialogData {
     confirmSelectTitle: string;
     notFoundText: string;
     requiredText: string;
-    customerId?: string;
 }

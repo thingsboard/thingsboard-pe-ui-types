@@ -1,5 +1,5 @@
 import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
-import { Integration, IntegrationParams } from '@shared/models/integration.models';
+import { Integration, IntegrationInfo, IntegrationParams } from '@shared/models/integration.models';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { TranslateService } from '@ngx-translate/core';
 import { DatePipe } from '@angular/common';
@@ -10,7 +10,8 @@ import { IntegrationService } from '@core/http/integration.service';
 import { EdgeService } from '@core/http/edge.service';
 import { DialogService } from '@core/services/dialog.service';
 import { EntityAction } from '@home/models/entity/entity-component.models';
-export declare class IntegrationsTableConfig extends EntityTableConfig<Integration> {
+import { PageLink } from '@shared/models/page/page-link';
+export declare class IntegrationsTableConfig extends EntityTableConfig<Integration, PageLink, IntegrationInfo> {
     private integrationService;
     private userPermissionsService;
     private edgeService;
@@ -35,4 +36,8 @@ export declare class IntegrationsTableConfig extends EntityTableConfig<Integrati
     private assignIntegrationsToEdge;
     private unassignFromEdge;
     private unassignIntegrationsFromEdge;
+    private addIntegration;
+    private integrationStatus;
+    private integrationStatusStyle;
+    private toggleDebugMode;
 }

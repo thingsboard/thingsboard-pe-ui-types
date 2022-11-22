@@ -5,6 +5,7 @@ export declare class MarkdownEditorComponent implements OnInit, ControlValueAcce
     label: string;
     disabled: boolean;
     readonly: boolean;
+    helpId: string;
     markdownEditorElmRef: ElementRef;
     private markdownEditor;
     editorMode: boolean;
@@ -27,5 +28,5 @@ export declare class MarkdownEditorComponent implements OnInit, ControlValueAcce
     onFullscreen(): void;
     toggleEditMode(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<MarkdownEditorComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MarkdownEditorComponent, "tb-markdown-editor", never, { "label": "label"; "disabled": "disabled"; "readonly": "readonly"; "required": "required"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MarkdownEditorComponent, "tb-markdown-editor", never, { "label": "label"; "disabled": "disabled"; "readonly": "readonly"; "helpId": "helpId"; "required": "required"; }, {}, never, never>;
 }

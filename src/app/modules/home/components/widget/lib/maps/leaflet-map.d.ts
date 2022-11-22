@@ -1,7 +1,7 @@
 /// <reference types="tooltipster" />
 import L, { FeatureGroup, LatLngBounds, LatLngTuple } from 'leaflet';
 import 'leaflet-providers';
-import { MarkerClusterGroup } from 'leaflet.markercluster/dist/leaflet.markercluster';
+import { MarkerClusterGroup, MarkerClusterGroupOptions } from 'leaflet.markercluster/dist/leaflet.markercluster';
 import '@geoman-io/leaflet-geoman-free';
 import { CircleData, MarkerIconInfo, WidgetPolygonSettings, WidgetPolylineSettings, WidgetUnitedMapSettings } from './map-models';
 import { Marker } from './markers';
@@ -11,8 +11,8 @@ import { Polygon } from './polygon';
 import { Circle } from './circle';
 import { WidgetContext } from '@home/models/widget-component.models';
 import { TranslateService } from '@ngx-translate/core';
-import ITooltipsterInstance = JQueryTooltipster.ITooltipsterInstance;
 import { FormattedData, ReplaceInfo } from '@shared/models/widget.models';
+import ITooltipsterInstance = JQueryTooltipster.ITooltipsterInstance;
 export default abstract class LeafletMap {
     ctx: WidgetContext;
     $container: HTMLElement;
@@ -56,6 +56,7 @@ export default abstract class LeafletMap {
     savePolygonLocation: (e: FormattedData, coordinates?: Array<any>) => Observable<any>;
     translateService: TranslateService;
     tooltipInstances: ITooltipsterInstance[];
+    clusteringSettings: MarkerClusterGroupOptions;
     protected constructor(ctx: WidgetContext, $container: HTMLElement, options: WidgetUnitedMapSettings);
     private initMarkerClusterSettings;
     private selectEntityWithoutLocationDialog;

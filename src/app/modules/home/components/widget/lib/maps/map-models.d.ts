@@ -329,6 +329,11 @@ export interface MarkerClusteringSettings {
     showCoverageOnHover: boolean;
     chunkedLoading: boolean;
     removeOutsideVisibleBounds: boolean;
+    useIconCreateFunction: boolean;
+    clusterMarkerFunction?: string;
+}
+export interface WidgetMarkerClusteringSettings extends MarkerClusteringSettings {
+    parsedClusterMarkerFunction?: GenericFunction;
 }
 export declare const defaultMarkerClusteringSettings: MarkerClusteringSettings;
 export interface MapEditorSettings {
@@ -340,7 +345,7 @@ export interface MapEditorSettings {
     hideRemoveControlButton: boolean;
 }
 export declare const defaultMapEditorSettings: MapEditorSettings;
-export declare type UnitedMapSettings = MapProviderSettings & CommonMapSettings & MarkersSettings & PolygonSettings & CircleSettings & PolylineSettings & PointsSettings & MarkerClusteringSettings & MapEditorSettings;
+export declare type UnitedMapSettings = MapProviderSettings & CommonMapSettings & MarkersSettings & PolygonSettings & CircleSettings & PolylineSettings & PointsSettings & WidgetMarkerClusteringSettings & MapEditorSettings;
 export declare const defaultMapSettings: UnitedMapSettings;
 export declare type WidgetUnitedMapSettings = UnitedMapSettings & Partial<WidgetCommonMapSettings & WidgetMarkersSettings & WidgetPolygonSettings & WidgetCircleSettings & WidgetPolylineSettings & WidgetPointsSettings>;
 export declare type UnitedTripAnimationSettings = MapProviderSettings & TripAnimationCommonSettings & TripAnimationMarkerSettings & PolylineSettings & PointsSettings & PolygonSettings & CircleSettings;

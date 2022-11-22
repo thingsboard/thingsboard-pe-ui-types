@@ -62,7 +62,7 @@ export declare class AuthService {
     activateByEmailCode(emailCode: string): Observable<LoginResponse>;
     resendEmailActivation(email: string): Observable<Object>;
     loginAsUser(userId: string): Observable<LoginResponse>;
-    logout(captureLastUrl?: boolean): void;
+    logout(captureLastUrl?: boolean, ignoreRequest?: boolean): void;
     private notifyUserLoaded;
     gotoDefaultPlace(isAuthenticated: boolean): void;
     loadOAuth2Clients(): Observable<Array<OAuth2ClientInfo>>;
@@ -78,7 +78,7 @@ export declare class AuthService {
     private checkIsWhiteLabelingAllowed;
     loadIsEdgesSupportEnabled(): Observable<boolean>;
     private loadHasRepository;
-    private loadMvelEnabled;
+    private loadTbelEnabled;
     private loadSystemParams;
     refreshJwtToken(loadUserElseStoreJwtToken?: boolean): Observable<LoginResponse>;
     private validateJwtToken;

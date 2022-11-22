@@ -89,12 +89,14 @@ export declare class EntitiesTableComponent extends PageComponent implements IEn
     columnsUpdated(resetData?: boolean): void;
     headerCellStyle(column: EntityColumn<BaseData<HasId>>): any;
     clearCellCache(col: number, row: number): void;
-    cellContent(entity: BaseData<HasId>, column: EntityColumn<BaseData<HasId>>, row: number): SafeHtml;
+    cellContent(entity: BaseData<HasId>, column: EntityColumn<BaseData<HasId>>, row: number): any;
     cellTooltip(entity: BaseData<HasId>, column: EntityColumn<BaseData<HasId>>, row: number): string;
     cellStyle(entity: BaseData<HasId>, column: EntityColumn<BaseData<HasId>>, row: number): any;
+    cellChartStyle(entity: BaseData<HasId>, column: EntityColumn<BaseData<HasId>>, row: number): any;
     trackByColumnKey(index: any, column: EntityTableColumn<BaseData<HasId>>): string;
     trackByEntityId(index: number, entity: BaseData<HasId>): string;
     protected updatedRouterParamsAndData(queryParams: object, queryParamsHandling?: QueryParamsHandling): void;
+    detectChanges(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntitiesTableComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<EntitiesTableComponent, "tb-entities-table", never, { "entitiesTableConfig": "entitiesTableConfig"; }, {}, never, never>;
 }

@@ -1,0 +1,33 @@
+import { ControlValueAccessor, FormBuilder, FormGroup, ValidationErrors, Validator } from '@angular/forms';
+import { IntegrationCredentialType } from '@shared/models/integration.models';
+import * as i0 from "@angular/core";
+export declare class IntegrationCredentialsComponent implements ControlValueAccessor, Validator {
+    private fb;
+    integrationCredentialForm: FormGroup;
+    hideSelectType: boolean;
+    private allowCredentialTypesValue;
+    set allowCredentialTypes(types: IntegrationCredentialType[]);
+    get allowCredentialTypes(): IntegrationCredentialType[];
+    private ignoreCaCertValue;
+    set ignoreCaCert(value: boolean);
+    get ignoreCaCert(): boolean;
+    userNameLabel: string;
+    userNameRequired: string;
+    passwordLabel: string;
+    passwordRequired: string;
+    IntegrationCredentialTypeTranslation: Map<IntegrationCredentialType, string>;
+    IntegrationCredentialType: typeof IntegrationCredentialType;
+    disabled: boolean;
+    private destroy$;
+    private propagateChange;
+    constructor(fb: FormBuilder);
+    registerOnChange(fn: any): void;
+    registerOnTouched(fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    writeValue(value: any): void;
+    private updatedValidation;
+    private updateModel;
+    validate(): ValidationErrors | null;
+    static ɵfac: i0.ɵɵFactoryDeclaration<IntegrationCredentialsComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<IntegrationCredentialsComponent, "tb-integration-credentials", never, { "allowCredentialTypes": "allowCredentialTypes"; "ignoreCaCert": "ignoreCaCert"; "userNameLabel": "userNameLabel"; "userNameRequired": "userNameRequired"; "passwordLabel": "passwordLabel"; "passwordRequired": "passwordRequired"; "disabled": "disabled"; }, {}, never, ["*"]>;
+}

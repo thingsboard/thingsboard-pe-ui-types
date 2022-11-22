@@ -26,6 +26,7 @@ export declare class AlarmDataSubscription {
     private subscriber;
     private alarmDataCommand;
     private pageData;
+    private prematureUpdates;
     private alarmIdToDataIndex;
     private subsTw;
     constructor(listener: AlarmDataListener, telemetryService: TelemetryService);

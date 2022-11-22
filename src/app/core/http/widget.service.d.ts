@@ -34,6 +34,7 @@ export declare class WidgetService {
     getTenantWidgetsBundles(config?: RequestConfig): Observable<Array<WidgetsBundle>>;
     getWidgetBundles(pageLink: PageLink, config?: RequestConfig): Observable<PageData<WidgetsBundle>>;
     getWidgetsBundle(widgetsBundleId: string, config?: RequestConfig): Observable<WidgetsBundle>;
+    getWidgetsBundlesByIds(widgetsBundleIds: Array<string>, config?: RequestConfig): Observable<Array<WidgetsBundle>>;
     saveWidgetsBundle(widgetsBundle: WidgetsBundle, config?: RequestConfig): Observable<WidgetsBundle>;
     deleteWidgetsBundle(widgetsBundleId: string, config?: RequestConfig): Observable<Object>;
     getBundleWidgetTypes(bundleAlias: string, isSystem: boolean, config?: RequestConfig): Observable<Array<WidgetType>>;

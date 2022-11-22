@@ -11,6 +11,7 @@ import { MatSort } from '@angular/material/sort';
 import { EntityAction } from '@home/models/entity/entity-component.models';
 import { CellActionDescriptor, EntityActionTableColumn, EntityColumn, EntityTableColumn, EntityTableConfig, GroupActionDescriptor, HeaderActionDescriptor } from '@home/models/entity/entities-table-config.models';
 import { ActivatedRoute } from '@angular/router';
+import { EntityDetailsPanelComponent } from '@home/components/entity/entity-details-panel.component';
 export interface IEntitiesTableComponent {
     entitiesTableConfig: EntityTableConfig<BaseData<HasId>>;
     translations: EntityTypeTranslation;
@@ -40,6 +41,7 @@ export interface IEntitiesTableComponent {
     paginator: MatPaginator;
     sort: MatSort;
     route: ActivatedRoute;
+    entityDetailsPanel: EntityDetailsPanelComponent;
     addEnabled(): boolean;
     clearSelection(): void;
     updateData(closeDetails?: boolean): void;
@@ -62,4 +64,5 @@ export interface IEntitiesTableComponent {
     cellStyle(entity: BaseData<HasId>, column: EntityColumn<BaseData<HasId>>, row: number): any;
     trackByColumnKey(index: any, column: EntityTableColumn<BaseData<HasId>>): string;
     trackByEntityId(index: number, entity: BaseData<HasId>): string;
+    detectChanges(): void;
 }

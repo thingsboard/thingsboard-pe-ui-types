@@ -1,5 +1,6 @@
 import { AfterViewInit, NgZone, OnInit } from '@angular/core';
 import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { MatFormFieldAppearance } from '@angular/material/form-field/form-field';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -15,6 +16,7 @@ export declare class TimezoneSelectComponent implements ControlValueAccessor, On
     selectTimezoneFormGroup: FormGroup;
     modelValue: string | null;
     defaultTimezoneId: string;
+    appearance: MatFormFieldAppearance;
     set defaultTimezone(timezone: string);
     private requiredValue;
     get required(): boolean;
@@ -50,5 +52,5 @@ export declare class TimezoneSelectComponent implements ControlValueAccessor, On
     private loadTimezones;
     private getLocalBrowserTimezoneInfoPlaceholder;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimezoneSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimezoneSelectComponent, "tb-timezone-select", never, { "defaultTimezone": "defaultTimezone"; "required": "required"; "userTimezoneByDefault": "userTimezoneByDefault"; "localBrowserTimezonePlaceholderOnEmpty": "localBrowserTimezonePlaceholderOnEmpty"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimezoneSelectComponent, "tb-timezone-select", never, { "appearance": "appearance"; "defaultTimezone": "defaultTimezone"; "required": "required"; "userTimezoneByDefault": "userTimezoneByDefault"; "localBrowserTimezonePlaceholderOnEmpty": "localBrowserTimezonePlaceholderOnEmpty"; "disabled": "disabled"; }, {}, never, never>;
 }
