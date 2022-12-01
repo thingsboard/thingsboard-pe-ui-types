@@ -23,6 +23,7 @@ export declare class ChirpStackIntegrationFormComponent extends IntegrationForm 
     private updateModels;
     validate(): ValidationErrors | null;
     onHttpEndpointCopied(): void;
+    updatedValidationPrivateNetwork(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ChirpStackIntegrationFormComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<ChirpStackIntegrationFormComponent, "tb-chirp-stack-integration-form", never, { "routingKey": "routingKey"; }, {}, never, never>;
 }

@@ -1,3 +1,4 @@
+import { FormControl } from '@angular/forms';
 import { IntegrationType, MqttTopicFilter } from '@shared/models/integration.models';
 export declare enum ThingsStartHostType {
     Region = 0,
@@ -16,3 +17,6 @@ export interface TtnVersionParameter {
 }
 export declare const ttnVersionMap: Map<ttnVersion, TtnVersionParameter>;
 export declare function integrationEndPointUrl(type: IntegrationType, baseUrl: string, key?: string): string;
+export declare function privateNetworkAddressValidator(control: FormControl): {
+    [key: string]: any;
+} | null;

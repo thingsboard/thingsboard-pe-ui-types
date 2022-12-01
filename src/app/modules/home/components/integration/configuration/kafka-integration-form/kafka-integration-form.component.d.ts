@@ -13,6 +13,7 @@ export declare class KafkaIntegrationFormComponent extends IntegrationForm imple
     setDisabledState(isDisabled: boolean): void;
     private updateModels;
     validate(): ValidationErrors | null;
+    updatedValidationPrivateNetwork(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<KafkaIntegrationFormComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<KafkaIntegrationFormComponent, "tb-kafka-integration-form", never, {}, {}, never, never>;
 }

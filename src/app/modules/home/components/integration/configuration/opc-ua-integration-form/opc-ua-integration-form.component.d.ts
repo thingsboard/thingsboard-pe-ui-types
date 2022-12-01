@@ -20,6 +20,7 @@ export declare class OpcUaIntegrationFormComponent extends IntegrationForm imple
     private updateSecurityTypeValidation;
     private updateIdentityTypeValidation;
     validate(): ValidationErrors | null;
+    updatedValidationPrivateNetwork(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<OpcUaIntegrationFormComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<OpcUaIntegrationFormComponent, "tb-opc-ua-integration-form", never, {}, {}, never, never>;
 }

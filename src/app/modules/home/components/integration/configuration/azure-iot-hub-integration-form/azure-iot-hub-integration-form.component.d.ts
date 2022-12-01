@@ -14,6 +14,7 @@ export declare class AzureIotHubIntegrationFormComponent extends IntegrationForm
     setDisabledState(isDisabled: boolean): void;
     private updateModels;
     validate(): ValidationErrors | null;
+    updatedValidationPrivateNetwork(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AzureIotHubIntegrationFormComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<AzureIotHubIntegrationFormComponent, "tb-azure-iot-hub-integration-form", never, {}, {}, never, never>;
 }

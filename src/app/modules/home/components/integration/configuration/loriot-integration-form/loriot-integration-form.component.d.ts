@@ -28,6 +28,7 @@ export declare class LoriotIntegrationFormComponent extends IntegrationForm impl
     private updateModels;
     private generateLoriotDownlinkUrl;
     private updateEnableFields;
+    updatedValidationPrivateNetwork(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<LoriotIntegrationFormComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<LoriotIntegrationFormComponent, "tb-loriot-integration-form", never, { "routingKey": "routingKey"; }, {}, never, never>;
 }

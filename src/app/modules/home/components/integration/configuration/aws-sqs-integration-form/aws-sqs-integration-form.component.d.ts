@@ -13,6 +13,7 @@ export declare class AwsSqsIntegrationFormComponent extends IntegrationForm impl
     setDisabledState(isDisabled: boolean): void;
     private updateModels;
     validate(): ValidationErrors | null;
+    updatedValidationPrivateNetwork(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AwsSqsIntegrationFormComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<AwsSqsIntegrationFormComponent, "tb-aws-sqs-integration-form", never, {}, {}, never, never>;
 }

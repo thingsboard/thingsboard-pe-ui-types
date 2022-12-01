@@ -30,6 +30,7 @@ export declare class TtnIntegrationFormComponent extends IntegrationForm impleme
     private buildHostName;
     private updateTtnVersionState;
     private updateDownlinkPattern;
+    updatedValidationPrivateNetwork(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TtnIntegrationFormComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<TtnIntegrationFormComponent, "tb-ttn-integration-form", never, {}, {}, never, never>;
 }

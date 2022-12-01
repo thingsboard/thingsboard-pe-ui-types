@@ -13,6 +13,7 @@ export declare class RabbitMqIntegrationFormComponent extends IntegrationForm im
     setDisabledState(isDisabled: boolean): void;
     private updateModels;
     validate(): ValidationErrors | null;
+    updatedValidationPrivateNetwork(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<RabbitMqIntegrationFormComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<RabbitMqIntegrationFormComponent, "tb-rabbit-mq-integration-form", never, {}, {}, never, never>;
 }

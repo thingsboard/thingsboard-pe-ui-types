@@ -17,6 +17,7 @@ export declare class MqttIntegrationFormComponent extends IntegrationForm implem
     setDisabledState(isDisabled: boolean): void;
     private updateModels;
     validate(): ValidationErrors | null;
+    updatedValidationPrivateNetwork(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<MqttIntegrationFormComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<MqttIntegrationFormComponent, "tb-mqtt-integration-form", never, { "isEdgeTemplate": "isEdgeTemplate"; }, {}, never, never>;
 }

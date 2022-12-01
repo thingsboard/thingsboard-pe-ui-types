@@ -128,6 +128,7 @@ export declare class DashboardWidget implements GridsterItem, IDashboardWidget {
     private gridsterItemComponentSubject;
     private gridsterItemComponentValue;
     get mobileHide(): boolean;
+    get desktopHide(): boolean;
     set gridsterItemComponent(item: GridsterItemComponentInterface);
     get highlighted(): boolean;
     set highlighted(highlighted: boolean);

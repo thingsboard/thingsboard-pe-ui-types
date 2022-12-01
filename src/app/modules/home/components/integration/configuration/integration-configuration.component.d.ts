@@ -12,6 +12,7 @@ export declare class IntegrationConfigurationComponent implements ControlValueAc
     routingKey: string;
     integrationType: IntegrationType;
     isEdgeTemplate: boolean;
+    allowLocalNetwork: boolean;
     disabled: boolean;
     private destroy$;
     private propagateChange;
@@ -24,5 +25,5 @@ export declare class IntegrationConfigurationComponent implements ControlValueAc
     private updateModel;
     validate(): ValidationErrors | null;
     static ɵfac: i0.ɵɵFactoryDeclaration<IntegrationConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<IntegrationConfigurationComponent, "tb-integration-configuration", never, { "executeRemotelyTemplate": "executeRemotelyTemplate"; "genericAdditionalInfoTemplate": "genericAdditionalInfoTemplate"; "isSetDownlink": "isSetDownlink"; "routingKey": "routingKey"; "integrationType": "integrationType"; "isEdgeTemplate": "isEdgeTemplate"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<IntegrationConfigurationComponent, "tb-integration-configuration", never, { "executeRemotelyTemplate": "executeRemotelyTemplate"; "genericAdditionalInfoTemplate": "genericAdditionalInfoTemplate"; "isSetDownlink": "isSetDownlink"; "routingKey": "routingKey"; "integrationType": "integrationType"; "isEdgeTemplate": "isEdgeTemplate"; "allowLocalNetwork": "allowLocalNetwork"; "disabled": "disabled"; }, {}, never, never>;
 }
