@@ -121,6 +121,7 @@ export declare class EntityTableConfig<T extends BaseData<HasId>, P extends Page
     entitiesDeleteEnabled: boolean;
     detailsPanelEnabled: boolean;
     hideDetailsTabsOnEdit: boolean;
+    rowPointer: boolean;
     actionsColumnTitle: any;
     entityTranslations: EntityTypeTranslation;
     entityResources: EntityTypeResource<T>;
@@ -161,6 +162,8 @@ export declare class EntityTableConfig<T extends BaseData<HasId>, P extends Page
     getEntityDetailsPage(): IEntityDetailsPageComponent;
     setEntityDetailsPage(entityDetailsPage: IEntityDetailsPageComponent): void;
     updateData(closeDetails?: boolean): void;
+    toggleEntityDetails($event: Event, entity: T): void;
+    isDetailsOpen(): boolean;
     getActivatedRoute(): ActivatedRoute;
 }
 export declare function checkBoxCell(value: boolean): string;

@@ -39,6 +39,7 @@ export declare class GroupEntityTableConfig<T extends BaseData<HasId>> extends E
     actionDescriptorsBySourceId: {
         [actionSourceId: string]: Array<WidgetActionDescriptor>;
     };
+    onGroupEntityRowClick: ($event: Event, entity: ShortEntityView) => void;
     onToggleEntityGroupDetails: () => void;
     onToggleEntityDetails: ($event: Event, entity: ShortEntityView) => void;
     loginAsUserEnabled: EntityBooleanFunction<T | ShortEntityView>;

@@ -1,7 +1,8 @@
 import { ControlValueAccessor, FormBuilder, FormGroup, ValidationErrors, Validator } from '@angular/forms';
+import { OnDestroy, OnInit } from '@angular/core';
 import { IntegrationCredentialType } from '@shared/models/integration.models';
 import * as i0 from "@angular/core";
-export declare class IntegrationCredentialsComponent implements ControlValueAccessor, Validator {
+export declare class IntegrationCredentialsComponent implements ControlValueAccessor, Validator, OnInit, OnDestroy {
     private fb;
     integrationCredentialForm: FormGroup;
     hideSelectType: boolean;
@@ -15,12 +16,17 @@ export declare class IntegrationCredentialsComponent implements ControlValueAcce
     userNameRequired: string;
     passwordLabel: string;
     passwordRequired: string;
+    private passwordOptionalValue;
+    get passwordOptional(): boolean;
+    set passwordOptional(value: boolean);
     IntegrationCredentialTypeTranslation: Map<IntegrationCredentialType, string>;
     IntegrationCredentialType: typeof IntegrationCredentialType;
     disabled: boolean;
     private destroy$;
     private propagateChange;
     constructor(fb: FormBuilder);
+    ngOnInit(): void;
+    ngOnDestroy(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
@@ -29,5 +35,5 @@ export declare class IntegrationCredentialsComponent implements ControlValueAcce
     private updateModel;
     validate(): ValidationErrors | null;
     static ɵfac: i0.ɵɵFactoryDeclaration<IntegrationCredentialsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<IntegrationCredentialsComponent, "tb-integration-credentials", never, { "allowCredentialTypes": "allowCredentialTypes"; "ignoreCaCert": "ignoreCaCert"; "userNameLabel": "userNameLabel"; "userNameRequired": "userNameRequired"; "passwordLabel": "passwordLabel"; "passwordRequired": "passwordRequired"; "disabled": "disabled"; }, {}, never, ["*"]>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<IntegrationCredentialsComponent, "tb-integration-credentials", never, { "allowCredentialTypes": "allowCredentialTypes"; "ignoreCaCert": "ignoreCaCert"; "userNameLabel": "userNameLabel"; "userNameRequired": "userNameRequired"; "passwordLabel": "passwordLabel"; "passwordRequired": "passwordRequired"; "passwordOptional": "passwordOptional"; "disabled": "disabled"; }, {}, never, ["*"]>;
 }

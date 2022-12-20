@@ -50,7 +50,6 @@ export declare enum ImportEntityColumnType {
     routingKey = "ROUTING_KEY",
     secret = "SECRET"
 }
-export declare const importEntityObjectColumns: ImportEntityColumnType[];
 export declare const importEntityColumnTypeTranslations: Map<ImportEntityColumnType, string>;
 export interface CsvColumnParam {
     type: ImportEntityColumnType;

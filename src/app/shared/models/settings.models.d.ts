@@ -178,6 +178,7 @@ export declare const repositoryAuthMethodTranslationMap: Map<RepositoryAuthMetho
 export interface RepositorySettings {
     repositoryUri: string;
     defaultBranch: string;
+    showMergeCommits: boolean;
     authMethod: RepositoryAuthMethod;
     username: string;
     password: string;
