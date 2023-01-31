@@ -15,7 +15,7 @@ export declare class PhoneInputComponent implements OnInit, ControlValueAccessor
     floatLabel: FloatLabelType;
     appearance: MatFormFieldAppearance;
     placeholder: any;
-    label: string;
+    label: any;
     get showFlagSelect(): boolean;
     allCountries: Array<Country>;
     phonePlaceholder: string;

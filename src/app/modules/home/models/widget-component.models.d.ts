@@ -40,7 +40,7 @@ import { TbPopoverComponent } from '@shared/components/popover.component';
 import { EntityId } from '@shared/models/id/entity-id';
 import { ReportService } from '@core/http/report.service';
 import { AlarmQuery, AlarmSearchStatus, AlarmStatus } from '@app/shared/models/alarm.models';
-import { TelemetrySubscriber } from '@app/shared/public-api';
+import { MillisecondsToTimeStringPipe, TelemetrySubscriber } from '@app/shared/public-api';
 export interface IWidgetAction {
     name: string;
     icon: string;
@@ -94,6 +94,7 @@ export declare class WidgetContext {
     telemetryWsService: TelemetryWebsocketService;
     telemetrySubscribers?: TelemetrySubscriber[];
     date: DatePipe;
+    milliSecondsToTimeString: MillisecondsToTimeStringPipe;
     translate: TranslateService;
     http: HttpClient;
     sanitizer: DomSanitizer;

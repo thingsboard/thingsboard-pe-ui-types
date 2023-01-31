@@ -25,10 +25,10 @@ export interface CircleData {
     radius: number;
 }
 export declare type GenericFunction = (data: FormattedData, dsData: FormattedData[], dsIndex: number) => string;
-export declare type MarkerImageFunction = (data: FormattedData, dsData: FormattedData[], dsIndex: number) => MarkerImageInfo;
-export declare type PosFuncton = (origXPos: any, origYPos: any) => {
-    x: any;
-    y: any;
+export declare type MarkerImageFunction = (data: FormattedData, markerImages: string[], dsData: FormattedData[], dsIndex: number) => MarkerImageInfo;
+export declare type PosFunction = (origXPos: any, origYPos: any, data: FormattedData, dsData: FormattedData[], dsIndex: number, aspect: number) => {
+    x: number;
+    y: number;
 };
 export declare type MarkerIconReadyFunction = (icon: MarkerIconInfo) => void;
 export declare enum GoogleMapType {

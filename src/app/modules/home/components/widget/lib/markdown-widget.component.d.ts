@@ -12,7 +12,7 @@ interface MarkdownWidgetSettings {
     markdownTextFunction: string;
     markdownCss: string;
 }
-declare type MarkdownTextFunction = (data: FormattedData[]) => string;
+declare type MarkdownTextFunction = (data: FormattedData[], ctx: WidgetContext) => string;
 export declare class MarkdownWidgetComponent extends PageComponent implements OnInit {
     protected store: Store<AppState>;
     private utils;

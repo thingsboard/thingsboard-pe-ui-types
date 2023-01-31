@@ -22,6 +22,7 @@ export declare class QueueAutocompleteComponent implements ControlValueAccessor,
     modelValue: string | null;
     labelText: string;
     requiredText: string;
+    autocompleteHint: string;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
@@ -48,5 +49,5 @@ export declare class QueueAutocompleteComponent implements ControlValueAccessor,
     getDescription(value: any): any;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<QueueAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<QueueAutocompleteComponent, "tb-queue-autocomplete", never, { "labelText": "labelText"; "requiredText": "requiredText"; "required": "required"; "queueType": "queueType"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<QueueAutocompleteComponent, "tb-queue-autocomplete", never, { "labelText": "labelText"; "requiredText": "requiredText"; "autocompleteHint": "autocompleteHint"; "required": "required"; "queueType": "queueType"; "disabled": "disabled"; }, {}, never, never>;
 }

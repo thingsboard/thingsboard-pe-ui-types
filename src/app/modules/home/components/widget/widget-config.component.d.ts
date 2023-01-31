@@ -98,7 +98,6 @@ export declare class WidgetConfigComponent extends PageComponent implements OnIn
     removeDatasource(index: number): void;
     addDatasource(): void;
     generateDataKey(chip: any, type: DataKeyType, datakeySettingsSchema: JsonSettingsSchema): DataKey;
-    private genNextLabel;
     private genNextColor;
     private createEntityAlias;
     private createFilter;

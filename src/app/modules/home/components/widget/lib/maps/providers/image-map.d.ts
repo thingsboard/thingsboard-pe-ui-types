@@ -1,14 +1,15 @@
 import L, { LatLngBounds, LatLngLiteral, LatLngTuple } from 'leaflet';
 import LeafletMap from '../leaflet-map';
-import { CircleData, PosFuncton, WidgetUnitedMapSettings } from '../map-models';
+import { CircleData, PosFunction, WidgetUnitedMapSettings } from '../map-models';
 import { WidgetContext } from '@home/models/widget-component.models';
+import { FormattedData } from '@shared/models/widget.models';
 export declare class ImageMap extends LeafletMap {
     imageOverlay: L.ImageOverlay;
     aspect: number;
     width: number;
     height: number;
     imageUrl: string;
-    posFunction: PosFuncton;
+    posFunction: PosFunction;
     private mapUuid;
     constructor(ctx: WidgetContext, $container: HTMLElement, options: WidgetUnitedMapSettings);
     private mapImage;
@@ -18,7 +19,15 @@ export declare class ImageMap extends LeafletMap {
     onResize(updateImage?: boolean): void;
     fitBounds(bounds: LatLngBounds, padding?: LatLngTuple): void;
     initMap(updateImage?: boolean): void;
-    convertPosition(expression: any): L.LatLng;
+    extractPosition(data: FormattedData): {
+        x: number;
+        y: number;
+    };
+    positionToLatLng(position: {
+        x: number;
+        y: number;
+    }): L.LatLng;
+    convertPosition(data: any, dsData: FormattedData[]): L.LatLng;
     convertPositionPolygon(expression: (LatLngTuple | LatLngTuple[] | LatLngTuple[][])[]): any;
     pointToLatLng(x: any, y: any): L.LatLng;
     latLngToPoint(latLng: LatLngLiteral): L.Point;

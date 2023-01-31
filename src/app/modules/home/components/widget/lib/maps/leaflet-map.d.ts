@@ -73,7 +73,15 @@ export default abstract class LeafletMap {
     onResize(): void;
     getCenter(): L.LatLng;
     fitBounds(bounds: LatLngBounds, padding?: LatLngTuple): void;
-    convertPosition(expression: object): L.LatLng;
+    extractPosition(data: FormattedData): {
+        x: number;
+        y: number;
+    };
+    positionToLatLng(position: {
+        x: number;
+        y: number;
+    }): L.LatLng;
+    convertPosition(data: FormattedData, dsData: FormattedData[]): L.LatLng;
     convertPositionPolygon(expression: (LatLngTuple | LatLngTuple[] | LatLngTuple[][])[]): any;
     convertToCustomFormat(position: L.LatLng, offset?: number): object;
     convertToPolygonFormat(points: Array<any>): Array<any>;

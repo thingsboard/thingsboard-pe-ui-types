@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, ElementRef, EventEmitter, NgZone, OnDestroy, OnInit, Renderer2, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ElementRef, EventEmitter, NgZone, OnDestroy, OnInit, Renderer2, ViewContainerRef } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -39,7 +39,7 @@ import { MatButton } from '@angular/material/button';
 import { TbPopoverService } from '@shared/components/popover.service';
 import { TbPopoverComponent } from '@shared/components/popover.component';
 import * as i0 from "@angular/core";
-export declare class DashboardPageComponent extends PageComponent implements IDashboardController, OnInit, OnDestroy {
+export declare class DashboardPageComponent extends PageComponent implements IDashboardController, OnInit, AfterViewInit, OnDestroy {
     protected store: Store<AppState>;
     private window;
     private document;
@@ -122,8 +122,17 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     currentDashboardId: string;
     setStateDashboardId: boolean;
     addingLayoutCtx: DashboardPageLayoutContext;
+    mainLayoutSize: {
+        width: string;
+        height: string;
+    };
+    rightLayoutSize: {
+        width: string;
+        height: string;
+    };
     private dashboardLogoCache;
     private defaultDashboardLogo;
+    private dashboardResize$;
     dashboardCtx: DashboardContext;
     layouts: DashboardPageLayouts;
     addWidgetFabButtons: FooterFabButtons;
@@ -137,6 +146,7 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     dashboardWidgetSelectComponent: DashboardWidgetSelectComponent;
     constructor(store: Store<AppState>, window: Window, document: Document, breakpointObserver: BreakpointObserver, route: ActivatedRoute, router: Router, utils: UtilsService, reportService: ReportService, dashboardUtils: DashboardUtilsService, authService: AuthService, entityService: EntityService, dialogService: DialogService, widgetComponentService: WidgetComponentService, dashboardService: DashboardService, userPermissionsService: UserPermissionsService, wl: WhiteLabelingService, itembuffer: ItemBufferService, importExport: ImportExportService, solutionsService: SolutionsService, mobileService: MobileService, fb: FormBuilder, dialog: MatDialog, translate: TranslateService, popoverService: TbPopoverService, renderer: Renderer2, ngZone: NgZone, embeddedValue: any, overlay: Overlay, viewContainerRef: ViewContainerRef, cd: ChangeDetectorRef, sanitizer: DomSanitizer, elRef: ElementRef);
     ngOnInit(): void;
+    ngAfterViewInit(): void;
     private init;
     private updateDashboardCss;
     private cleanupDashboardCss;
@@ -162,11 +172,10 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     showRightLayoutSwitch(): boolean;
     toggleLayouts(): void;
     openRightLayout(): void;
-    mainLayoutWidth(): string;
-    mainLayoutHeight(): string;
-    rightLayoutWidth(): string;
+    private updateLayoutSizes;
+    private updateMainLayoutSize;
+    private updateRightLayoutSize;
     private calculateWidth;
-    rightLayoutHeight(): string;
     isPublicUser(): boolean;
     isCustomerUser(): boolean;
     isTenantAdmin(): boolean;

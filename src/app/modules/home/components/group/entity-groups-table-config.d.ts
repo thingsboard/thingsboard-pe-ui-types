@@ -41,4 +41,6 @@ export declare class EntityGroupsTableConfig extends EntityTableConfig<EntityGro
     private unassignEntityGroupsFromEdge;
     private onEntityGroupAction;
     private isEdgeGroup;
+    private groupPageLinkSearchFunction;
+    private groupPageLinkSearch;
 }
