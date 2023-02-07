@@ -1,5 +1,5 @@
 import { ElementRef, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormControl, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormControl, Validator } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { EntityType } from '@shared/models/entity-type.models';
@@ -30,12 +30,12 @@ export declare class TableColumnsAssignmentComponent implements OnInit, ControlV
     columnsUpdated(): void;
     isColumnTypeDiffers(columnType: ImportEntityColumnType): boolean;
     private columnValid;
-    validate(c: FormControl): {
+    validate(c: UntypedFormControl): {
         columnsInvalid: boolean;
     };
     writeValue(value: CsvColumnParam[]): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TableColumnsAssignmentComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TableColumnsAssignmentComponent, "tb-table-columns-assignment", never, { "entityType": "entityType"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TableColumnsAssignmentComponent, "tb-table-columns-assignment", never, { "entityType": "entityType"; "disabled": "disabled"; }, {}, never, never, false>;
 }
 interface AssignmentColumnType {
     value: ImportEntityColumnType;

@@ -1,17 +1,17 @@
 import { OnDestroy } from '@angular/core';
-import { ControlValueAccessor, FormArray, FormBuilder, FormGroup, ValidationErrors, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { OpcMappingType, OpcUaMapping } from '@shared/models/integration.models';
 import * as i0 from "@angular/core";
 export declare class OpcUaMappingComponent implements ControlValueAccessor, Validator, OnDestroy {
     private fb;
-    opcMappingForm: FormGroup;
+    opcMappingForm: UntypedFormGroup;
     OpcMappingTypes: OpcMappingType[];
     OpcMappingType: typeof OpcMappingType;
     OpcMappingTypeTranslation: Map<OpcMappingType, string>;
     disabled: boolean;
     private destroy$;
     private propagateChange;
-    constructor(fb: FormBuilder);
+    constructor(fb: UntypedFormBuilder);
     ngOnDestroy(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -20,10 +20,10 @@ export declare class OpcUaMappingComponent implements ControlValueAccessor, Vali
     validate(): ValidationErrors | null;
     addMap(): void;
     removeMap(index: number): void;
-    get mapFormArray(): FormArray;
-    get mapFormArrayControls(): FormGroup[];
+    get mapFormArray(): UntypedFormArray;
+    get mapFormArrayControls(): UntypedFormGroup[];
     private createdFormGroup;
     private updateModels;
     static ɵfac: i0.ɵɵFactoryDeclaration<OpcUaMappingComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<OpcUaMappingComponent, "tb-opc-ua-mapping", never, { "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<OpcUaMappingComponent, "tb-opc-ua-mapping", never, { "disabled": "disabled"; }, {}, never, never, false>;
 }

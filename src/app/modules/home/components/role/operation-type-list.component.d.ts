@@ -1,5 +1,5 @@
 import { AfterViewInit, ElementRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -18,7 +18,7 @@ export declare class OperationTypeListComponent implements ControlValueAccessor,
     translate: TranslateService;
     private userPermissionsService;
     private fb;
-    operationTypeListFormGroup: FormGroup;
+    operationTypeListFormGroup: UntypedFormGroup;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
@@ -38,7 +38,7 @@ export declare class OperationTypeListComponent implements ControlValueAccessor,
     searchText: string;
     private dirty;
     private propagateChange;
-    constructor(store: Store<AppState>, translate: TranslateService, userPermissionsService: UserPermissionsService, fb: FormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, userPermissionsService: UserPermissionsService, fb: UntypedFormBuilder);
     updateValidators(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -60,6 +60,6 @@ export declare class OperationTypeListComponent implements ControlValueAccessor,
     onFocus(): void;
     clear(value?: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<OperationTypeListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<OperationTypeListComponent, "tb-operation-type-list", never, { "required": "required"; "disabled": "disabled"; "groupRoleOperations": "groupRoleOperations"; "resource": "resource"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<OperationTypeListComponent, "tb-operation-type-list", never, { "required": "required"; "disabled": "disabled"; "groupRoleOperations": "groupRoleOperations"; "resource": "resource"; }, {}, never, never, false>;
 }
 export {};

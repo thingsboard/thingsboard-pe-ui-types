@@ -1,5 +1,5 @@
 import { AfterViewInit, OnDestroy, OnInit, ViewContainerRef } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { RuleNodeConfiguration, RuleNodeDefinition } from '@shared/models/rule-node.models';
 import { Subscription } from 'rxjs';
 import { RuleChainService } from '@core/http/rule-chain.service';
@@ -24,13 +24,13 @@ export declare class RuleNodeConfigComponent implements ControlValueAccessor, On
     set nodeDefinition(nodeDefinition: RuleNodeDefinition);
     get nodeDefinition(): RuleNodeDefinition;
     definedDirectiveError: string;
-    ruleNodeConfigFormGroup: FormGroup;
+    ruleNodeConfigFormGroup: UntypedFormGroup;
     changeSubscription: Subscription;
     private definedConfigComponentRef;
     private definedConfigComponent;
     private configuration;
     private propagateChange;
-    constructor(translate: TranslateService, ruleChainService: RuleChainService, fb: FormBuilder);
+    constructor(translate: TranslateService, ruleChainService: RuleChainService, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -43,5 +43,5 @@ export declare class RuleNodeConfigComponent implements ControlValueAccessor, On
     private validateDefinedDirective;
     validate(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<RuleNodeConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RuleNodeConfigComponent, "tb-rule-node-config", never, { "required": "required"; "disabled": "disabled"; "ruleNodeId": "ruleNodeId"; "ruleChainId": "ruleChainId"; "ruleChainType": "ruleChainType"; "nodeDefinition": "nodeDefinition"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RuleNodeConfigComponent, "tb-rule-node-config", never, { "required": "required"; "disabled": "disabled"; "ruleNodeId": "ruleNodeId"; "ruleChainId": "ruleChainId"; "ruleChainType": "ruleChainType"; "nodeDefinition": "nodeDefinition"; }, {}, never, never, false>;
 }

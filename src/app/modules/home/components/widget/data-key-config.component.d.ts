@@ -3,7 +3,7 @@ import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { ComparisonResultType, DataKey, Widget, widgetType } from '@shared/models/widget.models';
-import { ControlValueAccessor, FormBuilder, FormControl, FormGroup, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { UtilsService } from '@core/services/utils.service';
 import { TranslateService } from '@ngx-translate/core';
 import { MatDialog } from '@angular/material/dialog';
@@ -49,8 +49,8 @@ export declare class DataKeyConfigComponent extends PageComponent implements OnI
     displayAdvanced: boolean;
     modelValue: DataKey;
     private propagateChange;
-    dataKeyFormGroup: FormGroup;
-    dataKeySettingsFormGroup: FormGroup;
+    dataKeyFormGroup: UntypedFormGroup;
+    dataKeySettingsFormGroup: UntypedFormGroup;
     private dataKeySettingsData;
     private alarmKeys;
     filteredKeys: Observable<Array<string>>;
@@ -58,7 +58,7 @@ export declare class DataKeyConfigComponent extends PageComponent implements OnI
     private fetchObservable$;
     keySearchText: string;
     functionScopeVariables: string[];
-    constructor(store: Store<AppState>, utils: UtilsService, entityService: EntityService, dialog: MatDialog, translate: TranslateService, widgetService: WidgetService, fb: FormBuilder);
+    constructor(store: Store<AppState>, utils: UtilsService, entityService: EntityService, dialog: MatDialog, translate: TranslateService, widgetService: WidgetService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -73,7 +73,7 @@ export declare class DataKeyConfigComponent extends PageComponent implements OnI
     private getKeys;
     private createKeyFilter;
     validateOnSubmit(): void;
-    validate(c: FormControl): {
+    validate(c: UntypedFormControl): {
         dataKey: {
             valid: boolean;
         };
@@ -85,5 +85,5 @@ export declare class DataKeyConfigComponent extends PageComponent implements OnI
         dataKey?: undefined;
     };
     static ɵfac: i0.ɵɵFactoryDeclaration<DataKeyConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeyConfigComponent, "tb-data-key-config", never, { "entityAliasId": "entityAliasId"; "callbacks": "callbacks"; "dashboard": "dashboard"; "aliasController": "aliasController"; "widget": "widget"; "widgetType": "widgetType"; "dataKeySettingsSchema": "dataKeySettingsSchema"; "dataKeySettingsDirective": "dataKeySettingsDirective"; "showPostProcessing": "showPostProcessing"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeyConfigComponent, "tb-data-key-config", never, { "entityAliasId": "entityAliasId"; "callbacks": "callbacks"; "dashboard": "dashboard"; "aliasController": "aliasController"; "widget": "widget"; "widgetType": "widgetType"; "dataKeySettingsSchema": "dataKeySettingsSchema"; "dataKeySettingsDirective": "dataKeySettingsDirective"; "showPostProcessing": "showPostProcessing"; }, {}, never, never, false>;
 }

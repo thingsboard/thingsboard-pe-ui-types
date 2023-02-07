@@ -23,5 +23,5 @@ export declare class AppComponent implements OnInit {
     ngOnInit(): void;
     onActivateComponent($event: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AppComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AppComponent, "tb-root", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AppComponent, "tb-root", never, {}, {}, never, never, false>;
 }

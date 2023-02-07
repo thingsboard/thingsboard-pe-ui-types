@@ -1,15 +1,15 @@
 import { OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { AwsSnsSmsProviderConfiguration, BindTypes, CodingSchemes, NumberingPlanIdentification, TypeOfNumber } from '@shared/models/settings.models';
 import * as i0 from "@angular/core";
 export declare class SmppSmsProviderConfigurationComponent implements ControlValueAccessor, OnInit {
     private fb;
-    constructor(fb: FormBuilder);
+    constructor(fb: UntypedFormBuilder);
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
     disabled: boolean;
-    smppSmsProviderConfigurationFormGroup: FormGroup;
+    smppSmsProviderConfigurationFormGroup: UntypedFormGroup;
     smppVersions: {
         value: number;
     }[];
@@ -29,5 +29,5 @@ export declare class SmppSmsProviderConfigurationComponent implements ControlVal
     writeValue(value: AwsSnsSmsProviderConfiguration | null): void;
     private updateValue;
     static ɵfac: i0.ɵɵFactoryDeclaration<SmppSmsProviderConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SmppSmsProviderConfigurationComponent, "tb-smpp-sms-provider-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SmppSmsProviderConfigurationComponent, "tb-smpp-sms-provider-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
 }

@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, OnDestroy } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup, ValidationErrors, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { Lwm2mProfileConfigModels, ObjectLwM2M } from './lwm2m-profile-config.models';
 import { DeviceProfileService } from '@core/http/device-profile.service';
 import { DialogService } from '@core/services/dialog.service';
@@ -16,14 +16,14 @@ export declare class Lwm2mDeviceProfileTransportConfigurationComponent implement
     isBootstrapServerUpdateEnable: boolean;
     private requiredValue;
     private destroy$;
-    lwm2mDeviceProfileFormGroup: FormGroup;
+    lwm2mDeviceProfileFormGroup: UntypedFormGroup;
     configurationValue: Lwm2mProfileConfigModels;
     sortFunction: (key: string, value: object) => object;
     get required(): boolean;
     set required(value: boolean);
     isAdd: boolean;
     private propagateChange;
-    constructor(translate: TranslateService, fb: FormBuilder, cd: ChangeDetectorRef, dialogService: DialogService, deviceProfileService: DeviceProfileService);
+    constructor(translate: TranslateService, fb: UntypedFormBuilder, cd: ChangeDetectorRef, dialogService: DialogService, deviceProfileService: DeviceProfileService);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnDestroy(): void;
@@ -53,7 +53,7 @@ export declare class Lwm2mDeviceProfileTransportConfigurationComponent implement
     private removeObserveAttrTelemetryFromJson;
     private removeKeyNameFromJson;
     private removeAttributesFromJson;
-    get clientSettingsFormGroup(): FormGroup;
+    get clientSettingsFormGroup(): UntypedFormGroup;
     static ɵfac: i0.ɵɵFactoryDeclaration<Lwm2mDeviceProfileTransportConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mDeviceProfileTransportConfigurationComponent, "tb-profile-lwm2m-device-transport-configuration", never, { "required": "required"; "isAdd": "isAdd"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mDeviceProfileTransportConfigurationComponent, "tb-profile-lwm2m-device-transport-configuration", never, { "required": "required"; "isAdd": "isAdd"; }, {}, never, never, false>;
 }

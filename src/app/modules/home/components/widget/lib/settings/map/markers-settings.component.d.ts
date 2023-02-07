@@ -1,5 +1,5 @@
 import { OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormControl, FormGroup, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -18,17 +18,17 @@ export declare class MarkersSettingsComponent extends PageComponent implements O
     functionScopeVariables: string[];
     private modelValue;
     private propagateChange;
-    markersSettingsFormGroup: FormGroup;
+    markersSettingsFormGroup: UntypedFormGroup;
     showTooltipActions: ShowTooltipAction[];
     showTooltipActionTranslations: Map<ShowTooltipAction, string>;
-    constructor(store: Store<AppState>, translate: TranslateService, widgetService: WidgetService, fb: FormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, widgetService: WidgetService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: MarkersSettings): void;
-    validate(c: FormControl): {
+    validate(c: UntypedFormControl): {
         markersSettings: {
             valid: boolean;
         };
@@ -36,5 +36,5 @@ export declare class MarkersSettingsComponent extends PageComponent implements O
     private updateModel;
     private updateValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<MarkersSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MarkersSettingsComponent, "tb-markers-settings", never, { "disabled": "disabled"; "provider": "provider"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MarkersSettingsComponent, "tb-markers-settings", never, { "disabled": "disabled"; "provider": "provider"; }, {}, never, never, false>;
 }

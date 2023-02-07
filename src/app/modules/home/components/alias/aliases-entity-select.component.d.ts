@@ -32,5 +32,5 @@ export declare class AliasesEntitySelectComponent implements OnInit, OnDestroy {
     private updateDisplayValue;
     private updateEntityAliasesInfo;
     static ɵfac: i0.ɵɵFactoryDeclaration<AliasesEntitySelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AliasesEntitySelectComponent, "tb-aliases-entity-select", never, { "aliasController": "aliasController"; "tooltipPosition": "tooltipPosition"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AliasesEntitySelectComponent, "tb-aliases-entity-select", never, { "aliasController": "aliasController"; "tooltipPosition": "tooltipPosition"; "disabled": "disabled"; }, {}, never, never, false>;
 }

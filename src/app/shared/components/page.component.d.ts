@@ -16,5 +16,5 @@ export declare abstract class PageComponent implements OnDestroy {
     protected registerDisableOnLoadFormControl(control: AbstractControl): void;
     ngOnDestroy(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<PageComponent, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<PageComponent, never, never, {}, {}, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<PageComponent, never, never, {}, {}, never, never, false>;
 }

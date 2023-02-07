@@ -11,7 +11,7 @@ import { EntityType } from '@shared/models/entity-type.models';
 import { AuditLogMode } from '@shared/models/audit-log.models';
 import { DebugEventType, EventType } from '@shared/models/event.models';
 import { AttributeScope, LatestTelemetry } from '@shared/models/telemetry/telemetry.models';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 import { PageLink } from '@shared/models/page/page-link';
 import * as i0 from "@angular/core";
 export declare abstract class EntityTabsComponent<T extends BaseData<HasId>, P extends PageLink = PageLink, L extends BaseData<HasId> = T, C extends EntityTableConfig<T, P, L> = EntityTableConfig<T, P, L>> extends PageComponent implements OnInit, AfterViewInit {
@@ -35,7 +35,7 @@ export declare abstract class EntityTabsComponent<T extends BaseData<HasId>, P e
     get entity(): T;
     set entitiesTableConfig(entitiesTableConfig: C);
     get entitiesTableConfig(): C;
-    detailsForm: FormGroup;
+    detailsForm: UntypedFormGroup;
     private entityTabsSubject;
     entityTabsChanged: import("rxjs").Observable<MatTab[]>;
     protected constructor(store: Store<AppState>);
@@ -44,5 +44,5 @@ export declare abstract class EntityTabsComponent<T extends BaseData<HasId>, P e
     protected setEntity(entity: T): void;
     protected setEntitiesTableConfig(entitiesTableConfig: C): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityTabsComponent<any, any, any, any>, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<EntityTabsComponent<any, any, any, any>, never, never, { "isEdit": "isEdit"; "entity": "entity"; "entitiesTableConfig": "entitiesTableConfig"; "detailsForm": "detailsForm"; }, {}, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<EntityTabsComponent<any, any, any, any>, never, never, { "isEdit": "isEdit"; "entity": "entity"; "entitiesTableConfig": "entitiesTableConfig"; "detailsForm": "detailsForm"; }, {}, never, never, false>;
 }

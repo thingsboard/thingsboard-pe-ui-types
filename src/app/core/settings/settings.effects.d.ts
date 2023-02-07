@@ -26,11 +26,11 @@ export declare class SettingsEffects {
     private customTranslationService;
     private reportService;
     constructor(actions$: Actions<SettingsActions>, store: Store<AppState>, authService: AuthService, utils: UtilsService, router: Router, localStorageService: LocalStorageService, titleService: TitleService, faviconService: FaviconService, translate: TranslateService, customTranslationService: CustomTranslationService, reportService: ReportService);
-    persistSettings: import("rxjs").Observable<[import("./settings.actions").ActionSettingsChangeLanguage, import("./settings.models").SettingsState]>;
-    setTranslateServiceLanguage: import("rxjs").Observable<string>;
-    setTitle: import("rxjs").Observable<import("@angular/router").Event>;
-    setFavicon: import("rxjs").Observable<never>;
-    setPublicId: import("rxjs").Observable<import("@angular/router").Event>;
+    persistSettings: import("rxjs").Observable<[import("./settings.actions").ActionSettingsChangeLanguage, import("./settings.models").SettingsState]> & import("@ngrx/effects").CreateEffectMetadata;
+    setTranslateServiceLanguage: import("rxjs").Observable<string> & import("@ngrx/effects").CreateEffectMetadata;
+    setTitle: import("rxjs").Observable<import("@angular/router").Event | SettingsActions> & import("@ngrx/effects").CreateEffectMetadata;
+    setFavicon: import("rxjs").Observable<import("./settings.actions").ActionSettingsChangeWhiteLabeling> & import("@ngrx/effects").CreateEffectMetadata;
+    setPublicId: import("rxjs").Observable<import("@angular/router").Event> & import("@ngrx/effects").CreateEffectMetadata;
     static ɵfac: i0.ɵɵFactoryDeclaration<SettingsEffects, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<SettingsEffects>;
 }

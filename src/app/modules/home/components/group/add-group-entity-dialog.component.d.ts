@@ -3,7 +3,7 @@ import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { FormControl, FormGroupDirective, NgForm, FormGroup } from '@angular/forms';
+import { UntypedFormControl, FormGroupDirective, NgForm, UntypedFormGroup } from '@angular/forms';
 import { EntityType, EntityTypeResource, EntityTypeTranslation } from '@shared/models/entity-type.models';
 import { BaseData, HasId } from '@shared/models/base-data';
 import { EntityId } from '@shared/models/id/entity-id';
@@ -26,7 +26,7 @@ export declare class AddGroupEntityDialogComponent extends DialogComponent<AddGr
     private errorStateMatcher;
     private entityService;
     entityComponent: GroupEntityComponent<BaseData<HasId>>;
-    detailsForm: FormGroup;
+    detailsForm: UntypedFormGroup;
     entitiesTableConfig: GroupEntityTableConfig<BaseData<HasId>>;
     entityGroup: EntityGroupInfo;
     entityType: EntityType;
@@ -38,9 +38,9 @@ export declare class AddGroupEntityDialogComponent extends DialogComponent<AddGr
     constructor(store: Store<AppState>, router: Router, data: AddGroupEntityDialogData<BaseData<HasId>>, dialogRef: MatDialogRef<AddGroupEntityDialogComponent, BaseData<HasId>>, componentFactoryResolver: ComponentFactoryResolver, injector: Injector, errorStateMatcher: ErrorStateMatcher, entityService: EntityService);
     ngOnInit(): void;
     helpLinkId(): string;
-    isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean;
+    isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     cancel(): void;
     add(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AddGroupEntityDialogComponent, [null, null, null, null, null, null, { skipSelf: true; }, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AddGroupEntityDialogComponent, "tb-add-group-entity-dialog", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AddGroupEntityDialogComponent, "tb-add-group-entity-dialog", never, {}, {}, never, never, false>;
 }

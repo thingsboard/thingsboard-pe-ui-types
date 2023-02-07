@@ -2,7 +2,7 @@ import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, FormGroupDirective, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DialogComponent } from '@app/shared/components/dialog.component';
 import { UtilsService } from '@core/services/utils.service';
@@ -27,16 +27,16 @@ export declare class ManageDashboardLayoutsDialogComponent extends DialogCompone
     private translate;
     private dialog;
     tooltip: MatTooltip;
-    layoutsFormGroup: FormGroup;
+    layoutsFormGroup: UntypedFormGroup;
     layoutWidthType: typeof LayoutWidthType;
     layoutPercentageSize: typeof LayoutPercentageSize;
     layoutFixedSize: typeof LayoutFixedSize;
     private readonly layouts;
     private subscriptions;
     private submitted;
-    constructor(store: Store<AppState>, router: Router, data: ManageDashboardLayoutsDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<ManageDashboardLayoutsDialogComponent, DashboardStateLayouts>, fb: FormBuilder, utils: UtilsService, dashboardUtils: DashboardUtilsService, translate: TranslateService, dialog: MatDialog);
+    constructor(store: Store<AppState>, router: Router, data: ManageDashboardLayoutsDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<ManageDashboardLayoutsDialogComponent, DashboardStateLayouts>, fb: UntypedFormBuilder, utils: UtilsService, dashboardUtils: DashboardUtilsService, translate: TranslateService, dialog: MatDialog);
     ngOnDestroy(): void;
-    isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean;
+    isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     openLayoutSettings(layoutId: DashboardLayoutId): void;
     cancel(): void;
     save(): void;
@@ -49,5 +49,5 @@ export declare class ManageDashboardLayoutsDialogComponent extends DialogCompone
     layoutButtonText(side: DashboardLayoutId): string;
     showPreviewInputs(side: DashboardLayoutId): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<ManageDashboardLayoutsDialogComponent, [null, null, null, { skipSelf: true; }, null, null, null, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ManageDashboardLayoutsDialogComponent, "tb-manage-dashboard-layouts-dialog", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ManageDashboardLayoutsDialogComponent, "tb-manage-dashboard-layouts-dialog", never, {}, {}, never, never, false>;
 }

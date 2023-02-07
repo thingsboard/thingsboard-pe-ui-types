@@ -35,5 +35,5 @@ export declare class JsonObjectViewComponent implements OnInit, OnDestroy {
     registerOnTouched(fn: any): void;
     writeValue(value: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<JsonObjectViewComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<JsonObjectViewComponent, "tb-json-object-view", never, { "label": "label"; "fillHeight": "fillHeight"; "editorStyle": "editorStyle"; "sort": "sort"; "autoWidth": "autoWidth"; "autoHeight": "autoHeight"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<JsonObjectViewComponent, "tb-json-object-view", never, { "label": "label"; "fillHeight": "fillHeight"; "editorStyle": "editorStyle"; "sort": "sort"; "autoWidth": "autoWidth"; "autoHeight": "autoHeight"; }, {}, never, never, false>;
 }

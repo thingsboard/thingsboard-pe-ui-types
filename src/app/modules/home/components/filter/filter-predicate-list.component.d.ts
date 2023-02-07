@@ -1,5 +1,5 @@
 import { OnInit } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, FormArray, FormBuilder, FormGroup, ValidationErrors, Validator } from '@angular/forms';
+import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { ComplexOperation, EntityKeyValueType, KeyFilterPredicateInfo } from '@shared/models/query/query.models';
 import { MatDialog } from '@angular/material/dialog';
 import { ComponentType } from '@angular/cdk/portal';
@@ -15,14 +15,14 @@ export declare class FilterPredicateListComponent implements ControlValueAccesso
     displayUserParameters: boolean;
     allowUserDynamicSource: boolean;
     onlyUserDynamicSource: boolean;
-    filterListFormGroup: FormGroup;
+    filterListFormGroup: UntypedFormGroup;
     valueTypeEnum: typeof EntityKeyValueType;
     complexOperationTranslations: Map<ComplexOperation, string>;
     private propagateChange;
     private valueChangeSubscription;
-    constructor(fb: FormBuilder, complexFilterPredicateDialogComponent: ComponentType<any>, dialog: MatDialog);
+    constructor(fb: UntypedFormBuilder, complexFilterPredicateDialogComponent: ComponentType<any>, dialog: MatDialog);
     ngOnInit(): void;
-    predicatesFormArray(): FormArray;
+    predicatesFormArray(): UntypedFormArray;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState?(isDisabled: boolean): void;
@@ -33,5 +33,5 @@ export declare class FilterPredicateListComponent implements ControlValueAccesso
     private openComplexFilterDialog;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<FilterPredicateListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FilterPredicateListComponent, "tb-filter-predicate-list", never, { "disabled": "disabled"; "valueType": "valueType"; "key": "key"; "operation": "operation"; "displayUserParameters": "displayUserParameters"; "allowUserDynamicSource": "allowUserDynamicSource"; "onlyUserDynamicSource": "onlyUserDynamicSource"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FilterPredicateListComponent, "tb-filter-predicate-list", never, { "disabled": "disabled"; "valueType": "valueType"; "key": "key"; "operation": "operation"; "displayUserParameters": "displayUserParameters"; "allowUserDynamicSource": "allowUserDynamicSource"; "onlyUserDynamicSource": "onlyUserDynamicSource"; }, {}, never, never, false>;
 }

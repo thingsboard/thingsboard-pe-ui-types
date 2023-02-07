@@ -1,5 +1,5 @@
 import { EventEmitter, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -19,8 +19,8 @@ export declare class GaugeHighlightComponent extends PageComponent implements On
     removeHighlight: EventEmitter<any>;
     private modelValue;
     private propagateChange;
-    gaugeHighlightFormGroup: FormGroup;
-    constructor(store: Store<AppState>, translate: TranslateService, fb: FormBuilder);
+    gaugeHighlightFormGroup: UntypedFormGroup;
+    constructor(store: Store<AppState>, translate: TranslateService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -29,5 +29,5 @@ export declare class GaugeHighlightComponent extends PageComponent implements On
     highlightRangeText(): string;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<GaugeHighlightComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<GaugeHighlightComponent, "tb-gauge-highlight", never, { "disabled": "disabled"; "expanded": "expanded"; }, { "removeHighlight": "removeHighlight"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GaugeHighlightComponent, "tb-gauge-highlight", never, { "disabled": "disabled"; "expanded": "expanded"; }, { "removeHighlight": "removeHighlight"; }, never, never, false>;
 }

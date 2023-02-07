@@ -30,5 +30,5 @@ export declare class MailTemplatesComponent extends PageComponent implements OnI
     isTenantAdmin(): boolean;
     save(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<MailTemplatesComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MailTemplatesComponent, "tb-mail-templates", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MailTemplatesComponent, "tb-mail-templates", never, {}, {}, never, never, false>;
 }

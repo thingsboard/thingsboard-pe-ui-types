@@ -1,5 +1,5 @@
 import { ElementRef, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -10,6 +10,7 @@ import { EntityService } from '@core/http/entity.service';
 import { TruncatePipe } from '@shared/pipe/truncate.pipe';
 import { RuleChainService } from '@core/http/rule-chain.service';
 import { MatAutocompleteTrigger } from '@angular/material/autocomplete';
+import { RuleChainType } from '@app/shared/models/rule-chain.models';
 import * as i0 from "@angular/core";
 export declare class RuleChainAutocompleteComponent implements ControlValueAccessor, OnInit {
     private store;
@@ -18,11 +19,11 @@ export declare class RuleChainAutocompleteComponent implements ControlValueAcces
     private entityService;
     private ruleChainService;
     private fb;
-    selectRuleChainFormGroup: FormGroup;
-    ruleChainLabel: string;
+    selectRuleChainFormGroup: UntypedFormGroup;
     modelValue: string | null;
     labelText: string;
     requiredText: string;
+    ruleChainType: RuleChainType;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
@@ -33,7 +34,7 @@ export declare class RuleChainAutocompleteComponent implements ControlValueAcces
     searchText: string;
     private dirty;
     private propagateChange;
-    constructor(store: Store<AppState>, translate: TranslateService, truncate: TruncatePipe, entityService: EntityService, ruleChainService: RuleChainService, fb: FormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, truncate: TruncatePipe, entityService: EntityService, ruleChainService: RuleChainService, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -50,5 +51,5 @@ export declare class RuleChainAutocompleteComponent implements ControlValueAcces
     clear(): void;
     createDefaultRuleChain($event: Event, ruleChainName: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<RuleChainAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RuleChainAutocompleteComponent, "tb-rule-chain-autocomplete", never, { "labelText": "labelText"; "requiredText": "requiredText"; "required": "required"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RuleChainAutocompleteComponent, "tb-rule-chain-autocomplete", never, { "labelText": "labelText"; "requiredText": "requiredText"; "ruleChainType": "ruleChainType"; "required": "required"; "disabled": "disabled"; }, {}, never, ["[tb-hint]"], false>;
 }

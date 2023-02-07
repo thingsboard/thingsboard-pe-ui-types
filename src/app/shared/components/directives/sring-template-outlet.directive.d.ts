@@ -13,7 +13,7 @@ export declare class TbStringTemplateOutletDirective<_T = unknown> implements On
     constructor(viewContainer: ViewContainerRef, templateRef: TemplateRef<any>);
     ngOnChanges(changes: SimpleChanges): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TbStringTemplateOutletDirective<any>, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<TbStringTemplateOutletDirective<any>, "[tbStringTemplateOutlet]", ["tbStringTemplateOutlet"], { "tbStringTemplateOutletContext": "tbStringTemplateOutletContext"; "tbStringTemplateOutlet": "tbStringTemplateOutlet"; }, {}, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<TbStringTemplateOutletDirective<any>, "[tbStringTemplateOutlet]", ["tbStringTemplateOutlet"], { "tbStringTemplateOutletContext": "tbStringTemplateOutletContext"; "tbStringTemplateOutlet": "tbStringTemplateOutlet"; }, {}, never, never, false>;
 }
 export declare class TbStringTemplateOutletContext {
     $implicit: any;

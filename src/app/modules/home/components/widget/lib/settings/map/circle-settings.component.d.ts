@@ -1,5 +1,5 @@
 import { OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormControl, FormGroup, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -18,16 +18,16 @@ export declare class CircleSettingsComponent extends PageComponent implements On
     functionScopeVariables: string[];
     private modelValue;
     private propagateChange;
-    circleSettingsFormGroup: FormGroup;
+    circleSettingsFormGroup: UntypedFormGroup;
     showTooltipActions: ShowTooltipAction[];
     showTooltipActionTranslations: Map<ShowTooltipAction, string>;
-    constructor(store: Store<AppState>, translate: TranslateService, widgetService: WidgetService, fb: FormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, widgetService: WidgetService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: CircleSettings): void;
-    validate(c: FormControl): {
+    validate(c: UntypedFormControl): {
         circleSettings: {
             valid: boolean;
         };
@@ -35,5 +35,5 @@ export declare class CircleSettingsComponent extends PageComponent implements On
     private updateModel;
     private updateValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<CircleSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CircleSettingsComponent, "tb-circle-settings", never, { "disabled": "disabled"; "widget": "widget"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CircleSettingsComponent, "tb-circle-settings", never, { "disabled": "disabled"; "widget": "widget"; }, {}, never, never, false>;
 }

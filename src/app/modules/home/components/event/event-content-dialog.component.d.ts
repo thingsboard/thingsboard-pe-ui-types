@@ -30,5 +30,5 @@ export declare class EventContentDialogComponent extends DialogComponent<EventCo
     createEditor(editorElementRef: ElementRef, content: string): void;
     updateEditorSize(editorElement: any, content: string, editor: Ace.Editor): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EventContentDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EventContentDialogComponent, "tb-event-content-dialog", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EventContentDialogComponent, "tb-event-content-dialog", never, {}, {}, never, never, false>;
 }

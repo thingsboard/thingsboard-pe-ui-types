@@ -1,5 +1,5 @@
 import { AfterViewInit, ElementRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -20,7 +20,7 @@ export declare class EdgeEntityGroupListComponent implements ControlValueAccesso
     private customerService;
     data: AddEntityGroupsToEdgeDialogData;
     private fb;
-    edgeEntityGroupListFormGroup: FormGroup;
+    edgeEntityGroupListFormGroup: UntypedFormGroup;
     modelValue: Array<string> | null;
     groupType: EntityType;
     excludeGroupAll: boolean;
@@ -39,7 +39,7 @@ export declare class EdgeEntityGroupListComponent implements ControlValueAccesso
     searchText: string;
     private dirty;
     private propagateChange;
-    constructor(store: Store<AppState>, translate: TranslateService, entityGroupService: EntityGroupService, customerService: CustomerService, data: AddEntityGroupsToEdgeDialogData, fb: FormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, entityGroupService: EntityGroupService, customerService: CustomerService, data: AddEntityGroupsToEdgeDialogData, fb: UntypedFormBuilder);
     updateValidators(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -62,5 +62,5 @@ export declare class EdgeEntityGroupListComponent implements ControlValueAccesso
     private createEntityGroupTasks;
     private getGroupsByOwnerId;
     static ɵfac: i0.ɵɵFactoryDeclaration<EdgeEntityGroupListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EdgeEntityGroupListComponent, "tb-edge-entity-group-list", never, { "groupType": "groupType"; "excludeGroupAll": "excludeGroupAll"; "required": "required"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EdgeEntityGroupListComponent, "tb-edge-entity-group-list", never, { "groupType": "groupType"; "excludeGroupAll": "excludeGroupAll"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
 }

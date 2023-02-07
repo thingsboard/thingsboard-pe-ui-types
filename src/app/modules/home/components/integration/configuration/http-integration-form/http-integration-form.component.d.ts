@@ -1,5 +1,5 @@
 import { OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup, ValidationErrors, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { HttpIntegration, IntegrationType } from '@shared/models/integration.models';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -7,16 +7,16 @@ import { TranslateService } from '@ngx-translate/core';
 import { IntegrationForm } from '@home/components/integration/configuration/integration-form';
 import * as i0 from "@angular/core";
 export declare class HttpIntegrationFormComponent extends IntegrationForm implements ControlValueAccessor, Validator, OnInit {
-    protected fb: FormBuilder;
+    protected fb: UntypedFormBuilder;
     protected store: Store<AppState>;
     protected translate: TranslateService;
-    baseHttpIntegrationConfigForm: FormGroup;
+    baseHttpIntegrationConfigForm: UntypedFormGroup;
     showSecurity: boolean;
     routingKey: string;
     protected integrationType: IntegrationType;
     private propagateChangePending;
     private propagateChange;
-    constructor(fb: FormBuilder, store: Store<AppState>, translate: TranslateService);
+    constructor(fb: UntypedFormBuilder, store: Store<AppState>, translate: TranslateService);
     ngOnInit(): void;
     writeValue(value: HttpIntegration): void;
     registerOnChange(fn: any): void;
@@ -27,5 +27,5 @@ export declare class HttpIntegrationFormComponent extends IntegrationForm implem
     onHttpEndpointCopied(): void;
     updatedValidationPrivateNetwork(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<HttpIntegrationFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<HttpIntegrationFormComponent, "tb-http-integration-form", never, { "routingKey": "routingKey"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<HttpIntegrationFormComponent, "tb-http-integration-form", never, { "routingKey": "routingKey"; }, {}, never, never, false>;
 }

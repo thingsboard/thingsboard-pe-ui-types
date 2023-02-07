@@ -5,7 +5,7 @@ import { UtilsService } from '@core/services/utils.service';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { MatSlideToggle } from '@angular/material/slide-toggle';
-import { ThemePalette } from '@angular/material/core/common-behaviors/color';
+import { ThemePalette } from '@angular/material/core';
 import * as i0 from "@angular/core";
 declare type SwitchType = 'switch' | 'slide-toggle';
 export declare class SwitchComponent extends PageComponent implements OnInit, AfterViewInit, OnDestroy {
@@ -74,6 +74,6 @@ export declare class SwitchComponent extends PageComponent implements OnInit, Af
     private onDataUpdated;
     private onDataUpdateError;
     static ɵfac: i0.ɵɵFactoryDeclaration<SwitchComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SwitchComponent, "tb-switch", never, { "ctx": "ctx"; "switchType": "switchType"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SwitchComponent, "tb-switch", never, { "ctx": "ctx"; "switchType": "switchType"; }, {}, never, never, false>;
 }
 export {};

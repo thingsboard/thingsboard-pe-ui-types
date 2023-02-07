@@ -1,5 +1,5 @@
 import { ElementRef, EventEmitter, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -18,7 +18,7 @@ export declare class TenantProfileAutocompleteComponent implements ControlValueA
     private tenantProfileService;
     private fb;
     private dialog;
-    selectTenantProfileFormGroup: FormGroup;
+    selectTenantProfileFormGroup: UntypedFormGroup;
     modelValue: TenantProfileId | null;
     selectDefaultProfile: boolean;
     private requiredValue;
@@ -33,7 +33,7 @@ export declare class TenantProfileAutocompleteComponent implements ControlValueA
     tenantProfileURL: string;
     private dirty;
     private propagateChange;
-    constructor(store: Store<AppState>, translate: TranslateService, truncate: TruncatePipe, tenantProfileService: TenantProfileService, fb: FormBuilder, dialog: MatDialog);
+    constructor(store: Store<AppState>, translate: TranslateService, truncate: TruncatePipe, tenantProfileService: TenantProfileService, fb: UntypedFormBuilder, dialog: MatDialog);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -51,5 +51,5 @@ export declare class TenantProfileAutocompleteComponent implements ControlValueA
     editTenantProfile($event: Event): void;
     openTenantProfileDialog(tenantProfile: TenantProfile, isAdd: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TenantProfileAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TenantProfileAutocompleteComponent, "tb-tenant-profile-autocomplete", never, { "selectDefaultProfile": "selectDefaultProfile"; "required": "required"; "disabled": "disabled"; "showDetailsPageLink": "showDetailsPageLink"; }, { "tenantProfileUpdated": "tenantProfileUpdated"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TenantProfileAutocompleteComponent, "tb-tenant-profile-autocomplete", never, { "selectDefaultProfile": "selectDefaultProfile"; "required": "required"; "disabled": "disabled"; "showDetailsPageLink": "showDetailsPageLink"; }, { "tenantProfileUpdated": "tenantProfileUpdated"; }, never, never, false>;
 }

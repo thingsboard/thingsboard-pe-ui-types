@@ -1,5 +1,5 @@
 import { AfterViewInit, OnDestroy, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -20,7 +20,7 @@ export declare class EntitySubTypeSelectComponent implements ControlValueAccesso
     private entityViewService;
     private edgeService;
     private fb;
-    subTypeFormGroup: FormGroup;
+    subTypeFormGroup: UntypedFormGroup;
     modelValue: string | null;
     entityType: EntityType;
     showLabel: boolean;
@@ -35,7 +35,7 @@ export declare class EntitySubTypeSelectComponent implements ControlValueAccesso
     subTypesLoaded: boolean;
     private broadcastSubscription;
     private propagateChange;
-    constructor(store: Store<AppState>, broadcast: BroadcastService, translate: TranslateService, deviceService: DeviceService, assetService: AssetService, entityViewService: EntityViewService, edgeService: EdgeService, fb: FormBuilder);
+    constructor(store: Store<AppState>, broadcast: BroadcastService, translate: TranslateService, deviceService: DeviceService, assetService: AssetService, entityViewService: EntityViewService, edgeService: EdgeService, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -48,5 +48,5 @@ export declare class EntitySubTypeSelectComponent implements ControlValueAccesso
     findSubTypes(searchText?: string): Observable<Array<EntitySubtype | string>>;
     getSubTypes(): Observable<Array<EntitySubtype | string>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntitySubTypeSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntitySubTypeSelectComponent, "tb-entity-subtype-select", never, { "entityType": "entityType"; "showLabel": "showLabel"; "required": "required"; "disabled": "disabled"; "typeTranslatePrefix": "typeTranslatePrefix"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntitySubTypeSelectComponent, "tb-entity-subtype-select", never, { "entityType": "entityType"; "showLabel": "showLabel"; "required": "required"; "disabled": "disabled"; "typeTranslatePrefix": "typeTranslatePrefix"; }, {}, never, never, false>;
 }

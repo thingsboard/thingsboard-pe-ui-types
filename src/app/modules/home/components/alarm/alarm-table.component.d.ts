@@ -24,10 +24,13 @@ export declare class AlarmTableComponent implements OnInit {
     entityIdValue: EntityId;
     set active(active: boolean);
     set entityId(entityId: EntityId);
+    private readonlyValue;
+    get readonly(): boolean;
+    set readonly(value: boolean);
     entitiesTable: EntitiesTableComponent;
     alarmTableConfig: AlarmTableConfig;
     constructor(alarmService: AlarmService, dialogService: DialogService, userPermissionsService: UserPermissionsService, translate: TranslateService, datePipe: DatePipe, dialog: MatDialog, store: Store<AppState>);
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AlarmTableComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmTableComponent, "tb-alarm-table", never, { "active": "active"; "entityId": "entityId"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmTableComponent, "tb-alarm-table", never, { "active": "active"; "entityId": "entityId"; "readonly": "readonly"; }, {}, never, never, false>;
 }

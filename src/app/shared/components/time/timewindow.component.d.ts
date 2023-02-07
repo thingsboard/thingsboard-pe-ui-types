@@ -66,5 +66,5 @@ export declare class TimewindowComponent implements OnInit, OnDestroy, ControlVa
     hideLabel(): boolean;
     private isTimewindowDisabled;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimewindowComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimewindowComponent, "tb-timewindow", never, { "historyOnly": "historyOnly"; "alwaysDisplayTypePrefix": "alwaysDisplayTypePrefix"; "quickIntervalOnly": "quickIntervalOnly"; "aggregation": "aggregation"; "timezone": "timezone"; "isToolbar": "isToolbar"; "asButton": "asButton"; "isEdit": "isEdit"; "direction": "direction"; "tooltipPosition": "tooltipPosition"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimewindowComponent, "tb-timewindow", never, { "historyOnly": "historyOnly"; "alwaysDisplayTypePrefix": "alwaysDisplayTypePrefix"; "quickIntervalOnly": "quickIntervalOnly"; "aggregation": "aggregation"; "timezone": "timezone"; "isToolbar": "isToolbar"; "asButton": "asButton"; "isEdit": "isEdit"; "direction": "direction"; "tooltipPosition": "tooltipPosition"; "disabled": "disabled"; }, {}, never, never, false>;
 }

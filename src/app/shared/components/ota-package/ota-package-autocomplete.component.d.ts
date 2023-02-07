@@ -1,5 +1,5 @@
 import { ElementRef, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -17,7 +17,7 @@ export declare class OtaPackageAutocompleteComponent implements ControlValueAcce
     private entityService;
     private otaPackageService;
     private fb;
-    otaPackageFormGroup: FormGroup;
+    otaPackageFormGroup: UntypedFormGroup;
     modelValue: string | EntityId | null;
     private otaUpdateType;
     get type(): OtaUpdateType;
@@ -44,7 +44,7 @@ export declare class OtaPackageAutocompleteComponent implements ControlValueAcce
     private dirty;
     private cleanFilteredPackages;
     private propagateChange;
-    constructor(store: Store<AppState>, translate: TranslateService, truncate: TruncatePipe, entityService: EntityService, otaPackageService: OtaPackageService, fb: FormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, truncate: TruncatePipe, entityService: EntityService, otaPackageService: OtaPackageService, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -67,5 +67,5 @@ export declare class OtaPackageAutocompleteComponent implements ControlValueAcce
     get hintText(): string;
     packageTitleText(firpackageInfomware: OtaPackageInfo): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<OtaPackageAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<OtaPackageAutocompleteComponent, "tb-ota-package-autocomplete", never, { "type": "type"; "deviceProfileId": "deviceProfileId"; "deviceGroupId": "deviceGroupId"; "labelText": "labelText"; "requiredText": "requiredText"; "useFullEntityId": "useFullEntityId"; "deviceGroupAll": "deviceGroupAll"; "showDetailsPageLink": "showDetailsPageLink"; "required": "required"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<OtaPackageAutocompleteComponent, "tb-ota-package-autocomplete", never, { "type": "type"; "deviceProfileId": "deviceProfileId"; "deviceGroupId": "deviceGroupId"; "labelText": "labelText"; "requiredText": "requiredText"; "useFullEntityId": "useFullEntityId"; "deviceGroupAll": "deviceGroupAll"; "showDetailsPageLink": "showDetailsPageLink"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
 }

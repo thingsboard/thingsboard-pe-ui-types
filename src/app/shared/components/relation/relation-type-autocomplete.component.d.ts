@@ -1,5 +1,5 @@
 import { AfterViewInit, ElementRef, OnDestroy, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -11,7 +11,7 @@ export declare class RelationTypeAutocompleteComponent implements ControlValueAc
     private broadcast;
     translate: TranslateService;
     private fb;
-    relationTypeFormGroup: FormGroup;
+    relationTypeFormGroup: UntypedFormGroup;
     modelValue: string | null;
     private requiredValue;
     get required(): boolean;
@@ -22,7 +22,7 @@ export declare class RelationTypeAutocompleteComponent implements ControlValueAc
     searchText: string;
     private dirty;
     private propagateChange;
-    constructor(store: Store<AppState>, broadcast: BroadcastService, translate: TranslateService, fb: FormBuilder);
+    constructor(store: Store<AppState>, broadcast: BroadcastService, translate: TranslateService, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -36,5 +36,5 @@ export declare class RelationTypeAutocompleteComponent implements ControlValueAc
     fetchRelationTypes(searchText?: string, strictMatch?: boolean): Observable<Array<string>>;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<RelationTypeAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RelationTypeAutocompleteComponent, "tb-relation-type-autocomplete", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RelationTypeAutocompleteComponent, "tb-relation-type-autocomplete", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
 }

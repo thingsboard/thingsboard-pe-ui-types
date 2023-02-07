@@ -8,5 +8,5 @@ export declare class EdgeTabsComponent extends EntityTabsComponent<Edge> {
     constructor(store: Store<AppState>);
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EdgeTabsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EdgeTabsComponent, "tb-edge-tabs", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EdgeTabsComponent, "tb-edge-tabs", never, {}, {}, never, never, false>;
 }

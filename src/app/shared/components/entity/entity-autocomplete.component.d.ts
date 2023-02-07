@@ -1,6 +1,6 @@
 import { AfterViewInit, ElementRef, EventEmitter, OnInit } from '@angular/core';
-import { MatFormFieldAppearance } from '@angular/material/form-field/form-field';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -15,7 +15,7 @@ export declare class EntityAutocompleteComponent implements ControlValueAccessor
     translate: TranslateService;
     private entityService;
     private fb;
-    selectEntityFormGroup: FormGroup;
+    selectEntityFormGroup: UntypedFormGroup;
     modelValue: string | EntityId | null;
     entityTypeValue: EntityType | AliasEntityType;
     entitySubtypeValue: string;
@@ -40,7 +40,7 @@ export declare class EntityAutocompleteComponent implements ControlValueAccessor
     private dirty;
     private refresh$;
     private propagateChange;
-    constructor(store: Store<AppState>, translate: TranslateService, entityService: EntityService, fb: FormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, entityService: EntityService, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -57,5 +57,5 @@ export declare class EntityAutocompleteComponent implements ControlValueAccessor
     clear(): void;
     checkEntityType(entityType: EntityType | AliasEntityType): EntityType;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityAutocompleteComponent, "tb-entity-autocomplete", never, { "entityType": "entityType"; "entitySubtype": "entitySubtype"; "excludeEntityIds": "excludeEntityIds"; "labelText": "labelText"; "requiredText": "requiredText"; "useFullEntityId": "useFullEntityId"; "appearance": "appearance"; "required": "required"; "disabled": "disabled"; }, { "entityChanged": "entityChanged"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityAutocompleteComponent, "tb-entity-autocomplete", never, { "entityType": "entityType"; "entitySubtype": "entitySubtype"; "excludeEntityIds": "excludeEntityIds"; "labelText": "labelText"; "requiredText": "requiredText"; "useFullEntityId": "useFullEntityId"; "appearance": "appearance"; "required": "required"; "disabled": "disabled"; }, { "entityChanged": "entityChanged"; }, never, never, false>;
 }

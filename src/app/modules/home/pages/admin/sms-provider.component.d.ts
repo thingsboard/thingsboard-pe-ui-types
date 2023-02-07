@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { PageComponent } from '@shared/components/page.component';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { AdminSettings, SmsProviderConfiguration } from '@shared/models/settings.models';
 import { AdminService } from '@core/http/admin.service';
 import { HasConfirmForm } from '@core/guards/confirm-on-exit.guard';
@@ -18,13 +18,13 @@ export declare class SmsProviderComponent extends PageComponent implements OnIni
     private adminService;
     private dialog;
     private userPermissionsService;
-    fb: FormBuilder;
+    fb: UntypedFormBuilder;
     authState: AuthState;
     authUser: AuthUser;
-    smsProvider: FormGroup;
+    smsProvider: UntypedFormGroup;
     adminSettings: AdminSettings<SmsProviderConfiguration>;
     readonly: boolean;
-    constructor(store: Store<AppState>, router: Router, adminService: AdminService, dialog: MatDialog, userPermissionsService: UserPermissionsService, fb: FormBuilder);
+    constructor(store: Store<AppState>, router: Router, adminService: AdminService, dialog: MatDialog, userPermissionsService: UserPermissionsService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     private setSmsProviderSettings;
     isTenantAdmin(): boolean;
@@ -32,7 +32,7 @@ export declare class SmsProviderComponent extends PageComponent implements OnIni
     private updateValidators;
     sendTestSms(): void;
     save(): void;
-    confirmForm(): FormGroup;
+    confirmForm(): UntypedFormGroup;
     static ɵfac: i0.ɵɵFactoryDeclaration<SmsProviderComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SmsProviderComponent, "tb-sms-provider", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SmsProviderComponent, "tb-sms-provider", never, {}, {}, never, never, false>;
 }

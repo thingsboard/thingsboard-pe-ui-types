@@ -1,5 +1,5 @@
 import { ElementRef, EventEmitter, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -14,7 +14,7 @@ export declare class EntityGroupAutocompleteComponent implements ControlValueAcc
     translate: TranslateService;
     private entityGroupService;
     private fb;
-    selectEntityGroupFormGroup: FormGroup;
+    selectEntityGroupFormGroup: UntypedFormGroup;
     modelValue: string | null;
     groupType: EntityType;
     private ownerIdValue;
@@ -37,7 +37,7 @@ export declare class EntityGroupAutocompleteComponent implements ControlValueAcc
     private pristine;
     private cleanFilteredEntityGroups;
     private propagateChange;
-    constructor(store: Store<AppState>, translate: TranslateService, entityGroupService: EntityGroupService, fb: FormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, entityGroupService: EntityGroupService, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -54,5 +54,5 @@ export declare class EntityGroupAutocompleteComponent implements ControlValueAcc
     getEntityGroups(): Observable<Array<EntityGroupInfo>>;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityGroupAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupAutocompleteComponent, "tb-entity-group-autocomplete", never, { "groupType": "groupType"; "ownerId": "ownerId"; "excludeGroupIds": "excludeGroupIds"; "excludeGroupAll": "excludeGroupAll"; "placeholderText": "placeholderText"; "notFoundText": "notFoundText"; "requiredText": "requiredText"; "required": "required"; "disabled": "disabled"; }, { "entityGroupLoaded": "entityGroupLoaded"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupAutocompleteComponent, "tb-entity-group-autocomplete", never, { "groupType": "groupType"; "ownerId": "ownerId"; "excludeGroupIds": "excludeGroupIds"; "excludeGroupAll": "excludeGroupAll"; "placeholderText": "placeholderText"; "notFoundText": "notFoundText"; "requiredText": "requiredText"; "required": "required"; "disabled": "disabled"; }, { "entityGroupLoaded": "entityGroupLoaded"; }, never, never, false>;
 }

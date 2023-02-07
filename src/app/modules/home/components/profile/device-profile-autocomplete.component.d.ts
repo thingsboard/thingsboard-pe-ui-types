@@ -1,5 +1,5 @@
 import { ElementRef, EventEmitter, NgZone, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -22,7 +22,7 @@ export declare class DeviceProfileAutocompleteComponent implements ControlValueA
     private dialog;
     resource: typeof Resource;
     operation: typeof Operation;
-    selectDeviceProfileFormGroup: FormGroup;
+    selectDeviceProfileFormGroup: UntypedFormGroup;
     modelValue: DeviceProfileId | null;
     selectDefaultProfile: boolean;
     selectFirstProfile: boolean;
@@ -47,7 +47,7 @@ export declare class DeviceProfileAutocompleteComponent implements ControlValueA
     private ignoreClosedPanel;
     private allDeviceProfile;
     private propagateChange;
-    constructor(store: Store<AppState>, translate: TranslateService, truncate: TruncatePipe, deviceProfileService: DeviceProfileService, fb: FormBuilder, zone: NgZone, dialog: MatDialog);
+    constructor(store: Store<AppState>, translate: TranslateService, truncate: TruncatePipe, deviceProfileService: DeviceProfileService, fb: UntypedFormBuilder, zone: NgZone, dialog: MatDialog);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -68,5 +68,5 @@ export declare class DeviceProfileAutocompleteComponent implements ControlValueA
     editDeviceProfile($event: Event): void;
     openDeviceProfileDialog(deviceProfile: DeviceProfile, isAdd: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceProfileAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceProfileAutocompleteComponent, "tb-device-profile-autocomplete", never, { "selectDefaultProfile": "selectDefaultProfile"; "selectFirstProfile": "selectFirstProfile"; "displayAllOnEmpty": "displayAllOnEmpty"; "editProfileEnabled": "editProfileEnabled"; "addNewProfile": "addNewProfile"; "showDetailsPageLink": "showDetailsPageLink"; "transportType": "transportType"; "required": "required"; "disabled": "disabled"; "hint": "hint"; }, { "deviceProfileUpdated": "deviceProfileUpdated"; "deviceProfileChanged": "deviceProfileChanged"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceProfileAutocompleteComponent, "tb-device-profile-autocomplete", never, { "selectDefaultProfile": "selectDefaultProfile"; "selectFirstProfile": "selectFirstProfile"; "displayAllOnEmpty": "displayAllOnEmpty"; "editProfileEnabled": "editProfileEnabled"; "addNewProfile": "addNewProfile"; "showDetailsPageLink": "showDetailsPageLink"; "transportType": "transportType"; "required": "required"; "disabled": "disabled"; "hint": "hint"; }, { "deviceProfileUpdated": "deviceProfileUpdated"; "deviceProfileChanged": "deviceProfileChanged"; }, never, never, false>;
 }

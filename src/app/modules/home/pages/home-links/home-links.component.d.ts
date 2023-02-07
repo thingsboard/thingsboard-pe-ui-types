@@ -20,5 +20,5 @@ export declare class HomeLinksComponent implements OnInit {
     sectionPlaces(section: HomeSection): HomeSectionPlace[];
     sectionColspan(section: HomeSection): number;
     static ɵfac: i0.ɵɵFactoryDeclaration<HomeLinksComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<HomeLinksComponent, "tb-home-links", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<HomeLinksComponent, "tb-home-links", never, {}, {}, never, never, false>;
 }

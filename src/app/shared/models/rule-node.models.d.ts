@@ -8,7 +8,7 @@ import { PageComponent } from '@shared/components/page.component';
 import { AfterViewInit, EventEmitter, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 import { RuleChainType } from '@shared/models/rule-chain.models';
 import * as i0 from "@angular/core";
 export interface RuleNodeConfiguration {
@@ -78,10 +78,10 @@ export declare abstract class RuleNodeConfigurationComponent extends PageCompone
     protected prepareOutputConfig(configuration: RuleNodeConfiguration): RuleNodeConfiguration;
     protected validateConfig(): boolean;
     protected onValidate(): void;
-    protected abstract configForm(): FormGroup;
+    protected abstract configForm(): UntypedFormGroup;
     protected abstract onConfigurationSet(configuration: RuleNodeConfiguration): any;
     static ɵfac: i0.ɵɵFactoryDeclaration<RuleNodeConfigurationComponent, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<RuleNodeConfigurationComponent, never, never, {}, {}, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<RuleNodeConfigurationComponent, never, never, {}, {}, never, never, false>;
 }
 export declare enum RuleNodeType {
     FILTER = "FILTER",

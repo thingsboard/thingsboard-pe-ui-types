@@ -1,5 +1,5 @@
 import { AfterViewInit, ElementRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, FormGroupDirective, NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -32,7 +32,7 @@ export declare class DataKeysComponent implements ControlValueAccessor, OnInit, 
     datasourceTypes: typeof DatasourceType;
     widgetTypes: typeof widgetType;
     dataKeyTypes: typeof DataKeyType;
-    keysListFormGroup: FormGroup;
+    keysListFormGroup: UntypedFormGroup;
     modelValue: Array<DataKey> | null;
     widgetType: widgetType;
     datasourceType: DatasourceType;
@@ -68,7 +68,7 @@ export declare class DataKeysComponent implements ControlValueAccessor, OnInit, 
     private fetchObservable$;
     private dirty;
     private propagateChange;
-    constructor(store: Store<AppState>, errorStateMatcher: ErrorStateMatcher, translate: TranslateService, utils: UtilsService, dialogs: DialogService, dialog: MatDialog, fb: FormBuilder, sanitizer: DomSanitizer, truncate: TruncatePipe);
+    constructor(store: Store<AppState>, errorStateMatcher: ErrorStateMatcher, translate: TranslateService, utils: UtilsService, dialogs: DialogService, dialog: MatDialog, fb: UntypedFormBuilder, sanitizer: DomSanitizer, truncate: TruncatePipe);
     updateValidators(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -77,7 +77,7 @@ export declare class DataKeysComponent implements ControlValueAccessor, OnInit, 
     private updateParams;
     private reset;
     ngOnChanges(changes: SimpleChanges): void;
-    isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean;
+    isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     ngAfterViewInit(): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: Array<DataKey> | null): void;
@@ -100,5 +100,5 @@ export declare class DataKeysComponent implements ControlValueAccessor, OnInit, 
     get isEntityCountDatasource(): boolean;
     private clearSearchCache;
     static ɵfac: i0.ɵɵFactoryDeclaration<DataKeysComponent, [null, { skipSelf: true; }, null, null, null, null, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeysComponent, "tb-data-keys", never, { "widgetType": "widgetType"; "datasourceType": "datasourceType"; "maxDataKeys": "maxDataKeys"; "optDataKeys": "optDataKeys"; "aliasController": "aliasController"; "datakeySettingsSchema": "datakeySettingsSchema"; "dataKeySettingsDirective": "dataKeySettingsDirective"; "dashboard": "dashboard"; "widget": "widget"; "callbacks": "callbacks"; "entityAliasId": "entityAliasId"; "required": "required"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeysComponent, "tb-data-keys", never, { "widgetType": "widgetType"; "datasourceType": "datasourceType"; "maxDataKeys": "maxDataKeys"; "optDataKeys": "optDataKeys"; "aliasController": "aliasController"; "datakeySettingsSchema": "datakeySettingsSchema"; "dataKeySettingsDirective": "dataKeySettingsDirective"; "dashboard": "dashboard"; "widget": "widget"; "callbacks": "callbacks"; "entityAliasId": "entityAliasId"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
 }

@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, ElementRef, OnChanges, OnDestroy, OnInit, Renderer2, SimpleChanges, ViewContainerRef } from '@angular/core';
-import { ControlValueAccessor, FormControl, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormControl, Validator } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { TranslateService } from '@ngx-translate/core';
@@ -44,7 +44,7 @@ export declare class JsonFormComponent implements OnInit, ControlValueAccessor, 
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
-    validate(c: FormControl): {
+    validate(c: UntypedFormControl): {
         modelValid: boolean;
     };
     writeValue(data: JsonFormComponentData): void;
@@ -61,5 +61,5 @@ export declare class JsonFormComponent implements OnInit, ControlValueAccessor, 
     private destroyReactSchemaForm;
     private validateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<JsonFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<JsonFormComponent, "tb-json-form", never, { "required": "required"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<JsonFormComponent, "tb-json-form", never, { "required": "required"; }, {}, never, never, false>;
 }

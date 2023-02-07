@@ -1,5 +1,5 @@
 import { DialogComponent } from '@shared/components/dialog.component';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { Router } from '@angular/router';
@@ -11,12 +11,12 @@ export declare class Lwm2mBootstrapAddConfigServerDialogComponent extends Dialog
     protected router: Router;
     private fb;
     dialogRef: MatDialogRef<Lwm2mBootstrapAddConfigServerDialogComponent, boolean>;
-    addConfigServerFormGroup: FormGroup;
+    addConfigServerFormGroup: UntypedFormGroup;
     serverTypes: ServerConfigType[];
     serverConfigTypeNamesMap: Map<ServerConfigType, string>;
-    constructor(store: Store<AppState>, router: Router, fb: FormBuilder, dialogRef: MatDialogRef<Lwm2mBootstrapAddConfigServerDialogComponent, boolean>);
+    constructor(store: Store<AppState>, router: Router, fb: UntypedFormBuilder, dialogRef: MatDialogRef<Lwm2mBootstrapAddConfigServerDialogComponent, boolean>);
     addServerConfig(): void;
     cancel(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<Lwm2mBootstrapAddConfigServerDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mBootstrapAddConfigServerDialogComponent, "tb-profile-lwm2m-bootstrap-add-config-server-dialog", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mBootstrapAddConfigServerDialogComponent, "tb-profile-lwm2m-bootstrap-add-config-server-dialog", never, {}, {}, never, never, false>;
 }

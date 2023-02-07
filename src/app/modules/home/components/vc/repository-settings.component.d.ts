@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
-import { FormBuilder, FormGroup, FormGroupDirective } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, FormGroupDirective } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { AdminService } from '@core/http/admin.service';
@@ -17,10 +17,10 @@ export declare class RepositorySettingsComponent extends PageComponent implement
     private translate;
     private userPermissionsService;
     private cd;
-    fb: FormBuilder;
+    fb: UntypedFormBuilder;
     detailsMode: boolean;
     popoverComponent: TbPopoverComponent;
-    repositorySettingsForm: FormGroup;
+    repositorySettingsForm: UntypedFormGroup;
     settings: RepositorySettings;
     repositoryAuthMethod: typeof RepositoryAuthMethod;
     repositoryAuthMethods: RepositoryAuthMethod[];
@@ -31,7 +31,7 @@ export declare class RepositorySettingsComponent extends PageComponent implement
     changePrivateKeyPassword: boolean;
     readonly: boolean;
     allowDelete: boolean;
-    constructor(store: Store<AppState>, adminService: AdminService, dialogService: DialogService, translate: TranslateService, userPermissionsService: UserPermissionsService, cd: ChangeDetectorRef, fb: FormBuilder);
+    constructor(store: Store<AppState>, adminService: AdminService, dialogService: DialogService, translate: TranslateService, userPermissionsService: UserPermissionsService, cd: ChangeDetectorRef, fb: UntypedFormBuilder);
     ngOnInit(): void;
     checkAccess(): void;
     save(): void;
@@ -40,5 +40,5 @@ export declare class RepositorySettingsComponent extends PageComponent implement
     changePrivateKeyPasswordChanged(): void;
     updateValidators(emitEvent?: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<RepositorySettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RepositorySettingsComponent, "tb-repository-settings", never, { "detailsMode": "detailsMode"; "popoverComponent": "popoverComponent"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RepositorySettingsComponent, "tb-repository-settings", never, { "detailsMode": "detailsMode"; "popoverComponent": "popoverComponent"; }, {}, never, never, false>;
 }

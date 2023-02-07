@@ -50,5 +50,5 @@ export declare class WidgetLibraryComponent extends PageComponent implements OnI
     exportWidgetType($event: Event, widget: Widget): void;
     removeWidgetType($event: Event, widget: Widget): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetLibraryComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetLibraryComponent, "tb-widget-library", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetLibraryComponent, "tb-widget-library", never, {}, {}, never, never, false>;
 }

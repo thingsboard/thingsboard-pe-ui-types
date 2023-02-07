@@ -28,5 +28,5 @@ export declare class BreadcrumbComponent implements OnInit, OnDestroy {
     buildBreadCrumbs(route: ActivatedRouteSnapshot, breadcrumbs?: Array<BreadCrumb>, lastChild?: ActivatedRouteSnapshot): Array<BreadCrumb>;
     trackByBreadcrumbs(index: number, breadcrumb: BreadCrumb): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<BreadcrumbComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<BreadcrumbComponent, "tb-breadcrumb", never, { "activeComponent": "activeComponent"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<BreadcrumbComponent, "tb-breadcrumb", never, { "activeComponent": "activeComponent"; }, {}, never, never, false>;
 }

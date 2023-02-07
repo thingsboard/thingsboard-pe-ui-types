@@ -8,5 +8,5 @@ export declare class ConverterTabsComponent extends EntityTabsComponent<Converte
     constructor(store: Store<AppState>);
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ConverterTabsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ConverterTabsComponent, "tb-converter-tabs", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ConverterTabsComponent, "tb-converter-tabs", never, {}, {}, never, never, false>;
 }

@@ -2,7 +2,7 @@ import { OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 import { ActivationMethod, User } from '@shared/models/user.model';
 import { UserService } from '@core/http/user.service';
 import { Observable } from 'rxjs';
@@ -21,7 +21,7 @@ export declare class AddGroupUserDialogComponent extends DialogComponent<AddGrou
     dialogRef: MatDialogRef<AddGroupUserDialogComponent, User>;
     private userService;
     private dialog;
-    detailsForm: FormGroup;
+    detailsForm: UntypedFormGroup;
     user: User;
     activationMethods: string[];
     activationMethodEnum: typeof ActivationMethod;
@@ -35,5 +35,5 @@ export declare class AddGroupUserDialogComponent extends DialogComponent<AddGrou
     add(): void;
     displayActivationLink(activationLink: string): Observable<void>;
     static ɵfac: i0.ɵɵFactoryDeclaration<AddGroupUserDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AddGroupUserDialogComponent, "tb-add-group-user-dialog", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AddGroupUserDialogComponent, "tb-add-group-user-dialog", never, {}, {}, never, never, false>;
 }

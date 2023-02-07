@@ -1,5 +1,5 @@
 import { OnInit } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, FormBuilder, FormControl, FormGroup, Validator } from '@angular/forms';
+import { AbstractControl, ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { EntityTypeVersionCreateConfig, SyncStrategy } from '@shared/models/vc.models';
 import { Store } from '@ngrx/store';
@@ -14,13 +14,13 @@ export declare class EntityTypesVersionCreateComponent extends PageComponent imp
     disabled: boolean;
     private modelValue;
     private propagateChange;
-    entityTypesVersionCreateFormGroup: FormGroup;
+    entityTypesVersionCreateFormGroup: UntypedFormGroup;
     syncStrategies: SyncStrategy[];
     syncStrategyTranslations: Map<SyncStrategy, string>;
     entityTypes: typeof EntityType;
     loading: boolean;
     overrideEntityTypeTranslationsMap: Map<EntityType | import("@shared/models/entity-type.models").AliasEntityType, string>;
-    constructor(store: Store<AppState>, translate: TranslateService, fb: FormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -28,7 +28,7 @@ export declare class EntityTypesVersionCreateComponent extends PageComponent imp
     writeValue(value: {
         [entityType: string]: EntityTypeVersionCreateConfig;
     } | undefined): void;
-    validate(c: FormControl): {
+    validate(c: UntypedFormControl): {
         entityTypes: {
             valid: boolean;
         };
@@ -36,7 +36,7 @@ export declare class EntityTypesVersionCreateComponent extends PageComponent imp
     private prepareEntityTypesFormArray;
     private createEntityTypeControl;
     private updateEntityTypeValidators;
-    entityTypesFormGroupArray(): FormGroup[];
+    entityTypesFormGroupArray(): UntypedFormGroup[];
     entityTypesFormGroupExpanded(entityTypeControl: AbstractControl): boolean;
     trackByEntityType(index: number, entityTypeControl: AbstractControl): any;
     removeEntityType(index: number): void;
@@ -48,5 +48,5 @@ export declare class EntityTypesVersionCreateComponent extends PageComponent imp
     isGroupEntityType(entityType: EntityType): boolean;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityTypesVersionCreateComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityTypesVersionCreateComponent, "tb-entity-types-version-create", never, { "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityTypesVersionCreateComponent, "tb-entity-types-version-create", never, { "disabled": "disabled"; }, {}, never, never, false>;
 }

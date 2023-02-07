@@ -15,5 +15,5 @@ export declare class MatChipDraggableDirective implements AfterViewInit {
     ngAfterViewInit(): void;
     private configureDraggableChipList;
     static ɵfac: i0.ɵɵFactoryDeclaration<MatChipDraggableDirective, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<MatChipDraggableDirective, "mat-chip-list[tb-chip-draggable]", never, {}, { "chipDrop": "chipDrop"; }, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<MatChipDraggableDirective, "mat-chip-list[tb-chip-draggable]", never, {}, { "chipDrop": "chipDrop"; }, never, never, false>;
 }

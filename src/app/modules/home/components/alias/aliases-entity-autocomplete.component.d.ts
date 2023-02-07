@@ -1,5 +1,5 @@
 import { AfterViewInit, ElementRef, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { PageData } from '@shared/models/page/page-data';
 import { Store } from '@ngrx/store';
@@ -14,7 +14,7 @@ export declare class AliasesEntityAutocompleteComponent implements ControlValueA
     translate: TranslateService;
     private entityService;
     private fb;
-    selectEntityInfoFormGroup: FormGroup;
+    selectEntityInfoFormGroup: UntypedFormGroup;
     modelValue: EntityInfo | null;
     alias: string;
     entityFilter: EntityFilter;
@@ -26,7 +26,7 @@ export declare class AliasesEntityAutocompleteComponent implements ControlValueA
     filteredEntityInfos: Observable<Array<EntityInfo>>;
     searchText: string;
     private propagateChange;
-    constructor(store: Store<AppState>, translate: TranslateService, entityService: EntityService, fb: FormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, entityService: EntityService, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -39,5 +39,5 @@ export declare class AliasesEntityAutocompleteComponent implements ControlValueA
     getEntityInfos(searchText: string): Observable<PageData<EntityInfo>>;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AliasesEntityAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AliasesEntityAutocompleteComponent, "tb-aliases-entity-autocomplete", never, { "alias": "alias"; "entityFilter": "entityFilter"; "required": "required"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AliasesEntityAutocompleteComponent, "tb-aliases-entity-autocomplete", never, { "alias": "alias"; "entityFilter": "entityFilter"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
 }

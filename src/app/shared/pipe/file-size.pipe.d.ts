@@ -8,6 +8,6 @@ export declare class FileSizePipe implements PipeTransform {
     private readonly units;
     transform(bytes?: number, precision?: number | unitPrecisionMap): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<FileSizePipe, never>;
-    static ɵpipe: i0.ɵɵPipeDeclaration<FileSizePipe, "fileSize">;
+    static ɵpipe: i0.ɵɵPipeDeclaration<FileSizePipe, "fileSize", false>;
 }
 export {};

@@ -5,7 +5,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { UtilsService } from '@core/services/utils.service';
 import { TranslateService } from '@ngx-translate/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { AttributeService } from '@core/http/attribute.service';
 import { AttributeScope } from '@shared/models/telemetry/telemetry.models';
 import * as i0 from "@angular/core";
@@ -38,9 +38,9 @@ export declare class JsonInputWidgetComponent extends PageComponent implements O
     errorMessage: string;
     isFocused: boolean;
     originalValue: any;
-    attributeUpdateFormGroup: FormGroup;
+    attributeUpdateFormGroup: UntypedFormGroup;
     toastTargetId: string;
-    constructor(store: Store<AppState>, utils: UtilsService, fb: FormBuilder, attributeService: AttributeService, translate: TranslateService);
+    constructor(store: Store<AppState>, utils: UtilsService, fb: UntypedFormBuilder, attributeService: AttributeService, translate: TranslateService);
     ngOnInit(): void;
     private initializeConfig;
     private validateDatasources;
@@ -50,6 +50,6 @@ export declare class JsonInputWidgetComponent extends PageComponent implements O
     save(): void;
     discard(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<JsonInputWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<JsonInputWidgetComponent, "tb-json-input-widget ", never, { "ctx": "ctx"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<JsonInputWidgetComponent, "tb-json-input-widget ", never, { "ctx": "ctx"; }, {}, never, never, false>;
 }
 export {};

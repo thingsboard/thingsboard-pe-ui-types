@@ -1,5 +1,5 @@
 import { AfterViewInit, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { TranslateService } from '@ngx-translate/core';
@@ -17,7 +17,7 @@ export declare class EntityListSelectComponent implements ControlValueAccessor, 
     private entityService;
     translate: TranslateService;
     private fb;
-    entityListSelectFormGroup: FormGroup;
+    entityListSelectFormGroup: UntypedFormGroup;
     modelValue: EntityListSelectModel;
     allowedEntityTypes: Array<EntityType | AliasEntityType>;
     useAliasEntityTypes: boolean;
@@ -29,7 +29,7 @@ export declare class EntityListSelectComponent implements ControlValueAccessor, 
     displayEntityTypeSelect: boolean;
     private readonly defaultEntityType;
     private propagateChange;
-    constructor(store: Store<AppState>, entityService: EntityService, translate: TranslateService, fb: FormBuilder);
+    constructor(store: Store<AppState>, entityService: EntityService, translate: TranslateService, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -40,6 +40,6 @@ export declare class EntityListSelectComponent implements ControlValueAccessor, 
     compareIds(ids1: Array<string> | null, ids2: Array<string> | null): boolean;
     toEntityIds(modelValue: EntityListSelectModel): Array<EntityId>;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityListSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityListSelectComponent, "tb-entity-list-select", never, { "allowedEntityTypes": "allowedEntityTypes"; "useAliasEntityTypes": "useAliasEntityTypes"; "operation": "operation"; "required": "required"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityListSelectComponent, "tb-entity-list-select", never, { "allowedEntityTypes": "allowedEntityTypes"; "useAliasEntityTypes": "useAliasEntityTypes"; "operation": "operation"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
 }
 export {};

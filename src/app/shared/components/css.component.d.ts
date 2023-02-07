@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, ElementRef, OnDestroy, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormControl, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormControl, Validator } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { UtilsService } from '@core/services/utils.service';
@@ -35,7 +35,7 @@ export declare class CssComponent implements OnInit, OnDestroy, ControlValueAcce
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
-    validate(c: FormControl): {
+    validate(c: UntypedFormControl): {
         css: {
             valid: boolean;
         };
@@ -44,5 +44,5 @@ export declare class CssComponent implements OnInit, OnDestroy, ControlValueAcce
     writeValue(value: string): void;
     updateView(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<CssComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CssComponent, "tb-css", never, { "label": "label"; "disabled": "disabled"; "fillHeight": "fillHeight"; "required": "required"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CssComponent, "tb-css", never, { "label": "label"; "disabled": "disabled"; "fillHeight": "fillHeight"; "required": "required"; }, {}, never, never, false>;
 }

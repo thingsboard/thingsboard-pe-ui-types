@@ -1,7 +1,7 @@
 import { ChangeDetectorRef } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { EntityType } from '@shared/models/entity-type.models';
 import { TranslateService } from '@ngx-translate/core';
 import { GroupEntityComponent } from '@home/components/group/group-entity.component';
@@ -15,10 +15,10 @@ export declare class EdgeComponent extends GroupEntityComponent<Edge> {
     private userPermissionsService;
     protected entityValue: Edge;
     protected entitiesTableConfigValue: GroupEntityTableConfig<Edge>;
-    fb: FormBuilder;
+    fb: UntypedFormBuilder;
     protected cd: ChangeDetectorRef;
     entityType: typeof EntityType;
-    constructor(store: Store<AppState>, translate: TranslateService, userPermissionsService: UserPermissionsService, entityValue: Edge, entitiesTableConfigValue: GroupEntityTableConfig<Edge>, fb: FormBuilder, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, translate: TranslateService, userPermissionsService: UserPermissionsService, entityValue: Edge, entitiesTableConfigValue: GroupEntityTableConfig<Edge>, fb: UntypedFormBuilder, cd: ChangeDetectorRef);
     ngOnInit(): void;
     hideDelete(): boolean;
     hideManageUsers(): boolean;
@@ -27,7 +27,7 @@ export declare class EdgeComponent extends GroupEntityComponent<Edge> {
     hideManageEntityViews(): boolean;
     hideManageDashboards(): boolean;
     hideManageSchedulerEvents(): boolean;
-    buildForm(entity: Edge): FormGroup;
+    buildForm(entity: Edge): UntypedFormGroup;
     updateForm(entity: Edge): void;
     updateFormState(): void;
     onEdgeIdCopied($event: any): void;
@@ -35,5 +35,5 @@ export declare class EdgeComponent extends GroupEntityComponent<Edge> {
     isTenantAdmin(): boolean;
     private generateRoutingKeyAndSecret;
     static ɵfac: i0.ɵɵFactoryDeclaration<EdgeComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EdgeComponent, "tb-edge", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EdgeComponent, "tb-edge", never, {}, {}, never, never, false>;
 }

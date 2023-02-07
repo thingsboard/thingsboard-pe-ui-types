@@ -2,7 +2,7 @@ import { ElementRef, NgZone, OnDestroy, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { AbstractControl, FormArray, FormBuilder, FormGroup, NgForm } from '@angular/forms';
+import { AbstractControl, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup, NgForm } from '@angular/forms';
 import { WidgetContext } from '@home/models/widget-component.models';
 import { UtilsService } from '@core/services/utils.service';
 import { SecurityType, StorageType } from './gateway-form.models';
@@ -24,8 +24,8 @@ export declare class GatewayFormComponent extends PageComponent implements OnIni
     private deviceService;
     private attributeService;
     private importExport;
-    constructor(store: Store<AppState>, elementRef: ElementRef, utils: UtilsService, ngZone: NgZone, fb: FormBuilder, window: Window, dialog: MatDialog, translate: TranslateService, deviceService: DeviceService, attributeService: AttributeService, importExport: ImportExportService);
-    get connectors(): FormArray;
+    constructor(store: Store<AppState>, elementRef: ElementRef, utils: UtilsService, ngZone: NgZone, fb: UntypedFormBuilder, window: Window, dialog: MatDialog, translate: TranslateService, deviceService: DeviceService, attributeService: AttributeService, importExport: ImportExportService);
+    get connectors(): UntypedFormArray;
     formContainerRef: ElementRef<HTMLElement>;
     multipleInputForm: NgForm;
     private successfulSaved;
@@ -37,7 +37,7 @@ export declare class GatewayFormComponent extends PageComponent implements OnIni
     alignment: string;
     layoutGap: string;
     gatewayType: string;
-    gatewayConfigurationGroup: FormGroup;
+    gatewayConfigurationGroup: UntypedFormGroup;
     securityTypes: Map<SecurityType, string>;
     gatewayLogLevels: any[];
     connectorTypes: string[];
@@ -72,5 +72,5 @@ export declare class GatewayFormComponent extends PageComponent implements OnIni
     private setFormConnectorsDraft;
     private processLoggingLevel;
     static ɵfac: i0.ɵɵFactoryDeclaration<GatewayFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<GatewayFormComponent, "tb-gateway-form", never, { "ctx": "ctx"; "isStateForm": "isStateForm"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GatewayFormComponent, "tb-gateway-form", never, { "ctx": "ctx"; "isStateForm": "isStateForm"; }, {}, never, never, false>;
 }

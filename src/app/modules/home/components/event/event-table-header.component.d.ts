@@ -11,5 +11,5 @@ export declare class EventTableHeaderComponent extends EntityTableHeaderComponen
     constructor(store: Store<AppState>);
     eventTypeChanged(eventType: EventType | DebugEventType): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EventTableHeaderComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EventTableHeaderComponent, "tb-event-table-header", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EventTableHeaderComponent, "tb-event-table-header", never, {}, {}, never, never, false>;
 }

@@ -1,5 +1,5 @@
 import { InjectionToken } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { OverlayRef } from '@angular/cdk/overlay';
 import { RpcStatus } from '@shared/models/rpc.models';
 import { TranslateService } from '@ngx-translate/core';
@@ -13,14 +13,14 @@ export declare class PersistentFilterPanelComponent {
     overlayRef: OverlayRef;
     private fb;
     private translate;
-    persistentFilterFormGroup: FormGroup;
+    persistentFilterFormGroup: UntypedFormGroup;
     result: PersistentFilterPanelData;
     rpcSearchStatusTranslationMap: Map<RpcStatus, string>;
     rpcSearchPlaceholder: string;
     persistentSearchStatuses: string[];
-    constructor(data: PersistentFilterPanelData, overlayRef: OverlayRef, fb: FormBuilder, translate: TranslateService);
+    constructor(data: PersistentFilterPanelData, overlayRef: OverlayRef, fb: UntypedFormBuilder, translate: TranslateService);
     update(): void;
     cancel(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<PersistentFilterPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PersistentFilterPanelComponent, "tb-persistent-filter-panel", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PersistentFilterPanelComponent, "tb-persistent-filter-panel", never, {}, {}, never, never, false>;
 }

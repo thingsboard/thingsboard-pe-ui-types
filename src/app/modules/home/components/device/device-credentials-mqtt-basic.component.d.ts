@@ -1,14 +1,14 @@
 import { OnDestroy } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup, ValidationErrors, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { DeviceCredentialMQTTBasic } from '@shared/models/device.models';
 import * as i0 from "@angular/core";
 export declare class DeviceCredentialsMqttBasicComponent implements ControlValueAccessor, Validator, OnDestroy {
-    fb: FormBuilder;
+    fb: UntypedFormBuilder;
     disabled: boolean;
-    deviceCredentialsMqttFormGroup: FormGroup;
+    deviceCredentialsMqttFormGroup: UntypedFormGroup;
     private destroy$;
     private propagateChange;
-    constructor(fb: FormBuilder);
+    constructor(fb: UntypedFormBuilder);
     ngOnDestroy(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -19,5 +19,5 @@ export declare class DeviceCredentialsMqttBasicComponent implements ControlValue
     passwordChanged(): void;
     private atLeastOne;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceCredentialsMqttBasicComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceCredentialsMqttBasicComponent, "tb-device-credentials-mqtt-basic", never, { "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceCredentialsMqttBasicComponent, "tb-device-credentials-mqtt-basic", never, { "disabled": "disabled"; }, {}, never, never, false>;
 }

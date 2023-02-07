@@ -128,5 +128,5 @@ export declare class CustomersHierarchyComponent extends PageComponent implement
     private edgeUpdated;
     private edgesDeleted;
     static ɵfac: i0.ɵɵFactoryDeclaration<CustomersHierarchyComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CustomersHierarchyComponent, "tb-customers-hierarchy", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CustomersHierarchyComponent, "tb-customers-hierarchy", never, {}, {}, never, never, false>;
 }

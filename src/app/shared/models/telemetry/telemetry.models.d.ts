@@ -26,7 +26,7 @@ export declare enum TelemetryFeature {
     TIMESERIES = "TIMESERIES"
 }
 export declare type TelemetryType = LatestTelemetry | AttributeScope;
-export declare function toTelemetryType(val: string): TelemetryType;
+export declare const toTelemetryType: (val: string) => TelemetryType;
 export declare const telemetryTypeTranslations: Map<TelemetryType, string>;
 export declare const isClientSideTelemetryType: Map<TelemetryType, boolean>;
 export interface AttributeData {
@@ -203,9 +203,9 @@ export interface EntityCountUpdateMsg extends CmdUpdateMsg {
     count: number;
 }
 export declare type WebsocketDataMsg = AlarmDataUpdateMsg | EntityDataUpdateMsg | EntityCountUpdateMsg | SubscriptionUpdateMsg;
-export declare function isEntityDataUpdateMsg(message: WebsocketDataMsg): message is EntityDataUpdateMsg;
-export declare function isAlarmDataUpdateMsg(message: WebsocketDataMsg): message is AlarmDataUpdateMsg;
-export declare function isEntityCountUpdateMsg(message: WebsocketDataMsg): message is EntityCountUpdateMsg;
+export declare const isEntityDataUpdateMsg: (message: WebsocketDataMsg) => message is EntityDataUpdateMsg;
+export declare const isAlarmDataUpdateMsg: (message: WebsocketDataMsg) => message is AlarmDataUpdateMsg;
+export declare const isEntityCountUpdateMsg: (message: WebsocketDataMsg) => message is EntityCountUpdateMsg;
 export declare class SubscriptionUpdate implements SubscriptionUpdateMsg {
     subscriptionId: number;
     errorCode: number;
@@ -262,7 +262,7 @@ export declare class TelemetrySubscriber {
     entityData$: Observable<EntityDataUpdate>;
     alarmData$: Observable<AlarmDataUpdate>;
     entityCount$: Observable<EntityCountUpdate>;
-    reconnect$: Observable<unknown>;
+    reconnect$: Observable<void>;
     static createEntityAttributesSubscription(telemetryService: TelemetryService, entityId: EntityId, attributeScope: TelemetryType, zone: NgZone, keys?: string[]): TelemetrySubscriber;
     constructor(telemetryService: TelemetryService, zone?: NgZone);
     subscribe(): void;

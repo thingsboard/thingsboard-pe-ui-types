@@ -6,8 +6,8 @@ export declare class NotificationEffects {
     private actions$;
     private notificationService;
     constructor(actions$: Actions<NotificationActions>, notificationService: NotificationService);
-    dispatchNotification: import("rxjs").Observable<void>;
-    hideNotification: import("rxjs").Observable<void>;
+    dispatchNotification: import("rxjs").Observable<void> & import("@ngrx/effects").CreateEffectMetadata;
+    hideNotification: import("rxjs").Observable<void> & import("@ngrx/effects").CreateEffectMetadata;
     static ɵfac: i0.ɵɵFactoryDeclaration<NotificationEffects, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<NotificationEffects>;
 }

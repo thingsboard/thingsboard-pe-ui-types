@@ -19,5 +19,5 @@ export declare class QuickTimeIntervalComponent implements OnInit, ControlValueA
     writeValue(interval: QuickTimeInterval): void;
     onIntervalChange(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<QuickTimeIntervalComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<QuickTimeIntervalComponent, "tb-quick-time-interval", never, { "disabled": "disabled"; "onlyCurrentInterval": "onlyCurrentInterval"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<QuickTimeIntervalComponent, "tb-quick-time-interval", never, { "disabled": "disabled"; "onlyCurrentInterval": "onlyCurrentInterval"; }, {}, never, never, false>;
 }

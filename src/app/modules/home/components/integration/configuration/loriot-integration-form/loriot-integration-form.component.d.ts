@@ -1,5 +1,5 @@
 import { OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup, ValidationErrors, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { IntegrationCredentialType, LoriotIntegration } from '@shared/models/integration.models';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -10,14 +10,14 @@ export declare class LoriotIntegrationFormComponent extends IntegrationForm impl
     private fb;
     private store;
     private translate;
-    loriotIntegrationConfigForm: FormGroup;
+    loriotIntegrationConfigForm: UntypedFormGroup;
     IntegrationCredentialType: typeof IntegrationCredentialType;
     routingKey: string;
     private integrationType;
     private updatedDownlinkUrl;
     private propagateChangePending;
     private propagateChange;
-    constructor(fb: FormBuilder, store: Store<AppState>, translate: TranslateService);
+    constructor(fb: UntypedFormBuilder, store: Store<AppState>, translate: TranslateService);
     ngOnInit(): void;
     writeValue(value: LoriotIntegration): void;
     registerOnChange(fn: any): void;
@@ -30,5 +30,5 @@ export declare class LoriotIntegrationFormComponent extends IntegrationForm impl
     private updateEnableFields;
     updatedValidationPrivateNetwork(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<LoriotIntegrationFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<LoriotIntegrationFormComponent, "tb-loriot-integration-form", never, { "routingKey": "routingKey"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<LoriotIntegrationFormComponent, "tb-loriot-integration-form", never, { "routingKey": "routingKey"; }, {}, never, never, false>;
 }

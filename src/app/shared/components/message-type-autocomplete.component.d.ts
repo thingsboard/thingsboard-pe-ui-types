@@ -1,5 +1,5 @@
 import { AfterViewInit, ElementRef, OnDestroy, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -10,7 +10,7 @@ export declare class MessageTypeAutocompleteComponent implements ControlValueAcc
     private store;
     translate: TranslateService;
     private fb;
-    messageTypeFormGroup: FormGroup;
+    messageTypeFormGroup: UntypedFormGroup;
     modelValue: string | null;
     private requiredValue;
     get required(): boolean;
@@ -21,7 +21,7 @@ export declare class MessageTypeAutocompleteComponent implements ControlValueAcc
     searchText: string;
     private dirty;
     private propagateChange;
-    constructor(store: Store<AppState>, translate: TranslateService, fb: FormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -35,5 +35,5 @@ export declare class MessageTypeAutocompleteComponent implements ControlValueAcc
     fetchMessageTypes(searchText?: string): Observable<Array<MessageType | string>>;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<MessageTypeAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MessageTypeAutocompleteComponent, "tb-message-type-autocomplete", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MessageTypeAutocompleteComponent, "tb-message-type-autocomplete", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
 }

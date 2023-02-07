@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, OnDestroy } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, FormArray, FormBuilder, FormGroup, ValidationErrors, Validator } from '@angular/forms';
+import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { ObjectLwM2M } from './lwm2m-profile-config.models';
 import { MatDialog } from '@angular/material/dialog';
 import * as i0 from "@angular/core";
@@ -7,21 +7,21 @@ export declare class Lwm2mObserveAttrTelemetryComponent implements ControlValueA
     private fb;
     private dialog;
     private cd;
-    modelsFormGroup: FormGroup;
+    modelsFormGroup: UntypedFormGroup;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
     disabled: boolean;
     private valueChange$;
     private propagateChange;
-    constructor(fb: FormBuilder, dialog: MatDialog, cd: ChangeDetectorRef);
+    constructor(fb: UntypedFormBuilder, dialog: MatDialog, cd: ChangeDetectorRef);
     ngOnDestroy(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: ObjectLwM2M[]): void;
     validate(): ValidationErrors | null;
-    get modelsFormArray(): FormArray;
+    get modelsFormArray(): UntypedFormArray;
     private updateModels;
     private createModelFormGroup;
     private updateModel;
@@ -50,5 +50,5 @@ export declare class Lwm2mObserveAttrTelemetryComponent implements ControlValueA
     private instancesToSetId;
     getNameObject: (objectLwM2M: ObjectLwM2M) => string;
     static ɵfac: i0.ɵɵFactoryDeclaration<Lwm2mObserveAttrTelemetryComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mObserveAttrTelemetryComponent, "tb-profile-lwm2m-observe-attr-telemetry", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mObserveAttrTelemetryComponent, "tb-profile-lwm2m-observe-attr-telemetry", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
 }

@@ -3,7 +3,7 @@ import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { FormControl, FormGroup, FormGroupDirective, NgForm } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, FormGroupDirective, NgForm } from '@angular/forms';
 import { EntityTypeResource, EntityTypeTranslation } from '@shared/models/entity-type.models';
 import { BaseData, HasId } from '@shared/models/base-data';
 import { EntityId } from '@shared/models/id/entity-id';
@@ -23,7 +23,7 @@ export declare class AddEntityDialogComponent extends DialogComponent<AddEntityD
     private injector;
     private errorStateMatcher;
     entityComponent: EntityComponent<BaseData<HasId>>;
-    detailsForm: FormGroup;
+    detailsForm: UntypedFormGroup;
     entitiesTableConfig: EntityTableConfig<BaseData<HasId>>;
     translations: EntityTypeTranslation;
     resources: EntityTypeResource<BaseData<HasId>>;
@@ -33,9 +33,9 @@ export declare class AddEntityDialogComponent extends DialogComponent<AddEntityD
     constructor(store: Store<AppState>, router: Router, data: AddEntityDialogData<BaseData<HasId>>, dialogRef: MatDialogRef<AddEntityDialogComponent, BaseData<HasId>>, componentFactoryResolver: ComponentFactoryResolver, injector: Injector, errorStateMatcher: ErrorStateMatcher);
     ngOnInit(): void;
     helpLinkId(): string;
-    isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean;
+    isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     cancel(): void;
     add(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AddEntityDialogComponent, [null, null, null, null, null, null, { skipSelf: true; }]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AddEntityDialogComponent, "tb-add-entity-dialog", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AddEntityDialogComponent, "tb-add-entity-dialog", never, {}, {}, never, never, false>;
 }

@@ -30,5 +30,5 @@ export declare class SolutionTemplateDetailsComponent extends PageComponent impl
     openInstructions(): void;
     private reload;
     static ɵfac: i0.ɵɵFactoryDeclaration<SolutionTemplateDetailsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SolutionTemplateDetailsComponent, "tb-solution-template-details", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SolutionTemplateDetailsComponent, "tb-solution-template-details", never, {}, {}, never, never, false>;
 }

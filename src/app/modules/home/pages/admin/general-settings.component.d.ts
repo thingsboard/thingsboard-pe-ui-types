@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { PageComponent } from '@shared/components/page.component';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { AdminSettings, GeneralSettings } from '@shared/models/settings.models';
 import { AdminService } from '@core/http/admin.service';
 import { HasConfirmForm } from '@core/guards/confirm-on-exit.guard';
@@ -12,14 +12,14 @@ export declare class GeneralSettingsComponent extends PageComponent implements O
     protected store: Store<AppState>;
     private router;
     private adminService;
-    fb: FormBuilder;
-    generalSettings: FormGroup;
+    fb: UntypedFormBuilder;
+    generalSettings: UntypedFormGroup;
     adminSettings: AdminSettings<GeneralSettings>;
-    constructor(store: Store<AppState>, router: Router, adminService: AdminService, fb: FormBuilder);
+    constructor(store: Store<AppState>, router: Router, adminService: AdminService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     buildGeneralServerSettingsForm(): void;
     save(): void;
-    confirmForm(): FormGroup;
+    confirmForm(): UntypedFormGroup;
     static ɵfac: i0.ɵɵFactoryDeclaration<GeneralSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<GeneralSettingsComponent, "tb-general-settings", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GeneralSettingsComponent, "tb-general-settings", never, {}, {}, never, never, false>;
 }

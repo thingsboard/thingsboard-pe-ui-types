@@ -5,5 +5,5 @@ export declare class KeyboardShortcutPipe implements PipeTransform {
     constructor(window: Window);
     transform(value: string): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<KeyboardShortcutPipe, never>;
-    static ɵpipe: i0.ɵɵPipeDeclaration<KeyboardShortcutPipe, "keyboardShortcut">;
+    static ɵpipe: i0.ɵɵPipeDeclaration<KeyboardShortcutPipe, "keyboardShortcut", false>;
 }

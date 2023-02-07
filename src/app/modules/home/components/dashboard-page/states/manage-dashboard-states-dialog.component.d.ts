@@ -3,7 +3,7 @@ import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, FormGroupDirective, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DialogComponent } from '@app/shared/components/dialog.component';
 import { DashboardState } from '@app/shared/models/dashboard.models';
@@ -33,7 +33,7 @@ export declare class ManageDashboardStatesDialogComponent extends DialogComponen
     private translate;
     private dialogs;
     private dialog;
-    statesFormGroup: FormGroup;
+    statesFormGroup: UntypedFormGroup;
     states: {
         [id: string]: DashboardState;
     };
@@ -47,7 +47,7 @@ export declare class ManageDashboardStatesDialogComponent extends DialogComponen
     sort: MatSort;
     constructor(store: Store<AppState>, router: Router, data: ManageDashboardStatesDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<ManageDashboardStatesDialogComponent, {
         [id: string]: DashboardState;
-    }>, fb: FormBuilder, translate: TranslateService, dialogs: DialogService, dialog: MatDialog);
+    }>, fb: UntypedFormBuilder, translate: TranslateService, dialogs: DialogService, dialog: MatDialog);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     updateData(reload?: boolean): void;
@@ -59,9 +59,9 @@ export declare class ManageDashboardStatesDialogComponent extends DialogComponen
     openStateDialog($event: Event, state?: DashboardStateInfo): void;
     saveState(state: DashboardStateInfo, prevStateId: string): void;
     private onStatesUpdated;
-    isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean;
+    isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     cancel(): void;
     save(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ManageDashboardStatesDialogComponent, [null, null, null, { skipSelf: true; }, null, null, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ManageDashboardStatesDialogComponent, "tb-manage-dashboard-states-dialog", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ManageDashboardStatesDialogComponent, "tb-manage-dashboard-states-dialog", never, {}, {}, never, never, false>;
 }

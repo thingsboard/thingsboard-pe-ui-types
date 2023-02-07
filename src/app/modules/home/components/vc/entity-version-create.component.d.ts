@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, OnDestroy, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { VersionCreationResult } from '@shared/models/vc.models';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -24,16 +24,16 @@ export declare class EntityVersionCreateComponent extends PageComponent implemen
     onClose: (result: VersionCreationResult | null, branch: string | null) => void;
     onBeforeCreateVersion: () => Observable<any>;
     popoverComponent: TbPopoverComponent;
-    createVersionFormGroup: FormGroup;
+    createVersionFormGroup: UntypedFormGroup;
     entityTypes: typeof EntityType;
     resultMessage: string;
     versionCreateResult$: Observable<VersionCreationResult>;
     private versionCreateResultSubscription;
-    constructor(store: Store<AppState>, entitiesVersionControlService: EntitiesVersionControlService, cd: ChangeDetectorRef, translate: TranslateService, fb: FormBuilder);
+    constructor(store: Store<AppState>, entitiesVersionControlService: EntitiesVersionControlService, cd: ChangeDetectorRef, translate: TranslateService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     ngOnDestroy(): void;
     cancel(): void;
     export(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityVersionCreateComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityVersionCreateComponent, "tb-entity-version-create", never, { "branch": "branch"; "entityId": "entityId"; "groupType": "groupType"; "entityName": "entityName"; "onClose": "onClose"; "onBeforeCreateVersion": "onBeforeCreateVersion"; "popoverComponent": "popoverComponent"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityVersionCreateComponent, "tb-entity-version-create", never, { "branch": "branch"; "entityId": "entityId"; "groupType": "groupType"; "entityName": "entityName"; "onClose": "onClose"; "onBeforeCreateVersion": "onBeforeCreateVersion"; "popoverComponent": "popoverComponent"; }, {}, never, never, false>;
 }

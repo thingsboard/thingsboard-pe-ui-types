@@ -33,5 +33,5 @@ export declare class WidgetsBundleSelectComponent implements ControlValueAccesso
     private updateView;
     private getWidgetsBundles;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetsBundleSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetsBundleSelectComponent, "tb-widgets-bundle-select", never, { "bundlesScope": "bundlesScope"; "selectFirstBundle": "selectFirstBundle"; "selectBundleAlias": "selectBundleAlias"; "required": "required"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetsBundleSelectComponent, "tb-widgets-bundle-select", never, { "bundlesScope": "bundlesScope"; "selectFirstBundle": "selectFirstBundle"; "selectBundleAlias": "selectBundleAlias"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
 }

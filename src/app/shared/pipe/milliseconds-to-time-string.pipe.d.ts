@@ -6,5 +6,5 @@ export declare class MillisecondsToTimeStringPipe implements PipeTransform {
     constructor(translate: TranslateService);
     transform(millseconds: number, shortFormat?: boolean): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<MillisecondsToTimeStringPipe, never>;
-    static ɵpipe: i0.ɵɵPipeDeclaration<MillisecondsToTimeStringPipe, "milliSecondsToTimeString">;
+    static ɵpipe: i0.ɵɵPipeDeclaration<MillisecondsToTimeStringPipe, "milliSecondsToTimeString", false>;
 }

@@ -31,5 +31,5 @@ export declare class CustomMenuComponent extends PageComponent implements OnInit
     save(): void;
     private parse;
     static ɵfac: i0.ɵɵFactoryDeclaration<CustomMenuComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CustomMenuComponent, "tb-custom-menu", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CustomMenuComponent, "tb-custom-menu", never, {}, {}, never, never, false>;
 }

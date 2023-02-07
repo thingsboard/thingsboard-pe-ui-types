@@ -1,5 +1,5 @@
 import { ElementRef, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -27,7 +27,7 @@ export declare class ValueSourceComponent extends PageComponent implements OnIni
     aliasController: IAliasController;
     private modelValue;
     private propagateChange;
-    valueSourceFormGroup: FormGroup;
+    valueSourceFormGroup: UntypedFormGroup;
     filteredEntityAliases: Observable<Array<string>>;
     aliasSearchText: string;
     filteredKeys: Observable<Array<string>>;
@@ -35,7 +35,7 @@ export declare class ValueSourceComponent extends PageComponent implements OnIni
     private latestKeySearchResult;
     private keysFetchObservable$;
     private entityAliasList;
-    constructor(store: Store<AppState>, translate: TranslateService, entityService: EntityService, fb: FormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, entityService: EntityService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -51,5 +51,5 @@ export declare class ValueSourceComponent extends PageComponent implements OnIni
     private updateModel;
     private updateValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<ValueSourceComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ValueSourceComponent, "tb-value-source", never, { "disabled": "disabled"; "aliasController": "aliasController"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ValueSourceComponent, "tb-value-source", never, { "disabled": "disabled"; "aliasController": "aliasController"; }, {}, never, never, false>;
 }

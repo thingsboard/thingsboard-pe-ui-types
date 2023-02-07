@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, ElementRef, OnDestroy, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormControl, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormControl, Validator } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { UtilsService } from '@core/services/utils.service';
@@ -36,7 +36,7 @@ export declare class HtmlComponent implements OnInit, OnDestroy, ControlValueAcc
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
-    validate(c: FormControl): {
+    validate(c: UntypedFormControl): {
         html: {
             valid: boolean;
         };
@@ -45,5 +45,5 @@ export declare class HtmlComponent implements OnInit, OnDestroy, ControlValueAcc
     writeValue(value: string): void;
     updateView(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<HtmlComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<HtmlComponent, "tb-html", never, { "label": "label"; "disabled": "disabled"; "fillHeight": "fillHeight"; "minHeight": "minHeight"; "required": "required"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<HtmlComponent, "tb-html", never, { "label": "label"; "disabled": "disabled"; "fillHeight": "fillHeight"; "minHeight": "minHeight"; "required": "required"; }, {}, never, never, false>;
 }

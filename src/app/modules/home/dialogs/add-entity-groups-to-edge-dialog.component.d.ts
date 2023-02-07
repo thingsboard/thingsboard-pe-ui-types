@@ -3,7 +3,7 @@ import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, FormGroupDirective, NgForm } from '@angular/forms';
 import { DialogComponent } from '@shared/components/dialog.component';
 import { Router } from '@angular/router';
 import { EntityType } from '@shared/models/entity-type.models';
@@ -21,8 +21,8 @@ export declare class AddEntityGroupsToEdgeDialogComponent extends DialogComponen
     data: AddEntityGroupsToEdgeDialogData;
     private errorStateMatcher;
     dialogRef: MatDialogRef<AddEntityGroupsToEdgeDialogComponent>;
-    fb: FormBuilder;
-    addEntityGroupToEdgeFormGroup: FormGroup;
+    fb: UntypedFormBuilder;
+    addEntityGroupToEdgeFormGroup: UntypedFormGroup;
     submitted: boolean;
     entityType: typeof EntityType;
     groupType: EntityType;
@@ -34,11 +34,11 @@ export declare class AddEntityGroupsToEdgeDialogComponent extends DialogComponen
     notFoundText: string;
     requiredText: string;
     edgeEntityGroupIds: string[];
-    constructor(store: Store<AppState>, router: Router, userPermissionsService: UserPermissionsService, entityGroupService: EntityGroupService, broadcast: BroadcastService, data: AddEntityGroupsToEdgeDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<AddEntityGroupsToEdgeDialogComponent>, fb: FormBuilder);
+    constructor(store: Store<AppState>, router: Router, userPermissionsService: UserPermissionsService, entityGroupService: EntityGroupService, broadcast: BroadcastService, data: AddEntityGroupsToEdgeDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<AddEntityGroupsToEdgeDialogComponent>, fb: UntypedFormBuilder);
     ngOnInit(): void;
-    isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean;
+    isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     cancel(): void;
     addEntityGroupsToEdge(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AddEntityGroupsToEdgeDialogComponent, [null, null, null, null, null, null, { skipSelf: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AddEntityGroupsToEdgeDialogComponent, "tb-add-entity-groups-to-edge-dialog", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AddEntityGroupsToEdgeDialogComponent, "tb-add-entity-groups-to-edge-dialog", never, {}, {}, never, never, false>;
 }

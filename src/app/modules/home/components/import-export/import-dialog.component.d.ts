@@ -3,7 +3,7 @@ import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, FormGroupDirective, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DialogComponent } from '@app/shared/components/dialog.component';
 import * as i0 from "@angular/core";
@@ -20,14 +20,14 @@ export declare class ImportDialogComponent extends DialogComponent<ImportDialogC
     private fb;
     importTitle: string;
     importFileLabel: string;
-    importFormGroup: FormGroup;
+    importFormGroup: UntypedFormGroup;
     submitted: boolean;
-    constructor(store: Store<AppState>, router: Router, data: ImportDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<ImportDialogComponent>, fb: FormBuilder);
+    constructor(store: Store<AppState>, router: Router, data: ImportDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<ImportDialogComponent>, fb: UntypedFormBuilder);
     ngOnInit(): void;
-    isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean;
+    isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     loadDataFromJsonContent(content: string): any;
     cancel(): void;
     importFromJson(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ImportDialogComponent, [null, null, null, { skipSelf: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ImportDialogComponent, "tb-import-dialog", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ImportDialogComponent, "tb-import-dialog", never, {}, {}, never, never, false>;
 }

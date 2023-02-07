@@ -1,5 +1,5 @@
 import { OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -23,8 +23,8 @@ export declare class WidgetFontComponent extends PageComponent implements OnInit
     sizeTitle: string;
     private modelValue;
     private propagateChange;
-    widgetFontFormGroup: FormGroup;
-    constructor(store: Store<AppState>, translate: TranslateService, fb: FormBuilder);
+    widgetFontFormGroup: UntypedFormGroup;
+    constructor(store: Store<AppState>, translate: TranslateService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -32,5 +32,5 @@ export declare class WidgetFontComponent extends PageComponent implements OnInit
     writeValue(value: WidgetFont): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetFontComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetFontComponent, "tb-widget-font", never, { "disabled": "disabled"; "hasShadowColor": "hasShadowColor"; "sizeTitle": "sizeTitle"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetFontComponent, "tb-widget-font", never, { "disabled": "disabled"; "hasShadowColor": "hasShadowColor"; "sizeTitle": "sizeTitle"; }, {}, never, never, false>;
 }

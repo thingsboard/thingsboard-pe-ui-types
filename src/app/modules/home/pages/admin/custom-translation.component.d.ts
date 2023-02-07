@@ -31,5 +31,5 @@ export declare class CustomTranslationComponent extends PageComponent implements
     private validate;
     downloadLocaleJson(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<CustomTranslationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CustomTranslationComponent, "tb-custom-translation", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CustomTranslationComponent, "tb-custom-translation", never, {}, {}, never, never, false>;
 }

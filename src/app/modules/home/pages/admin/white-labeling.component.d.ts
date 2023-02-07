@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { PageComponent } from '@shared/components/page.component';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { HasConfirmForm } from '@core/guards/confirm-on-exit.guard';
 import { LoginWhiteLabelingParams, WhiteLabelingParams } from '@shared/models/white-labeling.models';
@@ -22,13 +22,13 @@ export declare class WhiteLabelingComponent extends PageComponent implements OnI
     private uiSettingsService;
     private translate;
     private dialog;
-    fb: FormBuilder;
+    fb: UntypedFormBuilder;
     maxFaviconSize: number;
     maxFaviconSizeKb: number;
     faviconTypes: string[];
     maxLogoSize: number;
     maxLogoSizeKb: number;
-    wlSettings: FormGroup;
+    wlSettings: UntypedFormGroup;
     whiteLabelingParams: WhiteLabelingParams & LoginWhiteLabelingParams;
     isSysAdmin: boolean;
     readonly: boolean;
@@ -39,7 +39,7 @@ export declare class WhiteLabelingComponent extends PageComponent implements OnI
         name: string;
         value: boolean;
     }[];
-    constructor(store: Store<AppState>, router: Router, route: ActivatedRoute, userPermissionsService: UserPermissionsService, whiteLabelingService: WhiteLabelingService, uiSettingsService: UiSettingsService, translate: TranslateService, dialog: MatDialog, fb: FormBuilder);
+    constructor(store: Store<AppState>, router: Router, route: ActivatedRoute, userPermissionsService: UserPermissionsService, whiteLabelingService: WhiteLabelingService, uiSettingsService: UiSettingsService, translate: TranslateService, dialog: MatDialog, fb: UntypedFormBuilder);
     ngOnInit(): void;
     private loadWhiteLabelingParams;
     buildWhiteLabelingSettingsForm(): void;
@@ -54,8 +54,8 @@ export declare class WhiteLabelingComponent extends PageComponent implements OnI
     editCustomCss(): void;
     preview(): void;
     save(): void;
-    confirmForm(): FormGroup;
+    confirmForm(): UntypedFormGroup;
     onExit(): Observable<any>;
     static ɵfac: i0.ɵɵFactoryDeclaration<WhiteLabelingComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WhiteLabelingComponent, "tb-white-labeling", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WhiteLabelingComponent, "tb-white-labeling", never, {}, {}, never, never, false>;
 }

@@ -22,10 +22,10 @@ export declare class AlarmTableConfig extends EntityTableConfig<AlarmInfo, TimeP
     entityId: EntityId;
     private defaultSearchStatus;
     private store;
+    private readonly;
     private authUser;
     searchStatus: AlarmSearchStatus;
-    readonly: boolean;
-    constructor(alarmService: AlarmService, dialogService: DialogService, userPermissionsService: UserPermissionsService, translate: TranslateService, datePipe: DatePipe, dialog: MatDialog, entityId: EntityId, defaultSearchStatus: AlarmSearchStatus, store: Store<AppState>);
+    constructor(alarmService: AlarmService, dialogService: DialogService, userPermissionsService: UserPermissionsService, translate: TranslateService, datePipe: DatePipe, dialog: MatDialog, entityId: EntityId, defaultSearchStatus: AlarmSearchStatus, store: Store<AppState>, readonly: any);
     fetchAlarms(pageLink: TimePageLink): Observable<PageData<AlarmInfo>>;
     showAlarmDetails(entity: AlarmInfo): void;
 }

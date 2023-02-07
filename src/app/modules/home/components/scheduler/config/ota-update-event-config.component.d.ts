@@ -1,5 +1,5 @@
 import { OnDestroy, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { SchedulerEventConfiguration } from '@shared/models/scheduler-event.models';
@@ -13,7 +13,7 @@ export declare class OtaUpdateEventConfigComponent implements ControlValueAccess
     private fb;
     private destroy$;
     modelValue: SchedulerEventConfiguration | null;
-    updatePackageForm: FormGroup;
+    updatePackageForm: UntypedFormGroup;
     currentGroupType: EntityType;
     packageType: OtaUpdateType;
     profileId: string;
@@ -22,7 +22,7 @@ export declare class OtaUpdateEventConfigComponent implements ControlValueAccess
     schedulerEventType: string;
     disabled: boolean;
     private propagateChange;
-    constructor(store: Store<AppState>, fb: FormBuilder);
+    constructor(store: Store<AppState>, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -32,5 +32,5 @@ export declare class OtaUpdateEventConfigComponent implements ControlValueAccess
     private updateModel;
     currentEntity(entity: EntityId | EntityGroupInfo | null): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<OtaUpdateEventConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<OtaUpdateEventConfigComponent, "tb-ota-update-event-config", never, { "schedulerEventType": "schedulerEventType"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<OtaUpdateEventConfigComponent, "tb-ota-update-event-config", never, { "schedulerEventType": "schedulerEventType"; "disabled": "disabled"; }, {}, never, never, false>;
 }

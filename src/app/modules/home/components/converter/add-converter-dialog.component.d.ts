@@ -30,5 +30,5 @@ export declare class AddConverterDialogComponent extends DialogComponent<AddConv
     cancel(): void;
     add(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AddConverterDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AddConverterDialogComponent, "tb-add-converter-dialog", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AddConverterDialogComponent, "tb-add-converter-dialog", never, {}, {}, never, never, false>;
 }

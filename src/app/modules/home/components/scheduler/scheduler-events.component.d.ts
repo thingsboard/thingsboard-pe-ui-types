@@ -131,7 +131,7 @@ export declare class SchedulerEventsComponent extends PageComponent implements O
     unassignFromEdgeSchedulerEvents($event: Event): void;
     private updatedRouterQueryParams;
     static ɵfac: i0.ɵɵFactoryDeclaration<SchedulerEventsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SchedulerEventsComponent, "tb-scheduler-events", never, { "widgetMode": "widgetMode"; "ctx": "ctx"; "edgeId": "edgeId"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SchedulerEventsComponent, "tb-scheduler-events", never, { "widgetMode": "widgetMode"; "ctx": "ctx"; "edgeId": "edgeId"; }, {}, never, never, false>;
 }
 declare class SchedulerEventsDatasource implements DataSource<SchedulerEventWithCustomerInfo> {
     private schedulerEventService;

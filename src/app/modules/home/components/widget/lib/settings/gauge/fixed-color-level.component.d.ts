@@ -1,6 +1,6 @@
 import { ValueSourceProperty } from '@home/components/widget/lib/settings/common/value-source.component';
 import { EventEmitter, OnInit } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, FormBuilder, FormGroup, ValidationErrors } from '@angular/forms';
+import { AbstractControl, ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, ValidationErrors } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -23,8 +23,8 @@ export declare class FixedColorLevelComponent extends PageComponent implements O
     removeFixedColorLevel: EventEmitter<any>;
     private modelValue;
     private propagateChange;
-    fixedColorLevelFormGroup: FormGroup;
-    constructor(store: Store<AppState>, translate: TranslateService, fb: FormBuilder);
+    fixedColorLevelFormGroup: UntypedFormGroup;
+    constructor(store: Store<AppState>, translate: TranslateService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -34,5 +34,5 @@ export declare class FixedColorLevelComponent extends PageComponent implements O
     private valueSourcePropertyText;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<FixedColorLevelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FixedColorLevelComponent, "tb-fixed-color-level", never, { "disabled": "disabled"; "expanded": "expanded"; "aliasController": "aliasController"; }, { "removeFixedColorLevel": "removeFixedColorLevel"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FixedColorLevelComponent, "tb-fixed-color-level", never, { "disabled": "disabled"; "expanded": "expanded"; "aliasController": "aliasController"; }, { "removeFixedColorLevel": "removeFixedColorLevel"; }, never, never, false>;
 }

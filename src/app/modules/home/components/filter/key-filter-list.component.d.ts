@@ -1,5 +1,5 @@
 import { OnInit } from '@angular/core';
-import { ControlValueAccessor, FormArray, FormBuilder, FormControl, FormGroup, ValidationErrors, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { EntityKeyType, KeyFilterInfo } from '@shared/models/query/query.models';
 import { MatDialog } from '@angular/material/dialog';
 import { EntityId } from '@shared/models/id/entity-id';
@@ -12,14 +12,14 @@ export declare class KeyFilterListComponent implements ControlValueAccessor, Val
     allowUserDynamicSource: boolean;
     telemetryKeysOnly: boolean;
     entityId: EntityId;
-    keyFilterListFormGroup: FormGroup;
+    keyFilterListFormGroup: UntypedFormGroup;
     entityKeyTypeTranslations: Map<EntityKeyType, string>;
-    keyFiltersControl: FormControl;
+    keyFiltersControl: UntypedFormControl;
     private propagateChange;
     private valueChangeSubscription;
-    constructor(fb: FormBuilder, dialog: MatDialog);
+    constructor(fb: UntypedFormBuilder, dialog: MatDialog);
     ngOnInit(): void;
-    keyFiltersFormArray(): FormArray;
+    keyFiltersFormArray(): UntypedFormArray;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState?(isDisabled: boolean): void;
@@ -31,5 +31,5 @@ export declare class KeyFilterListComponent implements ControlValueAccessor, Val
     private openKeyFilterDialog;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<KeyFilterListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<KeyFilterListComponent, "tb-key-filter-list", never, { "disabled": "disabled"; "displayUserParameters": "displayUserParameters"; "allowUserDynamicSource": "allowUserDynamicSource"; "telemetryKeysOnly": "telemetryKeysOnly"; "entityId": "entityId"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<KeyFilterListComponent, "tb-key-filter-list", never, { "disabled": "disabled"; "displayUserParameters": "displayUserParameters"; "allowUserDynamicSource": "allowUserDynamicSource"; "telemetryKeysOnly": "telemetryKeysOnly"; "entityId": "entityId"; }, {}, never, never, false>;
 }

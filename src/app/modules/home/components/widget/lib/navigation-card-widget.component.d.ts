@@ -23,6 +23,6 @@ export declare class NavigationCardWidgetComponent extends PageComponent impleme
     ngOnInit(): void;
     navigate($event: Event, path: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<NavigationCardWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<NavigationCardWidgetComponent, "tb-navigation-card-widget", never, { "ctx": "ctx"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NavigationCardWidgetComponent, "tb-navigation-card-widget", never, { "ctx": "ctx"; }, {}, never, never, false>;
 }
 export {};

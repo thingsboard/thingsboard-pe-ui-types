@@ -20,5 +20,5 @@ export declare class FilterUserInfoComponent implements ControlValueAccessor, On
     openFilterUserInfoDialog(): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<FilterUserInfoComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FilterUserInfoComponent, "tb-filter-user-info", never, { "disabled": "disabled"; "key": "key"; "operation": "operation"; "valueType": "valueType"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FilterUserInfoComponent, "tb-filter-user-info", never, { "disabled": "disabled"; "key": "key"; "operation": "operation"; "valueType": "valueType"; }, {}, never, never, false>;
 }

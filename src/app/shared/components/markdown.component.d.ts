@@ -39,5 +39,5 @@ export declare class TbMarkdownComponent implements OnChanges {
     private sanitizeCurlyBraces;
     private destroyMarkdownInstanceResources;
     static ɵfac: i0.ɵɵFactoryDeclaration<TbMarkdownComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TbMarkdownComponent, "tb-markdown", never, { "data": "data"; "context": "context"; "additionalCompileModules": "additionalCompileModules"; "markdownClass": "markdownClass"; "style": "style"; "lineNumbers": "lineNumbers"; "fallbackToPlainMarkdown": "fallbackToPlainMarkdown"; }, { "ready": "ready"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TbMarkdownComponent, "tb-markdown", never, { "data": "data"; "context": "context"; "additionalCompileModules": "additionalCompileModules"; "markdownClass": "markdownClass"; "style": "style"; "lineNumbers": "lineNumbers"; "fallbackToPlainMarkdown": "fallbackToPlainMarkdown"; }, { "ready": "ready"; }, never, never, false>;
 }

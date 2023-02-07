@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, ElementRef, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
-import { ControlValueAccessor, FormControl, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormControl, Validator } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { ContentType } from '@shared/models/constants';
@@ -51,7 +51,7 @@ export declare class JsonContentComponent implements OnInit, ControlValueAccesso
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
-    validate(c: FormControl): {
+    validate(c: UntypedFormControl): {
         contentBody: {
             valid: boolean;
         };
@@ -65,5 +65,5 @@ export declare class JsonContentComponent implements OnInit, ControlValueAccesso
     minifyJSON(): void;
     onFullscreen(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<JsonContentComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<JsonContentComponent, "tb-json-content", never, { "label": "label"; "contentType": "contentType"; "disabled": "disabled"; "fillHeight": "fillHeight"; "editorStyle": "editorStyle"; "tbPlaceholder": "tbPlaceholder"; "readonly": "readonly"; "validateContent": "validateContent"; "validateOnChange": "validateOnChange"; "required": "required"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<JsonContentComponent, "tb-json-content", never, { "label": "label"; "contentType": "contentType"; "disabled": "disabled"; "fillHeight": "fillHeight"; "editorStyle": "editorStyle"; "tbPlaceholder": "tbPlaceholder"; "readonly": "readonly"; "validateContent": "validateContent"; "validateOnChange": "validateOnChange"; "required": "required"; }, {}, never, never, false>;
 }

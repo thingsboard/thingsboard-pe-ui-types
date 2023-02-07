@@ -1,5 +1,5 @@
 import { EventEmitter, OnDestroy } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { TranslateService } from '@ngx-translate/core';
@@ -23,7 +23,7 @@ export declare class TargetSelectComponent implements ControlValueAccessor, OnDe
     private store;
     translate: TranslateService;
     private fb;
-    targetFormGroup: FormGroup;
+    targetFormGroup: UntypedFormGroup;
     entityType: EntityType;
     currentUser: import("../../../../../shared/public-api").AuthUser;
     private modelValue;
@@ -35,7 +35,7 @@ export declare class TargetSelectComponent implements ControlValueAccessor, OnDe
     disabled: boolean;
     currentEntity: EventEmitter<EntityId | EntityGroupInfo>;
     private propagateChange;
-    constructor(store: Store<AppState>, translate: TranslateService, fb: FormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnDestroy(): void;
@@ -46,6 +46,6 @@ export declare class TargetSelectComponent implements ControlValueAccessor, OnDe
     deviceLoaded(device: any): void;
     updateView(value: FormValue | null): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TargetSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TargetSelectComponent, "tb-target-select", never, { "required": "required"; "disabled": "disabled"; }, { "currentEntity": "currentEntity"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TargetSelectComponent, "tb-target-select", never, { "required": "required"; "disabled": "disabled"; }, { "currentEntity": "currentEntity"; }, never, never, false>;
 }
 export {};

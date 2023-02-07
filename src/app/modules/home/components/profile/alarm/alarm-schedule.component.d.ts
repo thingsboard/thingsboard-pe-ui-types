@@ -1,12 +1,12 @@
 import { OnInit } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, FormArray, FormBuilder, FormControl, FormGroup, ValidationErrors, Validator } from '@angular/forms';
+import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { AlarmSchedule, AlarmScheduleType } from '@shared/models/device.models';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 import * as i0 from "@angular/core";
 export declare class AlarmScheduleComponent implements ControlValueAccessor, Validator, OnInit {
     private fb;
     disabled: boolean;
-    alarmScheduleForm: FormGroup;
+    alarmScheduleForm: UntypedFormGroup;
     alarmScheduleTypes: string[];
     alarmScheduleType: typeof AlarmScheduleType;
     alarmScheduleTypeTranslate: Map<AlarmScheduleType, string>;
@@ -17,7 +17,7 @@ export declare class AlarmScheduleComponent implements ControlValueAccessor, Val
     private modelValue;
     private defaultItems;
     private propagateChange;
-    constructor(fb: FormBuilder);
+    constructor(fb: UntypedFormBuilder);
     ngOnInit(): void;
     validateDayOfWeeks(control: AbstractControl): ValidationErrors | null;
     validateItems(control: AbstractControl): ValidationErrors | null;
@@ -25,15 +25,15 @@ export declare class AlarmScheduleComponent implements ControlValueAccessor, Val
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: AlarmSchedule): void;
-    validate(control: FormGroup): ValidationErrors | null;
-    weeklyRepeatControl(index: number): FormControl;
+    validate(control: UntypedFormGroup): ValidationErrors | null;
+    weeklyRepeatControl(index: number): UntypedFormControl;
     private updateValidators;
     private updateModel;
     private defaultItemsScheduler;
     changeCustomScheduler($event: MatCheckboxChange, index: number): void;
     private disabledSelectedTime;
-    getSchedulerRangeText(control: FormGroup | AbstractControl): string;
-    get itemsSchedulerForm(): FormArray;
+    getSchedulerRangeText(control: UntypedFormGroup | AbstractControl): string;
+    get itemsSchedulerForm(): UntypedFormArray;
     static ɵfac: i0.ɵɵFactoryDeclaration<AlarmScheduleComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmScheduleComponent, "tb-alarm-schedule", never, { "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmScheduleComponent, "tb-alarm-schedule", never, { "disabled": "disabled"; }, {}, never, never, false>;
 }

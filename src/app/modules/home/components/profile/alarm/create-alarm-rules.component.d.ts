@@ -1,5 +1,5 @@
 import { OnInit } from '@angular/core';
-import { ControlValueAccessor, FormArray, FormBuilder, FormControl, FormGroup, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { AlarmRule } from '@shared/models/device.models';
 import { MatDialog } from '@angular/material/dialog';
 import { AlarmSeverity } from '@shared/models/alarm.models';
@@ -13,15 +13,15 @@ export declare class CreateAlarmRulesComponent implements ControlValueAccessor, 
     alarmSeverityTranslationMap: Map<AlarmSeverity, string>;
     disabled: boolean;
     deviceProfileId: EntityId;
-    createAlarmRulesFormGroup: FormGroup;
+    createAlarmRulesFormGroup: UntypedFormGroup;
     private usedSeverities;
     private valueChangeSubscription;
     private propagateChange;
-    constructor(dialog: MatDialog, fb: FormBuilder);
+    constructor(dialog: MatDialog, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
-    createAlarmRulesFormArray(): FormArray;
+    createAlarmRulesFormArray(): UntypedFormArray;
     setDisabledState(isDisabled: boolean): void;
     writeValue(createAlarmRules: {
         [severity: string]: AlarmRule;
@@ -29,7 +29,7 @@ export declare class CreateAlarmRulesComponent implements ControlValueAccessor, 
     removeCreateAlarmRule(index: number): void;
     addCreateAlarmRule(): void;
     private getFirstUnusedSeverity;
-    validate(c: FormControl): {
+    validate(c: UntypedFormControl): {
         createAlarmRules: {
             valid: boolean;
         };
@@ -38,5 +38,5 @@ export declare class CreateAlarmRulesComponent implements ControlValueAccessor, 
     private updateUsedSeverities;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<CreateAlarmRulesComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CreateAlarmRulesComponent, "tb-create-alarm-rules", never, { "disabled": "disabled"; "deviceProfileId": "deviceProfileId"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CreateAlarmRulesComponent, "tb-create-alarm-rules", never, { "disabled": "disabled"; "deviceProfileId": "deviceProfileId"; }, {}, never, never, false>;
 }

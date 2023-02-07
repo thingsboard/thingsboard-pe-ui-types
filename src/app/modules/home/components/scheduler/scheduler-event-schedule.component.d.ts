@@ -1,5 +1,5 @@
 import { AfterViewInit, OnDestroy, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { PageComponent } from '@shared/components/page.component';
@@ -21,14 +21,14 @@ interface SchedulerEventScheduleConfig {
     };
 }
 export declare class EndsOnDateErrorStateMatcher implements ErrorStateMatcher {
-    isErrorState(control: FormControl | null): boolean;
+    isErrorState(control: UntypedFormControl | null): boolean;
 }
 export declare class SchedulerEventScheduleComponent extends PageComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnDestroy {
     protected store: Store<AppState>;
     private fb;
     modelValue: SchedulerEventScheduleConfig | null;
     endsOnDateMatcher: EndsOnDateErrorStateMatcher;
-    scheduleConfigFormGroup: FormGroup;
+    scheduleConfigFormGroup: UntypedFormGroup;
     schedulerRepeatTypes: string[];
     schedulerRepeatType: typeof SchedulerRepeatType;
     schedulerRepeatTypeTranslations: Map<SchedulerRepeatType, string>;
@@ -37,9 +37,9 @@ export declare class SchedulerEventScheduleComponent extends PageComponent imple
     disabled: boolean;
     private lastAppliedTimezone;
     private propagateChange;
-    constructor(store: Store<AppState>, fb: FormBuilder);
+    constructor(store: Store<AppState>, fb: UntypedFormBuilder);
     private endsOnDateValidator;
-    weeklyRepeatControl(index: number): FormControl;
+    weeklyRepeatControl(index: number): UntypedFormControl;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -57,6 +57,6 @@ export declare class SchedulerEventScheduleComponent extends PageComponent imple
     private dateTimeToUtcTime;
     private dateToUtcTime;
     static ɵfac: i0.ɵɵFactoryDeclaration<SchedulerEventScheduleComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SchedulerEventScheduleComponent, "tb-scheduler-event-schedule", never, { "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SchedulerEventScheduleComponent, "tb-scheduler-event-schedule", never, { "disabled": "disabled"; }, {}, never, never, false>;
 }
 export {};

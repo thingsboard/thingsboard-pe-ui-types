@@ -10,5 +10,5 @@ export declare class AlertDialogComponent {
     data: AlertDialogData;
     constructor(dialogRef: MatDialogRef<AlertDialogComponent>, data: AlertDialogData);
     static ɵfac: i0.ɵɵFactoryDeclaration<AlertDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AlertDialogComponent, "tb-alert-dialog", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AlertDialogComponent, "tb-alert-dialog", never, {}, {}, never, never, false>;
 }

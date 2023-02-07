@@ -1,4 +1,4 @@
-import { ControlValueAccessor, FormBuilder, FormGroup, ValidationErrors, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { IntegrationForm } from '@home/components/integration/configuration/integration-form';
 import { AzureEventHubIntegration } from '@shared/models/integration.models';
 import * as i0 from "@angular/core";
@@ -7,9 +7,9 @@ export declare class AzureEventHubIntegrationFormComponent extends IntegrationFo
     downlinkConverter: boolean;
     set isSetDownlink(value: boolean);
     get isSetDownLink(): boolean;
-    azureEventHubIntegrationConfigForm: FormGroup;
+    azureEventHubIntegrationConfigForm: UntypedFormGroup;
     private propagateChange;
-    constructor(fb: FormBuilder);
+    constructor(fb: UntypedFormBuilder);
     writeValue(value: AzureEventHubIntegration): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -18,5 +18,5 @@ export declare class AzureEventHubIntegrationFormComponent extends IntegrationFo
     validate(): ValidationErrors | null;
     private downlinkConverterChanged;
     static ɵfac: i0.ɵɵFactoryDeclaration<AzureEventHubIntegrationFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AzureEventHubIntegrationFormComponent, "tb-azure-event-hub-integration-form", never, { "isSetDownlink": "isSetDownlink"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AzureEventHubIntegrationFormComponent, "tb-azure-event-hub-integration-form", never, { "isSetDownlink": "isSetDownlink"; }, {}, never, never, false>;
 }

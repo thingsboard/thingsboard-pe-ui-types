@@ -2,7 +2,7 @@ import { AfterViewInit, ElementRef, OnDestroy, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DialogComponent } from '@shared/components/dialog.component';
 import * as i0 from "@angular/core";
@@ -16,14 +16,14 @@ export declare class SelectDashboardStateDialogComponent extends DialogComponent
     private window;
     data: SelectDashboardStateDialogData;
     dialogRef: MatDialogRef<SelectDashboardStateDialogComponent, string>;
-    fb: FormBuilder;
+    fb: UntypedFormBuilder;
     width: string;
     height: string;
     selectDashboardFrameElmRef: ElementRef<HTMLIFrameElement>;
     dashboardId: string;
     currentState: string;
     onWindowMessageListener: any;
-    constructor(store: Store<AppState>, router: Router, window: Window, data: SelectDashboardStateDialogData, dialogRef: MatDialogRef<SelectDashboardStateDialogComponent, string>, fb: FormBuilder);
+    constructor(store: Store<AppState>, router: Router, window: Window, data: SelectDashboardStateDialogData, dialogRef: MatDialogRef<SelectDashboardStateDialogComponent, string>, fb: UntypedFormBuilder);
     ngOnInit(): void;
     ngOnDestroy(): void;
     ngAfterViewInit(): void;
@@ -32,5 +32,5 @@ export declare class SelectDashboardStateDialogComponent extends DialogComponent
     cancel(): void;
     select(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SelectDashboardStateDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SelectDashboardStateDialogComponent, "tb-select-dashboard-state-dialog", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SelectDashboardStateDialogComponent, "tb-select-dashboard-state-dialog", never, {}, {}, never, never, false>;
 }

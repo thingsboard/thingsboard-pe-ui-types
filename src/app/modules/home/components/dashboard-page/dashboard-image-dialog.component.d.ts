@@ -1,7 +1,7 @@
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DialogComponent } from '@app/shared/components/dialog.component';
 import { DashboardId } from '@shared/models/id/dashboard-id';
@@ -30,14 +30,14 @@ export declare class DashboardImageDialogComponent extends DialogComponent<Dashb
     dashboardId: DashboardId;
     safeImageUrl?: SafeUrl;
     dashboardElement: HTMLElement;
-    dashboardRectFormGroup: FormGroup;
-    dashboardImageFormGroup: FormGroup;
-    constructor(store: Store<AppState>, router: Router, data: DashboardImageDialogData, dialogRef: MatDialogRef<DashboardImageDialogComponent, DashboardImageDialogResult>, dashboardService: DashboardService, sanitizer: DomSanitizer, fb: FormBuilder);
+    dashboardRectFormGroup: UntypedFormGroup;
+    dashboardImageFormGroup: UntypedFormGroup;
+    constructor(store: Store<AppState>, router: Router, data: DashboardImageDialogData, dialogRef: MatDialogRef<DashboardImageDialogComponent, DashboardImageDialogResult>, dashboardService: DashboardService, sanitizer: DomSanitizer, fb: UntypedFormBuilder);
     private convertUserPercent;
     takeScreenShot(): void;
     cancel(): void;
     save(): void;
     private updateImage;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardImageDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardImageDialogComponent, "tb-dashboard-image-dialog", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardImageDialogComponent, "tb-dashboard-image-dialog", never, {}, {}, never, never, false>;
 }

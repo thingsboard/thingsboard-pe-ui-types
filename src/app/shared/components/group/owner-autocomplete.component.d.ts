@@ -1,5 +1,5 @@
 import { AfterViewInit, ElementRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -13,7 +13,7 @@ export declare class OwnerAutocompleteComponent implements ControlValueAccessor,
     private entityService;
     private entityGroupService;
     private fb;
-    selectOwnerFormGroup: FormGroup;
+    selectOwnerFormGroup: UntypedFormGroup;
     modelValue: EntityId | null;
     excludeOwnerIds: Array<string>;
     placeholderText: string;
@@ -29,7 +29,7 @@ export declare class OwnerAutocompleteComponent implements ControlValueAccessor,
     private dirty;
     private excludeOwnerIdsChanged;
     private propagateChange;
-    constructor(store: Store<AppState>, entityService: EntityService, entityGroupService: EntityGroupService, fb: FormBuilder);
+    constructor(store: Store<AppState>, entityService: EntityService, entityGroupService: EntityGroupService, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -44,5 +44,5 @@ export declare class OwnerAutocompleteComponent implements ControlValueAccessor,
     fetchOwners(searchText?: string): Observable<Array<ContactBased<EntityId>>>;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<OwnerAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<OwnerAutocompleteComponent, "tb-owner-autocomplete", never, { "excludeOwnerIds": "excludeOwnerIds"; "placeholderText": "placeholderText"; "notFoundText": "notFoundText"; "requiredText": "requiredText"; "required": "required"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<OwnerAutocompleteComponent, "tb-owner-autocomplete", never, { "excludeOwnerIds": "excludeOwnerIds"; "placeholderText": "placeholderText"; "notFoundText": "notFoundText"; "requiredText": "requiredText"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
 }

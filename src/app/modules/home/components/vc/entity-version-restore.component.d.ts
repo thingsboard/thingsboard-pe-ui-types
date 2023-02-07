@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, OnDestroy, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { EntityDataInfo, VersionLoadResult } from '@shared/models/vc.models';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -28,15 +28,15 @@ export declare class EntityVersionRestoreComponent extends PageComponent impleme
     popoverComponent: TbPopoverComponent;
     entityTypes: typeof EntityType;
     entityDataInfo: EntityDataInfo;
-    restoreFormGroup: FormGroup;
+    restoreFormGroup: UntypedFormGroup;
     errorMessage: SafeHtml;
     versionLoadResult$: Observable<VersionLoadResult>;
     private versionLoadResultSubscription;
-    constructor(store: Store<AppState>, entitiesVersionControlService: EntitiesVersionControlService, cd: ChangeDetectorRef, translate: TranslateService, sanitizer: DomSanitizer, fb: FormBuilder);
+    constructor(store: Store<AppState>, entitiesVersionControlService: EntitiesVersionControlService, cd: ChangeDetectorRef, translate: TranslateService, sanitizer: DomSanitizer, fb: UntypedFormBuilder);
     ngOnInit(): void;
     ngOnDestroy(): void;
     cancel(): void;
     restore(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityVersionRestoreComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityVersionRestoreComponent, "tb-entity-version-restore", never, { "versionName": "versionName"; "versionId": "versionId"; "internalEntityId": "internalEntityId"; "externalEntityId": "externalEntityId"; "groupType": "groupType"; "onClose": "onClose"; "popoverComponent": "popoverComponent"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityVersionRestoreComponent, "tb-entity-version-restore", never, { "versionName": "versionName"; "versionId": "versionId"; "internalEntityId": "internalEntityId"; "externalEntityId": "externalEntityId"; "groupType": "groupType"; "onClose": "onClose"; "popoverComponent": "popoverComponent"; }, {}, never, never, false>;
 }

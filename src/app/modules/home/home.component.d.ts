@@ -46,5 +46,5 @@ export declare class HomeComponent extends PageComponent implements AfterViewIni
     platformNameAndVersion$(): Observable<string>;
     private searchTextUpdated;
     static ɵfac: i0.ɵɵFactoryDeclaration<HomeComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<HomeComponent, "tb-home", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<HomeComponent, "tb-home", never, {}, {}, never, never, false>;
 }

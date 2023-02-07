@@ -31,5 +31,5 @@ export declare class EdgeDownlinkTableComponent implements OnInit {
     constructor(attributeService: AttributeService, datePipe: DatePipe, dialogService: DialogService, dialog: MatDialog, edgeService: EdgeService, entityService: EntityService, translate: TranslateService, store: Store<AppState>);
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EdgeDownlinkTableComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EdgeDownlinkTableComponent, "tb-edge-downlink-table", never, { "active": "active"; "entityId": "entityId"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EdgeDownlinkTableComponent, "tb-edge-downlink-table", never, { "active": "active"; "entityId": "entityId"; }, {}, never, never, false>;
 }

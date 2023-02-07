@@ -67,7 +67,7 @@ export declare class WidgetSubscription implements IWidgetSubscription {
     targetDeviceAliasId: string;
     targetDeviceId: string;
     targetDeviceName: string;
-    executingSubjects: Array<Subject<any>>;
+    executingSubjects: Array<Subject<void>>;
     subscribed: boolean;
     hasLatestData: boolean;
     widgetTimewindowChangedSubject: Subject<WidgetTimewindow>;

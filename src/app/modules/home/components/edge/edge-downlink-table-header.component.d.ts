@@ -9,5 +9,5 @@ export declare class EdgeDownlinkTableHeaderComponent extends EntityTableHeaderC
     get eventTableConfig(): EdgeDownlinkTableConfig;
     constructor(store: Store<AppState>);
     static ɵfac: i0.ɵɵFactoryDeclaration<EdgeDownlinkTableHeaderComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EdgeDownlinkTableHeaderComponent, "tb-edge-downlink-table-header", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EdgeDownlinkTableHeaderComponent, "tb-edge-downlink-table-header", never, {}, {}, never, never, false>;
 }

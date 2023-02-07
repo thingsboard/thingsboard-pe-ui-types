@@ -1,7 +1,7 @@
 import { ChangeDetectorRef } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { EntityType } from '@shared/models/entity-type.models';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
@@ -16,7 +16,7 @@ export declare class EntityViewComponent extends GroupEntityComponent<EntityView
     protected translate: TranslateService;
     protected entityValue: EntityView;
     protected entitiesTableConfigValue: GroupEntityTableConfig<EntityView>;
-    protected fb: FormBuilder;
+    protected fb: UntypedFormBuilder;
     protected cd: ChangeDetectorRef;
     entityType: typeof EntityType;
     dataKeyType: typeof DataKeyType;
@@ -24,12 +24,12 @@ export declare class EntityViewComponent extends GroupEntityComponent<EntityView
     maxStartTimeMs: Observable<number | null>;
     minEndTimeMs: Observable<number | null>;
     selectedEntityId: Observable<EntityId | null>;
-    constructor(store: Store<AppState>, translate: TranslateService, entityValue: EntityView, entitiesTableConfigValue: GroupEntityTableConfig<EntityView>, fb: FormBuilder, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, translate: TranslateService, entityValue: EntityView, entitiesTableConfigValue: GroupEntityTableConfig<EntityView>, fb: UntypedFormBuilder, cd: ChangeDetectorRef);
     ngOnInit(): void;
     hideDelete(): boolean;
-    buildForm(entity: EntityView): FormGroup;
+    buildForm(entity: EntityView): UntypedFormGroup;
     updateForm(entity: EntityView): void;
     onEntityViewIdCopied($event: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityViewComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityViewComponent, "tb-entity-view", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityViewComponent, "tb-entity-view", never, {}, {}, never, never, false>;
 }

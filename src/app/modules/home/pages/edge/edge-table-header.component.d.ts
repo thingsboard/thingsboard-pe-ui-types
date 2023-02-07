@@ -10,5 +10,5 @@ export declare class EdgeTableHeaderComponent extends EntityTableHeaderComponent
     constructor(store: Store<AppState>);
     edgeTypeChanged(edgeType: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EdgeTableHeaderComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EdgeTableHeaderComponent, "tb-edge-table-header", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EdgeTableHeaderComponent, "tb-edge-table-header", never, {}, {}, never, never, false>;
 }

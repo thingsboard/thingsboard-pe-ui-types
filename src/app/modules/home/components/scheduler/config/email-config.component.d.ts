@@ -1,5 +1,5 @@
 import { AfterViewInit, OnDestroy, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { PageComponent } from '@shared/components/page.component';
@@ -16,11 +16,11 @@ export declare class EmailConfigComponent extends PageComponent implements Contr
     protected store: Store<AppState>;
     private fb;
     modelValue: EmailConfig | null;
-    emailConfigFormGroup: FormGroup;
+    emailConfigFormGroup: UntypedFormGroup;
     disabled: boolean;
     authUser: import("../../../../../shared/public-api").AuthUser;
     private propagateChange;
-    constructor(store: Store<AppState>, fb: FormBuilder);
+    constructor(store: Store<AppState>, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -32,6 +32,6 @@ export declare class EmailConfigComponent extends PageComponent implements Contr
     private createDefaultEmailConfig;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<EmailConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EmailConfigComponent, "tb-email-config", never, { "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EmailConfigComponent, "tb-email-config", never, { "disabled": "disabled"; }, {}, never, never, false>;
 }
 export {};

@@ -1,5 +1,5 @@
 import { OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup, ValidationErrors, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { EntityKeyValueType, FilterPredicateType, KeyFilterPredicateInfo } from '@shared/models/query/query.models';
 import * as i0 from "@angular/core";
 export declare class FilterPredicateComponent implements ControlValueAccessor, Validator, OnInit {
@@ -10,11 +10,11 @@ export declare class FilterPredicateComponent implements ControlValueAccessor, V
     displayUserParameters: boolean;
     allowUserDynamicSource: boolean;
     onlyUserDynamicSource: boolean;
-    filterPredicateFormGroup: FormGroup;
+    filterPredicateFormGroup: UntypedFormGroup;
     type: FilterPredicateType;
     filterPredicateType: typeof FilterPredicateType;
     private propagateChange;
-    constructor(fb: FormBuilder);
+    constructor(fb: UntypedFormBuilder);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -23,5 +23,5 @@ export declare class FilterPredicateComponent implements ControlValueAccessor, V
     writeValue(predicate: KeyFilterPredicateInfo): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<FilterPredicateComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FilterPredicateComponent, "tb-filter-predicate", never, { "disabled": "disabled"; "valueType": "valueType"; "key": "key"; "displayUserParameters": "displayUserParameters"; "allowUserDynamicSource": "allowUserDynamicSource"; "onlyUserDynamicSource": "onlyUserDynamicSource"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FilterPredicateComponent, "tb-filter-predicate", never, { "disabled": "disabled"; "valueType": "valueType"; "key": "key"; "displayUserParameters": "displayUserParameters"; "allowUserDynamicSource": "allowUserDynamicSource"; "onlyUserDynamicSource": "onlyUserDynamicSource"; }, {}, never, never, false>;
 }

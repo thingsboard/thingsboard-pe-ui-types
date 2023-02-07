@@ -1,5 +1,5 @@
 import { ElementRef, OnDestroy, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormControl, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormControl, Validator } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { RafService } from '@core/services/raf.service';
@@ -41,7 +41,7 @@ export declare class JsonObjectEditComponent implements OnInit, ControlValueAcce
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
-    validate(c: FormControl): {
+    validate(c: UntypedFormControl): {
         jsonParseError: {
             valid: boolean;
         };
@@ -54,5 +54,5 @@ export declare class JsonObjectEditComponent implements OnInit, ControlValueAcce
     updateView(): void;
     onFullscreen(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<JsonObjectEditComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<JsonObjectEditComponent, "tb-json-object-edit", never, { "label": "label"; "disabled": "disabled"; "fillHeight": "fillHeight"; "editorStyle": "editorStyle"; "sort": "sort"; "required": "required"; "readonly": "readonly"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<JsonObjectEditComponent, "tb-json-object-edit", never, { "label": "label"; "disabled": "disabled"; "fillHeight": "fillHeight"; "editorStyle": "editorStyle"; "sort": "sort"; "required": "required"; "readonly": "readonly"; }, {}, never, never, false>;
 }

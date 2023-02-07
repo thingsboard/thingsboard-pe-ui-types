@@ -1,5 +1,5 @@
 import { EventEmitter, OnInit } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { AbstractControl, ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -20,8 +20,8 @@ export declare class CustomSchedulerEventTypeComponent extends PageComponent imp
     removeCustomSchedulerEventType: EventEmitter<any>;
     private modelValue;
     private propagateChange;
-    customSchedulerEventTypeFormGroup: FormGroup;
-    constructor(store: Store<AppState>, translate: TranslateService, domSanitizer: DomSanitizer, fb: FormBuilder);
+    customSchedulerEventTypeFormGroup: UntypedFormGroup;
+    constructor(store: Store<AppState>, translate: TranslateService, domSanitizer: DomSanitizer, fb: UntypedFormBuilder);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -30,5 +30,5 @@ export declare class CustomSchedulerEventTypeComponent extends PageComponent imp
     customSchedulerEventTypeHtml(): SafeHtml;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<CustomSchedulerEventTypeComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CustomSchedulerEventTypeComponent, "tb-custom-scheduler-event-type", never, { "disabled": "disabled"; "expanded": "expanded"; }, { "removeCustomSchedulerEventType": "removeCustomSchedulerEventType"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CustomSchedulerEventTypeComponent, "tb-custom-scheduler-event-type", never, { "disabled": "disabled"; "expanded": "expanded"; }, { "removeCustomSchedulerEventType": "removeCustomSchedulerEventType"; }, never, never, false>;
 }

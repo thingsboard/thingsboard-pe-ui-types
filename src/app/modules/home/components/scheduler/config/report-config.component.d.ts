@@ -1,5 +1,5 @@
 import { AfterViewInit, OnDestroy, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { ReportConfig } from '@shared/models/report.models';
@@ -20,7 +20,7 @@ export declare class ReportConfigComponent extends PageComponent implements Cont
     private dialog;
     private fb;
     modelValue: ReportConfig | null;
-    reportConfigFormGroup: FormGroup;
+    reportConfigFormGroup: UntypedFormGroup;
     reportsServerEndpointUrl: string;
     disabled: boolean;
     authUser: import("../../../../../shared/public-api").AuthUser;
@@ -29,7 +29,7 @@ export declare class ReportConfigComponent extends PageComponent implements Cont
     reportTypesList: import("@shared/models/report.models").ReportType[];
     reportTypeNames: Map<import("@shared/models/report.models").ReportType, string>;
     private propagateChange;
-    constructor(store: Store<AppState>, utils: UtilsService, reportService: ReportService, dialogService: DialogService, translate: TranslateService, dialog: MatDialog, fb: FormBuilder);
+    constructor(store: Store<AppState>, utils: UtilsService, reportService: ReportService, dialogService: DialogService, translate: TranslateService, dialog: MatDialog, fb: UntypedFormBuilder);
     private updateEnabledState;
     selectDashboardState(): void;
     generateTestReport(): void;
@@ -43,5 +43,5 @@ export declare class ReportConfigComponent extends PageComponent implements Cont
     private createDefaultReportConfig;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<ReportConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ReportConfigComponent, "tb-report-config", never, { "reportsServerEndpointUrl": "reportsServerEndpointUrl"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ReportConfigComponent, "tb-report-config", never, { "reportsServerEndpointUrl": "reportsServerEndpointUrl"; "disabled": "disabled"; }, {}, never, never, false>;
 }

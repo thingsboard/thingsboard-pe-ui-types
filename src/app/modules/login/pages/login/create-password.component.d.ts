@@ -3,7 +3,7 @@ import { AuthService } from '@core/auth/auth.service';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { PageComponent } from '@shared/components/page.component';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -15,15 +15,15 @@ export declare class CreatePasswordComponent extends PageComponent implements On
     private authService;
     private translate;
     wl: WhiteLabelingService;
-    fb: FormBuilder;
+    fb: UntypedFormBuilder;
     activateToken: string;
     sub: Subscription;
-    createPassword: import("@angular/forms").FormGroup;
+    createPassword: import("@angular/forms").UntypedFormGroup;
     class: string;
-    constructor(store: Store<AppState>, route: ActivatedRoute, authService: AuthService, translate: TranslateService, wl: WhiteLabelingService, fb: FormBuilder);
+    constructor(store: Store<AppState>, route: ActivatedRoute, authService: AuthService, translate: TranslateService, wl: WhiteLabelingService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     ngOnDestroy(): void;
     onCreatePassword(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<CreatePasswordComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CreatePasswordComponent, "tb-create-password", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CreatePasswordComponent, "tb-create-password", never, {}, {}, never, never, false>;
 }

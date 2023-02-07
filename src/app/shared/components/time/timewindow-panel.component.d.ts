@@ -4,7 +4,7 @@ import { OverlayRef } from '@angular/cdk/overlay';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { TimeService } from '@core/services/time.service';
 import * as i0 from "@angular/core";
 export declare const TIMEWINDOW_PANEL_DATA: InjectionToken<any>;
@@ -20,7 +20,7 @@ export declare class TimewindowPanelComponent extends PageComponent implements O
     data: TimewindowPanelData;
     overlayRef: OverlayRef;
     protected store: Store<AppState>;
-    fb: FormBuilder;
+    fb: UntypedFormBuilder;
     private timeService;
     viewContainerRef: ViewContainerRef;
     historyOnly: boolean;
@@ -30,14 +30,14 @@ export declare class TimewindowPanelComponent extends PageComponent implements O
     isEdit: boolean;
     timewindow: Timewindow;
     result: Timewindow;
-    timewindowForm: FormGroup;
+    timewindowForm: UntypedFormGroup;
     historyTypes: typeof HistoryWindowType;
     realtimeTypes: typeof RealtimeWindowType;
     timewindowTypes: typeof TimewindowType;
     aggregationTypes: typeof AggregationType;
     aggregations: string[];
     aggregationTypesTranslations: Map<AggregationType, string>;
-    constructor(data: TimewindowPanelData, overlayRef: OverlayRef, store: Store<AppState>, fb: FormBuilder, timeService: TimeService, viewContainerRef: ViewContainerRef);
+    constructor(data: TimewindowPanelData, overlayRef: OverlayRef, store: Store<AppState>, fb: UntypedFormBuilder, timeService: TimeService, viewContainerRef: ViewContainerRef);
     ngOnInit(): void;
     private checkLimit;
     private updateValidators;
@@ -58,5 +58,5 @@ export declare class TimewindowPanelComponent extends PageComponent implements O
     onHideAggIntervalChanged(): void;
     onHideTimezoneChanged(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimewindowPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimewindowPanelComponent, "tb-timewindow-panel", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimewindowPanelComponent, "tb-timewindow-panel", never, {}, {}, never, never, false>;
 }

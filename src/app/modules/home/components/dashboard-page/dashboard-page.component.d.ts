@@ -17,7 +17,7 @@ import { DashboardUtilsService } from '@core/services/dashboard-utils.service';
 import { DashboardService } from '@core/http/dashboard.service';
 import { DashboardContextMenuItem, IDashboardComponent, WidgetContextMenuItem } from '../../models/dashboard-component.models';
 import { WidgetComponentService } from '../../components/widget/widget-component.service';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { ItemBufferService } from '@core/services/item-buffer.service';
 import { MatDialog } from '@angular/material/dialog';
 import { EditWidgetComponent } from '@home/components/dashboard-page/edit-widget.component';
@@ -144,7 +144,7 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     set rightLayoutOpened(rightLayoutOpened: boolean);
     editWidgetComponent: EditWidgetComponent;
     dashboardWidgetSelectComponent: DashboardWidgetSelectComponent;
-    constructor(store: Store<AppState>, window: Window, document: Document, breakpointObserver: BreakpointObserver, route: ActivatedRoute, router: Router, utils: UtilsService, reportService: ReportService, dashboardUtils: DashboardUtilsService, authService: AuthService, entityService: EntityService, dialogService: DialogService, widgetComponentService: WidgetComponentService, dashboardService: DashboardService, userPermissionsService: UserPermissionsService, wl: WhiteLabelingService, itembuffer: ItemBufferService, importExport: ImportExportService, solutionsService: SolutionsService, mobileService: MobileService, fb: FormBuilder, dialog: MatDialog, translate: TranslateService, popoverService: TbPopoverService, renderer: Renderer2, ngZone: NgZone, embeddedValue: any, overlay: Overlay, viewContainerRef: ViewContainerRef, cd: ChangeDetectorRef, sanitizer: DomSanitizer, elRef: ElementRef);
+    constructor(store: Store<AppState>, window: Window, document: Document, breakpointObserver: BreakpointObserver, route: ActivatedRoute, router: Router, utils: UtilsService, reportService: ReportService, dashboardUtils: DashboardUtilsService, authService: AuthService, entityService: EntityService, dialogService: DialogService, widgetComponentService: WidgetComponentService, dashboardService: DashboardService, userPermissionsService: UserPermissionsService, wl: WhiteLabelingService, itembuffer: ItemBufferService, importExport: ImportExportService, solutionsService: SolutionsService, mobileService: MobileService, fb: UntypedFormBuilder, dialog: MatDialog, translate: TranslateService, popoverService: TbPopoverService, renderer: Renderer2, ngZone: NgZone, embeddedValue: any, overlay: Overlay, viewContainerRef: ViewContainerRef, cd: ChangeDetectorRef, sanitizer: DomSanitizer, elRef: ElementRef);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     private init;
@@ -232,5 +232,5 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     updateDashboardImage($event: Event): void;
     toggleVersionControl($event: Event, versionControlButton: MatButton): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardPageComponent, [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, { optional: true; }, null, null, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardPageComponent, "tb-dashboard-page", never, { "embedded": "embedded"; "currentState": "currentState"; "hideToolbar": "hideToolbar"; "syncStateWithQueryParam": "syncStateWithQueryParam"; "dashboard": "dashboard"; "parentDashboard": "parentDashboard"; "popoverComponent": "popoverComponent"; "parentAliasController": "parentAliasController"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardPageComponent, "tb-dashboard-page", never, { "embedded": "embedded"; "currentState": "currentState"; "hideToolbar": "hideToolbar"; "syncStateWithQueryParam": "syncStateWithQueryParam"; "dashboard": "dashboard"; "parentDashboard": "parentDashboard"; "popoverComponent": "popoverComponent"; "parentAliasController": "parentAliasController"; }, {}, never, never, false>;
 }

@@ -1,5 +1,5 @@
 import { AfterViewInit, ElementRef, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -15,7 +15,7 @@ export declare class EntityKeysListComponent implements ControlValueAccessor, On
     translate: TranslateService;
     private entityService;
     private fb;
-    keysListFormGroup: FormGroup;
+    keysListFormGroup: UntypedFormGroup;
     modelValue: Array<string> | null;
     entityIdValue: EntityId;
     set entityId(entityId: EntityId);
@@ -33,7 +33,7 @@ export declare class EntityKeysListComponent implements ControlValueAccessor, On
     searchText: string;
     private dirty;
     private propagateChange;
-    constructor(store: Store<AppState>, translate: TranslateService, entityService: EntityService, fb: FormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, entityService: EntityService, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -49,5 +49,5 @@ export declare class EntityKeysListComponent implements ControlValueAccessor, On
     fetchKeys(searchText?: string): Observable<Array<string>>;
     clear(value?: string, emitEvent?: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityKeysListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityKeysListComponent, "tb-entity-keys-list", never, { "entityId": "entityId"; "keysText": "keysText"; "dataKeyType": "dataKeyType"; "required": "required"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityKeysListComponent, "tb-entity-keys-list", never, { "entityId": "entityId"; "keysText": "keysText"; "dataKeyType": "dataKeyType"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
 }

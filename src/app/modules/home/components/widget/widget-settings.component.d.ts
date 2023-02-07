@@ -1,5 +1,5 @@
 import { AfterViewInit, ComponentFactoryResolver, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewContainerRef } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { JsonFormComponent } from '@shared/components/json-form/json-form.component';
@@ -22,13 +22,13 @@ export declare class WidgetSettingsComponent implements ControlValueAccessor, On
     widget: Widget;
     private settingsDirective;
     definedDirectiveError: string;
-    widgetSettingsFormGroup: FormGroup;
+    widgetSettingsFormGroup: UntypedFormGroup;
     changeSubscription: Subscription;
     private definedSettingsComponentRef;
     private definedSettingsComponent;
     private widgetSettingsFormData;
     private propagateChange;
-    constructor(translate: TranslateService, cfr: ComponentFactoryResolver, widgetService: WidgetService, fb: FormBuilder);
+    constructor(translate: TranslateService, cfr: ComponentFactoryResolver, widgetService: WidgetService, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -43,5 +43,5 @@ export declare class WidgetSettingsComponent implements ControlValueAccessor, On
     private validateDefinedDirective;
     validate(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetSettingsComponent, "tb-widget-settings", never, { "disabled": "disabled"; "aliasController": "aliasController"; "dashboard": "dashboard"; "widget": "widget"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetSettingsComponent, "tb-widget-settings", never, { "disabled": "disabled"; "aliasController": "aliasController"; "dashboard": "dashboard"; "widget": "widget"; }, {}, never, never, false>;
 }

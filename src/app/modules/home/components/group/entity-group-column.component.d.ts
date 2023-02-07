@@ -1,5 +1,5 @@
 import { AfterViewInit, EventEmitter, OnDestroy, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { EntityType } from '@shared/models/entity-type.models';
@@ -12,7 +12,7 @@ export declare class EntityGroupColumnComponent extends PageComponent implements
     private dialog;
     private fb;
     modelValue: EntityGroupColumn | null;
-    columnFormGroup: FormGroup;
+    columnFormGroup: UntypedFormGroup;
     entityType: EntityType;
     disabled: boolean;
     defaultSortOrderChanged: EventEmitter<EntityGroupSortOrder>;
@@ -27,7 +27,7 @@ export declare class EntityGroupColumnComponent extends PageComponent implements
     sortOrders: string[];
     entityGroupColumnTypeTranslations: Map<EntityGroupColumnType, string>;
     entityGroupSortOrderTranslations: Map<EntityGroupSortOrder, string>;
-    constructor(store: Store<AppState>, dialog: MatDialog, fb: FormBuilder);
+    constructor(store: Store<AppState>, dialog: MatDialog, fb: UntypedFormBuilder);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -39,5 +39,5 @@ export declare class EntityGroupColumnComponent extends PageComponent implements
     private updateModel;
     openColumn($event: Event): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityGroupColumnComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupColumnComponent, "tb-entity-group-column", never, { "entityType": "entityType"; "disabled": "disabled"; }, { "defaultSortOrderChanged": "defaultSortOrderChanged"; "removeColumn": "removeColumn"; "updateColumn": "updateColumn"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupColumnComponent, "tb-entity-group-column", never, { "entityType": "entityType"; "disabled": "disabled"; }, { "defaultSortOrderChanged": "defaultSortOrderChanged"; "removeColumn": "removeColumn"; "updateColumn": "updateColumn"; }, never, never, false>;
 }

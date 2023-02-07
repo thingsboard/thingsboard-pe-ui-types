@@ -1,5 +1,5 @@
 import { OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { SmsProviderConfiguration, SmsProviderType } from '@shared/models/settings.models';
@@ -10,13 +10,13 @@ export declare class SmsProviderConfigurationComponent implements ControlValueAc
     smsProviderType: typeof SmsProviderType;
     smsProviderTypes: string[];
     smsProviderTypeTranslations: Map<SmsProviderType, string>;
-    smsProviderConfigurationFormGroup: FormGroup;
+    smsProviderConfigurationFormGroup: UntypedFormGroup;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
     disabled: boolean;
     private propagateChange;
-    constructor(store: Store<AppState>, fb: FormBuilder);
+    constructor(store: Store<AppState>, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -25,5 +25,5 @@ export declare class SmsProviderConfigurationComponent implements ControlValueAc
     private smsProviderTypeChanged;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<SmsProviderConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SmsProviderConfigurationComponent, "tb-sms-provider-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SmsProviderConfigurationComponent, "tb-sms-provider-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
 }

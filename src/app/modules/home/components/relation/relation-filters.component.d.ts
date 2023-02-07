@@ -1,5 +1,5 @@
 import { OnInit } from '@angular/core';
-import { ControlValueAccessor, FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { AliasEntityType, EntityType } from '@shared/models/entity-type.models';
 import { RelationEntityTypeFilter } from '@shared/models/relation.models';
 import { PageComponent } from '@shared/components/page.component';
@@ -11,12 +11,12 @@ export declare class RelationFiltersComponent extends PageComponent implements C
     private fb;
     disabled: boolean;
     allowedEntityTypes: Array<EntityType | AliasEntityType>;
-    relationFiltersFormGroup: FormGroup;
+    relationFiltersFormGroup: UntypedFormGroup;
     private propagateChange;
     private valueChangeSubscription;
-    constructor(store: Store<AppState>, fb: FormBuilder);
+    constructor(store: Store<AppState>, fb: UntypedFormBuilder);
     ngOnInit(): void;
-    relationFiltersFormArray(): FormArray;
+    relationFiltersFormArray(): UntypedFormArray;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState?(isDisabled: boolean): void;
@@ -26,5 +26,5 @@ export declare class RelationFiltersComponent extends PageComponent implements C
     private createRelationFilterFormGroup;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<RelationFiltersComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RelationFiltersComponent, "tb-relation-filters", never, { "disabled": "disabled"; "allowedEntityTypes": "allowedEntityTypes"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RelationFiltersComponent, "tb-relation-filters", never, { "disabled": "disabled"; "allowedEntityTypes": "allowedEntityTypes"; }, {}, never, never, false>;
 }

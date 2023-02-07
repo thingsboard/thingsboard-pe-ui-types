@@ -1,5 +1,5 @@
 import { EventEmitter, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { AliasFilterType, EntityAliasFilter } from '@shared/models/alias.models';
 import { AliasEntityType, EntityType } from '@shared/models/entity-type.models';
 import { TranslateService } from '@ngx-translate/core';
@@ -14,8 +14,8 @@ export declare class EntityFilterComponent implements ControlValueAccessor, OnIn
     allowedEntityTypes: Array<EntityType | AliasEntityType>;
     resolveMultiple: boolean;
     resolveMultipleChanged: EventEmitter<boolean>;
-    entityFilterFormGroup: FormGroup;
-    filterFormGroup: FormGroup;
+    entityFilterFormGroup: UntypedFormGroup;
+    filterFormGroup: UntypedFormGroup;
     aliasFilterTypes: Array<AliasFilterType>;
     entityGroupTypes: Array<EntityType>;
     aliasFilterType: typeof AliasFilterType;
@@ -25,7 +25,7 @@ export declare class EntityFilterComponent implements ControlValueAccessor, OnIn
     directionTypeTranslations: Map<EntitySearchDirection, string>;
     directionTypeEnum: typeof EntitySearchDirection;
     private propagateChange;
-    constructor(translate: TranslateService, entityService: EntityService, fb: FormBuilder);
+    constructor(translate: TranslateService, entityService: EntityService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -35,5 +35,5 @@ export declare class EntityFilterComponent implements ControlValueAccessor, OnIn
     private filterTypeChanged;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityFilterComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityFilterComponent, "tb-entity-filter", never, { "disabled": "disabled"; "allowedEntityTypes": "allowedEntityTypes"; "resolveMultiple": "resolveMultiple"; }, { "resolveMultipleChanged": "resolveMultipleChanged"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityFilterComponent, "tb-entity-filter", never, { "disabled": "disabled"; "allowedEntityTypes": "allowedEntityTypes"; "resolveMultiple": "resolveMultiple"; }, { "resolveMultipleChanged": "resolveMultipleChanged"; }, never, never, false>;
 }

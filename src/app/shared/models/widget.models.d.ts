@@ -13,7 +13,7 @@ import { PageComponent } from '@shared/components/page.component';
 import { AfterViewInit, EventEmitter, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Dashboard } from '@shared/models/dashboard.models';
 import { IAliasController } from '@core/api/widget-api.models';
@@ -479,14 +479,14 @@ export declare abstract class WidgetSettingsComponent extends PageComponent impl
     protected updateValidators(emitEvent: boolean, trigger?: string): void;
     protected validatorTriggers(): string[];
     protected onSettingsChanged(updated: WidgetSettings): void;
-    protected doUpdateSettings(settingsForm: FormGroup, settings: WidgetSettings): void;
+    protected doUpdateSettings(settingsForm: UntypedFormGroup, settings: WidgetSettings): void;
     protected prepareInputSettings(settings: WidgetSettings): WidgetSettings;
     protected prepareOutputSettings(settings: any): WidgetSettings;
     protected validateSettings(): boolean;
     protected onValidate(): void;
-    protected abstract settingsForm(): FormGroup;
+    protected abstract settingsForm(): UntypedFormGroup;
     protected abstract onSettingsSet(settings: WidgetSettings): any;
     protected defaultSettings(): WidgetSettings;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetSettingsComponent, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<WidgetSettingsComponent, never, never, {}, {}, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<WidgetSettingsComponent, never, never, {}, {}, never, never, false>;
 }

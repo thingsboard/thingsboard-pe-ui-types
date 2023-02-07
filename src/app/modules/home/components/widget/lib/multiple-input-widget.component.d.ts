@@ -7,7 +7,7 @@ import { Overlay } from '@angular/cdk/overlay';
 import { UtilsService } from '@core/services/utils.service';
 import { TranslateService } from '@ngx-translate/core';
 import { DataKey, Datasource } from '@shared/models/widget.models';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { AttributeService } from '@core/http/attribute.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import * as i0 from "@angular/core";
@@ -103,9 +103,9 @@ export declare class MultipleInputWidgetComponent extends PageComponent implemen
     entityDetected: boolean;
     datasourceDetected: boolean;
     isAllParametersValid: boolean;
-    multipleInputFormGroup: FormGroup;
+    multipleInputFormGroup: UntypedFormGroup;
     toastTargetId: string;
-    constructor(store: Store<AppState>, elementRef: ElementRef, ngZone: NgZone, overlay: Overlay, viewContainerRef: ViewContainerRef, utils: UtilsService, fb: FormBuilder, attributeService: AttributeService, translate: TranslateService, sanitizer: DomSanitizer);
+    constructor(store: Store<AppState>, elementRef: ElementRef, ngZone: NgZone, overlay: Overlay, viewContainerRef: ViewContainerRef, utils: UtilsService, fb: UntypedFormBuilder, attributeService: AttributeService, translate: TranslateService, sanitizer: DomSanitizer);
     ngOnInit(): void;
     ngOnDestroy(): void;
     private initializeConfig;
@@ -129,6 +129,6 @@ export declare class MultipleInputWidgetComponent extends PageComponent implemen
     private setKeyValue;
     discardAll(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<MultipleInputWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MultipleInputWidgetComponent, "tb-multiple-input-widget ", never, { "ctx": "ctx"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MultipleInputWidgetComponent, "tb-multiple-input-widget ", never, { "ctx": "ctx"; }, {}, never, never, false>;
 }
 export {};

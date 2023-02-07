@@ -1,7 +1,7 @@
 import { ChangeDetectorRef } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Device } from '@shared/models/device.models';
 import { DeviceCredentials, DeviceProfileInfo } from '@shared/models/device.models';
 import { EntityType } from '@shared/models/entity-type.models';
@@ -20,20 +20,20 @@ export declare class DeviceComponent extends GroupEntityComponent<Device> {
     private clipboardService;
     protected entityValue: Device;
     protected entitiesTableConfigValue: GroupEntityTableConfig<Device>;
-    protected fb: FormBuilder;
+    protected fb: UntypedFormBuilder;
     protected cd: ChangeDetectorRef;
     entityType: typeof EntityType;
     deviceCredentials$: Subject<DeviceCredentials>;
     otaUpdateType: typeof OtaUpdateType;
-    constructor(store: Store<AppState>, translate: TranslateService, deviceService: DeviceService, clipboardService: ClipboardService, entityValue: Device, entitiesTableConfigValue: GroupEntityTableConfig<Device>, fb: FormBuilder, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, translate: TranslateService, deviceService: DeviceService, clipboardService: ClipboardService, entityValue: Device, entitiesTableConfigValue: GroupEntityTableConfig<Device>, fb: UntypedFormBuilder, cd: ChangeDetectorRef);
     ngOnInit(): void;
     hideDelete(): boolean;
     hideManageCredentials(): boolean;
-    buildForm(entity: Device): FormGroup;
+    buildForm(entity: Device): UntypedFormGroup;
     updateForm(entity: Device): void;
     onDeviceIdCopied($event: any): void;
     onDeviceProfileUpdated(): void;
     onDeviceProfileChanged(deviceProfile: DeviceProfileInfo): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceComponent, "tb-device", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceComponent, "tb-device", never, {}, {}, never, never, false>;
 }

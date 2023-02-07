@@ -1,5 +1,5 @@
 import { AfterViewInit, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { TranslateService } from '@ngx-translate/core';
@@ -13,7 +13,7 @@ export declare class EntitySelectComponent implements ControlValueAccessor, OnIn
     private entityService;
     translate: TranslateService;
     private fb;
-    entitySelectFormGroup: FormGroup;
+    entitySelectFormGroup: UntypedFormGroup;
     modelValue: EntityId;
     allowedEntityTypes: Array<EntityType | AliasEntityType>;
     useAliasEntityTypes: boolean;
@@ -26,7 +26,7 @@ export declare class EntitySelectComponent implements ControlValueAccessor, OnIn
     AliasEntityType: typeof AliasEntityType;
     private readonly defaultEntityType;
     private propagateChange;
-    constructor(store: Store<AppState>, entityService: EntityService, translate: TranslateService, fb: FormBuilder);
+    constructor(store: Store<AppState>, entityService: EntityService, translate: TranslateService, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -35,5 +35,5 @@ export declare class EntitySelectComponent implements ControlValueAccessor, OnIn
     writeValue(value: EntityId | null): void;
     updateView(entityType: EntityType | AliasEntityType | null, entityId: string | null): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntitySelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntitySelectComponent, "tb-entity-select", never, { "allowedEntityTypes": "allowedEntityTypes"; "useAliasEntityTypes": "useAliasEntityTypes"; "operation": "operation"; "required": "required"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntitySelectComponent, "tb-entity-select", never, { "allowedEntityTypes": "allowedEntityTypes"; "useAliasEntityTypes": "useAliasEntityTypes"; "operation": "operation"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
 }

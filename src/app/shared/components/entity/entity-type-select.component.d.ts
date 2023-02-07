@@ -1,5 +1,5 @@
 import { AfterViewInit, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { TranslateService } from '@ngx-translate/core';
@@ -12,7 +12,7 @@ export declare class EntityTypeSelectComponent implements ControlValueAccessor, 
     private entityService;
     translate: TranslateService;
     private fb;
-    entityTypeFormGroup: FormGroup;
+    entityTypeFormGroup: UntypedFormGroup;
     modelValue: EntityType | AliasEntityType | null;
     allowedEntityTypes: Array<EntityType | AliasEntityType>;
     useAliasEntityTypes: boolean;
@@ -28,7 +28,7 @@ export declare class EntityTypeSelectComponent implements ControlValueAccessor, 
     disabled: boolean;
     entityTypes: Array<EntityType | AliasEntityType>;
     private propagateChange;
-    constructor(store: Store<AppState>, entityService: EntityService, translate: TranslateService, fb: FormBuilder);
+    constructor(store: Store<AppState>, entityService: EntityService, translate: TranslateService, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -39,5 +39,5 @@ export declare class EntityTypeSelectComponent implements ControlValueAccessor, 
     updateView(value: EntityType | AliasEntityType | null): void;
     displayEntityTypeFn(entityType?: EntityType | AliasEntityType | null): string | undefined;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityTypeSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityTypeSelectComponent, "tb-entity-type-select", never, { "allowedEntityTypes": "allowedEntityTypes"; "useAliasEntityTypes": "useAliasEntityTypes"; "operation": "operation"; "filterAllowedEntityTypes": "filterAllowedEntityTypes"; "overrideEntityTypeTranslations": "overrideEntityTypeTranslations"; "showLabel": "showLabel"; "required": "required"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityTypeSelectComponent, "tb-entity-type-select", never, { "allowedEntityTypes": "allowedEntityTypes"; "useAliasEntityTypes": "useAliasEntityTypes"; "operation": "operation"; "filterAllowedEntityTypes": "filterAllowedEntityTypes"; "overrideEntityTypeTranslations": "overrideEntityTypeTranslations"; "showLabel": "showLabel"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
 }

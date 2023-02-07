@@ -1,5 +1,5 @@
 import { OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormControl, FormGroup, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -13,16 +13,16 @@ export declare class OpenStreetMapProviderSettingsComponent extends PageComponen
     disabled: boolean;
     private modelValue;
     private propagateChange;
-    providerSettingsFormGroup: FormGroup;
+    providerSettingsFormGroup: UntypedFormGroup;
     mapProviders: OpenStreetMapProvider[];
     openStreetMapProviderTranslations: Map<OpenStreetMapProvider, string>;
-    constructor(store: Store<AppState>, translate: TranslateService, fb: FormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: OpenStreetMapProviderSettings): void;
-    validate(c: FormControl): {
+    validate(c: UntypedFormControl): {
         openStreetProviderSettings: {
             valid: boolean;
         };
@@ -30,5 +30,5 @@ export declare class OpenStreetMapProviderSettingsComponent extends PageComponen
     private updateModel;
     private updateValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<OpenStreetMapProviderSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<OpenStreetMapProviderSettingsComponent, "tb-openstreet-map-provider-settings", never, { "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<OpenStreetMapProviderSettingsComponent, "tb-openstreet-map-provider-settings", never, { "disabled": "disabled"; }, {}, never, never, false>;
 }

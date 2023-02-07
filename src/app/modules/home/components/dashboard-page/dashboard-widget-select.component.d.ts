@@ -40,5 +40,5 @@ export declare class DashboardWidgetSelectComponent implements OnInit {
     private fetchWidgetBundle;
     private fetchWidget;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardWidgetSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardWidgetSelectComponent, "tb-dashboard-widget-select", never, { "aliasController": "aliasController"; "searchBundle": "searchBundle"; "filterWidgetTypes": "filterWidgetTypes"; }, { "widgetSelected": "widgetSelected"; "widgetsBundleSelected": "widgetsBundleSelected"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardWidgetSelectComponent, "tb-dashboard-widget-select", never, { "aliasController": "aliasController"; "searchBundle": "searchBundle"; "filterWidgetTypes": "filterWidgetTypes"; }, { "widgetSelected": "widgetSelected"; "widgetsBundleSelected": "widgetsBundleSelected"; }, never, never, false>;
 }

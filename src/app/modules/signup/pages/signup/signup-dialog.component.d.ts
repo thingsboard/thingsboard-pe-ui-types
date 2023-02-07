@@ -27,5 +27,5 @@ export declare class SignupDialogComponent extends DialogComponent<SignupDialogC
     cancel(): void;
     accept(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SignupDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SignupDialogComponent, "tb-signup-dialog", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SignupDialogComponent, "tb-signup-dialog", never, {}, {}, never, never, false>;
 }

@@ -2,7 +2,7 @@ import { ChangeDetectorRef, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { EntityComponent } from '../../components/entity/entity.component';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
 import { Integration, IntegrationInfo } from '@shared/models/integration.models';
@@ -15,16 +15,16 @@ export declare class IntegrationComponent extends EntityComponent<Integration, P
     protected translate: TranslateService;
     protected entityValue: Integration;
     protected entitiesTableConfigValue: EntityTableConfig<Integration, PageLink, IntegrationInfo>;
-    protected fb: FormBuilder;
+    protected fb: UntypedFormBuilder;
     protected integrationService: IntegrationService;
     protected cd: ChangeDetectorRef;
     converterType: typeof ConverterType;
     integrationScope: 'tenant' | 'edges' | 'edge';
     private integrationType;
-    constructor(store: Store<AppState>, translate: TranslateService, entityValue: Integration, entitiesTableConfigValue: EntityTableConfig<Integration, PageLink, IntegrationInfo>, fb: FormBuilder, integrationService: IntegrationService, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, translate: TranslateService, entityValue: Integration, entitiesTableConfigValue: EntityTableConfig<Integration, PageLink, IntegrationInfo>, fb: UntypedFormBuilder, integrationService: IntegrationService, cd: ChangeDetectorRef);
     ngOnInit(): void;
     hideDelete(): boolean;
-    buildForm(entity: Integration): FormGroup;
+    buildForm(entity: Integration): UntypedFormGroup;
     updateFormState(): void;
     private checkIsRemote;
     get showDownlinkConvector(): boolean;
@@ -38,5 +38,5 @@ export declare class IntegrationComponent extends EntityComponent<Integration, P
     onIntegrationInfoCopied(type: string): void;
     onIntegrationCheck(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<IntegrationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<IntegrationComponent, "tb-integration", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<IntegrationComponent, "tb-integration", never, {}, {}, never, never, false>;
 }

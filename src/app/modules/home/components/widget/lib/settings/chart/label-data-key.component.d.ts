@@ -1,5 +1,5 @@
 import { EventEmitter, OnInit } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, FormBuilder, FormGroup, ValidationErrors } from '@angular/forms';
+import { AbstractControl, ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, ValidationErrors } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -20,8 +20,8 @@ export declare class LabelDataKeyComponent extends PageComponent implements OnIn
     removeLabelDataKey: EventEmitter<any>;
     private modelValue;
     private propagateChange;
-    labelDataKeyFormGroup: FormGroup;
-    constructor(store: Store<AppState>, translate: TranslateService, fb: FormBuilder);
+    labelDataKeyFormGroup: UntypedFormGroup;
+    constructor(store: Store<AppState>, translate: TranslateService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -30,5 +30,5 @@ export declare class LabelDataKeyComponent extends PageComponent implements OnIn
     labelDataKeyText(): string;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<LabelDataKeyComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<LabelDataKeyComponent, "tb-label-data-key", never, { "disabled": "disabled"; "expanded": "expanded"; }, { "removeLabelDataKey": "removeLabelDataKey"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<LabelDataKeyComponent, "tb-label-data-key", never, { "disabled": "disabled"; "expanded": "expanded"; }, { "removeLabelDataKey": "removeLabelDataKey"; }, never, never, false>;
 }

@@ -1,5 +1,5 @@
 import { AfterViewInit, ElementRef, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { PageLink } from '@shared/models/page/page-link';
 import { PageData } from '@shared/models/page/page-data';
@@ -9,7 +9,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { TranslateService } from '@ngx-translate/core';
 import { Operation } from '@shared/models/security.models';
-import { FloatLabelType } from '@angular/material/form-field/form-field';
+import { FloatLabelType } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class DashboardAutocompleteComponent implements ControlValueAccessor, OnInit, AfterViewInit {
     private store;
@@ -17,7 +17,7 @@ export declare class DashboardAutocompleteComponent implements ControlValueAcces
     private dashboardService;
     private fb;
     private dirty;
-    selectDashboardFormGroup: FormGroup;
+    selectDashboardFormGroup: UntypedFormGroup;
     modelValue: DashboardInfo | string | null;
     useIdValue: boolean;
     selectFirstDashboard: boolean;
@@ -34,7 +34,7 @@ export declare class DashboardAutocompleteComponent implements ControlValueAcces
     filteredDashboards: Observable<Array<DashboardInfo>>;
     searchText: string;
     private propagateChange;
-    constructor(store: Store<AppState>, translate: TranslateService, dashboardService: DashboardService, fb: FormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, dashboardService: DashboardService, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -49,5 +49,5 @@ export declare class DashboardAutocompleteComponent implements ControlValueAcces
     onFocus(): void;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardAutocompleteComponent, "tb-dashboard-autocomplete", never, { "useIdValue": "useIdValue"; "selectFirstDashboard": "selectFirstDashboard"; "placeholder": "placeholder"; "userId": "userId"; "tenantId": "tenantId"; "operation": "operation"; "floatLabel": "floatLabel"; "required": "required"; "disabled": "disabled"; }, {}, never, ["[tb-error]", "[tb-hint]"]>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardAutocompleteComponent, "tb-dashboard-autocomplete", never, { "useIdValue": "useIdValue"; "selectFirstDashboard": "selectFirstDashboard"; "placeholder": "placeholder"; "userId": "userId"; "tenantId": "tenantId"; "operation": "operation"; "floatLabel": "floatLabel"; "required": "required"; "disabled": "disabled"; }, {}, never, ["[tb-error]", "[tb-hint]"], false>;
 }

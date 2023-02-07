@@ -3,7 +3,7 @@ import { AuthService } from '@core/auth/auth.service';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { PageComponent } from '@shared/components/page.component';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { SignupService } from '@core/http/signup.service';
@@ -24,15 +24,15 @@ export declare class SignupComponent extends PageComponent implements OnInit {
     private dialogService;
     private translate;
     private dialog;
-    fb: FormBuilder;
+    fb: UntypedFormBuilder;
     recaptchaComponent: RecaptchaComponent;
-    signup: import("@angular/forms").FormGroup;
+    signup: import("@angular/forms").UntypedFormGroup;
     passwordCheck: string;
     acceptPrivacyPolicy: boolean;
     acceptTermsOfUse: boolean;
     signupParams: import("../../../../shared/models/self-register.models").SignUpSelfRegistrationParams;
     class: string;
-    constructor(store: Store<AppState>, route: ActivatedRoute, router: Router, authService: AuthService, signupService: SignupService, wl: WhiteLabelingService, selfRegistrationService: SelfRegistrationService, dialogService: DialogService, translate: TranslateService, dialog: MatDialog, fb: FormBuilder);
+    constructor(store: Store<AppState>, route: ActivatedRoute, router: Router, authService: AuthService, signupService: SignupService, wl: WhiteLabelingService, selfRegistrationService: SelfRegistrationService, dialogService: DialogService, translate: TranslateService, dialog: MatDialog, fb: UntypedFormBuilder);
     ngOnInit(): void;
     signUp(): void;
     promptToResendEmailVerification(): void;
@@ -40,5 +40,5 @@ export declare class SignupComponent extends PageComponent implements OnInit {
     openPrivacyPolicy($event: Event): void;
     openTermsOfUse($event: Event): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SignupComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SignupComponent, "tb-signup", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SignupComponent, "tb-signup", never, {}, {}, never, never, false>;
 }

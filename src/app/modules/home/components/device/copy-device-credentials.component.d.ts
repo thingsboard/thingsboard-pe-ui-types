@@ -29,5 +29,5 @@ export declare class CopyDeviceCredentialsComponent implements OnInit, OnDestroy
     private convertObjectToString;
     onCopyCredential(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<CopyDeviceCredentialsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CopyDeviceCredentialsComponent, "tb-copy-device-credentials", never, { "deviceId": "deviceId"; "disabled": "disabled"; "credentials$": "credentials$"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CopyDeviceCredentialsComponent, "tb-copy-device-credentials", never, { "deviceId": "deviceId"; "disabled": "disabled"; "credentials$": "credentials$"; }, {}, never, never, false>;
 }

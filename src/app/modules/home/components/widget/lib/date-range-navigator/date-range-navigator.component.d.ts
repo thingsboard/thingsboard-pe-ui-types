@@ -44,7 +44,7 @@ export declare class DateRangeNavigatorWidgetComponent extends PageComponent imp
     private updateStorageDate;
     private saveIntoStorage;
     static ɵfac: i0.ɵɵFactoryDeclaration<DateRangeNavigatorWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DateRangeNavigatorWidgetComponent, "tb-date-range-navigator-widget", never, { "ctx": "ctx"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DateRangeNavigatorWidgetComponent, "tb-date-range-navigator-widget", never, { "ctx": "ctx"; }, {}, never, never, false>;
 }
 export interface DateRangeNavigatorPanelData {
     model: DateRangeNavigatorModel;
@@ -61,5 +61,5 @@ export declare class DateRangeNavigatorPanelComponent {
     choosedDate($event: any): void;
     apply(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DateRangeNavigatorPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DateRangeNavigatorPanelComponent, "tb-date-range-navigator-panel", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DateRangeNavigatorPanelComponent, "tb-date-range-navigator-panel", never, {}, {}, never, never, false>;
 }

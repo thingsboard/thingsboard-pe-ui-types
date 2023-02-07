@@ -1,5 +1,5 @@
 import { AfterViewInit, ElementRef, OnDestroy, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup, ValidationErrors, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -16,7 +16,7 @@ export declare class SchedulerEventTypeAutocompleteComponent implements ControlV
     translate: TranslateService;
     private userPermissionsService;
     private fb;
-    schedulerEventTypeFormGroup: FormGroup;
+    schedulerEventTypeFormGroup: UntypedFormGroup;
     modelValue: string | null;
     private requiredValue;
     get required(): boolean;
@@ -31,7 +31,7 @@ export declare class SchedulerEventTypeAutocompleteComponent implements ControlV
     searchText: string;
     private dirty;
     private propagateChange;
-    constructor(store: Store<AppState>, translate: TranslateService, userPermissionsService: UserPermissionsService, fb: FormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, userPermissionsService: UserPermissionsService, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -46,6 +46,6 @@ export declare class SchedulerEventTypeAutocompleteComponent implements ControlV
     fetchSchedulerEventTypes(searchText?: string): Observable<Array<SchedulerEventTypeInfo>>;
     clear(value?: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SchedulerEventTypeAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SchedulerEventTypeAutocompleteComponent, "tb-scheduler-event-type-autocomplete", never, { "required": "required"; "disabled": "disabled"; "schedulerEventConfigTypes": "schedulerEventConfigTypes"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SchedulerEventTypeAutocompleteComponent, "tb-scheduler-event-type-autocomplete", never, { "required": "required"; "disabled": "disabled"; "schedulerEventConfigTypes": "schedulerEventConfigTypes"; }, {}, never, never, false>;
 }
 export {};

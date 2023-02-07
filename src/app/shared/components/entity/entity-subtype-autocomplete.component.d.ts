@@ -1,5 +1,5 @@
 import { AfterViewInit, ElementRef, OnDestroy, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -20,7 +20,7 @@ export declare class EntitySubTypeAutocompleteComponent implements ControlValueA
     private entityViewService;
     private edgeService;
     private fb;
-    subTypeFormGroup: FormGroup;
+    subTypeFormGroup: UntypedFormGroup;
     modelValue: string | null;
     entityType: EntityType;
     private requiredValue;
@@ -38,7 +38,7 @@ export declare class EntitySubTypeAutocompleteComponent implements ControlValueA
     searchText: string;
     private dirty;
     private propagateChange;
-    constructor(store: Store<AppState>, broadcast: BroadcastService, translate: TranslateService, deviceService: DeviceService, assetService: AssetService, entityViewService: EntityViewService, edgeService: EdgeService, fb: FormBuilder);
+    constructor(store: Store<AppState>, broadcast: BroadcastService, translate: TranslateService, deviceService: DeviceService, assetService: AssetService, entityViewService: EntityViewService, edgeService: EdgeService, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -53,5 +53,5 @@ export declare class EntitySubTypeAutocompleteComponent implements ControlValueA
     getSubTypes(): Observable<Array<string>>;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntitySubTypeAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntitySubTypeAutocompleteComponent, "tb-entity-subtype-autocomplete", never, { "entityType": "entityType"; "required": "required"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntitySubTypeAutocompleteComponent, "tb-entity-subtype-autocomplete", never, { "entityType": "entityType"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
 }

@@ -1,5 +1,5 @@
 import { AfterViewInit, ElementRef, OnDestroy, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -16,7 +16,7 @@ export declare class ResourceTypeAutocompleteComponent implements ControlValueAc
     translate: TranslateService;
     private userPermissionsService;
     private fb;
-    resourceTypeFormGroup: FormGroup;
+    resourceTypeFormGroup: UntypedFormGroup;
     modelValue: Resource | null;
     private requiredValue;
     get required(): boolean;
@@ -28,7 +28,7 @@ export declare class ResourceTypeAutocompleteComponent implements ControlValueAc
     searchText: string;
     private dirty;
     private propagateChange;
-    constructor(store: Store<AppState>, translate: TranslateService, userPermissionsService: UserPermissionsService, fb: FormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, userPermissionsService: UserPermissionsService, fb: UntypedFormBuilder);
     private sortResource;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -43,6 +43,6 @@ export declare class ResourceTypeAutocompleteComponent implements ControlValueAc
     fetchResources(searchText?: string): Observable<Array<ResourceTypeInfo>>;
     clear(value?: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ResourceTypeAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ResourceTypeAutocompleteComponent, "tb-resource-type-autocomplete", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ResourceTypeAutocompleteComponent, "tb-resource-type-autocomplete", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
 }
 export {};

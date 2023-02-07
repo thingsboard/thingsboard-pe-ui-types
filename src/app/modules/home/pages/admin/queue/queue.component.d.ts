@@ -1,6 +1,6 @@
 import { ChangeDetectorRef } from '@angular/core';
 import { EntityType } from '@shared/models/entity-type.models';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { EntityComponent } from '@home/components/entity/entity.component';
 import { QueueInfo } from '@shared/models/queue.models';
 import { Store } from '@ngrx/store';
@@ -14,18 +14,18 @@ export declare class QueueComponent extends EntityComponent<QueueInfo> {
     protected entityValue: QueueInfo;
     protected entitiesTableConfigValue: EntityTableConfig<QueueInfo>;
     protected cd: ChangeDetectorRef;
-    fb: FormBuilder;
-    entityForm: FormGroup;
+    fb: UntypedFormBuilder;
+    entityForm: UntypedFormGroup;
     entityType: typeof EntityType;
     submitStrategies: string[];
     processingStrategies: string[];
-    constructor(store: Store<AppState>, translate: TranslateService, entityValue: QueueInfo, entitiesTableConfigValue: EntityTableConfig<QueueInfo>, cd: ChangeDetectorRef, fb: FormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, entityValue: QueueInfo, entitiesTableConfigValue: EntityTableConfig<QueueInfo>, cd: ChangeDetectorRef, fb: UntypedFormBuilder);
     ngOnInit(): void;
-    buildForm(entity: QueueInfo): FormGroup;
+    buildForm(entity: QueueInfo): UntypedFormGroup;
     hideDelete(): boolean;
     updateForm(entity: QueueInfo): void;
     prepareFormValue(formValue: any): any;
     onQueueIdCopied($event: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<QueueComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<QueueComponent, "tb-queue", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<QueueComponent, "tb-queue", never, {}, {}, never, never, false>;
 }

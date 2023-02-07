@@ -1,5 +1,5 @@
 import { AfterViewInit, ElementRef, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -18,7 +18,7 @@ export declare class EntityTypeListComponent implements ControlValueAccessor, On
     translate: TranslateService;
     private entityService;
     private fb;
-    entityTypeListFormGroup: FormGroup;
+    entityTypeListFormGroup: UntypedFormGroup;
     modelValue: Array<EntityType> | null;
     private requiredValue;
     get required(): boolean;
@@ -37,7 +37,7 @@ export declare class EntityTypeListComponent implements ControlValueAccessor, On
     searchText: string;
     private dirty;
     private propagateChange;
-    constructor(store: Store<AppState>, translate: TranslateService, entityService: EntityService, fb: FormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, entityService: EntityService, fb: UntypedFormBuilder);
     updateValidators(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -52,6 +52,6 @@ export declare class EntityTypeListComponent implements ControlValueAccessor, On
     onFocus(): void;
     clear(value?: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityTypeListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityTypeListComponent, "tb-entity-type-list", never, { "required": "required"; "disabled": "disabled"; "allowedEntityTypes": "allowedEntityTypes"; "ignoreAuthorityFilter": "ignoreAuthorityFilter"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityTypeListComponent, "tb-entity-type-list", never, { "required": "required"; "disabled": "disabled"; "allowedEntityTypes": "allowedEntityTypes"; "ignoreAuthorityFilter": "ignoreAuthorityFilter"; }, {}, never, never, false>;
 }
 export {};

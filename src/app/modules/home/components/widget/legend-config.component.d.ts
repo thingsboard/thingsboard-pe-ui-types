@@ -1,11 +1,11 @@
 import { OnDestroy, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { LegendConfig, LegendDirection, LegendPosition } from '@shared/models/widget.models';
 import * as i0 from "@angular/core";
 export declare class LegendConfigComponent implements OnInit, OnDestroy, ControlValueAccessor {
     private fb;
     disabled: boolean;
-    legendConfigForm: FormGroup;
+    legendConfigForm: UntypedFormGroup;
     legendDirection: typeof LegendDirection;
     legendDirections: string[];
     legendDirectionTranslations: Map<LegendDirection, string>;
@@ -15,7 +15,7 @@ export declare class LegendConfigComponent implements OnInit, OnDestroy, Control
     private legendSettingsFormChanges$;
     private legendSettingsFormDirectionChanges$;
     private propagateChange;
-    constructor(fb: FormBuilder);
+    constructor(fb: UntypedFormBuilder);
     ngOnInit(): void;
     private onDirectionChanged;
     ngOnDestroy(): void;
@@ -25,5 +25,5 @@ export declare class LegendConfigComponent implements OnInit, OnDestroy, Control
     writeValue(legendConfig: LegendConfig): void;
     private legendConfigUpdated;
     static ɵfac: i0.ɵɵFactoryDeclaration<LegendConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<LegendConfigComponent, "tb-legend-config", never, { "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<LegendConfigComponent, "tb-legend-config", never, { "disabled": "disabled"; }, {}, never, never, false>;
 }

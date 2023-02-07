@@ -3,7 +3,7 @@ import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, ValidatorFn } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, FormGroupDirective, NgForm, ValidatorFn } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DialogComponent } from '@app/shared/components/dialog.component';
 import { EntityAlias, EntityAliases } from '@shared/models/alias.models';
@@ -32,15 +32,15 @@ export declare class EntityAliasDialogComponent extends DialogComponent<EntityAl
     allowedEntityTypes: Array<EntityType | AliasEntityType>;
     entityAliases: Array<EntityAlias>;
     alias: EntityAlias;
-    entityAliasFormGroup: FormGroup;
+    entityAliasFormGroup: UntypedFormGroup;
     submitted: boolean;
-    constructor(store: Store<AppState>, router: Router, data: EntityAliasDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<EntityAliasDialogComponent, EntityAlias>, fb: FormBuilder, utils: UtilsService, translate: TranslateService, entityService: EntityService);
+    constructor(store: Store<AppState>, router: Router, data: EntityAliasDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<EntityAliasDialogComponent, EntityAlias>, fb: UntypedFormBuilder, utils: UtilsService, translate: TranslateService, entityService: EntityService);
     validateDuplicateAliasName(): ValidatorFn;
     ngOnInit(): void;
-    isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean;
+    isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     cancel(): void;
     private validate;
     save(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityAliasDialogComponent, [null, null, null, { skipSelf: true; }, null, null, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityAliasDialogComponent, "tb-entity-alias-dialog", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityAliasDialogComponent, "tb-entity-alias-dialog", never, {}, {}, never, never, false>;
 }

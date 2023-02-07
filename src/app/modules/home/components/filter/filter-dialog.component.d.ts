@@ -3,7 +3,7 @@ import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, ValidatorFn } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, FormGroupDirective, NgForm, ValidatorFn } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DialogComponent } from '@app/shared/components/dialog.component';
 import { UtilsService } from '@core/services/utils.service';
@@ -27,14 +27,14 @@ export declare class FilterDialogComponent extends DialogComponent<FilterDialogC
     isAdd: boolean;
     filters: Array<Filter>;
     filter: Filter;
-    filterFormGroup: FormGroup;
+    filterFormGroup: UntypedFormGroup;
     submitted: boolean;
-    constructor(store: Store<AppState>, router: Router, data: FilterDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<FilterDialogComponent, Filter>, fb: FormBuilder, utils: UtilsService, translate: TranslateService);
+    constructor(store: Store<AppState>, router: Router, data: FilterDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<FilterDialogComponent, Filter>, fb: UntypedFormBuilder, utils: UtilsService, translate: TranslateService);
     validateDuplicateFilterName(): ValidatorFn;
     ngOnInit(): void;
-    isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean;
+    isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     cancel(): void;
     save(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<FilterDialogComponent, [null, null, null, { skipSelf: true; }, null, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FilterDialogComponent, "tb-filter-dialog", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FilterDialogComponent, "tb-filter-dialog", never, {}, {}, never, never, false>;
 }

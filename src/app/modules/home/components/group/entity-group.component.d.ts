@@ -2,7 +2,7 @@ import { ChangeDetectorRef } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { EntityComponent } from '@home/components/entity/entity.component';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
 import { EntityGroupInfo } from '@shared/models/entity-group.models';
@@ -15,7 +15,7 @@ export declare class EntityGroupComponent extends EntityComponent<EntityGroupInf
     protected userPermissionsService: UserPermissionsService;
     protected entityValue: EntityGroupInfo;
     protected entitiesTableConfigValue: EntityTableConfig<EntityGroupInfo>;
-    protected fb: FormBuilder;
+    protected fb: UntypedFormBuilder;
     protected cd: ChangeDetectorRef;
     isPublic: boolean;
     shareEnabled: boolean;
@@ -23,15 +23,15 @@ export declare class EntityGroupComponent extends EntityComponent<EntityGroupInf
     makePrivateEnabled: boolean;
     isGroupAll: boolean;
     packageTypes: typeof OtaUpdateType;
-    constructor(store: Store<AppState>, translate: TranslateService, userPermissionsService: UserPermissionsService, entityValue: EntityGroupInfo, entitiesTableConfigValue: EntityTableConfig<EntityGroupInfo>, fb: FormBuilder, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, translate: TranslateService, userPermissionsService: UserPermissionsService, entityValue: EntityGroupInfo, entitiesTableConfigValue: EntityTableConfig<EntityGroupInfo>, fb: UntypedFormBuilder, cd: ChangeDetectorRef);
     ngOnInit(): void;
     hideDelete(): boolean;
     hideOpen(): any;
     hideUnassign(): any;
-    buildForm(entity: EntityGroupInfo): FormGroup;
+    buildForm(entity: EntityGroupInfo): UntypedFormGroup;
     updateForm(entity: EntityGroupInfo): void;
     private updateGroupParams;
     onEntityGroupIdCopied($event: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityGroupComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupComponent, "tb-entity-group", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupComponent, "tb-entity-group", never, {}, {}, never, never, false>;
 }

@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, OnDestroy, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { SyncStrategy, VersionCreationResult } from '@shared/models/vc.models';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -20,7 +20,7 @@ export declare class ComplexVersionCreateComponent extends PageComponent impleme
     branch: string;
     onClose: (result: VersionCreationResult | null, branch: string | null) => void;
     popoverComponent: TbPopoverComponent;
-    createVersionFormGroup: FormGroup;
+    createVersionFormGroup: UntypedFormGroup;
     syncStrategies: SyncStrategy[];
     syncStrategyTranslations: Map<SyncStrategy, string>;
     syncStrategyHints: Map<SyncStrategy, string>;
@@ -30,11 +30,11 @@ export declare class ComplexVersionCreateComponent extends PageComponent impleme
     versionCreateBranch: string;
     versionCreateResult$: Observable<VersionCreationResult>;
     private versionCreateResultSubscription;
-    constructor(store: Store<AppState>, entitiesVersionControlService: EntitiesVersionControlService, cd: ChangeDetectorRef, sanitizer: DomSanitizer, translate: TranslateService, fb: FormBuilder);
+    constructor(store: Store<AppState>, entitiesVersionControlService: EntitiesVersionControlService, cd: ChangeDetectorRef, sanitizer: DomSanitizer, translate: TranslateService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     ngOnDestroy(): void;
     cancel(): void;
     export(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ComplexVersionCreateComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ComplexVersionCreateComponent, "tb-complex-version-create", never, { "branch": "branch"; "onClose": "onClose"; "popoverComponent": "popoverComponent"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ComplexVersionCreateComponent, "tb-complex-version-create", never, { "branch": "branch"; "onClose": "onClose"; "popoverComponent": "popoverComponent"; }, {}, never, never, false>;
 }

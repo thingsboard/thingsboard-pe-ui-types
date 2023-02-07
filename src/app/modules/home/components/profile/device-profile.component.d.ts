@@ -1,7 +1,7 @@
 import { ChangeDetectorRef } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
 import { EntityComponent } from '../entity/entity.component';
@@ -10,13 +10,14 @@ import { EntityType } from '@shared/models/entity-type.models';
 import { ServiceType } from '@shared/models/queue.models';
 import { EntityId } from '@shared/models/id/entity-id';
 import { OtaUpdateType } from '@shared/models/ota-package.models';
+import { RuleChainType } from '@shared/models/rule-chain.models';
 import * as i0 from "@angular/core";
 export declare class DeviceProfileComponent extends EntityComponent<DeviceProfile> {
     protected store: Store<AppState>;
     protected translate: TranslateService;
     protected entityValue: DeviceProfile;
     protected entitiesTableConfigValue: EntityTableConfig<DeviceProfile>;
-    protected fb: FormBuilder;
+    protected fb: UntypedFormBuilder;
     protected cd: ChangeDetectorRef;
     standalone: boolean;
     entityType: typeof EntityType;
@@ -28,11 +29,12 @@ export declare class DeviceProfileComponent extends EntityComponent<DeviceProfil
     displayTransportConfiguration: boolean;
     isTransportTypeChanged: boolean;
     serviceType: ServiceType;
+    edgeRuleChainType: RuleChainType;
     deviceProfileId: EntityId;
     otaUpdateType: typeof OtaUpdateType;
-    constructor(store: Store<AppState>, translate: TranslateService, entityValue: DeviceProfile, entitiesTableConfigValue: EntityTableConfig<DeviceProfile>, fb: FormBuilder, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, translate: TranslateService, entityValue: DeviceProfile, entitiesTableConfigValue: EntityTableConfig<DeviceProfile>, fb: UntypedFormBuilder, cd: ChangeDetectorRef);
     hideDelete(): boolean;
-    buildForm(entity: DeviceProfile): FormGroup;
+    buildForm(entity: DeviceProfile): UntypedFormGroup;
     private checkIsNewDeviceProfile;
     private deviceProfileTypeChanged;
     private deviceProfileTransportTypeChanged;
@@ -40,5 +42,5 @@ export declare class DeviceProfileComponent extends EntityComponent<DeviceProfil
     prepareFormValue(formValue: any): any;
     onDeviceProfileIdCopied(event: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceProfileComponent, [null, null, { optional: true; }, { optional: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceProfileComponent, "tb-device-profile", never, { "standalone": "standalone"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceProfileComponent, "tb-device-profile", never, { "standalone": "standalone"; }, {}, never, never, false>;
 }

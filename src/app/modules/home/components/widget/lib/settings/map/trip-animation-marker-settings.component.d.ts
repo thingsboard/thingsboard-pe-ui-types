@@ -1,5 +1,5 @@
 import { OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormControl, FormGroup, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -16,14 +16,14 @@ export declare class TripAnimationMarkerSettingsComponent extends PageComponent 
     functionScopeVariables: string[];
     private modelValue;
     private propagateChange;
-    tripAnimationMarkerSettingsFormGroup: FormGroup;
-    constructor(store: Store<AppState>, translate: TranslateService, widgetService: WidgetService, fb: FormBuilder);
+    tripAnimationMarkerSettingsFormGroup: UntypedFormGroup;
+    constructor(store: Store<AppState>, translate: TranslateService, widgetService: WidgetService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: TripAnimationMarkerSettings): void;
-    validate(c: FormControl): {
+    validate(c: UntypedFormControl): {
         tripAnimationMarkerSettings: {
             valid: boolean;
         };
@@ -31,5 +31,5 @@ export declare class TripAnimationMarkerSettingsComponent extends PageComponent 
     private updateModel;
     private updateValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<TripAnimationMarkerSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TripAnimationMarkerSettingsComponent, "tb-trip-animation-marker-settings", never, { "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TripAnimationMarkerSettingsComponent, "tb-trip-animation-marker-settings", never, { "disabled": "disabled"; }, {}, never, never, false>;
 }

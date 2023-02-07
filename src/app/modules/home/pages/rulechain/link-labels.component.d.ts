@@ -1,5 +1,5 @@
 import { ElementRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { LinkLabel } from '@shared/models/rule-node.models';
 import { Observable } from 'rxjs';
 import { TruncatePipe } from '@shared/pipe/truncate.pipe';
@@ -27,7 +27,7 @@ export declare class LinkLabelsComponent implements ControlValueAccessor, OnInit
         [label: string]: LinkLabel;
     };
     sourceRuleChainId: string;
-    linksFormGroup: FormGroup;
+    linksFormGroup: UntypedFormGroup;
     modelValue: Array<string>;
     private labelsList;
     separatorKeysCodes: number[];
@@ -35,7 +35,7 @@ export declare class LinkLabelsComponent implements ControlValueAccessor, OnInit
     labels: Array<LinkLabel>;
     searchText: string;
     private propagateChange;
-    constructor(fb: FormBuilder, truncate: TruncatePipe, translate: TranslateService, ruleChainService: RuleChainService);
+    constructor(fb: UntypedFormBuilder, truncate: TruncatePipe, translate: TranslateService, ruleChainService: RuleChainService);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -56,5 +56,5 @@ export declare class LinkLabelsComponent implements ControlValueAccessor, OnInit
     clear(value?: string): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<LinkLabelsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<LinkLabelsComponent, "tb-link-labels", never, { "required": "required"; "disabled": "disabled"; "allowCustom": "allowCustom"; "allowedLabels": "allowedLabels"; "sourceRuleChainId": "sourceRuleChainId"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<LinkLabelsComponent, "tb-link-labels", never, { "required": "required"; "disabled": "disabled"; "allowCustom": "allowCustom"; "allowedLabels": "allowedLabels"; "sourceRuleChainId": "sourceRuleChainId"; }, {}, never, never, false>;
 }

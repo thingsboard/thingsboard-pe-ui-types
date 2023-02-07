@@ -1,5 +1,5 @@
 import { EventEmitter, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { ServerSecurityConfig } from '@home/components/profile/device/lwm2m/lwm2m-profile-config.models';
 import { TranslateService } from '@ngx-translate/core';
 import { DialogService } from '@core/services/dialog.service';
@@ -12,7 +12,7 @@ export declare class Lwm2mBootstrapConfigServersComponent implements OnInit, Con
     private dialogService;
     private deviceProfileService;
     private fb;
-    bootstrapConfigServersFormGroup: FormGroup;
+    bootstrapConfigServersFormGroup: UntypedFormGroup;
     disabled: boolean;
     isTransportWasRunWithBootstrap: boolean;
     isTransportWasRunWithBootstrapChange: EventEmitter<boolean>;
@@ -20,18 +20,18 @@ export declare class Lwm2mBootstrapConfigServersComponent implements OnInit, Con
     set isBootstrapServerUpdateEnable(value: boolean);
     private valueChangeSubscription;
     private propagateChange;
-    constructor(translate: TranslateService, matDialog: MatDialog, dialogService: DialogService, deviceProfileService: DeviceProfileService, fb: FormBuilder);
+    constructor(translate: TranslateService, matDialog: MatDialog, dialogService: DialogService, deviceProfileService: DeviceProfileService, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
-    serverConfigsFromArray(): FormArray;
+    serverConfigsFromArray(): UntypedFormArray;
     setDisabledState(isDisabled: boolean): void;
     writeValue(serverConfigs: Array<ServerSecurityConfig> | null): void;
     trackByParams(index: number): number;
     removeServerConfig($event: Event, index: number): void;
     addServerConfig(): void;
     updateIsTransportWasRunWithBootstrap(newValue: boolean): void;
-    validate(c: FormControl): {
+    validate(c: UntypedFormControl): {
         serverConfigs: {
             valid: boolean;
         };
@@ -41,5 +41,5 @@ export declare class Lwm2mBootstrapConfigServersComponent implements OnInit, Con
     private removeBootstrapServerConfig;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<Lwm2mBootstrapConfigServersComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mBootstrapConfigServersComponent, "tb-profile-lwm2m-bootstrap-config-servers", never, { "disabled": "disabled"; "isTransportWasRunWithBootstrap": "isTransportWasRunWithBootstrap"; "isBootstrapServerUpdateEnable": "isBootstrapServerUpdateEnable"; }, { "isTransportWasRunWithBootstrapChange": "isTransportWasRunWithBootstrapChange"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mBootstrapConfigServersComponent, "tb-profile-lwm2m-bootstrap-config-servers", never, { "disabled": "disabled"; "isTransportWasRunWithBootstrap": "isTransportWasRunWithBootstrap"; "isBootstrapServerUpdateEnable": "isBootstrapServerUpdateEnable"; }, { "isTransportWasRunWithBootstrapChange": "isTransportWasRunWithBootstrapChange"; }, never, never, false>;
 }

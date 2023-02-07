@@ -4,7 +4,7 @@ import { AppState } from '@core/core.state';
 import { Router } from '@angular/router';
 import { TwoFactorAuthenticationService } from '@core/http/two-factor-authentication.service';
 import { MatDialogRef } from '@angular/material/dialog';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { BackupCodeTwoFactorAuthAccountConfig } from '@shared/models/two-factor-auth.models';
 import { ImportExportService } from '@home/components/import-export/import-export.service';
 import * as i0 from "@angular/core";
@@ -14,13 +14,13 @@ export declare class BackupCodeAuthDialogComponent extends DialogComponent<Backu
     private twoFaService;
     private importExportService;
     dialogRef: MatDialogRef<BackupCodeAuthDialogComponent>;
-    fb: FormBuilder;
+    fb: UntypedFormBuilder;
     private config;
     backupCode: BackupCodeTwoFactorAuthAccountConfig;
-    constructor(store: Store<AppState>, router: Router, twoFaService: TwoFactorAuthenticationService, importExportService: ImportExportService, dialogRef: MatDialogRef<BackupCodeAuthDialogComponent>, fb: FormBuilder);
+    constructor(store: Store<AppState>, router: Router, twoFaService: TwoFactorAuthenticationService, importExportService: ImportExportService, dialogRef: MatDialogRef<BackupCodeAuthDialogComponent>, fb: UntypedFormBuilder);
     closeDialog(): void;
     downloadFile(): void;
     printCode(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<BackupCodeAuthDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<BackupCodeAuthDialogComponent, "tb-backup-code-auth-dialog", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<BackupCodeAuthDialogComponent, "tb-backup-code-auth-dialog", never, {}, {}, never, never, false>;
 }

@@ -48,6 +48,6 @@ export declare class TripAnimationComponent implements OnInit, AfterViewInit, On
     private clearIncorrectFirsLastDatapoint;
     private findFirstHistoricalDataIndexCoordinate;
     static ɵfac: i0.ɵɵFactoryDeclaration<TripAnimationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TripAnimationComponent, "trip-animation", never, { "ctx": "ctx"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TripAnimationComponent, "trip-animation", never, { "ctx": "ctx"; }, {}, never, never, false>;
 }
 export declare let TbTripAnimationWidget: typeof TripAnimationComponent;

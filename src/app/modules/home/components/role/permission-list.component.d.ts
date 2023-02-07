@@ -1,5 +1,5 @@
 import { Injector, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormArray, FormBuilder, FormGroup, NgControl } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup, NgControl } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -10,13 +10,13 @@ export declare class PermissionListComponent extends PageComponent implements Co
     private injector;
     private fb;
     disabled: boolean;
-    permissionListFormGroup: FormGroup;
+    permissionListFormGroup: UntypedFormGroup;
     private propagateChange;
     private valueChangeSubscription;
     ngControl: NgControl;
-    constructor(store: Store<AppState>, injector: Injector, fb: FormBuilder);
+    constructor(store: Store<AppState>, injector: Injector, fb: UntypedFormBuilder);
     ngOnInit(): void;
-    permissionsFormArray(): FormArray;
+    permissionsFormArray(): UntypedFormArray;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState?(isDisabled: boolean): void;
@@ -25,5 +25,5 @@ export declare class PermissionListComponent extends PageComponent implements Co
     addPermission(): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<PermissionListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PermissionListComponent, "tb-permission-list", never, { "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PermissionListComponent, "tb-permission-list", never, { "disabled": "disabled"; }, {}, never, never, false>;
 }

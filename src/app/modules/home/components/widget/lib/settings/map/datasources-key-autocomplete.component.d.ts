@@ -1,5 +1,5 @@
 import { ElementRef, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -22,10 +22,10 @@ export declare class DatasourcesKeyAutocompleteComponent extends PageComponent i
     set required(value: boolean);
     private modelValue;
     private propagateChange;
-    keyFormGroup: FormGroup;
+    keyFormGroup: UntypedFormGroup;
     filteredKeys: Observable<Array<string>>;
     keySearchText: string;
-    constructor(store: Store<AppState>, translate: TranslateService, entityService: EntityService, fb: FormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, entityService: EntityService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -38,5 +38,5 @@ export declare class DatasourcesKeyAutocompleteComponent extends PageComponent i
     private createKeyFilter;
     private allKeys;
     static ɵfac: i0.ɵɵFactoryDeclaration<DatasourcesKeyAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DatasourcesKeyAutocompleteComponent, "tb-datasources-key-autocomplete", never, { "disabled": "disabled"; "datasources": "datasources"; "label": "label"; "required": "required"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DatasourcesKeyAutocompleteComponent, "tb-datasources-key-autocomplete", never, { "disabled": "disabled"; "datasources": "datasources"; "label": "label"; "required": "required"; }, {}, never, never, false>;
 }

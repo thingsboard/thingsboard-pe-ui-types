@@ -1,5 +1,5 @@
 import { AfterViewInit, ElementRef, NgZone, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -12,7 +12,7 @@ export declare class BranchAutocompleteComponent implements ControlValueAccessor
     private entitiesVersionControlService;
     private fb;
     private zone;
-    branchFormGroup: FormGroup;
+    branchFormGroup: UntypedFormGroup;
     modelValue: string | null;
     private requiredValue;
     get required(): boolean;
@@ -33,7 +33,7 @@ export declare class BranchAutocompleteComponent implements ControlValueAccessor
     private dirty;
     private clearButtonClicked;
     private propagateChange;
-    constructor(store: Store<AppState>, entitiesVersionControlService: EntitiesVersionControlService, fb: FormBuilder, zone: NgZone);
+    constructor(store: Store<AppState>, entitiesVersionControlService: EntitiesVersionControlService, fb: UntypedFormBuilder, zone: NgZone);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -52,5 +52,5 @@ export declare class BranchAutocompleteComponent implements ControlValueAccessor
     private getBranches;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<BranchAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<BranchAutocompleteComponent, "tb-branch-autocomplete", never, { "required": "required"; "disabled": "disabled"; "selectDefaultBranch": "selectDefaultBranch"; "selectionMode": "selectionMode"; "emptyPlaceholder": "emptyPlaceholder"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<BranchAutocompleteComponent, "tb-branch-autocomplete", never, { "required": "required"; "disabled": "disabled"; "selectDefaultBranch": "selectDefaultBranch"; "selectionMode": "selectionMode"; "emptyPlaceholder": "emptyPlaceholder"; }, {}, never, never, false>;
 }

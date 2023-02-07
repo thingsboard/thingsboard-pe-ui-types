@@ -1,5 +1,5 @@
 import { AfterViewInit, ElementRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -18,7 +18,7 @@ export declare class EntityGroupListComponent implements ControlValueAccessor, O
     private entityService;
     private entityGroupService;
     private fb;
-    entityGroupListFormGroup: FormGroup;
+    entityGroupListFormGroup: UntypedFormGroup;
     modelValue: Array<string> | null;
     groupType: EntityType;
     private ownerIdValue;
@@ -36,7 +36,7 @@ export declare class EntityGroupListComponent implements ControlValueAccessor, O
     searchText: string;
     private dirty;
     private propagateChange;
-    constructor(store: Store<AppState>, translate: TranslateService, entityService: EntityService, entityGroupService: EntityGroupService, fb: FormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, entityService: EntityService, entityGroupService: EntityGroupService, fb: UntypedFormBuilder);
     updateValidators(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -53,5 +53,5 @@ export declare class EntityGroupListComponent implements ControlValueAccessor, O
     onFocus(): void;
     clear(value?: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityGroupListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupListComponent, "tb-entity-group-list", never, { "groupType": "groupType"; "ownerId": "ownerId"; "required": "required"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupListComponent, "tb-entity-group-list", never, { "groupType": "groupType"; "ownerId": "ownerId"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
 }

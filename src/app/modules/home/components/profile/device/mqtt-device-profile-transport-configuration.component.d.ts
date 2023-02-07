@@ -1,5 +1,5 @@
 import { OnDestroy, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { MqttDeviceProfileTransportConfiguration, TransportPayloadType } from '@shared/models/device.models';
@@ -9,14 +9,14 @@ export declare class MqttDeviceProfileTransportConfigurationComponent implements
     private fb;
     transportPayloadTypes: string[];
     transportPayloadTypeTranslations: Map<TransportPayloadType, string>;
-    mqttDeviceProfileTransportConfigurationFormGroup: FormGroup;
+    mqttDeviceProfileTransportConfigurationFormGroup: UntypedFormGroup;
     private destroy$;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
     disabled: boolean;
     private propagateChange;
-    constructor(store: Store<AppState>, fb: FormBuilder);
+    constructor(store: Store<AppState>, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -30,5 +30,5 @@ export declare class MqttDeviceProfileTransportConfigurationComponent implements
     private validationMQTTTopic;
     private uniqueDeviceTopicValidator;
     static ɵfac: i0.ɵɵFactoryDeclaration<MqttDeviceProfileTransportConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MqttDeviceProfileTransportConfigurationComponent, "tb-mqtt-device-profile-transport-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MqttDeviceProfileTransportConfigurationComponent, "tb-mqtt-device-profile-transport-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
 }

@@ -1,10 +1,10 @@
-import { ControlValueAccessor, FormBuilder, FormGroup, ValidationErrors, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { OnDestroy, OnInit } from '@angular/core';
 import { IntegrationCredentialType } from '@shared/models/integration.models';
 import * as i0 from "@angular/core";
 export declare class IntegrationCredentialsComponent implements ControlValueAccessor, Validator, OnInit, OnDestroy {
     private fb;
-    integrationCredentialForm: FormGroup;
+    integrationCredentialForm: UntypedFormGroup;
     hideSelectType: boolean;
     private allowCredentialTypesValue;
     set allowCredentialTypes(types: IntegrationCredentialType[]);
@@ -24,7 +24,7 @@ export declare class IntegrationCredentialsComponent implements ControlValueAcce
     disabled: boolean;
     private destroy$;
     private propagateChange;
-    constructor(fb: FormBuilder);
+    constructor(fb: UntypedFormBuilder);
     ngOnInit(): void;
     ngOnDestroy(): void;
     registerOnChange(fn: any): void;
@@ -35,5 +35,5 @@ export declare class IntegrationCredentialsComponent implements ControlValueAcce
     private updateModel;
     validate(): ValidationErrors | null;
     static ɵfac: i0.ɵɵFactoryDeclaration<IntegrationCredentialsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<IntegrationCredentialsComponent, "tb-integration-credentials", never, { "allowCredentialTypes": "allowCredentialTypes"; "ignoreCaCert": "ignoreCaCert"; "userNameLabel": "userNameLabel"; "userNameRequired": "userNameRequired"; "passwordLabel": "passwordLabel"; "passwordRequired": "passwordRequired"; "passwordOptional": "passwordOptional"; "disabled": "disabled"; }, {}, never, ["*"]>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<IntegrationCredentialsComponent, "tb-integration-credentials", never, { "allowCredentialTypes": "allowCredentialTypes"; "ignoreCaCert": "ignoreCaCert"; "userNameLabel": "userNameLabel"; "userNameRequired": "userNameRequired"; "passwordLabel": "passwordLabel"; "passwordRequired": "passwordRequired"; "passwordOptional": "passwordOptional"; "disabled": "disabled"; }, {}, never, ["*"], false>;
 }

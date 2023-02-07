@@ -98,5 +98,5 @@ export declare class EntitiesTableComponent extends PageComponent implements IEn
     protected updatedRouterParamsAndData(queryParams: object, queryParamsHandling?: QueryParamsHandling): void;
     detectChanges(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntitiesTableComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntitiesTableComponent, "tb-entities-table", never, { "entitiesTableConfig": "entitiesTableConfig"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntitiesTableComponent, "tb-entities-table", never, { "entitiesTableConfig": "entitiesTableConfig"; }, {}, never, never, false>;
 }

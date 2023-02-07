@@ -1,5 +1,5 @@
 import { OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -8,11 +8,11 @@ import * as i0 from "@angular/core";
 export declare class TbScriptLangComponent extends PageComponent implements ControlValueAccessor, OnInit {
     protected store: Store<AppState>;
     private fb;
-    scriptLangFormGroup: FormGroup;
+    scriptLangFormGroup: UntypedFormGroup;
     scriptLanguage: typeof ScriptLanguage;
     disabled: boolean;
     private propagateChange;
-    constructor(store: Store<AppState>, fb: FormBuilder);
+    constructor(store: Store<AppState>, fb: UntypedFormBuilder);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -20,5 +20,5 @@ export declare class TbScriptLangComponent extends PageComponent implements Cont
     writeValue(scriptLang: ScriptLanguage): void;
     updateView(scriptLang: ScriptLanguage): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TbScriptLangComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TbScriptLangComponent, "tb-script-lang", never, { "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TbScriptLangComponent, "tb-script-lang", never, { "disabled": "disabled"; }, {}, never, never, false>;
 }

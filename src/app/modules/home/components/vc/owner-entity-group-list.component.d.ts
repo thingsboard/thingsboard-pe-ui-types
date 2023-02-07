@@ -1,5 +1,5 @@
 import { OnInit } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, FormBuilder, FormControl, FormGroup, Validator } from '@angular/forms';
+import { AbstractControl, ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { EntityType } from '@shared/models/entity-type.models';
 import { Store } from '@ngrx/store';
@@ -12,24 +12,24 @@ export declare class OwnerEntityGroupListComponent extends PageComponent impleme
     private fb;
     disabled: boolean;
     entityType: EntityType;
-    ownerEntityGroupListFormGroup: FormGroup;
+    ownerEntityGroupListFormGroup: UntypedFormGroup;
     modelValue: Array<string> | null;
     currentUser: import("../../../../shared/public-api").AuthUser;
     private propagateChange;
-    constructor(store: Store<AppState>, translate: TranslateService, fb: FormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: Array<string> | undefined): void;
-    validate(c: FormControl): {
+    validate(c: UntypedFormControl): {
         ownerEntityGroups: {
             valid: boolean;
         };
     };
     private prepareOwnerEntityGroupsFormArray;
     private createOwnerEntityGroupsControl;
-    ownerEntityGroupsArray(): FormGroup[];
+    ownerEntityGroupsArray(): UntypedFormGroup[];
     entityGroupsTitle(): string;
     trackByOwnerEntityGroups(index: number, ownerEntityGroupsControl: AbstractControl): any;
     excludeOwnerIds(ownerEntityGroupsControl: AbstractControl): Array<string>;
@@ -37,5 +37,5 @@ export declare class OwnerEntityGroupListComponent extends PageComponent impleme
     addOwnerEntityGroup(): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<OwnerEntityGroupListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<OwnerEntityGroupListComponent, "tb-owner-entity-group-list", never, { "disabled": "disabled"; "entityType": "entityType"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<OwnerEntityGroupListComponent, "tb-owner-entity-group-list", never, { "disabled": "disabled"; "entityType": "entityType"; }, {}, never, never, false>;
 }

@@ -1,5 +1,5 @@
 import { OnInit } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { EntityType } from '@shared/models/entity-type.models';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
@@ -12,12 +12,12 @@ export declare class EntityGroupColumnsComponent extends PageComponent implement
     private fb;
     disabled: boolean;
     entityType: EntityType;
-    columnsFormGroup: FormGroup;
+    columnsFormGroup: UntypedFormGroup;
     private propagateChange;
     private valueChangeSubscription;
-    constructor(store: Store<AppState>, fb: FormBuilder);
+    constructor(store: Store<AppState>, fb: UntypedFormBuilder);
     ngOnInit(): void;
-    columnsFormArray(): FormArray;
+    columnsFormArray(): UntypedFormArray;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState?(isDisabled: boolean): void;
@@ -30,5 +30,5 @@ export declare class EntityGroupColumnsComponent extends PageComponent implement
     onDrop(event: CdkDragDrop<string[]>): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityGroupColumnsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupColumnsComponent, "tb-entity-group-columns", never, { "disabled": "disabled"; "entityType": "entityType"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupColumnsComponent, "tb-entity-group-columns", never, { "disabled": "disabled"; "entityType": "entityType"; }, {}, never, never, false>;
 }

@@ -21,5 +21,5 @@ export declare class EmailVerificationComponent extends PageComponent implements
     ngOnDestroy(): void;
     resendEmail(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EmailVerificationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EmailVerificationComponent, "tb-email-verification", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EmailVerificationComponent, "tb-email-verification", never, {}, {}, never, never, false>;
 }

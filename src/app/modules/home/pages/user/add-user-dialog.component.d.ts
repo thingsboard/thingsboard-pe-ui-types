@@ -2,7 +2,7 @@ import { OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 import { UserComponent } from '@modules/home/pages/user/user.component';
 import { Authority } from '@shared/models/authority.enum';
 import { ActivationMethod, User } from '@shared/models/user.model';
@@ -23,7 +23,7 @@ export declare class AddUserDialogComponent extends DialogComponent<AddUserDialo
     dialogRef: MatDialogRef<AddUserDialogComponent, User>;
     private userService;
     private dialog;
-    detailsForm: FormGroup;
+    detailsForm: UntypedFormGroup;
     user: User;
     activationMethods: string[];
     activationMethodEnum: typeof ActivationMethod;
@@ -36,5 +36,5 @@ export declare class AddUserDialogComponent extends DialogComponent<AddUserDialo
     add(): void;
     displayActivationLink(activationLink: string): Observable<void>;
     static ɵfac: i0.ɵɵFactoryDeclaration<AddUserDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AddUserDialogComponent, "tb-add-user-dialog", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AddUserDialogComponent, "tb-add-user-dialog", never, {}, {}, never, never, false>;
 }

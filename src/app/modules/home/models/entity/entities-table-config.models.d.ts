@@ -166,5 +166,5 @@ export declare class EntityTableConfig<T extends BaseData<HasId>, P extends Page
     isDetailsOpen(): boolean;
     getActivatedRoute(): ActivatedRoute;
 }
-export declare function checkBoxCell(value: boolean): string;
+export declare const checkBoxCell: (value: boolean) => string;
 export declare function defaultEntityTablePermissions(userPermissionsService: UserPermissionsService, entitiesTableConfig: EntityTableConfig<BaseData<HasId>>): void;

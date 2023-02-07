@@ -18,5 +18,5 @@ export declare class GroupEntityTabsComponent<T extends BaseData<HasId>> extends
     hasVersionControl(): boolean;
     protected setEntitiesTableConfig(entitiesTableConfig: GroupEntityTableConfig<T>): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<GroupEntityTabsComponent<any>, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<GroupEntityTabsComponent<any>, "tb-group-entity-tabs", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GroupEntityTabsComponent<any>, "tb-group-entity-tabs", never, {}, {}, never, never, false>;
 }

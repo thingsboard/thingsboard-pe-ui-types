@@ -1,5 +1,5 @@
 import { EventEmitter, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -22,8 +22,8 @@ export declare class LabelWidgetLabelComponent extends PageComponent implements 
     removeLabel: EventEmitter<any>;
     private modelValue;
     private propagateChange;
-    labelWidgetLabelFormGroup: FormGroup;
-    constructor(store: Store<AppState>, translate: TranslateService, fb: FormBuilder);
+    labelWidgetLabelFormGroup: UntypedFormGroup;
+    constructor(store: Store<AppState>, translate: TranslateService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -31,5 +31,5 @@ export declare class LabelWidgetLabelComponent extends PageComponent implements 
     writeValue(value: LabelWidgetLabel): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<LabelWidgetLabelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<LabelWidgetLabelComponent, "tb-label-widget-label", never, { "disabled": "disabled"; "expanded": "expanded"; }, { "removeLabel": "removeLabel"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<LabelWidgetLabelComponent, "tb-label-widget-label", never, { "disabled": "disabled"; "expanded": "expanded"; }, { "removeLabel": "removeLabel"; }, never, never, false>;
 }

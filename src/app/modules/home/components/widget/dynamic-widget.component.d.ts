@@ -6,12 +6,12 @@ import { IDynamicWidgetComponent, WidgetContext } from '@home/models/widget-comp
 import { HttpErrorResponse } from '@angular/common/http';
 import { RafService } from '@core/services/raf.service';
 import { NotificationHorizontalPosition, NotificationType, NotificationVerticalPosition } from '@core/notification/notification.models';
-import { FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormBuilder, Validators } from '@angular/forms';
 import * as i0 from "@angular/core";
 export declare class DynamicWidgetComponent extends PageComponent implements IDynamicWidgetComponent, OnInit, OnDestroy {
     raf: RafService;
     protected store: Store<AppState>;
-    fb: FormBuilder;
+    fb: UntypedFormBuilder;
     readonly $injector: Injector;
     readonly ctx: WidgetContext;
     readonly errorMessages: string[];
@@ -21,7 +21,7 @@ export declare class DynamicWidgetComponent extends PageComponent implements IDy
     rpcRejection: HttpErrorResponse;
     [key: string]: any;
     validators: typeof Validators;
-    constructor(raf: RafService, store: Store<AppState>, fb: FormBuilder, $injector: Injector, ctx: WidgetContext, errorMessages: string[]);
+    constructor(raf: RafService, store: Store<AppState>, fb: UntypedFormBuilder, $injector: Injector, ctx: WidgetContext, errorMessages: string[]);
     ngOnInit(): void;
     ngOnDestroy(): void;
     clearRpcError(): void;
@@ -29,5 +29,5 @@ export declare class DynamicWidgetComponent extends PageComponent implements IDy
     showErrorToast(message: string, verticalPosition?: NotificationVerticalPosition, horizontalPosition?: NotificationHorizontalPosition, target?: string): void;
     showToast(type: NotificationType, message: string, duration: number, verticalPosition?: NotificationVerticalPosition, horizontalPosition?: NotificationHorizontalPosition, target?: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DynamicWidgetComponent, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<DynamicWidgetComponent, never, never, {}, {}, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<DynamicWidgetComponent, never, never, {}, {}, never, never, false>;
 }

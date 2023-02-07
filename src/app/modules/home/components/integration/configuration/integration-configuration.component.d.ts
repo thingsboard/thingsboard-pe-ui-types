@@ -1,10 +1,10 @@
 import { OnDestroy, TemplateRef } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup, ValidationErrors, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { IntegrationType } from '@shared/models/integration.models';
 import * as i0 from "@angular/core";
 export declare class IntegrationConfigurationComponent implements ControlValueAccessor, Validator, OnDestroy {
     private fb;
-    integrationConfigurationForm: FormGroup;
+    integrationConfigurationForm: UntypedFormGroup;
     integrationTypes: typeof IntegrationType;
     executeRemotelyTemplate: TemplateRef<any>;
     genericAdditionalInfoTemplate: TemplateRef<any>;
@@ -16,7 +16,7 @@ export declare class IntegrationConfigurationComponent implements ControlValueAc
     disabled: boolean;
     private destroy$;
     private propagateChange;
-    constructor(fb: FormBuilder);
+    constructor(fb: UntypedFormBuilder);
     ngOnDestroy(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -25,5 +25,5 @@ export declare class IntegrationConfigurationComponent implements ControlValueAc
     private updateModel;
     validate(): ValidationErrors | null;
     static ɵfac: i0.ɵɵFactoryDeclaration<IntegrationConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<IntegrationConfigurationComponent, "tb-integration-configuration", never, { "executeRemotelyTemplate": "executeRemotelyTemplate"; "genericAdditionalInfoTemplate": "genericAdditionalInfoTemplate"; "isSetDownlink": "isSetDownlink"; "routingKey": "routingKey"; "integrationType": "integrationType"; "isEdgeTemplate": "isEdgeTemplate"; "allowLocalNetwork": "allowLocalNetwork"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<IntegrationConfigurationComponent, "tb-integration-configuration", never, { "executeRemotelyTemplate": "executeRemotelyTemplate"; "genericAdditionalInfoTemplate": "genericAdditionalInfoTemplate"; "isSetDownlink": "isSetDownlink"; "routingKey": "routingKey"; "integrationType": "integrationType"; "isEdgeTemplate": "isEdgeTemplate"; "allowLocalNetwork": "allowLocalNetwork"; "disabled": "disabled"; }, {}, never, never, false>;
 }

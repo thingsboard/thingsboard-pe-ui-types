@@ -16,5 +16,5 @@ export declare class DisplayWidgetTypesPanelComponent {
     constructor(data: DisplayWidgetTypesPanelData);
     update(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DisplayWidgetTypesPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DisplayWidgetTypesPanelComponent, "tb-widget-types-panel", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DisplayWidgetTypesPanelComponent, "tb-widget-types-panel", never, {}, {}, never, never, false>;
 }

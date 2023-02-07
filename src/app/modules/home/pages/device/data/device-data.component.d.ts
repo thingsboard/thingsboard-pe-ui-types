@@ -1,5 +1,5 @@
 import { OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup, ValidationErrors, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { DeviceData } from '@shared/models/device.models';
@@ -7,7 +7,7 @@ import * as i0 from "@angular/core";
 export declare class DeviceDataComponent implements ControlValueAccessor, OnInit, Validator {
     private store;
     private fb;
-    deviceDataFormGroup: FormGroup;
+    deviceDataFormGroup: UntypedFormGroup;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
@@ -15,7 +15,7 @@ export declare class DeviceDataComponent implements ControlValueAccessor, OnInit
     displayDeviceConfiguration: boolean;
     displayTransportConfiguration: boolean;
     private propagateChange;
-    constructor(store: Store<AppState>, fb: FormBuilder);
+    constructor(store: Store<AppState>, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -24,5 +24,5 @@ export declare class DeviceDataComponent implements ControlValueAccessor, OnInit
     validate(): ValidationErrors | null;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceDataComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceDataComponent, "tb-device-data", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceDataComponent, "tb-device-data", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
 }

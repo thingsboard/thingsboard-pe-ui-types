@@ -1,5 +1,5 @@
 import { ElementRef, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -19,7 +19,7 @@ export declare class ConverterAutocompleteComponent implements ControlValueAcces
     private converterService;
     dialog: MatDialog;
     private fb;
-    selectConverterFormGroup: FormGroup;
+    selectConverterFormGroup: UntypedFormGroup;
     private modelValue;
     private converterTypeValue;
     useFullEntityId: boolean;
@@ -45,7 +45,7 @@ export declare class ConverterAutocompleteComponent implements ControlValueAcces
     operation: typeof Operation;
     private dirty;
     private propagateChange;
-    constructor(store: Store<AppState>, translate: TranslateService, truncate: TruncatePipe, converterService: ConverterService, dialog: MatDialog, fb: FormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, truncate: TruncatePipe, converterService: ConverterService, dialog: MatDialog, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -62,5 +62,5 @@ export declare class ConverterAutocompleteComponent implements ControlValueAcces
     textIsNotEmpty(text: string): boolean;
     createConverter($event: Event, converterName: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ConverterAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ConverterAutocompleteComponent, "tb-converter-autocomplete", never, { "useFullEntityId": "useFullEntityId"; "isEdgeTemplate": "isEdgeTemplate"; "addNewConverter": "addNewConverter"; "converterType": "converterType"; "excludeEntityIds": "excludeEntityIds"; "labelText": "labelText"; "requiredText": "requiredText"; "required": "required"; "disabled": "disabled"; "showDetailsPageLink": "showDetailsPageLink"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ConverterAutocompleteComponent, "tb-converter-autocomplete", never, { "useFullEntityId": "useFullEntityId"; "isEdgeTemplate": "isEdgeTemplate"; "addNewConverter": "addNewConverter"; "converterType": "converterType"; "excludeEntityIds": "excludeEntityIds"; "labelText": "labelText"; "requiredText": "requiredText"; "required": "required"; "disabled": "disabled"; "showDetailsPageLink": "showDetailsPageLink"; }, {}, never, never, false>;
 }

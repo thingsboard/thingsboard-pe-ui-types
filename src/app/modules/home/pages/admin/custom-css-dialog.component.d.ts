@@ -36,5 +36,5 @@ export declare class CustomCssDialogComponent extends DialogComponent<CustomCssD
     cancel(): void;
     save(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<CustomCssDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CustomCssDialogComponent, "tb-custom-css-dialog", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CustomCssDialogComponent, "tb-custom-css-dialog", never, {}, {}, never, never, false>;
 }

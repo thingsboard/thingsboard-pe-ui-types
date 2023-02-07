@@ -1,5 +1,5 @@
 import { OnInit } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, FormArray, FormBuilder, FormControl, FormGroup, Validator } from '@angular/forms';
+import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { ChartType, TbFlotSettings } from '@home/components/widget/lib/flot-widget.models';
 import { Store } from '@ngrx/store';
@@ -19,25 +19,25 @@ export declare class FlotWidgetSettingsComponent extends PageComponent implement
     functionScopeVariables: string[];
     private modelValue;
     private propagateChange;
-    flotSettingsFormGroup: FormGroup;
-    constructor(store: Store<AppState>, translate: TranslateService, widgetService: WidgetService, fb: FormBuilder);
+    flotSettingsFormGroup: UntypedFormGroup;
+    constructor(store: Store<AppState>, translate: TranslateService, widgetService: WidgetService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: TbFlotSettings): void;
-    validate(c: FormControl): {
+    validate(c: UntypedFormControl): {
         flotSettings: {
             valid: boolean;
         };
     };
     private updateModel;
     private updateValidators;
-    dataKeysListForLabelsFormArray(): FormArray;
+    dataKeysListForLabelsFormArray(): UntypedFormArray;
     trackByLabelDataKey(index: number, labelDataKeyControl: AbstractControl): any;
     removeLabelDataKey(index: number): void;
     addLabelDataKey(): void;
     labelDataKeyDrop(event: CdkDragDrop<string[]>): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<FlotWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FlotWidgetSettingsComponent, "tb-flot-widget-settings", never, { "disabled": "disabled"; "chartType": "chartType"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FlotWidgetSettingsComponent, "tb-flot-widget-settings", never, { "disabled": "disabled"; "chartType": "chartType"; }, {}, never, never, false>;
 }

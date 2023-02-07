@@ -1,7 +1,7 @@
 import { ChangeDetectorRef } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { EntityType } from '@shared/models/entity-type.models';
 import { TranslateService } from '@ngx-translate/core';
 import { Asset } from '@shared/models/asset.models';
@@ -13,16 +13,16 @@ export declare class AssetComponent extends GroupEntityComponent<Asset> {
     protected translate: TranslateService;
     protected entityValue: Asset;
     protected entitiesTableConfigValue: GroupEntityTableConfig<Asset>;
-    protected fb: FormBuilder;
+    protected fb: UntypedFormBuilder;
     protected cd: ChangeDetectorRef;
     entityType: typeof EntityType;
-    constructor(store: Store<AppState>, translate: TranslateService, entityValue: Asset, entitiesTableConfigValue: GroupEntityTableConfig<Asset>, fb: FormBuilder, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, translate: TranslateService, entityValue: Asset, entitiesTableConfigValue: GroupEntityTableConfig<Asset>, fb: UntypedFormBuilder, cd: ChangeDetectorRef);
     ngOnInit(): void;
     hideDelete(): boolean;
-    buildForm(entity: Asset): FormGroup;
+    buildForm(entity: Asset): UntypedFormGroup;
     updateForm(entity: Asset): void;
     onAssetIdCopied($event: any): void;
     onAssetProfileUpdated(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AssetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AssetComponent, "tb-asset", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AssetComponent, "tb-asset", never, {}, {}, never, never, false>;
 }

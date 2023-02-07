@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, OnDestroy, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { EntityTypeLoadResult, VersionLoadResult } from '@shared/models/vc.models';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -21,19 +21,19 @@ export declare class ComplexVersionLoadComponent extends PageComponent implement
     versionId: string;
     onClose: (result: VersionLoadResult | null) => void;
     popoverComponent: TbPopoverComponent;
-    loadVersionFormGroup: FormGroup;
+    loadVersionFormGroup: UntypedFormGroup;
     versionLoadResult: VersionLoadResult;
     entityTypeLoadResults: Array<EntityTypeLoadResult>;
     errorMessage: SafeHtml;
     hasError: boolean;
     versionLoadResult$: Observable<VersionLoadResult>;
     private versionLoadResultSubscription;
-    constructor(store: Store<AppState>, entitiesVersionControlService: EntitiesVersionControlService, cd: ChangeDetectorRef, translate: TranslateService, sanitizer: DomSanitizer, fb: FormBuilder);
+    constructor(store: Store<AppState>, entitiesVersionControlService: EntitiesVersionControlService, cd: ChangeDetectorRef, translate: TranslateService, sanitizer: DomSanitizer, fb: UntypedFormBuilder);
     ngOnInit(): void;
     ngOnDestroy(): void;
     entityTypeLoadResultMessage(result: EntityTypeLoadResult): string;
     cancel(): void;
     restore(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ComplexVersionLoadComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ComplexVersionLoadComponent, "tb-complex-version-load", never, { "versionName": "versionName"; "versionId": "versionId"; "onClose": "onClose"; "popoverComponent": "popoverComponent"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ComplexVersionLoadComponent, "tb-complex-version-load", never, { "versionName": "versionName"; "versionId": "versionId"; "onClose": "onClose"; "popoverComponent": "popoverComponent"; }, {}, never, never, false>;
 }

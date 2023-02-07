@@ -1,5 +1,5 @@
 import { AfterViewInit, ElementRef, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, FormGroupDirective, NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -17,7 +17,7 @@ export declare class FilterSelectComponent implements ControlValueAccessor, OnIn
     translate: TranslateService;
     truncate: TruncatePipe;
     private fb;
-    selectFilterFormGroup: FormGroup;
+    selectFilterFormGroup: UntypedFormGroup;
     modelValue: string | null;
     aliasController: IAliasController;
     callbacks: FilterSelectCallbacks;
@@ -35,11 +35,11 @@ export declare class FilterSelectComponent implements ControlValueAccessor, OnIn
     private dirty;
     private creatingFilter;
     private propagateChange;
-    constructor(store: Store<AppState>, errorStateMatcher: ErrorStateMatcher, translate: TranslateService, truncate: TruncatePipe, fb: FormBuilder);
+    constructor(store: Store<AppState>, errorStateMatcher: ErrorStateMatcher, translate: TranslateService, truncate: TruncatePipe, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
-    isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean;
+    isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     ngAfterViewInit(): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: string | null): void;
@@ -52,5 +52,5 @@ export declare class FilterSelectComponent implements ControlValueAccessor, OnIn
     filterEnter($event: KeyboardEvent): void;
     createFilter($event: Event, filter: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<FilterSelectComponent, [null, { skipSelf: true; }, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FilterSelectComponent, "tb-filter-select", never, { "aliasController": "aliasController"; "callbacks": "callbacks"; "showLabel": "showLabel"; "tbRequired": "tbRequired"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FilterSelectComponent, "tb-filter-select", never, { "aliasController": "aliasController"; "callbacks": "callbacks"; "showLabel": "showLabel"; "tbRequired": "tbRequired"; "disabled": "disabled"; }, {}, never, never, false>;
 }

@@ -100,4 +100,7 @@ export interface EdgeEvent extends BaseData<EventId> {
     uid: string;
     body: string;
 }
+export interface EdgeInstallInstructions {
+    dockerInstallInstructions: string;
+}
 export declare const edgeEntityGroupTypes: EntityType[];

@@ -1,5 +1,5 @@
 import { ElementRef, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormControl, FormGroup, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -37,14 +37,14 @@ export declare class SwitchRpcSettingsComponent extends PageComponent implements
     functionScopeVariables: string[];
     private modelValue;
     private propagateChange;
-    switchRpcSettingsFormGroup: FormGroup;
-    constructor(store: Store<AppState>, translate: TranslateService, widgetService: WidgetService, entityService: EntityService, fb: FormBuilder);
+    switchRpcSettingsFormGroup: UntypedFormGroup;
+    constructor(store: Store<AppState>, translate: TranslateService, widgetService: WidgetService, entityService: EntityService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: SwitchRpcSettings): void;
-    validate(c: FormControl): {
+    validate(c: UntypedFormControl): {
         switchRpcSettings: {
             valid: boolean;
         };
@@ -52,5 +52,5 @@ export declare class SwitchRpcSettingsComponent extends PageComponent implements
     private updateModel;
     private updateValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<SwitchRpcSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SwitchRpcSettingsComponent, "tb-switch-rpc-settings", never, { "disabled": "disabled"; "aliasController": "aliasController"; "targetDeviceAliasId": "targetDeviceAliasId"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SwitchRpcSettingsComponent, "tb-switch-rpc-settings", never, { "disabled": "disabled"; "aliasController": "aliasController"; "targetDeviceAliasId": "targetDeviceAliasId"; }, {}, never, never, false>;
 }

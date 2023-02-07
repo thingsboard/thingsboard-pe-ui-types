@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, ElementRef, OnDestroy, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormControl, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormControl, Validator } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { UtilsService } from '@core/services/utils.service';
@@ -55,7 +55,7 @@ export declare class JsFuncComponent implements OnInit, OnDestroy, ControlValueA
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
-    validate(c: FormControl): {
+    validate(c: UntypedFormControl): {
         jsFunc: {
             valid: boolean;
         };
@@ -67,5 +67,5 @@ export declare class JsFuncComponent implements OnInit, OnDestroy, ControlValueA
     writeValue(value: string): void;
     updateView(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<JsFuncComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<JsFuncComponent, "tb-js-func", never, { "functionTitle": "functionTitle"; "functionName": "functionName"; "functionArgs": "functionArgs"; "validationArgs": "validationArgs"; "resultType": "resultType"; "disabled": "disabled"; "fillHeight": "fillHeight"; "minHeight": "minHeight"; "editorCompleter": "editorCompleter"; "globalVariables": "globalVariables"; "disableUndefinedCheck": "disableUndefinedCheck"; "helpId": "helpId"; "noValidate": "noValidate"; "required": "required"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<JsFuncComponent, "tb-js-func", never, { "functionTitle": "functionTitle"; "functionName": "functionName"; "functionArgs": "functionArgs"; "validationArgs": "validationArgs"; "resultType": "resultType"; "disabled": "disabled"; "fillHeight": "fillHeight"; "minHeight": "minHeight"; "editorCompleter": "editorCompleter"; "globalVariables": "globalVariables"; "disableUndefinedCheck": "disableUndefinedCheck"; "helpId": "helpId"; "noValidate": "noValidate"; "required": "required"; }, {}, never, never, false>;
 }

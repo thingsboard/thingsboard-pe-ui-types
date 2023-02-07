@@ -1,5 +1,5 @@
 import { OnInit } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, FormArray, FormBuilder, FormControl, FormGroup, Validator } from '@angular/forms';
+import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { ChartType, TbFlotKeySettings } from '@home/components/widget/lib/flot-widget.models';
 import { Store } from '@ngrx/store';
@@ -21,25 +21,25 @@ export declare class FlotKeySettingsComponent extends PageComponent implements O
     functionScopeVariables: string[];
     private modelValue;
     private propagateChange;
-    flotKeySettingsFormGroup: FormGroup;
-    constructor(store: Store<AppState>, translate: TranslateService, widgetService: WidgetService, fb: FormBuilder);
+    flotKeySettingsFormGroup: UntypedFormGroup;
+    constructor(store: Store<AppState>, translate: TranslateService, widgetService: WidgetService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: TbFlotKeySettings): void;
-    validate(c: FormControl): {
+    validate(c: UntypedFormControl): {
         flotKeySettings: {
             valid: boolean;
         };
     };
     private updateModel;
     private updateValidators;
-    thresholdsFormArray(): FormArray;
+    thresholdsFormArray(): UntypedFormArray;
     trackByThreshold(index: number, thresholdControl: AbstractControl): any;
     removeThreshold(index: number): void;
     addThreshold(): void;
     thresholdDrop(event: CdkDragDrop<string[]>): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<FlotKeySettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FlotKeySettingsComponent, "tb-flot-key-settings", never, { "disabled": "disabled"; "chartType": "chartType"; "aliasController": "aliasController"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FlotKeySettingsComponent, "tb-flot-key-settings", never, { "disabled": "disabled"; "chartType": "chartType"; "aliasController": "aliasController"; }, {}, never, never, false>;
 }

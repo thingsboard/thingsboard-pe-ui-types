@@ -46,5 +46,5 @@ export declare class TimeintervalComponent implements OnInit, ControlValueAccess
     onHoursChange(): void;
     onDaysChange(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeintervalComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeintervalComponent, "tb-timeinterval", never, { "min": "min"; "max": "max"; "predefinedName": "predefinedName"; "isEdit": "isEdit"; "hideFlag": "hideFlag"; "disabled": "disabled"; }, { "hideFlagChange": "hideFlagChange"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeintervalComponent, "tb-timeinterval", never, { "min": "min"; "max": "max"; "predefinedName": "predefinedName"; "isEdit": "isEdit"; "hideFlag": "hideFlag"; "disabled": "disabled"; }, { "hideFlagChange": "hideFlagChange"; }, never, never, false>;
 }

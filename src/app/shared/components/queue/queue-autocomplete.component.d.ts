@@ -1,5 +1,5 @@
 import { ElementRef, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -18,7 +18,7 @@ export declare class QueueAutocompleteComponent implements ControlValueAccessor,
     private entityService;
     private queueService;
     private fb;
-    selectQueueFormGroup: FormGroup;
+    selectQueueFormGroup: UntypedFormGroup;
     modelValue: string | null;
     labelText: string;
     requiredText: string;
@@ -33,7 +33,7 @@ export declare class QueueAutocompleteComponent implements ControlValueAccessor,
     searchText: string;
     private dirty;
     private propagateChange;
-    constructor(store: Store<AppState>, translate: TranslateService, truncate: TruncatePipe, entityService: EntityService, queueService: QueueService, fb: FormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, truncate: TruncatePipe, entityService: EntityService, queueService: QueueService, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -49,5 +49,5 @@ export declare class QueueAutocompleteComponent implements ControlValueAccessor,
     getDescription(value: any): any;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<QueueAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<QueueAutocompleteComponent, "tb-queue-autocomplete", never, { "labelText": "labelText"; "requiredText": "requiredText"; "autocompleteHint": "autocompleteHint"; "required": "required"; "queueType": "queueType"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<QueueAutocompleteComponent, "tb-queue-autocomplete", never, { "labelText": "labelText"; "requiredText": "requiredText"; "autocompleteHint": "autocompleteHint"; "required": "required"; "queueType": "queueType"; "disabled": "disabled"; }, {}, never, never, false>;
 }

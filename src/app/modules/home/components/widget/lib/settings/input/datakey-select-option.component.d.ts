@@ -1,5 +1,5 @@
 import { EventEmitter, OnInit } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { AbstractControl, ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -23,8 +23,8 @@ export declare class DataKeySelectOptionComponent extends PageComponent implemen
     removeSelectOption: EventEmitter<any>;
     private modelValue;
     private propagateChange;
-    selectOptionFormGroup: FormGroup;
-    constructor(store: Store<AppState>, translate: TranslateService, domSanitizer: DomSanitizer, fb: FormBuilder);
+    selectOptionFormGroup: UntypedFormGroup;
+    constructor(store: Store<AppState>, translate: TranslateService, domSanitizer: DomSanitizer, fb: UntypedFormBuilder);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -33,5 +33,5 @@ export declare class DataKeySelectOptionComponent extends PageComponent implemen
     selectOptionHtml(): SafeHtml;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<DataKeySelectOptionComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeySelectOptionComponent, "tb-datakey-select-option", never, { "disabled": "disabled"; "expanded": "expanded"; }, { "removeSelectOption": "removeSelectOption"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeySelectOptionComponent, "tb-datakey-select-option", never, { "disabled": "disabled"; "expanded": "expanded"; }, { "removeSelectOption": "removeSelectOption"; }, never, never, false>;
 }

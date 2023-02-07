@@ -1,5 +1,5 @@
 import { OnDestroy } from '@angular/core';
-import { ControlValueAccessor, FormArray, FormBuilder, FormGroup, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup, Validator } from '@angular/forms';
 import { AttributeName, AttributesNameValueMap } from './lwm2m-profile-config.models';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -12,19 +12,19 @@ export declare class Lwm2mAttributesKeyListComponent extends PageComponent imple
     attributeNameTranslationMap: Map<AttributeName, string>;
     disabled: boolean;
     isResource: boolean;
-    attributesValueFormGroup: FormGroup;
+    attributesValueFormGroup: UntypedFormGroup;
     private propagateChange;
     private valueChange$;
     private destroy$;
     private usedAttributesName;
-    constructor(store: Store<AppState>, fb: FormBuilder);
+    constructor(store: Store<AppState>, fb: UntypedFormBuilder);
     ngOnInit(): void;
     ngOnDestroy(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(keyValMap: AttributesNameValueMap): void;
-    attributesValueFormArray(): FormArray;
+    attributesValueFormArray(): UntypedFormArray;
     removeKeyVal(index: number): void;
     addKeyVal(): void;
     private createdFormGroup;
@@ -39,5 +39,5 @@ export declare class Lwm2mAttributesKeyListComponent extends PageComponent imple
     private updateUsedAttributesName;
     get isAddEnabled(): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<Lwm2mAttributesKeyListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mAttributesKeyListComponent, "tb-lwm2m-attributes-key-list", never, { "disabled": "disabled"; "isResource": "isResource"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mAttributesKeyListComponent, "tb-lwm2m-attributes-key-list", never, { "disabled": "disabled"; "isResource": "isResource"; }, {}, never, never, false>;
 }

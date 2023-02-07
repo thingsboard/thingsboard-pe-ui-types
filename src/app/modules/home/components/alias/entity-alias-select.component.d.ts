@@ -1,5 +1,5 @@
 import { AfterViewInit, ElementRef, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, FormGroupDirective, NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -20,7 +20,7 @@ export declare class EntityAliasSelectComponent implements ControlValueAccessor,
     translate: TranslateService;
     truncate: TruncatePipe;
     private fb;
-    selectEntityAliasFormGroup: FormGroup;
+    selectEntityAliasFormGroup: UntypedFormGroup;
     modelValue: string | null;
     aliasController: IAliasController;
     allowedEntityTypes: Array<EntityType>;
@@ -39,11 +39,11 @@ export declare class EntityAliasSelectComponent implements ControlValueAccessor,
     private dirty;
     private creatingEntityAlias;
     private propagateChange;
-    constructor(store: Store<AppState>, errorStateMatcher: ErrorStateMatcher, entityService: EntityService, translate: TranslateService, truncate: TruncatePipe, fb: FormBuilder);
+    constructor(store: Store<AppState>, errorStateMatcher: ErrorStateMatcher, entityService: EntityService, translate: TranslateService, truncate: TruncatePipe, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
-    isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean;
+    isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     ngAfterViewInit(): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: string | null): void;
@@ -56,5 +56,5 @@ export declare class EntityAliasSelectComponent implements ControlValueAccessor,
     entityAliasEnter($event: KeyboardEvent): void;
     createEntityAlias($event: Event, alias: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityAliasSelectComponent, [null, { skipSelf: true; }, null, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityAliasSelectComponent, "tb-entity-alias-select", never, { "aliasController": "aliasController"; "allowedEntityTypes": "allowedEntityTypes"; "callbacks": "callbacks"; "showLabel": "showLabel"; "tbRequired": "tbRequired"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityAliasSelectComponent, "tb-entity-alias-select", never, { "aliasController": "aliasController"; "allowedEntityTypes": "allowedEntityTypes"; "callbacks": "callbacks"; "showLabel": "showLabel"; "tbRequired": "tbRequired"; "disabled": "disabled"; }, {}, never, never, false>;
 }

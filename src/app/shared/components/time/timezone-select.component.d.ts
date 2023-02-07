@@ -1,6 +1,6 @@
 import { AfterViewInit, NgZone, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
-import { MatFormFieldAppearance } from '@angular/material/form-field/form-field';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -13,7 +13,7 @@ export declare class TimezoneSelectComponent implements ControlValueAccessor, On
     translate: TranslateService;
     private ngZone;
     private fb;
-    selectTimezoneFormGroup: FormGroup;
+    selectTimezoneFormGroup: UntypedFormGroup;
     modelValue: string | null;
     defaultTimezoneId: string;
     appearance: MatFormFieldAppearance;
@@ -36,7 +36,7 @@ export declare class TimezoneSelectComponent implements ControlValueAccessor, On
     private localBrowserTimezoneInfoPlaceholder;
     private timezones;
     private propagateChange;
-    constructor(store: Store<AppState>, translate: TranslateService, ngZone: NgZone, fb: FormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, ngZone: NgZone, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -52,5 +52,5 @@ export declare class TimezoneSelectComponent implements ControlValueAccessor, On
     private loadTimezones;
     private getLocalBrowserTimezoneInfoPlaceholder;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimezoneSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimezoneSelectComponent, "tb-timezone-select", never, { "appearance": "appearance"; "defaultTimezone": "defaultTimezone"; "required": "required"; "userTimezoneByDefault": "userTimezoneByDefault"; "localBrowserTimezonePlaceholderOnEmpty": "localBrowserTimezonePlaceholderOnEmpty"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimezoneSelectComponent, "tb-timezone-select", never, { "appearance": "appearance"; "defaultTimezone": "defaultTimezone"; "required": "required"; "userTimezoneByDefault": "userTimezoneByDefault"; "localBrowserTimezonePlaceholderOnEmpty": "localBrowserTimezonePlaceholderOnEmpty"; "disabled": "disabled"; }, {}, never, never, false>;
 }

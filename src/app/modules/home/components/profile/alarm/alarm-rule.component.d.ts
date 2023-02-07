@@ -1,5 +1,5 @@
 import { OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormControl, FormGroup, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { AlarmRule } from '@shared/models/device.models';
 import { MatDialog } from '@angular/material/dialog';
 import { EntityId } from '@shared/models/id/entity-id';
@@ -15,17 +15,17 @@ export declare class AlarmRuleComponent implements ControlValueAccessor, OnInit,
     set required(value: boolean);
     deviceProfileId: EntityId;
     private modelValue;
-    alarmRuleFormGroup: FormGroup;
+    alarmRuleFormGroup: UntypedFormGroup;
     expandAlarmDetails: boolean;
     private propagateChange;
-    constructor(dialog: MatDialog, utils: UtilsService, fb: FormBuilder);
+    constructor(dialog: MatDialog, utils: UtilsService, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: AlarmRule): void;
     openEditDetailsDialog($event: Event): void;
-    validate(c: FormControl): {
+    validate(c: UntypedFormControl): {
         alarmRule: {
             valid: boolean;
         };
@@ -33,5 +33,5 @@ export declare class AlarmRuleComponent implements ControlValueAccessor, OnInit,
     get alarmDetailsText(): string;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<AlarmRuleComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmRuleComponent, "tb-alarm-rule", never, { "disabled": "disabled"; "required": "required"; "deviceProfileId": "deviceProfileId"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmRuleComponent, "tb-alarm-rule", never, { "disabled": "disabled"; "required": "required"; "deviceProfileId": "deviceProfileId"; }, {}, never, never, false>;
 }

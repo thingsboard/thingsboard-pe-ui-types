@@ -2,7 +2,7 @@ import { OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DialogComponent } from '@shared/components/dialog.component';
 import { RoleType } from '@shared/models/security.models';
@@ -16,15 +16,15 @@ export declare class ViewRoleDialogComponent extends DialogComponent<ViewRoleDia
     protected router: Router;
     data: ViewRoleDialogData;
     dialogRef: MatDialogRef<ViewRoleDialogComponent>;
-    fb: FormBuilder;
-    roleFormGroup: FormGroup;
+    fb: UntypedFormBuilder;
+    roleFormGroup: UntypedFormGroup;
     role: Role;
     roleType: typeof RoleType;
     roleTypes: string[];
     roleTypeTranslations: Map<RoleType, string>;
-    constructor(store: Store<AppState>, router: Router, data: ViewRoleDialogData, dialogRef: MatDialogRef<ViewRoleDialogComponent>, fb: FormBuilder);
+    constructor(store: Store<AppState>, router: Router, data: ViewRoleDialogData, dialogRef: MatDialogRef<ViewRoleDialogComponent>, fb: UntypedFormBuilder);
     ngOnInit(): void;
     close(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ViewRoleDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ViewRoleDialogComponent, "tb-view-role-dialog", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ViewRoleDialogComponent, "tb-view-role-dialog", never, {}, {}, never, never, false>;
 }

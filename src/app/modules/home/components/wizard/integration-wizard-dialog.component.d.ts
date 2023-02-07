@@ -11,7 +11,7 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { StepperSelectionEvent } from '@angular/cdk/stepper';
 import { TranslateService } from '@ngx-translate/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Converter, ConverterType } from '@shared/models/converter.models';
 import { ConverterComponent } from '@home/components/converter/converter.component';
 import { ConverterService } from '@core/http/converter.service';
@@ -42,15 +42,15 @@ export declare class IntegrationWizardDialogComponent extends DialogComponent<In
     checkErrMsg: string;
     showDownlinkStep: boolean;
     stepperOrientation: Observable<StepperOrientation>;
-    integrationWizardForm: FormGroup;
-    uplinkConverterForm: FormGroup;
-    downlinkConverterForm: FormGroup;
-    integrationConfigurationForm: FormGroup;
+    integrationWizardForm: UntypedFormGroup;
+    uplinkConverterForm: UntypedFormGroup;
+    downlinkConverterForm: UntypedFormGroup;
+    integrationConfigurationForm: UntypedFormGroup;
     uplinkConverter: Converter;
     downlinkConverter: Converter;
     private checkConnectionAllow;
     private destroy$;
-    constructor(store: Store<AppState>, router: Router, data: IntegrationWizardData<Integration>, dialogRef: MatDialogRef<IntegrationWizardDialogComponent, Integration>, breakpointObserver: BreakpointObserver, converterService: ConverterService, integrationService: IntegrationService, translate: TranslateService, fb: FormBuilder);
+    constructor(store: Store<AppState>, router: Router, data: IntegrationWizardData<Integration>, dialogRef: MatDialogRef<IntegrationWizardDialogComponent, Integration>, breakpointObserver: BreakpointObserver, converterService: ConverterService, integrationService: IntegrationService, translate: TranslateService, fb: UntypedFormBuilder);
     ngAfterViewInit(): void;
     ngOnDestroy(): void;
     add(): void;
@@ -73,5 +73,5 @@ export declare class IntegrationWizardDialogComponent extends DialogComponent<In
     private generateSecret;
     private allValid;
     static ɵfac: i0.ɵɵFactoryDeclaration<IntegrationWizardDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<IntegrationWizardDialogComponent, "tb-integration-wizard", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<IntegrationWizardDialogComponent, "tb-integration-wizard", never, {}, {}, never, never, false>;
 }

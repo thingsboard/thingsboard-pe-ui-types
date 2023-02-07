@@ -28,5 +28,5 @@ export declare class StatesComponentDirective implements OnInit, OnDestroy, OnCh
     private init;
     private destroy;
     static ɵfac: i0.ɵɵFactoryDeclaration<StatesComponentDirective, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<StatesComponentDirective, "tb-states-component", never, { "statesControllerId": "statesControllerId"; "dashboardCtrl": "dashboardCtrl"; "dashboardId": "dashboardId"; "states": "states"; "state": "state"; "currentState": "currentState"; "syncStateWithQueryParam": "syncStateWithQueryParam"; "isMobile": "isMobile"; }, {}, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<StatesComponentDirective, "tb-states-component", never, { "statesControllerId": "statesControllerId"; "dashboardCtrl": "dashboardCtrl"; "dashboardId": "dashboardId"; "states": "states"; "state": "state"; "currentState": "currentState"; "syncStateWithQueryParam": "syncStateWithQueryParam"; "isMobile": "isMobile"; }, {}, never, never, false>;
 }

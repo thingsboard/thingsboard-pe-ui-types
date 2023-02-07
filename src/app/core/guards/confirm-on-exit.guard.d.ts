@@ -1,5 +1,5 @@
 import { ActivatedRouteSnapshot, CanDeactivate, RouterStateSnapshot } from '@angular/router';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { DialogService } from '@core/services/dialog.service';
@@ -7,7 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 import * as i0 from "@angular/core";
 export interface HasConfirmForm {
-    confirmForm(): FormGroup;
+    confirmForm(): UntypedFormGroup;
     onExit?(): Observable<any>;
 }
 export interface HasDirtyFlag {

@@ -1,5 +1,5 @@
 import { EventEmitter, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup, ValidatorFn } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, ValidatorFn } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -25,8 +25,8 @@ export declare class GpioItemComponent extends PageComponent implements OnInit, 
     removeGpioItem: EventEmitter<any>;
     private modelValue;
     private propagateChange;
-    gpioItemFormGroup: FormGroup;
-    constructor(store: Store<AppState>, translate: TranslateService, domSanitizer: DomSanitizer, fb: FormBuilder);
+    gpioItemFormGroup: UntypedFormGroup;
+    constructor(store: Store<AppState>, translate: TranslateService, domSanitizer: DomSanitizer, fb: UntypedFormBuilder);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -35,5 +35,5 @@ export declare class GpioItemComponent extends PageComponent implements OnInit, 
     gpioItemHtml(): SafeHtml;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<GpioItemComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<GpioItemComponent, "tb-gpio-item", never, { "disabled": "disabled"; "expanded": "expanded"; "hasColor": "hasColor"; }, { "removeGpioItem": "removeGpioItem"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GpioItemComponent, "tb-gpio-item", never, { "disabled": "disabled"; "expanded": "expanded"; "hasColor": "hasColor"; }, { "removeGpioItem": "removeGpioItem"; }, never, never, false>;
 }

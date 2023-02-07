@@ -12,5 +12,5 @@ export declare class DisplayColumnsPanelComponent {
     constructor(data: DisplayColumnsPanelData);
     update(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DisplayColumnsPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DisplayColumnsPanelComponent, "tb-display-columns-panel", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DisplayColumnsPanelComponent, "tb-display-columns-panel", never, {}, {}, never, never, false>;
 }

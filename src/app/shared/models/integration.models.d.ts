@@ -29,7 +29,8 @@ export declare enum IntegrationType {
     THINGPARK = "THINGPARK",
     TMOBILE_IOT_CDP = "TMOBILE_IOT_CDP",
     TPE = "TPE",
-    UDP = "UDP"
+    UDP = "UDP",
+    TUYA = "TUYA"
 }
 export declare enum CoapSecurityMode {
     NO_SECURE = "NO_SECURE",
@@ -47,7 +48,7 @@ export interface IntegrationTypeInfo {
     hideDownlink?: boolean;
 }
 export declare const integrationTypeInfoMap: Map<IntegrationType, IntegrationTypeInfo>;
-export declare type IntegrationConfiguration = ApachePulsarIntegration | HttpIntegration | ThingParkIntegration | LoriotIntegration | MqttIntegration | AwsIotIntegration | AwsSqsIntegration | AwsKinesisIntegration | IbmWatsonIotIntegration | TtnIntegration | ChipStackIntegration | AzureEventHubIntegration | AzureIotHubIntegration | OpcUaIntegration | UpdIntegration | TcpIntegration | KafkaIntegration | RabbitMqIntegration | PubSubIntegration | CoapIntegration | CustomIntegration;
+export declare type IntegrationConfiguration = ApachePulsarIntegration | HttpIntegration | ThingParkIntegration | LoriotIntegration | MqttIntegration | AwsIotIntegration | AwsSqsIntegration | AwsKinesisIntegration | IbmWatsonIotIntegration | TtnIntegration | ChipStackIntegration | AzureEventHubIntegration | AzureIotHubIntegration | OpcUaIntegration | UpdIntegration | TcpIntegration | KafkaIntegration | RabbitMqIntegration | PubSubIntegration | CoapIntegration | TuyaIntegration | CustomIntegration;
 export declare function getIntegrationHelpLink(integration: Integration): string;
 export interface IntegrationMetaData {
     metadata?: {
@@ -388,6 +389,25 @@ export interface RabbitMqIntegration {
         autoDelete: boolean;
     };
 }
+export declare enum TuyaRegion {
+    CN = "CN",
+    US = "US",
+    EU = "EU",
+    IN = "IN"
+}
+export declare enum TuyaEnv {
+    PROD = "PROD",
+    TEST = "TEST"
+}
+export interface TuyaIntegration {
+    clientConfiguration: {
+        region: TuyaRegion;
+        accessId: string;
+        accessKey: string;
+        env: TuyaEnv;
+    };
+}
+export declare const TuyaRegionTranslation: Map<TuyaRegion, string>;
 interface TcpHandlerConfiguration {
     handlerType: TcpHandlerConfigurationType;
 }

@@ -1,5 +1,5 @@
 import { OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormControl, FormGroup, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -16,16 +16,16 @@ export declare class TripAnimationPathSettingsComponent extends PageComponent im
     functionScopeVariables: string[];
     private modelValue;
     private propagateChange;
-    tripAnimationPathSettingsFormGroup: FormGroup;
+    tripAnimationPathSettingsFormGroup: UntypedFormGroup;
     polylineDecoratorSymbols: PolylineDecoratorSymbol[];
     polylineDecoratorSymbolTranslations: Map<PolylineDecoratorSymbol, string>;
-    constructor(store: Store<AppState>, translate: TranslateService, widgetService: WidgetService, fb: FormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, widgetService: WidgetService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: PolylineSettings): void;
-    validate(c: FormControl): {
+    validate(c: UntypedFormControl): {
         tripAnimationPathSettings: {
             valid: boolean;
         };
@@ -33,5 +33,5 @@ export declare class TripAnimationPathSettingsComponent extends PageComponent im
     private updateModel;
     private updateValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<TripAnimationPathSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TripAnimationPathSettingsComponent, "tb-trip-animation-path-settings", never, { "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TripAnimationPathSettingsComponent, "tb-trip-animation-path-settings", never, { "disabled": "disabled"; }, {}, never, never, false>;
 }

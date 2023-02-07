@@ -29,7 +29,7 @@ export declare class ToastDirective implements AfterViewInit, OnDestroy {
     private shouldDisplayMessage;
     ngOnDestroy(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ToastDirective, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<ToastDirective, "[tb-toast]", never, { "toastTarget": "toastTarget"; }, {}, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<ToastDirective, "[tb-toast]", never, { "toastTarget": "toastTarget"; }, {}, never, never, false>;
 }
 interface ToastPanelData {
     notification: NotificationMessage;
@@ -64,6 +64,6 @@ export declare class TbSnackBarComponent implements AfterViewInit, OnDestroy {
     action(event: MouseEvent): void;
     onHideFinished(event: AnimationEvent): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TbSnackBarComponent, [null, null, { optional: true; }]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TbSnackBarComponent, "tb-snack-bar-component", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TbSnackBarComponent, "tb-snack-bar-component", never, {}, {}, never, never, false>;
 }
 export {};

@@ -1,5 +1,5 @@
 import { OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup, ValidationErrors, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { DeviceTransportConfiguration, DeviceTransportType } from '@shared/models/device.models';
@@ -8,14 +8,14 @@ export declare class DeviceTransportConfigurationComponent implements ControlVal
     private store;
     private fb;
     deviceTransportType: typeof DeviceTransportType;
-    deviceTransportConfigurationFormGroup: FormGroup;
+    deviceTransportConfigurationFormGroup: UntypedFormGroup;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
     disabled: boolean;
     transportType: DeviceTransportType;
     private propagateChange;
-    constructor(store: Store<AppState>, fb: FormBuilder);
+    constructor(store: Store<AppState>, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -24,5 +24,5 @@ export declare class DeviceTransportConfigurationComponent implements ControlVal
     validate(): ValidationErrors | null;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceTransportConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceTransportConfigurationComponent, "tb-device-transport-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceTransportConfigurationComponent, "tb-device-transport-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
 }

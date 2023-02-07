@@ -1,12 +1,12 @@
 import { OnDestroy } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { AttributesNameValueMap } from './lwm2m-profile-config.models';
 import * as i0 from "@angular/core";
 export declare class Lwm2mAttributesComponent implements ControlValueAccessor, OnDestroy {
     private dialog;
     private fb;
-    attributesFormGroup: FormGroup;
+    attributesFormGroup: UntypedFormGroup;
     private requiredValue;
     private destroy$;
     isAttributeTelemetry: boolean;
@@ -15,7 +15,7 @@ export declare class Lwm2mAttributesComponent implements ControlValueAccessor, O
     isResource: boolean;
     set required(value: boolean);
     private propagateChange;
-    constructor(dialog: MatDialog, fb: FormBuilder);
+    constructor(dialog: MatDialog, fb: UntypedFormBuilder);
     ngOnDestroy(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -29,5 +29,5 @@ export declare class Lwm2mAttributesComponent implements ControlValueAccessor, O
     get iconButton(): string;
     editAttributesLwm2m: ($event: Event) => void;
     static ɵfac: i0.ɵɵFactoryDeclaration<Lwm2mAttributesComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mAttributesComponent, "tb-profile-lwm2m-attributes", never, { "isAttributeTelemetry": "isAttributeTelemetry"; "modelName": "modelName"; "disabled": "disabled"; "isResource": "isResource"; "required": "required"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mAttributesComponent, "tb-profile-lwm2m-attributes", never, { "isAttributeTelemetry": "isAttributeTelemetry"; "modelName": "modelName"; "disabled": "disabled"; "isResource": "isResource"; "required": "required"; }, {}, never, never, false>;
 }

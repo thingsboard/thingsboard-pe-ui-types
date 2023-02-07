@@ -1,5 +1,5 @@
 import { AfterViewInit, EventEmitter, OnDestroy, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { TranslateService } from '@ngx-translate/core';
@@ -11,7 +11,7 @@ export declare class OriginatorSelectComponent implements ControlValueAccessor, 
     private store;
     translate: TranslateService;
     private fb;
-    originatorFormGroup: FormGroup;
+    originatorFormGroup: UntypedFormGroup;
     modelValue: EntityId | null;
     allowedEntityTypes: Array<EntityType>;
     singleEntityText: string;
@@ -25,7 +25,7 @@ export declare class OriginatorSelectComponent implements ControlValueAccessor, 
     currentUser: import("../public-api").AuthUser;
     private loadData;
     private propagateChange;
-    constructor(store: Store<AppState>, translate: TranslateService, fb: FormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -40,5 +40,5 @@ export declare class OriginatorSelectComponent implements ControlValueAccessor, 
         groupOriginatorId: EntityId;
     } | null): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<OriginatorSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<OriginatorSelectComponent, "tb-originator-select", never, { "allowedEntityTypes": "allowedEntityTypes"; "singleEntityText": "singleEntityText"; "groupOfEntitiesText": "groupOfEntitiesText"; "entitiesGroupOwnerText": "entitiesGroupOwnerText"; "required": "required"; "disabled": "disabled"; }, { "currentGroupType": "currentGroupType"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<OriginatorSelectComponent, "tb-originator-select", never, { "allowedEntityTypes": "allowedEntityTypes"; "singleEntityText": "singleEntityText"; "groupOfEntitiesText": "groupOfEntitiesText"; "entitiesGroupOwnerText": "entitiesGroupOwnerText"; "required": "required"; "disabled": "disabled"; }, { "currentGroupType": "currentGroupType"; }, never, never, false>;
 }

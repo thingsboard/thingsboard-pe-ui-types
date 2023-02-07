@@ -3,7 +3,7 @@ import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { FormControl, FormGroupDirective, NgForm } from '@angular/forms';
+import { UntypedFormControl, FormGroupDirective, NgForm } from '@angular/forms';
 import { DialogComponent } from '@shared/components/dialog.component';
 import { Router } from '@angular/router';
 import { TenantProfile } from '@shared/models/tenant.model';
@@ -29,9 +29,9 @@ export declare class TenantProfileDialogComponent extends DialogComponent<Tenant
     tenantProfileComponent: TenantProfileComponent;
     constructor(store: Store<AppState>, router: Router, data: TenantProfileDialogData, dialogRef: MatDialogRef<TenantProfileDialogComponent, TenantProfile>, componentFactoryResolver: ComponentFactoryResolver, injector: Injector, errorStateMatcher: ErrorStateMatcher, tenantProfileService: TenantProfileService);
     ngAfterViewInit(): void;
-    isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean;
+    isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     cancel(): void;
     save(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TenantProfileDialogComponent, [null, null, null, null, null, null, { skipSelf: true; }, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TenantProfileDialogComponent, "tb-tenant-profile-dialog", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TenantProfileDialogComponent, "tb-tenant-profile-dialog", never, {}, {}, never, never, false>;
 }

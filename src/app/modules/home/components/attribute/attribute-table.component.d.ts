@@ -9,7 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogService } from '@core/services/dialog.service';
 import { EntityId } from '@shared/models/id/entity-id';
-import { AttributeData, LatestTelemetry, TelemetryType, toTelemetryType } from '@shared/models/telemetry/telemetry.models';
+import { AttributeData, LatestTelemetry, TelemetryType } from '@shared/models/telemetry/telemetry.models';
 import { AttributeDatasource } from '@home/models/datasource/attribute-datasource';
 import { AttributeService } from '@app/core/http/attribute.service';
 import { Overlay } from '@angular/cdk/overlay';
@@ -46,7 +46,7 @@ export declare class AttributeTableComponent extends PageComponent implements Af
     mode: 'default' | 'widget';
     attributeScopes: Array<string>;
     attributeScope: TelemetryType;
-    toTelemetryTypeFunc: typeof toTelemetryType;
+    toTelemetryTypeFunc: (val: string) => TelemetryType;
     displayedColumns: string[];
     pageLink: PageLink;
     textSearchMode: boolean;
@@ -99,5 +99,5 @@ export declare class AttributeTableComponent extends PageComponent implements Af
     addWidgetToDashboard(): void;
     exitWidgetMode(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AttributeTableComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AttributeTableComponent, "tb-attribute-table", never, { "disableAttributeScopeSelection": "disableAttributeScopeSelection"; "defaultAttributeScope": "defaultAttributeScope"; "active": "active"; "entityId": "entityId"; "entityName": "entityName"; "readonly": "readonly"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AttributeTableComponent, "tb-attribute-table", never, { "disableAttributeScopeSelection": "disableAttributeScopeSelection"; "defaultAttributeScope": "defaultAttributeScope"; "active": "active"; "entityId": "entityId"; "entityName": "entityName"; "readonly": "readonly"; }, {}, never, never, false>;
 }

@@ -53,5 +53,5 @@ export declare class GroupEntitiesTableComponent extends PageComponent implement
     private init;
     ngAfterViewInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<GroupEntitiesTableComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<GroupEntitiesTableComponent, "tb-group-entities-table", never, { "groupParams": "groupParams"; "entityGroup": "entityGroup"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GroupEntitiesTableComponent, "tb-group-entities-table", never, { "groupParams": "groupParams"; "entityGroup": "entityGroup"; }, {}, never, never, false>;
 }

@@ -18,5 +18,5 @@ export declare class GroupEntityTableHeaderComponent<T extends BaseData<HasId>> 
     protected setEntitiesTableConfig(entitiesTableConfig: GroupEntityTableConfig<T>): void;
     toggleGroupDetails(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<GroupEntityTableHeaderComponent<any>, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<GroupEntityTableHeaderComponent<any>, "tb-group-entity-table-header", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GroupEntityTableHeaderComponent<any>, "tb-group-entity-table-header", never, {}, {}, never, never, false>;
 }

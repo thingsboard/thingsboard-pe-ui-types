@@ -16,5 +16,5 @@ export declare class LegendComponent implements OnInit {
     legendKeys(): LegendKey[];
     getDataKeyLabel(label: string): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<LegendComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<LegendComponent, "tb-legend", never, { "legendConfig": "legendConfig"; "legendData": "legendData"; }, { "legendKeyHiddenChange": "legendKeyHiddenChange"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<LegendComponent, "tb-legend", never, { "legendConfig": "legendConfig"; "legendData": "legendData"; }, { "legendKeyHiddenChange": "legendKeyHiddenChange"; }, never, never, false>;
 }

@@ -1,5 +1,5 @@
 import { OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { TenantProfileConfiguration, TenantProfileType } from '@shared/models/tenant.model';
@@ -8,14 +8,14 @@ export declare class TenantProfileConfigurationComponent implements ControlValue
     private store;
     private fb;
     tenantProfileType: typeof TenantProfileType;
-    tenantProfileConfigurationFormGroup: FormGroup;
+    tenantProfileConfigurationFormGroup: UntypedFormGroup;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
     disabled: boolean;
     type: TenantProfileType;
     private propagateChange;
-    constructor(store: Store<AppState>, fb: FormBuilder);
+    constructor(store: Store<AppState>, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -23,5 +23,5 @@ export declare class TenantProfileConfigurationComponent implements ControlValue
     writeValue(value: TenantProfileConfiguration | null): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<TenantProfileConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TenantProfileConfigurationComponent, "tb-tenant-profile-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TenantProfileConfigurationComponent, "tb-tenant-profile-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
 }

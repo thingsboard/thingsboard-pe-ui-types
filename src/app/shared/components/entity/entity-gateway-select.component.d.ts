@@ -1,5 +1,5 @@
 import { ElementRef, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { Observable } from 'rxjs';
@@ -22,14 +22,14 @@ export declare class EntityGatewaySelectComponent implements ControlValueAccesso
     deviceName: string;
     isStateForm: boolean;
     private gatewayNameExist;
-    constructor(store: Store<AppState>, entityService: EntityService, dialogService: DialogService, deviceService: DeviceService, translate: TranslateService, fb: FormBuilder);
+    constructor(store: Store<AppState>, entityService: EntityService, dialogService: DialogService, deviceService: DeviceService, translate: TranslateService, fb: UntypedFormBuilder);
     private gatewayType;
     private dirty;
     private requiredValue;
     private gatewayList;
     searchText: string;
     filteredGateways: Observable<Array<Device>>;
-    selectDeviceGatewayFormGroup: FormGroup;
+    selectDeviceGatewayFormGroup: UntypedFormGroup;
     modelValue: string | null;
     deviceGatewayInput: ElementRef<HTMLInputElement>;
     private propagateChange;
@@ -49,5 +49,5 @@ export declare class EntityGatewaySelectComponent implements ControlValueAccesso
     private loadGatewayList;
     private updateView;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityGatewaySelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGatewaySelectComponent, "tb-entity-gateway-select", never, { "required": "required"; "newGatewayType": "newGatewayType"; "deviceName": "deviceName"; "isStateForm": "isStateForm"; }, { "gatewayNameExist": "gatewayNameExist"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGatewaySelectComponent, "tb-entity-gateway-select", never, { "required": "required"; "newGatewayType": "newGatewayType"; "deviceName": "deviceName"; "isStateForm": "isStateForm"; }, { "gatewayNameExist": "gatewayNameExist"; }, never, never, false>;
 }

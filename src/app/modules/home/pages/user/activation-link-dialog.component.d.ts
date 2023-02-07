@@ -21,5 +21,5 @@ export declare class ActivationLinkDialogComponent extends DialogComponent<Activ
     close(): void;
     onActivationLinkCopied(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ActivationLinkDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ActivationLinkDialogComponent, "tb-activation-link-dialog", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ActivationLinkDialogComponent, "tb-activation-link-dialog", never, {}, {}, never, never, false>;
 }

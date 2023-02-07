@@ -8,9 +8,9 @@ export declare abstract class IntegrationForm implements OnDestroy {
     private allowLocalNetworkValue;
     get allowLocalNetwork(): boolean;
     set allowLocalNetwork(value: boolean);
-    protected destroy$: Subject<unknown>;
+    protected destroy$: Subject<void>;
     protected updatedValidationPrivateNetwork(): void;
     ngOnDestroy(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<IntegrationForm, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<IntegrationForm, never, never, { "executeRemotelyTemplate": "executeRemotelyTemplate"; "genericAdditionalInfoTemplate": "genericAdditionalInfoTemplate"; "disabled": "disabled"; "allowLocalNetwork": "allowLocalNetwork"; }, {}, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<IntegrationForm, never, never, { "executeRemotelyTemplate": "executeRemotelyTemplate"; "genericAdditionalInfoTemplate": "genericAdditionalInfoTemplate"; "disabled": "disabled"; "allowLocalNetwork": "allowLocalNetwork"; }, {}, never, never, false>;
 }

@@ -1,5 +1,5 @@
 import { ElementRef, EventEmitter, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup, ValidationErrors, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { ObjectLwM2M } from './lwm2m-profile-config.models';
 import { DeviceProfileService } from '@core/http/device-profile.service';
@@ -11,7 +11,7 @@ export declare class Lwm2mObjectListComponent implements ControlValueAccessor, O
     private fb;
     private requiredValue;
     private dirty;
-    lwm2mListFormGroup: FormGroup;
+    lwm2mListFormGroup: UntypedFormGroup;
     objectsList: Array<ObjectLwM2M>;
     filteredObjectsList: Observable<Array<ObjectLwM2M>>;
     disabled: boolean;
@@ -22,7 +22,7 @@ export declare class Lwm2mObjectListComponent implements ControlValueAccessor, O
     removeList: EventEmitter<any>;
     objectInput: ElementRef<HTMLInputElement>;
     private propagateChange;
-    constructor(truncate: TruncatePipe, deviceProfileService: DeviceProfileService, fb: FormBuilder);
+    constructor(truncate: TruncatePipe, deviceProfileService: DeviceProfileService, fb: UntypedFormBuilder);
     private updateValidators;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -38,5 +38,5 @@ export declare class Lwm2mObjectListComponent implements ControlValueAccessor, O
     textIsNotEmpty(text: string): boolean;
     private clear;
     static ɵfac: i0.ɵɵFactoryDeclaration<Lwm2mObjectListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mObjectListComponent, "tb-profile-lwm2m-object-list", never, { "required": "required"; }, { "addList": "addList"; "removeList": "removeList"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mObjectListComponent, "tb-profile-lwm2m-object-list", never, { "required": "required"; }, { "addList": "addList"; "removeList": "removeList"; }, never, never, false>;
 }

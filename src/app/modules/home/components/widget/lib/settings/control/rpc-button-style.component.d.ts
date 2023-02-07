@@ -1,5 +1,5 @@
 import { OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -16,8 +16,8 @@ export declare class RpcButtonStyleComponent extends PageComponent implements On
     disabled: boolean;
     private modelValue;
     private propagateChange;
-    rpcButtonStyleFormGroup: FormGroup;
-    constructor(store: Store<AppState>, fb: FormBuilder);
+    rpcButtonStyleFormGroup: UntypedFormGroup;
+    constructor(store: Store<AppState>, fb: UntypedFormBuilder);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -25,5 +25,5 @@ export declare class RpcButtonStyleComponent extends PageComponent implements On
     writeValue(value: RpcButtonStyle): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<RpcButtonStyleComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RpcButtonStyleComponent, "tb-rpc-button-style", never, { "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RpcButtonStyleComponent, "tb-rpc-button-style", never, { "disabled": "disabled"; }, {}, never, never, false>;
 }

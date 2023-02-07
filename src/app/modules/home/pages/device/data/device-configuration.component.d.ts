@@ -1,5 +1,5 @@
 import { OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { DeviceConfiguration, DeviceProfileType } from '@shared/models/device.models';
@@ -8,14 +8,14 @@ export declare class DeviceConfigurationComponent implements ControlValueAccesso
     private store;
     private fb;
     deviceProfileType: typeof DeviceProfileType;
-    deviceConfigurationFormGroup: FormGroup;
+    deviceConfigurationFormGroup: UntypedFormGroup;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
     disabled: boolean;
     type: DeviceProfileType;
     private propagateChange;
-    constructor(store: Store<AppState>, fb: FormBuilder);
+    constructor(store: Store<AppState>, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -23,5 +23,5 @@ export declare class DeviceConfigurationComponent implements ControlValueAccesso
     writeValue(value: DeviceConfiguration | null): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceConfigurationComponent, "tb-device-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceConfigurationComponent, "tb-device-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
 }

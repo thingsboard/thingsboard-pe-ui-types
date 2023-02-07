@@ -1,5 +1,5 @@
 import { ElementRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -27,12 +27,12 @@ export declare class DeviceKeyAutocompleteComponent extends PageComponent implem
     dataKeyType: typeof DataKeyType;
     private modelValue;
     private propagateChange;
-    deviceKeyFormGroup: FormGroup;
+    deviceKeyFormGroup: UntypedFormGroup;
     filteredKeys: Observable<Array<string>>;
     keySearchText: string;
     private latestKeySearchResult;
     private keysFetchObservable$;
-    constructor(store: Store<AppState>, translate: TranslateService, entityService: EntityService, fb: FormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, entityService: EntityService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
     registerOnChange(fn: any): void;
@@ -48,5 +48,5 @@ export declare class DeviceKeyAutocompleteComponent extends PageComponent implem
     private fetchEntityKeys;
     private createKeyFilter;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceKeyAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceKeyAutocompleteComponent, "tb-device-key-autocomplete", never, { "disabled": "disabled"; "aliasController": "aliasController"; "targetDeviceAliasId": "targetDeviceAliasId"; "keyType": "keyType"; "attributeLabel": "attributeLabel"; "timeseriesLabel": "timeseriesLabel"; "required": "required"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceKeyAutocompleteComponent, "tb-device-key-autocomplete", never, { "disabled": "disabled"; "aliasController": "aliasController"; "targetDeviceAliasId": "targetDeviceAliasId"; "keyType": "keyType"; "attributeLabel": "attributeLabel"; "timeseriesLabel": "timeseriesLabel"; "required": "required"; }, {}, never, never, false>;
 }

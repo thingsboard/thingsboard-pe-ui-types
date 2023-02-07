@@ -72,7 +72,7 @@ export declare class EntityVersionsTableComponent extends PageComponent implemen
     updateData(): void;
     private resetSortAndFilter;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityVersionsTableComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityVersionsTableComponent, "tb-entity-versions-table", never, { "singleEntityMode": "singleEntityMode"; "popoverComponent": "popoverComponent"; "onBeforeCreateVersion": "onBeforeCreateVersion"; "active": "active"; "externalEntityId": "externalEntityId"; "entityId": "entityId"; "groupType": "groupType"; "entityName": "entityName"; }, { "versionRestored": "versionRestored"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityVersionsTableComponent, "tb-entity-versions-table", never, { "singleEntityMode": "singleEntityMode"; "popoverComponent": "popoverComponent"; "onBeforeCreateVersion": "onBeforeCreateVersion"; "active": "active"; "externalEntityId": "externalEntityId"; "entityId": "entityId"; "groupType": "groupType"; "entityName": "entityName"; }, { "versionRestored": "versionRestored"; }, never, never, false>;
 }
 declare class EntityVersionsDatasource implements DataSource<EntityVersion> {
     private entitiesVersionControlService;

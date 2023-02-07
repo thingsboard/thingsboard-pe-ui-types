@@ -24,5 +24,5 @@ export declare class CustomSchedulerEventConfigComponent extends PageComponent i
     private updateFormsDisabledState;
     private validate;
     static ɵfac: i0.ɵɵFactoryDeclaration<CustomSchedulerEventConfigComponent, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<CustomSchedulerEventConfigComponent, never, never, {}, {}, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<CustomSchedulerEventConfigComponent, never, never, {}, {}, never, never, false>;
 }

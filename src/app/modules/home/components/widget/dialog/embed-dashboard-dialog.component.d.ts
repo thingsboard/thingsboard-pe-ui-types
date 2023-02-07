@@ -32,5 +32,5 @@ export declare class EmbedDashboardDialogComponent extends DialogComponent<Embed
     ngOnInit(): void;
     close(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EmbedDashboardDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EmbedDashboardDialogComponent, "tb-embed-dashboard-dialog", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EmbedDashboardDialogComponent, "tb-embed-dashboard-dialog", never, {}, {}, never, never, false>;
 }

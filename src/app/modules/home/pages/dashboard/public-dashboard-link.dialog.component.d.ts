@@ -2,7 +2,7 @@ import { OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { DashboardService } from '@core/http/dashboard.service';
 import { TranslateService } from '@ngx-translate/core';
 import { DialogComponent } from '@shared/components/dialog.component';
@@ -21,14 +21,14 @@ export declare class PublicDashboardLinkDialogComponent extends DialogComponent<
     translate: TranslateService;
     private dashboardService;
     dialogRef: MatDialogRef<PublicDashboardLinkDialogComponent>;
-    fb: FormBuilder;
+    fb: UntypedFormBuilder;
     dashboard: ShortEntityView | DashboardInfo;
     entityGroup: EntityGroupInfo;
     publicLink: string;
-    constructor(store: Store<AppState>, router: Router, data: PublicDashboardLinkDialogData, translate: TranslateService, dashboardService: DashboardService, dialogRef: MatDialogRef<PublicDashboardLinkDialogComponent>, fb: FormBuilder);
+    constructor(store: Store<AppState>, router: Router, data: PublicDashboardLinkDialogData, translate: TranslateService, dashboardService: DashboardService, dialogRef: MatDialogRef<PublicDashboardLinkDialogComponent>, fb: UntypedFormBuilder);
     ngOnInit(): void;
     close(): void;
     onPublicLinkCopied($event: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<PublicDashboardLinkDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PublicDashboardLinkDialogComponent, "tb-public-dashboard-link-dialog", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PublicDashboardLinkDialogComponent, "tb-public-dashboard-link-dialog", never, {}, {}, never, never, false>;
 }

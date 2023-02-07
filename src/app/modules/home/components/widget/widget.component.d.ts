@@ -143,5 +143,5 @@ export declare class WidgetComponent extends PageComponent implements OnInit, Af
     private getActiveEntityInfo;
     private checkSize;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetComponent, "tb-widget", never, { "isEdit": "isEdit"; "isMobile": "isMobile"; "dashboardWidget": "dashboardWidget"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetComponent, "tb-widget", never, { "isEdit": "isEdit"; "isMobile": "isMobile"; "dashboardWidget": "dashboardWidget"; }, {}, never, never, false>;
 }

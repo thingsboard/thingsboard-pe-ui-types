@@ -51,5 +51,5 @@ export declare class EntityStateControllerComponent extends StateControllerCompo
     private isEntityResolved;
     private getStateObjById;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityStateControllerComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityStateControllerComponent, "tb-entity-state-controller", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityStateControllerComponent, "tb-entity-state-controller", never, {}, {}, never, never, false>;
 }

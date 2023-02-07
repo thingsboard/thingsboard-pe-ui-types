@@ -1,5 +1,5 @@
 import { OnDestroy, OnInit } from '@angular/core';
-import { AbstractControl, FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { AbstractControl, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { DomainSchema, MapperConfigType, OAuth2Info, PlatformType } from '@shared/models/oauth2.models';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -19,15 +19,15 @@ export declare class OAuth2SettingsComponent extends PageComponent implements On
     private dialogService;
     private translate;
     private window;
-    constructor(store: Store<AppState>, route: ActivatedRoute, oauth2Service: OAuth2Service, fb: FormBuilder, dialogService: DialogService, translate: TranslateService, window: Window);
-    get oauth2ParamsInfos(): FormArray;
+    constructor(store: Store<AppState>, route: ActivatedRoute, oauth2Service: OAuth2Service, fb: UntypedFormBuilder, dialogService: DialogService, translate: TranslateService, window: Window);
+    get oauth2ParamsInfos(): UntypedFormArray;
     private URL_REGEXP;
     private DOMAIN_AND_PORT_REGEXP;
     private subscriptions;
     private templates;
     private defaultProvider;
     readonly separatorKeysCodes: number[];
-    oauth2SettingsForm: FormGroup;
+    oauth2SettingsForm: UntypedFormGroup;
     oauth2Info: OAuth2Info;
     clientAuthenticationMethods: string[];
     mapperConfigType: typeof MapperConfigType;
@@ -57,14 +57,14 @@ export declare class OAuth2SettingsComponent extends PageComponent implements On
     private setProviderDefaultValue;
     private changeMapperConfigType;
     save(): void;
-    confirmForm(): FormGroup;
+    confirmForm(): UntypedFormGroup;
     addChipValue(event: MatChipInputEvent, control: AbstractControl, fieldName: string): void;
     removeChipValue(i: number, control: AbstractControl, fieldName: string): void;
     addOAuth2ParamsInfo(): void;
     deleteOAuth2ParamsInfo($event: Event, index: number): void;
-    clientRegistrations(control: AbstractControl): FormArray;
-    domainInfos(control: AbstractControl): FormArray;
-    mobileInfos(control: AbstractControl): FormArray;
+    clientRegistrations(control: AbstractControl): UntypedFormArray;
+    domainInfos(control: AbstractControl): UntypedFormArray;
+    mobileInfos(control: AbstractControl): UntypedFormArray;
     addRegistration(control: AbstractControl): void;
     deleteRegistration($event: Event, control: AbstractControl, index: number): void;
     toggleEditMode(control: AbstractControl, path: string): void;
@@ -79,5 +79,5 @@ export declare class OAuth2SettingsComponent extends PageComponent implements On
     redirectURIMixed(control: AbstractControl): string;
     trackByParams(index: number): number;
     static ɵfac: i0.ɵɵFactoryDeclaration<OAuth2SettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<OAuth2SettingsComponent, "tb-oauth2-settings", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<OAuth2SettingsComponent, "tb-oauth2-settings", never, {}, {}, never, never, false>;
 }

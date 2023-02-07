@@ -1,5 +1,5 @@
 import { BaseData, HasId } from '@shared/models/base-data';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { ChangeDetectorRef, EventEmitter, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
@@ -10,11 +10,11 @@ import { PageLink } from '@shared/models/page/page-link';
 import * as i0 from "@angular/core";
 export declare abstract class EntityComponent<T extends BaseData<HasId>, P extends PageLink = PageLink, L extends BaseData<HasId> = T, C extends EntityTableConfig<T, P, L> = EntityTableConfig<T, P, L>> extends PageComponent implements OnInit {
     protected store: Store<AppState>;
-    protected fb: FormBuilder;
+    protected fb: UntypedFormBuilder;
     protected entityValue: T;
     protected entitiesTableConfigValue: C;
     protected cd: ChangeDetectorRef;
-    entityForm: FormGroup;
+    entityForm: UntypedFormGroup;
     isEditValue: boolean;
     isDetailsPage: boolean;
     set entitiesTableConfig(entitiesTableConfig: C);
@@ -25,15 +25,15 @@ export declare abstract class EntityComponent<T extends BaseData<HasId>, P exten
     set entity(entity: T);
     get entity(): T;
     entityAction: EventEmitter<EntityAction<T>>;
-    protected constructor(store: Store<AppState>, fb: FormBuilder, entityValue: T, entitiesTableConfigValue: C, cd: ChangeDetectorRef);
+    protected constructor(store: Store<AppState>, fb: UntypedFormBuilder, entityValue: T, entitiesTableConfigValue: C, cd: ChangeDetectorRef);
     ngOnInit(): void;
     onEntityAction($event: Event, action: string): void;
     updateFormState(): void;
     entityFormValue(): any;
     prepareFormValue(formValue: any): any;
     protected setEntitiesTableConfig(entitiesTableConfig: C): void;
-    abstract buildForm(entity: T): FormGroup;
+    abstract buildForm(entity: T): UntypedFormGroup;
     abstract updateForm(entity: T): any;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityComponent<any, any, any, any>, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<EntityComponent<any, any, any, any>, never, never, { "entitiesTableConfig": "entitiesTableConfig"; "isEdit": "isEdit"; "entity": "entity"; }, { "entityAction": "entityAction"; }, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<EntityComponent<any, any, any, any>, never, never, { "entitiesTableConfig": "entitiesTableConfig"; "isEdit": "isEdit"; "entity": "entity"; }, { "entityAction": "entityAction"; }, never, never, false>;
 }

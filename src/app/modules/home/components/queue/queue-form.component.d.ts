@@ -1,5 +1,5 @@
 import { OnDestroy, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormControl, FormGroup, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { UtilsService } from '@core/services/utils.service';
 import { QueueInfo, QueueProcessingStrategyTypes, QueueSubmitStrategyTypes } from '@shared/models/queue.models';
 import * as i0 from "@angular/core";
@@ -9,7 +9,7 @@ export declare class QueueFormComponent implements ControlValueAccessor, OnInit,
     disabled: boolean;
     newQueue: boolean;
     systemQueue: boolean;
-    queueFormGroup: FormGroup;
+    queueFormGroup: UntypedFormGroup;
     hideBatchSize: boolean;
     queueSubmitStrategyTypes: typeof QueueSubmitStrategyTypes;
     queueProcessingStrategyTypes: typeof QueueProcessingStrategyTypes;
@@ -21,14 +21,14 @@ export declare class QueueFormComponent implements ControlValueAccessor, OnInit,
     private propagateChange;
     private propagateChangePending;
     private valueChange$;
-    constructor(utils: UtilsService, fb: FormBuilder);
+    constructor(utils: UtilsService, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
     ngOnDestroy(): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: QueueInfo): void;
-    validate(c: FormControl): {
+    validate(c: UntypedFormControl): {
         queue: {
             valid: boolean;
         };
@@ -36,5 +36,5 @@ export declare class QueueFormComponent implements ControlValueAccessor, OnInit,
     private updateModel;
     submitStrategyTypeChanged(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<QueueFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<QueueFormComponent, "tb-queue-form", never, { "disabled": "disabled"; "newQueue": "newQueue"; "systemQueue": "systemQueue"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<QueueFormComponent, "tb-queue-form", never, { "disabled": "disabled"; "newQueue": "newQueue"; "systemQueue": "systemQueue"; }, {}, never, never, false>;
 }

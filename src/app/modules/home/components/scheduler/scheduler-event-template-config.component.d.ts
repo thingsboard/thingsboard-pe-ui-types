@@ -35,5 +35,5 @@ export declare class SchedulerEventTemplateConfigComponent implements ControlVal
     writeValue(value: SchedulerEventConfiguration | null): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<SchedulerEventTemplateConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SchedulerEventTemplateConfigComponent, "tb-scheduler-event-template-config", never, { "disabled": "disabled"; "schedulerEventConfigTypes": "schedulerEventConfigTypes"; "schedulerEventType": "schedulerEventType"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SchedulerEventTemplateConfigComponent, "tb-scheduler-event-template-config", never, { "disabled": "disabled"; "schedulerEventConfigTypes": "schedulerEventConfigTypes"; "schedulerEventType": "schedulerEventType"; }, {}, never, never, false>;
 }

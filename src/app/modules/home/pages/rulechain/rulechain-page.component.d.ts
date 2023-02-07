@@ -3,7 +3,7 @@ import { AfterViewInit, ElementRef, EventEmitter, OnDestroy, OnInit, QueryList, 
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, FormGroupDirective, NgForm } from '@angular/forms';
 import { HasDirtyFlag } from '@core/guards/confirm-on-exit.guard';
 import { TranslateService } from '@ngx-translate/core';
 import { ErrorStateMatcher } from '@angular/material/core';
@@ -44,7 +44,7 @@ export declare class RuleChainPageComponent extends PageComponent implements Aft
     private viewContainerRef;
     dialog: MatDialog;
     dialogService: DialogService;
-    fb: FormBuilder;
+    fb: UntypedFormBuilder;
     get isDirty(): boolean;
     set isDirty(value: boolean);
     width: string;
@@ -134,7 +134,7 @@ export declare class RuleChainPageComponent extends PageComponent implements Aft
     updateBreadcrumbs: EventEmitter<any>;
     private rxSubscription;
     private tooltipTimeout;
-    constructor(store: Store<AppState>, route: ActivatedRoute, router: Router, ruleChainService: RuleChainService, authService: AuthService, translate: TranslateService, itembuffer: ItemBufferService, userPermissionsService: UserPermissionsService, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, dialog: MatDialog, dialogService: DialogService, fb: FormBuilder);
+    constructor(store: Store<AppState>, route: ActivatedRoute, router: Router, ruleChainService: RuleChainService, authService: AuthService, translate: TranslateService, itembuffer: ItemBufferService, userPermissionsService: UserPermissionsService, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, dialog: MatDialog, dialogService: DialogService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     ngOnDestroy(): void;
@@ -189,7 +189,7 @@ export declare class RuleChainPageComponent extends PageComponent implements Aft
     private updateErrorTooltips;
     private displayTooltip;
     static ɵfac: i0.ɵɵFactoryDeclaration<RuleChainPageComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RuleChainPageComponent, "tb-rulechain-page", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RuleChainPageComponent, "tb-rulechain-page", never, {}, {}, never, never, false>;
 }
 export interface AddRuleNodeLinkDialogData {
     link: FcRuleEdge;
@@ -206,7 +206,7 @@ export declare class AddRuleNodeLinkDialogComponent extends DialogComponent<AddR
     private errorStateMatcher;
     dialogRef: MatDialogRef<AddRuleNodeLinkDialogComponent, FcRuleEdge>;
     private fb;
-    ruleNodeLinkFormGroup: FormGroup;
+    ruleNodeLinkFormGroup: UntypedFormGroup;
     link: FcRuleEdge;
     labels: {
         [label: string]: LinkLabel;
@@ -214,13 +214,13 @@ export declare class AddRuleNodeLinkDialogComponent extends DialogComponent<AddR
     allowCustomLabels: boolean;
     sourceRuleChainId: string;
     submitted: boolean;
-    constructor(store: Store<AppState>, router: Router, data: AddRuleNodeLinkDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<AddRuleNodeLinkDialogComponent, FcRuleEdge>, fb: FormBuilder);
+    constructor(store: Store<AppState>, router: Router, data: AddRuleNodeLinkDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<AddRuleNodeLinkDialogComponent, FcRuleEdge>, fb: UntypedFormBuilder);
     ngOnInit(): void;
-    isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean;
+    isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     cancel(): void;
     add(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AddRuleNodeLinkDialogComponent, [null, null, null, { skipSelf: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AddRuleNodeLinkDialogComponent, "tb-add-rule-node-link-dialog", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AddRuleNodeLinkDialogComponent, "tb-add-rule-node-link-dialog", never, {}, {}, never, never, false>;
 }
 export interface AddRuleNodeDialogData {
     ruleNode: FcRuleNode;
@@ -240,12 +240,12 @@ export declare class AddRuleNodeDialogComponent extends DialogComponent<AddRuleN
     submitted: boolean;
     constructor(store: Store<AppState>, router: Router, data: AddRuleNodeDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<AddRuleNodeDialogComponent, FcRuleNode>);
     ngOnInit(): void;
-    isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean;
+    isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     helpLinkIdForRuleNodeType(): string;
     cancel(): void;
     add(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AddRuleNodeDialogComponent, [null, null, null, { skipSelf: true; }, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AddRuleNodeDialogComponent, "tb-add-rule-node-dialog", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AddRuleNodeDialogComponent, "tb-add-rule-node-dialog", never, {}, {}, never, never, false>;
 }
 export interface CreateNestedRuleChainDialogData {
     ruleChainType: RuleChainType;
@@ -258,13 +258,13 @@ export declare class CreateNestedRuleChainDialogComponent extends DialogComponen
     private fb;
     private ruleChainService;
     dialogRef: MatDialogRef<CreateNestedRuleChainDialogComponent, RuleChain>;
-    createNestedRuleChainFormGroup: FormGroup;
+    createNestedRuleChainFormGroup: UntypedFormGroup;
     submitted: boolean;
-    constructor(store: Store<AppState>, router: Router, data: CreateNestedRuleChainDialogData, errorStateMatcher: ErrorStateMatcher, fb: FormBuilder, ruleChainService: RuleChainService, dialogRef: MatDialogRef<CreateNestedRuleChainDialogComponent, RuleChain>);
+    constructor(store: Store<AppState>, router: Router, data: CreateNestedRuleChainDialogData, errorStateMatcher: ErrorStateMatcher, fb: UntypedFormBuilder, ruleChainService: RuleChainService, dialogRef: MatDialogRef<CreateNestedRuleChainDialogComponent, RuleChain>);
     ngOnInit(): void;
-    isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean;
+    isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     cancel(): void;
     add(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<CreateNestedRuleChainDialogComponent, [null, null, null, { skipSelf: true; }, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CreateNestedRuleChainDialogComponent, "tb-create-nested-rulechain-dialog", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CreateNestedRuleChainDialogComponent, "tb-create-nested-rulechain-dialog", never, {}, {}, never, never, false>;
 }

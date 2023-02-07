@@ -3,7 +3,7 @@ import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { DataKey, Datasource, DatasourceType, JsonSettingsSchema, Widget, widgetType } from '@shared/models/widget.models';
-import { ControlValueAccessor, FormArray, FormBuilder, FormControl, FormGroup, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { WidgetConfigComponentData } from '@home/models/widget-component.models';
 import { AlarmSearchStatus, AlarmSeverity } from '@shared/models/alarm.models';
 import { IAliasController } from '@core/api/widget-api.models';
@@ -50,13 +50,13 @@ export declare class WidgetConfigComponent extends PageComponent implements OnIn
     modelValue: WidgetConfigComponentData;
     showLegendFieldset: boolean;
     private propagateChange;
-    dataSettings: FormGroup;
-    targetDeviceSettings: FormGroup;
-    alarmSourceSettings: FormGroup;
-    widgetSettings: FormGroup;
-    layoutSettings: FormGroup;
-    advancedSettings: FormGroup;
-    actionsSettings: FormGroup;
+    dataSettings: UntypedFormGroup;
+    targetDeviceSettings: UntypedFormGroup;
+    alarmSourceSettings: UntypedFormGroup;
+    widgetSettings: UntypedFormGroup;
+    layoutSettings: UntypedFormGroup;
+    advancedSettings: UntypedFormGroup;
+    actionsSettings: UntypedFormGroup;
     openExtensionPanel: boolean;
     timeseriesKeyError: boolean;
     datasourceError: string[];
@@ -67,13 +67,13 @@ export declare class WidgetConfigComponent extends PageComponent implements OnIn
     private layoutSettingsSubscription;
     private advancedSettingsSubscription;
     private actionsSettingsSubscription;
-    constructor(store: Store<AppState>, utils: UtilsService, entityService: EntityService, dialog: MatDialog, translate: TranslateService, fb: FormBuilder);
+    constructor(store: Store<AppState>, utils: UtilsService, entityService: EntityService, dialog: MatDialog, translate: TranslateService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     ngOnDestroy(): void;
     private removeChangeSubscriptions;
     private createChangeSubscriptions;
     private buildForms;
-    datasourcesFormArray(): FormArray;
+    datasourcesFormArray(): UntypedFormArray;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
@@ -104,7 +104,7 @@ export declare class WidgetConfigComponent extends PageComponent implements OnIn
     private fetchEntityKeys;
     private fetchDashboardStates;
     private createFilterForDashboardState;
-    validate(c: FormControl): {
+    validate(c: UntypedFormControl): {
         dataSettings: {
             valid: boolean;
         };
@@ -195,5 +195,5 @@ export declare class WidgetConfigComponent extends PageComponent implements OnIn
     };
     extensionPanelIsOpen(value: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetConfigComponent, "tb-widget-config", never, { "forceExpandDatasources": "forceExpandDatasources"; "aliasController": "aliasController"; "dashboard": "dashboard"; "widget": "widget"; "functionsOnly": "functionsOnly"; "disabled": "disabled"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetConfigComponent, "tb-widget-config", never, { "forceExpandDatasources": "forceExpandDatasources"; "aliasController": "aliasController"; "dashboard": "dashboard"; "widget": "widget"; "functionsOnly": "functionsOnly"; "disabled": "disabled"; }, {}, never, never, false>;
 }

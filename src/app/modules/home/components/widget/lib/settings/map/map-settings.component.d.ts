@@ -1,5 +1,5 @@
 import { OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormControl, FormGroup, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -19,14 +19,14 @@ export declare class MapSettingsComponent extends PageComponent implements OnIni
     mapProvider: typeof MapProviders;
     private modelValue;
     private propagateChange;
-    mapSettingsFormGroup: FormGroup;
-    constructor(store: Store<AppState>, translate: TranslateService, fb: FormBuilder);
+    mapSettingsFormGroup: UntypedFormGroup;
+    constructor(store: Store<AppState>, translate: TranslateService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: UnitedMapSettings): void;
-    validate(c: FormControl): {
+    validate(c: UntypedFormControl): {
         mapSettings: {
             valid: boolean;
         };
@@ -35,5 +35,5 @@ export declare class MapSettingsComponent extends PageComponent implements OnIni
     displayEditorSettings(): boolean;
     private updateValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<MapSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MapSettingsComponent, "tb-map-settings", never, { "disabled": "disabled"; "aliasController": "aliasController"; "widget": "widget"; "routeMap": "routeMap"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MapSettingsComponent, "tb-map-settings", never, { "disabled": "disabled"; "aliasController": "aliasController"; "widget": "widget"; "routeMap": "routeMap"; }, {}, never, never, false>;
 }

@@ -1,8 +1,8 @@
 import { OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup, ValidationErrors, Validator, ValidatorFn } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator, ValidatorFn } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { Country, CountryData } from '@shared/models/country.models';
-import { FloatLabelType, MatFormFieldAppearance } from '@angular/material/form-field/form-field';
+import { FloatLabelType, MatFormFieldAppearance } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class PhoneInputComponent implements OnInit, ControlValueAccessor, Validator {
     private translate;
@@ -20,7 +20,7 @@ export declare class PhoneInputComponent implements OnInit, ControlValueAccessor
     allCountries: Array<Country>;
     phonePlaceholder: string;
     flagIcon: string;
-    phoneFormGroup: FormGroup;
+    phoneFormGroup: UntypedFormGroup;
     private isLoading;
     get isLoad(): boolean;
     set isLoad(value: boolean);
@@ -33,7 +33,7 @@ export declare class PhoneInputComponent implements OnInit, ControlValueAccessor
     private changeSubscriptions;
     private validators;
     private propagateChange;
-    constructor(translate: TranslateService, fb: FormBuilder, countryCodeData: CountryData);
+    constructor(translate: TranslateService, fb: UntypedFormBuilder, countryCodeData: CountryData);
     ngOnInit(): void;
     ngOnDestroy(): void;
     focus(): void;
@@ -50,5 +50,5 @@ export declare class PhoneInputComponent implements OnInit, ControlValueAccessor
     writeValue(phoneNumber: any): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<PhoneInputComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PhoneInputComponent, "tb-phone-input", never, { "disabled": "disabled"; "defaultCountry": "defaultCountry"; "enableFlagsSelect": "enableFlagsSelect"; "required": "required"; "floatLabel": "floatLabel"; "appearance": "appearance"; "placeholder": "placeholder"; "label": "label"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PhoneInputComponent, "tb-phone-input", never, { "disabled": "disabled"; "defaultCountry": "defaultCountry"; "enableFlagsSelect": "enableFlagsSelect"; "required": "required"; "floatLabel": "floatLabel"; "appearance": "appearance"; "placeholder": "placeholder"; "label": "label"; }, {}, never, never, false>;
 }

@@ -79,5 +79,5 @@ export declare class KnobComponent extends PageComponent implements OnInit, OnDe
     private rpcUpdateValue;
     private onError;
     static ɵfac: i0.ɵɵFactoryDeclaration<KnobComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<KnobComponent, "tb-knob", never, { "ctx": "ctx"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<KnobComponent, "tb-knob", never, { "ctx": "ctx"; }, {}, never, never, false>;
 }
