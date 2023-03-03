@@ -13,5 +13,5 @@ export declare class TbSparkLineComponent implements AfterViewInit {
     ngAfterViewInit(): void;
     private updatedChartData;
     static ɵfac: i0.ɵɵFactoryDeclaration<TbSparkLineComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TbSparkLineComponent, "tb-spark-line", never, { "chartData": "chartData"; "chartProperty": "chartProperty"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TbSparkLineComponent, "tb-spark-line", never, { "chartData": "chartData"; "chartProperty": "chartProperty"; }, {}, never, never, false, never>;
 }

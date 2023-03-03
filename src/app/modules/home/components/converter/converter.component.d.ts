@@ -38,5 +38,5 @@ export declare class ConverterComponent extends EntityComponent<Converter> {
     openConverterTestDialog(isDecoder: boolean): void;
     showConverterTestDialog(isDecoder: boolean, debugIn: ConverterDebugInput): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ConverterComponent, [null, null, null, null, { optional: true; }, { optional: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ConverterComponent, "tb-converter", never, { "hideType": "hideType"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ConverterComponent, "tb-converter", never, { "hideType": "hideType"; }, {}, never, never, false, never>;
 }

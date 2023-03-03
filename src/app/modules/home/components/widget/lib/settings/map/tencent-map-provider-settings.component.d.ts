@@ -29,5 +29,5 @@ export declare class TencentMapProviderSettingsComponent extends PageComponent i
     };
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<TencentMapProviderSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TencentMapProviderSettingsComponent, "tb-tencent-map-provider-settings", never, { "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TencentMapProviderSettingsComponent, "tb-tencent-map-provider-settings", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
 }

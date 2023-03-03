@@ -14,5 +14,5 @@ export declare class MarkdownWidgetSettingsComponent extends WidgetSettingsCompo
     protected validatorTriggers(): string[];
     protected updateValidators(emitEvent: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<MarkdownWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MarkdownWidgetSettingsComponent, "tb-markdown-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MarkdownWidgetSettingsComponent, "tb-markdown-widget-settings", never, {}, {}, never, never, false, never>;
 }

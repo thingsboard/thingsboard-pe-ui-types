@@ -16,5 +16,5 @@ export declare class CustomIntegrationFormComponent extends IntegrationForm impl
     validate(): ValidationErrors;
     private updateModels;
     static ɵfac: i0.ɵɵFactoryDeclaration<CustomIntegrationFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CustomIntegrationFormComponent, "tb-custom-integration-form", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CustomIntegrationFormComponent, "tb-custom-integration-form", never, {}, {}, never, never, false, never>;
 }

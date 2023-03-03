@@ -3,7 +3,7 @@ import { AfterViewInit, ElementRef, EventEmitter, OnDestroy, OnInit, QueryList, 
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, FormGroupDirective, NgForm } from '@angular/forms';
+import { FormGroupDirective, NgForm, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { HasDirtyFlag } from '@core/guards/confirm-on-exit.guard';
 import { TranslateService } from '@ngx-translate/core';
 import { ErrorStateMatcher } from '@angular/material/core';
@@ -26,9 +26,9 @@ import { MatMenuTrigger } from '@angular/material/menu';
 import { ItemBufferService } from '@core/services/item-buffer.service';
 import { Hotkey } from 'angular2-hotkeys';
 import { DebugEventType, EventType } from '@shared/models/event.models';
-import { UserPermissionsService } from '@core/http/user-permissions.service';
-import { MatButton } from '@angular/material/button';
+import { MatMiniFabButton } from '@angular/material/button';
 import { TbPopoverService } from '@shared/components/popover.service';
+import { UserPermissionsService } from '@core/http/user-permissions.service';
 import * as i0 from "@angular/core";
 export declare class RuleChainPageComponent extends PageComponent implements AfterViewInit, OnInit, OnDestroy, HasDirtyFlag, ISearchableComponent {
     protected store: Store<AppState>;
@@ -184,12 +184,12 @@ export declare class RuleChainPageComponent extends PageComponent implements Aft
     addRuleNodeLink(link: FcRuleEdge, labels: {
         [label: string]: LinkLabel;
     }, allowCustomLabels: boolean, sourceRuleChainId: string): Observable<FcRuleEdge>;
-    toggleVersionControl($event: Event, versionControlButton: MatButton): void;
+    toggleVersionControl($event: Event, versionControlButton: MatMiniFabButton): void;
     private updateNodeErrorTooltip;
     private updateErrorTooltips;
     private displayTooltip;
     static ɵfac: i0.ɵɵFactoryDeclaration<RuleChainPageComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RuleChainPageComponent, "tb-rulechain-page", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RuleChainPageComponent, "tb-rulechain-page", never, {}, {}, never, never, false, never>;
 }
 export interface AddRuleNodeLinkDialogData {
     link: FcRuleEdge;
@@ -220,7 +220,7 @@ export declare class AddRuleNodeLinkDialogComponent extends DialogComponent<AddR
     cancel(): void;
     add(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AddRuleNodeLinkDialogComponent, [null, null, null, { skipSelf: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AddRuleNodeLinkDialogComponent, "tb-add-rule-node-link-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AddRuleNodeLinkDialogComponent, "tb-add-rule-node-link-dialog", never, {}, {}, never, never, false, never>;
 }
 export interface AddRuleNodeDialogData {
     ruleNode: FcRuleNode;
@@ -245,7 +245,7 @@ export declare class AddRuleNodeDialogComponent extends DialogComponent<AddRuleN
     cancel(): void;
     add(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AddRuleNodeDialogComponent, [null, null, null, { skipSelf: true; }, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AddRuleNodeDialogComponent, "tb-add-rule-node-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AddRuleNodeDialogComponent, "tb-add-rule-node-dialog", never, {}, {}, never, never, false, never>;
 }
 export interface CreateNestedRuleChainDialogData {
     ruleChainType: RuleChainType;
@@ -266,5 +266,5 @@ export declare class CreateNestedRuleChainDialogComponent extends DialogComponen
     cancel(): void;
     add(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<CreateNestedRuleChainDialogComponent, [null, null, null, { skipSelf: true; }, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CreateNestedRuleChainDialogComponent, "tb-create-nested-rulechain-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CreateNestedRuleChainDialogComponent, "tb-create-nested-rulechain-dialog", never, {}, {}, never, never, false, never>;
 }

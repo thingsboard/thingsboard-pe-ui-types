@@ -25,5 +25,5 @@ export declare class DeviceCredentialsLwm2mComponent implements ControlValueAcce
     private setValidatorsPskRpk;
     private initLwm2mConfigForm;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceCredentialsLwm2mComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceCredentialsLwm2mComponent, "tb-device-credentials-lwm2m", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceCredentialsLwm2mComponent, "tb-device-credentials-lwm2m", never, {}, {}, never, never, false, never>;
 }

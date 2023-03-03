@@ -34,5 +34,5 @@ export declare class MapProviderSettingsComponent extends PageComponent implemen
     private updateModel;
     private updateValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<MapProviderSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MapProviderSettingsComponent, "tb-map-provider-settings", never, { "aliasController": "aliasController"; "disabled": "disabled"; "ignoreImageMap": "ignoreImageMap"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MapProviderSettingsComponent, "tb-map-provider-settings", never, { "aliasController": "aliasController"; "disabled": "disabled"; "ignoreImageMap": "ignoreImageMap"; }, {}, never, never, false, never>;
 }

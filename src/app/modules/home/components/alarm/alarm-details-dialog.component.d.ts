@@ -47,5 +47,5 @@ export declare class AlarmDetailsDialogComponent extends DialogComponent<AlarmDe
     acknowledge(): void;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AlarmDetailsDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmDetailsDialogComponent, "tb-alarm-details-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmDetailsDialogComponent, "tb-alarm-details-dialog", never, {}, {}, never, never, false, never>;
 }

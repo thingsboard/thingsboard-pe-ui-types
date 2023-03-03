@@ -14,5 +14,5 @@ export declare class QrCodeWidgetSettingsComponent extends WidgetSettingsCompone
     protected validatorTriggers(): string[];
     protected updateValidators(emitEvent: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<QrCodeWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<QrCodeWidgetSettingsComponent, "tb-qrcode-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<QrCodeWidgetSettingsComponent, "tb-qrcode-widget-settings", never, {}, {}, never, never, false, never>;
 }

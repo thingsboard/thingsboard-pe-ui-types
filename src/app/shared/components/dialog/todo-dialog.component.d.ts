@@ -4,5 +4,5 @@ export declare class TodoDialogComponent {
     dialogRef: MatDialogRef<TodoDialogComponent>;
     constructor(dialogRef: MatDialogRef<TodoDialogComponent>);
     static ɵfac: i0.ɵɵFactoryDeclaration<TodoDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TodoDialogComponent, "tb-todo-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TodoDialogComponent, "tb-todo-dialog", never, {}, {}, never, never, false, never>;
 }

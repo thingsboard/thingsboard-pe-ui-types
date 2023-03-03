@@ -62,5 +62,5 @@ export declare class ConverterAutocompleteComponent implements ControlValueAcces
     textIsNotEmpty(text: string): boolean;
     createConverter($event: Event, converterName: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ConverterAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ConverterAutocompleteComponent, "tb-converter-autocomplete", never, { "useFullEntityId": "useFullEntityId"; "isEdgeTemplate": "isEdgeTemplate"; "addNewConverter": "addNewConverter"; "converterType": "converterType"; "excludeEntityIds": "excludeEntityIds"; "labelText": "labelText"; "requiredText": "requiredText"; "required": "required"; "disabled": "disabled"; "showDetailsPageLink": "showDetailsPageLink"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ConverterAutocompleteComponent, "tb-converter-autocomplete", never, { "useFullEntityId": "useFullEntityId"; "isEdgeTemplate": "isEdgeTemplate"; "addNewConverter": "addNewConverter"; "converterType": "converterType"; "excludeEntityIds": "excludeEntityIds"; "labelText": "labelText"; "requiredText": "requiredText"; "required": "required"; "disabled": "disabled"; "showDetailsPageLink": "showDetailsPageLink"; }, {}, never, never, false, never>;
 }

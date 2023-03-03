@@ -22,5 +22,5 @@ export declare class RateLimitsDetailsDialogComponent extends DialogComponent<Ra
     constructor(store: Store<AppState>, router: Router, data: RateLimitsDetailsDialogData, dialogRef: MatDialogRef<RateLimitsDetailsDialogComponent>, fb: UntypedFormBuilder);
     save(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<RateLimitsDetailsDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RateLimitsDetailsDialogComponent, "ng-component", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RateLimitsDetailsDialogComponent, "ng-component", never, {}, {}, never, never, false, never>;
 }

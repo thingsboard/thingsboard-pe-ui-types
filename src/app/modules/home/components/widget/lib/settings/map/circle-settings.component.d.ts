@@ -35,5 +35,5 @@ export declare class CircleSettingsComponent extends PageComponent implements On
     private updateModel;
     private updateValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<CircleSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CircleSettingsComponent, "tb-circle-settings", never, { "disabled": "disabled"; "widget": "widget"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CircleSettingsComponent, "tb-circle-settings", never, { "disabled": "disabled"; "widget": "widget"; }, {}, never, never, false, never>;
 }

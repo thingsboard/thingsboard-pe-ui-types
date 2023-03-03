@@ -38,5 +38,5 @@ export declare class PersistentDetailsDialogComponent extends DialogComponent<Pe
     close(): void;
     deleteRpcRequest(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<PersistentDetailsDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PersistentDetailsDialogComponent, "tb-persistent-details-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PersistentDetailsDialogComponent, "tb-persistent-details-dialog", never, {}, {}, never, never, false, never>;
 }

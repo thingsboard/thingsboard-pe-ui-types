@@ -17,5 +17,5 @@ export declare class TbJsonToStringDirective implements ControlValueAccessor, Va
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TbJsonToStringDirective, [null, null, { skipSelf: true; }]>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<TbJsonToStringDirective, "[tb-json-to-string]", never, {}, {}, never, never, false>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<TbJsonToStringDirective, "[tb-json-to-string]", never, {}, {}, never, never, false, never>;
 }

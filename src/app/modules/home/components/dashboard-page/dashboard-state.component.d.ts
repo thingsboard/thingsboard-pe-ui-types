@@ -30,5 +30,5 @@ export declare class DashboardStateComponent extends PageComponent implements On
     ngOnDestroy(): void;
     private updateCurrentState;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardStateComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardStateComponent, "tb-dashboard-state", never, { "ctx": "ctx"; "stateId": "stateId"; "syncParentStateParams": "syncParentStateParams"; "defaultAutofillLayout": "defaultAutofillLayout"; "defaultMargin": "defaultMargin"; "defaultBackgroundColor": "defaultBackgroundColor"; "entityParamName": "entityParamName"; "entityId": "entityId"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardStateComponent, "tb-dashboard-state", never, { "ctx": "ctx"; "stateId": "stateId"; "syncParentStateParams": "syncParentStateParams"; "defaultAutofillLayout": "defaultAutofillLayout"; "defaultMargin": "defaultMargin"; "defaultBackgroundColor": "defaultBackgroundColor"; "entityParamName": "entityParamName"; "entityId": "entityId"; }, {}, never, never, false, never>;
 }

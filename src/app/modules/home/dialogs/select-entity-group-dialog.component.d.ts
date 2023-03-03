@@ -60,5 +60,5 @@ export declare class SelectEntityGroupDialogComponent extends DialogComponent<Se
     selectEntityGroup(): void;
     private groupSelected;
     static ɵfac: i0.ɵɵFactoryDeclaration<SelectEntityGroupDialogComponent, [null, null, null, null, null, null, { skipSelf: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SelectEntityGroupDialogComponent, "tb-select-entity-group-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SelectEntityGroupDialogComponent, "tb-select-entity-group-dialog", never, {}, {}, never, never, false, never>;
 }

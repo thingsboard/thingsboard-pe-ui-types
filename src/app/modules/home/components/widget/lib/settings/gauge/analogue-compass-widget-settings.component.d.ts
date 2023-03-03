@@ -21,5 +21,5 @@ export declare class AnalogueCompassWidgetSettingsComponent extends WidgetSettin
     addMajorTickName(event: MatChipInputEvent): void;
     majorTickNameDrop(event: CdkDragDrop<string[]>): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AnalogueCompassWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AnalogueCompassWidgetSettingsComponent, "tb-analogue-compass-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AnalogueCompassWidgetSettingsComponent, "tb-analogue-compass-widget-settings", never, {}, {}, never, never, false, never>;
 }

@@ -21,5 +21,5 @@ export declare abstract class ContactBasedComponent<T extends ContactBased<HasId
     abstract buildEntityForm(entity: T): UntypedFormGroup;
     abstract updateEntityForm(entity: T): any;
     static ɵfac: i0.ɵɵFactoryDeclaration<ContactBasedComponent<any>, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<ContactBasedComponent<any>, never, never, {}, {}, never, never, false>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<ContactBasedComponent<any>, never, never, {}, {}, never, never, false, never>;
 }

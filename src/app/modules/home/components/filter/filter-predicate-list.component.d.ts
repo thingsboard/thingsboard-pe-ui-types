@@ -33,5 +33,5 @@ export declare class FilterPredicateListComponent implements ControlValueAccesso
     private openComplexFilterDialog;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<FilterPredicateListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FilterPredicateListComponent, "tb-filter-predicate-list", never, { "disabled": "disabled"; "valueType": "valueType"; "key": "key"; "operation": "operation"; "displayUserParameters": "displayUserParameters"; "allowUserDynamicSource": "allowUserDynamicSource"; "onlyUserDynamicSource": "onlyUserDynamicSource"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FilterPredicateListComponent, "tb-filter-predicate-list", never, { "disabled": "disabled"; "valueType": "valueType"; "key": "key"; "operation": "operation"; "displayUserParameters": "displayUserParameters"; "allowUserDynamicSource": "allowUserDynamicSource"; "onlyUserDynamicSource": "onlyUserDynamicSource"; }, {}, never, never, false, never>;
 }

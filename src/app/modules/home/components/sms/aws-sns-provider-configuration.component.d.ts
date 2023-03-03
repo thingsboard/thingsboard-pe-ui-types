@@ -21,5 +21,5 @@ export declare class AwsSnsProviderConfigurationComponent implements ControlValu
     writeValue(value: AwsSnsSmsProviderConfiguration | null): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<AwsSnsProviderConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AwsSnsProviderConfigurationComponent, "tb-aws-sns-provider-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AwsSnsProviderConfigurationComponent, "tb-aws-sns-provider-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

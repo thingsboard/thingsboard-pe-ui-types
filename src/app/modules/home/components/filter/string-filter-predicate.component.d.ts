@@ -22,5 +22,5 @@ export declare class StringFilterPredicateComponent implements ControlValueAcces
     validate(c: any): ValidationErrors;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<StringFilterPredicateComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<StringFilterPredicateComponent, "tb-string-filter-predicate", never, { "disabled": "disabled"; "allowUserDynamicSource": "allowUserDynamicSource"; "onlyUserDynamicSource": "onlyUserDynamicSource"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<StringFilterPredicateComponent, "tb-string-filter-predicate", never, { "disabled": "disabled"; "allowUserDynamicSource": "allowUserDynamicSource"; "onlyUserDynamicSource": "onlyUserDynamicSource"; }, {}, never, never, false, never>;
 }

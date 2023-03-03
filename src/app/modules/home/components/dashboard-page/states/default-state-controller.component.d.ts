@@ -49,5 +49,5 @@ export declare class DefaultStateControllerComponent extends StateControllerComp
     private updateLocation;
     private getStateObjById;
     static ɵfac: i0.ɵɵFactoryDeclaration<DefaultStateControllerComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DefaultStateControllerComponent, "tb-default-state-controller", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DefaultStateControllerComponent, "tb-default-state-controller", never, {}, {}, never, never, false, never>;
 }

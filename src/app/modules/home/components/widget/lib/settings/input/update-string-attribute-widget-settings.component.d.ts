@@ -14,5 +14,5 @@ export declare class UpdateStringAttributeWidgetSettingsComponent extends Widget
     protected prepareInputSettings(settings: WidgetSettings): WidgetSettings;
     protected prepareOutputSettings(settings: any): WidgetSettings;
     static ɵfac: i0.ɵɵFactoryDeclaration<UpdateStringAttributeWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<UpdateStringAttributeWidgetSettingsComponent, "tb-update-string-attribute-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<UpdateStringAttributeWidgetSettingsComponent, "tb-update-string-attribute-widget-settings", never, {}, {}, never, never, false, never>;
 }

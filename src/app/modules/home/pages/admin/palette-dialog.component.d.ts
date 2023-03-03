@@ -37,5 +37,5 @@ export declare class PaletteDialogComponent extends DialogComponent<PaletteDialo
     savePalette(): void;
     private normalizeColors;
     static ɵfac: i0.ɵɵFactoryDeclaration<PaletteDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PaletteDialogComponent, "tb-palette-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PaletteDialogComponent, "tb-palette-dialog", never, {}, {}, never, never, false, never>;
 }

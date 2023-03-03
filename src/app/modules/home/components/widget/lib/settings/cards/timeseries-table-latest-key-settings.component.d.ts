@@ -14,5 +14,5 @@ export declare class TimeseriesTableLatestKeySettingsComponent extends WidgetSet
     protected validatorTriggers(): string[];
     protected updateValidators(emitEvent: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeseriesTableLatestKeySettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeseriesTableLatestKeySettingsComponent, "tb-timeseries-table-latest-key-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeseriesTableLatestKeySettingsComponent, "tb-timeseries-table-latest-key-settings", never, {}, {}, never, never, false, never>;
 }

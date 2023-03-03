@@ -36,5 +36,5 @@ export declare class QueueFormComponent implements ControlValueAccessor, OnInit,
     private updateModel;
     submitStrategyTypeChanged(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<QueueFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<QueueFormComponent, "tb-queue-form", never, { "disabled": "disabled"; "newQueue": "newQueue"; "systemQueue": "systemQueue"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<QueueFormComponent, "tb-queue-form", never, { "disabled": "disabled"; "newQueue": "newQueue"; "systemQueue": "systemQueue"; }, {}, never, never, false, never>;
 }

@@ -1,10 +1,10 @@
-import { AfterViewInit, ChangeDetectorRef, ElementRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ElementRef, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { WidgetContext } from '@home/models/widget-component.models';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
-import { SchedulerEvent, SchedulerEventWithCustomerInfo } from '@shared/models/scheduler-event.models';
+import { SchedulerEventWithCustomerInfo } from '@shared/models/scheduler-event.models';
 import { CollectionViewer, DataSource, SelectionModel } from '@angular/cdk/collections';
 import { Observable } from 'rxjs';
 import { PageData } from '@shared/models/page/page-data';
@@ -19,14 +19,11 @@ import { SchedulerEventConfigType } from '@home/components/scheduler/scheduler-e
 import { DialogService } from '@core/services/dialog.service';
 import { FullCalendarComponent } from '@fullcalendar/angular';
 import { schedulerCalendarView, SchedulerEventsWidgetSettings } from '@home/components/scheduler/scheduler-events.models';
-import { Calendar, DateClickApi } from '@fullcalendar/core/Calendar';
-import { EventInput } from '@fullcalendar/core';
-import { EventSourceError, EventSourceInput } from '@fullcalendar/core/structs/event-source';
+import { CalendarOptions } from '@fullcalendar/core';
 import { MatMenuTrigger } from '@angular/material/menu';
-import { EventHandlerArg } from '@fullcalendar/core/types/input-types';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as i0 from "@angular/core";
-export declare class SchedulerEventsComponent extends PageComponent implements OnInit, AfterViewInit, OnChanges {
+export declare class SchedulerEventsComponent extends PageComponent implements OnInit, AfterViewInit, OnChanges, OnDestroy {
     protected store: Store<AppState>;
     private utils;
     translate: TranslateService;
@@ -54,12 +51,6 @@ export declare class SchedulerEventsComponent extends PageComponent implements O
     authUser: import("../../../../shared/public-api").AuthUser;
     showData: boolean;
     mode: string;
-    displayCreatedTime: boolean;
-    displayType: boolean;
-    displayCustomer: boolean;
-    schedulerEventConfigTypes: {
-        [eventType: string]: SchedulerEventConfigType;
-    };
     displayPagination: boolean;
     pageSizeOptions: any;
     defaultPageSize: number;
@@ -72,20 +63,20 @@ export declare class SchedulerEventsComponent extends PageComponent implements O
     textSearchMode: boolean;
     assignEnabled: boolean;
     dataSource: SchedulerEventsDatasource;
-    calendarPlugins: import("@fullcalendar/core").PluginDef[];
     currentCalendarView: schedulerCalendarView;
-    currentCalendarViewValue: string;
-    schedulerCalendarViews: string[];
+    schedulerCalendarViews: schedulerCalendarView[];
     schedulerCalendarViewTranslations: Map<schedulerCalendarView, string>;
-    eventSources: EventSourceInput[];
-    calendarApi: Calendar;
     schedulerEventMenuPosition: {
         x: string;
         y: string;
     };
     schedulerContextMenuEvent: MouseEvent;
+    calendarOptions: CalendarOptions;
+    private calendarApi;
     private schedulerEvents;
+    private currentCalendarViewValue;
     private widgetResize$;
+    private schedulerEventConfigTypes;
     constructor(store: Store<AppState>, utils: UtilsService, translate: TranslateService, schedulerEventService: SchedulerEventService, userPermissionsService: UserPermissionsService, dialogService: DialogService, dialog: MatDialog, router: Router, route: ActivatedRoute, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngOnDestroy(): void;
@@ -103,8 +94,8 @@ export declare class SchedulerEventsComponent extends PageComponent implements O
     assignToEdgeSchedulerEvent($event: Event): void;
     editSchedulerEvent($event: any, schedulerEventWithCustomerInfo: SchedulerEventWithCustomerInfo): void;
     viewSchedulerEvent($event: any, schedulerEventWithCustomerInfo: SchedulerEventWithCustomerInfo): void;
-    openSchedulerEventDialog($event: Event, schedulerEvent?: SchedulerEvent, readonly?: boolean): void;
-    openAssignSchedulerEventToEdgeDialog($event: Event): void;
+    private openSchedulerEventDialog;
+    private openAssignSchedulerEventToEdgeDialog;
     triggerResize(): void;
     changeCalendarView(): void;
     calendarViewTitle(): string;
@@ -112,31 +103,26 @@ export declare class SchedulerEventsComponent extends PageComponent implements O
     isCalendarToday(): boolean;
     gotoCalendarPrev(): void;
     gotoCalendarNext(): void;
-    onEventClick(arg: EventHandlerArg<'eventClick'>): void;
-    openSchedulerEventContextMenu($event: MouseEvent, schedulerEvent: SchedulerEventWithCustomerInfo): void;
+    private onEventClick;
+    private openSchedulerEventContextMenu;
     onSchedulerEventContextMenuMouseLeave(): void;
-    onDayClick(event: DateClickApi): void;
-    onEventDrop(arg: EventHandlerArg<'eventDrop'>): void;
+    private onDayClick;
+    private onEventDrop;
+    private onEventDidMount;
     private moveEvent;
-    eventRender(arg: EventHandlerArg<'eventRender'>): void;
-    updateCalendarEvents(schedulerEvents: Array<SchedulerEventWithCustomerInfo>): void;
-    eventSourceFunction(arg: {
-        start: Date;
-        end: Date;
-        timeZone: string;
-    }, successCallback: (events: EventInput[]) => void, failureCallback: (error: EventSourceError) => void): void;
+    private updateCalendarEvents;
+    private eventSourceFunction;
     private toCalendarEvent;
     private eventInfo;
     unassignFromEdge($event: Event, schedulerEvent: SchedulerEventWithCustomerInfo): void;
     unassignFromEdgeSchedulerEvents($event: Event): void;
     private updatedRouterQueryParams;
     static ɵfac: i0.ɵɵFactoryDeclaration<SchedulerEventsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SchedulerEventsComponent, "tb-scheduler-events", never, { "widgetMode": "widgetMode"; "ctx": "ctx"; "edgeId": "edgeId"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SchedulerEventsComponent, "tb-scheduler-events", never, { "widgetMode": "widgetMode"; "ctx": "ctx"; "edgeId": "edgeId"; }, {}, never, never, false, never>;
 }
 declare class SchedulerEventsDatasource implements DataSource<SchedulerEventWithCustomerInfo> {
     private schedulerEventService;
     private schedulerEventConfigTypes;
-    private route;
     private entitiesSubject;
     private pageDataSubject;
     pageData$: Observable<PageData<SchedulerEventWithCustomerInfo>>;
@@ -146,7 +132,7 @@ declare class SchedulerEventsDatasource implements DataSource<SchedulerEventWith
     edgeId: string;
     constructor(schedulerEventService: SchedulerEventService, schedulerEventConfigTypes: {
         [eventType: string]: SchedulerEventConfigType;
-    }, route: ActivatedRoute);
+    });
     connect(collectionViewer: CollectionViewer): Observable<SchedulerEventWithCustomerInfo[] | ReadonlyArray<SchedulerEventWithCustomerInfo>>;
     disconnect(collectionViewer: CollectionViewer): void;
     reset(): void;

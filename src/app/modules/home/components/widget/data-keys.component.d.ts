@@ -1,11 +1,11 @@
-import { AfterViewInit, ElementRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, FormGroupDirective, NgForm } from '@angular/forms';
+import { AfterViewInit, ChangeDetectorRef, ElementRef, OnChanges, OnInit, Renderer2, SimpleChanges } from '@angular/core';
+import { ControlValueAccessor, FormGroupDirective, NgForm, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { TranslateService } from '@ngx-translate/core';
 import { MatAutocomplete } from '@angular/material/autocomplete';
-import { MatChipInputEvent, MatChipList } from '@angular/material/chips';
+import { MatChipGrid, MatChipInputEvent, MatChipRow } from '@angular/material/chips';
 import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
 import { DataKey, DatasourceType, JsonSettingsSchema, Widget, widgetType } from '@shared/models/widget.models';
 import { IAliasController } from '@core/api/widget-api.models';
@@ -15,9 +15,8 @@ import { ErrorStateMatcher } from '@angular/material/core';
 import { TruncatePipe } from '@shared/pipe/truncate.pipe';
 import { DialogService } from '@core/services/dialog.service';
 import { MatDialog } from '@angular/material/dialog';
-import { MatChipDropEvent } from '@app/shared/components/mat-chip-draggable.directive';
 import { Dashboard } from '@shared/models/dashboard.models';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { DndDropEvent } from 'ngx-drag-drop/lib/dnd-dropzone.directive';
 import * as i0 from "@angular/core";
 export declare class DataKeysComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnChanges, ErrorStateMatcher {
     private store;
@@ -27,7 +26,8 @@ export declare class DataKeysComponent implements ControlValueAccessor, OnInit, 
     private dialogs;
     private dialog;
     private fb;
-    private sanitizer;
+    private cd;
+    private renderer;
     truncate: TruncatePipe;
     datasourceTypes: typeof DatasourceType;
     widgetTypes: typeof widgetType;
@@ -53,7 +53,7 @@ export declare class DataKeysComponent implements ControlValueAccessor, OnInit, 
     disabled: boolean;
     keyInput: ElementRef<HTMLInputElement>;
     matAutocomplete: MatAutocomplete;
-    chipList: MatChipList;
+    chipList: MatChipGrid;
     keys: Array<DataKey>;
     filteredKeys: Observable<Array<DataKey>>;
     separatorKeysCodes: number[];
@@ -64,11 +64,13 @@ export declare class DataKeysComponent implements ControlValueAccessor, OnInit, 
     secondaryPlaceholder: string;
     requiredText: string;
     searchText: string;
+    dndId: string;
+    dragIndex: number;
     private latestSearchTextResult;
     private fetchObservable$;
     private dirty;
     private propagateChange;
-    constructor(store: Store<AppState>, errorStateMatcher: ErrorStateMatcher, translate: TranslateService, utils: UtilsService, dialogs: DialogService, dialog: MatDialog, fb: UntypedFormBuilder, sanitizer: DomSanitizer, truncate: TruncatePipe);
+    constructor(store: Store<AppState>, errorStateMatcher: ErrorStateMatcher, translate: TranslateService, utils: UtilsService, dialogs: DialogService, dialog: MatDialog, fb: UntypedFormBuilder, cd: ChangeDetectorRef, renderer: Renderer2, truncate: TruncatePipe);
     updateValidators(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -86,12 +88,15 @@ export declare class DataKeysComponent implements ControlValueAccessor, OnInit, 
     addKey(key: DataKey): void;
     add(event: MatChipInputEvent): void;
     remove(key: DataKey): void;
-    onChipDrop(event: MatChipDropEvent): void;
+    chipDragStart(index: number, chipRow: MatChipRow, placeholderChipRow: MatChipRow): void;
+    chipDragEnd(): void;
+    onChipDrop(event: DndDropEvent): void;
     showColorPicker(key: DataKey): void;
     editDataKey(key: DataKey, index: number): void;
     createKey(name: string, dataKeyType?: DataKeyType): void;
     displayKeyFn(key?: DataKey): string | undefined;
-    displayDataKeyNameFn(key: DataKey): SafeHtml;
+    dataKeyHasAggregation(key: DataKey): boolean;
+    dataKeyHasPostprocessing(key: DataKey): boolean;
     private fetchKeys;
     private getKeys;
     private createDataKeyFilter;
@@ -99,6 +104,6 @@ export declare class DataKeysComponent implements ControlValueAccessor, OnInit, 
     clear(value?: string): void;
     get isEntityCountDatasource(): boolean;
     private clearSearchCache;
-    static ɵfac: i0.ɵɵFactoryDeclaration<DataKeysComponent, [null, { skipSelf: true; }, null, null, null, null, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeysComponent, "tb-data-keys", never, { "widgetType": "widgetType"; "datasourceType": "datasourceType"; "maxDataKeys": "maxDataKeys"; "optDataKeys": "optDataKeys"; "aliasController": "aliasController"; "datakeySettingsSchema": "datakeySettingsSchema"; "dataKeySettingsDirective": "dataKeySettingsDirective"; "dashboard": "dashboard"; "widget": "widget"; "callbacks": "callbacks"; "entityAliasId": "entityAliasId"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<DataKeysComponent, [null, { skipSelf: true; }, null, null, null, null, null, null, null, null]>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeysComponent, "tb-data-keys", never, { "widgetType": "widgetType"; "datasourceType": "datasourceType"; "maxDataKeys": "maxDataKeys"; "optDataKeys": "optDataKeys"; "aliasController": "aliasController"; "datakeySettingsSchema": "datakeySettingsSchema"; "dataKeySettingsDirective": "dataKeySettingsDirective"; "dashboard": "dashboard"; "widget": "widget"; "callbacks": "callbacks"; "entityAliasId": "entityAliasId"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

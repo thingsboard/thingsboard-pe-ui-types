@@ -12,5 +12,5 @@ export declare class SigfoxIntegrationFormComponent extends HttpIntegrationFormC
     protected integrationType: IntegrationType;
     constructor(fb: UntypedFormBuilder, store: Store<AppState>, translate: TranslateService);
     static ɵfac: i0.ɵɵFactoryDeclaration<SigfoxIntegrationFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SigfoxIntegrationFormComponent, "tb-sigfox-integration-form", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SigfoxIntegrationFormComponent, "tb-sigfox-integration-form", never, {}, {}, never, never, false, never>;
 }

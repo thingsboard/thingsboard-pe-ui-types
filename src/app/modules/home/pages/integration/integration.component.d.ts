@@ -38,5 +38,5 @@ export declare class IntegrationComponent extends EntityComponent<Integration, P
     onIntegrationInfoCopied(type: string): void;
     onIntegrationCheck(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<IntegrationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<IntegrationComponent, "tb-integration", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<IntegrationComponent, "tb-integration", never, {}, {}, never, never, false, never>;
 }

@@ -12,5 +12,5 @@ export declare class CircularProgressDirective {
     constructor(elementRef: ElementRef, viewContainerRef: ViewContainerRef);
     createCircularProgress(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<CircularProgressDirective, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<CircularProgressDirective, "[tb-circular-progress]", never, { "showProgress": "tb-circular-progress"; }, {}, never, never, false>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<CircularProgressDirective, "[tb-circular-progress]", never, { "showProgress": "tb-circular-progress"; }, {}, never, never, false, never>;
 }

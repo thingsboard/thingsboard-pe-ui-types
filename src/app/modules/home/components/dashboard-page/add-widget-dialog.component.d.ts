@@ -36,5 +36,5 @@ export declare class AddWidgetDialogComponent extends DialogComponent<AddWidgetD
     cancel(): void;
     add(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AddWidgetDialogComponent, [null, null, null, { skipSelf: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AddWidgetDialogComponent, "tb-add-widget-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AddWidgetDialogComponent, "tb-add-widget-dialog", never, {}, {}, never, never, false, never>;
 }

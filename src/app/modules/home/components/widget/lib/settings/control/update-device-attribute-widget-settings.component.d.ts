@@ -14,5 +14,5 @@ export declare class UpdateDeviceAttributeWidgetSettingsComponent extends Widget
     protected defaultSettings(): WidgetSettings;
     protected onSettingsSet(settings: WidgetSettings): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<UpdateDeviceAttributeWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<UpdateDeviceAttributeWidgetSettingsComponent, "tb-update-device-attribute-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<UpdateDeviceAttributeWidgetSettingsComponent, "tb-update-device-attribute-widget-settings", never, {}, {}, never, never, false, never>;
 }

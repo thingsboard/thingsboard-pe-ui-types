@@ -33,5 +33,5 @@ export declare class TripAnimationCommonSettingsComponent extends PageComponent 
     private updateModel;
     private updateValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<TripAnimationCommonSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TripAnimationCommonSettingsComponent, "tb-trip-animation-common-settings", never, { "disabled": "disabled"; "widget": "widget"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TripAnimationCommonSettingsComponent, "tb-trip-animation-common-settings", never, { "disabled": "disabled"; "widget": "widget"; }, {}, never, never, false, never>;
 }

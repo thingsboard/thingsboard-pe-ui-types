@@ -14,5 +14,5 @@ export declare class FlotBarWidgetSettingsComponent extends WidgetSettingsCompon
     protected prepareInputSettings(settings: WidgetSettings): WidgetSettings;
     protected prepareOutputSettings(settings: any): WidgetSettings;
     static ɵfac: i0.ɵɵFactoryDeclaration<FlotBarWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FlotBarWidgetSettingsComponent, "tb-flot-bar-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FlotBarWidgetSettingsComponent, "tb-flot-bar-widget-settings", never, {}, {}, never, never, false, never>;
 }

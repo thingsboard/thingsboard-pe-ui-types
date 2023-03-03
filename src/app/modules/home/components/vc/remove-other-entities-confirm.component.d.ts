@@ -20,5 +20,5 @@ export declare class RemoveOtherEntitiesConfirmComponent extends PageComponent i
     cancel(): void;
     confirm(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<RemoveOtherEntitiesConfirmComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RemoveOtherEntitiesConfirmComponent, "tb-remove-other-entities-confirm", never, { "onClose": "onClose"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RemoveOtherEntitiesConfirmComponent, "tb-remove-other-entities-confirm", never, { "onClose": "onClose"; }, {}, never, never, false, never>;
 }

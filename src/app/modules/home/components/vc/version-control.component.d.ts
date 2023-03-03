@@ -27,5 +27,5 @@ export declare class VersionControlComponent implements OnInit, HasConfirmForm {
     ngOnInit(): void;
     confirmForm(): UntypedFormGroup;
     static ɵfac: i0.ɵɵFactoryDeclaration<VersionControlComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<VersionControlComponent, "tb-version-control", never, { "detailsMode": "detailsMode"; "popoverComponent": "popoverComponent"; "active": "active"; "singleEntityMode": "singleEntityMode"; "externalEntityId": "externalEntityId"; "entityId": "entityId"; "groupType": "groupType"; "entityName": "entityName"; "onBeforeCreateVersion": "onBeforeCreateVersion"; }, { "versionRestored": "versionRestored"; }, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<VersionControlComponent, "tb-version-control", never, { "detailsMode": "detailsMode"; "popoverComponent": "popoverComponent"; "active": "active"; "singleEntityMode": "singleEntityMode"; "externalEntityId": "externalEntityId"; "entityId": "entityId"; "groupType": "groupType"; "entityName": "entityName"; "onBeforeCreateVersion": "onBeforeCreateVersion"; }, { "versionRestored": "versionRestored"; }, never, never, false, never>;
 }

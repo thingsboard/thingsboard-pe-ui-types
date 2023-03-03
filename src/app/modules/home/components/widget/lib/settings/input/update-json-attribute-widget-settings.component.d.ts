@@ -14,5 +14,5 @@ export declare class UpdateJsonAttributeWidgetSettingsComponent extends WidgetSe
     protected validatorTriggers(): string[];
     protected updateValidators(emitEvent: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<UpdateJsonAttributeWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<UpdateJsonAttributeWidgetSettingsComponent, "tb-update-json-attribute-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<UpdateJsonAttributeWidgetSettingsComponent, "tb-update-json-attribute-widget-settings", never, {}, {}, never, never, false, never>;
 }

@@ -13,5 +13,5 @@ export declare class PowerModeSettingComponent implements OnInit, OnDestroy {
     private disablePSKMode;
     private disableEdrxMode;
     static ɵfac: i0.ɵɵFactoryDeclaration<PowerModeSettingComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PowerModeSettingComponent, "tb-power-mode-settings", never, { "parentForm": "parentForm"; "isDeviceSetting": "isDeviceSetting"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PowerModeSettingComponent, "tb-power-mode-settings", never, { "parentForm": "parentForm"; "isDeviceSetting": "isDeviceSetting"; }, {}, never, never, false, never>;
 }

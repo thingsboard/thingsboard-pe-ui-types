@@ -68,5 +68,5 @@ export declare class DeviceWizardDialogComponent extends DialogComponent<DeviceW
     allValid(): boolean;
     changeStep($event: StepperSelectionEvent): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceWizardDialogComponent, [null, null, null, { skipSelf: true; }, null, null, null, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceWizardDialogComponent, "tb-device-wizard", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceWizardDialogComponent, "tb-device-wizard", never, {}, {}, never, never, false, never>;
 }

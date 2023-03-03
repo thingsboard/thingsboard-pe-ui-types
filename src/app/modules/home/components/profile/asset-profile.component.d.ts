@@ -31,5 +31,5 @@ export declare class AssetProfileComponent extends EntityComponent<AssetProfile>
     prepareFormValue(formValue: any): any;
     onAssetProfileIdCopied(event: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AssetProfileComponent, [null, null, { optional: true; }, { optional: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AssetProfileComponent, "tb-asset-profile", never, { "standalone": "standalone"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AssetProfileComponent, "tb-asset-profile", never, { "standalone": "standalone"; }, {}, never, never, false, never>;
 }

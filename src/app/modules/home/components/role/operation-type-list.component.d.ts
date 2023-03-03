@@ -5,7 +5,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { TranslateService } from '@ngx-translate/core';
 import { MatAutocomplete } from '@angular/material/autocomplete';
-import { MatChipList } from '@angular/material/chips';
+import { MatChipGrid } from '@angular/material/chips';
 import { Operation, Resource } from '@shared/models/security.models';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import * as i0 from "@angular/core";
@@ -29,7 +29,7 @@ export declare class OperationTypeListComponent implements ControlValueAccessor,
     resource: Resource;
     operationTypeInput: ElementRef<HTMLInputElement>;
     operationTypeAutocomplete: MatAutocomplete;
-    chipList: MatChipList;
+    chipList: MatChipGrid;
     allOperationTypeList: Array<OperationTypeInfo>;
     operationTypeList: Array<OperationTypeInfo>;
     filteredOperationTypeList: Observable<Array<OperationTypeInfo>>;
@@ -60,6 +60,6 @@ export declare class OperationTypeListComponent implements ControlValueAccessor,
     onFocus(): void;
     clear(value?: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<OperationTypeListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<OperationTypeListComponent, "tb-operation-type-list", never, { "required": "required"; "disabled": "disabled"; "groupRoleOperations": "groupRoleOperations"; "resource": "resource"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<OperationTypeListComponent, "tb-operation-type-list", never, { "required": "required"; "disabled": "disabled"; "groupRoleOperations": "groupRoleOperations"; "resource": "resource"; }, {}, never, never, false, never>;
 }
 export {};

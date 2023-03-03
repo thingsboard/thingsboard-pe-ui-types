@@ -43,5 +43,5 @@ export declare class AutoCommitSettingsComponent extends PageComponent implement
     private prepareEntityTypesFormArray;
     private createEntityTypeControl;
     static ɵfac: i0.ɵɵFactoryDeclaration<AutoCommitSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AutoCommitSettingsComponent, "tb-auto-commit-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AutoCommitSettingsComponent, "tb-auto-commit-settings", never, {}, {}, never, never, false, never>;
 }

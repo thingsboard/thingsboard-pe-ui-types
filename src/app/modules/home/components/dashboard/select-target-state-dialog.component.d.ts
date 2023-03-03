@@ -33,5 +33,5 @@ export declare class SelectTargetStateDialogComponent extends DialogComponent<Se
     cancel(): void;
     save(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SelectTargetStateDialogComponent, [null, null, null, { skipSelf: true; }, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SelectTargetStateDialogComponent, "tb-select-target-state-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SelectTargetStateDialogComponent, "tb-select-target-state-dialog", never, {}, {}, never, never, false, never>;
 }

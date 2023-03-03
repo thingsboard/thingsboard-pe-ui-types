@@ -14,5 +14,5 @@ export declare abstract class DialogComponent<T, R = any> extends PageComponent 
     protected constructor(store: Store<AppState>, router: Router, dialogRef: MatDialogRef<T, R>);
     ngOnDestroy(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DialogComponent<any, any>, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<DialogComponent<any, any>, never, never, {}, {}, never, never, false>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<DialogComponent<any, any>, never, never, {}, {}, never, never, false, never>;
 }

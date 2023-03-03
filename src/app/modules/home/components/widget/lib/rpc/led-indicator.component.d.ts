@@ -60,5 +60,5 @@ export declare class LedIndicatorComponent extends PageComponent implements OnIn
     private onDataUpdated;
     private onDataUpdateError;
     static ɵfac: i0.ɵɵFactoryDeclaration<LedIndicatorComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<LedIndicatorComponent, "tb-led-indicator", never, { "ctx": "ctx"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<LedIndicatorComponent, "tb-led-indicator", never, { "ctx": "ctx"; }, {}, never, never, false, never>;
 }

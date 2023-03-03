@@ -26,5 +26,5 @@ export declare class ResetPasswordComponent extends PageComponent implements OnI
     ngOnDestroy(): void;
     onResetPassword(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ResetPasswordComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ResetPasswordComponent, "tb-reset-password", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ResetPasswordComponent, "tb-reset-password", never, {}, {}, never, never, false, never>;
 }

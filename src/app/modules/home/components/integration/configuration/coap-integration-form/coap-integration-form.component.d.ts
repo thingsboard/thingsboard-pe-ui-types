@@ -33,5 +33,5 @@ export declare class CoapIntegrationFormComponent extends IntegrationForm implem
     private coapEndPointUrl;
     private onEndpointCopied;
     static ɵfac: i0.ɵɵFactoryDeclaration<CoapIntegrationFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CoapIntegrationFormComponent, "tb-coap-integration-form", never, { "routingKey": "routingKey"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CoapIntegrationFormComponent, "tb-coap-integration-form", never, { "routingKey": "routingKey"; }, {}, never, never, false, never>;
 }

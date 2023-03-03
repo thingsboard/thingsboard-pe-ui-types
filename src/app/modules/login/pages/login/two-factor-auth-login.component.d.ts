@@ -42,5 +42,5 @@ export declare class TwoFactorAuthLoginComponent extends PageComponent implement
     cancelLogin(): void;
     private updatedTime;
     static ɵfac: i0.ɵɵFactoryDeclaration<TwoFactorAuthLoginComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TwoFactorAuthLoginComponent, "tb-two-factor-auth-login", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TwoFactorAuthLoginComponent, "tb-two-factor-auth-login", never, {}, {}, never, never, false, never>;
 }

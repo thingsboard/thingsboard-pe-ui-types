@@ -6,5 +6,5 @@ export declare class CertUploadComponent {
     ignoreCaCert: boolean;
     constructor();
     static ɵfac: i0.ɵɵFactoryDeclaration<CertUploadComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CertUploadComponent, "tb-cert-upload", never, { "form": "form"; "disabled": "disabled"; "ignoreCaCert": "ignoreCaCert"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CertUploadComponent, "tb-cert-upload", never, { "form": "form"; "disabled": "disabled"; "ignoreCaCert": "ignoreCaCert"; }, {}, never, never, false, never>;
 }

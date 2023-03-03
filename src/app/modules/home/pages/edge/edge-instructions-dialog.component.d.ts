@@ -16,5 +16,5 @@ export declare class EdgeInstructionsDialogComponent extends DialogComponent<Edg
     constructor(store: Store<AppState>, router: Router, dialogRef: MatDialogRef<EdgeInstructionsDialogComponent, EdgeInstructionsData>, data: EdgeInstructionsData);
     cancel(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EdgeInstructionsDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EdgeInstructionsDialogComponent, "tb-edge-instructions", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EdgeInstructionsDialogComponent, "tb-edge-instructions", never, {}, {}, never, never, false, never>;
 }

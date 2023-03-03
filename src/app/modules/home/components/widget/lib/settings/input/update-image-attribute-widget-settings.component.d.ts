@@ -12,5 +12,5 @@ export declare class UpdateImageAttributeWidgetSettingsComponent extends WidgetS
     protected defaultSettings(): WidgetSettings;
     protected onSettingsSet(settings: WidgetSettings): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<UpdateImageAttributeWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<UpdateImageAttributeWidgetSettingsComponent, "tb-update-image-attribute-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<UpdateImageAttributeWidgetSettingsComponent, "tb-update-image-attribute-widget-settings", never, {}, {}, never, never, false, never>;
 }

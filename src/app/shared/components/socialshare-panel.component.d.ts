@@ -9,5 +9,5 @@ export declare class SocialSharePanelComponent implements OnInit {
     ngOnInit(): void;
     isShareLinkLocal(): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<SocialSharePanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SocialSharePanelComponent, "tb-social-share-panel", never, { "shareTitle": "shareTitle"; "shareText": "shareText"; "shareLink": "shareLink"; "shareHashTags": "shareHashTags"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SocialSharePanelComponent, "tb-social-share-panel", never, { "shareTitle": "shareTitle"; "shareText": "shareText"; "shareLink": "shareLink"; "shareHashTags": "shareHashTags"; }, {}, never, never, false, never>;
 }

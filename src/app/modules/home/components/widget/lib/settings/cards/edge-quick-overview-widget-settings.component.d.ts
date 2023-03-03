@@ -12,5 +12,5 @@ export declare class EdgeQuickOverviewWidgetSettingsComponent extends WidgetSett
     protected defaultSettings(): WidgetSettings;
     protected onSettingsSet(settings: WidgetSettings): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EdgeQuickOverviewWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EdgeQuickOverviewWidgetSettingsComponent, "tb-edge-quick-overview-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EdgeQuickOverviewWidgetSettingsComponent, "tb-edge-quick-overview-widget-settings", never, {}, {}, never, never, false, never>;
 }

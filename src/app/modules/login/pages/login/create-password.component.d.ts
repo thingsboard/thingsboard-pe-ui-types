@@ -25,5 +25,5 @@ export declare class CreatePasswordComponent extends PageComponent implements On
     ngOnDestroy(): void;
     onCreatePassword(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<CreatePasswordComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CreatePasswordComponent, "tb-create-password", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CreatePasswordComponent, "tb-create-password", never, {}, {}, never, never, false, never>;
 }

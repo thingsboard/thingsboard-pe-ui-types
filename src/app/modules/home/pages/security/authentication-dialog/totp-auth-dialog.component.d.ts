@@ -24,5 +24,5 @@ export declare class TotpAuthDialogComponent extends DialogComponent<TotpAuthDia
     onSaveConfig(): void;
     closeDialog(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TotpAuthDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TotpAuthDialogComponent, "tb-totp-auth-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TotpAuthDialogComponent, "tb-totp-auth-dialog", never, {}, {}, never, never, false, never>;
 }

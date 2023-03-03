@@ -12,5 +12,5 @@ export declare class EntitiesHierarchyWidgetSettingsComponent extends WidgetSett
     protected defaultSettings(): WidgetSettings;
     protected onSettingsSet(settings: WidgetSettings): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntitiesHierarchyWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntitiesHierarchyWidgetSettingsComponent, "tb-entities-hierarchy-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntitiesHierarchyWidgetSettingsComponent, "tb-entities-hierarchy-widget-settings", never, {}, {}, never, never, false, never>;
 }

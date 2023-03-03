@@ -26,5 +26,5 @@ export declare class AlarmDurationPredicateValueComponent implements ControlValu
     private updateModel;
     private updateShowInheritMode;
     static ɵfac: i0.ɵɵFactoryDeclaration<AlarmDurationPredicateValueComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmDurationPredicateValueComponent, "tb-alarm-duration-predicate-value", never, { "alarmConditionType": "alarmConditionType"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmDurationPredicateValueComponent, "tb-alarm-duration-predicate-value", never, { "alarmConditionType": "alarmConditionType"; }, {}, never, never, false, never>;
 }

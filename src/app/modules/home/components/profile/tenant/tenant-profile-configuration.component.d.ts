@@ -23,5 +23,5 @@ export declare class TenantProfileConfigurationComponent implements ControlValue
     writeValue(value: TenantProfileConfiguration | null): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<TenantProfileConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TenantProfileConfigurationComponent, "tb-tenant-profile-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TenantProfileConfigurationComponent, "tb-tenant-profile-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

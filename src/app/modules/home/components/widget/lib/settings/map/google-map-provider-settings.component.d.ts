@@ -29,5 +29,5 @@ export declare class GoogleMapProviderSettingsComponent extends PageComponent im
     };
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<GoogleMapProviderSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<GoogleMapProviderSettingsComponent, "tb-google-map-provider-settings", never, { "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GoogleMapProviderSettingsComponent, "tb-google-map-provider-settings", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
 }

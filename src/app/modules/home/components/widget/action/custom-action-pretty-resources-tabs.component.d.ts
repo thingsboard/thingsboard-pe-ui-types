@@ -43,5 +43,5 @@ export declare class CustomActionPrettyResourcesTabsComponent extends PageCompon
     private setAceEditorValues;
     private onAceEditorResize;
     static ɵfac: i0.ɵɵFactoryDeclaration<CustomActionPrettyResourcesTabsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CustomActionPrettyResourcesTabsComponent, "tb-custom-action-pretty-resources-tabs", never, { "action": "action"; "hasCustomFunction": "hasCustomFunction"; }, { "actionUpdated": "actionUpdated"; }, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CustomActionPrettyResourcesTabsComponent, "tb-custom-action-pretty-resources-tabs", never, { "action": "action"; "hasCustomFunction": "hasCustomFunction"; }, { "actionUpdated": "actionUpdated"; }, never, never, false, never>;
 }

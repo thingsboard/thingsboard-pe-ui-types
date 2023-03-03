@@ -38,6 +38,6 @@ export declare class IntegrationTypeSelectComponent implements ControlValueAcces
     private fetchIntegrationTypes;
     private filterIntegrationType;
     static ɵfac: i0.ɵɵFactoryDeclaration<IntegrationTypeSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<IntegrationTypeSelectComponent, "tb-integration-type-select", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<IntegrationTypeSelectComponent, "tb-integration-type-select", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }
 export {};

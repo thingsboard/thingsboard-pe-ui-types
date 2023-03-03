@@ -42,5 +42,5 @@ export declare class AddGroupEntityDialogComponent extends DialogComponent<AddGr
     cancel(): void;
     add(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AddGroupEntityDialogComponent, [null, null, null, null, null, null, { skipSelf: true; }, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AddGroupEntityDialogComponent, "tb-add-group-entity-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AddGroupEntityDialogComponent, "tb-add-group-entity-dialog", never, {}, {}, never, never, false, never>;
 }

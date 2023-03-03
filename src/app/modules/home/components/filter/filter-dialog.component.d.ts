@@ -36,5 +36,5 @@ export declare class FilterDialogComponent extends DialogComponent<FilterDialogC
     cancel(): void;
     save(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<FilterDialogComponent, [null, null, null, { skipSelf: true; }, null, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FilterDialogComponent, "tb-filter-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FilterDialogComponent, "tb-filter-dialog", never, {}, {}, never, never, false, never>;
 }

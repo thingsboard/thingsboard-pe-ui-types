@@ -54,5 +54,5 @@ export declare class JsonObjectEditComponent implements OnInit, ControlValueAcce
     updateView(): void;
     onFullscreen(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<JsonObjectEditComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<JsonObjectEditComponent, "tb-json-object-edit", never, { "label": "label"; "disabled": "disabled"; "fillHeight": "fillHeight"; "editorStyle": "editorStyle"; "sort": "sort"; "required": "required"; "readonly": "readonly"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<JsonObjectEditComponent, "tb-json-object-edit", never, { "label": "label"; "disabled": "disabled"; "fillHeight": "fillHeight"; "editorStyle": "editorStyle"; "sort": "sort"; "required": "required"; "readonly": "readonly"; }, {}, never, never, false, never>;
 }

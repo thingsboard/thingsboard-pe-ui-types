@@ -232,5 +232,5 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     updateDashboardImage($event: Event): void;
     toggleVersionControl($event: Event, versionControlButton: MatButton): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardPageComponent, [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, { optional: true; }, null, null, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardPageComponent, "tb-dashboard-page", never, { "embedded": "embedded"; "currentState": "currentState"; "hideToolbar": "hideToolbar"; "syncStateWithQueryParam": "syncStateWithQueryParam"; "dashboard": "dashboard"; "parentDashboard": "parentDashboard"; "popoverComponent": "popoverComponent"; "parentAliasController": "parentAliasController"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardPageComponent, "tb-dashboard-page", never, { "embedded": "embedded"; "currentState": "currentState"; "hideToolbar": "hideToolbar"; "syncStateWithQueryParam": "syncStateWithQueryParam"; "dashboard": "dashboard"; "parentDashboard": "parentDashboard"; "popoverComponent": "popoverComponent"; "parentAliasController": "parentAliasController"; }, {}, never, never, false, never>;
 }

@@ -29,5 +29,5 @@ export declare class Lwm2mAttributesComponent implements ControlValueAccessor, O
     get iconButton(): string;
     editAttributesLwm2m: ($event: Event) => void;
     static ɵfac: i0.ɵɵFactoryDeclaration<Lwm2mAttributesComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mAttributesComponent, "tb-profile-lwm2m-attributes", never, { "isAttributeTelemetry": "isAttributeTelemetry"; "modelName": "modelName"; "disabled": "disabled"; "isResource": "isResource"; "required": "required"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mAttributesComponent, "tb-profile-lwm2m-attributes", never, { "isAttributeTelemetry": "isAttributeTelemetry"; "modelName": "modelName"; "disabled": "disabled"; "isResource": "isResource"; "required": "required"; }, {}, never, never, false, never>;
 }

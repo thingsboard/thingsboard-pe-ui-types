@@ -14,5 +14,5 @@ export declare class DeviceClaimingWidgetSettingsComponent extends WidgetSetting
     protected validatorTriggers(): string[];
     protected updateValidators(emitEvent: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceClaimingWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceClaimingWidgetSettingsComponent, "tb-device-claiming-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceClaimingWidgetSettingsComponent, "tb-device-claiming-widget-settings", never, {}, {}, never, never, false, never>;
 }

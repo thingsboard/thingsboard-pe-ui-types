@@ -28,5 +28,5 @@ export declare class ComplexFilterPredicateDialogComponent extends DialogCompone
     cancel(): void;
     save(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ComplexFilterPredicateDialogComponent, [null, null, null, { skipSelf: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ComplexFilterPredicateDialogComponent, "tb-complex-filter-predicate-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ComplexFilterPredicateDialogComponent, "tb-complex-filter-predicate-dialog", never, {}, {}, never, never, false, never>;
 }

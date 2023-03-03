@@ -10,6 +10,7 @@ import { EntityService } from '@core/http/entity.service';
 import { TruncatePipe } from '@shared/pipe/truncate.pipe';
 import { QueueInfo, ServiceType } from '@shared/models/queue.models';
 import { QueueService } from '@core/http/queue.service';
+import { SubscriptSizing } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class QueueAutocompleteComponent implements ControlValueAccessor, OnInit {
     private store;
@@ -23,6 +24,7 @@ export declare class QueueAutocompleteComponent implements ControlValueAccessor,
     labelText: string;
     requiredText: string;
     autocompleteHint: string;
+    subscriptSizing: SubscriptSizing;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
@@ -49,5 +51,5 @@ export declare class QueueAutocompleteComponent implements ControlValueAccessor,
     getDescription(value: any): any;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<QueueAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<QueueAutocompleteComponent, "tb-queue-autocomplete", never, { "labelText": "labelText"; "requiredText": "requiredText"; "autocompleteHint": "autocompleteHint"; "required": "required"; "queueType": "queueType"; "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<QueueAutocompleteComponent, "tb-queue-autocomplete", never, { "labelText": "labelText"; "requiredText": "requiredText"; "autocompleteHint": "autocompleteHint"; "subscriptSizing": "subscriptSizing"; "required": "required"; "queueType": "queueType"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

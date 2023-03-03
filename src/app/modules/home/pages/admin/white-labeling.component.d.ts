@@ -57,5 +57,5 @@ export declare class WhiteLabelingComponent extends PageComponent implements OnI
     confirmForm(): UntypedFormGroup;
     onExit(): Observable<any>;
     static ɵfac: i0.ɵɵFactoryDeclaration<WhiteLabelingComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WhiteLabelingComponent, "tb-white-labeling", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WhiteLabelingComponent, "tb-white-labeling", never, {}, {}, never, never, false, never>;
 }

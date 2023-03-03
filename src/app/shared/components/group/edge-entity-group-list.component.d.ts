@@ -6,7 +6,7 @@ import { AppState } from '@app/core/core.state';
 import { TranslateService } from '@ngx-translate/core';
 import { EntityType } from '@shared/models/entity-type.models';
 import { MatAutocomplete } from '@angular/material/autocomplete';
-import { MatChipList } from '@angular/material/chips';
+import { MatChipGrid } from '@angular/material/chips';
 import { EntityGroupInfo } from '@shared/models/entity-group.models';
 import { EntityGroupService } from '@core/http/entity-group.service';
 import { EntityId } from '@shared/models/id/entity-id';
@@ -30,7 +30,7 @@ export declare class EdgeEntityGroupListComponent implements ControlValueAccesso
     disabled: boolean;
     entityGroupInput: ElementRef<HTMLInputElement>;
     matAutocomplete: MatAutocomplete;
-    chipList: MatChipList;
+    chipList: MatChipGrid;
     entityGroups: Array<EntityGroupInfo>;
     filteredEntityGroups: Observable<Array<EntityGroupInfo>>;
     ownerId: EntityId;
@@ -62,5 +62,5 @@ export declare class EdgeEntityGroupListComponent implements ControlValueAccesso
     private createEntityGroupTasks;
     private getGroupsByOwnerId;
     static ɵfac: i0.ɵɵFactoryDeclaration<EdgeEntityGroupListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EdgeEntityGroupListComponent, "tb-edge-entity-group-list", never, { "groupType": "groupType"; "excludeGroupAll": "excludeGroupAll"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EdgeEntityGroupListComponent, "tb-edge-entity-group-list", never, { "groupType": "groupType"; "excludeGroupAll": "excludeGroupAll"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

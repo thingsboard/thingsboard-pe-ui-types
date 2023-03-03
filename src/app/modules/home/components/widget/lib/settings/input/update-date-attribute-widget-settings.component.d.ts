@@ -14,5 +14,5 @@ export declare class UpdateDateAttributeWidgetSettingsComponent extends WidgetSe
     protected prepareInputSettings(settings: WidgetSettings): WidgetSettings;
     protected prepareOutputSettings(settings: any): WidgetSettings;
     static ɵfac: i0.ɵɵFactoryDeclaration<UpdateDateAttributeWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<UpdateDateAttributeWidgetSettingsComponent, "tb-update-date-attribute-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<UpdateDateAttributeWidgetSettingsComponent, "tb-update-date-attribute-widget-settings", never, {}, {}, never, never, false, never>;
 }

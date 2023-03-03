@@ -14,5 +14,5 @@ export declare class TMobileIotIntegrationFormComponent extends HttpIntegrationF
     constructor(fb: UntypedFormBuilder, store: Store<AppState>, translate: TranslateService);
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TMobileIotIntegrationFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TMobileIotIntegrationFormComponent, "tb-t-mobile-iot-cdp-integration-form", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TMobileIotIntegrationFormComponent, "tb-t-mobile-iot-cdp-integration-form", never, {}, {}, never, never, false, never>;
 }

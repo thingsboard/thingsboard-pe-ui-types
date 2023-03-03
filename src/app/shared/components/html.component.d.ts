@@ -45,5 +45,5 @@ export declare class HtmlComponent implements OnInit, OnDestroy, ControlValueAcc
     writeValue(value: string): void;
     updateView(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<HtmlComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<HtmlComponent, "tb-html", never, { "label": "label"; "disabled": "disabled"; "fillHeight": "fillHeight"; "minHeight": "minHeight"; "required": "required"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<HtmlComponent, "tb-html", never, { "label": "label"; "disabled": "disabled"; "fillHeight": "fillHeight"; "minHeight": "minHeight"; "required": "required"; }, {}, never, never, false, never>;
 }

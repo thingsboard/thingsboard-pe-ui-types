@@ -50,5 +50,5 @@ export declare class ImageMapProviderSettingsComponent extends PageComponent imp
     private fetchEntityKeys;
     private createKeyFilter;
     static ɵfac: i0.ɵɵFactoryDeclaration<ImageMapProviderSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ImageMapProviderSettingsComponent, "tb-image-map-provider-settings", never, { "disabled": "disabled"; "aliasController": "aliasController"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ImageMapProviderSettingsComponent, "tb-image-map-provider-settings", never, { "disabled": "disabled"; "aliasController": "aliasController"; }, {}, never, never, false, never>;
 }

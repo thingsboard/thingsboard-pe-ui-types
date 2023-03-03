@@ -8,5 +8,5 @@ export declare class TbErrorComponent {
     constructor(cd: ChangeDetectorRef);
     set error(value: any);
     static ɵfac: i0.ɵɵFactoryDeclaration<TbErrorComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TbErrorComponent, "tb-error", never, { "error": "error"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TbErrorComponent, "tb-error", never, { "error": "error"; }, {}, never, never, false, never>;
 }

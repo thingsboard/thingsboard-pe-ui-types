@@ -25,5 +25,5 @@ export declare class Lwm2mObjectAddInstancesListComponent implements ControlValu
     onFocus(): void;
     private updateValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<Lwm2mObjectAddInstancesListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mObjectAddInstancesListComponent, "tb-profile-lwm2m-object-add-instances-list", never, { "disabled": "disabled"; "required": "required"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mObjectAddInstancesListComponent, "tb-profile-lwm2m-object-add-instances-list", never, { "disabled": "disabled"; "required": "required"; }, {}, never, never, false, never>;
 }

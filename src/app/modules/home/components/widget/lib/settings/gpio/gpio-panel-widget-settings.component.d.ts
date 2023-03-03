@@ -18,5 +18,5 @@ export declare class GpioPanelWidgetSettingsComponent extends WidgetSettingsComp
     removeGpioItem(index: number): void;
     addGpioItem(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<GpioPanelWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<GpioPanelWidgetSettingsComponent, "tb-gpio-panel-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GpioPanelWidgetSettingsComponent, "tb-gpio-panel-widget-settings", never, {}, {}, never, never, false, never>;
 }

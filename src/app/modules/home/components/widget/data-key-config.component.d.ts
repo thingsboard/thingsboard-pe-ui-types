@@ -85,5 +85,5 @@ export declare class DataKeyConfigComponent extends PageComponent implements OnI
         dataKey?: undefined;
     };
     static ɵfac: i0.ɵɵFactoryDeclaration<DataKeyConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeyConfigComponent, "tb-data-key-config", never, { "entityAliasId": "entityAliasId"; "callbacks": "callbacks"; "dashboard": "dashboard"; "aliasController": "aliasController"; "widget": "widget"; "widgetType": "widgetType"; "dataKeySettingsSchema": "dataKeySettingsSchema"; "dataKeySettingsDirective": "dataKeySettingsDirective"; "showPostProcessing": "showPostProcessing"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeyConfigComponent, "tb-data-key-config", never, { "entityAliasId": "entityAliasId"; "callbacks": "callbacks"; "dashboard": "dashboard"; "aliasController": "aliasController"; "widget": "widget"; "widgetType": "widgetType"; "dataKeySettingsSchema": "dataKeySettingsSchema"; "dataKeySettingsDirective": "dataKeySettingsDirective"; "showPostProcessing": "showPostProcessing"; }, {}, never, never, false, never>;
 }

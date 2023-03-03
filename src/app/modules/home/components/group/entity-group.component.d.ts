@@ -33,5 +33,5 @@ export declare class EntityGroupComponent extends EntityComponent<EntityGroupInf
     private updateGroupParams;
     onEntityGroupIdCopied($event: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityGroupComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupComponent, "tb-entity-group", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupComponent, "tb-entity-group", never, {}, {}, never, never, false, never>;
 }

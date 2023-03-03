@@ -15,5 +15,5 @@ export declare class RoundSwitchWidgetSettingsComponent extends WidgetSettingsCo
     protected prepareInputSettings(settings: WidgetSettings): WidgetSettings;
     protected prepareOutputSettings(settings: any): WidgetSettings;
     static ɵfac: i0.ɵɵFactoryDeclaration<RoundSwitchWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RoundSwitchWidgetSettingsComponent, "tb-round-switch-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RoundSwitchWidgetSettingsComponent, "tb-round-switch-widget-settings", never, {}, {}, never, never, false, never>;
 }

@@ -37,5 +37,5 @@ export declare class SchedulerEventConfigComponent implements ControlValueAccess
     writeValue(value: SchedulerEventConfiguration | null): void;
     updateView(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SchedulerEventConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SchedulerEventConfigComponent, "tb-scheduler-event-config", never, { "disabled": "disabled"; "schedulerEventConfigTypes": "schedulerEventConfigTypes"; "schedulerEventType": "schedulerEventType"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SchedulerEventConfigComponent, "tb-scheduler-event-config", never, { "disabled": "disabled"; "schedulerEventConfigTypes": "schedulerEventConfigTypes"; "schedulerEventType": "schedulerEventType"; }, {}, never, never, false, never>;
 }

@@ -39,5 +39,5 @@ export declare class AddEntitiesToEdgeDialogComponent extends DialogComponent<Ad
     assign(): void;
     private getAssignToEdgeTask;
     static ɵfac: i0.ɵɵFactoryDeclaration<AddEntitiesToEdgeDialogComponent, [null, null, null, null, null, null, { skipSelf: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AddEntitiesToEdgeDialogComponent, "tb-add-entities-to-edge-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AddEntitiesToEdgeDialogComponent, "tb-add-entities-to-edge-dialog", never, {}, {}, never, never, false, never>;
 }

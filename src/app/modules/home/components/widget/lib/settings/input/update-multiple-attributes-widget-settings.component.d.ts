@@ -14,5 +14,5 @@ export declare class UpdateMultipleAttributesWidgetSettingsComponent extends Wid
     protected validatorTriggers(): string[];
     protected updateValidators(emitEvent: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<UpdateMultipleAttributesWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<UpdateMultipleAttributesWidgetSettingsComponent, "tb-update-multiple-attributes-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<UpdateMultipleAttributesWidgetSettingsComponent, "tb-update-multiple-attributes-widget-settings", never, {}, {}, never, never, false, never>;
 }

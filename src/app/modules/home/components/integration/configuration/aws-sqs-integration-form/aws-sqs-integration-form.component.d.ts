@@ -15,5 +15,5 @@ export declare class AwsSqsIntegrationFormComponent extends IntegrationForm impl
     validate(): ValidationErrors | null;
     updatedValidationPrivateNetwork(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AwsSqsIntegrationFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AwsSqsIntegrationFormComponent, "tb-aws-sqs-integration-form", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AwsSqsIntegrationFormComponent, "tb-aws-sqs-integration-form", never, {}, {}, never, never, false, never>;
 }

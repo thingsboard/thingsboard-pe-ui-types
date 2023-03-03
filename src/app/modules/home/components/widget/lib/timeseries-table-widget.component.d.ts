@@ -129,7 +129,7 @@ export declare class TimeseriesTableWidgetComponent extends PageComponent implem
     private loadCurrentSourceRow;
     private clearCache;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeseriesTableWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeseriesTableWidgetComponent, "tb-timeseries-table-widget", never, { "ctx": "ctx"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeseriesTableWidgetComponent, "tb-timeseries-table-widget", never, { "ctx": "ctx"; }, {}, never, never, false, never>;
 }
 declare class TimeseriesDatasource implements DataSource<TimeseriesRow> {
     private source;

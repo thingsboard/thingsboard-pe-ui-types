@@ -31,5 +31,5 @@ export declare class TripAnimationPointSettingsComponent extends PageComponent i
     private updateModel;
     private updateValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<TripAnimationPointSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TripAnimationPointSettingsComponent, "tb-trip-animation-point-settings", never, { "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TripAnimationPointSettingsComponent, "tb-trip-animation-point-settings", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
 }

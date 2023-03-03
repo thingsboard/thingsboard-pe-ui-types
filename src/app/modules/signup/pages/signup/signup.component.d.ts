@@ -40,5 +40,5 @@ export declare class SignupComponent extends PageComponent implements OnInit {
     openPrivacyPolicy($event: Event): void;
     openTermsOfUse($event: Event): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SignupComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SignupComponent, "tb-signup", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SignupComponent, "tb-signup", never, {}, {}, never, never, false, never>;
 }

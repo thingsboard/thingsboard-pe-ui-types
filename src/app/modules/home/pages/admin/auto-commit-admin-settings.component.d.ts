@@ -16,5 +16,5 @@ export declare class AutoCommitAdminSettingsComponent extends PageComponent impl
     ngOnInit(): void;
     confirmForm(): UntypedFormGroup;
     static ɵfac: i0.ɵɵFactoryDeclaration<AutoCommitAdminSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AutoCommitAdminSettingsComponent, "tb-auto-commit-admin-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AutoCommitAdminSettingsComponent, "tb-auto-commit-admin-settings", never, {}, {}, never, never, false, never>;
 }

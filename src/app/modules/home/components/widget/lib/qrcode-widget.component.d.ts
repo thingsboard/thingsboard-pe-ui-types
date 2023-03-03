@@ -29,6 +29,6 @@ export declare class QrCodeWidgetComponent extends PageComponent implements OnIn
     private updateQrCodeText;
     private updateCanvas;
     static ɵfac: i0.ɵɵFactoryDeclaration<QrCodeWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<QrCodeWidgetComponent, "tb-qrcode-widget", never, { "ctx": "ctx"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<QrCodeWidgetComponent, "tb-qrcode-widget", never, { "ctx": "ctx"; }, {}, never, never, false, never>;
 }
 export {};

@@ -52,5 +52,5 @@ export declare class TimezoneSelectComponent implements ControlValueAccessor, On
     private loadTimezones;
     private getLocalBrowserTimezoneInfoPlaceholder;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimezoneSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimezoneSelectComponent, "tb-timezone-select", never, { "appearance": "appearance"; "defaultTimezone": "defaultTimezone"; "required": "required"; "userTimezoneByDefault": "userTimezoneByDefault"; "localBrowserTimezonePlaceholderOnEmpty": "localBrowserTimezonePlaceholderOnEmpty"; "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimezoneSelectComponent, "tb-timezone-select", never, { "appearance": "appearance"; "defaultTimezone": "defaultTimezone"; "required": "required"; "userTimezoneByDefault": "userTimezoneByDefault"; "localBrowserTimezonePlaceholderOnEmpty": "localBrowserTimezonePlaceholderOnEmpty"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

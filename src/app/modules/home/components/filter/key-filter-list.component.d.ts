@@ -31,5 +31,5 @@ export declare class KeyFilterListComponent implements ControlValueAccessor, Val
     private openKeyFilterDialog;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<KeyFilterListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<KeyFilterListComponent, "tb-key-filter-list", never, { "disabled": "disabled"; "displayUserParameters": "displayUserParameters"; "allowUserDynamicSource": "allowUserDynamicSource"; "telemetryKeysOnly": "telemetryKeysOnly"; "entityId": "entityId"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<KeyFilterListComponent, "tb-key-filter-list", never, { "disabled": "disabled"; "displayUserParameters": "displayUserParameters"; "allowUserDynamicSource": "allowUserDynamicSource"; "telemetryKeysOnly": "telemetryKeysOnly"; "entityId": "entityId"; }, {}, never, never, false, never>;
 }

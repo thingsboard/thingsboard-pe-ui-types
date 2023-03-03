@@ -12,5 +12,5 @@ export declare class AnalogueRadialGaugeWidgetSettingsComponent extends Analogue
     protected defaultSettings(): WidgetSettings;
     protected onSettingsSet(settings: WidgetSettings): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AnalogueRadialGaugeWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AnalogueRadialGaugeWidgetSettingsComponent, "tb-analogue-radial-gauge-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AnalogueRadialGaugeWidgetSettingsComponent, "tb-analogue-radial-gauge-widget-settings", never, {}, {}, never, never, false, never>;
 }

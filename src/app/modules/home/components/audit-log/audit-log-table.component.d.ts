@@ -38,5 +38,5 @@ export declare class AuditLogTableComponent implements OnInit {
     constructor(auditLogService: AuditLogService, translate: TranslateService, utils: UtilsService, datePipe: DatePipe, dialog: MatDialog, store: Store<AppState>, route: ActivatedRoute);
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AuditLogTableComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AuditLogTableComponent, "tb-audit-log-table", never, { "auditLogMode": "auditLogMode"; "detailsMode": "detailsMode"; "active": "active"; "entityId": "entityId"; "userId": "userId"; "customerId": "customerId"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AuditLogTableComponent, "tb-audit-log-table", never, { "auditLogMode": "auditLogMode"; "detailsMode": "detailsMode"; "active": "active"; "entityId": "entityId"; "userId": "userId"; "customerId": "customerId"; }, {}, never, never, false, never>;
 }

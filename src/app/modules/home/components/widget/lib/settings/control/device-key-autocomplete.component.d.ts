@@ -48,5 +48,5 @@ export declare class DeviceKeyAutocompleteComponent extends PageComponent implem
     private fetchEntityKeys;
     private createKeyFilter;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceKeyAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceKeyAutocompleteComponent, "tb-device-key-autocomplete", never, { "disabled": "disabled"; "aliasController": "aliasController"; "targetDeviceAliasId": "targetDeviceAliasId"; "keyType": "keyType"; "attributeLabel": "attributeLabel"; "timeseriesLabel": "timeseriesLabel"; "required": "required"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceKeyAutocompleteComponent, "tb-device-key-autocomplete", never, { "disabled": "disabled"; "aliasController": "aliasController"; "targetDeviceAliasId": "targetDeviceAliasId"; "keyType": "keyType"; "attributeLabel": "attributeLabel"; "timeseriesLabel": "timeseriesLabel"; "required": "required"; }, {}, never, never, false, never>;
 }

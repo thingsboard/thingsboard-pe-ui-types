@@ -36,5 +36,5 @@ export declare class ComplexVersionCreateComponent extends PageComponent impleme
     cancel(): void;
     export(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ComplexVersionCreateComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ComplexVersionCreateComponent, "tb-complex-version-create", never, { "branch": "branch"; "onClose": "onClose"; "popoverComponent": "popoverComponent"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ComplexVersionCreateComponent, "tb-complex-version-create", never, { "branch": "branch"; "onClose": "onClose"; "popoverComponent": "popoverComponent"; }, {}, never, never, false, never>;
 }

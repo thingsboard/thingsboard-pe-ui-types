@@ -39,5 +39,5 @@ export declare class DashboardImageDialogComponent extends DialogComponent<Dashb
     save(): void;
     private updateImage;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardImageDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardImageDialogComponent, "tb-dashboard-image-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardImageDialogComponent, "tb-dashboard-image-dialog", never, {}, {}, never, never, false, never>;
 }

@@ -28,5 +28,5 @@ export declare class TickValueComponent extends PageComponent implements OnInit,
     private valueSourcePropertyText;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<TickValueComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TickValueComponent, "tb-tick-value", never, { "disabled": "disabled"; "expanded": "expanded"; "aliasController": "aliasController"; }, { "removeTickValue": "removeTickValue"; }, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TickValueComponent, "tb-tick-value", never, { "disabled": "disabled"; "expanded": "expanded"; "aliasController": "aliasController"; }, { "removeTickValue": "removeTickValue"; }, never, never, false, never>;
 }

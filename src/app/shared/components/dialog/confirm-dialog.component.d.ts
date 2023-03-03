@@ -11,5 +11,5 @@ export declare class ConfirmDialogComponent {
     data: ConfirmDialogData;
     constructor(dialogRef: MatDialogRef<ConfirmDialogComponent>, data: ConfirmDialogData);
     static ɵfac: i0.ɵɵFactoryDeclaration<ConfirmDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ConfirmDialogComponent, "tb-confirm-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ConfirmDialogComponent, "tb-confirm-dialog", never, {}, {}, never, never, false, never>;
 }

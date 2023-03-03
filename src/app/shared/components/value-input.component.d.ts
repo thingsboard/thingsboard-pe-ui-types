@@ -28,5 +28,5 @@ export declare class ValueInputComponent implements OnInit, ControlValueAccessor
     onValueTypeChanged(): void;
     onValueChanged(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ValueInputComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ValueInputComponent, "tb-value-input", never, { "disabled": "disabled"; "requiredText": "requiredText"; "stringNotRequired": "stringNotRequired"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ValueInputComponent, "tb-value-input", never, { "disabled": "disabled"; "requiredText": "requiredText"; "stringNotRequired": "stringNotRequired"; }, {}, never, never, false, never>;
 }

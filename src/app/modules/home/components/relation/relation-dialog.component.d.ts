@@ -38,5 +38,5 @@ export declare class RelationDialogComponent extends DialogComponent<RelationDia
     cancel(): void;
     save(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<RelationDialogComponent, [null, null, null, null, { skipSelf: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RelationDialogComponent, "tb-relation-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RelationDialogComponent, "tb-relation-dialog", never, {}, {}, never, never, false, never>;
 }

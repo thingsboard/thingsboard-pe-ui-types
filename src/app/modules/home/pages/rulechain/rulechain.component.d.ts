@@ -25,5 +25,5 @@ export declare class RuleChainComponent extends EntityComponent<RuleChain> {
     isAutoAssignToEdgeRuleChain(): any;
     isNotAutoAssignToEdgeRuleChain(): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<RuleChainComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RuleChainComponent, "tb-rulechain", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RuleChainComponent, "tb-rulechain", never, {}, {}, never, never, false, never>;
 }

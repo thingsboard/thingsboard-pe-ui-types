@@ -24,5 +24,5 @@ export declare class SolutionInstallDialogComponent extends DialogComponent<Solu
     cancel(): void;
     gotoMainDashboard(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SolutionInstallDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SolutionInstallDialogComponent, "tb-solution-install-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SolutionInstallDialogComponent, "tb-solution-install-dialog", never, {}, {}, never, never, false, never>;
 }

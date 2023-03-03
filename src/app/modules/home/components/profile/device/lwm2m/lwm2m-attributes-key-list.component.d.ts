@@ -39,5 +39,5 @@ export declare class Lwm2mAttributesKeyListComponent extends PageComponent imple
     private updateUsedAttributesName;
     get isAddEnabled(): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<Lwm2mAttributesKeyListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mAttributesKeyListComponent, "tb-lwm2m-attributes-key-list", never, { "disabled": "disabled"; "isResource": "isResource"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mAttributesKeyListComponent, "tb-lwm2m-attributes-key-list", never, { "disabled": "disabled"; "isResource": "isResource"; }, {}, never, never, false, never>;
 }

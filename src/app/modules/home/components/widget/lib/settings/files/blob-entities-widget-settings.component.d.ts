@@ -14,5 +14,5 @@ export declare class BlobEntitiesWidgetSettingsComponent extends WidgetSettingsC
     protected validatorTriggers(): string[];
     protected updateValidators(emitEvent: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<BlobEntitiesWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<BlobEntitiesWidgetSettingsComponent, "tb-blob-entities-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<BlobEntitiesWidgetSettingsComponent, "tb-blob-entities-widget-settings", never, {}, {}, never, never, false, never>;
 }

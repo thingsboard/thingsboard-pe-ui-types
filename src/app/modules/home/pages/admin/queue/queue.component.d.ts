@@ -27,5 +27,5 @@ export declare class QueueComponent extends EntityComponent<QueueInfo> {
     prepareFormValue(formValue: any): any;
     onQueueIdCopied($event: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<QueueComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<QueueComponent, "tb-queue", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<QueueComponent, "tb-queue", never, {}, {}, never, never, false, never>;
 }

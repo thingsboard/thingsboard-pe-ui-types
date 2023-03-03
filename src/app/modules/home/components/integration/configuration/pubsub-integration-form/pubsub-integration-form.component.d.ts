@@ -14,5 +14,5 @@ export declare class PubSubIntegrationFormComponent extends IntegrationForm impl
     private updateModels;
     validate(): ValidationErrors | null;
     static ɵfac: i0.ɵɵFactoryDeclaration<PubSubIntegrationFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PubSubIntegrationFormComponent, "tb-pubsub-integration-form", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PubSubIntegrationFormComponent, "tb-pubsub-integration-form", never, {}, {}, never, never, false, never>;
 }

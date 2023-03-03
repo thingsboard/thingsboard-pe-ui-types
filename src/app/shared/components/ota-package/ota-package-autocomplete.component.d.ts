@@ -67,5 +67,5 @@ export declare class OtaPackageAutocompleteComponent implements ControlValueAcce
     get hintText(): string;
     packageTitleText(firpackageInfomware: OtaPackageInfo): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<OtaPackageAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<OtaPackageAutocompleteComponent, "tb-ota-package-autocomplete", never, { "type": "type"; "deviceProfileId": "deviceProfileId"; "deviceGroupId": "deviceGroupId"; "labelText": "labelText"; "requiredText": "requiredText"; "useFullEntityId": "useFullEntityId"; "deviceGroupAll": "deviceGroupAll"; "showDetailsPageLink": "showDetailsPageLink"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<OtaPackageAutocompleteComponent, "tb-ota-package-autocomplete", never, { "type": "type"; "deviceProfileId": "deviceProfileId"; "deviceGroupId": "deviceGroupId"; "labelText": "labelText"; "requiredText": "requiredText"; "useFullEntityId": "useFullEntityId"; "deviceGroupAll": "deviceGroupAll"; "showDetailsPageLink": "showDetailsPageLink"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

@@ -63,5 +63,5 @@ export declare class ManageDashboardStatesDialogComponent extends DialogComponen
     cancel(): void;
     save(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ManageDashboardStatesDialogComponent, [null, null, null, { skipSelf: true; }, null, null, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ManageDashboardStatesDialogComponent, "tb-manage-dashboard-states-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ManageDashboardStatesDialogComponent, "tb-manage-dashboard-states-dialog", never, {}, {}, never, never, false, never>;
 }

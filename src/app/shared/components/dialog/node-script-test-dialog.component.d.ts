@@ -61,5 +61,5 @@ export declare class NodeScriptTestDialogComponent extends DialogComponent<NodeS
     private checkInputParamErrors;
     save(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<NodeScriptTestDialogComponent, [null, null, null, { skipSelf: true; }, null, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<NodeScriptTestDialogComponent, "tb-node-script-test-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NodeScriptTestDialogComponent, "tb-node-script-test-dialog", never, {}, {}, never, never, false, never>;
 }

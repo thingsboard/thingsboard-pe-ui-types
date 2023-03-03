@@ -14,5 +14,5 @@ export declare class DateRangeNavigatorWidgetSettingsComponent extends WidgetSet
     protected validatorTriggers(): string[];
     protected updateValidators(emitEvent: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DateRangeNavigatorWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DateRangeNavigatorWidgetSettingsComponent, "tb-date-range-navigator-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DateRangeNavigatorWidgetSettingsComponent, "tb-date-range-navigator-widget-settings", never, {}, {}, never, never, false, never>;
 }

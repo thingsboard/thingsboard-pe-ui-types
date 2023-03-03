@@ -40,5 +40,5 @@ export declare class DataKeyConfigDialogComponent extends DialogComponent<DataKe
     cancel(): void;
     save(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DataKeyConfigDialogComponent, [null, null, null, { skipSelf: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeyConfigDialogComponent, "tb-data-key-config-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeyConfigDialogComponent, "tb-data-key-config-dialog", never, {}, {}, never, never, false, never>;
 }

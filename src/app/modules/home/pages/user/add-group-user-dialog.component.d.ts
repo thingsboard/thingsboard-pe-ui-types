@@ -35,5 +35,5 @@ export declare class AddGroupUserDialogComponent extends DialogComponent<AddGrou
     add(): void;
     displayActivationLink(activationLink: string): Observable<void>;
     static ɵfac: i0.ɵɵFactoryDeclaration<AddGroupUserDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AddGroupUserDialogComponent, "tb-add-group-user-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AddGroupUserDialogComponent, "tb-add-group-user-dialog", never, {}, {}, never, never, false, never>;
 }

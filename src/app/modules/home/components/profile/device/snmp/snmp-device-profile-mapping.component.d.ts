@@ -26,5 +26,5 @@ export declare class SnmpDeviceProfileMappingComponent implements OnInit, OnDest
     private createdFormGroup;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<SnmpDeviceProfileMappingComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SnmpDeviceProfileMappingComponent, "tb-snmp-device-profile-mapping", never, { "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SnmpDeviceProfileMappingComponent, "tb-snmp-device-profile-mapping", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
 }

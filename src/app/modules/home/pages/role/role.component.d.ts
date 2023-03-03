@@ -30,5 +30,5 @@ export declare class RoleComponent extends EntityComponent<Role> {
     prepareFormValue(formValue: any): any;
     onRoleIdCopied($event: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<RoleComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RoleComponent, "tb-role", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RoleComponent, "tb-role", never, {}, {}, never, never, false, never>;
 }

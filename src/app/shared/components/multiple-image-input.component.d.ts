@@ -49,5 +49,5 @@ export declare class MultipleImageInputComponent extends PageComponent implement
     imageDragEnd(): void;
     imageDrop(event: DndDropEvent): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<MultipleImageInputComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MultipleImageInputComponent, "tb-multiple-image-input", never, { "label": "label"; "maxSizeByte": "maxSizeByte"; "required": "required"; "disabled": "disabled"; "inputId": "inputId"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MultipleImageInputComponent, "tb-multiple-image-input", never, { "label": "label"; "maxSizeByte": "maxSizeByte"; "required": "required"; "disabled": "disabled"; "inputId": "inputId"; }, {}, never, never, false, never>;
 }

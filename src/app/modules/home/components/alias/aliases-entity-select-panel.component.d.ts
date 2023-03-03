@@ -17,5 +17,5 @@ export declare class AliasesEntitySelectPanelComponent {
     constructor(data: AliasesEntitySelectPanelData);
     currentAliasEntityChanged(aliasId: string, selected: EntityInfo | null): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AliasesEntitySelectPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AliasesEntitySelectPanelComponent, "tb-aliases-entity-select-panel", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AliasesEntitySelectPanelComponent, "tb-aliases-entity-select-panel", never, {}, {}, never, never, false, never>;
 }

@@ -74,6 +74,6 @@ export declare class SwitchComponent extends PageComponent implements OnInit, Af
     private onDataUpdated;
     private onDataUpdateError;
     static ɵfac: i0.ɵɵFactoryDeclaration<SwitchComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SwitchComponent, "tb-switch", never, { "ctx": "ctx"; "switchType": "switchType"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SwitchComponent, "tb-switch", never, { "ctx": "ctx"; "switchType": "switchType"; }, {}, never, never, false, never>;
 }
 export {};

@@ -33,5 +33,5 @@ export declare class DeviceProfileDialogComponent extends DialogComponent<Device
     cancel(): void;
     save(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceProfileDialogComponent, [null, null, null, null, null, null, { skipSelf: true; }, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceProfileDialogComponent, "tb-device-profile-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceProfileDialogComponent, "tb-device-profile-dialog", never, {}, {}, never, never, false, never>;
 }

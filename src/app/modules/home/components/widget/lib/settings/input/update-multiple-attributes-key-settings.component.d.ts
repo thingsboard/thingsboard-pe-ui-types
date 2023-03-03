@@ -23,5 +23,5 @@ export declare class UpdateMultipleAttributesKeySettingsComponent extends Widget
     selectOptionDrop(event: CdkDragDrop<any[]>): void;
     displayErrorMessagesSection(): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<UpdateMultipleAttributesKeySettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<UpdateMultipleAttributesKeySettingsComponent, "tb-update-multiple-attributes-key-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<UpdateMultipleAttributesKeySettingsComponent, "tb-update-multiple-attributes-key-settings", never, {}, {}, never, never, false, never>;
 }

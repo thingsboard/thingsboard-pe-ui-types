@@ -8,5 +8,5 @@ export declare class AssetProfileTabsComponent extends EntityTabsComponent<Asset
     constructor(store: Store<AppState>);
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AssetProfileTabsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AssetProfileTabsComponent, "tb-asset-profile-tabs", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AssetProfileTabsComponent, "tb-asset-profile-tabs", never, {}, {}, never, never, false, never>;
 }

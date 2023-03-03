@@ -7,7 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { EntityId } from '@shared/models/id/entity-id';
 import { EntityService } from '@core/http/entity.service';
 import { MatAutocomplete, MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
-import { MatChipInputEvent, MatChipList } from '@angular/material/chips';
+import { MatChipInputEvent, MatChipGrid } from '@angular/material/chips';
 import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
 import * as i0 from "@angular/core";
 export declare class EntityKeysListComponent implements ControlValueAccessor, OnInit, AfterViewInit {
@@ -27,7 +27,7 @@ export declare class EntityKeysListComponent implements ControlValueAccessor, On
     disabled: boolean;
     keyInput: ElementRef<HTMLInputElement>;
     matAutocomplete: MatAutocomplete;
-    chipList: MatChipList;
+    chipList: MatChipGrid;
     filteredKeys: Observable<Array<string>>;
     separatorKeysCodes: number[];
     searchText: string;
@@ -49,5 +49,5 @@ export declare class EntityKeysListComponent implements ControlValueAccessor, On
     fetchKeys(searchText?: string): Observable<Array<string>>;
     clear(value?: string, emitEvent?: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityKeysListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityKeysListComponent, "tb-entity-keys-list", never, { "entityId": "entityId"; "keysText": "keysText"; "dataKeyType": "dataKeyType"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityKeysListComponent, "tb-entity-keys-list", never, { "entityId": "entityId"; "keysText": "keysText"; "dataKeyType": "dataKeyType"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

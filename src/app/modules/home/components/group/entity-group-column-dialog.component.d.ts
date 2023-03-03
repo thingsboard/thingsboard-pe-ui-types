@@ -49,5 +49,5 @@ export declare class EntityGroupColumnDialogComponent extends DialogComponent<En
     cancel(): void;
     save(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityGroupColumnDialogComponent, [null, null, null, { skipSelf: true; }, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupColumnDialogComponent, "tb-entity-group-column-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupColumnDialogComponent, "tb-entity-group-column-dialog", never, {}, {}, never, never, false, never>;
 }

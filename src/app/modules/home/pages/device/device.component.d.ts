@@ -35,5 +35,5 @@ export declare class DeviceComponent extends GroupEntityComponent<Device> {
     onDeviceProfileUpdated(): void;
     onDeviceProfileChanged(deviceProfile: DeviceProfileInfo): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceComponent, "tb-device", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceComponent, "tb-device", never, {}, {}, never, never, false, never>;
 }

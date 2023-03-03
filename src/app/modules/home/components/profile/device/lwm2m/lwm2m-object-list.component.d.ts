@@ -38,5 +38,5 @@ export declare class Lwm2mObjectListComponent implements ControlValueAccessor, O
     textIsNotEmpty(text: string): boolean;
     private clear;
     static ɵfac: i0.ɵɵFactoryDeclaration<Lwm2mObjectListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mObjectListComponent, "tb-profile-lwm2m-object-list", never, { "required": "required"; }, { "addList": "addList"; "removeList": "removeList"; }, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mObjectListComponent, "tb-profile-lwm2m-object-list", never, { "required": "required"; }, { "addList": "addList"; "removeList": "removeList"; }, never, never, false, never>;
 }

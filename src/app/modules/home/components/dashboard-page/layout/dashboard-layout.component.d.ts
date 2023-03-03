@@ -58,5 +58,5 @@ export declare class DashboardLayoutComponent extends PageComponent implements I
     pasteWidget($event: Event): void;
     pasteWidgetReference($event: Event): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardLayoutComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardLayoutComponent, "tb-dashboard-layout", never, { "dashboardCheatSheet": "dashboardCheatSheet"; "layoutCtx": "layoutCtx"; "dashboardCtx": "dashboardCtx"; "isEdit": "isEdit"; "isEditingWidget": "isEditingWidget"; "isMobile": "isMobile"; "widgetEditMode": "widgetEditMode"; "parentDashboard": "parentDashboard"; "popoverComponent": "popoverComponent"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardLayoutComponent, "tb-dashboard-layout", never, { "dashboardCheatSheet": "dashboardCheatSheet"; "layoutCtx": "layoutCtx"; "dashboardCtx": "dashboardCtx"; "isEdit": "isEdit"; "isEditingWidget": "isEditingWidget"; "isMobile": "isMobile"; "widgetEditMode": "widgetEditMode"; "parentDashboard": "parentDashboard"; "popoverComponent": "popoverComponent"; }, {}, never, never, false, never>;
 }

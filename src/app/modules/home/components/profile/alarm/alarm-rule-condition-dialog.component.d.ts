@@ -41,5 +41,5 @@ export declare class AlarmRuleConditionDialogComponent extends DialogComponent<A
     cancel(): void;
     save(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AlarmRuleConditionDialogComponent, [null, null, null, { skipSelf: true; }, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmRuleConditionDialogComponent, "tb-alarm-rule-condition-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmRuleConditionDialogComponent, "tb-alarm-rule-condition-dialog", never, {}, {}, never, never, false, never>;
 }

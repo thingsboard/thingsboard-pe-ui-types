@@ -16,5 +16,5 @@ export declare class SelectWidgetTypeDialogComponent extends DialogComponent<Sel
     cancel(): void;
     typeSelected(type: widgetType): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SelectWidgetTypeDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SelectWidgetTypeDialogComponent, "tb-select-widget-type-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SelectWidgetTypeDialogComponent, "tb-select-widget-type-dialog", never, {}, {}, never, never, false, never>;
 }

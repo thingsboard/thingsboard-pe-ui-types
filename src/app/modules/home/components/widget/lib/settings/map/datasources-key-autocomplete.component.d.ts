@@ -38,5 +38,5 @@ export declare class DatasourcesKeyAutocompleteComponent extends PageComponent i
     private createKeyFilter;
     private allKeys;
     static ɵfac: i0.ɵɵFactoryDeclaration<DatasourcesKeyAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DatasourcesKeyAutocompleteComponent, "tb-datasources-key-autocomplete", never, { "disabled": "disabled"; "datasources": "datasources"; "label": "label"; "required": "required"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DatasourcesKeyAutocompleteComponent, "tb-datasources-key-autocomplete", never, { "disabled": "disabled"; "datasources": "datasources"; "label": "label"; "required": "required"; }, {}, never, never, false, never>;
 }

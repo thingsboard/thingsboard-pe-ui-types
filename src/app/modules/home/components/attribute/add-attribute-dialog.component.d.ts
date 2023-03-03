@@ -30,5 +30,5 @@ export declare class AddAttributeDialogComponent extends DialogComponent<AddAttr
     cancel(): void;
     add(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AddAttributeDialogComponent, [null, null, null, null, { skipSelf: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AddAttributeDialogComponent, "tb-add-attribute-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AddAttributeDialogComponent, "tb-add-attribute-dialog", never, {}, {}, never, never, false, never>;
 }

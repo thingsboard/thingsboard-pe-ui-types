@@ -33,5 +33,5 @@ export declare class SnmpDeviceProfileCommunicationConfigComponent implements On
     private createdFormGroup;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<SnmpDeviceProfileCommunicationConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SnmpDeviceProfileCommunicationConfigComponent, "tb-snmp-device-profile-communication-config", never, { "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SnmpDeviceProfileCommunicationConfigComponent, "tb-snmp-device-profile-communication-config", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
 }

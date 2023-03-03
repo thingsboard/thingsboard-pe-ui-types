@@ -28,5 +28,5 @@ export declare class MarkdownEditorComponent implements OnInit, ControlValueAcce
     onFullscreen(): void;
     toggleEditMode(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<MarkdownEditorComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MarkdownEditorComponent, "tb-markdown-editor", never, { "label": "label"; "disabled": "disabled"; "readonly": "readonly"; "helpId": "helpId"; "required": "required"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MarkdownEditorComponent, "tb-markdown-editor", never, { "label": "label"; "disabled": "disabled"; "readonly": "readonly"; "helpId": "helpId"; "required": "required"; }, {}, never, never, false, never>;
 }

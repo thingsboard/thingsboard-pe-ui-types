@@ -32,5 +32,5 @@ export declare class CoapDeviceProfileTransportConfigurationComponent implements
     writeValue(value: CoapDeviceProfileTransportConfiguration | null): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<CoapDeviceProfileTransportConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CoapDeviceProfileTransportConfigurationComponent, "tb-coap-device-profile-transport-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CoapDeviceProfileTransportConfigurationComponent, "tb-coap-device-profile-transport-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

@@ -14,5 +14,5 @@ export declare class OceanConnectIntegrationFormComponent extends HttpIntegratio
     constructor(fb: UntypedFormBuilder, store: Store<AppState>, translate: TranslateService);
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<OceanConnectIntegrationFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<OceanConnectIntegrationFormComponent, "tb-ocean-connect-integration-form", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<OceanConnectIntegrationFormComponent, "tb-ocean-connect-integration-form", never, {}, {}, never, never, false, never>;
 }

@@ -33,5 +33,5 @@ export declare class TenantProfileDialogComponent extends DialogComponent<Tenant
     cancel(): void;
     save(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TenantProfileDialogComponent, [null, null, null, null, null, null, { skipSelf: true; }, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TenantProfileDialogComponent, "tb-tenant-profile-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TenantProfileDialogComponent, "tb-tenant-profile-dialog", never, {}, {}, never, never, false, never>;
 }

@@ -19,5 +19,5 @@ export declare class FiltersEditPanelComponent {
     constructor(data: FiltersEditPanelData, dialog: MatDialog);
     editFilter(filterId: string, filter: FilterInfo): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<FiltersEditPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FiltersEditPanelComponent, "tb-filters-edit-panel", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FiltersEditPanelComponent, "tb-filters-edit-panel", never, {}, {}, never, never, false, never>;
 }

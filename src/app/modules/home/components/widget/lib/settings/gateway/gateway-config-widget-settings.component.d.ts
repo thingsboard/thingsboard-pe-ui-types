@@ -12,5 +12,5 @@ export declare class GatewayConfigWidgetSettingsComponent extends WidgetSettings
     protected defaultSettings(): WidgetSettings;
     protected onSettingsSet(settings: WidgetSettings): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<GatewayConfigWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<GatewayConfigWidgetSettingsComponent, "tb-gateway-config-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GatewayConfigWidgetSettingsComponent, "tb-gateway-config-widget-settings", never, {}, {}, never, never, false, never>;
 }

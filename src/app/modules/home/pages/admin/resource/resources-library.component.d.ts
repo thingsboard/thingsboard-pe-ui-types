@@ -29,5 +29,5 @@ export declare class ResourcesLibraryComponent extends EntityComponent<Resource>
     convertToBase64File(data: string): string;
     onResourceIdCopied(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ResourcesLibraryComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ResourcesLibraryComponent, "tb-resources-library", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ResourcesLibraryComponent, "tb-resources-library", never, {}, {}, never, never, false, never>;
 }

@@ -18,5 +18,5 @@ export declare class Lwm2mBootstrapAddConfigServerDialogComponent extends Dialog
     addServerConfig(): void;
     cancel(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<Lwm2mBootstrapAddConfigServerDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mBootstrapAddConfigServerDialogComponent, "tb-profile-lwm2m-bootstrap-add-config-server-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mBootstrapAddConfigServerDialogComponent, "tb-profile-lwm2m-bootstrap-add-config-server-dialog", never, {}, {}, never, never, false, never>;
 }

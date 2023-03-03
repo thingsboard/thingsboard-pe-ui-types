@@ -30,5 +30,5 @@ export declare class CustomSchedulerEventTypeComponent extends PageComponent imp
     customSchedulerEventTypeHtml(): SafeHtml;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<CustomSchedulerEventTypeComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CustomSchedulerEventTypeComponent, "tb-custom-scheduler-event-type", never, { "disabled": "disabled"; "expanded": "expanded"; }, { "removeCustomSchedulerEventType": "removeCustomSchedulerEventType"; }, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CustomSchedulerEventTypeComponent, "tb-custom-scheduler-event-type", never, { "disabled": "disabled"; "expanded": "expanded"; }, { "removeCustomSchedulerEventType": "removeCustomSchedulerEventType"; }, never, never, false, never>;
 }

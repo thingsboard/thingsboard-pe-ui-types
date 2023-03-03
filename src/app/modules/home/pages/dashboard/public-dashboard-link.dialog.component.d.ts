@@ -30,5 +30,5 @@ export declare class PublicDashboardLinkDialogComponent extends DialogComponent<
     close(): void;
     onPublicLinkCopied($event: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<PublicDashboardLinkDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PublicDashboardLinkDialogComponent, "tb-public-dashboard-link-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PublicDashboardLinkDialogComponent, "tb-public-dashboard-link-dialog", never, {}, {}, never, never, false, never>;
 }

@@ -29,5 +29,5 @@ export declare class UpdateAttributesComponent implements ControlValueAccessor, 
     writeValue(value: SchedulerEventConfiguration | null): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<UpdateAttributesComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<UpdateAttributesComponent, "tb-update-attributes-event-config", never, { "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<UpdateAttributesComponent, "tb-update-attributes-event-config", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
 }

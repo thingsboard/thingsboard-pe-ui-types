@@ -4,7 +4,7 @@ import { LinkLabel } from '@shared/models/rule-node.models';
 import { Observable } from 'rxjs';
 import { TruncatePipe } from '@shared/pipe/truncate.pipe';
 import { MatAutocomplete, MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
-import { MatChipInputEvent, MatChipList } from '@angular/material/chips';
+import { MatChipInputEvent, MatChipGrid } from '@angular/material/chips';
 import { TranslateService } from '@ngx-translate/core';
 import { RuleChainService } from '@core/http/rule-chain.service';
 import * as i0 from "@angular/core";
@@ -13,7 +13,7 @@ export declare class LinkLabelsComponent implements ControlValueAccessor, OnInit
     truncate: TruncatePipe;
     translate: TranslateService;
     private ruleChainService;
-    chipList: MatChipList;
+    chipList: MatChipGrid;
     matAutocomplete: MatAutocomplete;
     labelInput: ElementRef<HTMLInputElement>;
     private requiredValue;
@@ -56,5 +56,5 @@ export declare class LinkLabelsComponent implements ControlValueAccessor, OnInit
     clear(value?: string): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<LinkLabelsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<LinkLabelsComponent, "tb-link-labels", never, { "required": "required"; "disabled": "disabled"; "allowCustom": "allowCustom"; "allowedLabels": "allowedLabels"; "sourceRuleChainId": "sourceRuleChainId"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<LinkLabelsComponent, "tb-link-labels", never, { "required": "required"; "disabled": "disabled"; "allowCustom": "allowCustom"; "allowedLabels": "allowedLabels"; "sourceRuleChainId": "sourceRuleChainId"; }, {}, never, never, false, never>;
 }

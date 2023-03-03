@@ -43,5 +43,5 @@ export declare class ReportConfigComponent extends PageComponent implements Cont
     private createDefaultReportConfig;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<ReportConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ReportConfigComponent, "tb-report-config", never, { "reportsServerEndpointUrl": "reportsServerEndpointUrl"; "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ReportConfigComponent, "tb-report-config", never, { "reportsServerEndpointUrl": "reportsServerEndpointUrl"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

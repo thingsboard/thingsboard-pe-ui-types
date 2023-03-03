@@ -14,5 +14,5 @@ export declare class DoughnutChartWidgetSettingsComponent extends WidgetSettings
     protected validatorTriggers(): string[];
     protected updateValidators(emitEvent: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DoughnutChartWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DoughnutChartWidgetSettingsComponent, "tb-doughnut-chart-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DoughnutChartWidgetSettingsComponent, "tb-doughnut-chart-widget-settings", never, {}, {}, never, never, false, never>;
 }

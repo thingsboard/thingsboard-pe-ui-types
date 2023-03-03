@@ -54,5 +54,5 @@ export declare class EntityGroupAutocompleteComponent implements ControlValueAcc
     getEntityGroups(): Observable<Array<EntityGroupInfo>>;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityGroupAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupAutocompleteComponent, "tb-entity-group-autocomplete", never, { "groupType": "groupType"; "ownerId": "ownerId"; "excludeGroupIds": "excludeGroupIds"; "excludeGroupAll": "excludeGroupAll"; "placeholderText": "placeholderText"; "notFoundText": "notFoundText"; "requiredText": "requiredText"; "required": "required"; "disabled": "disabled"; }, { "entityGroupLoaded": "entityGroupLoaded"; }, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupAutocompleteComponent, "tb-entity-group-autocomplete", never, { "groupType": "groupType"; "ownerId": "ownerId"; "excludeGroupIds": "excludeGroupIds"; "excludeGroupAll": "excludeGroupAll"; "placeholderText": "placeholderText"; "notFoundText": "notFoundText"; "requiredText": "requiredText"; "required": "required"; "disabled": "disabled"; }, { "entityGroupLoaded": "entityGroupLoaded"; }, never, never, false, never>;
 }

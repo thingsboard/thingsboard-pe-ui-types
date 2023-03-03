@@ -25,5 +25,5 @@ export declare class EditAttributeValuePanelComponent extends PageComponent impl
     cancel(): void;
     update(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EditAttributeValuePanelComponent, [null, null, { skipSelf: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EditAttributeValuePanelComponent, "tb-edit-attribute-value-panel", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EditAttributeValuePanelComponent, "tb-edit-attribute-value-panel", never, {}, {}, never, never, false, never>;
 }

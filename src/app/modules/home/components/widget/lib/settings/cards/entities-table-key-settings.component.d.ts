@@ -14,5 +14,5 @@ export declare class EntitiesTableKeySettingsComponent extends WidgetSettingsCom
     protected validatorTriggers(): string[];
     protected updateValidators(emitEvent: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntitiesTableKeySettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntitiesTableKeySettingsComponent, "tb-entities-table-key-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntitiesTableKeySettingsComponent, "tb-entities-table-key-settings", never, {}, {}, never, never, false, never>;
 }

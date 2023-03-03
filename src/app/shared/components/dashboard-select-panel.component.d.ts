@@ -15,5 +15,5 @@ export declare class DashboardSelectPanelComponent {
     constructor(data: DashboardSelectPanelData);
     dashboardSelected(dashboardId: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardSelectPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardSelectPanelComponent, "tb-dashboard-select-panel", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardSelectPanelComponent, "tb-dashboard-select-panel", never, {}, {}, never, never, false, never>;
 }

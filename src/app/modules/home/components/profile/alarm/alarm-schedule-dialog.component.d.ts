@@ -33,5 +33,5 @@ export declare class AlarmScheduleDialogComponent extends DialogComponent<AlarmS
     cancel(): void;
     save(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AlarmScheduleDialogComponent, [null, null, null, { skipSelf: true; }, null, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmScheduleDialogComponent, "tb-alarm-schedule-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmScheduleDialogComponent, "tb-alarm-schedule-dialog", never, {}, {}, never, never, false, never>;
 }

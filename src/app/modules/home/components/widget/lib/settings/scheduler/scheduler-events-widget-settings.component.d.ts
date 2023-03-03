@@ -20,5 +20,5 @@ export declare class SchedulerEventsWidgetSettingsComponent extends WidgetSettin
     protected validatorTriggers(): string[];
     protected updateValidators(emitEvent: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SchedulerEventsWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SchedulerEventsWidgetSettingsComponent, "tb-scheduler-events-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SchedulerEventsWidgetSettingsComponent, "tb-scheduler-events-widget-settings", never, {}, {}, never, never, false, never>;
 }

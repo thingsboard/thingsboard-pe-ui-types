@@ -39,5 +39,5 @@ export declare class DashboardSettingsDialogComponent extends DialogComponent<Da
     cancel(): void;
     save(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardSettingsDialogComponent, [null, null, null, { skipSelf: true; }, null, null, null, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardSettingsDialogComponent, "tb-dashboard-settings-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardSettingsDialogComponent, "tb-dashboard-settings-dialog", never, {}, {}, never, never, false, never>;
 }

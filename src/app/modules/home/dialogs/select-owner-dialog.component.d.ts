@@ -40,5 +40,5 @@ export declare class SelectOwnerDialogComponent extends DialogComponent<SelectOw
     cancel(): void;
     selectOwner(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SelectOwnerDialogComponent, [null, null, null, { skipSelf: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SelectOwnerDialogComponent, "tb-select-owner-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SelectOwnerDialogComponent, "tb-select-owner-dialog", never, {}, {}, never, never, false, never>;
 }

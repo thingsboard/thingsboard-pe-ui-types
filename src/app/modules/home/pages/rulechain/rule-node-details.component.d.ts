@@ -34,5 +34,5 @@ export declare class RuleNodeDetailsComponent extends PageComponent implements O
     validate(): void;
     openRuleChain($event: Event): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<RuleNodeDetailsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RuleNodeDetailsComponent, "tb-rule-node", never, { "ruleNode": "ruleNode"; "ruleChainId": "ruleChainId"; "ruleChainType": "ruleChainType"; "isEdit": "isEdit"; "isReadOnly": "isReadOnly"; "isAdd": "isAdd"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RuleNodeDetailsComponent, "tb-rule-node", never, { "ruleNode": "ruleNode"; "ruleChainId": "ruleChainId"; "ruleChainType": "ruleChainType"; "isEdit": "isEdit"; "isReadOnly": "isReadOnly"; "isAdd": "isAdd"; }, {}, never, never, false, never>;
 }

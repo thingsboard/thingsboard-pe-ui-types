@@ -30,5 +30,5 @@ export declare class Lwm2mAttributesDialogComponent extends DialogComponent<Lwm2
     save(): void;
     cancel(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<Lwm2mAttributesDialogComponent, [null, null, null, { skipSelf: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mAttributesDialogComponent, "tb-lwm2m-attributes-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mAttributesDialogComponent, "tb-lwm2m-attributes-dialog", never, {}, {}, never, never, false, never>;
 }

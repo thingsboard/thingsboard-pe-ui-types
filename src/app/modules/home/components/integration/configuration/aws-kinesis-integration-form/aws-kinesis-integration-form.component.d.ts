@@ -18,5 +18,5 @@ export declare class AwsKinesisIntegrationFormComponent extends IntegrationForm 
     private updateEnhancedFanOut;
     private updateModels;
     static ɵfac: i0.ɵɵFactoryDeclaration<AwsKinesisIntegrationFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AwsKinesisIntegrationFormComponent, "tb-aws-kinesis-integration-form", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AwsKinesisIntegrationFormComponent, "tb-aws-kinesis-integration-form", never, {}, {}, never, never, false, never>;
 }

@@ -51,5 +51,5 @@ export declare class RuleChainAutocompleteComponent implements ControlValueAcces
     clear(): void;
     createDefaultRuleChain($event: Event, ruleChainName: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<RuleChainAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RuleChainAutocompleteComponent, "tb-rule-chain-autocomplete", never, { "labelText": "labelText"; "requiredText": "requiredText"; "ruleChainType": "ruleChainType"; "required": "required"; "disabled": "disabled"; }, {}, never, ["[tb-hint]"], false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RuleChainAutocompleteComponent, "tb-rule-chain-autocomplete", never, { "labelText": "labelText"; "requiredText": "requiredText"; "ruleChainType": "ruleChainType"; "required": "required"; "disabled": "disabled"; }, {}, never, ["[tb-hint]"], false, never>;
 }

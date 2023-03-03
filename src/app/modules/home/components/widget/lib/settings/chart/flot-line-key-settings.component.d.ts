@@ -14,5 +14,5 @@ export declare class FlotLineKeySettingsComponent extends WidgetSettingsComponen
     protected prepareInputSettings(settings: WidgetSettings): WidgetSettings;
     protected prepareOutputSettings(settings: any): WidgetSettings;
     static ɵfac: i0.ɵɵFactoryDeclaration<FlotLineKeySettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FlotLineKeySettingsComponent, "tb-flot-line-key-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FlotLineKeySettingsComponent, "tb-flot-line-key-settings", never, {}, {}, never, never, false, never>;
 }

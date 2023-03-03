@@ -14,5 +14,5 @@ export declare class UpdateLocationAttributeWidgetSettingsComponent extends Widg
     protected validatorTriggers(): string[];
     protected updateValidators(emitEvent: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<UpdateLocationAttributeWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<UpdateLocationAttributeWidgetSettingsComponent, "tb-update-location-attribute-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<UpdateLocationAttributeWidgetSettingsComponent, "tb-update-location-attribute-widget-settings", never, {}, {}, never, never, false, never>;
 }

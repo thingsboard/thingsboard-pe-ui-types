@@ -12,5 +12,5 @@ export declare class EntityFilterViewComponent implements ControlValueAccessor {
     setDisabledState?(isDisabled: boolean): void;
     writeValue(filter: EntityAliasFilter): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityFilterViewComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityFilterViewComponent, "tb-entity-filter-view", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityFilterViewComponent, "tb-entity-filter-view", never, {}, {}, never, never, false, never>;
 }

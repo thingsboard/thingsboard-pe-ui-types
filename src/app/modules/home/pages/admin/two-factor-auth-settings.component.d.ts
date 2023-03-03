@@ -39,5 +39,5 @@ export declare class TwoFactorAuthSettingsComponent extends PageComponent implem
     private splitRateLimit;
     private joinRateLimit;
     static ɵfac: i0.ɵɵFactoryDeclaration<TwoFactorAuthSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TwoFactorAuthSettingsComponent, "tb-2fa-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TwoFactorAuthSettingsComponent, "tb-2fa-settings", never, {}, {}, never, never, false, never>;
 }

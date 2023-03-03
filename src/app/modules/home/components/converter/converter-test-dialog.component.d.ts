@@ -59,5 +59,5 @@ export declare class ConverterTestDialogComponent extends DialogComponent<Conver
     private checkInputParamErrors;
     save(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ConverterTestDialogComponent, [null, null, null, { skipSelf: true; }, null, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ConverterTestDialogComponent, "tb-converter-test-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ConverterTestDialogComponent, "tb-converter-test-dialog", never, {}, {}, never, never, false, never>;
 }

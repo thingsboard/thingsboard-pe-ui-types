@@ -23,5 +23,5 @@ export declare class DeviceCredentialsLwm2mServerComponent implements OnDestroy,
     private updateValidate;
     private setValidatorsSecurity;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceCredentialsLwm2mServerComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceCredentialsLwm2mServerComponent, "tb-device-credentials-lwm2m-server", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceCredentialsLwm2mServerComponent, "tb-device-credentials-lwm2m-server", never, {}, {}, never, never, false, never>;
 }

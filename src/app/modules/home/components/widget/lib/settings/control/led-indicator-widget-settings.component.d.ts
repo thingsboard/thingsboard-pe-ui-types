@@ -20,5 +20,5 @@ export declare class LedIndicatorWidgetSettingsComponent extends WidgetSettingsC
     protected validatorTriggers(): string[];
     protected updateValidators(emitEvent: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<LedIndicatorWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<LedIndicatorWidgetSettingsComponent, "tb-led-indicator-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<LedIndicatorWidgetSettingsComponent, "tb-led-indicator-widget-settings", never, {}, {}, never, never, false, never>;
 }

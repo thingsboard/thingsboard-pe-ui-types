@@ -50,5 +50,5 @@ export declare class Lwm2mObserveAttrTelemetryComponent implements ControlValueA
     private instancesToSetId;
     getNameObject: (objectLwM2M: ObjectLwM2M) => string;
     static ɵfac: i0.ɵɵFactoryDeclaration<Lwm2mObserveAttrTelemetryComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mObserveAttrTelemetryComponent, "tb-profile-lwm2m-observe-attr-telemetry", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mObserveAttrTelemetryComponent, "tb-profile-lwm2m-observe-attr-telemetry", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

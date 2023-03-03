@@ -58,5 +58,5 @@ export declare class TimewindowPanelComponent extends PageComponent implements O
     onHideAggIntervalChanged(): void;
     onHideTimezoneChanged(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimewindowPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimewindowPanelComponent, "tb-timewindow-panel", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimewindowPanelComponent, "tb-timewindow-panel", never, {}, {}, never, never, false, never>;
 }

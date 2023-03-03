@@ -12,5 +12,5 @@ export declare class UpdateBooleanAttributeWidgetSettingsComponent extends Widge
     protected defaultSettings(): WidgetSettings;
     protected onSettingsSet(settings: WidgetSettings): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<UpdateBooleanAttributeWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<UpdateBooleanAttributeWidgetSettingsComponent, "tb-update-boolean-attribute-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<UpdateBooleanAttributeWidgetSettingsComponent, "tb-update-boolean-attribute-widget-settings", never, {}, {}, never, never, false, never>;
 }

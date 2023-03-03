@@ -26,5 +26,5 @@ export declare class ColorPickerDialogComponent extends DialogComponent<ColorPic
     cancel(): void;
     select(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ColorPickerDialogComponent, [null, null, null, { skipSelf: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ColorPickerDialogComponent, "tb-color-picker-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ColorPickerDialogComponent, "tb-color-picker-dialog", never, {}, {}, never, never, false, never>;
 }

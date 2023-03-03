@@ -57,5 +57,5 @@ export declare class EntityAutocompleteComponent implements ControlValueAccessor
     clear(): void;
     checkEntityType(entityType: EntityType | AliasEntityType): EntityType;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityAutocompleteComponent, "tb-entity-autocomplete", never, { "entityType": "entityType"; "entitySubtype": "entitySubtype"; "excludeEntityIds": "excludeEntityIds"; "labelText": "labelText"; "requiredText": "requiredText"; "useFullEntityId": "useFullEntityId"; "appearance": "appearance"; "required": "required"; "disabled": "disabled"; }, { "entityChanged": "entityChanged"; }, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityAutocompleteComponent, "tb-entity-autocomplete", never, { "entityType": "entityType"; "entitySubtype": "entitySubtype"; "excludeEntityIds": "excludeEntityIds"; "labelText": "labelText"; "requiredText": "requiredText"; "useFullEntityId": "useFullEntityId"; "appearance": "appearance"; "required": "required"; "disabled": "disabled"; }, { "entityChanged": "entityChanged"; }, never, never, false, never>;
 }

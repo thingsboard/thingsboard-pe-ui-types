@@ -23,5 +23,5 @@ export declare class SendRpcRequestComponent implements ControlValueAccessor, On
     writeValue(value: SchedulerEventConfiguration | null): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<SendRpcRequestComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SendRpcRequestComponent, "tb-send-rpc-request-event-config", never, { "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SendRpcRequestComponent, "tb-send-rpc-request-event-config", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
 }

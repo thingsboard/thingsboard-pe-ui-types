@@ -22,5 +22,5 @@ export declare class OpcUaSubscriptionComponent implements ControlValueAccessor,
     removeSubscriptionTag(index: number): void;
     private updateModels;
     static ɵfac: i0.ɵɵFactoryDeclaration<OpcUaSubscriptionComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<OpcUaSubscriptionComponent, "tb-opc-ua-subscription", never, { "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<OpcUaSubscriptionComponent, "tb-opc-ua-subscription", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
 }

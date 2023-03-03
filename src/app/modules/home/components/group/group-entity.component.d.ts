@@ -18,5 +18,5 @@ export declare abstract class GroupEntityComponent<T extends BaseData<HasId>> ex
     constructor(store: Store<AppState>, fb: UntypedFormBuilder, entityValue: T, entitiesTableConfigValue: GroupEntityTableConfig<T>, cd: ChangeDetectorRef);
     protected setEntitiesTableConfig(entitiesTableConfig: GroupEntityTableConfig<T>): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<GroupEntityComponent<any>, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<GroupEntityComponent<any>, never, never, {}, {}, never, never, false>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<GroupEntityComponent<any>, never, never, {}, {}, never, never, false, never>;
 }

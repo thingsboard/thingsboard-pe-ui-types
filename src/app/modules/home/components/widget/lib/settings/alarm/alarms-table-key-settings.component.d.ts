@@ -14,5 +14,5 @@ export declare class AlarmsTableKeySettingsComponent extends WidgetSettingsCompo
     protected validatorTriggers(): string[];
     protected updateValidators(emitEvent: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AlarmsTableKeySettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmsTableKeySettingsComponent, "tb-alarms-table-key-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmsTableKeySettingsComponent, "tb-alarms-table-key-settings", never, {}, {}, never, never, false, never>;
 }

@@ -7,7 +7,7 @@ import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable, Subject } from 'rxjs';
 import { TruncatePipe } from '@shared/pipe/truncate.pipe';
-import { MatChipInputEvent, MatChipList } from '@angular/material/chips';
+import { MatChipInputEvent, MatChipGrid } from '@angular/material/chips';
 import { MatAutocomplete, MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import * as i0 from "@angular/core";
 interface DisplayColumn {
@@ -19,7 +19,7 @@ export declare class PersistentTableWidgetSettingsComponent extends WidgetSettin
     translate: TranslateService;
     truncate: TruncatePipe;
     private fb;
-    columnsChipList: MatChipList;
+    columnsChipList: MatChipGrid;
     columnAutocomplete: MatAutocomplete;
     columnInput: ElementRef<HTMLInputElement>;
     displayColumns: Array<DisplayColumn>;
@@ -47,6 +47,6 @@ export declare class PersistentTableWidgetSettingsComponent extends WidgetSettin
     columnSelected(event: MatAutocompleteSelectedEvent): void;
     clearColumnInput(value?: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<PersistentTableWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PersistentTableWidgetSettingsComponent, "tb-persistent-table-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PersistentTableWidgetSettingsComponent, "tb-persistent-table-widget-settings", never, {}, {}, never, never, false, never>;
 }
 export {};

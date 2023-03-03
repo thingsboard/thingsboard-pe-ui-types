@@ -35,7 +35,7 @@ export declare class TableColumnsAssignmentComponent implements OnInit, ControlV
     };
     writeValue(value: CsvColumnParam[]): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TableColumnsAssignmentComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TableColumnsAssignmentComponent, "tb-table-columns-assignment", never, { "entityType": "entityType"; "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TableColumnsAssignmentComponent, "tb-table-columns-assignment", never, { "entityType": "entityType"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }
 interface AssignmentColumnType {
     value: ImportEntityColumnType;

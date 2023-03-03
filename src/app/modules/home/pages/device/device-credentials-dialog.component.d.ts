@@ -38,5 +38,5 @@ export declare class DeviceCredentialsDialogComponent extends DialogComponent<De
     cancel(): void;
     save(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceCredentialsDialogComponent, [null, null, null, null, null, { skipSelf: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceCredentialsDialogComponent, "tb-device-credentials-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceCredentialsDialogComponent, "tb-device-credentials-dialog", never, {}, {}, never, never, false, never>;
 }

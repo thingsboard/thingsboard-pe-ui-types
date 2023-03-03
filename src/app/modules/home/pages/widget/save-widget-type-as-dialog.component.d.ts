@@ -23,5 +23,5 @@ export declare class SaveWidgetTypeAsDialogComponent extends DialogComponent<Sav
     cancel(): void;
     saveAs(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SaveWidgetTypeAsDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SaveWidgetTypeAsDialogComponent, "tb-save-widget-type-as-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SaveWidgetTypeAsDialogComponent, "tb-save-widget-type-as-dialog", never, {}, {}, never, never, false, never>;
 }

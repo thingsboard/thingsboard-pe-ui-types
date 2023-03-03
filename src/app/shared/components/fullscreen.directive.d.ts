@@ -25,5 +25,5 @@ export declare class FullscreenDirective implements OnChanges, OnDestroy {
     private setStyle;
     exitFullscreen(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<FullscreenDirective, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<FullscreenDirective, "[tb-fullscreen]", never, { "fullscreen": "fullscreen"; "fullscreenElement": "fullscreenElement"; "fullscreenBackgroundStyle": "fullscreenBackgroundStyle"; "fullscreenBackgroundImage": "fullscreenBackgroundImage"; }, { "fullscreenChanged": "fullscreenChanged"; }, never, never, false>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<FullscreenDirective, "[tb-fullscreen]", never, { "fullscreen": "fullscreen"; "fullscreenElement": "fullscreenElement"; "fullscreenBackgroundStyle": "fullscreenBackgroundStyle"; "fullscreenBackgroundImage": "fullscreenBackgroundImage"; }, { "fullscreenChanged": "fullscreenChanged"; }, never, never, false, never>;
 }

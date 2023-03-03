@@ -39,5 +39,5 @@ export declare class EntityTypeSelectComponent implements ControlValueAccessor, 
     updateView(value: EntityType | AliasEntityType | null): void;
     displayEntityTypeFn(entityType?: EntityType | AliasEntityType | null): string | undefined;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityTypeSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityTypeSelectComponent, "tb-entity-type-select", never, { "allowedEntityTypes": "allowedEntityTypes"; "useAliasEntityTypes": "useAliasEntityTypes"; "operation": "operation"; "filterAllowedEntityTypes": "filterAllowedEntityTypes"; "overrideEntityTypeTranslations": "overrideEntityTypeTranslations"; "showLabel": "showLabel"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityTypeSelectComponent, "tb-entity-type-select", never, { "allowedEntityTypes": "allowedEntityTypes"; "useAliasEntityTypes": "useAliasEntityTypes"; "operation": "operation"; "filterAllowedEntityTypes": "filterAllowedEntityTypes"; "overrideEntityTypeTranslations": "overrideEntityTypeTranslations"; "showLabel": "showLabel"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

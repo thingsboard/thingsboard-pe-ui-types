@@ -14,5 +14,5 @@ export declare class ThingParkEnterpriseIntegrationFormComponent extends ThingPa
     ngOnInit(): void;
     setDisabledState(isDisabled: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ThingParkEnterpriseIntegrationFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ThingParkEnterpriseIntegrationFormComponent, "tb-thing-spark-enterprise-integration-form", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ThingParkEnterpriseIntegrationFormComponent, "tb-thing-spark-enterprise-integration-form", never, {}, {}, never, never, false, never>;
 }

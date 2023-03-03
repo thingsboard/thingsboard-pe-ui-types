@@ -29,5 +29,5 @@ export declare class AlarmFilterPanelComponent {
     update(): void;
     cancel(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AlarmFilterPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmFilterPanelComponent, "tb-alarm-filter-panel", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmFilterPanelComponent, "tb-alarm-filter-panel", never, {}, {}, never, never, false, never>;
 }

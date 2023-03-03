@@ -20,5 +20,5 @@ export declare class LabelWidgetSettingsComponent extends WidgetSettingsComponen
     addLabel(): void;
     labelDrop(event: CdkDragDrop<string[]>): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<LabelWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<LabelWidgetSettingsComponent, "tb-label-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<LabelWidgetSettingsComponent, "tb-label-widget-settings", never, {}, {}, never, never, false, never>;
 }

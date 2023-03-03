@@ -50,6 +50,6 @@ export declare class JsonInputWidgetComponent extends PageComponent implements O
     save(): void;
     discard(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<JsonInputWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<JsonInputWidgetComponent, "tb-json-input-widget ", never, { "ctx": "ctx"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<JsonInputWidgetComponent, "tb-json-input-widget ", never, { "ctx": "ctx"; }, {}, never, never, false, never>;
 }
 export {};

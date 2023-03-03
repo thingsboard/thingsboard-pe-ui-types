@@ -28,5 +28,5 @@ export declare class DashboardFormComponent extends GroupEntityComponent<Dashboa
     onDashboardIdCopied($event: any): void;
     private updateFields;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardFormComponent, "tb-dashboard-form", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardFormComponent, "tb-dashboard-form", never, {}, {}, never, never, false, never>;
 }

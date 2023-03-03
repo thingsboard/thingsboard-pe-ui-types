@@ -21,5 +21,5 @@ export declare class GeneralSettingsComponent extends PageComponent implements O
     save(): void;
     confirmForm(): UntypedFormGroup;
     static ɵfac: i0.ɵɵFactoryDeclaration<GeneralSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<GeneralSettingsComponent, "tb-general-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GeneralSettingsComponent, "tb-general-settings", never, {}, {}, never, never, false, never>;
 }

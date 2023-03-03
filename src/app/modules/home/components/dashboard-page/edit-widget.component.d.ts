@@ -27,5 +27,5 @@ export declare class EditWidgetComponent extends PageComponent implements OnInit
     ngOnChanges(changes: SimpleChanges): void;
     private loadWidgetConfig;
     static ɵfac: i0.ɵɵFactoryDeclaration<EditWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EditWidgetComponent, "tb-edit-widget", never, { "dashboard": "dashboard"; "aliasController": "aliasController"; "widgetEditMode": "widgetEditMode"; "widget": "widget"; "widgetLayout": "widgetLayout"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EditWidgetComponent, "tb-edit-widget", never, { "dashboard": "dashboard"; "aliasController": "aliasController"; "widgetEditMode": "widgetEditMode"; "widget": "widget"; "widgetLayout": "widgetLayout"; }, {}, never, never, false, never>;
 }

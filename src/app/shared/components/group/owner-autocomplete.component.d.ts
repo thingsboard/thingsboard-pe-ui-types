@@ -44,5 +44,5 @@ export declare class OwnerAutocompleteComponent implements ControlValueAccessor,
     fetchOwners(searchText?: string): Observable<Array<ContactBased<EntityId>>>;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<OwnerAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<OwnerAutocompleteComponent, "tb-owner-autocomplete", never, { "excludeOwnerIds": "excludeOwnerIds"; "placeholderText": "placeholderText"; "notFoundText": "notFoundText"; "requiredText": "requiredText"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<OwnerAutocompleteComponent, "tb-owner-autocomplete", never, { "excludeOwnerIds": "excludeOwnerIds"; "placeholderText": "placeholderText"; "notFoundText": "notFoundText"; "requiredText": "requiredText"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

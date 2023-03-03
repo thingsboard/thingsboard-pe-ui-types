@@ -52,6 +52,9 @@ export declare const HelpLinks: {
         ruleNodeGpsGeofencingFilter: string;
         ruleNodeJsFilter: string;
         ruleNodeJsSwitch: string;
+        ruleNodeAssetProfileSwitch: string;
+        ruleNodeDeviceProfileSwitch: string;
+        ruleNodeCheckAlarmStatus: string;
         ruleNodeMessageTypeFilter: string;
         ruleNodeMessageTypeSwitch: string;
         ruleNodeOriginatorTypeFilter: string;

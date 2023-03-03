@@ -30,5 +30,5 @@ export declare class RuleNodeLinkComponent implements ControlValueAccessor, OnIn
     writeValue(value: FcRuleEdge): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<RuleNodeLinkComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RuleNodeLinkComponent, "tb-rule-node-link", never, { "required": "required"; "disabled": "disabled"; "allowCustom": "allowCustom"; "allowedLabels": "allowedLabels"; "sourceRuleChainId": "sourceRuleChainId"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RuleNodeLinkComponent, "tb-rule-node-link", never, { "required": "required"; "disabled": "disabled"; "allowCustom": "allowCustom"; "allowedLabels": "allowedLabels"; "sourceRuleChainId": "sourceRuleChainId"; }, {}, never, never, false, never>;
 }

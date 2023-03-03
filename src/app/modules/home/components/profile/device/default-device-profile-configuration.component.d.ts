@@ -21,5 +21,5 @@ export declare class DefaultDeviceProfileConfigurationComponent implements Contr
     writeValue(value: DefaultDeviceProfileConfiguration | null): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<DefaultDeviceProfileConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DefaultDeviceProfileConfigurationComponent, "tb-default-device-profile-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DefaultDeviceProfileConfigurationComponent, "tb-default-device-profile-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

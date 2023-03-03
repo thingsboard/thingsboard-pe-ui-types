@@ -21,5 +21,5 @@ export declare class MqttDeviceTransportConfigurationComponent implements Contro
     writeValue(value: MqttDeviceTransportConfiguration | null): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<MqttDeviceTransportConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MqttDeviceTransportConfigurationComponent, "tb-mqtt-device-transport-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MqttDeviceTransportConfigurationComponent, "tb-mqtt-device-transport-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

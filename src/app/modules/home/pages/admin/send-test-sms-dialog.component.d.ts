@@ -28,5 +28,5 @@ export declare class SendTestSmsDialogComponent extends DialogComponent<SendTest
     close(): void;
     sendTestSms(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SendTestSmsDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SendTestSmsDialogComponent, "tb-send-test-sms-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SendTestSmsDialogComponent, "tb-send-test-sms-dialog", never, {}, {}, never, never, false, never>;
 }

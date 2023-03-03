@@ -28,5 +28,5 @@ export declare class TimeUnitSelectComponent implements OnInit, OnDestroy, Contr
     private updateModel;
     private calculateTimeUnit;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeUnitSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeUnitSelectComponent, "tb-time-unit-select", never, { "disabled": "disabled"; "labelText": "labelText"; "requiredText": "requiredText"; "patternText": "patternText"; "minTime": "minTime"; "minText": "minText"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeUnitSelectComponent, "tb-time-unit-select", never, { "disabled": "disabled"; "labelText": "labelText"; "requiredText": "requiredText"; "patternText": "patternText"; "minTime": "minTime"; "minText": "minText"; }, {}, never, never, false, never>;
 }

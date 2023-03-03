@@ -29,5 +29,5 @@ export declare class ImportDialogComponent extends DialogComponent<ImportDialogC
     cancel(): void;
     importFromJson(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ImportDialogComponent, [null, null, null, { skipSelf: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ImportDialogComponent, "tb-import-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ImportDialogComponent, "tb-import-dialog", never, {}, {}, never, never, false, never>;
 }

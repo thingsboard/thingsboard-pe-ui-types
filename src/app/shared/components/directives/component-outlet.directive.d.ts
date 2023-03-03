@@ -18,7 +18,7 @@ export declare class TbComponentOutletDirective<_T = unknown> implements OnChang
     constructor(viewContainer: ViewContainerRef, renderer: Renderer2);
     ngOnChanges(changes: SimpleChanges): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TbComponentOutletDirective<any>, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<TbComponentOutletDirective<any>, "[tbComponentOutlet]", ["tbComponentOutlet"], { "tbComponentOutletContext": "tbComponentOutletContext"; "tbComponentStyle": "tbComponentStyle"; "tbComponentInjector": "tbComponentInjector"; "tbComponentOutlet": "tbComponentOutlet"; }, { "componentChange": "componentChange"; }, never, never, false>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<TbComponentOutletDirective<any>, "[tbComponentOutlet]", ["tbComponentOutlet"], { "tbComponentOutletContext": "tbComponentOutletContext"; "tbComponentStyle": "tbComponentStyle"; "tbComponentInjector": "tbComponentInjector"; "tbComponentOutlet": "tbComponentOutlet"; }, { "componentChange": "componentChange"; }, never, never, false, never>;
 }
 export declare class TbComponentOutletContext {
     $implicit: any;

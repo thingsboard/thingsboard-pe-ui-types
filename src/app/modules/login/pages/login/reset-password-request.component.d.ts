@@ -21,5 +21,5 @@ export declare class ResetPasswordRequestComponent extends PageComponent impleme
     disableInputs(): void;
     sendResetPasswordLink(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ResetPasswordRequestComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ResetPasswordRequestComponent, "tb-reset-password-request", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ResetPasswordRequestComponent, "tb-reset-password-request", never, {}, {}, never, never, false, never>;
 }

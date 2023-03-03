@@ -12,5 +12,5 @@ export declare class NavigationCardWidgetSettingsComponent extends WidgetSetting
     protected defaultSettings(): WidgetSettings;
     protected onSettingsSet(settings: WidgetSettings): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<NavigationCardWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<NavigationCardWidgetSettingsComponent, "tb-navigation-card-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NavigationCardWidgetSettingsComponent, "tb-navigation-card-widget-settings", never, {}, {}, never, never, false, never>;
 }

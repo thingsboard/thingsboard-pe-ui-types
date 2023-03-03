@@ -15,5 +15,5 @@ export declare class SelectTargetLayoutDialogComponent extends DialogComponent<S
     selectLayout(layoutId: DashboardLayoutId): void;
     cancel(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SelectTargetLayoutDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SelectTargetLayoutDialogComponent, "tb-select-target-layout-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SelectTargetLayoutDialogComponent, "tb-select-target-layout-dialog", never, {}, {}, never, never, false, never>;
 }

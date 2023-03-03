@@ -25,5 +25,5 @@ export declare class EmailVerifiedComponent extends PageComponent implements OnI
     activateAndGetCredentials(): void;
     login(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EmailVerifiedComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EmailVerifiedComponent, "tb-email-verified", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EmailVerifiedComponent, "tb-email-verified", never, {}, {}, never, never, false, never>;
 }

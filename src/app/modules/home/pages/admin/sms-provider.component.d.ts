@@ -34,5 +34,5 @@ export declare class SmsProviderComponent extends PageComponent implements OnIni
     save(): void;
     confirmForm(): UntypedFormGroup;
     static ɵfac: i0.ɵɵFactoryDeclaration<SmsProviderComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SmsProviderComponent, "tb-sms-provider", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SmsProviderComponent, "tb-sms-provider", never, {}, {}, never, never, false, never>;
 }

@@ -85,6 +85,6 @@ export declare class WidgetActionDialogComponent extends DialogComponent<WidgetA
     cancel(): void;
     save(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetActionDialogComponent, [null, null, null, null, null, null, null, null, { skipSelf: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetActionDialogComponent, "tb-widget-action-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetActionDialogComponent, "tb-widget-action-dialog", never, {}, {}, never, never, false, never>;
 }
 export {};

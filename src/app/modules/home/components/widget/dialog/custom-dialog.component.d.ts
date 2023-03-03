@@ -21,5 +21,5 @@ export declare class CustomDialogComponent extends PageComponent {
     [key: string]: any;
     constructor(store: Store<AppState>, router: Router, dialogRef: MatDialogRef<CustomDialogContainerComponent>, fb: UntypedFormBuilder, data: CustomDialogData);
     static ɵfac: i0.ɵɵFactoryDeclaration<CustomDialogComponent, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<CustomDialogComponent, never, never, {}, {}, never, never, false>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<CustomDialogComponent, never, never, {}, {}, never, never, false, never>;
 }

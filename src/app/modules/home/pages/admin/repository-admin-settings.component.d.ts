@@ -13,5 +13,5 @@ export declare class RepositoryAdminSettingsComponent extends PageComponent impl
     ngOnInit(): void;
     confirmForm(): UntypedFormGroup;
     static ɵfac: i0.ɵɵFactoryDeclaration<RepositoryAdminSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RepositoryAdminSettingsComponent, "tb-repository-admin-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RepositoryAdminSettingsComponent, "tb-repository-admin-settings", never, {}, {}, never, never, false, never>;
 }

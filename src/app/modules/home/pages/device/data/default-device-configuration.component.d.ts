@@ -21,5 +21,5 @@ export declare class DefaultDeviceConfigurationComponent implements ControlValue
     writeValue(value: DefaultDeviceConfiguration | null): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<DefaultDeviceConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DefaultDeviceConfigurationComponent, "tb-default-device-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DefaultDeviceConfigurationComponent, "tb-default-device-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

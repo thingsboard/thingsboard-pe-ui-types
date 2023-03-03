@@ -40,5 +40,5 @@ export declare class AddEntityGroupsToEdgeDialogComponent extends DialogComponen
     cancel(): void;
     addEntityGroupsToEdge(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AddEntityGroupsToEdgeDialogComponent, [null, null, null, null, null, null, { skipSelf: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AddEntityGroupsToEdgeDialogComponent, "tb-add-entity-groups-to-edge-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AddEntityGroupsToEdgeDialogComponent, "tb-add-entity-groups-to-edge-dialog", never, {}, {}, never, never, false, never>;
 }

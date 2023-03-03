@@ -28,5 +28,5 @@ export declare class FilterTextComponent implements ControlValueAccessor, OnInit
     writeValue(value: Array<KeyFilter>): void;
     private updateFilterText;
     static ɵfac: i0.ɵɵFactoryDeclaration<FilterTextComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FilterTextComponent, "tb-filter-text", never, { "required": "required"; "disabled": "disabled"; "noFilterText": "noFilterText"; "addFilterPrompt": "addFilterPrompt"; "nowrap": "nowrap"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FilterTextComponent, "tb-filter-text", never, { "required": "required"; "disabled": "disabled"; "noFilterText": "noFilterText"; "addFilterPrompt": "addFilterPrompt"; "nowrap": "nowrap"; }, {}, never, never, false, never>;
 }

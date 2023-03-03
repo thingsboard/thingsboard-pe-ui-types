@@ -11,6 +11,7 @@ import { DeviceProfile, DeviceProfileInfo, DeviceTransportType } from '@shared/m
 import { DeviceProfileService } from '@core/http/device-profile.service';
 import { MatAutocomplete } from '@angular/material/autocomplete';
 import { Operation, Resource } from '@shared/models/security.models';
+import { SubscriptSizing } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class DeviceProfileAutocompleteComponent implements ControlValueAccessor, OnInit, OnChanges {
     private store;
@@ -24,6 +25,7 @@ export declare class DeviceProfileAutocompleteComponent implements ControlValueA
     operation: typeof Operation;
     selectDeviceProfileFormGroup: UntypedFormGroup;
     modelValue: DeviceProfileId | null;
+    subscriptSizing: SubscriptSizing;
     selectDefaultProfile: boolean;
     selectFirstProfile: boolean;
     displayAllOnEmpty: boolean;
@@ -68,5 +70,5 @@ export declare class DeviceProfileAutocompleteComponent implements ControlValueA
     editDeviceProfile($event: Event): void;
     openDeviceProfileDialog(deviceProfile: DeviceProfile, isAdd: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceProfileAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceProfileAutocompleteComponent, "tb-device-profile-autocomplete", never, { "selectDefaultProfile": "selectDefaultProfile"; "selectFirstProfile": "selectFirstProfile"; "displayAllOnEmpty": "displayAllOnEmpty"; "editProfileEnabled": "editProfileEnabled"; "addNewProfile": "addNewProfile"; "showDetailsPageLink": "showDetailsPageLink"; "transportType": "transportType"; "required": "required"; "disabled": "disabled"; "hint": "hint"; }, { "deviceProfileUpdated": "deviceProfileUpdated"; "deviceProfileChanged": "deviceProfileChanged"; }, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceProfileAutocompleteComponent, "tb-device-profile-autocomplete", never, { "subscriptSizing": "subscriptSizing"; "selectDefaultProfile": "selectDefaultProfile"; "selectFirstProfile": "selectFirstProfile"; "displayAllOnEmpty": "displayAllOnEmpty"; "editProfileEnabled": "editProfileEnabled"; "addNewProfile": "addNewProfile"; "showDetailsPageLink": "showDetailsPageLink"; "transportType": "transportType"; "required": "required"; "disabled": "disabled"; "hint": "hint"; }, { "deviceProfileUpdated": "deviceProfileUpdated"; "deviceProfileChanged": "deviceProfileChanged"; }, never, never, false, never>;
 }

@@ -40,5 +40,5 @@ export declare class OriginatorSelectComponent implements ControlValueAccessor, 
         groupOriginatorId: EntityId;
     } | null): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<OriginatorSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<OriginatorSelectComponent, "tb-originator-select", never, { "allowedEntityTypes": "allowedEntityTypes"; "singleEntityText": "singleEntityText"; "groupOfEntitiesText": "groupOfEntitiesText"; "entitiesGroupOwnerText": "entitiesGroupOwnerText"; "required": "required"; "disabled": "disabled"; }, { "currentGroupType": "currentGroupType"; }, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<OriginatorSelectComponent, "tb-originator-select", never, { "allowedEntityTypes": "allowedEntityTypes"; "singleEntityText": "singleEntityText"; "groupOfEntitiesText": "groupOfEntitiesText"; "entitiesGroupOwnerText": "entitiesGroupOwnerText"; "required": "required"; "disabled": "disabled"; }, { "currentGroupType": "currentGroupType"; }, never, never, false, never>;
 }

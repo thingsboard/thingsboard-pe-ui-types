@@ -12,5 +12,5 @@ export declare class FlotPieKeySettingsComponent extends WidgetSettingsComponent
     protected defaultSettings(): WidgetSettings;
     protected onSettingsSet(settings: WidgetSettings): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<FlotPieKeySettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FlotPieKeySettingsComponent, "tb-flot-pie-key-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FlotPieKeySettingsComponent, "tb-flot-pie-key-settings", never, {}, {}, never, never, false, never>;
 }

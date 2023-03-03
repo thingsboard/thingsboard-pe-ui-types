@@ -26,5 +26,5 @@ export declare class HomeSettingsComponent extends PageComponent implements OnIn
     confirmForm(): UntypedFormGroup;
     private setHomeDashboardInfo;
     static ɵfac: i0.ɵɵFactoryDeclaration<HomeSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<HomeSettingsComponent, "tb-home-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<HomeSettingsComponent, "tb-home-settings", never, {}, {}, never, never, false, never>;
 }

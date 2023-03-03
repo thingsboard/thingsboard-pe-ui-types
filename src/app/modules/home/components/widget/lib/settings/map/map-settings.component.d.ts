@@ -35,5 +35,5 @@ export declare class MapSettingsComponent extends PageComponent implements OnIni
     displayEditorSettings(): boolean;
     private updateValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<MapSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MapSettingsComponent, "tb-map-settings", never, { "disabled": "disabled"; "aliasController": "aliasController"; "widget": "widget"; "routeMap": "routeMap"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MapSettingsComponent, "tb-map-settings", never, { "disabled": "disabled"; "aliasController": "aliasController"; "widget": "widget"; "routeMap": "routeMap"; }, {}, never, never, false, never>;
 }

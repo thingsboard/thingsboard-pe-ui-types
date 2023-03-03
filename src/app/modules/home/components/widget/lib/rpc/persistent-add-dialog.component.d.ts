@@ -22,5 +22,5 @@ export declare class PersistentAddDialogComponent extends DialogComponent<Persis
     ngOnInit(): void;
     close(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<PersistentAddDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PersistentAddDialogComponent, "tb-persistent-add-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PersistentAddDialogComponent, "tb-persistent-add-dialog", never, {}, {}, never, never, false, never>;
 }

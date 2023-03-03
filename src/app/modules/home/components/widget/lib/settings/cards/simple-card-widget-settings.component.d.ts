@@ -12,5 +12,5 @@ export declare class SimpleCardWidgetSettingsComponent extends WidgetSettingsCom
     protected defaultSettings(): WidgetSettings;
     protected onSettingsSet(settings: WidgetSettings): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SimpleCardWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SimpleCardWidgetSettingsComponent, "tb-simple-card-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SimpleCardWidgetSettingsComponent, "tb-simple-card-widget-settings", never, {}, {}, never, never, false, never>;
 }

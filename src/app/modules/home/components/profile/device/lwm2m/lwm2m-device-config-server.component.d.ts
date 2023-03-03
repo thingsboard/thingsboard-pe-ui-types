@@ -37,5 +37,5 @@ export declare class Lwm2mDeviceConfigServerComponent implements OnInit, Control
     private changeSecurityHostPortFields;
     validate(): ValidationErrors | null;
     static ɵfac: i0.ɵɵFactoryDeclaration<Lwm2mDeviceConfigServerComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mDeviceConfigServerComponent, "tb-profile-lwm2m-device-config-server", never, {}, { "removeServer": "removeServer"; "isTransportWasRunWithBootstrapChange": "isTransportWasRunWithBootstrapChange"; }, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mDeviceConfigServerComponent, "tb-profile-lwm2m-device-config-server", never, {}, { "removeServer": "removeServer"; "isTransportWasRunWithBootstrapChange": "isTransportWasRunWithBootstrapChange"; }, never, never, false, never>;
 }

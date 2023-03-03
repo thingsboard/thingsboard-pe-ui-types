@@ -8,5 +8,5 @@ export declare class RuleChainTabsComponent extends EntityTabsComponent<RuleChai
     constructor(store: Store<AppState>);
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<RuleChainTabsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RuleChainTabsComponent, "tb-rulechain-tabs", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RuleChainTabsComponent, "tb-rulechain-tabs", never, {}, {}, never, never, false, never>;
 }

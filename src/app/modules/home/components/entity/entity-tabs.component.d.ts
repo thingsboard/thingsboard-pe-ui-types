@@ -44,5 +44,5 @@ export declare abstract class EntityTabsComponent<T extends BaseData<HasId>, P e
     protected setEntity(entity: T): void;
     protected setEntitiesTableConfig(entitiesTableConfig: C): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityTabsComponent<any, any, any, any>, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<EntityTabsComponent<any, any, any, any>, never, never, { "isEdit": "isEdit"; "entity": "entity"; "entitiesTableConfig": "entitiesTableConfig"; "detailsForm": "detailsForm"; }, {}, never, never, false>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<EntityTabsComponent<any, any, any, any>, never, never, { "isEdit": "isEdit"; "entity": "entity"; "entitiesTableConfig": "entitiesTableConfig"; "detailsForm": "detailsForm"; }, {}, never, never, false, never>;
 }

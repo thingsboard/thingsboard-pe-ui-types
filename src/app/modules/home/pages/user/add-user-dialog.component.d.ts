@@ -36,5 +36,5 @@ export declare class AddUserDialogComponent extends DialogComponent<AddUserDialo
     add(): void;
     displayActivationLink(activationLink: string): Observable<void>;
     static ɵfac: i0.ɵɵFactoryDeclaration<AddUserDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AddUserDialogComponent, "tb-add-user-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AddUserDialogComponent, "tb-add-user-dialog", never, {}, {}, never, never, false, never>;
 }

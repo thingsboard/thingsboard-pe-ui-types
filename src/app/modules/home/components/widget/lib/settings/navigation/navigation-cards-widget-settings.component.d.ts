@@ -3,14 +3,14 @@ import { WidgetSettings, WidgetSettingsComponent } from '@shared/models/widget.m
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { MatChipInputEvent, MatChipList } from '@angular/material/chips';
+import { MatChipInputEvent, MatChipGrid } from '@angular/material/chips';
 import { MatAutocomplete, MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { Observable, Subject } from 'rxjs';
 import * as i0 from "@angular/core";
 export declare class NavigationCardsWidgetSettingsComponent extends WidgetSettingsComponent {
     protected store: Store<AppState>;
     private fb;
-    filterItemsChipList: MatChipList;
+    filterItemsChipList: MatChipGrid;
     filterItemAutocomplete: MatAutocomplete;
     filterItemInput: ElementRef<HTMLInputElement>;
     filterItems: Array<string>;
@@ -33,5 +33,5 @@ export declare class NavigationCardsWidgetSettingsComponent extends WidgetSettin
     filterItemSelected(event: MatAutocompleteSelectedEvent): void;
     clearFilterItemInput(value?: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<NavigationCardsWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<NavigationCardsWidgetSettingsComponent, "tb-navigation-cards-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NavigationCardsWidgetSettingsComponent, "tb-navigation-cards-widget-settings", never, {}, {}, never, never, false, never>;
 }

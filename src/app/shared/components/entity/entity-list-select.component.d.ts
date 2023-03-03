@@ -40,6 +40,6 @@ export declare class EntityListSelectComponent implements ControlValueAccessor, 
     compareIds(ids1: Array<string> | null, ids2: Array<string> | null): boolean;
     toEntityIds(modelValue: EntityListSelectModel): Array<EntityId>;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityListSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityListSelectComponent, "tb-entity-list-select", never, { "allowedEntityTypes": "allowedEntityTypes"; "useAliasEntityTypes": "useAliasEntityTypes"; "operation": "operation"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityListSelectComponent, "tb-entity-list-select", never, { "allowedEntityTypes": "allowedEntityTypes"; "useAliasEntityTypes": "useAliasEntityTypes"; "operation": "operation"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }
 export {};

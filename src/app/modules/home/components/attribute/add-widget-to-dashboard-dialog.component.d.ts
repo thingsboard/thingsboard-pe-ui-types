@@ -41,5 +41,5 @@ export declare class AddWidgetToDashboardDialogComponent extends DialogComponent
     private selectTargetLayout;
     private addWidgetToDashboard;
     static ɵfac: i0.ɵɵFactoryDeclaration<AddWidgetToDashboardDialogComponent, [null, null, null, { skipSelf: true; }, null, null, null, null, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AddWidgetToDashboardDialogComponent, "tb-add-widget-to-dashboard-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AddWidgetToDashboardDialogComponent, "tb-add-widget-to-dashboard-dialog", never, {}, {}, never, never, false, never>;
 }

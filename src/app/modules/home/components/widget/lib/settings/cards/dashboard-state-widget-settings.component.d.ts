@@ -20,5 +20,5 @@ export declare class DashboardStateWidgetSettingsComponent extends WidgetSetting
     private fetchDashboardStates;
     private createFilterForDashboardState;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardStateWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardStateWidgetSettingsComponent, "tb-dashboard-state-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardStateWidgetSettingsComponent, "tb-dashboard-state-widget-settings", never, {}, {}, never, never, false, never>;
 }

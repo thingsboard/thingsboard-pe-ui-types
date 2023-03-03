@@ -21,6 +21,7 @@ export declare class DashboardAutocompleteComponent implements ControlValueAcces
     modelValue: DashboardInfo | string | null;
     useIdValue: boolean;
     selectFirstDashboard: boolean;
+    label: any;
     placeholder: string;
     userId: string;
     tenantId: string;
@@ -49,5 +50,5 @@ export declare class DashboardAutocompleteComponent implements ControlValueAcces
     onFocus(): void;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardAutocompleteComponent, "tb-dashboard-autocomplete", never, { "useIdValue": "useIdValue"; "selectFirstDashboard": "selectFirstDashboard"; "placeholder": "placeholder"; "userId": "userId"; "tenantId": "tenantId"; "operation": "operation"; "floatLabel": "floatLabel"; "required": "required"; "disabled": "disabled"; }, {}, never, ["[tb-error]", "[tb-hint]"], false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardAutocompleteComponent, "tb-dashboard-autocomplete", never, { "useIdValue": "useIdValue"; "selectFirstDashboard": "selectFirstDashboard"; "label": "label"; "placeholder": "placeholder"; "userId": "userId"; "tenantId": "tenantId"; "operation": "operation"; "floatLabel": "floatLabel"; "required": "required"; "disabled": "disabled"; }, {}, never, ["[tb-error]", "[tb-hint]"], false, never>;
 }

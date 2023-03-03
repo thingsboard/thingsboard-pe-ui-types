@@ -81,7 +81,7 @@ export declare abstract class RuleNodeConfigurationComponent extends PageCompone
     protected abstract configForm(): UntypedFormGroup;
     protected abstract onConfigurationSet(configuration: RuleNodeConfiguration): any;
     static ɵfac: i0.ɵɵFactoryDeclaration<RuleNodeConfigurationComponent, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<RuleNodeConfigurationComponent, never, never, {}, {}, never, never, false>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<RuleNodeConfigurationComponent, never, never, {}, {}, never, never, false, never>;
 }
 export declare enum RuleNodeType {
     FILTER = "FILTER",

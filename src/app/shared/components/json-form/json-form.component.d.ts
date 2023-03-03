@@ -61,5 +61,5 @@ export declare class JsonFormComponent implements OnInit, ControlValueAccessor, 
     private destroyReactSchemaForm;
     private validateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<JsonFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<JsonFormComponent, "tb-json-form", never, { "required": "required"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<JsonFormComponent, "tb-json-form", never, { "required": "required"; }, {}, never, never, false, never>;
 }

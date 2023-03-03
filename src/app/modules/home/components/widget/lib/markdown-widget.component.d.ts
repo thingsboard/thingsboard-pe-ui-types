@@ -28,6 +28,6 @@ export declare class MarkdownWidgetComponent extends PageComponent implements On
     onDataUpdated(): void;
     markdownClick($event: MouseEvent): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<MarkdownWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MarkdownWidgetComponent, "tb-markdown-widget ", never, { "ctx": "ctx"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MarkdownWidgetComponent, "tb-markdown-widget ", never, { "ctx": "ctx"; }, {}, never, never, false, never>;
 }
 export {};

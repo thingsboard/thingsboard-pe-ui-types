@@ -32,5 +32,5 @@ export declare class SelectDashboardStateDialogComponent extends DialogComponent
     cancel(): void;
     select(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SelectDashboardStateDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SelectDashboardStateDialogComponent, "tb-select-dashboard-state-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SelectDashboardStateDialogComponent, "tb-select-dashboard-state-dialog", never, {}, {}, never, never, false, never>;
 }

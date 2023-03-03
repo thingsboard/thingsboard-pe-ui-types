@@ -26,5 +26,5 @@ export declare class ViewRoleDialogComponent extends DialogComponent<ViewRoleDia
     ngOnInit(): void;
     close(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ViewRoleDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ViewRoleDialogComponent, "tb-view-role-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ViewRoleDialogComponent, "tb-view-role-dialog", never, {}, {}, never, never, false, never>;
 }

@@ -19,5 +19,5 @@ export declare class TbRecaptchaComponent extends PageComponent implements OnIni
     ngOnDestroy(): void;
     onRecaptchaResponse(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TbRecaptchaComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TbRecaptchaComponent, "tb-recaptcha", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TbRecaptchaComponent, "tb-recaptcha", never, {}, {}, never, never, false, never>;
 }

@@ -51,5 +51,5 @@ export declare class TenantProfileAutocompleteComponent implements ControlValueA
     editTenantProfile($event: Event): void;
     openTenantProfileDialog(tenantProfile: TenantProfile, isAdd: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TenantProfileAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TenantProfileAutocompleteComponent, "tb-tenant-profile-autocomplete", never, { "selectDefaultProfile": "selectDefaultProfile"; "required": "required"; "disabled": "disabled"; "showDetailsPageLink": "showDetailsPageLink"; }, { "tenantProfileUpdated": "tenantProfileUpdated"; }, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TenantProfileAutocompleteComponent, "tb-tenant-profile-autocomplete", never, { "selectDefaultProfile": "selectDefaultProfile"; "required": "required"; "disabled": "disabled"; "showDetailsPageLink": "showDetailsPageLink"; }, { "tenantProfileUpdated": "tenantProfileUpdated"; }, never, never, false, never>;
 }

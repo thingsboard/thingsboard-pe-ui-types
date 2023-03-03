@@ -30,5 +30,5 @@ export declare class HelpPopupComponent implements OnChanges, OnDestroy {
     toggleHelp(): void;
     ngOnDestroy(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<HelpPopupComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<HelpPopupComponent, "[tb-help-popup], [tb-help-popup-content]", never, { "helpId": "tb-help-popup"; "helpContent": "tb-help-popup-content"; "triggerText": "trigger-text"; "triggerStyle": "trigger-style"; "helpPopupPlacement": "tb-help-popup-placement"; "helpPopupStyle": "tb-help-popup-style"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<HelpPopupComponent, "[tb-help-popup], [tb-help-popup-content]", never, { "helpId": "tb-help-popup"; "helpContent": "tb-help-popup-content"; "triggerText": "trigger-text"; "triggerStyle": "trigger-style"; "helpPopupPlacement": "tb-help-popup-placement"; "helpPopupStyle": "tb-help-popup-style"; }, {}, never, never, false, never>;
 }

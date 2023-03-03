@@ -42,5 +42,5 @@ export declare class DeviceProfileComponent extends EntityComponent<DeviceProfil
     prepareFormValue(formValue: any): any;
     onDeviceProfileIdCopied(event: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceProfileComponent, [null, null, { optional: true; }, { optional: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceProfileComponent, "tb-device-profile", never, { "standalone": "standalone"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceProfileComponent, "tb-device-profile", never, { "standalone": "standalone"; }, {}, never, never, false, never>;
 }

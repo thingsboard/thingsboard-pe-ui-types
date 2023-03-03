@@ -24,5 +24,5 @@ export declare class AssetComponent extends GroupEntityComponent<Asset> {
     onAssetIdCopied($event: any): void;
     onAssetProfileUpdated(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AssetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AssetComponent, "tb-asset", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AssetComponent, "tb-asset", never, {}, {}, never, never, false, never>;
 }

@@ -67,5 +67,5 @@ export declare class JsFuncComponent implements OnInit, OnDestroy, ControlValueA
     writeValue(value: string): void;
     updateView(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<JsFuncComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<JsFuncComponent, "tb-js-func", never, { "functionTitle": "functionTitle"; "functionName": "functionName"; "functionArgs": "functionArgs"; "validationArgs": "validationArgs"; "resultType": "resultType"; "disabled": "disabled"; "fillHeight": "fillHeight"; "minHeight": "minHeight"; "editorCompleter": "editorCompleter"; "globalVariables": "globalVariables"; "disableUndefinedCheck": "disableUndefinedCheck"; "helpId": "helpId"; "noValidate": "noValidate"; "required": "required"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<JsFuncComponent, "tb-js-func", never, { "functionTitle": "functionTitle"; "functionName": "functionName"; "functionArgs": "functionArgs"; "validationArgs": "validationArgs"; "resultType": "resultType"; "disabled": "disabled"; "fillHeight": "fillHeight"; "minHeight": "minHeight"; "editorCompleter": "editorCompleter"; "globalVariables": "globalVariables"; "disableUndefinedCheck": "disableUndefinedCheck"; "helpId": "helpId"; "noValidate": "noValidate"; "required": "required"; }, {}, never, never, false, never>;
 }

@@ -12,5 +12,5 @@ export declare class TtiIntegrationFormComponent extends TtnIntegrationFormCompo
     constructor(fb: UntypedFormBuilder);
     setDisabledState(isDisabled: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TtiIntegrationFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TtiIntegrationFormComponent, "tb-tti-integration-form", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TtiIntegrationFormComponent, "tb-tti-integration-form", never, {}, {}, never, never, false, never>;
 }

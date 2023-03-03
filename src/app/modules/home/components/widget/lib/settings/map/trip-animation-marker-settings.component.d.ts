@@ -31,5 +31,5 @@ export declare class TripAnimationMarkerSettingsComponent extends PageComponent 
     private updateModel;
     private updateValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<TripAnimationMarkerSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TripAnimationMarkerSettingsComponent, "tb-trip-animation-marker-settings", never, { "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TripAnimationMarkerSettingsComponent, "tb-trip-animation-marker-settings", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
 }

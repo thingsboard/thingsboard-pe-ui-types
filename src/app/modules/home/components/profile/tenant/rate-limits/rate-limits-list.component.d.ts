@@ -23,5 +23,5 @@ export declare class RateLimitsListComponent implements ControlValueAccessor, Va
     updateView(rateLimitsArray: Array<RateLimits>): void;
     ngOnDestroy(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<RateLimitsListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RateLimitsListComponent, "tb-rate-limits-list", never, { "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RateLimitsListComponent, "tb-rate-limits-list", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
 }

@@ -34,5 +34,5 @@ export declare class FixedColorLevelComponent extends PageComponent implements O
     private valueSourcePropertyText;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<FixedColorLevelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FixedColorLevelComponent, "tb-fixed-color-level", never, { "disabled": "disabled"; "expanded": "expanded"; "aliasController": "aliasController"; }, { "removeFixedColorLevel": "removeFixedColorLevel"; }, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FixedColorLevelComponent, "tb-fixed-color-level", never, { "disabled": "disabled"; "expanded": "expanded"; "aliasController": "aliasController"; }, { "removeFixedColorLevel": "removeFixedColorLevel"; }, never, never, false, never>;
 }

@@ -14,5 +14,5 @@ export declare class TripAnimationWidgetSettingsComponent extends WidgetSettings
     protected prepareInputSettings(settings: WidgetSettings): WidgetSettings;
     protected prepareOutputSettings(settings: any): WidgetSettings;
     static ɵfac: i0.ɵɵFactoryDeclaration<TripAnimationWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TripAnimationWidgetSettingsComponent, "tb-trip-animation-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TripAnimationWidgetSettingsComponent, "tb-trip-animation-widget-settings", never, {}, {}, never, never, false, never>;
 }

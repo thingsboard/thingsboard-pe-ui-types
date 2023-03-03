@@ -38,5 +38,5 @@ export declare class CreateAlarmRulesComponent implements ControlValueAccessor, 
     private updateUsedSeverities;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<CreateAlarmRulesComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CreateAlarmRulesComponent, "tb-create-alarm-rules", never, { "disabled": "disabled"; "deviceProfileId": "deviceProfileId"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CreateAlarmRulesComponent, "tb-create-alarm-rules", never, { "disabled": "disabled"; "deviceProfileId": "deviceProfileId"; }, {}, never, never, false, never>;
 }

@@ -27,5 +27,5 @@ export declare class HttpIntegrationFormComponent extends IntegrationForm implem
     onHttpEndpointCopied(): void;
     updatedValidationPrivateNetwork(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<HttpIntegrationFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<HttpIntegrationFormComponent, "tb-http-integration-form", never, { "routingKey": "routingKey"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<HttpIntegrationFormComponent, "tb-http-integration-form", never, { "routingKey": "routingKey"; }, {}, never, never, false, never>;
 }

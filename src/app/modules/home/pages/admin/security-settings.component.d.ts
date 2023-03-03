@@ -37,5 +37,5 @@ export declare class SecuritySettingsComponent extends PageComponent implements 
     private base64Format;
     confirmForm(): UntypedFormGroup;
     static ɵfac: i0.ɵɵFactoryDeclaration<SecuritySettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SecuritySettingsComponent, "tb-security-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SecuritySettingsComponent, "tb-security-settings", never, {}, {}, never, never, false, never>;
 }

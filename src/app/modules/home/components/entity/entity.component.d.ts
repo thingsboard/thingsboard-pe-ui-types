@@ -35,5 +35,5 @@ export declare abstract class EntityComponent<T extends BaseData<HasId>, P exten
     abstract buildForm(entity: T): UntypedFormGroup;
     abstract updateForm(entity: T): any;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityComponent<any, any, any, any>, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<EntityComponent<any, any, any, any>, never, never, { "entitiesTableConfig": "entitiesTableConfig"; "isEdit": "isEdit"; "entity": "entity"; }, { "entityAction": "entityAction"; }, never, never, false>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<EntityComponent<any, any, any, any>, never, never, { "entitiesTableConfig": "entitiesTableConfig"; "isEdit": "isEdit"; "entity": "entity"; }, { "entityAction": "entityAction"; }, never, never, false, never>;
 }

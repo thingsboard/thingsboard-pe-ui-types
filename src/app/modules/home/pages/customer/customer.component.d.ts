@@ -31,5 +31,5 @@ export declare class CustomerComponent extends GroupContactBasedComponent<Custom
     updateEntityForm(entity: Customer): void;
     onCustomerIdCopied(event: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<CustomerComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CustomerComponent, "tb-customer", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CustomerComponent, "tb-customer", never, {}, {}, never, never, false, never>;
 }

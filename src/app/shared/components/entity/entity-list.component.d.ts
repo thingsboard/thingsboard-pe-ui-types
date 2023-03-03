@@ -9,7 +9,7 @@ import { BaseData } from '@shared/models/base-data';
 import { EntityId } from '@shared/models/id/entity-id';
 import { EntityService } from '@core/http/entity.service';
 import { MatAutocomplete } from '@angular/material/autocomplete';
-import { MatChipList } from '@angular/material/chips';
+import { MatChipGrid } from '@angular/material/chips';
 import * as i0 from "@angular/core";
 export declare class EntityListComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnChanges {
     private store;
@@ -29,7 +29,7 @@ export declare class EntityListComponent implements ControlValueAccessor, OnInit
     disabled: boolean;
     entityInput: ElementRef<HTMLInputElement>;
     matAutocomplete: MatAutocomplete;
-    chipList: MatChipList;
+    chipList: MatChipGrid;
     entities: Array<BaseData<EntityId>>;
     filteredEntities: Observable<Array<BaseData<EntityId>>>;
     searchText: string;
@@ -52,5 +52,5 @@ export declare class EntityListComponent implements ControlValueAccessor, OnInit
     onFocus(): void;
     clear(value?: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityListComponent, "tb-entity-list", never, { "entityType": "entityType"; "entitySubType": "entitySubType"; "entityListText": "entityListText"; "noEntitiesText": "noEntitiesText"; "entitiesRequiredText": "entitiesRequiredText"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityListComponent, "tb-entity-list", never, { "entityType": "entityType"; "entitySubType": "entitySubType"; "entityListText": "entityListText"; "noEntitiesText": "noEntitiesText"; "entitiesRequiredText": "entitiesRequiredText"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

@@ -12,5 +12,5 @@ export declare class HtmlCardWidgetSettingsComponent extends WidgetSettingsCompo
     protected defaultSettings(): WidgetSettings;
     protected onSettingsSet(settings: WidgetSettings): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<HtmlCardWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<HtmlCardWidgetSettingsComponent, "tb-html-card-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<HtmlCardWidgetSettingsComponent, "tb-html-card-widget-settings", never, {}, {}, never, never, false, never>;
 }

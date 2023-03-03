@@ -31,5 +31,5 @@ export declare class EditAlarmDetailsDialogComponent extends DialogComponent<Edi
     cancel(): void;
     save(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EditAlarmDetailsDialogComponent, [null, null, null, { skipSelf: true; }, null, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EditAlarmDetailsDialogComponent, "tb-edit-alarm-details-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EditAlarmDetailsDialogComponent, "tb-edit-alarm-details-dialog", never, {}, {}, never, never, false, never>;
 }

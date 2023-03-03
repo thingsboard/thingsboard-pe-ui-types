@@ -43,5 +43,5 @@ export declare class GroupPermissionDialogComponent extends DialogComponent<Grou
     cancel(): void;
     save(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<GroupPermissionDialogComponent, [null, null, null, null, null, { skipSelf: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<GroupPermissionDialogComponent, "tb-group-permission-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GroupPermissionDialogComponent, "tb-group-permission-dialog", never, {}, {}, never, never, false, never>;
 }

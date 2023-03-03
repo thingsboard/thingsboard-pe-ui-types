@@ -22,5 +22,5 @@ export declare class CustomDialogContainerComponent extends DialogComponent<Cust
     constructor(store: Store<AppState>, router: Router, viewContainerRef: ViewContainerRef, dialogRef: MatDialogRef<CustomDialogContainerComponent>, data: CustomDialogContainerData);
     ngOnDestroy(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<CustomDialogContainerComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CustomDialogContainerComponent, "tb-custom-dialog-container-component", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CustomDialogContainerComponent, "tb-custom-dialog-container-component", never, {}, {}, never, never, false, never>;
 }

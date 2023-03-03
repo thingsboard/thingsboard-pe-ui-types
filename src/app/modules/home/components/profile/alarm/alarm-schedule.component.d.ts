@@ -35,5 +35,5 @@ export declare class AlarmScheduleComponent implements ControlValueAccessor, Val
     getSchedulerRangeText(control: UntypedFormGroup | AbstractControl): string;
     get itemsSchedulerForm(): UntypedFormArray;
     static ɵfac: i0.ɵɵFactoryDeclaration<AlarmScheduleComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmScheduleComponent, "tb-alarm-schedule", never, { "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmScheduleComponent, "tb-alarm-schedule", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
 }

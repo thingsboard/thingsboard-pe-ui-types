@@ -17,5 +17,5 @@ export declare class TuyaIntegrationFormComponent extends IntegrationForm implem
     private updateModels;
     validate(): ValidationErrors | null;
     static ɵfac: i0.ɵɵFactoryDeclaration<TuyaIntegrationFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TuyaIntegrationFormComponent, "tb-tuya-integration-form", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TuyaIntegrationFormComponent, "tb-tuya-integration-form", never, {}, {}, never, never, false, never>;
 }

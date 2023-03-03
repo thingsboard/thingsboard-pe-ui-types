@@ -29,5 +29,5 @@ export declare class ShareEntityGroupDialogComponent extends DialogComponent<Sha
     cancel(): void;
     share(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ShareEntityGroupDialogComponent, [null, null, null, null, { skipSelf: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ShareEntityGroupDialogComponent, "tb-share-entity-group-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ShareEntityGroupDialogComponent, "tb-share-entity-group-dialog", never, {}, {}, never, never, false, never>;
 }

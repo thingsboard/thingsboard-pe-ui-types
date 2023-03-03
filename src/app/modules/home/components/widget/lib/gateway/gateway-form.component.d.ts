@@ -72,5 +72,5 @@ export declare class GatewayFormComponent extends PageComponent implements OnIni
     private setFormConnectorsDraft;
     private processLoggingLevel;
     static ɵfac: i0.ɵɵFactoryDeclaration<GatewayFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<GatewayFormComponent, "tb-gateway-form", never, { "ctx": "ctx"; "isStateForm": "isStateForm"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GatewayFormComponent, "tb-gateway-form", never, { "ctx": "ctx"; "isStateForm": "isStateForm"; }, {}, never, never, false, never>;
 }

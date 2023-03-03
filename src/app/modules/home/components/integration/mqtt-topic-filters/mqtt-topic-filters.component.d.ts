@@ -21,5 +21,5 @@ export declare class MqttTopicFiltersComponent implements ControlValueAccessor, 
     private updateModel;
     validate(): ValidationErrors | null;
     static ɵfac: i0.ɵɵFactoryDeclaration<MqttTopicFiltersComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MqttTopicFiltersComponent, "tb-mqtt-topic-filters", never, { "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MqttTopicFiltersComponent, "tb-mqtt-topic-filters", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
 }

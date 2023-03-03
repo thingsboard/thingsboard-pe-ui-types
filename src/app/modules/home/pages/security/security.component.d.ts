@@ -15,6 +15,7 @@ import { TwoFactorAuthProviderType } from '@shared/models/two-factor-auth.models
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { AuthService } from '@core/auth/auth.service';
 import { UserPasswordPolicy } from '@shared/models/settings.models';
+import { MatCheckboxChange } from '@angular/material/checkbox';
 import * as i0 from "@angular/core";
 export declare class SecurityComponent extends PageComponent implements OnInit, OnDestroy {
     protected store: Store<AppState>;
@@ -55,7 +56,7 @@ export declare class SecurityComponent extends PageComponent implements OnInit, 
     copyToken(): void;
     confirm2FAChange(event: MouseEvent, provider: TwoFactorAuthProviderType): void;
     private createdNewAuthConfig;
-    changeDefaultProvider(event: MouseEvent, provider: TwoFactorAuthProviderType): void;
+    changeDefaultProvider(event: MatCheckboxChange, provider: TwoFactorAuthProviderType): void;
     generateNewBackupCode(): void;
     providerDataInfo(provider: TwoFactorAuthProviderType): {
         info: any;
@@ -63,5 +64,5 @@ export declare class SecurityComponent extends PageComponent implements OnInit, 
     onChangePassword(form: FormGroupDirective): void;
     discardChanges(form: FormGroupDirective, event?: MouseEvent): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SecurityComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SecurityComponent, "tb-security", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SecurityComponent, "tb-security", never, {}, {}, never, never, false, never>;
 }

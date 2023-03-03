@@ -22,5 +22,5 @@ export declare class BackupCodeAuthDialogComponent extends DialogComponent<Backu
     downloadFile(): void;
     printCode(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<BackupCodeAuthDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<BackupCodeAuthDialogComponent, "tb-backup-code-auth-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<BackupCodeAuthDialogComponent, "tb-backup-code-auth-dialog", never, {}, {}, never, never, false, never>;
 }

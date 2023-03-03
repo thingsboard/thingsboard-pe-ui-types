@@ -195,5 +195,5 @@ export declare class WidgetConfigComponent extends PageComponent implements OnIn
     };
     extensionPanelIsOpen(value: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetConfigComponent, "tb-widget-config", never, { "forceExpandDatasources": "forceExpandDatasources"; "aliasController": "aliasController"; "dashboard": "dashboard"; "widget": "widget"; "functionsOnly": "functionsOnly"; "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetConfigComponent, "tb-widget-config", never, { "forceExpandDatasources": "forceExpandDatasources"; "aliasController": "aliasController"; "dashboard": "dashboard"; "widget": "widget"; "functionsOnly": "functionsOnly"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

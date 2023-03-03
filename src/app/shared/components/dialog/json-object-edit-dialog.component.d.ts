@@ -26,5 +26,5 @@ export declare class JsonObjectEditDialogComponent extends DialogComponent<JsonO
     cancel(): void;
     add(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<JsonObjectEditDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<JsonObjectEditDialogComponent, "tb-object-edit-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<JsonObjectEditDialogComponent, "tb-object-edit-dialog", never, {}, {}, never, never, false, never>;
 }

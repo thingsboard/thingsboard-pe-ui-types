@@ -3,6 +3,7 @@ import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedForm
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
+import { SubscriptSizing } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class KeyValMapComponent extends PageComponent implements ControlValueAccessor, OnInit, Validator {
     protected store: Store<AppState>;
@@ -14,6 +15,7 @@ export declare class KeyValMapComponent extends PageComponent implements Control
     noDataText: string;
     singlePredefinedKey: string;
     isStrokedButton: boolean;
+    subscriptSizing: SubscriptSizing;
     kvListFormGroup: UntypedFormGroup;
     private propagateChange;
     private valueChangeSubscription;
@@ -37,5 +39,5 @@ export declare class KeyValMapComponent extends PageComponent implements Control
     get isSinglePredefinedKey(): boolean;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<KeyValMapComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<KeyValMapComponent, "tb-key-val-map", never, { "disabled": "disabled"; "titleText": "titleText"; "keyPlaceholderText": "keyPlaceholderText"; "valuePlaceholderText": "valuePlaceholderText"; "noDataText": "noDataText"; "singlePredefinedKey": "singlePredefinedKey"; "isStrokedButton": "isStrokedButton"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<KeyValMapComponent, "tb-key-val-map", never, { "disabled": "disabled"; "titleText": "titleText"; "keyPlaceholderText": "keyPlaceholderText"; "valuePlaceholderText": "valuePlaceholderText"; "noDataText": "noDataText"; "singlePredefinedKey": "singlePredefinedKey"; "isStrokedButton": "isStrokedButton"; "subscriptSizing": "subscriptSizing"; }, {}, never, never, false, never>;
 }

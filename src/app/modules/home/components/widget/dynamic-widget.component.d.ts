@@ -29,5 +29,5 @@ export declare class DynamicWidgetComponent extends PageComponent implements IDy
     showErrorToast(message: string, verticalPosition?: NotificationVerticalPosition, horizontalPosition?: NotificationHorizontalPosition, target?: string): void;
     showToast(type: NotificationType, message: string, duration: number, verticalPosition?: NotificationVerticalPosition, horizontalPosition?: NotificationHorizontalPosition, target?: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DynamicWidgetComponent, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<DynamicWidgetComponent, never, never, {}, {}, never, never, false>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<DynamicWidgetComponent, never, never, {}, {}, never, never, false, never>;
 }

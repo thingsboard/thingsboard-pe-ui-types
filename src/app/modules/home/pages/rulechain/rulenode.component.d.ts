@@ -16,5 +16,5 @@ export declare class RuleNodeComponent extends FcNodeComponent implements OnInit
     openRuleChain($event: Event, node: FcRuleNode): void;
     displayOpenRuleChainTooltip($event: MouseEvent, node: FcRuleNode): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<RuleNodeComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RuleNodeComponent, "rule-node", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RuleNodeComponent, "rule-node", never, {}, {}, never, never, false, never>;
 }

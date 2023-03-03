@@ -14,5 +14,5 @@ export declare class KnobControlWidgetSettingsComponent extends WidgetSettingsCo
     protected validatorTriggers(): string[];
     protected updateValidators(emitEvent: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<KnobControlWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<KnobControlWidgetSettingsComponent, "tb-knob-control-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<KnobControlWidgetSettingsComponent, "tb-knob-control-widget-settings", never, {}, {}, never, never, false, never>;
 }

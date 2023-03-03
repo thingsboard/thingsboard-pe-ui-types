@@ -26,5 +26,5 @@ export declare class CustomActionPrettyEditorComponent extends PageComponent imp
     writeValue(obj: CustomActionDescriptor): void;
     onActionUpdated(valid?: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<CustomActionPrettyEditorComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CustomActionPrettyEditorComponent, "tb-custom-action-pretty-editor", never, { "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CustomActionPrettyEditorComponent, "tb-custom-action-pretty-editor", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
 }

@@ -16,5 +16,5 @@ export declare class GatewayEventsWidgetSettingsComponent extends WidgetSettings
     removeEventFilter(eventFilter: string): void;
     addEventFilterFromInput(event: MatChipInputEvent): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<GatewayEventsWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<GatewayEventsWidgetSettingsComponent, "tb-gateway-events-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GatewayEventsWidgetSettingsComponent, "tb-gateway-events-widget-settings", never, {}, {}, never, never, false, never>;
 }

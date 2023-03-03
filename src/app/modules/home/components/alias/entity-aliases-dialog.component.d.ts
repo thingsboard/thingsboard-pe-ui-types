@@ -55,5 +55,5 @@ export declare class EntityAliasesDialogComponent extends DialogComponent<Entity
     cancel(): void;
     save(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityAliasesDialogComponent, [null, null, null, { skipSelf: true; }, null, null, null, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityAliasesDialogComponent, "tb-entity-aliases-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityAliasesDialogComponent, "tb-entity-aliases-dialog", never, {}, {}, never, never, false, never>;
 }

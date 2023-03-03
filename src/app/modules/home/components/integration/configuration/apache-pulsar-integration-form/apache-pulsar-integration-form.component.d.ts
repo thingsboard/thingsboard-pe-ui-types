@@ -17,5 +17,5 @@ export declare class ApachePulsarIntegrationFormComponent extends IntegrationFor
     private updateModels;
     updatedValidationPrivateNetwork(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ApachePulsarIntegrationFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ApachePulsarIntegrationFormComponent, "tb-apache-pulsar-integration-form", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ApachePulsarIntegrationFormComponent, "tb-apache-pulsar-integration-form", never, {}, {}, never, never, false, never>;
 }

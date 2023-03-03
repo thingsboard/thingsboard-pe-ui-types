@@ -28,5 +28,5 @@ export declare class DeviceProfileProvisionConfigurationComponent implements Con
     private updateModel;
     onProvisionCopied(isKey: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceProfileProvisionConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceProfileProvisionConfigurationComponent, "tb-device-profile-provision-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceProfileProvisionConfigurationComponent, "tb-device-profile-provision-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

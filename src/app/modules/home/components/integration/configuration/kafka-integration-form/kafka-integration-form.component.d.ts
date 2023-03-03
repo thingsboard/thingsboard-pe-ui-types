@@ -15,5 +15,5 @@ export declare class KafkaIntegrationFormComponent extends IntegrationForm imple
     validate(): ValidationErrors | null;
     updatedValidationPrivateNetwork(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<KafkaIntegrationFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<KafkaIntegrationFormComponent, "tb-kafka-integration-form", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<KafkaIntegrationFormComponent, "tb-kafka-integration-form", never, {}, {}, never, never, false, never>;
 }

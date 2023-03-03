@@ -12,5 +12,5 @@ export declare class AnalogueLinearGaugeWidgetSettingsComponent extends Analogue
     protected defaultSettings(): WidgetSettings;
     protected onSettingsSet(settings: WidgetSettings): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AnalogueLinearGaugeWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AnalogueLinearGaugeWidgetSettingsComponent, "tb-analogue-linear-gauge-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AnalogueLinearGaugeWidgetSettingsComponent, "tb-analogue-linear-gauge-widget-settings", never, {}, {}, never, never, false, never>;
 }

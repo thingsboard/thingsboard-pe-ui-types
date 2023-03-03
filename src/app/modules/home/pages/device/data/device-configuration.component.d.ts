@@ -23,5 +23,5 @@ export declare class DeviceConfigurationComponent implements ControlValueAccesso
     writeValue(value: DeviceConfiguration | null): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceConfigurationComponent, "tb-device-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceConfigurationComponent, "tb-device-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

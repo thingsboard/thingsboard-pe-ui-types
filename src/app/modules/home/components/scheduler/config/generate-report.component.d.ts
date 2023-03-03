@@ -22,5 +22,5 @@ export declare class GenerateReportComponent implements ControlValueAccessor, On
     writeValue(value: SchedulerEventConfiguration | null): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<GenerateReportComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<GenerateReportComponent, "tb-generate-report-event-config", never, { "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GenerateReportComponent, "tb-generate-report-event-config", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
 }

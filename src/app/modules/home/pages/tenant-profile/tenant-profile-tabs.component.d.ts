@@ -8,5 +8,5 @@ export declare class TenantProfileTabsComponent extends EntityTabsComponent<Tena
     constructor(store: Store<AppState>);
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TenantProfileTabsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TenantProfileTabsComponent, "tb-tenant-profile-tabs", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TenantProfileTabsComponent, "tb-tenant-profile-tabs", never, {}, {}, never, never, false, never>;
 }

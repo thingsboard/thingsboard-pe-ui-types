@@ -61,5 +61,5 @@ export declare class EntityDetailsPanelComponent extends PageComponent implement
     saveEntity(emitEntityUpdated?: boolean): Observable<BaseData<HasId>>;
     ngAfterViewInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityDetailsPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityDetailsPanelComponent, "tb-entity-details-panel", never, { "entityId": "entityId"; "entitiesTableConfig": "entitiesTableConfig"; }, { "closeEntityDetails": "closeEntityDetails"; "entityUpdated": "entityUpdated"; "entityAction": "entityAction"; }, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityDetailsPanelComponent, "tb-entity-details-panel", never, { "entityId": "entityId"; "entitiesTableConfig": "entitiesTableConfig"; }, { "closeEntityDetails": "closeEntityDetails"; "entityUpdated": "entityUpdated"; "entityAction": "entityAction"; }, never, never, false, never>;
 }

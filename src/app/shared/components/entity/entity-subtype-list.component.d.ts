@@ -6,7 +6,7 @@ import { AppState } from '@app/core/core.state';
 import { TranslateService } from '@ngx-translate/core';
 import { EntityType } from '@shared/models/entity-type.models';
 import { MatAutocomplete, MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
-import { MatChipInputEvent, MatChipList } from '@angular/material/chips';
+import { MatChipInputEvent, MatChipGrid } from '@angular/material/chips';
 import { AssetService } from '@core/http/asset.service';
 import { DeviceService } from '@core/http/device.service';
 import { EdgeService } from '@core/http/edge.service';
@@ -31,7 +31,7 @@ export declare class EntitySubTypeListComponent implements ControlValueAccessor,
     entityType: EntityType;
     entitySubtypeInput: ElementRef<HTMLInputElement>;
     entitySubtypeAutocomplete: MatAutocomplete;
-    chipList: MatChipList;
+    chipList: MatChipGrid;
     entitySubtypeList: Array<string>;
     filteredEntitySubtypeList: Observable<Array<string>>;
     entitySubtypes: Observable<Array<string>>;
@@ -63,5 +63,5 @@ export declare class EntitySubTypeListComponent implements ControlValueAccessor,
     onFocus(): void;
     clear(value?: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntitySubTypeListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntitySubTypeListComponent, "tb-entity-subtype-list", never, { "required": "required"; "disabled": "disabled"; "entityType": "entityType"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntitySubTypeListComponent, "tb-entity-subtype-list", never, { "required": "required"; "disabled": "disabled"; "entityType": "entityType"; }, {}, never, never, false, never>;
 }

@@ -39,5 +39,5 @@ export declare class FlotWidgetSettingsComponent extends PageComponent implement
     addLabelDataKey(): void;
     labelDataKeyDrop(event: CdkDragDrop<string[]>): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<FlotWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FlotWidgetSettingsComponent, "tb-flot-widget-settings", never, { "disabled": "disabled"; "chartType": "chartType"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FlotWidgetSettingsComponent, "tb-flot-widget-settings", never, { "disabled": "disabled"; "chartType": "chartType"; }, {}, never, never, false, never>;
 }

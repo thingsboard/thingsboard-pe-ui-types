@@ -21,5 +21,5 @@ export declare class DefaultDeviceProfileTransportConfigurationComponent impleme
     writeValue(value: DefaultDeviceProfileTransportConfiguration | null): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<DefaultDeviceProfileTransportConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DefaultDeviceProfileTransportConfigurationComponent, "tb-default-device-profile-transport-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DefaultDeviceProfileTransportConfigurationComponent, "tb-default-device-profile-transport-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

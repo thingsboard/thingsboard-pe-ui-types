@@ -20,5 +20,5 @@ export declare class EntityGroupTabsComponent extends EntityTabsComponent<Entity
     private validate;
     protected setEntity(entity: EntityGroupInfo): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityGroupTabsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupTabsComponent, "tb-entity-group-tabs", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupTabsComponent, "tb-entity-group-tabs", never, {}, {}, never, never, false, never>;
 }

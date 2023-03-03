@@ -27,5 +27,5 @@ export declare class Lwm2mObserveAttrTelemetryResourcesComponent implements Cont
     trackByParams(index: number, resource: ResourceLwM2M): number;
     isDisabledObserve(index: number): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<Lwm2mObserveAttrTelemetryResourcesComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mObserveAttrTelemetryResourcesComponent, "tb-profile-lwm2m-observe-attr-telemetry-resource", never, { "disabled": "disabled"; "required": "required"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mObserveAttrTelemetryResourcesComponent, "tb-profile-lwm2m-observe-attr-telemetry-resource", never, { "disabled": "disabled"; "required": "required"; }, {}, never, never, false, never>;
 }

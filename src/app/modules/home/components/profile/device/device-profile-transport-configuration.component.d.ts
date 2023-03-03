@@ -24,5 +24,5 @@ export declare class DeviceProfileTransportConfigurationComponent implements Con
     writeValue(value: DeviceProfileTransportConfiguration | null): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceProfileTransportConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceProfileTransportConfigurationComponent, "tb-device-profile-transport-configuration", never, { "required": "required"; "disabled": "disabled"; "isAdd": "isAdd"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceProfileTransportConfigurationComponent, "tb-device-profile-transport-configuration", never, { "required": "required"; "disabled": "disabled"; "isAdd": "isAdd"; }, {}, never, never, false, never>;
 }

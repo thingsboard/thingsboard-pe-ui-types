@@ -22,5 +22,5 @@ export declare class OpcUaIntegrationFormComponent extends IntegrationForm imple
     validate(): ValidationErrors | null;
     updatedValidationPrivateNetwork(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<OpcUaIntegrationFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<OpcUaIntegrationFormComponent, "tb-opc-ua-integration-form", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<OpcUaIntegrationFormComponent, "tb-opc-ua-integration-form", never, {}, {}, never, never, false, never>;
 }

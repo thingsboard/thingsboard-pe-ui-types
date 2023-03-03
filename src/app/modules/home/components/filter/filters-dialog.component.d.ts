@@ -51,5 +51,5 @@ export declare class FiltersDialogComponent extends DialogComponent<FiltersDialo
     cancel(): void;
     save(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<FiltersDialogComponent, [null, null, null, { skipSelf: true; }, null, null, null, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FiltersDialogComponent, "tb-filters-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FiltersDialogComponent, "tb-filters-dialog", never, {}, {}, never, never, false, never>;
 }

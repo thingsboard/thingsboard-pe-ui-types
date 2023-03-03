@@ -7,7 +7,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { AliasEntityType, EntityType } from '@shared/models/entity-type.models';
 import { EntityService } from '@core/http/entity.service';
 import { MatAutocomplete } from '@angular/material/autocomplete';
-import { MatChipList } from '@angular/material/chips';
+import { MatChipGrid } from '@angular/material/chips';
+import { SubscriptSizing } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 interface EntityTypeInfo {
     name: string;
@@ -24,11 +25,12 @@ export declare class EntityTypeListComponent implements ControlValueAccessor, On
     get required(): boolean;
     set required(value: boolean);
     disabled: boolean;
+    subscriptSizing: SubscriptSizing;
     allowedEntityTypes: Array<EntityType | AliasEntityType>;
     ignoreAuthorityFilter: boolean;
     entityTypeInput: ElementRef<HTMLInputElement>;
     entityTypeAutocomplete: MatAutocomplete;
-    chipList: MatChipList;
+    chipList: MatChipGrid;
     allEntityTypeList: Array<EntityTypeInfo>;
     entityTypeList: Array<EntityTypeInfo>;
     filteredEntityTypeList: Observable<Array<EntityTypeInfo>>;
@@ -52,6 +54,6 @@ export declare class EntityTypeListComponent implements ControlValueAccessor, On
     onFocus(): void;
     clear(value?: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityTypeListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityTypeListComponent, "tb-entity-type-list", never, { "required": "required"; "disabled": "disabled"; "allowedEntityTypes": "allowedEntityTypes"; "ignoreAuthorityFilter": "ignoreAuthorityFilter"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityTypeListComponent, "tb-entity-type-list", never, { "required": "required"; "disabled": "disabled"; "subscriptSizing": "subscriptSizing"; "allowedEntityTypes": "allowedEntityTypes"; "ignoreAuthorityFilter": "ignoreAuthorityFilter"; }, {}, never, never, false, never>;
 }
 export {};

@@ -41,5 +41,5 @@ export declare class FlotKeySettingsComponent extends PageComponent implements O
     addThreshold(): void;
     thresholdDrop(event: CdkDragDrop<string[]>): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<FlotKeySettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FlotKeySettingsComponent, "tb-flot-key-settings", never, { "disabled": "disabled"; "chartType": "chartType"; "aliasController": "aliasController"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FlotKeySettingsComponent, "tb-flot-key-settings", never, { "disabled": "disabled"; "chartType": "chartType"; "aliasController": "aliasController"; }, {}, never, never, false, never>;
 }

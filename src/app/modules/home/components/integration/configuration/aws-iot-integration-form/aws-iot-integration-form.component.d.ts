@@ -16,5 +16,5 @@ export declare class AwsIotIntegrationFormComponent extends IntegrationForm impl
     validate(): ValidationErrors | null;
     updatedValidationPrivateNetwork(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AwsIotIntegrationFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AwsIotIntegrationFormComponent, "tb-aws-iot-integration-form", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AwsIotIntegrationFormComponent, "tb-aws-iot-integration-form", never, {}, {}, never, never, false, never>;
 }

@@ -8,5 +8,5 @@ export declare class DashboardToolbarComponent implements OnInit {
     ngOnInit(): void;
     onTriggerClick(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardToolbarComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardToolbarComponent, "tb-dashboard-toolbar", never, { "toolbarOpened": "toolbarOpened"; "forceFullscreen": "forceFullscreen"; }, { "triggerClick": "triggerClick"; }, never, ["*"], false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardToolbarComponent, "tb-dashboard-toolbar", never, { "toolbarOpened": "toolbarOpened"; "forceFullscreen": "forceFullscreen"; }, { "triggerClick": "triggerClick"; }, never, ["*"], false, never>;
 }

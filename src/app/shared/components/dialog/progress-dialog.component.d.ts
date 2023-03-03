@@ -11,5 +11,5 @@ export declare class ProgressDialogComponent<T> {
     progressText: string;
     constructor(dialogRef: MatDialogRef<ProgressDialogComponent<T>, T>, data: ProgressDialogData<T>);
     static ɵfac: i0.ɵɵFactoryDeclaration<ProgressDialogComponent<any>, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ProgressDialogComponent<any>, "tb-progress-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ProgressDialogComponent<any>, "tb-progress-dialog", never, {}, {}, never, never, false, never>;
 }

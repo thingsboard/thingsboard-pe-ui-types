@@ -115,5 +115,5 @@ export declare class WidgetEditorComponent extends PageComponent implements OnIn
     addResource(): void;
     widetTypeChanged(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetEditorComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetEditorComponent, "tb-widget-editor", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetEditorComponent, "tb-widget-editor", never, {}, {}, never, never, false, never>;
 }

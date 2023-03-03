@@ -49,5 +49,5 @@ export declare class ManageDashboardLayoutsDialogComponent extends DialogCompone
     layoutButtonText(side: DashboardLayoutId): string;
     showPreviewInputs(side: DashboardLayoutId): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<ManageDashboardLayoutsDialogComponent, [null, null, null, { skipSelf: true; }, null, null, null, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ManageDashboardLayoutsDialogComponent, "tb-manage-dashboard-layouts-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ManageDashboardLayoutsDialogComponent, "tb-manage-dashboard-layouts-dialog", never, {}, {}, never, never, false, never>;
 }

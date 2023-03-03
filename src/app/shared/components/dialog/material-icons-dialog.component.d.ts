@@ -28,5 +28,5 @@ export declare class MaterialIconsDialogComponent extends DialogComponent<Materi
     selectIcon(icon: string): void;
     cancel(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<MaterialIconsDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MaterialIconsDialogComponent, "tb-material-icons-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MaterialIconsDialogComponent, "tb-material-icons-dialog", never, {}, {}, never, never, false, never>;
 }

@@ -22,5 +22,5 @@ export declare class TenantComponent extends ContactBasedComponent<TenantInfo> {
     onTenantIdCopied(event: any): void;
     onTenantProfileUpdated(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TenantComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TenantComponent, "tb-tenant", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TenantComponent, "tb-tenant", never, {}, {}, never, never, false, never>;
 }

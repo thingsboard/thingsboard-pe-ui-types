@@ -38,5 +38,5 @@ export declare class ColorInputComponent extends PageComponent implements OnInit
     showColorPicker(): void;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ColorInputComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ColorInputComponent, "tb-color-input", never, { "icon": "icon"; "label": "label"; "requiredText": "requiredText"; "colorClearButton": "colorClearButton"; "openOnInput": "openOnInput"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ColorInputComponent, "tb-color-input", never, { "icon": "icon"; "label": "label"; "requiredText": "requiredText"; "colorClearButton": "colorClearButton"; "openOnInput": "openOnInput"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

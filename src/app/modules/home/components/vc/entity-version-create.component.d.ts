@@ -35,5 +35,5 @@ export declare class EntityVersionCreateComponent extends PageComponent implemen
     cancel(): void;
     export(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityVersionCreateComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityVersionCreateComponent, "tb-entity-version-create", never, { "branch": "branch"; "entityId": "entityId"; "groupType": "groupType"; "entityName": "entityName"; "onClose": "onClose"; "onBeforeCreateVersion": "onBeforeCreateVersion"; "popoverComponent": "popoverComponent"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityVersionCreateComponent, "tb-entity-version-create", never, { "branch": "branch"; "entityId": "entityId"; "groupType": "groupType"; "entityName": "entityName"; "onClose": "onClose"; "onBeforeCreateVersion": "onBeforeCreateVersion"; "popoverComponent": "popoverComponent"; }, {}, never, never, false, never>;
 }

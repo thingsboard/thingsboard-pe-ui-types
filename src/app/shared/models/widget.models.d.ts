@@ -488,5 +488,5 @@ export declare abstract class WidgetSettingsComponent extends PageComponent impl
     protected abstract onSettingsSet(settings: WidgetSettings): any;
     protected defaultSettings(): WidgetSettings;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetSettingsComponent, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<WidgetSettingsComponent, never, never, {}, {}, never, never, false>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<WidgetSettingsComponent, never, never, {}, {}, never, never, false, never>;
 }

@@ -33,5 +33,5 @@ export declare class FiltersEditComponent implements OnInit, OnDestroy {
     private _createFiltersEditPanelInjector;
     private updateFiltersInfo;
     static ɵfac: i0.ɵɵFactoryDeclaration<FiltersEditComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FiltersEditComponent, "tb-filters-edit", never, { "aliasController": "aliasController"; "tooltipPosition": "tooltipPosition"; "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FiltersEditComponent, "tb-filters-edit", never, { "aliasController": "aliasController"; "tooltipPosition": "tooltipPosition"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

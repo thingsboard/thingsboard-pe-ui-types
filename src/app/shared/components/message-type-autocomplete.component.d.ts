@@ -35,5 +35,5 @@ export declare class MessageTypeAutocompleteComponent implements ControlValueAcc
     fetchMessageTypes(searchText?: string): Observable<Array<MessageType | string>>;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<MessageTypeAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MessageTypeAutocompleteComponent, "tb-message-type-autocomplete", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MessageTypeAutocompleteComponent, "tb-message-type-autocomplete", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

@@ -15,5 +15,5 @@ export declare class SolutionTemplatesComponent extends PageComponent implements
     ngOnInit(): void;
     reload(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SolutionTemplatesComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SolutionTemplatesComponent, "tb-solution-templates", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SolutionTemplatesComponent, "tb-solution-templates", never, {}, {}, never, never, false, never>;
 }

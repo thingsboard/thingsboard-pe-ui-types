@@ -27,5 +27,5 @@ export declare class EmailAuthDialogComponent extends DialogComponent<EmailAuthD
     closeDialog(): void;
     private showFormErrors;
     static ɵfac: i0.ɵɵFactoryDeclaration<EmailAuthDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EmailAuthDialogComponent, "tb-email-auth-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EmailAuthDialogComponent, "tb-email-auth-dialog", never, {}, {}, never, never, false, never>;
 }

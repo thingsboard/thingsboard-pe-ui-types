@@ -56,5 +56,5 @@ export declare class AddDeviceProfileDialogComponent extends DialogComponent<Add
     private get maxStepperIndex();
     allValid(): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<AddDeviceProfileDialogComponent, [null, null, null, null, null, null, { skipSelf: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AddDeviceProfileDialogComponent, "tb-add-device-profile-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AddDeviceProfileDialogComponent, "tb-add-device-profile-dialog", never, {}, {}, never, never, false, never>;
 }

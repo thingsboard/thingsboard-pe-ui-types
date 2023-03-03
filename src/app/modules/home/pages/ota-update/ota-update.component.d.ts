@@ -30,5 +30,5 @@ export declare class OtaUpdateComponent extends EntityComponent<OtaPackage> impl
     onPackageDirectUrlCopied(): void;
     prepareFormValue(formValue: any): any;
     static ɵfac: i0.ɵɵFactoryDeclaration<OtaUpdateComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<OtaUpdateComponent, "tb-ota-update", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<OtaUpdateComponent, "tb-ota-update", never, {}, {}, never, never, false, never>;
 }

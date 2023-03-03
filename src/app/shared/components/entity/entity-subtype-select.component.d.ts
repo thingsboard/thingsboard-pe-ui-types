@@ -10,6 +10,7 @@ import { BroadcastService } from '@app/core/services/broadcast.service';
 import { AssetService } from '@core/http/asset.service';
 import { EdgeService } from '@core/http/edge.service';
 import { EntityViewService } from '@core/http/entity-view.service';
+import { SubscriptSizing } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class EntitySubTypeSelectComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnDestroy {
     private store;
@@ -22,6 +23,7 @@ export declare class EntitySubTypeSelectComponent implements ControlValueAccesso
     private fb;
     subTypeFormGroup: UntypedFormGroup;
     modelValue: string | null;
+    subscriptSizing: SubscriptSizing;
     entityType: EntityType;
     showLabel: boolean;
     required: boolean;
@@ -48,5 +50,5 @@ export declare class EntitySubTypeSelectComponent implements ControlValueAccesso
     findSubTypes(searchText?: string): Observable<Array<EntitySubtype | string>>;
     getSubTypes(): Observable<Array<EntitySubtype | string>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntitySubTypeSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntitySubTypeSelectComponent, "tb-entity-subtype-select", never, { "entityType": "entityType"; "showLabel": "showLabel"; "required": "required"; "disabled": "disabled"; "typeTranslatePrefix": "typeTranslatePrefix"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntitySubTypeSelectComponent, "tb-entity-subtype-select", never, { "subscriptSizing": "subscriptSizing"; "entityType": "entityType"; "showLabel": "showLabel"; "required": "required"; "disabled": "disabled"; "typeTranslatePrefix": "typeTranslatePrefix"; }, {}, never, never, false, never>;
 }

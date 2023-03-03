@@ -11,5 +11,5 @@ export declare class SideMenuComponent implements OnInit {
     ngOnInit(): void;
     private filterSections;
     static ɵfac: i0.ɵɵFactoryDeclaration<SideMenuComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SideMenuComponent, "tb-side-menu", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SideMenuComponent, "tb-side-menu", never, {}, {}, never, never, false, never>;
 }

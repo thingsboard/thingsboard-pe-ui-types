@@ -13,5 +13,5 @@ export declare class AlarmTableHeaderComponent extends EntityTableHeaderComponen
     constructor(store: Store<AppState>);
     searchStatusChanged(searchStatus: AlarmSearchStatus): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AlarmTableHeaderComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmTableHeaderComponent, "tb-alarm-table-header", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmTableHeaderComponent, "tb-alarm-table-header", never, {}, {}, never, never, false, never>;
 }

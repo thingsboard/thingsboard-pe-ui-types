@@ -9,7 +9,7 @@ import { BaseData } from '@shared/models/base-data';
 import { EntityId } from '@shared/models/id/entity-id';
 import { EntityService } from '@core/http/entity.service';
 import { MatAutocomplete } from '@angular/material/autocomplete';
-import { MatChipList } from '@angular/material/chips';
+import { MatChipGrid } from '@angular/material/chips';
 import { EntityGroupService } from '@core/http/entity-group.service';
 import * as i0 from "@angular/core";
 export declare class EntityGroupListComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnChanges {
@@ -30,7 +30,7 @@ export declare class EntityGroupListComponent implements ControlValueAccessor, O
     disabled: boolean;
     entityGroupInput: ElementRef<HTMLInputElement>;
     matAutocomplete: MatAutocomplete;
-    chipList: MatChipList;
+    chipList: MatChipGrid;
     entityGroups: Array<BaseData<EntityId>>;
     filteredEntityGroups: Observable<Array<BaseData<EntityId>>>;
     searchText: string;
@@ -53,5 +53,5 @@ export declare class EntityGroupListComponent implements ControlValueAccessor, O
     onFocus(): void;
     clear(value?: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityGroupListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupListComponent, "tb-entity-group-list", never, { "groupType": "groupType"; "ownerId": "ownerId"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupListComponent, "tb-entity-group-list", never, { "groupType": "groupType"; "ownerId": "ownerId"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

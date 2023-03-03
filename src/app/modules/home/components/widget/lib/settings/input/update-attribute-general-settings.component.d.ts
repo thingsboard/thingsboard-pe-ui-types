@@ -37,5 +37,5 @@ export declare class UpdateAttributeGeneralSettingsComponent extends PageCompone
     private updateModel;
     private updateValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<UpdateAttributeGeneralSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<UpdateAttributeGeneralSettingsComponent, "tb-update-attribute-general-settings", never, { "disabled": "disabled"; "hasLabelValue": "hasLabelValue"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<UpdateAttributeGeneralSettingsComponent, "tb-update-attribute-general-settings", never, { "disabled": "disabled"; "hasLabelValue": "hasLabelValue"; }, {}, never, never, false, never>;
 }

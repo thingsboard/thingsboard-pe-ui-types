@@ -12,5 +12,5 @@ export declare class ChartWidgetSettingsComponent extends WidgetSettingsComponen
     protected defaultSettings(): WidgetSettings;
     protected onSettingsSet(settings: WidgetSettings): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ChartWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ChartWidgetSettingsComponent, "tb-chart-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ChartWidgetSettingsComponent, "tb-chart-widget-settings", never, {}, {}, never, never, false, never>;
 }

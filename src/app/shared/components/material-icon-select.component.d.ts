@@ -32,5 +32,5 @@ export declare class MaterialIconSelectComponent extends PageComponent implement
     openIconDialog(): void;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<MaterialIconSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MaterialIconSelectComponent, "tb-material-icon-select", never, { "label": "label"; "disabled": "disabled"; "iconClearButton": "iconClearButton"; "required": "required"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MaterialIconSelectComponent, "tb-material-icon-select", never, { "label": "label"; "disabled": "disabled"; "iconClearButton": "iconClearButton"; "required": "required"; }, {}, never, never, false, never>;
 }

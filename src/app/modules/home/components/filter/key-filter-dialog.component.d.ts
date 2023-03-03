@@ -57,5 +57,5 @@ export declare class KeyFilterDialogComponent extends DialogComponent<KeyFilterD
     private fetchEntityName;
     private getEntityKeys;
     static ɵfac: i0.ɵɵFactoryDeclaration<KeyFilterDialogComponent, [null, null, null, { skipSelf: true; }, null, null, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<KeyFilterDialogComponent, "tb-key-filter-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<KeyFilterDialogComponent, "tb-key-filter-dialog", never, {}, {}, never, never, false, never>;
 }

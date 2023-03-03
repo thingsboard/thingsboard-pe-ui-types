@@ -79,5 +79,5 @@ export declare class OAuth2SettingsComponent extends PageComponent implements On
     redirectURIMixed(control: AbstractControl): string;
     trackByParams(index: number): number;
     static ɵfac: i0.ɵɵFactoryDeclaration<OAuth2SettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<OAuth2SettingsComponent, "tb-oauth2-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<OAuth2SettingsComponent, "tb-oauth2-settings", never, {}, {}, never, never, false, never>;
 }

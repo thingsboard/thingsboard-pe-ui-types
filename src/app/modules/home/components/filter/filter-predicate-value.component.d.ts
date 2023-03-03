@@ -31,5 +31,5 @@ export declare class FilterPredicateValueComponent implements ControlValueAccess
     private updateShowInheritMode;
     private updateValidationDynamicMode;
     static ɵfac: i0.ɵɵFactoryDeclaration<FilterPredicateValueComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FilterPredicateValueComponent, "tb-filter-predicate-value", never, { "disabled": "disabled"; "allowUserDynamicSource": "allowUserDynamicSource"; "onlyUserDynamicSource": "onlyUserDynamicSource"; "valueType": "valueType"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FilterPredicateValueComponent, "tb-filter-predicate-value", never, { "disabled": "disabled"; "allowUserDynamicSource": "allowUserDynamicSource"; "onlyUserDynamicSource": "onlyUserDynamicSource"; "valueType": "valueType"; }, {}, never, never, false, never>;
 }

@@ -9,5 +9,5 @@ export declare class TogglePasswordComponent implements AfterViewInit {
     togglePassword($event: Event): void;
     ngAfterViewInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TogglePasswordComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TogglePasswordComponent, "tb-toggle-password", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TogglePasswordComponent, "tb-toggle-password", never, {}, {}, never, never, false, never>;
 }

@@ -35,5 +35,5 @@ export declare class IntegrationCredentialsComponent implements ControlValueAcce
     private updateModel;
     validate(): ValidationErrors | null;
     static ɵfac: i0.ɵɵFactoryDeclaration<IntegrationCredentialsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<IntegrationCredentialsComponent, "tb-integration-credentials", never, { "allowCredentialTypes": "allowCredentialTypes"; "ignoreCaCert": "ignoreCaCert"; "userNameLabel": "userNameLabel"; "userNameRequired": "userNameRequired"; "passwordLabel": "passwordLabel"; "passwordRequired": "passwordRequired"; "passwordOptional": "passwordOptional"; "disabled": "disabled"; }, {}, never, ["*"], false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<IntegrationCredentialsComponent, "tb-integration-credentials", never, { "allowCredentialTypes": "allowCredentialTypes"; "ignoreCaCert": "ignoreCaCert"; "userNameLabel": "userNameLabel"; "userNameRequired": "userNameRequired"; "passwordLabel": "passwordLabel"; "passwordRequired": "passwordRequired"; "passwordOptional": "passwordOptional"; "disabled": "disabled"; }, {}, never, ["*"], false, never>;
 }

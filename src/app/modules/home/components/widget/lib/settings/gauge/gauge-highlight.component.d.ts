@@ -29,5 +29,5 @@ export declare class GaugeHighlightComponent extends PageComponent implements On
     highlightRangeText(): string;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<GaugeHighlightComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<GaugeHighlightComponent, "tb-gauge-highlight", never, { "disabled": "disabled"; "expanded": "expanded"; }, { "removeHighlight": "removeHighlight"; }, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GaugeHighlightComponent, "tb-gauge-highlight", never, { "disabled": "disabled"; "expanded": "expanded"; }, { "removeHighlight": "removeHighlight"; }, never, never, false, never>;
 }

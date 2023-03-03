@@ -43,5 +43,5 @@ export declare class WidgetSettingsComponent implements ControlValueAccessor, On
     private validateDefinedDirective;
     validate(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetSettingsComponent, "tb-widget-settings", never, { "disabled": "disabled"; "aliasController": "aliasController"; "dashboard": "dashboard"; "widget": "widget"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetSettingsComponent, "tb-widget-settings", never, { "disabled": "disabled"; "aliasController": "aliasController"; "dashboard": "dashboard"; "widget": "widget"; }, {}, never, never, false, never>;
 }

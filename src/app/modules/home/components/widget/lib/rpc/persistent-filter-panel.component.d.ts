@@ -22,5 +22,5 @@ export declare class PersistentFilterPanelComponent {
     update(): void;
     cancel(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<PersistentFilterPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PersistentFilterPanelComponent, "tb-persistent-filter-panel", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PersistentFilterPanelComponent, "tb-persistent-filter-panel", never, {}, {}, never, never, false, never>;
 }

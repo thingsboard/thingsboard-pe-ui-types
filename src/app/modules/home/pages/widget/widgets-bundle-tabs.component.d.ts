@@ -9,5 +9,5 @@ export declare class WidgetsBundleTabsComponent extends EntityTabsComponent<Widg
     isTenantWidgetsBundle(): boolean;
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetsBundleTabsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetsBundleTabsComponent, "tb-widgets-bundle-tabs", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetsBundleTabsComponent, "tb-widgets-bundle-tabs", never, {}, {}, never, never, false, never>;
 }

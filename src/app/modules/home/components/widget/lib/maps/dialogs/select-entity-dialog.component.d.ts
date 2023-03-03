@@ -19,5 +19,5 @@ export declare class SelectEntityDialogComponent extends DialogComponent<SelectE
     constructor(store: Store<AppState>, router: Router, data: SelectEntityDialogData, dialogRef: MatDialogRef<SelectEntityDialogComponent, FormattedData>, fb: UntypedFormBuilder);
     save(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SelectEntityDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SelectEntityDialogComponent, "tb-select-entity-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SelectEntityDialogComponent, "tb-select-entity-dialog", never, {}, {}, never, never, false, never>;
 }

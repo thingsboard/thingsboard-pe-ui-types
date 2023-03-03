@@ -12,5 +12,5 @@ export declare class RpcShellWidgetSettingsComponent extends WidgetSettingsCompo
     protected defaultSettings(): WidgetSettings;
     protected onSettingsSet(settings: WidgetSettings): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<RpcShellWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RpcShellWidgetSettingsComponent, "tb-rpc-shell-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RpcShellWidgetSettingsComponent, "tb-rpc-shell-widget-settings", never, {}, {}, never, never, false, never>;
 }

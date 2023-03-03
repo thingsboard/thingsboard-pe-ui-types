@@ -29,5 +29,5 @@ export declare class HereMapProviderSettingsComponent extends PageComponent impl
     };
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<HereMapProviderSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<HereMapProviderSettingsComponent, "tb-here-map-provider-settings", never, { "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<HereMapProviderSettingsComponent, "tb-here-map-provider-settings", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
 }

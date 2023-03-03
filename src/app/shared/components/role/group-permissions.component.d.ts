@@ -74,5 +74,5 @@ export declare class GroupPermissionsComponent extends PageComponent implements 
     openGroupPermissionDialog($event: Event, groupPermission?: GroupPermissionFullInfo): void;
     viewRole($event: Event, groupPermission: GroupPermissionFullInfo): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<GroupPermissionsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<GroupPermissionsComponent, "tb-group-permissions", never, { "active": "active"; "entityGroup": "entityGroup"; "registrationPermissions": "registrationPermissions"; "readonly": "readonly"; }, { "permissionsChanged": "permissionsChanged"; }, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GroupPermissionsComponent, "tb-group-permissions", never, { "active": "active"; "entityGroup": "entityGroup"; "registrationPermissions": "registrationPermissions"; "readonly": "readonly"; }, { "permissionsChanged": "permissionsChanged"; }, never, never, false, never>;
 }

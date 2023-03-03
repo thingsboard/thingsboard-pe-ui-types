@@ -43,5 +43,5 @@ export declare class RuleNodeConfigComponent implements ControlValueAccessor, On
     private validateDefinedDirective;
     validate(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<RuleNodeConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RuleNodeConfigComponent, "tb-rule-node-config", never, { "required": "required"; "disabled": "disabled"; "ruleNodeId": "ruleNodeId"; "ruleChainId": "ruleChainId"; "ruleChainType": "ruleChainType"; "nodeDefinition": "nodeDefinition"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RuleNodeConfigComponent, "tb-rule-node-config", never, { "required": "required"; "disabled": "disabled"; "ruleNodeId": "ruleNodeId"; "ruleChainId": "ruleChainId"; "ruleChainType": "ruleChainType"; "nodeDefinition": "nodeDefinition"; }, {}, never, never, false, never>;
 }

@@ -34,5 +34,5 @@ export declare class DigitalGaugeWidgetSettingsComponent extends WidgetSettingsC
     addTickValue(): void;
     tickValueDrop(event: CdkDragDrop<string[]>): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DigitalGaugeWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DigitalGaugeWidgetSettingsComponent, "tb-digital-gauge-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DigitalGaugeWidgetSettingsComponent, "tb-digital-gauge-widget-settings", never, {}, {}, never, never, false, never>;
 }

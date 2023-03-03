@@ -37,5 +37,5 @@ export declare class AddEntityDialogComponent extends DialogComponent<AddEntityD
     cancel(): void;
     add(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AddEntityDialogComponent, [null, null, null, null, null, null, { skipSelf: true; }]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AddEntityDialogComponent, "tb-add-entity-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AddEntityDialogComponent, "tb-add-entity-dialog", never, {}, {}, never, never, false, never>;
 }

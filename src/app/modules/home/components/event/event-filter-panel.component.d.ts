@@ -33,5 +33,5 @@ export declare class EventFilterPanelComponent {
     cancel(): void;
     changeIsError(value: boolean | string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EventFilterPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EventFilterPanelComponent, "tb-event-filter-panel", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EventFilterPanelComponent, "tb-event-filter-panel", never, {}, {}, never, never, false, never>;
 }

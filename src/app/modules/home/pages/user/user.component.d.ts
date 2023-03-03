@@ -27,5 +27,5 @@ export declare class UserComponent extends EntityComponent<User> {
     updateForm(entity: User): void;
     onUserIdCopied($event: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<UserComponent, [null, { optional: true; }, { optional: true; }, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<UserComponent, "tb-user", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<UserComponent, "tb-user", never, {}, {}, never, never, false, never>;
 }

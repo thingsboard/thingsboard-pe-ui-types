@@ -35,5 +35,5 @@ export declare class EntitySelectComponent implements ControlValueAccessor, OnIn
     writeValue(value: EntityId | null): void;
     updateView(entityType: EntityType | AliasEntityType | null, entityId: string | null): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntitySelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntitySelectComponent, "tb-entity-select", never, { "allowedEntityTypes": "allowedEntityTypes"; "useAliasEntityTypes": "useAliasEntityTypes"; "operation": "operation"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntitySelectComponent, "tb-entity-select", never, { "allowedEntityTypes": "allowedEntityTypes"; "useAliasEntityTypes": "useAliasEntityTypes"; "operation": "operation"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

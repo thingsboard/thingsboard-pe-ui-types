@@ -26,5 +26,5 @@ export declare class RelationFiltersComponent extends PageComponent implements C
     private createRelationFilterFormGroup;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<RelationFiltersComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RelationFiltersComponent, "tb-relation-filters", never, { "disabled": "disabled"; "allowedEntityTypes": "allowedEntityTypes"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RelationFiltersComponent, "tb-relation-filters", never, { "disabled": "disabled"; "allowedEntityTypes": "allowedEntityTypes"; }, {}, never, never, false, never>;
 }

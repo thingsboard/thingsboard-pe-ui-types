@@ -12,5 +12,5 @@ export declare class PhotoCameraInputWidgetSettingsComponent extends WidgetSetti
     protected defaultSettings(): WidgetSettings;
     protected onSettingsSet(settings: WidgetSettings): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<PhotoCameraInputWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PhotoCameraInputWidgetSettingsComponent, "tb-photo-camera-input-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PhotoCameraInputWidgetSettingsComponent, "tb-photo-camera-input-widget-settings", never, {}, {}, never, never, false, never>;
 }

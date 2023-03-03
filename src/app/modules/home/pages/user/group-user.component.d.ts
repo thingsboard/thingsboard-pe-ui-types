@@ -25,5 +25,5 @@ export declare class GroupUserComponent extends GroupEntityComponent<User> {
     updateForm(entity: User): void;
     onUserIdCopied($event: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<GroupUserComponent, [null, { optional: true; }, { optional: true; }, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<GroupUserComponent, "tb-group-user", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GroupUserComponent, "tb-group-user", never, {}, {}, never, never, false, never>;
 }

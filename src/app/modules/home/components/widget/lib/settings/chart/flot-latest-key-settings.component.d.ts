@@ -14,5 +14,5 @@ export declare class FlotLatestKeySettingsComponent extends WidgetSettingsCompon
     protected validatorTriggers(): string[];
     protected updateValidators(emitEvent: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<FlotLatestKeySettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FlotLatestKeySettingsComponent, "tb-flot-latest-key-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FlotLatestKeySettingsComponent, "tb-flot-latest-key-settings", never, {}, {}, never, never, false, never>;
 }

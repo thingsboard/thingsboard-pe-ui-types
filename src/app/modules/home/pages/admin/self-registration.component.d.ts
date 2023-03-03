@@ -38,5 +38,5 @@ export declare class SelfRegistrationComponent extends PageComponent implements 
     private convertTextToHTML;
     private convertHTMLToText;
     static ɵfac: i0.ɵɵFactoryDeclaration<SelfRegistrationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SelfRegistrationComponent, "tb-self-registration", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SelfRegistrationComponent, "tb-self-registration", never, {}, {}, never, never, false, never>;
 }

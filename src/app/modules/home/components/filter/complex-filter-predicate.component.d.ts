@@ -24,5 +24,5 @@ export declare class ComplexFilterPredicateComponent implements ControlValueAcce
     openComplexFilterDialog(): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<ComplexFilterPredicateComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ComplexFilterPredicateComponent, "tb-complex-filter-predicate", never, { "disabled": "disabled"; "valueType": "valueType"; "key": "key"; "displayUserParameters": "displayUserParameters"; "allowUserDynamicSource": "allowUserDynamicSource"; "onlyUserDynamicSource": "onlyUserDynamicSource"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ComplexFilterPredicateComponent, "tb-complex-filter-predicate", never, { "disabled": "disabled"; "valueType": "valueType"; "key": "key"; "displayUserParameters": "displayUserParameters"; "allowUserDynamicSource": "allowUserDynamicSource"; "onlyUserDynamicSource": "onlyUserDynamicSource"; }, {}, never, never, false, never>;
 }

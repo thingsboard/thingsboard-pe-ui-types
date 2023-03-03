@@ -20,5 +20,5 @@ export declare class TbScriptLangComponent extends PageComponent implements Cont
     writeValue(scriptLang: ScriptLanguage): void;
     updateView(scriptLang: ScriptLanguage): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TbScriptLangComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TbScriptLangComponent, "tb-script-lang", never, { "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TbScriptLangComponent, "tb-script-lang", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
 }

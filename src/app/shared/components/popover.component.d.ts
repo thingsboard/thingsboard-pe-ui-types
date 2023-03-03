@@ -47,7 +47,7 @@ export declare class TbPopoverDirective implements OnChanges, OnDestroy, AfterVi
     private removeTriggerListeners;
     private clearTogglingTimer;
     static ɵfac: i0.ɵɵFactoryDeclaration<TbPopoverDirective, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<TbPopoverDirective, "[tb-popover]", ["tbPopover"], { "content": "tbPopoverContent"; "trigger": "tbPopoverTrigger"; "placement": "tbPopoverPlacement"; "origin": "tbPopoverOrigin"; "visible": "tbPopoverVisible"; "mouseEnterDelay": "tbPopoverMouseEnterDelay"; "mouseLeaveDelay": "tbPopoverMouseLeaveDelay"; "overlayClassName": "tbPopoverOverlayClassName"; "overlayStyle": "tbPopoverOverlayStyle"; "tbPopoverBackdrop": "tbPopoverBackdrop"; }, { "visibleChange": "tbPopoverVisibleChange"; }, never, never, false>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<TbPopoverDirective, "[tb-popover]", ["tbPopover"], { "content": "tbPopoverContent"; "trigger": "tbPopoverTrigger"; "placement": "tbPopoverPlacement"; "origin": "tbPopoverOrigin"; "visible": "tbPopoverVisible"; "mouseEnterDelay": "tbPopoverMouseEnterDelay"; "mouseLeaveDelay": "tbPopoverMouseLeaveDelay"; "overlayClassName": "tbPopoverOverlayClassName"; "overlayStyle": "tbPopoverOverlayStyle"; "tbPopoverBackdrop": "tbPopoverBackdrop"; }, { "visibleChange": "tbPopoverVisibleChange"; }, never, never, false, never>;
 }
 export declare class TbPopoverComponent implements OnDestroy, OnInit {
     cdr: ChangeDetectorRef;
@@ -123,5 +123,5 @@ export declare class TbPopoverComponent implements OnDestroy, OnInit {
     private updateVisibilityByContent;
     private isEmpty;
     static ɵfac: i0.ɵɵFactoryDeclaration<TbPopoverComponent, [null, null, null, { optional: true; }]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TbPopoverComponent, "tb-popover", ["tbPopoverComponent"], {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TbPopoverComponent, "tb-popover", ["tbPopoverComponent"], {}, {}, never, never, false, never>;
 }

@@ -129,6 +129,6 @@ export declare class MultipleInputWidgetComponent extends PageComponent implemen
     private setKeyValue;
     discardAll(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<MultipleInputWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MultipleInputWidgetComponent, "tb-multiple-input-widget ", never, { "ctx": "ctx"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MultipleInputWidgetComponent, "tb-multiple-input-widget ", never, { "ctx": "ctx"; }, {}, never, never, false, never>;
 }
 export {};

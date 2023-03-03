@@ -16,5 +16,5 @@ export declare class SendRpcWidgetSettingsComponent extends WidgetSettingsCompon
     protected validatorTriggers(): string[];
     protected updateValidators(emitEvent: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SendRpcWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SendRpcWidgetSettingsComponent, "tb-send-rpc-widget-settings", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SendRpcWidgetSettingsComponent, "tb-send-rpc-widget-settings", never, {}, {}, never, never, false, never>;
 }

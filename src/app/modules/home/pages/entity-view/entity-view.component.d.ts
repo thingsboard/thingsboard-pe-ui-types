@@ -31,5 +31,5 @@ export declare class EntityViewComponent extends GroupEntityComponent<EntityView
     updateForm(entity: EntityView): void;
     onEntityViewIdCopied($event: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityViewComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityViewComponent, "tb-entity-view", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityViewComponent, "tb-entity-view", never, {}, {}, never, never, false, never>;
 }

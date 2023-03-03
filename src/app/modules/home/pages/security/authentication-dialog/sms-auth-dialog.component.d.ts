@@ -24,5 +24,5 @@ export declare class SMSAuthDialogComponent extends DialogComponent<SMSAuthDialo
     closeDialog(): void;
     private showFormErrors;
     static ɵfac: i0.ɵɵFactoryDeclaration<SMSAuthDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SMSAuthDialogComponent, "tb-sms-auth-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SMSAuthDialogComponent, "tb-sms-auth-dialog", never, {}, {}, never, never, false, never>;
 }

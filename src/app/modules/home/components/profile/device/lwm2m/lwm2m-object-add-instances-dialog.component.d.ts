@@ -24,5 +24,5 @@ export declare class Lwm2mObjectAddInstancesDialogComponent extends DialogCompon
     cancel(): void;
     add(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<Lwm2mObjectAddInstancesDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mObjectAddInstancesDialogComponent, "tb-lwm2m-object-add-instances", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mObjectAddInstancesDialogComponent, "tb-lwm2m-object-add-instances", never, {}, {}, never, never, false, never>;
 }

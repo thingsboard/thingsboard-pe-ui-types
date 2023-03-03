@@ -39,5 +39,5 @@ export declare class EntityGroupColumnComponent extends PageComponent implements
     private updateModel;
     openColumn($event: Event): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityGroupColumnComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupColumnComponent, "tb-entity-group-column", never, { "entityType": "entityType"; "disabled": "disabled"; }, { "defaultSortOrderChanged": "defaultSortOrderChanged"; "removeColumn": "removeColumn"; "updateColumn": "updateColumn"; }, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupColumnComponent, "tb-entity-group-column", never, { "entityType": "entityType"; "disabled": "disabled"; }, { "defaultSortOrderChanged": "defaultSortOrderChanged"; "removeColumn": "removeColumn"; "updateColumn": "updateColumn"; }, never, never, false, never>;
 }

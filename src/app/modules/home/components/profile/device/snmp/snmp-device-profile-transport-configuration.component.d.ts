@@ -28,5 +28,5 @@ export declare class SnmpDeviceProfileTransportConfigurationComponent implements
     private updateModel;
     validate(): ValidationErrors | null;
     static ɵfac: i0.ɵɵFactoryDeclaration<SnmpDeviceProfileTransportConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SnmpDeviceProfileTransportConfigurationComponent, "tb-snmp-device-profile-transport-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SnmpDeviceProfileTransportConfigurationComponent, "tb-snmp-device-profile-transport-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

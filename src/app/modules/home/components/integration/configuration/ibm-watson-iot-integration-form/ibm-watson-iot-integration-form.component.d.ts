@@ -19,5 +19,5 @@ export declare class IbmWatsonIotIntegrationFormComponent extends IntegrationFor
     private updateModels;
     validate(): ValidationErrors | null;
     static ɵfac: i0.ɵɵFactoryDeclaration<IbmWatsonIotIntegrationFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<IbmWatsonIotIntegrationFormComponent, "tb-ibm-watson-iot-integration-form", never, { "isEdgeTemplate": "isEdgeTemplate"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<IbmWatsonIotIntegrationFormComponent, "tb-ibm-watson-iot-integration-form", never, { "isEdgeTemplate": "isEdgeTemplate"; }, {}, never, never, false, never>;
 }

@@ -36,5 +36,5 @@ export declare class EventTableComponent implements OnInit, AfterViewInit {
     ngAfterViewInit(): void;
     ngOnDestroy(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EventTableComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EventTableComponent, "tb-event-table", never, { "tenantId": "tenantId"; "defaultEventType": "defaultEventType"; "disabledEventTypes": "disabledEventTypes"; "debugEventTypes": "debugEventTypes"; "active": "active"; "entityId": "entityId"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EventTableComponent, "tb-event-table", never, { "tenantId": "tenantId"; "defaultEventType": "defaultEventType"; "disabledEventTypes": "disabledEventTypes"; "debugEventTypes": "debugEventTypes"; "active": "active"; "entityId": "entityId"; }, {}, never, never, false, never>;
 }

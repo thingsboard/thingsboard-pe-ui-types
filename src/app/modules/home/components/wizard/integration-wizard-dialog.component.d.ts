@@ -73,5 +73,5 @@ export declare class IntegrationWizardDialogComponent extends DialogComponent<In
     private generateSecret;
     private allValid;
     static ɵfac: i0.ɵɵFactoryDeclaration<IntegrationWizardDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<IntegrationWizardDialogComponent, "tb-integration-wizard", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<IntegrationWizardDialogComponent, "tb-integration-wizard", never, {}, {}, never, never, false, never>;
 }

@@ -43,5 +43,5 @@ export declare class SchedulerEventDialogComponent extends DialogComponent<Sched
     save(): void;
     private deepTrim;
     static ɵfac: i0.ɵɵFactoryDeclaration<SchedulerEventDialogComponent, [null, null, null, null, { skipSelf: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SchedulerEventDialogComponent, "tb-scheduler-event-dialog", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SchedulerEventDialogComponent, "tb-scheduler-event-dialog", never, {}, {}, never, never, false, never>;
 }

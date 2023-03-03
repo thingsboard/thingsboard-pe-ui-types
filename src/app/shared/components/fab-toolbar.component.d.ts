@@ -11,14 +11,14 @@ export declare class FabTriggerDirective {
     private el;
     constructor(el: ElementRef<HTMLElement>);
     static ɵfac: i0.ɵɵFactoryDeclaration<FabTriggerDirective, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<FabTriggerDirective, "mat-fab-trigger", never, {}, {}, never, never, false>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<FabTriggerDirective, "mat-fab-trigger", never, {}, {}, never, never, false, never>;
 }
 export declare class FabActionsDirective implements OnInit {
     private el;
     constructor(el: ElementRef<HTMLElement>);
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<FabActionsDirective, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<FabActionsDirective, "mat-fab-actions", never, {}, {}, never, never, false>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<FabActionsDirective, "mat-fab-actions", never, {}, {}, never, never, false, never>;
 }
 export declare class FabToolbarComponent extends MatFabToolbarMixinBase implements OnInit, OnDestroy, AfterViewInit, OnChanges {
     private el;
@@ -35,6 +35,6 @@ export declare class FabToolbarComponent extends MatFabToolbarMixinBase implemen
     private onFabToolbarResize;
     private triggerOpenClose;
     static ɵfac: i0.ɵɵFactoryDeclaration<FabToolbarComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FabToolbarComponent, "mat-fab-toolbar", never, { "isOpen": "isOpen"; "direction": "direction"; "color": "color"; }, {}, never, ["*"], false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FabToolbarComponent, "mat-fab-toolbar", never, { "isOpen": "isOpen"; "direction": "direction"; "color": "color"; }, {}, never, ["*"], false, never>;
 }
 export {};
