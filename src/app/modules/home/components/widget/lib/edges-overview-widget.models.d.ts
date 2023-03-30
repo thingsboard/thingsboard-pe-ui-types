@@ -14,7 +14,7 @@ export interface BaseEdgeNodeData {
     group: BaseData<HasId>;
     groupType: EntityType;
 }
-export declare type EdgeNodeType = 'group' | 'groups';
+export type EdgeNodeType = 'group' | 'groups';
 export interface EntityGroupNodeData extends BaseEdgeNodeData {
     type: 'group';
 }

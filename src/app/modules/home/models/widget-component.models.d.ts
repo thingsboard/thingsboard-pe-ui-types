@@ -41,12 +41,14 @@ import { EntityId } from '@shared/models/id/entity-id';
 import { ReportService } from '@core/http/report.service';
 import { AlarmQuery, AlarmSearchStatus, AlarmStatus } from '@app/shared/models/alarm.models';
 import { MillisecondsToTimeStringPipe, TelemetrySubscriber } from '@app/shared/public-api';
+import { UserId } from '@shared/models/id/user-id';
+import { UserSettingsService } from '@core/http/user-settings.service';
 export interface IWidgetAction {
     name: string;
     icon: string;
     onAction: ($event: Event) => void;
 }
-export declare type ShowWidgetHeaderActionFunction = (ctx: WidgetContext, data: FormattedData[]) => boolean;
+export type ShowWidgetHeaderActionFunction = (ctx: WidgetContext, data: FormattedData[]) => boolean;
 export interface WidgetHeaderAction extends IWidgetAction {
     displayName: string;
     descriptor: WidgetActionDescriptor;
@@ -91,6 +93,7 @@ export declare class WidgetContext {
     dialogs: DialogService;
     customDialog: CustomDialogService;
     resourceService: ResourceService;
+    userSettingsService: UserSettingsService;
     telemetryWsService: TelemetryWebsocketService;
     telemetrySubscribers?: TelemetrySubscriber[];
     date: DatePipe;
@@ -338,7 +341,7 @@ export declare class WidgetContext {
     closeDialog(resultData?: any): void;
     pageLink(pageSize: number, page?: number, textSearch?: string, sortOrder?: SortOrder): PageLink;
     timePageLink(startTime: number, endTime: number, pageSize: number, page?: number, textSearch?: string, sortOrder?: SortOrder): TimePageLink;
-    alarmQuery(entityId: EntityId, pageLink: TimePageLink, searchStatus: AlarmSearchStatus, status: AlarmStatus, fetchOriginator: boolean): AlarmQuery;
+    alarmQuery(entityId: EntityId, pageLink: TimePageLink, searchStatus: AlarmSearchStatus, status: AlarmStatus, fetchOriginator: boolean, assigneeId: UserId): AlarmQuery;
 }
 export interface IDynamicWidgetComponent {
     readonly ctx: WidgetContext;

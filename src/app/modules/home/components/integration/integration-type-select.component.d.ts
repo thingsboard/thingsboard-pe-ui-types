@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { MatAutocompleteTrigger } from '@angular/material/autocomplete';
 import * as i0 from "@angular/core";
-declare type IntegrationInfo = IntegrationTypeInfo & {
+type IntegrationInfo = IntegrationTypeInfo & {
     type: IntegrationType;
 };
 export declare class IntegrationTypeSelectComponent implements ControlValueAccessor, OnInit {

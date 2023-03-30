@@ -16,8 +16,8 @@ export interface ColorLevelSetting {
     value: number;
     color: string;
 }
-export declare type colorLevel = Array<string | ColorLevelSetting>;
-export declare type attributesGaugeType = 'levelColors' | 'ticks';
+export type colorLevel = Array<string | ColorLevelSetting>;
+export type attributesGaugeType = 'levelColors' | 'ticks';
 export interface DigitalGaugeSettings {
     minValue?: number;
     maxValue?: number;

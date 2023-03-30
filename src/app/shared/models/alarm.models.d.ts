@@ -5,6 +5,12 @@ import { EntityId } from '@shared/models/id/entity-id';
 import { TimePageLink } from '@shared/models/page/page-link';
 import { CustomerId } from '@shared/models/id/customer-id';
 import { TableCellButtonActionDescriptor } from '@home/components/widget/lib/table-widget.models';
+import { AlarmCommentId } from '@shared/models/id/alarm-comment-id';
+import { UserId } from '@shared/models/id/user-id';
+export declare enum AlarmsMode {
+    ALL = 0,
+    ENTITY = 1
+}
 export declare enum AlarmSeverity {
     CRITICAL = "CRITICAL",
     MAJOR = "MAJOR",
@@ -32,6 +38,7 @@ export declare const alarmSeverityColors: Map<AlarmSeverity, string>;
 export interface Alarm extends BaseData<AlarmId> {
     tenantId: TenantId;
     customerId: CustomerId;
+    assigneeId: UserId;
     type: string;
     originator: EntityId;
     severity: AlarmSeverity;
@@ -40,11 +47,38 @@ export interface Alarm extends BaseData<AlarmId> {
     endTs: number;
     ackTs: number;
     clearTs: number;
+    assignTs: number;
     propagate: boolean;
     details?: any;
 }
+export declare enum AlarmCommentType {
+    SYSTEM = "SYSTEM",
+    OTHER = "OTHER"
+}
+export interface AlarmComment extends BaseData<AlarmCommentId> {
+    alarmId: AlarmId;
+    userId?: UserId;
+    type: AlarmCommentType;
+    comment: {
+        text: string;
+        edited?: boolean;
+        editedOn?: number;
+    };
+}
+export interface AlarmCommentInfo extends AlarmComment {
+    firstName?: string;
+    lastName?: string;
+    email?: string;
+}
 export interface AlarmInfo extends Alarm {
     originatorName: string;
+    originatorLabel: string;
+    assignee: AlarmAssignee;
+}
+export interface AlarmAssignee {
+    firstName: string;
+    lastName: string;
+    email: string;
 }
 export interface AlarmDataInfo extends AlarmInfo {
     actionCellButtons?: TableCellButtonActionDescriptor[];
@@ -67,6 +101,7 @@ export declare class AlarmQuery {
     searchStatus: AlarmSearchStatus;
     status: AlarmStatus;
     fetchOriginator: boolean;
-    constructor(entityId: EntityId, pageLink: TimePageLink, searchStatus: AlarmSearchStatus, status: AlarmStatus, fetchOriginator: boolean);
+    assigneeId?: UserId;
+    constructor(entityId: EntityId, pageLink: TimePageLink, searchStatus: AlarmSearchStatus, status: AlarmStatus, fetchOriginator: boolean, assigneeId?: UserId);
     toQuery(): string;
 }

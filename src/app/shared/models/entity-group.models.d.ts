@@ -98,32 +98,34 @@ export interface EntityGroup extends BaseData<EntityGroupId>, ExportableEntity<E
 }
 export interface EntityGroupInfo extends EntityGroup {
     ownerIds: EntityId[];
+}
+export interface DeviceEntityGroupInfo extends EntityGroupInfo {
     softwareId?: OtaPackageId;
     softwareGroup?: DeviceGroupOtaPackage;
     firmwareId?: OtaPackageId;
     firmwareGroup?: DeviceGroupOtaPackage;
 }
-export declare function prepareEntityGroupConfiguration(groupType: EntityType, configuration: EntityGroupConfiguration): EntityGroupConfiguration;
+export declare const prepareEntityGroupConfiguration: (groupType: EntityType, configuration: EntityGroupConfiguration) => EntityGroupConfiguration;
 export interface ShortEntityView {
     id: EntityId;
     name: string;
     [key: string]: any;
 }
-export declare function groupColumnTypeToEntityKeyType(groupColumnType: EntityGroupColumnType): EntityKeyType;
-export declare function entityGroupColumnKeyToEntityKey(column: EntityGroupColumn): string;
-export declare function entityGroupColumnToEntityKey(column: EntityGroupColumn): EntityKey;
-export declare function prepareEntityDataColumnMap(columns: EntityGroupColumn[]): {
+export declare const groupColumnTypeToEntityKeyType: (groupColumnType: EntityGroupColumnType) => EntityKeyType;
+export declare const entityGroupColumnKeyToEntityKey: (column: EntityGroupColumn) => string;
+export declare const entityGroupColumnToEntityKey: (column: EntityGroupColumn) => EntityKey;
+export declare const prepareEntityDataColumnMap: (columns: EntityGroupColumn[]) => {
     [entityKeyType: string]: EntityGroupColumn[];
 };
-export declare function entityDataToShortEntityView(entityData: EntityData, columnsMap: {
+export declare const entityDataToShortEntityView: (entityData: EntityData, columnsMap: {
     [entityKeyType: string]: EntityGroupColumn[];
-}, isUpdate?: boolean): ShortEntityView;
-export declare function groupEntitiesPageLinkToEntityDataPageLink(pageLink: PageLink, columnKeyToEntityKeyMap: {
+}, isUpdate?: boolean) => ShortEntityView;
+export declare const groupEntitiesPageLinkToEntityDataPageLink: (pageLink: PageLink, columnKeyToEntityKeyMap: {
     [columnKey: string]: EntityKey;
-}): EntityDataPageLink;
-export declare function groupSettingsDefaults(entityType: EntityType, settings: EntityGroupSettings): EntityGroupSettings;
-export declare function entityGroupsTitle(groupType: EntityType): "entity-group.asset-groups" | "entity-group.device-groups" | "entity-group.customer-groups" | "entity-group.user-groups" | "entity-group.entity-view-groups" | "entity-group.dashboard-groups" | "entity-group.edge-groups";
-export declare function edgeEntitiesTitle(entityType: EntityType): "entity-group.asset-groups" | "entity-group.device-groups" | "entity-group.customer-groups" | "entity-group.user-groups" | "entity-group.entity-view-groups" | "entity-group.dashboard-groups" | "entity-group.edge-groups" | "scheduler.scheduler" | "edge.rulechains" | "edge.integrations";
+}) => EntityDataPageLink;
+export declare const groupSettingsDefaults: (entityType: EntityType, settings: EntityGroupSettings) => EntityGroupSettings;
+export declare const entityGroupsTitle: (groupType: EntityType, shared?: boolean) => string;
+export declare const edgeEntitiesTitle: (entityType: EntityType) => string;
 export interface HierarchyCallbacks {
     groupSelected?: (parentNodeId: string, groupId: string) => void;
     customerGroupsSelected?: (parentNodeId: string, customerId: string, groupsType: EntityType) => void;
@@ -147,6 +149,7 @@ export interface EntityGroupParams {
     childEntityGroupId?: string;
     groupType?: EntityType;
     childGroupType?: EntityType;
+    shared?: boolean;
     hierarchyView?: boolean;
     nodeId?: string;
     internalId?: string;
@@ -155,6 +158,7 @@ export interface EntityGroupParams {
     edgeId?: string;
     edgeEntitiesType?: EntityType;
     edgeEntitiesGroupId?: string;
+    backNavigationCommands?: any[];
 }
 export interface ShareGroupRequest {
     ownerId: EntityId;
@@ -163,4 +167,4 @@ export interface ShareGroupRequest {
     readElseWrite: boolean;
     roleIds?: RoleId[];
 }
-export declare function resolveGroupParams(route: ActivatedRouteSnapshot): EntityGroupParams;
+export declare const resolveGroupParams: (route: ActivatedRouteSnapshot) => EntityGroupParams;

@@ -31,6 +31,7 @@ export declare class EntityGroupComponent extends EntityComponent<EntityGroupInf
     buildForm(entity: EntityGroupInfo): UntypedFormGroup;
     updateForm(entity: EntityGroupInfo): void;
     private updateGroupParams;
+    private sharedGroup;
     onEntityGroupIdCopied($event: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityGroupComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupComponent, "tb-entity-group", never, {}, {}, never, never, false, never>;

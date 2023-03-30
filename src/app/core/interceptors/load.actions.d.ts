@@ -9,4 +9,4 @@ export declare class ActionLoadStart implements Action {
 export declare class ActionLoadFinish implements Action {
     readonly type = LoadActionTypes.FINISH_LOAD;
 }
-export declare type LoadActions = ActionLoadStart | ActionLoadFinish;
+export type LoadActions = ActionLoadStart | ActionLoadFinish;

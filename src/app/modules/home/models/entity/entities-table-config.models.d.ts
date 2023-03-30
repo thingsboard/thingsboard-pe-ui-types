@@ -15,23 +15,28 @@ import { EntityTabsComponent } from '../../components/entity/entity-tabs.compone
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { IEntitiesTableComponent } from '@home/models/entity/entity-table-component.models';
 import { IEntityDetailsPageComponent } from '@home/models/entity/entity-details-page-component.models';
-export declare type EntityBooleanFunction<T extends BaseData<HasId>> = (entity: T) => boolean;
-export declare type EntityStringFunction<T extends BaseData<HasId>> = (entity: T) => string;
-export declare type EntityVoidFunction<T extends BaseData<HasId>> = (entity: T) => void;
-export declare type EntityIdsVoidFunction<T extends BaseData<HasId>> = (ids: HasUUID[]) => void;
-export declare type EntityCountStringFunction = (count: number) => string;
-export declare type EntityTwoWayOperation<T extends BaseData<HasId>> = (entity: T, originalEntity?: T) => Observable<T>;
-export declare type EntityByIdOperation<T extends BaseData<HasId>> = (id: HasUUID) => Observable<T>;
-export declare type EntityIdOneWayOperation = (id: HasUUID) => Observable<any>;
-export declare type EntityActionFunction<T extends BaseData<HasId>> = (action: EntityAction<T>) => boolean;
-export declare type CreateEntityOperation<T extends BaseData<HasId>> = () => Observable<T>;
-export declare type EntityRowClickFunction<T extends BaseData<HasId>> = (event: Event, entity: T) => boolean;
-export declare type CellContentFunction<T extends BaseData<HasId>> = (entity: T, key: string) => string;
-export declare type CellChartContentFunction<T extends BaseData<HasId>> = (entity: T, key: string) => number[];
-export declare type CellTooltipFunction<T extends BaseData<HasId>> = (entity: T, key: string) => string | undefined;
-export declare type HeaderCellStyleFunction<T extends BaseData<HasId>> = (key: string) => object;
-export declare type CellStyleFunction<T extends BaseData<HasId>> = (entity: T, key: string) => object;
-export declare type CopyCellContent<T extends BaseData<HasId>> = (entity: T, key: string, length: number) => object;
+import { MatButton } from '@angular/material/button';
+import { EntityGroupParams } from '@shared/models/entity-group.models';
+import { GroupEntityComponent } from '@home/components/group/group-entity.component';
+import { GroupEntityTabsComponent } from '@home/components/group/group-entity-tabs.component';
+import { EntityInfoData } from '@shared/models/entity.models';
+export type EntityBooleanFunction<T extends BaseData<HasId>> = (entity: T) => boolean;
+export type EntityStringFunction<T extends BaseData<HasId>> = (entity: T) => string;
+export type EntityVoidFunction<T extends BaseData<HasId>> = (entity: T) => void;
+export type EntityIdsVoidFunction<T extends BaseData<HasId>> = (ids: HasUUID[]) => void;
+export type EntityCountStringFunction = (count: number) => string;
+export type EntityTwoWayOperation<T extends BaseData<HasId>> = (entity: T, originalEntity?: T) => Observable<T>;
+export type EntityByIdOperation<T extends BaseData<HasId>> = (id: HasUUID) => Observable<T>;
+export type EntityIdOneWayOperation = (id: HasUUID) => Observable<any>;
+export type EntityActionFunction<T extends BaseData<HasId>> = (action: EntityAction<T>) => boolean;
+export type CreateEntityOperation<T extends BaseData<HasId>> = () => Observable<T>;
+export type EntityRowClickFunction<T extends BaseData<HasId>> = (event: Event, entity: T) => boolean;
+export type CellContentFunction<T extends BaseData<HasId>> = (entity: T, key: string) => string;
+export type CellChartContentFunction<T extends BaseData<HasId>> = (entity: T, key: string) => number[];
+export type CellTooltipFunction<T extends BaseData<HasId>> = (entity: T, key: string) => string | undefined;
+export type HeaderCellStyleFunction<T extends BaseData<HasId>> = (key: string) => object;
+export type CellStyleFunction<T extends BaseData<HasId>> = (entity: T, key: string) => object;
+export type CopyCellContent<T extends BaseData<HasId>> = (entity: T, key: string, length: number) => object;
 export declare enum CellActionDescriptorType {
     'DEFAULT' = 0,
     'COPY_BUTTON' = 1
@@ -58,9 +63,9 @@ export interface HeaderActionDescriptor {
     icon: string;
     isMdiIcon?: boolean;
     isEnabled: () => boolean;
-    onAction: ($event: MouseEvent) => void;
+    onAction: ($event: MouseEvent, headerButton?: MatButton) => void;
 }
-export declare type EntityTableColumnType = 'content' | 'action' | 'chart';
+export type EntityTableColumnType = 'content' | 'action' | 'chart' | 'groups';
 export declare class BaseEntityTableColumn<T extends BaseData<HasId>> {
     type: EntityTableColumnType;
     key: string;
@@ -103,9 +108,22 @@ export declare class ChartEntityTableColumn<T extends BaseData<HasId>> extends B
     cellStyleFunction: CellStyleFunction<T>;
     constructor(key: string, title: string, width?: string, cellContentFunction?: CellChartContentFunction<T>, chartStyleFunction?: CellStyleFunction<T>, cellStyleFunction?: CellStyleFunction<T>);
 }
-export declare type EntityColumn<T extends BaseData<HasId>> = EntityTableColumn<T> | EntityActionTableColumn<T> | ChartEntityTableColumn<T>;
+export declare class GroupChipsEntityTableColumn<T extends BaseData<HasId>> extends BaseEntityTableColumn<T> {
+    key: string;
+    title: string;
+    width: string;
+    cellContentFunction: CellChartContentFunction<T>;
+    chartStyleFunction: CellStyleFunction<T>;
+    cellStyleFunction: CellStyleFunction<T>;
+    constructor(key: string, title: string, width?: string, cellContentFunction?: CellChartContentFunction<T>, chartStyleFunction?: CellStyleFunction<T>, cellStyleFunction?: CellStyleFunction<T>);
+}
+export type EntityColumn<T extends BaseData<HasId>> = EntityTableColumn<T> | EntityActionTableColumn<T> | ChartEntityTableColumn<T> | GroupChipsEntityTableColumn<T>;
 export declare class EntityTableConfig<T extends BaseData<HasId>, P extends PageLink = PageLink, L extends BaseData<HasId> = T> {
-    constructor();
+    groupParams?: EntityGroupParams;
+    customerId: string;
+    backNavigationCommands?: any[];
+    constructor(groupParams?: EntityGroupParams);
+    displayBackButton(): boolean;
     private table;
     private entityDetailsPage;
     componentsData: any;
@@ -125,8 +143,8 @@ export declare class EntityTableConfig<T extends BaseData<HasId>, P extends Page
     actionsColumnTitle: any;
     entityTranslations: EntityTypeTranslation;
     entityResources: EntityTypeResource<T>;
-    entityComponent: Type<EntityComponent<T, P, L>>;
-    entityTabsComponent: Type<EntityTabsComponent<T, P, L>>;
+    entityComponent: Type<EntityComponent<T, P, L> | GroupEntityComponent<T>>;
+    entityTabsComponent: Type<EntityTabsComponent<T, P, L> | GroupEntityTabsComponent<T>>;
     addDialogStyle: {};
     defaultSortOrder: SortOrder;
     displayPagination: boolean;
@@ -167,4 +185,5 @@ export declare class EntityTableConfig<T extends BaseData<HasId>, P extends Page
     getActivatedRoute(): ActivatedRoute;
 }
 export declare const checkBoxCell: (value: boolean) => string;
-export declare function defaultEntityTablePermissions(userPermissionsService: UserPermissionsService, entitiesTableConfig: EntityTableConfig<BaseData<HasId>>): void;
+export declare const groupsCell: (groups?: EntityInfoData[]) => string;
+export declare const defaultEntityTablePermissions: (userPermissionsService: UserPermissionsService, entitiesTableConfig: EntityTableConfig<BaseData<HasId>>) => void;

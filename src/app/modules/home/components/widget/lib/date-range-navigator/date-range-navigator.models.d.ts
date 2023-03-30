@@ -1,5 +1,5 @@
 import * as _moment from 'moment';
-export declare type DateRangeInterval = 'hour' | 'day' | 'week' | 'twoWeeks' | 'month' | 'threeMonths' | 'sixMonths';
+export type DateRangeInterval = 'hour' | 'day' | 'week' | 'twoWeeks' | 'month' | 'threeMonths' | 'sixMonths';
 export interface DateRangeNavigatorSettings {
     hidePicker: boolean;
     onePanel: boolean;

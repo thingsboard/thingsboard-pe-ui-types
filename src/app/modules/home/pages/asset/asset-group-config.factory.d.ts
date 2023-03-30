@@ -9,11 +9,11 @@ import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { EntityGroupParams } from '@shared/models/entity-group.models';
 import { HomeDialogsService } from '@home/dialogs/home-dialogs.service';
 import { GroupConfigTableConfigService } from '@home/components/group/group-config-table-config.service';
-import { Asset } from '@shared/models/asset.models';
+import { AssetInfo } from '@shared/models/asset.models';
 import { AssetService } from '@core/http/asset.service';
 import { Router } from '@angular/router';
 import * as i0 from "@angular/core";
-export declare class AssetGroupConfigFactory implements EntityGroupStateConfigFactory<Asset> {
+export declare class AssetGroupConfigFactory implements EntityGroupStateConfigFactory<AssetInfo> {
     private groupConfigTableConfigService;
     private userPermissionsService;
     private translate;
@@ -24,11 +24,12 @@ export declare class AssetGroupConfigFactory implements EntityGroupStateConfigFa
     private router;
     private broadcast;
     private window;
-    constructor(groupConfigTableConfigService: GroupConfigTableConfigService<Asset>, userPermissionsService: UserPermissionsService, translate: TranslateService, utils: UtilsService, dialog: MatDialog, homeDialogs: HomeDialogsService, assetService: AssetService, router: Router, broadcast: BroadcastService, window: Window);
-    createConfig(params: EntityGroupParams, entityGroup: EntityGroupStateInfo<Asset>): Observable<GroupEntityTableConfig<Asset>>;
-    importAssets($event: Event, config: GroupEntityTableConfig<Asset>): void;
+    constructor(groupConfigTableConfigService: GroupConfigTableConfigService<AssetInfo>, userPermissionsService: UserPermissionsService, translate: TranslateService, utils: UtilsService, dialog: MatDialog, homeDialogs: HomeDialogsService, assetService: AssetService, router: Router, broadcast: BroadcastService, window: Window);
+    createConfig(params: EntityGroupParams, entityGroup: EntityGroupStateInfo<AssetInfo>): Observable<GroupEntityTableConfig<AssetInfo>>;
+    importAssets($event: Event, config: GroupEntityTableConfig<AssetInfo>): void;
     private openAsset;
-    onAssetAction(action: EntityAction<Asset>, config: GroupEntityTableConfig<Asset>, params: EntityGroupParams): boolean;
+    manageOwnerAndGroups($event: Event, asset: AssetInfo, config: GroupEntityTableConfig<AssetInfo>): void;
+    onAssetAction(action: EntityAction<AssetInfo>, config: GroupEntityTableConfig<AssetInfo>, params: EntityGroupParams): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<AssetGroupConfigFactory, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<AssetGroupConfigFactory>;
 }

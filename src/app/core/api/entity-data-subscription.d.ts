@@ -1,10 +1,11 @@
 import { ComparisonResultType, DatasourceType, widgetType } from '@shared/models/widget.models';
 import { AggregationType, ComparisonDuration, SubscriptionTimewindow } from '@shared/models/time/time.models';
 import { EntityDataPageLink, EntityFilter, KeyFilter } from '@shared/models/query/query.models';
-import { DataKeyType, TelemetryService } from '@shared/models/telemetry/telemetry.models';
+import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
 import { UtilsService } from '@core/services/utils.service';
 import { EntityDataListener, EntityDataLoadResult } from '@core/api/entity-data.service';
 import { Observable } from 'rxjs';
+import { TelemetryWebsocketService } from '@core/ws/telemetry-websocket.service';
 declare type DataKeyFunction = (time: number, prevValue: any) => any;
 declare type DataKeyPostFunction = (time: number, value: any, prevValue: any, timePrev: number, prevOrigValue: any) => any;
 export interface SubscriptionDataKey {
@@ -42,7 +43,7 @@ export declare class EntityDataSubscription {
     private listener;
     private telemetryService;
     private utils;
-    constructor(listener: EntityDataListener, telemetryService: TelemetryService, utils: UtilsService);
+    constructor(listener: EntityDataListener, telemetryService: TelemetryWebsocketService, utils: UtilsService);
     private entityDataSubscriptionOptions;
     private datasourceType;
     private history;

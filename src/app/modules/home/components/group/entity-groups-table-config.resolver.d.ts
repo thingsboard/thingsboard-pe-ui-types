@@ -6,7 +6,6 @@ import { EntityGroupParams } from '@shared/models/entity-group.models';
 import { EntityGroupService } from '@core/http/entity-group.service';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { Observable } from 'rxjs';
-import { BroadcastService } from '@core/services/broadcast.service';
 import { HomeDialogsService } from '@home/dialogs/home-dialogs.service';
 import { CustomerService } from '@core/http/customer.service';
 import { EntityGroupsTableConfig } from './entity-groups-table-config';
@@ -18,7 +17,6 @@ export declare class EntityGroupsTableConfigResolver implements Resolve<EntityGr
     private customerService;
     private edgeService;
     private userPermissionsService;
-    private broadcast;
     private translate;
     private datePipe;
     private utils;
@@ -26,7 +24,7 @@ export declare class EntityGroupsTableConfigResolver implements Resolve<EntityGr
     private router;
     private dialog;
     private homeDialogs;
-    constructor(entityGroupService: EntityGroupService, customerService: CustomerService, edgeService: EdgeService, userPermissionsService: UserPermissionsService, broadcast: BroadcastService, translate: TranslateService, datePipe: DatePipe, utils: UtilsService, route: ActivatedRoute, router: Router, dialog: MatDialog, homeDialogs: HomeDialogsService);
+    constructor(entityGroupService: EntityGroupService, customerService: CustomerService, edgeService: EdgeService, userPermissionsService: UserPermissionsService, translate: TranslateService, datePipe: DatePipe, utils: UtilsService, route: ActivatedRoute, router: Router, dialog: MatDialog, homeDialogs: HomeDialogsService);
     resolve(route: ActivatedRouteSnapshot): Observable<EntityGroupsTableConfig> | EntityGroupsTableConfig;
     resolveEntityGroupTableConfig(params: EntityGroupParams, resolveCustomer?: boolean, customerTitle?: string): Observable<EntityGroupsTableConfig> | EntityGroupsTableConfig;
     private resolveEdgeInfo;

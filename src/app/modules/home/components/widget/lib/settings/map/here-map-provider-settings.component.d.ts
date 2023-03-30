@@ -1,5 +1,5 @@
 import { OnInit } from '@angular/core';
-import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
+import { ControlValueAccessor, FormBuilder, FormControl, FormGroup, Validator } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -13,16 +13,16 @@ export declare class HereMapProviderSettingsComponent extends PageComponent impl
     disabled: boolean;
     private modelValue;
     private propagateChange;
-    providerSettingsFormGroup: UntypedFormGroup;
+    providerSettingsFormGroup: FormGroup;
     hereMapProviders: HereMapProvider[];
     hereMapProviderTranslations: Map<HereMapProvider, string>;
-    constructor(store: Store<AppState>, translate: TranslateService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, fb: FormBuilder);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: HereMapProviderSettings): void;
-    validate(c: UntypedFormControl): {
+    validate(c: FormControl): {
         hereMapProviderSettings: {
             valid: boolean;
         };

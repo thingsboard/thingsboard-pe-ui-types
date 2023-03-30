@@ -1,4 +1,4 @@
-import { BaseData } from '@shared/models/base-data';
+import { BaseData, GroupEntityInfo } from '@shared/models/base-data';
 import { TenantId } from '@shared/models/id/tenant-id';
 import { CustomerId } from '@shared/models/id/customer-id';
 import { EdgeId } from '@shared/models/id/edge-id';
@@ -20,10 +20,7 @@ export interface Edge extends BaseData<EdgeId> {
     additionalInfo?: any;
     rootRuleChainId?: RuleChainId;
 }
-export interface EdgeInfo extends Edge {
-    customerTitle: string;
-    customerIsPublic: boolean;
-}
+export type EdgeInfo = Edge & GroupEntityInfo<EdgeId>;
 export interface EdgeSearchQuery extends EntitySearchQuery {
     edgeTypes: Array<string>;
 }

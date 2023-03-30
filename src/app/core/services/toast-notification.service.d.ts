@@ -1,7 +1,7 @@
 import { HideNotification, NotificationMessage } from '@app/core/notification/notification.models';
 import { Observable } from 'rxjs';
 import * as i0 from "@angular/core";
-export declare class NotificationService {
+export declare class ToastNotificationService {
     private notificationSubject;
     private hideNotificationSubject;
     constructor();
@@ -9,6 +9,6 @@ export declare class NotificationService {
     hideNotification(hideNotification: HideNotification): void;
     getNotification(): Observable<NotificationMessage>;
     getHideNotification(): Observable<HideNotification>;
-    static ɵfac: i0.ɵɵFactoryDeclaration<NotificationService, never>;
-    static ɵprov: i0.ɵɵInjectableDeclaration<NotificationService>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<ToastNotificationService, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<ToastNotificationService>;
 }

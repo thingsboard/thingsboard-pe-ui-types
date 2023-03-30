@@ -1,0 +1,34 @@
+import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { MatChipInputEvent } from '@angular/material/chips';
+import { FloatLabelType, MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
+import * as i0 from "@angular/core";
+export declare class StringItemsListComponent implements ControlValueAccessor {
+    private fb;
+    stringItemsForm: FormGroup;
+    private modelValue;
+    readonly separatorKeysCodes: number[];
+    private requiredValue;
+    get required(): boolean;
+    set required(value: boolean);
+    disabled: boolean;
+    label: string;
+    placeholder: string;
+    hint: string;
+    requiredText: string;
+    floatLabel: FloatLabelType;
+    appearance: MatFormFieldAppearance;
+    editable: boolean;
+    subscriptSizing: SubscriptSizing;
+    private propagateChange;
+    constructor(fb: FormBuilder);
+    updateValidators(): void;
+    registerOnChange(fn: any): void;
+    registerOnTouched(fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    writeValue(value: Array<string> | null): void;
+    addItem(event: MatChipInputEvent): void;
+    removeItems(item: string): void;
+    get stringItemsList(): string[];
+    static ɵfac: i0.ɵɵFactoryDeclaration<StringItemsListComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<StringItemsListComponent, "tb-string-items-list", never, { "required": "required"; "disabled": "disabled"; "label": "label"; "placeholder": "placeholder"; "hint": "hint"; "requiredText": "requiredText"; "floatLabel": "floatLabel"; "appearance": "appearance"; "editable": "editable"; "subscriptSizing": "subscriptSizing"; }, {}, never, never, false, never>;
+}

@@ -5,7 +5,7 @@ import { Subject } from 'rxjs';
 import { PopoverPlacement } from '@shared/components/popover.models';
 import { AnimationBuilder } from '@angular/animations';
 import * as i0 from "@angular/core";
-export declare type TbPopoverTrigger = 'click' | 'focus' | 'hover' | null;
+export type TbPopoverTrigger = 'click' | 'focus' | 'hover' | null;
 export declare class TbPopoverDirective implements OnChanges, OnDestroy, AfterViewInit {
     private elementRef;
     private hostView;

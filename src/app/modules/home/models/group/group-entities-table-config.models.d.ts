@@ -26,6 +26,7 @@ export interface EntityGroupStateConfigFactory<T extends BaseData<HasId>> {
 }
 export interface EntityGroupStateInfo<T extends BaseData<HasId>> extends EntityGroupInfo {
     customerGroupsTitle?: string;
+    customerTitle?: string;
     parentEntityGroup?: EntityGroupInfo;
     entityGroupConfig?: GroupEntityTableConfig<T>;
     edgeEntitiesTitle?: string;
@@ -34,7 +35,6 @@ export interface EntityGroupStateInfo<T extends BaseData<HasId>> extends EntityG
 export declare class GroupEntityTableConfig<T extends BaseData<HasId>> extends EntityTableConfig<T, PageLink, ShortEntityView> {
     entityGroup: EntityGroupStateInfo<T>;
     groupParams: EntityGroupParams;
-    customerId: string;
     settings: import("@shared/models/entity-group.models").EntityGroupSettings;
     actionDescriptorsBySourceId: {
         [actionSourceId: string]: Array<WidgetActionDescriptor>;

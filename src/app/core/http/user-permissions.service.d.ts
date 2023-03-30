@@ -20,6 +20,8 @@ export declare class UserPermissionsService {
     getAllowedGroupRoleOperations(): Operation[];
     getAllowedResources(): Resource[];
     hasReadGroupsPermission(entityType: EntityType): boolean;
+    hasGenericReadGroupsPermission(entityType: EntityType): boolean;
+    hasSharedReadGroupsPermission(entityType: EntityType): boolean;
     hasReadGenericPermission(resource: Resource): boolean;
     hasGenericPermission(resource: Resource, operation: Operation): boolean;
     hasGenericPermissionByEntityGroupType(operation: Operation, groupType: EntityType): boolean;

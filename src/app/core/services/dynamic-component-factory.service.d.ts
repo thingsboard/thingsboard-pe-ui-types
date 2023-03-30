@@ -12,7 +12,7 @@ export declare class DynamicComponentFactoryService {
     private injector;
     private dynamicComponentModulesMap;
     constructor(compiler: Compiler, injector: Injector);
-    createDynamicComponentFactory<T>(componentType: Type<T>, template: string, modules?: Type<any>[], preserveWhitespaces?: boolean, compileAttempt?: number): Observable<ComponentFactory<T>>;
+    createDynamicComponentFactory<T>(componentType: Type<T>, template: string, modules?: Type<any>[], preserveWhitespaces?: boolean, compileAttempt?: number, styles?: string[]): Observable<ComponentFactory<T>>;
     destroyDynamicComponentFactory<T>(factory: ComponentFactory<T>): void;
     private createDynamicComponent;
     static ɵfac: i0.ɵɵFactoryDeclaration<DynamicComponentFactoryService, never>;

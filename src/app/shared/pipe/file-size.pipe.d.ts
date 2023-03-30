@@ -1,7 +1,7 @@
 import { PipeTransform } from '@angular/core';
 import * as i0 from "@angular/core";
-declare type unit = 'bytes' | 'KB' | 'MB' | 'GB' | 'TB' | 'PB';
-declare type unitPrecisionMap = {
+type unit = 'bytes' | 'KB' | 'MB' | 'GB' | 'TB' | 'PB';
+type unitPrecisionMap = {
     [u in unit]: number;
 };
 export declare class FileSizePipe implements PipeTransform {

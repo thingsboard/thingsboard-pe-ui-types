@@ -4,7 +4,7 @@ import { PageData } from '@shared/models/page/page-data';
 import { BaseData, HasId } from '@shared/models/base-data';
 import { CollectionViewer, DataSource, SelectionModel } from '@angular/cdk/collections';
 import { EntityBooleanFunction } from '@home/models/entity/entities-table-config.models';
-export declare type EntitiesFetchFunction<T extends BaseData<HasId>, P extends PageLink> = (pageLink: P) => Observable<PageData<T>>;
+export type EntitiesFetchFunction<T extends BaseData<HasId>, P extends PageLink> = (pageLink: P) => Observable<PageData<T>>;
 export declare class EntitiesDataSource<T extends BaseData<HasId>, P extends PageLink = PageLink> implements DataSource<T> {
     private fetchFunction;
     protected selectionEnabledFunction: EntityBooleanFunction<T>;

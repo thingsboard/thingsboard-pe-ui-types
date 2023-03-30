@@ -1,11 +1,8 @@
-import { AuthService } from '../auth/auth.service';
 import { Store } from '@ngrx/store';
 import { AppState } from '../core.state';
 import { HomeSection, MenuSection } from '@core/services/menu.models';
 import { Observable } from 'rxjs';
 import { CustomMenuService } from '@core/http/custom-menu.service';
-import { EntityGroupService } from '@core/http/entity-group.service';
-import { BroadcastService } from '@core/services/broadcast.service';
 import { Router } from '@angular/router';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import * as i0 from "@angular/core";
@@ -13,20 +10,16 @@ export declare class MenuService {
     private store;
     private router;
     private customMenuService;
-    private entityGroupService;
-    private broadcast;
     private userPermissionsService;
-    private authService;
     private menuSections$;
     private homeSections$;
-    private entityGroupSections;
     private currentMenuSections;
     private currentHomeSections;
     private currentCustomSection;
     private currentCustomChildSection;
-    constructor(store: Store<AppState>, router: Router, customMenuService: CustomMenuService, entityGroupService: EntityGroupService, broadcast: BroadcastService, userPermissionsService: UserPermissionsService, authService: AuthService);
+    constructor(store: Store<AppState>, router: Router, customMenuService: CustomMenuService, userPermissionsService: UserPermissionsService);
     private buildMenu;
-    private createEntityGroupSection;
+    private updateOpenedMenuSections;
     private buildSysAdminMenu;
     private buildSysAdminHome;
     private buildTenantAdminMenu;
@@ -45,6 +38,7 @@ export declare class MenuService {
     private detectCurrentCustomChildSection;
     private extractQueryParams;
     getRedirectPath(parentPath: string, redirectPath: string): Observable<string>;
+    private findSectionByPath;
     static ɵfac: i0.ɵɵFactoryDeclaration<MenuService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<MenuService>;
 }

@@ -5,4 +5,4 @@ export interface BroadcastMessage {
 export interface BroadcastEvent {
     name: string;
 }
-export declare type BroadcastListener = (event: BroadcastEvent, ...args: Array<any>) => void;
+export type BroadcastListener = (event: BroadcastEvent, ...args: Array<any>) => void;

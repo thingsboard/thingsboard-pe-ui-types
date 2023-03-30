@@ -5,7 +5,7 @@ import { AppState } from '@core/core.state';
 import { LoadNodesCallback, NavTreeEditCallbacks, NodeSelectedCallback } from '@shared/components/nav-tree.component';
 import { EntityGroupService } from '@core/http/entity-group.service';
 import { EntityGroupParams } from '@shared/models/entity-group.models';
-import { CustomersHierarchyViewMode } from '@home/pages/group/customers-hierarchy.models';
+import { CustomersHierarchyViewMode } from '@home/pages/customer/customers-hierarchy.models';
 import { EntityService } from '@core/http/entity.service';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { TranslateService } from '@ngx-translate/core';

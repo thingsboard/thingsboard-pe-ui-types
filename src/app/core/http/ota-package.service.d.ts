@@ -26,7 +26,7 @@ export declare class OtaPackageService {
     getOtaPackageInfoByDeviceGroupId(deviceGroupId: string, type: OtaUpdateType, config?: RequestConfig): Observable<DeviceGroupOtaPackage>;
     getOtaPackagesInfoByDeviceGroupId(pageLink: PageLink, deviceGroupId: string, type: OtaUpdateType, config?: RequestConfig): Observable<PageData<OtaPackageInfo>>;
     countUpdateDeviceAfterChangePackage(type: OtaUpdateType, entityId: EntityId, packageId?: string, config?: RequestConfig): Observable<number>;
-    confirmDialogUpdatePackage(entity: BaseData<EntityId> & OtaPagesIds, originEntity: BaseData<EntityId> & OtaPagesIds): Observable<boolean>;
+    confirmDialogUpdatePackage(entity: BaseData<EntityId> & OtaPagesIds, originEntity?: BaseData<EntityId> & OtaPagesIds): Observable<boolean>;
     static ɵfac: i0.ɵɵFactoryDeclaration<OtaPackageService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<OtaPackageService>;
 }

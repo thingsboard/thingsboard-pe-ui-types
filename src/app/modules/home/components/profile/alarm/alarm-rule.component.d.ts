@@ -1,6 +1,6 @@
 import { OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
-import { AlarmRule } from '@shared/models/device.models';
+import { DeviceProfileAlarmRule } from '@shared/models/device.models';
 import { MatDialog } from '@angular/material/dialog';
 import { EntityId } from '@shared/models/id/entity-id';
 import { UtilsService } from '@core/services/utils.service';
@@ -23,7 +23,7 @@ export declare class AlarmRuleComponent implements ControlValueAccessor, OnInit,
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
     setDisabledState(isDisabled: boolean): void;
-    writeValue(value: AlarmRule): void;
+    writeValue(value: DeviceProfileAlarmRule): void;
     openEditDetailsDialog($event: Event): void;
     validate(c: UntypedFormControl): {
         alarmRule: {

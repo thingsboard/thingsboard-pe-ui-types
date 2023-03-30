@@ -1,5 +1,5 @@
 import { Timewindow } from '@shared/models/time/time.models';
-export declare type ReportType = 'pdf' | 'jpeg' | 'png';
+export type ReportType = 'pdf' | 'jpeg' | 'png';
 export declare const reportTypes: ReportType[];
 export declare const reportTypeNamesMap: Map<ReportType, string>;
 export interface ReportParams {

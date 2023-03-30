@@ -1,0 +1,50 @@
+import { AfterViewInit, ElementRef, InjectionToken, OnDestroy, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { User, UserEmailInfo } from '@shared/models/user.model';
+import { TranslateService } from '@ngx-translate/core';
+import { UserService } from '@core/http/user.service';
+import { AlarmService } from '@core/http/alarm.service';
+import { OverlayRef } from '@angular/cdk/overlay';
+import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
+import { UtilsService } from '@core/services/utils.service';
+import * as i0 from "@angular/core";
+export declare const ALARM_ASSIGNEE_PANEL_DATA: InjectionToken<any>;
+export interface AlarmAssigneePanelData {
+    alarmId: string;
+    assigneeId: string;
+}
+export declare class AlarmAssigneePanelComponent implements OnInit, AfterViewInit, OnDestroy {
+    data: AlarmAssigneePanelData;
+    overlayRef: OverlayRef;
+    translate: TranslateService;
+    private userService;
+    private alarmService;
+    private fb;
+    private utilsService;
+    private dirty;
+    alarmId: string;
+    assigneeId?: string;
+    selectUserFormGroup: FormGroup;
+    userInput: ElementRef;
+    filteredUsers: Observable<Array<UserEmailInfo>>;
+    searchText: string;
+    private destroy$;
+    constructor(data: AlarmAssigneePanelData, overlayRef: OverlayRef, translate: TranslateService, userService: UserService, alarmService: AlarmService, fb: FormBuilder, utilsService: UtilsService);
+    ngOnInit(): void;
+    ngAfterViewInit(): void;
+    ngOnDestroy(): void;
+    displayUserFn(user?: User): string | undefined;
+    selected(event: MatAutocompleteSelectedEvent): void;
+    assign(user: User): void;
+    unassign(): void;
+    fetchUsers(searchText?: string): Observable<Array<UserEmailInfo>>;
+    onFocus(): void;
+    clear(): void;
+    getUserDisplayName(entity: User): string;
+    getUserInitials(entity: User): string;
+    getFullName(entity: User): string;
+    getAvatarBgColor(entity: User): string;
+    static ɵfac: i0.ɵɵFactoryDeclaration<AlarmAssigneePanelComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmAssigneePanelComponent, "tb-alarm-assignee-panel", never, {}, {}, never, never, false, never>;
+}

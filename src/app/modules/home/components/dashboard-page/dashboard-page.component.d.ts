@@ -76,6 +76,7 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     authUser: AuthUser;
     entityGroup: EntityGroupInfo;
     entityGroupId: string;
+    customerId: string;
     dashboardPageClass: string;
     embedded: boolean;
     currentState: string;

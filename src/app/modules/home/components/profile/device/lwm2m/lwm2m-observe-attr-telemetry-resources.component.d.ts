@@ -10,7 +10,6 @@ export declare class Lwm2mObserveAttrTelemetryResourcesComponent implements Cont
     get required(): boolean;
     set required(value: boolean);
     private destroy$;
-    private valueChange$;
     private propagateChange;
     constructor(fb: UntypedFormBuilder);
     ngOnDestroy(): void;

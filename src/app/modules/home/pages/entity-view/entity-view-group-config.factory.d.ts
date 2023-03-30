@@ -9,11 +9,11 @@ import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { EntityGroupParams } from '@shared/models/entity-group.models';
 import { HomeDialogsService } from '@home/dialogs/home-dialogs.service';
 import { GroupConfigTableConfigService } from '@home/components/group/group-config-table-config.service';
-import { EntityView } from '@shared/models/entity-view.models';
+import { EntityViewInfo } from '@shared/models/entity-view.models';
 import { EntityViewService } from '@core/http/entity-view.service';
 import { Router } from '@angular/router';
 import * as i0 from "@angular/core";
-export declare class EntityViewGroupConfigFactory implements EntityGroupStateConfigFactory<EntityView> {
+export declare class EntityViewGroupConfigFactory implements EntityGroupStateConfigFactory<EntityViewInfo> {
     private groupConfigTableConfigService;
     private userPermissionsService;
     private translate;
@@ -24,10 +24,11 @@ export declare class EntityViewGroupConfigFactory implements EntityGroupStateCon
     private router;
     private broadcast;
     private window;
-    constructor(groupConfigTableConfigService: GroupConfigTableConfigService<EntityView>, userPermissionsService: UserPermissionsService, translate: TranslateService, utils: UtilsService, dialog: MatDialog, homeDialogs: HomeDialogsService, entityViewService: EntityViewService, router: Router, broadcast: BroadcastService, window: Window);
-    createConfig(params: EntityGroupParams, entityGroup: EntityGroupStateInfo<EntityView>): Observable<GroupEntityTableConfig<EntityView>>;
+    constructor(groupConfigTableConfigService: GroupConfigTableConfigService<EntityViewInfo>, userPermissionsService: UserPermissionsService, translate: TranslateService, utils: UtilsService, dialog: MatDialog, homeDialogs: HomeDialogsService, entityViewService: EntityViewService, router: Router, broadcast: BroadcastService, window: Window);
+    createConfig(params: EntityGroupParams, entityGroup: EntityGroupStateInfo<EntityViewInfo>): Observable<GroupEntityTableConfig<EntityViewInfo>>;
     private openEntityView;
-    onEntityViewAction(action: EntityAction<EntityView>, config: GroupEntityTableConfig<EntityView>, params: EntityGroupParams): boolean;
+    manageOwnerAndGroups($event: Event, entityView: EntityViewInfo, config: GroupEntityTableConfig<EntityViewInfo>): void;
+    onEntityViewAction(action: EntityAction<EntityViewInfo>, config: GroupEntityTableConfig<EntityViewInfo>, params: EntityGroupParams): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityViewGroupConfigFactory, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<EntityViewGroupConfigFactory>;
 }

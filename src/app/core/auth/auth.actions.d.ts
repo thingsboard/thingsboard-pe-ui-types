@@ -7,7 +7,8 @@ export declare enum AuthActionTypes {
     LOAD_USER = "[Auth] Load User",
     UPDATE_USER_DETAILS = "[Auth] Update User Details",
     UPDATE_LAST_PUBLIC_DASHBOARD_ID = "[Auth] Update Last Public Dashboard Id",
-    UPDATE_HAS_REPOSITORY = "[Auth] Change Has Repository"
+    UPDATE_HAS_REPOSITORY = "[Auth] Change Has Repository",
+    UPDATE_OPENED_MENU_SECTION = "[Preferences] Update Opened Menu Section"
 }
 export declare class ActionAuthAuthenticated implements Action {
     readonly payload: AuthPayload;
@@ -53,4 +54,15 @@ export declare class ActionAuthUpdateHasRepository implements Action {
         hasRepository: boolean;
     });
 }
-export declare type AuthActions = ActionAuthAuthenticated | ActionAuthUnauthenticated | ActionAuthLoadUser | ActionAuthUpdateUserDetails | ActionAuthUpdateLastPublicDashboardId | ActionAuthUpdateHasRepository;
+export declare class ActionPreferencesUpdateOpenedMenuSection implements Action {
+    readonly payload: {
+        path: string;
+        opened: boolean;
+    };
+    readonly type = AuthActionTypes.UPDATE_OPENED_MENU_SECTION;
+    constructor(payload: {
+        path: string;
+        opened: boolean;
+    });
+}
+export type AuthActions = ActionAuthAuthenticated | ActionAuthUnauthenticated | ActionAuthLoadUser | ActionAuthUpdateUserDetails | ActionAuthUpdateLastPublicDashboardId | ActionAuthUpdateHasRepository | ActionPreferencesUpdateOpenedMenuSection;

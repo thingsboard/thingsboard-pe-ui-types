@@ -44,6 +44,7 @@ export declare class SchedulerEventsComponent extends PageComponent implements O
     widgetMode: boolean;
     ctx: WidgetContext;
     edgeId: string;
+    backNavigationCommands?: any;
     settings: SchedulerEventsWidgetSettings;
     editEnabled: boolean;
     addEnabled: boolean;
@@ -81,6 +82,8 @@ export declare class SchedulerEventsComponent extends PageComponent implements O
     ngOnInit(): void;
     ngOnDestroy(): void;
     ngOnChanges(changes: SimpleChanges): void;
+    displayBackButton(): boolean;
+    goBack(): void;
     private initializeWidgetConfig;
     ngAfterViewInit(): void;
     resize(): void;

@@ -5,7 +5,8 @@ import { Timewindow } from '@shared/models/time/time.models';
 import { Observable, Subject } from 'rxjs';
 import { Router } from '@angular/router';
 import { AuthService } from '@core/auth/auth.service';
-import { CmdUpdateMsg, TelemetryPluginCmdsWrapper } from '@shared/models/telemetry/telemetry.models';
+import { WebsocketCmd } from '@shared/models/telemetry/telemetry.models';
+import { CmdWrapper } from '@shared/models/websocket/websocket.models';
 import * as i0 from "@angular/core";
 export declare class ReportService {
     private window;
@@ -29,8 +30,8 @@ export declare class ReportService {
     private lastWaitWidgetsTimeMs;
     constructor(window: Window, document: Document, utils: UtilsService, http: HttpClient, router: Router, authService: AuthService);
     loadReportParams(): boolean;
-    onSendWsCommands(cmds: TelemetryPluginCmdsWrapper): void;
-    onWsCmdUpdateMessage(message: CmdUpdateMsg): void;
+    onSendWsCommands(cmds: CmdWrapper): void;
+    onWsCmdUpdateMessage(message: WebsocketCmd): void;
     onDashboardLoaded(widgetsCount: number): void;
     onWaitForMap(): string;
     onMapLoaded(uuid: string): void;

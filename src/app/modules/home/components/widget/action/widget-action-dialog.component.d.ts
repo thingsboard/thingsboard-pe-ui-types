@@ -28,8 +28,8 @@ export interface WidgetActionDialogData {
     widgetType: widgetType;
 }
 declare const stateDisplayTypes: readonly ["normal", "separateDialog", "popover"];
-declare type stateDisplayTypeTuple = typeof stateDisplayTypes;
-export declare type stateDisplayType = stateDisplayTypeTuple[number];
+type stateDisplayTypeTuple = typeof stateDisplayTypes;
+export type stateDisplayType = stateDisplayTypeTuple[number];
 export declare class WidgetActionDialogComponent extends DialogComponent<WidgetActionDialogComponent, WidgetActionDescriptorInfo> implements OnInit, ErrorStateMatcher {
     protected store: Store<AppState>;
     protected router: Router;

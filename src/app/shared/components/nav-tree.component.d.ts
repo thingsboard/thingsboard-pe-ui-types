@@ -31,11 +31,11 @@ export interface NavTreeEditCallbacks {
     search?: (searchText: string) => void;
     clearSearch?: () => void;
 }
-export declare type NodesCallback = (nodes: NavTreeNode[]) => void;
-export declare type LoadNodesCallback = (node: NavTreeNode, cb: NodesCallback) => void;
-export declare type NodeSearchCallback = (searchText: string, node: NavTreeNode) => boolean;
-export declare type NodeSelectedCallback = (node: NavTreeNode, event: Event) => void;
-export declare type NodesInsertedCallback = (nodes: string[], parent: string) => void;
+export type NodesCallback = (nodes: NavTreeNode[]) => void;
+export type LoadNodesCallback = (node: NavTreeNode, cb: NodesCallback) => void;
+export type NodeSearchCallback = (searchText: string, node: NavTreeNode) => boolean;
+export type NodeSelectedCallback = (node: NavTreeNode, event: Event) => void;
+export type NodesInsertedCallback = (nodes: string[], parent: string) => void;
 export declare class NavTreeComponent implements OnInit {
     private elementRef;
     private ngZone;

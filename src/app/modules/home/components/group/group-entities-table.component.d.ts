@@ -4,7 +4,7 @@ import { BaseData, HasId } from '@shared/models/base-data';
 import { EntityGroupStateInfo, GroupEntityTableConfig } from '@home/models/group/group-entities-table-config.models';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { MatDialog } from '@angular/material/dialog';
 import { EntityGroupParams, ShortEntityView } from '@shared/models/entity-group.models';
@@ -22,6 +22,7 @@ export declare class GroupEntitiesTableComponent extends PageComponent implement
     protected store: Store<AppState>;
     private window;
     private route;
+    private router;
     private entityGroupsTableConfigResolver;
     private entityGroupConfigResolver;
     private entityGroupService;
@@ -39,7 +40,7 @@ export declare class GroupEntitiesTableComponent extends PageComponent implement
     entityGroupDetailsConfig: EntityGroupsTableConfig;
     private rxSubscriptions;
     updateBreadcrumbs: EventEmitter<any>;
-    constructor(store: Store<AppState>, window: Window, route: ActivatedRoute, entityGroupsTableConfigResolver: EntityGroupsTableConfigResolver, entityGroupConfigResolver: EntityGroupConfigResolver, entityGroupService: EntityGroupService, userPermissionsService: UserPermissionsService, translate: TranslateService, dialog: MatDialog, dialogService: DialogService, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, window: Window, route: ActivatedRoute, router: Router, entityGroupsTableConfigResolver: EntityGroupsTableConfigResolver, entityGroupConfigResolver: EntityGroupConfigResolver, entityGroupService: EntityGroupService, userPermissionsService: UserPermissionsService, translate: TranslateService, dialog: MatDialog, dialogService: DialogService, cd: ChangeDetectorRef);
     ngOnChanges(changes: SimpleChanges): void;
     ngOnInit(): void;
     ngOnDestroy(): void;

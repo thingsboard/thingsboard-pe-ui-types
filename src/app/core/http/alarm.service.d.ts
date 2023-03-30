@@ -15,8 +15,11 @@ export declare class AlarmService {
     saveAlarm(alarm: Alarm, config?: RequestConfig): Observable<Alarm>;
     ackAlarm(alarmId: string, config?: RequestConfig): Observable<void>;
     clearAlarm(alarmId: string, config?: RequestConfig): Observable<void>;
+    assignAlarm(alarmId: string, assigneeId: string, config?: RequestConfig): Observable<void>;
+    unassignAlarm(alarmId: string, config?: RequestConfig): Observable<void>;
     deleteAlarm(alarmId: string, config?: RequestConfig): Observable<void>;
     getAlarms(query: AlarmQuery, config?: RequestConfig): Observable<PageData<AlarmInfo>>;
+    getAllAlarms(query: AlarmQuery, config?: RequestConfig): Observable<PageData<AlarmInfo>>;
     getHighestAlarmSeverity(entityId: EntityId, alarmSearchStatus: AlarmSearchStatus, alarmStatus: AlarmStatus, config?: RequestConfig): Observable<AlarmSeverity>;
     static ɵfac: i0.ɵɵFactoryDeclaration<AlarmService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<AlarmService>;

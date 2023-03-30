@@ -24,3 +24,10 @@ export declare class HasGroupEntityPermissionPipe implements PipeTransform {
     static ɵfac: i0.ɵɵFactoryDeclaration<HasGroupEntityPermissionPipe, never>;
     static ɵpipe: i0.ɵɵPipeDeclaration<HasGroupEntityPermissionPipe, "hasGroupEntityPermission", false>;
 }
+export declare class HasGroupEntityOrGenericPermissionPipe implements PipeTransform {
+    private userPermissionsService;
+    constructor(userPermissionsService: UserPermissionsService);
+    transform(entityGroup: EntityGroupInfo, resource: Resource, operation: Operation): boolean;
+    static ɵfac: i0.ɵɵFactoryDeclaration<HasGroupEntityOrGenericPermissionPipe, never>;
+    static ɵpipe: i0.ɵɵPipeDeclaration<HasGroupEntityOrGenericPermissionPipe, "hasGroupEntityOrGenericPermission", false>;
+}

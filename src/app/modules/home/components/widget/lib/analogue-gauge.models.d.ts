@@ -4,8 +4,8 @@ import { WidgetContext } from '@home/models/widget-component.models';
 import Highlight = CanvasGauges.Highlight;
 import BaseGauge = CanvasGauges.BaseGauge;
 import GenericOptions = CanvasGauges.GenericOptions;
-export declare type AnimationRule = 'linear' | 'quad' | 'quint' | 'cycle' | 'bounce' | 'elastic' | 'dequad' | 'dequint' | 'decycle' | 'debounce' | 'delastic';
-export declare type AnimationTarget = 'needle' | 'plate';
+export type AnimationRule = 'linear' | 'quad' | 'quint' | 'cycle' | 'bounce' | 'elastic' | 'dequad' | 'dequint' | 'decycle' | 'debounce' | 'delastic';
+export type AnimationTarget = 'needle' | 'plate';
 export interface AnalogueGaugeSettings {
     minValue: number;
     maxValue: number;

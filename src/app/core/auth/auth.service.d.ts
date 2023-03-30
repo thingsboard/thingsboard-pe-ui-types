@@ -21,6 +21,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { OAuth2ClientInfo } from '@shared/models/oauth2.models';
 import { TwoFactorAuthProviderType, TwoFaProviderInfo } from '@shared/models/two-factor-auth.models';
 import { UserPasswordPolicy } from '@shared/models/settings.models';
+import { UserSettingsService } from '@core/http/user-settings.service';
 import * as i0 from "@angular/core";
 export declare class AuthService {
     private store;
@@ -38,8 +39,9 @@ export declare class AuthService {
     private dashboardService;
     private adminService;
     private translate;
+    private userSettingsService;
     private dialog;
-    constructor(store: Store<AppState>, http: HttpClient, userService: UserService, whiteLabelingService: WhiteLabelingService, customMenuService: CustomMenuService, customTranslationService: CustomTranslationService, userPermissionsService: UserPermissionsService, timeService: TimeService, router: Router, route: ActivatedRoute, zone: NgZone, utils: UtilsService, dashboardService: DashboardService, adminService: AdminService, translate: TranslateService, dialog: MatDialog);
+    constructor(store: Store<AppState>, http: HttpClient, userService: UserService, whiteLabelingService: WhiteLabelingService, customMenuService: CustomMenuService, customTranslationService: CustomTranslationService, userPermissionsService: UserPermissionsService, timeService: TimeService, router: Router, route: ActivatedRoute, zone: NgZone, utils: UtilsService, dashboardService: DashboardService, adminService: AdminService, translate: TranslateService, userSettingsService: UserSettingsService, dialog: MatDialog);
     redirectUrl: string;
     oauth2Clients: Array<OAuth2ClientInfo>;
     twoFactorAuthProviders: Array<TwoFaProviderInfo>;
@@ -79,6 +81,7 @@ export declare class AuthService {
     loadIsEdgesSupportEnabled(): Observable<boolean>;
     private loadHasRepository;
     private loadTbelEnabled;
+    private loadUserSettings;
     private loadSystemParams;
     refreshJwtToken(loadUserElseStoreJwtToken?: boolean): Observable<LoginResponse>;
     private validateJwtToken;

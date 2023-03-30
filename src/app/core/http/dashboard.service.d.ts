@@ -19,10 +19,12 @@ export declare class DashboardService {
     getTenantDashboardsByTenantId(tenantId: string, pageLink: PageLink, config?: RequestConfig): Observable<PageData<DashboardInfo>>;
     getDashboards(dashboardIds: string[], config?: RequestConfig): Observable<Array<DashboardInfo>>;
     getUserDashboards(userId: string, operation: Operation, pageLink: PageLink, config?: RequestConfig): Observable<PageData<DashboardInfo>>;
+    getAllDashboards(includeCustomers: boolean, pageLink: PageLink, config?: RequestConfig): Observable<PageData<DashboardInfo>>;
+    getCustomerDashboards(includeCustomers: boolean, customerId: string, pageLink: PageLink, config?: RequestConfig): Observable<PageData<DashboardInfo>>;
     getGroupDashboards(groupId: string, pageLink: PageLink, config?: RequestConfig): Observable<PageData<DashboardInfo>>;
     getDashboard(dashboardId: string, config?: RequestConfig): Observable<Dashboard>;
     getDashboardInfo(dashboardId: string, config?: RequestConfig): Observable<DashboardInfo>;
-    saveDashboard(dashboard: Dashboard, entityGroupId?: string, config?: RequestConfig): Observable<Dashboard>;
+    saveDashboard(dashboard: Dashboard, entityGroupIds?: string | string[], config?: RequestConfig): Observable<Dashboard>;
     deleteDashboard(dashboardId: string, config?: RequestConfig): Observable<Object>;
     getPublicDashboardLink(dashboard: DashboardInfo | ShortEntityView, entityGroup: EntityGroup): string | null;
     getHomeDashboard(config?: RequestConfig): Observable<HomeDashboard>;

@@ -8,6 +8,7 @@ import { PageData } from '@shared/models/page/page-data';
 import { EntityDataListener } from '@core/api/entity-data.service';
 import { AlarmData, AlarmDataPageLink, EntityDataPageLink, KeyFilter } from '@shared/models/query/query.models';
 import { AlarmDataListener } from '@core/api/alarm-data.service';
+import { EventEmitter } from '@angular/core';
 export declare class WidgetSubscription implements IWidgetSubscription {
     options: WidgetSubscriptionOptions;
     id: string;
@@ -72,6 +73,7 @@ export declare class WidgetSubscription implements IWidgetSubscription {
     hasLatestData: boolean;
     widgetTimewindowChangedSubject: Subject<WidgetTimewindow>;
     widgetTimewindowChanged$: Observable<WidgetTimewindow>;
+    paginatedDataSubscriptionUpdated: EventEmitter<void>;
     constructor(subscriptionContext: WidgetSubscriptionContext, options: WidgetSubscriptionOptions);
     private initRpc;
     private initAlarmSubscription;
@@ -98,6 +100,7 @@ export declare class WidgetSubscription implements IWidgetSubscription {
     update(isTimewindowTypeChanged?: boolean): void;
     subscribe(): void;
     subscribeAllForPaginatedData(pageLink: EntityDataPageLink, keyFilters: KeyFilter[]): Observable<any>;
+    stopSubscription(datasourceIndex: number): void;
     subscribeForPaginatedData(datasourceIndex: number, pageLink: EntityDataPageLink, keyFilters: KeyFilter[]): Observable<any>;
     subscribeForAlarms(pageLink: AlarmDataPageLink, keyFilters: KeyFilter[]): void;
     private doSubscribe;

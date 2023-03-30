@@ -7,7 +7,7 @@ import { AppState } from '@core/core.state';
 import { MatSlideToggle } from '@angular/material/slide-toggle';
 import { ThemePalette } from '@angular/material/core';
 import * as i0 from "@angular/core";
-declare type SwitchType = 'switch' | 'slide-toggle';
+type SwitchType = 'switch' | 'slide-toggle';
 export declare class SwitchComponent extends PageComponent implements OnInit, AfterViewInit, OnDestroy {
     private utils;
     protected store: Store<AppState>;

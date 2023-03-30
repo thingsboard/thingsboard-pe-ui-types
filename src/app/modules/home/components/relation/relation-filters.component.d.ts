@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { OnDestroy, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { AliasEntityType, EntityType } from '@shared/models/entity-type.models';
 import { RelationEntityTypeFilter } from '@shared/models/relation.models';
@@ -6,17 +6,18 @@ import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import * as i0 from "@angular/core";
-export declare class RelationFiltersComponent extends PageComponent implements ControlValueAccessor, OnInit {
+export declare class RelationFiltersComponent extends PageComponent implements ControlValueAccessor, OnInit, OnDestroy {
     protected store: Store<AppState>;
     private fb;
     disabled: boolean;
     allowedEntityTypes: Array<EntityType | AliasEntityType>;
     relationFiltersFormGroup: UntypedFormGroup;
+    private destroy$;
     private propagateChange;
-    private valueChangeSubscription;
     constructor(store: Store<AppState>, fb: UntypedFormBuilder);
     ngOnInit(): void;
-    relationFiltersFormArray(): UntypedFormArray;
+    ngOnDestroy(): void;
+    get relationFiltersFormArray(): UntypedFormArray;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState?(isDisabled: boolean): void;

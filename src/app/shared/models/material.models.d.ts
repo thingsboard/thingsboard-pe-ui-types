@@ -4,7 +4,7 @@ export interface MaterialColorItem {
     label: string;
     isDark: boolean;
 }
-export declare type ColorPalette = {
+export type ColorPalette = {
     [spectrum: string]: string;
 };
 export interface PaletteContrastInfo {

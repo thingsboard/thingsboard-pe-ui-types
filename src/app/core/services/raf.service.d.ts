@@ -1,6 +1,6 @@
 import { NgZone } from '@angular/core';
 import * as i0 from "@angular/core";
-export declare type CancelAnimationFrame = () => void;
+export type CancelAnimationFrame = () => void;
 export declare class RafService {
     private window;
     private ngZone;

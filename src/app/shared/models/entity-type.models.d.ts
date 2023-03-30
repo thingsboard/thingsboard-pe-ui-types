@@ -28,7 +28,12 @@ export declare enum EntityType {
     EDGE = "EDGE",
     OTA_PACKAGE = "OTA_PACKAGE",
     RPC = "RPC",
-    QUEUE = "QUEUE"
+    QUEUE = "QUEUE",
+    NOTIFICATION = "NOTIFICATION",
+    NOTIFICATION_REQUEST = "NOTIFICATION_REQUEST",
+    NOTIFICATION_RULE = "NOTIFICATION_RULE",
+    NOTIFICATION_TARGET = "NOTIFICATION_TARGET",
+    NOTIFICATION_TEMPLATE = "NOTIFICATION_TEMPLATE"
 }
 export declare enum AliasEntityType {
     CURRENT_CUSTOMER = "CURRENT_CUSTOMER",
@@ -60,6 +65,7 @@ export interface EntityTypeResource<T> {
 export declare const entityTypeTranslations: Map<EntityType | AliasEntityType, EntityTypeTranslation>;
 export declare const entityTypeResources: Map<EntityType, EntityTypeResource<BaseData<HasId>>>;
 export declare const baseDetailsPageByEntityType: Map<EntityType, string>;
+export declare const groupUrlPrefixByEntityType: Map<EntityType, string>;
 export interface EntitySubtype {
     tenantId: TenantId;
     entityType: EntityType;

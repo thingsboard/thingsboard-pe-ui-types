@@ -129,7 +129,7 @@ export interface SchedulerEventFilter {
     originator?: EntityId;
     eventType?: string;
 }
-export declare type EntityFilters = SingleEntityFilter & EntityGroupFilter & EntityListFilter & EntityNameFilter & EntityTypeFilter & EntityGroupListFilter & EntityGroupNameFilter & EntitiesByGroupNameFilter & StateEntityFilter & StateEntityOwnerFilter & AssetTypeFilter & DeviceTypeFilter & EntityViewFilter & EdgeTypeFilter & RelationsQueryFilter & AssetSearchQueryFilter & DeviceSearchQueryFilter & EntityViewSearchQueryFilter & EntitySearchQueryFilter & EdgeSearchQueryFilter & SchedulerEventFilter;
+export type EntityFilters = SingleEntityFilter & EntityGroupFilter & EntityListFilter & EntityNameFilter & EntityTypeFilter & EntityGroupListFilter & EntityGroupNameFilter & EntitiesByGroupNameFilter & StateEntityFilter & StateEntityOwnerFilter & AssetTypeFilter & DeviceTypeFilter & EntityViewFilter & EdgeTypeFilter & RelationsQueryFilter & AssetSearchQueryFilter & DeviceSearchQueryFilter & EntityViewSearchQueryFilter & EntitySearchQueryFilter & EdgeSearchQueryFilter & SchedulerEventFilter;
 export interface EntityAliasFilter extends EntityFilters {
     type?: AliasFilterType;
     resolveMultiple?: boolean;

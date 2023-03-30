@@ -3,7 +3,6 @@ import { EntityGroupInfo, EntityGroupParams } from '@shared/models/entity-group.
 import { EntityGroupService } from '@core/http/entity-group.service';
 import { CustomerService } from '@core/http/customer.service';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
-import { BroadcastService } from '@core/services/broadcast.service';
 import { TranslateService } from '@ngx-translate/core';
 import { DatePipe } from '@angular/common';
 import { UtilsService } from '@core/services/utils.service';
@@ -15,7 +14,6 @@ export declare class EntityGroupsTableConfig extends EntityTableConfig<EntityGro
     private entityGroupService;
     private customerService;
     private userPermissionsService;
-    private broadcast;
     private translate;
     private datePipe;
     private utils;
@@ -24,10 +22,10 @@ export declare class EntityGroupsTableConfig extends EntityTableConfig<EntityGro
     private dialog;
     private homeDialogs;
     private params;
-    customerId: string;
     edgeId: string;
     groupType: EntityType;
-    constructor(entityGroupService: EntityGroupService, customerService: CustomerService, userPermissionsService: UserPermissionsService, broadcast: BroadcastService, translate: TranslateService, datePipe: DatePipe, utils: UtilsService, route: ActivatedRoute, router: Router, dialog: MatDialog, homeDialogs: HomeDialogsService, params: EntityGroupParams);
+    shared: boolean;
+    constructor(entityGroupService: EntityGroupService, customerService: CustomerService, userPermissionsService: UserPermissionsService, translate: TranslateService, datePipe: DatePipe, utils: UtilsService, route: ActivatedRoute, router: Router, dialog: MatDialog, homeDialogs: HomeDialogsService, params: EntityGroupParams);
     private updateActionCellDescriptors;
     private entityGroupWizard;
     private assignEntityGroupsToEdge;
@@ -41,6 +39,4 @@ export declare class EntityGroupsTableConfig extends EntityTableConfig<EntityGro
     private unassignEntityGroupsFromEdge;
     private onEntityGroupAction;
     private isEdgeGroup;
-    private groupPageLinkSearchFunction;
-    private groupPageLinkSearch;
 }

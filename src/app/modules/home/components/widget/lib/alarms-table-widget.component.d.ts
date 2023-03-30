@@ -14,7 +14,7 @@ import { MatSort, SortDirection } from '@angular/material/sort';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { EntityColumn, TableCellButtonActionDescriptor } from '@home/components/widget/lib/table-widget.models';
 import { Overlay } from '@angular/cdk/overlay';
-import { AlarmDataInfo } from '@shared/models/alarm.models';
+import { AlarmDataInfo, AlarmInfo } from '@shared/models/alarm.models';
 import { DatePipe } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogService } from '@core/services/dialog.service';
@@ -27,6 +27,7 @@ interface AlarmWidgetActionDescriptor extends TableCellButtonActionDescriptor {
     details?: boolean;
     acknowledge?: boolean;
     clear?: boolean;
+    comments?: boolean;
 }
 export declare class AlarmsTableWidgetComponent extends PageComponent implements OnInit, AfterViewInit {
     protected store: Store<AppState>;
@@ -71,9 +72,11 @@ export declare class AlarmsTableWidgetComponent extends PageComponent implements
     private subscription;
     private widgetResize$;
     private alarmsTitlePattern;
+    private displayComments;
     private displayDetails;
     allowAcknowledgment: boolean;
     private allowClear;
+    allowAssign: boolean;
     private defaultPageSize;
     private defaultSortOrder;
     private contentsInfo;
@@ -117,6 +120,7 @@ export declare class AlarmsTableWidgetComponent extends PageComponent implements
     ackAlarms($event: Event): void;
     private clearAlarm;
     clearAlarms($event: Event): void;
+    private openAlarmComments;
     private defaultContent;
     private defaultStyle;
     customDataExport(): {
@@ -128,6 +132,10 @@ export declare class AlarmsTableWidgetComponent extends PageComponent implements
     private alarmDataToExportedData;
     isSorting(column: EntityColumn): boolean;
     private clearCache;
+    getUserDisplayName(entity: AlarmInfo): string;
+    getUserInitials(entity: AlarmInfo): string;
+    getAvatarBgColor(entity: AlarmInfo): string;
+    openAlarmAssigneePanel($event: Event, entity: AlarmInfo): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AlarmsTableWidgetComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<AlarmsTableWidgetComponent, "tb-alarms-table-widget", never, { "ctx": "ctx"; }, {}, never, never, false, never>;
 }

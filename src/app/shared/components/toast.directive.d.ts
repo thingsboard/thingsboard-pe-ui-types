@@ -1,7 +1,7 @@
 import { AfterViewInit, ChangeDetectorRef, ComponentFactoryResolver, ElementRef, NgZone, OnDestroy, ViewContainerRef } from '@angular/core';
 import { MatSnackBar, MatSnackBarRef } from '@angular/material/snack-bar';
 import { NotificationMessage } from '@app/core/notification/notification.models';
-import { NotificationService } from '@app/core/services/notification.service';
+import { ToastNotificationService } from '@core/services/toast-notification.service';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatButton } from '@angular/material/button';
 import { AnimationTriggerMetadata, AnimationEvent } from '@angular/animations';
@@ -22,7 +22,7 @@ export declare class ToastDirective implements AfterViewInit, OnDestroy {
     private toastComponentRef;
     private currentMessage;
     private dismissTimeout;
-    constructor(elementRef: ElementRef, viewContainerRef: ViewContainerRef, notificationService: NotificationService, componentFactoryResolver: ComponentFactoryResolver, snackBar: MatSnackBar, ngZone: NgZone, breakpointObserver: BreakpointObserver, cd: ChangeDetectorRef);
+    constructor(elementRef: ElementRef, viewContainerRef: ViewContainerRef, notificationService: ToastNotificationService, componentFactoryResolver: ComponentFactoryResolver, snackBar: MatSnackBar, ngZone: NgZone, breakpointObserver: BreakpointObserver, cd: ChangeDetectorRef);
     ngAfterViewInit(): void;
     private showToastPanel;
     private showSnackBar;
@@ -40,7 +40,7 @@ interface ToastPanelData {
 export declare const toastAnimations: {
     readonly showHideToast: AnimationTriggerMetadata;
 };
-export declare type ToastAnimationState = 'default' | 'opened' | 'closing';
+export type ToastAnimationState = 'default' | 'opened' | 'closing';
 export declare class TbSnackBarComponent implements AfterViewInit, OnDestroy {
     private data;
     private elementRef;

@@ -8,13 +8,13 @@ import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { EntityGroupParams, ShortEntityView } from '@shared/models/entity-group.models';
 import { HomeDialogsService } from '@home/dialogs/home-dialogs.service';
 import { GroupConfigTableConfigService } from '@home/components/group/group-config-table-config.service';
-import { Customer } from '@shared/models/customer.model';
+import { CustomerInfo } from '@shared/models/customer.model';
 import { CustomerService } from '@core/http/customer.service';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import * as i0 from "@angular/core";
-export declare class CustomerGroupConfigFactory implements EntityGroupStateConfigFactory<Customer> {
+export declare class CustomerGroupConfigFactory implements EntityGroupStateConfigFactory<CustomerInfo> {
     private groupConfigTableConfigService;
     private userPermissionsService;
     private translate;
@@ -25,17 +25,19 @@ export declare class CustomerGroupConfigFactory implements EntityGroupStateConfi
     private router;
     private store;
     private window;
-    constructor(groupConfigTableConfigService: GroupConfigTableConfigService<Customer>, userPermissionsService: UserPermissionsService, translate: TranslateService, utils: UtilsService, dialog: MatDialog, homeDialogs: HomeDialogsService, customerService: CustomerService, router: Router, store: Store<AppState>, window: Window);
-    createConfig(params: EntityGroupParams, entityGroup: EntityGroupStateInfo<Customer>): Observable<GroupEntityTableConfig<Customer>>;
+    constructor(groupConfigTableConfigService: GroupConfigTableConfigService<CustomerInfo>, userPermissionsService: UserPermissionsService, translate: TranslateService, utils: UtilsService, dialog: MatDialog, homeDialogs: HomeDialogsService, customerService: CustomerService, router: Router, store: Store<AppState>, window: Window);
+    createConfig(params: EntityGroupParams, entityGroup: EntityGroupStateInfo<CustomerInfo>): Observable<GroupEntityTableConfig<CustomerInfo>>;
     private openCustomer;
-    manageUsers($event: Event, customer: Customer | ShortEntityView, config: GroupEntityTableConfig<Customer>, params: EntityGroupParams): void;
-    manageCustomers($event: Event, customer: Customer | ShortEntityView, config: GroupEntityTableConfig<Customer>, params: EntityGroupParams): void;
-    manageAssets($event: Event, customer: Customer | ShortEntityView, config: GroupEntityTableConfig<Customer>, params: EntityGroupParams): void;
-    manageDevices($event: Event, customer: Customer | ShortEntityView, config: GroupEntityTableConfig<Customer>, params: EntityGroupParams): void;
-    manageEntityViews($event: Event, customer: Customer | ShortEntityView, config: GroupEntityTableConfig<Customer>, params: EntityGroupParams): void;
-    manageEdges($event: Event, customer: Customer | ShortEntityView, config: GroupEntityTableConfig<Customer>, params: EntityGroupParams): void;
-    manageDashboards($event: Event, customer: Customer | ShortEntityView, config: GroupEntityTableConfig<Customer>, params: EntityGroupParams): void;
-    onCustomerAction(action: EntityAction<Customer>, config: GroupEntityTableConfig<Customer>, params: EntityGroupParams): boolean;
+    manageUsers($event: Event, customer: CustomerInfo | ShortEntityView, config: GroupEntityTableConfig<CustomerInfo>, params: EntityGroupParams): void;
+    manageCustomers($event: Event, customer: CustomerInfo | ShortEntityView, config: GroupEntityTableConfig<CustomerInfo>, params: EntityGroupParams): void;
+    manageAssets($event: Event, customer: CustomerInfo | ShortEntityView, config: GroupEntityTableConfig<CustomerInfo>, params: EntityGroupParams): void;
+    manageDevices($event: Event, customer: CustomerInfo | ShortEntityView, config: GroupEntityTableConfig<CustomerInfo>, params: EntityGroupParams): void;
+    manageEntityViews($event: Event, customer: CustomerInfo | ShortEntityView, config: GroupEntityTableConfig<CustomerInfo>, params: EntityGroupParams): void;
+    manageEdges($event: Event, customer: CustomerInfo | ShortEntityView, config: GroupEntityTableConfig<CustomerInfo>, params: EntityGroupParams): void;
+    manageDashboards($event: Event, customer: CustomerInfo | ShortEntityView, config: GroupEntityTableConfig<CustomerInfo>, params: EntityGroupParams): void;
+    private navigateToChildCustomerPage;
+    manageOwnerAndGroups($event: Event, customer: CustomerInfo, config: GroupEntityTableConfig<CustomerInfo>): void;
+    onCustomerAction(action: EntityAction<CustomerInfo>, config: GroupEntityTableConfig<CustomerInfo>, params: EntityGroupParams): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<CustomerGroupConfigFactory, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<CustomerGroupConfigFactory>;
 }

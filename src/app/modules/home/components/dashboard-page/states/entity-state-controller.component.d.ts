@@ -38,7 +38,7 @@ export declare class EntityStateControllerComponent extends StateControllerCompo
     getStateIdAtIndex(index: number): string;
     getStateIndex(): number;
     getStateParamsByStateId(stateId: string): StateParams;
-    navigatePrevState(index: number): void;
+    navigatePrevState(index: number, params?: StateParams): void;
     resetState(): void;
     getStateName(index: number): string;
     getCurrentStateName(): string;

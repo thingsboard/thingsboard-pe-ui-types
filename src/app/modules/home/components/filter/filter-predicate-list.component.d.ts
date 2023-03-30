@@ -1,10 +1,10 @@
-import { OnInit } from '@angular/core';
+import { OnDestroy, OnInit } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { ComplexOperation, EntityKeyValueType, KeyFilterPredicateInfo } from '@shared/models/query/query.models';
 import { MatDialog } from '@angular/material/dialog';
 import { ComponentType } from '@angular/cdk/portal';
 import * as i0 from "@angular/core";
-export declare class FilterPredicateListComponent implements ControlValueAccessor, Validator, OnInit {
+export declare class FilterPredicateListComponent implements ControlValueAccessor, Validator, OnInit, OnDestroy {
     private fb;
     private complexFilterPredicateDialogComponent;
     private dialog;
@@ -18,11 +18,12 @@ export declare class FilterPredicateListComponent implements ControlValueAccesso
     filterListFormGroup: UntypedFormGroup;
     valueTypeEnum: typeof EntityKeyValueType;
     complexOperationTranslations: Map<ComplexOperation, string>;
+    private destroy$;
     private propagateChange;
-    private valueChangeSubscription;
     constructor(fb: UntypedFormBuilder, complexFilterPredicateDialogComponent: ComponentType<any>, dialog: MatDialog);
     ngOnInit(): void;
-    predicatesFormArray(): UntypedFormArray;
+    ngOnDestroy(): void;
+    get predicatesFormArray(): UntypedFormArray;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState?(isDisabled: boolean): void;

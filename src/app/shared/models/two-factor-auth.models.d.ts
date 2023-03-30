@@ -12,8 +12,8 @@ export interface TwoFactorAuthSettingsForm extends TwoFactorAuthSettings {
     verificationCodeCheckRateLimitNumber: number;
     verificationCodeCheckRateLimitTime: number;
 }
-export declare type TwoFactorAuthProviderConfig = Partial<TotpTwoFactorAuthProviderConfig | SmsTwoFactorAuthProviderConfig | EmailTwoFactorAuthProviderConfig>;
-export declare type TwoFactorAuthProviderConfigForm = Partial<TotpTwoFactorAuthProviderConfig | SmsTwoFactorAuthProviderConfig | EmailTwoFactorAuthProviderConfig> & TwoFactorAuthProviderFormConfig;
+export type TwoFactorAuthProviderConfig = Partial<TotpTwoFactorAuthProviderConfig | SmsTwoFactorAuthProviderConfig | EmailTwoFactorAuthProviderConfig>;
+export type TwoFactorAuthProviderConfigForm = Partial<TotpTwoFactorAuthProviderConfig | SmsTwoFactorAuthProviderConfig | EmailTwoFactorAuthProviderConfig> & TwoFactorAuthProviderFormConfig;
 export interface TotpTwoFactorAuthProviderConfig {
     providerType: TwoFactorAuthProviderType;
     issuerName: string;
@@ -53,11 +53,11 @@ export interface BackupCodeTwoFactorAuthAccountConfig extends GeneralTwoFactorAu
     codesLeft: number;
     codes?: Array<string>;
 }
-export declare type TwoFactorAuthAccountConfig = TotpTwoFactorAuthAccountConfig | SmsTwoFactorAuthAccountConfig | EmailTwoFactorAuthAccountConfig | BackupCodeTwoFactorAuthAccountConfig;
+export type TwoFactorAuthAccountConfig = TotpTwoFactorAuthAccountConfig | SmsTwoFactorAuthAccountConfig | EmailTwoFactorAuthAccountConfig | BackupCodeTwoFactorAuthAccountConfig;
 export interface AccountTwoFaSettings {
     configs: AccountTwoFaSettingProviders;
 }
-export declare type AccountTwoFaSettingProviders = {
+export type AccountTwoFaSettingProviders = {
     [key in TwoFactorAuthProviderType]?: TwoFactorAuthAccountConfig;
 };
 export interface TwoFaProviderInfo {

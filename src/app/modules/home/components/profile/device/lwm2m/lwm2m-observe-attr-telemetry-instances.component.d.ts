@@ -11,7 +11,7 @@ export declare class Lwm2mObserveAttrTelemetryInstancesComponent implements Cont
     get required(): boolean;
     set required(value: boolean);
     disabled: boolean;
-    private valueChange$;
+    private destroy$;
     private propagateChange;
     constructor(fb: UntypedFormBuilder, translate: TranslateService);
     ngOnDestroy(): void;

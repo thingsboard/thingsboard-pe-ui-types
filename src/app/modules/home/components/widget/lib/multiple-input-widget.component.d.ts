@@ -11,12 +11,12 @@ import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { AttributeService } from '@core/http/attribute.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import * as i0 from "@angular/core";
-declare type FieldAlignment = 'row' | 'column';
-declare type MultipleInputWidgetDataKeyType = 'server' | 'shared' | 'timeseries';
-declare type MultipleInputWidgetDataKeyValueType = 'string' | 'double' | 'integer' | 'booleanCheckbox' | 'booleanSwitch' | 'dateTime' | 'date' | 'time' | 'select';
-declare type MultipleInputWidgetDataKeyEditableType = 'editable' | 'disabled' | 'readonly';
-declare type ConvertGetValueFunction = (value: any, ctx: WidgetContext) => any;
-declare type ConvertSetValueFunction = (value: any, originValue: any, ctx: WidgetContext) => any;
+type FieldAlignment = 'row' | 'column';
+type MultipleInputWidgetDataKeyType = 'server' | 'shared' | 'timeseries';
+type MultipleInputWidgetDataKeyValueType = 'string' | 'double' | 'integer' | 'booleanCheckbox' | 'booleanSwitch' | 'dateTime' | 'date' | 'time' | 'select';
+type MultipleInputWidgetDataKeyEditableType = 'editable' | 'disabled' | 'readonly';
+type ConvertGetValueFunction = (value: any, ctx: WidgetContext) => any;
+type ConvertSetValueFunction = (value: any, originValue: any, ctx: WidgetContext) => any;
 interface MultipleInputWidgetSettings {
     widgetTitle: string;
     showActionButtons: boolean;

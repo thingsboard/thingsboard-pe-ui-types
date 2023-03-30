@@ -12,7 +12,7 @@ export declare class Lwm2mObserveAttrTelemetryComponent implements ControlValueA
     get required(): boolean;
     set required(value: boolean);
     disabled: boolean;
-    private valueChange$;
+    private destroy$;
     private propagateChange;
     constructor(fb: UntypedFormBuilder, dialog: MatDialog, cd: ChangeDetectorRef);
     ngOnDestroy(): void;

@@ -108,7 +108,7 @@ export interface ObservableAttributes {
 }
 export declare function getDefaultProfileObserveAttrConfig(): ObservableAttributes;
 export declare function getDefaultProfileClientLwM2mSettingsConfig(): ClientLwM2mSettings;
-export declare type ResourceSettingTelemetry = 'observe' | 'attribute' | 'telemetry';
+export type ResourceSettingTelemetry = 'observe' | 'attribute' | 'telemetry';
 export interface ResourceLwM2M {
     id: number;
     name: string;
@@ -138,7 +138,7 @@ export interface ObjectLwM2M {
     attributes?: AttributesNameValueMap;
     instances?: Instance[];
 }
-export declare type AttributesNameValueMap = {
+export type AttributesNameValueMap = {
     [key in AttributeName]?: number;
 };
 export interface AttributesNameValue {

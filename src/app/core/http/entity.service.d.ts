@@ -42,6 +42,8 @@ import { WidgetService } from '@core/http/widget.service';
 import { DeviceProfileService } from '@core/http/device-profile.service';
 import { QueueService } from '@core/http/queue.service';
 import { AssetProfileService } from '@core/http/asset-profile.service';
+import { NotificationService } from '@core/http/notification.service';
+import { TenantProfileService } from '@core/http/tenant-profile.service';
 import * as i0 from "@angular/core";
 export declare class EntityService {
     private http;
@@ -60,6 +62,7 @@ export declare class EntityService {
     private otaPackageService;
     private widgetService;
     private deviceProfileService;
+    private tenantProfileService;
     private assetProfileService;
     private converterService;
     private integrationService;
@@ -70,13 +73,14 @@ export declare class EntityService {
     private userPermissionsService;
     private utils;
     private queueService;
-    constructor(http: HttpClient, store: Store<AppState>, deviceService: DeviceService, assetService: AssetService, entityViewService: EntityViewService, edgeService: EdgeService, tenantService: TenantService, customerService: CustomerService, userService: UserService, ruleChainService: RuleChainService, dashboardService: DashboardService, entityRelationService: EntityRelationService, attributeService: AttributeService, otaPackageService: OtaPackageService, widgetService: WidgetService, deviceProfileService: DeviceProfileService, assetProfileService: AssetProfileService, converterService: ConverterService, integrationService: IntegrationService, schedulerEventService: SchedulerEventService, blobEntityService: BlobEntityService, roleService: RoleService, entityGroupService: EntityGroupService, userPermissionsService: UserPermissionsService, utils: UtilsService, queueService: QueueService);
+    private notificationService;
+    constructor(http: HttpClient, store: Store<AppState>, deviceService: DeviceService, assetService: AssetService, entityViewService: EntityViewService, edgeService: EdgeService, tenantService: TenantService, customerService: CustomerService, userService: UserService, ruleChainService: RuleChainService, dashboardService: DashboardService, entityRelationService: EntityRelationService, attributeService: AttributeService, otaPackageService: OtaPackageService, widgetService: WidgetService, deviceProfileService: DeviceProfileService, tenantProfileService: TenantProfileService, assetProfileService: AssetProfileService, converterService: ConverterService, integrationService: IntegrationService, schedulerEventService: SchedulerEventService, blobEntityService: BlobEntityService, roleService: RoleService, entityGroupService: EntityGroupService, userPermissionsService: UserPermissionsService, utils: UtilsService, queueService: QueueService, notificationService: NotificationService);
     private getEntityObservable;
     private saveEntityObservable;
     getEntity(entityType: EntityType, entityId: string, config?: RequestConfig): Observable<BaseData<EntityId>>;
     saveEntity(entity: BaseData<EntityId>, config?: RequestConfig): Observable<BaseData<EntityId>>;
     private saveGroupEntityObservable;
-    saveGroupEntity(entity: BaseData<EntityId>, entityGroupId: string, config?: RequestConfig): Observable<BaseData<EntityId>>;
+    saveGroupEntity(entity: BaseData<EntityId>, entityGroupIds: string | string[], config?: RequestConfig): Observable<BaseData<EntityId>>;
     private getEntitiesObservable;
     getEntities(entityType: EntityType, entityIds: Array<string>, config?: RequestConfig): Observable<Array<BaseData<EntityId>>>;
     private getSingleTenantByPageLinkObservable;
@@ -85,7 +89,6 @@ export declare class EntityService {
     getEntitiesByNameFilter(entityType: EntityType, entityNameFilter: string, pageSize: number, subType?: string, config?: RequestConfig): Observable<Array<BaseData<EntityId>>>;
     private getEntityGroupEntitiesByPageLink;
     getEntityGroupEntities(entityGroupId: string, entityGroupType: EntityType, pageSize: number, config?: RequestConfig): Observable<Array<BaseData<EntityId>>>;
-    getEntitiesByGroupName(entityType: EntityType, entityNameFilter: string, pageSize: number, stateEntityId?: EntityId, config?: RequestConfig): Observable<Array<BaseData<EntityId>>>;
     findEntityDataByQuery(query: EntityDataQuery, config?: RequestConfig): Observable<PageData<EntityData>>;
     findEntityKeysByQuery(query: EntityDataQuery, attributes?: boolean, timeseries?: boolean, config?: RequestConfig): Observable<EntitiesKeysByQuery>;
     findAlarmDataByQuery(query: AlarmDataQuery, config?: RequestConfig): Observable<PageData<AlarmData>>;

@@ -65,6 +65,7 @@ export default abstract class LeafletMap {
     addEditControl(): void;
     setLoading(loading: boolean): void;
     setMap(map: L.Map): void;
+    resetState(): void;
     private createdControlButtonTooltip;
     createLatLng(lat: number, lng: number): L.LatLng;
     createBounds(): L.LatLngBounds;

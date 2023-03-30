@@ -43,7 +43,7 @@ export declare class WidgetEditorAddDataResolver implements Resolve<WidgetEditor
 }
 export declare const widgetTypesBreadcumbLabelFunction: BreadCrumbLabelFunction<any>;
 export declare const widgetEditorBreadcumbLabelFunction: BreadCrumbLabelFunction<WidgetEditorComponent>;
-export declare const routes: Routes;
+export declare const widgetsBundlesRoutes: Routes;
 export declare class WidgetLibraryRoutingModule {
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetLibraryRoutingModule, never>;
     static ɵmod: i0.ɵɵNgModuleDeclaration<WidgetLibraryRoutingModule, never, [typeof i1.RouterModule], [typeof i1.RouterModule]>;

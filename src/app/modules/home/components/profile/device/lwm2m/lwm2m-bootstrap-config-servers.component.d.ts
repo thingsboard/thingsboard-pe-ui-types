@@ -1,4 +1,4 @@
-import { EventEmitter, OnInit } from '@angular/core';
+import { EventEmitter, OnDestroy, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { ServerSecurityConfig } from '@home/components/profile/device/lwm2m/lwm2m-profile-config.models';
 import { TranslateService } from '@ngx-translate/core';
@@ -6,7 +6,7 @@ import { DialogService } from '@core/services/dialog.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DeviceProfileService } from '@core/http/device-profile.service';
 import * as i0 from "@angular/core";
-export declare class Lwm2mBootstrapConfigServersComponent implements OnInit, ControlValueAccessor {
+export declare class Lwm2mBootstrapConfigServersComponent implements OnInit, ControlValueAccessor, OnDestroy {
     translate: TranslateService;
     matDialog: MatDialog;
     private dialogService;
@@ -18,13 +18,14 @@ export declare class Lwm2mBootstrapConfigServersComponent implements OnInit, Con
     isTransportWasRunWithBootstrapChange: EventEmitter<boolean>;
     isBootstrapServerUpdateEnableValue: boolean;
     set isBootstrapServerUpdateEnable(value: boolean);
-    private valueChangeSubscription;
+    private destroy$;
     private propagateChange;
     constructor(translate: TranslateService, matDialog: MatDialog, dialogService: DialogService, deviceProfileService: DeviceProfileService, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
-    serverConfigsFromArray(): UntypedFormArray;
+    ngOnDestroy(): void;
+    get serverConfigsFromArray(): UntypedFormArray;
     setDisabledState(isDisabled: boolean): void;
     writeValue(serverConfigs: Array<ServerSecurityConfig> | null): void;
     trackByParams(index: number): number;

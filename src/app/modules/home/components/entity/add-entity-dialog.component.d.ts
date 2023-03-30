@@ -4,7 +4,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { UntypedFormControl, UntypedFormGroup, FormGroupDirective, NgForm } from '@angular/forms';
-import { EntityTypeResource, EntityTypeTranslation } from '@shared/models/entity-type.models';
+import { EntityType, EntityTypeResource, EntityTypeTranslation } from '@shared/models/entity-type.models';
 import { BaseData, HasId } from '@shared/models/base-data';
 import { EntityId } from '@shared/models/id/entity-id';
 import { TbAnchorComponent } from '@shared/components/tb-anchor.component';
@@ -25,6 +25,8 @@ export declare class AddEntityDialogComponent extends DialogComponent<AddEntityD
     entityComponent: EntityComponent<BaseData<HasId>>;
     detailsForm: UntypedFormGroup;
     entitiesTableConfig: EntityTableConfig<BaseData<HasId>>;
+    customerId: string;
+    entityType: EntityType;
     translations: EntityTypeTranslation;
     resources: EntityTypeResource<BaseData<HasId>>;
     entity: BaseData<EntityId>;

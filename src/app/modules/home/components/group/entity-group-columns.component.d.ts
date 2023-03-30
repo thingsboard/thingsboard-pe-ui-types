@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { OnDestroy, OnInit } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { EntityType } from '@shared/models/entity-type.models';
 import { PageComponent } from '@shared/components/page.component';
@@ -7,17 +7,18 @@ import { AppState } from '@core/core.state';
 import { EntityGroupColumn, EntityGroupSortOrder } from '@shared/models/entity-group.models';
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import * as i0 from "@angular/core";
-export declare class EntityGroupColumnsComponent extends PageComponent implements ControlValueAccessor, OnInit {
+export declare class EntityGroupColumnsComponent extends PageComponent implements ControlValueAccessor, OnInit, OnDestroy {
     protected store: Store<AppState>;
     private fb;
     disabled: boolean;
     entityType: EntityType;
     columnsFormGroup: UntypedFormGroup;
     private propagateChange;
-    private valueChangeSubscription;
+    private destroy$;
     constructor(store: Store<AppState>, fb: UntypedFormBuilder);
     ngOnInit(): void;
-    columnsFormArray(): UntypedFormArray;
+    ngOnDestroy(): void;
+    get columnsFormArray(): UntypedFormArray;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState?(isDisabled: boolean): void;

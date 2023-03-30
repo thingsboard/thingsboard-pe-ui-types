@@ -48,7 +48,7 @@ export interface IntegrationTypeInfo {
     hideDownlink?: boolean;
 }
 export declare const integrationTypeInfoMap: Map<IntegrationType, IntegrationTypeInfo>;
-export declare type IntegrationConfiguration = ApachePulsarIntegration | HttpIntegration | ThingParkIntegration | LoriotIntegration | MqttIntegration | AwsIotIntegration | AwsSqsIntegration | AwsKinesisIntegration | IbmWatsonIotIntegration | TtnIntegration | ChipStackIntegration | AzureEventHubIntegration | AzureIotHubIntegration | OpcUaIntegration | UpdIntegration | TcpIntegration | KafkaIntegration | RabbitMqIntegration | PubSubIntegration | CoapIntegration | TuyaIntegration | CustomIntegration;
+export type IntegrationConfiguration = ApachePulsarIntegration | HttpIntegration | ThingParkIntegration | LoriotIntegration | MqttIntegration | AwsIotIntegration | AwsSqsIntegration | AwsKinesisIntegration | IbmWatsonIotIntegration | TtnIntegration | ChipStackIntegration | AzureEventHubIntegration | AzureIotHubIntegration | OpcUaIntegration | UpdIntegration | TcpIntegration | KafkaIntegration | RabbitMqIntegration | PubSubIntegration | CoapIntegration | TuyaIntegration | CustomIntegration;
 export declare function getIntegrationHelpLink(integration: Integration): string;
 export interface IntegrationMetaData {
     metadata?: {
@@ -146,7 +146,7 @@ export declare enum TcpHandlerConfigurationType {
 export declare enum UpdHandlerConfigurationType {
     HEX = "HEX"
 }
-export declare type HandlerConfigurationType = TcpHandlerConfigurationType | UpdHandlerConfigurationType;
+export type HandlerConfigurationType = TcpHandlerConfigurationType | UpdHandlerConfigurationType;
 export declare const HandlerConfigurationType: {
     HEX: UpdHandlerConfigurationType.HEX;
     TEXT: TcpHandlerConfigurationType.TEXT;

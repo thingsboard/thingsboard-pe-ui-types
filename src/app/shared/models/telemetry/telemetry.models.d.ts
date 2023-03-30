@@ -5,6 +5,8 @@ import { EntityId } from '@shared/models/id/entity-id';
 import { NgZone } from '@angular/core';
 import { AlarmData, AlarmDataQuery, EntityCountQuery, EntityData, EntityDataQuery, EntityKey, TsValue } from '@shared/models/query/query.models';
 import { PageData } from '@shared/models/page/page-data';
+import { CmdWrapper, WsSubscriber } from '@shared/models/websocket/websocket.models';
+import { TelemetryWebsocketService } from '@core/ws/telemetry-websocket.service';
 export declare enum DataKeyType {
     timeseries = "timeseries",
     attribute = "attribute",
@@ -25,7 +27,7 @@ export declare enum TelemetryFeature {
     ATTRIBUTES = "ATTRIBUTES",
     TIMESERIES = "TIMESERIES"
 }
-export declare type TelemetryType = LatestTelemetry | AttributeScope;
+export type TelemetryType = LatestTelemetry | AttributeScope;
 export declare const toTelemetryType: (val: string) => TelemetryType;
 export declare const telemetryTypeTranslations: Map<TelemetryType, string>;
 export declare const isClientSideTelemetryType: Map<TelemetryType, boolean>;
@@ -145,7 +147,7 @@ export declare class EntityCountUnsubscribeCmd implements WebsocketCmd {
 export declare class AlarmDataUnsubscribeCmd implements WebsocketCmd {
     cmdId: number;
 }
-export declare class TelemetryPluginCmdsWrapper {
+export declare class TelemetryPluginCmdsWrapper implements CmdWrapper {
     constructor();
     attrSubCmds: Array<AttributesSubscriptionCmd>;
     tsSubCmds: Array<TimeseriesSubscriptionCmd>;
@@ -178,7 +180,9 @@ export interface SubscriptionUpdateMsg extends SubscriptionDataHolder {
 export declare enum CmdUpdateType {
     ENTITY_DATA = "ENTITY_DATA",
     ALARM_DATA = "ALARM_DATA",
-    COUNT_DATA = "COUNT_DATA"
+    COUNT_DATA = "COUNT_DATA",
+    NOTIFICATIONS_COUNT = "NOTIFICATIONS_COUNT",
+    NOTIFICATIONS = "NOTIFICATIONS"
 }
 export interface CmdUpdateMsg {
     cmdId: number;
@@ -202,7 +206,7 @@ export interface EntityCountUpdateMsg extends CmdUpdateMsg {
     cmdUpdateType: CmdUpdateType.COUNT_DATA;
     count: number;
 }
-export declare type WebsocketDataMsg = AlarmDataUpdateMsg | EntityDataUpdateMsg | EntityCountUpdateMsg | SubscriptionUpdateMsg;
+export type WebsocketDataMsg = AlarmDataUpdateMsg | EntityDataUpdateMsg | EntityCountUpdateMsg | SubscriptionUpdateMsg;
 export declare const isEntityDataUpdateMsg: (message: WebsocketDataMsg) => message is EntityDataUpdateMsg;
 export declare const isAlarmDataUpdateMsg: (message: WebsocketDataMsg) => message is AlarmDataUpdateMsg;
 export declare const isEntityCountUpdateMsg: (message: WebsocketDataMsg) => message is EntityCountUpdateMsg;
@@ -243,37 +247,25 @@ export declare class EntityCountUpdate extends CmdUpdate {
     count: number;
     constructor(msg: EntityCountUpdateMsg);
 }
-export interface TelemetryService {
-    subscribe(subscriber: TelemetrySubscriber): any;
-    update(subscriber: TelemetrySubscriber): any;
-    unsubscribe(subscriber: TelemetrySubscriber): any;
-}
-export declare class TelemetrySubscriber {
+export declare class TelemetrySubscriber extends WsSubscriber {
     private telemetryService;
-    private zone?;
+    protected zone?: NgZone;
     private dataSubject;
     private entityDataSubject;
     private alarmDataSubject;
     private entityCountSubject;
-    private reconnectSubject;
     private tsOffset;
-    subscriptionCommands: Array<WebsocketCmd>;
     data$: Observable<SubscriptionUpdate>;
     entityData$: Observable<EntityDataUpdate>;
     alarmData$: Observable<AlarmDataUpdate>;
     entityCount$: Observable<EntityCountUpdate>;
-    reconnect$: Observable<void>;
-    static createEntityAttributesSubscription(telemetryService: TelemetryService, entityId: EntityId, attributeScope: TelemetryType, zone: NgZone, keys?: string[]): TelemetrySubscriber;
-    constructor(telemetryService: TelemetryService, zone?: NgZone);
-    subscribe(): void;
-    update(): void;
-    unsubscribe(): void;
+    static createEntityAttributesSubscription(telemetryService: TelemetryWebsocketService, entityId: EntityId, attributeScope: TelemetryType, zone: NgZone, keys?: string[]): TelemetrySubscriber;
+    constructor(telemetryService: TelemetryWebsocketService, zone?: NgZone);
     complete(): void;
     setTsOffset(tsOffset: number): boolean;
     onData(message: SubscriptionUpdate): void;
     onEntityData(message: EntityDataUpdate): void;
     onAlarmData(message: AlarmDataUpdate): void;
     onEntityCount(message: EntityCountUpdate): void;
-    onReconnected(): void;
     attributeData$(): Observable<Array<AttributeData>>;
 }

@@ -14,7 +14,6 @@ export declare class Lwm2mAttributesKeyListComponent extends PageComponent imple
     isResource: boolean;
     attributesValueFormGroup: UntypedFormGroup;
     private propagateChange;
-    private valueChange$;
     private destroy$;
     private usedAttributesName;
     constructor(store: Store<AppState>, fb: UntypedFormBuilder);

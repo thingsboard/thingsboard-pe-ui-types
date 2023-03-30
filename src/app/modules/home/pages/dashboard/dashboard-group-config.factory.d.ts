@@ -8,12 +8,12 @@ import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { EntityGroupParams, ShortEntityView } from '@shared/models/entity-group.models';
 import { HomeDialogsService } from '@home/dialogs/home-dialogs.service';
 import { GroupConfigTableConfigService } from '@home/components/group/group-config-table-config.service';
-import { Dashboard, DashboardInfo } from '@shared/models/dashboard.models';
+import { DashboardInfo } from '@shared/models/dashboard.models';
 import { DashboardService } from '@core/http/dashboard.service';
 import { ImportExportService } from '@home/components/import-export/import-export.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as i0 from "@angular/core";
-export declare class DashboardGroupConfigFactory implements EntityGroupStateConfigFactory<Dashboard> {
+export declare class DashboardGroupConfigFactory implements EntityGroupStateConfigFactory<DashboardInfo> {
     private groupConfigTableConfigService;
     private userPermissionsService;
     private translate;
@@ -25,13 +25,14 @@ export declare class DashboardGroupConfigFactory implements EntityGroupStateConf
     private homeDialogs;
     private dashboardService;
     private window;
-    constructor(groupConfigTableConfigService: GroupConfigTableConfigService<Dashboard>, userPermissionsService: UserPermissionsService, translate: TranslateService, utils: UtilsService, route: ActivatedRoute, router: Router, dialog: MatDialog, importExport: ImportExportService, homeDialogs: HomeDialogsService, dashboardService: DashboardService, window: Window);
-    createConfig(params: EntityGroupParams, entityGroup: EntityGroupStateInfo<Dashboard>): Observable<GroupEntityTableConfig<Dashboard>>;
-    openDashboard($event: Event, dashboard: ShortEntityView | Dashboard, config: GroupEntityTableConfig<Dashboard>, params: EntityGroupParams): void;
-    exportDashboard($event: Event, dashboard: ShortEntityView | Dashboard): void;
-    importDashboard($event: Event, config: GroupEntityTableConfig<Dashboard>): void;
-    openPublicDashboardLinkDialog($event: Event, dashboard: ShortEntityView | DashboardInfo, config: GroupEntityTableConfig<Dashboard>): void;
-    onDashboardAction(action: EntityAction<Dashboard>, config: GroupEntityTableConfig<Dashboard>, params: EntityGroupParams): boolean;
+    constructor(groupConfigTableConfigService: GroupConfigTableConfigService<DashboardInfo>, userPermissionsService: UserPermissionsService, translate: TranslateService, utils: UtilsService, route: ActivatedRoute, router: Router, dialog: MatDialog, importExport: ImportExportService, homeDialogs: HomeDialogsService, dashboardService: DashboardService, window: Window);
+    createConfig(params: EntityGroupParams, entityGroup: EntityGroupStateInfo<DashboardInfo>): Observable<GroupEntityTableConfig<DashboardInfo>>;
+    openDashboard($event: Event, dashboard: ShortEntityView | DashboardInfo, config: GroupEntityTableConfig<DashboardInfo>, params: EntityGroupParams): void;
+    exportDashboard($event: Event, dashboard: ShortEntityView | DashboardInfo): void;
+    importDashboard($event: Event, config: GroupEntityTableConfig<DashboardInfo>): void;
+    openPublicDashboardLinkDialog($event: Event, dashboard: ShortEntityView | DashboardInfo, config: GroupEntityTableConfig<DashboardInfo>): void;
+    manageOwnerAndGroups($event: Event, dashboard: DashboardInfo, config: GroupEntityTableConfig<DashboardInfo>): void;
+    onDashboardAction(action: EntityAction<DashboardInfo>, config: GroupEntityTableConfig<DashboardInfo>, params: EntityGroupParams): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardGroupConfigFactory, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<DashboardGroupConfigFactory>;
 }

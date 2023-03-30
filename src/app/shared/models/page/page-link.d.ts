@@ -2,7 +2,7 @@ import { SortOrder } from '@shared/models/page/sort-order';
 import { PageData } from '@shared/models/page/page-data';
 import { SortDirection } from '@angular/material/sort';
 export declare const MAX_SAFE_PAGE_SIZE = 2147483647;
-export declare type PageLinkSearchFunction<T> = (entity: T, textSearch: string, searchProperty?: string) => boolean;
+export type PageLinkSearchFunction<T> = (entity: T, textSearch: string, searchProperty?: string) => boolean;
 export interface PageQueryParam extends Partial<SortOrder> {
     textSearch?: string;
     pageSize?: number;

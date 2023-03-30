@@ -2,11 +2,10 @@ import { OnDestroy } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, FormGroupDirective, NgForm } from '@angular/forms';
+import { FormGroupDirective, NgForm, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { DialogComponent } from '@shared/components/dialog.component';
 import { Router } from '@angular/router';
 import { MatStepper } from '@angular/material/stepper';
-import { AddEntityDialogData } from '@home/models/entity/entity-component.models';
 import { EntityType } from '@shared/models/entity-type.models';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { StepperSelectionEvent } from '@angular/cdk/stepper';
@@ -15,7 +14,13 @@ import { EntityGroupInfo } from '@shared/models/entity-group.models';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { Operation, Resource } from '@shared/models/security.models';
 import { EntityGroupService } from '@core/http/entity-group.service';
+import { EntityId } from '@shared/models/id/entity-id';
 import * as i0 from "@angular/core";
+export interface EntityGroupWizardDialogData {
+    ownerId?: EntityId;
+    groupName?: string;
+    groupType: EntityType;
+}
 export interface EntityGroupWizardDialogResult {
     entityGroup: EntityGroupInfo;
     shared: boolean;
@@ -23,7 +28,7 @@ export interface EntityGroupWizardDialogResult {
 export declare class EntityGroupWizardDialogComponent extends DialogComponent<EntityGroupWizardDialogComponent, EntityGroupWizardDialogResult> implements OnDestroy, ErrorStateMatcher {
     protected store: Store<AppState>;
     protected router: Router;
-    data: AddEntityDialogData<EntityGroupInfo>;
+    data: EntityGroupWizardDialogData;
     private errorStateMatcher;
     dialogRef: MatDialogRef<EntityGroupWizardDialogComponent, EntityGroupWizardDialogResult>;
     private entityGroupService;
@@ -39,9 +44,8 @@ export declare class EntityGroupWizardDialogComponent extends DialogComponent<En
     entityGroupWizardFormGroup: UntypedFormGroup;
     shareEntityGroupFormGroup: UntypedFormGroup;
     labelPosition: string;
-    entitiesTableConfig: import("../../models/entity/entities-table-config.models").EntityTableConfig<EntityGroupInfo, import("../../../../shared/public-api").PageLink, EntityGroupInfo>;
     private subscriptions;
-    constructor(store: Store<AppState>, router: Router, data: AddEntityDialogData<EntityGroupInfo>, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<EntityGroupWizardDialogComponent, EntityGroupWizardDialogResult>, entityGroupService: EntityGroupService, userPermissionService: UserPermissionsService, breakpointObserver: BreakpointObserver, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, router: Router, data: EntityGroupWizardDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<EntityGroupWizardDialogComponent, EntityGroupWizardDialogResult>, entityGroupService: EntityGroupService, userPermissionService: UserPermissionsService, breakpointObserver: BreakpointObserver, fb: UntypedFormBuilder);
     ngOnDestroy(): void;
     isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     cancel(): void;

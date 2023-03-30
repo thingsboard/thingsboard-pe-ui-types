@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, ElementRef, OnChanges, OnInit, Renderer2, SimpleChanges } from '@angular/core';
+import { ChangeDetectorRef, ElementRef, OnChanges, OnInit, Renderer2, SimpleChanges } from '@angular/core';
 import { ControlValueAccessor, FormGroupDirective, NgForm, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
@@ -18,7 +18,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Dashboard } from '@shared/models/dashboard.models';
 import { DndDropEvent } from 'ngx-drag-drop/lib/dnd-dropzone.directive';
 import * as i0 from "@angular/core";
-export declare class DataKeysComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnChanges, ErrorStateMatcher {
+export declare class DataKeysComponent implements ControlValueAccessor, OnInit, OnChanges, ErrorStateMatcher {
     private store;
     private errorStateMatcher;
     translate: TranslateService;
@@ -80,7 +80,6 @@ export declare class DataKeysComponent implements ControlValueAccessor, OnInit, 
     private reset;
     ngOnChanges(changes: SimpleChanges): void;
     isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
-    ngAfterViewInit(): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: Array<DataKey> | null): void;
     onFocus(): void;

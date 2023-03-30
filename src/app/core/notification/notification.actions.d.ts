@@ -14,4 +14,4 @@ export declare class ActionNotificationHide implements Action {
     readonly type = NotificationActionTypes.HIDE_NOTIFICATION;
     constructor(hideNotification: HideNotification);
 }
-export declare type NotificationActions = ActionNotificationShow | ActionNotificationHide;
+export type NotificationActions = ActionNotificationShow | ActionNotificationHide;

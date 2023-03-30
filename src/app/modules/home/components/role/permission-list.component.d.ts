@@ -1,21 +1,22 @@
-import { Injector, OnInit } from '@angular/core';
+import { Injector, OnDestroy, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup, NgControl } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { GenericRolePermissions } from '@shared/models/role.models';
 import * as i0 from "@angular/core";
-export declare class PermissionListComponent extends PageComponent implements ControlValueAccessor, OnInit {
+export declare class PermissionListComponent extends PageComponent implements ControlValueAccessor, OnInit, OnDestroy {
     protected store: Store<AppState>;
     private injector;
     private fb;
     disabled: boolean;
     permissionListFormGroup: UntypedFormGroup;
     private propagateChange;
-    private valueChangeSubscription;
+    private destroy$;
     ngControl: NgControl;
     constructor(store: Store<AppState>, injector: Injector, fb: UntypedFormBuilder);
     ngOnInit(): void;
+    ngOnDestroy(): void;
     permissionsFormArray(): UntypedFormArray;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

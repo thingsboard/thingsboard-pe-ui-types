@@ -17,6 +17,7 @@ export declare class EntityGroupTabsComponent extends EntityTabsComponent<Entity
     validateAndMark(): void;
     onPermissionsChanged(): void;
     hasVersionControl(): boolean;
+    sharedGroup(): boolean;
     private validate;
     protected setEntity(entity: EntityGroupInfo): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityGroupTabsComponent, never>;

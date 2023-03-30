@@ -3,7 +3,7 @@ import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, FormGroupDirective, NgForm } from '@angular/forms';
+import { FormGroupDirective, NgForm, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { EntityId } from '@shared/models/id/entity-id';
 import { Observable } from 'rxjs';
 import { DialogComponent } from '@shared/components/dialog.component';
@@ -12,7 +12,6 @@ import { EntityType } from '@shared/models/entity-type.models';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { EntityGroupInfo } from '@shared/models/entity-group.models';
 import { EntityGroupService } from '@core/http/entity-group.service';
-import { BroadcastService } from '@core/services/broadcast.service';
 import * as i0 from "@angular/core";
 export interface SelectEntityGroupDialogResult {
     groupId: string;
@@ -35,7 +34,6 @@ export declare class SelectEntityGroupDialogComponent extends DialogComponent<Se
     protected router: Router;
     protected userPermissionsService: UserPermissionsService;
     protected entityGroupService: EntityGroupService;
-    protected broadcast: BroadcastService;
     data: SelectEntityGroupDialogData;
     private errorStateMatcher;
     dialogRef: MatDialogRef<SelectEntityGroupDialogComponent, SelectEntityGroupDialogResult>;
@@ -52,13 +50,13 @@ export declare class SelectEntityGroupDialogComponent extends DialogComponent<Se
     excludeGroupIds: Array<string>;
     onEntityGroupSelected: (result: SelectEntityGroupDialogResult) => Observable<boolean>;
     createEnabled: boolean;
-    constructor(store: Store<AppState>, router: Router, userPermissionsService: UserPermissionsService, entityGroupService: EntityGroupService, broadcast: BroadcastService, data: SelectEntityGroupDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<SelectEntityGroupDialogComponent, SelectEntityGroupDialogResult>, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, router: Router, userPermissionsService: UserPermissionsService, entityGroupService: EntityGroupService, data: SelectEntityGroupDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<SelectEntityGroupDialogComponent, SelectEntityGroupDialogResult>, fb: UntypedFormBuilder);
     ngOnInit(): void;
     private updateDisabledState;
     isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     cancel(): void;
     selectEntityGroup(): void;
     private groupSelected;
-    static ɵfac: i0.ɵɵFactoryDeclaration<SelectEntityGroupDialogComponent, [null, null, null, null, null, null, { skipSelf: true; }, null, null]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<SelectEntityGroupDialogComponent, [null, null, null, null, null, { skipSelf: true; }, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<SelectEntityGroupDialogComponent, "tb-select-entity-group-dialog", never, {}, {}, never, never, false, never>;
 }

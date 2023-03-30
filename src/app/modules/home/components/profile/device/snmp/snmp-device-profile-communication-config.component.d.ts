@@ -9,13 +9,12 @@ export declare class SnmpDeviceProfileCommunicationConfigComponent implements On
     deviceProfileCommunicationConfig: UntypedFormGroup;
     disabled: boolean;
     private usedSpecType;
-    private valueChange$;
     private destroy$;
     private propagateChange;
     constructor(fb: UntypedFormBuilder);
     ngOnInit(): void;
     ngOnDestroy(): void;
-    communicationConfigFormArray(): UntypedFormArray;
+    get communicationConfigFormArray(): UntypedFormArray;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;

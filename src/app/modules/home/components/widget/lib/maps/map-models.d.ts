@@ -3,13 +3,13 @@ import tinycolor from 'tinycolor2';
 import { BaseIconOptions, Icon } from 'leaflet';
 export declare const DEFAULT_MAP_PAGE_SIZE = 16384;
 export declare const DEFAULT_ZOOM_LEVEL = 8;
-export declare type MarkerImageInfo = {
+export type MarkerImageInfo = {
     url: string;
     size: number;
     markerOffset?: [number, number];
     tooltipOffset?: [number, number];
 };
-export declare type MarkerIconInfo = {
+export type MarkerIconInfo = {
     icon: Icon<BaseIconOptions>;
     size: [number, number];
 };
@@ -18,19 +18,19 @@ export interface MapImage {
     aspect: number;
     update?: boolean;
 }
-export declare type actionsHandler = ($event: Event, datasource: Datasource) => void;
+export type actionsHandler = ($event: Event, datasource: Datasource) => void;
 export interface CircleData {
     latitude: number;
     longitude: number;
     radius: number;
 }
-export declare type GenericFunction = (data: FormattedData, dsData: FormattedData[], dsIndex: number) => string;
-export declare type MarkerImageFunction = (data: FormattedData, markerImages: string[], dsData: FormattedData[], dsIndex: number) => MarkerImageInfo;
-export declare type PosFunction = (origXPos: any, origYPos: any, data: FormattedData, dsData: FormattedData[], dsIndex: number, aspect: number) => {
+export type GenericFunction = (data: FormattedData, dsData: FormattedData[], dsIndex: number) => string;
+export type MarkerImageFunction = (data: FormattedData, markerImages: string[], dsData: FormattedData[], dsIndex: number) => MarkerImageInfo;
+export type PosFunction = (origXPos: any, origYPos: any, data: FormattedData, dsData: FormattedData[], dsIndex: number, aspect: number) => {
     x: number;
     y: number;
 };
-export declare type MarkerIconReadyFunction = (icon: MarkerIconInfo) => void;
+export type MarkerIconReadyFunction = (icon: MarkerIconInfo) => void;
 export declare enum GoogleMapType {
     roadmap = "roadmap",
     satellite = "satellite",
@@ -69,8 +69,10 @@ export declare const hereMapProviderTranslationMap: Map<HereMapProvider, string>
 export interface HereMapProviderSettings {
     mapProviderHere: HereMapProvider;
     credentials: {
+        useV3: boolean;
         app_id: string;
         app_code: string;
+        apiKey: string;
     };
 }
 export declare const defaultHereMapProviderSettings: HereMapProviderSettings;
@@ -345,12 +347,12 @@ export interface MapEditorSettings {
     hideRemoveControlButton: boolean;
 }
 export declare const defaultMapEditorSettings: MapEditorSettings;
-export declare type UnitedMapSettings = MapProviderSettings & CommonMapSettings & MarkersSettings & PolygonSettings & CircleSettings & PolylineSettings & PointsSettings & WidgetMarkerClusteringSettings & MapEditorSettings;
+export type UnitedMapSettings = MapProviderSettings & CommonMapSettings & MarkersSettings & PolygonSettings & CircleSettings & PolylineSettings & PointsSettings & WidgetMarkerClusteringSettings & MapEditorSettings;
 export declare const defaultMapSettings: UnitedMapSettings;
-export declare type WidgetUnitedMapSettings = UnitedMapSettings & Partial<WidgetCommonMapSettings & WidgetMarkersSettings & WidgetPolygonSettings & WidgetCircleSettings & WidgetPolylineSettings & WidgetPointsSettings>;
-export declare type UnitedTripAnimationSettings = MapProviderSettings & TripAnimationCommonSettings & TripAnimationMarkerSettings & PolylineSettings & PointsSettings & PolygonSettings & CircleSettings;
+export type WidgetUnitedMapSettings = UnitedMapSettings & Partial<WidgetCommonMapSettings & WidgetMarkersSettings & WidgetPolygonSettings & WidgetCircleSettings & WidgetPolylineSettings & WidgetPointsSettings>;
+export type UnitedTripAnimationSettings = MapProviderSettings & TripAnimationCommonSettings & TripAnimationMarkerSettings & PolylineSettings & PointsSettings & PolygonSettings & CircleSettings;
 export declare const defaultTripAnimationSettings: UnitedTripAnimationSettings;
 export interface HistorySelectSettings {
     buttonColor: string;
 }
-export declare type WidgetUnitedTripAnimationSettings = UnitedTripAnimationSettings & HistorySelectSettings & Partial<WidgetTripAnimationCommonSettings & WidgetTripAnimationMarkerSettings & WidgetPolylineSettings & WidgetPointsSettings & WidgetPolygonSettings & WidgetCircleSettings>;
+export type WidgetUnitedTripAnimationSettings = UnitedTripAnimationSettings & HistorySelectSettings & Partial<WidgetTripAnimationCommonSettings & WidgetTripAnimationMarkerSettings & WidgetPolylineSettings & WidgetPointsSettings & WidgetPolygonSettings & WidgetCircleSettings>;

@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, ComponentFactoryResolver, ElementRef, EventEmitter, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ComponentFactoryResolver, ElementRef, EventEmitter, OnChanges, OnInit, Renderer2, SimpleChanges, ViewContainerRef } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -31,6 +31,8 @@ export declare class EntitiesTableComponent extends PageComponent implements IEn
     private router;
     private componentFactoryResolver;
     private elementRef;
+    viewContainerRef: ViewContainerRef;
+    renderer: Renderer2;
     entitiesTableConfig: EntityTableConfig<BaseData<HasId>>;
     translations: EntityTypeTranslation;
     headerActionDescriptors: Array<HeaderActionDescriptor>;
@@ -64,10 +66,12 @@ export declare class EntitiesTableComponent extends PageComponent implements IEn
     private updateDataSubscription;
     private viewInited;
     private widgetResize$;
-    constructor(store: Store<AppState>, route: ActivatedRoute, translate: TranslateService, dialog: MatDialog, dialogService: DialogService, domSanitizer: DomSanitizer, cd: ChangeDetectorRef, router: Router, componentFactoryResolver: ComponentFactoryResolver, elementRef: ElementRef);
+    private rxSubscriptions;
+    constructor(store: Store<AppState>, route: ActivatedRoute, translate: TranslateService, dialog: MatDialog, dialogService: DialogService, domSanitizer: DomSanitizer, cd: ChangeDetectorRef, router: Router, componentFactoryResolver: ComponentFactoryResolver, elementRef: ElementRef, viewContainerRef: ViewContainerRef, renderer: Renderer2);
     ngOnInit(): void;
     ngOnDestroy(): void;
     ngOnChanges(changes: SimpleChanges): void;
+    goBack(): void;
     private init;
     ngAfterViewInit(): void;
     private updatePaginationSubscriptions;

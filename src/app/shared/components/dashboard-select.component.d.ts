@@ -1,4 +1,4 @@
-import { OnInit, ViewContainerRef } from '@angular/core';
+import { ElementRef, OnInit, ViewContainerRef } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { DashboardInfo } from '@app/shared/models/dashboard.models';
@@ -18,9 +18,11 @@ export declare class DashboardSelectComponent implements ControlValueAccessor, O
     private overlay;
     private breakpointObserver;
     private viewContainerRef;
+    private nativeElement;
     private document;
     private window;
     groupId: string;
+    customerId: string;
     operation: Operation;
     tooltipPosition: TooltipPosition;
     private requiredValue;
@@ -31,7 +33,7 @@ export declare class DashboardSelectComponent implements ControlValueAccessor, O
     dashboardId: string | null;
     dashboardSelectPanelOrigin: CdkOverlayOrigin;
     private propagateChange;
-    constructor(store: Store<AppState>, dashboardService: DashboardService, utils: UtilsService, overlay: Overlay, breakpointObserver: BreakpointObserver, viewContainerRef: ViewContainerRef, document: Document, window: Window);
+    constructor(store: Store<AppState>, dashboardService: DashboardService, utils: UtilsService, overlay: Overlay, breakpointObserver: BreakpointObserver, viewContainerRef: ViewContainerRef, nativeElement: ElementRef, document: Document, window: Window);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -40,9 +42,8 @@ export declare class DashboardSelectComponent implements ControlValueAccessor, O
     dashboardIdChanged(): void;
     openDashboardSelectPanel(): void;
     getDashboardTitle(title: string): string;
-    private _createDashboardSelectPanelInjector;
     private updateView;
     private getDashboards;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardSelectComponent, "tb-dashboard-select", never, { "groupId": "groupId"; "operation": "operation"; "tooltipPosition": "tooltipPosition"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardSelectComponent, "tb-dashboard-select", never, { "groupId": "groupId"; "customerId": "customerId"; "operation": "operation"; "tooltipPosition": "tooltipPosition"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

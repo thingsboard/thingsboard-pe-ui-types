@@ -5,8 +5,8 @@ import { EntityDataSortOrder, EntityKey } from '@shared/models/query/query.model
 import { WidgetContext } from '@home/models/widget-component.models';
 import { UtilsService } from '@core/services/utils.service';
 import { TranslateService } from '@ngx-translate/core';
-declare type ColumnVisibilityOptions = 'visible' | 'hidden' | 'hidden-mobile';
-declare type ColumnSelectionOptions = 'enabled' | 'disabled';
+type ColumnVisibilityOptions = 'visible' | 'hidden' | 'hidden-mobile';
+type ColumnSelectionOptions = 'enabled' | 'disabled';
 export declare enum columnExportOptions {
     always = "always",
     onlyVisible = "onlyVisible",
@@ -33,7 +33,7 @@ export interface TableWidgetDataKeySettings {
     columnSelectionToDisplay?: ColumnSelectionOptions;
     columnExportOption?: columnExportOptions;
 }
-export declare type ShowCellButtonActionFunction = (ctx: WidgetContext, data: EntityData | AlarmDataInfo | FormattedData) => boolean;
+export type ShowCellButtonActionFunction = (ctx: WidgetContext, data: EntityData | AlarmDataInfo | FormattedData) => boolean;
 export interface TableCellButtonActionDescriptor extends WidgetActionDescriptor {
     useShowActionCellButtonFunction: boolean;
     showActionCellButtonFunction: ShowCellButtonActionFunction;
@@ -59,19 +59,19 @@ export interface DisplayColumn {
     display: boolean;
     selectable: boolean;
 }
-export declare type CellContentFunction = (...args: any[]) => string;
+export type CellContentFunction = (...args: any[]) => string;
 export interface CellContentInfo {
     useCellContentFunction: boolean;
     cellContentFunction?: CellContentFunction;
     units?: string;
     decimals?: number;
 }
-export declare type CellStyleFunction = (...args: any[]) => any;
+export type CellStyleFunction = (...args: any[]) => any;
 export interface CellStyleInfo {
     useCellStyleFunction: boolean;
     cellStyleFunction?: CellStyleFunction;
 }
-export declare type RowStyleFunction = (...args: any[]) => any;
+export type RowStyleFunction = (...args: any[]) => any;
 export interface RowStyleInfo {
     useRowStyleFunction: boolean;
     rowStyleFunction?: RowStyleFunction;

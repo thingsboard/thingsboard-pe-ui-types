@@ -36,6 +36,7 @@ export declare class EntityDetailsPageComponent extends EntityDetailsPanelCompon
     onToggleDetailsEditMode(): void;
     onApplyDetails(): void;
     confirmForm(): UntypedFormGroup;
+    goBack(): void;
     private onUpdateEntity;
     private deleteEntity;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityDetailsPageComponent, never>;

@@ -6,7 +6,7 @@ export declare const HOUR: number;
 export declare const DAY: number;
 export declare const WEEK: number;
 export declare const YEAR: number;
-export declare type ComparisonDuration = moment_.unitOfTime.DurationConstructor | 'previousInterval' | 'customInterval';
+export type ComparisonDuration = moment_.unitOfTime.DurationConstructor | 'previousInterval' | 'customInterval';
 export declare enum TimewindowType {
     REALTIME = 0,
     HISTORY = 1
@@ -94,6 +94,8 @@ export declare enum QuickTimeInterval {
     PREVIOUS_WEEK = "PREVIOUS_WEEK",
     PREVIOUS_WEEK_ISO = "PREVIOUS_WEEK_ISO",
     PREVIOUS_MONTH = "PREVIOUS_MONTH",
+    PREVIOUS_QUARTER = "PREVIOUS_QUARTER",
+    PREVIOUS_HALF_YEAR = "PREVIOUS_HALF_YEAR",
     PREVIOUS_YEAR = "PREVIOUS_YEAR",
     CURRENT_HOUR = "CURRENT_HOUR",
     CURRENT_DAY = "CURRENT_DAY",
@@ -104,6 +106,10 @@ export declare enum QuickTimeInterval {
     CURRENT_WEEK_ISO_SO_FAR = "CURRENT_WEEK_ISO_SO_FAR",
     CURRENT_MONTH = "CURRENT_MONTH",
     CURRENT_MONTH_SO_FAR = "CURRENT_MONTH_SO_FAR",
+    CURRENT_QUARTER = "CURRENT_QUARTER",
+    CURRENT_QUARTER_SO_FAR = "CURRENT_QUARTER_SO_FAR",
+    CURRENT_HALF_YEAR = "CURRENT_HALF_YEAR",
+    CURRENT_HALF_YEAR_SO_FAR = "CURRENT_HALF_YEAR_SO_FAR",
     CURRENT_YEAR = "CURRENT_YEAR",
     CURRENT_YEAR_SO_FAR = "CURRENT_YEAR_SO_FAR"
 }
@@ -141,7 +147,7 @@ export declare enum TimeUnit {
 export declare enum TimeUnitMilli {
     MILLISECONDS = "MILLISECONDS"
 }
-export declare type FullTimeUnit = TimeUnit | TimeUnitMilli;
+export type FullTimeUnit = TimeUnit | TimeUnitMilli;
 export declare const timeUnitTranslationMap: Map<FullTimeUnit, string>;
 export interface TimezoneInfo {
     id: string;

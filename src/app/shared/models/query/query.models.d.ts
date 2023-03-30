@@ -118,9 +118,9 @@ export interface BaseComplexFilterPredicate<T extends KeyFilterPredicate | KeyFi
     operation: ComplexOperation;
     predicates: Array<T>;
 }
-export declare type ComplexFilterPredicate = BaseComplexFilterPredicate<KeyFilterPredicate>;
-export declare type ComplexFilterPredicateInfo = BaseComplexFilterPredicate<KeyFilterPredicateInfo>;
-export declare type KeyFilterPredicate = StringFilterPredicate | NumericFilterPredicate | BooleanFilterPredicate | ComplexFilterPredicate | ComplexFilterPredicateInfo;
+export type ComplexFilterPredicate = BaseComplexFilterPredicate<KeyFilterPredicate>;
+export type ComplexFilterPredicateInfo = BaseComplexFilterPredicate<KeyFilterPredicateInfo>;
+export type KeyFilterPredicate = StringFilterPredicate | NumericFilterPredicate | BooleanFilterPredicate | ComplexFilterPredicate | ComplexFilterPredicateInfo;
 export interface KeyFilterPredicateUserInfo {
     editable: boolean;
     label: string;

@@ -37,6 +37,7 @@ export declare class FiltersDialogComponent extends DialogComponent<FiltersDialo
     filterToWidgetsMap: {
         [filterId: string]: Array<string>;
     };
+    filterNames: Set<string>;
     filtersFormGroup: UntypedFormGroup;
     submitted: boolean;
     constructor(store: Store<AppState>, router: Router, data: FiltersDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<FiltersDialogComponent, Filters>, fb: UntypedFormBuilder, utils: UtilsService, translate: TranslateService, dialogs: DialogService, dialog: MatDialog);
@@ -45,6 +46,8 @@ export declare class FiltersDialogComponent extends DialogComponent<FiltersDialo
     ngOnInit(): void;
     isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     removeFilter(index: number): void;
+    private getNextDuplicatedName;
+    duplicateFilter(index: number): void;
     addFilter(): void;
     editFilter(index: number): void;
     private openFilterDialog;

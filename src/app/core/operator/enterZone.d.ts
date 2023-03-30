@@ -1,5 +1,5 @@
 import { MonoTypeOperatorFunction, Observable, Operator, Subscriber } from 'rxjs';
-export declare type EnterZoneSignature<T> = (zone: {
+export type EnterZoneSignature<T> = (zone: {
     run: (fn: any) => any;
 }) => Observable<T>;
 export declare function enterZone<T>(zone: {

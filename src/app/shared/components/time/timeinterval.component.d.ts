@@ -1,6 +1,7 @@
 import { EventEmitter, OnInit } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 import { TimeInterval, TimeService } from '@core/services/time.service';
+import { SubscriptSizing } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class TimeintervalComponent implements OnInit, ControlValueAccessor {
     private timeService;
@@ -9,14 +10,13 @@ export declare class TimeintervalComponent implements OnInit, ControlValueAccess
     set min(min: number);
     set max(max: number);
     predefinedName: string;
-    isEditValue: boolean;
-    set isEdit(val: boolean);
-    get isEdit(): boolean;
+    isEdit: boolean;
     hideFlagValue: boolean;
-    get hideFlag(): boolean;
-    set hideFlag(val: boolean);
+    hideFlag: boolean;
+    disabledAdvanced: boolean;
     hideFlagChange: EventEmitter<boolean>;
     disabled: boolean;
+    subscriptSizing: SubscriptSizing;
     days: number;
     hours: number;
     mins: number;
@@ -46,5 +46,5 @@ export declare class TimeintervalComponent implements OnInit, ControlValueAccess
     onHoursChange(): void;
     onDaysChange(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeintervalComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeintervalComponent, "tb-timeinterval", never, { "min": "min"; "max": "max"; "predefinedName": "predefinedName"; "isEdit": "isEdit"; "hideFlag": "hideFlag"; "disabled": "disabled"; }, { "hideFlagChange": "hideFlagChange"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeintervalComponent, "tb-timeinterval", never, { "min": "min"; "max": "max"; "predefinedName": "predefinedName"; "isEdit": "isEdit"; "hideFlag": "hideFlag"; "disabledAdvanced": "disabledAdvanced"; "disabled": "disabled"; "subscriptSizing": "subscriptSizing"; }, { "hideFlagChange": "hideFlagChange"; }, never, never, false, never>;
 }

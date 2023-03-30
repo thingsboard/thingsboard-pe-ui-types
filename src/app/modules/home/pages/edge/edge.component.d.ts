@@ -5,20 +5,21 @@ import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { EntityType } from '@shared/models/entity-type.models';
 import { TranslateService } from '@ngx-translate/core';
 import { GroupEntityComponent } from '@home/components/group/group-entity.component';
-import { Edge } from '@shared/models/edge.models';
+import { EdgeInfo } from '@shared/models/edge.models';
 import { GroupEntityTableConfig } from '@home/models/group/group-entities-table-config.models';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
+import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
 import * as i0 from "@angular/core";
-export declare class EdgeComponent extends GroupEntityComponent<Edge> {
+export declare class EdgeComponent extends GroupEntityComponent<EdgeInfo> {
     protected store: Store<AppState>;
     protected translate: TranslateService;
-    private userPermissionsService;
-    protected entityValue: Edge;
-    protected entitiesTableConfigValue: GroupEntityTableConfig<Edge>;
+    protected entityValue: EdgeInfo;
+    protected entitiesTableConfigValue: EntityTableConfig<EdgeInfo> | GroupEntityTableConfig<EdgeInfo>;
     fb: UntypedFormBuilder;
     protected cd: ChangeDetectorRef;
+    protected userPermissionsService: UserPermissionsService;
     entityType: typeof EntityType;
-    constructor(store: Store<AppState>, translate: TranslateService, userPermissionsService: UserPermissionsService, entityValue: Edge, entitiesTableConfigValue: GroupEntityTableConfig<Edge>, fb: UntypedFormBuilder, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, translate: TranslateService, entityValue: EdgeInfo, entitiesTableConfigValue: EntityTableConfig<EdgeInfo> | GroupEntityTableConfig<EdgeInfo>, fb: UntypedFormBuilder, cd: ChangeDetectorRef, userPermissionsService: UserPermissionsService);
     ngOnInit(): void;
     hideDelete(): boolean;
     hideManageUsers(): boolean;
@@ -27,8 +28,8 @@ export declare class EdgeComponent extends GroupEntityComponent<Edge> {
     hideManageEntityViews(): boolean;
     hideManageDashboards(): boolean;
     hideManageSchedulerEvents(): boolean;
-    buildForm(entity: Edge): UntypedFormGroup;
-    updateForm(entity: Edge): void;
+    buildForm(entity: EdgeInfo): UntypedFormGroup;
+    updateForm(entity: EdgeInfo): void;
     updateFormState(): void;
     onEdgeIdCopied($event: any): void;
     onEdgeInfoCopied(type: string): void;

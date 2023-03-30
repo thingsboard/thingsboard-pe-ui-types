@@ -11,7 +11,7 @@ import { DeviceId } from '@shared/models/id/device-id';
 import { DeviceProfileId } from '@shared/models/id/device-profile-id';
 import { EntityGroupId } from '@shared/models/id/entity-group-id';
 import * as i0 from "@angular/core";
-declare type TargetType = 'entity' | 'deviceProfile' | 'groupTenant' | 'ownerGroup';
+type TargetType = 'entity' | 'deviceProfile' | 'groupTenant' | 'ownerGroup';
 interface FormValue {
     target: TargetType;
     deviceTargetId: DeviceId;

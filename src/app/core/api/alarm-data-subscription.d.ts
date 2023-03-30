@@ -1,8 +1,9 @@
-import { DataKeyType, TelemetryService } from '@shared/models/telemetry/telemetry.models';
+import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
 import { DatasourceType } from '@shared/models/widget.models';
 import { AlarmDataPageLink, EntityFilter, KeyFilter } from '@shared/models/query/query.models';
 import { SubscriptionTimewindow } from '@shared/models/time/time.models';
 import { AlarmDataListener } from '@core/api/alarm-data.service';
+import { TelemetryWebsocketService } from '@core/ws/telemetry-websocket.service';
 export interface AlarmSubscriptionDataKey {
     name: string;
     type: DataKeyType;
@@ -29,7 +30,7 @@ export declare class AlarmDataSubscription {
     private prematureUpdates;
     private alarmIdToDataIndex;
     private subsTw;
-    constructor(listener: AlarmDataListener, telemetryService: TelemetryService);
+    constructor(listener: AlarmDataListener, telemetryService: TelemetryWebsocketService);
     unsubscribe(): void;
     subscribe(): void;
     private resetData;

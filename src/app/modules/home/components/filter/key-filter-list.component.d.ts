@@ -1,10 +1,10 @@
-import { OnInit } from '@angular/core';
+import { OnDestroy, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { EntityKeyType, KeyFilterInfo } from '@shared/models/query/query.models';
 import { MatDialog } from '@angular/material/dialog';
 import { EntityId } from '@shared/models/id/entity-id';
 import * as i0 from "@angular/core";
-export declare class KeyFilterListComponent implements ControlValueAccessor, Validator, OnInit {
+export declare class KeyFilterListComponent implements ControlValueAccessor, Validator, OnInit, OnDestroy {
     private fb;
     private dialog;
     disabled: boolean;
@@ -15,11 +15,12 @@ export declare class KeyFilterListComponent implements ControlValueAccessor, Val
     keyFilterListFormGroup: UntypedFormGroup;
     entityKeyTypeTranslations: Map<EntityKeyType, string>;
     keyFiltersControl: UntypedFormControl;
+    private destroy$;
     private propagateChange;
-    private valueChangeSubscription;
     constructor(fb: UntypedFormBuilder, dialog: MatDialog);
     ngOnInit(): void;
-    keyFiltersFormArray(): UntypedFormArray;
+    ngOnDestroy(): void;
+    get keyFiltersFormArray(): UntypedFormArray;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState?(isDisabled: boolean): void;

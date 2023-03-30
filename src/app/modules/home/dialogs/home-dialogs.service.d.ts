@@ -8,6 +8,8 @@ import { EntityGroup, EntityGroupInfo } from '@shared/models/entity-group.models
 import { TranslateService } from '@ngx-translate/core';
 import { EntityId } from '@shared/models/id/entity-id';
 import { SelectEntityGroupDialogResult } from '@home/dialogs/select-entity-group-dialog.component';
+import { GroupEntityInfo } from '@shared/models/base-data';
+import { EntityGroupWizardDialogResult } from '@home/components/wizard/entity-group-wizard-dialog.component';
 import * as i0 from "@angular/core";
 export declare class HomeDialogsService {
     private dialog;
@@ -20,8 +22,10 @@ export declare class HomeDialogsService {
     shareEntityGroup($event: Event, entityGroup: EntityGroupInfo): Observable<boolean>;
     makeEntityGroupPublic($event: Event, entityGroup: EntityGroupInfo): Observable<boolean>;
     makeEntityGroupPrivate($event: Event, entityGroup: EntityGroupInfo): Observable<boolean>;
+    manageOwnerAndGroups($event: Event, groupEntity: GroupEntityInfo<EntityId>): Observable<boolean>;
     selectOwner($event: Event, selectOwnerTitle: string, confirmSelectTitle: string, placeholderText: string, notFoundText: string, requiredText: string, onOwnerSelected?: (targetOwnerId: EntityId) => Observable<boolean>, excludeOwnerIds?: Array<string>): Observable<EntityId>;
     selectEntityGroup($event: Event, ownerId: EntityId, targetGroupType: EntityType, selectEntityGroupTitle: string, confirmSelectTitle: string, placeholderText: string, notFoundText: string, requiredText: string, onEntityGroupSelected?: (result: SelectEntityGroupDialogResult) => Observable<boolean>, excludeGroupIds?: Array<string>): Observable<SelectEntityGroupDialogResult>;
+    createEntityGroup(groupType: EntityType, groupName?: string, ownerId?: EntityId): Observable<EntityGroupWizardDialogResult>;
     private openImportDialogCSV;
     unassignEntityGroupFromEdge($event: Event, entityGroup: EntityGroup, edgeId: string): Observable<boolean>;
     unassignEntityGroupsFromEdge($event: Event, entityGroups: Array<EntityGroup>, edgeId: string): Observable<boolean>;

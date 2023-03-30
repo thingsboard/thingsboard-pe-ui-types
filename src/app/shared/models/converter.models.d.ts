@@ -35,7 +35,7 @@ export interface TestDownLinkInputParams {
     };
     encoder: string;
 }
-export declare type TestConverterInputParams = TestUpLinkInputParams & TestDownLinkInputParams;
+export type TestConverterInputParams = TestUpLinkInputParams & TestDownLinkInputParams;
 export interface TestConverterResult {
     output: string;
     error: string;

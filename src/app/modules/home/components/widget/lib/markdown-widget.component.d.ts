@@ -10,9 +10,10 @@ interface MarkdownWidgetSettings {
     markdownTextPattern: string;
     useMarkdownTextFunction: boolean;
     markdownTextFunction: string;
+    applyDefaultMarkdownStyle: boolean;
     markdownCss: string;
 }
-declare type MarkdownTextFunction = (data: FormattedData[], ctx: WidgetContext) => string;
+type MarkdownTextFunction = (data: FormattedData[], ctx: WidgetContext) => string;
 export declare class MarkdownWidgetComponent extends PageComponent implements OnInit {
     protected store: Store<AppState>;
     private utils;
@@ -23,11 +24,13 @@ export declare class MarkdownWidgetComponent extends PageComponent implements On
     markdownClass: string;
     ctx: WidgetContext;
     markdownText: string;
+    additionalStyles: string[];
+    applyDefaultMarkdownStyle: boolean;
     constructor(store: Store<AppState>, utils: UtilsService, homeComponentsModule: Type<any>, cd: ChangeDetectorRef);
     ngOnInit(): void;
     onDataUpdated(): void;
     markdownClick($event: MouseEvent): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<MarkdownWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MarkdownWidgetComponent, "tb-markdown-widget ", never, { "ctx": "ctx"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MarkdownWidgetComponent, "tb-markdown-widget", never, { "ctx": "ctx"; }, {}, never, never, false, never>;
 }
 export {};

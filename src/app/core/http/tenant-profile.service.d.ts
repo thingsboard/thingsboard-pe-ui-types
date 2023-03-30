@@ -17,6 +17,7 @@ export declare class TenantProfileService {
     getDefaultTenantProfileInfo(config?: RequestConfig): Observable<EntityInfoData>;
     getTenantProfileInfo(tenantProfileId: string, config?: RequestConfig): Observable<EntityInfoData>;
     getTenantProfileInfos(pageLink: PageLink, config?: RequestConfig): Observable<PageData<EntityInfoData>>;
+    getTenantProfilesByIds(tenantProfileIds: Array<string>, config?: RequestConfig): Observable<Array<EntityInfoData>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<TenantProfileService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<TenantProfileService>;
 }

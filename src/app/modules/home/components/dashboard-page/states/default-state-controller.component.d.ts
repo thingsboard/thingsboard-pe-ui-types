@@ -38,7 +38,7 @@ export declare class DefaultStateControllerComponent extends StateControllerComp
     getStateIdAtIndex(index: number): string;
     getStateIndex(): number;
     getStateParamsByStateId(stateId: string): StateParams;
-    navigatePrevState(index: number): void;
+    navigatePrevState(index: number, params?: StateParams): void;
     resetState(): void;
     getStateName(id: string, state: DashboardState): string;
     getCurrentStateName(): string;

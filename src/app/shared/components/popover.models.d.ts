@@ -3,8 +3,8 @@ import { ConnectedOverlayPositionChange, ConnectionPositionPair } from '@angular
 import { TbPopoverComponent } from '@shared/components/popover.component';
 export declare const popoverMotion: AnimationTriggerMetadata;
 export declare const PopoverPlacements: readonly ["top", "topLeft", "topRight", "right", "rightTop", "rightBottom", "bottom", "bottomLeft", "bottomRight", "left", "leftTop", "leftBottom"];
-declare type PopoverPlacementTuple = typeof PopoverPlacements;
-export declare type PopoverPlacement = PopoverPlacementTuple[number];
+type PopoverPlacementTuple = typeof PopoverPlacements;
+export type PopoverPlacement = PopoverPlacementTuple[number];
 export declare const POSITION_MAP: {
     [key: string]: ConnectionPositionPair;
 };

@@ -4,11 +4,11 @@ import { CustomerId } from '@shared/models/id/customer-id';
 import { RoleId } from '@shared/models/id/role-id';
 import { Operation, RoleType } from '@shared/models/security.models';
 import { ValidatorFn } from '@angular/forms';
-export declare type SpecificRolePermissions = Operation[];
-export declare type GenericRolePermissions = {
+export type SpecificRolePermissions = Operation[];
+export type GenericRolePermissions = {
     [resource: string]: Operation[];
 };
-export declare type RolePermissions = SpecificRolePermissions & GenericRolePermissions;
+export type RolePermissions = SpecificRolePermissions & GenericRolePermissions;
 export interface Role extends BaseData<RoleId>, ExportableEntity<RoleId> {
     tenantId?: TenantId;
     customerId?: CustomerId;

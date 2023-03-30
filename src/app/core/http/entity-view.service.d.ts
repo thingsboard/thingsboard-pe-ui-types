@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { PageLink } from '@shared/models/page/page-link';
 import { PageData } from '@shared/models/page/page-data';
 import { EntitySubtype } from '@app/shared/models/entity-type.models';
-import { EntityView, EntityViewSearchQuery } from '@app/shared/models/entity-view.models';
+import { EntityView, EntityViewInfo, EntityViewSearchQuery } from '@app/shared/models/entity-view.models';
 import * as i0 from "@angular/core";
 export declare class EntityViewService {
     private http;
@@ -14,7 +14,10 @@ export declare class EntityViewService {
     getEntityView(entityViewId: string, config?: RequestConfig): Observable<EntityView>;
     getEntityViews(entityViewIds: Array<string>, config?: RequestConfig): Observable<Array<EntityView>>;
     getUserEntityViews(pageLink: PageLink, type?: string, config?: RequestConfig): Observable<PageData<EntityView>>;
-    saveEntityView(entityView: EntityView, entityGroupId?: string, config?: RequestConfig): Observable<EntityView>;
+    getAllEntityViewInfos(includeCustomers: boolean, pageLink: PageLink, type?: string, config?: RequestConfig): Observable<PageData<EntityViewInfo>>;
+    getCustomerEntityViewInfos(includeCustomers: boolean, customerId: string, pageLink: PageLink, type?: string, config?: RequestConfig): Observable<PageData<EntityViewInfo>>;
+    getEntityViewInfo(entityViewId: string, config?: RequestConfig): Observable<EntityViewInfo>;
+    saveEntityView(entityView: EntityView, entityGroupIds?: string | string[], config?: RequestConfig): Observable<EntityView>;
     deleteEntityView(entityViewId: string, config?: RequestConfig): Observable<Object>;
     getEntityViewTypes(config?: RequestConfig): Observable<Array<EntitySubtype>>;
     findByQuery(query: EntityViewSearchQuery, config?: RequestConfig): Observable<Array<EntityView>>;

@@ -1,6 +1,6 @@
 import { Ace } from 'ace-builds';
-export declare type tbMetaType = 'object' | 'function' | 'service' | 'property' | 'argument';
-export declare type TbEditorCompletions = {
+export type tbMetaType = 'object' | 'function' | 'service' | 'property' | 'argument';
+export type TbEditorCompletions = {
     [name: string]: TbEditorCompletion;
 };
 export interface FunctionArgType {

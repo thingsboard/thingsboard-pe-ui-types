@@ -1,5 +1,8 @@
+import { Route } from '@angular/router';
 import * as i0 from "@angular/core";
 import * as i1 from "@angular/router";
+export declare const userGroupsRoute: Route;
+export declare const usersRoute: (root?: boolean) => Route;
 export declare class UserRoutingModule {
     static ɵfac: i0.ɵɵFactoryDeclaration<UserRoutingModule, never>;
     static ɵmod: i0.ɵɵNgModuleDeclaration<UserRoutingModule, never, [typeof i1.RouterModule], [typeof i1.RouterModule]>;

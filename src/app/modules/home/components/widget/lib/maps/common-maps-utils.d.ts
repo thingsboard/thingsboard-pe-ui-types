@@ -8,7 +8,7 @@ export declare function interpolateOnLineSegment(pointA: FormattedData, pointB: 
 export declare function findAngle(startPoint: FormattedData, endPoint: FormattedData, latKeyName: string, lngKeyName: string): number;
 export declare function getDefCenterPosition(position: any): [number, number];
 export declare function aspectCache(imageUrl: string): Observable<number>;
-export declare type TranslateFunc = (key: string, defaultTranslation?: string) => string;
+export type TranslateFunc = (key: string, defaultTranslation?: string) => string;
 export declare const parseWithTranslation: {
     translateFn: any;
     translate(key: string, defaultTranslation?: string): string;

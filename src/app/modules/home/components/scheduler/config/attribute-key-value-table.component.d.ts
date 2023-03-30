@@ -1,10 +1,10 @@
-import { OnInit } from '@angular/core';
+import { OnDestroy, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup, ValidatorFn } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import * as i0 from "@angular/core";
-export declare class AttributeKeyValueTableComponent extends PageComponent implements ControlValueAccessor, OnInit {
+export declare class AttributeKeyValueTableComponent extends PageComponent implements ControlValueAccessor, OnInit, OnDestroy {
     protected store: Store<AppState>;
     private fb;
     disabled: boolean;
@@ -15,9 +15,10 @@ export declare class AttributeKeyValueTableComponent extends PageComponent imple
     set required(value: boolean);
     kvListFormGroup: UntypedFormGroup;
     private propagateChange;
-    private valueChangeSubscription;
+    private destroy$;
     constructor(store: Store<AppState>, fb: UntypedFormBuilder);
     ngOnInit(): void;
+    ngOnDestroy(): void;
     keyValsFormArray(): UntypedFormArray;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

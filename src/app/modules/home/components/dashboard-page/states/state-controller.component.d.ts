@@ -65,7 +65,7 @@ export declare abstract class StateControllerComponent implements IStateControll
     abstract getStateIndex(): number;
     abstract getStateParams(): StateParams;
     abstract getStateParamsByStateId(stateId: string): StateParams;
-    abstract navigatePrevState(index: number): void;
+    abstract navigatePrevState(index: number, params?: StateParams): void;
     abstract openState(id: string, params?: StateParams, openRightLayout?: boolean): void;
     abstract pushAndOpenState(states: Array<StateObject>, openRightLayout?: boolean): void;
     abstract resetState(): void;

@@ -3,7 +3,7 @@ import { FontStyle, FontWeight } from '@home/components/widget/lib/settings.mode
 import { ColorFormats } from 'tinycolor2';
 import GenericOptions = CanvasGauges.GenericOptions;
 import BaseGauge = CanvasGauges.BaseGauge;
-export declare type GaugeType = 'arc' | 'donut' | 'horizontalBar' | 'verticalBar';
+export type GaugeType = 'arc' | 'donut' | 'horizontalBar' | 'verticalBar';
 export interface DigitalGaugeColorRange {
     pct: number;
     color: ColorFormats.RGBA;
@@ -13,7 +13,7 @@ export interface ColorLevelSetting {
     value: number;
     color: string;
 }
-export declare type levelColors = Array<string | ColorLevelSetting>;
+export type levelColors = Array<string | ColorLevelSetting>;
 export interface CanvasDigitalGaugeOptions extends GenericOptions {
     gaugeType?: GaugeType;
     gaugeWithScale?: number;

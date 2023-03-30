@@ -10,7 +10,7 @@ export declare class SnmpDeviceProfileMappingComponent implements OnInit, OnDest
     dataTypesTranslationMap: Map<DataType, string>;
     disabled: boolean;
     private readonly oidPattern;
-    private valueChange$;
+    private destroy$;
     private propagateChange;
     constructor(fb: UntypedFormBuilder);
     ngOnInit(): void;
@@ -20,7 +20,7 @@ export declare class SnmpDeviceProfileMappingComponent implements OnInit, OnDest
     setDisabledState(isDisabled: boolean): void;
     validate(): ValidationErrors | null;
     writeValue(mappings: SnmpMapping[]): void;
-    mappingsConfigFormArray(): UntypedFormArray;
+    get mappingsConfigFormArray(): UntypedFormArray;
     addMappingConfig(): void;
     removeMappingConfig(index: number): void;
     private createdFormGroup;

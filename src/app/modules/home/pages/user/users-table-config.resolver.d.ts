@@ -1,8 +1,8 @@
 import { ActivatedRouteSnapshot, Resolve, Router } from '@angular/router';
-import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
+import { CellActionDescriptor, EntityColumn, EntityTableConfig, GroupActionDescriptor, HeaderActionDescriptor } from '@home/models/entity/entities-table-config.models';
 import { TranslateService } from '@ngx-translate/core';
 import { DatePipe } from '@angular/common';
-import { User } from '@shared/models/user.model';
+import { AuthUser, UserInfo } from '@shared/models/user.model';
 import { UserService } from '@core/http/user.service';
 import { CustomerService } from '@core/http/customer.service';
 import { Observable } from 'rxjs';
@@ -15,11 +15,14 @@ import { AppState } from '@core/core.state';
 import { AuthService } from '@core/auth/auth.service';
 import { TenantService } from '@app/core/http/tenant.service';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
+import { AllEntitiesTableConfigService } from '@home/components/entity/all-entities-table-config.service';
+import { HomeDialogsService } from '@home/dialogs/home-dialogs.service';
 import * as i0 from "@angular/core";
 export interface UsersTableRouteData {
     authority: Authority;
 }
-export declare class UsersTableConfigResolver implements Resolve<EntityTableConfig<User>> {
+export declare class UsersTableConfigResolver implements Resolve<EntityTableConfig<UserInfo>> {
+    private allEntitiesTableConfigService;
     private store;
     private userService;
     private authService;
@@ -27,25 +30,27 @@ export declare class UsersTableConfigResolver implements Resolve<EntityTableConf
     private customerService;
     private userPermissionsService;
     private translate;
+    private homeDialogs;
     private datePipe;
     private router;
     private dialog;
-    private readonly config;
-    private tenantId;
-    private customerId;
-    private authority;
-    private authUser;
-    constructor(store: Store<AppState>, userService: UserService, authService: AuthService, tenantService: TenantService, customerService: CustomerService, userPermissionsService: UserPermissionsService, translate: TranslateService, datePipe: DatePipe, router: Router, dialog: MatDialog);
-    resolve(route: ActivatedRouteSnapshot): Observable<EntityTableConfig<User>>;
-    updateActionCellDescriptors(auth: AuthState): void;
-    saveUser(user: User): Observable<User>;
-    addUser(): Observable<User>;
+    constructor(allEntitiesTableConfigService: AllEntitiesTableConfigService<UserInfo>, store: Store<AppState>, userService: UserService, authService: AuthService, tenantService: TenantService, customerService: CustomerService, userPermissionsService: UserPermissionsService, translate: TranslateService, homeDialogs: HomeDialogsService, datePipe: DatePipe, router: Router, dialog: MatDialog);
+    resolve(route: ActivatedRouteSnapshot): Observable<EntityTableConfig<UserInfo>>;
+    configDefaults(config: EntityTableConfig<UserInfo>, authUser: AuthUser, tenantId?: string): void;
+    configureColumns(authUser: AuthUser, config: EntityTableConfig<UserInfo>): Array<EntityColumn<UserInfo>>;
+    configureEntityFunctions(authUser: AuthUser, config: EntityTableConfig<UserInfo>, tenantId?: string): void;
+    configureCellActions(auth: AuthState, config: EntityTableConfig<UserInfo>): Array<CellActionDescriptor<UserInfo>>;
+    configureGroupActions(config: EntityTableConfig<UserInfo>): Array<GroupActionDescriptor<UserInfo>>;
+    configureAddActions(config: EntityTableConfig<UserInfo>): Array<HeaderActionDescriptor>;
+    private saveUser;
+    private addUser;
     private openUser;
-    loginAsUser($event: Event, user: User): void;
-    displayActivationLink($event: Event, user: User): void;
-    resendActivation($event: Event, user: User): void;
-    setUserCredentialsEnabled($event: Event, user: User, userCredentialsEnabled: boolean): void;
-    onUserAction(action: EntityAction<User>, config: EntityTableConfig<User>): boolean;
+    private loginAsUser;
+    private displayActivationLink;
+    private resendActivation;
+    private setUserCredentialsEnabled;
+    manageOwnerAndGroups($event: Event, user: UserInfo, config: EntityTableConfig<UserInfo>): void;
+    onUserAction(action: EntityAction<UserInfo>, config: EntityTableConfig<UserInfo>): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<UsersTableConfigResolver, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<UsersTableConfigResolver>;
 }

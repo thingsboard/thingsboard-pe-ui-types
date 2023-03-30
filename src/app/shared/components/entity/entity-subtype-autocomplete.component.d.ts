@@ -10,6 +10,7 @@ import { BroadcastService } from '@app/core/services/broadcast.service';
 import { AssetService } from '@core/http/asset.service';
 import { EntityViewService } from '@core/http/entity-view.service';
 import { EdgeService } from '@core/http/edge.service';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class EntitySubTypeAutocompleteComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnDestroy {
     private store;
@@ -27,6 +28,8 @@ export declare class EntitySubTypeAutocompleteComponent implements ControlValueA
     get required(): boolean;
     set required(value: boolean);
     disabled: boolean;
+    excludeSubTypes: Array<string>;
+    appearance: MatFormFieldAppearance;
     subTypeInput: ElementRef;
     selectEntitySubtypeText: string;
     entitySubtypeText: string;
@@ -53,5 +56,5 @@ export declare class EntitySubTypeAutocompleteComponent implements ControlValueA
     getSubTypes(): Observable<Array<string>>;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntitySubTypeAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntitySubTypeAutocompleteComponent, "tb-entity-subtype-autocomplete", never, { "entityType": "entityType"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntitySubTypeAutocompleteComponent, "tb-entity-subtype-autocomplete", never, { "entityType": "entityType"; "required": "required"; "disabled": "disabled"; "excludeSubTypes": "excludeSubTypes"; "appearance": "appearance"; }, {}, never, never, false, never>;
 }

@@ -10,7 +10,7 @@ interface QrCodeWidgetSettings {
     useQrCodeTextFunction: boolean;
     qrCodeTextFunction: string;
 }
-declare type QrCodeTextFunction = (data: FormattedData[]) => string;
+type QrCodeTextFunction = (data: FormattedData[]) => string;
 export declare class QrCodeWidgetComponent extends PageComponent implements OnInit, AfterViewInit {
     protected store: Store<AppState>;
     protected cd: ChangeDetectorRef;

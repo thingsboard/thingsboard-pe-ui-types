@@ -16,13 +16,13 @@ export declare class TenantProfileQueuesComponent implements ControlValueAccesso
     get required(): boolean;
     set required(value: boolean);
     disabled: boolean;
-    private valueChangeSubscription$;
+    private destroy$;
     private propagateChange;
     constructor(store: Store<AppState>, utils: UtilsService, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
-    ngOnDestroy(): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
+    ngOnDestroy(): void;
     get queuesFormArray(): UntypedFormArray;
     setDisabledState(isDisabled: boolean): void;
     writeValue(queues: Array<QueueInfo> | null): void;

@@ -67,7 +67,7 @@ export interface GatewayFormConnectorModel {
     enabled: boolean;
 }
 export declare const DEFAULT_CONNECTOR: GatewayFormConnectorModel;
-declare type Connector = {
+type Connector = {
     [key in ConnectorType]?: Array<ConnectorConfig>;
 };
 interface GatewaySetting extends Connector {
@@ -89,7 +89,7 @@ interface GatewayMainThingsboardSetting {
     port: number;
     security: GatewaySecurity;
 }
-declare type GatewaySecurity = SecurityToken | SecurityCertificate;
+type GatewaySecurity = SecurityToken | SecurityCertificate;
 interface SecurityToken {
     accessToken: string;
 }
@@ -98,7 +98,7 @@ interface SecurityCertificate {
     privateKey: string;
     cert: string;
 }
-declare type GatewayStorage = GatewayStorageMemory | GatewayStorageFile;
+type GatewayStorage = GatewayStorageMemory | GatewayStorageFile;
 interface GatewayStorageMemory {
     type: string;
     max_records_count: number;

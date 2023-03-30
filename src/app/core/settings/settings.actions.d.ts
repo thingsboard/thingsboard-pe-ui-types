@@ -17,4 +17,4 @@ export declare class ActionSettingsChangeWhiteLabeling implements Action {
     readonly type = SettingsActionTypes.CHANGE_WHITE_LABELING;
     constructor(payload: {});
 }
-export declare type SettingsActions = ActionSettingsChangeLanguage | ActionSettingsChangeWhiteLabeling;
+export type SettingsActions = ActionSettingsChangeLanguage | ActionSettingsChangeWhiteLabeling;

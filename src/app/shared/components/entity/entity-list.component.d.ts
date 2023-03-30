@@ -10,6 +10,7 @@ import { EntityId } from '@shared/models/id/entity-id';
 import { EntityService } from '@core/http/entity.service';
 import { MatAutocomplete } from '@angular/material/autocomplete';
 import { MatChipGrid } from '@angular/material/chips';
+import { SubscriptSizing } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class EntityListComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnChanges {
     private store;
@@ -23,10 +24,15 @@ export declare class EntityListComponent implements ControlValueAccessor, OnInit
     entityListText: string;
     noEntitiesText: string;
     entitiesRequiredText: string;
+    labelText: string;
+    placeholderText: any;
+    requiredText: any;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
     disabled: boolean;
+    subscriptSizing: SubscriptSizing;
+    hint: string;
     entityInput: ElementRef<HTMLInputElement>;
     matAutocomplete: MatAutocomplete;
     chipList: MatChipGrid;
@@ -51,6 +57,8 @@ export declare class EntityListComponent implements ControlValueAccessor, OnInit
     fetchEntities(searchText?: string): Observable<Array<BaseData<EntityId>>>;
     onFocus(): void;
     clear(value?: string): void;
+    get placeholder(): string;
+    get requiredLabel(): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityListComponent, "tb-entity-list", never, { "entityType": "entityType"; "entitySubType": "entitySubType"; "entityListText": "entityListText"; "noEntitiesText": "noEntitiesText"; "entitiesRequiredText": "entitiesRequiredText"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityListComponent, "tb-entity-list", never, { "entityType": "entityType"; "entitySubType": "entitySubType"; "entityListText": "entityListText"; "noEntitiesText": "noEntitiesText"; "entitiesRequiredText": "entitiesRequiredText"; "labelText": "labelText"; "placeholderText": "placeholderText"; "requiredText": "requiredText"; "required": "required"; "disabled": "disabled"; "subscriptSizing": "subscriptSizing"; "hint": "hint"; }, {}, never, ["[matSuffix]"], false, never>;
 }

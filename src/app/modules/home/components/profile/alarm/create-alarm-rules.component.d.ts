@@ -1,11 +1,11 @@
-import { OnInit } from '@angular/core';
+import { OnDestroy, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
-import { AlarmRule } from '@shared/models/device.models';
+import { DeviceProfileAlarmRule } from '@shared/models/device.models';
 import { MatDialog } from '@angular/material/dialog';
 import { AlarmSeverity } from '@shared/models/alarm.models';
 import { EntityId } from '@shared/models/id/entity-id';
 import * as i0 from "@angular/core";
-export declare class CreateAlarmRulesComponent implements ControlValueAccessor, OnInit, Validator {
+export declare class CreateAlarmRulesComponent implements ControlValueAccessor, OnInit, Validator, OnDestroy {
     private dialog;
     private fb;
     alarmSeverities: string[];
@@ -15,16 +15,17 @@ export declare class CreateAlarmRulesComponent implements ControlValueAccessor, 
     deviceProfileId: EntityId;
     createAlarmRulesFormGroup: UntypedFormGroup;
     private usedSeverities;
-    private valueChangeSubscription;
+    private destroy$;
     private propagateChange;
     constructor(dialog: MatDialog, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
+    ngOnDestroy(): void;
     createAlarmRulesFormArray(): UntypedFormArray;
     setDisabledState(isDisabled: boolean): void;
     writeValue(createAlarmRules: {
-        [severity: string]: AlarmRule;
+        [severity: string]: DeviceProfileAlarmRule;
     }): void;
     removeCreateAlarmRule(index: number): void;
     addCreateAlarmRule(): void;
