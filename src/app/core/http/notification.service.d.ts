@@ -20,7 +20,7 @@ export declare class NotificationService {
     getNotificationRequests(pageLink: PageLink, config?: RequestConfig): Observable<PageData<NotificationRequestInfo>>;
     getNotificationSettings(config?: RequestConfig): Observable<NotificationSettings>;
     saveNotificationSettings(notificationSettings: NotificationSettings, config?: RequestConfig): Observable<NotificationSettings>;
-    listSlackConversations(type: SlackChanelType, config?: RequestConfig): Observable<Array<SlackConversation>>;
+    listSlackConversations(type: SlackChanelType, token?: string, config?: RequestConfig): Observable<Array<SlackConversation>>;
     saveNotificationRule(notificationRule: NotificationRule, config?: RequestConfig): Observable<NotificationRule>;
     getNotificationRuleById(id: string, config?: RequestConfig): Observable<NotificationRule>;
     deleteNotificationRule(id: string, config?: RequestConfig): Observable<void>;

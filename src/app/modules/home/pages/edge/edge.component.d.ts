@@ -7,8 +7,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { GroupEntityComponent } from '@home/components/group/group-entity.component';
 import { EdgeInfo } from '@shared/models/edge.models';
 import { GroupEntityTableConfig } from '@home/models/group/group-entities-table-config.models';
-import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
+import { UserPermissionsService } from '@core/http/user-permissions.service';
 import * as i0 from "@angular/core";
 export declare class EdgeComponent extends GroupEntityComponent<EdgeInfo> {
     protected store: Store<AppState>;

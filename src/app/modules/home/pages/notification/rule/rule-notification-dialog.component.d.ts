@@ -1,4 +1,4 @@
-import { AlarmAction, AlarmAssignmentAction, ComponentLifecycleEvent, NotificationRule, TriggerType } from '@shared/models/notification.models';
+import { AlarmAction, AlarmAssignmentAction, ComponentLifecycleEvent, DeviceEvent, NotificationRule, TriggerType } from '@shared/models/notification.models';
 import { OnDestroy } from '@angular/core';
 import { DialogComponent } from '@shared/components/dialog.component';
 import { Store } from '@ngrx/store';
@@ -15,6 +15,8 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 import { AlarmSearchStatus, AlarmSeverity } from '@shared/models/alarm.models';
 import { TranslateService } from '@ngx-translate/core';
 import { MatButton } from '@angular/material/button';
+import { ApiFeature, ApiUsageStateValue } from '@shared/models/api-usage.models';
+import { IntegrationType } from '@shared/models/integration.models';
 import * as i0 from "@angular/core";
 export interface RuleNotificationDialogData {
     rule?: NotificationRule;
@@ -42,6 +44,8 @@ export declare class RuleNotificationDialogComponent extends DialogComponent<Rul
     alarmAssignmentTemplateForm: FormGroup;
     ruleEngineEventsTemplateForm: FormGroup;
     entitiesLimitTemplateForm: FormGroup;
+    apiUsageLimitTemplateForm: FormGroup;
+    integrationEventsTemplateForm: FormGroup;
     triggerType: typeof TriggerType;
     triggerTypes: TriggerType[];
     triggerTypeTranslationMap: Map<TriggerType, string>;
@@ -55,9 +59,17 @@ export declare class RuleNotificationDialogComponent extends DialogComponent<Rul
     alarmAssignmentActionTranslationMap: Map<AlarmAssignmentAction, string>;
     componentLifecycleEvents: ComponentLifecycleEvent[];
     componentLifecycleEventTranslationMap: Map<ComponentLifecycleEvent, string>;
+    deviceEvents: DeviceEvent[];
+    deviceEventTranslationMap: Map<DeviceEvent, string>;
+    apiUsageStateValues: ApiUsageStateValue[];
+    apiUsageStateValueTranslationMap: Map<ApiUsageStateValue, string>;
+    apiFeatures: ApiFeature[];
+    apiFeatureTranslationMap: Map<ApiFeature, string>;
+    integrationTypes: IntegrationType[];
+    integrationTypeInfoMap: Map<IntegrationType, import("@shared/models/integration.models").IntegrationTypeInfo>;
     entityType: typeof EntityType;
-    entityTypes: (EntityType | import("@shared/models/entity-type.models").AliasEntityType)[];
     isAdd: boolean;
+    allowEntityTypeForEntitiesLimit: EntityType[];
     selectedIndex: number;
     dialogTitle: string;
     private destroy$;
@@ -65,6 +77,7 @@ export declare class RuleNotificationDialogComponent extends DialogComponent<Rul
     private triggerTypeFormsMap;
     private authState;
     private authUser;
+    private _allowEntityTypeForEntityAction;
     constructor(store: Store<AppState>, router: Router, dialogRef: MatDialogRef<RuleNotificationDialogComponent, NotificationRule>, data: RuleNotificationDialogData, breakpointObserver: BreakpointObserver, fb: FormBuilder, translate: TranslateService, notificationService: NotificationService, dialog: MatDialog);
     ngOnDestroy(): void;
     changeStep($event: StepperSelectionEvent): void;
@@ -80,6 +93,7 @@ export declare class RuleNotificationDialogComponent extends DialogComponent<Rul
     formatLabel(value: number): string;
     private isSysAdmin;
     private allowTriggerTypes;
+    get allowEntityTypeForEntityAction(): EntityType[];
     static ɵfac: i0.ɵɵFactoryDeclaration<RuleNotificationDialogComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<RuleNotificationDialogComponent, "tb-rule-notification-dialog", never, {}, {}, never, never, false, never>;
 }

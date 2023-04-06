@@ -25,6 +25,7 @@ export declare class SlackConversationAutocompleteComponent implements ControlVa
     set required(value: boolean);
     disabled: boolean;
     slackChanelType: SlackChanelType;
+    token: string;
     slackInput: ElementRef;
     slackConversation$: Observable<Array<SlackConversation>>;
     slackSearchText: string;
@@ -50,5 +51,5 @@ export declare class SlackConversationAutocompleteComponent implements ControlVa
     private clearSlackCache;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SlackConversationAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SlackConversationAutocompleteComponent, "tb-slack-conversation-autocomplete", never, { "labelText": "labelText"; "requiredText": "requiredText"; "required": "required"; "disabled": "disabled"; "slackChanelType": "slackChanelType"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SlackConversationAutocompleteComponent, "tb-slack-conversation-autocomplete", never, { "labelText": "labelText"; "requiredText": "requiredText"; "required": "required"; "disabled": "disabled"; "slackChanelType": "slackChanelType"; "token": "token"; }, {}, never, never, false, never>;
 }

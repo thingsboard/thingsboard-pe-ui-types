@@ -43,6 +43,7 @@ export declare const HelpLinks: {
         docs: string;
         outgoingMailSettings: string;
         smsProviderSettings: string;
+        slackSettings: string;
         securitySettings: string;
         oauth2Settings: string;
         twoFactorAuthSettings: string;

@@ -18,7 +18,7 @@ export declare class SentErrorDialogComponent extends DialogComponent<SentErrorD
             [errorKey in string]: string;
         };
     };
-    notificationDeliveryMethodErrorTranslateMap: Map<NotificationDeliveryMethod, string>;
+    notificationDeliveryMethodTranslateMap: Map<NotificationDeliveryMethod, string>;
     constructor(store: Store<AppState>, router: Router, dialogRef: MatDialogRef<SentErrorDialogComponent, void>, data: NotificationRequestErrorDialogData);
     cancel(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SentErrorDialogComponent, never>;

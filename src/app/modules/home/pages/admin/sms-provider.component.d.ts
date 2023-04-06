@@ -1,19 +1,15 @@
-import { OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { PageComponent } from '@shared/components/page.component';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { AdminSettings, SmsProviderConfiguration } from '@shared/models/settings.models';
 import { AdminService } from '@core/http/admin.service';
 import { HasConfirmForm } from '@core/guards/confirm-on-exit.guard';
 import { MatDialog } from '@angular/material/dialog';
 import { NotificationService } from '@core/http/notification.service';
-import { AuthState } from '@core/auth/auth.models';
-import { AuthUser } from '@shared/models/user.model';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import * as i0 from "@angular/core";
-export declare class SmsProviderComponent extends PageComponent implements OnInit, HasConfirmForm {
+export declare class SmsProviderComponent extends PageComponent implements HasConfirmForm {
     protected store: Store<AppState>;
     private router;
     private adminService;
@@ -21,15 +17,13 @@ export declare class SmsProviderComponent extends PageComponent implements OnIni
     private dialog;
     private userPermissionsService;
     fb: FormBuilder;
-    authState: AuthState;
-    authUser: AuthUser;
     smsProvider: FormGroup;
-    adminSettings: AdminSettings<SmsProviderConfiguration>;
-    readonly: boolean;
-    notificationSettingsForm: FormGroup;
+    private adminSettings;
+    slackSettingsForm: FormGroup;
     private notificationSettings;
+    private readonly authUser;
+    readonly: boolean;
     constructor(store: Store<AppState>, router: Router, adminService: AdminService, notificationService: NotificationService, dialog: MatDialog, userPermissionsService: UserPermissionsService, fb: FormBuilder);
-    ngOnInit(): void;
     private setSmsProviderSettings;
     isTenantAdmin(): boolean;
     private buildSmsProviderForm;

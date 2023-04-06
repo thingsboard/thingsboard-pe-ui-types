@@ -13,6 +13,7 @@ export declare enum IntegrationType {
     TTI = "TTI",
     CHIRPSTACK = "CHIRPSTACK",
     AZURE_EVENT_HUB = "AZURE_EVENT_HUB",
+    AZURE_SERVICE_BUS = "AZURE_SERVICE_BUS",
     COAP = "COAP",
     OPC_UA = "OPC_UA",
     APACHE_PULSAR = "APACHE_PULSAR",
@@ -240,6 +241,15 @@ export interface AzureEventHubIntegration {
         connectionString: string;
         consumerGroup?: string;
         iotHubName?: string;
+    };
+}
+export interface AzureServicesBusIntegration {
+    clientConfiguration: {
+        connectionString: string;
+        topicName: string;
+        subName: string;
+        downlinkConnectionString: string;
+        downlinkTopicName: string;
     };
 }
 export interface AzureIotHubIntegration {
