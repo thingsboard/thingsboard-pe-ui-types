@@ -1,0 +1,34 @@
+import { OnInit, ViewContainerRef } from '@angular/core';
+import { UtilsService } from '@core/services/utils.service';
+import { Overlay } from '@angular/cdk/overlay';
+import { TranslateService } from '@ngx-translate/core';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { UserId } from '@shared/models/id/user-id';
+import { UserService } from '@core/http/user.service';
+import { User, UserEmailInfo } from '@shared/models/user.model';
+import * as i0 from "@angular/core";
+export declare class AlarmAssigneeSelectComponent implements OnInit, ControlValueAccessor {
+    private utilsService;
+    private overlay;
+    private fb;
+    private userService;
+    private viewContainerRef;
+    private translateService;
+    disabled: boolean;
+    assigneeFormGroup: UntypedFormGroup;
+    assignee?: User | UserEmailInfo;
+    private propagateChange;
+    constructor(utilsService: UtilsService, overlay: Overlay, fb: UntypedFormBuilder, userService: UserService, viewContainerRef: ViewContainerRef, translateService: TranslateService);
+    ngOnInit(): void;
+    registerOnChange(fn: any): void;
+    registerOnTouched(fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    writeValue(userId?: UserId): void;
+    private getAssignee;
+    private getUserDisplayName;
+    getUserInitials(): string;
+    getAvatarBgColor(): string;
+    openAlarmAssigneeSelectPanel($event: Event): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<AlarmAssigneeSelectComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmAssigneeSelectComponent, "tb-alarm-assignee-select", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+}

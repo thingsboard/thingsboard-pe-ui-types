@@ -73,20 +73,36 @@ export interface StateEntityOwnerFilter {
     defaultStateEntity?: EntityId;
 }
 export interface AssetTypeFilter {
+    /**
+     * @deprecated
+     */
     assetType?: string;
+    assetTypes?: string[];
     assetNameFilter?: string;
 }
 export interface DeviceTypeFilter {
+    /**
+     * @deprecated
+     */
     deviceType?: string;
+    deviceTypes?: string[];
     deviceNameFilter?: string;
 }
-export interface EntityViewFilter {
-    entityViewType?: string;
-    entityViewNameFilter?: string;
-}
 export interface EdgeTypeFilter {
+    /**
+     * @deprecated
+     */
     edgeType?: string;
+    edgeTypes?: string[];
     edgeNameFilter?: string;
+}
+export interface EntityViewFilter {
+    /**
+     * @deprecated
+     */
+    entityViewType?: string;
+    entityViewTypes?: string[];
+    entityViewNameFilter?: string;
 }
 export interface RelationsQueryFilter {
     rootStateEntity?: boolean;

@@ -18,7 +18,8 @@ export declare enum RealtimeWindowType {
 export declare enum HistoryWindowType {
     LAST_INTERVAL = 0,
     FIXED = 1,
-    INTERVAL = 2
+    INTERVAL = 2,
+    FOR_ALL_TIME = 3
 }
 export interface IntervalWindow {
     interval?: number;
@@ -114,22 +115,25 @@ export declare enum QuickTimeInterval {
     CURRENT_YEAR_SO_FAR = "CURRENT_YEAR_SO_FAR"
 }
 export declare const QuickTimeIntervalTranslationMap: Map<QuickTimeInterval, string>;
-export declare function historyInterval(timewindowMs: number): Timewindow;
-export declare function defaultTimewindow(timeService: TimeService): Timewindow;
-export declare function initModelFromDefaultTimewindow(value: Timewindow, quickIntervalOnly: boolean, timeService: TimeService): Timewindow;
-export declare function toHistoryTimewindow(timewindow: Timewindow, startTimeMs: number, endTimeMs: number, interval: number, timeService: TimeService): Timewindow;
-export declare function timewindowTypeChanged(newTimewindow: Timewindow, oldTimewindow: Timewindow): boolean;
-export declare function calculateTsOffset(timezone?: string): number;
-export declare function isHistoryTypeTimewindow(timewindow: Timewindow): boolean;
-export declare function createSubscriptionTimewindow(timewindow: Timewindow, stDiff: number, stateData: boolean, timeService: TimeService): SubscriptionTimewindow;
-export declare function calculateIntervalStartEndTime(interval: QuickTimeInterval, tz?: string): [number, number];
-export declare function calculateIntervalStartTime(interval: QuickTimeInterval, currentDate: moment_.Moment): moment_.Moment;
-export declare function calculateIntervalEndTime(interval: QuickTimeInterval, startDate: moment_.Moment, tz?: string): number;
-export declare function quickTimeIntervalPeriod(interval: QuickTimeInterval): number;
-export declare function calculateIntervalComparisonStartTime(interval: QuickTimeInterval, startDate: moment_.Moment): moment_.Moment;
-export declare function calculateIntervalComparisonEndTime(interval: QuickTimeInterval, comparisonStartDate: moment_.Moment, endDate: moment_.Moment): number;
-export declare function createTimewindowForComparison(subscriptionTimewindow: SubscriptionTimewindow, timeUnit: ComparisonDuration, customIntervalValue: number): SubscriptionTimewindow;
-export declare function cloneSelectedTimewindow(timewindow: Timewindow): Timewindow;
+export declare const forAllTimeInterval: () => Timewindow;
+export declare const historyInterval: (timewindowMs: number) => Timewindow;
+export declare const defaultTimewindow: (timeService: TimeService) => Timewindow;
+export declare const initModelFromDefaultTimewindow: (value: Timewindow, quickIntervalOnly: boolean, timeService: TimeService) => Timewindow;
+export declare const toHistoryTimewindow: (timewindow: Timewindow, startTimeMs: number, endTimeMs: number, interval: number, timeService: TimeService) => Timewindow;
+export declare const timewindowTypeChanged: (newTimewindow: Timewindow, oldTimewindow: Timewindow) => boolean;
+export declare const getTimezone: (tz: string) => moment_.Moment;
+export declare const calculateTsOffset: (timezone?: string) => number;
+export declare const isHistoryTypeTimewindow: (timewindow: Timewindow) => boolean;
+export declare const getCurrentTime: (tz?: string) => moment_.Moment;
+export declare const calculateIntervalStartTime: (interval: QuickTimeInterval, currentDate: moment_.Moment) => moment_.Moment;
+export declare const calculateIntervalEndTime: (interval: QuickTimeInterval, startDate: moment_.Moment, tz?: string) => number;
+export declare const calculateIntervalStartEndTime: (interval: QuickTimeInterval, tz?: string) => [number, number];
+export declare const createSubscriptionTimewindow: (timewindow: Timewindow, stDiff: number, stateData: boolean, timeService: TimeService) => SubscriptionTimewindow;
+export declare const quickTimeIntervalPeriod: (interval: QuickTimeInterval) => number;
+export declare const calculateIntervalComparisonStartTime: (interval: QuickTimeInterval, startDate: moment_.Moment) => moment_.Moment;
+export declare const calculateIntervalComparisonEndTime: (interval: QuickTimeInterval, comparisonStartDate: moment_.Moment, endDate: moment_.Moment) => number;
+export declare const createTimewindowForComparison: (subscriptionTimewindow: SubscriptionTimewindow, timeUnit: ComparisonDuration, customIntervalValue: number) => SubscriptionTimewindow;
+export declare const cloneSelectedTimewindow: (timewindow: Timewindow) => Timewindow;
 export interface TimeInterval {
     name: string;
     translateParams: {
@@ -156,12 +160,10 @@ export interface TimezoneInfo {
     nOffset: number;
     abbr: string;
 }
-export declare function getTimezones(): TimezoneInfo[];
-export declare function getTimezoneInfo(timezoneId: string, defaultTimezoneId?: string, userTimezoneByDefault?: boolean): TimezoneInfo;
-export declare function getDefaultTimezoneInfo(): TimezoneInfo;
-export declare function getDefaultTimezone(): string;
-export declare function getUserZone(): moment_.MomentZone;
-export declare function getCurrentTime(tz?: string): moment_.Moment;
-export declare function getTime(ts: number, tz?: string): moment_.Moment;
-export declare function getTimezone(tz: string): moment_.Moment;
-export declare function getCurrentTimeForComparison(timeForComparison: moment_.unitOfTime.DurationConstructor, tz?: string): moment_.Moment;
+export declare const getTimezones: () => TimezoneInfo[];
+export declare const getDefaultTimezone: () => string;
+export declare const getTimezoneInfo: (timezoneId: string, defaultTimezoneId?: string, userTimezoneByDefault?: boolean) => TimezoneInfo;
+export declare const getDefaultTimezoneInfo: () => TimezoneInfo;
+export declare const getUserZone: () => moment_.MomentZone;
+export declare const getTime: (ts: number, tz?: string) => moment_.Moment;
+export declare const getCurrentTimeForComparison: (timeForComparison: moment_.unitOfTime.DurationConstructor, tz?: string) => moment_.Moment;

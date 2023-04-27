@@ -9,9 +9,11 @@ export declare class SendNotificationButtonComponent {
     private store;
     private activeComponentService;
     private userPermissionsService;
+    private authUser;
     constructor(dialog: MatDialog, store: Store<AppState>, activeComponentService: ActiveComponentService, userPermissionsService: UserPermissionsService);
     sendNotification($event: Event): void;
     show(): boolean;
+    private isCustomer;
     static ɵfac: i0.ɵɵFactoryDeclaration<SendNotificationButtonComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<SendNotificationButtonComponent, "tb-send-notification-button", never, {}, {}, never, never, false, never>;
 }

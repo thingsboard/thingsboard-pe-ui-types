@@ -1,7 +1,7 @@
 import { UtilsService } from '@core/services/utils.service';
 import { TimeService } from '@core/services/time.service';
 import { Dashboard, DashboardLayout, DashboardLayoutId, DashboardLayoutsInfo, DashboardState, DashboardStateLayouts, GridSettings } from '@shared/models/dashboard.models';
-import { Widget } from '@app/shared/models/widget.models';
+import { Widget, WidgetConfig, widgetType } from '@app/shared/models/widget.models';
 import { EntityAliasFilter } from '@app/shared/models/alias.models';
 import { EntityId } from '@app/shared/models/id/entity-id';
 import { EntityGroupService } from '@core/http/entity-group.service';
@@ -15,6 +15,7 @@ export declare class DashboardUtilsService {
     validateAndUpdateDashboard(dashboard: Dashboard): Dashboard;
     createSingleWidgetDashboard(widget: Widget): Dashboard;
     validateAndUpdateWidget(widget: Widget): Widget;
+    validateAndUpdateWidgetConfig(widgetConfig: WidgetConfig | undefined, type: widgetType): WidgetConfig;
     createDefaultLayoutData(): DashboardLayout;
     private createDefaultGridSettings;
     createDefaultLayouts(): DashboardStateLayouts;
@@ -42,6 +43,7 @@ export declare class DashboardUtilsService {
     private validateAndUpdateEntityAliases;
     private validateAndUpdateDeviceAlias;
     private validateAndUpdateEntityAlias;
+    private validateAndUpdateEntityAliasSingleTypeFilters;
     private validateAliasId;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardUtilsService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<DashboardUtilsService>;

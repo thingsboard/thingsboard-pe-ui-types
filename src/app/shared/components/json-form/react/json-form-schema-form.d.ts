@@ -1,6 +1,6 @@
-/// <reference types="tinycolor2" />
 import * as React from 'react';
 import { JsonFormData, JsonFormProps, onChangeFn, OnColorClickFn, onHelpClickFn, OnIconClickFn, onToggleFullscreenFn } from './json-form.models';
+import tinycolor from 'tinycolor2';
 import { MouseEvent } from 'react';
 declare class ThingsboardSchemaForm extends React.Component<JsonFormProps, any> {
     private hasConditions;

@@ -5,7 +5,6 @@ import { AppState } from '@core/core.state';
 import { DataKey, Datasource, DatasourceType, JsonSettingsSchema, Widget, widgetType } from '@shared/models/widget.models';
 import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { WidgetConfigComponentData } from '@home/models/widget-component.models';
-import { AlarmSearchStatus, AlarmSeverity } from '@shared/models/alarm.models';
 import { IAliasController } from '@core/api/widget-api.models';
 import { UtilsService } from '@core/services/utils.service';
 import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
@@ -15,7 +14,6 @@ import { WidgetConfigCallbacks } from '@home/components/widget/widget-config.com
 import { MatDialog } from '@angular/material/dialog';
 import { EntityService } from '@core/http/entity.service';
 import { Dashboard } from '@shared/models/dashboard.models';
-import { MatChipInputEvent } from '@angular/material/chips';
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import * as i0 from "@angular/core";
 export declare class WidgetConfigComponent extends PageComponent implements OnInit, ControlValueAccessor, Validator {
@@ -25,14 +23,8 @@ export declare class WidgetConfigComponent extends PageComponent implements OnIn
     private dialog;
     private translate;
     private fb;
-    readonly separatorKeysCodes: number[];
     widgetTypes: typeof widgetType;
     entityTypes: typeof EntityType;
-    alarmSearchStatuses: AlarmSearchStatus[];
-    alarmSearchStatusTranslationMap: Map<AlarmSearchStatus, string>;
-    alarmSeverities: string[];
-    alarmSeverityEnum: typeof AlarmSeverity;
-    alarmSeverityTranslationMap: Map<AlarmSeverity, string>;
     forceExpandDatasources: boolean;
     aliasController: IAliasController;
     dashboard: Dashboard;
@@ -88,9 +80,6 @@ export declare class WidgetConfigComponent extends PageComponent implements OnIn
     private updateLayoutSettings;
     private updateAdvancedSettings;
     private updateActionSettings;
-    alarmTypeList(): string[];
-    removeAlarmType(type: string): void;
-    addAlarmType(event: MatChipInputEvent): void;
     displayAdvanced(): boolean;
     displayTimewindowConfig(): boolean;
     onlyHistoryTimewindow(): boolean;

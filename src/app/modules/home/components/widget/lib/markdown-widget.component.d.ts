@@ -18,6 +18,7 @@ export declare class MarkdownWidgetComponent extends PageComponent implements On
     protected store: Store<AppState>;
     private utils;
     homeComponentsModule: Type<any>;
+    widgetComponentsModule: Type<any>;
     private cd;
     settings: MarkdownWidgetSettings;
     markdownTextFunction: MarkdownTextFunction;
@@ -26,7 +27,7 @@ export declare class MarkdownWidgetComponent extends PageComponent implements On
     markdownText: string;
     additionalStyles: string[];
     applyDefaultMarkdownStyle: boolean;
-    constructor(store: Store<AppState>, utils: UtilsService, homeComponentsModule: Type<any>, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, utils: UtilsService, homeComponentsModule: Type<any>, widgetComponentsModule: Type<any>, cd: ChangeDetectorRef);
     ngOnInit(): void;
     onDataUpdated(): void;
     markdownClick($event: MouseEvent): void;

@@ -33,6 +33,7 @@ export declare class RuleNodeDetailsComponent extends PageComponent implements O
     ngOnChanges(changes: SimpleChanges): void;
     validate(): void;
     openRuleChain($event: Event): void;
+    isSingletonEditAllowed(): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<RuleNodeDetailsComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<RuleNodeDetailsComponent, "tb-rule-node", never, { "ruleNode": "ruleNode"; "ruleChainId": "ruleChainId"; "ruleChainType": "ruleChainType"; "isEdit": "isEdit"; "isReadOnly": "isReadOnly"; "isAdd": "isAdd"; }, {}, never, never, false, never>;
 }

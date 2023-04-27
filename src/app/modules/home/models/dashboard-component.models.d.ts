@@ -81,7 +81,7 @@ export declare class DashboardWidgets implements Iterable<DashboardWidget> {
     isNotHighlighted(widget: DashboardWidget): boolean;
     getSelectedWidget(): DashboardWidget;
     private findWidgetById;
-    private updateRowsAndSort;
+    updateRowsAndSort(): void;
     sortWidgets(): void;
 }
 export declare class DashboardWidget implements GridsterItem, IDashboardWidget {

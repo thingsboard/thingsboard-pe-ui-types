@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { Router } from '@angular/router';
 import { MatDialogRef } from '@angular/material/dialog';
-import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { FormattedData } from '@shared/models/widget.models';
 import * as i0 from "@angular/core";
 export interface SelectEntityDialogData {
@@ -14,9 +14,9 @@ export declare class SelectEntityDialogComponent extends DialogComponent<SelectE
     protected router: Router;
     data: SelectEntityDialogData;
     dialogRef: MatDialogRef<SelectEntityDialogComponent, FormattedData>;
-    fb: UntypedFormBuilder;
-    selectEntityFormGroup: UntypedFormGroup;
-    constructor(store: Store<AppState>, router: Router, data: SelectEntityDialogData, dialogRef: MatDialogRef<SelectEntityDialogComponent, FormattedData>, fb: UntypedFormBuilder);
+    fb: FormBuilder;
+    selectEntityFormGroup: FormGroup;
+    constructor(store: Store<AppState>, router: Router, data: SelectEntityDialogData, dialogRef: MatDialogRef<SelectEntityDialogComponent, FormattedData>, fb: FormBuilder);
     save(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SelectEntityDialogComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<SelectEntityDialogComponent, "tb-select-entity-dialog", never, {}, {}, never, never, false, never>;

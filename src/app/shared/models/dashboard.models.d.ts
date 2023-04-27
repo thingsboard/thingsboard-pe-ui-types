@@ -25,6 +25,7 @@ export interface GridSettings {
     backgroundColor?: string;
     columns?: number;
     margin?: number;
+    outerMargin?: boolean;
     backgroundSizeMode?: string;
     backgroundImageUrl?: string;
     autoFillHeight?: boolean;

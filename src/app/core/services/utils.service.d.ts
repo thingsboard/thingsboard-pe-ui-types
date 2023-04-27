@@ -64,6 +64,7 @@ export declare class UtilsService {
     base64toString(b64Encoded: string): string;
     objToBase64URI(obj: any): string;
     base64toObj(b64Encoded: string): any;
+    plainColorFromVariable(variable: string): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<UtilsService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<UtilsService>;
 }

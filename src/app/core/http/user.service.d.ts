@@ -11,6 +11,7 @@ export declare class UserService {
     getTenantAdmins(tenantId: string, pageLink: PageLink, config?: RequestConfig): Observable<PageData<User>>;
     getCustomerUsers(customerId: string, pageLink: PageLink, config?: RequestConfig): Observable<PageData<User>>;
     getAllCustomerUsers(pageLink: PageLink, config?: RequestConfig): Observable<PageData<User>>;
+    getUsersForAssign(alarmId: string, pageLink: PageLink, config?: RequestConfig): Observable<PageData<UserEmailInfo>>;
     getUser(userId: string, config?: RequestConfig): Observable<User>;
     getUserInfo(userId: string, config?: RequestConfig): Observable<UserInfo>;
     getUsers(userIds: Array<string>, config?: RequestConfig): Observable<Array<User>>;

@@ -11,7 +11,6 @@ export declare class TimeintervalComponent implements OnInit, ControlValueAccess
     set max(max: number);
     predefinedName: string;
     isEdit: boolean;
-    hideFlagValue: boolean;
     hideFlag: boolean;
     disabledAdvanced: boolean;
     hideFlagChange: EventEmitter<boolean>;

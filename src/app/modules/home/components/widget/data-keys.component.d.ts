@@ -101,7 +101,7 @@ export declare class DataKeysComponent implements ControlValueAccessor, OnInit, 
     private createDataKeyFilter;
     textIsNotEmpty(text: string): boolean;
     clear(value?: string): void;
-    get isEntityCountDatasource(): boolean;
+    get isCountDatasource(): boolean;
     private clearSearchCache;
     static ɵfac: i0.ɵɵFactoryDeclaration<DataKeysComponent, [null, { skipSelf: true; }, null, null, null, null, null, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<DataKeysComponent, "tb-data-keys", never, { "widgetType": "widgetType"; "datasourceType": "datasourceType"; "maxDataKeys": "maxDataKeys"; "optDataKeys": "optDataKeys"; "aliasController": "aliasController"; "datakeySettingsSchema": "datakeySettingsSchema"; "dataKeySettingsDirective": "dataKeySettingsDirective"; "dashboard": "dashboard"; "widget": "widget"; "callbacks": "callbacks"; "entityAliasId": "entityAliasId"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;

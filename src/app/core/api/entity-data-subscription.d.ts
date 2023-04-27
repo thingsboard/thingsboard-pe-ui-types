@@ -1,6 +1,6 @@
 import { ComparisonResultType, DatasourceType, widgetType } from '@shared/models/widget.models';
 import { AggregationType, ComparisonDuration, SubscriptionTimewindow } from '@shared/models/time/time.models';
-import { EntityDataPageLink, EntityFilter, KeyFilter } from '@shared/models/query/query.models';
+import { AlarmFilter, EntityDataPageLink, EntityFilter, KeyFilter } from '@shared/models/query/query.models';
 import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
 import { UtilsService } from '@core/services/utils.service';
 import { EntityDataListener, EntityDataLoadResult } from '@core/api/entity-data.service';
@@ -31,6 +31,7 @@ export interface EntityDataSubscriptionOptions {
     dataKeys: Array<SubscriptionDataKey>;
     type: widgetType;
     entityFilter?: EntityFilter;
+    alarmFilter?: AlarmFilter;
     isPaginatedDataSubscription?: boolean;
     ignoreDataUpdateOnIntervalTick?: boolean;
     pageLink?: EntityDataPageLink;
@@ -53,6 +54,7 @@ export declare class EntityDataSubscription {
     private dataCommand;
     private subsCommand;
     private countCommand;
+    private alarmCountCommand;
     private attrFields;
     private tsFields;
     private latestValues;

@@ -16,7 +16,7 @@ export declare class NotificationBellComponent implements OnDestroy {
     private notificationSubscriber;
     private notificationCountSubscriber;
     private countSubject;
-    count$: import("rxjs").Observable<number>;
+    count$: import("rxjs").Observable<string | number>;
     constructor(notificationWsService: NotificationWebsocketService, zone: NgZone, cd: ChangeDetectorRef, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, store: Store<AppState>);
     ngOnDestroy(): void;
     showNotification($event: Event, createVersionButton: MatButton): void;

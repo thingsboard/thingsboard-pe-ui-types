@@ -27,6 +27,7 @@ export declare class DeviceProfileProvisionConfigurationComponent implements Con
     validate(c: UntypedFormControl): ValidationErrors | null;
     private updateModel;
     onProvisionCopied(isKey: boolean): void;
+    private resetFormControls;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceProfileProvisionConfigurationComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<DeviceProfileProvisionConfigurationComponent, "tb-device-profile-provision-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

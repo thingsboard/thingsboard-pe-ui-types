@@ -14,6 +14,7 @@ export declare class ColorInputComponent extends PageComponent implements OnInit
     icon: string;
     label: string;
     requiredText: string;
+    useThemePalette: boolean;
     private colorClearButtonValue;
     get colorClearButton(): boolean;
     set colorClearButton(value: boolean);
@@ -38,5 +39,5 @@ export declare class ColorInputComponent extends PageComponent implements OnInit
     showColorPicker(): void;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ColorInputComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ColorInputComponent, "tb-color-input", never, { "icon": "icon"; "label": "label"; "requiredText": "requiredText"; "colorClearButton": "colorClearButton"; "openOnInput": "openOnInput"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ColorInputComponent, "tb-color-input", never, { "icon": "icon"; "label": "label"; "requiredText": "requiredText"; "useThemePalette": "useThemePalette"; "colorClearButton": "colorClearButton"; "openOnInput": "openOnInput"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

@@ -1,6 +1,6 @@
 import { RendererFactory2 } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { LoginWhiteLabelingParams, WhiteLabelingParams } from '@shared/models/white-labeling.models';
+import { LoginWhiteLabelingParams, Palette, WhiteLabelingParams } from '@shared/models/white-labeling.models';
 import { Observable } from 'rxjs';
 import { ColorPalette } from '@shared/models/material.models';
 import { Store } from '@ngrx/store';
@@ -39,8 +39,8 @@ export declare class WhiteLabelingService {
     private userWlParams;
     private isUserWlMode;
     private isPreviewWlMode;
-    private primaryPalette;
-    private accentPalette;
+    primaryPalette: Palette;
+    accentPalette: Palette;
     private loginPrimaryPalette;
     private loginAccentPalette;
     private renderer;

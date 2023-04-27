@@ -25,6 +25,8 @@ export declare class AlarmAssigneePanelComponent implements OnInit, AfterViewIni
     private dirty;
     alarmId: string;
     assigneeId?: string;
+    assigneeNotSetText: string;
+    reassigned: boolean;
     selectUserFormGroup: FormGroup;
     userInput: ElementRef;
     filteredUsers: Observable<Array<UserEmailInfo>>;

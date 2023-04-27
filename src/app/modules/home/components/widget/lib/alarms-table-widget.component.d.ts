@@ -27,7 +27,7 @@ interface AlarmWidgetActionDescriptor extends TableCellButtonActionDescriptor {
     details?: boolean;
     acknowledge?: boolean;
     clear?: boolean;
-    comments?: boolean;
+    activity?: boolean;
 }
 export declare class AlarmsTableWidgetComponent extends PageComponent implements OnInit, AfterViewInit {
     protected store: Store<AppState>;
@@ -72,7 +72,7 @@ export declare class AlarmsTableWidgetComponent extends PageComponent implements
     private subscription;
     private widgetResize$;
     private alarmsTitlePattern;
-    private displayComments;
+    private displayActivity;
     private displayDetails;
     allowAcknowledgment: boolean;
     private allowClear;
@@ -120,7 +120,7 @@ export declare class AlarmsTableWidgetComponent extends PageComponent implements
     ackAlarms($event: Event): void;
     private clearAlarm;
     clearAlarms($event: Event): void;
-    private openAlarmComments;
+    private openAlarmActivity;
     private defaultContent;
     private defaultStyle;
     customDataExport(): {

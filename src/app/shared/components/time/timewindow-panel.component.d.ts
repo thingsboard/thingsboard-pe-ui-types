@@ -9,6 +9,7 @@ import { OverlayRef } from '@angular/cdk/overlay';
 import * as i0 from "@angular/core";
 export interface TimewindowPanelData {
     historyOnly: boolean;
+    forAllTimeEnabled: boolean;
     quickIntervalOnly: boolean;
     timewindow: Timewindow;
     aggregation: boolean;
@@ -24,6 +25,7 @@ export declare class TimewindowPanelComponent extends PageComponent implements O
     private timeService;
     viewContainerRef: ViewContainerRef;
     historyOnly: boolean;
+    forAllTimeEnabled: boolean;
     quickIntervalOnly: boolean;
     aggregation: boolean;
     timezone: boolean;

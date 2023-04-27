@@ -36,7 +36,8 @@ export declare enum CoapTransportDeviceType {
 export declare enum DeviceProvisionType {
     DISABLED = "DISABLED",
     ALLOW_CREATE_NEW_DEVICES = "ALLOW_CREATE_NEW_DEVICES",
-    CHECK_PRE_PROVISIONED_DEVICES = "CHECK_PRE_PROVISIONED_DEVICES"
+    CHECK_PRE_PROVISIONED_DEVICES = "CHECK_PRE_PROVISIONED_DEVICES",
+    X509_CERTIFICATE_CHAIN = "X509_CERTIFICATE_CHAIN"
 }
 export interface DeviceConfigurationFormInfo {
     hasProfileConfiguration: boolean;
@@ -67,6 +68,7 @@ export interface DefaultDeviceProfileTransportConfiguration {
 export interface MqttDeviceProfileTransportConfiguration {
     deviceTelemetryTopic?: string;
     deviceAttributesTopic?: string;
+    deviceAttributesSubscribeTopic?: string;
     sparkplug?: boolean;
     sendAckOnValidationException?: boolean;
     transportPayloadTypeConfiguration?: {
@@ -125,6 +127,9 @@ export interface DeviceProvisionConfiguration {
     type: DeviceProvisionType;
     provisionDeviceSecret?: string;
     provisionDeviceKey?: string;
+    certificateValue?: string;
+    certificateRegExPattern?: string;
+    allowCreateNewDevicesByX509Certificate?: boolean;
 }
 export declare function createDeviceProfileConfiguration(type: DeviceProfileType): DeviceProfileConfiguration;
 export declare function createDeviceConfiguration(type: DeviceProfileType): DeviceConfiguration;

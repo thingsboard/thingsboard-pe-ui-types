@@ -22,6 +22,7 @@ export declare class TimewindowComponent implements OnInit, OnDestroy, ControlVa
     historyOnlyValue: boolean;
     set historyOnly(val: boolean);
     get historyOnly(): boolean;
+    forAllTimeEnabled: boolean;
     alwaysDisplayTypePrefixValue: boolean;
     set alwaysDisplayTypePrefix(val: boolean);
     get alwaysDisplayTypePrefix(): boolean;
@@ -40,6 +41,7 @@ export declare class TimewindowComponent implements OnInit, OnDestroy, ControlVa
     asButtonValue: boolean;
     set asButton(val: boolean);
     get asButton(): boolean;
+    strokedButton: boolean;
     isEditValue: boolean;
     set isEdit(val: boolean);
     get isEdit(): boolean;
@@ -63,5 +65,5 @@ export declare class TimewindowComponent implements OnInit, OnDestroy, ControlVa
     hideLabel(): boolean;
     private isTimewindowDisabled;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimewindowComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimewindowComponent, "tb-timewindow", never, { "historyOnly": "historyOnly"; "alwaysDisplayTypePrefix": "alwaysDisplayTypePrefix"; "quickIntervalOnly": "quickIntervalOnly"; "aggregation": "aggregation"; "timezone": "timezone"; "isToolbar": "isToolbar"; "asButton": "asButton"; "isEdit": "isEdit"; "direction": "direction"; "tooltipPosition": "tooltipPosition"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimewindowComponent, "tb-timewindow", never, { "historyOnly": "historyOnly"; "forAllTimeEnabled": "forAllTimeEnabled"; "alwaysDisplayTypePrefix": "alwaysDisplayTypePrefix"; "quickIntervalOnly": "quickIntervalOnly"; "aggregation": "aggregation"; "timezone": "timezone"; "isToolbar": "isToolbar"; "asButton": "asButton"; "strokedButton": "strokedButton"; "isEdit": "isEdit"; "direction": "direction"; "tooltipPosition": "tooltipPosition"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

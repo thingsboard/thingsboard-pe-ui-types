@@ -12,10 +12,12 @@ export declare class TbPopoverDirective implements OnChanges, OnDestroy, AfterVi
     private resolver;
     private renderer;
     content?: string | TemplateRef<void>;
+    context?: any | null;
     trigger?: TbPopoverTrigger;
     placement?: string | string[];
     origin?: ElementRef<HTMLElement>;
     visible?: boolean;
+    showCloseButton: boolean;
     mouseEnterDelay?: number;
     mouseLeaveDelay?: number;
     overlayClassName?: string;
@@ -47,7 +49,7 @@ export declare class TbPopoverDirective implements OnChanges, OnDestroy, AfterVi
     private removeTriggerListeners;
     private clearTogglingTimer;
     static ɵfac: i0.ɵɵFactoryDeclaration<TbPopoverDirective, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<TbPopoverDirective, "[tb-popover]", ["tbPopover"], { "content": "tbPopoverContent"; "trigger": "tbPopoverTrigger"; "placement": "tbPopoverPlacement"; "origin": "tbPopoverOrigin"; "visible": "tbPopoverVisible"; "mouseEnterDelay": "tbPopoverMouseEnterDelay"; "mouseLeaveDelay": "tbPopoverMouseLeaveDelay"; "overlayClassName": "tbPopoverOverlayClassName"; "overlayStyle": "tbPopoverOverlayStyle"; "tbPopoverBackdrop": "tbPopoverBackdrop"; }, { "visibleChange": "tbPopoverVisibleChange"; }, never, never, false, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<TbPopoverDirective, "[tb-popover]", ["tbPopover"], { "content": "tbPopoverContent"; "context": "tbPopoverContext"; "trigger": "tbPopoverTrigger"; "placement": "tbPopoverPlacement"; "origin": "tbPopoverOrigin"; "visible": "tbPopoverVisible"; "showCloseButton": "tbPopoverShowCloseButton"; "mouseEnterDelay": "tbPopoverMouseEnterDelay"; "mouseLeaveDelay": "tbPopoverMouseLeaveDelay"; "overlayClassName": "tbPopoverOverlayClassName"; "overlayStyle": "tbPopoverOverlayStyle"; "tbPopoverBackdrop": "tbPopoverBackdrop"; }, { "visibleChange": "tbPopoverVisibleChange"; }, never, never, false, never>;
 }
 export declare class TbPopoverComponent implements OnDestroy, OnInit {
     cdr: ChangeDetectorRef;

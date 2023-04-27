@@ -33,7 +33,7 @@ import { EntityGroupService } from '@core/http/entity-group.service';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { Operation } from '@shared/models/security.models';
 import { CustomerId } from '@shared/models/id/customer-id';
-import { AlarmData, AlarmDataQuery, EntityData, EntityDataQuery, EntityFilter } from '@shared/models/query/query.models';
+import { AlarmData, AlarmDataQuery, AlarmFilter, AlarmFilterConfig, EntityData, EntityDataQuery, EntityFilter } from '@shared/models/query/query.models';
 import { EdgeService } from '@core/http/edge.service';
 import { EdgeEvent } from '@shared/models/edge.models';
 import { OtaPackageService } from '@core/http/ota-package.service';
@@ -108,6 +108,7 @@ export declare class EntityService {
     resolveAlias(entityAlias: EntityAlias, stateParams: StateParams): Observable<AliasInfo>;
     resolveAliasFilter(filter: EntityAliasFilter, stateParams: StateParams): Observable<EntityAliasFilterResult>;
     checkEntityAlias(entityAlias: EntityAlias): Observable<boolean>;
+    resolveAlarmFilter(alarmFilterConfig?: AlarmFilterConfig, searchPropagatedByDefault?: boolean): AlarmFilter;
     saveEntityParameters(customerId: CustomerId, entityType: EntityType, entityGroupId: string, entityData: ImportEntityData, update: boolean, config?: RequestConfig): Observable<ImportEntitiesResultInfo>;
     private getSaveEntityObservable;
     private getUpdateEntityTasks;

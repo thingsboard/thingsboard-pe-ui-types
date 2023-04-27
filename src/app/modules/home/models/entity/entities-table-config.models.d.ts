@@ -130,6 +130,7 @@ export declare class EntityTableConfig<T extends BaseData<HasId>, P extends Page
     loadDataOnInit: boolean;
     onLoadAction: (route: ActivatedRoute) => void;
     useTimePageLink: boolean;
+    forAllTimeEnabled: boolean;
     defaultTimewindowInterval: import("@shared/models/time/time.models").Timewindow;
     entityType: EntityType;
     tableTitle: string;

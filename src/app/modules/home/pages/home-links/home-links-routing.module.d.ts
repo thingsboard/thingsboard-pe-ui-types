@@ -2,11 +2,14 @@ import { Resolve } from '@angular/router';
 import { Observable } from 'rxjs';
 import { HomeDashboard } from '@shared/models/dashboard.models';
 import { DashboardService } from '@core/http/dashboard.service';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
 import * as i0 from "@angular/core";
 import * as i1 from "@angular/router";
 export declare class HomeDashboardResolver implements Resolve<HomeDashboard> {
     private dashboardService;
-    constructor(dashboardService: DashboardService);
+    private store;
+    constructor(dashboardService: DashboardService, store: Store<AppState>);
     resolve(): Observable<HomeDashboard>;
     static ɵfac: i0.ɵɵFactoryDeclaration<HomeDashboardResolver, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<HomeDashboardResolver>;

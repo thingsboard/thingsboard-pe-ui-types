@@ -19,6 +19,8 @@ export declare const materialColorPaletteContrastInfo: {
 export declare const materialColorPalette: {
     [palette: string]: ColorPalette;
 };
+export declare const primaryPalette: ColorPalette;
+export declare const accentPalette: ColorPalette;
 export declare function extendDefaultPalette(existingPaletteName: string, palette: ColorPalette): ColorPalette;
 export declare function extendPalette(paletteMap: {
     [palette: string]: ColorPalette;

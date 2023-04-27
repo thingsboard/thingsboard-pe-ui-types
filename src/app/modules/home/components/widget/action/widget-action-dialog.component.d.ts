@@ -26,6 +26,7 @@ export interface WidgetActionDialogData {
     customFunctionArgs: string[];
     action?: WidgetActionDescriptorInfo;
     widgetType: widgetType;
+    isEntityGroup?: boolean;
 }
 declare const stateDisplayTypes: readonly ["normal", "separateDialog", "popover"];
 type stateDisplayTypeTuple = typeof stateDisplayTypes;
@@ -54,6 +55,7 @@ export declare class WidgetActionDialogComponent extends DialogComponent<WidgetA
     widgetActionTypeTranslations: Map<WidgetActionType, string>;
     widgetActionType: typeof WidgetActionType;
     customFunctionArgs: string[];
+    isEntityGroup: boolean;
     filteredDashboardStates: Observable<Array<string>>;
     targetDashboardStateSearchText: string;
     selectedDashboardStateIds: Observable<Array<string>>;
@@ -66,6 +68,7 @@ export declare class WidgetActionDialogComponent extends DialogComponent<WidgetA
     constructor(store: Store<AppState>, router: Router, utils: UtilsService, dashboardService: DashboardService, dashboardUtils: DashboardUtilsService, widgetService: WidgetService, translate: TranslateService, data: WidgetActionDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<WidgetActionDialogComponent, WidgetActionDescriptorInfo>, fb: UntypedFormBuilder);
     ngOnInit(): void;
     displayShowWidgetActionForm(): boolean;
+    customFunctionHelpId(): string;
     getWidgetActionFunctionHelpId(): string | undefined;
     private updateShowWidgetActionForm;
     private updateActionTypeFormGroup;

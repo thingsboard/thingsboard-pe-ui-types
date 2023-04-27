@@ -2,7 +2,6 @@ import { EventEmitter, OnInit } from '@angular/core';
 import { Notification, NotificationType } from '@shared/models/notification.models';
 import { UtilsService } from '@core/services/utils.service';
 import { Router } from '@angular/router';
-import * as tinycolor_ from 'tinycolor2';
 import * as i0 from "@angular/core";
 export declare class NotificationComponent implements OnInit {
     private utils;
@@ -15,7 +14,6 @@ export declare class NotificationComponent implements OnInit {
     showButton: boolean;
     buttonLabel: string;
     hideMarkAsReadButton: boolean;
-    tinycolor: tinycolor_.Constructor;
     notificationType: typeof NotificationType;
     notificationTypeIcons: Map<NotificationType, string>;
     alarmSeverityTranslations: Map<import("@shared/models/alarm.models").AlarmSeverity, string>;

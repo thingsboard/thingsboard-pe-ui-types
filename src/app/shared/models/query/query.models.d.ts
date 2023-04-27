@@ -8,6 +8,7 @@ import { PageData } from '@shared/models/page/page-data';
 import { TranslateService } from '@ngx-translate/core';
 import { AlarmInfo, AlarmSearchStatus, AlarmSeverity } from '../alarm.models';
 import { DatePipe } from '@angular/common';
+import { UserId } from '../id/user-id';
 export declare enum EntityKeyType {
     ATTRIBUTE = "ATTRIBUTE",
     CLIENT_ATTRIBUTE = "CLIENT_ATTRIBUTE",
@@ -197,7 +198,7 @@ export interface EntityDataPageLink {
     sortOrder?: EntityDataSortOrder;
     dynamic?: boolean;
 }
-export interface AlarmDataPageLink extends EntityDataPageLink {
+export interface AlarmFilter {
     startTs?: number;
     endTs?: number;
     timeWindow?: number;
@@ -205,7 +206,13 @@ export interface AlarmDataPageLink extends EntityDataPageLink {
     statusList?: Array<AlarmSearchStatus>;
     severityList?: Array<AlarmSeverity>;
     searchPropagatedAlarms?: boolean;
+    assigneeId?: UserId;
 }
+export interface AlarmFilterConfig extends AlarmFilter {
+    assignedToCurrentUser?: boolean;
+}
+export type AlarmCountQuery = EntityCountQuery & AlarmFilter;
+export type AlarmDataPageLink = EntityDataPageLink & AlarmFilter;
 export declare function entityDataPageLinkSortDirection(pageLink: EntityDataPageLink): SortDirection;
 export declare function createDefaultEntityDataPageLink(pageSize: number): EntityDataPageLink;
 export declare const singleEntityDataPageLink: EntityDataPageLink;

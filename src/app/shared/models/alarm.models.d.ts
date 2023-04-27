@@ -7,6 +7,7 @@ import { CustomerId } from '@shared/models/id/customer-id';
 import { TableCellButtonActionDescriptor } from '@home/components/widget/lib/table-widget.models';
 import { AlarmCommentId } from '@shared/models/id/alarm-comment-id';
 import { UserId } from '@shared/models/id/user-id';
+import { AlarmFilter } from '@shared/models/query/query.models';
 export declare enum AlarmsMode {
     ALL = 0,
     ENTITY = 1
@@ -103,5 +104,15 @@ export declare class AlarmQuery {
     fetchOriginator: boolean;
     assigneeId?: UserId;
     constructor(entityId: EntityId, pageLink: TimePageLink, searchStatus: AlarmSearchStatus, status: AlarmStatus, fetchOriginator: boolean, assigneeId?: UserId);
+    toQuery(): string;
+}
+export declare class AlarmQueryV2 {
+    affectedEntityId: EntityId;
+    pageLink: TimePageLink;
+    typeList: string[];
+    statusList: AlarmSearchStatus[];
+    severityList: AlarmSeverity[];
+    assigneeId?: UserId;
+    constructor(entityId: EntityId, pageLink: TimePageLink, alarmFilter: AlarmFilter);
     toQuery(): string;
 }

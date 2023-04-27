@@ -10,7 +10,7 @@ export declare class DialogService {
     constructor(translate: TranslateService, authService: AuthService, dialog: MatDialog);
     confirm(title: string, message: string, cancel?: string, ok?: string, fullscreen?: boolean): Observable<boolean>;
     alert(title: string, message: string, ok?: string, fullscreen?: boolean): Observable<boolean>;
-    colorPicker(color: string): Observable<string>;
+    colorPicker(color: string, useThemePalette?: boolean): Observable<string>;
     materialIconPicker(icon: string): Observable<string>;
     permissionDenied(): void;
     forbidden(): Observable<boolean>;

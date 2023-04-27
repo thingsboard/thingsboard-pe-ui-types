@@ -9,11 +9,12 @@ import { TranslateService } from '@ngx-translate/core';
 import { DataKey, Datasource } from '@shared/models/widget.models';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { AttributeService } from '@core/http/attribute.service';
+import { MatDialog } from '@angular/material/dialog';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import * as i0 from "@angular/core";
 type FieldAlignment = 'row' | 'column';
 type MultipleInputWidgetDataKeyType = 'server' | 'shared' | 'timeseries';
-type MultipleInputWidgetDataKeyValueType = 'string' | 'double' | 'integer' | 'booleanCheckbox' | 'booleanSwitch' | 'dateTime' | 'date' | 'time' | 'select';
+export type MultipleInputWidgetDataKeyValueType = 'string' | 'double' | 'integer' | 'JSON' | 'booleanCheckbox' | 'booleanSwitch' | 'dateTime' | 'date' | 'time' | 'select';
 type MultipleInputWidgetDataKeyEditableType = 'editable' | 'disabled' | 'readonly';
 type ConvertGetValueFunction = (value: any, ctx: WidgetContext) => any;
 type ConvertSetValueFunction = (value: any, originValue: any, ctx: WidgetContext) => any;
@@ -50,6 +51,7 @@ interface MultipleInputWidgetDataKeySettings {
     invalidDateErrorMessage?: string;
     minValueErrorMessage?: string;
     maxValueErrorMessage?: string;
+    invalidJsonErrorMessage?: string;
     useCustomIcon: boolean;
     icon: string;
     customIcon: string;
@@ -63,6 +65,9 @@ interface MultipleInputWidgetDataKeySettings {
     useSetValueFunction?: boolean;
     setValueFunctionBody?: string;
     setValueFunction?: ConvertSetValueFunction;
+    dialogTitle?: string;
+    saveButtonLabel?: string;
+    cancelButtonLabel?: string;
 }
 interface MultipleInputWidgetDataKey extends DataKey {
     formId?: string;
@@ -85,6 +90,7 @@ export declare class MultipleInputWidgetComponent extends PageComponent implemen
     private attributeService;
     private translate;
     private sanitizer;
+    private dialog;
     formContainerRef: ElementRef<HTMLElement>;
     ctx: WidgetContext;
     private formResize$;
@@ -105,7 +111,7 @@ export declare class MultipleInputWidgetComponent extends PageComponent implemen
     isAllParametersValid: boolean;
     multipleInputFormGroup: UntypedFormGroup;
     toastTargetId: string;
-    constructor(store: Store<AppState>, elementRef: ElementRef, ngZone: NgZone, overlay: Overlay, viewContainerRef: ViewContainerRef, utils: UtilsService, fb: UntypedFormBuilder, attributeService: AttributeService, translate: TranslateService, sanitizer: DomSanitizer);
+    constructor(store: Store<AppState>, elementRef: ElementRef, ngZone: NgZone, overlay: Overlay, viewContainerRef: ViewContainerRef, utils: UtilsService, fb: UntypedFormBuilder, attributeService: AttributeService, translate: TranslateService, sanitizer: DomSanitizer, dialog: MatDialog);
     ngOnInit(): void;
     ngOnDestroy(): void;
     private initializeConfig;
@@ -128,6 +134,7 @@ export declare class MultipleInputWidgetComponent extends PageComponent implemen
     private save;
     private setKeyValue;
     discardAll(): void;
+    openEditJSONDialog($event: Event, key: MultipleInputWidgetDataKey, source: MultipleInputWidgetSource): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<MultipleInputWidgetComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<MultipleInputWidgetComponent, "tb-multiple-input-widget ", never, { "ctx": "ctx"; }, {}, never, never, false, never>;
 }

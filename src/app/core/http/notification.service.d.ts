@@ -3,7 +3,7 @@ import { RequestConfig } from '@core/http/http-utils';
 import { Observable } from 'rxjs';
 import { PageLink } from '@shared/models/page/page-link';
 import { PageData } from '@shared/models/page/page-data';
-import { Notification, NotificationRequest, NotificationRequestInfo, NotificationRequestPreview, NotificationRule, NotificationSettings, NotificationTarget, NotificationTemplate, NotificationType, SlackChanelType, SlackConversation } from '@shared/models/notification.models';
+import { Notification, NotificationDeliveryMethod, NotificationRequest, NotificationRequestInfo, NotificationRequestPreview, NotificationRule, NotificationSettings, NotificationTarget, NotificationTemplate, NotificationType, SlackChanelType, SlackConversation } from '@shared/models/notification.models';
 import { User } from '@shared/models/user.model';
 import * as i0 from "@angular/core";
 export declare class NotificationService {
@@ -15,6 +15,7 @@ export declare class NotificationService {
     markAllNotificationsAsRead(config?: RequestConfig): Observable<void>;
     createNotificationRequest(notification: NotificationRequest, config?: RequestConfig): Observable<NotificationRequest>;
     getNotificationRequestById(id: string, config?: RequestConfig): Observable<NotificationRequest>;
+    getAvailableDeliveryMethods(config?: RequestConfig): Observable<Array<NotificationDeliveryMethod>>;
     deleteNotificationRequest(id: string, config?: RequestConfig): Observable<void>;
     getNotificationRequestPreview(notification: NotificationRequest, config?: RequestConfig): Observable<NotificationRequestPreview>;
     getNotificationRequests(pageLink: PageLink, config?: RequestConfig): Observable<PageData<NotificationRequestInfo>>;

@@ -13,12 +13,14 @@ export declare class MenuService {
     private userPermissionsService;
     private menuSections$;
     private homeSections$;
+    private availableMenuLinks$;
     private currentMenuSections;
     private currentHomeSections;
     private currentCustomSection;
     private currentCustomChildSection;
     constructor(store: Store<AppState>, router: Router, customMenuService: CustomMenuService, userPermissionsService: UserPermissionsService);
     private buildMenu;
+    private updateDisabledItems;
     private updateOpenedMenuSections;
     private buildSysAdminMenu;
     private buildSysAdminHome;
@@ -28,6 +30,7 @@ export declare class MenuService {
     private buildCustomerUserHome;
     private buildCustomMenu;
     private getCustomMenuStateId;
+    private allMenuLinks;
     menuSections(): Observable<Array<MenuSection>>;
     homeSections(): Observable<Array<HomeSection>>;
     sectionActive(section: MenuSection): boolean;
@@ -39,6 +42,9 @@ export declare class MenuService {
     private extractQueryParams;
     getRedirectPath(parentPath: string, redirectPath: string): Observable<string>;
     private findSectionByPath;
+    availableMenuLinks(): Observable<Array<MenuSection>>;
+    menuLinkById(id: string): Observable<MenuSection | undefined>;
+    menuLinksByIds(ids: string[]): Observable<Array<MenuSection>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<MenuService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<MenuService>;
 }

@@ -1,0 +1,34 @@
+import { ChangeDetectorRef, OnDestroy, OnInit } from '@angular/core';
+import { PageComponent } from '@shared/components/page.component';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { WidgetContext } from '@home/models/widget-component.models';
+import { UserPermissionsService } from '@core/http/user-permissions.service';
+import { SolutionTemplateLevel, TenantSolutionTemplateInfo } from '@shared/models/solution-template.models';
+import { SolutionsService } from '@core/http/solutions.service';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { TranslateService } from '@ngx-translate/core';
+import * as i0 from "@angular/core";
+export declare class SolutionTemplatesWidgetComponent extends PageComponent implements OnInit, OnDestroy {
+    protected store: Store<AppState>;
+    private cd;
+    private translate;
+    private userPermissionsService;
+    private solutionService;
+    private breakpointObserver;
+    ctx: WidgetContext;
+    solutionTemplateLevel: typeof SolutionTemplateLevel;
+    authUser: import("../../../../../../shared/public-api").AuthUser;
+    solutionTemplates: Array<TenantSolutionTemplateInfo>;
+    items: number;
+    hasSolutionTemplatesAccess: boolean;
+    selectedIndex: number;
+    private observeBreakpointSubscription;
+    constructor(store: Store<AppState>, cd: ChangeDetectorRef, translate: TranslateService, userPermissionsService: UserPermissionsService, solutionService: SolutionsService, breakpointObserver: BreakpointObserver);
+    ngOnInit(): void;
+    ngOnDestroy(): void;
+    reload(): void;
+    planText(level: SolutionTemplateLevel): string;
+    static ɵfac: i0.ɵɵFactoryDeclaration<SolutionTemplatesWidgetComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SolutionTemplatesWidgetComponent, "tb-solution-templates-widget", never, { "ctx": "ctx"; }, {}, never, never, false, never>;
+}

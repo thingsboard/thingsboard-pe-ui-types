@@ -12,9 +12,15 @@ export declare enum ComponentScope {
     SYSTEM = "SYSTEM",
     TENANT = "TENANT"
 }
+export declare enum ComponentClusteringMode {
+    USER_PREFERENCE = "USER_PREFERENCE",
+    ENABLED = "ENABLED",
+    SINGLETON = "SINGLETON"
+}
 export interface ComponentDescriptor {
     type: ComponentType | RuleNodeType;
     scope?: ComponentScope;
+    clusteringMode: ComponentClusteringMode;
     name: string;
     clazz: string;
     configurationDescriptor?: any;

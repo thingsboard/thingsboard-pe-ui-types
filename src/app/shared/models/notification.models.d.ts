@@ -18,7 +18,7 @@ export interface Notification {
     readonly type: NotificationType;
     readonly subject: string;
     readonly text: string;
-    readonly info: NotificationInfo;
+    readonly info?: NotificationInfo;
     readonly status: NotificationStatus;
     readonly createdTime: number;
     readonly additionalConfig?: WebDeliveryMethodAdditionalConfig;
@@ -84,9 +84,10 @@ interface SlackNotificationDeliveryMethodConfig {
 export interface SlackConversation {
     id: string;
     title: string;
-    shortName: string;
+    name: string;
     wholeName: string;
     email: string;
+    type: string;
 }
 export interface NotificationRule extends Omit<BaseData<NotificationRuleId>, 'label'> {
     tenantId: TenantId;
@@ -317,7 +318,8 @@ export declare enum NotificationType {
     RULE_ENGINE_COMPONENT_LIFECYCLE_EVENT = "RULE_ENGINE_COMPONENT_LIFECYCLE_EVENT",
     ENTITIES_LIMIT = "ENTITIES_LIMIT",
     API_USAGE_LIMIT = "API_USAGE_LIMIT",
-    RULE_ENGINE = "RULE_ENGINE",
+    NEW_PLATFORM_VERSION = "NEW_PLATFORM_VERSION",
+    RULE_NODE = "RULE_NODE",
     INTEGRATION_LIFECYCLE_EVENT = "INTEGRATION_LIFECYCLE_EVENT"
 }
 export declare const NotificationTypeIcons: Map<NotificationType, string>;
@@ -341,7 +343,8 @@ export declare enum TriggerType {
     RULE_ENGINE_COMPONENT_LIFECYCLE_EVENT = "RULE_ENGINE_COMPONENT_LIFECYCLE_EVENT",
     ENTITIES_LIMIT = "ENTITIES_LIMIT",
     API_USAGE_LIMIT = "API_USAGE_LIMIT",
-    INTEGRATION_LIFECYCLE_EVENT = "INTEGRATION_LIFECYCLE_EVENT"
+    INTEGRATION_LIFECYCLE_EVENT = "INTEGRATION_LIFECYCLE_EVENT",
+    NEW_PLATFORM_VERSION = "NEW_PLATFORM_VERSION"
 }
 export declare const TriggerTypeTranslationMap: Map<TriggerType, string>;
 export {};

@@ -1,7 +1,7 @@
 import { RequestConfig } from './http-utils';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { AdminSettings, AutoCommitSettings, JwtSettings, MailServerSettings, RepositorySettings, RepositorySettingsInfo, SecuritySettings, TestSmsRequest, UpdateMessage } from '@shared/models/settings.models';
+import { AdminSettings, AutoCommitSettings, FeaturesInfo, JwtSettings, LicenseUsageInfo, MailServerSettings, RepositorySettings, RepositorySettingsInfo, SecuritySettings, TestSmsRequest, UpdateMessage } from '@shared/models/settings.models';
 import { EntitiesVersionControlService } from '@core/http/entities-version-control.service';
 import { LoginResponse } from '@shared/models/login.models';
 import * as i0 from "@angular/core";
@@ -27,6 +27,8 @@ export declare class AdminService {
     saveAutoCommitSettings(autoCommitSettings: AutoCommitSettings, config?: RequestConfig): Observable<AutoCommitSettings>;
     deleteAutoCommitSettings(config?: RequestConfig): Observable<Object>;
     checkUpdates(config?: RequestConfig): Observable<UpdateMessage>;
+    getFeaturesInfo(config?: RequestConfig): Observable<FeaturesInfo>;
+    getLicenseUsageInfo(config?: RequestConfig): Observable<LicenseUsageInfo>;
     static ɵfac: i0.ɵɵFactoryDeclaration<AdminService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<AdminService>;
 }

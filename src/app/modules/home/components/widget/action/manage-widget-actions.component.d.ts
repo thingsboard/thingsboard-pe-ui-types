@@ -27,6 +27,7 @@ export declare class ManageWidgetActionsComponent extends PageComponent implemen
     callbacks: WidgetActionCallbacks;
     actionTypes: WidgetActionType[];
     customFunctionArgs: string[];
+    isEntityGroup: boolean;
     innerValue: WidgetActionsData;
     displayedColumns: string[];
     pageLink: PageLink;
@@ -62,5 +63,5 @@ export declare class ManageWidgetActionsComponent extends PageComponent implemen
     writeValue(obj: WidgetActionsData): void;
     private onActionsUpdated;
     static ɵfac: i0.ɵɵFactoryDeclaration<ManageWidgetActionsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ManageWidgetActionsComponent, "tb-manage-widget-actions", never, { "disabled": "disabled"; "widgetType": "widgetType"; "callbacks": "callbacks"; "actionTypes": "actionTypes"; "customFunctionArgs": "customFunctionArgs"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ManageWidgetActionsComponent, "tb-manage-widget-actions", never, { "disabled": "disabled"; "widgetType": "widgetType"; "callbacks": "callbacks"; "actionTypes": "actionTypes"; "customFunctionArgs": "customFunctionArgs"; "isEntityGroup": "isEntityGroup"; }, {}, never, never, false, never>;
 }
