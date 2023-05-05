@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { MenuSection } from '@core/services/menu.models';
 import { MenuService } from '@core/services/menu.service';
 import { UtilsService } from '@core/services/utils.service';
@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import * as i0 from "@angular/core";
-export declare class MenuToggleComponent implements OnInit {
+export declare class MenuToggleComponent implements OnInit, OnChanges {
     utils: UtilsService;
     private menuService;
     private router;
@@ -15,6 +15,7 @@ export declare class MenuToggleComponent implements OnInit {
     sectionPages: Array<MenuSection>;
     constructor(utils: UtilsService, menuService: MenuService, router: Router, store: Store<AppState>);
     ngOnInit(): void;
+    ngOnChanges(changes: SimpleChanges): void;
     sectionActive(): boolean;
     sectionHeight(): string;
     toggleSection(event: MouseEvent): void;

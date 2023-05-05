@@ -1,9 +1,9 @@
-import { ActivatedRouteSnapshot, Resolve, Router } from '@angular/router';
+import { ActivatedRoute, ActivatedRouteSnapshot, Resolve, Router } from '@angular/router';
 import { CellActionDescriptor, EntityColumn, EntityTableConfig, GroupActionDescriptor, HeaderActionDescriptor } from '@home/models/entity/entities-table-config.models';
 import { TranslateService } from '@ngx-translate/core';
 import { DatePipe } from '@angular/common';
 import { EntityAction } from '@home/models/entity/entity-component.models';
-import { DeviceInfo } from '@app/shared/models/device.models';
+import { DeviceInfo, DeviceInfoQuery } from '@app/shared/models/device.models';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -17,6 +17,7 @@ import { UtilsService } from '@core/services/utils.service';
 import { AllEntitiesTableConfigService } from '@home/components/entity/all-entities-table-config.service';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { AuthUser } from '@shared/models/user.model';
+import { PageLink } from '@shared/models/page/page-link';
 import * as i0 from "@angular/core";
 export declare class DevicesTableConfigResolver implements Resolve<EntityTableConfig<DeviceInfo>> {
     private allEntitiesTableConfigService;
@@ -35,8 +36,12 @@ export declare class DevicesTableConfigResolver implements Resolve<EntityTableCo
     constructor(allEntitiesTableConfigService: AllEntitiesTableConfigService<DeviceInfo>, store: Store<AppState>, userPermissionsService: UserPermissionsService, broadcast: BroadcastService, deviceService: DeviceService, customerService: CustomerService, dialogService: DialogService, homeDialogs: HomeDialogsService, translate: TranslateService, datePipe: DatePipe, utils: UtilsService, router: Router, dialog: MatDialog);
     resolve(route: ActivatedRouteSnapshot): Observable<EntityTableConfig<DeviceInfo>>;
     configDefaults(config: EntityTableConfig<DeviceInfo>): void;
+    onLoadAction(config: EntityTableConfig<DeviceInfo>, route: ActivatedRoute): void;
     configureColumns(authUser: AuthUser, config: EntityTableConfig<DeviceInfo>): Array<EntityColumn<DeviceInfo>>;
+    private deviceState;
+    private deviceStateStyle;
     configureEntityFunctions(config: EntityTableConfig<DeviceInfo>): void;
+    prepareDeviceInfoQuery(config: EntityTableConfig<DeviceInfo>, pageLink: PageLink): DeviceInfoQuery;
     configureCellActions(config: EntityTableConfig<DeviceInfo>): Array<CellActionDescriptor<DeviceInfo>>;
     configureGroupActions(config: EntityTableConfig<DeviceInfo>): Array<GroupActionDescriptor<DeviceInfo>>;
     configureAddActions(config: EntityTableConfig<DeviceInfo>): Array<HeaderActionDescriptor>;

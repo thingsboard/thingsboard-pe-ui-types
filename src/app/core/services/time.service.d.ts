@@ -1,6 +1,5 @@
 import { AggregationType, Timewindow } from '@shared/models/time/time.models';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import * as i0 from "@angular/core";
 export interface TimeInterval {
     name: string;
@@ -13,7 +12,7 @@ export declare class TimeService {
     private http;
     private maxDatapointsLimit;
     constructor(http: HttpClient);
-    loadMaxDatapointsLimit(): Observable<number>;
+    setMaxDatapointsLimit(limit: number): void;
     matchesExistingInterval(min: number, max: number, intervalMs: number): boolean;
     getIntervals(min: number, max: number): Array<TimeInterval>;
     boundMinInterval(min: number): number;

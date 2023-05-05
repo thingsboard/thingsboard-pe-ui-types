@@ -127,7 +127,7 @@ export declare const HelpLinks: {
         entitiesImport: string;
         rulechains: string;
         dashboards: string;
-        resources: string;
+        lwm2mResourceLibrary: string;
         otaUpdates: string;
         widgetsBundles: string;
         widgetsConfig: string;

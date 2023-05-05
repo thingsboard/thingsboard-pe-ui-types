@@ -14,7 +14,9 @@ export declare class CustomDialogService {
     private sharedHomeComponentsModule;
     private homeComponentsModule;
     dialog: MatDialog;
+    private customModules;
     constructor(translate: TranslateService, authService: AuthService, dynamicComponentFactoryService: DynamicComponentFactoryService, sharedModule: Type<any>, sharedHomeComponentsModule: Type<any>, homeComponentsModule: Type<any>, dialog: MatDialog);
+    setAdditionalModules(modules: Array<Type<any>>): void;
     customDialog(template: string, controller: (instance: CustomDialogComponent) => void, data?: any, config?: MatDialogConfig): Observable<any>;
     static ɵfac: i0.ɵɵFactoryDeclaration<CustomDialogService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<CustomDialogService>;

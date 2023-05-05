@@ -1,0 +1,52 @@
+import { ChangeDetectorRef, ElementRef, InjectionToken, OnDestroy, OnInit, TemplateRef, ViewContainerRef } from '@angular/core';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { Overlay, OverlayRef } from '@angular/cdk/overlay';
+import { TranslateService } from '@ngx-translate/core';
+import { DeviceInfoFilter } from '@shared/models/device.models';
+import { EntityInfoData } from '@shared/models/entity.models';
+import { DeviceProfileService } from '@core/http/device-profile.service';
+import * as i0 from "@angular/core";
+export declare const DEVICE_FILTER_CONFIG_DATA: InjectionToken<any>;
+export interface DeviceFilterConfigData {
+    panelMode: boolean;
+    deviceInfoFilter: DeviceInfoFilter;
+}
+export declare class DeviceInfoFilterComponent implements OnInit, OnDestroy, ControlValueAccessor {
+    private data;
+    private overlayRef;
+    private fb;
+    private translate;
+    private overlay;
+    private nativeElement;
+    private viewContainerRef;
+    private deviceProfileService;
+    private cd;
+    deviceFilterPanel: TemplateRef<any>;
+    disabled: boolean;
+    buttonMode: boolean;
+    panelMode: boolean;
+    buttonDisplayValue: any;
+    deviceInfoFilterForm: UntypedFormGroup;
+    deviceFilterOverlayRef: OverlayRef;
+    panelResult: DeviceInfoFilter;
+    private deviceProfileInfo;
+    private deviceInfoFilter;
+    private propagateChange;
+    constructor(data: DeviceFilterConfigData | undefined, overlayRef: OverlayRef, fb: UntypedFormBuilder, translate: TranslateService, overlay: Overlay, nativeElement: ElementRef, viewContainerRef: ViewContainerRef, deviceProfileService: DeviceProfileService, cd: ChangeDetectorRef);
+    ngOnInit(): void;
+    ngOnDestroy(): void;
+    registerOnChange(fn: any): void;
+    registerOnTouched(fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    writeValue(deviceInfoFilter?: DeviceInfoFilter): void;
+    private updateValidators;
+    toggleDeviceFilterPanel($event: Event): void;
+    cancel(): void;
+    update(): void;
+    deviceProfileChanged(deviceProfileInfo: EntityInfoData): void;
+    private updateDeviceInfoFilterForm;
+    private deviceFilterUpdated;
+    private updateButtonDisplayValue;
+    static ɵfac: i0.ɵɵFactoryDeclaration<DeviceInfoFilterComponent, [{ optional: true; }, { optional: true; }, null, null, null, null, null, null, null]>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceInfoFilterComponent, "tb-device-info-filter", never, { "disabled": "disabled"; "buttonMode": "buttonMode"; }, {}, never, never, false, never>;
+}

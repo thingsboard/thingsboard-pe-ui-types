@@ -4,13 +4,16 @@ import { DashboardService } from '@core/http/dashboard.service';
 import { DashboardUtilsService } from '@core/services/dashboard-utils.service';
 import { Observable } from 'rxjs';
 import { UserSettingsService } from '@core/http/user-settings.service';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
 import * as i0 from "@angular/core";
 import * as i1 from "@angular/router";
 export declare class DashboardResolver implements Resolve<Dashboard> {
+    private store;
     private dashboardService;
     private userSettingService;
     private dashboardUtils;
-    constructor(dashboardService: DashboardService, userSettingService: UserSettingsService, dashboardUtils: DashboardUtilsService);
+    constructor(store: Store<AppState>, dashboardService: DashboardService, userSettingService: UserSettingsService, dashboardUtils: DashboardUtilsService);
     resolve(route: ActivatedRouteSnapshot): Observable<Dashboard>;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardResolver, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<DashboardResolver>;

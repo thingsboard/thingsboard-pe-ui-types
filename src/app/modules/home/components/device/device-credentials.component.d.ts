@@ -29,6 +29,7 @@ export declare class DeviceCredentialsComponent implements ControlValueAccessor,
     };
     credentialsTypeChanged(): void;
     updateValidators(): void;
+    generate(formControlName: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceCredentialsComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<DeviceCredentialsComponent, "tb-device-credentials", never, { "disabled": "disabled"; "deviceTransportType": "deviceTransportType"; }, {}, never, never, false, never>;
 }

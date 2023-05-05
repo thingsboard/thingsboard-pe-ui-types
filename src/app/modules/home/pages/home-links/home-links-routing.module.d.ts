@@ -11,6 +11,7 @@ export declare class HomeDashboardResolver implements Resolve<HomeDashboard> {
     private store;
     constructor(dashboardService: DashboardService, store: Store<AppState>);
     resolve(): Observable<HomeDashboard>;
+    private updateDeviceActivityKeyFilterIfNeeded;
     static ɵfac: i0.ɵɵFactoryDeclaration<HomeDashboardResolver, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<HomeDashboardResolver>;
 }

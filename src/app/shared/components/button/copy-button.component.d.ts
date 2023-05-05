@@ -20,11 +20,12 @@ export declare class CopyButtonComponent {
         [key: string]: any;
     };
     color: ThemePalette;
+    miniButton: boolean;
     successCopied: EventEmitter<string>;
     constructor(clipboardService: ClipboardService, translate: TranslateService, cd: ChangeDetectorRef);
     copy($event: Event): void;
     get matTooltipText(): string;
     get matTooltipPosition(): TooltipPosition;
     static ɵfac: i0.ɵɵFactoryDeclaration<CopyButtonComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CopyButtonComponent, "tb-copy-button", never, { "copyText": "copyText"; "disabled": "disabled"; "mdiIcon": "mdiIcon"; "icon": "icon"; "tooltipText": "tooltipText"; "tooltipPosition": "tooltipPosition"; "style": "style"; "color": "color"; }, { "successCopied": "successCopied"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CopyButtonComponent, "tb-copy-button", never, { "copyText": "copyText"; "disabled": "disabled"; "mdiIcon": "mdiIcon"; "icon": "icon"; "tooltipText": "tooltipText"; "tooltipPosition": "tooltipPosition"; "style": "style"; "color": "color"; "miniButton": "miniButton"; }, { "successCopied": "successCopied"; }, never, never, false, never>;
 }

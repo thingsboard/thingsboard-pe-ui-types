@@ -9,7 +9,7 @@ import * as moment_ from 'moment';
 import { AlarmFilter, AlarmFilterConfig, EntityDataPageLink, EntityFilter, KeyFilter } from '@shared/models/query/query.models';
 import { PopoverPlacement } from '@shared/components/popover.models';
 import { PageComponent } from '@shared/components/page.component';
-import { AfterViewInit, EventEmitter, OnInit } from '@angular/core';
+import { AfterViewInit, EventEmitter, OnInit, Type } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { UntypedFormGroup } from '@angular/forms';
@@ -320,6 +320,7 @@ export interface CustomActionDescriptor {
     customResources?: Array<WidgetResource>;
     customHtml?: string;
     customCss?: string;
+    customModules?: Type<any>[];
 }
 export interface WidgetActionDescriptor extends CustomActionDescriptor {
     id: string;

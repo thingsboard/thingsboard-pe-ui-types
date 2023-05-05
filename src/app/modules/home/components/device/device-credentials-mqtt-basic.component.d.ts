@@ -18,6 +18,7 @@ export declare class DeviceCredentialsMqttBasicComponent implements ControlValue
     updateView(value: DeviceCredentialMQTTBasic): void;
     passwordChanged(): void;
     private atLeastOne;
+    generate(formControlName: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceCredentialsMqttBasicComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<DeviceCredentialsMqttBasicComponent, "tb-device-credentials-mqtt-basic", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
 }

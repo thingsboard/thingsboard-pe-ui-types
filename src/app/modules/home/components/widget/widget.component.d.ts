@@ -28,6 +28,7 @@ import { ComponentType } from '@angular/cdk/portal';
 import { MobileService } from '@core/services/mobile.service';
 import { DialogService } from '@core/services/dialog.service';
 import { TbPopoverService } from '@shared/components/popover.service';
+import { IModulesMap } from '@modules/common/modules-map.models';
 import * as i0 from "@angular/core";
 export declare class WidgetComponent extends PageComponent implements OnInit, AfterViewInit, OnChanges, OnDestroy {
     protected store: Store<AppState>;
@@ -42,6 +43,7 @@ export declare class WidgetComponent extends PageComponent implements OnInit, Af
     private popoverService;
     private embedDashboardDialogComponent;
     private dashboardPageComponent;
+    private modulesMap;
     private widgetService;
     private resources;
     private timeService;
@@ -99,7 +101,7 @@ export declare class WidgetComponent extends PageComponent implements OnInit, Af
     private widgetResize$;
     private cssParser;
     private rxSubscriptions;
-    constructor(store: Store<AppState>, route: ActivatedRoute, router: Router, widgetComponentService: WidgetComponentService, componentFactoryResolver: ComponentFactoryResolver, elementRef: ElementRef, injector: Injector, dialog: MatDialog, renderer: Renderer2, popoverService: TbPopoverService, embedDashboardDialogComponent: ComponentType<any>, dashboardPageComponent: ComponentType<any>, widgetService: WidgetService, resources: ResourcesService, timeService: TimeService, deviceService: DeviceService, entityService: EntityService, dashboardService: DashboardService, importExport: ImportExportService, entityDataService: EntityDataService, alarmDataService: AlarmDataService, translate: TranslateService, utils: UtilsService, datePipe: DatePipe, mobileService: MobileService, dialogs: DialogService, raf: RafService, ngZone: NgZone, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, route: ActivatedRoute, router: Router, widgetComponentService: WidgetComponentService, componentFactoryResolver: ComponentFactoryResolver, elementRef: ElementRef, injector: Injector, dialog: MatDialog, renderer: Renderer2, popoverService: TbPopoverService, embedDashboardDialogComponent: ComponentType<any>, dashboardPageComponent: ComponentType<any>, modulesMap: IModulesMap, widgetService: WidgetService, resources: ResourcesService, timeService: TimeService, deviceService: DeviceService, entityService: EntityService, dashboardService: DashboardService, importExport: ImportExportService, entityDataService: EntityDataService, alarmDataService: AlarmDataService, translate: TranslateService, utils: UtilsService, datePipe: DatePipe, mobileService: MobileService, dialogs: DialogService, raf: RafService, ngZone: NgZone, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
@@ -142,6 +144,6 @@ export declare class WidgetComponent extends PageComponent implements OnInit, Af
     private prepareWidgetExportData;
     private getActiveEntityInfo;
     private checkSize;
-    static ɵfac: i0.ɵɵFactoryDeclaration<WidgetComponent, never>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<WidgetComponent, [null, null, null, null, null, null, null, null, null, null, null, null, { optional: true; }, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<WidgetComponent, "tb-widget", never, { "isEdit": "isEdit"; "isMobile": "isMobile"; "dashboardWidget": "dashboardWidget"; }, {}, never, never, false, never>;
 }

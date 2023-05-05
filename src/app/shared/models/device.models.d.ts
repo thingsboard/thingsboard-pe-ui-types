@@ -14,6 +14,7 @@ import { OtaPackageId } from '@shared/models/id/ota-package-id';
 import { DashboardId } from '@shared/models/id/dashboard-id';
 import { DataType } from '@shared/models/constants';
 import { PowerMode } from '@home/components/profile/device/lwm2m/lwm2m-profile-config.models';
+import { PageLink } from '@shared/models/page/page-link';
 export declare enum DeviceProfileType {
     DEFAULT = "DEFAULT",
     SNMP = "SNMP"
@@ -131,10 +132,10 @@ export interface DeviceProvisionConfiguration {
     certificateRegExPattern?: string;
     allowCreateNewDevicesByX509Certificate?: boolean;
 }
-export declare function createDeviceProfileConfiguration(type: DeviceProfileType): DeviceProfileConfiguration;
-export declare function createDeviceConfiguration(type: DeviceProfileType): DeviceConfiguration;
-export declare function createDeviceProfileTransportConfiguration(type: DeviceTransportType): DeviceProfileTransportConfiguration;
-export declare function createDeviceTransportConfiguration(type: DeviceTransportType): DeviceTransportConfiguration;
+export declare const createDeviceProfileConfiguration: (type: DeviceProfileType) => DeviceProfileConfiguration;
+export declare const createDeviceConfiguration: (type: DeviceProfileType) => DeviceConfiguration;
+export declare const createDeviceProfileTransportConfiguration: (type: DeviceTransportType) => DeviceProfileTransportConfiguration;
+export declare const createDeviceTransportConfiguration: (type: DeviceTransportType) => DeviceTransportConfiguration;
 export declare enum AlarmConditionType {
     SIMPLE = "SIMPLE",
     DURATION = "DURATION",
@@ -181,7 +182,7 @@ interface AlarmRule {
     schedule?: AlarmSchedule;
 }
 export { AlarmRule as DeviceProfileAlarmRule };
-export declare function alarmRuleValidator(control: AbstractControl): ValidationErrors | null;
+export declare const alarmRuleValidator: (control: AbstractControl) => ValidationErrors | null;
 export interface DeviceProfileAlarm {
     id: string;
     alarmType: string;
@@ -195,7 +196,7 @@ export interface DeviceProfileAlarm {
     propagateToTenant?: boolean;
     propagateRelationTypes?: Array<string>;
 }
-export declare function deviceProfileAlarmValidator(control: AbstractControl): ValidationErrors | null;
+export declare const deviceProfileAlarmValidator: (control: AbstractControl) => ValidationErrors | null;
 export interface DeviceProfileData {
     configuration: DeviceProfileConfiguration;
     transportConfiguration: DeviceProfileTransportConfiguration;
@@ -298,16 +299,30 @@ export interface DeviceData {
 export interface Device extends BaseData<DeviceId>, ExportableEntity<DeviceId> {
     tenantId?: TenantId;
     customerId?: CustomerId;
-    name: string;
+    name?: string;
     type: string;
-    label: string;
+    label?: string;
     firmwareId?: OtaPackageId;
     softwareId?: OtaPackageId;
     deviceProfileId?: DeviceProfileId;
     deviceData?: DeviceData;
     additionalInfo?: any;
 }
-export type DeviceInfo = Device & GroupEntityInfo<DeviceId>;
+export interface DeviceInfo extends Device, GroupEntityInfo<DeviceId> {
+    active: boolean;
+}
+export interface DeviceInfoFilter {
+    customerId?: CustomerId;
+    includeCustomers?: boolean;
+    deviceProfileId?: DeviceProfileId;
+    active?: boolean;
+}
+export declare class DeviceInfoQuery {
+    pageLink: PageLink;
+    deviceInfoFilter: DeviceInfoFilter;
+    constructor(pageLink: PageLink, deviceInfoFilter: DeviceInfoFilter);
+    toQuery(): string;
+}
 export declare enum DeviceCredentialsType {
     ACCESS_TOKEN = "ACCESS_TOKEN",
     X509_CERTIFICATE = "X509_CERTIFICATE",
@@ -327,7 +342,7 @@ export interface DeviceCredentialMQTTBasic {
     userName: string;
     password: string;
 }
-export declare function getDeviceCredentialMQTTDefault(): DeviceCredentialMQTTBasic;
+export declare const getDeviceCredentialMQTTDefault: () => DeviceCredentialMQTTBasic;
 export interface DeviceSearchQuery extends EntitySearchQuery {
     deviceTypes: Array<string>;
 }
@@ -344,7 +359,6 @@ export interface ClaimResult {
     response: ClaimResponse;
 }
 export declare const dayOfWeekTranslations: string[];
-export declare function getDayString(day: number): string;
-export declare function timeOfDayToUTCTimestamp(date: Date | number): number;
-export declare function utcTimestampToTimeOfDay(time?: number): Date;
-export declare function getAlarmScheduleRangeText(startsOn: Date | number, endsOn: Date | number): string;
+export declare const timeOfDayToUTCTimestamp: (date: Date | number) => number;
+export declare const utcTimestampToTimeOfDay: (time?: number) => Date;
+export declare const getAlarmScheduleRangeText: (startsOn: Date | number, endsOn: Date | number) => string;

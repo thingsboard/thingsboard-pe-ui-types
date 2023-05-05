@@ -38,14 +38,13 @@ export declare class SentNotificationDialogComponent extends TemplateConfigurati
     entityType: typeof EntityType;
     notificationType: typeof NotificationType;
     notificationRequestForm: FormGroup;
-    notificationDeliveryMethods: NotificationDeliveryMethod[];
-    notificationDeliveryMethodTranslateMap: Map<NotificationDeliveryMethod, string>;
     selectedIndex: number;
     preview: NotificationRequestPreview;
     dialogTitle: string;
     showRefresh: boolean;
     private authUser;
     private authState;
+    private allowNotificationDeliveryMethods;
     constructor(store: Store<AppState>, router: Router, dialogRef: MatDialogRef<SentNotificationDialogComponent, NotificationRequest>, data: RequestNotificationDialogData, breakpointObserver: BreakpointObserver, fb: FormBuilder, notificationService: NotificationService, dialog: MatDialog, translate: TranslateService, userPermissionsService: UserPermissionsService);
     ngOnDestroy(): void;
     cancel(): void;
@@ -69,6 +68,7 @@ export declare class SentNotificationDialogComponent extends TemplateConfigurati
     isInteractDeliveryMethod(deliveryMethod: NotificationDeliveryMethod): boolean;
     configurationPage(deliveryMethod: NotificationDeliveryMethod): "/settings/outgoing-mail" | "/settings/notifications";
     refreshAllowDeliveryMethod(): void;
+    private updateDeliveryMethodsDisableState;
     static ɵfac: i0.ɵɵFactoryDeclaration<SentNotificationDialogComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<SentNotificationDialogComponent, "tb-sent-notification-dialog", never, {}, {}, never, never, false, never>;
 }
