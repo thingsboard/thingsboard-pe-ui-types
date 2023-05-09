@@ -1,5 +1,5 @@
 import { ElementRef, OnInit } from '@angular/core';
-import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -19,7 +19,7 @@ export declare class QueueAutocompleteComponent implements ControlValueAccessor,
     private entityService;
     private queueService;
     private fb;
-    selectQueueFormGroup: UntypedFormGroup;
+    selectQueueFormGroup: FormGroup;
     modelValue: string | null;
     labelText: string;
     requiredText: string;
@@ -35,11 +35,10 @@ export declare class QueueAutocompleteComponent implements ControlValueAccessor,
     searchText: string;
     private dirty;
     private propagateChange;
-    constructor(store: Store<AppState>, translate: TranslateService, truncate: TruncatePipe, entityService: EntityService, queueService: QueueService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, truncate: TruncatePipe, entityService: EntityService, queueService: QueueService, fb: FormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
-    ngAfterViewInit(): void;
     setDisabledState(isDisabled: boolean): void;
     textIsNotEmpty(text: string): boolean;
     writeValue(value: string | null): void;

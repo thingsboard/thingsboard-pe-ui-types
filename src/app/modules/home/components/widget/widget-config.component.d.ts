@@ -2,7 +2,7 @@ import { OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { DataKey, Datasource, DatasourceType, JsonSettingsSchema, Widget, widgetType } from '@shared/models/widget.models';
+import { DataKey, DatasourceType, JsonSettingsSchema, Widget, widgetType } from '@shared/models/widget.models';
 import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { WidgetConfigComponentData } from '@home/models/widget-component.models';
 import { IAliasController } from '@core/api/widget-api.models';
@@ -70,7 +70,7 @@ export declare class WidgetConfigComponent extends PageComponent implements OnIn
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: WidgetConfigComponentData): void;
-    dataKeysOptional(datasource?: Datasource): boolean;
+    dataKeysOptional(type?: DatasourceType): boolean;
     private buildDatasourceForm;
     private updateSchemaForm;
     private updateDataSettings;

@@ -47,7 +47,7 @@ export declare class EntityTypesVersionLoadComponent extends PageComponent imple
     removeAll(): void;
     entityTypeText(entityTypeControl: AbstractControl): string;
     allowedEntityTypes(entityTypeControl?: AbstractControl): Array<EntityType>;
-    onRemoveOtherEntities(removeOtherEntitiesCheckbox: MatCheckbox, entityTypeControl: AbstractControl, $event: Event): void;
+    onRemoveOtherEntities(removeOtherEntitiesCheckbox: MatCheckbox, entityTypeControl: AbstractControl): void;
     isGroupEntityType(entityType: EntityType): boolean;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityTypesVersionLoadComponent, never>;
