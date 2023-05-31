@@ -18,6 +18,8 @@ export declare class NotificationComponent implements OnInit {
     notificationTypeIcons: Map<NotificationType, string>;
     alarmSeverityTranslations: Map<import("@shared/models/alarm.models").AlarmSeverity, string>;
     currentDate: number;
+    title: string;
+    message: string;
     constructor(utils: UtilsService, router: Router);
     ngOnInit(): void;
     markRead($event: Event): void;

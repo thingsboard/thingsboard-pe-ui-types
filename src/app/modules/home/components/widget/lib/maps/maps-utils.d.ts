@@ -12,4 +12,7 @@ interface labelSettings {
     label: string;
 }
 export declare function entitiesParseName(entities: FormattedData[], labelSettings: labelSettings): FormattedData[];
+export declare const isValidLatitude: (latitude: any) => boolean;
+export declare const isValidLongitude: (longitude: any) => boolean;
+export declare const isValidLatLng: (latitude: any, longitude: any) => boolean;
 export {};

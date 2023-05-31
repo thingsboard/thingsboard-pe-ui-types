@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, ElementRef, OnDestroy, OnInit, ViewContainerRef } from '@angular/core';
+import { ChangeDetectorRef, ElementRef, ViewContainerRef } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { MillisecondsToTimeStringPipe } from '@shared/pipe/milliseconds-to-time-string.pipe';
@@ -9,7 +9,7 @@ import { TimeService } from '@core/services/time.service';
 import { TooltipPosition } from '@angular/material/tooltip';
 import { Overlay } from '@angular/cdk/overlay';
 import * as i0 from "@angular/core";
-export declare class TimewindowComponent implements OnInit, OnDestroy, ControlValueAccessor {
+export declare class TimewindowComponent implements ControlValueAccessor {
     private overlay;
     private translate;
     private timeService;
@@ -23,24 +23,12 @@ export declare class TimewindowComponent implements OnInit, OnDestroy, ControlVa
     set historyOnly(val: boolean);
     get historyOnly(): boolean;
     forAllTimeEnabled: boolean;
-    alwaysDisplayTypePrefixValue: boolean;
-    set alwaysDisplayTypePrefix(val: boolean);
-    get alwaysDisplayTypePrefix(): boolean;
-    quickIntervalOnlyValue: boolean;
-    set quickIntervalOnly(val: boolean);
-    get quickIntervalOnly(): boolean;
-    aggregationValue: boolean;
-    set aggregation(val: boolean);
-    get aggregation(): boolean;
-    timezoneValue: boolean;
-    set timezone(val: boolean);
-    get timezone(): boolean;
-    isToolbarValue: boolean;
-    set isToolbar(val: boolean);
-    get isToolbar(): boolean;
-    asButtonValue: boolean;
-    set asButton(val: boolean);
-    get asButton(): boolean;
+    alwaysDisplayTypePrefix: boolean;
+    quickIntervalOnly: boolean;
+    aggregation: boolean;
+    timezone: boolean;
+    isToolbar: boolean;
+    asButton: boolean;
     strokedButton: boolean;
     isEditValue: boolean;
     set isEdit(val: boolean);
@@ -52,8 +40,6 @@ export declare class TimewindowComponent implements OnInit, OnDestroy, ControlVa
     timewindowDisabled: boolean;
     private propagateChange;
     constructor(overlay: Overlay, translate: TranslateService, timeService: TimeService, millisecondsToTimeStringPipe: MillisecondsToTimeStringPipe, datePipe: DatePipe, cd: ChangeDetectorRef, nativeElement: ElementRef, viewContainerRef: ViewContainerRef, breakpointObserver: BreakpointObserver);
-    ngOnInit(): void;
-    ngOnDestroy(): void;
     toggleTimewindow($event: Event): void;
     private onHistoryOnlyChanged;
     registerOnChange(fn: any): void;

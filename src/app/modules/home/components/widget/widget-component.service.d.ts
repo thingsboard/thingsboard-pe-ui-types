@@ -30,6 +30,7 @@ export declare class WidgetComponentService {
     private init;
     getInstantWidgetInfo(widget: Widget): WidgetInfo;
     getWidgetInfo(bundleAlias: string, widgetTypeAlias: string, isSystem: boolean): Observable<WidgetInfo>;
+    clearWidgetInfo(widgetInfo: WidgetInfo, bundleAlias: string, widgetTypeAlias: string, isSystem: boolean): void;
     private getWidgetInfoInternal;
     private loadWidget;
     private loadWidgetResources;

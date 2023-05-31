@@ -45,7 +45,7 @@ export declare class EntityGroupService {
     getEntityGroupEntityInfosByIds(entityGroupIds: Array<string>, config?: RequestConfig): Observable<Array<EntityInfoData>>;
     getEntityGroupsHierarchyByOwnerId(pageLink: PageLink, ownerType: EntityType, ownerId: string, groupType: EntityType, config?: RequestConfig): Observable<PageData<EntityGroupInfo>>;
     getEntityGroupEntityInfosHierarchyByOwnerId(pageLink: PageLink, ownerType: EntityType, ownerId: string, groupType: EntityType, config?: RequestConfig): Observable<PageData<EntityInfoData>>;
-    getEntityGroupsByOwnerIdAndPageLink(pageLink: PageLink, ownerType: EntityType, ownerId: string, groupType: EntityType, config?: RequestConfig): Observable<PageData<EntityGroupInfo>>;
+    getEntityGroupsByOwnerIdAndPageLink(ownerType: EntityType, ownerId: string, groupType: EntityType, pageLink: PageLink, config?: RequestConfig): Observable<PageData<EntityGroupInfo>>;
     getEntityGroupsByOwnerId(ownerType: EntityType, ownerId: string, groupType: EntityType, config?: RequestConfig): Observable<Array<EntityGroupInfo>>;
     getEntityGroupEntityInfosByOwnerId(pageLink: PageLink, ownerType: EntityType, ownerId: string, groupType: EntityType, config?: RequestConfig): Observable<PageData<EntityInfoData>>;
     getAllEntityGroupsByOwnerId(pageSize: number, ownerType: EntityType, ownerId: string, groupType: EntityType, config?: RequestConfig): Observable<Array<EntityGroupInfo>>;

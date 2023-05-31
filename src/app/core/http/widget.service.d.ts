@@ -52,7 +52,7 @@ export declare class WidgetService {
     putWidgetInfoToCache(widgetInfo: WidgetInfo, bundleAlias: string, widgetTypeAlias: string, isSystem: boolean): void;
     private widgetTypeUpdated;
     private widgetsBundleDeleted;
-    private deleteWidgetInfoFromCache;
+    deleteWidgetInfoFromCache(bundleAlias: string, widgetTypeAlias: string, isSystem: boolean): void;
     private deleteWidgetsBundleFromCache;
     private loadWidgetsBundleCache;
     private invalidateWidgetsBundleCache;

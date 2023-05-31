@@ -1,11 +1,11 @@
-import { OnDestroy } from '@angular/core';
+import { OnDestroy, OnInit } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { QueueInfo } from '@shared/models/queue.models';
 import { UtilsService } from '@core/services/utils.service';
 import * as i0 from "@angular/core";
-export declare class TenantProfileQueuesComponent implements ControlValueAccessor, Validator, OnDestroy {
+export declare class TenantProfileQueuesComponent implements ControlValueAccessor, Validator, OnDestroy, OnInit {
     private store;
     private utils;
     private fb;

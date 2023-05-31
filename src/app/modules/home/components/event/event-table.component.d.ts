@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, OnInit, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, OnDestroy, OnInit, ViewContainerRef } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { DatePipe } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
@@ -10,7 +10,7 @@ import { DialogService } from '@core/services/dialog.service';
 import { DebugEventType, EventType } from '@shared/models/event.models';
 import { Overlay } from '@angular/cdk/overlay';
 import * as i0 from "@angular/core";
-export declare class EventTableComponent implements OnInit, AfterViewInit {
+export declare class EventTableComponent implements OnInit, AfterViewInit, OnDestroy {
     private eventService;
     private dialogService;
     private translate;
