@@ -24,6 +24,7 @@ export declare class TemplateAutocompleteComponent implements ControlValueAccess
     selectTemplateFormGroup: FormGroup;
     required: boolean;
     allowCreate: boolean;
+    allowEdit: boolean;
     disabled: boolean;
     private notificationTypeValue;
     get notificationTypes(): NotificationType;
@@ -44,10 +45,12 @@ export declare class TemplateAutocompleteComponent implements ControlValueAccess
     onFocus(): void;
     displayTemplateFn(template?: NotificationTemplate): string | undefined;
     clear(): void;
+    editTemplate($event: Event): void;
     createTemplate($event: Event, button: MatButton): void;
+    private openNotificationTemplateDialog;
     private updateView;
     private fetchTemplate;
     private reset;
     static ɵfac: i0.ɵɵFactoryDeclaration<TemplateAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TemplateAutocompleteComponent, "tb-template-autocomplete", never, { "required": "required"; "allowCreate": "allowCreate"; "disabled": "disabled"; "notificationTypes": "notificationTypes"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TemplateAutocompleteComponent, "tb-template-autocomplete", never, { "required": "required"; "allowCreate": "allowCreate"; "allowEdit": "allowEdit"; "disabled": "disabled"; "notificationTypes": "notificationTypes"; }, {}, never, never, false, never>;
 }

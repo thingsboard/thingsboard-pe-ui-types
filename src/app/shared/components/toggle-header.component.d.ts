@@ -8,6 +8,7 @@ export interface ToggleHeaderOption {
     name: string;
     value: any;
 }
+export type ToggleHeaderAppearance = 'fill' | 'fill-invert' | 'stroked';
 export declare class ToggleHeaderComponent extends PageComponent implements OnInit {
     protected store: Store<AppState>;
     private cd;
@@ -17,10 +18,13 @@ export declare class ToggleHeaderComponent extends PageComponent implements OnIn
     options: ToggleHeaderOption[];
     name: string;
     useSelectOnMdLg: boolean;
+    ignoreMdLgSize: boolean;
+    appearance: ToggleHeaderAppearance;
     isMdLg: boolean;
     private observeBreakpointSubscription;
     constructor(store: Store<AppState>, cd: ChangeDetectorRef, breakpointObserver: BreakpointObserver);
     ngOnInit(): void;
+    trackByHeaderOption(index: number, option: ToggleHeaderOption): any;
     static ɵfac: i0.ɵɵFactoryDeclaration<ToggleHeaderComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ToggleHeaderComponent, "tb-toggle-header", never, { "value": "value"; "options": "options"; "name": "name"; "useSelectOnMdLg": "useSelectOnMdLg"; }, { "valueChange": "valueChange"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ToggleHeaderComponent, "tb-toggle-header", never, { "value": "value"; "options": "options"; "name": "name"; "useSelectOnMdLg": "useSelectOnMdLg"; "ignoreMdLgSize": "ignoreMdLgSize"; "appearance": "appearance"; }, { "valueChange": "valueChange"; }, never, never, false, never>;
 }

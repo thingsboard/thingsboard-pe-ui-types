@@ -1,21 +1,24 @@
-import { OnInit } from '@angular/core';
+import { OnDestroy, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { DefaultTenantProfileConfiguration } from '@shared/models/tenant.model';
 import { RateLimitsType } from './rate-limits/rate-limits.models';
 import * as i0 from "@angular/core";
-export declare class DefaultTenantProfileConfigurationComponent implements ControlValueAccessor, OnInit {
+export declare class DefaultTenantProfileConfigurationComponent implements ControlValueAccessor, OnInit, OnDestroy {
     private store;
     private fb;
     defaultTenantProfileConfigurationFormGroup: UntypedFormGroup;
     private requiredValue;
+    private destroy$;
     get required(): boolean;
     set required(value: boolean);
     disabled: boolean;
     rateLimitsType: typeof RateLimitsType;
     private propagateChange;
     constructor(store: Store<AppState>, fb: UntypedFormBuilder);
+    private maxSmsValidation;
+    ngOnDestroy(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;

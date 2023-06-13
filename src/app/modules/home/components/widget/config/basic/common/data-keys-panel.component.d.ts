@@ -1,0 +1,55 @@
+import { ChangeDetectorRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { WidgetConfigComponent } from '@home/components/widget/widget-config.component';
+import { DataKey, DatasourceType, JsonSettingsSchema, widgetType } from '@shared/models/widget.models';
+import { CdkDragDrop } from '@angular/cdk/drag-drop';
+import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
+import { UtilsService } from '@core/services/utils.service';
+import { DataKeysCallbacks } from '@home/components/widget/config/data-keys.component.models';
+import * as i0 from "@angular/core";
+export declare class DataKeysPanelComponent implements ControlValueAccessor, OnInit, OnChanges, Validator {
+    private fb;
+    private dialog;
+    private cd;
+    private utils;
+    private widgetConfigComponent;
+    disabled: boolean;
+    panelTitle: string;
+    addKeyTitle: string;
+    removeKeyTitle: string;
+    noKeysText: string;
+    datasourceType: DatasourceType;
+    entityAliasId: string;
+    deviceId: string;
+    hideDataKeyColor: boolean;
+    dataKeyType: DataKeyType;
+    alarmKeys: Array<DataKey>;
+    functionTypeKeys: Array<DataKey>;
+    keysListFormGroup: UntypedFormGroup;
+    get widgetType(): widgetType;
+    get callbacks(): DataKeysCallbacks;
+    get datakeySettingsSchema(): JsonSettingsSchema;
+    private propagateChange;
+    constructor(fb: UntypedFormBuilder, dialog: MatDialog, cd: ChangeDetectorRef, utils: UtilsService, widgetConfigComponent: WidgetConfigComponent);
+    ngOnInit(): void;
+    ngOnChanges(changes: SimpleChanges): void;
+    private updateParams;
+    registerOnChange(fn: any): void;
+    registerOnTouched(fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    writeValue(value: DataKey[] | undefined): void;
+    validate(c: UntypedFormControl): {
+        dataKeyRows: {
+            valid: boolean;
+        };
+    };
+    keyDrop(event: CdkDragDrop<string[]>): void;
+    keysFormArray(): UntypedFormArray;
+    trackByKey(index: number, keyControl: AbstractControl): any;
+    removeKey(index: number): void;
+    addKey(): void;
+    private prepareKeysFormArray;
+    static ɵfac: i0.ɵɵFactoryDeclaration<DataKeysPanelComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeysPanelComponent, "tb-data-keys-panel", never, { "disabled": "disabled"; "panelTitle": "panelTitle"; "addKeyTitle": "addKeyTitle"; "removeKeyTitle": "removeKeyTitle"; "noKeysText": "noKeysText"; "datasourceType": "datasourceType"; "entityAliasId": "entityAliasId"; "deviceId": "deviceId"; "hideDataKeyColor": "hideDataKeyColor"; }, {}, never, never, false, never>;
+}

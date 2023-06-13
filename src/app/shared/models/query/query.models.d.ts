@@ -216,6 +216,7 @@ export type AlarmDataPageLink = EntityDataPageLink & AlarmFilter;
 export declare function entityDataPageLinkSortDirection(pageLink: EntityDataPageLink): SortDirection;
 export declare function createDefaultEntityDataPageLink(pageSize: number): EntityDataPageLink;
 export declare const singleEntityDataPageLink: EntityDataPageLink;
+export declare const singleEntityFilterFromDeviceId: (deviceId: string) => EntityFilter;
 export interface EntityCountQuery {
     entityFilter: EntityFilter;
     keyFilters?: Array<KeyFilter>;

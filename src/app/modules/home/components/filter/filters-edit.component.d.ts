@@ -13,6 +13,7 @@ export declare class FiltersEditComponent implements OnInit, OnDestroy {
     private breakpointObserver;
     private viewContainerRef;
     private dialog;
+    filtersEditClass: string;
     aliasControllerValue: IAliasController;
     set aliasController(aliasController: IAliasController);
     get aliasController(): IAliasController;

@@ -11,6 +11,7 @@ export declare class AliasesEntitySelectComponent implements OnInit, OnDestroy {
     private cd;
     private breakpointObserver;
     private viewContainerRef;
+    aliasesEntitySelectClass: string;
     aliasControllerValue: IAliasController;
     set aliasController(aliasController: IAliasController);
     get aliasController(): IAliasController;

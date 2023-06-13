@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, ElementRef, OnInit, QueryList, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ElementRef, OnDestroy, OnInit, QueryList, ViewContainerRef } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -32,6 +32,8 @@ interface TimeseriesHeader {
     dataKey: DataKey;
     sortable: boolean;
     show: boolean;
+    columnDefaultVisibility?: boolean;
+    columnSelectionAvailability?: boolean;
     styleInfo: CellStyleInfo;
     contentInfo: CellContentInfo;
     order?: number;
@@ -53,7 +55,7 @@ interface TimeseriesTableSource {
         [key: string]: any;
     };
 }
-export declare class TimeseriesTableWidgetComponent extends PageComponent implements OnInit, AfterViewInit {
+export declare class TimeseriesTableWidgetComponent extends PageComponent implements OnInit, AfterViewInit, OnDestroy {
     protected store: Store<AppState>;
     private elementRef;
     private overlay;
@@ -92,11 +94,13 @@ export declare class TimeseriesTableWidgetComponent extends PageComponent implem
     showTimestamp: boolean;
     private useEntityLabel;
     private dateFormatFilter;
+    private displayedColumns;
     private rowStylesInfo;
     private subscriptions;
     private widgetTimewindowChanged$;
     private widgetResize$;
     private searchAction;
+    private columnDisplayAction;
     constructor(store: Store<AppState>, elementRef: ElementRef, overlay: Overlay, viewContainerRef: ViewContainerRef, utils: UtilsService, translate: TranslateService, domSanitizer: DomSanitizer, datePipe: DatePipe, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngOnDestroy(): void;
@@ -106,6 +110,8 @@ export declare class TimeseriesTableWidgetComponent extends PageComponent implem
     private initialize;
     getTabLabel(source: TimeseriesTableSource): string;
     private updateDatasources;
+    private editColumnsToDisplay;
+    private prepareDisplayedColumn;
     private prepareHeader;
     private updateActiveEntityInfo;
     private initSubscriptionsToSortAndPaginator;

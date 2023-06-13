@@ -367,6 +367,7 @@ export interface WidgetInfo extends WidgetTypeDescriptor, WidgetControllerDescri
     componentFactory?: ComponentFactory<IDynamicWidgetComponent>;
 }
 export interface WidgetConfigComponentData {
+    widgetName: string;
     config: WidgetConfig;
     layout: WidgetLayout;
     widgetType: widgetType;
@@ -381,6 +382,7 @@ export interface WidgetConfigComponentData {
     settingsDirective: string;
     dataKeySettingsDirective: string;
     latestDataKeySettingsDirective: string;
+    basicModeDirective: string;
 }
 export declare const MissingWidgetType: WidgetInfo;
 export declare const ErrorWidgetType: WidgetInfo;

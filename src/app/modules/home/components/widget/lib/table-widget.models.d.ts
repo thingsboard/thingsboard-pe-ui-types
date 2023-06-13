@@ -14,6 +14,7 @@ export declare enum columnExportOptions {
 }
 export interface TableWidgetSettings {
     enableSearch: boolean;
+    enableSelectColumnDisplay: boolean;
     enableStickyAction: boolean;
     enableStickyHeader: boolean;
     displayPagination: boolean;

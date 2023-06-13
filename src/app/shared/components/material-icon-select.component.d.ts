@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { ChangeDetectorRef, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -11,7 +11,10 @@ export declare class MaterialIconSelectComponent extends PageComponent implement
     private dialogs;
     private translate;
     private fb;
+    private cd;
+    asBoxInput: boolean;
     label: any;
+    color: string;
     disabled: boolean;
     private iconClearButtonValue;
     get iconClearButton(): boolean;
@@ -22,7 +25,7 @@ export declare class MaterialIconSelectComponent extends PageComponent implement
     private modelValue;
     private propagateChange;
     materialIconFormGroup: UntypedFormGroup;
-    constructor(store: Store<AppState>, dialogs: DialogService, translate: TranslateService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, dialogs: DialogService, translate: TranslateService, fb: UntypedFormBuilder, cd: ChangeDetectorRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -32,5 +35,5 @@ export declare class MaterialIconSelectComponent extends PageComponent implement
     openIconDialog(): void;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<MaterialIconSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MaterialIconSelectComponent, "tb-material-icon-select", never, { "label": "label"; "disabled": "disabled"; "iconClearButton": "iconClearButton"; "required": "required"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MaterialIconSelectComponent, "tb-material-icon-select", never, { "asBoxInput": "asBoxInput"; "label": "label"; "color": "color"; "disabled": "disabled"; "iconClearButton": "iconClearButton"; "required": "required"; }, {}, never, never, false, never>;
 }

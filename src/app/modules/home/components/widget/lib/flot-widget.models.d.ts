@@ -1,10 +1,10 @@
 /// <reference types="flot" />
 /// <reference types="src/typings/jquery.flot.typings" />
-import { DataKey, Datasource, DatasourceData, FormattedData } from '@shared/models/widget.models';
+import { DataKey, Datasource, DatasourceData, FormattedData, LegendConfig } from '@shared/models/widget.models';
 import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
 import { ComparisonDuration } from '@shared/models/time/time.models';
 export declare type ChartType = 'line' | 'pie' | 'bar' | 'state' | 'graph';
-export declare type TbFlotSettings = TbFlotBaseSettings & TbFlotGraphSettings & TbFlotBarSettings & TbFlotPieSettings;
+export declare type TbFlotSettings = TbFlotBaseSettings & TbFlotLegendSettings & TbFlotGraphSettings & TbFlotBarSettings & TbFlotPieSettings;
 export declare type TooltipValueFormatFunction = (value: any, latestData: FormattedData) => string;
 export declare type TbFlotTicksFormatterFunction = (t: number, a?: TbFlotPlotAxis) => string;
 export interface TbFlotSeries extends DatasourceData, JQueryPlotSeriesOptions {
@@ -104,6 +104,10 @@ export interface TbFlotBaseSettings {
     grid: TbFlotGridSettings;
     xaxis: TbFlotXAxisSettings;
     yaxis: TbFlotYAxisSettings;
+}
+export interface TbFlotLegendSettings {
+    showLegend?: boolean;
+    legendConfig?: LegendConfig;
 }
 export interface TbFlotComparisonSettings {
     comparisonEnabled: boolean;

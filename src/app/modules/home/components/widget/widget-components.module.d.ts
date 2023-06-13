@@ -8,7 +8,7 @@ import * as i6 from "@home/components/widget/lib/edges-overview-widget.component
 import * as i7 from "@home/components/widget/lib/date-range-navigator/date-range-navigator.component";
 import * as i8 from "@home/components/widget/lib/json-input-widget.component";
 import * as i9 from "@home/components/widget/lib/multiple-input-widget.component";
-import * as i10 from "@home/components/widget/trip-animation/trip-animation.component";
+import * as i10 from "@home/components/widget/lib/trip-animation/trip-animation.component";
 import * as i11 from "@home/components/widget/lib/photo-camera-input.component";
 import * as i12 from "@home/components/widget/lib/gateway/gateway-form.component";
 import * as i13 from "@home/components/widget/lib/navigation-cards-widget.component";
@@ -16,13 +16,15 @@ import * as i14 from "@home/components/widget/lib/navigation-card-widget.compone
 import * as i15 from "@home/components/widget/lib/qrcode-widget.component";
 import * as i16 from "@home/components/widget/lib/markdown-widget.component";
 import * as i17 from "@home/components/widget/lib/maps/dialogs/select-entity-dialog.component";
-import * as i18 from "@angular/common";
-import * as i19 from "@app/shared/shared.module";
-import * as i20 from "@home/components/widget/lib/rpc/rpc-widgets.module";
-import * as i21 from "@home/components/widget/lib/home-page/home-page-widgets.module";
-import * as i22 from "@home/components/shared-home-components.module";
+import * as i18 from "@home/components/widget/lib/legend.component";
+import * as i19 from "@home/components/widget/lib/flot-widget.component";
+import * as i20 from "@angular/common";
+import * as i21 from "@app/shared/shared.module";
+import * as i22 from "@home/components/widget/lib/rpc/rpc-widgets.module";
+import * as i23 from "@home/components/widget/lib/home-page/home-page-widgets.module";
+import * as i24 from "@home/components/shared-home-components.module";
 export declare class WidgetComponentsModule {
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetComponentsModule, never>;
-    static ɵmod: i0.ɵɵNgModuleDeclaration<WidgetComponentsModule, [typeof i1.DisplayColumnsPanelComponent, typeof i2.EntitiesTableWidgetComponent, typeof i3.AlarmsTableWidgetComponent, typeof i4.TimeseriesTableWidgetComponent, typeof i5.EntitiesHierarchyWidgetComponent, typeof i6.EdgesOverviewWidgetComponent, typeof i7.DateRangeNavigatorWidgetComponent, typeof i7.DateRangeNavigatorPanelComponent, typeof i8.JsonInputWidgetComponent, typeof i9.MultipleInputWidgetComponent, typeof i10.TripAnimationComponent, typeof i11.PhotoCameraInputWidgetComponent, typeof i12.GatewayFormComponent, typeof i13.NavigationCardsWidgetComponent, typeof i14.NavigationCardWidgetComponent, typeof i15.QrCodeWidgetComponent, typeof i16.MarkdownWidgetComponent, typeof i17.SelectEntityDialogComponent], [typeof i18.CommonModule, typeof i19.SharedModule, typeof i20.RpcWidgetsModule, typeof i21.HomePageWidgetsModule, typeof i22.SharedHomeComponentsModule], [typeof i2.EntitiesTableWidgetComponent, typeof i3.AlarmsTableWidgetComponent, typeof i4.TimeseriesTableWidgetComponent, typeof i5.EntitiesHierarchyWidgetComponent, typeof i6.EdgesOverviewWidgetComponent, typeof i20.RpcWidgetsModule, typeof i22.SharedHomeComponentsModule, typeof i21.HomePageWidgetsModule, typeof i7.DateRangeNavigatorWidgetComponent, typeof i8.JsonInputWidgetComponent, typeof i9.MultipleInputWidgetComponent, typeof i10.TripAnimationComponent, typeof i11.PhotoCameraInputWidgetComponent, typeof i12.GatewayFormComponent, typeof i13.NavigationCardsWidgetComponent, typeof i14.NavigationCardWidgetComponent, typeof i15.QrCodeWidgetComponent, typeof i16.MarkdownWidgetComponent]>;
+    static ɵmod: i0.ɵɵNgModuleDeclaration<WidgetComponentsModule, [typeof i1.DisplayColumnsPanelComponent, typeof i2.EntitiesTableWidgetComponent, typeof i3.AlarmsTableWidgetComponent, typeof i4.TimeseriesTableWidgetComponent, typeof i5.EntitiesHierarchyWidgetComponent, typeof i6.EdgesOverviewWidgetComponent, typeof i7.DateRangeNavigatorWidgetComponent, typeof i7.DateRangeNavigatorPanelComponent, typeof i8.JsonInputWidgetComponent, typeof i9.MultipleInputWidgetComponent, typeof i10.TripAnimationComponent, typeof i11.PhotoCameraInputWidgetComponent, typeof i12.GatewayFormComponent, typeof i13.NavigationCardsWidgetComponent, typeof i14.NavigationCardWidgetComponent, typeof i15.QrCodeWidgetComponent, typeof i16.MarkdownWidgetComponent, typeof i17.SelectEntityDialogComponent, typeof i18.LegendComponent, typeof i19.FlotWidgetComponent], [typeof i20.CommonModule, typeof i21.SharedModule, typeof i22.RpcWidgetsModule, typeof i23.HomePageWidgetsModule, typeof i24.SharedHomeComponentsModule], [typeof i2.EntitiesTableWidgetComponent, typeof i3.AlarmsTableWidgetComponent, typeof i4.TimeseriesTableWidgetComponent, typeof i5.EntitiesHierarchyWidgetComponent, typeof i6.EdgesOverviewWidgetComponent, typeof i22.RpcWidgetsModule, typeof i24.SharedHomeComponentsModule, typeof i23.HomePageWidgetsModule, typeof i7.DateRangeNavigatorWidgetComponent, typeof i8.JsonInputWidgetComponent, typeof i9.MultipleInputWidgetComponent, typeof i10.TripAnimationComponent, typeof i11.PhotoCameraInputWidgetComponent, typeof i12.GatewayFormComponent, typeof i13.NavigationCardsWidgetComponent, typeof i14.NavigationCardWidgetComponent, typeof i15.QrCodeWidgetComponent, typeof i16.MarkdownWidgetComponent, typeof i18.LegendComponent, typeof i19.FlotWidgetComponent]>;
     static ɵinj: i0.ɵɵInjectorDeclaration<WidgetComponentsModule>;
 }

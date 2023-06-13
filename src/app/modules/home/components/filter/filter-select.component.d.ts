@@ -50,7 +50,7 @@ export declare class FilterSelectComponent implements ControlValueAccessor, OnIn
     clear(value?: string): void;
     textIsNotEmpty(text: string): boolean;
     filterEnter($event: KeyboardEvent): void;
-    createFilter($event: Event, filter: string): void;
+    createFilter($event: Event, filter: string, focusOnCancel?: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<FilterSelectComponent, [null, { skipSelf: true; }, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<FilterSelectComponent, "tb-filter-select", never, { "aliasController": "aliasController"; "callbacks": "callbacks"; "showLabel": "showLabel"; "tbRequired": "tbRequired"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { ChangeDetectorRef, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -11,6 +11,8 @@ export declare class ColorInputComponent extends PageComponent implements OnInit
     private dialogs;
     private translate;
     private fb;
+    private cd;
+    asBoxInput: boolean;
     icon: string;
     label: string;
     requiredText: string;
@@ -28,7 +30,7 @@ export declare class ColorInputComponent extends PageComponent implements OnInit
     private modelValue;
     private propagateChange;
     colorFormGroup: UntypedFormGroup;
-    constructor(store: Store<AppState>, dialogs: DialogService, translate: TranslateService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, dialogs: DialogService, translate: TranslateService, fb: UntypedFormBuilder, cd: ChangeDetectorRef);
     ngOnInit(): void;
     updateValidators(): void;
     registerOnChange(fn: any): void;
@@ -39,5 +41,5 @@ export declare class ColorInputComponent extends PageComponent implements OnInit
     showColorPicker(): void;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ColorInputComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ColorInputComponent, "tb-color-input", never, { "icon": "icon"; "label": "label"; "requiredText": "requiredText"; "useThemePalette": "useThemePalette"; "colorClearButton": "colorClearButton"; "openOnInput": "openOnInput"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ColorInputComponent, "tb-color-input", never, { "asBoxInput": "asBoxInput"; "icon": "icon"; "label": "label"; "requiredText": "requiredText"; "useThemePalette": "useThemePalette"; "colorClearButton": "colorClearButton"; "openOnInput": "openOnInput"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

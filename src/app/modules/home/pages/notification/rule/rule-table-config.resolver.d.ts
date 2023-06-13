@@ -19,6 +19,7 @@ export declare class RuleTableConfigResolver implements Resolve<EntityTableConfi
     private configureCellActions;
     private editRule;
     private onTargetAction;
+    private toggleEnableMode;
     static ɵfac: i0.ɵɵFactoryDeclaration<RuleTableConfigResolver, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<RuleTableConfigResolver>;
 }

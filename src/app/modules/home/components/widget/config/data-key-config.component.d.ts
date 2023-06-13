@@ -8,7 +8,7 @@ import { UtilsService } from '@core/services/utils.service';
 import { TranslateService } from '@ngx-translate/core';
 import { MatDialog } from '@angular/material/dialog';
 import { EntityService } from '@core/http/entity.service';
-import { DataKeysCallbacks } from '@home/components/widget/data-keys.component.models';
+import { DataKeysCallbacks } from '@home/components/widget/config/data-keys.component.models';
 import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
 import { Observable } from 'rxjs';
 import { JsFuncComponent } from '@shared/components/js-func.component';
@@ -34,6 +34,7 @@ export declare class DataKeyConfigComponent extends PageComponent implements OnI
     comparisonResultTypes: typeof ComparisonResultType;
     comparisonResults: string[];
     comparisonResultTypeTranslations: Map<ComparisonResultType, string>;
+    deviceId: string;
     entityAliasId: string;
     callbacks: DataKeysCallbacks;
     dashboard: Dashboard;
@@ -43,6 +44,10 @@ export declare class DataKeyConfigComponent extends PageComponent implements OnI
     dataKeySettingsSchema: any;
     dataKeySettingsDirective: string;
     showPostProcessing: boolean;
+    hideDataKeyLabel: boolean;
+    hideDataKeyColor: boolean;
+    hideDataKeyUnits: boolean;
+    hideDataKeyDecimals: boolean;
     keyInput: ElementRef;
     funcBodyEdit: JsFuncComponent;
     postFuncBodyEdit: JsFuncComponent;
@@ -53,6 +58,7 @@ export declare class DataKeyConfigComponent extends PageComponent implements OnI
     dataKeySettingsFormGroup: UntypedFormGroup;
     private dataKeySettingsData;
     private alarmKeys;
+    private functionTypeKeys;
     filteredKeys: Observable<Array<string>>;
     private latestKeySearchResult;
     private fetchObservable$;
@@ -85,5 +91,5 @@ export declare class DataKeyConfigComponent extends PageComponent implements OnI
         dataKey?: undefined;
     };
     static ɵfac: i0.ɵɵFactoryDeclaration<DataKeyConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeyConfigComponent, "tb-data-key-config", never, { "entityAliasId": "entityAliasId"; "callbacks": "callbacks"; "dashboard": "dashboard"; "aliasController": "aliasController"; "widget": "widget"; "widgetType": "widgetType"; "dataKeySettingsSchema": "dataKeySettingsSchema"; "dataKeySettingsDirective": "dataKeySettingsDirective"; "showPostProcessing": "showPostProcessing"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeyConfigComponent, "tb-data-key-config", never, { "deviceId": "deviceId"; "entityAliasId": "entityAliasId"; "callbacks": "callbacks"; "dashboard": "dashboard"; "aliasController": "aliasController"; "widget": "widget"; "widgetType": "widgetType"; "dataKeySettingsSchema": "dataKeySettingsSchema"; "dataKeySettingsDirective": "dataKeySettingsDirective"; "showPostProcessing": "showPostProcessing"; "hideDataKeyLabel": "hideDataKeyLabel"; "hideDataKeyColor": "hideDataKeyColor"; "hideDataKeyUnits": "hideDataKeyUnits"; "hideDataKeyDecimals": "hideDataKeyDecimals"; }, {}, never, never, false, never>;
 }
