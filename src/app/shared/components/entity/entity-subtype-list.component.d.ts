@@ -26,6 +26,7 @@ export declare class EntitySubTypeListComponent implements ControlValueAccessor,
     modelValue: Array<string> | null;
     private requiredValue;
     get required(): boolean;
+    label: string;
     set required(value: boolean);
     disabled: boolean;
     entityType: EntityType;
@@ -55,6 +56,7 @@ export declare class EntitySubTypeListComponent implements ControlValueAccessor,
     writeValue(value: Array<string> | null): void;
     private add;
     chipAdd(event: MatChipInputEvent): void;
+    clearChipGrid(): void;
     remove(entitySubtype: string): void;
     selected(event: MatAutocompleteSelectedEvent): void;
     displayEntitySubtypeFn(entitySubtype?: string): string | undefined;
@@ -63,5 +65,5 @@ export declare class EntitySubTypeListComponent implements ControlValueAccessor,
     onFocus(): void;
     clear(value?: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntitySubTypeListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntitySubTypeListComponent, "tb-entity-subtype-list", never, { "required": "required"; "disabled": "disabled"; "entityType": "entityType"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntitySubTypeListComponent, "tb-entity-subtype-list", never, { "label": "label"; "required": "required"; "disabled": "disabled"; "entityType": "entityType"; }, {}, never, never, false, never>;
 }

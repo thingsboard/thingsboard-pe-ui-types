@@ -5,7 +5,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { TranslateService } from '@ngx-translate/core';
 import { BroadcastService } from '@app/core/services/broadcast.service';
-import { SubscriptSizing } from '@angular/material/form-field';
+import { FloatLabelType, SubscriptSizing } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class RelationTypeAutocompleteComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnDestroy {
     private store;
@@ -16,6 +16,8 @@ export declare class RelationTypeAutocompleteComponent implements ControlValueAc
     modelValue: string | null;
     private requiredValue;
     get required(): boolean;
+    label: string;
+    floatLabel: FloatLabelType;
     set required(value: boolean);
     disabled: boolean;
     subscriptSizing: SubscriptSizing;
@@ -38,5 +40,5 @@ export declare class RelationTypeAutocompleteComponent implements ControlValueAc
     fetchRelationTypes(searchText?: string, strictMatch?: boolean): Observable<Array<string>>;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<RelationTypeAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RelationTypeAutocompleteComponent, "tb-relation-type-autocomplete", never, { "required": "required"; "disabled": "disabled"; "subscriptSizing": "subscriptSizing"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RelationTypeAutocompleteComponent, "tb-relation-type-autocomplete", never, { "label": "label"; "floatLabel": "floatLabel"; "required": "required"; "disabled": "disabled"; "subscriptSizing": "subscriptSizing"; }, {}, never, never, false, never>;
 }

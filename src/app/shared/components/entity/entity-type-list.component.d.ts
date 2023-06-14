@@ -8,7 +8,7 @@ import { AliasEntityType, EntityType } from '@shared/models/entity-type.models';
 import { EntityService } from '@core/http/entity.service';
 import { MatAutocomplete } from '@angular/material/autocomplete';
 import { MatChipGrid } from '@angular/material/chips';
-import { SubscriptSizing } from '@angular/material/form-field';
+import { FloatLabelType, SubscriptSizing } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 interface EntityTypeInfo {
     name: string;
@@ -23,6 +23,8 @@ export declare class EntityTypeListComponent implements ControlValueAccessor, On
     modelValue: Array<EntityType> | null;
     private requiredValue;
     get required(): boolean;
+    label: string;
+    floatLabel: FloatLabelType;
     set required(value: boolean);
     disabled: boolean;
     subscriptSizing: SubscriptSizing;
@@ -54,6 +56,6 @@ export declare class EntityTypeListComponent implements ControlValueAccessor, On
     onFocus(): void;
     clear(value?: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityTypeListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityTypeListComponent, "tb-entity-type-list", never, { "required": "required"; "disabled": "disabled"; "subscriptSizing": "subscriptSizing"; "allowedEntityTypes": "allowedEntityTypes"; "ignoreAuthorityFilter": "ignoreAuthorityFilter"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityTypeListComponent, "tb-entity-type-list", never, { "label": "label"; "floatLabel": "floatLabel"; "required": "required"; "disabled": "disabled"; "subscriptSizing": "subscriptSizing"; "allowedEntityTypes": "allowedEntityTypes"; "ignoreAuthorityFilter": "ignoreAuthorityFilter"; }, {}, never, never, false, never>;
 }
 export {};

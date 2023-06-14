@@ -16,6 +16,7 @@ import { AlarmSearchStatus, AlarmSeverity } from '@shared/models/alarm.models';
 import { TranslateService } from '@ngx-translate/core';
 import { MatButton } from '@angular/material/button';
 import { ApiFeature, ApiUsageStateValue } from '@shared/models/api-usage.models';
+import { StringItemsOption } from '@shared/components/string-items-list.component';
 import { IntegrationType } from '@shared/models/integration.models';
 import * as i0 from "@angular/core";
 export interface RuleNotificationDialogData {
@@ -47,6 +48,7 @@ export declare class RuleNotificationDialogComponent extends DialogComponent<Rul
     apiUsageLimitTemplateForm: FormGroup;
     integrationEventsTemplateForm: FormGroup;
     newPlatformVersionTemplateForm: FormGroup;
+    rateLimitsTemplateForm: FormGroup;
     triggerType: typeof TriggerType;
     triggerTypes: TriggerType[];
     triggerTypeTranslationMap: Map<TriggerType, string>;
@@ -66,6 +68,7 @@ export declare class RuleNotificationDialogComponent extends DialogComponent<Rul
     apiUsageStateValueTranslationMap: Map<ApiUsageStateValue, string>;
     apiFeatures: ApiFeature[];
     apiFeatureTranslationMap: Map<ApiFeature, string>;
+    limitedApis: StringItemsOption[];
     integrationTypes: IntegrationType[];
     integrationTypeInfoMap: Map<IntegrationType, import("@shared/models/integration.models").IntegrationTypeInfo>;
     entityType: typeof EntityType;

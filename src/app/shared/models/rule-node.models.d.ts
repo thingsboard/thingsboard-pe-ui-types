@@ -20,6 +20,7 @@ export interface RuleNode extends BaseData<RuleNodeId> {
     name: string;
     debugMode: boolean;
     singletonMode: boolean;
+    configurationVersion?: number;
     configuration: RuleNodeConfiguration;
     additionalInfo?: any;
 }
@@ -107,6 +108,7 @@ export interface RuleNodeTypeDescriptor {
 export declare const ruleNodeTypeDescriptors: Map<RuleNodeType, RuleNodeTypeDescriptor>;
 export interface RuleNodeComponentDescriptor extends ComponentDescriptor {
     type: RuleNodeType;
+    configurationVersion: number;
     configurationDescriptor?: RuleNodeConfigurationDescriptor;
 }
 export interface FcRuleNodeType extends FcNode {
