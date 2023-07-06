@@ -11,6 +11,7 @@ export interface AlarmFilterConfigData {
     panelMode: boolean;
     userMode: boolean;
     alarmFilterConfig: AlarmFilterConfig;
+    initialAlarmFilterConfig?: AlarmFilterConfig;
 }
 export declare class AlarmFilterConfigComponent implements OnInit, OnDestroy, ControlValueAccessor {
     private data;
@@ -25,6 +26,7 @@ export declare class AlarmFilterConfigComponent implements OnInit, OnDestroy, Co
     buttonMode: boolean;
     userMode: boolean;
     propagatedFilter: boolean;
+    initialAlarmFilterConfig: AlarmFilterConfig;
     panelMode: boolean;
     readonly separatorKeysCodes: number[];
     alarmSearchStatuses: AlarmSearchStatus[];
@@ -45,16 +47,17 @@ export declare class AlarmFilterConfigComponent implements OnInit, OnDestroy, Co
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(alarmFilterConfig?: AlarmFilterConfig): void;
-    private updateValidators;
     toggleAlarmFilterPanel($event: Event): void;
     cancel(): void;
     update(): void;
+    reset(): void;
     alarmTypeList(): string[];
     removeAlarmType(type: string): void;
     addAlarmType(event: MatChipInputEvent): void;
     private updateAlarmConfigForm;
     private alarmConfigUpdated;
+    private alarmFilterConfigFromFormValue;
     private updateButtonDisplayValue;
     static ɵfac: i0.ɵɵFactoryDeclaration<AlarmFilterConfigComponent, [{ optional: true; }, { optional: true; }, null, null, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmFilterConfigComponent, "tb-alarm-filter-config", never, { "disabled": "disabled"; "buttonMode": "buttonMode"; "userMode": "userMode"; "propagatedFilter": "propagatedFilter"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmFilterConfigComponent, "tb-alarm-filter-config", never, { "disabled": "disabled"; "buttonMode": "buttonMode"; "userMode": "userMode"; "propagatedFilter": "propagatedFilter"; "initialAlarmFilterConfig": "initialAlarmFilterConfig"; }, {}, never, never, false, never>;
 }

@@ -37,8 +37,9 @@ import { IAliasController } from '@core/api/widget-api.models';
 import { MatButton } from '@angular/material/button';
 import { TbPopoverService } from '@shared/components/popover.service';
 import { TbPopoverComponent } from '@shared/components/popover.component';
+import { HasDirtyFlag } from '@core/guards/confirm-on-exit.guard';
 import * as i0 from "@angular/core";
-export declare class DashboardPageComponent extends PageComponent implements IDashboardController, OnInit, AfterViewInit, OnDestroy {
+export declare class DashboardPageComponent extends PageComponent implements IDashboardController, HasDirtyFlag, OnInit, AfterViewInit, OnDestroy {
     protected store: Store<AppState>;
     private window;
     private document;
@@ -71,6 +72,8 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     private cd;
     private sanitizer;
     elRef: ElementRef;
+    get isDirty(): boolean;
+    set isDirty(value: boolean);
     authState: AuthState;
     authUser: AuthUser;
     entityGroup: EntityGroupInfo;

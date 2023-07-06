@@ -43,6 +43,8 @@ export declare class TbFlot {
     private mouseupHandler;
     private mouseleaveHandler;
     private flotClickHandler;
+    private enableSelection;
+    private selectionMode;
     private readonly showTooltip;
     private readonly animatedPie;
     private pieDataAnimationDuration;

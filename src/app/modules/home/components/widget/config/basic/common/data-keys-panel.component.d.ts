@@ -17,19 +17,28 @@ export declare class DataKeysPanelComponent implements ControlValueAccessor, OnI
     disabled: boolean;
     panelTitle: string;
     addKeyTitle: string;
+    keySettingsTitle: string;
     removeKeyTitle: string;
     noKeysText: string;
+    requiredKeysText: string;
     datasourceType: DatasourceType;
     entityAliasId: string;
     deviceId: string;
     hideDataKeyColor: boolean;
+    hideUnits: boolean;
+    hideDecimals: boolean;
+    hideSourceSelection: boolean;
     dataKeyType: DataKeyType;
     alarmKeys: Array<DataKey>;
     functionTypeKeys: Array<DataKey>;
     keysListFormGroup: UntypedFormGroup;
+    errorText: string;
     get widgetType(): widgetType;
     get callbacks(): DataKeysCallbacks;
+    get hasAdditionalLatestDataKeys(): boolean;
     get datakeySettingsSchema(): JsonSettingsSchema;
+    get dragEnabled(): boolean;
+    get noKeys(): boolean;
     private propagateChange;
     constructor(fb: UntypedFormBuilder, dialog: MatDialog, cd: ChangeDetectorRef, utils: UtilsService, widgetConfigComponent: WidgetConfigComponent);
     ngOnInit(): void;
@@ -51,5 +60,5 @@ export declare class DataKeysPanelComponent implements ControlValueAccessor, OnI
     addKey(): void;
     private prepareKeysFormArray;
     static ɵfac: i0.ɵɵFactoryDeclaration<DataKeysPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeysPanelComponent, "tb-data-keys-panel", never, { "disabled": "disabled"; "panelTitle": "panelTitle"; "addKeyTitle": "addKeyTitle"; "removeKeyTitle": "removeKeyTitle"; "noKeysText": "noKeysText"; "datasourceType": "datasourceType"; "entityAliasId": "entityAliasId"; "deviceId": "deviceId"; "hideDataKeyColor": "hideDataKeyColor"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeysPanelComponent, "tb-data-keys-panel", never, { "disabled": "disabled"; "panelTitle": "panelTitle"; "addKeyTitle": "addKeyTitle"; "keySettingsTitle": "keySettingsTitle"; "removeKeyTitle": "removeKeyTitle"; "noKeysText": "noKeysText"; "requiredKeysText": "requiredKeysText"; "datasourceType": "datasourceType"; "entityAliasId": "entityAliasId"; "deviceId": "deviceId"; "hideDataKeyColor": "hideDataKeyColor"; "hideUnits": "hideUnits"; "hideDecimals": "hideDecimals"; "hideSourceSelection": "hideSourceSelection"; }, {}, never, never, false, never>;
 }

@@ -6,14 +6,12 @@ import { WidgetConfigComponentData } from '@home/models/widget-component.models'
 import { Datasource } from '@shared/models/widget.models';
 import { WidgetConfigComponent } from '@home/components/widget/widget-config.component';
 import * as i0 from "@angular/core";
-export declare class EntitiesTableBasicConfigComponent extends BasicWidgetConfigComponent {
+export declare class FlotBasicConfigComponent extends BasicWidgetConfigComponent {
     protected store: Store<AppState>;
     protected widgetConfigComponent: WidgetConfigComponent;
     private fb;
-    get displayTimewindowConfig(): boolean;
-    onlyHistoryTimewindow(): boolean;
     get datasource(): Datasource;
-    entitiesTableWidgetConfigForm: UntypedFormGroup;
+    flotWidgetConfigForm: UntypedFormGroup;
     constructor(store: Store<AppState>, widgetConfigComponent: WidgetConfigComponent, fb: UntypedFormBuilder);
     protected configForm(): UntypedFormGroup;
     protected setupDefaults(configData: WidgetConfigComponentData): void;
@@ -21,10 +19,10 @@ export declare class EntitiesTableBasicConfigComponent extends BasicWidgetConfig
     protected prepareOutputConfig(config: any): WidgetConfigComponentData;
     protected validatorTriggers(): string[];
     protected updateValidators(emitEvent: boolean, trigger?: string): void;
-    private getColumns;
-    private setColumns;
+    private getSeries;
+    private setSeries;
     private getCardButtons;
     private setCardButtons;
-    static ɵfac: i0.ɵɵFactoryDeclaration<EntitiesTableBasicConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntitiesTableBasicConfigComponent, "tb-entities-table-basic-config", never, {}, {}, never, never, false, never>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<FlotBasicConfigComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FlotBasicConfigComponent, "tb-flot-basic-config", never, {}, {}, never, never, false, never>;
 }

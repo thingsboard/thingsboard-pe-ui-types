@@ -24,6 +24,8 @@ export declare class LegendConfigComponent implements OnInit, OnDestroy, Control
     setDisabledState(isDisabled: boolean): void;
     writeValue(legendConfig: LegendConfig): void;
     private legendConfigUpdated;
+    private getShowValues;
+    private setShowValues;
     static ɵfac: i0.ɵɵFactoryDeclaration<LegendConfigComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<LegendConfigComponent, "tb-legend-config", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
 }

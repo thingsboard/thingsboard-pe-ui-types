@@ -38,7 +38,7 @@ export declare class ColorInputComponent extends PageComponent implements OnInit
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: string): void;
     private updateModel;
-    showColorPicker(): void;
+    showColorPicker($event: MouseEvent): void;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ColorInputComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<ColorInputComponent, "tb-color-input", never, { "asBoxInput": "asBoxInput"; "icon": "icon"; "label": "label"; "requiredText": "requiredText"; "useThemePalette": "useThemePalette"; "colorClearButton": "colorClearButton"; "openOnInput": "openOnInput"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;

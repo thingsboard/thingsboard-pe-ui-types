@@ -211,6 +211,7 @@ export interface AlarmFilter {
 export interface AlarmFilterConfig extends AlarmFilter {
     assignedToCurrentUser?: boolean;
 }
+export declare const alarmFilterConfigEquals: (filter1?: AlarmFilterConfig, filter2?: AlarmFilterConfig) => boolean;
 export type AlarmCountQuery = EntityCountQuery & AlarmFilter;
 export type AlarmDataPageLink = EntityDataPageLink & AlarmFilter;
 export declare function entityDataPageLinkSortDirection(pageLink: EntityDataPageLink): SortDirection;

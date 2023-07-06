@@ -1,6 +1,7 @@
 import { OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { Datasource, DatasourceType, JsonSettingsSchema, Widget, widgetType } from '@shared/models/widget.models';
+import { AlarmSearchStatus } from '@shared/models/alarm.models';
 import { Dashboard } from '@shared/models/dashboard.models';
 import { WidgetConfigComponent } from '@home/components/widget/widget-config.component';
 import { IAliasController } from '@core/api/widget-api.models';
@@ -40,6 +41,7 @@ export declare class DatasourceComponent implements ControlValueAccessor, OnInit
     datasourceType: typeof DatasourceType;
     datasourceTypes: Array<DatasourceType>;
     datasourceTypesTranslations: Map<DatasourceType, string>;
+    alarmSearchStatus: typeof AlarmSearchStatus;
     datasourceFormGroup: UntypedFormGroup;
     private propagateChange;
     constructor(fb: UntypedFormBuilder, datasourcesComponent: DatasourcesComponent, widgetConfigComponent: WidgetConfigComponent);

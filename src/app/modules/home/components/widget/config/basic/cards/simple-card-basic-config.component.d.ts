@@ -19,6 +19,8 @@ export declare class SimpleCardBasicConfigComponent extends BasicWidgetConfigCom
     protected prepareOutputConfig(config: any): WidgetConfigComponentData;
     private getDataKeyLabel;
     private setDataKeyLabel;
+    private getCardButtons;
+    private setCardButtons;
     static ɵfac: i0.ɵɵFactoryDeclaration<SimpleCardBasicConfigComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<SimpleCardBasicConfigComponent, "tb-simple-card-basic-config", never, {}, {}, never, never, false, never>;
 }

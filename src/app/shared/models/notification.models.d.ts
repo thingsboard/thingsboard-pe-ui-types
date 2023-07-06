@@ -31,6 +31,8 @@ export interface NotificationInfo {
     alarmStatus?: AlarmStatus;
     alarmType?: string;
     stateEntityId?: EntityId;
+    acknowledged?: boolean;
+    cleared?: boolean;
 }
 export interface NotificationRequest extends Omit<BaseData<NotificationRequestId>, 'label'> {
     tenantId?: TenantId;

@@ -165,6 +165,10 @@ export interface DataKey extends KeyInfo {
     origDataKeyIndex?: number;
     _hash?: number;
 }
+export declare enum DataKeyConfigMode {
+    general = "general",
+    advanced = "advanced"
+}
 export declare enum DatasourceType {
     function = "function",
     device = "device",

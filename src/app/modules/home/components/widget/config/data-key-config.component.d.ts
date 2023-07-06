@@ -2,7 +2,7 @@ import { ElementRef, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { ComparisonResultType, DataKey, Widget, widgetType } from '@shared/models/widget.models';
+import { ComparisonResultType, DataKey, DataKeyConfigMode, Widget, widgetType } from '@shared/models/widget.models';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { UtilsService } from '@core/services/utils.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -25,6 +25,7 @@ export declare class DataKeyConfigComponent extends PageComponent implements OnI
     private translate;
     private widgetService;
     private fb;
+    dataKeyConfigModes: typeof DataKeyConfigMode;
     dataKeyTypes: typeof DataKeyType;
     widgetTypes: typeof widgetType;
     aggregations: string[];
@@ -34,6 +35,7 @@ export declare class DataKeyConfigComponent extends PageComponent implements OnI
     comparisonResultTypes: typeof ComparisonResultType;
     comparisonResults: string[];
     comparisonResultTypeTranslations: Map<ComparisonResultType, string>;
+    dataKeyConfigMode: DataKeyConfigMode;
     deviceId: string;
     entityAliasId: string;
     callbacks: DataKeysCallbacks;
@@ -51,7 +53,7 @@ export declare class DataKeyConfigComponent extends PageComponent implements OnI
     keyInput: ElementRef;
     funcBodyEdit: JsFuncComponent;
     postFuncBodyEdit: JsFuncComponent;
-    displayAdvanced: boolean;
+    hasAdvanced: boolean;
     modelValue: DataKey;
     private propagateChange;
     dataKeyFormGroup: UntypedFormGroup;
@@ -91,5 +93,5 @@ export declare class DataKeyConfigComponent extends PageComponent implements OnI
         dataKey?: undefined;
     };
     static ɵfac: i0.ɵɵFactoryDeclaration<DataKeyConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeyConfigComponent, "tb-data-key-config", never, { "deviceId": "deviceId"; "entityAliasId": "entityAliasId"; "callbacks": "callbacks"; "dashboard": "dashboard"; "aliasController": "aliasController"; "widget": "widget"; "widgetType": "widgetType"; "dataKeySettingsSchema": "dataKeySettingsSchema"; "dataKeySettingsDirective": "dataKeySettingsDirective"; "showPostProcessing": "showPostProcessing"; "hideDataKeyLabel": "hideDataKeyLabel"; "hideDataKeyColor": "hideDataKeyColor"; "hideDataKeyUnits": "hideDataKeyUnits"; "hideDataKeyDecimals": "hideDataKeyDecimals"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeyConfigComponent, "tb-data-key-config", never, { "dataKeyConfigMode": "dataKeyConfigMode"; "deviceId": "deviceId"; "entityAliasId": "entityAliasId"; "callbacks": "callbacks"; "dashboard": "dashboard"; "aliasController": "aliasController"; "widget": "widget"; "widgetType": "widgetType"; "dataKeySettingsSchema": "dataKeySettingsSchema"; "dataKeySettingsDirective": "dataKeySettingsDirective"; "showPostProcessing": "showPostProcessing"; "hideDataKeyLabel": "hideDataKeyLabel"; "hideDataKeyColor": "hideDataKeyColor"; "hideDataKeyUnits": "hideDataKeyUnits"; "hideDataKeyDecimals": "hideDataKeyDecimals"; }, {}, never, never, false, never>;
 }

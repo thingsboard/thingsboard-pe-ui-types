@@ -8,6 +8,7 @@ import { AlarmService } from '@core/http/alarm.service';
 import { OverlayRef } from '@angular/cdk/overlay';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { UtilsService } from '@core/services/utils.service';
+import { AlarmAssigneeOption } from '@shared/models/alarm.models';
 import * as i0 from "@angular/core";
 export declare const ALARM_ASSIGNEE_PANEL_DATA: InjectionToken<any>;
 export interface AlarmAssigneePanelData {
@@ -22,15 +23,20 @@ export declare class AlarmAssigneePanelComponent implements OnInit, AfterViewIni
     private alarmService;
     private fb;
     private utilsService;
+    assigneeOptions: typeof AlarmAssigneeOption;
     private dirty;
     alarmId: string;
     assigneeId?: string;
+    assigneeOption?: AlarmAssigneeOption;
     assigneeNotSetText: string;
+    assignedToCurrentUserText: string;
     reassigned: boolean;
     selectUserFormGroup: FormGroup;
     userInput: ElementRef;
     filteredUsers: Observable<Array<UserEmailInfo>>;
     searchText: string;
+    get displayAssigneeNotSet(): boolean;
+    get displayAssignedToCurrentUser(): boolean;
     private destroy$;
     constructor(data: AlarmAssigneePanelData, overlayRef: OverlayRef, translate: TranslateService, userService: UserService, alarmService: AlarmService, fb: FormBuilder, utilsService: UtilsService);
     ngOnInit(): void;

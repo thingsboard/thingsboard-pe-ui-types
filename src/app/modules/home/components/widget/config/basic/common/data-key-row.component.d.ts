@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, ElementRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectorRef, ElementRef, EventEmitter, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, ValidationErrors } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { WidgetConfigComponent } from '@home/components/widget/widget-config.component';
@@ -34,6 +34,7 @@ export declare class DataKeyRowComponent implements ControlValueAccessor, OnInit
     datasourceType: DatasourceType;
     entityAliasId: string;
     deviceId: string;
+    keyRemoved: EventEmitter<any>;
     keyFormControl: UntypedFormControl;
     keyRowFormGroup: UntypedFormGroup;
     modelValue: DataKey;
@@ -45,15 +46,24 @@ export declare class DataKeyRowComponent implements ControlValueAccessor, OnInit
     get alarmKeys(): Array<DataKey>;
     get functionTypeKeys(): Array<DataKey>;
     get hideDataKeyColor(): boolean;
+    get hideUnits(): boolean;
+    get hideDecimals(): boolean;
     get widgetType(): widgetType;
     get callbacks(): DataKeysCallbacks;
+    get hasAdditionalLatestDataKeys(): boolean;
     get widget(): Widget;
     get dashboard(): Dashboard;
     get aliasController(): IAliasController;
-    get datakeySettingsSchema(): JsonSettingsSchema;
+    get dataKeySettingsSchema(): JsonSettingsSchema;
     get dataKeySettingsDirective(): string;
+    get latestDataKeySettingsSchema(): JsonSettingsSchema;
+    get latestDataKeySettingsDirective(): string;
     get isEntityDatasource(): boolean;
     get displayUnitsOrDigits(): boolean;
+    get keySettingsTitle(): string;
+    get removeKeyTitle(): string;
+    get dragEnabled(): boolean;
+    get isLatestDataKeys(): boolean;
     private propagateChange;
     constructor(fb: UntypedFormBuilder, dialog: MatDialog, cd: ChangeDetectorRef, translate: TranslateService, truncate: TruncatePipe, dataKeysPanelComponent: DataKeysPanelComponent, widgetConfigComponent: WidgetConfigComponent);
     ngOnInit(): void;
@@ -68,7 +78,7 @@ export declare class DataKeyRowComponent implements ControlValueAccessor, OnInit
     displayKeyFn(key?: DataKey): string | undefined;
     createKey(name: string, dataKeyType?: DataKeyType): void;
     addKey(event: MatChipInputEvent): void;
-    editKey(): void;
+    editKey(advanced?: boolean): void;
     removeKey(): void;
     textIsNotEmpty(text: string): boolean;
     clearKeyChip(value?: string, focus?: boolean): void;
@@ -80,5 +90,5 @@ export declare class DataKeyRowComponent implements ControlValueAccessor, OnInit
     private clearKeySearchCache;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<DataKeyRowComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeyRowComponent, "tb-data-key-row", never, { "disabled": "disabled"; "datasourceType": "datasourceType"; "entityAliasId": "entityAliasId"; "deviceId": "deviceId"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeyRowComponent, "tb-data-key-row", never, { "disabled": "disabled"; "datasourceType": "datasourceType"; "entityAliasId": "entityAliasId"; "deviceId": "deviceId"; }, { "keyRemoved": "keyRemoved"; }, never, never, false, never>;
 }

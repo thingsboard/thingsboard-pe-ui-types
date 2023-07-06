@@ -1,7 +1,7 @@
 import { OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { WidgetConfigComponent } from '@home/components/widget/widget-config.component';
-import { widgetType } from '@shared/models/widget.models';
+import { WidgetConfig, widgetType } from '@shared/models/widget.models';
 import { Timewindow } from '@shared/models/time/time.models';
 import { TranslateService } from '@ngx-translate/core';
 import * as i0 from "@angular/core";
@@ -10,6 +10,7 @@ export interface TimewindowConfigData {
     displayTimewindow: boolean;
     timewindow: Timewindow;
 }
+export declare const getTimewindowConfig: (config: WidgetConfig) => TimewindowConfigData;
 export declare class TimewindowConfigPanelComponent implements ControlValueAccessor, OnInit {
     private fb;
     translate: TranslateService;
