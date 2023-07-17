@@ -300,7 +300,7 @@ export interface Device extends BaseData<DeviceId>, ExportableEntity<DeviceId> {
     tenantId?: TenantId;
     customerId?: CustomerId;
     name?: string;
-    type: string;
+    type?: string;
     label?: string;
     firmwareId?: OtaPackageId;
     softwareId?: OtaPackageId;

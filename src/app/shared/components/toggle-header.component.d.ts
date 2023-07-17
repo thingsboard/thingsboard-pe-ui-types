@@ -39,11 +39,12 @@ export declare class ToggleHeaderComponent extends _ToggleBase implements OnInit
     useSelectOnMdLg: boolean;
     ignoreMdLgSize: boolean;
     appearance: ToggleHeaderAppearance;
+    disabled: boolean;
     isMdLg: boolean;
     private observeBreakpointSubscription;
     constructor(store: Store<AppState>, cd: ChangeDetectorRef, breakpointObserver: BreakpointObserver);
     ngOnInit(): void;
     trackByHeaderOption(index: number, option: ToggleHeaderOption): any;
     static ɵfac: i0.ɵɵFactoryDeclaration<ToggleHeaderComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ToggleHeaderComponent, "tb-toggle-header", never, { "value": "value"; "name": "name"; "useSelectOnMdLg": "useSelectOnMdLg"; "ignoreMdLgSize": "ignoreMdLgSize"; "appearance": "appearance"; }, { "valueChange": "valueChange"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ToggleHeaderComponent, "tb-toggle-header", never, { "value": "value"; "name": "name"; "useSelectOnMdLg": "useSelectOnMdLg"; "ignoreMdLgSize": "ignoreMdLgSize"; "appearance": "appearance"; "disabled": "disabled"; }, { "valueChange": "valueChange"; }, never, never, false, never>;
 }

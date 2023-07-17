@@ -1,4 +1,4 @@
-import { OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { EventEmitter, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -22,6 +22,8 @@ export declare class RuleNodeDetailsComponent extends PageComponent implements O
     isEdit: boolean;
     isReadOnly: boolean;
     isAdd: boolean;
+    initRuleNode: EventEmitter<void>;
+    changeScript: EventEmitter<void>;
     ruleNodeType: typeof RuleNodeType;
     entityType: typeof EntityType;
     ruleNodeFormGroup: UntypedFormGroup;
@@ -35,5 +37,5 @@ export declare class RuleNodeDetailsComponent extends PageComponent implements O
     openRuleChain($event: Event): void;
     isSingletonEditAllowed(): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<RuleNodeDetailsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RuleNodeDetailsComponent, "tb-rule-node", never, { "ruleNode": "ruleNode"; "ruleChainId": "ruleChainId"; "ruleChainType": "ruleChainType"; "isEdit": "isEdit"; "isReadOnly": "isReadOnly"; "isAdd": "isAdd"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RuleNodeDetailsComponent, "tb-rule-node", never, { "ruleNode": "ruleNode"; "ruleChainId": "ruleChainId"; "ruleChainType": "ruleChainType"; "isEdit": "isEdit"; "isReadOnly": "isReadOnly"; "isAdd": "isAdd"; }, { "initRuleNode": "initRuleNode"; "changeScript": "changeScript"; }, never, never, false, never>;
 }

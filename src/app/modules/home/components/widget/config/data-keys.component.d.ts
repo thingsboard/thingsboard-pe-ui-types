@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, ElementRef, OnChanges, OnInit, Renderer2, SimpleChanges } from '@angular/core';
+import { ChangeDetectorRef, ElementRef, OnChanges, OnInit, Renderer2, SimpleChanges, ViewContainerRef } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, FormGroupDirective, NgForm, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, ValidationErrors } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
@@ -13,11 +13,11 @@ import { DataKeysCallbacks } from './data-keys.component.models';
 import { UtilsService } from '@core/services/utils.service';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { TruncatePipe } from '@shared/pipe/truncate.pipe';
-import { DialogService } from '@core/services/dialog.service';
 import { MatDialog } from '@angular/material/dialog';
 import { Dashboard } from '@shared/models/dashboard.models';
 import { DndDropEvent } from 'ngx-drag-drop/lib/dnd-dropzone.directive';
 import { DatasourceComponent } from '@home/components/widget/config/datasource.component';
+import { TbPopoverService } from '@shared/components/popover.service';
 import * as i0 from "@angular/core";
 export declare class DataKeysComponent implements ControlValueAccessor, OnInit, OnChanges, ErrorStateMatcher {
     private store;
@@ -25,10 +25,11 @@ export declare class DataKeysComponent implements ControlValueAccessor, OnInit, 
     private datasourceComponent;
     translate: TranslateService;
     private utils;
-    private dialogs;
     private dialog;
     private fb;
     private cd;
+    private popoverService;
+    private viewContainerRef;
     private renderer;
     truncate: TruncatePipe;
     get hideDataKeyLabel(): boolean;
@@ -79,7 +80,7 @@ export declare class DataKeysComponent implements ControlValueAccessor, OnInit, 
     private fetchObservable$;
     private dirty;
     private propagateChange;
-    constructor(store: Store<AppState>, errorStateMatcher: ErrorStateMatcher, datasourceComponent: DatasourceComponent, translate: TranslateService, utils: UtilsService, dialogs: DialogService, dialog: MatDialog, fb: UntypedFormBuilder, cd: ChangeDetectorRef, renderer: Renderer2, truncate: TruncatePipe);
+    constructor(store: Store<AppState>, errorStateMatcher: ErrorStateMatcher, datasourceComponent: DatasourceComponent, translate: TranslateService, utils: UtilsService, dialog: MatDialog, fb: UntypedFormBuilder, cd: ChangeDetectorRef, popoverService: TbPopoverService, viewContainerRef: ViewContainerRef, renderer: Renderer2, truncate: TruncatePipe);
     updateValidators(): void;
     keysRequired(control: AbstractControl): ValidationErrors | null;
     registerOnChange(fn: any): void;
@@ -100,7 +101,7 @@ export declare class DataKeysComponent implements ControlValueAccessor, OnInit, 
     chipDragStart(index: number, chipRow: MatChipRow, placeholderChipRow: Element): void;
     chipDragEnd(): void;
     onChipDrop(event: DndDropEvent): void;
-    showColorPicker(key: DataKey): void;
+    openColorPickerPopup(key: DataKey, $event: Event, keyColorButton: HTMLDivElement): void;
     editDataKey(key: DataKey, index: number): void;
     createKey(name: string, dataKeyType?: DataKeyType): void;
     displayKeyFn(key?: DataKey): string | undefined;
@@ -117,6 +118,6 @@ export declare class DataKeysComponent implements ControlValueAccessor, OnInit, 
     get dragDisabled(): boolean;
     get maxDataKeysSet(): boolean;
     private clearSearchCache;
-    static ɵfac: i0.ɵɵFactoryDeclaration<DataKeysComponent, [null, { skipSelf: true; }, null, null, null, null, null, null, null, null, null]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<DataKeysComponent, [null, { skipSelf: true; }, null, null, null, null, null, null, null, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<DataKeysComponent, "tb-data-keys", never, { "widgetType": "widgetType"; "datasourceType": "datasourceType"; "maxDataKeys": "maxDataKeys"; "optDataKeys": "optDataKeys"; "simpleDataKeysLabel": "simpleDataKeysLabel"; "aliasController": "aliasController"; "datakeySettingsSchema": "datakeySettingsSchema"; "dataKeySettingsDirective": "dataKeySettingsDirective"; "dashboard": "dashboard"; "widget": "widget"; "callbacks": "callbacks"; "entityAliasId": "entityAliasId"; "deviceId": "deviceId"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

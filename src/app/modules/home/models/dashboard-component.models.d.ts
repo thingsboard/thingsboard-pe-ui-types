@@ -97,6 +97,7 @@ export declare class DashboardWidget implements GridsterItem, IDashboardWidget {
     backgroundColor: string;
     padding: string;
     margin: string;
+    borderRadius: string;
     title: string;
     customTranslatedTitle: string;
     titleTooltip: string;

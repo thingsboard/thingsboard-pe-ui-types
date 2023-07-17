@@ -31,11 +31,10 @@ export declare class DeviceProfileAutocompleteComponent implements ControlValueA
     displayAllOnEmpty: boolean;
     editProfileEnabled: boolean;
     addNewProfile: boolean;
+    showCreateNewButton: boolean;
     showDetailsPageLink: boolean;
     transportType: DeviceTransportType;
-    private requiredValue;
-    get required(): boolean;
-    set required(value: boolean);
+    required: boolean;
     disabled: boolean;
     hint: string;
     deviceProfileUpdated: EventEmitter<DeviceProfileId>;
@@ -70,5 +69,5 @@ export declare class DeviceProfileAutocompleteComponent implements ControlValueA
     editDeviceProfile($event: Event): void;
     openDeviceProfileDialog(deviceProfile: DeviceProfile, isAdd: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceProfileAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceProfileAutocompleteComponent, "tb-device-profile-autocomplete", never, { "subscriptSizing": "subscriptSizing"; "selectDefaultProfile": "selectDefaultProfile"; "selectFirstProfile": "selectFirstProfile"; "displayAllOnEmpty": "displayAllOnEmpty"; "editProfileEnabled": "editProfileEnabled"; "addNewProfile": "addNewProfile"; "showDetailsPageLink": "showDetailsPageLink"; "transportType": "transportType"; "required": "required"; "disabled": "disabled"; "hint": "hint"; }, { "deviceProfileUpdated": "deviceProfileUpdated"; "deviceProfileChanged": "deviceProfileChanged"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceProfileAutocompleteComponent, "tb-device-profile-autocomplete", never, { "subscriptSizing": "subscriptSizing"; "selectDefaultProfile": "selectDefaultProfile"; "selectFirstProfile": "selectFirstProfile"; "displayAllOnEmpty": "displayAllOnEmpty"; "editProfileEnabled": "editProfileEnabled"; "addNewProfile": "addNewProfile"; "showCreateNewButton": "showCreateNewButton"; "showDetailsPageLink": "showDetailsPageLink"; "transportType": "transportType"; "required": "required"; "disabled": "disabled"; "hint": "hint"; }, { "deviceProfileUpdated": "deviceProfileUpdated"; "deviceProfileChanged": "deviceProfileChanged"; }, never, never, false, never>;
 }

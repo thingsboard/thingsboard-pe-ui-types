@@ -1,4 +1,4 @@
-import { ElementRef, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, ElementRef, OnDestroy, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormControl, Validator } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -8,6 +8,7 @@ export declare class JsonObjectEditComponent implements OnInit, ControlValueAcce
     elementRef: ElementRef;
     protected store: Store<AppState>;
     private raf;
+    private cd;
     jsonEditorElmRef: ElementRef;
     private jsonEditor;
     private editorsResizeCaf;
@@ -34,7 +35,7 @@ export declare class JsonObjectEditComponent implements OnInit, ControlValueAcce
     errorShowed: boolean;
     ignoreChange: boolean;
     private propagateChange;
-    constructor(elementRef: ElementRef, store: Store<AppState>, raf: RafService);
+    constructor(elementRef: ElementRef, store: Store<AppState>, raf: RafService, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngOnDestroy(): void;
     private onAceEditorResize;

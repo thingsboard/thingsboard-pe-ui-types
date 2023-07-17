@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, ElementRef, NgZone, OnInit, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ElementRef, NgZone, OnDestroy, OnInit, ViewContainerRef } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -29,7 +29,7 @@ interface AlarmWidgetActionDescriptor extends TableCellButtonActionDescriptor {
     clear?: boolean;
     activity?: boolean;
 }
-export declare class AlarmsTableWidgetComponent extends PageComponent implements OnInit, AfterViewInit {
+export declare class AlarmsTableWidgetComponent extends PageComponent implements OnInit, OnDestroy, AfterViewInit {
     protected store: Store<AppState>;
     private userPermissionsService;
     private elementRef;

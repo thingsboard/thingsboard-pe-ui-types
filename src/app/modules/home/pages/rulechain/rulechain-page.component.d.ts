@@ -25,7 +25,7 @@ import { DialogComponent } from '@shared/components/dialog.component';
 import { MatMenuTrigger } from '@angular/material/menu';
 import { ItemBufferService } from '@core/services/item-buffer.service';
 import { Hotkey } from 'angular2-hotkeys';
-import { DebugEventType, EventType } from '@shared/models/event.models';
+import { DebugEventType, DebugRuleNodeEventBody, EventType } from '@shared/models/event.models';
 import { MatMiniFabButton } from '@angular/material/button';
 import { TbPopoverService } from '@shared/components/popover.service';
 import { MatDrawer } from '@angular/material/sidenav';
@@ -83,6 +83,7 @@ export declare class RuleChainPageComponent extends PageComponent implements Aft
         [label: string]: LinkLabel;
     };
     editingRuleNodeSourceRuleChainId: string;
+    ruleNodeTestButtonLabel: string;
     ruleNodeComponent: RuleNodeDetailsComponent;
     ruleNodeLinkComponent: RuleNodeLinkComponent;
     editingRuleNodeLink: FcRuleEdge;
@@ -169,6 +170,9 @@ export declare class RuleChainPageComponent extends PageComponent implements Aft
     onEditRuleNodeLinkClosed(): void;
     onRevertRuleNodeEdit(): void;
     onRevertRuleNodeLinkEdit(): void;
+    onDebugEventSelected(debugEventBody: DebugRuleNodeEventBody): void;
+    onRuleNodeInit(): void;
+    switchToFirstTab(): void;
     saveRuleNode(): void;
     saveRuleNodeLink(): void;
     typeHeaderMouseEnter(event: MouseEvent, ruleNodeType: RuleNodeType): void;

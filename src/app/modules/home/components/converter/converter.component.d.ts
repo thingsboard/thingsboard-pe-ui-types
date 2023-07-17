@@ -35,8 +35,8 @@ export declare class ConverterComponent extends EntityComponent<Converter> {
     private setupDefaultScriptBody;
     updateForm(entity: Converter): void;
     onConverterIdCopied($event: any): void;
-    openConverterTestDialog(isDecoder: boolean): void;
-    showConverterTestDialog(isDecoder: boolean, debugIn: ConverterDebugInput): void;
+    openConverterTestDialog(): void;
+    showConverterTestDialog(debugIn: ConverterDebugInput, setFirstTab?: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ConverterComponent, [null, null, null, null, { optional: true; }, { optional: true; }, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<ConverterComponent, "tb-converter", never, { "hideType": "hideType"; }, {}, never, never, false, never>;
 }

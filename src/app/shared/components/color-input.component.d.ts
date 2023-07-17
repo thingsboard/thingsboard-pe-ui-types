@@ -1,15 +1,20 @@
-import { ChangeDetectorRef, OnInit } from '@angular/core';
+import { ChangeDetectorRef, OnInit, Renderer2, ViewContainerRef } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { DialogService } from '@core/services/dialog.service';
+import { TbPopoverService } from '@shared/components/popover.service';
+import { MatButton } from '@angular/material/button';
 import * as i0 from "@angular/core";
 export declare class ColorInputComponent extends PageComponent implements OnInit, ControlValueAccessor {
     protected store: Store<AppState>;
     private dialogs;
     private translate;
+    private popoverService;
+    private renderer;
+    private viewContainerRef;
     private fb;
     private cd;
     asBoxInput: boolean;
@@ -30,7 +35,7 @@ export declare class ColorInputComponent extends PageComponent implements OnInit
     private modelValue;
     private propagateChange;
     colorFormGroup: UntypedFormGroup;
-    constructor(store: Store<AppState>, dialogs: DialogService, translate: TranslateService, fb: UntypedFormBuilder, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, dialogs: DialogService, translate: TranslateService, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, fb: UntypedFormBuilder, cd: ChangeDetectorRef);
     ngOnInit(): void;
     updateValidators(): void;
     registerOnChange(fn: any): void;
@@ -39,6 +44,7 @@ export declare class ColorInputComponent extends PageComponent implements OnInit
     writeValue(value: string): void;
     private updateModel;
     showColorPicker($event: MouseEvent): void;
+    openColorPickerPopup($event: Event, matButton: MatButton): void;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ColorInputComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<ColorInputComponent, "tb-color-input", never, { "asBoxInput": "asBoxInput"; "icon": "icon"; "label": "label"; "requiredText": "requiredText"; "useThemePalette": "useThemePalette"; "colorClearButton": "colorClearButton"; "openOnInput": "openOnInput"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;

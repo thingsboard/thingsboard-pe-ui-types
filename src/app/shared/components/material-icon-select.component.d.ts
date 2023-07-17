@@ -1,15 +1,20 @@
-import { ChangeDetectorRef, OnInit } from '@angular/core';
+import { ChangeDetectorRef, OnInit, Renderer2, ViewContainerRef } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { DialogService } from '@core/services/dialog.service';
 import { TranslateService } from '@ngx-translate/core';
+import { TbPopoverService } from '@shared/components/popover.service';
+import { MatButton } from '@angular/material/button';
 import * as i0 from "@angular/core";
 export declare class MaterialIconSelectComponent extends PageComponent implements OnInit, ControlValueAccessor {
     protected store: Store<AppState>;
     private dialogs;
     private translate;
+    private popoverService;
+    private renderer;
+    private viewContainerRef;
     private fb;
     private cd;
     asBoxInput: boolean;
@@ -25,7 +30,7 @@ export declare class MaterialIconSelectComponent extends PageComponent implement
     private modelValue;
     private propagateChange;
     materialIconFormGroup: UntypedFormGroup;
-    constructor(store: Store<AppState>, dialogs: DialogService, translate: TranslateService, fb: UntypedFormBuilder, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, dialogs: DialogService, translate: TranslateService, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, fb: UntypedFormBuilder, cd: ChangeDetectorRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -33,6 +38,7 @@ export declare class MaterialIconSelectComponent extends PageComponent implement
     writeValue(value: string): void;
     private updateModel;
     openIconDialog(): void;
+    openIconPopup($event: Event, matButton: MatButton): void;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<MaterialIconSelectComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<MaterialIconSelectComponent, "tb-material-icon-select", never, { "asBoxInput": "asBoxInput"; "label": "label"; "color": "color"; "disabled": "disabled"; "iconClearButton": "iconClearButton"; "required": "required"; }, {}, never, never, false, never>;

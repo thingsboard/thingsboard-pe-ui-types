@@ -1,0 +1,34 @@
+import { PageComponent } from '@shared/components/page.component';
+import { EventEmitter, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { TbPopoverComponent } from '@shared/components/popover.component';
+import { UtilsService } from '@core/services/utils.service';
+import * as i0 from "@angular/core";
+type ColorMode = 'color' | 'primary' | 'accent';
+export declare class ColorPickerPanelComponent extends PageComponent implements OnInit {
+    protected store: Store<AppState>;
+    private utils;
+    color: string;
+    useThemePalette: boolean;
+    popover: TbPopoverComponent<ColorPickerPanelComponent>;
+    colorSelected: EventEmitter<string>;
+    colorMode: ColorMode;
+    plainColor: string;
+    primaryColor: string;
+    accentColor: string;
+    dirty: boolean;
+    valid: boolean;
+    constructor(store: Store<AppState>, utils: UtilsService);
+    ngOnInit(): void;
+    onPrimaryColorChange(color: string): void;
+    onAccentColorChange(color: string): void;
+    onPlainColorChange(color: string): void;
+    selectedIndexChange(index: number): void;
+    private updateValidity;
+    selectColor(): void;
+    private getColor;
+    static ɵfac: i0.ɵɵFactoryDeclaration<ColorPickerPanelComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ColorPickerPanelComponent, "tb-color-picker-panel", never, { "color": "color"; "useThemePalette": "useThemePalette"; "popover": "popover"; }, { "colorSelected": "colorSelected"; }, never, never, false, never>;
+}
+export {};
