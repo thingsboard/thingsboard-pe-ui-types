@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { PageLink } from '@shared/models/page/page-link';
 import { PageData } from '@shared/models/page/page-data';
-import { ClaimRequest, ClaimResult, Device, DeviceCredentials, DeviceInfo, DeviceInfoQuery, DeviceSearchQuery } from '@app/shared/models/device.models';
+import { ClaimRequest, ClaimResult, Device, DeviceCredentials, DeviceInfo, DeviceInfoQuery, DeviceSearchQuery, PublishTelemetryCommand } from '@app/shared/models/device.models';
 import { EntitySubtype } from '@app/shared/models/entity-type.models';
 import { BulkImportRequest, BulkImportResult } from '@home/components/import-export/import-export.models';
 import { PersistentRpc, RpcStatus } from '@shared/models/rpc.models';
@@ -36,6 +36,7 @@ export declare class DeviceService {
     claimDevice(deviceName: string, claimRequest: ClaimRequest, config?: RequestConfig): Observable<ClaimResult>;
     unclaimDevice(deviceName: string, config?: RequestConfig): Observable<Object>;
     bulkImportDevices(entitiesData: BulkImportRequest, config?: RequestConfig): Observable<BulkImportResult>;
+    getDevicePublishTelemetryCommands(deviceId: string, config?: RequestConfig): Observable<PublishTelemetryCommand>;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<DeviceService>;
 }

@@ -5,8 +5,11 @@ import { _ToggleBase, ToggleHeaderAppearance } from '@shared/components/toggle-h
 import * as i0 from "@angular/core";
 export declare class ToggleSelectComponent extends _ToggleBase implements ControlValueAccessor {
     protected store: Store<AppState>;
+    get maxWidth(): string;
     disabled: boolean;
+    selectMediaBreakpoint: any;
     appearance: ToggleHeaderAppearance;
+    disablePagination: boolean;
     modelValue: any;
     private propagateChange;
     constructor(store: Store<AppState>);
@@ -16,5 +19,5 @@ export declare class ToggleSelectComponent extends _ToggleBase implements Contro
     writeValue(value: any): void;
     updateModel(value: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ToggleSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ToggleSelectComponent, "tb-toggle-select", never, { "disabled": "disabled"; "appearance": "appearance"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ToggleSelectComponent, "tb-toggle-select", never, { "disabled": "disabled"; "selectMediaBreakpoint": "selectMediaBreakpoint"; "appearance": "appearance"; "disablePagination": "disablePagination"; }, {}, never, never, false, never>;
 }

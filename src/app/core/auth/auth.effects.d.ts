@@ -10,6 +10,8 @@ export declare class AuthEffects {
     private userSettingsService;
     constructor(actions$: Actions<AuthActions>, store: Store<AppState>, userSettingsService: UserSettingsService);
     persistOpenedMenuSections: import("rxjs").Observable<void> & import("@ngrx/effects").CreateEffectMetadata;
+    putUserSettings: import("rxjs").Observable<void> & import("@ngrx/effects").CreateEffectMetadata;
+    deleteUserSettings: import("rxjs").Observable<Object> & import("@ngrx/effects").CreateEffectMetadata;
     static ɵfac: i0.ɵɵFactoryDeclaration<AuthEffects, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<AuthEffects>;
 }

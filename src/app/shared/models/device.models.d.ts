@@ -26,6 +26,11 @@ export declare enum DeviceTransportType {
     LWM2M = "LWM2M",
     SNMP = "SNMP"
 }
+export declare enum BasicTransportType {
+    HTTP = "HTTP"
+}
+export type TransportType = BasicTransportType | DeviceTransportType;
+export type NetworkTransportType = BasicTransportType | Exclude<DeviceTransportType, DeviceTransportType.DEFAULT>;
 export declare enum TransportPayloadType {
     JSON = "JSON",
     PROTOBUF = "PROTOBUF"
@@ -46,9 +51,9 @@ export interface DeviceConfigurationFormInfo {
 }
 export declare const deviceProfileTypeTranslationMap: Map<DeviceProfileType, string>;
 export declare const deviceProfileTypeConfigurationInfoMap: Map<DeviceProfileType, DeviceConfigurationFormInfo>;
-export declare const deviceTransportTypeTranslationMap: Map<DeviceTransportType, string>;
+export declare const deviceTransportTypeTranslationMap: Map<TransportType, string>;
 export declare const deviceProvisionTypeTranslationMap: Map<DeviceProvisionType, string>;
-export declare const deviceTransportTypeHintMap: Map<DeviceTransportType, string>;
+export declare const deviceTransportTypeHintMap: Map<TransportType, string>;
 export declare const transportPayloadTypeTranslationMap: Map<TransportPayloadType, string>;
 export declare const defaultTelemetrySchema: string;
 export declare const defaultAttributesSchema: string;
@@ -357,6 +362,31 @@ export declare enum ClaimResponse {
 export interface ClaimResult {
     device: Device;
     response: ClaimResponse;
+}
+export interface PublishTelemetryCommand {
+    http?: {
+        http?: string;
+        https?: string;
+    };
+    mqtt: {
+        mqtt?: string;
+        mqtts?: string | Array<string>;
+        docker?: {
+            mqtt?: string;
+            mqtts?: string | Array<string>;
+        };
+        sparkplug?: string;
+    };
+    coap: {
+        coap?: string;
+        coaps?: string | Array<string>;
+        docker?: {
+            coap?: string;
+            coaps?: string | Array<string>;
+        };
+    };
+    lwm2m?: string;
+    snmp?: string;
 }
 export declare const dayOfWeekTranslations: string[];
 export declare const timeOfDayToUTCTimestamp: (date: Date | number) => number;

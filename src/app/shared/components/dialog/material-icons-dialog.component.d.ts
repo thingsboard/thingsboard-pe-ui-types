@@ -6,14 +6,20 @@ import { DialogComponent } from '@shared/components/dialog.component';
 import * as i0 from "@angular/core";
 export interface MaterialIconsDialogData {
     icon: string;
+    iconClearButton: boolean;
 }
-export declare class MaterialIconsDialogComponent extends DialogComponent<MaterialIconsDialogComponent, string> {
+export interface MaterialIconsDialogResult {
+    icon?: string;
+    canceled?: boolean;
+}
+export declare class MaterialIconsDialogComponent extends DialogComponent<MaterialIconsDialogComponent, MaterialIconsDialogResult> {
     protected store: Store<AppState>;
     protected router: Router;
     data: MaterialIconsDialogData;
-    dialogRef: MatDialogRef<MaterialIconsDialogComponent, string>;
+    dialogRef: MatDialogRef<MaterialIconsDialogComponent, MaterialIconsDialogResult>;
     selectedIcon: string;
-    constructor(store: Store<AppState>, router: Router, data: MaterialIconsDialogData, dialogRef: MatDialogRef<MaterialIconsDialogComponent, string>);
+    iconClearButton: boolean;
+    constructor(store: Store<AppState>, router: Router, data: MaterialIconsDialogData, dialogRef: MatDialogRef<MaterialIconsDialogComponent, MaterialIconsDialogResult>);
     selectIcon(icon: string): void;
     cancel(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<MaterialIconsDialogComponent, never>;

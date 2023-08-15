@@ -1,0 +1,32 @@
+import { OnInit } from '@angular/core';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
+import { IntegrationCredentialType, ParticleIntegration } from '@shared/models/integration.models';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { TranslateService } from '@ngx-translate/core';
+import { IntegrationForm } from '@home/components/integration/configuration/integration-form';
+import * as i0 from "@angular/core";
+export declare class ParticleIntegrationFormComponent extends IntegrationForm implements ControlValueAccessor, Validator, OnInit {
+    private fb;
+    private store;
+    private translate;
+    particleIntegrationConfigForm: UntypedFormGroup;
+    IntegrationCredentialType: typeof IntegrationCredentialType;
+    routingKey: string;
+    private integrationType;
+    private propagateChangePending;
+    private propagateChange;
+    constructor(fb: UntypedFormBuilder, store: Store<AppState>, translate: TranslateService);
+    ngOnInit(): void;
+    writeValue(value: ParticleIntegration): void;
+    registerOnChange(fn: any): void;
+    registerOnTouched(fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    validate(): ValidationErrors | null;
+    onHttpEndpointCopied(): void;
+    private updateModels;
+    private updateEnableFields;
+    updatedValidationPrivateNetwork(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<ParticleIntegrationFormComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ParticleIntegrationFormComponent, "tb-particle-integration-form", never, { "routingKey": "routingKey"; }, {}, never, never, false, never>;
+}

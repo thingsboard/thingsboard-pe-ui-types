@@ -1,15 +1,16 @@
 /// <reference types="src/typings/rawloader.typings" />
-import { NgZone } from '@angular/core';
+import { ElementRef, NgZone } from '@angular/core';
 import { ExceptionData } from '@app/shared/models/error.models';
 import { TranslateService } from '@ngx-translate/core';
 import { DataKey, Datasource, KeyInfo } from '@shared/models/widget.models';
 import { DataKeyType } from '@app/shared/models/telemetry/telemetry.models';
 import { WidgetInfo } from '@home/models/widget-component.models';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { WidgetContext } from '@app/modules/home/models/widget-component.models';
 import { AttributeData, TelemetryType } from '@shared/models/telemetry/telemetry.models';
 import { EntityId } from '@shared/models/id/entity-id';
 import { DatePipe } from '@angular/common';
+import { OverlayRef } from '@angular/cdk/overlay';
 import * as i0 from "@angular/core";
 export declare class UtilsService {
     private window;
@@ -61,6 +62,7 @@ export declare class UtilsService {
     base64toString(b64Encoded: string): string;
     objToBase64URI(obj: any): string;
     base64toObj(b64Encoded: string): any;
+    updateOverlayMaxHeigth(overlay: OverlayRef, observeElementRef?: ElementRef): Subscription;
     plainColorFromVariable(variable: string): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<UtilsService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<UtilsService>;

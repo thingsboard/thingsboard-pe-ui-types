@@ -33,10 +33,11 @@ export declare class AlarmTableConfig extends EntityTableConfig<AlarmInfo, TimeP
     private overlay;
     private cd;
     private utilsService;
-    private readonly;
+    private writeEnabled;
+    private removeEnabled;
     private authUser;
     alarmFilterConfig: AlarmFilterConfig;
-    constructor(alarmService: AlarmService, entityService: EntityService, dialogService: DialogService, userPermissionsService: UserPermissionsService, translate: TranslateService, datePipe: DatePipe, dialog: MatDialog, alarmsMode: AlarmsMode, entityId: EntityId, defaultAlarmFilterConfig: AlarmFilterConfig, store: Store<AppState>, viewContainerRef: ViewContainerRef, overlay: Overlay, cd: ChangeDetectorRef, utilsService: UtilsService, readonly: any, pageMode?: boolean);
+    constructor(alarmService: AlarmService, entityService: EntityService, dialogService: DialogService, userPermissionsService: UserPermissionsService, translate: TranslateService, datePipe: DatePipe, dialog: MatDialog, alarmsMode: AlarmsMode, entityId: EntityId, defaultAlarmFilterConfig: AlarmFilterConfig, store: Store<AppState>, viewContainerRef: ViewContainerRef, overlay: Overlay, cd: ChangeDetectorRef, utilsService: UtilsService, writeEnabled: any, removeEnabled: any, pageMode?: boolean);
     fetchAlarms(pageLink: TimePageLink): Observable<PageData<AlarmInfo>>;
     showAlarmDetails(entity: AlarmInfo): void;
     getAssigneeTemplate(entity: AlarmInfo): string;
@@ -44,4 +45,7 @@ export declare class AlarmTableConfig extends EntityTableConfig<AlarmInfo, TimeP
     getUserInitials(entity: AlarmInfo): string;
     getAvatarBgColor(entity: AlarmInfo): string;
     openAlarmAssigneePanel($event: Event, entity: AlarmInfo): void;
+    ackAlarms($event: Event, alarms: Array<AlarmInfo>): void;
+    clearAlarms($event: Event, alarms: Array<AlarmInfo>): void;
+    deleteAlarms($event: Event, alarms: Array<AlarmInfo>): void;
 }

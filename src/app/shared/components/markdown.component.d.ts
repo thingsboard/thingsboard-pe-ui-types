@@ -34,7 +34,7 @@ export declare class TbMarkdownComponent implements OnChanges {
     isMarkdownReady: boolean;
     error: any;
     private tbMarkdownInstanceComponentRef;
-    private tbMarkdownInstanceComponentFactory;
+    private tbMarkdownInstanceComponentType;
     constructor(help: HelpService, cd: ChangeDetectorRef, zone: NgZone, markdownService: MarkdownService, sharedModule: Type<any>, dynamicComponentFactoryService: DynamicComponentFactoryService, renderer: Renderer2);
     ngOnChanges(changes: SimpleChanges): void;
     private render;

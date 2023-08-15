@@ -4,13 +4,16 @@ import { WidgetConfigComponent } from '@home/components/widget/widget-config.com
 import { WidgetConfig, widgetType } from '@shared/models/widget.models';
 import { Timewindow } from '@shared/models/time/time.models';
 import { TranslateService } from '@ngx-translate/core';
+import { TimewindowStyle } from '@shared/models/widget-settings.models';
 import * as i0 from "@angular/core";
 export interface TimewindowConfigData {
     useDashboardTimewindow: boolean;
     displayTimewindow: boolean;
     timewindow: Timewindow;
+    timewindowStyle: TimewindowStyle;
 }
 export declare const getTimewindowConfig: (config: WidgetConfig) => TimewindowConfigData;
+export declare const setTimewindowConfig: (config: WidgetConfig, data: TimewindowConfigData) => void;
 export declare class TimewindowConfigPanelComponent implements ControlValueAccessor, OnInit {
     private fb;
     translate: TranslateService;

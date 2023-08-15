@@ -14,6 +14,7 @@ export declare const selectHasRepository: import("@ngrx/store").MemoizedSelector
 export declare const selectTbelEnabled: import("@ngrx/store").MemoizedSelector<object, boolean, (s1: AuthState) => boolean>;
 export declare const selectPersistDeviceStateToTelemetry: import("@ngrx/store").MemoizedSelector<object, boolean, (s1: AuthState) => boolean>;
 export declare const selectUserSettings: import("@ngrx/store").MemoizedSelector<object, UserSettings, (s1: AuthState) => UserSettings>;
+export declare const selectUserSettingsProperty: (path: NestedKeyOf<UserSettings>) => import("@ngrx/store").MemoizedSelector<object, any, (s1: AuthState) => any>;
 export declare const selectOpenedMenuSections: import("@ngrx/store").MemoizedSelector<object, string[], (s1: AuthState) => string[]>;
 export declare const getCurrentAuthState: (store: Store<AppState>) => AuthState;
 export declare const getCurrentAuthUser: (store: Store<AppState>) => AuthUser;

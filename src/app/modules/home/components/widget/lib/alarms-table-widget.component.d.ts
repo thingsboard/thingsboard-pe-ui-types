@@ -54,6 +54,7 @@ export declare class AlarmsTableWidgetComponent extends PageComponent implements
     displayPagination: boolean;
     enableStickyHeader: boolean;
     enableStickyAction: boolean;
+    showCellActionsMenu: boolean;
     pageSizeOptions: any;
     pageLink: AlarmDataPageLink;
     sortOrderProperty: string;
@@ -63,6 +64,7 @@ export declare class AlarmsTableWidgetComponent extends PageComponent implements
     displayedColumns: string[];
     alarmsDatasource: AlarmsDatasource;
     noDataDisplayMessageText: string;
+    hasRowAction: boolean;
     private setCellButtonAction;
     private cellContentCache;
     private cellStyleCache;
@@ -71,7 +73,6 @@ export declare class AlarmsTableWidgetComponent extends PageComponent implements
     private widgetConfig;
     private subscription;
     private widgetResize$;
-    private alarmsTitlePattern;
     private displayActivity;
     private displayDetails;
     allowAcknowledgment: boolean;
@@ -97,7 +98,6 @@ export declare class AlarmsTableWidgetComponent extends PageComponent implements
     onDataUpdated(): void;
     pageLinkSortDirection(): SortDirection;
     private initializeConfig;
-    private updateTitle;
     private updateAlarmSource;
     private editColumnsToDisplay;
     private resetPageIndex;

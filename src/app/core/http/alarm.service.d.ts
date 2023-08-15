@@ -13,11 +13,11 @@ export declare class AlarmService {
     getAlarm(alarmId: string, config?: RequestConfig): Observable<Alarm>;
     getAlarmInfo(alarmId: string, config?: RequestConfig): Observable<AlarmInfo>;
     saveAlarm(alarm: Alarm, config?: RequestConfig): Observable<Alarm>;
-    ackAlarm(alarmId: string, config?: RequestConfig): Observable<void>;
-    clearAlarm(alarmId: string, config?: RequestConfig): Observable<void>;
+    ackAlarm(alarmId: string, config?: RequestConfig): Observable<AlarmInfo>;
+    clearAlarm(alarmId: string, config?: RequestConfig): Observable<AlarmInfo>;
     assignAlarm(alarmId: string, assigneeId: string, config?: RequestConfig): Observable<void>;
     unassignAlarm(alarmId: string, config?: RequestConfig): Observable<void>;
-    deleteAlarm(alarmId: string, config?: RequestConfig): Observable<void>;
+    deleteAlarm(alarmId: string, config?: RequestConfig): Observable<boolean>;
     getAlarms(query: AlarmQuery, config?: RequestConfig): Observable<PageData<AlarmInfo>>;
     getAlarmsV2(query: AlarmQueryV2, config?: RequestConfig): Observable<PageData<AlarmInfo>>;
     getAllAlarms(query: AlarmQuery, config?: RequestConfig): Observable<PageData<AlarmInfo>>;

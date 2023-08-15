@@ -13,11 +13,13 @@ export declare class WidgetPreviewComponent extends PageComponent implements OnI
     dashboardTimewindow: Timewindow;
     widget: Widget;
     widgetConfig: WidgetConfig;
+    previewWidth: string;
+    previewHeight: string;
     widgets: Widget[];
     constructor(store: Store<AppState>);
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
     private loadPreviewWidget;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetPreviewComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetPreviewComponent, "tb-widget-preview", never, { "aliasController": "aliasController"; "stateController": "stateController"; "dashboardTimewindow": "dashboardTimewindow"; "widget": "widget"; "widgetConfig": "widgetConfig"; }, {}, never, [".tb-preview-panel-content"], false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetPreviewComponent, "tb-widget-preview", never, { "aliasController": "aliasController"; "stateController": "stateController"; "dashboardTimewindow": "dashboardTimewindow"; "widget": "widget"; "widgetConfig": "widgetConfig"; "previewWidth": "previewWidth"; "previewHeight": "previewHeight"; }, {}, never, [".tb-preview-panel-content"], false, never>;
 }

@@ -37,6 +37,7 @@ export declare function deepClone<T>(target: T, ignoreFields?: string[]): T;
 export declare function extractType<T extends object>(target: any, keysOfProps: (keyof T)[]): T;
 export declare const isEqual: (a: any, b: any) => boolean;
 export declare const isEmpty: (a: any) => boolean;
+export declare const unset: (object: any, path: string | symbol) => boolean;
 export declare const isEqualIgnoreUndefined: (a: any, b: any) => boolean;
 export declare const isArraysEqualIgnoreUndefined: (a: any[], b: any[]) => boolean;
 export declare function mergeDeep<T>(target: T, ...sources: T[]): T;
@@ -45,7 +46,8 @@ export declare function cloneMetadata<S, T>(sourceType: Type<S>, targetType: Typ
 export declare function snakeCase(name: string, separator: string): string;
 export declare function getDescendantProp(obj: any, path: string): any;
 export declare function insertVariable(pattern: string, name: string, value: any): string;
-export declare function createLabelFromDatasource(datasource: Datasource, pattern: string): string;
+export declare const createLabelFromDatasource: (datasource: Datasource, pattern: string) => string;
+export declare const hasDatasourceLabelsVariables: (pattern: string) => boolean;
 export declare function formattedDataFormDatasourceData(input: DatasourceData[], dataIndex?: number): FormattedData[];
 export declare function formattedDataArrayFromDatasourceData(input: DatasourceData[]): FormattedData[][];
 export declare function formattedDataFromDatasource(datasource: Datasource, dsIndex: number): FormattedData;
@@ -74,3 +76,4 @@ export declare function parseHttpErrorMessage(errorResponse: HttpErrorResponse, 
     timeout: number;
 };
 export declare function genNextLabel(name: string, datasources: Datasource[]): string;
+export declare const getOS: () => string;

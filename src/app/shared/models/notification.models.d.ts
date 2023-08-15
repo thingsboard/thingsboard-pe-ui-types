@@ -99,7 +99,7 @@ export interface NotificationRule extends Omit<BaseData<NotificationRuleId>, 'la
     triggerType: TriggerType;
     triggerConfig: NotificationRuleTriggerConfig;
     recipientsConfig: NotificationRuleRecipientConfig;
-    additionalConfig: {
+    additionalConfig?: {
         description: string;
     };
 }
