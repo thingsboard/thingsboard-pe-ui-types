@@ -1,5 +1,13 @@
 import { ResourcesService } from '@core/services/resources.service';
 import { Observable } from 'rxjs';
+export declare const svgIcons: {
+    [key: string]: string;
+};
+export declare const svgIconsUrl: {
+    [key: string]: string;
+};
+export declare const splitIconName: (iconName: string) => [string, string];
+export declare const isSvgIcon: (icon: string) => boolean;
 export interface MaterialIcon {
     name: string;
     displayName?: string;

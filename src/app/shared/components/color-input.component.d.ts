@@ -21,13 +21,9 @@ export declare class ColorInputComponent extends PageComponent implements OnInit
     icon: string;
     label: string;
     requiredText: string;
+    colorClearButton: boolean;
     useThemePalette: boolean;
-    private colorClearButtonValue;
-    get colorClearButton(): boolean;
-    set colorClearButton(value: boolean);
-    private openOnInputValue;
-    get openOnInput(): boolean;
-    set openOnInput(value: boolean);
+    openOnInput: boolean;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
@@ -47,5 +43,5 @@ export declare class ColorInputComponent extends PageComponent implements OnInit
     openColorPickerPopup($event: Event, matButton: MatButton): void;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ColorInputComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ColorInputComponent, "tb-color-input", never, { "asBoxInput": "asBoxInput"; "icon": "icon"; "label": "label"; "requiredText": "requiredText"; "useThemePalette": "useThemePalette"; "colorClearButton": "colorClearButton"; "openOnInput": "openOnInput"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ColorInputComponent, "tb-color-input", never, { "asBoxInput": "asBoxInput"; "icon": "icon"; "label": "label"; "requiredText": "requiredText"; "colorClearButton": "colorClearButton"; "useThemePalette": "useThemePalette"; "openOnInput": "openOnInput"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

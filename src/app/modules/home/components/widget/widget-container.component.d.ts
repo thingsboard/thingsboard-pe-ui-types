@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, ElementRef, EventEmitter, OnDestroy, OnInit, Renderer2 } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ElementRef, EventEmitter, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { DashboardWidget, DashboardWidgets } from '@home/models/dashboard-component.models';
 import { Store } from '@ngrx/store';
@@ -19,7 +19,7 @@ export declare class WidgetComponentAction {
     event: MouseEvent;
     actionType: WidgetComponentActionType;
 }
-export declare class WidgetContainerComponent extends PageComponent implements OnInit, OnDestroy {
+export declare class WidgetContainerComponent extends PageComponent implements OnInit, AfterViewInit, OnDestroy {
     protected store: Store<AppState>;
     private cd;
     private renderer;
@@ -46,6 +46,7 @@ export declare class WidgetContainerComponent extends PageComponent implements O
     private cssClass;
     constructor(store: Store<AppState>, cd: ChangeDetectorRef, renderer: Renderer2, document: Document);
     ngOnInit(): void;
+    ngAfterViewInit(): void;
     ngOnDestroy(): void;
     isHighlighted(widget: DashboardWidget): boolean;
     isNotHighlighted(widget: DashboardWidget): boolean;

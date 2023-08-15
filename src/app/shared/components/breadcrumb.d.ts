@@ -8,7 +8,6 @@ export interface BreadCrumb extends HasUUID {
     ignoreTranslate: boolean;
     icon: string;
     iconUrl: string;
-    isMdiIcon: boolean;
     link: any[];
     queryParams: Params;
 }

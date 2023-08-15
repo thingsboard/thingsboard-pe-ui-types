@@ -149,6 +149,7 @@ export declare const HelpLinks: {
         integrationThingParkEnterprise: string;
         integrationTMobileIotCdp: string;
         integrationLoriot: string;
+        integrationParticle: string;
         integrationMqtt: string;
         integrationAwsIoT: string;
         integrationAwsSQS: string;

@@ -10,7 +10,7 @@ export declare class AttributeService {
     constructor(http: HttpClient);
     getEntityAttributes(entityId: EntityId, attributeScope: AttributeScope, keys?: Array<string>, config?: RequestConfig): Observable<Array<AttributeData>>;
     deleteEntityAttributes(entityId: EntityId, attributeScope: AttributeScope, attributes: Array<AttributeData>, config?: RequestConfig): Observable<any>;
-    deleteEntityTimeseries(entityId: EntityId, timeseries: Array<AttributeData>, deleteAllDataForKeys?: boolean, startTs?: number, endTs?: number, config?: RequestConfig): Observable<any>;
+    deleteEntityTimeseries(entityId: EntityId, timeseries: Array<AttributeData>, deleteAllDataForKeys?: boolean, startTs?: number, endTs?: number, rewriteLatestIfDeleted?: boolean, deleteLatest?: boolean, config?: RequestConfig): Observable<any>;
     saveEntityAttributes(entityId: EntityId, attributeScope: AttributeScope, attributes: Array<AttributeData>, config?: RequestConfig): Observable<any>;
     saveEntityTimeseries(entityId: EntityId, timeseriesScope: string, timeseries: Array<AttributeData>, config?: RequestConfig): Observable<any>;
     getEntityTimeseries(entityId: EntityId, keys: Array<string>, startTs: number, endTs: number, limit?: number, agg?: AggregationType, interval?: number, orderBy?: DataSortOrder, useStrictDataTypes?: boolean, config?: RequestConfig): Observable<TimeseriesData>;

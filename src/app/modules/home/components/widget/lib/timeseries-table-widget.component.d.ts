@@ -72,6 +72,7 @@ export declare class TimeseriesTableWidgetComponent extends PageComponent implem
     displayPagination: boolean;
     enableStickyHeader: boolean;
     enableStickyAction: boolean;
+    showCellActionsMenu: boolean;
     pageSizeOptions: any;
     textSearchMode: boolean;
     hidePageSize: boolean;
@@ -79,6 +80,7 @@ export declare class TimeseriesTableWidgetComponent extends PageComponent implem
     sources: TimeseriesTableSource[];
     sourceIndex: number;
     noDataDisplayMessageText: string;
+    hasRowAction: boolean;
     private setCellButtonAction;
     private cellContentCache;
     private cellStyleCache;

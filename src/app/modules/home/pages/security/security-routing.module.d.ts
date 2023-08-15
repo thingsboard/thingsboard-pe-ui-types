@@ -1,4 +1,4 @@
-import { Resolve } from '@angular/router';
+import { Resolve, Routes } from '@angular/router';
 import { User } from '@shared/models/user.model';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -23,6 +23,7 @@ export declare class UserTwoFAProvidersResolver implements Resolve<Array<TwoFact
     static ɵfac: i0.ɵɵFactoryDeclaration<UserTwoFAProvidersResolver, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<UserTwoFAProvidersResolver>;
 }
+export declare const securityRoutes: Routes;
 export declare class SecurityRoutingModule {
     static ɵfac: i0.ɵɵFactoryDeclaration<SecurityRoutingModule, never>;
     static ɵmod: i0.ɵɵNgModuleDeclaration<SecurityRoutingModule, never, [typeof i1.RouterModule], [typeof i1.RouterModule]>;

@@ -27,10 +27,17 @@ export declare enum TelemetryFeature {
     ATTRIBUTES = "ATTRIBUTES",
     TIMESERIES = "TIMESERIES"
 }
+export declare enum TimeseriesDeleteStrategy {
+    DELETE_ALL_DATA = "DELETE_ALL_DATA",
+    DELETE_ALL_DATA_EXCEPT_LATEST_VALUE = "DELETE_ALL_DATA_EXCEPT_LATEST_VALUE",
+    DELETE_LATEST_VALUE = "DELETE_LATEST_VALUE",
+    DELETE_ALL_DATA_FOR_TIME_PERIOD = "DELETE_ALL_DATA_FOR_TIME_PERIOD"
+}
 export type TelemetryType = LatestTelemetry | AttributeScope;
 export declare const toTelemetryType: (val: string) => TelemetryType;
 export declare const telemetryTypeTranslations: Map<TelemetryType, string>;
 export declare const isClientSideTelemetryType: Map<TelemetryType, boolean>;
+export declare const timeseriesDeleteStrategyTranslations: Map<TimeseriesDeleteStrategy, string>;
 export interface AttributeData {
     lastUpdateTs?: number;
     key: string;

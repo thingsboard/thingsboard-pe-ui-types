@@ -17,8 +17,6 @@ export declare class SimpleCardBasicConfigComponent extends BasicWidgetConfigCom
     protected setupDefaults(configData: WidgetConfigComponentData): void;
     protected onConfigSet(configData: WidgetConfigComponentData): void;
     protected prepareOutputConfig(config: any): WidgetConfigComponentData;
-    private getDataKeyLabel;
-    private setDataKeyLabel;
     private getCardButtons;
     private setCardButtons;
     static ɵfac: i0.ɵɵFactoryDeclaration<SimpleCardBasicConfigComponent, never>;

@@ -24,7 +24,7 @@ export declare class DeviceProfileComponent extends EntityComponent<DeviceProfil
     deviceProfileTypes: DeviceProfileType[];
     deviceProfileTypeTranslations: Map<DeviceProfileType, string>;
     deviceTransportTypes: DeviceTransportType[];
-    deviceTransportTypeTranslations: Map<DeviceTransportType, string>;
+    deviceTransportTypeTranslations: Map<import("@shared/models/device.models").TransportType, string>;
     displayProfileConfiguration: boolean;
     displayTransportConfiguration: boolean;
     isTransportTypeChanged: boolean;

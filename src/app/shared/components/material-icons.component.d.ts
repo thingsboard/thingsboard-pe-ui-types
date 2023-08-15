@@ -17,6 +17,7 @@ export declare class MaterialIconsComponent extends PageComponent implements OnI
     private cd;
     iconsPanel: CdkVirtualScrollViewport;
     selectedIcon: string;
+    iconClearButton: boolean;
     popover: TbPopoverComponent<MaterialIconsComponent>;
     iconSelected: EventEmitter<string>;
     iconRows$: Observable<MaterialIcon[][]>;
@@ -30,8 +31,9 @@ export declare class MaterialIconsComponent extends PageComponent implements OnI
     ngOnInit(): void;
     clearSearch(): void;
     selectIcon(icon: MaterialIcon): void;
+    clearIcon(): void;
     private calculatePanelSize;
     private checkSize;
     static ɵfac: i0.ɵɵFactoryDeclaration<MaterialIconsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MaterialIconsComponent, "tb-material-icons", never, { "selectedIcon": "selectedIcon"; "popover": "popover"; }, { "iconSelected": "iconSelected"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MaterialIconsComponent, "tb-material-icons", never, { "selectedIcon": "selectedIcon"; "iconClearButton": "iconClearButton"; "popover": "popover"; }, { "iconSelected": "iconSelected"; }, never, never, false, never>;
 }

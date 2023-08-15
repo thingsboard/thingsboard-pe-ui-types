@@ -16,6 +16,8 @@ import { UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Dashboard } from '@shared/models/dashboard.models';
 import { IAliasController } from '@core/api/widget-api.models';
+import { WidgetConfigComponentData } from '@home/models/widget-component.models';
+import { ComponentStyle, Font, TimewindowStyle } from '@shared/models/widget-settings.models';
 import * as i0 from "@angular/core";
 export declare enum widgetType {
     timeseries = "timeseries",
@@ -31,7 +33,6 @@ export interface WidgetTypeTemplate {
 export interface WidgetTypeData {
     name: string;
     icon: string;
-    isMdiIcon?: boolean;
     configHelpLinkId: string;
     template: WidgetTypeTemplate;
 }
@@ -80,6 +81,9 @@ export interface WidgetTypeParameters {
     warnOnPageDataOverflow?: boolean;
     ignoreDataUpdateOnIntervalTick?: boolean;
     processNoDataByWidget?: boolean;
+    previewWidth?: string;
+    previewHeight?: string;
+    embedTitlePanel?: boolean;
 }
 export interface WidgetControllerDescriptor {
     widgetTypeFunction?: any;
@@ -375,6 +379,8 @@ export declare enum WidgetConfigMode {
 export interface WidgetConfig {
     configMode?: WidgetConfigMode;
     title?: string;
+    titleFont?: Font;
+    titleColor?: string;
     titleIcon?: string;
     showTitle?: boolean;
     showTitleIcon?: boolean;
@@ -387,6 +393,7 @@ export interface WidgetConfig {
     useDashboardTimewindow?: boolean;
     displayTimewindow?: boolean;
     timewindow?: Timewindow;
+    timewindowStyle?: TimewindowStyle;
     desktopHide?: boolean;
     mobileHide?: boolean;
     mobileHeight?: number;
@@ -396,13 +403,9 @@ export interface WidgetConfig {
     padding?: string;
     margin?: string;
     borderRadius?: string;
-    widgetStyle?: {
-        [klass: string]: any;
-    };
+    widgetStyle?: ComponentStyle;
     widgetCss?: string;
-    titleStyle?: {
-        [klass: string]: any;
-    };
+    titleStyle?: ComponentStyle;
     units?: string;
     decimals?: number;
     noDataDisplayMessage?: string;
@@ -464,6 +467,7 @@ export interface IWidgetSettingsComponent {
     aliasController: IAliasController;
     dashboard: Dashboard;
     widget: Widget;
+    widgetConfig: WidgetConfigComponentData;
     functionScopeVariables: string[];
     settings: WidgetSettings;
     settingsChanged: Observable<WidgetSettings>;
@@ -475,6 +479,9 @@ export declare abstract class WidgetSettingsComponent extends PageComponent impl
     aliasController: IAliasController;
     dashboard: Dashboard;
     widget: Widget;
+    widgetConfigValue: WidgetConfigComponentData;
+    set widgetConfig(value: WidgetConfigComponentData);
+    get widgetConfig(): WidgetConfigComponentData;
     functionScopeVariables: string[];
     settingsValue: WidgetSettings;
     private settingsSet;
@@ -499,6 +506,7 @@ export declare abstract class WidgetSettingsComponent extends PageComponent impl
     protected abstract settingsForm(): UntypedFormGroup;
     protected abstract onSettingsSet(settings: WidgetSettings): any;
     protected defaultSettings(): WidgetSettings;
+    protected onWidgetConfigSet(widgetConfig: WidgetConfigComponentData): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetSettingsComponent, never>;
     static ɵdir: i0.ɵɵDirectiveDeclaration<WidgetSettingsComponent, never, never, {}, {}, never, never, false, never>;
 }

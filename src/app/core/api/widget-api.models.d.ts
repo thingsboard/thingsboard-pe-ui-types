@@ -213,6 +213,7 @@ export interface IWidgetSubscription {
     loadingData: boolean;
     useDashboardTimewindow: boolean;
     legendData: LegendData;
+    readonly firstDatasource?: Datasource;
     datasourcePages?: PageData<Datasource>[];
     dataPages?: PageData<Array<DatasourceData>>[];
     datasources?: Array<Datasource>;

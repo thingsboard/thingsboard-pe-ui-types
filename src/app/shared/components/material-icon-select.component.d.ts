@@ -21,9 +21,7 @@ export declare class MaterialIconSelectComponent extends PageComponent implement
     label: any;
     color: string;
     disabled: boolean;
-    private iconClearButtonValue;
-    get iconClearButton(): boolean;
-    set iconClearButton(value: boolean);
+    iconClearButton: boolean;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);

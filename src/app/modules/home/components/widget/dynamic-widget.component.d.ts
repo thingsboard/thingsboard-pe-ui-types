@@ -1,5 +1,5 @@
 import { PageComponent } from '@shared/components/page.component';
-import { Injector, OnDestroy, OnInit } from '@angular/core';
+import { Injector, OnDestroy, OnInit, TemplateRef } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { IDynamicWidgetComponent, WidgetContext } from '@home/models/widget-component.models';
@@ -15,13 +15,14 @@ export declare class DynamicWidgetComponent extends PageComponent implements IDy
     readonly $injector: Injector;
     readonly ctx: WidgetContext;
     readonly errorMessages: string[];
+    readonly widgetTitlePanel: TemplateRef<any>;
     executingRpcRequest: boolean;
     rpcEnabled: boolean;
     rpcErrorText: string;
     rpcRejection: HttpErrorResponse;
     [key: string]: any;
     validators: typeof Validators;
-    constructor(raf: RafService, store: Store<AppState>, fb: UntypedFormBuilder, $injector: Injector, ctx: WidgetContext, errorMessages: string[]);
+    constructor(raf: RafService, store: Store<AppState>, fb: UntypedFormBuilder, $injector: Injector, ctx: WidgetContext, errorMessages: string[], widgetTitlePanel: TemplateRef<any>);
     ngOnInit(): void;
     ngOnDestroy(): void;
     clearRpcError(): void;

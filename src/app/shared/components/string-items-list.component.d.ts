@@ -51,5 +51,5 @@ export declare class StringItemsListComponent implements ControlValueAccessor, O
     private fetchValues;
     private clear;
     static ɵfac: i0.ɵɵFactoryDeclaration<StringItemsListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<StringItemsListComponent, "tb-string-items-list", never, { "required": "required"; "disabled": "disabled"; "label": "label"; "placeholder": "placeholder"; "hint": "hint"; "requiredText": "requiredText"; "floatLabel": "floatLabel"; "appearance": "appearance"; "editable": "editable"; "subscriptSizing": "subscriptSizing"; "predefinedValues": "predefinedValues"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<StringItemsListComponent, "tb-string-items-list", never, { "required": "required"; "disabled": "disabled"; "label": "label"; "placeholder": "placeholder"; "hint": "hint"; "requiredText": "requiredText"; "floatLabel": "floatLabel"; "appearance": "appearance"; "editable": "editable"; "subscriptSizing": "subscriptSizing"; "predefinedValues": "predefinedValues"; }, {}, never, ["[matHintEnd]", "[matSuffix]"], false, never>;
 }

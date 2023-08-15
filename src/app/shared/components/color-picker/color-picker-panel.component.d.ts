@@ -10,6 +10,7 @@ export declare class ColorPickerPanelComponent extends PageComponent implements 
     protected store: Store<AppState>;
     private utils;
     color: string;
+    colorClearButton: boolean;
     useThemePalette: boolean;
     popover: TbPopoverComponent<ColorPickerPanelComponent>;
     colorSelected: EventEmitter<string>;
@@ -27,8 +28,9 @@ export declare class ColorPickerPanelComponent extends PageComponent implements 
     selectedIndexChange(index: number): void;
     private updateValidity;
     selectColor(): void;
-    private getColor;
+    getColor(): string;
+    clearColor(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ColorPickerPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ColorPickerPanelComponent, "tb-color-picker-panel", never, { "color": "color"; "useThemePalette": "useThemePalette"; "popover": "popover"; }, { "colorSelected": "colorSelected"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ColorPickerPanelComponent, "tb-color-picker-panel", never, { "color": "color"; "colorClearButton": "colorClearButton"; "useThemePalette": "useThemePalette"; "popover": "popover"; }, { "colorSelected": "colorSelected"; }, never, never, false, never>;
 }
 export {};
