@@ -21,6 +21,7 @@ export declare class TimewindowComponent implements ControlValueAccessor, OnInit
     historyOnlyValue: boolean;
     set historyOnly(val: boolean);
     get historyOnly(): boolean;
+    get displayTypePrefix(): boolean;
     noMargin: boolean;
     noPadding: boolean;
     disablePanel: boolean;

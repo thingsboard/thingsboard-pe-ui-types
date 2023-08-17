@@ -1,4 +1,4 @@
-import { AfterViewInit, ElementRef, OnInit, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, ElementRef, OnDestroy, OnInit, ViewContainerRef } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -6,18 +6,20 @@ import { WidgetContext } from '@home/models/widget-component.models';
 import { UtilsService } from '@core/services/utils.service';
 import { Overlay } from '@angular/cdk/overlay';
 import { LoadNodesCallback, NavTreeEditCallbacks, NodeSearchCallback, NodeSelectedCallback, NodesInsertedCallback } from '@shared/components/nav-tree.component';
+import { FormBuilder } from '@angular/forms';
 import * as i0 from "@angular/core";
-export declare class EntitiesHierarchyWidgetComponent extends PageComponent implements OnInit, AfterViewInit {
+export declare class EntitiesHierarchyWidgetComponent extends PageComponent implements OnInit, AfterViewInit, OnDestroy {
     protected store: Store<AppState>;
     private elementRef;
     private overlay;
     private viewContainerRef;
     private utils;
+    private fb;
     ctx: WidgetContext;
     searchInputField: ElementRef;
     toastTargetId: string;
     textSearchMode: boolean;
-    textSearch: any;
+    textSearch: import("@angular/forms").FormControl<string>;
     nodeEditCallbacks: NavTreeEditCallbacks;
     private settings;
     private widgetConfig;
@@ -34,14 +36,15 @@ export declare class EntitiesHierarchyWidgetComponent extends PageComponent impl
     private nodeHasChildrenFunction;
     private nodesSortFunction;
     private searchAction;
-    constructor(store: Store<AppState>, elementRef: ElementRef, overlay: Overlay, viewContainerRef: ViewContainerRef, utils: UtilsService);
+    private destroy$;
+    constructor(store: Store<AppState>, elementRef: ElementRef, overlay: Overlay, viewContainerRef: ViewContainerRef, utils: UtilsService, fb: FormBuilder);
     ngOnInit(): void;
     ngAfterViewInit(): void;
+    ngOnDestroy(): void;
     onDataUpdated(): void;
     private initializeConfig;
     private enterFilterMode;
     exitFilterMode(): void;
-    private updateSearchNodes;
     private updateNodeData;
     loadNodes: LoadNodesCallback;
     onNodeSelected: NodeSelectedCallback;

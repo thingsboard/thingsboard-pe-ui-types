@@ -37,7 +37,8 @@ export declare abstract class BasicWidgetConfigComponent extends PageComponent i
     protected onConfigChanged(widgetConfig: WidgetConfigComponentData): void;
     protected prepareOutputConfig(config: any): WidgetConfigComponentData;
     validateConfig(): boolean;
-    protected setupDefaultDatasource(configData: WidgetConfigComponentData, keys?: DataKey[]): void;
+    protected setupDefaultDatasource(configData: WidgetConfigComponentData, keys?: DataKey[], latestKeys?: DataKey[]): void;
+    protected constructDataKey(configData: WidgetConfigComponentData, key: DataKey): DataKey;
     protected abstract configForm(): UntypedFormGroup;
     protected abstract onConfigSet(configData: WidgetConfigComponentData): any;
     static ɵfac: i0.ɵɵFactoryDeclaration<BasicWidgetConfigComponent, never>;

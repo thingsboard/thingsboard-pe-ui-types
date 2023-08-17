@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, ElementRef, NgZone, OnInit, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ElementRef, NgZone, OnDestroy, OnInit, ViewContainerRef } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { PageLink } from '@shared/models/page/page-link';
 import { MatPaginator } from '@angular/material/paginator';
@@ -22,8 +22,9 @@ import { DashboardUtilsService } from '@core/services/dashboard-utils.service';
 import { WidgetService } from '@core/http/widget.service';
 import { EntityService } from '@core/http/entity.service';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
+import { FormBuilder } from '@angular/forms';
 import * as i0 from "@angular/core";
-export declare class AttributeTableComponent extends PageComponent implements AfterViewInit, OnInit {
+export declare class AttributeTableComponent extends PageComponent implements AfterViewInit, OnInit, OnDestroy {
     protected store: Store<AppState>;
     private attributeService;
     private telemetryWsService;
@@ -40,6 +41,7 @@ export declare class AttributeTableComponent extends PageComponent implements Af
     private zone;
     private cd;
     private elementRef;
+    private fb;
     telemetryTypeTranslationsMap: Map<TelemetryType, string>;
     isClientSideTelemetryTypeMap: Map<TelemetryType, boolean>;
     latestTelemetryTypes: typeof LatestTelemetry;
@@ -80,7 +82,9 @@ export declare class AttributeTableComponent extends PageComponent implements Af
     searchInputField: ElementRef;
     paginator: MatPaginator;
     sort: MatSort;
-    constructor(store: Store<AppState>, attributeService: AttributeService, telemetryWsService: TelemetryWebsocketService, translate: TranslateService, dialog: MatDialog, overlay: Overlay, viewContainerRef: ViewContainerRef, dialogService: DialogService, entityService: EntityService, utils: UtilsService, dashboardUtils: DashboardUtilsService, widgetService: WidgetService, userPermissionsService: UserPermissionsService, zone: NgZone, cd: ChangeDetectorRef, elementRef: ElementRef);
+    textSearch: import("@angular/forms").FormControl<string>;
+    private destroy$;
+    constructor(store: Store<AppState>, attributeService: AttributeService, telemetryWsService: TelemetryWebsocketService, translate: TranslateService, dialog: MatDialog, overlay: Overlay, viewContainerRef: ViewContainerRef, dialogService: DialogService, entityService: EntityService, utils: UtilsService, dashboardUtils: DashboardUtilsService, widgetService: WidgetService, userPermissionsService: UserPermissionsService, zone: NgZone, cd: ChangeDetectorRef, elementRef: ElementRef, fb: FormBuilder);
     ngOnInit(): void;
     ngOnDestroy(): void;
     attributeScopeChanged(attributeScope: TelemetryType): void;

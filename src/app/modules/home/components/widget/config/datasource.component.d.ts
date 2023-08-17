@@ -35,6 +35,7 @@ export declare class DatasourceComponent implements ControlValueAccessor, OnInit
     get hideDataKeyUnits(): boolean;
     get hideDataKeyDecimals(): boolean;
     get hideDataKeys(): boolean;
+    get hideLatestDataKeys(): boolean;
     disabled: boolean;
     widgetTypes: typeof widgetType;
     entityType: typeof EntityType;

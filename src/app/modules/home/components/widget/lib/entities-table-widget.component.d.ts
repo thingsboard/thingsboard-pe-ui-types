@@ -17,6 +17,7 @@ import { Overlay } from '@angular/cdk/overlay';
 import { EntityDataPageLink, KeyFilter } from '@shared/models/query/query.models';
 import { DatePipe } from '@angular/common';
 import { EntityService } from '@core/http/entity.service';
+import { FormBuilder } from '@angular/forms';
 import * as i0 from "@angular/core";
 export declare class EntitiesTableWidgetComponent extends PageComponent implements OnInit, AfterViewInit, OnDestroy {
     protected store: Store<AppState>;
@@ -30,10 +31,12 @@ export declare class EntitiesTableWidgetComponent extends PageComponent implemen
     private translate;
     private domSanitizer;
     private cd;
+    private fb;
     ctx: WidgetContext;
     searchInputField: ElementRef;
     paginator: MatPaginator;
     sort: MatSort;
+    textSearch: import("@angular/forms").FormControl<string>;
     displayPagination: boolean;
     enableStickyHeader: boolean;
     enableStickyAction: boolean;
@@ -56,6 +59,7 @@ export declare class EntitiesTableWidgetComponent extends PageComponent implemen
     private widgetConfig;
     private subscription;
     private widgetResize$;
+    private destroy$;
     private defaultPageSize;
     private defaultSortOrder;
     private contentsInfo;
@@ -68,7 +72,7 @@ export declare class EntitiesTableWidgetComponent extends PageComponent implemen
     private searchAction;
     private columnDisplayAction;
     private postProcessingFunctionMap;
-    constructor(store: Store<AppState>, elementRef: ElementRef, ngZone: NgZone, overlay: Overlay, viewContainerRef: ViewContainerRef, entityService: EntityService, utils: UtilsService, datePipe: DatePipe, translate: TranslateService, domSanitizer: DomSanitizer, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, elementRef: ElementRef, ngZone: NgZone, overlay: Overlay, viewContainerRef: ViewContainerRef, entityService: EntityService, utils: UtilsService, datePipe: DatePipe, translate: TranslateService, domSanitizer: DomSanitizer, cd: ChangeDetectorRef, fb: FormBuilder);
     ngOnInit(): void;
     ngOnDestroy(): void;
     ngAfterViewInit(): void;

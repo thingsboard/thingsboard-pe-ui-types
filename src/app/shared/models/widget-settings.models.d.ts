@@ -47,9 +47,12 @@ export interface TimewindowStyle {
     iconPosition: 'left' | 'right';
     font?: Font;
     color?: string;
+    displayTypePrefix?: boolean;
 }
 export declare const defaultTimewindowStyle: TimewindowStyle;
 export declare const constantColor: (color: string) => ColorSettings;
+export declare const cssSizeToStrSize: (size?: number, unit?: cssUnit) => string;
+export declare const resolveCssSize: (strSize?: string) => [number, cssUnit];
 export declare abstract class ColorProcessor {
     protected settings: ColorSettings;
     static fromSettings(color: ColorSettings): ColorProcessor;
@@ -118,4 +121,5 @@ export declare const getDataKey: (datasources?: Datasource[]) => DataKey;
 export declare const getLabel: (datasources?: Datasource[]) => string;
 export declare const setLabel: (label: string, datasources?: Datasource[]) => void;
 export declare const getSingleTsValue: (data: Array<DatasourceData>) => [number, any];
+export declare const getLatestSingleTsValue: (data: Array<DatasourceData>) => [number, any];
 export {};

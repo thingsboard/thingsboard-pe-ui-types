@@ -15,6 +15,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { CellContentInfo, CellStyleInfo, TableCellButtonActionDescriptor, TableWidgetSettings } from '@home/components/widget/lib/table-widget.models';
 import { Overlay } from '@angular/cdk/overlay';
 import { DatePipe } from '@angular/common';
+import { FormBuilder } from '@angular/forms';
 import * as i0 from "@angular/core";
 export interface TimeseriesTableWidgetSettings extends TableWidgetSettings {
     showTimestamp: boolean;
@@ -65,10 +66,12 @@ export declare class TimeseriesTableWidgetComponent extends PageComponent implem
     private domSanitizer;
     private datePipe;
     private cd;
+    private fb;
     ctx: WidgetContext;
     searchInputField: ElementRef;
     paginators: QueryList<MatPaginator>;
     sorts: QueryList<MatSort>;
+    textSearch: import("@angular/forms").FormControl<string>;
     displayPagination: boolean;
     enableStickyHeader: boolean;
     enableStickyAction: boolean;
@@ -76,7 +79,6 @@ export declare class TimeseriesTableWidgetComponent extends PageComponent implem
     pageSizeOptions: any;
     textSearchMode: boolean;
     hidePageSize: boolean;
-    textSearch: string;
     sources: TimeseriesTableSource[];
     sourceIndex: number;
     noDataDisplayMessageText: string;
@@ -101,9 +103,10 @@ export declare class TimeseriesTableWidgetComponent extends PageComponent implem
     private subscriptions;
     private widgetTimewindowChanged$;
     private widgetResize$;
+    private destroy$;
     private searchAction;
     private columnDisplayAction;
-    constructor(store: Store<AppState>, elementRef: ElementRef, overlay: Overlay, viewContainerRef: ViewContainerRef, utils: UtilsService, translate: TranslateService, domSanitizer: DomSanitizer, datePipe: DatePipe, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, elementRef: ElementRef, overlay: Overlay, viewContainerRef: ViewContainerRef, utils: UtilsService, translate: TranslateService, domSanitizer: DomSanitizer, datePipe: DatePipe, cd: ChangeDetectorRef, fb: FormBuilder);
     ngOnInit(): void;
     ngOnDestroy(): void;
     ngAfterViewInit(): void;

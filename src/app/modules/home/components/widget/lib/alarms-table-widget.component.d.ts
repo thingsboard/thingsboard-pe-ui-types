@@ -22,6 +22,7 @@ import { AlarmService } from '@core/http/alarm.service';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { AlarmData, AlarmDataPageLink, KeyFilter } from '@app/shared/models/query/query.models';
 import { EntityService } from '@core/http/entity.service';
+import { FormBuilder } from '@angular/forms';
 import * as i0 from "@angular/core";
 interface AlarmWidgetActionDescriptor extends TableCellButtonActionDescriptor {
     details?: boolean;
@@ -45,10 +46,12 @@ export declare class AlarmsTableWidgetComponent extends PageComponent implements
     private dialogService;
     private alarmService;
     private cd;
+    private fb;
     ctx: WidgetContext;
     searchInputField: ElementRef;
     paginator: MatPaginator;
     sort: MatSort;
+    textSearch: import("@angular/forms").FormControl<string>;
     readonly: boolean;
     enableSelection: boolean;
     displayPagination: boolean;
@@ -73,6 +76,7 @@ export declare class AlarmsTableWidgetComponent extends PageComponent implements
     private widgetConfig;
     private subscription;
     private widgetResize$;
+    private destroy$;
     private displayActivity;
     private displayDetails;
     allowAcknowledgment: boolean;
@@ -91,7 +95,7 @@ export declare class AlarmsTableWidgetComponent extends PageComponent implements
     private searchAction;
     private columnDisplayAction;
     private alarmFilterAction;
-    constructor(store: Store<AppState>, userPermissionsService: UserPermissionsService, elementRef: ElementRef, ngZone: NgZone, overlay: Overlay, viewContainerRef: ViewContainerRef, entityService: EntityService, utils: UtilsService, translate: TranslateService, domSanitizer: DomSanitizer, datePipe: DatePipe, dialog: MatDialog, dialogService: DialogService, alarmService: AlarmService, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, userPermissionsService: UserPermissionsService, elementRef: ElementRef, ngZone: NgZone, overlay: Overlay, viewContainerRef: ViewContainerRef, entityService: EntityService, utils: UtilsService, translate: TranslateService, domSanitizer: DomSanitizer, datePipe: DatePipe, dialog: MatDialog, dialogService: DialogService, alarmService: AlarmService, cd: ChangeDetectorRef, fb: FormBuilder);
     ngOnInit(): void;
     ngOnDestroy(): void;
     ngAfterViewInit(): void;

@@ -46,6 +46,7 @@ export declare class DataKeyConfigComponent extends PageComponent implements OnI
     dataKeySettingsSchema: any;
     dataKeySettingsDirective: string;
     showPostProcessing: boolean;
+    hideDataKeyName: boolean;
     hideDataKeyLabel: boolean;
     hideDataKeyColor: boolean;
     hideDataKeyUnits: boolean;
@@ -93,5 +94,5 @@ export declare class DataKeyConfigComponent extends PageComponent implements OnI
         dataKey?: undefined;
     };
     static ɵfac: i0.ɵɵFactoryDeclaration<DataKeyConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeyConfigComponent, "tb-data-key-config", never, { "dataKeyConfigMode": "dataKeyConfigMode"; "deviceId": "deviceId"; "entityAliasId": "entityAliasId"; "callbacks": "callbacks"; "dashboard": "dashboard"; "aliasController": "aliasController"; "widget": "widget"; "widgetType": "widgetType"; "dataKeySettingsSchema": "dataKeySettingsSchema"; "dataKeySettingsDirective": "dataKeySettingsDirective"; "showPostProcessing": "showPostProcessing"; "hideDataKeyLabel": "hideDataKeyLabel"; "hideDataKeyColor": "hideDataKeyColor"; "hideDataKeyUnits": "hideDataKeyUnits"; "hideDataKeyDecimals": "hideDataKeyDecimals"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeyConfigComponent, "tb-data-key-config", never, { "dataKeyConfigMode": "dataKeyConfigMode"; "deviceId": "deviceId"; "entityAliasId": "entityAliasId"; "callbacks": "callbacks"; "dashboard": "dashboard"; "aliasController": "aliasController"; "widget": "widget"; "widgetType": "widgetType"; "dataKeySettingsSchema": "dataKeySettingsSchema"; "dataKeySettingsDirective": "dataKeySettingsDirective"; "showPostProcessing": "showPostProcessing"; "hideDataKeyName": "hideDataKeyName"; "hideDataKeyLabel": "hideDataKeyLabel"; "hideDataKeyColor": "hideDataKeyColor"; "hideDataKeyUnits": "hideDataKeyUnits"; "hideDataKeyDecimals": "hideDataKeyDecimals"; }, {}, never, never, false, never>;
 }

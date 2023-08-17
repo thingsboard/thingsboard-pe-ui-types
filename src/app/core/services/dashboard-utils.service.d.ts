@@ -32,6 +32,7 @@ export declare class DashboardUtilsService {
     }): string;
     getStateLayoutsData(dashboard: Dashboard, targetState: string): DashboardLayoutsInfo;
     getWidgetsArray(dashboard: Dashboard): Array<Widget>;
+    isEmptyDashboard(dashboard: Dashboard): boolean;
     addWidgetToLayout(dashboard: Dashboard, targetState: string, targetLayout: DashboardLayoutId, widget: Widget, originalColumns?: number, originalSize?: {
         sizeX: number;
         sizeY: number;

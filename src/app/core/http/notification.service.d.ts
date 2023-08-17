@@ -3,7 +3,7 @@ import { RequestConfig } from '@core/http/http-utils';
 import { Observable } from 'rxjs';
 import { PageLink } from '@shared/models/page/page-link';
 import { PageData } from '@shared/models/page/page-data';
-import { Notification, NotificationDeliveryMethod, NotificationRequest, NotificationRequestInfo, NotificationRequestPreview, NotificationRule, NotificationSettings, NotificationTarget, NotificationTemplate, NotificationType, SlackChanelType, SlackConversation } from '@shared/models/notification.models';
+import { Notification, NotificationDeliveryMethod, NotificationRequest, NotificationRequestInfo, NotificationRequestPreview, NotificationRule, NotificationSettings, NotificationTarget, NotificationTemplate, NotificationType, NotificationUserSettings, SlackChanelType, SlackConversation } from '@shared/models/notification.models';
 import { User } from '@shared/models/user.model';
 import * as i0 from "@angular/core";
 export declare class NotificationService {
@@ -36,6 +36,8 @@ export declare class NotificationService {
     getNotificationTemplateById(id: string, config?: RequestConfig): Observable<NotificationTemplate>;
     deleteNotificationTemplate(id: string, config?: RequestConfig): Observable<void>;
     getNotificationTemplates(pageLink: PageLink, notificationTypes?: NotificationType, config?: RequestConfig): Observable<PageData<NotificationTemplate>>;
+    getNotificationUserSettings(config?: RequestConfig): Observable<NotificationUserSettings>;
+    saveNotificationUserSettings(settings: NotificationUserSettings, config?: RequestConfig): Observable<NotificationUserSettings>;
     static ɵfac: i0.ɵɵFactoryDeclaration<NotificationService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<NotificationService>;
 }

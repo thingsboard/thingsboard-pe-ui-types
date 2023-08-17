@@ -1,9 +1,9 @@
 /// <reference types="tooltipster" />
-import { AfterViewChecked, AfterViewInit, ChangeDetectorRef, ElementRef, EventEmitter, OnDestroy, OnInit, QueryList, Renderer2, ViewContainerRef } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, ChangeDetectorRef, EventEmitter, OnDestroy, OnInit, QueryList, Renderer2, ViewContainerRef } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { FormGroupDirective, NgForm, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
+import { FormBuilder, FormGroupDirective, NgForm, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { HasDirtyFlag } from '@core/guards/confirm-on-exit.guard';
 import { TranslateService } from '@ngx-translate/core';
 import { ErrorStateMatcher } from '@angular/material/core';
@@ -46,12 +46,11 @@ export declare class RuleChainPageComponent extends PageComponent implements Aft
     private changeDetector;
     dialog: MatDialog;
     dialogService: DialogService;
-    fb: UntypedFormBuilder;
+    fb: FormBuilder;
     get isDirty(): boolean;
     set isDirty(value: boolean);
     width: string;
     height: string;
-    ruleNodeSearchInputField: ElementRef;
     ruleChainCanvas: NgxFlowchartComponent;
     expansionPanels: QueryList<MatExpansionPanel>;
     ruleChainMenuTrigger: MatMenuTrigger;
@@ -92,7 +91,7 @@ export declare class RuleChainPageComponent extends PageComponent implements Aft
     hotKeys: Hotkey[];
     enableHotKeys: boolean;
     ruleNodeSearch: string;
-    ruleNodeTypeSearch: string;
+    ruleNodeTypeSearch: import("@angular/forms").FormControl<string>;
     ruleChain: RuleChain;
     ruleChainMetaData: RuleChainMetaData;
     ruleChainModel: FcRuleNodeModel;
@@ -135,9 +134,9 @@ export declare class RuleChainPageComponent extends PageComponent implements Aft
         canvasResizeStep: number;
     };
     updateBreadcrumbs: EventEmitter<any>;
-    private rxSubscription;
+    private destroy$;
     private tooltipTimeout;
-    constructor(store: Store<AppState>, route: ActivatedRoute, router: Router, ruleChainService: RuleChainService, authService: AuthService, translate: TranslateService, itembuffer: ItemBufferService, userPermissionsService: UserPermissionsService, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, changeDetector: ChangeDetectorRef, dialog: MatDialog, dialogService: DialogService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, route: ActivatedRoute, router: Router, ruleChainService: RuleChainService, authService: AuthService, translate: TranslateService, itembuffer: ItemBufferService, userPermissionsService: UserPermissionsService, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, changeDetector: ChangeDetectorRef, dialog: MatDialog, dialogService: DialogService, fb: FormBuilder);
     ngOnInit(): void;
     ngAfterViewChecked(): void;
     ngAfterViewInit(): void;

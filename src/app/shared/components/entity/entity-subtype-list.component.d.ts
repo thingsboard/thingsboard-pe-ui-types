@@ -68,5 +68,5 @@ export declare class EntitySubTypeListComponent implements ControlValueAccessor,
     onFocus(): void;
     clear(value?: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntitySubTypeListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntitySubTypeListComponent, "tb-entity-subtype-list", never, { "required": "required"; "floatLabel": "floatLabel"; "label": "label"; "disabled": "disabled"; "entityType": "entityType"; "emptyInputPlaceholder": "emptyInputPlaceholder"; "filledInputPlaceholder": "filledInputPlaceholder"; }, {}, never, ["[additionalButtons]"], false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntitySubTypeListComponent, "tb-entity-subtype-list", never, { "required": "required"; "floatLabel": "floatLabel"; "label": "label"; "disabled": "disabled"; "entityType": "entityType"; "emptyInputPlaceholder": "emptyInputPlaceholder"; "filledInputPlaceholder": "filledInputPlaceholder"; }, {}, never, ["[matSuffix]"], false, never>;
 }

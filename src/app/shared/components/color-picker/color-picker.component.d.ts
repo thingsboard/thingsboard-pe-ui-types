@@ -24,6 +24,7 @@ export declare class ColorPickerComponent implements ControlValueAccessor, OnDes
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     writeValue(value: string): void;
+    private isValidColorValue;
     private updateModel;
     ngOnDestroy(): void;
     getValueByType(color: Color, type: ColorType): string;

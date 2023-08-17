@@ -50,5 +50,6 @@ export interface QueueInfo extends BaseData<QueueId> {
     topic: string;
     additionalInfo: {
         description?: string;
+        customProperties?: string;
     };
 }

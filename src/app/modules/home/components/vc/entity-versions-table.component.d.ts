@@ -15,9 +15,10 @@ import { BranchAutocompleteComponent } from '@shared/components/vc/branch-autoco
 import { TbPopoverService } from '@shared/components/popover.service';
 import { MatButton } from '@angular/material/button';
 import { TbPopoverComponent } from '@shared/components/popover.component';
+import { AdminService } from '@core/http/admin.service';
+import { FormBuilder } from '@angular/forms';
 import { EntityType } from '@app/shared/models/entity-type.models';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
-import { AdminService } from "@core/http/admin.service";
 import * as i0 from "@angular/core";
 export declare class EntityVersionsTableComponent extends PageComponent implements OnInit, AfterViewInit, OnDestroy {
     protected store: Store<AppState>;
@@ -29,6 +30,7 @@ export declare class EntityVersionsTableComponent extends PageComponent implemen
     private cd;
     private viewContainerRef;
     private elementRef;
+    private fb;
     branchAutocompleteComponent: BranchAutocompleteComponent;
     singleEntityMode: boolean;
     popoverComponent: TbPopoverComponent;
@@ -45,7 +47,9 @@ export declare class EntityVersionsTableComponent extends PageComponent implemen
     viewsInited: boolean;
     readonly: boolean;
     isReadOnly: Observable<boolean>;
+    textSearch: import("@angular/forms").FormControl<string>;
     private componentResize$;
+    private destroy$;
     set active(active: boolean);
     set externalEntityId(externalEntityId: EntityId);
     entityId: EntityId;
@@ -55,7 +59,7 @@ export declare class EntityVersionsTableComponent extends PageComponent implemen
     searchInputField: ElementRef;
     paginator: MatPaginator;
     sort: MatSort;
-    constructor(store: Store<AppState>, entitiesVersionControlService: EntitiesVersionControlService, adminService: AdminService, popoverService: TbPopoverService, userPermissionsService: UserPermissionsService, renderer: Renderer2, cd: ChangeDetectorRef, viewContainerRef: ViewContainerRef, elementRef: ElementRef);
+    constructor(store: Store<AppState>, entitiesVersionControlService: EntitiesVersionControlService, adminService: AdminService, popoverService: TbPopoverService, userPermissionsService: UserPermissionsService, renderer: Renderer2, cd: ChangeDetectorRef, viewContainerRef: ViewContainerRef, elementRef: ElementRef, fb: FormBuilder);
     ngOnInit(): void;
     ngOnDestroy(): void;
     branchChanged(newBranch: string): void;

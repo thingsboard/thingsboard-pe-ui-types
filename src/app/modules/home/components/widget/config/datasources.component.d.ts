@@ -24,6 +24,7 @@ export declare class DatasourcesComponent implements ControlValueAccessor, OnIni
     hideDataKeyUnits: boolean;
     hideDataKeyDecimals: boolean;
     hideDataKeys: boolean;
+    hideLatestDataKeys: boolean;
     forceSingleDatasource: boolean;
     configMode: WidgetConfigMode;
     datasourcesFormGroup: UntypedFormGroup;
@@ -72,5 +73,5 @@ export declare class DatasourcesComponent implements ControlValueAccessor, OnIni
     private get hasAdditionalLatestDataKeys();
     private get datasourcesOptional();
     static ɵfac: i0.ɵɵFactoryDeclaration<DatasourcesComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DatasourcesComponent, "tb-datasources", never, { "disabled": "disabled"; "hideDataKeyLabel": "hideDataKeyLabel"; "hideDataKeyColor": "hideDataKeyColor"; "hideDataKeyUnits": "hideDataKeyUnits"; "hideDataKeyDecimals": "hideDataKeyDecimals"; "hideDataKeys": "hideDataKeys"; "forceSingleDatasource": "forceSingleDatasource"; "configMode": "configMode"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DatasourcesComponent, "tb-datasources", never, { "disabled": "disabled"; "hideDataKeyLabel": "hideDataKeyLabel"; "hideDataKeyColor": "hideDataKeyColor"; "hideDataKeyUnits": "hideDataKeyUnits"; "hideDataKeyDecimals": "hideDataKeyDecimals"; "hideDataKeys": "hideDataKeys"; "hideLatestDataKeys": "hideLatestDataKeys"; "forceSingleDatasource": "forceSingleDatasource"; "configMode": "configMode"; }, {}, never, never, false, never>;
 }
