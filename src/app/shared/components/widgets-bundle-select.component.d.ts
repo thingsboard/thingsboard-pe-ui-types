@@ -16,6 +16,7 @@ export declare class WidgetsBundleSelectComponent implements ControlValueAccesso
     get required(): boolean;
     set required(value: boolean);
     disabled: boolean;
+    excludeBundleIds: Array<string>;
     widgetsBundles$: Observable<Array<WidgetsBundle>>;
     widgetsBundles: Array<WidgetsBundle>;
     widgetsBundle: WidgetsBundle | null;
@@ -33,5 +34,5 @@ export declare class WidgetsBundleSelectComponent implements ControlValueAccesso
     private updateView;
     private getWidgetsBundles;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetsBundleSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetsBundleSelectComponent, "tb-widgets-bundle-select", never, { "bundlesScope": "bundlesScope"; "selectFirstBundle": "selectFirstBundle"; "selectBundleAlias": "selectBundleAlias"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetsBundleSelectComponent, "tb-widgets-bundle-select", never, { "bundlesScope": "bundlesScope"; "selectFirstBundle": "selectFirstBundle"; "selectBundleAlias": "selectBundleAlias"; "required": "required"; "disabled": "disabled"; "excludeBundleIds": "excludeBundleIds"; }, {}, never, never, false, never>;
 }

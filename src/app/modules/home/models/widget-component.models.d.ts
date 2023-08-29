@@ -35,6 +35,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { EdgeService } from '@core/http/edge.service';
 import * as RxJS from 'rxjs';
+import { Observable } from 'rxjs';
 import * as RxJSOperators from 'rxjs/operators';
 import { TbPopoverComponent } from '@shared/components/popover.component';
 import { EntityId } from '@shared/models/id/entity-id';
@@ -45,7 +46,6 @@ import { UserId } from '@shared/models/id/user-id';
 import { UserSettingsService } from '@core/http/user-settings.service';
 import { WhiteLabelingService } from '@core/http/white-labeling.service';
 import { DynamicComponentModule } from '@core/services/dynamic-component-factory.service';
-import { Observable } from 'rxjs';
 export interface IWidgetAction {
     name: string;
     icon: string;
@@ -377,7 +377,9 @@ export interface IDynamicWidgetComponent {
 }
 export interface WidgetInfo extends WidgetTypeDescriptor, WidgetControllerDescriptor {
     widgetName: string;
-    alias: string;
+    bundleAlias: string;
+    fullFqn: string;
+    deprecated: boolean;
     typeSettingsSchema?: string | any;
     typeDataKeySettingsSchema?: string | any;
     typeLatestDataKeySettingsSchema?: string | any;
@@ -402,6 +404,7 @@ export interface WidgetConfigComponentData {
     settingsDirective: string;
     dataKeySettingsDirective: string;
     latestDataKeySettingsDirective: string;
+    hasBasicMode: boolean;
     basicModeDirective: string;
 }
 export declare const MissingWidgetType: WidgetInfo;
@@ -423,8 +426,8 @@ export interface WidgetTypeInstance {
     onMobileModeChanged?: () => void;
     onDestroy?: () => void;
 }
-export declare function detailsToWidgetInfo(widgetTypeDetailsEntity: WidgetTypeDetails): WidgetInfo;
-export declare function toWidgetInfo(widgetTypeEntity: WidgetType): WidgetInfo;
-export declare function toWidgetTypeDetails(widgetInfo: WidgetInfo, id: WidgetTypeId, tenantId: TenantId, bundleAlias: string, createdTime: number): WidgetTypeDetails;
-export declare function toWidgetType(widgetInfo: WidgetInfo, id: WidgetTypeId, tenantId: TenantId, bundleAlias: string, createdTime: number): WidgetType;
-export declare function updateEntityParams(params: StateParams, targetEntityParamName?: string, targetEntityId?: EntityId, entityName?: string, entityLabel?: string): void;
+export declare const toWidgetInfo: (widgetTypeEntity: WidgetType) => WidgetInfo;
+export declare const detailsToWidgetInfo: (widgetTypeDetailsEntity: WidgetTypeDetails) => WidgetInfo;
+export declare const toWidgetType: (widgetInfo: WidgetInfo, id: WidgetTypeId, tenantId: TenantId, bundleAlias: string, createdTime: number) => WidgetType;
+export declare const toWidgetTypeDetails: (widgetInfo: WidgetInfo, id: WidgetTypeId, tenantId: TenantId, bundleAlias: string, createdTime: number) => WidgetTypeDetails;
+export declare const updateEntityParams: (params: StateParams, targetEntityParamName?: string, targetEntityId?: EntityId, entityName?: string, entityLabel?: string) => void;

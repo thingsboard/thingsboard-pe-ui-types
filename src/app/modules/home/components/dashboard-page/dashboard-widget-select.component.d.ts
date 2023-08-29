@@ -6,15 +6,18 @@ import { WidgetInfo, widgetType } from '@shared/models/widget.models';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import * as i0 from "@angular/core";
+type widgetsListMode = 'all' | 'actual' | 'deprecated';
 export declare class DashboardWidgetSelectComponent implements OnInit {
     private widgetsService;
     private sanitizer;
     private cd;
     private search$;
     private filterWidgetTypes$;
+    private widgetsListMode$;
     private widgetsInfo;
     private widgetsBundleValue;
     widgetTypes: Set<widgetType>;
+    hasDeprecated: boolean;
     widgets$: Observable<Array<WidgetInfo>>;
     loadingWidgetsSubject: BehaviorSubject<boolean>;
     loadingWidgets$: Observable<boolean>;
@@ -27,6 +30,8 @@ export declare class DashboardWidgetSelectComponent implements OnInit {
     set searchBundle(search: string);
     set filterWidgetTypes(widgetTypes: Array<widgetType>);
     get filterWidgetTypes(): Array<widgetType>;
+    set widgetsListMode(mode: widgetsListMode);
+    get widgetsListMode(): widgetsListMode;
     widgetSelected: EventEmitter<WidgetInfo>;
     widgetsBundleSelected: EventEmitter<WidgetsBundle>;
     constructor(widgetsService: WidgetService, sanitizer: DomSanitizer, cd: ChangeDetectorRef);
@@ -40,5 +45,6 @@ export declare class DashboardWidgetSelectComponent implements OnInit {
     private fetchWidgetBundle;
     private fetchWidget;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardWidgetSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardWidgetSelectComponent, "tb-dashboard-widget-select", never, { "aliasController": "aliasController"; "searchBundle": "searchBundle"; "filterWidgetTypes": "filterWidgetTypes"; }, { "widgetSelected": "widgetSelected"; "widgetsBundleSelected": "widgetsBundleSelected"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardWidgetSelectComponent, "tb-dashboard-widget-select", never, { "aliasController": "aliasController"; "searchBundle": "searchBundle"; "filterWidgetTypes": "filterWidgetTypes"; "widgetsListMode": "widgetsListMode"; }, { "widgetSelected": "widgetSelected"; "widgetsBundleSelected": "widgetsBundleSelected"; }, never, never, false, never>;
 }
+export {};

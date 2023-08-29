@@ -34,13 +34,6 @@ export declare class WidgetEditorDataResolver implements Resolve<WidgetEditorDat
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetEditorDataResolver, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<WidgetEditorDataResolver>;
 }
-export declare class WidgetEditorAddDataResolver implements Resolve<WidgetEditorData> {
-    private widgetsService;
-    constructor(widgetsService: WidgetService);
-    resolve(route: ActivatedRouteSnapshot): Observable<WidgetEditorData>;
-    static ɵfac: i0.ɵɵFactoryDeclaration<WidgetEditorAddDataResolver, never>;
-    static ɵprov: i0.ɵɵInjectableDeclaration<WidgetEditorAddDataResolver>;
-}
 export declare const widgetTypesBreadcumbLabelFunction: BreadCrumbLabelFunction<any>;
 export declare const widgetEditorBreadcumbLabelFunction: BreadCrumbLabelFunction<WidgetEditorComponent>;
 export declare const widgetsBundlesRoutes: Routes;

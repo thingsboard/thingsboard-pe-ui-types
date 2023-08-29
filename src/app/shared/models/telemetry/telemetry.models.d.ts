@@ -7,6 +7,7 @@ import { AlarmCountQuery, AlarmData, AlarmDataQuery, EntityCountQuery, EntityDat
 import { PageData } from '@shared/models/page/page-data';
 import { CmdWrapper, WsSubscriber } from '@shared/models/websocket/websocket.models';
 import { TelemetryWebsocketService } from '@core/ws/telemetry-websocket.service';
+export declare const NOT_SUPPORTED = "Not supported!";
 export declare enum DataKeyType {
     timeseries = "timeseries",
     attribute = "attribute",

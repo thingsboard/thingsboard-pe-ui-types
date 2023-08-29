@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, ComponentFactoryResolver, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewContainerRef } from '@angular/core';
+import { ChangeDetectorRef, ComponentFactoryResolver, OnDestroy, OnInit, ViewContainerRef } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -16,7 +16,7 @@ import { EntityService } from '@core/http/entity.service';
 import { Dashboard } from '@shared/models/dashboard.models';
 import { ToggleHeaderOption } from '@shared/components/toggle-header.component';
 import * as i0 from "@angular/core";
-export declare class WidgetConfigComponent extends PageComponent implements OnInit, OnDestroy, ControlValueAccessor, Validator, OnChanges {
+export declare class WidgetConfigComponent extends PageComponent implements OnInit, OnDestroy, ControlValueAccessor, Validator {
     protected store: Store<AppState>;
     private utils;
     private entityService;
@@ -67,7 +67,6 @@ export declare class WidgetConfigComponent extends PageComponent implements OnIn
     private defaultConfigFormsType;
     constructor(store: Store<AppState>, utils: UtilsService, entityService: EntityService, dialog: MatDialog, translate: TranslateService, cfr: ComponentFactoryResolver, fb: UntypedFormBuilder, cd: ChangeDetectorRef);
     ngOnInit(): void;
-    ngOnChanges(changes: SimpleChanges): void;
     ngOnDestroy(): void;
     private removeChangeSubscriptions;
     private createChangeSubscriptions;
@@ -77,6 +76,7 @@ export declare class WidgetConfigComponent extends PageComponent implements OnIn
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: WidgetConfigComponentData): void;
+    setWidgetConfigMode(widgetConfigMode: WidgetConfigMode): void;
     private setupConfig;
     private setupBasicModeConfig;
     private destroyBasicModeComponent;
@@ -149,5 +149,5 @@ export declare class WidgetConfigComponent extends PageComponent implements OnIn
         advancedSettings?: undefined;
     };
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetConfigComponent, "tb-widget-config", never, { "forceExpandDatasources": "forceExpandDatasources"; "aliasController": "aliasController"; "dashboard": "dashboard"; "widget": "widget"; "functionsOnly": "functionsOnly"; "hideHeader": "hideHeader"; "hideToggleHeader": "hideToggleHeader"; "isAdd": "isAdd"; "disabled": "disabled"; "widgetConfigMode": "widgetConfigMode"; }, {}, never, [".tb-widget-config-header-prefix", ".tb-widget-config-header-suffix"], false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetConfigComponent, "tb-widget-config", never, { "forceExpandDatasources": "forceExpandDatasources"; "aliasController": "aliasController"; "dashboard": "dashboard"; "widget": "widget"; "functionsOnly": "functionsOnly"; "hideHeader": "hideHeader"; "hideToggleHeader": "hideToggleHeader"; "isAdd": "isAdd"; "disabled": "disabled"; }, {}, never, [".tb-widget-config-header-prefix", ".tb-widget-config-header-suffix"], false, never>;
 }

@@ -1,6 +1,6 @@
 /// <reference types="node" />
 import { PageComponent } from '@shared/components/page.component';
-import { ElementRef, OnDestroy, OnInit } from '@angular/core';
+import { ElementRef, EventEmitter, OnDestroy, OnInit } from '@angular/core';
 import { WidgetsBundle } from '@shared/models/widgets-bundle.model';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -74,11 +74,13 @@ export declare class WidgetEditorComponent extends PageComponent implements OnIn
     iframeWidgetEditModeInited: boolean;
     saveWidgetPending: boolean;
     saveWidgetAsPending: boolean;
+    moveWidgetPending: boolean;
     gotError: boolean;
     errorMarkers: number[];
     errorAnnotationId: number;
     saveWidgetTimeout: Timeout;
     hotKeys: Hotkey[];
+    updateBreadcrumbs: EventEmitter<any>;
     private rxSubscriptions;
     constructor(store: Store<AppState>, window: Window, route: ActivatedRoute, router: Router, widgetService: WidgetService, translate: TranslateService, raf: RafService, dialog: MatDialog);
     private init;
@@ -102,9 +104,11 @@ export declare class WidgetEditorComponent extends PageComponent implements OnIn
     undoWidget(): void;
     saveWidget(): void;
     saveWidgetAs(): void;
+    moveWidget(): void;
     undoDisabled(): boolean;
     saveDisabled(): boolean;
     saveAsDisabled(): boolean;
+    moveDisabled(): boolean;
     beautifyCss(): void;
     beautifyHtml(): void;
     beautifyJson(): void;

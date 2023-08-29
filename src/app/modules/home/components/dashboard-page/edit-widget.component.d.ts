@@ -9,12 +9,14 @@ import { Widget, WidgetConfigMode } from '@shared/models/widget.models';
 import { WidgetComponentService } from '@home/components/widget/widget-component.service';
 import { WidgetConfigComponentData } from '../../models/widget-component.models';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { WidgetConfigComponent } from '@home/components/widget/widget-config.component';
 import * as i0 from "@angular/core";
 export declare class EditWidgetComponent extends PageComponent implements OnInit, OnChanges {
     protected store: Store<AppState>;
     private dialog;
     private fb;
     private widgetComponentService;
+    widgetConfigComponent: WidgetConfigComponent;
     dashboard: Dashboard;
     aliasController: IAliasController;
     stateController: IStateController;
@@ -26,7 +28,6 @@ export declare class EditWidgetComponent extends PageComponent implements OnInit
     widgetFormGroup: UntypedFormGroup;
     widgetConfig: WidgetConfigComponentData;
     previewMode: boolean;
-    hasBasicMode: boolean;
     get widgetConfigMode(): WidgetConfigMode;
     set widgetConfigMode(widgetConfigMode: WidgetConfigMode);
     private currentWidgetConfigChanged;

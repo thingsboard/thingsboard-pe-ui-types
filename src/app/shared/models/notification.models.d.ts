@@ -198,7 +198,7 @@ export interface NotificationTarget extends Omit<BaseData<NotificationTargetId>,
     tenantId: TenantId;
     configuration: NotificationTargetConfig;
 }
-export interface NotificationTargetConfig extends Partial<PlatformUsersNotificationTargetConfig & SlackNotificationTargetConfig> {
+export interface NotificationTargetConfig extends Partial<PlatformUsersNotificationTargetConfig & SlackNotificationTargetConfig & MicrosoftTeamsNotificationTargetConfig> {
     description?: string;
     type: NotificationTargetType;
 }
@@ -228,9 +228,14 @@ export interface SlackNotificationTargetConfig {
     conversationType: SlackChanelType;
     conversation: SlackConversation;
 }
+export interface MicrosoftTeamsNotificationTargetConfig {
+    webhookUrl: string;
+    channelName: string;
+}
 export declare enum NotificationTargetType {
     PLATFORM_USERS = "PLATFORM_USERS",
-    SLACK = "SLACK"
+    SLACK = "SLACK",
+    MICROSOFT_TEAMS = "MICROSOFT_TEAMS"
 }
 export declare const NotificationTargetTypeTranslationMap: Map<NotificationTargetType, string>;
 export interface NotificationTemplate extends Omit<BaseData<NotificationTemplateId>, 'label'>, ExportableEntity<NotificationTemplateId> {
@@ -243,13 +248,13 @@ interface NotificationTemplateConfig {
         [key in NotificationDeliveryMethod]: DeliveryMethodNotificationTemplate;
     };
 }
-export interface DeliveryMethodNotificationTemplate extends Partial<WebDeliveryMethodNotificationTemplate & EmailDeliveryMethodNotificationTemplate & SlackDeliveryMethodNotificationTemplate> {
-    body?: string;
+export interface DeliveryMethodNotificationTemplate extends Partial<WebDeliveryMethodNotificationTemplate & EmailDeliveryMethodNotificationTemplate & SlackDeliveryMethodNotificationTemplate & MicrosoftTeamsDeliveryMethodNotificationTemplate> {
+    body: string;
     enabled: boolean;
     method: NotificationDeliveryMethod;
 }
 interface WebDeliveryMethodNotificationTemplate {
-    subject?: string;
+    subject: string;
     additionalConfig: WebDeliveryMethodAdditionalConfig;
 }
 interface WebDeliveryMethodAdditionalConfig {
@@ -258,15 +263,16 @@ interface WebDeliveryMethodAdditionalConfig {
         icon: string;
         color: string;
     };
-    actionButtonConfig: {
-        enabled: boolean;
-        text: string;
-        linkType: ActionButtonLinkType;
-        link?: string;
-        dashboardId?: string;
-        dashboardState?: string;
-        setEntityIdInState?: boolean;
-    };
+    actionButtonConfig: NotificationButtonConfig;
+}
+interface NotificationButtonConfig {
+    enabled: boolean;
+    text: string;
+    linkType: ActionButtonLinkType;
+    link?: string;
+    dashboardId?: string;
+    dashboardState?: string;
+    setEntityIdInState?: boolean;
 }
 interface EmailDeliveryMethodNotificationTemplate {
     subject: string;
@@ -274,6 +280,10 @@ interface EmailDeliveryMethodNotificationTemplate {
 interface SlackDeliveryMethodNotificationTemplate {
     conversationType: SlackChanelType;
     conversationId: string;
+}
+interface MicrosoftTeamsDeliveryMethodNotificationTemplate {
+    subject?: string;
+    button: NotificationButtonConfig;
 }
 export declare enum NotificationStatus {
     SENT = "SENT",
@@ -283,7 +293,8 @@ export declare enum NotificationDeliveryMethod {
     WEB = "WEB",
     SMS = "SMS",
     EMAIL = "EMAIL",
-    SLACK = "SLACK"
+    SLACK = "SLACK",
+    MICROSOFT_TEAMS = "MICROSOFT_TEAMS"
 }
 export declare const NotificationDeliveryMethodTranslateMap: Map<NotificationDeliveryMethod, string>;
 export declare enum NotificationRequestStatus {

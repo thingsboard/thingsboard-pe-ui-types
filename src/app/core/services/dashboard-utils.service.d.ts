@@ -15,6 +15,7 @@ export declare class DashboardUtilsService {
     validateAndUpdateDashboard(dashboard: Dashboard): Dashboard;
     createSingleWidgetDashboard(widget: Widget): Dashboard;
     validateAndUpdateWidget(widget: Widget): Widget;
+    private validateAndUpdateWidgetTypeFqn;
     validateAndUpdateWidgetConfig(widgetConfig: WidgetConfig | undefined, type: widgetType): WidgetConfig;
     createDefaultLayoutData(): DashboardLayout;
     private createDefaultGridSettings;

@@ -27,8 +27,7 @@ export declare enum widgetType {
     static = "static"
 }
 export interface WidgetTypeTemplate {
-    bundleAlias: string;
-    alias: string;
+    fullFqn: string;
 }
 export interface WidgetTypeData {
     name: string;
@@ -98,9 +97,13 @@ export interface WidgetControllerDescriptor {
 export interface BaseWidgetType extends BaseData<WidgetTypeId> {
     tenantId: TenantId;
     bundleAlias: string;
-    alias: string;
+    fqn: string;
     name: string;
+    deprecated: boolean;
 }
+export declare const fullWidgetTypeFqn: (type: BaseWidgetType) => string;
+export declare const widgetTypeFqn: (fullFqn: string) => string;
+export declare const isValidWidgetFullFqn: (fullFqn: string) => boolean;
 export interface WidgetType extends BaseWidgetType {
     descriptor: WidgetTypeDescriptor;
 }
@@ -430,13 +433,12 @@ export interface Widget extends WidgetInfo {
 }
 export interface WidgetInfo {
     id?: string;
-    isSystemType: boolean;
-    bundleAlias: string;
-    typeAlias: string;
+    typeFullFqn: string;
     type: widgetType;
     title: string;
     image?: string;
     description?: string;
+    deprecated?: boolean;
 }
 export interface GroupInfo {
     formIndex: number;

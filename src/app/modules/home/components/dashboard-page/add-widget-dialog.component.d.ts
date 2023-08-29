@@ -11,6 +11,7 @@ import { Dashboard } from '@app/shared/models/dashboard.models';
 import { IAliasController, IStateController } from '@core/api/widget-api.models';
 import { WidgetConfigComponentData, WidgetInfo } from '@home/models/widget-component.models';
 import { TranslateService } from '@ngx-translate/core';
+import { WidgetConfigComponent } from '@home/components/widget/widget-config.component';
 import * as i0 from "@angular/core";
 export interface AddWidgetDialogData {
     dashboard: Dashboard;
@@ -27,7 +28,7 @@ export declare class AddWidgetDialogComponent extends DialogComponent<AddWidgetD
     private errorStateMatcher;
     dialogRef: MatDialogRef<AddWidgetDialogComponent, Widget>;
     private fb;
-    widgetConfigModes: typeof WidgetConfigMode;
+    widgetConfigComponent: WidgetConfigComponent;
     widgetFormGroup: UntypedFormGroup;
     dashboard: Dashboard;
     aliasController: IAliasController;
@@ -35,7 +36,8 @@ export declare class AddWidgetDialogComponent extends DialogComponent<AddWidgetD
     widget: Widget;
     widgetConfig: WidgetConfigComponentData;
     previewMode: boolean;
-    hasBasicMode: boolean;
+    hideHeader: boolean;
+    private readonly initialWidgetConfigMode;
     get widgetConfigMode(): WidgetConfigMode;
     set widgetConfigMode(widgetConfigMode: WidgetConfigMode);
     submitted: boolean;

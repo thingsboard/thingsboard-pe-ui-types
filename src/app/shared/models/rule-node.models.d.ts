@@ -52,6 +52,7 @@ export interface IRuleNodeConfigurationComponent {
     ruleNodeId: string;
     ruleChainId: string;
     hasScript: boolean;
+    disabled: boolean;
     testScriptLabel?: string;
     changeScript?: EventEmitter<void>;
     ruleChainType: RuleChainType;
@@ -69,6 +70,7 @@ export declare abstract class RuleNodeConfigurationComponent extends PageCompone
     ruleChainType: RuleChainType;
     configurationValue: RuleNodeConfiguration;
     private configurationSet;
+    set disabled(value: boolean);
     set configuration(value: RuleNodeConfiguration);
     get configuration(): RuleNodeConfiguration;
     configurationChangedEmiter: EventEmitter<RuleNodeConfiguration>;

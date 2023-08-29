@@ -18,6 +18,7 @@ export declare abstract class TemplateConfiguration<T, R = any> extends DialogCo
     emailTemplateForm: FormGroup;
     smsTemplateForm: FormGroup;
     slackTemplateForm: FormGroup;
+    microsoftTeamsTemplateForm: FormGroup;
     notificationDeliveryMethods: NotificationDeliveryMethod[];
     notificationDeliveryMethodTranslateMap: Map<NotificationDeliveryMethod, string>;
     notificationTemplateTypeTranslateMap: Map<NotificationType, import("@shared/models/notification.models").NotificationTemplateTypeTranslate>;
@@ -31,6 +32,7 @@ export declare abstract class TemplateConfiguration<T, R = any> extends DialogCo
     ngOnDestroy(): void;
     atLeastOne(): (group: FormGroup) => ValidationErrors | null;
     protected getNotificationTemplateValue(): NotificationTemplate;
+    private createButtonConfigForm;
     static ɵfac: i0.ɵɵFactoryDeclaration<TemplateConfiguration<any, any>, never>;
     static ɵdir: i0.ɵɵDirectiveDeclaration<TemplateConfiguration<any, any>, never, never, {}, {}, never, never, false, never>;
 }

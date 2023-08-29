@@ -1,23 +1,22 @@
 import { AfterViewInit, ElementRef, OnDestroy, OnInit } from '@angular/core';
-import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { TranslateService } from '@ngx-translate/core';
 import { BroadcastService } from '@app/core/services/broadcast.service';
-import { FloatLabelType, MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
+import { MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class RelationTypeAutocompleteComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnDestroy {
     private store;
     private broadcast;
     translate: TranslateService;
     private fb;
-    relationTypeFormGroup: UntypedFormGroup;
+    relationTypeFormGroup: FormGroup;
     modelValue: string | null;
-    label: string;
+    showLabel: boolean;
     additionalClasses: Array<string>;
     appearance: MatFormFieldAppearance;
-    floatLabel: FloatLabelType;
     required: boolean;
     disabled: boolean;
     subscriptSizing: SubscriptSizing;
@@ -26,7 +25,7 @@ export declare class RelationTypeAutocompleteComponent implements ControlValueAc
     searchText: string;
     private dirty;
     private propagateChange;
-    constructor(store: Store<AppState>, broadcast: BroadcastService, translate: TranslateService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, broadcast: BroadcastService, translate: TranslateService, fb: FormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -40,5 +39,5 @@ export declare class RelationTypeAutocompleteComponent implements ControlValueAc
     fetchRelationTypes(searchText?: string, strictMatch?: boolean): Observable<Array<string>>;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<RelationTypeAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RelationTypeAutocompleteComponent, "tb-relation-type-autocomplete", never, { "label": "label"; "additionalClasses": "additionalClasses"; "appearance": "appearance"; "floatLabel": "floatLabel"; "required": "required"; "disabled": "disabled"; "subscriptSizing": "subscriptSizing"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RelationTypeAutocompleteComponent, "tb-relation-type-autocomplete", never, { "showLabel": "showLabel"; "additionalClasses": "additionalClasses"; "appearance": "appearance"; "required": "required"; "disabled": "disabled"; "subscriptSizing": "subscriptSizing"; }, {}, never, never, false, never>;
 }
