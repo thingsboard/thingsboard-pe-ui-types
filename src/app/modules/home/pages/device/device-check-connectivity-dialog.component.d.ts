@@ -35,7 +35,6 @@ export declare class DeviceCheckConnectivityDialogComponent extends DialogCompon
     deviceTransportTypeTranslationMap: Map<import("@shared/models/device.models").TransportType, string>;
     showDontShowAgain: boolean;
     dialogTitle: string;
-    closeButtonLabel: string;
     notShowAgain: boolean;
     helpBaseUrl: string;
     httpTabIndex: number;

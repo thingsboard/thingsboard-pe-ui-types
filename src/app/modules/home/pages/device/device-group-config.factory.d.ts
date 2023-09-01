@@ -35,7 +35,7 @@ export declare class DeviceGroupConfigFactory implements EntityGroupStateConfigF
     private openDevice;
     manageCredentials($event: Event, device: DeviceInfo | ShortEntityView, isReadOnly: boolean, config: GroupEntityTableConfig<DeviceInfo>): void;
     manageOwnerAndGroups($event: Event, device: DeviceInfo, config: GroupEntityTableConfig<DeviceInfo>): void;
-    checkConnectivity($event: Event, deviceId: EntityId, afterAdd?: boolean): void;
+    checkConnectivity($event: Event, deviceId: EntityId, afterAdd?: boolean, config?: GroupEntityTableConfig<DeviceInfo>): void;
     onDeviceAction(action: EntityAction<DeviceInfo>, config: GroupEntityTableConfig<DeviceInfo>, params: EntityGroupParams): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceGroupConfigFactory, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<DeviceGroupConfigFactory>;

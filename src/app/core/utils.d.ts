@@ -49,7 +49,7 @@ export declare function getDescendantProp(obj: any, path: string): any;
 export declare function insertVariable(pattern: string, name: string, value: any): string;
 export declare const createLabelFromDatasource: (datasource: Datasource, pattern: string) => string;
 export declare const hasDatasourceLabelsVariables: (pattern: string) => boolean;
-export declare function formattedDataFormDatasourceData(input: DatasourceData[], dataIndex?: number): FormattedData[];
+export declare function formattedDataFormDatasourceData(input: DatasourceData[], dataIndex?: number, ts?: number): FormattedData[];
 export declare function formattedDataArrayFromDatasourceData(input: DatasourceData[]): FormattedData[][];
 export declare function formattedDataFromDatasource(datasource: Datasource, dsIndex: number): FormattedData;
 export declare function flatFormattedData(input: FormattedData[]): FormattedData;

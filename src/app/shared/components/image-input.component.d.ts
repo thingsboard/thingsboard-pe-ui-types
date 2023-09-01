@@ -36,6 +36,7 @@ export declare class ImageInputComponent extends PageComponent implements AfterV
     imageSizeOverflow: EventEmitter<any>;
     imageTypeError: EventEmitter<any>;
     imageCleared: EventEmitter<any>;
+    showClearButton: boolean;
     showPreview: boolean;
     imageType: string;
     imageUrl: string;
@@ -54,5 +55,5 @@ export declare class ImageInputComponent extends PageComponent implements AfterV
     private updateModel;
     clearImage(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ImageInputComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ImageInputComponent, "tb-image-input", never, { "label": "label"; "accept": "accept"; "emptyImageText": "emptyImageText"; "noImageText": "noImageText"; "inputId": "inputId"; "dropLabel": "dropLabel"; "maxImageSize": "maxImageSize"; "allowedImageMimeTypes": "allowedImageMimeTypes"; "maxSizeByte": "maxSizeByte"; "required": "required"; "disabled": "disabled"; "showPreview": "showPreview"; }, { "imageTypeChanged": "imageTypeChanged"; "imageSizeOverflow": "imageSizeOverflow"; "imageTypeError": "imageTypeError"; "imageCleared": "imageCleared"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ImageInputComponent, "tb-image-input", never, { "label": "label"; "accept": "accept"; "emptyImageText": "emptyImageText"; "noImageText": "noImageText"; "inputId": "inputId"; "dropLabel": "dropLabel"; "maxImageSize": "maxImageSize"; "allowedImageMimeTypes": "allowedImageMimeTypes"; "maxSizeByte": "maxSizeByte"; "required": "required"; "disabled": "disabled"; "showClearButton": "showClearButton"; "showPreview": "showPreview"; }, { "imageTypeChanged": "imageTypeChanged"; "imageSizeOverflow": "imageSizeOverflow"; "imageTypeError": "imageTypeError"; "imageCleared": "imageCleared"; }, never, never, false, never>;
 }
