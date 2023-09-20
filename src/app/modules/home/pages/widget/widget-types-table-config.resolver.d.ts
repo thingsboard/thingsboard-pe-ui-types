@@ -1,0 +1,36 @@
+import { Resolve, Router } from '@angular/router';
+import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
+import { TranslateService } from '@ngx-translate/core';
+import { DatePipe } from '@angular/common';
+import { EntityAction } from '@home/models/entity/entity-component.models';
+import { WidgetService } from '@app/core/http/widget.service';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { Authority } from '@shared/models/authority.enum';
+import { ImportExportService } from '@home/components/import-export/import-export.service';
+import { BaseWidgetType, WidgetTypeDetails, WidgetTypeInfo } from '@shared/models/widget.models';
+import { MatDialog } from '@angular/material/dialog';
+import { UserPermissionsService } from '@core/http/user-permissions.service';
+import * as i0 from "@angular/core";
+export declare class WidgetTypesTableConfigResolver implements Resolve<EntityTableConfig<WidgetTypeInfo | WidgetTypeDetails>> {
+    private store;
+    private dialog;
+    private widgetsService;
+    private userPermissionsService;
+    private translate;
+    private importExport;
+    private datePipe;
+    private router;
+    private readonly config;
+    constructor(store: Store<AppState>, dialog: MatDialog, widgetsService: WidgetService, userPermissionsService: UserPermissionsService, translate: TranslateService, importExport: ImportExportService, datePipe: DatePipe, router: Router);
+    resolve(): EntityTableConfig<WidgetTypeInfo | WidgetTypeDetails>;
+    isWidgetTypeEditable(widgetType: BaseWidgetType, authority: Authority): boolean;
+    addWidgetType($event: Event): void;
+    importWidgetType($event: Event): void;
+    openWidgetEditor($event: Event, widgetType: BaseWidgetType): void;
+    exportWidgetType($event: Event, widgetType: BaseWidgetType): void;
+    exportWidgetTypes($event: Event, widgetTypes: BaseWidgetType[]): void;
+    onWidgetTypeAction(action: EntityAction<BaseWidgetType>): boolean;
+    static ɵfac: i0.ɵɵFactoryDeclaration<WidgetTypesTableConfigResolver, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<WidgetTypesTableConfigResolver>;
+}

@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, ComponentFactoryResolver, ElementRef, EventEmitter, OnChanges, OnInit, Renderer2, SimpleChanges, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ComponentFactoryResolver, ElementRef, EventEmitter, OnChanges, OnDestroy, OnInit, Renderer2, SimpleChanges, ViewContainerRef } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -19,8 +19,9 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { TbAnchorComponent } from '@shared/components/tb-anchor.component';
 import { IEntitiesTableComponent } from '@home/models/entity/entity-table-component.models';
 import { EntityDetailsPanelComponent } from '@home/components/entity/entity-details-panel.component';
+import { FormBuilder } from '@angular/forms';
 import * as i0 from "@angular/core";
-export declare class EntitiesTableComponent extends PageComponent implements IEntitiesTableComponent, AfterViewInit, OnInit, OnChanges {
+export declare class EntitiesTableComponent extends PageComponent implements IEntitiesTableComponent, AfterViewInit, OnInit, OnChanges, OnDestroy {
     protected store: Store<AppState>;
     route: ActivatedRoute;
     translate: TranslateService;
@@ -31,6 +32,7 @@ export declare class EntitiesTableComponent extends PageComponent implements IEn
     private router;
     private componentFactoryResolver;
     private elementRef;
+    private fb;
     viewContainerRef: ViewContainerRef;
     renderer: Renderer2;
     entitiesTableConfig: EntityTableConfig<BaseData<HasId>>;
@@ -63,11 +65,12 @@ export declare class EntitiesTableComponent extends PageComponent implements IEn
     paginator: MatPaginator;
     sort: MatSort;
     entityDetailsPanel: EntityDetailsPanelComponent;
+    textSearch: import("@angular/forms").FormControl<string>;
     private updateDataSubscription;
     private viewInited;
     private widgetResize$;
-    private rxSubscriptions;
-    constructor(store: Store<AppState>, route: ActivatedRoute, translate: TranslateService, dialog: MatDialog, dialogService: DialogService, domSanitizer: DomSanitizer, cd: ChangeDetectorRef, router: Router, componentFactoryResolver: ComponentFactoryResolver, elementRef: ElementRef, viewContainerRef: ViewContainerRef, renderer: Renderer2);
+    private destroy$;
+    constructor(store: Store<AppState>, route: ActivatedRoute, translate: TranslateService, dialog: MatDialog, dialogService: DialogService, domSanitizer: DomSanitizer, cd: ChangeDetectorRef, router: Router, componentFactoryResolver: ComponentFactoryResolver, elementRef: ElementRef, fb: FormBuilder, viewContainerRef: ViewContainerRef, renderer: Renderer2);
     ngOnInit(): void;
     ngOnDestroy(): void;
     ngOnChanges(changes: SimpleChanges): void;
@@ -92,6 +95,7 @@ export declare class EntitiesTableComponent extends PageComponent implements IEn
     exitFilterMode(): void;
     resetSortAndFilter(update?: boolean, preserveTimewindow?: boolean): void;
     columnsUpdated(resetData?: boolean): void;
+    cellActionDescriptorsUpdated(): void;
     headerCellStyle(column: EntityColumn<BaseData<HasId>>): any;
     clearCellCache(col: number, row: number): void;
     cellContent(entity: BaseData<HasId>, column: EntityColumn<BaseData<HasId>>, row: number): any;

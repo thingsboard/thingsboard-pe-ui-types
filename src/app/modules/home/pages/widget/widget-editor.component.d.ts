@@ -1,7 +1,6 @@
 /// <reference types="node" />
 import { PageComponent } from '@shared/components/page.component';
-import { ElementRef, OnDestroy, OnInit } from '@angular/core';
-import { WidgetsBundle } from '@shared/models/widgets-bundle.model';
+import { ElementRef, EventEmitter, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { WidgetService } from '@core/http/widget.service';
@@ -46,7 +45,6 @@ export declare class WidgetEditorComponent extends PageComponent implements OnIn
     widgetTypesDataMap: Map<widgetType, import("@shared/models/widget.models").WidgetTypeData>;
     authUser: AuthUser;
     isReadOnly: boolean;
-    widgetsBundle: WidgetsBundle;
     widgetTypeDetails: WidgetTypeDetails;
     widget: WidgetInfo;
     origWidget: WidgetInfo;
@@ -79,6 +77,7 @@ export declare class WidgetEditorComponent extends PageComponent implements OnIn
     errorAnnotationId: number;
     saveWidgetTimeout: Timeout;
     hotKeys: Hotkey[];
+    updateBreadcrumbs: EventEmitter<any>;
     private rxSubscriptions;
     constructor(store: Store<AppState>, window: Window, route: ActivatedRoute, router: Router, widgetService: WidgetService, translate: TranslateService, raf: RafService, dialog: MatDialog);
     private init;

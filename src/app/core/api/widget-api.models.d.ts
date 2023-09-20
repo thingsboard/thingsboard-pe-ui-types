@@ -46,6 +46,7 @@ export interface WidgetActionsApi {
     getActionDescriptors: (actionSourceId: string) => Array<WidgetActionDescriptor>;
     handleWidgetAction: ($event: Event, descriptor: WidgetActionDescriptor, entityId?: EntityId, entityName?: string, additionalParams?: any, entityLabel?: string) => void;
     elementClick: ($event: Event) => void;
+    cardClick: ($event: Event) => void;
     getActiveEntityInfo: () => SubscriptionEntityInfo;
     openDashboardStateInSeparateDialog: (targetDashboardStateId: string, params?: StateParams, dialogTitle?: string, hideDashboardToolbar?: boolean, dialogWidth?: number, dialogHeight?: number) => void;
     openDashboardStateInPopover: ($event: Event, targetDashboardStateId: string, params?: StateParams, hideDashboardToolbar?: boolean, preferredPlacement?: PopoverPlacement, hideOnClickOutside?: boolean, popoverWidth?: string, popoverHeight?: string, popoverStyle?: {
@@ -213,6 +214,7 @@ export interface IWidgetSubscription {
     loadingData: boolean;
     useDashboardTimewindow: boolean;
     legendData: LegendData;
+    readonly firstDatasource?: Datasource;
     datasourcePages?: PageData<Datasource>[];
     dataPages?: PageData<Array<DatasourceData>>[];
     datasources?: Array<Datasource>;

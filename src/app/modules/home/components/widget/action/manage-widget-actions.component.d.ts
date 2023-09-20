@@ -11,7 +11,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { WidgetActionCallbacks, WidgetActionDescriptorInfo, WidgetActionsData, WidgetActionsDatasource } from '@home/components/widget/action/manage-widget-actions.component.models';
 import { UtilsService } from '@core/services/utils.service';
-import { WidgetActionType, widgetType } from '@shared/models/widget.models';
+import { WidgetActionDescriptor, WidgetActionSource, WidgetActionType, widgetType } from '@shared/models/widget.models';
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import * as i0 from "@angular/core";
 export declare class ManageWidgetActionsComponent extends PageComponent implements OnInit, AfterViewInit, OnDestroy, ControlValueAccessor {
@@ -25,9 +25,13 @@ export declare class ManageWidgetActionsComponent extends PageComponent implemen
     disabled: boolean;
     widgetType: widgetType;
     callbacks: WidgetActionCallbacks;
+    actionSources: {
+        [actionSourceId: string]: WidgetActionSource;
+    };
     actionTypes: WidgetActionType[];
     customFunctionArgs: string[];
     isEntityGroup: boolean;
+    outlinedBorder: boolean;
     innerValue: WidgetActionsData;
     displayedColumns: string[];
     pageLink: PageLink;
@@ -38,6 +42,7 @@ export declare class ManageWidgetActionsComponent extends PageComponent implemen
     dirtyValue: boolean;
     dragDisabled: boolean;
     private widgetResize$;
+    private destroyed;
     searchInputField: ElementRef;
     paginator: MatPaginator;
     sort: MatSort;
@@ -60,8 +65,10 @@ export declare class ManageWidgetActionsComponent extends PageComponent implemen
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
-    writeValue(obj: WidgetActionsData): void;
+    writeValue(actions?: {
+        [actionSourceId: string]: Array<WidgetActionDescriptor>;
+    }): void;
     private onActionsUpdated;
     static ɵfac: i0.ɵɵFactoryDeclaration<ManageWidgetActionsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ManageWidgetActionsComponent, "tb-manage-widget-actions", never, { "disabled": "disabled"; "widgetType": "widgetType"; "callbacks": "callbacks"; "actionTypes": "actionTypes"; "customFunctionArgs": "customFunctionArgs"; "isEntityGroup": "isEntityGroup"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ManageWidgetActionsComponent, "tb-manage-widget-actions", never, { "disabled": "disabled"; "widgetType": "widgetType"; "callbacks": "callbacks"; "actionSources": "actionSources"; "actionTypes": "actionTypes"; "customFunctionArgs": "customFunctionArgs"; "isEntityGroup": "isEntityGroup"; "outlinedBorder": "outlinedBorder"; }, {}, never, never, false, never>;
 }

@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { PageComponent } from '@shared/components/page.component';
@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { UiSettingsService } from '@core/http/ui-settings.service';
 import * as i0 from "@angular/core";
-export declare class WhiteLabelingComponent extends PageComponent implements OnInit, HasConfirmForm {
+export declare class WhiteLabelingComponent extends PageComponent implements OnInit, OnDestroy, HasConfirmForm {
     protected store: Store<AppState>;
     private router;
     private route;
@@ -23,6 +23,7 @@ export declare class WhiteLabelingComponent extends PageComponent implements OnI
     private translate;
     private dialog;
     fb: UntypedFormBuilder;
+    private window;
     maxFaviconSize: number;
     maxFaviconSizeKb: number;
     faviconTypes: string[];
@@ -39,8 +40,10 @@ export declare class WhiteLabelingComponent extends PageComponent implements OnI
         name: string;
         value: boolean;
     }[];
-    constructor(store: Store<AppState>, router: Router, route: ActivatedRoute, userPermissionsService: UserPermissionsService, whiteLabelingService: WhiteLabelingService, uiSettingsService: UiSettingsService, translate: TranslateService, dialog: MatDialog, fb: UntypedFormBuilder);
+    private destroy$;
+    constructor(store: Store<AppState>, router: Router, route: ActivatedRoute, userPermissionsService: UserPermissionsService, whiteLabelingService: WhiteLabelingService, uiSettingsService: UiSettingsService, translate: TranslateService, dialog: MatDialog, fb: UntypedFormBuilder, window: Window);
     ngOnInit(): void;
+    ngOnDestroy(): void;
     private loadWhiteLabelingParams;
     buildWhiteLabelingSettingsForm(): void;
     private updateValidators;

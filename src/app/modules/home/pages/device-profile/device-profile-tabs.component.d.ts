@@ -6,8 +6,8 @@ import * as i0 from "@angular/core";
 export declare class DeviceProfileTabsComponent extends EntityTabsComponent<DeviceProfile> {
     protected store: Store<AppState>;
     deviceTransportTypes: DeviceTransportType[];
-    deviceTransportTypeTranslations: Map<DeviceTransportType, string>;
-    deviceTransportTypeHints: Map<DeviceTransportType, string>;
+    deviceTransportTypeTranslations: Map<import("@shared/models/device.models").TransportType, string>;
+    deviceTransportTypeHints: Map<import("@shared/models/device.models").TransportType, string>;
     isTransportTypeChanged: boolean;
     constructor(store: Store<AppState>);
     ngOnInit(): void;

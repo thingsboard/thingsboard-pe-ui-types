@@ -1,0 +1,36 @@
+import { ElementRef, OnInit } from '@angular/core';
+import { ControlValueAccessor, FormBuilder, FormControl } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { Unit } from '@shared/models/unit.models';
+import { TranslateService } from '@ngx-translate/core';
+import { ResourcesService } from '@core/services/resources.service';
+import * as i0 from "@angular/core";
+export declare class UnitInputComponent implements ControlValueAccessor, OnInit {
+    private fb;
+    private resourcesService;
+    private translate;
+    get hostDisplay(): string;
+    unitsFormControl: FormControl;
+    modelValue: string | null;
+    disabled: boolean;
+    unitInput: ElementRef;
+    filteredUnits: Observable<Array<Unit | string>>;
+    searchText: string;
+    private dirty;
+    private fetchUnits$;
+    private propagateChange;
+    constructor(fb: FormBuilder, resourcesService: ResourcesService, translate: TranslateService);
+    ngOnInit(): void;
+    writeValue(symbol?: string): void;
+    onFocus(): void;
+    updateView(value: Unit | string | null): void;
+    displayUnitFn(unit?: Unit | string): string | undefined;
+    fetchUnits(searchText?: string): Observable<Array<Unit | string>>;
+    registerOnChange(fn: any): void;
+    registerOnTouched(fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    clear(): void;
+    private unitsConstant;
+    static ɵfac: i0.ɵɵFactoryDeclaration<UnitInputComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<UnitInputComponent, "tb-unit-input", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+}

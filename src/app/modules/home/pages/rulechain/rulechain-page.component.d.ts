@@ -1,9 +1,9 @@
 /// <reference types="tooltipster" />
-import { AfterViewInit, ElementRef, EventEmitter, OnDestroy, OnInit, QueryList, Renderer2, ViewContainerRef } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, ChangeDetectorRef, EventEmitter, OnDestroy, OnInit, QueryList, Renderer2, ViewContainerRef } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { FormGroupDirective, NgForm, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
+import { FormBuilder, FormGroupDirective, NgForm, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { HasDirtyFlag } from '@core/guards/confirm-on-exit.guard';
 import { TranslateService } from '@ngx-translate/core';
 import { ErrorStateMatcher } from '@angular/material/core';
@@ -25,12 +25,13 @@ import { DialogComponent } from '@shared/components/dialog.component';
 import { MatMenuTrigger } from '@angular/material/menu';
 import { ItemBufferService } from '@core/services/item-buffer.service';
 import { Hotkey } from 'angular2-hotkeys';
-import { DebugEventType, EventType } from '@shared/models/event.models';
+import { DebugEventType, DebugRuleNodeEventBody, EventType } from '@shared/models/event.models';
 import { MatMiniFabButton } from '@angular/material/button';
 import { TbPopoverService } from '@shared/components/popover.service';
+import { MatDrawer } from '@angular/material/sidenav';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import * as i0 from "@angular/core";
-export declare class RuleChainPageComponent extends PageComponent implements AfterViewInit, OnInit, OnDestroy, HasDirtyFlag, ISearchableComponent {
+export declare class RuleChainPageComponent extends PageComponent implements AfterViewInit, OnInit, OnDestroy, HasDirtyFlag, ISearchableComponent, AfterViewChecked {
     protected store: Store<AppState>;
     private route;
     private router;
@@ -42,17 +43,18 @@ export declare class RuleChainPageComponent extends PageComponent implements Aft
     private popoverService;
     private renderer;
     private viewContainerRef;
+    private changeDetector;
     dialog: MatDialog;
     dialogService: DialogService;
-    fb: UntypedFormBuilder;
+    fb: FormBuilder;
     get isDirty(): boolean;
     set isDirty(value: boolean);
     width: string;
     height: string;
-    ruleNodeSearchInputField: ElementRef;
     ruleChainCanvas: NgxFlowchartComponent;
     expansionPanels: QueryList<MatExpansionPanel>;
     ruleChainMenuTrigger: MatMenuTrigger;
+    drawer: MatDrawer;
     readonly: boolean;
     eventTypes: typeof EventType;
     debugEventTypes: typeof DebugEventType;
@@ -80,6 +82,7 @@ export declare class RuleChainPageComponent extends PageComponent implements Aft
         [label: string]: LinkLabel;
     };
     editingRuleNodeSourceRuleChainId: string;
+    ruleNodeTestButtonLabel: string;
     ruleNodeComponent: RuleNodeDetailsComponent;
     ruleNodeLinkComponent: RuleNodeLinkComponent;
     editingRuleNodeLink: FcRuleEdge;
@@ -87,9 +90,8 @@ export declare class RuleChainPageComponent extends PageComponent implements Aft
     editingRuleNodeLinkIndex: number;
     hotKeys: Hotkey[];
     enableHotKeys: boolean;
-    isLibraryOpen: boolean;
     ruleNodeSearch: string;
-    ruleNodeTypeSearch: string;
+    ruleNodeTypeSearch: import("@angular/forms").FormControl<string>;
     ruleChain: RuleChain;
     ruleChainMetaData: RuleChainMetaData;
     ruleChainModel: FcRuleNodeModel;
@@ -132,12 +134,14 @@ export declare class RuleChainPageComponent extends PageComponent implements Aft
         canvasResizeStep: number;
     };
     updateBreadcrumbs: EventEmitter<any>;
-    private rxSubscription;
+    private destroy$;
     private tooltipTimeout;
-    constructor(store: Store<AppState>, route: ActivatedRoute, router: Router, ruleChainService: RuleChainService, authService: AuthService, translate: TranslateService, itembuffer: ItemBufferService, userPermissionsService: UserPermissionsService, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, dialog: MatDialog, dialogService: DialogService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, route: ActivatedRoute, router: Router, ruleChainService: RuleChainService, authService: AuthService, translate: TranslateService, itembuffer: ItemBufferService, userPermissionsService: UserPermissionsService, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, changeDetector: ChangeDetectorRef, dialog: MatDialog, dialogService: DialogService, fb: FormBuilder);
     ngOnInit(): void;
+    ngAfterViewChecked(): void;
     ngAfterViewInit(): void;
     ngOnDestroy(): void;
+    currentRuleChainIdChanged(ruleChainId: string): void;
     onSearchTextUpdated(searchText: string): void;
     private init;
     private reset;
@@ -165,6 +169,9 @@ export declare class RuleChainPageComponent extends PageComponent implements Aft
     onEditRuleNodeLinkClosed(): void;
     onRevertRuleNodeEdit(): void;
     onRevertRuleNodeLinkEdit(): void;
+    onDebugEventSelected(debugEventBody: DebugRuleNodeEventBody): void;
+    onRuleNodeInit(): void;
+    switchToFirstTab(): void;
     saveRuleNode(): void;
     saveRuleNodeLink(): void;
     typeHeaderMouseEnter(event: MouseEvent, ruleNodeType: RuleNodeType): void;

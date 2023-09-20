@@ -26,6 +26,11 @@ export declare enum DeviceTransportType {
     LWM2M = "LWM2M",
     SNMP = "SNMP"
 }
+export declare enum BasicTransportType {
+    HTTP = "HTTP"
+}
+export type TransportType = BasicTransportType | DeviceTransportType;
+export type NetworkTransportType = BasicTransportType | Exclude<DeviceTransportType, DeviceTransportType.DEFAULT>;
 export declare enum TransportPayloadType {
     JSON = "JSON",
     PROTOBUF = "PROTOBUF"
@@ -46,9 +51,9 @@ export interface DeviceConfigurationFormInfo {
 }
 export declare const deviceProfileTypeTranslationMap: Map<DeviceProfileType, string>;
 export declare const deviceProfileTypeConfigurationInfoMap: Map<DeviceProfileType, DeviceConfigurationFormInfo>;
-export declare const deviceTransportTypeTranslationMap: Map<DeviceTransportType, string>;
+export declare const deviceTransportTypeTranslationMap: Map<TransportType, string>;
 export declare const deviceProvisionTypeTranslationMap: Map<DeviceProvisionType, string>;
-export declare const deviceTransportTypeHintMap: Map<DeviceTransportType, string>;
+export declare const deviceTransportTypeHintMap: Map<TransportType, string>;
 export declare const transportPayloadTypeTranslationMap: Map<TransportPayloadType, string>;
 export declare const defaultTelemetrySchema: string;
 export declare const defaultAttributesSchema: string;
@@ -107,7 +112,8 @@ export declare enum SnmpSpecType {
     TELEMETRY_QUERYING = "TELEMETRY_QUERYING",
     CLIENT_ATTRIBUTES_QUERYING = "CLIENT_ATTRIBUTES_QUERYING",
     SHARED_ATTRIBUTES_SETTING = "SHARED_ATTRIBUTES_SETTING",
-    TO_DEVICE_RPC_REQUEST = "TO_DEVICE_RPC_REQUEST"
+    TO_DEVICE_RPC_REQUEST = "TO_DEVICE_RPC_REQUEST",
+    TO_SERVER_RPC_REQUEST = "TO_SERVER_RPC_REQUEST"
 }
 export declare const SnmpSpecTypeTranslationMap: Map<SnmpSpecType, string>;
 export interface SnmpCommunicationConfig {
@@ -300,7 +306,7 @@ export interface Device extends BaseData<DeviceId>, ExportableEntity<DeviceId> {
     tenantId?: TenantId;
     customerId?: CustomerId;
     name?: string;
-    type: string;
+    type?: string;
     label?: string;
     firmwareId?: OtaPackageId;
     softwareId?: OtaPackageId;
@@ -357,6 +363,37 @@ export declare enum ClaimResponse {
 export interface ClaimResult {
     device: Device;
     response: ClaimResponse;
+}
+export interface PublishTelemetryCommand {
+    http?: {
+        http?: string;
+        https?: string;
+    };
+    mqtt: {
+        mqtt?: string;
+        mqtts?: string | Array<string>;
+        docker?: {
+            mqtt?: string;
+            mqtts?: string | Array<string>;
+        };
+        sparkplug?: string;
+    };
+    coap: {
+        coap?: string;
+        coaps?: string | Array<string>;
+        docker?: {
+            coap?: string;
+            coaps?: string | Array<string>;
+        };
+    };
+    lwm2m?: string;
+    snmp?: string;
+}
+export interface PublishLaunchCommand {
+    mqtt: {
+        linux: string;
+        windows: string;
+    };
 }
 export declare const dayOfWeekTranslations: string[];
 export declare const timeOfDayToUTCTimestamp: (date: Date | number) => number;

@@ -42,6 +42,7 @@ export interface EntityGroupSettings {
     enableDashboardsManagement: boolean;
     enableEdgesManagement: boolean;
     enableSchedulerEventsManagement: boolean;
+    addDialogOwnerAndGroupWizard: boolean;
 }
 export declare enum EntityGroupSortOrder {
     ASC = "ASC",

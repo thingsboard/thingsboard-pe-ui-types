@@ -61,7 +61,6 @@ export interface GroupActionDescriptor<T extends BaseData<HasId>> {
 export interface HeaderActionDescriptor {
     name: string;
     icon: string;
-    isMdiIcon?: boolean;
     isEnabled: () => boolean;
     onAction: ($event: MouseEvent, headerButton?: MatButton) => void;
 }
@@ -158,6 +157,7 @@ export declare class EntityTableConfig<T extends BaseData<HasId>, P extends Page
     addActionDescriptors: Array<HeaderActionDescriptor>;
     headerComponent: Type<EntityTableHeaderComponent<T, P, L>>;
     addEntity: CreateEntityOperation<T>;
+    addDialogOwnerAndGroupWizard: boolean;
     dataSource: (dataLoadedFunction: (col?: number, row?: number) => void) => EntitiesDataSource<L>;
     detailsReadonly: EntityBooleanFunction<T>;
     entitySelectionEnabled: EntityBooleanFunction<L>;

@@ -11,11 +11,12 @@ import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { AttributeService } from '@core/http/attribute.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 type FieldAlignment = 'row' | 'column';
 type MultipleInputWidgetDataKeyType = 'server' | 'shared' | 'timeseries';
-export type MultipleInputWidgetDataKeyValueType = 'string' | 'double' | 'integer' | 'JSON' | 'booleanCheckbox' | 'booleanSwitch' | 'dateTime' | 'date' | 'time' | 'select';
-type MultipleInputWidgetDataKeyEditableType = 'editable' | 'disabled' | 'readonly';
+export type MultipleInputWidgetDataKeyValueType = 'string' | 'double' | 'integer' | 'JSON' | 'booleanCheckbox' | 'booleanSwitch' | 'dateTime' | 'date' | 'time' | 'select' | 'color';
+export type MultipleInputWidgetDataKeyEditableType = 'editable' | 'disabled' | 'readonly';
 type ConvertGetValueFunction = (value: any, ctx: WidgetContext) => any;
 type ConvertSetValueFunction = (value: any, originValue: any, ctx: WidgetContext) => any;
 interface MultipleInputWidgetSettings {
@@ -29,6 +30,8 @@ interface MultipleInputWidgetSettings {
     groupTitle: string;
     fieldsAlignment: FieldAlignment;
     fieldsInRow: number;
+    columnGap: number;
+    rowGap: number;
     attributesShared?: boolean;
 }
 interface MultipleInputWidgetSelectOption {
@@ -44,6 +47,8 @@ interface MultipleInputWidgetDataKeySettings {
     isEditable: MultipleInputWidgetDataKeyEditableType;
     disabledOnDataKey: string;
     dataKeyHidden: boolean;
+    appearance: MatFormFieldAppearance;
+    subscriptSizing: SubscriptSizing;
     step?: number;
     minValue?: number;
     maxValue?: number;
@@ -102,8 +107,7 @@ export declare class MultipleInputWidgetComponent extends PageComponent implemen
     sources: Array<MultipleInputWidgetSource>;
     private isSavingInProgress;
     isVerticalAlignment: boolean;
-    inputWidthSettings: string;
-    changeAlignment: boolean;
+    columns: number;
     saveButtonLabel: string;
     resetButtonLabel: string;
     entityDetected: boolean;
@@ -119,7 +123,7 @@ export declare class MultipleInputWidgetComponent extends PageComponent implemen
     private buildForm;
     private updateWidgetData;
     private getKeyValue;
-    private updateWidgetDisplaying;
+    private updateColumns;
     onDataUpdated(): void;
     private resize;
     getGroupTitle(datasource: Datasource): string;
@@ -130,11 +134,13 @@ export declare class MultipleInputWidgetComponent extends PageComponent implemen
     datePickerType(keyType: MultipleInputWidgetDataKeyValueType): string;
     focusInputElement($event: Event): void;
     inputChanged(source: MultipleInputWidgetSource, key: MultipleInputWidgetDataKey): void;
+    colorChanged(source: MultipleInputWidgetSource, key: MultipleInputWidgetDataKey, color: string): void;
     saveForm(): void;
     private save;
     private setKeyValue;
     discardAll(): void;
     openEditJSONDialog($event: Event, key: MultipleInputWidgetDataKey, source: MultipleInputWidgetSource): void;
+    invalid(): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<MultipleInputWidgetComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<MultipleInputWidgetComponent, "tb-multiple-input-widget ", never, { "ctx": "ctx"; }, {}, never, never, false, never>;
 }

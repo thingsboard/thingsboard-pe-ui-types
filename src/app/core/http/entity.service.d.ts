@@ -102,7 +102,7 @@ export declare class EntityService {
     private getEntityFieldKeys;
     private getAlarmKeys;
     getEntityKeys(entityId: EntityId, query: string, type: DataKeyType, config?: RequestConfig): Observable<Array<string>>;
-    getEntityKeysByEntityFilter(filter: EntityFilter, types: DataKeyType[], config?: RequestConfig): Observable<Array<DataKey>>;
+    getEntityKeysByEntityFilter(filter: EntityFilter, types: DataKeyType[], entityTypes?: EntityType[], config?: RequestConfig): Observable<Array<DataKey>>;
     createDatasourcesFromSubscriptionsInfo(subscriptionsInfo: Array<SubscriptionInfo>): Array<Datasource>;
     createAlarmSourceFromSubscriptionInfo(subscriptionInfo: SubscriptionInfo): Datasource;
     resolveAlias(entityAlias: EntityAlias, stateParams: StateParams): Observable<AliasInfo>;

@@ -72,6 +72,7 @@ export declare class AuthService {
     private procceedJwtTokenValidate;
     private loadSystemParams;
     refreshJwtToken(loadUserElseStoreJwtToken?: boolean): Observable<LoginResponse>;
+    private updatedAuthUserFromToken;
     private validateJwtToken;
     refreshTokenPending(): boolean;
     setUserFromJwtToken(jwtToken: any, refreshToken: any, notify: any): Observable<boolean>;

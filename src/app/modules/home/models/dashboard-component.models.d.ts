@@ -8,6 +8,7 @@ import { IterableDiffer, KeyValueDiffer } from '@angular/core';
 import { IAliasController, IStateController } from '@app/core/api/widget-api.models';
 import { UtilsService } from '@core/services/utils.service';
 import { TbPopoverComponent } from '@shared/components/popover.component';
+import { ComponentStyle } from '@shared/models/widget-settings.models';
 export interface WidgetsData {
     widgets: Array<Widget>;
     widgetLayouts?: WidgetLayouts;
@@ -97,18 +98,14 @@ export declare class DashboardWidget implements GridsterItem, IDashboardWidget {
     backgroundColor: string;
     padding: string;
     margin: string;
-    title: string;
-    customTranslatedTitle: string;
+    borderRadius: string;
+    title$: Observable<string>;
     titleTooltip: string;
     showTitle: boolean;
-    titleStyle: {
-        [klass: string]: any;
-    };
+    titleStyle: ComponentStyle;
     titleIcon: string;
     showTitleIcon: boolean;
-    titleIconStyle: {
-        [klass: string]: any;
-    };
+    titleIconStyle: ComponentStyle;
     dropShadow: boolean;
     enableFullscreen: boolean;
     enableDataExport: boolean;
@@ -116,9 +113,7 @@ export declare class DashboardWidget implements GridsterItem, IDashboardWidget {
     hasAggregation: boolean;
     onlyQuickInterval: boolean;
     onlyHistoryTimewindow: boolean;
-    style: {
-        [klass: string]: any;
-    };
+    style: ComponentStyle;
     showWidgetTitlePanel: boolean;
     showWidgetActions: boolean;
     customHeaderActions: Array<WidgetHeaderAction>;
@@ -138,7 +133,8 @@ export declare class DashboardWidget implements GridsterItem, IDashboardWidget {
     gridsterItemComponent$(): Observable<GridsterItemComponentInterface>;
     updateWidgetParams(detectChanges?: boolean): void;
     exportWidgetData($event: Event, widgetExportType: WidgetExportType): void;
-    updateCustomHeaderActions(detectChanges?: boolean): void;
+    updateParamsFromData(detectChanges?: boolean): void;
+    private updateCustomHeaderActions;
     private filterCustomHeaderAction;
     get x(): number;
     set x(x: number);

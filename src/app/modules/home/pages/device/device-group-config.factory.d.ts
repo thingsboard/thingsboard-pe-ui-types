@@ -12,6 +12,9 @@ import { EntityGroupParams, ShortEntityView } from '@shared/models/entity-group.
 import { HomeDialogsService } from '@home/dialogs/home-dialogs.service';
 import { GroupConfigTableConfigService } from '@home/components/group/group-config-table-config.service';
 import { Router } from '@angular/router';
+import { EntityId } from '@shared/models/id/entity-id';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
 import * as i0 from "@angular/core";
 export declare class DeviceGroupConfigFactory implements EntityGroupStateConfigFactory<DeviceInfo> {
     private groupConfigTableConfigService;
@@ -23,14 +26,16 @@ export declare class DeviceGroupConfigFactory implements EntityGroupStateConfigF
     private deviceService;
     private router;
     private broadcast;
+    private store;
     private window;
-    constructor(groupConfigTableConfigService: GroupConfigTableConfigService<DeviceInfo>, userPermissionsService: UserPermissionsService, translate: TranslateService, utils: UtilsService, dialog: MatDialog, homeDialogs: HomeDialogsService, deviceService: DeviceService, router: Router, broadcast: BroadcastService, window: Window);
+    constructor(groupConfigTableConfigService: GroupConfigTableConfigService<DeviceInfo>, userPermissionsService: UserPermissionsService, translate: TranslateService, utils: UtilsService, dialog: MatDialog, homeDialogs: HomeDialogsService, deviceService: DeviceService, router: Router, broadcast: BroadcastService, store: Store<AppState>, window: Window);
     createConfig(params: EntityGroupParams, entityGroup: EntityGroupStateInfo<DeviceInfo>): Observable<GroupEntityTableConfig<DeviceInfo>>;
     deviceWizard(config: GroupEntityTableConfig<DeviceInfo>): Observable<DeviceInfo>;
     importDevices($event: Event, config: GroupEntityTableConfig<DeviceInfo>): void;
     private openDevice;
     manageCredentials($event: Event, device: DeviceInfo | ShortEntityView, isReadOnly: boolean, config: GroupEntityTableConfig<DeviceInfo>): void;
     manageOwnerAndGroups($event: Event, device: DeviceInfo, config: GroupEntityTableConfig<DeviceInfo>): void;
+    checkConnectivity($event: Event, deviceId: EntityId, afterAdd?: boolean, config?: GroupEntityTableConfig<DeviceInfo>): void;
     onDeviceAction(action: EntityAction<DeviceInfo>, config: GroupEntityTableConfig<DeviceInfo>, params: EntityGroupParams): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceGroupConfigFactory, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<DeviceGroupConfigFactory>;

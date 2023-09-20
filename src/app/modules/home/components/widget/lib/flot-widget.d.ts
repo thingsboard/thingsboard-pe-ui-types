@@ -1,8 +1,9 @@
 import { WidgetContext } from '@home/models/widget-component.models';
-import { ChartType } from './flot-widget.models';
+import { ChartType, TbFlotSettings } from './flot-widget.models';
 export declare class TbFlot {
     private ctx;
     private readonly chartType;
+    private $flotElement?;
     private readonly utils;
     private settings;
     private comparisonEnabled;
@@ -42,6 +43,8 @@ export declare class TbFlot {
     private mouseupHandler;
     private mouseleaveHandler;
     private flotClickHandler;
+    private enableSelection;
+    private selectionMode;
     private readonly showTooltip;
     private readonly animatedPie;
     private pieDataAnimationDuration;
@@ -51,10 +54,15 @@ export declare class TbFlot {
     private pieAnimationStartTime;
     private pieAnimationLastTime;
     private pieAnimationCaf;
-    constructor(ctx: WidgetContext, chartType: ChartType);
+    private yMinSubject;
+    private yMaxSubject;
+    yMin$: import("rxjs").Observable<number>;
+    yMax$: import("rxjs").Observable<number>;
+    constructor(ctx: WidgetContext, chartType: ChartType, $flotElement?: JQuery<any>, settings?: TbFlotSettings);
     private init;
     update(): void;
     latestDataUpdate(): void;
+    updateSeriesColor(color: string): void;
     private latestDataByDataIndex;
     private scalingPieRadius;
     resize(): void;
@@ -63,6 +71,7 @@ export declare class TbFlot {
     private cleanup;
     private createPlot;
     private updateData;
+    private updateYMinMax;
     private redrawPlot;
     private createYAxis;
     private subscribeForThresholdsAttributes;

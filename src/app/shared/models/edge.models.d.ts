@@ -39,9 +39,12 @@ export declare enum EdgeEventType {
     CUSTOMER = "CUSTOMER",
     RELATION = "RELATION",
     TENANT = "TENANT",
+    TENANT_PROFILE = "TENANT_PROFILE",
     WIDGETS_BUNDLE = "WIDGETS_BUNDLE",
     WIDGET_TYPE = "WIDGET_TYPE",
     ADMIN_SETTINGS = "ADMIN_SETTINGS",
+    OTA_PACKAGE = "OTA_PACKAGE",
+    QUEUE = "QUEUE",
     ENTITY_GROUP = "ENTITY_GROUP",
     SCHEDULER_EVENT = "SCHEDULER_EVENT",
     WHITE_LABELING = "WHITE_LABELING",
@@ -66,14 +69,15 @@ export declare enum EdgeEventActionType {
     RPC_CALL = "RPC_CALL",
     ALARM_ACK = "ALARM_ACK",
     ALARM_CLEAR = "ALARM_CLEAR",
+    ALARM_ASSIGNED = "ALARM_ASSIGNED",
+    ALARM_UNASSIGNED = "ALARM_UNASSIGNED",
     ASSIGNED_TO_EDGE = "ASSIGNED_TO_EDGE",
     UNASSIGNED_FROM_EDGE = "UNASSIGNED_FROM_EDGE",
     CREDENTIALS_REQUEST = "CREDENTIALS_REQUEST",
     ENTITY_MERGE_REQUEST = "ENTITY_MERGE_REQUEST",
     ADDED_TO_ENTITY_GROUP = "ADDED_TO_ENTITY_GROUP",
     REMOVED_FROM_ENTITY_GROUP = "REMOVED_FROM_ENTITY_GROUP",
-    CHANGE_OWNER = "CHANGE_OWNER",
-    RELATIONS_DELETED = "RELATIONS_DELETED"
+    CHANGE_OWNER = "CHANGE_OWNER"
 }
 export declare enum EdgeEventStatus {
     DEPLOYED = "DEPLOYED",
@@ -98,6 +102,11 @@ export interface EdgeEvent extends BaseData<EventId> {
     body: string;
 }
 export interface EdgeInstallInstructions {
-    dockerInstallInstructions: string;
+    installInstructions: string;
+}
+export declare enum EdgeInstructionsMethod {
+    ubuntu = 0,
+    centos = 1,
+    docker = 2
 }
 export declare const edgeEntityGroupTypes: EntityType[];

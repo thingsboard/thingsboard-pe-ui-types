@@ -51,7 +51,7 @@ export declare class TbPopoverDirective implements OnChanges, OnDestroy, AfterVi
     static ɵfac: i0.ɵɵFactoryDeclaration<TbPopoverDirective, never>;
     static ɵdir: i0.ɵɵDirectiveDeclaration<TbPopoverDirective, "[tb-popover]", ["tbPopover"], { "content": "tbPopoverContent"; "context": "tbPopoverContext"; "trigger": "tbPopoverTrigger"; "placement": "tbPopoverPlacement"; "origin": "tbPopoverOrigin"; "visible": "tbPopoverVisible"; "showCloseButton": "tbPopoverShowCloseButton"; "mouseEnterDelay": "tbPopoverMouseEnterDelay"; "mouseLeaveDelay": "tbPopoverMouseLeaveDelay"; "overlayClassName": "tbPopoverOverlayClassName"; "overlayStyle": "tbPopoverOverlayStyle"; "tbPopoverBackdrop": "tbPopoverBackdrop"; }, { "visibleChange": "tbPopoverVisibleChange"; }, never, never, false, never>;
 }
-export declare class TbPopoverComponent implements OnDestroy, OnInit {
+export declare class TbPopoverComponent<T = any> implements OnDestroy, OnInit {
     cdr: ChangeDetectorRef;
     private renderer;
     private animationBuilder;
@@ -60,8 +60,8 @@ export declare class TbPopoverComponent implements OnDestroy, OnInit {
     popoverRoot: ElementRef<HTMLElement>;
     popover: ElementRef<HTMLElement>;
     tbContent: string | TemplateRef<void> | null;
-    tbComponentFactory: ComponentFactory<any> | null;
-    tbComponentRef: ComponentRef<any> | null;
+    tbComponentFactory: ComponentFactory<T> | null;
+    tbComponentRef: ComponentRef<T> | null;
     tbComponentContext: any;
     tbComponentInjector: Injector | null;
     tbComponentStyle: {
@@ -124,6 +124,6 @@ export declare class TbPopoverComponent implements OnDestroy, OnInit {
     private isTopOverlay;
     private updateVisibilityByContent;
     private isEmpty;
-    static ɵfac: i0.ɵɵFactoryDeclaration<TbPopoverComponent, [null, null, null, { optional: true; }]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TbPopoverComponent, "tb-popover", ["tbPopoverComponent"], {}, {}, never, never, false, never>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<TbPopoverComponent<any>, [null, null, null, { optional: true; }]>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TbPopoverComponent<any>, "tb-popover", ["tbPopoverComponent"], {}, {}, never, never, false, never>;
 }

@@ -1,4 +1,4 @@
-import { ComponentFactoryResolver, Injector, OnDestroy, OnInit, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ComponentFactoryResolver, ElementRef, Injector, OnDestroy, OnInit, ViewContainerRef } from '@angular/core';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
@@ -22,7 +22,7 @@ import { MatStepper } from '@angular/material/stepper';
 import { StepperSelectionEvent } from '@angular/cdk/stepper';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import * as i0 from "@angular/core";
-export declare class AddGroupEntityDialogComponent extends DialogComponent<AddGroupEntityDialogComponent, BaseData<HasId>> implements OnInit, OnDestroy {
+export declare class AddGroupEntityDialogComponent extends DialogComponent<AddGroupEntityDialogComponent, BaseData<HasId>> implements OnInit, OnDestroy, AfterViewInit {
     protected store: Store<AppState>;
     protected router: Router;
     data: AddGroupEntityDialogData<BaseData<HasId>>;
@@ -33,14 +33,16 @@ export declare class AddGroupEntityDialogComponent extends DialogComponent<AddGr
     private entityService;
     private userPermissionsService;
     private breakpointObserver;
+    private cd;
     private fb;
     addGroupEntityWizardStepper: MatStepper;
     detailsFormStepContainerRef: ViewContainerRef;
     entityDetailsFormAnchor: TbAnchorComponent;
+    ownersAndGroup: ElementRef;
     style: {} | {};
     selectedIndex: number;
     showNext: boolean;
-    labelPosition: string;
+    labelPosition: 'bottom' | 'end';
     entityComponent: GroupEntityComponent<BaseData<HasId>>;
     detailsForm: UntypedFormGroup;
     ownerAndGroupsFormGroup: UntypedFormGroup;
@@ -54,9 +56,11 @@ export declare class AddGroupEntityDialogComponent extends DialogComponent<AddGr
     groupMode: boolean;
     initialOwnerId: EntityId;
     initialGroups: EntityInfoData[];
+    addDialogOwnerAndGroupWizard: boolean;
     private subscriptions;
-    constructor(store: Store<AppState>, router: Router, data: AddGroupEntityDialogData<BaseData<HasId>>, dialogRef: MatDialogRef<AddGroupEntityDialogComponent, BaseData<HasId>>, componentFactoryResolver: ComponentFactoryResolver, injector: Injector, errorStateMatcher: ErrorStateMatcher, entityService: EntityService, userPermissionsService: UserPermissionsService, breakpointObserver: BreakpointObserver, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, router: Router, data: AddGroupEntityDialogData<BaseData<HasId>>, dialogRef: MatDialogRef<AddGroupEntityDialogComponent, BaseData<HasId>>, componentFactoryResolver: ComponentFactoryResolver, injector: Injector, errorStateMatcher: ErrorStateMatcher, entityService: EntityService, userPermissionsService: UserPermissionsService, breakpointObserver: BreakpointObserver, cd: ChangeDetectorRef, fb: UntypedFormBuilder);
     ngOnInit(): void;
+    ngAfterViewInit(): void;
     ngOnDestroy(): void;
     helpLinkId(): string;
     cancel(): void;
@@ -67,6 +71,6 @@ export declare class AddGroupEntityDialogComponent extends DialogComponent<AddGr
     add(): void;
     allValid(): boolean;
     changeStep($event: StepperSelectionEvent): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<AddGroupEntityDialogComponent, [null, null, null, null, null, null, { skipSelf: true; }, null, null, null, null]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<AddGroupEntityDialogComponent, [null, null, null, null, null, null, { skipSelf: true; }, null, null, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<AddGroupEntityDialogComponent, "tb-add-group-entity-dialog", never, {}, {}, never, never, false, never>;
 }

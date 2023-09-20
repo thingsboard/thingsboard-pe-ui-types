@@ -2,7 +2,7 @@ import { IDashboardComponent } from '@home/models/dashboard-component.models';
 import { DataSet, Datasource, DatasourceData, FormattedData, JsonSettingsSchema, Widget, WidgetActionDescriptor, WidgetActionSource, WidgetConfig, WidgetControllerDescriptor, WidgetType, widgetType, WidgetTypeDescriptor, WidgetTypeDetails, WidgetTypeParameters, WidgetExportType } from '@shared/models/widget.models';
 import { Timewindow, WidgetTimewindow } from '@shared/models/time/time.models';
 import { IAliasController, IStateController, IWidgetSubscription, IWidgetUtils, RpcApi, StateParams, SubscriptionEntityInfo, TimewindowFunctions, WidgetActionsApi, WidgetSubscriptionApi } from '@core/api/widget-api.models';
-import { ChangeDetectorRef, ComponentFactory, Injector, NgZone, Type } from '@angular/core';
+import { ChangeDetectorRef, Injector, NgModuleRef, NgZone, Type } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { RafService } from '@core/services/raf.service';
 import { WidgetTypeId } from '@shared/models/id/widget-type-id';
@@ -35,6 +35,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { EdgeService } from '@core/http/edge.service';
 import * as RxJS from 'rxjs';
+import { Observable } from 'rxjs';
 import * as RxJSOperators from 'rxjs/operators';
 import { TbPopoverComponent } from '@shared/components/popover.component';
 import { EntityId } from '@shared/models/id/entity-id';
@@ -44,6 +45,7 @@ import { MillisecondsToTimeStringPipe, TelemetrySubscriber } from '@app/shared/p
 import { UserId } from '@shared/models/id/user-id';
 import { UserSettingsService } from '@core/http/user-settings.service';
 import { WhiteLabelingService } from '@core/http/white-labeling.service';
+import { DynamicComponentModule } from '@core/services/dynamic-component-factory.service';
 export interface IWidgetAction {
     name: string;
     icon: string;
@@ -113,9 +115,11 @@ export declare class WidgetContext {
         [id: string]: IWidgetSubscription;
     };
     defaultSubscription: IWidgetSubscription;
+    labelPatterns: Map<RxJS.Observable<string>, LabelVariablePattern>;
     timewindowFunctions: TimewindowFunctions;
     controlApi: RpcApi;
     utils: IWidgetUtils;
+    $widgetElement: JQuery<HTMLElement>;
     $container: JQuery<HTMLElement>;
     $containerParent: JQuery<HTMLElement>;
     width: number;
@@ -141,6 +145,7 @@ export declare class WidgetContext {
         data: DataSet;
     }>;
     timeWindow?: WidgetTimewindow;
+    embedTitlePanel?: boolean;
     hideTitlePanel: boolean;
     widgetTitle?: string;
     widgetTitleTooltip?: string;
@@ -329,6 +334,8 @@ export declare class WidgetContext {
     registerPopoverComponent(popoverComponent: TbPopoverComponent): void;
     updatePopoverPositions(): void;
     setPopoversHidden(hidden: boolean): void;
+    registerLabelPattern(label: string, label$: Observable<string>): Observable<string>;
+    updateLabelPatterns(): void;
     showSuccessToast(message: string, duration?: number, verticalPosition?: NotificationVerticalPosition, horizontalPosition?: NotificationHorizontalPosition, target?: string): void;
     showInfoToast(message: string, verticalPosition?: NotificationVerticalPosition, horizontalPosition?: NotificationHorizontalPosition, target?: string): void;
     showWarnToast(message: string, verticalPosition?: NotificationVerticalPosition, horizontalPosition?: NotificationHorizontalPosition, target?: string): void;
@@ -340,10 +347,22 @@ export declare class WidgetContext {
     updateWidgetParams(): void;
     updateAliases(aliasIds?: Array<string>): void;
     reset(): void;
+    destroy(): void;
     closeDialog(resultData?: any): void;
     pageLink(pageSize: number, page?: number, textSearch?: string, sortOrder?: SortOrder): PageLink;
     timePageLink(startTime: number, endTime: number, pageSize: number, page?: number, textSearch?: string, sortOrder?: SortOrder): TimePageLink;
     alarmQuery(entityId: EntityId, pageLink: TimePageLink, searchStatus: AlarmSearchStatus, status: AlarmStatus, fetchOriginator: boolean, assigneeId: UserId): AlarmQuery;
+}
+export declare class LabelVariablePattern {
+    private ctx;
+    private pattern;
+    private hasVariables;
+    private labelSubject;
+    label$: RxJS.Observable<string>;
+    constructor(label: string, ctx: WidgetContext);
+    setupPattern(label: string): void;
+    update(): void;
+    destroy(): void;
 }
 export interface IDynamicWidgetComponent {
     readonly ctx: WidgetContext;
@@ -358,15 +377,18 @@ export interface IDynamicWidgetComponent {
 }
 export interface WidgetInfo extends WidgetTypeDescriptor, WidgetControllerDescriptor {
     widgetName: string;
-    alias: string;
+    fullFqn: string;
+    deprecated: boolean;
     typeSettingsSchema?: string | any;
     typeDataKeySettingsSchema?: string | any;
     typeLatestDataKeySettingsSchema?: string | any;
     image?: string;
     description?: string;
-    componentFactory?: ComponentFactory<IDynamicWidgetComponent>;
+    componentType?: Type<IDynamicWidgetComponent>;
+    componentModuleRef?: NgModuleRef<DynamicComponentModule>;
 }
 export interface WidgetConfigComponentData {
+    widgetName: string;
     config: WidgetConfig;
     layout: WidgetLayout;
     widgetType: widgetType;
@@ -381,6 +403,8 @@ export interface WidgetConfigComponentData {
     settingsDirective: string;
     dataKeySettingsDirective: string;
     latestDataKeySettingsDirective: string;
+    hasBasicMode: boolean;
+    basicModeDirective: string;
 }
 export declare const MissingWidgetType: WidgetInfo;
 export declare const ErrorWidgetType: WidgetInfo;
@@ -401,8 +425,8 @@ export interface WidgetTypeInstance {
     onMobileModeChanged?: () => void;
     onDestroy?: () => void;
 }
-export declare function detailsToWidgetInfo(widgetTypeDetailsEntity: WidgetTypeDetails): WidgetInfo;
-export declare function toWidgetInfo(widgetTypeEntity: WidgetType): WidgetInfo;
-export declare function toWidgetTypeDetails(widgetInfo: WidgetInfo, id: WidgetTypeId, tenantId: TenantId, bundleAlias: string, createdTime: number): WidgetTypeDetails;
-export declare function toWidgetType(widgetInfo: WidgetInfo, id: WidgetTypeId, tenantId: TenantId, bundleAlias: string, createdTime: number): WidgetType;
-export declare function updateEntityParams(params: StateParams, targetEntityParamName?: string, targetEntityId?: EntityId, entityName?: string, entityLabel?: string): void;
+export declare const toWidgetInfo: (widgetTypeEntity: WidgetType) => WidgetInfo;
+export declare const detailsToWidgetInfo: (widgetTypeDetailsEntity: WidgetTypeDetails) => WidgetInfo;
+export declare const toWidgetType: (widgetInfo: WidgetInfo, id: WidgetTypeId, tenantId: TenantId, createdTime: number) => WidgetType;
+export declare const toWidgetTypeDetails: (widgetInfo: WidgetInfo, id: WidgetTypeId, tenantId: TenantId, createdTime: number) => WidgetTypeDetails;
+export declare const updateEntityParams: (params: StateParams, targetEntityParamName?: string, targetEntityId?: EntityId, entityName?: string, entityLabel?: string) => void;

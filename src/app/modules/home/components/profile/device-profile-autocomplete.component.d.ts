@@ -33,9 +33,7 @@ export declare class DeviceProfileAutocompleteComponent implements ControlValueA
     addNewProfile: boolean;
     showDetailsPageLink: boolean;
     transportType: DeviceTransportType;
-    private requiredValue;
-    get required(): boolean;
-    set required(value: boolean);
+    required: boolean;
     disabled: boolean;
     hint: string;
     deviceProfileUpdated: EventEmitter<DeviceProfileId>;

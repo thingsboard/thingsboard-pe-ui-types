@@ -1,4 +1,4 @@
-import { AfterViewInit, ComponentFactoryResolver, Injector, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewContainerRef } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -9,8 +9,6 @@ import * as i0 from "@angular/core";
 export declare class SchedulerEventTemplateConfigComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnChanges, OnDestroy {
     private store;
     private dynamicComponentFactoryService;
-    private injector;
-    private resolver;
     configContentContainer: ViewContainerRef;
     private configuration;
     disabled: boolean;
@@ -18,17 +16,17 @@ export declare class SchedulerEventTemplateConfigComponent implements ControlVal
         [eventType: string]: SchedulerEventConfigType;
     };
     schedulerEventType: string;
-    private customSchedulerEventConfigFactory;
+    private customSchedulerEventComponentType;
     private configComponentRef;
     private configComponent;
     private propagateChange;
-    constructor(store: Store<AppState>, dynamicComponentFactoryService: DynamicComponentFactoryService, injector: Injector, resolver: ComponentFactoryResolver);
+    constructor(store: Store<AppState>, dynamicComponentFactoryService: DynamicComponentFactoryService);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
     private loadTemplate;
-    private resolveComponentFactory;
+    private resolveComponent;
     ngAfterViewInit(): void;
     ngOnDestroy(): void;
     setDisabledState(isDisabled: boolean): void;

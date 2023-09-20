@@ -1,5 +1,5 @@
 import { ElementRef, Renderer2 } from '@angular/core';
-import { ControlValueAccessor, UntypedFormControl, FormGroupDirective, NgForm, ValidationErrors, Validator } from '@angular/forms';
+import { ControlValueAccessor, FormGroupDirective, NgForm, UntypedFormControl, ValidationErrors, Validator } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import * as i0 from "@angular/core";
 export declare class TbJsonToStringDirective implements ControlValueAccessor, Validator, ErrorStateMatcher {
@@ -7,6 +7,7 @@ export declare class TbJsonToStringDirective implements ControlValueAccessor, Va
     private element;
     private errorStateMatcher;
     private propagateChange;
+    onTouched: () => void;
     private parseError;
     private data;
     input(newValue: any): void;

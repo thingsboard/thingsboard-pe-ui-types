@@ -6,7 +6,8 @@ export declare class TbErrorComponent {
     state: string;
     message: string;
     constructor(cd: ChangeDetectorRef);
+    noMargin: boolean;
     set error(value: any);
     static ɵfac: i0.ɵɵFactoryDeclaration<TbErrorComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TbErrorComponent, "tb-error", never, { "error": "error"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TbErrorComponent, "tb-error", never, { "noMargin": "noMargin"; "error": "error"; }, {}, never, never, false, never>;
 }

@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, ElementRef, EventEmitter, NgZone, OnDestroy, OnInit, Renderer2, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ElementRef, EventEmitter, Injector, NgZone, OnDestroy, OnInit, Renderer2, ViewContainerRef } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -12,7 +12,6 @@ import { AuthUser } from '@shared/models/user.model';
 import { Widget, WidgetInfo, WidgetPosition, widgetType } from '@shared/models/widget.models';
 import { DialogService } from '@core/services/dialog.service';
 import { EntityService } from '@core/http/entity.service';
-import { FooterFabButtons } from '@shared/components/footer-fab-buttons.component';
 import { DashboardUtilsService } from '@core/services/dashboard-utils.service';
 import { DashboardService } from '@core/http/dashboard.service';
 import { DashboardContextMenuItem, IDashboardComponent, WidgetContextMenuItem } from '../../models/dashboard-component.models';
@@ -38,8 +37,9 @@ import { IAliasController } from '@core/api/widget-api.models';
 import { MatButton } from '@angular/material/button';
 import { TbPopoverService } from '@shared/components/popover.service';
 import { TbPopoverComponent } from '@shared/components/popover.component';
+import { HasDirtyFlag } from '@core/guards/confirm-on-exit.guard';
 import * as i0 from "@angular/core";
-export declare class DashboardPageComponent extends PageComponent implements IDashboardController, OnInit, AfterViewInit, OnDestroy {
+export declare class DashboardPageComponent extends PageComponent implements IDashboardController, HasDirtyFlag, OnInit, AfterViewInit, OnDestroy {
     protected store: Store<AppState>;
     private window;
     private document;
@@ -62,7 +62,7 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     private mobileService;
     private fb;
     private dialog;
-    private translate;
+    translate: TranslateService;
     private popoverService;
     private renderer;
     private ngZone;
@@ -72,6 +72,10 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     private cd;
     private sanitizer;
     elRef: ElementRef;
+    private injector;
+    private forcePristine;
+    get isDirty(): boolean;
+    set isDirty(value: boolean);
     authState: AuthState;
     authUser: AuthUser;
     entityGroup: EntityGroupInfo;
@@ -136,7 +140,6 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     private dashboardResize$;
     dashboardCtx: DashboardContext;
     layouts: DashboardPageLayouts;
-    addWidgetFabButtons: FooterFabButtons;
     updateBreadcrumbs: EventEmitter<any>;
     private rxSubscriptions;
     get toolbarOpened(): boolean;
@@ -145,7 +148,7 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     set rightLayoutOpened(rightLayoutOpened: boolean);
     editWidgetComponent: EditWidgetComponent;
     dashboardWidgetSelectComponent: DashboardWidgetSelectComponent;
-    constructor(store: Store<AppState>, window: Window, document: Document, breakpointObserver: BreakpointObserver, route: ActivatedRoute, router: Router, utils: UtilsService, reportService: ReportService, dashboardUtils: DashboardUtilsService, authService: AuthService, entityService: EntityService, dialogService: DialogService, widgetComponentService: WidgetComponentService, dashboardService: DashboardService, userPermissionsService: UserPermissionsService, wl: WhiteLabelingService, itembuffer: ItemBufferService, importExport: ImportExportService, solutionsService: SolutionsService, mobileService: MobileService, fb: UntypedFormBuilder, dialog: MatDialog, translate: TranslateService, popoverService: TbPopoverService, renderer: Renderer2, ngZone: NgZone, embeddedValue: any, overlay: Overlay, viewContainerRef: ViewContainerRef, cd: ChangeDetectorRef, sanitizer: DomSanitizer, elRef: ElementRef);
+    constructor(store: Store<AppState>, window: Window, document: Document, breakpointObserver: BreakpointObserver, route: ActivatedRoute, router: Router, utils: UtilsService, reportService: ReportService, dashboardUtils: DashboardUtilsService, authService: AuthService, entityService: EntityService, dialogService: DialogService, widgetComponentService: WidgetComponentService, dashboardService: DashboardService, userPermissionsService: UserPermissionsService, wl: WhiteLabelingService, itembuffer: ItemBufferService, importExport: ImportExportService, solutionsService: SolutionsService, mobileService: MobileService, fb: UntypedFormBuilder, dialog: MatDialog, translate: TranslateService, popoverService: TbPopoverService, renderer: Renderer2, ngZone: NgZone, embeddedValue: any, overlay: Overlay, viewContainerRef: ViewContainerRef, cd: ChangeDetectorRef, sanitizer: DomSanitizer, elRef: ElementRef, injector: Injector);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     private init;
@@ -191,7 +194,7 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     manageDashboardLayouts($event: Event): void;
     private updateDashboardLayouts;
     private updateStates;
-    private importWidget;
+    importWidget($event: Event): void;
     currentDashboardIdChanged(dashboardId: string): void;
     toggleDashboardEditMode(): void;
     saveDashboard(): void;
@@ -232,6 +235,6 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     onCloseSearchBundle(): void;
     updateDashboardImage($event: Event): void;
     toggleVersionControl($event: Event, versionControlButton: MatButton): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<DashboardPageComponent, [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, { optional: true; }, null, null, null, null, null]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<DashboardPageComponent, [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, { optional: true; }, null, null, null, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<DashboardPageComponent, "tb-dashboard-page", never, { "embedded": "embedded"; "currentState": "currentState"; "hideToolbar": "hideToolbar"; "syncStateWithQueryParam": "syncStateWithQueryParam"; "dashboard": "dashboard"; "parentDashboard": "parentDashboard"; "popoverComponent": "popoverComponent"; "parentAliasController": "parentAliasController"; }, {}, never, never, false, never>;
 }

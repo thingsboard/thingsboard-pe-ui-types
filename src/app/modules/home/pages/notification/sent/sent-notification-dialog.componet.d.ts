@@ -33,7 +33,6 @@ export declare class SentNotificationDialogComponent extends TemplateConfigurati
     private userPermissionsService;
     createNotification: MatStepper;
     stepperOrientation: Observable<StepperOrientation>;
-    stepperLabelPosition: Observable<'bottom' | 'end'>;
     isAdd: boolean;
     entityType: typeof EntityType;
     notificationType: typeof NotificationType;

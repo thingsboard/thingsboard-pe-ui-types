@@ -3,10 +3,18 @@ import { TenantId } from '@shared/models/id/tenant-id';
 import { ConverterId } from '@shared/models/id/converter-id';
 import { ContentType } from '@shared/models/constants';
 import { ActivatedRouteSnapshot } from '@angular/router';
+import { IntegrationType } from '@shared/models/integration.models';
 export declare enum ConverterType {
     UPLINK = "UPLINK",
     DOWNLINK = "DOWNLINK"
 }
+export declare const IntegrationTbelDefaultConvertersUrl: Map<IntegrationType, string>;
+export declare const jsDefaultConvertorsUrl: Map<ConverterType, string>;
+export declare const tbelDefaultConvertorsUrl: Map<ConverterType, string>;
+export declare const DefaultUpdateOnlyKeysValue: string[];
+export type DefaultUpdateOnlyKeys = {
+    [key in IntegrationType]?: Array<string>;
+};
 export declare const converterTypeTranslationMap: Map<ConverterType, string>;
 export interface Converter extends BaseData<ConverterId>, ExportableEntity<ConverterId> {
     tenantId?: TenantId;
@@ -34,6 +42,11 @@ export interface TestDownLinkInputParams {
         [key: string]: string;
     };
     encoder: string;
+}
+export interface LatestConverterParameters {
+    converterType: ConverterType;
+    integrationType?: IntegrationType;
+    integrationName?: string;
 }
 export type TestConverterInputParams = TestUpLinkInputParams & TestDownLinkInputParams;
 export interface TestConverterResult {

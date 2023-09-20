@@ -17,6 +17,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Timewindow } from '@shared/models/time/time.models';
 import { DialogService } from '@core/services/dialog.service';
 import { UtilsService } from '@core/services/utils.service';
+import { FormBuilder } from '@angular/forms';
 import * as i0 from "@angular/core";
 export declare class BlobEntitiesComponent extends PageComponent implements OnInit, AfterViewInit {
     protected store: Store<AppState>;
@@ -26,6 +27,7 @@ export declare class BlobEntitiesComponent extends PageComponent implements OnIn
     private userPermissionsService;
     private dialogService;
     private cd;
+    private fb;
     blobEntitiesWidgetContainerRef: ElementRef;
     searchInputField: ElementRef;
     paginator: MatPaginator;
@@ -51,8 +53,10 @@ export declare class BlobEntitiesComponent extends PageComponent implements OnIn
     noDataDisplayMessageText: string;
     textSearchMode: boolean;
     dataSource: BlobEntitiesDatasource;
+    textSearch: import("@angular/forms").FormControl<string>;
     private widgetResize$;
-    constructor(store: Store<AppState>, utils: UtilsService, translate: TranslateService, blobEntityService: BlobEntityService, userPermissionsService: UserPermissionsService, dialogService: DialogService, cd: ChangeDetectorRef);
+    private destroy$;
+    constructor(store: Store<AppState>, utils: UtilsService, translate: TranslateService, blobEntityService: BlobEntityService, userPermissionsService: UserPermissionsService, dialogService: DialogService, cd: ChangeDetectorRef, fb: FormBuilder);
     ngOnInit(): void;
     ngOnDestroy(): void;
     private initializeWidgetConfig;

@@ -1,4 +1,4 @@
-import { BaseData } from '@shared/models/base-data';
+import { BaseData, ExportableEntity } from '@shared/models/base-data';
 import { TenantId } from '@shared/models/id/tenant-id';
 import { WidgetTypeId } from '@shared/models/id/widget-type-id';
 import { AggregationType, ComparisonDuration, Timewindow } from '@shared/models/time/time.models';
@@ -16,6 +16,8 @@ import { UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Dashboard } from '@shared/models/dashboard.models';
 import { IAliasController } from '@core/api/widget-api.models';
+import { WidgetConfigComponentData } from '@home/models/widget-component.models';
+import { ComponentStyle, Font, TimewindowStyle } from '@shared/models/widget-settings.models';
 import * as i0 from "@angular/core";
 export declare enum widgetType {
     timeseries = "timeseries",
@@ -25,13 +27,11 @@ export declare enum widgetType {
     static = "static"
 }
 export interface WidgetTypeTemplate {
-    bundleAlias: string;
-    alias: string;
+    fullFqn: string;
 }
 export interface WidgetTypeData {
     name: string;
     icon: string;
-    isMdiIcon?: boolean;
     configHelpLinkId: string;
     template: WidgetTypeTemplate;
 }
@@ -61,6 +61,8 @@ export interface WidgetTypeDescriptor {
     settingsDirective?: string;
     dataKeySettingsDirective?: string;
     latestDataKeySettingsDirective?: string;
+    hasBasicMode?: boolean;
+    basicModeDirective?: string;
     defaultConfig: string;
     sizeX: number;
     sizeY: number;
@@ -78,6 +80,10 @@ export interface WidgetTypeParameters {
     warnOnPageDataOverflow?: boolean;
     ignoreDataUpdateOnIntervalTick?: boolean;
     processNoDataByWidget?: boolean;
+    previewWidth?: string;
+    previewHeight?: string;
+    embedTitlePanel?: boolean;
+    hideDataSettings?: boolean;
 }
 export interface WidgetControllerDescriptor {
     widgetTypeFunction?: any;
@@ -91,10 +97,13 @@ export interface WidgetControllerDescriptor {
 }
 export interface BaseWidgetType extends BaseData<WidgetTypeId> {
     tenantId: TenantId;
-    bundleAlias: string;
-    alias: string;
+    fqn: string;
     name: string;
+    deprecated: boolean;
 }
+export declare const fullWidgetTypeFqn: (type: BaseWidgetType) => string;
+export declare const widgetTypeFqn: (fullFqn: string) => string;
+export declare const isValidWidgetFullFqn: (fullFqn: string) => boolean;
 export interface WidgetType extends BaseWidgetType {
     descriptor: WidgetTypeDescriptor;
 }
@@ -103,7 +112,7 @@ export interface WidgetTypeInfo extends BaseWidgetType {
     description: string;
     widgetType: widgetType;
 }
-export interface WidgetTypeDetails extends WidgetType {
+export interface WidgetTypeDetails extends WidgetType, ExportableEntity<WidgetTypeId> {
     image: string;
     description: string;
 }
@@ -129,7 +138,7 @@ export interface LegendConfig {
     showTotal: boolean;
     showLatest: boolean;
 }
-export declare function defaultLegendConfig(wType: widgetType): LegendConfig;
+export declare const defaultLegendConfig: (wType: widgetType) => LegendConfig;
 export declare enum ComparisonResultType {
     PREVIOUS_VALUE = "PREVIOUS_VALUE",
     DELTA_ABSOLUTE = "DELTA_ABSOLUTE",
@@ -163,8 +172,13 @@ export interface DataKey extends KeyInfo {
     origDataKeyIndex?: number;
     _hash?: number;
 }
+export declare enum DataKeyConfigMode {
+    general = "general",
+    advanced = "advanced"
+}
 export declare enum DatasourceType {
     function = "function",
+    device = "device",
     entity = "entity",
     entityCount = "entityCount",
     alarmCount = "alarmCount"
@@ -179,6 +193,7 @@ export interface Datasource {
     entityType?: EntityType;
     entityId?: string;
     entityName?: string;
+    deviceId?: string;
     entityAliasId?: string;
     filterId?: string;
     unresolvedStateEntity?: boolean;
@@ -198,8 +213,8 @@ export interface Datasource {
     latestDataKeyStartIndex?: number;
     [key: string]: any;
 }
-export declare function datasourcesHasAggregation(datasources?: Array<Datasource>): boolean;
-export declare function datasourcesHasOnlyComparisonAggregation(datasources?: Array<Datasource>): boolean;
+export declare const datasourcesHasAggregation: (datasources?: Array<Datasource>) => boolean;
+export declare const datasourcesHasOnlyComparisonAggregation: (datasources?: Array<Datasource>) => boolean;
 export interface FormattedData {
     $datasource: Datasource;
     entityName: string;
@@ -360,8 +375,15 @@ export interface WidgetComparisonSettings {
 export interface WidgetSettings {
     [key: string]: any;
 }
+export declare enum WidgetConfigMode {
+    basic = "basic",
+    advanced = "advanced"
+}
 export interface WidgetConfig {
+    configMode?: WidgetConfigMode;
     title?: string;
+    titleFont?: Font;
+    titleColor?: string;
     titleIcon?: string;
     showTitle?: boolean;
     showTitleIcon?: boolean;
@@ -373,9 +395,8 @@ export interface WidgetConfig {
     enableDataExport?: boolean;
     useDashboardTimewindow?: boolean;
     displayTimewindow?: boolean;
-    showLegend?: boolean;
-    legendConfig?: LegendConfig;
     timewindow?: Timewindow;
+    timewindowStyle?: TimewindowStyle;
     desktopHide?: boolean;
     mobileHide?: boolean;
     mobileHeight?: number;
@@ -384,13 +405,10 @@ export interface WidgetConfig {
     backgroundColor?: string;
     padding?: string;
     margin?: string;
-    widgetStyle?: {
-        [klass: string]: any;
-    };
+    borderRadius?: string;
+    widgetStyle?: ComponentStyle;
     widgetCss?: string;
-    titleStyle?: {
-        [klass: string]: any;
-    };
+    titleStyle?: ComponentStyle;
     units?: string;
     decimals?: number;
     noDataDisplayMessage?: string;
@@ -405,7 +423,12 @@ export interface WidgetConfig {
     targetDeviceAliasIds?: Array<string>;
     [key: string]: any;
 }
-export interface Widget extends WidgetInfo {
+export interface BaseWidgetInfo {
+    id?: string;
+    typeFullFqn: string;
+    type: widgetType;
+}
+export interface Widget extends BaseWidgetInfo {
     typeId?: WidgetTypeId;
     sizeX: number;
     sizeY: number;
@@ -413,15 +436,11 @@ export interface Widget extends WidgetInfo {
     col: number;
     config: WidgetConfig;
 }
-export interface WidgetInfo {
-    id?: string;
-    isSystemType: boolean;
-    bundleAlias: string;
-    typeAlias: string;
-    type: widgetType;
+export interface WidgetInfo extends BaseWidgetInfo {
     title: string;
     image?: string;
     description?: string;
+    deprecated?: boolean;
 }
 export interface GroupInfo {
     formIndex: number;
@@ -452,6 +471,7 @@ export interface IWidgetSettingsComponent {
     aliasController: IAliasController;
     dashboard: Dashboard;
     widget: Widget;
+    widgetConfig: WidgetConfigComponentData;
     functionScopeVariables: string[];
     settings: WidgetSettings;
     settingsChanged: Observable<WidgetSettings>;
@@ -463,6 +483,9 @@ export declare abstract class WidgetSettingsComponent extends PageComponent impl
     aliasController: IAliasController;
     dashboard: Dashboard;
     widget: Widget;
+    widgetConfigValue: WidgetConfigComponentData;
+    set widgetConfig(value: WidgetConfigComponentData);
+    get widgetConfig(): WidgetConfigComponentData;
     functionScopeVariables: string[];
     settingsValue: WidgetSettings;
     private settingsSet;
@@ -487,6 +510,7 @@ export declare abstract class WidgetSettingsComponent extends PageComponent impl
     protected abstract settingsForm(): UntypedFormGroup;
     protected abstract onSettingsSet(settings: WidgetSettings): any;
     protected defaultSettings(): WidgetSettings;
+    protected onWidgetConfigSet(widgetConfig: WidgetConfigComponentData): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetSettingsComponent, never>;
     static ɵdir: i0.ɵɵDirectiveDeclaration<WidgetSettingsComponent, never, never, {}, {}, never, never, false, never>;
 }

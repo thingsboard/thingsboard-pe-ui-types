@@ -129,6 +129,7 @@ export declare const HelpLinks: {
         dashboards: string;
         lwm2mResourceLibrary: string;
         otaUpdates: string;
+        widgetTypes: string;
         widgetsBundles: string;
         widgetsConfig: string;
         widgetsConfigTimeseries: string;
@@ -149,6 +150,7 @@ export declare const HelpLinks: {
         integrationThingParkEnterprise: string;
         integrationTMobileIotCdp: string;
         integrationLoriot: string;
+        integrationParticle: string;
         integrationMqtt: string;
         integrationAwsIoT: string;
         integrationAwsSQS: string;

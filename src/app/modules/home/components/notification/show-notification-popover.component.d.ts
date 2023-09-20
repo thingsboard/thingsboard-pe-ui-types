@@ -20,6 +20,7 @@ export declare class ShowNotificationPopoverComponent extends PageComponent impl
     private notificationSubscriber;
     private notificationCountSubscriber;
     notifications$: Observable<Notification[]>;
+    loadNotification: boolean;
     constructor(store: Store<AppState>, notificationWsService: NotificationWebsocketService, zone: NgZone, cd: ChangeDetectorRef, router: Router);
     ngOnInit(): void;
     ngOnDestroy(): void;

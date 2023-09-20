@@ -52,6 +52,7 @@ export declare class IntegrationWizardDialogComponent extends DialogComponent<In
     private destroy$;
     constructor(store: Store<AppState>, router: Router, data: IntegrationWizardData<Integration>, dialogRef: MatDialogRef<IntegrationWizardDialogComponent, Integration>, breakpointObserver: BreakpointObserver, converterService: ConverterService, integrationService: IntegrationService, translate: TranslateService, fb: UntypedFormBuilder);
     ngAfterViewInit(): void;
+    createConvertorName(type: ConverterType): any;
     ngOnDestroy(): void;
     add(): void;
     get helpLinkId(): string;

@@ -54,7 +54,7 @@ export declare class EntityAliasSelectComponent implements ControlValueAccessor,
     clear(value?: string): void;
     textIsNotEmpty(text: string): boolean;
     entityAliasEnter($event: KeyboardEvent): void;
-    createEntityAlias($event: Event, alias: string): void;
+    createEntityAlias($event: Event, alias: string, focusOnCancel?: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityAliasSelectComponent, [null, { skipSelf: true; }, null, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<EntityAliasSelectComponent, "tb-entity-alias-select", never, { "aliasController": "aliasController"; "allowedEntityTypes": "allowedEntityTypes"; "callbacks": "callbacks"; "showLabel": "showLabel"; "tbRequired": "tbRequired"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

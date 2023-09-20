@@ -1,5 +1,7 @@
 export interface UserSettings {
     openedMenuSections?: string[];
+    notDisplayConnectivityAfterAddDevice?: boolean;
+    notDisplayInstructionsAfterAddEdge?: boolean;
 }
 export declare const initialUserSettings: UserSettings;
 export declare enum UserSettingsType {

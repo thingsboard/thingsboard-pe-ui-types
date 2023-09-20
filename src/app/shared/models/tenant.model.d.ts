@@ -24,6 +24,8 @@ export interface DefaultTenantProfileConfiguration {
     transportDeviceMsgRateLimit?: string;
     transportDeviceTelemetryMsgRateLimit?: string;
     transportDeviceTelemetryDataPointsRateLimit?: string;
+    integrationMsgsPerTenantRateLimit?: string;
+    integrationMsgsPerDeviceRateLimit?: string;
     tenantEntityExportRateLimit?: string;
     tenantEntityImportRateLimit?: string;
     tenantNotificationRequestsRateLimit?: string;
@@ -36,6 +38,7 @@ export interface DefaultTenantProfileConfiguration {
     maxRuleNodeExecutionsPerMessage: number;
     maxEmails: number;
     maxSms: number;
+    smsEnabled: boolean;
     maxCreatedAlarms: number;
     tenantServerRestLimitsConfiguration: string;
     customerServerRestLimitsConfiguration: string;

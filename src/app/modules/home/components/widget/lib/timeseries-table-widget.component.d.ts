@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, ElementRef, OnInit, QueryList, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ElementRef, OnDestroy, OnInit, QueryList, ViewContainerRef } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -15,6 +15,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { CellContentInfo, CellStyleInfo, TableCellButtonActionDescriptor, TableWidgetSettings } from '@home/components/widget/lib/table-widget.models';
 import { Overlay } from '@angular/cdk/overlay';
 import { DatePipe } from '@angular/common';
+import { FormBuilder } from '@angular/forms';
 import * as i0 from "@angular/core";
 export interface TimeseriesTableWidgetSettings extends TableWidgetSettings {
     showTimestamp: boolean;
@@ -32,6 +33,8 @@ interface TimeseriesHeader {
     dataKey: DataKey;
     sortable: boolean;
     show: boolean;
+    columnDefaultVisibility?: boolean;
+    columnSelectionAvailability?: boolean;
     styleInfo: CellStyleInfo;
     contentInfo: CellContentInfo;
     order?: number;
@@ -53,7 +56,7 @@ interface TimeseriesTableSource {
         [key: string]: any;
     };
 }
-export declare class TimeseriesTableWidgetComponent extends PageComponent implements OnInit, AfterViewInit {
+export declare class TimeseriesTableWidgetComponent extends PageComponent implements OnInit, AfterViewInit, OnDestroy {
     protected store: Store<AppState>;
     private elementRef;
     private overlay;
@@ -63,20 +66,23 @@ export declare class TimeseriesTableWidgetComponent extends PageComponent implem
     private domSanitizer;
     private datePipe;
     private cd;
+    private fb;
     ctx: WidgetContext;
     searchInputField: ElementRef;
     paginators: QueryList<MatPaginator>;
     sorts: QueryList<MatSort>;
+    textSearch: import("@angular/forms").FormControl<string>;
     displayPagination: boolean;
     enableStickyHeader: boolean;
     enableStickyAction: boolean;
+    showCellActionsMenu: boolean;
     pageSizeOptions: any;
     textSearchMode: boolean;
     hidePageSize: boolean;
-    textSearch: string;
     sources: TimeseriesTableSource[];
     sourceIndex: number;
     noDataDisplayMessageText: string;
+    hasRowAction: boolean;
     private setCellButtonAction;
     private cellContentCache;
     private cellStyleCache;
@@ -92,12 +98,15 @@ export declare class TimeseriesTableWidgetComponent extends PageComponent implem
     showTimestamp: boolean;
     private useEntityLabel;
     private dateFormatFilter;
+    private displayedColumns;
     private rowStylesInfo;
     private subscriptions;
     private widgetTimewindowChanged$;
     private widgetResize$;
+    private destroy$;
     private searchAction;
-    constructor(store: Store<AppState>, elementRef: ElementRef, overlay: Overlay, viewContainerRef: ViewContainerRef, utils: UtilsService, translate: TranslateService, domSanitizer: DomSanitizer, datePipe: DatePipe, cd: ChangeDetectorRef);
+    private columnDisplayAction;
+    constructor(store: Store<AppState>, elementRef: ElementRef, overlay: Overlay, viewContainerRef: ViewContainerRef, utils: UtilsService, translate: TranslateService, domSanitizer: DomSanitizer, datePipe: DatePipe, cd: ChangeDetectorRef, fb: FormBuilder);
     ngOnInit(): void;
     ngOnDestroy(): void;
     ngAfterViewInit(): void;
@@ -106,6 +115,8 @@ export declare class TimeseriesTableWidgetComponent extends PageComponent implem
     private initialize;
     getTabLabel(source: TimeseriesTableSource): string;
     private updateDatasources;
+    private editColumnsToDisplay;
+    private prepareDisplayedColumn;
     private prepareHeader;
     private updateActiveEntityInfo;
     private initSubscriptionsToSortAndPaginator;

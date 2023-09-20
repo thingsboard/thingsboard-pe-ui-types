@@ -57,9 +57,13 @@ export declare class ImportExportService {
     exportWidget(dashboard: Dashboard, sourceState: string, sourceLayout: DashboardLayoutId, widget: Widget): void;
     importWidget(dashboard: Dashboard, targetState: string, targetLayoutFunction: () => Observable<DashboardLayoutId>, onAliasesUpdateFunction: () => void, onFiltersUpdateFunction: () => void): Observable<ImportWidgetResult>;
     exportWidgetType(widgetTypeId: string): void;
-    importWidgetType(bundleAlias: string): Observable<WidgetType>;
+    exportWidgetTypes(widgetTypeIds: string[]): Observable<void>;
+    importWidgetType(): Observable<WidgetType>;
     exportWidgetsBundle(widgetsBundleId: string): void;
+    private exportWidgetsBundleWithWidgetTypes;
+    private exportWidgetsBundleWithWidgetTypeFqns;
     importWidgetsBundle(): Observable<WidgetsBundle>;
+    private prepareWidgetType;
     bulkImportEntities(entitiesData: BulkImportRequest, entityType: EntityType, config?: RequestConfig): Observable<BulkImportResult>;
     importEntities(entitiesData: ImportEntityData[], customerId: CustomerId, entityType: EntityType, entityGroupId: string, updateData: boolean, importEntityCompleted?: () => void, config?: RequestConfig): Observable<ImportEntitiesResultInfo>;
     exportRuleChain(ruleChainId: string): void;
@@ -86,7 +90,7 @@ export declare class ImportExportService {
     private formatDataAccordingToLocale;
     private validateImportedConverter;
     exportText(data: string | Array<string>, filename: string): void;
-    exportJSZip(data: object, filename: string): void;
+    exportJSZip(data: object, filename: string): Observable<void>;
     private prepareRuleChain;
     private prepareRuleChainMetaData;
     private validateImportedRuleChain;

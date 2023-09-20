@@ -1,20 +1,35 @@
-import { MatDialogRef } from "@angular/material/dialog";
-import { DialogComponent } from "@shared/components/dialog.component";
-import { Store } from "@ngrx/store";
-import { AppState } from "@core/core.state";
-import { Router } from "@angular/router";
+import { OnDestroy, OnInit } from '@angular/core';
+import { DialogComponent } from '@shared/components/dialog.component';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { Router } from '@angular/router';
+import { MatDialogRef } from '@angular/material/dialog';
+import { EdgeInfo, EdgeInstructionsMethod } from '@shared/models/edge.models';
+import { EdgeService } from '@core/http/edge.service';
 import * as i0 from "@angular/core";
-export interface EdgeInstructionsData {
-    instructions: string;
+export interface EdgeInstructionsDialogData {
+    edge: EdgeInfo;
+    afterAdd: boolean;
 }
-export declare class EdgeInstructionsDialogComponent extends DialogComponent<EdgeInstructionsDialogComponent, EdgeInstructionsData> {
+export declare class EdgeInstructionsDialogComponent extends DialogComponent<EdgeInstructionsDialogComponent> implements OnInit, OnDestroy {
     protected store: Store<AppState>;
     protected router: Router;
-    dialogRef: MatDialogRef<EdgeInstructionsDialogComponent, EdgeInstructionsData>;
-    data: EdgeInstructionsData;
-    instructions: string;
-    constructor(store: Store<AppState>, router: Router, dialogRef: MatDialogRef<EdgeInstructionsDialogComponent, EdgeInstructionsData>, data: EdgeInstructionsData);
-    cancel(): void;
+    private data;
+    dialogRef: MatDialogRef<EdgeInstructionsDialogComponent>;
+    private edgeService;
+    dialogTitle: string;
+    showDontShowAgain: boolean;
+    loadedInstructions: boolean;
+    notShowAgain: boolean;
+    tabIndex: number;
+    instructionsMethod: typeof EdgeInstructionsMethod;
+    contentData: any;
+    constructor(store: Store<AppState>, router: Router, data: EdgeInstructionsDialogData, dialogRef: MatDialogRef<EdgeInstructionsDialogComponent>, edgeService: EdgeService);
+    ngOnInit(): void;
+    ngOnDestroy(): void;
+    close(): void;
+    selectedTabChange(index: number): void;
+    getInstructions(method: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EdgeInstructionsDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EdgeInstructionsDialogComponent, "tb-edge-instructions", never, {}, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EdgeInstructionsDialogComponent, "tb-edge-installation-dialog", never, {}, {}, never, never, false, never>;
 }

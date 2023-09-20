@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { PageLink } from '@shared/models/page/page-link';
 import { PageData } from '@shared/models/page/page-data';
-import { ClaimRequest, ClaimResult, Device, DeviceCredentials, DeviceInfo, DeviceInfoQuery, DeviceSearchQuery } from '@app/shared/models/device.models';
+import { ClaimRequest, ClaimResult, Device, DeviceCredentials, DeviceInfo, DeviceInfoQuery, DeviceSearchQuery, PublishLaunchCommand, PublishTelemetryCommand } from '@app/shared/models/device.models';
 import { EntitySubtype } from '@app/shared/models/entity-type.models';
 import { BulkImportRequest, BulkImportResult } from '@home/components/import-export/import-export.models';
 import { PersistentRpc, RpcStatus } from '@shared/models/rpc.models';
@@ -21,6 +21,7 @@ export declare class DeviceService {
     getCustomerDeviceInfos(includeCustomers: boolean, customerId: string, pageLink: PageLink, deviceProfileId?: string, config?: RequestConfig): Observable<PageData<DeviceInfo>>;
     getDeviceInfo(deviceId: string, config?: RequestConfig): Observable<DeviceInfo>;
     saveDevice(device: Device, entityGroupIds?: string | string[], config?: RequestConfig): Observable<Device>;
+    saveDeviceWithCredentials(device: Device, credentials: DeviceCredentials, entityGroupIds?: string | string[], config?: RequestConfig): Observable<Device>;
     deleteDevice(deviceId: string, config?: RequestConfig): Observable<Object>;
     getDeviceTypes(config?: RequestConfig): Observable<Array<EntitySubtype>>;
     getDeviceCredentials(deviceId: string, sync?: boolean, config?: RequestConfig): Observable<DeviceCredentials>;
@@ -35,6 +36,8 @@ export declare class DeviceService {
     claimDevice(deviceName: string, claimRequest: ClaimRequest, config?: RequestConfig): Observable<ClaimResult>;
     unclaimDevice(deviceName: string, config?: RequestConfig): Observable<Object>;
     bulkImportDevices(entitiesData: BulkImportRequest, config?: RequestConfig): Observable<BulkImportResult>;
+    getDevicePublishTelemetryCommands(deviceId: string, config?: RequestConfig): Observable<PublishTelemetryCommand>;
+    getDevicePublishLaunchCommands(deviceId: string, config?: RequestConfig): Observable<PublishLaunchCommand>;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<DeviceService>;
 }

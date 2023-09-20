@@ -29,6 +29,7 @@ export declare class WidgetSubscription implements IWidgetSubscription {
     pageSize: number;
     warnOnPageDataOverflow: boolean;
     ignoreDataUpdateOnIntervalTick: boolean;
+    get firstDatasource(): Datasource;
     datasourcePages: PageData<Datasource>[];
     dataPages: PageData<Array<DatasourceData>>[];
     entityDataListeners: Array<EntityDataListener>;

@@ -8,6 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
 import * as i0 from "@angular/core";
 export interface JsonObjectEditDialogData {
     jsonValue: object;
+    required?: boolean;
     title?: string;
     saveLabel?: string;
     cancelLabel?: string;
@@ -23,6 +24,7 @@ export declare class JsonObjectEditDialogComponent extends DialogComponent<JsonO
     title: any;
     saveButtonLabel: any;
     cancelButtonLabel: any;
+    required: boolean;
     constructor(store: Store<AppState>, router: Router, data: JsonObjectEditDialogData, dialogRef: MatDialogRef<JsonObjectEditDialogComponent, object>, fb: FormBuilder, translate: TranslateService);
     cancel(): void;
     add(): void;

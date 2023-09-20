@@ -22,6 +22,7 @@ import { schedulerCalendarView, SchedulerEventsWidgetSettings } from '@home/comp
 import { CalendarOptions } from '@fullcalendar/core';
 import { MatMenuTrigger } from '@angular/material/menu';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FormBuilder } from '@angular/forms';
 import * as i0 from "@angular/core";
 export declare class SchedulerEventsComponent extends PageComponent implements OnInit, AfterViewInit, OnChanges, OnDestroy {
     protected store: Store<AppState>;
@@ -34,6 +35,7 @@ export declare class SchedulerEventsComponent extends PageComponent implements O
     private router;
     private route;
     private cd;
+    private fb;
     schedulerEventWidgetContainerRef: ElementRef;
     searchInputField: ElementRef;
     paginator: MatPaginator;
@@ -53,7 +55,7 @@ export declare class SchedulerEventsComponent extends PageComponent implements O
     showData: boolean;
     mode: string;
     displayPagination: boolean;
-    pageSizeOptions: any;
+    pageSizeOptions: Array<number>;
     defaultPageSize: number;
     defaultSortOrder: string;
     defaultEventType: string;
@@ -73,12 +75,14 @@ export declare class SchedulerEventsComponent extends PageComponent implements O
     };
     schedulerContextMenuEvent: MouseEvent;
     calendarOptions: CalendarOptions;
+    textSearch: import("@angular/forms").FormControl<string>;
     private calendarApi;
     private schedulerEvents;
     private currentCalendarViewValue;
     private widgetResize$;
+    private destroy$;
     private schedulerEventConfigTypes;
-    constructor(store: Store<AppState>, utils: UtilsService, translate: TranslateService, schedulerEventService: SchedulerEventService, userPermissionsService: UserPermissionsService, dialogService: DialogService, dialog: MatDialog, router: Router, route: ActivatedRoute, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, utils: UtilsService, translate: TranslateService, schedulerEventService: SchedulerEventService, userPermissionsService: UserPermissionsService, dialogService: DialogService, dialog: MatDialog, router: Router, route: ActivatedRoute, cd: ChangeDetectorRef, fb: FormBuilder);
     ngOnInit(): void;
     ngOnDestroy(): void;
     ngOnChanges(changes: SimpleChanges): void;

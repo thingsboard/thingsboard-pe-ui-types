@@ -1,4 +1,4 @@
-import { Resolve } from '@angular/router';
+import { Resolve, Routes } from '@angular/router';
 import { User } from '@shared/models/user.model';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -14,6 +14,7 @@ export declare class UserProfileResolver implements Resolve<User> {
     static ɵfac: i0.ɵɵFactoryDeclaration<UserProfileResolver, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<UserProfileResolver>;
 }
+export declare const profileRoutes: Routes;
 export declare class ProfileRoutingModule {
     static ɵfac: i0.ɵɵFactoryDeclaration<ProfileRoutingModule, never>;
     static ɵmod: i0.ɵɵNgModuleDeclaration<ProfileRoutingModule, never, [typeof i1.RouterModule], [typeof i1.RouterModule]>;

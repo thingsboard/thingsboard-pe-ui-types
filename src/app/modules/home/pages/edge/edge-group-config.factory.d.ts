@@ -42,7 +42,7 @@ export declare class EdgeGroupConfigFactory implements EntityGroupStateConfigFac
     manageIntegrations($event: Event, edge: EdgeInfo | ShortEntityView, config: GroupEntityTableConfig<EdgeInfo>, params: EntityGroupParams): void;
     private navigateToChildEdgePage;
     syncEdge($event: any, edge: EdgeInfo): void;
-    openInstructions($event: any, edge: EdgeInfo): void;
+    openInstructions($event: Event, edge: EdgeInfo): void;
     manageOwnerAndGroups($event: Event, edge: EdgeInfo, config: GroupEntityTableConfig<EdgeInfo>): void;
     private isCustomerScope;
     static ɵfac: i0.ɵɵFactoryDeclaration<EdgeGroupConfigFactory, never>;

@@ -1,0 +1,34 @@
+import { Injector } from '@angular/core';
+import { WidgetSettings, WidgetSettingsComponent } from '@shared/models/widget.models';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { ValueCardLayout } from '@home/components/widget/lib/cards/value-card-widget.models';
+import { WidgetConfigComponentData } from '@home/models/widget-component.models';
+import * as i0 from "@angular/core";
+export declare class ValueCardWidgetSettingsComponent extends WidgetSettingsComponent {
+    protected store: Store<AppState>;
+    private $injector;
+    private fb;
+    valueCardLayouts: ValueCardLayout[];
+    valueCardLayoutTranslationMap: Map<ValueCardLayout, string>;
+    valueCardLayoutImageMap: Map<ValueCardLayout, string>;
+    horizontal: boolean;
+    valueCardWidgetSettingsForm: UntypedFormGroup;
+    valuePreviewFn: any;
+    datePreviewFn: any;
+    get label(): string;
+    get dateEnabled(): boolean;
+    get iconEnabled(): boolean;
+    constructor(store: Store<AppState>, $injector: Injector, fb: UntypedFormBuilder);
+    protected settingsForm(): UntypedFormGroup;
+    protected onWidgetConfigSet(widgetConfig: WidgetConfigComponentData): void;
+    protected defaultSettings(): WidgetSettings;
+    protected onSettingsSet(settings: WidgetSettings): void;
+    protected validatorTriggers(): string[];
+    protected updateValidators(emitEvent: boolean): void;
+    private _valuePreviewFn;
+    private _datePreviewFn;
+    static ɵfac: i0.ɵɵFactoryDeclaration<ValueCardWidgetSettingsComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ValueCardWidgetSettingsComponent, "tb-value-card-widget-settings", never, {}, {}, never, never, false, never>;
+}

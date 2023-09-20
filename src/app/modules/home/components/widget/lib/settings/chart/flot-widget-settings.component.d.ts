@@ -8,7 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { WidgetService } from '@core/http/widget.service';
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import * as i0 from "@angular/core";
-export declare function flotDefaultSettings(chartType: ChartType): Partial<TbFlotSettings>;
+export declare const flotDefaultSettings: (chartType: ChartType) => Partial<TbFlotSettings>;
 export declare class FlotWidgetSettingsComponent extends PageComponent implements OnInit, ControlValueAccessor, Validator {
     protected store: Store<AppState>;
     private translate;

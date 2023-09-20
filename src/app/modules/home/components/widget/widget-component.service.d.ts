@@ -29,8 +29,8 @@ export declare class WidgetComponentService {
     constructor(window: Window, modulesMap: IModulesMap, homeComponentsModule: Type<any>, dynamicComponentFactoryService: DynamicComponentFactoryService, widgetService: WidgetService, utils: UtilsService, resources: ResourcesService, translate: TranslateService, reportService: ReportService);
     private init;
     getInstantWidgetInfo(widget: Widget): WidgetInfo;
-    getWidgetInfo(bundleAlias: string, widgetTypeAlias: string, isSystem: boolean): Observable<WidgetInfo>;
-    clearWidgetInfo(widgetInfo: WidgetInfo, bundleAlias: string, widgetTypeAlias: string, isSystem: boolean): void;
+    getWidgetInfo(fullFqn: string): Observable<WidgetInfo>;
+    clearWidgetInfo(widgetInfo: WidgetInfo): void;
     private getWidgetInfoInternal;
     private loadWidget;
     private loadWidgetResources;

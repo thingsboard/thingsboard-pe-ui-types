@@ -20,8 +20,7 @@ export declare class UserMenuComponent implements OnInit, OnDestroy {
     ngOnDestroy(): void;
     getAuthorityName(user: User): string;
     getUserDisplayName(user: User): string;
-    openProfile(): void;
-    openSecurity(): void;
+    openAccount(): void;
     logout(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<UserMenuComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<UserMenuComponent, "tb-user-menu", never, { "displayUserInfo": "displayUserInfo"; }, {}, never, never, false, never>;

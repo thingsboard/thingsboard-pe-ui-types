@@ -18,6 +18,7 @@ import { AllEntitiesTableConfigService } from '@home/components/entity/all-entit
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { AuthUser } from '@shared/models/user.model';
 import { PageLink } from '@shared/models/page/page-link';
+import { EntityId } from '@shared/models/id/entity-id';
 import * as i0 from "@angular/core";
 export declare class DevicesTableConfigResolver implements Resolve<EntityTableConfig<DeviceInfo>> {
     private allEntitiesTableConfigService;
@@ -50,6 +51,7 @@ export declare class DevicesTableConfigResolver implements Resolve<EntityTableCo
     deviceWizard($event: Event, config: EntityTableConfig<DeviceInfo>): void;
     manageCredentials($event: Event, device: DeviceInfo, isReadOnly: boolean, config: EntityTableConfig<DeviceInfo>): void;
     manageOwnerAndGroups($event: Event, device: DeviceInfo, config: EntityTableConfig<DeviceInfo>): void;
+    checkConnectivity($event: Event, deviceId: EntityId, afterAdd?: boolean, config?: EntityTableConfig<DeviceInfo>): void;
     onDeviceAction(action: EntityAction<DeviceInfo>, config: EntityTableConfig<DeviceInfo>): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<DevicesTableConfigResolver, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<DevicesTableConfigResolver>;

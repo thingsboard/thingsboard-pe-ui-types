@@ -20,7 +20,6 @@ export declare class ValueSourceComponent extends PageComponent implements OnIni
     private translate;
     private entityService;
     private fb;
-    display: string;
     entityAliasInput: ElementRef;
     keyInput: ElementRef;
     disabled: boolean;

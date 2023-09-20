@@ -1,0 +1,41 @@
+import { ElementRef, OnInit } from '@angular/core';
+import { ControlValueAccessor, FormBuilder } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { ResourceInfo } from '@shared/models/resource.models';
+import { TbResourceId } from '@shared/models/id/tb-resource-id';
+import { ResourceService } from '@core/http/resource.service';
+import { MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
+import * as i0 from "@angular/core";
+export declare class ResourceAutocompleteComponent implements ControlValueAccessor, OnInit {
+    private fb;
+    private resourceService;
+    disabled: boolean;
+    required: boolean;
+    appearance: MatFormFieldAppearance;
+    subscriptSizing: SubscriptSizing;
+    placeholder: string;
+    hideRequiredMarker: boolean;
+    allowAutocomplete: boolean;
+    resourceFormGroup: import("@angular/forms").FormGroup<{
+        resource: import("@angular/forms").FormControl<any>;
+    }>;
+    filteredResources$: Observable<Array<ResourceInfo>>;
+    searchText: string;
+    resourceInput: ElementRef;
+    private modelValue;
+    private dirty;
+    private propagateChange;
+    constructor(fb: FormBuilder, resourceService: ResourceService);
+    ngOnInit(): void;
+    registerOnChange(fn: any): void;
+    registerOnTouched(fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    writeValue(value: string | TbResourceId): void;
+    displayResourceFn(resource?: ResourceInfo | string): string;
+    clear(): void;
+    onFocus(): void;
+    private updateView;
+    private fetchResources;
+    static ɵfac: i0.ɵɵFactoryDeclaration<ResourceAutocompleteComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ResourceAutocompleteComponent, "tb-resource-autocomplete", never, { "disabled": "disabled"; "required": "required"; "appearance": "appearance"; "subscriptSizing": "subscriptSizing"; "placeholder": "placeholder"; "hideRequiredMarker": "hideRequiredMarker"; "allowAutocomplete": "allowAutocomplete"; }, {}, never, never, false, never>;
+}

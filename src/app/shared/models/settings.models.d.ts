@@ -1,20 +1,25 @@
 import { ValidatorFn } from '@angular/forms';
 import { VersionCreateConfig } from '@shared/models/vc.models';
+import { HasUUID } from '@shared/models/id/has-uuid';
 export declare const smtpPortPattern: RegExp;
 export interface AdminSettings<T> {
     key: string;
     jsonValue: T;
 }
-export declare type SmtpProtocol = 'smtp' | 'smtps';
+export declare enum SmtpProtocol {
+    SMTP = "smtp",
+    SMTPS = "smtps"
+}
 export interface MailServerSettings {
     useSystemMailSettings: boolean;
-    showChangePassword: boolean;
+    showChangePassword?: boolean;
     mailFrom: string;
     smtpProtocol: SmtpProtocol;
     smtpHost: string;
     smtpPort: number;
     timeout: number;
     enableTls: boolean;
+    tlsVersion: string;
     username: string;
     changePassword?: boolean;
     password?: string;
@@ -23,6 +28,37 @@ export interface MailServerSettings {
     proxyPort: number;
     proxyUser: string;
     proxyPassword: string;
+    enableOauth2: boolean;
+    providerId?: string;
+    clientId?: string;
+    clientSecret?: string;
+    providerTenantId?: string;
+    authUri?: string;
+    tokenUri?: string;
+    scope?: Array<string>;
+    redirectUri?: string;
+    tokenGenerated?: boolean;
+}
+export declare enum MailServerOauth2Provider {
+    OFFICE_365 = "OFFICE_365",
+    CUSTOM = "CUSTOM"
+}
+export interface MailConfigTemplate {
+    id: HasUUID;
+    createdTime: number;
+    name: string;
+    providerId: string;
+    helpLink: string;
+    scope: Array<string>;
+    accessTokenUri: string;
+    authorizationUri: string;
+    enableTls: boolean;
+    tlsVersion: string;
+    smtpProtocol: SmtpProtocol;
+    smtpHost: string;
+    smtpPort: number;
+    timeout: number;
+    additionalInfo: any;
 }
 export interface GeneralSettings {
     baseUrl: string;

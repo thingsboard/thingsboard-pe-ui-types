@@ -31,7 +31,6 @@ export declare class TemplateNotificationDialogComponent extends TemplateConfigu
     private translate;
     notificationTemplateStepper: MatStepper;
     stepperOrientation: Observable<StepperOrientation>;
-    stepperLabelPosition: Observable<'bottom' | 'end'>;
     dialogTitle: string;
     notificationTypes: NotificationType[];
     selectedIndex: number;

@@ -8,8 +8,6 @@ import { Router } from '@angular/router';
 import * as i0 from "@angular/core";
 export interface SaveWidgetTypeAsDialogResult {
     widgetName: string;
-    bundleId: string;
-    bundleAlias: string;
 }
 export declare class SaveWidgetTypeAsDialogComponent extends DialogComponent<SaveWidgetTypeAsDialogComponent, SaveWidgetTypeAsDialogResult> implements OnInit {
     protected store: Store<AppState>;
@@ -17,7 +15,6 @@ export declare class SaveWidgetTypeAsDialogComponent extends DialogComponent<Sav
     dialogRef: MatDialogRef<SaveWidgetTypeAsDialogComponent, SaveWidgetTypeAsDialogResult>;
     fb: UntypedFormBuilder;
     saveWidgetTypeAsFormGroup: UntypedFormGroup;
-    bundlesScope: string;
     constructor(store: Store<AppState>, router: Router, dialogRef: MatDialogRef<SaveWidgetTypeAsDialogComponent, SaveWidgetTypeAsDialogResult>, fb: UntypedFormBuilder);
     ngOnInit(): void;
     cancel(): void;

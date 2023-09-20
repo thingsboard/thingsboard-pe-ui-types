@@ -22,6 +22,7 @@ export declare class EditAttributeValuePanelComponent extends PageComponent impl
     constructor(store: Store<AppState>, data: EditAttributeValuePanelData, errorStateMatcher: ErrorStateMatcher, overlayRef: OverlayRef, fb: UntypedFormBuilder);
     ngOnInit(): void;
     isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
+    invalid(): boolean;
     cancel(): void;
     update(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EditAttributeValuePanelComponent, [null, null, { skipSelf: true; }, null, null]>;

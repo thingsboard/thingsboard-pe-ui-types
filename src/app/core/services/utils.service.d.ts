@@ -6,10 +6,10 @@ import { DataKey, Datasource, KeyInfo } from '@shared/models/widget.models';
 import { DataKeyType } from '@app/shared/models/telemetry/telemetry.models';
 import { WidgetInfo } from '@home/models/widget-component.models';
 import { Observable } from 'rxjs';
-import { DatePipe } from '@angular/common';
 import { WidgetContext } from '@app/modules/home/models/widget-component.models';
 import { AttributeData, TelemetryType } from '@shared/models/telemetry/telemetry.models';
 import { EntityId } from '@shared/models/id/entity-id';
+import { DatePipe } from '@angular/common';
 import * as i0 from "@angular/core";
 export declare class UtilsService {
     private window;
@@ -23,7 +23,6 @@ export declare class UtilsService {
     defaultDataKey: DataKey;
     defaultDatasource: Datasource;
     defaultAlarmDataKeys: Array<DataKey>;
-    materialIcons: Array<string>;
     constructor(window: Window, zone: NgZone, datePipe: DatePipe, translate: TranslateService);
     getPredefinedFunctionsList(): Array<string>;
     getPredefinedFunctionBody(func: string): string;
@@ -40,8 +39,6 @@ export declare class UtilsService {
     private doTranslate;
     guid(): string;
     validateDatasources(datasources: Array<Datasource>): Array<Datasource>;
-    getMaterialIcons(): Observable<Array<string>>;
-    getCommonMaterialIcons(): Array<string>;
     getMaterialColor(index: number): string;
     createKey(keyInfo: KeyInfo, type: DataKeyType, index?: number): DataKey;
     createLabelFromDatasource(datasource: Datasource, pattern: string): string;

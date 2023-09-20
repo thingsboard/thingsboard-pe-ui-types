@@ -1,13 +1,15 @@
-import { ElementRef, OnDestroy, OnInit } from '@angular/core';
-import { ControlValueAccessor, UntypedFormControl, Validator } from '@angular/forms';
+import { ChangeDetectorRef, ElementRef, OnDestroy, OnInit } from '@angular/core';
+import { ControlValueAccessor, UntypedFormControl, Validator, AbstractControl, ValidationErrors } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { RafService } from '@core/services/raf.service';
 import * as i0 from "@angular/core";
+export declare const jsonRequired: (control: AbstractControl) => ValidationErrors | null;
 export declare class JsonObjectEditComponent implements OnInit, ControlValueAccessor, Validator, OnDestroy {
     elementRef: ElementRef;
     protected store: Store<AppState>;
     private raf;
+    private cd;
     jsonEditorElmRef: ElementRef;
     private jsonEditor;
     private editorsResizeCaf;
@@ -20,12 +22,8 @@ export declare class JsonObjectEditComponent implements OnInit, ControlValueAcce
         [klass: string]: any;
     };
     sort: (key: string, value: any) => any;
-    private requiredValue;
-    get required(): boolean;
-    set required(value: boolean);
-    private readonlyValue;
-    get readonly(): boolean;
-    set readonly(value: boolean);
+    jsonRequired: boolean;
+    readonly: boolean;
     fullscreen: boolean;
     modelValue: any;
     contentValue: string;
@@ -34,7 +32,7 @@ export declare class JsonObjectEditComponent implements OnInit, ControlValueAcce
     errorShowed: boolean;
     ignoreChange: boolean;
     private propagateChange;
-    constructor(elementRef: ElementRef, store: Store<AppState>, raf: RafService);
+    constructor(elementRef: ElementRef, store: Store<AppState>, raf: RafService, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngOnDestroy(): void;
     private onAceEditorResize;
@@ -54,5 +52,5 @@ export declare class JsonObjectEditComponent implements OnInit, ControlValueAcce
     updateView(): void;
     onFullscreen(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<JsonObjectEditComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<JsonObjectEditComponent, "tb-json-object-edit", never, { "label": "label"; "disabled": "disabled"; "fillHeight": "fillHeight"; "editorStyle": "editorStyle"; "sort": "sort"; "required": "required"; "readonly": "readonly"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<JsonObjectEditComponent, "tb-json-object-edit", never, { "label": "label"; "disabled": "disabled"; "fillHeight": "fillHeight"; "editorStyle": "editorStyle"; "sort": "sort"; "jsonRequired": "jsonRequired"; "readonly": "readonly"; }, {}, never, never, false, never>;
 }
