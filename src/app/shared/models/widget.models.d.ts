@@ -84,6 +84,8 @@ export interface WidgetTypeParameters {
     previewHeight?: string;
     embedTitlePanel?: boolean;
     hideDataSettings?: boolean;
+    defaultDataKeysFunction?: (configComponent: any, configData: any) => DataKey[];
+    defaultLatestDataKeysFunction?: (configComponent: any, configData: any) => DataKey[];
 }
 export interface WidgetControllerDescriptor {
     widgetTypeFunction?: any;
@@ -110,11 +112,18 @@ export interface WidgetType extends BaseWidgetType {
 export interface WidgetTypeInfo extends BaseWidgetType {
     image: string;
     description: string;
+    tags: string[];
     widgetType: widgetType;
 }
 export interface WidgetTypeDetails extends WidgetType, ExportableEntity<WidgetTypeId> {
     image: string;
     description: string;
+    tags: string[];
+}
+export declare enum DeprecatedFilter {
+    ALL = "ALL",
+    ACTUAL = "ACTUAL",
+    DEPRECATED = "DEPRECATED"
 }
 export declare enum LegendDirection {
     column = "column",
@@ -475,7 +484,7 @@ export interface IWidgetSettingsComponent {
     functionScopeVariables: string[];
     settings: WidgetSettings;
     settingsChanged: Observable<WidgetSettings>;
-    validate(): any;
+    validateSettings(): boolean;
     [key: string]: any;
 }
 export declare abstract class WidgetSettingsComponent extends PageComponent implements IWidgetSettingsComponent, OnInit, AfterViewInit {
@@ -496,7 +505,7 @@ export declare abstract class WidgetSettingsComponent extends PageComponent impl
     protected constructor(store: Store<AppState>);
     ngOnInit(): void;
     ngAfterViewInit(): void;
-    validate(): void;
+    validateSettings(): boolean;
     protected setupSettings(settings: WidgetSettings): void;
     protected updateSettings(settings: WidgetSettings): void;
     protected updateValidators(emitEvent: boolean, trigger?: string): void;
@@ -505,8 +514,6 @@ export declare abstract class WidgetSettingsComponent extends PageComponent impl
     protected doUpdateSettings(settingsForm: UntypedFormGroup, settings: WidgetSettings): void;
     protected prepareInputSettings(settings: WidgetSettings): WidgetSettings;
     protected prepareOutputSettings(settings: any): WidgetSettings;
-    protected validateSettings(): boolean;
-    protected onValidate(): void;
     protected abstract settingsForm(): UntypedFormGroup;
     protected abstract onSettingsSet(settings: WidgetSettings): any;
     protected defaultSettings(): WidgetSettings;

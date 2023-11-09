@@ -9,6 +9,7 @@ export declare enum ApiFeature {
     DB = "DB",
     RE = "RE",
     JS = "JS",
+    TBEL = "TBEL",
     EMAIL = "EMAIL",
     SMS = "SMS",
     ALARM = "ALARM"

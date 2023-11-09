@@ -2,16 +2,23 @@ import { AfterContentInit, ElementRef, OnChanges, OnDestroy, OnInit, QueryList, 
 import { ControlValueAccessor, UntypedFormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { BreakpointObserver } from '@angular/cdk/layout';
+import { SafeUrl } from '@angular/platform-browser';
 import * as i0 from "@angular/core";
 export interface ImageCardsSelectOption {
     name: string;
     value: any;
-    image: string;
+    image: string | SafeUrl;
+}
+export interface ImageCardsColumns {
+    columns: number;
+    breakpoints?: {
+        [breakpoint: string]: number;
+    };
 }
 export declare class ImageCardsSelectOptionDirective {
     private _element;
     value: any;
-    image: string;
+    image: string | SafeUrl;
     get viewValue(): string;
     constructor(_element: ElementRef<HTMLElement>);
     static ɵfac: i0.ɵɵFactoryDeclaration<ImageCardsSelectOptionDirective, never>;
@@ -21,8 +28,7 @@ export declare class ImageCardsSelectComponent implements ControlValueAccessor, 
     private breakpointObserver;
     imageCardsSelectOptions: QueryList<ImageCardsSelectOptionDirective>;
     disabled: boolean;
-    cols: number;
-    colsLtMd: number;
+    cols: ImageCardsColumns | number;
     rowHeight: string;
     label: string;
     valueFormControl: UntypedFormControl;
@@ -32,20 +38,21 @@ export declare class ImageCardsSelectComponent implements ControlValueAccessor, 
     cols$: Observable<number>;
     private propagateChange;
     private _destroyed;
-    private _colsChanged;
     constructor(breakpointObserver: BreakpointObserver);
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
     ngAfterContentInit(): void;
     ngOnDestroy(): void;
+    private _initCols;
+    private _detectColumns;
     private syncImageCardsSelectOptions;
     registerOnChange(fn: any): void;
-    registerOnTouched(fn: any): void;
+    registerOnTouched(_fn: any): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: any): void;
     updateModel(value: any): void;
     toggleSelectPanel($event: Event): void;
     private updateDisplayValue;
     static ɵfac: i0.ɵɵFactoryDeclaration<ImageCardsSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ImageCardsSelectComponent, "tb-image-cards-select", never, { "disabled": "disabled"; "cols": "cols"; "colsLtMd": "colsLtMd"; "rowHeight": "rowHeight"; "label": "label"; }, {}, ["imageCardsSelectOptions"], never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ImageCardsSelectComponent, "tb-image-cards-select", never, { "disabled": "disabled"; "cols": "cols"; "rowHeight": "rowHeight"; "label": "label"; }, {}, ["imageCardsSelectOptions"], never, false, never>;
 }

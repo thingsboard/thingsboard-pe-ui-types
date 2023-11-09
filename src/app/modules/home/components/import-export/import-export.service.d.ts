@@ -7,7 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 import { DashboardUtilsService } from '@core/services/dashboard-utils.service';
 import { EntityService } from '@core/http/entity.service';
-import { Widget, WidgetType } from '@shared/models/widget.models';
+import { Widget, WidgetTypeDetails } from '@shared/models/widget.models';
 import { ItemBufferService } from '@core/services/item-buffer.service';
 import { BulkImportRequest, BulkImportResult, ImportWidgetResult } from './import-export.models';
 import { EntityType } from '@shared/models/entity-type.models';
@@ -58,7 +58,7 @@ export declare class ImportExportService {
     importWidget(dashboard: Dashboard, targetState: string, targetLayoutFunction: () => Observable<DashboardLayoutId>, onAliasesUpdateFunction: () => void, onFiltersUpdateFunction: () => void): Observable<ImportWidgetResult>;
     exportWidgetType(widgetTypeId: string): void;
     exportWidgetTypes(widgetTypeIds: string[]): Observable<void>;
-    importWidgetType(): Observable<WidgetType>;
+    importWidgetType(): Observable<WidgetTypeDetails>;
     exportWidgetsBundle(widgetsBundleId: string): void;
     private exportWidgetsBundleWithWidgetTypes;
     private exportWidgetsBundleWithWidgetTypeFqns;

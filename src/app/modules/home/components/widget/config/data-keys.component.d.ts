@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, ElementRef, OnChanges, OnInit, Renderer2, SimpleChanges, ViewContainerRef } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, FormGroupDirective, NgForm, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, ValidationErrors } from '@angular/forms';
+import { ControlValueAccessor, FormGroupDirective, NgForm, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -19,7 +19,7 @@ import { DndDropEvent } from 'ngx-drag-drop/lib/dnd-dropzone.directive';
 import { DatasourceComponent } from '@home/components/widget/config/datasource.component';
 import { TbPopoverService } from '@shared/components/popover.service';
 import * as i0 from "@angular/core";
-export declare class DataKeysComponent implements ControlValueAccessor, OnInit, OnChanges, ErrorStateMatcher {
+export declare class DataKeysComponent implements ControlValueAccessor, OnInit, OnChanges, ErrorStateMatcher, Validator {
     private store;
     private errorStateMatcher;
     private datasourceComponent;
@@ -80,9 +80,12 @@ export declare class DataKeysComponent implements ControlValueAccessor, OnInit, 
     private fetchObservable$;
     private dirty;
     private propagateChange;
+    private keysRequired;
+    private keysValidator;
     constructor(store: Store<AppState>, errorStateMatcher: ErrorStateMatcher, datasourceComponent: DatasourceComponent, translate: TranslateService, utils: UtilsService, dialog: MatDialog, fb: UntypedFormBuilder, cd: ChangeDetectorRef, popoverService: TbPopoverService, viewContainerRef: ViewContainerRef, renderer: Renderer2, truncate: TruncatePipe);
     updateValidators(): void;
-    keysRequired(control: AbstractControl): ValidationErrors | null;
+    private _keysRequired;
+    private _keysValidator;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -93,6 +96,11 @@ export declare class DataKeysComponent implements ControlValueAccessor, OnInit, 
     isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: Array<DataKey> | null): void;
+    validate(c: UntypedFormControl): {
+        dataKeys: {
+            valid: boolean;
+        };
+    };
     onFocus(): void;
     private addFromChipValue;
     addKey(key: DataKey): void;

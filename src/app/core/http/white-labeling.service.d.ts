@@ -5,13 +5,13 @@ import { Observable } from 'rxjs';
 import { ColorPalette } from '@shared/models/material.models';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { UtilsService } from '@core/services/utils.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { RequestConfig } from '@core/http/http-utils';
+import { MailTemplatesSettings } from '@shared/models/settings.models';
 import * as i0 from "@angular/core";
 export declare class WhiteLabelingService {
     private http;
     private store;
-    private utils;
     private sanitizer;
     private document;
     private changeWhiteLabelingSubject;
@@ -45,7 +45,7 @@ export declare class WhiteLabelingService {
     private loginAccentPalette;
     private renderer;
     private readonly ROOT;
-    constructor(http: HttpClient, store: Store<AppState>, utils: UtilsService, sanitizer: DomSanitizer, rendererFactory: RendererFactory2, document: Document);
+    constructor(http: HttpClient, store: Store<AppState>, sanitizer: DomSanitizer, rendererFactory: RendererFactory2, document: Document);
     logoImageUrl(): string;
     logoImageSafeUrl(): SafeUrl;
     logoImageUrl$(): Observable<string>;
@@ -87,6 +87,8 @@ export declare class WhiteLabelingService {
     saveLoginWhiteLabelParams(wlParams: LoginWhiteLabelingParams): Observable<LoginWhiteLabelingParams>;
     isWhiteLabelingAllowed(): Observable<boolean>;
     isCustomerWhiteLabelingAllowed(): Observable<boolean>;
+    saveMailTemplates(mailTemplates: MailTemplatesSettings, config?: RequestConfig): Observable<MailTemplatesSettings>;
+    getMailTemplates(systemByDefault?: boolean, config?: RequestConfig): Observable<MailTemplatesSettings>;
     private wlChanged;
     private notifyWlChanged;
     private getCurrentWlParams;

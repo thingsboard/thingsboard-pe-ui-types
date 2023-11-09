@@ -25,6 +25,7 @@ export declare class AggregatedDataKeyRowComponent implements ControlValueAccess
     disabled: boolean;
     datasourceType: DatasourceType;
     keyName: string;
+    index: number;
     keyRemoved: EventEmitter<any>;
     keyRowFormGroup: UntypedFormGroup;
     modelValue: DataKey;
@@ -47,5 +48,5 @@ export declare class AggregatedDataKeyRowComponent implements ControlValueAccess
     private updateModel;
     private _valuePreviewFn;
     static ɵfac: i0.ɵɵFactoryDeclaration<AggregatedDataKeyRowComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AggregatedDataKeyRowComponent, "tb-aggregated-data-key-row", never, { "disabled": "disabled"; "datasourceType": "datasourceType"; "keyName": "keyName"; }, { "keyRemoved": "keyRemoved"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AggregatedDataKeyRowComponent, "tb-aggregated-data-key-row", never, { "disabled": "disabled"; "datasourceType": "datasourceType"; "keyName": "keyName"; "index": "index"; }, { "keyRemoved": "keyRemoved"; }, never, never, false, never>;
 }

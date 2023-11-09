@@ -8,7 +8,7 @@ import * as i0 from "@angular/core";
 export declare class AttributeService {
     private http;
     constructor(http: HttpClient);
-    getEntityAttributes(entityId: EntityId, attributeScope: AttributeScope, keys?: Array<string>, config?: RequestConfig): Observable<Array<AttributeData>>;
+    getEntityAttributes(entityId: EntityId, attributeScope?: AttributeScope, keys?: Array<string>, config?: RequestConfig): Observable<Array<AttributeData>>;
     deleteEntityAttributes(entityId: EntityId, attributeScope: AttributeScope, attributes: Array<AttributeData>, config?: RequestConfig): Observable<any>;
     deleteEntityTimeseries(entityId: EntityId, timeseries: Array<AttributeData>, deleteAllDataForKeys?: boolean, startTs?: number, endTs?: number, rewriteLatestIfDeleted?: boolean, deleteLatest?: boolean, config?: RequestConfig): Observable<any>;
     saveEntityAttributes(entityId: EntityId, attributeScope: AttributeScope, attributes: Array<AttributeData>, config?: RequestConfig): Observable<any>;

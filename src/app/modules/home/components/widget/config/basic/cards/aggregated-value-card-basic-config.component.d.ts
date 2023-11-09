@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { BasicWidgetConfigComponent } from '@home/components/widget/config/widget-config.component.models';
 import { WidgetConfigComponentData } from '@home/models/widget-component.models';
-import { Datasource } from '@shared/models/widget.models';
+import { DataKey, Datasource } from '@shared/models/widget.models';
 import { WidgetConfigComponent } from '@home/components/widget/widget-config.component';
 import * as i0 from "@angular/core";
 export declare class AggregatedValueCardBasicConfigComponent extends BasicWidgetConfigComponent {
@@ -20,6 +20,9 @@ export declare class AggregatedValueCardBasicConfigComponent extends BasicWidget
     constructor(store: Store<AppState>, widgetConfigComponent: WidgetConfigComponent, cd: ChangeDetectorRef, $injector: Injector, fb: UntypedFormBuilder);
     protected configForm(): UntypedFormGroup;
     protected setupDefaults(configData: WidgetConfigComponentData): void;
+    protected defaultDataKeys(configData: WidgetConfigComponentData): DataKey[];
+    protected defaultLatestDataKeys(configData: WidgetConfigComponentData): DataKey[];
+    createDefaultAggregatedValueLatestDataKeys(configData: WidgetConfigComponentData, keyName: string, units: string, decimals: number): DataKey[];
     protected onConfigSet(configData: WidgetConfigComponentData): void;
     protected prepareOutputConfig(config: any): WidgetConfigComponentData;
     protected validatorTriggers(): string[];

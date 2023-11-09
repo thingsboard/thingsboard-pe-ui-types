@@ -12,6 +12,7 @@ import { EntityViewService } from '@core/http/entity-view.service';
 import { BroadcastService } from '@core/services/broadcast.service';
 import { AlarmService } from '@core/http/alarm.service';
 import { FloatLabelType, MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
+import { UtilsService } from '@core/services/utils.service';
 import * as i0 from "@angular/core";
 export declare class EntitySubTypeListComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnDestroy {
     private broadcast;
@@ -21,6 +22,7 @@ export declare class EntitySubTypeListComponent implements ControlValueAccessor,
     private entityViewService;
     private edgeService;
     private alarmService;
+    private utils;
     private fb;
     entitySubtypeListFormGroup: FormGroup;
     modelValue: Array<string> | null;
@@ -52,7 +54,7 @@ export declare class EntitySubTypeListComponent implements ControlValueAccessor,
     private dirty;
     private propagateChange;
     private hasPageDataEntitySubTypes;
-    constructor(broadcast: BroadcastService, translate: TranslateService, assetService: AssetService, deviceService: DeviceService, entityViewService: EntityViewService, edgeService: EdgeService, alarmService: AlarmService, fb: FormBuilder);
+    constructor(broadcast: BroadcastService, translate: TranslateService, assetService: AssetService, deviceService: DeviceService, entityViewService: EntityViewService, edgeService: EdgeService, alarmService: AlarmService, utils: UtilsService, fb: FormBuilder);
     updateValidators(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -70,6 +72,7 @@ export declare class EntitySubTypeListComponent implements ControlValueAccessor,
     private getEntitySubtypes;
     onFocus(): void;
     clear(value?: string): void;
+    customTranslate(entity: string): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntitySubTypeListComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<EntitySubTypeListComponent, "tb-entity-subtype-list", never, { "required": "required"; "floatLabel": "floatLabel"; "label": "label"; "disabled": "disabled"; "entityType": "entityType"; "emptyInputPlaceholder": "emptyInputPlaceholder"; "filledInputPlaceholder": "filledInputPlaceholder"; "appearance": "appearance"; "subscriptSizing": "subscriptSizing"; "additionalClasses": "additionalClasses"; }, {}, never, ["[matSuffix]"], false, never>;
 }

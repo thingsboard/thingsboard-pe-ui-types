@@ -384,6 +384,7 @@ export interface WidgetInfo extends WidgetTypeDescriptor, WidgetControllerDescri
     typeLatestDataKeySettingsSchema?: string | any;
     image?: string;
     description?: string;
+    tags?: string[];
     componentType?: Type<IDynamicWidgetComponent>;
     componentModuleRef?: NgModuleRef<DynamicComponentModule>;
 }

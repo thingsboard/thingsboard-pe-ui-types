@@ -1,6 +1,7 @@
 import { BackgroundSettings, ColorProcessor, ColorSettings, ComponentStyle, DateFormatSettings, Font } from '@shared/models/widget-settings.models';
 import { DataKey, DatasourceData } from '@shared/models/widget.models';
 export interface AggregatedValueCardWidgetSettings {
+    autoScale: boolean;
     showSubtitle: boolean;
     subtitle: string;
     subtitleFont: Font;
@@ -41,4 +42,3 @@ export declare const computeAggregatedCardValue: (dataKeys: DataKey[], keyName: 
 export declare const getTsValueByLatestDataKey: (latestData: Array<DatasourceData>, dataKey: DataKey) => [number, any];
 export declare const aggregatedValueCardDefaultSettings: AggregatedValueCardWidgetSettings;
 export declare const aggregatedValueCardDefaultKeySettings: AggregatedValueCardKeySettings;
-export declare const createDefaultAggregatedValueLatestDataKeys: (keyName: string, units: any) => DataKey[];

@@ -48,7 +48,10 @@ export declare class WidgetEditorComponent extends PageComponent implements OnIn
     widgetTypeDetails: WidgetTypeDetails;
     widget: WidgetInfo;
     origWidget: WidgetInfo;
-    isDirty: boolean;
+    private isEditModeWidget;
+    private _isDirty;
+    get isDirty(): boolean;
+    set isDirty(value: boolean);
     fullscreen: boolean;
     htmlFullscreen: boolean;
     cssFullscreen: boolean;
@@ -92,6 +95,7 @@ export declare class WidgetEditorComponent extends PageComponent implements OnIn
     private onWindowMessage;
     private onWidgetEditModeInited;
     private onWidgetEditUpdated;
+    private onWidgetEditModeToggled;
     private onWidgetException;
     private cleanupJsErrors;
     private commitSaveWidget;
@@ -113,6 +117,7 @@ export declare class WidgetEditorComponent extends PageComponent implements OnIn
     removeResource(index: number): void;
     addResource(): void;
     widetTypeChanged(): void;
+    get confirmOnExitMessage(): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetEditorComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<WidgetEditorComponent, "tb-widget-editor", never, {}, {}, never, never, false, never>;
 }

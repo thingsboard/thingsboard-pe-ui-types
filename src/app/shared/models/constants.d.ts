@@ -38,6 +38,7 @@ export declare const MediaBreakpoints: {
     'gt-xl': string;
     'md-lg': string;
 };
+export declare const resolveBreakpoint: (breakpoint: string) => string;
 export declare const helpBaseUrl = "https://thingsboard.io";
 export declare const HelpLinks: {
     linksMap: {

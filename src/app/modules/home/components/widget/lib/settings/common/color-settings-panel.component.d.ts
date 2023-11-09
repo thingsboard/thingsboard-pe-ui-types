@@ -2,10 +2,11 @@ import { EventEmitter, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { ColorSettings, ColorType } from '@shared/models/widget-settings.models';
 import { TbPopoverComponent } from '@shared/components/popover.component';
-import { AbstractControl, FormGroup, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { WidgetService } from '@core/http/widget.service';
+import { ColorSettingsComponent } from '@home/components/widget/lib/settings/common/color-settings.component';
 import * as i0 from "@angular/core";
 export declare class ColorSettingsPanelComponent extends PageComponent implements OnInit {
     private fb;
@@ -13,6 +14,7 @@ export declare class ColorSettingsPanelComponent extends PageComponent implement
     protected store: Store<AppState>;
     colorSettings: ColorSettings;
     popover: TbPopoverComponent<ColorSettingsPanelComponent>;
+    settingsComponents: ColorSettingsComponent[];
     colorSettingsApplied: EventEmitter<ColorSettings>;
     colorType: typeof ColorType;
     colorTypes: ColorType[];
@@ -21,14 +23,9 @@ export declare class ColorSettingsPanelComponent extends PageComponent implement
     functionScopeVariables: string[];
     constructor(fb: UntypedFormBuilder, widgetService: WidgetService, store: Store<AppState>);
     ngOnInit(): void;
-    private colorRangeControl;
-    get rangeListFormArray(): UntypedFormArray;
-    get rangeListFormGroups(): FormGroup[];
-    trackByRange(index: number, rangeControl: AbstractControl): any;
-    removeRange(index: number): void;
-    addRange(): void;
+    copyColorSettings(comp: ColorSettingsComponent): void;
     cancel(): void;
     applyColorSettings(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ColorSettingsPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ColorSettingsPanelComponent, "tb-color-settings-panel", never, { "colorSettings": "colorSettings"; "popover": "popover"; }, { "colorSettingsApplied": "colorSettingsApplied"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ColorSettingsPanelComponent, "tb-color-settings-panel", never, { "colorSettings": "colorSettings"; "popover": "popover"; "settingsComponents": "settingsComponents"; }, { "colorSettingsApplied": "colorSettingsApplied"; }, never, never, false, never>;
 }

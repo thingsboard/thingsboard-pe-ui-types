@@ -13,6 +13,7 @@ export declare class FontSettingsComponent implements OnInit, ControlValueAccess
     initialPreviewStyle: ComponentStyle;
     clearButton: boolean;
     autoScale: boolean;
+    disabledLineHeight: boolean;
     private modelValue;
     private propagateChange;
     constructor(popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef);
@@ -23,5 +24,5 @@ export declare class FontSettingsComponent implements OnInit, ControlValueAccess
     writeValue(value: Font): void;
     openFontSettingsPopup($event: Event, matButton: MatButton): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<FontSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FontSettingsComponent, "tb-font-settings", never, { "disabled": "disabled"; "previewText": "previewText"; "initialPreviewStyle": "initialPreviewStyle"; "clearButton": "clearButton"; "autoScale": "autoScale"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FontSettingsComponent, "tb-font-settings", never, { "disabled": "disabled"; "previewText": "previewText"; "initialPreviewStyle": "initialPreviewStyle"; "clearButton": "clearButton"; "autoScale": "autoScale"; "disabledLineHeight": "disabledLineHeight"; }, {}, never, never, false, never>;
 }

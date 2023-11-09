@@ -1,12 +1,13 @@
-import { ChangeDetectorRef, OnInit, TemplateRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ElementRef, OnDestroy, OnInit, Renderer2, TemplateRef } from '@angular/core';
 import { WidgetContext } from '@home/models/widget-component.models';
 import { ColorProcessor, ComponentStyle } from '@shared/models/widget-settings.models';
-import { WidgetComponent } from '@home/components/widget/widget.component';
 import { CountCardLayout, CountWidgetSettings } from '@home/components/widget/lib/count/count-widget.models';
 import * as i0 from "@angular/core";
-export declare class CountWidgetComponent implements OnInit {
-    private widgetComponent;
+export declare class CountWidgetComponent implements OnInit, AfterViewInit, OnDestroy {
+    private renderer;
     private cd;
+    countPanel: ElementRef<HTMLElement>;
+    countPanelContent: ElementRef<HTMLElement>;
     settings: CountWidgetSettings;
     countCardLayout: typeof CountCardLayout;
     ctx: WidgetContext;
@@ -31,11 +32,16 @@ export declare class CountWidgetComponent implements OnInit {
     showChevron: boolean;
     chevronStyle: ComponentStyle;
     hasCardClickAction: boolean;
-    constructor(widgetComponent: WidgetComponent, cd: ChangeDetectorRef);
+    private panelResize$;
+    private hasTitle;
+    constructor(renderer: Renderer2, cd: ChangeDetectorRef);
     ngOnInit(): void;
+    ngAfterViewInit(): void;
+    ngOnDestroy(): void;
     onInit(): void;
     onDataUpdated(): void;
     cardClick($event: Event): void;
+    private onResize;
     static ɵfac: i0.ɵɵFactoryDeclaration<CountWidgetComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<CountWidgetComponent, "tb-count-widget", never, { "ctx": "ctx"; "widgetTitlePanel": "widgetTitlePanel"; "alarmElseEntity": "alarmElseEntity"; }, {}, never, never, false, never>;
 }

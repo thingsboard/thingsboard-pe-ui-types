@@ -27,10 +27,10 @@ export declare class DataKeysPanelComponent implements ControlValueAccessor, OnI
     hideDataKeyColor: boolean;
     hideUnits: boolean;
     hideDecimals: boolean;
+    hideDataKeyUnits: boolean;
+    hideDataKeyDecimals: boolean;
     hideSourceSelection: boolean;
     dataKeyType: DataKeyType;
-    alarmKeys: Array<DataKey>;
-    functionTypeKeys: Array<DataKey>;
     keysListFormGroup: UntypedFormGroup;
     errorText: string;
     get widgetType(): widgetType;
@@ -60,5 +60,5 @@ export declare class DataKeysPanelComponent implements ControlValueAccessor, OnI
     addKey(): void;
     private prepareKeysFormArray;
     static ɵfac: i0.ɵɵFactoryDeclaration<DataKeysPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeysPanelComponent, "tb-data-keys-panel", never, { "disabled": "disabled"; "panelTitle": "panelTitle"; "addKeyTitle": "addKeyTitle"; "keySettingsTitle": "keySettingsTitle"; "removeKeyTitle": "removeKeyTitle"; "noKeysText": "noKeysText"; "requiredKeysText": "requiredKeysText"; "datasourceType": "datasourceType"; "entityAliasId": "entityAliasId"; "deviceId": "deviceId"; "hideDataKeyColor": "hideDataKeyColor"; "hideUnits": "hideUnits"; "hideDecimals": "hideDecimals"; "hideSourceSelection": "hideSourceSelection"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeysPanelComponent, "tb-data-keys-panel", never, { "disabled": "disabled"; "panelTitle": "panelTitle"; "addKeyTitle": "addKeyTitle"; "keySettingsTitle": "keySettingsTitle"; "removeKeyTitle": "removeKeyTitle"; "noKeysText": "noKeysText"; "requiredKeysText": "requiredKeysText"; "datasourceType": "datasourceType"; "entityAliasId": "entityAliasId"; "deviceId": "deviceId"; "hideDataKeyColor": "hideDataKeyColor"; "hideUnits": "hideUnits"; "hideDecimals": "hideDecimals"; "hideDataKeyUnits": "hideDataKeyUnits"; "hideDataKeyDecimals": "hideDataKeyDecimals"; "hideSourceSelection": "hideSourceSelection"; }, {}, never, never, false, never>;
 }

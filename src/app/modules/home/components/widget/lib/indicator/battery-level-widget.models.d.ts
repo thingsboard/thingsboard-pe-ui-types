@@ -10,6 +10,7 @@ export declare const batteryLevelLayoutTranslations: Map<BatteryLevelLayout, str
 export declare const batteryLevelLayoutImages: Map<BatteryLevelLayout, string>;
 export interface BatteryLevelWidgetSettings {
     layout: BatteryLevelLayout;
+    sectionsCount: number;
     showValue: boolean;
     autoScaleValueSize: boolean;
     valueFont: Font;

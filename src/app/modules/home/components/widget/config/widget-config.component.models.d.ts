@@ -32,6 +32,8 @@ export declare abstract class BasicWidgetConfigComponent extends PageComponent i
     ngAfterViewInit(): void;
     protected setupConfig(widgetConfig: WidgetConfigComponentData): void;
     protected setupDefaults(configData: WidgetConfigComponentData): void;
+    protected defaultDataKeys(configData: WidgetConfigComponentData): DataKey[];
+    protected defaultLatestDataKeys(configData: WidgetConfigComponentData): DataKey[];
     protected updateValidators(emitEvent: boolean, trigger?: string): void;
     protected validatorTriggers(): string[];
     protected onConfigChanged(widgetConfig: WidgetConfigComponentData): void;

@@ -1,4 +1,4 @@
-export type WindowMessageType = 'openReport' | 'clearReport' | 'reportResult' | 'widgetException' | 'widgetEditModeInited' | 'widgetEditUpdated' | 'dashboardStateSelected' | 'openDashboardMessage' | 'reloadUserMessage' | 'toggleDashboardLayout' | 'resetRecaptcha';
+export type WindowMessageType = 'openReport' | 'clearReport' | 'reportResult' | 'widgetException' | 'widgetEditModeInited' | 'widgetEditUpdated' | 'dashboardStateSelected' | 'openDashboardMessage' | 'reloadUserMessage' | 'toggleDashboardLayout' | 'resetRecaptcha' | 'widgetEditModeToggle';
 export interface WindowMessage {
     type: WindowMessageType;
     data?: any;

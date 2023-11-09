@@ -32,7 +32,7 @@ export declare class PersistentTableWidgetSettingsComponent extends WidgetSettin
     protected settingsForm(): UntypedFormGroup;
     protected defaultSettings(): WidgetSettings;
     protected onSettingsSet(settings: WidgetSettings): void;
-    protected validateSettings(): boolean;
+    validateSettings(): boolean;
     protected validatorTriggers(): string[];
     protected updateValidators(emitEvent: boolean): void;
     private fetchColumns;

@@ -1,15 +1,16 @@
-import { ChangeDetectorRef, OnInit, TemplateRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ElementRef, OnDestroy, OnInit, Renderer2, TemplateRef } from '@angular/core';
 import { WidgetContext } from '@home/models/widget-component.models';
-import { DatePipe } from '@angular/common';
 import { ColorProcessor, ComponentStyle, DateFormatProcessor } from '@shared/models/widget-settings.models';
 import { ValueCardLayout, ValueCardWidgetSettings } from './value-card-widget.models';
 import { WidgetComponent } from '@home/components/widget/widget.component';
 import { Observable } from 'rxjs';
 import * as i0 from "@angular/core";
-export declare class ValueCardWidgetComponent implements OnInit {
-    private date;
+export declare class ValueCardWidgetComponent implements OnInit, AfterViewInit, OnDestroy {
+    private renderer;
     private widgetComponent;
     private cd;
+    valueCardPanel: ElementRef<HTMLElement>;
+    valueCardContent: ElementRef<HTMLElement>;
     settings: ValueCardWidgetSettings;
     valueCardLayout: typeof ValueCardLayout;
     ctx: WidgetContext;
@@ -32,13 +33,17 @@ export declare class ValueCardWidgetComponent implements OnInit {
     dateColor: ColorProcessor;
     backgroundStyle: ComponentStyle;
     overlayStyle: ComponentStyle;
+    private panelResize$;
     private horizontal;
     private decimals;
     private units;
-    constructor(date: DatePipe, widgetComponent: WidgetComponent, cd: ChangeDetectorRef);
+    constructor(renderer: Renderer2, widgetComponent: WidgetComponent, cd: ChangeDetectorRef);
     ngOnInit(): void;
+    ngAfterViewInit(): void;
+    ngOnDestroy(): void;
     onInit(): void;
     onDataUpdated(): void;
+    private onResize;
     static ɵfac: i0.ɵɵFactoryDeclaration<ValueCardWidgetComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<ValueCardWidgetComponent, "tb-value-card-widget", never, { "ctx": "ctx"; "widgetTitlePanel": "widgetTitlePanel"; }, {}, never, never, false, never>;
 }

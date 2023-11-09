@@ -44,6 +44,8 @@ export interface Alarm extends BaseData<AlarmId> {
     originator: EntityId;
     severity: AlarmSeverity;
     status: AlarmStatus;
+    acknowledged: boolean;
+    cleared: boolean;
     startTs: number;
     endTs: number;
     ackTs: number;

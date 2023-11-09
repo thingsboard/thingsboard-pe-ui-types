@@ -15,6 +15,7 @@ export declare class FontSettingsPanelComponent extends PageComponent implements
     initialPreviewStyle: ComponentStyle;
     clearButton: boolean;
     autoScale: boolean;
+    disabledLineHeight: boolean;
     popover: TbPopoverComponent<FontSettingsPanelComponent>;
     fontApplied: EventEmitter<Font>;
     familyInput: ElementRef;
@@ -35,5 +36,5 @@ export declare class FontSettingsPanelComponent extends PageComponent implements
     clearFont(): void;
     private updatePreviewStyle;
     static ɵfac: i0.ɵɵFactoryDeclaration<FontSettingsPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FontSettingsPanelComponent, "tb-font-settings-panel", never, { "font": "font"; "previewText": "previewText"; "initialPreviewStyle": "initialPreviewStyle"; "clearButton": "clearButton"; "autoScale": "autoScale"; "popover": "popover"; }, { "fontApplied": "fontApplied"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FontSettingsPanelComponent, "tb-font-settings-panel", never, { "font": "font"; "previewText": "previewText"; "initialPreviewStyle": "initialPreviewStyle"; "clearButton": "clearButton"; "autoScale": "autoScale"; "disabledLineHeight": "disabledLineHeight"; "popover": "popover"; }, { "fontApplied": "fontApplied"; }, never, never, false, never>;
 }

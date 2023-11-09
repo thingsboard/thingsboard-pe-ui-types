@@ -12,6 +12,7 @@ export declare const valueCardLayoutTranslations: Map<ValueCardLayout, string>;
 export declare const valueCardLayoutImages: Map<ValueCardLayout, string>;
 export interface ValueCardWidgetSettings {
     layout: ValueCardLayout;
+    autoScale: boolean;
     showLabel: boolean;
     labelFont: Font;
     labelColor: ColorSettings;

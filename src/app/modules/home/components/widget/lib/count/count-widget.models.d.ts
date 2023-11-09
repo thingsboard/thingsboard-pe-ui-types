@@ -9,6 +9,7 @@ export declare const alarmCountCardLayoutImages: Map<CountCardLayout, string>;
 export declare const entityCountCardLayoutImages: Map<CountCardLayout, string>;
 export interface CountWidgetSettings {
     layout: CountCardLayout;
+    autoScale: boolean;
     showLabel: boolean;
     label: string;
     labelFont: Font;

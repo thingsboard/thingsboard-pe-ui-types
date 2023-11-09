@@ -12,14 +12,13 @@ export declare class WidgetsBundleSelectComponent implements ControlValueAccesso
     bundlesScope: 'system' | 'tenant';
     selectFirstBundle: boolean;
     selectBundleAlias: string;
-    private requiredValue;
-    get required(): boolean;
-    set required(value: boolean);
+    required: boolean;
     disabled: boolean;
     excludeBundleIds: Array<string>;
     widgetsBundles$: Observable<Array<WidgetsBundle>>;
     widgetsBundles: Array<WidgetsBundle>;
     widgetsBundle: WidgetsBundle | null;
+    onTouched: () => void;
     private propagateChange;
     constructor(store: Store<AppState>, widgetService: WidgetService);
     registerOnChange(fn: any): void;

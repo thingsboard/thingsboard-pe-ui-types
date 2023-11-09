@@ -30,6 +30,8 @@ export declare class BatteryLevelWidgetComponent implements OnInit, OnDestroy, A
     valueColor: ColorProcessor;
     value: number;
     batterySections: boolean[];
+    dividedBorderRadius: string;
+    dividedGap: string;
     batteryLevelColor: ColorProcessor;
     batteryShapeColor: ColorProcessor;
     backgroundStyle: ComponentStyle;

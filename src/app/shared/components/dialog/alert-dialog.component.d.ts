@@ -4,6 +4,7 @@ export interface AlertDialogData {
     title: string;
     message: string;
     ok: string;
+    textMode?: boolean;
 }
 export declare class AlertDialogComponent {
     dialogRef: MatDialogRef<AlertDialogComponent>;

@@ -34,6 +34,7 @@ export interface DefaultTenantProfileConfiguration {
     maxTransportDataPoints: number;
     maxREExecutions: number;
     maxJSExecutions: number;
+    maxTbelExecutions: number;
     maxDPStorageDays: number;
     maxRuleNodeExecutionsPerMessage: number;
     maxEmails: number;
@@ -56,6 +57,8 @@ export interface DefaultTenantProfileConfiguration {
     defaultStorageTtlDays: number;
     alarmsTtlDays: number;
     rpcTtlDays: number;
+    queueStatsTtlDays: number;
+    ruleEngineExceptionsTtlDays: number;
 }
 export type TenantProfileConfigurations = DefaultTenantProfileConfiguration;
 export interface TenantProfileConfiguration extends TenantProfileConfigurations {

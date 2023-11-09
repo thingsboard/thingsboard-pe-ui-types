@@ -66,6 +66,7 @@ export interface DateFormatSettings {
     format?: string;
     lastUpdateAgo?: boolean;
     custom?: boolean;
+    hideLastUpdatePrefix?: boolean;
 }
 export declare const simpleDateFormat: (format: string) => DateFormatSettings;
 export declare const lastUpdateAgoDateFormat: () => DateFormatSettings;
@@ -115,15 +116,23 @@ export interface BackgroundSettings {
 }
 export declare const iconStyle: (size: number | string, sizeUnit?: cssUnit) => ComponentStyle;
 export declare const textStyle: (font?: Font, letterSpacing?: string) => ComponentStyle;
+export declare const inlineTextStyle: (font?: Font, letterSpacing?: string) => ComponentStyle;
+export declare const cssTextFromInlineStyle: (styleObj: {
+    [key: string]: string | number;
+}) => string;
 export declare const isFontSet: (font: Font) => boolean;
 export declare const isFontPartiallySet: (font: Font) => boolean;
 export declare const backgroundStyle: (background: BackgroundSettings) => ComponentStyle;
 export declare const overlayStyle: (overlay: OverlaySettings) => ComponentStyle;
-export declare const getDataKey: (datasources?: Datasource[]) => DataKey;
+export declare const getDataKey: (datasources?: Datasource[], index?: number) => DataKey;
+export declare const updateDataKeys: (datasources: Datasource[], dataKeys: DataKey[]) => void;
+export declare const getDataKeyByLabel: (datasources: Datasource[], label: string) => DataKey;
+export declare const updateDataKeyByLabel: (datasources: Datasource[], dataKey: DataKey, label: string) => void;
 export declare const getAlarmFilterConfig: (datasources?: Datasource[]) => AlarmFilterConfig;
 export declare const setAlarmFilterConfig: (config: AlarmFilterConfig, datasources?: Datasource[]) => void;
 export declare const getLabel: (datasources?: Datasource[]) => string;
 export declare const setLabel: (label: string, datasources?: Datasource[]) => void;
 export declare const getSingleTsValue: (data: Array<DatasourceData>) => [number, any];
+export declare const getSingleTsValueByDataKey: (data: Array<DatasourceData>, dataKey: DataKey) => [number, any];
 export declare const getLatestSingleTsValue: (data: Array<DatasourceData>) => [number, any];
 export {};

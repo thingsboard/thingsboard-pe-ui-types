@@ -4,9 +4,6 @@ import { TimeseriesDeleteStrategy } from '@shared/models/telemetry/telemetry.mod
 import { FormBuilder, FormGroup } from '@angular/forms';
 import * as i0 from "@angular/core";
 export declare const DELETE_TIMESERIES_PANEL_DATA: InjectionToken<any>;
-export interface DeleteTimeseriesPanelData {
-    isMultipleDeletion: boolean;
-}
 export interface DeleteTimeseriesPanelResult {
     strategy: TimeseriesDeleteStrategy;
     startDateTime: Date;
@@ -14,15 +11,13 @@ export interface DeleteTimeseriesPanelResult {
     rewriteLatest: boolean;
 }
 export declare class DeleteTimeseriesPanelComponent implements OnInit, OnDestroy {
-    private data;
     private overlayRef;
     private fb;
     deleteTimeseriesFormGroup: FormGroup;
     result: DeleteTimeseriesPanelResult;
     strategiesTranslationsMap: Map<TimeseriesDeleteStrategy, string>;
-    private multipleDeletionStrategies;
     private destroy$;
-    constructor(data: DeleteTimeseriesPanelData, overlayRef: OverlayRef, fb: FormBuilder);
+    constructor(overlayRef: OverlayRef, fb: FormBuilder);
     ngOnInit(): void;
     ngOnDestroy(): void;
     delete(): void;

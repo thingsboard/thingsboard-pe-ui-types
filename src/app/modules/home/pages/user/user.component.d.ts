@@ -22,8 +22,10 @@ export declare class UserComponent extends GroupEntityComponent<UserInfo> {
     loginAsUserEnabled$: import("rxjs").Observable<boolean>;
     whiteLabelingAllowed$: import("rxjs").Observable<boolean>;
     isSysAdmin$: import("rxjs").Observable<boolean>;
+    private authUser;
     constructor(store: Store<AppState>, entityValue: UserInfo, entitiesTableConfigValue: EntityTableConfig<UserInfo> | GroupEntityTableConfig<UserInfo>, fb: UntypedFormBuilder, cd: ChangeDetectorRef, translate: TranslateService, userPermissionsService: UserPermissionsService);
     hideDelete(): boolean;
+    isCurrentUser(): boolean;
     isUserCredentialsEnabled(): boolean;
     isUserCredentialPresent(): boolean;
     buildForm(entity: UserInfo): UntypedFormGroup;

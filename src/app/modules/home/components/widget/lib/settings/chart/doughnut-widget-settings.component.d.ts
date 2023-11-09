@@ -1,0 +1,36 @@
+import { Injector } from '@angular/core';
+import { WidgetSettings, WidgetSettingsComponent } from '@shared/models/widget.models';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { DoughnutLayout, DoughnutLegendPosition, DoughnutTooltipValueType } from '@home/components/widget/lib/chart/doughnut-widget.models';
+import { WidgetConfigComponentData } from '@home/models/widget-component.models';
+import * as i0 from "@angular/core";
+export declare class DoughnutWidgetSettingsComponent extends WidgetSettingsComponent {
+    protected store: Store<AppState>;
+    private $injector;
+    private fb;
+    get totalEnabled(): boolean;
+    doughnutLayouts: DoughnutLayout[];
+    doughnutLayoutTranslationMap: Map<DoughnutLayout, string>;
+    horizontal: boolean;
+    doughnutLayoutImageMap: Map<DoughnutLayout, string>;
+    doughnutLegendPositions: DoughnutLegendPosition[];
+    doughnutLegendPositionTranslationMap: Map<DoughnutLegendPosition, string>;
+    doughnutTooltipValueTypes: DoughnutTooltipValueType[];
+    doughnutTooltipValueTypeTranslationMap: Map<DoughnutTooltipValueType, string>;
+    doughnutWidgetSettingsForm: UntypedFormGroup;
+    valuePreviewFn: any;
+    tooltipValuePreviewFn: any;
+    constructor(store: Store<AppState>, $injector: Injector, fb: UntypedFormBuilder);
+    protected settingsForm(): UntypedFormGroup;
+    protected onWidgetConfigSet(widgetConfig: WidgetConfigComponentData): void;
+    protected defaultSettings(): WidgetSettings;
+    protected onSettingsSet(settings: WidgetSettings): void;
+    protected validatorTriggers(): string[];
+    protected updateValidators(emitEvent: boolean): void;
+    private _valuePreviewFn;
+    private _tooltipValuePreviewFn;
+    static ɵfac: i0.ɵɵFactoryDeclaration<DoughnutWidgetSettingsComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DoughnutWidgetSettingsComponent, "tb-doughnut-widget-settings", never, {}, {}, never, never, false, never>;
+}
