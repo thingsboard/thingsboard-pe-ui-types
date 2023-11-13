@@ -5,7 +5,7 @@ import { BasicWidgetConfigComponent } from '@home/components/widget/config/widge
 import { WidgetConfigComponentData } from '@home/models/widget-component.models';
 import { DataKey, Datasource } from '@shared/models/widget.models';
 import { WidgetConfigComponent } from '@home/components/widget/widget-config.component';
-import { DoughnutLayout, DoughnutLegendPosition, DoughnutTooltipValueType } from '@home/components/widget/lib/chart/doughnut-widget.models';
+import { DoughnutLayout, DoughnutTooltipValueType } from '@home/components/widget/lib/chart/doughnut-widget.models';
 import * as i0 from "@angular/core";
 export declare class DoughnutBasicConfigComponent extends BasicWidgetConfigComponent {
     protected store: Store<AppState>;
@@ -18,8 +18,8 @@ export declare class DoughnutBasicConfigComponent extends BasicWidgetConfigCompo
     doughnutLayoutTranslationMap: Map<DoughnutLayout, string>;
     horizontal: boolean;
     doughnutLayoutImageMap: Map<DoughnutLayout, string>;
-    doughnutLegendPositions: DoughnutLegendPosition[];
-    doughnutLegendPositionTranslationMap: Map<DoughnutLegendPosition, string>;
+    doughnutLegendPositions: import("@home/components/widget/lib/chart/doughnut-widget.models").DoughnutLegendPosition[];
+    doughnutLegendPositionTranslationMap: Map<import("@home/components/widget/lib/chart/doughnut-widget.models").DoughnutLegendPosition, string>;
     doughnutTooltipValueTypes: DoughnutTooltipValueType[];
     doughnutTooltipValueTypeTranslationMap: Map<DoughnutTooltipValueType, string>;
     doughnutWidgetConfigForm: UntypedFormGroup;

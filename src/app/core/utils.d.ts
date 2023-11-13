@@ -79,3 +79,4 @@ export declare function parseHttpErrorMessage(errorResponse: HttpErrorResponse, 
 export declare function genNextLabel(name: string, datasources: Datasource[]): string;
 export declare const getOS: () => string;
 export declare const camelCase: (str: string) => string;
+export declare const convertKeysToCamelCase: (obj: Record<string, any>) => Record<string, any>;
