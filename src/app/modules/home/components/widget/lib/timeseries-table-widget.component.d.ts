@@ -16,11 +16,13 @@ import { CellContentInfo, CellStyleInfo, TableCellButtonActionDescriptor, TableW
 import { Overlay } from '@angular/cdk/overlay';
 import { DatePipe } from '@angular/common';
 import { FormBuilder } from '@angular/forms';
+import { DateFormatSettings } from '@shared/models/widget-settings.models';
 import * as i0 from "@angular/core";
 export interface TimeseriesTableWidgetSettings extends TableWidgetSettings {
     showTimestamp: boolean;
     showMilliseconds: boolean;
     hideEmptyLines: boolean;
+    dateFormat: DateFormatSettings;
 }
 interface TimeseriesRow {
     actionCellButtons?: TableCellButtonActionDescriptor[];

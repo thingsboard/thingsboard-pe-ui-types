@@ -3,9 +3,9 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { PageLink } from '@shared/models/page/page-link';
 import { PageData } from '@shared/models/page/page-data';
-import { ClaimRequest, ClaimResult, Device, DeviceCredentials, DeviceInfo, DeviceInfoQuery, DeviceSearchQuery, PublishLaunchCommand, PublishTelemetryCommand } from '@app/shared/models/device.models';
-import { EntitySubtype } from '@app/shared/models/entity-type.models';
-import { BulkImportRequest, BulkImportResult } from '@home/components/import-export/import-export.models';
+import { ClaimRequest, ClaimResult, Device, DeviceCredentials, DeviceInfo, DeviceInfoQuery, DeviceSearchQuery, PublishLaunchCommand, PublishTelemetryCommand } from '@shared/models/device.models';
+import { EntitySubtype } from '@shared/models/entity-type.models';
+import { BulkImportRequest, BulkImportResult } from '@shared/import-export/import-export.models';
 import { PersistentRpc, RpcStatus } from '@shared/models/rpc.models';
 import * as i0 from "@angular/core";
 export declare class DeviceService {

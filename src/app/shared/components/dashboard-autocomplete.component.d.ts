@@ -36,6 +36,9 @@ export declare class DashboardAutocompleteComponent implements ControlValueAcces
     dashboardInput: ElementRef;
     filteredDashboards: Observable<Array<DashboardInfo>>;
     searchText: string;
+    dashboardURL: string;
+    useDashboardLink: boolean;
+    private authUser;
     private propagateChange;
     constructor(store: Store<AppState>, translate: TranslateService, dashboardService: DashboardService, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;

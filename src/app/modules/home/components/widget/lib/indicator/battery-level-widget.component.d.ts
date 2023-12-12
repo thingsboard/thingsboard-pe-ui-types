@@ -5,9 +5,14 @@ import { ColorProcessor, ComponentStyle } from '@shared/models/widget-settings.m
 import { WidgetComponent } from '@home/components/widget/widget.component';
 import { BatteryLevelLayout, BatteryLevelWidgetSettings } from '@home/components/widget/lib/indicator/battery-level-widget.models';
 import { ResizeObserver } from '@juggle/resize-observer';
+import { Observable } from 'rxjs';
+import { ImagePipe } from '@shared/pipe/image.pipe';
+import { DomSanitizer } from '@angular/platform-browser';
 import * as i0 from "@angular/core";
 export declare class BatteryLevelWidgetComponent implements OnInit, OnDestroy, AfterViewInit {
     private date;
+    private imagePipe;
+    private sanitizer;
     private widgetComponent;
     private renderer;
     private cd;
@@ -34,13 +39,13 @@ export declare class BatteryLevelWidgetComponent implements OnInit, OnDestroy, A
     dividedGap: string;
     batteryLevelColor: ColorProcessor;
     batteryShapeColor: ColorProcessor;
-    backgroundStyle: ComponentStyle;
+    backgroundStyle$: Observable<ComponentStyle>;
     overlayStyle: ComponentStyle;
     batteryBoxResize$: ResizeObserver;
     hasCardClickAction: boolean;
     private decimals;
     private units;
-    constructor(date: DatePipe, widgetComponent: WidgetComponent, renderer: Renderer2, cd: ChangeDetectorRef);
+    constructor(date: DatePipe, imagePipe: ImagePipe, sanitizer: DomSanitizer, widgetComponent: WidgetComponent, renderer: Renderer2, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     ngOnDestroy(): void;

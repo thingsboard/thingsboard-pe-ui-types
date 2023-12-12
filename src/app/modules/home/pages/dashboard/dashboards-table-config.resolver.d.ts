@@ -10,12 +10,13 @@ import { CustomerService } from '@core/http/customer.service';
 import { DialogService } from '@core/services/dialog.service';
 import { DashboardInfo } from '@app/shared/models/dashboard.models';
 import { DashboardService } from '@app/core/http/dashboard.service';
-import { ImportExportService } from '@home/components/import-export/import-export.service';
+import { ImportExportService } from '@shared/import-export/import-export.service';
 import { UtilsService } from '@core/services/utils.service';
 import { HomeDialogsService } from '@home/dialogs/home-dialogs.service';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { AuthUser } from '@shared/models/user.model';
 import { AllEntitiesTableConfigService } from '@home/components/entity/all-entities-table-config.service';
+import { MatDialog } from '@angular/material/dialog';
 import * as i0 from "@angular/core";
 export declare class DashboardsTableConfigResolver implements Resolve<EntityTableConfig<DashboardInfo>> {
     private allEntitiesTableConfigService;
@@ -30,7 +31,8 @@ export declare class DashboardsTableConfigResolver implements Resolve<EntityTabl
     private datePipe;
     private router;
     private utils;
-    constructor(allEntitiesTableConfigService: AllEntitiesTableConfigService<DashboardInfo>, store: Store<AppState>, userPermissionsService: UserPermissionsService, dashboardService: DashboardService, customerService: CustomerService, dialogService: DialogService, homeDialogs: HomeDialogsService, importExport: ImportExportService, translate: TranslateService, datePipe: DatePipe, router: Router, utils: UtilsService);
+    private dialog;
+    constructor(allEntitiesTableConfigService: AllEntitiesTableConfigService<DashboardInfo>, store: Store<AppState>, userPermissionsService: UserPermissionsService, dashboardService: DashboardService, customerService: CustomerService, dialogService: DialogService, homeDialogs: HomeDialogsService, importExport: ImportExportService, translate: TranslateService, datePipe: DatePipe, router: Router, utils: UtilsService, dialog: MatDialog);
     resolve(route: ActivatedRouteSnapshot): Observable<EntityTableConfig<DashboardInfo>>;
     configDefaults(config: EntityTableConfig<DashboardInfo>): void;
     configureColumns(authUser: AuthUser, config: EntityTableConfig<DashboardInfo>): Array<EntityColumn<DashboardInfo>>;
@@ -40,6 +42,7 @@ export declare class DashboardsTableConfigResolver implements Resolve<EntityTabl
     configureAddActions(config: EntityTableConfig<DashboardInfo>): Array<HeaderActionDescriptor>;
     openDashboard($event: Event, dashboard: DashboardInfo, config: EntityTableConfig<DashboardInfo>): void;
     importDashboard($event: Event, config: EntityTableConfig<DashboardInfo>): void;
+    private editMissingAliases;
     exportDashboard($event: Event, dashboard: DashboardInfo): void;
     manageOwnerAndGroups($event: Event, dashboard: DashboardInfo, config: EntityTableConfig<DashboardInfo>): void;
     onDashboardAction(action: EntityAction<DashboardInfo>, config: EntityTableConfig<DashboardInfo>): boolean;

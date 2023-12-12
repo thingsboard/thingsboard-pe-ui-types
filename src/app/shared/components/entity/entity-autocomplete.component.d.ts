@@ -24,6 +24,7 @@ export declare class EntityAutocompleteComponent implements ControlValueAccessor
     entityRequiredText: string;
     filteredEntities: Observable<Array<BaseData<EntityId>>>;
     searchText: string;
+    entityURL: string;
     private dirty;
     private refresh$;
     private propagateChange;

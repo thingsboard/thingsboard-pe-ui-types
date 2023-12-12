@@ -19,7 +19,7 @@ import { CancelAnimationFrame, RafService } from '@core/services/raf.service';
 import { DashboardService } from '@core/http/dashboard.service';
 import { EntityService } from '@core/http/entity.service';
 import { DatePipe } from '@angular/common';
-import { ImportExportService } from '@home/components/import-export/import-export.service';
+import { ImportExportService } from '@shared/import-export/import-export.service';
 import { EntityDataService } from '@core/api/entity-data.service';
 import { TranslateService } from '@ngx-translate/core';
 import { AlarmDataService } from '@core/api/alarm-data.service';

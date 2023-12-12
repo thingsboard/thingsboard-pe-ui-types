@@ -3,8 +3,12 @@ import { AggregatedValueCardKeyPosition, AggregatedValueCardValue, AggregatedVal
 import { WidgetContext } from '@home/models/widget-component.models';
 import { Observable } from 'rxjs';
 import { ComponentStyle, DateFormatProcessor } from '@shared/models/widget-settings.models';
+import { ImagePipe } from '@shared/pipe/image.pipe';
+import { DomSanitizer } from '@angular/platform-browser';
 import * as i0 from "@angular/core";
 export declare class AggregatedValueCardWidgetComponent implements OnInit, AfterViewInit, OnDestroy {
+    private imagePipe;
+    private sanitizer;
     private renderer;
     private cd;
     chartElement: ElementRef;
@@ -27,7 +31,7 @@ export declare class AggregatedValueCardWidgetComponent implements OnInit, After
     dateFormat: DateFormatProcessor;
     dateStyle: ComponentStyle;
     dateColor: string;
-    backgroundStyle: ComponentStyle;
+    backgroundStyle$: Observable<ComponentStyle>;
     overlayStyle: ComponentStyle;
     private flot;
     private flotDataKey;
@@ -35,7 +39,7 @@ export declare class AggregatedValueCardWidgetComponent implements OnInit, After
     tickMin$: Observable<string>;
     tickMax$: Observable<string>;
     private panelResize$;
-    constructor(renderer: Renderer2, cd: ChangeDetectorRef);
+    constructor(imagePipe: ImagePipe, sanitizer: DomSanitizer, renderer: Renderer2, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     ngOnDestroy(): void;

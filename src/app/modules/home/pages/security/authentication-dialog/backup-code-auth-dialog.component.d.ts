@@ -6,7 +6,7 @@ import { TwoFactorAuthenticationService } from '@core/http/two-factor-authentica
 import { MatDialogRef } from '@angular/material/dialog';
 import { UntypedFormBuilder } from '@angular/forms';
 import { BackupCodeTwoFactorAuthAccountConfig } from '@shared/models/two-factor-auth.models';
-import { ImportExportService } from '@home/components/import-export/import-export.service';
+import { ImportExportService } from '@shared/import-export/import-export.service';
 import * as i0 from "@angular/core";
 export declare class BackupCodeAuthDialogComponent extends DialogComponent<BackupCodeAuthDialogComponent> {
     protected store: Store<AppState>;

@@ -1,17 +1,22 @@
 import { ChangeDetectorRef, ElementRef, OnInit, TemplateRef } from '@angular/core';
 import { WidgetContext } from '@home/models/widget-component.models';
+import { Observable } from 'rxjs';
 import { ComponentStyle } from '@shared/models/widget-settings.models';
 import { ResourcesService } from '@core/services/resources.service';
 import { TranslateService } from '@ngx-translate/core';
+import { ImagePipe } from '@shared/pipe/image.pipe';
+import { DomSanitizer } from '@angular/platform-browser';
 import * as i0 from "@angular/core";
 export declare class LiquidLevelWidgetComponent implements OnInit {
+    private imagePipe;
+    private sanitizer;
     private cd;
     private resourcesService;
     private translate;
     liquidLevelContent: ElementRef<HTMLElement>;
     ctx: WidgetContext;
     widgetTitlePanel: TemplateRef<any>;
-    backgroundStyle: ComponentStyle;
+    backgroundStyle$: Observable<ComponentStyle>;
     overlayStyle: ComponentStyle;
     hasCardClickAction: boolean;
     errorsMsg: string[];
@@ -31,7 +36,7 @@ export declare class LiquidLevelWidgetComponent implements OnInit {
     private tooltipContent;
     private widgetUnits;
     private capacityUnits;
-    constructor(cd: ChangeDetectorRef, resourcesService: ResourcesService, translate: TranslateService);
+    constructor(imagePipe: ImagePipe, sanitizer: DomSanitizer, cd: ChangeDetectorRef, resourcesService: ResourcesService, translate: TranslateService);
     ngOnInit(): void;
     private declareStyles;
     private getData;

@@ -10,6 +10,7 @@ export declare class AssetProfileService {
     constructor(http: HttpClient);
     getAssetProfiles(pageLink: PageLink, config?: RequestConfig): Observable<PageData<AssetProfile>>;
     getAssetProfile(assetProfileId: string, config?: RequestConfig): Observable<AssetProfile>;
+    exportAssetProfile(assetProfileId: string, config?: RequestConfig): Observable<AssetProfile>;
     saveAssetProfile(assetProfile: AssetProfile, config?: RequestConfig): Observable<AssetProfile>;
     deleteAssetProfile(assetProfileId: string, config?: RequestConfig): Observable<Object>;
     setDefaultAssetProfile(assetProfileId: string, config?: RequestConfig): Observable<AssetProfile>;

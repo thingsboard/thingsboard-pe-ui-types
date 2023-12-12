@@ -136,6 +136,7 @@ export declare enum LegendPosition {
     left = "left",
     right = "right"
 }
+export declare const legendPositions: LegendPosition[];
 export declare const legendPositionTranslationMap: Map<LegendPosition, string>;
 export interface LegendConfig {
     position: LegendPosition;

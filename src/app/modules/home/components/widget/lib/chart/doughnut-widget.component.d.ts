@@ -4,6 +4,9 @@ import { WidgetContext } from '@home/models/widget-component.models';
 import { ColorProcessor, ComponentStyle } from '@shared/models/widget-settings.models';
 import { WidgetComponent } from '@home/components/widget/widget.component';
 import { TranslateService } from '@ngx-translate/core';
+import { Observable } from 'rxjs';
+import { ImagePipe } from '@shared/pipe/image.pipe';
+import { DomSanitizer } from '@angular/platform-browser';
 import * as i0 from "@angular/core";
 interface DoughnutLegendItem {
     id: number;
@@ -15,6 +18,8 @@ interface DoughnutLegendItem {
     total?: boolean;
 }
 export declare class DoughnutWidgetComponent implements OnInit, OnDestroy, AfterViewInit {
+    private imagePipe;
+    private sanitizer;
     private widgetComponent;
     private renderer;
     private translate;
@@ -28,7 +33,7 @@ export declare class DoughnutWidgetComponent implements OnInit, OnDestroy, After
     showLegend: boolean;
     legendClass: string;
     totalValueColor: ColorProcessor;
-    backgroundStyle: ComponentStyle;
+    backgroundStyle$: Observable<ComponentStyle>;
     overlayStyle: ComponentStyle;
     legendItems: DoughnutLegendItem[];
     legendLabelStyle: ComponentStyle;
@@ -49,7 +54,7 @@ export declare class DoughnutWidgetComponent implements OnInit, OnDestroy, After
     private doughnutOptions;
     private svgShape;
     private totalTextNode;
-    constructor(widgetComponent: WidgetComponent, renderer: Renderer2, translate: TranslateService, cd: ChangeDetectorRef);
+    constructor(imagePipe: ImagePipe, sanitizer: DomSanitizer, widgetComponent: WidgetComponent, renderer: Renderer2, translate: TranslateService, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     ngOnDestroy(): void;

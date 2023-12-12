@@ -13,6 +13,7 @@ export declare const Constants: {
         itemNotFound: number;
         tooManyRequests: number;
         tooManyUpdates: number;
+        passwordViolation: number;
     };
     entryPoints: {
         login: string;

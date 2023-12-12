@@ -33,7 +33,11 @@ export declare class ScrollGridDatasource<T, F> extends DataSource<(T | GridCell
     disconnect(): void;
     get isEmpty(): boolean;
     get active(): boolean;
+    get currentColumns(): number;
     updateFilter(filter: F): void;
+    update(): void;
+    updateItem(index: number, item: T): void;
+    deleteItem(index: number): void;
     private _detectColumns;
     private _init;
     private _reset;

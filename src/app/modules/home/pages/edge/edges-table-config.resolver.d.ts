@@ -53,7 +53,7 @@ export declare class EdgesTableConfigResolver implements Resolve<EntityTableConf
     private navigateToChildEdgePage;
     syncEdge($event: any, edge: EdgeInfo): void;
     addEdge(config: any): void;
-    openInstructions($event: any, edge: EdgeInfo, afterAdd: boolean, config: EntityTableConfig<EdgeInfo>): void;
+    openInstructions($event: Event, edge: EdgeInfo, afterAdd: boolean, config: EntityTableConfig<EdgeInfo>, upgradeAvailable?: boolean): void;
     manageOwnerAndGroups($event: Event, edge: EdgeInfo, config: EntityTableConfig<EdgeInfo>): void;
     onEdgeAction(action: EntityAction<EdgeInfo>, config: EntityTableConfig<EdgeInfo>): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<EdgesTableConfigResolver, never>;

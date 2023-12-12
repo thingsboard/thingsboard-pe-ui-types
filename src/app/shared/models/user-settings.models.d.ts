@@ -2,6 +2,7 @@ export interface UserSettings {
     openedMenuSections?: string[];
     notDisplayConnectivityAfterAddDevice?: boolean;
     notDisplayInstructionsAfterAddEdge?: boolean;
+    includeBundleWidgetsInExport?: boolean;
 }
 export declare const initialUserSettings: UserSettings;
 export declare enum UserSettingsType {

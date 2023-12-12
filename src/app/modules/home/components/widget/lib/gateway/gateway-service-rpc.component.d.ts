@@ -9,6 +9,7 @@ export declare class GatewayServiceRPCComponent implements AfterViewInit {
     private dialog;
     ctx: WidgetContext;
     contentTypes: typeof ContentType;
+    resultTime: number | null;
     dialogRef: MatDialogRef<any>;
     commandForm: FormGroup;
     isConnector: boolean;

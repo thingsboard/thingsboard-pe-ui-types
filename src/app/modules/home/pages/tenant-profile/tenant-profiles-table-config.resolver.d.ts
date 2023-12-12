@@ -6,9 +6,9 @@ import { DatePipe } from '@angular/common';
 import { EntityAction } from '@home/models/entity/entity-component.models';
 import { TenantProfileService } from '@core/http/tenant-profile.service';
 import { DialogService } from '@core/services/dialog.service';
-import { UserPermissionsService } from '../../../../core/http/user-permissions.service';
-import { UtilsService } from '../../../../core/services/utils.service';
-import { ImportExportService } from '@home/components/import-export/import-export.service';
+import { UserPermissionsService } from '@core/http/user-permissions.service';
+import { UtilsService } from '@core/services/utils.service';
+import { ImportExportService } from '@shared/import-export/import-export.service';
 import * as i0 from "@angular/core";
 export declare class TenantProfilesTableConfigResolver implements Resolve<EntityTableConfig<TenantProfile>> {
     private tenantProfileService;

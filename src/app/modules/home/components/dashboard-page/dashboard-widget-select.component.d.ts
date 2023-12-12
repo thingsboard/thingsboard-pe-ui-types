@@ -3,8 +3,8 @@ import { WidgetsBundle } from '@shared/models/widgets-bundle.model';
 import { IAliasController } from '@core/api/widget-api.models';
 import { WidgetService } from '@core/http/widget.service';
 import { DeprecatedFilter, WidgetInfo, widgetType, WidgetTypeInfo } from '@shared/models/widget.models';
-import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
-import { GridEntitiesFetchFunction, ScrollGridColumns } from '@home/models/datasource/scroll-grid-datasource';
+import { GridEntitiesFetchFunction, ScrollGridColumns } from '@shared/components/grid/scroll-grid-datasource';
+import { ItemSizeStrategy } from '@shared/components/grid/scroll-grid.component';
 import * as i0 from "@angular/core";
 type selectWidgetMode = 'bundles' | 'allWidgets';
 interface WidgetsFilter {
@@ -18,7 +18,6 @@ interface BundleWidgetsFilter extends WidgetsFilter {
 export declare class DashboardWidgetSelectComponent implements OnInit {
     private widgetsService;
     private cd;
-    private sanitizer;
     private searchSubject;
     private search$;
     private filterWidgetTypes$;
@@ -40,18 +39,18 @@ export declare class DashboardWidgetSelectComponent implements OnInit {
     get widgetsBundle(): WidgetsBundle;
     widgetSelected: EventEmitter<WidgetInfo>;
     columns: ScrollGridColumns;
+    gridWidgetsItemSizeStrategy: ItemSizeStrategy;
     widgetBundlesFetchFunction: GridEntitiesFetchFunction<WidgetsBundle, string>;
     allWidgetsFetchFunction: GridEntitiesFetchFunction<WidgetTypeInfo, WidgetsFilter>;
     widgetsFetchFunction: GridEntitiesFetchFunction<WidgetTypeInfo, BundleWidgetsFilter>;
     widgetsBundleFilter: string;
     allWidgetsFilter: WidgetsFilter;
     widgetsFilter: BundleWidgetsFilter;
-    constructor(widgetsService: WidgetService, cd: ChangeDetectorRef, sanitizer: DomSanitizer);
+    constructor(widgetsService: WidgetService, cd: ChangeDetectorRef);
     ngOnInit(): void;
     onWidgetClicked($event: Event, widget: WidgetTypeInfo): void;
     isSystem(item: WidgetsBundle): boolean;
     selectBundle($event: Event, bundle: WidgetsBundle): void;
-    getPreviewImage(imageUrl: string | null): SafeUrl | string;
     isObject(value: any): boolean;
     private toWidgetInfo;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardWidgetSelectComponent, never>;

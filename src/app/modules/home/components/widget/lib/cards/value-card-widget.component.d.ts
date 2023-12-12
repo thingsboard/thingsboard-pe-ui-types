@@ -4,8 +4,12 @@ import { ColorProcessor, ComponentStyle, DateFormatProcessor } from '@shared/mod
 import { ValueCardLayout, ValueCardWidgetSettings } from './value-card-widget.models';
 import { WidgetComponent } from '@home/components/widget/widget.component';
 import { Observable } from 'rxjs';
+import { ImagePipe } from '@shared/pipe/image.pipe';
+import { DomSanitizer } from '@angular/platform-browser';
 import * as i0 from "@angular/core";
 export declare class ValueCardWidgetComponent implements OnInit, AfterViewInit, OnDestroy {
+    private imagePipe;
+    private sanitizer;
     private renderer;
     private widgetComponent;
     private cd;
@@ -31,13 +35,13 @@ export declare class ValueCardWidgetComponent implements OnInit, AfterViewInit, 
     dateFormat: DateFormatProcessor;
     dateStyle: ComponentStyle;
     dateColor: ColorProcessor;
-    backgroundStyle: ComponentStyle;
+    backgroundStyle$: Observable<ComponentStyle>;
     overlayStyle: ComponentStyle;
     private panelResize$;
     private horizontal;
     private decimals;
     private units;
-    constructor(renderer: Renderer2, widgetComponent: WidgetComponent, cd: ChangeDetectorRef);
+    constructor(imagePipe: ImagePipe, sanitizer: DomSanitizer, renderer: Renderer2, widgetComponent: WidgetComponent, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     ngOnDestroy(): void;

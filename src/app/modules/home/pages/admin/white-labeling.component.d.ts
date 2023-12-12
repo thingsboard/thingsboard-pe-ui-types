@@ -24,11 +24,6 @@ export declare class WhiteLabelingComponent extends PageComponent implements OnI
     private dialog;
     fb: UntypedFormBuilder;
     private window;
-    maxFaviconSize: number;
-    maxFaviconSizeKb: number;
-    faviconTypes: string[];
-    maxLogoSize: number;
-    maxLogoSizeKb: number;
     wlSettings: UntypedFormGroup;
     whiteLabelingParams: WhiteLabelingParams & LoginWhiteLabelingParams;
     isSysAdmin: boolean;
@@ -47,13 +42,6 @@ export declare class WhiteLabelingComponent extends PageComponent implements OnI
     private loadWhiteLabelingParams;
     buildWhiteLabelingSettingsForm(): void;
     private updateValidators;
-    onFaviconTypeError(): void;
-    onFaviconSizeError(): void;
-    onFaviconCleared(): void;
-    onLogoTypeError(): void;
-    onLogoSizeError(): void;
-    onLogoCleared(): void;
-    private showError;
     editCustomCss(): void;
     preview(): void;
     save(): void;

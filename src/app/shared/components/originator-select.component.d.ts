@@ -17,6 +17,10 @@ export declare class OriginatorSelectComponent implements ControlValueAccessor, 
     singleEntityText: string;
     groupOfEntitiesText: string;
     entitiesGroupOwnerText: string;
+    headerOptions: {
+        name: any;
+        value: string;
+    }[];
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);

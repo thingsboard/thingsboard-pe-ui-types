@@ -19,6 +19,7 @@ export declare class LoginComponent extends PageComponent implements OnInit {
     private translateService;
     fb: UntypedFormBuilder;
     private router;
+    passwordViolation: boolean;
     loginFormGroup: import("@angular/forms").UntypedFormGroup;
     oauth2Clients: Array<OAuth2ClientInfo>;
     class: string;

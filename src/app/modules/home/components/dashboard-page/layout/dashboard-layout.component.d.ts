@@ -6,23 +6,26 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { Widget } from '@shared/models/widget.models';
 import { DashboardCallbacks, DashboardContextMenuItem, IDashboardComponent, WidgetContextMenuItem } from '@home/models/dashboard-component.models';
+import { Observable } from 'rxjs';
 import { Hotkey } from 'angular2-hotkeys';
 import { TranslateService } from '@ngx-translate/core';
 import { ItemBufferService } from '@app/core/services/item-buffer.service';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 import { TbCheatSheetComponent } from '@shared/components/cheatsheet.component';
 import { TbPopoverComponent } from '@shared/components/popover.component';
+import { ImagePipe } from '@shared/pipe/image.pipe';
 import * as i0 from "@angular/core";
 export declare class DashboardLayoutComponent extends PageComponent implements ILayoutController, DashboardCallbacks, OnInit, OnDestroy {
     protected store: Store<AppState>;
     private translate;
     private itembuffer;
+    private imagePipe;
     private sanitizer;
     layoutCtxValue: DashboardPageLayoutContext;
     dashboardStyle: {
         [klass: string]: any;
     };
-    backgroundImage: SafeStyle | string;
+    backgroundImage$: Observable<SafeStyle | string>;
     hotKeys: Hotkey[];
     dashboardCheatSheet: TbCheatSheetComponent;
     set layoutCtx(val: DashboardPageLayoutContext);
@@ -36,7 +39,7 @@ export declare class DashboardLayoutComponent extends PageComponent implements I
     popoverComponent?: TbPopoverComponent;
     dashboard: IDashboardComponent;
     private rxSubscriptions;
-    constructor(store: Store<AppState>, translate: TranslateService, itembuffer: ItemBufferService, sanitizer: DomSanitizer);
+    constructor(store: Store<AppState>, translate: TranslateService, itembuffer: ItemBufferService, imagePipe: ImagePipe, sanitizer: DomSanitizer);
     ngOnInit(): void;
     ngOnDestroy(): void;
     private initHotKeys;

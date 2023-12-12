@@ -10,7 +10,7 @@ import { DataKey, Datasource } from '@shared/models/widget.models';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { AttributeService } from '@core/http/attribute.service';
 import { MatDialog } from '@angular/material/dialog';
-import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { DomSanitizer } from '@angular/platform-browser';
 import { MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 type FieldAlignment = 'row' | 'column';
@@ -60,7 +60,7 @@ interface MultipleInputWidgetDataKeySettings {
     useCustomIcon: boolean;
     icon: string;
     customIcon: string;
-    safeCustomIcon?: SafeUrl;
+    customIconUrl?: string;
     inputTypeNumber?: boolean;
     readOnly?: boolean;
     disabledOnCondition?: boolean;

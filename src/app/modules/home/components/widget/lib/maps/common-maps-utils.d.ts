@@ -1,13 +1,18 @@
 import { Observable } from 'rxjs';
 import { FormattedData } from '@shared/models/widget.models';
 import L from 'leaflet';
+import { ImagePipe } from '@shared/pipe/image.pipe';
 export declare function getRatio(firsMoment: number, secondMoment: number, intermediateMoment: number): number;
 export declare function interpolateOnLineSegment(pointA: FormattedData, pointB: FormattedData, latKeyName: string, lngKeyName: string, ratio: number): {
     [key: string]: number;
 };
 export declare function findAngle(startPoint: FormattedData, endPoint: FormattedData, latKeyName: string, lngKeyName: string): number;
 export declare function getDefCenterPosition(position: any): [number, number];
-export declare function aspectCache(imageUrl: string): Observable<number>;
+export interface ImageWithAspect {
+    url: string;
+    aspect: number;
+}
+export declare const loadImageWithAspect: (imagePipe: ImagePipe, imageUrl: string) => Observable<ImageWithAspect>;
 export type TranslateFunc = (key: string, defaultTranslation?: string) => string;
 export declare const parseWithTranslation: {
     translateFn: any;

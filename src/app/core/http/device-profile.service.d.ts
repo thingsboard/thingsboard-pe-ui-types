@@ -16,6 +16,7 @@ export declare class DeviceProfileService {
     constructor(http: HttpClient, otaPackageService: OtaPackageService);
     getDeviceProfiles(pageLink: PageLink, config?: RequestConfig): Observable<PageData<DeviceProfile>>;
     getDeviceProfile(deviceProfileId: string, config?: RequestConfig): Observable<DeviceProfile>;
+    exportDeviceProfile(deviceProfileId: string, config?: RequestConfig): Observable<DeviceProfile>;
     getLwm2mObjects(sortOrder: SortOrder, objectIds?: string[], searchText?: string, config?: RequestConfig): Observable<Array<ObjectLwM2M>>;
     getLwm2mBootstrapSecurityInfo(isBootstrapServer: boolean, config?: RequestConfig): Observable<ServerSecurityConfigInfo>;
     getLwm2mBootstrapSecurityInfoBySecurityType(isBootstrapServer: boolean, securityMode?: Lwm2mSecurityType, config?: RequestConfig): Observable<ServerSecurityConfig>;

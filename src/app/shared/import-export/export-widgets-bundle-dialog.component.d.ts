@@ -9,6 +9,7 @@ import { WidgetsBundle } from '@shared/models/widgets-bundle.model';
 import * as i0 from "@angular/core";
 export interface ExportWidgetsBundleDialogData {
     widgetsBundle: WidgetsBundle;
+    includeBundleWidgetsInExport: boolean;
 }
 export interface ExportWidgetsBundleDialogResult {
     exportWidgets: boolean;

@@ -10,7 +10,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { TranslateService } from '@ngx-translate/core';
 import { DeviceService } from '@core/http/device.service';
 import { AttributeService } from '@core/http/attribute.service';
-import { ImportExportService } from '@home/components/import-export/import-export.service';
+import { ImportExportService } from '@shared/import-export/import-export.service';
 import * as i0 from "@angular/core";
 export declare class GatewayFormComponent extends PageComponent implements OnInit, OnDestroy {
     protected store: Store<AppState>;

@@ -43,6 +43,7 @@ export declare class TimewindowPanelComponent extends PageComponent implements O
     ngOnInit(): void;
     private checkLimit;
     private updateValidators;
+    onTimewindowTypeChange(): void;
     update(): void;
     cancel(): void;
     minDatapointsLimit(): number;

@@ -101,8 +101,8 @@ export interface EdgeEvent extends BaseData<EventId> {
     uid: string;
     body: string;
 }
-export interface EdgeInstallInstructions {
-    installInstructions: string;
+export interface EdgeInstructions {
+    instructions: string;
 }
 export declare enum EdgeInstructionsMethod {
     ubuntu = 0,
@@ -110,3 +110,4 @@ export declare enum EdgeInstructionsMethod {
     docker = 2
 }
 export declare const edgeEntityGroupTypes: EntityType[];
+export declare const edgeVersionAttributeKey = "edgeVersion";

@@ -32,6 +32,7 @@ export declare class RuleChainAutocompleteComponent implements ControlValueAcces
     ruleChainAutocomplete: MatAutocompleteTrigger;
     filteredRuleChains: Observable<Array<BaseData<EntityId>>>;
     searchText: string;
+    ruleChainURL: string;
     private dirty;
     private propagateChange;
     constructor(store: Store<AppState>, translate: TranslateService, truncate: TruncatePipe, entityService: EntityService, ruleChainService: RuleChainService, fb: UntypedFormBuilder);

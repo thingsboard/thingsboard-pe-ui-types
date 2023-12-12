@@ -4,9 +4,9 @@ import { HttpClient } from '@angular/common/http';
 import { PageLink, TimePageLink } from '@shared/models/page/page-link';
 import { PageData } from '@shared/models/page/page-data';
 import { EntitySubtype } from '@app/shared/models/entity-type.models';
-import { Edge, EdgeEvent, EdgeInfo, EdgeInstallInstructions, EdgeSearchQuery } from '@shared/models/edge.models';
+import { Edge, EdgeEvent, EdgeInfo, EdgeInstructions, EdgeSearchQuery } from '@shared/models/edge.models';
 import { EntityId } from '@shared/models/id/entity-id';
-import { BulkImportRequest, BulkImportResult } from '@home/components/import-export/import-export.models';
+import { BulkImportRequest, BulkImportResult } from '@shared/import-export/import-export.models';
 import * as i0 from "@angular/core";
 export declare class EdgeService {
     private http;
@@ -31,7 +31,8 @@ export declare class EdgeService {
     findMissingToRelatedRuleChains(edgeId: string, config?: RequestConfig): Observable<string>;
     findByName(edgeName: string, config?: RequestConfig): Observable<Edge>;
     bulkImportEdges(entitiesData: BulkImportRequest, config?: RequestConfig): Observable<BulkImportResult>;
-    getEdgeInstallInstructions(edgeId: string, method?: string, config?: RequestConfig): Observable<EdgeInstallInstructions>;
+    getEdgeInstallInstructions(edgeId: string, method?: string, config?: RequestConfig): Observable<EdgeInstructions>;
+    getEdgeUpgradeInstructions(edgeVersion: string, method?: string, config?: RequestConfig): Observable<EdgeInstructions>;
     findAllRelatedEdgesMissingAttributes(integrationId: string, config?: RequestConfig): Observable<string>;
     findEdgeMissingAttributes(integrationIds: Array<string>, edgeId: string, config?: RequestConfig): Observable<string>;
     static ɵfac: i0.ɵɵFactoryDeclaration<EdgeService, never>;

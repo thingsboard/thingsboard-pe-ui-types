@@ -2,9 +2,11 @@ import { AfterViewInit, ChangeDetectorRef, ElementRef, OnDestroy, OnInit, Render
 import { WidgetContext } from '@home/models/widget-component.models';
 import { ColorProcessor, ComponentStyle } from '@shared/models/widget-settings.models';
 import { CountCardLayout, CountWidgetSettings } from '@home/components/widget/lib/count/count-widget.models';
+import { UtilsService } from '@core/services/utils.service';
 import * as i0 from "@angular/core";
 export declare class CountWidgetComponent implements OnInit, AfterViewInit, OnDestroy {
     private renderer;
+    private utils;
     private cd;
     countPanel: ElementRef<HTMLElement>;
     countPanelContent: ElementRef<HTMLElement>;
@@ -34,7 +36,7 @@ export declare class CountWidgetComponent implements OnInit, AfterViewInit, OnDe
     hasCardClickAction: boolean;
     private panelResize$;
     private hasTitle;
-    constructor(renderer: Renderer2, cd: ChangeDetectorRef);
+    constructor(renderer: Renderer2, utils: UtilsService, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     ngOnDestroy(): void;

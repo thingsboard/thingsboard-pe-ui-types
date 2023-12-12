@@ -21,7 +21,7 @@ import { ItemBufferService } from '@core/services/item-buffer.service';
 import { MatDialog } from '@angular/material/dialog';
 import { EditWidgetComponent } from '@home/components/dashboard-page/edit-widget.component';
 import { TranslateService } from '@ngx-translate/core';
-import { ImportExportService } from '@home/components/import-export/import-export.service';
+import { ImportExportService } from '@shared/import-export/import-export.service';
 import { AuthState } from '@app/core/auth/auth.models';
 import { ReportService } from '@core/http/report.service';
 import { EntityGroupInfo } from '@shared/models/entity-group.models';
@@ -32,7 +32,7 @@ import { DashboardWidgetSelectComponent } from '@home/components/dashboard-page/
 import { WhiteLabelingService } from '@core/http/white-labeling.service';
 import { SolutionsService } from '@core/http/solutions.service';
 import { MobileService } from '@core/services/mobile.service';
-import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { DomSanitizer } from '@angular/platform-browser';
 import { IAliasController } from '@core/api/widget-api.models';
 import { MatButton } from '@angular/material/button';
 import { TbPopoverService } from '@shared/components/popover.service';
@@ -171,7 +171,7 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     displayEntitiesSelect(): boolean;
     displayFilters(): boolean;
     showDashboardLogo(): boolean;
-    get dashboardLogo(): SafeUrl;
+    get dashboardLogo(): string;
     showRightLayoutSwitch(): boolean;
     toggleLayouts(): void;
     openRightLayout(): void;
@@ -194,6 +194,7 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     private updateDashboardLayouts;
     private updateStates;
     importWidget($event: Event): void;
+    private editMissingAliases;
     currentDashboardIdChanged(dashboardId: string): void;
     toggleDashboardEditMode(): void;
     saveDashboard(): void;

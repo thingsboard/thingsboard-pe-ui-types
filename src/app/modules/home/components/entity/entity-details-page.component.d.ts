@@ -26,6 +26,7 @@ export declare class EntityDetailsPageComponent extends EntityDetailsPanelCompon
     headerSubtitle: string;
     isReadOnly: boolean;
     entityGroup: EntityGroupStateInfo<BaseData<HasId>>;
+    backNavigationCommands?: any[];
     set entitiesTableConfig(entitiesTableConfig: EntityTableConfig<BaseData<HasId>>);
     get entitiesTableConfig(): EntityTableConfig<BaseData<HasId>>;
     'tb-absolute-fill': any;

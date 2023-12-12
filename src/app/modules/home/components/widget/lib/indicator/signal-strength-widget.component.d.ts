@@ -5,9 +5,14 @@ import { WidgetComponent } from '@home/components/widget/widget.component';
 import { ResizeObserver } from '@juggle/resize-observer';
 import { SignalStrengthLayout, SignalStrengthWidgetSettings } from '@home/components/widget/lib/indicator/signal-strength-widget.models';
 import { TranslateService } from '@ngx-translate/core';
+import { Observable } from 'rxjs';
+import { ImagePipe } from '@shared/pipe/image.pipe';
+import { DomSanitizer } from '@angular/platform-browser';
 import * as i0 from "@angular/core";
 export declare class SignalStrengthWidgetComponent implements OnInit, OnDestroy, AfterViewInit {
     widgetComponent: WidgetComponent;
+    private imagePipe;
+    private sanitizer;
     private translate;
     private renderer;
     private cd;
@@ -31,7 +36,7 @@ export declare class SignalStrengthWidgetComponent implements OnInit, OnDestroy,
     tooltipDateFormat: DateFormatProcessor;
     tooltipDateLabelStyle: ComponentStyle;
     tooltipDateStyle: ComponentStyle;
-    backgroundStyle: ComponentStyle;
+    backgroundStyle$: Observable<ComponentStyle>;
     overlayStyle: ComponentStyle;
     shapeResize$: ResizeObserver;
     hasCardClickAction: boolean;
@@ -47,7 +52,7 @@ export declare class SignalStrengthWidgetComponent implements OnInit, OnDestroy,
     private rssi;
     private noSignal;
     private noData;
-    constructor(widgetComponent: WidgetComponent, translate: TranslateService, renderer: Renderer2, cd: ChangeDetectorRef);
+    constructor(widgetComponent: WidgetComponent, imagePipe: ImagePipe, sanitizer: DomSanitizer, translate: TranslateService, renderer: Renderer2, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     ngOnDestroy(): void;

@@ -23,6 +23,7 @@ export declare class DashboardService {
     getCustomerDashboards(includeCustomers: boolean, customerId: string, pageLink: PageLink, config?: RequestConfig): Observable<PageData<DashboardInfo>>;
     getGroupDashboards(groupId: string, pageLink: PageLink, config?: RequestConfig): Observable<PageData<DashboardInfo>>;
     getDashboard(dashboardId: string, config?: RequestConfig): Observable<Dashboard>;
+    exportDashboard(dashboardId: string, config?: RequestConfig): Observable<Dashboard>;
     getDashboardInfo(dashboardId: string, config?: RequestConfig): Observable<DashboardInfo>;
     saveDashboard(dashboard: Dashboard, entityGroupIds?: string | string[], config?: RequestConfig): Observable<Dashboard>;
     deleteDashboard(dashboardId: string, config?: RequestConfig): Observable<Object>;

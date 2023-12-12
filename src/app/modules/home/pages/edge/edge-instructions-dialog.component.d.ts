@@ -6,16 +6,19 @@ import { Router } from '@angular/router';
 import { MatDialogRef } from '@angular/material/dialog';
 import { EdgeInfo, EdgeInstructionsMethod } from '@shared/models/edge.models';
 import { EdgeService } from '@core/http/edge.service';
+import { AttributeService } from '@core/http/attribute.service';
 import * as i0 from "@angular/core";
 export interface EdgeInstructionsDialogData {
     edge: EdgeInfo;
     afterAdd: boolean;
+    upgradeAvailable: boolean;
 }
 export declare class EdgeInstructionsDialogComponent extends DialogComponent<EdgeInstructionsDialogComponent> implements OnInit, OnDestroy {
     protected store: Store<AppState>;
     protected router: Router;
     private data;
     dialogRef: MatDialogRef<EdgeInstructionsDialogComponent>;
+    private attributeService;
     private edgeService;
     dialogTitle: string;
     showDontShowAgain: boolean;
@@ -24,7 +27,7 @@ export declare class EdgeInstructionsDialogComponent extends DialogComponent<Edg
     tabIndex: number;
     instructionsMethod: typeof EdgeInstructionsMethod;
     contentData: any;
-    constructor(store: Store<AppState>, router: Router, data: EdgeInstructionsDialogData, dialogRef: MatDialogRef<EdgeInstructionsDialogComponent>, edgeService: EdgeService);
+    constructor(store: Store<AppState>, router: Router, data: EdgeInstructionsDialogData, dialogRef: MatDialogRef<EdgeInstructionsDialogComponent>, attributeService: AttributeService, edgeService: EdgeService);
     ngOnInit(): void;
     ngOnDestroy(): void;
     close(): void;

@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { DialogComponent } from '@app/shared/components/dialog.component';
 import { DashboardId } from '@shared/models/id/dashboard-id';
 import { DashboardService } from '@core/http/dashboard.service';
-import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { DomSanitizer } from '@angular/platform-browser';
 import { BehaviorSubject } from 'rxjs';
 import * as i0 from "@angular/core";
 export interface DashboardImageDialogData {
@@ -28,7 +28,7 @@ export declare class DashboardImageDialogComponent extends DialogComponent<Dashb
     takingScreenshotSubject: BehaviorSubject<boolean>;
     takingScreenshot$: import("rxjs").Observable<boolean>;
     dashboardId: DashboardId;
-    safeImageUrl?: SafeUrl;
+    imageUrl?: string;
     dashboardElement: HTMLElement;
     dashboardRectFormGroup: UntypedFormGroup;
     dashboardImageFormGroup: UntypedFormGroup;

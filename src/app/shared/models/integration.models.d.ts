@@ -13,6 +13,7 @@ export declare enum IntegrationType {
     TTI = "TTI",
     CHIRPSTACK = "CHIRPSTACK",
     PARTICLE = "PARTICLE",
+    KPN = "KPN",
     AZURE_EVENT_HUB = "AZURE_EVENT_HUB",
     AZURE_SERVICE_BUS = "AZURE_SERVICE_BUS",
     COAP = "COAP",
@@ -50,7 +51,7 @@ export interface IntegrationTypeInfo {
     hideDownlink?: boolean;
 }
 export declare const integrationTypeInfoMap: Map<IntegrationType, IntegrationTypeInfo>;
-export type IntegrationConfiguration = ApachePulsarIntegration | HttpIntegration | ThingParkIntegration | LoriotIntegration | MqttIntegration | AwsIotIntegration | AwsSqsIntegration | AwsKinesisIntegration | IbmWatsonIotIntegration | TtnIntegration | ChipStackIntegration | ParticleIntegration | AzureEventHubIntegration | AzureIotHubIntegration | OpcUaIntegration | UpdIntegration | TcpIntegration | KafkaIntegration | RabbitMqIntegration | PubSubIntegration | CoapIntegration | TuyaIntegration | CustomIntegration;
+export type IntegrationConfiguration = ApachePulsarIntegration | HttpIntegration | ThingParkIntegration | LoriotIntegration | MqttIntegration | AwsIotIntegration | AwsSqsIntegration | AwsKinesisIntegration | IbmWatsonIotIntegration | TtnIntegration | ChipStackIntegration | ParticleIntegration | KpnIntegration | AzureEventHubIntegration | AzureIotHubIntegration | OpcUaIntegration | UpdIntegration | TcpIntegration | KafkaIntegration | RabbitMqIntegration | PubSubIntegration | CoapIntegration | TuyaIntegration | CustomIntegration;
 export declare function getIntegrationHelpLink(integration: Integration): string;
 export interface IntegrationMetaData {
     metadata?: {
@@ -280,6 +281,19 @@ export interface ParticleIntegration {
             [key: string]: string;
         } | null;
     };
+}
+export interface KpnIntegration {
+    baseUrl: string;
+    httpEndpoint: string;
+    destinationSharedSecret: string;
+    customerId: string;
+    gripTenantId: string;
+    apiId: string;
+    apiKey: string;
+    enableSecurity?: boolean;
+    headersFilter?: {
+        [key: string]: string;
+    } | null;
 }
 export interface CoapIntegration {
     clientConfiguration: {

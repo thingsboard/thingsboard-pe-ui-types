@@ -28,13 +28,14 @@ export declare class WidgetService {
     getTenantWidgetsBundles(config?: RequestConfig): Observable<Array<WidgetsBundle>>;
     getWidgetBundles(pageLink: PageLink, fullSearch?: boolean, tenantOnly?: boolean, config?: RequestConfig): Observable<PageData<WidgetsBundle>>;
     getWidgetsBundle(widgetsBundleId: string, config?: RequestConfig): Observable<WidgetsBundle>;
+    exportWidgetsBundle(widgetsBundleId: string, config?: RequestConfig): Observable<WidgetsBundle>;
     getWidgetsBundlesByIds(widgetsBundleIds: Array<string>, config?: RequestConfig): Observable<Array<WidgetsBundle>>;
     saveWidgetsBundle(widgetsBundle: WidgetsBundle, config?: RequestConfig): Observable<WidgetsBundle>;
     updateWidgetsBundleWidgetTypes(widgetsBundleId: string, widgetTypeIds: Array<string>, config?: RequestConfig): Observable<void>;
     updateWidgetsBundleWidgetFqns(widgetsBundleId: string, widgetTypeFqns: Array<string>, config?: RequestConfig): Observable<void>;
     deleteWidgetsBundle(widgetsBundleId: string, config?: RequestConfig): Observable<Object>;
     getBundleWidgetTypes(widgetsBundleId: string, config?: RequestConfig): Observable<Array<WidgetType>>;
-    getBundleWidgetTypesDetails(widgetsBundleId: string, config?: RequestConfig): Observable<Array<WidgetTypeDetails>>;
+    exportBundleWidgetTypesDetails(widgetsBundleId: string, config?: RequestConfig): Observable<Array<WidgetTypeDetails>>;
     getBundleWidgetTypeFqns(widgetsBundleId: string, config?: RequestConfig): Observable<Array<string>>;
     getBundleWidgetTypeInfosList(widgetsBundleId: string, config?: RequestConfig): Observable<Array<WidgetTypeInfo>>;
     getBundleWidgetTypeInfos(pageLink: PageLink, widgetsBundleId: string, fullSearch?: boolean, deprecatedFilter?: DeprecatedFilter, widgetTypes?: Array<widgetType>, config?: RequestConfig): Observable<PageData<WidgetTypeInfo>>;
@@ -42,6 +43,7 @@ export declare class WidgetService {
     saveWidgetTypeDetails(widgetInfo: WidgetInfo, id: WidgetTypeId, createdTime: number, config?: RequestConfig): Observable<WidgetTypeDetails>;
     saveImportedWidgetTypeDetails(widgetTypeDetails: WidgetTypeDetails, config?: RequestConfig): Observable<WidgetTypeDetails>;
     getWidgetTypeById(widgetTypeId: string, config?: RequestConfig): Observable<WidgetTypeDetails>;
+    exportWidgetType(widgetTypeId: string, config?: RequestConfig): Observable<WidgetTypeDetails>;
     getWidgetTypeInfoById(widgetTypeId: string, config?: RequestConfig): Observable<WidgetTypeInfo>;
     saveWidgetType(widgetTypeDetails: WidgetTypeDetails, config?: RequestConfig): Observable<WidgetTypeDetails>;
     deleteWidgetType(widgetTypeId: string, config?: RequestConfig): Observable<Object>;

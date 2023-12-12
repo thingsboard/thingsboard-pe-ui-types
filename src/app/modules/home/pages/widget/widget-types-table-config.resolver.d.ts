@@ -7,7 +7,7 @@ import { WidgetService } from '@app/core/http/widget.service';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { Authority } from '@shared/models/authority.enum';
-import { ImportExportService } from '@home/components/import-export/import-export.service';
+import { ImportExportService } from '@shared/import-export/import-export.service';
 import { BaseWidgetType, WidgetTypeDetails, WidgetTypeInfo } from '@shared/models/widget.models';
 import { MatDialog } from '@angular/material/dialog';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
@@ -28,9 +28,10 @@ export declare class WidgetTypesTableConfigResolver implements Resolve<EntityTab
     addWidgetType($event: Event): void;
     importWidgetType($event: Event): void;
     openWidgetEditor($event: Event, widgetType: BaseWidgetType): void;
+    private openWidgetTypeDetails;
     exportWidgetType($event: Event, widgetType: BaseWidgetType): void;
     exportWidgetTypes($event: Event, widgetTypes: BaseWidgetType[]): void;
-    onWidgetTypeAction(action: EntityAction<BaseWidgetType>): boolean;
+    onWidgetTypeAction(action: EntityAction<BaseWidgetType>, config: EntityTableConfig<BaseWidgetType>): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetTypesTableConfigResolver, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<WidgetTypesTableConfigResolver>;
 }

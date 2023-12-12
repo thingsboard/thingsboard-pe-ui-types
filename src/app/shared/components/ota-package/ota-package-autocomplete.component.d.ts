@@ -1,4 +1,4 @@
-import { ElementRef, OnInit } from '@angular/core';
+import { ElementRef, OnDestroy, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
@@ -10,7 +10,7 @@ import { TruncatePipe } from '@shared/pipe/truncate.pipe';
 import { OtaPackageInfo, OtaUpdateType } from '@shared/models/ota-package.models';
 import { OtaPackageService } from '@core/http/ota-package.service';
 import * as i0 from "@angular/core";
-export declare class OtaPackageAutocompleteComponent implements ControlValueAccessor, OnInit {
+export declare class OtaPackageAutocompleteComponent implements ControlValueAccessor, OnInit, OnDestroy {
     private store;
     translate: TranslateService;
     truncate: TruncatePipe;
@@ -41,6 +41,8 @@ export declare class OtaPackageAutocompleteComponent implements ControlValueAcce
     filteredPackages: Observable<Array<OtaPackageInfo>>;
     searchText: string;
     packageURL: string;
+    usePackageLink: boolean;
+    private authUser;
     private dirty;
     private cleanFilteredPackages;
     private propagateChange;
@@ -48,7 +50,6 @@ export declare class OtaPackageAutocompleteComponent implements ControlValueAcce
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
-    ngAfterViewInit(): void;
     ngOnDestroy(): void;
     getCurrentEntity(): OtaPackageInfo | null;
     setDisabledState(isDisabled: boolean): void;

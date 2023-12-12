@@ -3,7 +3,7 @@ import { ControlValueAccessor, UntypedFormControl, Validator } from '@angular/fo
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { EntityType } from '@shared/models/entity-type.models';
-import { CsvColumnParam, ImportEntityColumnType } from '@home/components/import-export/import-export.models';
+import { CsvColumnParam, ImportEntityColumnType } from '@shared/import-export/import-export.models';
 import { Observable } from 'rxjs';
 import { CollectionViewer, DataSource } from '@angular/cdk/collections';
 import * as i0 from "@angular/core";

@@ -32,6 +32,7 @@ export declare function base64toString(b64Encoded: string): string;
 export declare function objToBase64URI(obj: any): string;
 export declare function base64toObj(b64Encoded: string): any;
 export declare function checkNumericStringAndConvert(val: string): number | string;
+export declare const blobToBase64: (blob: Blob) => Observable<string>;
 export declare function hashCode(str: string): number;
 export declare function objectHashCode(obj: any): number;
 export declare function deepClone<T>(target: T, ignoreFields?: string[]): T;

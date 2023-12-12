@@ -5,9 +5,14 @@ import { ColorProcessor, ComponentStyle } from '@shared/models/widget-settings.m
 import { WidgetComponent } from '@home/components/widget/widget.component';
 import { ProgressBarLayout, ProgressBarWidgetSettings } from './progress-bar-widget.models';
 import { ResizeObserver } from '@juggle/resize-observer';
+import { Observable } from 'rxjs';
+import { ImagePipe } from '@shared/pipe/image.pipe';
+import { DomSanitizer } from '@angular/platform-browser';
 import * as i0 from "@angular/core";
 export declare class ProgressBarWidgetComponent implements OnInit, OnDestroy, AfterViewInit {
     private date;
+    private imagePipe;
+    private sanitizer;
     private widgetComponent;
     private renderer;
     private cd;
@@ -30,12 +35,12 @@ export declare class ProgressBarWidgetComponent implements OnInit, OnDestroy, Af
     showTicks: boolean;
     ticksStyle: ComponentStyle;
     value: number;
-    backgroundStyle: ComponentStyle;
+    backgroundStyle$: Observable<ComponentStyle>;
     overlayStyle: ComponentStyle;
     progressBarPanelResize$: ResizeObserver;
     private decimals;
     private units;
-    constructor(date: DatePipe, widgetComponent: WidgetComponent, renderer: Renderer2, cd: ChangeDetectorRef);
+    constructor(date: DatePipe, imagePipe: ImagePipe, sanitizer: DomSanitizer, widgetComponent: WidgetComponent, renderer: Renderer2, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     ngOnDestroy(): void;

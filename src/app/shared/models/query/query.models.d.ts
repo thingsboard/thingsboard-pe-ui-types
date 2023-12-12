@@ -9,6 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { AlarmInfo, AlarmSearchStatus, AlarmSeverity } from '../alarm.models';
 import { DatePipe } from '@angular/common';
 import { UserId } from '../id/user-id';
+import { Direction } from '@shared/models/page/sort-order';
 export declare enum EntityKeyType {
     ATTRIBUTE = "ATTRIBUTE",
     CLIENT_ATTRIBUTE = "CLIENT_ATTRIBUTE",
@@ -182,10 +183,6 @@ export interface Filters {
 }
 export interface EntityFilter extends EntityFilters {
     type?: AliasFilterType;
-}
-export declare enum Direction {
-    ASC = "ASC",
-    DESC = "DESC"
 }
 export interface EntityDataSortOrder {
     key: EntityKey;

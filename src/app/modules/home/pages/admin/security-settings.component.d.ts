@@ -26,6 +26,7 @@ export declare class SecuritySettingsComponent extends PageComponent implements 
     buildJwtSecuritySettingsForm(): void;
     save(): void;
     saveJwtSettings(): void;
+    private maxPasswordValidation;
     discardSetting(): void;
     discardJwtSetting(): void;
     markAsTouched(): void;

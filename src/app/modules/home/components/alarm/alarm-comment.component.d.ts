@@ -11,7 +11,7 @@ import { DateAgoPipe } from '@shared/pipe/date-ago.pipe';
 import { AlarmComment } from '@shared/models/alarm.models';
 import { UtilsService } from '@core/services/utils.service';
 import { DatePipe } from '@angular/common';
-import { ImportExportService } from '@home/components/import-export/import-export.service';
+import { ImportExportService } from '@shared/import-export/import-export.service';
 import * as i0 from "@angular/core";
 interface AlarmCommentsDisplayData {
     commentId?: string;

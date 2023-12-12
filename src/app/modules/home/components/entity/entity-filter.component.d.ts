@@ -1,21 +1,19 @@
-import { EventEmitter, OnInit } from '@angular/core';
-import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { EventEmitter, OnDestroy, OnInit } from '@angular/core';
+import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
 import { AliasFilterType, EntityAliasFilter } from '@shared/models/alias.models';
 import { AliasEntityType, EntityType } from '@shared/models/entity-type.models';
-import { TranslateService } from '@ngx-translate/core';
 import { EntityService } from '@core/http/entity.service';
 import { EntitySearchDirection } from '@shared/models/relation.models';
 import * as i0 from "@angular/core";
-export declare class EntityFilterComponent implements ControlValueAccessor, OnInit {
-    private translate;
+export declare class EntityFilterComponent implements ControlValueAccessor, OnInit, OnDestroy {
     private entityService;
     private fb;
     disabled: boolean;
     allowedEntityTypes: Array<EntityType | AliasEntityType>;
     resolveMultiple: boolean;
     resolveMultipleChanged: EventEmitter<boolean>;
-    entityFilterFormGroup: UntypedFormGroup;
-    filterFormGroup: UntypedFormGroup;
+    entityFilterFormGroup: FormGroup;
+    filterFormGroup: FormGroup;
     aliasFilterTypes: Array<AliasFilterType>;
     entityGroupTypes: Array<EntityType>;
     aliasFilterType: typeof AliasFilterType;
@@ -25,8 +23,11 @@ export declare class EntityFilterComponent implements ControlValueAccessor, OnIn
     directionTypeTranslations: Map<EntitySearchDirection, string>;
     directionTypeEnum: typeof EntitySearchDirection;
     private propagateChange;
-    constructor(translate: TranslateService, entityService: EntityService, fb: UntypedFormBuilder);
+    private destroy$;
+    private subscriptions;
+    constructor(entityService: EntityService, fb: FormBuilder);
     ngOnInit(): void;
+    ngOnDestroy(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState?(isDisabled: boolean): void;

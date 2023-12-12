@@ -7,6 +7,7 @@ export interface WsService<T extends WsSubscriber> {
     unsubscribe(subscriber: T): any;
 }
 export declare abstract class CmdWrapper {
+    abstract setAuth(token: string): any;
     abstract hasCommands(): boolean;
     abstract clear(): void;
     abstract preparePublishCommands(maxCommands: number): CmdWrapper;

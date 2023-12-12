@@ -10,7 +10,7 @@ import { HomeDialogsService } from '@home/dialogs/home-dialogs.service';
 import { GroupConfigTableConfigService } from '@home/components/group/group-config-table-config.service';
 import { DashboardInfo } from '@shared/models/dashboard.models';
 import { DashboardService } from '@core/http/dashboard.service';
-import { ImportExportService } from '@home/components/import-export/import-export.service';
+import { ImportExportService } from '@shared/import-export/import-export.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as i0 from "@angular/core";
 export declare class DashboardGroupConfigFactory implements EntityGroupStateConfigFactory<DashboardInfo> {
@@ -30,6 +30,7 @@ export declare class DashboardGroupConfigFactory implements EntityGroupStateConf
     openDashboard($event: Event, dashboard: ShortEntityView | DashboardInfo, config: GroupEntityTableConfig<DashboardInfo>, params: EntityGroupParams): void;
     exportDashboard($event: Event, dashboard: ShortEntityView | DashboardInfo): void;
     importDashboard($event: Event, config: GroupEntityTableConfig<DashboardInfo>): void;
+    private editMissingAliases;
     openPublicDashboardLinkDialog($event: Event, dashboard: ShortEntityView | DashboardInfo, config: GroupEntityTableConfig<DashboardInfo>): void;
     manageOwnerAndGroups($event: Event, dashboard: DashboardInfo, config: GroupEntityTableConfig<DashboardInfo>): void;
     onDashboardAction(action: EntityAction<DashboardInfo>, config: GroupEntityTableConfig<DashboardInfo>, params: EntityGroupParams): boolean;

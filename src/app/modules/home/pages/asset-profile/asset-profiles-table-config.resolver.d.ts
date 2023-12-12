@@ -5,7 +5,7 @@ import { DatePipe } from '@angular/common';
 import { EntityAction } from '@home/models/entity/entity-component.models';
 import { DialogService } from '@core/services/dialog.service';
 import { MatDialog } from '@angular/material/dialog';
-import { ImportExportService } from '@home/components/import-export/import-export.service';
+import { ImportExportService } from '@shared/import-export/import-export.service';
 import { HomeDialogsService } from '@home/dialogs/home-dialogs.service';
 import { AssetProfile } from '@shared/models/asset.models';
 import { AssetProfileService } from '@core/http/asset-profile.service';

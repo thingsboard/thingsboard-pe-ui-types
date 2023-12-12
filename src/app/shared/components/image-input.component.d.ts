@@ -10,12 +10,14 @@ import { UtilsService } from '@core/services/utils.service';
 import { DialogService } from '@core/services/dialog.service';
 import { TranslateService } from '@ngx-translate/core';
 import { FileSizePipe } from '@shared/pipe/file-size.pipe';
+import { ImagePipe } from '@shared/pipe/image.pipe';
 import * as i0 from "@angular/core";
 export declare class ImageInputComponent extends PageComponent implements AfterViewInit, OnDestroy, ControlValueAccessor {
     protected store: Store<AppState>;
     private translate;
     private utils;
     private sanitizer;
+    private imagePipe;
     private dialog;
     private fileSize;
     private cd;
@@ -23,7 +25,6 @@ export declare class ImageInputComponent extends PageComponent implements AfterV
     accept: string;
     emptyImageText: any;
     noImageText: any;
-    inputId: string;
     dropLabel: any;
     maxImageSize: number;
     allowedImageMimeTypes: string[];
@@ -38,13 +39,20 @@ export declare class ImageInputComponent extends PageComponent implements AfterV
     imageCleared: EventEmitter<any>;
     showClearButton: boolean;
     showPreview: boolean;
+    inputId: string;
+    processImageApiLink: boolean;
+    resultAsFile: boolean;
+    showFileName: boolean;
+    fileName: string;
+    fileNameChanged: EventEmitter<string>;
     imageType: string;
     imageUrl: string;
+    file: File;
     safeImageUrl: SafeUrl;
     flow: FlowDirective;
     autoUploadSubscription: Subscription;
     private propagateChange;
-    constructor(store: Store<AppState>, translate: TranslateService, utils: UtilsService, sanitizer: DomSanitizer, dialog: DialogService, fileSize: FileSizePipe, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, translate: TranslateService, utils: UtilsService, sanitizer: DomSanitizer, imagePipe: ImagePipe, dialog: DialogService, fileSize: FileSizePipe, cd: ChangeDetectorRef);
     ngAfterViewInit(): void;
     private extractType;
     ngOnDestroy(): void;
@@ -55,5 +63,5 @@ export declare class ImageInputComponent extends PageComponent implements AfterV
     private updateModel;
     clearImage(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ImageInputComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ImageInputComponent, "tb-image-input", never, { "label": "label"; "accept": "accept"; "emptyImageText": "emptyImageText"; "noImageText": "noImageText"; "inputId": "inputId"; "dropLabel": "dropLabel"; "maxImageSize": "maxImageSize"; "allowedImageMimeTypes": "allowedImageMimeTypes"; "maxSizeByte": "maxSizeByte"; "required": "required"; "disabled": "disabled"; "showClearButton": "showClearButton"; "showPreview": "showPreview"; }, { "imageTypeChanged": "imageTypeChanged"; "imageSizeOverflow": "imageSizeOverflow"; "imageTypeError": "imageTypeError"; "imageCleared": "imageCleared"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ImageInputComponent, "tb-image-input", never, { "label": "label"; "accept": "accept"; "emptyImageText": "emptyImageText"; "noImageText": "noImageText"; "dropLabel": "dropLabel"; "maxImageSize": "maxImageSize"; "allowedImageMimeTypes": "allowedImageMimeTypes"; "maxSizeByte": "maxSizeByte"; "required": "required"; "disabled": "disabled"; "showClearButton": "showClearButton"; "showPreview": "showPreview"; "inputId": "inputId"; "processImageApiLink": "processImageApiLink"; "resultAsFile": "resultAsFile"; "showFileName": "showFileName"; "fileName": "fileName"; }, { "imageTypeChanged": "imageTypeChanged"; "imageSizeOverflow": "imageSizeOverflow"; "imageTypeError": "imageTypeError"; "imageCleared": "imageCleared"; "fileNameChanged": "fileNameChanged"; }, never, never, false, never>;
 }

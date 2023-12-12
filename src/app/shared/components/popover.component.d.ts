@@ -1,6 +1,6 @@
 import { AfterViewInit, ChangeDetectorRef, ComponentFactory, ComponentFactoryResolver, ComponentRef, ElementRef, EventEmitter, Injector, OnChanges, OnDestroy, OnInit, Renderer2, SimpleChanges, TemplateRef, ViewContainerRef } from '@angular/core';
 import { Direction, Directionality } from '@angular/cdk/bidi';
-import { CdkConnectedOverlay, CdkOverlayOrigin, ConnectedOverlayPositionChange, ConnectionPositionPair } from '@angular/cdk/overlay';
+import { CdkConnectedOverlay, CdkOverlayOrigin, ConnectedOverlayPositionChange, ConnectionPositionPair, NoopScrollStrategy } from '@angular/cdk/overlay';
 import { Subject } from 'rxjs';
 import { PopoverPlacement } from '@shared/components/popover.models';
 import { AnimationBuilder } from '@angular/animations';
@@ -80,6 +80,7 @@ export declare class TbPopoverComponent<T = any> implements OnDestroy, OnInit {
     tbHideOnClickOutside: boolean;
     tbShowCloseButton: boolean;
     tbAnimationState: string;
+    tbHideStart: Subject<void>;
     tbVisibleChange: Subject<boolean>;
     tbAnimationDone: Subject<void>;
     tbComponentChange: Subject<ComponentRef<any>>;
@@ -103,6 +104,7 @@ export declare class TbPopoverComponent<T = any> implements OnDestroy, OnInit {
         [klass: string]: any;
     };
     positions: ConnectionPositionPair[];
+    scrollStrategy: NoopScrollStrategy;
     private parentScrollSubscription;
     private intersectionObserver;
     constructor(cdr: ChangeDetectorRef, renderer: Renderer2, animationBuilder: AnimationBuilder, directionality: Directionality);

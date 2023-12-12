@@ -1,6 +1,9 @@
 import { DataKey, Datasource, DatasourceData } from '@shared/models/widget.models';
 import { Injector } from '@angular/core';
 import { AlarmFilterConfig } from '@shared/models/query/query.models';
+import { Observable } from 'rxjs';
+import { ImagePipe } from '@shared/pipe/image.pipe';
+import { DomSanitizer } from '@angular/platform-browser';
 export type ComponentStyle = {
     [klass: string]: any;
 };
@@ -35,6 +38,9 @@ export interface ColorRange {
     to?: number;
     color: string;
 }
+export declare const colorRangeIncludes: (range: ColorRange, toCheck: ColorRange) => boolean;
+export declare const filterIncludingColorRanges: (ranges: Array<ColorRange>) => Array<ColorRange>;
+export declare const sortedColorRange: (ranges: Array<ColorRange>) => Array<ColorRange>;
 export interface ColorSettings {
     type: ColorType;
     color: string;
@@ -98,7 +104,6 @@ export declare class LastUpdateAgoDateFormatProcessor extends DateFormatProcesso
 }
 export declare enum BackgroundType {
     image = "image",
-    imageUrl = "imageUrl",
     color = "color"
 }
 export declare const backgroundTypeTranslations: Map<BackgroundType, string>;
@@ -109,7 +114,6 @@ export interface OverlaySettings {
 }
 export interface BackgroundSettings {
     type: BackgroundType;
-    imageBase64?: string;
     imageUrl?: string;
     color?: string;
     overlay: OverlaySettings;
@@ -122,7 +126,8 @@ export declare const cssTextFromInlineStyle: (styleObj: {
 }) => string;
 export declare const isFontSet: (font: Font) => boolean;
 export declare const isFontPartiallySet: (font: Font) => boolean;
-export declare const backgroundStyle: (background: BackgroundSettings) => ComponentStyle;
+export declare const validateAndUpdateBackgroundSettings: (background: BackgroundSettings) => BackgroundSettings;
+export declare const backgroundStyle: (background: BackgroundSettings, imagePipe: ImagePipe, sanitizer: DomSanitizer, preview?: boolean) => Observable<ComponentStyle>;
 export declare const overlayStyle: (overlay: OverlaySettings) => ComponentStyle;
 export declare const getDataKey: (datasources?: Datasource[], index?: number) => DataKey;
 export declare const updateDataKeys: (datasources: Datasource[], dataKeys: DataKey[]) => void;

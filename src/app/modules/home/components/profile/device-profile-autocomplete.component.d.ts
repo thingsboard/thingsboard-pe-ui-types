@@ -43,6 +43,8 @@ export declare class DeviceProfileAutocompleteComponent implements ControlValueA
     filteredDeviceProfiles: Observable<Array<DeviceProfileInfo>>;
     searchText: string;
     deviceProfileURL: string;
+    useDeviceProfileLink: boolean;
+    private authUser;
     private dirty;
     private ignoreClosedPanel;
     private allDeviceProfile;

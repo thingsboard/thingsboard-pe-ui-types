@@ -5,7 +5,7 @@ import { PageLink } from '@shared/models/page/page-link';
 import { PageData } from '@shared/models/page/page-data';
 import { EntitySubtype } from '@app/shared/models/entity-type.models';
 import { Asset, AssetInfo, AssetSearchQuery } from '@app/shared/models/asset.models';
-import { BulkImportRequest, BulkImportResult } from '@home/components/import-export/import-export.models';
+import { BulkImportRequest, BulkImportResult } from '@shared/import-export/import-export.models';
 import * as i0 from "@angular/core";
 export declare class AssetService {
     private http;

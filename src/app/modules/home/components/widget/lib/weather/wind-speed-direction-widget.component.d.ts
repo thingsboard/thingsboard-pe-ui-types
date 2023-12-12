@@ -4,9 +4,14 @@ import { WindSpeedDirectionLayout, WindSpeedDirectionWidgetSettings } from '@hom
 import { ColorProcessor, ComponentStyle } from '@shared/models/widget-settings.models';
 import { WidgetComponent } from '@home/components/widget/widget.component';
 import { ResizeObserver } from '@juggle/resize-observer';
+import { Observable } from 'rxjs';
+import { ImagePipe } from '@shared/pipe/image.pipe';
+import { DomSanitizer } from '@angular/platform-browser';
 import * as i0 from "@angular/core";
 export declare class WindSpeedDirectionWidgetComponent implements OnInit, OnDestroy, AfterViewInit {
     private widgetComponent;
+    private imagePipe;
+    private sanitizer;
     private renderer;
     private cd;
     windSpeedDirectionShape: ElementRef<HTMLElement>;
@@ -15,7 +20,7 @@ export declare class WindSpeedDirectionWidgetComponent implements OnInit, OnDest
     widgetTitlePanel: TemplateRef<any>;
     layout: WindSpeedDirectionLayout;
     centerValueColor: ColorProcessor;
-    backgroundStyle: ComponentStyle;
+    backgroundStyle$: Observable<ComponentStyle>;
     overlayStyle: ComponentStyle;
     shapeResize$: ResizeObserver;
     hasCardClickAction: boolean;
@@ -29,7 +34,7 @@ export declare class WindSpeedDirectionWidgetComponent implements OnInit, OnDest
     private centerValueDataKey;
     private windDirection;
     private centerValueText;
-    constructor(widgetComponent: WidgetComponent, renderer: Renderer2, cd: ChangeDetectorRef);
+    constructor(widgetComponent: WidgetComponent, imagePipe: ImagePipe, sanitizer: DomSanitizer, renderer: Renderer2, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     ngOnDestroy(): void;

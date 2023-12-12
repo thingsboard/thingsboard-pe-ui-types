@@ -18,6 +18,7 @@ export interface DefaultTenantProfileConfiguration {
     maxSchedulerEvents: number;
     maxResourcesInBytes: number;
     maxOtaPackagesInBytes: number;
+    maxResourceSize: number;
     transportTenantMsgRateLimit?: string;
     transportTenantTelemetryMsgRateLimit?: string;
     transportTenantTelemetryDataPointsRateLimit?: string;
