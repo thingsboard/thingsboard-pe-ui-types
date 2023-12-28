@@ -286,7 +286,6 @@ export interface KpnIntegration {
     baseUrl: string;
     httpEndpoint: string;
     destinationSharedSecret: string;
-    customerId: string;
     gripTenantId: string;
     apiId: string;
     apiKey: string;

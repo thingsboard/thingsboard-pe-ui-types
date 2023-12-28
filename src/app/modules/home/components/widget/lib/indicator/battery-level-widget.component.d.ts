@@ -34,6 +34,7 @@ export declare class BatteryLevelWidgetComponent implements OnInit, OnDestroy, A
     valueStyle: ComponentStyle;
     valueColor: ColorProcessor;
     value: number;
+    batteryFillValue: number;
     batterySections: boolean[];
     dividedBorderRadius: string;
     dividedGap: string;
@@ -51,6 +52,7 @@ export declare class BatteryLevelWidgetComponent implements OnInit, OnDestroy, A
     ngOnDestroy(): void;
     onInit(): void;
     onDataUpdated(): void;
+    parseBatteryFillValue(value: number): number;
     trackBySection(index: number): number;
     cardClick($event: Event): void;
     private onResize;

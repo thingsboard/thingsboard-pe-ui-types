@@ -1,12 +1,13 @@
 import { PageComponent } from '@shared/components/page.component';
-import { EventEmitter, OnInit } from '@angular/core';
+import { EventEmitter, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { TbPopoverComponent } from '@shared/components/popover.component';
 import { UtilsService } from '@core/services/utils.service';
+import { UntypedFormControl } from '@angular/forms';
 import * as i0 from "@angular/core";
 type ColorMode = 'color' | 'primary' | 'accent';
-export declare class ColorPickerPanelComponent extends PageComponent implements OnInit {
+export declare class ColorPickerPanelComponent extends PageComponent implements OnInit, OnDestroy {
     protected store: Store<AppState>;
     private utils;
     color: string;
@@ -15,20 +16,22 @@ export declare class ColorPickerPanelComponent extends PageComponent implements 
     popover: TbPopoverComponent<ColorPickerPanelComponent>;
     colorSelected: EventEmitter<string>;
     colorMode: ColorMode;
-    plainColor: string;
+    plainColorControl: UntypedFormControl;
     primaryColor: string;
     accentColor: string;
     dirty: boolean;
     valid: boolean;
+    private destroy$;
     constructor(store: Store<AppState>, utils: UtilsService);
     ngOnInit(): void;
+    ngOnDestroy(): void;
     onPrimaryColorChange(color: string): void;
     onAccentColorChange(color: string): void;
-    onPlainColorChange(color: string): void;
+    onPlainColorChange(): void;
     selectedIndexChange(index: number): void;
     private updateValidity;
     selectColor(): void;
-    getColor(): string;
+    getColor(): any;
     clearColor(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ColorPickerPanelComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<ColorPickerPanelComponent, "tb-color-picker-panel", never, { "color": "color"; "colorClearButton": "colorClearButton"; "useThemePalette": "useThemePalette"; "popover": "popover"; }, { "colorSelected": "colorSelected"; }, never, never, false, never>;

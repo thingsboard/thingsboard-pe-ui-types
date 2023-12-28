@@ -9,12 +9,12 @@ import { GroupEntityComponent } from '@home/components/group/group-entity.compon
 import { GroupEntityTableConfig } from '@home/models/group/group-entities-table-config.models';
 import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
-import { AttributeService } from '@core/http/attribute.service';
+import { EdgeService } from "@core/http/edge.service";
 import * as i0 from "@angular/core";
 export declare class EdgeComponent extends GroupEntityComponent<EdgeInfo> {
     protected store: Store<AppState>;
     protected translate: TranslateService;
-    private attributeService;
+    private edgeService;
     protected entityValue: EdgeInfo;
     protected entitiesTableConfigValue: EntityTableConfig<EdgeInfo> | GroupEntityTableConfig<EdgeInfo>;
     fb: UntypedFormBuilder;
@@ -22,7 +22,7 @@ export declare class EdgeComponent extends GroupEntityComponent<EdgeInfo> {
     protected userPermissionsService: UserPermissionsService;
     entityType: typeof EntityType;
     upgradeAvailable: boolean;
-    constructor(store: Store<AppState>, translate: TranslateService, attributeService: AttributeService, entityValue: EdgeInfo, entitiesTableConfigValue: EntityTableConfig<EdgeInfo> | GroupEntityTableConfig<EdgeInfo>, fb: UntypedFormBuilder, cd: ChangeDetectorRef, userPermissionsService: UserPermissionsService);
+    constructor(store: Store<AppState>, translate: TranslateService, edgeService: EdgeService, entityValue: EdgeInfo, entitiesTableConfigValue: EntityTableConfig<EdgeInfo> | GroupEntityTableConfig<EdgeInfo>, fb: UntypedFormBuilder, cd: ChangeDetectorRef, userPermissionsService: UserPermissionsService);
     ngOnInit(): void;
     hideDelete(): boolean;
     hideManageUsers(): boolean;
@@ -38,8 +38,6 @@ export declare class EdgeComponent extends GroupEntityComponent<EdgeInfo> {
     onEdgeInfoCopied(type: string): void;
     isTenantAdmin(): boolean;
     private generateRoutingKeyAndSecret;
-    checkEdgeVersion(): void;
-    private versionUpgradeSupported;
     static ɵfac: i0.ɵɵFactoryDeclaration<EdgeComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<EdgeComponent, "tb-edge", never, {}, {}, never, never, false, never>;
 }

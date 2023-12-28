@@ -389,12 +389,6 @@ export interface PublishTelemetryCommand {
     lwm2m?: string;
     snmp?: string;
 }
-export interface PublishLaunchCommand {
-    mqtt: {
-        linux: string;
-        windows: string;
-    };
-}
 export declare const dayOfWeekTranslations: string[];
 export declare const timeOfDayToUTCTimestamp: (date: Date | number) => number;
 export declare const utcTimestampToTimeOfDay: (time?: number) => Date;

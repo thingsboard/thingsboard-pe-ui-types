@@ -35,6 +35,7 @@ export declare class EdgeService {
     getEdgeUpgradeInstructions(edgeVersion: string, method?: string, config?: RequestConfig): Observable<EdgeInstructions>;
     findAllRelatedEdgesMissingAttributes(integrationId: string, config?: RequestConfig): Observable<string>;
     findEdgeMissingAttributes(integrationIds: Array<string>, edgeId: string, config?: RequestConfig): Observable<string>;
+    isEdgeUpgradeAvailable(edgeId: string, config?: RequestConfig): Observable<boolean>;
     static ɵfac: i0.ɵɵFactoryDeclaration<EdgeService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<EdgeService>;
 }

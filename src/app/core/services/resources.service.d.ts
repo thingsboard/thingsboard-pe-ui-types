@@ -24,6 +24,7 @@ export declare class ResourcesService {
     constructor(document: any, store: Store<AppState>, compiler: Compiler, http: HttpClient, injector: Injector);
     loadJsonResource<T>(url: string, postProcess?: (data: T) => T): Observable<T>;
     loadResource(url: string): Observable<any>;
+    downloadResource(downloadUrl: string): Observable<any>;
     loadFactories(resourceId: string | TbResourceId, modulesMap: IModulesMap): Observable<ModulesWithFactories>;
     loadModules(resourceId: string | TbResourceId, modulesMap: IModulesMap): Observable<Type<any>[]>;
     private extractNgModules;

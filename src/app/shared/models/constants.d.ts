@@ -171,6 +171,7 @@ export declare const HelpLinks: {
         integrationApachePulsar: string;
         integrationPubsub: string;
         integrationCoAP: string;
+        integrationKpn: string;
         integrationCustom: string;
         whiteLabeling: string;
         entityGroups: string;
@@ -187,6 +188,7 @@ export declare const HelpLinks: {
         recipientNotifications: string;
         ruleNotifications: string;
         jwtSecuritySettings: string;
+        gatewayInstall: string;
     };
 };
 export interface ValueTypeData {

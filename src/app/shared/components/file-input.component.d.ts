@@ -7,11 +7,15 @@ import { Subscription } from 'rxjs';
 import { FlowDirective } from '@flowjs/ngx-flow';
 import { TranslateService } from '@ngx-translate/core';
 import { UtilsService } from '@core/services/utils.service';
+import { DialogService } from '@core/services/dialog.service';
+import { FileSizePipe } from '@shared/pipe/file-size.pipe';
 import * as i0 from "@angular/core";
 export declare class FileInputComponent extends PageComponent implements AfterViewInit, OnDestroy, ControlValueAccessor, OnChanges {
     protected store: Store<AppState>;
     private utils;
-    translate: TranslateService;
+    private translate;
+    private dialog;
+    private fileSize;
     label: string;
     hint: string;
     accept: string;
@@ -19,13 +23,10 @@ export declare class FileInputComponent extends PageComponent implements AfterVi
     inputId: string;
     allowedExtensions: string;
     dropLabel: string;
+    maxSizeByte: number;
     contentConvertFunction: (content: string) => any;
-    private requiredValue;
-    get required(): boolean;
-    set required(value: boolean);
-    private requiredAsErrorValue;
-    get requiredAsError(): boolean;
-    set requiredAsError(value: boolean);
+    required: boolean;
+    requiredAsError: boolean;
     disabled: boolean;
     existingFileName: string;
     readAsBinary: boolean;
@@ -41,9 +42,10 @@ export declare class FileInputComponent extends PageComponent implements AfterVi
     flowInput: ElementRef;
     autoUploadSubscription: Subscription;
     private propagateChange;
-    constructor(store: Store<AppState>, utils: UtilsService, translate: TranslateService);
+    constructor(store: Store<AppState>, utils: UtilsService, translate: TranslateService, dialog: DialogService, fileSize: FileSizePipe);
     ngAfterViewInit(): void;
     private readerAsFile;
+    private checkMaxSize;
     private filterFile;
     ngOnDestroy(): void;
     registerOnChange(fn: any): void;
@@ -55,5 +57,5 @@ export declare class FileInputComponent extends PageComponent implements AfterVi
     clearFile(): void;
     private updateMultipleFileMode;
     static ɵfac: i0.ɵɵFactoryDeclaration<FileInputComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FileInputComponent, "tb-file-input", never, { "label": "label"; "hint": "hint"; "accept": "accept"; "noFileText": "noFileText"; "inputId": "inputId"; "allowedExtensions": "allowedExtensions"; "dropLabel": "dropLabel"; "contentConvertFunction": "contentConvertFunction"; "required": "required"; "requiredAsError": "requiredAsError"; "disabled": "disabled"; "existingFileName": "existingFileName"; "readAsBinary": "readAsBinary"; "workFromFileObj": "workFromFileObj"; "multipleFile": "multipleFile"; }, { "fileNameChanged": "fileNameChanged"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FileInputComponent, "tb-file-input", never, { "label": "label"; "hint": "hint"; "accept": "accept"; "noFileText": "noFileText"; "inputId": "inputId"; "allowedExtensions": "allowedExtensions"; "dropLabel": "dropLabel"; "maxSizeByte": "maxSizeByte"; "contentConvertFunction": "contentConvertFunction"; "required": "required"; "requiredAsError": "requiredAsError"; "disabled": "disabled"; "existingFileName": "existingFileName"; "readAsBinary": "readAsBinary"; "workFromFileObj": "workFromFileObj"; "multipleFile": "multipleFile"; }, { "fileNameChanged": "fileNameChanged"; }, never, never, false, never>;
 }

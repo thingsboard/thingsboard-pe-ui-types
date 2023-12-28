@@ -17,6 +17,7 @@ export declare class ResourcesLibraryComponent extends EntityComponent<Resource>
     readonly resourceType: typeof ResourceType;
     readonly resourceTypes: ResourceType[];
     readonly resourceTypesTranslationMap: Map<ResourceType, string>;
+    maxResourceSize: number;
     private destroy$;
     constructor(store: Store<AppState>, translate: TranslateService, entityValue: Resource, entitiesTableConfigValue: EntityTableConfig<Resource>, fb: FormBuilder, cd: ChangeDetectorRef);
     ngOnInit(): void;

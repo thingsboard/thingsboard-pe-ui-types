@@ -35,6 +35,7 @@ export declare class ImageDialogComponent extends DialogComponent<ImageDialogCom
     saveInfo(): void;
     downloadImage($event: any): void;
     exportImage($event: any): void;
+    embedImage($event: Event): void;
     updateImage($event: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ImageDialogComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<ImageDialogComponent, "tb-image-dialog", never, {}, {}, never, never, false, never>;

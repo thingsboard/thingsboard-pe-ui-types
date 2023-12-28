@@ -35,6 +35,7 @@ export declare class ImageGalleryComponent extends PageComponent implements OnIn
     private elementRef;
     private cd;
     private fb;
+    private display;
     pageMode: boolean;
     popoverMode: boolean;
     mode: 'list' | 'grid';
@@ -95,6 +96,7 @@ export declare class ImageGalleryComponent extends PageComponent implements OnIn
     rowClick($event: any, image: ImageResourceInfo): void;
     uploadImage(): void;
     editImage($event: Event, image: ImageResourceInfo, itemIndex?: number): void;
+    embedImage($event: Event, image: ImageResourceInfo, itemIndex?: number): void;
     protected updatedRouterParamsAndData(queryParams: object, queryParamsHandling?: QueryParamsHandling): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ImageGalleryComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<ImageGalleryComponent, "tb-image-gallery", never, { "pageMode": "pageMode"; "popoverMode": "popoverMode"; "mode": "mode"; "selectionMode": "selectionMode"; }, { "imageSelected": "imageSelected"; }, never, never, false, never>;

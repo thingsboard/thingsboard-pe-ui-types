@@ -5,14 +5,17 @@ import { Observable } from 'rxjs';
 import { PageData } from '@shared/models/page/page-data';
 import { ImageResourceInfo, ImageResourceType, ImageExportData } from '@shared/models/resource.models';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { ResourcesService } from '@core/services/resources.service';
 import * as i0 from "@angular/core";
 export declare class ImageService {
     private http;
     private sanitizer;
-    constructor(http: HttpClient, sanitizer: DomSanitizer);
+    private resourcesService;
+    constructor(http: HttpClient, sanitizer: DomSanitizer, resourcesService: ResourcesService);
     uploadImage(file: File, title: string, config?: RequestConfig): Observable<ImageResourceInfo>;
     updateImage(type: ImageResourceType, key: string, file: File, config?: RequestConfig): Observable<ImageResourceInfo>;
     updateImageInfo(imageInfo: ImageResourceInfo, config?: RequestConfig): Observable<ImageResourceInfo>;
+    updateImagePublicStatus(imageInfo: ImageResourceInfo, isPublic: boolean, config?: RequestConfig): Observable<ImageResourceInfo>;
     getImages(pageLink: PageLink, includeSystemImages?: boolean, config?: RequestConfig): Observable<PageData<ImageResourceInfo>>;
     getImageInfo(type: ImageResourceType, key: string, config?: RequestConfig): Observable<ImageResourceInfo>;
     getImageDataUrl(imageUrl: string, preview?: boolean, asString?: boolean, emptyUrl?: string): Observable<SafeUrl | string>;

@@ -8,12 +8,14 @@ import { BaseData } from '@shared/models/base-data';
 import { EntityId } from '@shared/models/id/entity-id';
 import { TranslateService } from '@ngx-translate/core';
 import { DialogService } from '@core/services/dialog.service';
+import { ResourcesService } from '@core/services/resources.service';
 import * as i0 from "@angular/core";
 export declare class OtaPackageService {
     private http;
     private translate;
     private dialogService;
-    constructor(http: HttpClient, translate: TranslateService, dialogService: DialogService);
+    private resourcesService;
+    constructor(http: HttpClient, translate: TranslateService, dialogService: DialogService, resourcesService: ResourcesService);
     getOtaPackages(pageLink: PageLink, config?: RequestConfig): Observable<PageData<OtaPackageInfo>>;
     getOtaPackagesInfoByDeviceProfileId(pageLink: PageLink, deviceProfileId: string, type: OtaUpdateType, config?: RequestConfig): Observable<PageData<OtaPackageInfo>>;
     getOtaPackage(otaPackageId: string, config?: RequestConfig): Observable<OtaPackage>;

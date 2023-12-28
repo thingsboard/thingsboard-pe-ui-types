@@ -1,17 +1,10 @@
-import { ChangeDetectorRef, OnInit } from '@angular/core';
 import { DeviceService } from '@core/http/device.service';
-import { PublishLaunchCommand } from '@shared/models/device.models';
 import * as i0 from "@angular/core";
-export declare class DeviceGatewayCommandComponent implements OnInit {
-    private cd;
+export declare class DeviceGatewayCommandComponent {
     private deviceService;
-    token: string;
     deviceId: string;
-    commands: PublishLaunchCommand;
-    helpLink: string;
-    tabIndex: number;
-    constructor(cd: ChangeDetectorRef, deviceService: DeviceService);
-    ngOnInit(): void;
+    constructor(deviceService: DeviceService);
+    download($event: Event): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceGatewayCommandComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceGatewayCommandComponent, "tb-gateway-command", never, { "token": "token"; "deviceId": "deviceId"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceGatewayCommandComponent, "tb-gateway-command", never, { "deviceId": "deviceId"; }, {}, never, never, false, never>;
 }

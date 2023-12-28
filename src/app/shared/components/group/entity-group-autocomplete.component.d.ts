@@ -1,8 +1,6 @@
-import { ElementRef, EventEmitter, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
-import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { ElementRef, EventEmitter, OnDestroy, OnInit } from '@angular/core';
+import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { Store } from '@ngrx/store';
-import { AppState } from '@app/core/core.state';
 import { TranslateService } from '@ngx-translate/core';
 import { EntityType } from '@shared/models/entity-type.models';
 import { EntityId } from '@shared/models/id/entity-id';
@@ -11,14 +9,15 @@ import { PageLink } from '@shared/models/page/page-link';
 import { PageData } from '@shared/models/page/page-data';
 import { EntityInfoData } from '@shared/models/entity.models';
 import * as i0 from "@angular/core";
-export declare class EntityGroupAutocompleteComponent implements ControlValueAccessor, OnInit, OnChanges, OnDestroy {
-    private store;
+export declare class EntityGroupAutocompleteComponent implements ControlValueAccessor, OnInit, OnDestroy {
     translate: TranslateService;
     private entityGroupService;
     private fb;
-    selectEntityGroupFormGroup: UntypedFormGroup;
+    selectEntityGroupFormGroup: FormGroup;
     modelValue: string | null;
-    groupType: EntityType;
+    private groupTypeValue;
+    get groupType(): EntityType;
+    set groupType(value: EntityType);
     private ownerIdValue;
     get ownerId(): EntityId;
     set ownerId(value: EntityId | null);
@@ -39,11 +38,10 @@ export declare class EntityGroupAutocompleteComponent implements ControlValueAcc
     private pristine;
     private cleanFilteredEntityGroups;
     private propagateChange;
-    constructor(store: Store<AppState>, translate: TranslateService, entityGroupService: EntityGroupService, fb: UntypedFormBuilder);
+    constructor(translate: TranslateService, entityGroupService: EntityGroupService, fb: FormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
-    ngOnChanges(changes: SimpleChanges): void;
     ngOnDestroy(): void;
     getCurrentEntityGroup(): EntityInfoData | null;
     setDisabledState(isDisabled: boolean): void;

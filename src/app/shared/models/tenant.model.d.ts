@@ -1,7 +1,7 @@
 import { ContactBased } from '@shared/models/contact-based.model';
 import { TenantId } from './id/tenant-id';
 import { TenantProfileId } from '@shared/models/id/tenant-profile-id';
-import { BaseData } from '@shared/models/base-data';
+import { BaseData, ExportableEntity } from '@shared/models/base-data';
 import { QueueInfo } from '@shared/models/queue.models';
 export declare enum TenantProfileType {
     DEFAULT = "DEFAULT"
@@ -70,7 +70,7 @@ export interface TenantProfileData {
     configuration: TenantProfileConfiguration;
     queueConfiguration?: Array<QueueInfo>;
 }
-export interface TenantProfile extends BaseData<TenantProfileId> {
+export interface TenantProfile extends BaseData<TenantProfileId>, ExportableEntity<TenantProfileId> {
     name: string;
     description?: string;
     default?: boolean;

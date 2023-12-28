@@ -17,6 +17,8 @@ export interface TbResourceInfo<D> extends Omit<BaseData<TbResourceId>, 'name' |
     title?: string;
     resourceType: ResourceType;
     fileName: string;
+    public: boolean;
+    publicResourceKey?: string;
     descriptor?: D;
 }
 export type ResourceInfo = TbResourceInfo<any>;
@@ -34,12 +36,15 @@ export interface ImageDescriptor {
 }
 export interface ImageResourceInfo extends TbResourceInfo<ImageDescriptor> {
     link?: string;
+    publicLink?: string;
 }
 export interface ImageExportData {
     mediaType: string;
     fileName: string;
     title: string;
     resourceKey: string;
+    public: boolean;
+    publicResourceKey: string;
     data: string;
 }
 export type ImageResourceType = 'tenant' | 'system';
@@ -59,6 +64,7 @@ export declare const imageResourceType: (imageInfo: ImageResourceInfo) => ImageR
 export declare const TB_IMAGE_PREFIX = "tb-image;";
 export declare const IMAGES_URL_REGEXP: RegExp;
 export declare const IMAGES_URL_PREFIX = "/api/images";
+export declare const PUBLIC_IMAGES_URL_PREFIX = "/api/images/public";
 export declare const IMAGE_BASE64_URL_PREFIX = "data:image/";
 export declare const removeTbImagePrefix: (url: string) => string;
 export declare const removeTbImagePrefixFromUrls: (urls: string[]) => string[];

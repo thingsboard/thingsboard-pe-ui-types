@@ -23,6 +23,7 @@ export declare class UploadImageDialogComponent extends DialogComponent<UploadIm
     uploadImageFormGroup: UntypedFormGroup;
     uploadImage: boolean;
     submitted: boolean;
+    maxResourceSize: number;
     constructor(store: Store<AppState>, router: Router, imageService: ImageService, data: UploadImageDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<UploadImageDialogComponent, ImageResourceInfo>, fb: UntypedFormBuilder);
     ngOnInit(): void;
     imageFileNameChanged(fileName: string): void;

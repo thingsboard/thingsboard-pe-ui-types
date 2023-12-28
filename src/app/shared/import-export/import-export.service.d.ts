@@ -117,8 +117,8 @@ export declare class ImportExportService {
     private prepareAliasesInfo;
     private prepareEntityAlias;
     private prepareDashboardExport;
-    private prepareDeviceProfileExport;
     private prepareExport;
+    private prepareImport;
     private openImportDialog;
     private exportToPc;
     private exportJson;
