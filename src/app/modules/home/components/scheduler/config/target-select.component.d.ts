@@ -26,6 +26,10 @@ export declare class TargetSelectComponent implements ControlValueAccessor, OnDe
     targetFormGroup: UntypedFormGroup;
     entityType: EntityType;
     currentUser: import("../../../../../shared/public-api").AuthUser;
+    headerOptions: {
+        name: any;
+        value: string;
+    }[];
     private modelValue;
     private destroy$;
     private loadData;

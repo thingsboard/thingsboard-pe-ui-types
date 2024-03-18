@@ -1,0 +1,30 @@
+import { OnInit } from '@angular/core';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { BarSeriesSettings } from '@home/components/widget/lib/chart/time-series-chart.models';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { DataKeyConfigComponent } from '@home/components/widget/config/data-key-config.component';
+import * as i0 from "@angular/core";
+export declare class TimeSeriesChartBarSettingsComponent implements OnInit, ControlValueAccessor {
+    protected store: Store<AppState>;
+    private dataKeyConfigComponent;
+    private fb;
+    seriesLabelPositions: import("@home/components/widget/lib/chart/time-series-chart.models").SeriesLabelPosition[];
+    seriesLabelPositionTranslations: Map<import("@home/components/widget/lib/chart/time-series-chart.models").SeriesLabelPosition, string>;
+    labelPreviewFn: any;
+    disabled: boolean;
+    private modelValue;
+    private propagateChange;
+    barSettingsFormGroup: UntypedFormGroup;
+    constructor(store: Store<AppState>, dataKeyConfigComponent: DataKeyConfigComponent, fb: UntypedFormBuilder);
+    ngOnInit(): void;
+    registerOnChange(fn: any): void;
+    registerOnTouched(_fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    writeValue(value: BarSeriesSettings): void;
+    private updateValidators;
+    private updateModel;
+    private _labelPreviewFn;
+    static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesChartBarSettingsComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartBarSettingsComponent, "tb-time-series-chart-bar-settings", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+}

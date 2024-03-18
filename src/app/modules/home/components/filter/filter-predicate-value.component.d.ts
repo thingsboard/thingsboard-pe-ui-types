@@ -1,6 +1,6 @@
 import { OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
-import { DynamicValueSourceType, EntityKeyValueType, FilterPredicateValue } from '@shared/models/query/query.models';
+import { DynamicValueSourceType, EntityKeyValueType, FilterPredicateValue, StringOperation } from '@shared/models/query/query.models';
 import * as i0 from "@angular/core";
 export declare class FilterPredicateValueComponent implements ControlValueAccessor, Validator, OnInit {
     private fb;
@@ -10,6 +10,7 @@ export declare class FilterPredicateValueComponent implements ControlValueAccess
     private onlyUserDynamicSourceValue;
     set onlyUserDynamicSource(dynamicMode: boolean);
     get onlyUserDynamicSource(): boolean;
+    set operation(operation: StringOperation);
     valueType: EntityKeyValueType;
     valueTypeEnum: typeof EntityKeyValueType;
     allow: boolean;
@@ -18,6 +19,7 @@ export declare class FilterPredicateValueComponent implements ControlValueAccess
     filterPredicateValueFormGroup: UntypedFormGroup;
     dynamicMode: boolean;
     inheritMode: boolean;
+    hintText: string;
     private propagateChange;
     private propagateChangePending;
     constructor(fb: UntypedFormBuilder);
@@ -31,5 +33,5 @@ export declare class FilterPredicateValueComponent implements ControlValueAccess
     private updateShowInheritMode;
     private updateValidationDynamicMode;
     static ɵfac: i0.ɵɵFactoryDeclaration<FilterPredicateValueComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FilterPredicateValueComponent, "tb-filter-predicate-value", never, { "disabled": "disabled"; "allowUserDynamicSource": "allowUserDynamicSource"; "onlyUserDynamicSource": "onlyUserDynamicSource"; "valueType": "valueType"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FilterPredicateValueComponent, "tb-filter-predicate-value", never, { "disabled": "disabled"; "allowUserDynamicSource": "allowUserDynamicSource"; "onlyUserDynamicSource": "onlyUserDynamicSource"; "operation": "operation"; "valueType": "valueType"; }, {}, never, never, false, never>;
 }

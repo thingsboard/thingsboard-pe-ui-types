@@ -123,6 +123,8 @@ export declare class SchedulerEventsComponent extends PageComponent implements O
     private eventInfo;
     unassignFromEdge($event: Event, schedulerEvent: SchedulerEventWithCustomerInfo): void;
     unassignFromEdgeSchedulerEvents($event: Event): void;
+    isEnabled(schedulerEventWithCustomerInfo: SchedulerEventWithCustomerInfo): boolean;
+    enableSchedulerEvent($event: any, schedulerEvent: SchedulerEventWithCustomerInfo): void;
     private updatedRouterQueryParams;
     static ɵfac: i0.ɵɵFactoryDeclaration<SchedulerEventsComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<SchedulerEventsComponent, "tb-scheduler-events", never, { "widgetMode": "widgetMode"; "ctx": "ctx"; "edgeId": "edgeId"; }, {}, never, never, false, never>;

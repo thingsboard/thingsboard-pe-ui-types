@@ -7,8 +7,9 @@ import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { UntypedFormGroup } from '@angular/forms';
-import { DataKey, WidgetConfigMode } from '@shared/models/widget.models';
+import { DataKey, WidgetConfigMode, widgetType } from '@shared/models/widget.models';
 import { WidgetConfigComponent } from '@home/components/widget/widget-config.component';
+import { IAliasController } from '@core/api/widget-api.models';
 import * as i0 from "@angular/core";
 export type WidgetConfigCallbacks = DatasourceCallbacks & WidgetActionCallbacks;
 export interface IBasicWidgetConfigComponent {
@@ -25,6 +26,10 @@ export declare abstract class BasicWidgetConfigComponent extends PageComponent i
     widgetConfigValue: WidgetConfigComponentData;
     set widgetConfig(value: WidgetConfigComponentData);
     get widgetConfig(): WidgetConfigComponentData;
+    get aliasController(): IAliasController;
+    get callbacks(): WidgetConfigCallbacks;
+    get widgetType(): widgetType;
+    get widgetEditMode(): boolean;
     widgetConfigChangedEmitter: EventEmitter<WidgetConfigComponentData>;
     widgetConfigChanged: Observable<WidgetConfigComponentData>;
     protected constructor(store: Store<AppState>, widgetConfigComponent: WidgetConfigComponent);
@@ -40,7 +45,7 @@ export declare abstract class BasicWidgetConfigComponent extends PageComponent i
     protected prepareOutputConfig(config: any): WidgetConfigComponentData;
     validateConfig(): boolean;
     protected setupDefaultDatasource(configData: WidgetConfigComponentData, keys?: DataKey[], latestKeys?: DataKey[]): void;
-    protected constructDataKey(configData: WidgetConfigComponentData, key: DataKey): DataKey;
+    protected constructDataKey(configData: WidgetConfigComponentData, key: DataKey, isLatestKey: boolean): DataKey;
     protected abstract configForm(): UntypedFormGroup;
     protected abstract onConfigSet(configData: WidgetConfigComponentData): any;
     static ɵfac: i0.ɵɵFactoryDeclaration<BasicWidgetConfigComponent, never>;

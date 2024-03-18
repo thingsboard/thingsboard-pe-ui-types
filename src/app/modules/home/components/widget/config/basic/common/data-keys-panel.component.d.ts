@@ -6,7 +6,8 @@ import { DataKey, DatasourceType, JsonSettingsSchema, widgetType } from '@shared
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
 import { UtilsService } from '@core/services/utils.service';
-import { DataKeysCallbacks } from '@home/components/widget/config/data-keys.component.models';
+import { DataKeysCallbacks, DataKeySettingsFunction } from '@home/components/widget/config/data-keys.component.models';
+import { TimeSeriesChartYAxisId } from '@home/components/widget/lib/chart/time-series-chart.models';
 import * as i0 from "@angular/core";
 export declare class DataKeysPanelComponent implements ControlValueAccessor, OnInit, OnChanges, Validator {
     private fb;
@@ -30,6 +31,9 @@ export declare class DataKeysPanelComponent implements ControlValueAccessor, OnI
     hideDataKeyUnits: boolean;
     hideDataKeyDecimals: boolean;
     hideSourceSelection: boolean;
+    timeSeriesChart: boolean;
+    showTimeSeriesType: boolean;
+    yAxisIds: TimeSeriesChartYAxisId[];
     dataKeyType: DataKeyType;
     keysListFormGroup: UntypedFormGroup;
     errorText: string;
@@ -37,6 +41,7 @@ export declare class DataKeysPanelComponent implements ControlValueAccessor, OnI
     get callbacks(): DataKeysCallbacks;
     get hasAdditionalLatestDataKeys(): boolean;
     get datakeySettingsSchema(): JsonSettingsSchema;
+    get dataKeySettingsFunction(): DataKeySettingsFunction;
     get dragEnabled(): boolean;
     get noKeys(): boolean;
     private propagateChange;
@@ -60,5 +65,5 @@ export declare class DataKeysPanelComponent implements ControlValueAccessor, OnI
     addKey(): void;
     private prepareKeysFormArray;
     static ɵfac: i0.ɵɵFactoryDeclaration<DataKeysPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeysPanelComponent, "tb-data-keys-panel", never, { "disabled": "disabled"; "panelTitle": "panelTitle"; "addKeyTitle": "addKeyTitle"; "keySettingsTitle": "keySettingsTitle"; "removeKeyTitle": "removeKeyTitle"; "noKeysText": "noKeysText"; "requiredKeysText": "requiredKeysText"; "datasourceType": "datasourceType"; "entityAliasId": "entityAliasId"; "deviceId": "deviceId"; "hideDataKeyColor": "hideDataKeyColor"; "hideUnits": "hideUnits"; "hideDecimals": "hideDecimals"; "hideDataKeyUnits": "hideDataKeyUnits"; "hideDataKeyDecimals": "hideDataKeyDecimals"; "hideSourceSelection": "hideSourceSelection"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeysPanelComponent, "tb-data-keys-panel", never, { "disabled": "disabled"; "panelTitle": "panelTitle"; "addKeyTitle": "addKeyTitle"; "keySettingsTitle": "keySettingsTitle"; "removeKeyTitle": "removeKeyTitle"; "noKeysText": "noKeysText"; "requiredKeysText": "requiredKeysText"; "datasourceType": "datasourceType"; "entityAliasId": "entityAliasId"; "deviceId": "deviceId"; "hideDataKeyColor": "hideDataKeyColor"; "hideUnits": "hideUnits"; "hideDecimals": "hideDecimals"; "hideDataKeyUnits": "hideDataKeyUnits"; "hideDataKeyDecimals": "hideDataKeyDecimals"; "hideSourceSelection": "hideSourceSelection"; "timeSeriesChart": "timeSeriesChart"; "showTimeSeriesType": "showTimeSeriesType"; "yAxisIds": "yAxisIds"; }, {}, never, never, false, never>;
 }

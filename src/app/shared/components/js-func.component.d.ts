@@ -6,7 +6,7 @@ import { UtilsService } from '@core/services/utils.service';
 import { TranslateService } from '@ngx-translate/core';
 import { RafService } from '@core/services/raf.service';
 import { TbEditorCompleter } from '@shared/models/ace/completion.models';
-import { ScriptLanguage } from "@shared/models/rule-node.models";
+import { ScriptLanguage } from '@shared/models/rule-node.models';
 import * as i0 from "@angular/core";
 export declare class JsFuncComponent implements OnInit, OnDestroy, ControlValueAccessor, Validator {
     elementRef: ElementRef;
@@ -34,13 +34,14 @@ export declare class JsFuncComponent implements OnInit, OnDestroy, ControlValueA
     disableUndefinedCheck: boolean;
     helpId: string;
     scriptLanguage: ScriptLanguage;
+    hideBrackets: boolean;
     private noValidateValue;
     get noValidate(): boolean;
     set noValidate(value: boolean);
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
-    functionArgsString: string;
+    functionLabel: string;
     fullscreen: boolean;
     modelValue: string;
     functionValid: boolean;
@@ -48,6 +49,7 @@ export declare class JsFuncComponent implements OnInit, OnDestroy, ControlValueA
     errorShowed: boolean;
     errorMarkers: number[];
     errorAnnotationId: number;
+    private functionArgsString;
     private propagateChange;
     hasErrors: boolean;
     constructor(elementRef: ElementRef, utils: UtilsService, translate: TranslateService, store: Store<AppState>, raf: RafService, cd: ChangeDetectorRef);
@@ -69,5 +71,5 @@ export declare class JsFuncComponent implements OnInit, OnDestroy, ControlValueA
     writeValue(value: string): void;
     updateView(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<JsFuncComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<JsFuncComponent, "tb-js-func", never, { "functionTitle": "functionTitle"; "functionName": "functionName"; "functionArgs": "functionArgs"; "validationArgs": "validationArgs"; "resultType": "resultType"; "disabled": "disabled"; "fillHeight": "fillHeight"; "minHeight": "minHeight"; "editorCompleter": "editorCompleter"; "globalVariables": "globalVariables"; "disableUndefinedCheck": "disableUndefinedCheck"; "helpId": "helpId"; "scriptLanguage": "scriptLanguage"; "noValidate": "noValidate"; "required": "required"; }, {}, never, ["[toolbarSuffixButton]"], false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<JsFuncComponent, "tb-js-func", never, { "functionTitle": "functionTitle"; "functionName": "functionName"; "functionArgs": "functionArgs"; "validationArgs": "validationArgs"; "resultType": "resultType"; "disabled": "disabled"; "fillHeight": "fillHeight"; "minHeight": "minHeight"; "editorCompleter": "editorCompleter"; "globalVariables": "globalVariables"; "disableUndefinedCheck": "disableUndefinedCheck"; "helpId": "helpId"; "scriptLanguage": "scriptLanguage"; "hideBrackets": "hideBrackets"; "noValidate": "noValidate"; "required": "required"; }, {}, never, ["[toolbarSuffixButton]"], false, never>;
 }

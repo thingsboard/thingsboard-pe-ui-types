@@ -7,24 +7,24 @@ import { FormGroupDirective, NgForm, UntypedFormBuilder, UntypedFormControl, Unt
 import { DialogComponent } from '@shared/components/dialog.component';
 import { Router } from '@angular/router';
 import { ImageService } from '@core/http/image.service';
-import { ImageResourceInfo } from '@shared/models/resource.models';
+import { ImageResource, ImageResourceInfo } from '@shared/models/resource.models';
 import * as i0 from "@angular/core";
 export interface UploadImageDialogData {
     image?: ImageResourceInfo;
 }
-export declare class UploadImageDialogComponent extends DialogComponent<UploadImageDialogComponent, ImageResourceInfo> implements OnInit, ErrorStateMatcher {
+export declare class UploadImageDialogComponent extends DialogComponent<UploadImageDialogComponent, ImageResource> implements OnInit, ErrorStateMatcher {
     protected store: Store<AppState>;
     protected router: Router;
     private imageService;
     data: UploadImageDialogData;
     private errorStateMatcher;
-    dialogRef: MatDialogRef<UploadImageDialogComponent, ImageResourceInfo>;
+    dialogRef: MatDialogRef<UploadImageDialogComponent, ImageResource>;
     fb: UntypedFormBuilder;
     uploadImageFormGroup: UntypedFormGroup;
     uploadImage: boolean;
     submitted: boolean;
     maxResourceSize: number;
-    constructor(store: Store<AppState>, router: Router, imageService: ImageService, data: UploadImageDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<UploadImageDialogComponent, ImageResourceInfo>, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, router: Router, imageService: ImageService, data: UploadImageDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<UploadImageDialogComponent, ImageResource>, fb: UntypedFormBuilder);
     ngOnInit(): void;
     imageFileNameChanged(fileName: string): void;
     isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;

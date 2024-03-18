@@ -1,0 +1,33 @@
+import { ChangeDetectorRef, OnInit, Renderer2, ViewContainerRef } from '@angular/core';
+import { ControlValueAccessor } from '@angular/forms';
+import { MatButton } from '@angular/material/button';
+import { TbPopoverService } from '@shared/components/popover.service';
+import { TranslateService } from '@ngx-translate/core';
+import { WidgetAction, widgetType } from '@shared/models/widget.models';
+import { WidgetActionCallbacks } from '@home/components/widget/action/manage-widget-actions.component.models';
+import * as i0 from "@angular/core";
+export declare class WidgetActionSettingsComponent implements OnInit, ControlValueAccessor {
+    private translate;
+    private popoverService;
+    private renderer;
+    private viewContainerRef;
+    private cd;
+    overflow: string;
+    panelTitle: string;
+    widgetType: widgetType;
+    callbacks: WidgetActionCallbacks;
+    disabled: boolean;
+    modelValue: WidgetAction;
+    displayValue: string;
+    private propagateChange;
+    constructor(translate: TranslateService, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, cd: ChangeDetectorRef);
+    ngOnInit(): void;
+    registerOnChange(fn: any): void;
+    registerOnTouched(_fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    writeValue(value: WidgetAction): void;
+    openActionSettingsPopup($event: Event, matButton: MatButton): void;
+    private updateDisplayValue;
+    static ɵfac: i0.ɵɵFactoryDeclaration<WidgetActionSettingsComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetActionSettingsComponent, "tb-widget-action-settings", never, { "panelTitle": "panelTitle"; "widgetType": "widgetType"; "callbacks": "callbacks"; "disabled": "disabled"; }, {}, never, never, false, never>;
+}

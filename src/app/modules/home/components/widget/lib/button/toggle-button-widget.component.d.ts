@@ -1,0 +1,35 @@
+import { AfterViewInit, ChangeDetectorRef, OnDestroy, OnInit } from '@angular/core';
+import { BasicActionWidgetComponent } from '@home/components/widget/lib/action/action-widget.models';
+import { ImagePipe } from '@shared/pipe/image.pipe';
+import { DomSanitizer } from '@angular/platform-browser';
+import { WidgetButtonAppearance } from '@shared/components/button/widget-button.models';
+import { ToggleButtonWidgetSettings } from '@home/components/widget/lib/button/toggle-button-widget.models';
+import { Observable } from 'rxjs';
+import { ComponentStyle } from '@shared/models/widget-settings.models';
+import * as i0 from "@angular/core";
+export declare class ToggleButtonWidgetComponent extends BasicActionWidgetComponent implements OnInit, AfterViewInit, OnDestroy {
+    protected imagePipe: ImagePipe;
+    protected sanitizer: DomSanitizer;
+    protected cd: ChangeDetectorRef;
+    settings: ToggleButtonWidgetSettings;
+    backgroundStyle$: Observable<ComponentStyle>;
+    overlayStyle: ComponentStyle;
+    value: boolean;
+    disabled: boolean;
+    autoScale: boolean;
+    horizontalFill: boolean;
+    verticalFill: boolean;
+    appearance: WidgetButtonAppearance;
+    private checkValueSetter;
+    private uncheckValueSetter;
+    constructor(imagePipe: ImagePipe, sanitizer: DomSanitizer, cd: ChangeDetectorRef);
+    ngOnInit(): void;
+    ngAfterViewInit(): void;
+    ngOnDestroy(): void;
+    onInit(): void;
+    private onValue;
+    private onDisabled;
+    onClick(_$event: MouseEvent): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<ToggleButtonWidgetComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ToggleButtonWidgetComponent, "tb-toggle-button-widget", never, {}, {}, never, never, false, never>;
+}

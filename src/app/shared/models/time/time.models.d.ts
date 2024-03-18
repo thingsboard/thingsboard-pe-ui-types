@@ -1,10 +1,13 @@
 import { TimeService } from '@core/services/time.service';
 import * as moment_ from 'moment';
+import { IntervalType } from '@shared/models/telemetry/telemetry.models';
 export declare const SECOND = 1000;
 export declare const MINUTE: number;
 export declare const HOUR: number;
 export declare const DAY: number;
 export declare const WEEK: number;
+export declare const AVG_MONTH: number;
+export declare const AVG_QUARTER: number;
 export declare const YEAR: number;
 export type ComparisonDuration = moment_.unitOfTime.DurationConstructor | 'previousInterval' | 'customInterval';
 export declare enum TimewindowType {
@@ -21,8 +24,14 @@ export declare enum HistoryWindowType {
     INTERVAL = 2,
     FOR_ALL_TIME = 3
 }
+export type Interval = number | IntervalType;
+export declare class IntervalMath {
+    static max(...values: Interval[]): Interval;
+    static min(...values: Interval[]): Interval;
+    static numberValue(value: Interval): number;
+}
 export interface IntervalWindow {
-    interval?: number;
+    interval?: Interval;
     timewindowMs?: number;
     quickInterval?: QuickTimeInterval;
 }
@@ -47,7 +56,7 @@ export declare enum AggregationType {
 }
 export declare const aggregationTranslations: Map<AggregationType, string>;
 export interface Aggregation {
-    interval?: number;
+    interval?: Interval;
     type: AggregationType;
     limit: number;
 }
@@ -67,7 +76,7 @@ export interface Timewindow {
     timezone?: string;
 }
 export interface SubscriptionAggregation extends Aggregation {
-    interval?: number;
+    interval?: Interval;
     timeWindow?: number;
     stateData?: boolean;
 }
@@ -84,8 +93,9 @@ export interface SubscriptionTimewindow {
 export interface WidgetTimewindow {
     minTime?: number;
     maxTime?: number;
-    interval?: number;
+    interval?: Interval;
     timezone?: string;
+    tsOffset?: number;
     stDiff?: number;
 }
 export declare enum QuickTimeInterval {
@@ -115,11 +125,12 @@ export declare enum QuickTimeInterval {
     CURRENT_YEAR_SO_FAR = "CURRENT_YEAR_SO_FAR"
 }
 export declare const QuickTimeIntervalTranslationMap: Map<QuickTimeInterval, string>;
+export declare const IntervalTypeValuesMap: Map<IntervalType, number>;
 export declare const forAllTimeInterval: () => Timewindow;
 export declare const historyInterval: (timewindowMs: number) => Timewindow;
 export declare const defaultTimewindow: (timeService: TimeService) => Timewindow;
 export declare const initModelFromDefaultTimewindow: (value: Timewindow, quickIntervalOnly: boolean, historyOnly: boolean, timeService: TimeService) => Timewindow;
-export declare const toHistoryTimewindow: (timewindow: Timewindow, startTimeMs: number, endTimeMs: number, interval: number, timeService: TimeService) => Timewindow;
+export declare const toHistoryTimewindow: (timewindow: Timewindow, startTimeMs: number, endTimeMs: number, interval: Interval, timeService: TimeService) => Timewindow;
 export declare const timewindowTypeChanged: (newTimewindow: Timewindow, oldTimewindow: Timewindow) => boolean;
 export declare const getTimezone: (tz: string) => moment_.Moment;
 export declare const calculateTsOffset: (timezone?: string) => number;
@@ -139,7 +150,7 @@ export interface TimeInterval {
     translateParams: {
         [key: string]: any;
     };
-    value: number;
+    value: Interval;
 }
 export declare const defaultTimeIntervals: TimeInterval[];
 export declare enum TimeUnit {
@@ -166,4 +177,10 @@ export declare const getTimezoneInfo: (timezoneId: string, defaultTimezoneId?: s
 export declare const getDefaultTimezoneInfo: () => TimezoneInfo;
 export declare const getUserZone: () => moment_.MomentZone;
 export declare const getTime: (ts: number, tz?: string) => moment_.Moment;
+export declare const calculateIntervalsCount: (startTs: number, timewindow: number, interval: Interval, tz?: string) => number;
+export declare const startIntervalDate: (current: moment_.Moment, interval: IntervalType) => moment_.Moment;
+export declare const endIntervalDate: (current: moment_.Moment, interval: IntervalType) => moment_.Moment;
+export declare const calculateAggIntervalWithSubscriptionTimeWindow: (subsTw: SubscriptionTimewindow, endTs: number, timestamp: number) => [number, number];
+export declare const calculateAggIntervalWithWidgetTimeWindow: (widgetTimeWindow: WidgetTimewindow, timestamp: number) => [number, number];
+export declare const calculateInterval: (startTime: number, endTime: number, interval: Interval, tsOffset: number, timezone: string, timestamp: number) => [number, number];
 export declare const getCurrentTimeForComparison: (timeForComparison: moment_.unitOfTime.DurationConstructor, tz?: string) => moment_.Moment;

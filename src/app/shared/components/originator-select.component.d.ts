@@ -27,6 +27,7 @@ export declare class OriginatorSelectComponent implements ControlValueAccessor, 
     disabled: boolean;
     currentGroupType: EventEmitter<EntityType>;
     currentUser: import("../public-api").AuthUser;
+    private destroy$;
     private loadData;
     private propagateChange;
     constructor(store: Store<AppState>, translate: TranslateService, fb: UntypedFormBuilder);

@@ -11,6 +11,7 @@ import { UtilsService } from '@core/services/utils.service';
 import { TranslateService } from '@ngx-translate/core';
 import { DialogService } from '@core/services/dialog.service';
 import { Filter, Filters } from '@shared/models/query/query.models';
+import { DashboardUtilsService } from '@core/services/dashboard-utils.service';
 import * as i0 from "@angular/core";
 export interface FiltersDialogData {
     filters: Filters;
@@ -29,6 +30,7 @@ export declare class FiltersDialogComponent extends DialogComponent<FiltersDialo
     dialogRef: MatDialogRef<FiltersDialogComponent, Filters>;
     private fb;
     private utils;
+    private dashboardUtils;
     private translate;
     private dialogs;
     private dialog;
@@ -40,7 +42,7 @@ export declare class FiltersDialogComponent extends DialogComponent<FiltersDialo
     filterNames: Set<string>;
     filtersFormGroup: UntypedFormGroup;
     submitted: boolean;
-    constructor(store: Store<AppState>, router: Router, data: FiltersDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<FiltersDialogComponent, Filters>, fb: UntypedFormBuilder, utils: UtilsService, translate: TranslateService, dialogs: DialogService, dialog: MatDialog);
+    constructor(store: Store<AppState>, router: Router, data: FiltersDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<FiltersDialogComponent, Filters>, fb: UntypedFormBuilder, utils: UtilsService, dashboardUtils: DashboardUtilsService, translate: TranslateService, dialogs: DialogService, dialog: MatDialog);
     private createFilterFormControl;
     filtersFormArray(): UntypedFormArray;
     ngOnInit(): void;
@@ -53,6 +55,6 @@ export declare class FiltersDialogComponent extends DialogComponent<FiltersDialo
     private openFilterDialog;
     cancel(): void;
     save(): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<FiltersDialogComponent, [null, null, null, { skipSelf: true; }, null, null, null, null, null, null]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<FiltersDialogComponent, [null, null, null, { skipSelf: true; }, null, null, null, null, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<FiltersDialogComponent, "tb-filters-dialog", never, {}, {}, never, never, false, never>;
 }

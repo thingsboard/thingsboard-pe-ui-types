@@ -5,6 +5,7 @@ import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { AlarmSearchStatus, AlarmSeverity } from '@shared/models/alarm.models';
 import { TranslateService } from '@ngx-translate/core';
 import { EntityType } from '@shared/models/entity-type.models';
+import { UtilsService } from '@core/services/utils.service';
 import * as i0 from "@angular/core";
 export declare const ALARM_FILTER_CONFIG_DATA: InjectionToken<any>;
 export interface AlarmFilterConfigData {
@@ -21,6 +22,7 @@ export declare class AlarmFilterConfigComponent implements OnInit, OnDestroy, Co
     private overlay;
     private nativeElement;
     private viewContainerRef;
+    private utils;
     alarmFilterPanel: TemplateRef<any>;
     disabled: boolean;
     buttonMode: boolean;
@@ -41,7 +43,7 @@ export declare class AlarmFilterConfigComponent implements OnInit, OnDestroy, Co
     private alarmFilterConfig;
     private resizeWindows;
     private propagateChange;
-    constructor(data: AlarmFilterConfigData | undefined, overlayRef: OverlayRef, fb: UntypedFormBuilder, translate: TranslateService, overlay: Overlay, nativeElement: ElementRef, viewContainerRef: ViewContainerRef);
+    constructor(data: AlarmFilterConfigData | undefined, overlayRef: OverlayRef, fb: UntypedFormBuilder, translate: TranslateService, overlay: Overlay, nativeElement: ElementRef, viewContainerRef: ViewContainerRef, utils: UtilsService);
     ngOnInit(): void;
     ngOnDestroy(): void;
     registerOnChange(fn: any): void;
@@ -56,6 +58,7 @@ export declare class AlarmFilterConfigComponent implements OnInit, OnDestroy, Co
     private alarmConfigUpdated;
     private alarmFilterConfigFromFormValue;
     private updateButtonDisplayValue;
-    static ɵfac: i0.ɵɵFactoryDeclaration<AlarmFilterConfigComponent, [{ optional: true; }, { optional: true; }, null, null, null, null, null]>;
+    private customTranslate;
+    static ɵfac: i0.ɵɵFactoryDeclaration<AlarmFilterConfigComponent, [{ optional: true; }, { optional: true; }, null, null, null, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<AlarmFilterConfigComponent, "tb-alarm-filter-config", never, { "disabled": "disabled"; "buttonMode": "buttonMode"; "userMode": "userMode"; "propagatedFilter": "propagatedFilter"; "initialAlarmFilterConfig": "initialAlarmFilterConfig"; }, {}, never, never, false, never>;
 }

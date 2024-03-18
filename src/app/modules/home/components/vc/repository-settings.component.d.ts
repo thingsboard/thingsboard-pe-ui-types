@@ -1,10 +1,10 @@
 import { ChangeDetectorRef, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
-import { UntypedFormBuilder, UntypedFormGroup, FormGroupDirective } from '@angular/forms';
+import { FormGroupDirective, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { AdminService } from '@core/http/admin.service';
-import { RepositorySettings, RepositoryAuthMethod } from '@shared/models/settings.models';
+import { RepositoryAuthMethod, RepositorySettings } from '@shared/models/settings.models';
 import { TranslateService } from '@ngx-translate/core';
 import { DialogService } from '@core/services/dialog.service';
 import { TbPopoverComponent } from '@shared/components/popover.component';
@@ -20,6 +20,7 @@ export declare class RepositorySettingsComponent extends PageComponent implement
     fb: UntypedFormBuilder;
     detailsMode: boolean;
     popoverComponent: TbPopoverComponent;
+    hideLoadingBar: boolean;
     repositorySettingsForm: UntypedFormGroup;
     settings: RepositorySettings;
     repositoryAuthMethod: typeof RepositoryAuthMethod;
@@ -40,5 +41,5 @@ export declare class RepositorySettingsComponent extends PageComponent implement
     changePrivateKeyPasswordChanged(): void;
     updateValidators(emitEvent?: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<RepositorySettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RepositorySettingsComponent, "tb-repository-settings", never, { "detailsMode": "detailsMode"; "popoverComponent": "popoverComponent"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RepositorySettingsComponent, "tb-repository-settings", never, { "detailsMode": "detailsMode"; "popoverComponent": "popoverComponent"; "hideLoadingBar": "hideLoadingBar"; }, {}, never, never, false, never>;
 }

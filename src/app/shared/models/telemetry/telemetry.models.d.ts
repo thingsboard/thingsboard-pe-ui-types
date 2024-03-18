@@ -35,6 +35,7 @@ export declare enum TimeseriesDeleteStrategy {
 export type TelemetryType = LatestTelemetry | AttributeScope;
 export declare const toTelemetryType: (val: string) => TelemetryType;
 export declare const telemetryTypeTranslations: Map<TelemetryType, string>;
+export declare const telemetryTypeTranslationsShort: Map<TelemetryType, string>;
 export declare const isClientSideTelemetryType: Map<TelemetryType, boolean>;
 export declare const timeseriesDeleteStrategyTranslations: Map<TimeseriesDeleteStrategy, string>;
 export interface AttributeData {
@@ -90,6 +91,13 @@ export declare abstract class SubscriptionCmd implements TelemetryPluginCmd {
 export declare class AttributesSubscriptionCmd extends SubscriptionCmd {
     type: WsCmdType;
 }
+export declare enum IntervalType {
+    MILLISECONDS = "MILLISECONDS",
+    WEEK = "WEEK",
+    WEEK_ISO = "WEEK_ISO",
+    MONTH = "MONTH",
+    QUARTER = "QUARTER"
+}
 export declare class TimeseriesSubscriptionCmd extends SubscriptionCmd {
     startTs: number;
     timeWindow: number;
@@ -114,7 +122,9 @@ export interface EntityHistoryCmd {
     keys: Array<string>;
     startTs: number;
     endTs: number;
+    intervalType: IntervalType;
     interval: number;
+    timeZoneId: string;
     limit: number;
     agg: AggregationType;
     fetchLatestPreviousPoint?: boolean;
@@ -126,7 +136,9 @@ export interface TimeSeriesCmd {
     keys: Array<string>;
     startTs: number;
     timeWindow: number;
+    intervalType: IntervalType;
     interval: number;
+    timeZoneId: string;
     limit: number;
     agg: AggregationType;
     fetchLatestPreviousPoint?: boolean;
@@ -232,11 +244,12 @@ export declare class TelemetryPluginCmdsWrapper implements CmdWrapper {
     clear(): void;
     preparePublishCommands(maxCommands: number): TelemetryPluginCmdsWrapper;
 }
+export type SubscriptionDataEntry = [number, any, number?];
 export interface SubscriptionData {
-    [key: string]: [number, any, number?][];
+    [key: string]: SubscriptionDataEntry[];
 }
 export interface IndexedSubscriptionData {
-    [id: number]: [number, any, number?][];
+    [id: number]: SubscriptionDataEntry[];
 }
 export interface SubscriptionDataHolder {
     data: SubscriptionData;

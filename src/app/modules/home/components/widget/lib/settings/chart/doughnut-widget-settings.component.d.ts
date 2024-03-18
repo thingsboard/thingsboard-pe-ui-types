@@ -13,8 +13,8 @@ export declare class DoughnutWidgetSettingsComponent extends WidgetSettingsCompo
     doughnutLayoutTranslationMap: Map<DoughnutLayout, string>;
     horizontal: boolean;
     doughnutLayoutImageMap: Map<DoughnutLayout, string>;
-    doughnutLegendPositions: import("@home/components/widget/lib/chart/doughnut-widget.models").DoughnutLegendPosition[];
-    doughnutLegendPositionTranslationMap: Map<import("@home/components/widget/lib/chart/doughnut-widget.models").DoughnutLegendPosition, string>;
+    legendPositions: import("@shared/models/widget.models").LegendPosition[];
+    legendPositionTranslationMap: Map<import("@shared/models/widget.models").LegendPosition, string>;
     doughnutTooltipValueTypes: DoughnutTooltipValueType[];
     doughnutTooltipValueTypeTranslationMap: Map<DoughnutTooltipValueType, string>;
     doughnutWidgetSettingsForm: UntypedFormGroup;

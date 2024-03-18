@@ -4,6 +4,7 @@ import { RequestConfig } from './http-utils';
 import { Observable } from 'rxjs';
 import { PageData } from '@shared/models/page/page-data';
 import { AssetProfile, AssetProfileInfo } from '@shared/models/asset.models';
+import { EntityInfoData } from '@shared/models/entity.models';
 import * as i0 from "@angular/core";
 export declare class AssetProfileService {
     private http;
@@ -18,6 +19,7 @@ export declare class AssetProfileService {
     getAssetProfileInfo(assetProfileId: string, config?: RequestConfig): Observable<AssetProfileInfo>;
     getAssetProfileInfos(pageLink: PageLink, config?: RequestConfig): Observable<PageData<AssetProfileInfo>>;
     getAssetProfilesByIds(assetProfileIds: Array<string>, config?: RequestConfig): Observable<Array<AssetProfileInfo>>;
+    getAssetProfileNames(activeOnly?: boolean, config?: RequestConfig): Observable<Array<EntityInfoData>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<AssetProfileService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<AssetProfileService>;
 }

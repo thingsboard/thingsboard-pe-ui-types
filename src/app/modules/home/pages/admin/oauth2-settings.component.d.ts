@@ -38,6 +38,7 @@ export declare class OAuth2SettingsComponent extends PageComponent implements On
     platformTypes: PlatformType[];
     platformTypeTranslations: Map<PlatformType, string>;
     templateProvider: string[];
+    showMainLoadingBar: boolean;
     private loginProcessingUrl;
     private static validateScope;
     ngOnInit(): void;

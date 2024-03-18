@@ -111,3 +111,8 @@ export declare enum EdgeInstructionsMethod {
 }
 export declare const edgeEntityGroupTypes: EntityType[];
 export declare const edgeVersionAttributeKey = "edgeVersion";
+export declare enum EdgeConnectionEvent {
+    CONNECTED = "CONNECTED",
+    DISCONNECTED = "DISCONNECTED"
+}
+export declare const EdgeConnectionEventTranslationMap: Map<EdgeConnectionEvent, string>;

@@ -19,6 +19,7 @@ import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { AuthUser } from '@shared/models/user.model';
 import { PageLink } from '@shared/models/page/page-link';
 import { EntityId } from '@shared/models/id/entity-id';
+import { WhiteLabelingService } from '@core/http/white-labeling.service';
 import * as i0 from "@angular/core";
 export declare class DevicesTableConfigResolver implements Resolve<EntityTableConfig<DeviceInfo>> {
     private allEntitiesTableConfigService;
@@ -34,7 +35,8 @@ export declare class DevicesTableConfigResolver implements Resolve<EntityTableCo
     private utils;
     private router;
     private dialog;
-    constructor(allEntitiesTableConfigService: AllEntitiesTableConfigService<DeviceInfo>, store: Store<AppState>, userPermissionsService: UserPermissionsService, broadcast: BroadcastService, deviceService: DeviceService, customerService: CustomerService, dialogService: DialogService, homeDialogs: HomeDialogsService, translate: TranslateService, datePipe: DatePipe, utils: UtilsService, router: Router, dialog: MatDialog);
+    private wl;
+    constructor(allEntitiesTableConfigService: AllEntitiesTableConfigService<DeviceInfo>, store: Store<AppState>, userPermissionsService: UserPermissionsService, broadcast: BroadcastService, deviceService: DeviceService, customerService: CustomerService, dialogService: DialogService, homeDialogs: HomeDialogsService, translate: TranslateService, datePipe: DatePipe, utils: UtilsService, router: Router, dialog: MatDialog, wl: WhiteLabelingService);
     resolve(route: ActivatedRouteSnapshot): Observable<EntityTableConfig<DeviceInfo>>;
     configDefaults(config: EntityTableConfig<DeviceInfo>): void;
     onLoadAction(config: EntityTableConfig<DeviceInfo>, route: ActivatedRoute): void;

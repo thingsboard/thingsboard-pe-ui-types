@@ -18,6 +18,7 @@ import { Dashboard } from '@shared/models/dashboard.models';
 import { IAliasController } from '@core/api/widget-api.models';
 import { WidgetConfigComponentData } from '@home/models/widget-component.models';
 import { ComponentStyle, Font, TimewindowStyle } from '@shared/models/widget-settings.models';
+import { DataKeysCallbacks, DataKeySettingsFunction } from '@home/components/widget/config/data-keys.component.models';
 import * as i0 from "@angular/core";
 export declare enum widgetType {
     timeseries = "timeseries",
@@ -83,9 +84,12 @@ export interface WidgetTypeParameters {
     previewWidth?: string;
     previewHeight?: string;
     embedTitlePanel?: boolean;
+    overflowVisible?: boolean;
     hideDataSettings?: boolean;
     defaultDataKeysFunction?: (configComponent: any, configData: any) => DataKey[];
     defaultLatestDataKeysFunction?: (configComponent: any, configData: any) => DataKey[];
+    dataKeySettingsFunction?: DataKeySettingsFunction;
+    displayRpcMessageToast?: boolean;
 }
 export interface WidgetControllerDescriptor {
     widgetTypeFunction?: any;
@@ -223,6 +227,17 @@ export interface Datasource {
     latestDataKeyStartIndex?: number;
     [key: string]: any;
 }
+export declare const datasourceValid: (datasource: Datasource) => boolean;
+export declare enum TargetDeviceType {
+    device = "device",
+    entity = "entity"
+}
+export interface TargetDevice {
+    type?: TargetDeviceType;
+    deviceId?: string;
+    entityAliasId?: string;
+}
+export declare const targetDeviceValid: (targetDevice?: TargetDevice) => boolean;
 export declare const datasourcesHasAggregation: (datasources?: Array<Datasource>) => boolean;
 export declare const datasourcesHasOnlyComparisonAggregation: (datasources?: Array<Datasource>) => boolean;
 export interface FormattedData {
@@ -244,7 +259,11 @@ export interface ReplaceInfo {
     valDec?: number;
     dataKeyName: string;
 }
-export type DataSet = [number, any][];
+export type DataEntry = [number, any, [number, number]?];
+export type DataSet = DataEntry[];
+export interface IndexedData {
+    [id: number]: DataSet;
+}
 export interface DataSetHolder {
     data: DataSet;
 }
@@ -274,7 +293,8 @@ export declare enum WidgetActionType {
     openDashboard = "openDashboard",
     custom = "custom",
     customPretty = "customPretty",
-    mobileAction = "mobileAction"
+    mobileAction = "mobileAction",
+    openURL = "openURL"
 }
 export declare enum WidgetMobileActionType {
     takePictureFromGallery = "takePictureFromGallery",
@@ -347,11 +367,7 @@ export interface CustomActionDescriptor {
     customCss?: string;
     customModules?: Type<any>[];
 }
-export interface WidgetActionDescriptor extends CustomActionDescriptor {
-    id: string;
-    name: string;
-    icon: string;
-    displayName?: string;
+export interface WidgetAction extends CustomActionDescriptor {
     type: WidgetActionType;
     targetDashboardId?: string;
     targetDashboardStateId?: string;
@@ -374,9 +390,18 @@ export interface WidgetActionDescriptor extends CustomActionDescriptor {
     setEntityId?: boolean;
     stateEntityParamName?: string;
     mobileAction?: WidgetMobileActionDescriptor;
+    url?: string;
+}
+export interface WidgetActionDescriptor extends WidgetAction {
+    id: string;
+    name: string;
+    icon: string;
+    displayName?: string;
     useShowWidgetActionFunction?: boolean;
     showWidgetActionFunction?: string;
 }
+export declare const actionDescriptorToAction: (descriptor: WidgetActionDescriptor) => WidgetAction;
+export declare const defaultWidgetAction: (isEntityGroup?: boolean, setEntityId?: boolean) => WidgetAction;
 export interface WidgetComparisonSettings {
     comparisonEnabled?: boolean;
     timeForComparison?: moment_.unitOfTime.DurationConstructor;
@@ -430,7 +455,7 @@ export interface WidgetConfig {
     alarmSource?: Datasource;
     alarmFilterConfig?: AlarmFilterConfig;
     datasources?: Array<Datasource>;
-    targetDeviceAliasIds?: Array<string>;
+    targetDevice?: TargetDevice;
     [key: string]: any;
 }
 export interface BaseWidgetInfo {
@@ -479,6 +504,7 @@ export interface WidgetSize {
 }
 export interface IWidgetSettingsComponent {
     aliasController: IAliasController;
+    dataKeyCallbacks: DataKeysCallbacks;
     dashboard: Dashboard;
     widget: Widget;
     widgetConfig: WidgetConfigComponentData;
@@ -491,6 +517,7 @@ export interface IWidgetSettingsComponent {
 export declare abstract class WidgetSettingsComponent extends PageComponent implements IWidgetSettingsComponent, OnInit, AfterViewInit {
     protected store: Store<AppState>;
     aliasController: IAliasController;
+    dataKeyCallbacks: DataKeysCallbacks;
     dashboard: Dashboard;
     widget: Widget;
     widgetConfigValue: WidgetConfigComponentData;

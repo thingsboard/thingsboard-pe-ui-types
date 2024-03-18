@@ -25,6 +25,8 @@ export interface LevelCardWidgetSettings extends WidgetConfig {
     volumeSource: LiquidWidgetDataSourceType;
     volumeConstant: number;
     volumeAttributeName: string;
+    volumeUnitsSource: LiquidWidgetDataSourceType;
+    volumeUnitsAttributeName: string;
     volumeUnits: CapacityUnits;
     volumeFont: Font;
     volumeColor: string;

@@ -20,7 +20,7 @@ export declare class TemplateAutocompleteComponent implements ControlValueAccess
     private notificationService;
     private fb;
     private dialog;
-    notificationDeliveryMethodTranslateMap: Map<import("@shared/models/notification.models").NotificationDeliveryMethod, string>;
+    notificationDeliveryMethodInfoMap: Map<import("@shared/models/notification.models").NotificationDeliveryMethod, import("@shared/models/notification.models").NotificationDeliveryMethodInfo>;
     selectTemplateFormGroup: FormGroup;
     required: boolean;
     allowCreate: boolean;

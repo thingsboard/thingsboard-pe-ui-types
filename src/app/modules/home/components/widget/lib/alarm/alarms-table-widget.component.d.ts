@@ -115,7 +115,8 @@ export declare class AlarmsTableWidgetComponent extends PageComponent implements
     headerStyle(key: EntityColumn): any;
     rowStyle(alarm: AlarmDataInfo, row: number): any;
     cellStyle(alarm: AlarmDataInfo, key: EntityColumn, row: number): any;
-    cellContent(alarm: AlarmDataInfo, key: EntityColumn, row: number, useSafeHtml?: boolean): SafeHtml;
+    cellContent(alarm: AlarmDataInfo, key: EntityColumn, row: number, useSafeHtml?: boolean, isExport?: boolean): SafeHtml;
+    private applyCellContentFunction;
     onRowClick($event: Event, alarm: AlarmDataInfo): void;
     onActionButtonClick($event: Event, alarm: AlarmDataInfo, actionDescriptor: AlarmWidgetActionDescriptor): void;
     actionEnabled(alarm: AlarmDataInfo, actionDescriptor: AlarmWidgetActionDescriptor): boolean;

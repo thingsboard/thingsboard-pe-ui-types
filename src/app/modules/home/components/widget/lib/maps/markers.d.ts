@@ -3,6 +3,7 @@ import { MarkerIconInfo, MarkerIconReadyFunction, WidgetMarkersSettings } from '
 import tinycolor from 'tinycolor2';
 import LeafletMap from './leaflet-map';
 import { FormattedData } from '@shared/models/widget.models';
+import { ReplaySubject } from 'rxjs';
 export declare class Marker {
     private map;
     private location;
@@ -16,6 +17,7 @@ export declare class Marker {
     tooltipOffset: L.LatLngTuple;
     markerOffset: L.LatLngTuple;
     tooltip: L.Popup;
+    createMarkerIconSubject: ReplaySubject<MarkerIconInfo>;
     constructor(map: LeafletMap, location: L.LatLng, settings: Partial<WidgetMarkersSettings>, data?: FormattedData, dataSources?: any, onDragendListener?: any, snappable?: boolean);
     setDataSources(data: FormattedData, dataSources: FormattedData[]): void;
     updateMarkerTooltip(data: FormattedData): void;

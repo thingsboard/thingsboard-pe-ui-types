@@ -15,6 +15,7 @@ export declare class SchedulerEventService {
     getEdgeSchedulerEvents(edgeId: string, config?: RequestConfig): Observable<Array<SchedulerEventWithCustomerInfo>>;
     assignSchedulerEventToEdge(edgeId: string, schedulerEventId: string, config?: RequestConfig): Observable<SchedulerEventInfo>;
     unassignSchedulerEventFromEdge(edgeId: string, schedulerEventId: string, config?: RequestConfig): Observable<Object>;
+    updateSchedulerStatus(schedulerEventId: string, enabled: boolean, config?: RequestConfig): Observable<Object>;
     static ɵfac: i0.ɵɵFactoryDeclaration<SchedulerEventService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<SchedulerEventService>;
 }

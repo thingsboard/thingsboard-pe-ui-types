@@ -1,7 +1,8 @@
 import { EventEmitter, OnInit } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
-import { TimeInterval, TimeService } from '@core/services/time.service';
+import { TimeService } from '@core/services/time.service';
 import { SubscriptSizing } from '@angular/material/form-field';
+import { Interval, TimeInterval } from '@shared/models/time/time.models';
 import * as i0 from "@angular/core";
 export declare class TimeintervalComponent implements OnInit, ControlValueAccessor {
     private timeService;
@@ -13,6 +14,7 @@ export declare class TimeintervalComponent implements OnInit, ControlValueAccess
     isEdit: boolean;
     hideFlag: boolean;
     disabledAdvanced: boolean;
+    useCalendarIntervals: boolean;
     hideFlagChange: EventEmitter<boolean>;
     disabled: boolean;
     subscriptSizing: SubscriptSizing;
@@ -20,8 +22,8 @@ export declare class TimeintervalComponent implements OnInit, ControlValueAccess
     hours: number;
     mins: number;
     secs: number;
-    intervalMs: number;
-    modelValue: number;
+    interval: Interval;
+    modelValue: Interval;
     advanced: boolean;
     rendered: boolean;
     intervals: Array<TimeInterval>;
@@ -31,12 +33,12 @@ export declare class TimeintervalComponent implements OnInit, ControlValueAccess
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
-    writeValue(intervalMs: number): void;
-    setIntervalMs(intervalMs: number): void;
-    boundInterval(): void;
-    updateView(): void;
+    writeValue(interval: Interval): void;
+    setInterval(interval: Interval): void;
+    boundInterval(updateToPreferred?: boolean): void;
+    updateView(updateToPreferred?: boolean): void;
     calculateIntervalMs(): number;
-    onIntervalMsChange(): void;
+    onIntervalChange(): void;
     onAdvancedChange(): void;
     onHideFlagChange(): void;
     onTimeInputChange(type: string): void;
@@ -45,5 +47,5 @@ export declare class TimeintervalComponent implements OnInit, ControlValueAccess
     onHoursChange(): void;
     onDaysChange(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeintervalComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeintervalComponent, "tb-timeinterval", never, { "min": "min"; "max": "max"; "predefinedName": "predefinedName"; "isEdit": "isEdit"; "hideFlag": "hideFlag"; "disabledAdvanced": "disabledAdvanced"; "disabled": "disabled"; "subscriptSizing": "subscriptSizing"; }, { "hideFlagChange": "hideFlagChange"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeintervalComponent, "tb-timeinterval", never, { "min": "min"; "max": "max"; "predefinedName": "predefinedName"; "isEdit": "isEdit"; "hideFlag": "hideFlag"; "disabledAdvanced": "disabledAdvanced"; "useCalendarIntervals": "useCalendarIntervals"; "disabled": "disabled"; "subscriptSizing": "subscriptSizing"; }, { "hideFlagChange": "hideFlagChange"; }, never, never, false, never>;
 }

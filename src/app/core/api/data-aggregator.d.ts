@@ -1,7 +1,8 @@
 import { AggKey, IndexedSubscriptionData } from '@app/shared/models/telemetry/telemetry.models';
 import { SubscriptionTimewindow } from '@shared/models/time/time.models';
 import { UtilsService } from '@core/services/utils.service';
-export declare type onAggregatedData = (data: IndexedSubscriptionData, detectChanges: boolean) => void;
+import { IndexedData } from '@shared/models/widget.models';
+export declare type onAggregatedData = (data: IndexedData, detectChanges: boolean) => void;
 export declare class DataAggregator {
     private onDataCb;
     private tsKeys;
@@ -35,5 +36,6 @@ export declare class DataAggregator {
     private updateStateBounds;
     private processAggregatedData;
     private updateAggregatedData;
+    private updateLastInterval;
     private aggKeyById;
 }

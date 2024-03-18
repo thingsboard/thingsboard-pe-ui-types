@@ -34,4 +34,4 @@ export declare class MapWidgetController implements MapWidgetInterface {
     resize(): void;
     destroy(): void;
 }
-export declare let TbMapWidgetV2: MapWidgetStaticInterface;
+export declare const TbMapWidgetV2: MapWidgetStaticInterface;

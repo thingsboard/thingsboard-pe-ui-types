@@ -1,0 +1,31 @@
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { BasicWidgetConfigComponent } from '@home/components/widget/config/widget-config.component.models';
+import { WidgetConfigComponentData } from '@home/models/widget-component.models';
+import { TargetDevice, TargetDeviceType } from '@shared/models/widget.models';
+import { WidgetConfigComponent } from '@home/components/widget/widget-config.component';
+import { ValueType } from '@shared/models/constants';
+import * as i0 from "@angular/core";
+type ButtonAppearanceType = 'checked' | 'unchecked';
+export declare class ToggleButtonBasicConfigComponent extends BasicWidgetConfigComponent {
+    protected store: Store<AppState>;
+    protected widgetConfigComponent: WidgetConfigComponent;
+    private fb;
+    get targetDevice(): TargetDevice;
+    valueType: typeof ValueType;
+    buttonAppearanceType: ButtonAppearanceType;
+    toggleButtonWidgetConfigForm: UntypedFormGroup;
+    constructor(store: Store<AppState>, widgetConfigComponent: WidgetConfigComponent, fb: UntypedFormBuilder);
+    protected configForm(): UntypedFormGroup;
+    protected onConfigSet(configData: WidgetConfigComponentData): void;
+    protected prepareOutputConfig(config: any): WidgetConfigComponentData;
+    protected validatorTriggers(): string[];
+    protected updateValidators(emitEvent: boolean, trigger?: string): void;
+    private getCardButtons;
+    private setCardButtons;
+    protected readonly TargetDeviceType: typeof TargetDeviceType;
+    static ɵfac: i0.ɵɵFactoryDeclaration<ToggleButtonBasicConfigComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ToggleButtonBasicConfigComponent, "tb-toggle-button-basic-config", never, {}, {}, never, never, false, never>;
+}
+export {};

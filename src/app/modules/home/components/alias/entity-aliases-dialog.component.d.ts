@@ -9,9 +9,9 @@ import { DialogComponent } from '@app/shared/components/dialog.component';
 import { EntityAlias, EntityAliases } from '@shared/models/alias.models';
 import { Widget } from '@shared/models/widget.models';
 import { AliasEntityType, EntityType } from '@shared/models/entity-type.models';
-import { UtilsService } from '@core/services/utils.service';
 import { TranslateService } from '@ngx-translate/core';
 import { DialogService } from '@core/services/dialog.service';
+import { DashboardUtilsService } from '@core/services/dashboard-utils.service';
 import * as i0 from "@angular/core";
 export interface EntityAliasesDialogData {
     entityAliases: EntityAliases;
@@ -30,7 +30,7 @@ export declare class EntityAliasesDialogComponent extends DialogComponent<Entity
     private errorStateMatcher;
     dialogRef: MatDialogRef<EntityAliasesDialogComponent, EntityAliases>;
     private fb;
-    private utils;
+    private dashboardUtils;
     private translate;
     private dialogs;
     private dialog;
@@ -42,7 +42,7 @@ export declare class EntityAliasesDialogComponent extends DialogComponent<Entity
     };
     entityAliasesFormGroup: UntypedFormGroup;
     submitted: boolean;
-    constructor(store: Store<AppState>, router: Router, data: EntityAliasesDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<EntityAliasesDialogComponent, EntityAliases>, fb: UntypedFormBuilder, utils: UtilsService, translate: TranslateService, dialogs: DialogService, dialog: MatDialog);
+    constructor(store: Store<AppState>, router: Router, data: EntityAliasesDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<EntityAliasesDialogComponent, EntityAliases>, fb: UntypedFormBuilder, dashboardUtils: DashboardUtilsService, translate: TranslateService, dialogs: DialogService, dialog: MatDialog);
     private addWidgetTitleToWidgetsMap;
     private createEntityAliasFormControl;
     entityAliasesFormArray(): UntypedFormArray;

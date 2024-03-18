@@ -27,6 +27,7 @@ export declare class WhiteLabelingComponent extends PageComponent implements OnI
     wlSettings: UntypedFormGroup;
     whiteLabelingParams: WhiteLabelingParams & LoginWhiteLabelingParams;
     isSysAdmin: boolean;
+    isTenant: boolean;
     readonly: boolean;
     isLoginWl: boolean;
     uiHelpBaseUrlPlaceholder$: Observable<string>;

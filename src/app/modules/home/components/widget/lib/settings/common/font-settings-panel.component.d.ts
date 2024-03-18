@@ -1,6 +1,6 @@
 import { ElementRef, EventEmitter, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
-import { ComponentStyle, Font } from '@shared/models/widget-settings.models';
+import { ComponentStyle, cssUnit, Font } from '@shared/models/widget-settings.models';
 import { TbPopoverComponent } from '@shared/components/popover.component';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
@@ -16,6 +16,7 @@ export declare class FontSettingsPanelComponent extends PageComponent implements
     clearButton: boolean;
     autoScale: boolean;
     disabledLineHeight: boolean;
+    forceSizeUnit: cssUnit;
     popover: TbPopoverComponent<FontSettingsPanelComponent>;
     fontApplied: EventEmitter<Font>;
     familyInput: ElementRef;
@@ -36,5 +37,5 @@ export declare class FontSettingsPanelComponent extends PageComponent implements
     clearFont(): void;
     private updatePreviewStyle;
     static ɵfac: i0.ɵɵFactoryDeclaration<FontSettingsPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FontSettingsPanelComponent, "tb-font-settings-panel", never, { "font": "font"; "previewText": "previewText"; "initialPreviewStyle": "initialPreviewStyle"; "clearButton": "clearButton"; "autoScale": "autoScale"; "disabledLineHeight": "disabledLineHeight"; "popover": "popover"; }, { "fontApplied": "fontApplied"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FontSettingsPanelComponent, "tb-font-settings-panel", never, { "font": "font"; "previewText": "previewText"; "initialPreviewStyle": "initialPreviewStyle"; "clearButton": "clearButton"; "autoScale": "autoScale"; "disabledLineHeight": "disabledLineHeight"; "forceSizeUnit": "forceSizeUnit"; "popover": "popover"; }, { "fontApplied": "fontApplied"; }, never, never, false, never>;
 }

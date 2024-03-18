@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { Router } from '@angular/router';
 import { MatDialogRef } from '@angular/material/dialog';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { NotificationService } from '@core/http/notification.service';
 import { Observable } from 'rxjs';
 import { StepperOrientation, StepperSelectionEvent } from '@angular/cdk/stepper';
@@ -35,8 +35,8 @@ export declare class TemplateNotificationDialogComponent extends TemplateConfigu
     notificationTypes: NotificationType[];
     selectedIndex: number;
     hideSelectType: boolean;
+    notificationTemplateConfigurationForm: FormGroup;
     private readonly templateNotification;
-    private authState;
     private authUser;
     constructor(store: Store<AppState>, router: Router, dialogRef: MatDialogRef<TemplateNotificationDialogComponent, NotificationTemplate>, data: TemplateNotificationDialogData, breakpointObserver: BreakpointObserver, fb: FormBuilder, notificationService: NotificationService, translate: TranslateService);
     ngOnDestroy(): void;

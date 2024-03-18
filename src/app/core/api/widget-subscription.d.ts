@@ -1,9 +1,10 @@
 import { IWidgetSubscription, SubscriptionEntityInfo, WidgetSubscriptionCallbacks, WidgetSubscriptionContext, WidgetSubscriptionOptions } from '@core/api/widget-api.models';
-import { DataSetHolder, Datasource, DatasourceData, LegendConfig, LegendData, widgetType } from '@app/shared/models/widget.models';
+import { DataSetHolder, Datasource, DatasourceData, LegendConfig, LegendData, TargetDevice, widgetType } from '@app/shared/models/widget.models';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ComparisonDuration, SubscriptionTimewindow, Timewindow, WidgetTimewindow } from '@app/shared/models/time/time.models';
 import { Observable, Subject } from 'rxjs';
 import { CancelAnimationFrame } from '@core/services/raf.service';
+import { EntityId } from '@app/shared/models/id/entity-id';
 import { PageData } from '@shared/models/page/page-data';
 import { EntityDataListener } from '@core/api/entity-data.service';
 import { AlarmData, AlarmDataPageLink, EntityDataPageLink, KeyFilter } from '@shared/models/query/query.models';
@@ -55,20 +56,20 @@ export declare class WidgetSubscription implements IWidgetSubscription {
     alarmSource: Datasource;
     alarmDataListener: AlarmDataListener;
     loadingData: boolean;
-    targetDeviceAliasIds?: Array<string>;
-    targetDeviceIds?: Array<string>;
     executingRpcRequest: boolean;
     rpcEnabled: boolean;
+    rpcDisabledReason: string;
     rpcErrorText: string;
-    rpcRejection: HttpErrorResponse;
+    rpcRejection: HttpErrorResponse | Error;
     init$: Observable<IWidgetSubscription>;
     cafs: {
         [cafId: string]: CancelAnimationFrame;
     };
     hasResolvedData: boolean;
-    targetDeviceAliasId: string;
+    targetEntityId?: EntityId;
+    targetEntityName?: string;
+    targetDevice: TargetDevice;
     targetDeviceId: string;
-    targetDeviceName: string;
     executingSubjects: Array<Subject<void>>;
     subscribed: boolean;
     hasLatestData: boolean;

@@ -16,6 +16,8 @@ import { WidgetService } from '@core/http/widget.service';
 import { Dashboard } from '@shared/models/dashboard.models';
 import { IAliasController } from '@core/api/widget-api.models';
 import { AggregationType } from '@shared/models/time/time.models';
+import { WidgetConfigComponentData } from '@home/models/widget-component.models';
+import { WidgetComponentService } from '@home/components/widget/widget-component.service';
 import * as i0 from "@angular/core";
 export declare class DataKeyConfigComponent extends PageComponent implements OnInit, ControlValueAccessor, Validator {
     protected store: Store<AppState>;
@@ -24,6 +26,7 @@ export declare class DataKeyConfigComponent extends PageComponent implements OnI
     private dialog;
     private translate;
     private widgetService;
+    private widgetComponentService;
     private fb;
     dataKeyConfigModes: typeof DataKeyConfigMode;
     dataKeyTypes: typeof DataKeyType;
@@ -56,6 +59,7 @@ export declare class DataKeyConfigComponent extends PageComponent implements OnI
     postFuncBodyEdit: JsFuncComponent;
     hasAdvanced: boolean;
     modelValue: DataKey;
+    widgetConfig: WidgetConfigComponentData;
     private propagateChange;
     dataKeyFormGroup: UntypedFormGroup;
     dataKeySettingsFormGroup: UntypedFormGroup;
@@ -67,7 +71,7 @@ export declare class DataKeyConfigComponent extends PageComponent implements OnI
     private fetchObservable$;
     keySearchText: string;
     functionScopeVariables: string[];
-    constructor(store: Store<AppState>, utils: UtilsService, entityService: EntityService, dialog: MatDialog, translate: TranslateService, widgetService: WidgetService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, utils: UtilsService, entityService: EntityService, dialog: MatDialog, translate: TranslateService, widgetService: WidgetService, widgetComponentService: WidgetComponentService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

@@ -3,27 +3,27 @@ import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@ang
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { TranslateService } from '@ngx-translate/core';
-import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
+import { AttributeScope, DataKeyType } from '@shared/models/telemetry/telemetry.models';
 import { Observable } from 'rxjs';
 import { IAliasController } from '@core/api/widget-api.models';
+import { TargetDevice } from '@shared/models/widget.models';
 import { EntityService } from '@core/http/entity.service';
 import * as i0 from "@angular/core";
 export declare class DeviceKeyAutocompleteComponent extends PageComponent implements OnInit, ControlValueAccessor, OnChanges {
     protected store: Store<AppState>;
-    private translate;
     private entityService;
     private fb;
     keyInput: ElementRef;
     disabled: boolean;
     aliasController: IAliasController;
-    targetDeviceAliasId: string;
+    targetDevice: TargetDevice;
     keyType: DataKeyType;
+    attributeScope: AttributeScope;
     attributeLabel: string;
     timeseriesLabel: string;
-    private requiredValue;
-    get required(): boolean;
-    set required(value: boolean);
+    requiredText: string;
+    required: boolean;
+    inlineField: boolean;
     dataKeyType: typeof DataKeyType;
     private modelValue;
     private propagateChange;
@@ -32,7 +32,7 @@ export declare class DeviceKeyAutocompleteComponent extends PageComponent implem
     keySearchText: string;
     private latestKeySearchResult;
     private keysFetchObservable$;
-    constructor(store: Store<AppState>, translate: TranslateService, entityService: EntityService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, entityService: EntityService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
     registerOnChange(fn: any): void;
@@ -48,5 +48,5 @@ export declare class DeviceKeyAutocompleteComponent extends PageComponent implem
     private fetchEntityKeys;
     private createKeyFilter;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceKeyAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceKeyAutocompleteComponent, "tb-device-key-autocomplete", never, { "disabled": "disabled"; "aliasController": "aliasController"; "targetDeviceAliasId": "targetDeviceAliasId"; "keyType": "keyType"; "attributeLabel": "attributeLabel"; "timeseriesLabel": "timeseriesLabel"; "required": "required"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceKeyAutocompleteComponent, "tb-device-key-autocomplete", never, { "disabled": "disabled"; "aliasController": "aliasController"; "targetDevice": "targetDevice"; "keyType": "keyType"; "attributeScope": "attributeScope"; "attributeLabel": "attributeLabel"; "timeseriesLabel": "timeseriesLabel"; "requiredText": "requiredText"; "required": "required"; "inlineField": "inlineField"; }, {}, never, never, false, never>;
 }

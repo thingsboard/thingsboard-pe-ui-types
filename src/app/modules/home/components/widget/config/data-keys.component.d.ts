@@ -9,7 +9,7 @@ import { MatChipGrid, MatChipInputEvent, MatChipRow } from '@angular/material/ch
 import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
 import { DataKey, DatasourceType, JsonSettingsSchema, Widget, widgetType } from '@shared/models/widget.models';
 import { IAliasController } from '@core/api/widget-api.models';
-import { DataKeysCallbacks } from './data-keys.component.models';
+import { DataKeysCallbacks, DataKeySettingsFunction } from './data-keys.component.models';
 import { UtilsService } from '@core/services/utils.service';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { TruncatePipe } from '@shared/pipe/truncate.pipe';
@@ -47,9 +47,11 @@ export declare class DataKeysComponent implements ControlValueAccessor, OnInit, 
     get maxDataKeys(): number;
     set maxDataKeys(value: number);
     optDataKeys: boolean;
+    latestDataKeys: boolean;
     simpleDataKeysLabel: boolean;
     aliasController: IAliasController;
     datakeySettingsSchema: JsonSettingsSchema;
+    datakeySettingsFunction: DataKeySettingsFunction;
     dataKeySettingsDirective: string;
     dashboard: Dashboard;
     widget: Widget;
@@ -127,5 +129,5 @@ export declare class DataKeysComponent implements ControlValueAccessor, OnInit, 
     get maxDataKeysSet(): boolean;
     private clearSearchCache;
     static ɵfac: i0.ɵɵFactoryDeclaration<DataKeysComponent, [null, { skipSelf: true; }, null, null, null, null, null, null, null, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeysComponent, "tb-data-keys", never, { "widgetType": "widgetType"; "datasourceType": "datasourceType"; "maxDataKeys": "maxDataKeys"; "optDataKeys": "optDataKeys"; "simpleDataKeysLabel": "simpleDataKeysLabel"; "aliasController": "aliasController"; "datakeySettingsSchema": "datakeySettingsSchema"; "dataKeySettingsDirective": "dataKeySettingsDirective"; "dashboard": "dashboard"; "widget": "widget"; "callbacks": "callbacks"; "entityAliasId": "entityAliasId"; "deviceId": "deviceId"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeysComponent, "tb-data-keys", never, { "widgetType": "widgetType"; "datasourceType": "datasourceType"; "maxDataKeys": "maxDataKeys"; "optDataKeys": "optDataKeys"; "latestDataKeys": "latestDataKeys"; "simpleDataKeysLabel": "simpleDataKeysLabel"; "aliasController": "aliasController"; "datakeySettingsSchema": "datakeySettingsSchema"; "datakeySettingsFunction": "datakeySettingsFunction"; "dataKeySettingsDirective": "dataKeySettingsDirective"; "dashboard": "dashboard"; "widget": "widget"; "callbacks": "callbacks"; "entityAliasId": "entityAliasId"; "deviceId": "deviceId"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

@@ -1,5 +1,5 @@
-import { OnDestroy, OnInit } from '@angular/core';
-import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { AfterViewInit, OnDestroy, OnInit } from '@angular/core';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { SchedulerEventConfiguration } from '@shared/models/scheduler-event.models';
@@ -8,7 +8,7 @@ import { EntityId } from '@shared/models/id/entity-id';
 import { EntityGroupInfo } from '@shared/models/entity-group.models';
 import { OtaUpdateType } from '@shared/models/ota-package.models';
 import * as i0 from "@angular/core";
-export declare class OtaUpdateEventConfigComponent implements ControlValueAccessor, OnDestroy, OnInit {
+export declare class OtaUpdateEventConfigComponent implements ControlValueAccessor, OnDestroy, OnInit, AfterViewInit, Validator {
     private store;
     private fb;
     private destroy$;
@@ -26,9 +26,12 @@ export declare class OtaUpdateEventConfigComponent implements ControlValueAccess
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
+    ngAfterViewInit(): void;
     ngOnDestroy(): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: SchedulerEventConfiguration | null): void;
+    validate(): ValidationErrors | null;
+    private prepareInputConfig;
     private updateModel;
     currentEntity(entity: EntityId | EntityGroupInfo | null): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<OtaUpdateEventConfigComponent, never>;

@@ -1,7 +1,6 @@
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { PageComponent } from '@shared/components/page.component';
-import { Router } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { AdminService } from '@core/http/admin.service';
 import { HasConfirmForm } from '@core/guards/confirm-on-exit.guard';
@@ -11,7 +10,6 @@ import { UserPermissionsService } from '@core/http/user-permissions.service';
 import * as i0 from "@angular/core";
 export declare class SmsProviderComponent extends PageComponent implements HasConfirmForm {
     protected store: Store<AppState>;
-    private router;
     private adminService;
     private notificationService;
     private dialog;
@@ -19,12 +17,13 @@ export declare class SmsProviderComponent extends PageComponent implements HasCo
     fb: FormBuilder;
     smsProvider: FormGroup;
     private adminSettings;
-    slackSettingsForm: FormGroup;
+    notificationSettingsForm: FormGroup;
     private notificationSettings;
     private readonly authUser;
     readonly: boolean;
-    constructor(store: Store<AppState>, router: Router, adminService: AdminService, notificationService: NotificationService, dialog: MatDialog, userPermissionsService: UserPermissionsService, fb: FormBuilder);
+    constructor(store: Store<AppState>, adminService: AdminService, notificationService: NotificationService, dialog: MatDialog, userPermissionsService: UserPermissionsService, fb: FormBuilder);
     private setSmsProviderSettings;
+    private setNotificationSettings;
     isTenantAdmin(): boolean;
     private buildSmsProviderForm;
     private updateValidators;
@@ -32,6 +31,7 @@ export declare class SmsProviderComponent extends PageComponent implements HasCo
     save(): void;
     confirmForm(): FormGroup;
     private buildGeneralServerSettingsForm;
+    private updatedNotificationSettings;
     saveNotification(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SmsProviderComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<SmsProviderComponent, "tb-sms-provider", never, {}, {}, never, never, false, never>;

@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { CellContentInfo, CellStyleInfo, TableCellButtonActionDescriptor, TableWidgetSettings } from '@home/components/widget/lib/table-widget.models';
+import { CellContentInfo, CellStyleInfo, columnExportOptions, TableCellButtonActionDescriptor, TableWidgetSettings } from '@home/components/widget/lib/table-widget.models';
 import { Overlay } from '@angular/cdk/overlay';
 import { DatePipe } from '@angular/common';
 import { FormBuilder } from '@angular/forms';
@@ -23,6 +23,7 @@ export interface TimeseriesTableWidgetSettings extends TableWidgetSettings {
     showMilliseconds: boolean;
     hideEmptyLines: boolean;
     dateFormat: DateFormatSettings;
+    timestampExportOption: columnExportOptions;
 }
 interface TimeseriesRow {
     actionCellButtons?: TableCellButtonActionDescriptor[];
@@ -100,6 +101,7 @@ export declare class TimeseriesTableWidgetComponent extends PageComponent implem
     showTimestamp: boolean;
     private useEntityLabel;
     private dateFormatFilter;
+    private exportTimestampColumn;
     private displayedColumns;
     private rowStylesInfo;
     private subscriptions;
@@ -141,6 +143,13 @@ export declare class TimeseriesTableWidgetComponent extends PageComponent implem
     private updateCurrentSourceLatestData;
     private loadCurrentSourceRow;
     private clearCache;
+    private includeColumnInExport;
+    customDataExport(): {
+        [key: string]: any;
+    }[] | Observable<{
+        [key: string]: any;
+    }[]>;
+    private checkProperty;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeseriesTableWidgetComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<TimeseriesTableWidgetComponent, "tb-timeseries-table-widget", never, { "ctx": "ctx"; }, {}, never, never, false, never>;
 }

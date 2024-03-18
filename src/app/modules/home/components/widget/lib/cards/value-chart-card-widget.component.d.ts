@@ -20,14 +20,15 @@ export declare class ValueChartCardWidgetComponent implements OnInit, AfterViewI
     ctx: WidgetContext;
     widgetTitlePanel: TemplateRef<any>;
     layout: ValueChartCardLayout;
+    autoScale: boolean;
     showValue: boolean;
     valueText: string;
     valueStyle: ComponentStyle;
     valueColor: ColorProcessor;
     backgroundStyle$: Observable<ComponentStyle>;
     overlayStyle: ComponentStyle;
-    private flot;
-    private flotDataKey;
+    private lineChart;
+    private lineChartDataKey;
     private valueKey;
     private contentResize$;
     private decimals;

@@ -18,6 +18,7 @@ import { MatButton } from '@angular/material/button';
 import { ApiFeature, ApiUsageStateValue } from '@shared/models/api-usage.models';
 import { StringItemsOption } from '@shared/components/string-items-list.component';
 import { IntegrationType } from '@shared/models/integration.models';
+import { EdgeConnectionEvent } from '@shared/models/edge.models';
 import * as i0 from "@angular/core";
 export interface RuleNotificationDialogData {
     rule?: NotificationRule;
@@ -49,6 +50,8 @@ export declare class RuleNotificationDialogComponent extends DialogComponent<Rul
     integrationEventsTemplateForm: FormGroup;
     newPlatformVersionTemplateForm: FormGroup;
     rateLimitsTemplateForm: FormGroup;
+    edgeCommunicationFailureTemplateForm: FormGroup;
+    edgeConnectionTemplateForm: FormGroup;
     triggerType: typeof TriggerType;
     triggerTypes: TriggerType[];
     triggerTypeTranslationMap: Map<TriggerType, string>;
@@ -68,6 +71,8 @@ export declare class RuleNotificationDialogComponent extends DialogComponent<Rul
     apiUsageStateValueTranslationMap: Map<ApiUsageStateValue, string>;
     apiFeatures: ApiFeature[];
     apiFeatureTranslationMap: Map<ApiFeature, string>;
+    edgeConnectionEvents: EdgeConnectionEvent[];
+    edgeConnectionEventTranslationMap: Map<EdgeConnectionEvent, string>;
     limitedApis: StringItemsOption[];
     integrationTypes: IntegrationType[];
     integrationTypeInfoMap: Map<IntegrationType, import("@shared/models/integration.models").IntegrationTypeInfo>;

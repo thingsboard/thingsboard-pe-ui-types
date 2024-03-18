@@ -7,7 +7,7 @@ export declare class ToggleSelectComponent extends _ToggleBase implements Contro
     protected store: Store<AppState>;
     get maxWidth(): string;
     disabled: boolean;
-    selectMediaBreakpoint: any;
+    selectMediaBreakpoint: string;
     appearance: ToggleHeaderAppearance;
     disablePagination: boolean;
     modelValue: any;

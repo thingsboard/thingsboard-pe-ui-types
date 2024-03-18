@@ -11,6 +11,7 @@ export declare class ImageService {
     private http;
     private sanitizer;
     private resourcesService;
+    private imagesLoading;
     constructor(http: HttpClient, sanitizer: DomSanitizer, resourcesService: ResourcesService);
     uploadImage(file: File, title: string, config?: RequestConfig): Observable<ImageResourceInfo>;
     updateImage(type: ImageResourceType, key: string, file: File, config?: RequestConfig): Observable<ImageResourceInfo>;

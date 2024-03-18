@@ -11,6 +11,7 @@ export declare enum schedulerCalendarView {
 }
 export declare const schedulerCalendarViewValueMap: Map<schedulerCalendarView, string>;
 export declare const schedulerCalendarViewTranslationMap: Map<schedulerCalendarView, string>;
+export declare const scheduleWeekDays: Array<SchedulerWeekDay>;
 export interface CustomSchedulerEventType {
     name: string;
     value: string;
@@ -31,4 +32,8 @@ export interface SchedulerEventsWidgetSettings {
     enabledViews: 'both' | 'list' | 'calendar';
     forceDefaultEventType: string;
     customEventTypes: CustomSchedulerEventType[];
+}
+export interface SchedulerWeekDay {
+    label: string;
+    tooltip: string;
 }

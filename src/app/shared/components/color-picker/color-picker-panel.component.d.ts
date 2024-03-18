@@ -3,13 +3,11 @@ import { EventEmitter, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { TbPopoverComponent } from '@shared/components/popover.component';
-import { UtilsService } from '@core/services/utils.service';
 import { UntypedFormControl } from '@angular/forms';
 import * as i0 from "@angular/core";
 type ColorMode = 'color' | 'primary' | 'accent';
 export declare class ColorPickerPanelComponent extends PageComponent implements OnInit, OnDestroy {
     protected store: Store<AppState>;
-    private utils;
     color: string;
     colorClearButton: boolean;
     useThemePalette: boolean;
@@ -22,7 +20,7 @@ export declare class ColorPickerPanelComponent extends PageComponent implements 
     dirty: boolean;
     valid: boolean;
     private destroy$;
-    constructor(store: Store<AppState>, utils: UtilsService);
+    constructor(store: Store<AppState>);
     ngOnInit(): void;
     ngOnDestroy(): void;
     onPrimaryColorChange(color: string): void;

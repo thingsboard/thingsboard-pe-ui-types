@@ -42,6 +42,7 @@ export declare class DashboardComponent extends PageComponent implements IDashbo
     margin: number;
     outerMargin: boolean;
     isEdit: boolean;
+    isPreview: boolean;
     autofillHeight: boolean;
     mobileAutofillHeight: boolean;
     mobileRowHeight: number;
@@ -122,5 +123,5 @@ export declare class DashboardComponent extends PageComponent implements IDashbo
     private detectRowSize;
     private checkIsMobileSize;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardComponent, "tb-dashboard", never, { "widgets": "widgets"; "widgetLayouts": "widgetLayouts"; "callbacks": "callbacks"; "aliasController": "aliasController"; "stateController": "stateController"; "columns": "columns"; "margin": "margin"; "outerMargin": "outerMargin"; "isEdit": "isEdit"; "autofillHeight": "autofillHeight"; "mobileAutofillHeight": "mobileAutofillHeight"; "mobileRowHeight": "mobileRowHeight"; "isMobile": "isMobile"; "isMobileDisabled": "isMobileDisabled"; "isEditActionEnabled": "isEditActionEnabled"; "isExportActionEnabled": "isExportActionEnabled"; "isRemoveActionEnabled": "isRemoveActionEnabled"; "disableWidgetInteraction": "disableWidgetInteraction"; "dashboardStyle": "dashboardStyle"; "backgroundImage": "backgroundImage"; "dashboardClass": "dashboardClass"; "ignoreLoading": "ignoreLoading"; "dashboardTimewindow": "dashboardTimewindow"; "embedded": "embedded"; "parentDashboard": "parentDashboard"; "popoverComponent": "popoverComponent"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardComponent, "tb-dashboard", never, { "widgets": "widgets"; "widgetLayouts": "widgetLayouts"; "callbacks": "callbacks"; "aliasController": "aliasController"; "stateController": "stateController"; "columns": "columns"; "margin": "margin"; "outerMargin": "outerMargin"; "isEdit": "isEdit"; "isPreview": "isPreview"; "autofillHeight": "autofillHeight"; "mobileAutofillHeight": "mobileAutofillHeight"; "mobileRowHeight": "mobileRowHeight"; "isMobile": "isMobile"; "isMobileDisabled": "isMobileDisabled"; "isEditActionEnabled": "isEditActionEnabled"; "isExportActionEnabled": "isExportActionEnabled"; "isRemoveActionEnabled": "isRemoveActionEnabled"; "disableWidgetInteraction": "disableWidgetInteraction"; "dashboardStyle": "dashboardStyle"; "backgroundImage": "backgroundImage"; "dashboardClass": "dashboardClass"; "ignoreLoading": "ignoreLoading"; "dashboardTimewindow": "dashboardTimewindow"; "embedded": "embedded"; "parentDashboard": "parentDashboard"; "popoverComponent": "popoverComponent"; }, {}, never, never, false, never>;
 }

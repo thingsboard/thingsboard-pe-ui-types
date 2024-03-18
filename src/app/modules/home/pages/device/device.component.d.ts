@@ -14,6 +14,7 @@ import { Subject } from 'rxjs';
 import { OtaUpdateType } from '@shared/models/ota-package.models';
 import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
+import { WhiteLabelingService } from '@core/http/white-labeling.service';
 import * as i0 from "@angular/core";
 export declare class DeviceComponent extends GroupEntityComponent<DeviceInfo> {
     protected store: Store<AppState>;
@@ -25,12 +26,14 @@ export declare class DeviceComponent extends GroupEntityComponent<DeviceInfo> {
     protected fb: UntypedFormBuilder;
     protected cd: ChangeDetectorRef;
     protected userPermissionsService: UserPermissionsService;
+    private wl;
     entityType: typeof EntityType;
     deviceCredentials$: Subject<DeviceCredentials>;
     otaUpdateType: typeof OtaUpdateType;
-    constructor(store: Store<AppState>, translate: TranslateService, deviceService: DeviceService, clipboardService: ClipboardService, entityValue: DeviceInfo, entitiesTableConfigValue: EntityTableConfig<DeviceInfo> | GroupEntityTableConfig<DeviceInfo>, fb: UntypedFormBuilder, cd: ChangeDetectorRef, userPermissionsService: UserPermissionsService);
+    constructor(store: Store<AppState>, translate: TranslateService, deviceService: DeviceService, clipboardService: ClipboardService, entityValue: DeviceInfo, entitiesTableConfigValue: EntityTableConfig<DeviceInfo> | GroupEntityTableConfig<DeviceInfo>, fb: UntypedFormBuilder, cd: ChangeDetectorRef, userPermissionsService: UserPermissionsService, wl: WhiteLabelingService);
     ngOnInit(): void;
     hideDelete(): boolean;
+    showConnectivityDialog(): boolean;
     hideManageCredentials(): boolean;
     buildForm(entity: DeviceInfo): UntypedFormGroup;
     updateForm(entity: DeviceInfo): void;

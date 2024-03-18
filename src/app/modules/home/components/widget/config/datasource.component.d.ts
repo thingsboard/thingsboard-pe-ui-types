@@ -7,7 +7,7 @@ import { WidgetConfigComponent } from '@home/components/widget/widget-config.com
 import { IAliasController } from '@core/api/widget-api.models';
 import { EntityAliasSelectCallbacks } from '@home/components/alias/entity-alias-select.component.models';
 import { FilterSelectCallbacks } from '@home/components/filter/filter-select.component.models';
-import { DataKeysCallbacks } from '@home/components/widget/config/data-keys.component.models';
+import { DataKeysCallbacks, DataKeySettingsFunction } from '@home/components/widget/config/data-keys.component.models';
 import { EntityType } from '@shared/models/entity-type.models';
 import { DatasourcesComponent } from '@home/components/widget/config/datasources.component';
 import * as i0 from "@angular/core";
@@ -23,11 +23,13 @@ export declare class DatasourceComponent implements ControlValueAccessor, OnInit
     get dataKeysCallbacks(): DataKeysCallbacks;
     get hasAdditionalLatestDataKeys(): boolean;
     get dataKeysOptional(): boolean;
+    get datasourcesOptional(): boolean;
     get maxDataKeys(): number;
     get dataKeySettingsSchema(): JsonSettingsSchema;
     get dataKeySettingsDirective(): string;
     get latestDataKeySettingsSchema(): JsonSettingsSchema;
     get latestDataKeySettingsDirective(): string;
+    get dataKeySettingsFunction(): DataKeySettingsFunction;
     get dashboard(): Dashboard;
     get widget(): Widget;
     get hideDatasourceLabel(): boolean;

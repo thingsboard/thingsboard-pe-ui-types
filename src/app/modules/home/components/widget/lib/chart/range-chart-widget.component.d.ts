@@ -40,6 +40,7 @@ export declare class RangeChartWidgetComponent implements OnInit, OnDestroy, Aft
     legendLabelStyle: ComponentStyle;
     disabledLegendLabelStyle: ComponentStyle;
     visibleRangeItems: RangeItem[];
+    private get noAggregation();
     private rangeItems;
     private shapeResize$;
     private decimals;

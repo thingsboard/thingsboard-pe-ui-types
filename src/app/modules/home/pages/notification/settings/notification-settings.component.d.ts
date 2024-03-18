@@ -19,7 +19,7 @@ export declare class NotificationSettingsComponent extends PageComponent impleme
     private fb;
     notificationSettings: UntypedFormGroup;
     notificationDeliveryMethods: NotificationDeliveryMethod[];
-    notificationDeliveryMethodTranslateMap: Map<NotificationDeliveryMethod, string>;
+    notificationDeliveryMethodInfoMap: Map<NotificationDeliveryMethod, import("@shared/models/notification.models").NotificationDeliveryMethodInfo>;
     private deliveryMethods;
     constructor(store: Store<AppState>, route: ActivatedRoute, translate: TranslateService, dialogService: DialogService, notificationService: NotificationService, fb: UntypedFormBuilder);
     ngOnInit(): void;

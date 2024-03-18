@@ -16,6 +16,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { EntityService } from '@core/http/entity.service';
 import { Dashboard } from '@shared/models/dashboard.models';
 import { ToggleHeaderOption } from '@shared/components/toggle-header.component';
+import { DataKeySettingsFunction } from '@home/components/widget/config/data-keys.component.models';
 import * as i0 from "@angular/core";
 export declare class WidgetConfigComponent extends PageComponent implements OnInit, OnDestroy, ControlValueAccessor, AsyncValidator {
     protected store: Store<AppState>;
@@ -101,7 +102,7 @@ export declare class WidgetConfigComponent extends PageComponent implements OnIn
     get displayUnitsConfig(): boolean;
     get displayNoDataDisplayMessageConfig(): boolean;
     onlyHistoryTimewindow(): boolean;
-    generateDataKey(chip: any, type: DataKeyType, datakeySettingsSchema: JsonSettingsSchema): DataKey;
+    generateDataKey(chip: any, type: DataKeyType, datakeySettingsSchema: JsonSettingsSchema, isLatestDataKey: boolean, dataKeySettingsFunction: DataKeySettingsFunction): DataKey;
     private genNextColor;
     private createEntityAlias;
     private createFilter;

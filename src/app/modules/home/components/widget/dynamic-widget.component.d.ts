@@ -19,7 +19,7 @@ export declare class DynamicWidgetComponent extends PageComponent implements IDy
     executingRpcRequest: boolean;
     rpcEnabled: boolean;
     rpcErrorText: string;
-    rpcRejection: HttpErrorResponse;
+    rpcRejection: HttpErrorResponse | Error;
     [key: string]: any;
     validators: typeof Validators;
     constructor(raf: RafService, store: Store<AppState>, fb: UntypedFormBuilder, $injector: Injector, ctx: WidgetContext, errorMessages: string[], widgetTitlePanel: TemplateRef<any>);

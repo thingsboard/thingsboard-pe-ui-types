@@ -116,7 +116,7 @@ export declare class WidgetEditorComponent extends PageComponent implements OnIn
     beautifyJs(): void;
     removeResource(index: number): void;
     addResource(): void;
-    widetTypeChanged(): void;
+    widgetTypeChanged(): void;
     get confirmOnExitMessage(): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetEditorComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<WidgetEditorComponent, "tb-widget-editor", never, {}, {}, never, never, false, never>;

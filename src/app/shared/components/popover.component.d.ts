@@ -2,7 +2,7 @@ import { AfterViewInit, ChangeDetectorRef, ComponentFactory, ComponentFactoryRes
 import { Direction, Directionality } from '@angular/cdk/bidi';
 import { CdkConnectedOverlay, CdkOverlayOrigin, ConnectedOverlayPositionChange, ConnectionPositionPair, NoopScrollStrategy } from '@angular/cdk/overlay';
 import { Subject } from 'rxjs';
-import { PopoverPlacement } from '@shared/components/popover.models';
+import { PopoverPlacement, PopoverPreferredPlacement } from '@shared/components/popover.models';
 import { AnimationBuilder } from '@angular/animations';
 import * as i0 from "@angular/core";
 export type TbPopoverTrigger = 'click' | 'focus' | 'hover' | null;
@@ -95,9 +95,10 @@ export declare class TbPopoverComponent<T = any> implements OnDestroy, OnInit {
     set tbTrigger(value: TbPopoverTrigger);
     get tbTrigger(): TbPopoverTrigger;
     protected trigger: TbPopoverTrigger;
-    set tbPlacement(value: PopoverPlacement | PopoverPlacement[]);
+    set tbPlacement(value: PopoverPreferredPlacement);
     get hasBackdrop(): boolean;
     preferredPlacement: PopoverPlacement;
+    strictPosition: boolean;
     origin: CdkOverlayOrigin;
     dir: Direction;
     classMap: {

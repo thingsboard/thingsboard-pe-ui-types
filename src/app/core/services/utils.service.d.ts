@@ -1,5 +1,5 @@
 /// <reference types="src/typings/rawloader.typings" />
-import { NgZone } from '@angular/core';
+import { NgZone, Renderer2 } from '@angular/core';
 import { ExceptionData } from '@app/shared/models/error.models';
 import { TranslateService } from '@ngx-translate/core';
 import { DataKey, Datasource, KeyInfo } from '@shared/models/widget.models';
@@ -13,6 +13,7 @@ import { DatePipe } from '@angular/common';
 import * as i0 from "@angular/core";
 export declare class UtilsService {
     private window;
+    private document;
     private zone;
     private datePipe;
     private translate;
@@ -23,7 +24,7 @@ export declare class UtilsService {
     defaultDataKey: DataKey;
     defaultDatasource: Datasource;
     defaultAlarmDataKeys: Array<DataKey>;
-    constructor(window: Window, zone: NgZone, datePipe: DatePipe, translate: TranslateService);
+    constructor(window: Window, document: Document, zone: NgZone, datePipe: DatePipe, translate: TranslateService);
     getPredefinedFunctionsList(): Array<string>;
     getPredefinedFunctionBody(func: string): string;
     getDefaultDatasource(dataKeySchema: any): Datasource;
@@ -38,7 +39,6 @@ export declare class UtilsService {
     customTranslation(translationValue: string, defaultValue: string): string;
     private doTranslate;
     guid(): string;
-    validateDatasources(datasources: Array<Datasource>): Array<Datasource>;
     getMaterialColor(index: number): string;
     createKey(keyInfo: KeyInfo, type: DataKeyType, index?: number): DataKey;
     createLabelFromDatasource(datasource: Datasource, pattern: string): string;
@@ -61,7 +61,8 @@ export declare class UtilsService {
     base64toString(b64Encoded: string): string;
     objToBase64URI(obj: any): string;
     base64toObj(b64Encoded: string): any;
-    plainColorFromVariable(variable: string): string;
+    applyCssToElement(renderer: Renderer2, element: any, cssClassPrefix: string, css: string): string;
+    clearCssElement(renderer: Renderer2, cssClass: string, element?: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<UtilsService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<UtilsService>;
 }

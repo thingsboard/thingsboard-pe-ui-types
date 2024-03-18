@@ -1,0 +1,31 @@
+import { OnInit } from '@angular/core';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { AxisPosition, TimeSeriesChartAxisSettings, TimeSeriesChartYAxisSettings } from '@home/components/widget/lib/chart/time-series-chart.models';
+import { WidgetService } from '@core/http/widget.service';
+import * as i0 from "@angular/core";
+export declare class TimeSeriesChartAxisSettingsComponent implements OnInit, ControlValueAccessor {
+    private fb;
+    private widgetService;
+    alwaysExpanded: boolean;
+    settingsExpanded: boolean;
+    axisPositions: AxisPosition[];
+    timeSeriesAxisPositionTranslations: Map<AxisPosition, string>;
+    functionScopeVariables: string[];
+    defaultXAxisTicksFormat: import("../../../../../../../../shared/public-api").AutoDateFormatSettings;
+    disabled: boolean;
+    axisType: 'xAxis' | 'yAxis';
+    advanced: boolean;
+    private modelValue;
+    private propagateChange;
+    axisSettingsFormGroup: UntypedFormGroup;
+    constructor(fb: UntypedFormBuilder, widgetService: WidgetService);
+    ngOnInit(): void;
+    registerOnChange(fn: any): void;
+    registerOnTouched(_fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    writeValue(value: TimeSeriesChartAxisSettings | TimeSeriesChartYAxisSettings): void;
+    private updateValidators;
+    private updateModel;
+    static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesChartAxisSettingsComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartAxisSettingsComponent, "tb-time-series-chart-axis-settings", never, { "alwaysExpanded": "alwaysExpanded"; "disabled": "disabled"; "axisType": "axisType"; "advanced": "advanced"; }, {}, never, never, false, never>;
+}

@@ -90,7 +90,8 @@ export declare class EntitiesTableWidgetComponent extends PageComponent implemen
     headerStyle(key: EntityColumn): any;
     rowStyle(entity: EntityData, row: number): any;
     cellStyle(entity: EntityData, key: EntityColumn, row: number): any;
-    cellContent(entity: EntityData, key: EntityColumn, row: number, useSafeHtml?: boolean): SafeHtml;
+    cellContent(entity: EntityData, key: EntityColumn, row: number, useSafeHtml?: boolean, isExport?: boolean): SafeHtml;
+    private applyCellContentFunction;
     private defaultContent;
     onRowClick($event: Event, entity: EntityData, isDouble?: boolean): void;
     onActionButtonClick($event: Event, entity: EntityData, actionDescriptor: WidgetActionDescriptor): void;

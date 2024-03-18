@@ -27,7 +27,7 @@ export declare class CustomActionPrettyResourcesTabsComponent extends PageCompon
     htmlEditor: Ace.Editor;
     cssEditor: Ace.Editor;
     setValuesPending: boolean;
-    customPrettyActionEditorCompleter: import("../../../../../shared/models/ace/completion.models").TbEditorCompleter;
+    customPrettyActionEditorCompleter: import("../../../../../../../../shared/models/ace/completion.models").TbEditorCompleter;
     constructor(store: Store<AppState>, translate: TranslateService, raf: RafService);
     ngOnInit(): void;
     ngOnDestroy(): void;

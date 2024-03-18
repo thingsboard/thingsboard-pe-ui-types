@@ -5,12 +5,10 @@ import { AppState } from '@core/core.state';
 import { ControlValueAccessor } from '@angular/forms';
 import { ColorPalette } from '@shared/models/material.models';
 import { WhiteLabelingService } from '@core/http/white-labeling.service';
-import { UtilsService } from '@core/services/utils.service';
 import * as i0 from "@angular/core";
 export declare class ThemeColorSelectComponent extends PageComponent implements OnInit, ControlValueAccessor {
     protected store: Store<AppState>;
     private wl;
-    private utils;
     palette: 'primary' | 'accent';
     private modelValue;
     private propagateChange;
@@ -19,7 +17,7 @@ export declare class ThemeColorSelectComponent extends PageComponent implements 
     colors: ColorPalette;
     paletteKey: string;
     selectedHue: string;
-    constructor(store: Store<AppState>, wl: WhiteLabelingService, utils: UtilsService);
+    constructor(store: Store<AppState>, wl: WhiteLabelingService);
     ngOnInit(): void;
     hueStyle(hue: string): {
         [klass: string]: any;

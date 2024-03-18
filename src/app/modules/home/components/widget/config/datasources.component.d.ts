@@ -72,6 +72,7 @@ export declare class DatasourcesComponent implements ControlValueAccessor, OnIni
     removeDatasource(index: number): void;
     addDatasource(emitEvent?: boolean): void;
     private get dataKeySettingsSchema();
+    private get dataKeySettingsFunction();
     private get dataKeysCallbacks();
     private get hasAdditionalLatestDataKeys();
     private get datasourcesOptional();

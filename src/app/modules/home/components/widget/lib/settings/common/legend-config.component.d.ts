@@ -5,6 +5,7 @@ import * as i0 from "@angular/core";
 export declare class LegendConfigComponent implements OnInit, OnDestroy, ControlValueAccessor {
     private fb;
     disabled: boolean;
+    hideDirection: boolean;
     legendConfigForm: UntypedFormGroup;
     legendDirection: typeof LegendDirection;
     legendDirections: string[];
@@ -27,5 +28,5 @@ export declare class LegendConfigComponent implements OnInit, OnDestroy, Control
     private getShowValues;
     private setShowValues;
     static ɵfac: i0.ɵɵFactoryDeclaration<LegendConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<LegendConfigComponent, "tb-legend-config", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<LegendConfigComponent, "tb-legend-config", never, { "disabled": "disabled"; "hideDirection": "hideDirection"; }, {}, never, never, false, never>;
 }

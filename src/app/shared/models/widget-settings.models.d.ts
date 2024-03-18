@@ -1,9 +1,10 @@
-import { DataKey, Datasource, DatasourceData } from '@shared/models/widget.models';
+import { DataEntry, DataKey, Datasource, DatasourceData, TargetDevice } from '@shared/models/widget.models';
 import { Injector } from '@angular/core';
 import { AlarmFilterConfig } from '@shared/models/query/query.models';
 import { Observable } from 'rxjs';
 import { ImagePipe } from '@shared/pipe/image.pipe';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Interval } from '@shared/models/time/time.models';
 export type ComponentStyle = {
     [klass: string]: any;
 };
@@ -61,6 +62,7 @@ export declare const constantColor: (color: string) => ColorSettings;
 export declare const defaultColorFunction: string;
 export declare const cssSizeToStrSize: (size?: number, unit?: cssUnit) => string;
 export declare const resolveCssSize: (strSize?: string) => [number, cssUnit];
+export declare const validateCssSize: (strSize?: string) => string | undefined;
 export declare abstract class ColorProcessor {
     protected settings: ColorSettings;
     static fromSettings(color: ColorSettings): ColorProcessor;
@@ -68,16 +70,27 @@ export declare abstract class ColorProcessor {
     protected constructor(settings: ColorSettings);
     abstract update(value: any): void;
 }
+export type FormatTimeUnit = 'millisecond' | 'second' | 'minute' | 'hour' | 'day' | 'month' | 'year';
+export declare const formatTimeUnits: FormatTimeUnit[];
+export declare const formatTimeUnitTranslations: Map<FormatTimeUnit, string>;
+export type AutoDateFormatSettings = {
+    [unit in FormatTimeUnit]?: string;
+};
 export interface DateFormatSettings {
     format?: string;
     lastUpdateAgo?: boolean;
     custom?: boolean;
+    auto?: boolean;
     hideLastUpdatePrefix?: boolean;
+    autoDateFormatSettings?: AutoDateFormatSettings;
 }
 export declare const simpleDateFormat: (format: string) => DateFormatSettings;
 export declare const lastUpdateAgoDateFormat: () => DateFormatSettings;
 export declare const customDateFormat: (format: string) => DateFormatSettings;
+export declare const defaultAutoDateFormatSettings: AutoDateFormatSettings;
+export declare const autoDateFormat: () => DateFormatSettings;
 export declare const dateFormats: DateFormatSettings[];
+export declare const dateFormatsWithAuto: DateFormatSettings[];
 export declare const compareDateFormats: (df1: DateFormatSettings, df2: DateFormatSettings) => boolean;
 export declare abstract class DateFormatProcessor {
     protected $injector: Injector;
@@ -85,14 +98,14 @@ export declare abstract class DateFormatProcessor {
     static fromSettings($injector: Injector, settings: DateFormatSettings): DateFormatProcessor;
     formatted: string;
     protected constructor($injector: Injector, settings: DateFormatSettings);
-    abstract update(ts: string | number | Date): void;
+    abstract update(ts: string | number | Date, interval?: Interval): string;
 }
 export declare class SimpleDateFormatProcessor extends DateFormatProcessor {
     protected $injector: Injector;
     protected settings: DateFormatSettings;
     private datePipe;
     constructor($injector: Injector, settings: DateFormatSettings);
-    update(ts: string | number | Date): void;
+    update(ts: string | number | Date): string;
 }
 export declare class LastUpdateAgoDateFormatProcessor extends DateFormatProcessor {
     protected $injector: Injector;
@@ -100,8 +113,17 @@ export declare class LastUpdateAgoDateFormatProcessor extends DateFormatProcesso
     private dateAgoPipe;
     private translate;
     constructor($injector: Injector, settings: DateFormatSettings);
-    update(ts: string | number | Date): void;
+    update(ts: string | number | Date): string;
 }
+export declare class AutoDateFormatProcessor extends DateFormatProcessor {
+    protected $injector: Injector;
+    protected settings: DateFormatSettings;
+    private datePipe;
+    private readonly autoDateFormatSettings;
+    constructor($injector: Injector, settings: DateFormatSettings);
+    update(ts: string | number | Date, interval?: Interval): string;
+}
+export declare const tsToFormatTimeUnit: (ts: string | number | Date) => FormatTimeUnit;
 export declare enum BackgroundType {
     image = "image",
     color = "color"
@@ -133,11 +155,12 @@ export declare const getDataKey: (datasources?: Datasource[], index?: number) =>
 export declare const updateDataKeys: (datasources: Datasource[], dataKeys: DataKey[]) => void;
 export declare const getDataKeyByLabel: (datasources: Datasource[], label: string) => DataKey;
 export declare const updateDataKeyByLabel: (datasources: Datasource[], dataKey: DataKey, label: string) => void;
+export declare const getTargetDeviceFromDatasources: (datasources?: Datasource[]) => TargetDevice;
 export declare const getAlarmFilterConfig: (datasources?: Datasource[]) => AlarmFilterConfig;
 export declare const setAlarmFilterConfig: (config: AlarmFilterConfig, datasources?: Datasource[]) => void;
 export declare const getLabel: (datasources?: Datasource[]) => string;
 export declare const setLabel: (label: string, datasources?: Datasource[]) => void;
-export declare const getSingleTsValue: (data: Array<DatasourceData>) => [number, any];
-export declare const getSingleTsValueByDataKey: (data: Array<DatasourceData>, dataKey: DataKey) => [number, any];
-export declare const getLatestSingleTsValue: (data: Array<DatasourceData>) => [number, any];
+export declare const getSingleTsValue: (data: Array<DatasourceData>) => DataEntry;
+export declare const getSingleTsValueByDataKey: (data: Array<DatasourceData>, dataKey: DataKey) => DataEntry;
+export declare const getLatestSingleTsValue: (data: Array<DatasourceData>) => DataEntry;
 export {};

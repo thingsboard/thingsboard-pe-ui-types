@@ -1,7 +1,7 @@
 import { IStateControllerComponent, StateControllerState } from '@home/components/dashboard-page/states/state-controller.models';
 import { IDashboardController } from '../dashboard-page.models';
 import { DashboardState } from '@app/shared/models/dashboard.models';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { NgZone, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { StatesControllerService } from '@home/components/dashboard-page/states/states-controller.service';
@@ -17,6 +17,7 @@ export declare abstract class StateControllerComponent implements IStateControll
     protected ngZone: NgZone;
     protected statesControllerService: StatesControllerService;
     private stateChangedSubject;
+    protected stateIdSubject: Subject<string>;
     stateObject: StateControllerState;
     dashboardCtrl: IDashboardController;
     preservedState: any;
@@ -48,6 +49,7 @@ export declare abstract class StateControllerComponent implements IStateControll
     ngOnDestroy(): void;
     protected updateStateParam(newState: string, replaceCurrentHistoryUrl?: boolean): void;
     stateChanged(): Observable<string>;
+    stateId(): Observable<string>;
     openRightLayout(): void;
     preserveState(): void;
     cleanupPreservedStates(): void;

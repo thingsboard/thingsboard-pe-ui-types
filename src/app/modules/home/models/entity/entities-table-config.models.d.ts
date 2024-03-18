@@ -100,7 +100,8 @@ export declare class EntityLinkTableColumn<T extends BaseData<HasId>> extends Ba
     width: string;
     cellContentFunction: CellContentFunction<T>;
     entityURL: (entity: any) => string;
-    constructor(key: string, title: string, width: string, cellContentFunction: CellContentFunction<T>, entityURL: (entity: any) => string);
+    sortable: boolean;
+    constructor(key: string, title: string, width: string, cellContentFunction: CellContentFunction<T>, entityURL: (entity: any) => string, sortable?: boolean);
 }
 export declare class DateEntityTableColumn<T extends BaseData<HasId>> extends EntityTableColumn<T> {
     constructor(key: string, title: string, datePipe: DatePipe, width?: string, dateFormat?: string, cellStyleFunction?: CellStyleFunction<T>);

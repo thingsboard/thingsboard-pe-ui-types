@@ -2,7 +2,6 @@ import { NotificationDeliveryMethod, NotificationRequest, NotificationRequestPre
 import { OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { Router } from '@angular/router';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { AbstractControl, FormBuilder, FormGroup } from '@angular/forms';
 import { NotificationService } from '@core/http/notification.service';
@@ -15,6 +14,7 @@ import { MatButton } from '@angular/material/button';
 import { TemplateConfiguration } from '@home/pages/notification/template/template-configuration';
 import { TranslateService } from '@ngx-translate/core';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
+import { Router } from '@angular/router';
 import * as i0 from "@angular/core";
 export interface RequestNotificationDialogData {
     request?: NotificationRequest;

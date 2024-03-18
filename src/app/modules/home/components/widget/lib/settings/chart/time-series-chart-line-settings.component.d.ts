@@ -1,0 +1,38 @@
+import { OnInit } from '@angular/core';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { LineSeriesSettings, TimeSeriesChartType } from '@home/components/widget/lib/chart/time-series-chart.models';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { DataKeyConfigComponent } from '@home/components/widget/config/data-key-config.component';
+import * as i0 from "@angular/core";
+export declare class TimeSeriesChartLineSettingsComponent implements OnInit, ControlValueAccessor {
+    protected store: Store<AppState>;
+    private dataKeyConfigComponent;
+    private fb;
+    TimeSeriesChartType: typeof TimeSeriesChartType;
+    lineSeriesStepTypes: import("@home/components/widget/lib/chart/time-series-chart.models").LineSeriesStepType[];
+    lineSeriesStepTypeTranslations: Map<import("@home/components/widget/lib/chart/time-series-chart.models").LineSeriesStepType, string>;
+    timeSeriesLineTypes: import("@home/components/widget/lib/chart/time-series-chart.models").TimeSeriesChartLineType[];
+    timeSeriesLineTypeTranslations: Map<import("@home/components/widget/lib/chart/time-series-chart.models").TimeSeriesChartLineType, string>;
+    seriesLabelPositions: import("@home/components/widget/lib/chart/time-series-chart.models").SeriesLabelPosition[];
+    seriesLabelPositionTranslations: Map<import("@home/components/widget/lib/chart/time-series-chart.models").SeriesLabelPosition, string>;
+    timeSeriesChartShapes: import("@home/components/widget/lib/chart/time-series-chart.models").TimeSeriesChartShape[];
+    timeSeriesChartShapeTranslations: Map<import("@home/components/widget/lib/chart/time-series-chart.models").TimeSeriesChartShape, string>;
+    pointLabelPreviewFn: any;
+    disabled: boolean;
+    chartType: TimeSeriesChartType;
+    private modelValue;
+    private propagateChange;
+    lineSettingsFormGroup: UntypedFormGroup;
+    constructor(store: Store<AppState>, dataKeyConfigComponent: DataKeyConfigComponent, fb: UntypedFormBuilder);
+    ngOnInit(): void;
+    registerOnChange(fn: any): void;
+    registerOnTouched(_fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    writeValue(value: LineSeriesSettings): void;
+    private updateValidators;
+    private updateModel;
+    private _pointLabelPreviewFn;
+    static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesChartLineSettingsComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartLineSettingsComponent, "tb-time-series-chart-line-settings", never, { "disabled": "disabled"; "chartType": "chartType"; }, {}, never, never, false, never>;
+}

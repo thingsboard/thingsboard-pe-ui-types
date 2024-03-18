@@ -14,6 +14,7 @@ export declare class NotificationMessage {
     horizontalPosition?: NotificationHorizontalPosition;
     verticalPosition?: NotificationVerticalPosition;
     panelClass?: string | string[];
+    modern?: boolean;
 }
 export declare class HideNotification {
     target?: string;

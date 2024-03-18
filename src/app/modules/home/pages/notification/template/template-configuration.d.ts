@@ -1,5 +1,5 @@
 import { FormBuilder, FormGroup, ValidationErrors } from '@angular/forms';
-import { ActionButtonLinkType, NotificationDeliveryMethod, NotificationTemplate, NotificationType } from '@shared/models/notification.models';
+import { DeliveryMethodsTemplates, NotificationDeliveryMethod, NotificationTemplate, NotificationType } from '@shared/models/notification.models';
 import { Subject } from 'rxjs';
 import { OnDestroy } from '@angular/core';
 import { DialogComponent } from '@shared/components/dialog.component';
@@ -14,25 +14,17 @@ export declare abstract class TemplateConfiguration<T, R = any> extends DialogCo
     protected dialogRef: MatDialogRef<T, R>;
     protected fb: FormBuilder;
     templateNotificationForm: FormGroup;
-    webTemplateForm: FormGroup;
-    emailTemplateForm: FormGroup;
-    smsTemplateForm: FormGroup;
-    slackTemplateForm: FormGroup;
-    microsoftTeamsTemplateForm: FormGroup;
+    notificationTemplateConfigurationForm: FormGroup;
     notificationDeliveryMethods: NotificationDeliveryMethod[];
-    notificationDeliveryMethodTranslateMap: Map<NotificationDeliveryMethod, string>;
+    notificationDeliveryMethodInfoMap: Map<NotificationDeliveryMethod, import("@shared/models/notification.models").NotificationDeliveryMethodInfo>;
     notificationTemplateTypeTranslateMap: Map<NotificationType, import("@shared/models/notification.models").NotificationTemplateTypeTranslate>;
-    actionButtonLinkType: typeof ActionButtonLinkType;
-    actionButtonLinkTypes: ActionButtonLinkType[];
-    actionButtonLinkTypeTranslateMap: Map<ActionButtonLinkType, string>;
-    tinyMceOptions: Record<string, any>;
+    deliveryConfiguration: Partial<DeliveryMethodsTemplates>;
     protected readonly destroy$: Subject<void>;
     protected deliveryMethodFormsMap: Map<NotificationDeliveryMethod, FormGroup>;
     protected constructor(store: Store<AppState>, router: Router, dialogRef: MatDialogRef<T, R>, fb: FormBuilder);
     ngOnDestroy(): void;
     atLeastOne(): (group: FormGroup) => ValidationErrors | null;
     protected getNotificationTemplateValue(): NotificationTemplate;
-    private createButtonConfigForm;
     static ɵfac: i0.ɵɵFactoryDeclaration<TemplateConfiguration<any, any>, never>;
     static ɵdir: i0.ɵɵDirectiveDeclaration<TemplateConfiguration<any, any>, never, never, {}, {}, never, never, false, never>;
 }

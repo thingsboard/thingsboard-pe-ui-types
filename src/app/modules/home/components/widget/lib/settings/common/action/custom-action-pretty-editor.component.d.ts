@@ -13,7 +13,7 @@ export declare class CustomActionPrettyEditorComponent extends PageComponent imp
     fullscreen: boolean;
     leftPanelElmRef: QueryList<ElementRef<HTMLElement>>;
     rightPanelElmRef: QueryList<ElementRef<HTMLElement>>;
-    customPrettyActionEditorCompleter: import("../../../../../shared/models/ace/completion.models").TbEditorCompleter;
+    customPrettyActionEditorCompleter: import("../../../../../../../../shared/models/ace/completion.models").TbEditorCompleter;
     private propagateChange;
     constructor(store: Store<AppState>);
     ngOnInit(): void;

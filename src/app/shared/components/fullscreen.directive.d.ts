@@ -1,4 +1,4 @@
-import { ElementRef, EventEmitter, OnChanges, OnDestroy, Renderer2, SimpleChanges, ViewContainerRef } from '@angular/core';
+import { ElementRef, EventEmitter, OnChanges, OnDestroy, Renderer2, SimpleChanges } from '@angular/core';
 import { Overlay } from '@angular/cdk/overlay';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 import * as i0 from "@angular/core";
@@ -6,7 +6,6 @@ export declare class FullscreenDirective implements OnChanges, OnDestroy {
     elementRef: ElementRef;
     private renderer;
     private sanitizer;
-    private viewContainerRef;
     private overlay;
     fullscreenValue: boolean;
     private overlayRef;
@@ -18,7 +17,7 @@ export declare class FullscreenDirective implements OnChanges, OnDestroy {
     };
     fullscreenBackgroundImage: SafeStyle | string;
     fullscreenChanged: EventEmitter<boolean>;
-    constructor(elementRef: ElementRef, renderer: Renderer2, sanitizer: DomSanitizer, viewContainerRef: ViewContainerRef, overlay: Overlay);
+    constructor(elementRef: ElementRef, renderer: Renderer2, sanitizer: DomSanitizer, overlay: Overlay);
     ngOnChanges(changes: SimpleChanges): void;
     ngOnDestroy(): void;
     enterFullscreen(): void;

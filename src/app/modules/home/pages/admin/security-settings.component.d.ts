@@ -19,6 +19,7 @@ export declare class SecuritySettingsComponent extends PageComponent implements 
     private fb;
     securitySettingsFormGroup: UntypedFormGroup;
     jwtSecuritySettingsFormGroup: UntypedFormGroup;
+    showMainLoadingBar: boolean;
     private securitySettings;
     private jwtSettings;
     constructor(store: Store<AppState>, router: Router, adminService: AdminService, authService: AuthService, dialogService: DialogService, translate: TranslateService, fb: UntypedFormBuilder);

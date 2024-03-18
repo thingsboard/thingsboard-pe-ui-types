@@ -20,6 +20,7 @@ export declare class StatesComponentDirective implements OnInit, OnDestroy, OnCh
     stateControllerComponentRef: ComponentRef<IStateControllerComponent>;
     stateControllerComponent: IStateControllerComponent;
     private stateChangedSubject;
+    private stateIdSubject;
     constructor(viewContainerRef: ViewContainerRef, statesControllerService: StatesControllerService);
     ngOnInit(): void;
     ngOnDestroy(): void;

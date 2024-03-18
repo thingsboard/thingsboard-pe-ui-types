@@ -93,7 +93,7 @@ export declare class ImportExportService {
     }[], filename: string): void;
     exportXlsx(data: {
         [key: string]: any;
-    }[], filename: string): void;
+    }[], filename: string, dateFormat?: string): void;
     private formatDataAccordingToLocale;
     private validateImportedConverter;
     exportText(data: string | Array<string>, filename: string): void;

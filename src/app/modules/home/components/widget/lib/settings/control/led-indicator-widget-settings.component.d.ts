@@ -1,4 +1,4 @@
-import { WidgetSettings, WidgetSettingsComponent } from '@shared/models/widget.models';
+import { TargetDevice, WidgetSettings, WidgetSettingsComponent } from '@shared/models/widget.models';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -10,7 +10,7 @@ export declare class LedIndicatorWidgetSettingsComponent extends WidgetSettingsC
     private widgetService;
     private fb;
     functionScopeVariables: string[];
-    get targetDeviceAliasId(): string;
+    get targetDevice(): TargetDevice;
     dataKeyType: typeof DataKeyType;
     ledIndicatorWidgetSettingsForm: UntypedFormGroup;
     constructor(store: Store<AppState>, widgetService: WidgetService, fb: UntypedFormBuilder);

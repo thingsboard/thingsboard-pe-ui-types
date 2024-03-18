@@ -15,6 +15,7 @@ import { Router } from '@angular/router';
 import { EntityId } from '@shared/models/id/entity-id';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
+import { WhiteLabelingService } from '@core/http/white-labeling.service';
 import * as i0 from "@angular/core";
 export declare class DeviceGroupConfigFactory implements EntityGroupStateConfigFactory<DeviceInfo> {
     private groupConfigTableConfigService;
@@ -27,8 +28,9 @@ export declare class DeviceGroupConfigFactory implements EntityGroupStateConfigF
     private router;
     private broadcast;
     private store;
+    private wl;
     private window;
-    constructor(groupConfigTableConfigService: GroupConfigTableConfigService<DeviceInfo>, userPermissionsService: UserPermissionsService, translate: TranslateService, utils: UtilsService, dialog: MatDialog, homeDialogs: HomeDialogsService, deviceService: DeviceService, router: Router, broadcast: BroadcastService, store: Store<AppState>, window: Window);
+    constructor(groupConfigTableConfigService: GroupConfigTableConfigService<DeviceInfo>, userPermissionsService: UserPermissionsService, translate: TranslateService, utils: UtilsService, dialog: MatDialog, homeDialogs: HomeDialogsService, deviceService: DeviceService, router: Router, broadcast: BroadcastService, store: Store<AppState>, wl: WhiteLabelingService, window: Window);
     createConfig(params: EntityGroupParams, entityGroup: EntityGroupStateInfo<DeviceInfo>): Observable<GroupEntityTableConfig<DeviceInfo>>;
     deviceWizard(config: GroupEntityTableConfig<DeviceInfo>): Observable<DeviceInfo>;
     importDevices($event: Event, config: GroupEntityTableConfig<DeviceInfo>): void;

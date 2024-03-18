@@ -1,4 +1,5 @@
 import { BackgroundSettings, ColorSettings, Font } from '@shared/models/widget-settings.models';
+import { LegendPosition } from '@shared/models/widget.models';
 export declare enum DoughnutLayout {
     default = "default",
     with_total = "with_total"
@@ -7,14 +8,6 @@ export declare const doughnutLayouts: DoughnutLayout[];
 export declare const doughnutLayoutTranslations: Map<DoughnutLayout, string>;
 export declare const doughnutLayoutImages: Map<DoughnutLayout, string>;
 export declare const horizontalDoughnutLayoutImages: Map<DoughnutLayout, string>;
-export declare enum DoughnutLegendPosition {
-    top = "top",
-    bottom = "bottom",
-    left = "left",
-    right = "right"
-}
-export declare const doughnutLegendPositions: DoughnutLegendPosition[];
-export declare const doughnutLegendPositionTranslations: Map<DoughnutLegendPosition, string>;
 export declare enum DoughnutTooltipValueType {
     absolute = "absolute",
     percentage = "percentage"
@@ -29,7 +22,7 @@ export interface DoughnutWidgetSettings {
     totalValueFont: Font;
     totalValueColor: ColorSettings;
     showLegend: boolean;
-    legendPosition: DoughnutLegendPosition;
+    legendPosition: LegendPosition;
     legendLabelFont: Font;
     legendLabelColor: string;
     legendValueFont: Font;

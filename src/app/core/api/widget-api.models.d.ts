@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 import { EntityId } from '@app/shared/models/id/entity-id';
-import { DataSet, Datasource, DatasourceData, DatasourceType, KeyInfo, LegendConfig, LegendData, WidgetActionDescriptor, widgetType } from '@shared/models/widget.models';
+import { DataSet, Datasource, DatasourceData, DatasourceType, KeyInfo, LegendConfig, LegendData, TargetDevice, WidgetActionDescriptor, widgetType } from '@shared/models/widget.models';
 import { TimeService } from '../services/time.service';
 import { DeviceService } from '../http/device.service';
 import { UtilsService } from '@core/services/utils.service';
@@ -11,8 +11,8 @@ import { RafService } from '@core/services/raf.service';
 import { EntityAliases } from '@shared/models/alias.models';
 import { EntityInfo } from '@app/shared/models/entity.models';
 import { IDashboardComponent } from '@home/models/dashboard-component.models';
-import * as moment_ from 'moment';
 import { DatePipe } from '@angular/common';
+import moment_ from 'moment';
 import { AlarmData, AlarmDataPageLink, EntityData, EntityDataPageLink, EntityFilter, Filter, FilterInfo, Filters, KeyFilter } from '@shared/models/query/query.models';
 import { EntityDataService } from '@core/api/entity-data.service';
 import { PageData } from '@shared/models/page/page-data';
@@ -22,6 +22,7 @@ import { IDashboardController } from '@home/components/dashboard-page/dashboard-
 import { PopoverPlacement } from '@shared/components/popover.models';
 import { PersistentRpc } from '@shared/models/rpc.models';
 import { EventEmitter } from '@angular/core';
+import { DashboardUtilsService } from '@core/services/dashboard-utils.service';
 export interface TimewindowFunctions {
     onUpdateTimewindow: (startTimeMs: number, endTimeMs: number, interval?: number) => void;
     onResetTimewindow: () => void;
@@ -38,6 +39,7 @@ export interface RpcApi {
 }
 export interface IWidgetUtils {
     formatValue: (value: any, dec?: number, units?: string, showZeroDecimals?: boolean) => string | undefined;
+    getEntityDetailsPageURL: (id: string, entityType: EntityType) => string;
 }
 export interface WidgetActionsApi {
     actionDescriptorsBySourceId: {
@@ -47,6 +49,7 @@ export interface WidgetActionsApi {
     handleWidgetAction: ($event: Event, descriptor: WidgetActionDescriptor, entityId?: EntityId, entityName?: string, additionalParams?: any, entityLabel?: string) => void;
     elementClick: ($event: Event) => void;
     cardClick: ($event: Event) => void;
+    click: ($event: Event) => void;
     getActiveEntityInfo: () => SubscriptionEntityInfo;
     openDashboardStateInSeparateDialog: (targetDashboardStateId: string, params?: StateParams, dialogTitle?: string, hideDashboardToolbar?: boolean, dialogWidth?: number, dialogHeight?: number) => void;
     openDashboardStateInPopover: ($event: Event, targetDashboardStateId: string, params?: StateParams, hideDashboardToolbar?: boolean, preferredPlacement?: PopoverPlacement, hideOnClickOutside?: boolean, popoverWidth?: string, popoverHeight?: string, popoverStyle?: {
@@ -73,18 +76,20 @@ export interface IAliasController {
     getEntityAliasId(aliasName: string): string;
     getInstantAliasInfo(aliasId: string): AliasInfo;
     resolveSingleEntityInfo(aliasId: string): Observable<EntityInfo>;
+    resolveSingleEntityInfoForDeviceId(deviceId: string): Observable<EntityInfo>;
+    resolveSingleEntityInfoForTargetDevice(targetDevice: TargetDevice): Observable<EntityInfo>;
     resolveDatasources(datasources: Array<Datasource>, singleEntity?: boolean, pageSize?: number): Observable<Array<Datasource>>;
     resolveAlarmSource(alarmSource: Datasource): Observable<Datasource>;
     getEntityAliases(): EntityAliases;
     getFilters(): Filters;
     getFilterInfo(filterId: string): FilterInfo;
     getKeyFilters(filterId: string): Array<KeyFilter>;
-    updateCurrentAliasEntity(aliasId: string, currentEntity: EntityInfo): any;
-    updateUserFilter(filter: Filter): any;
-    updateEntityAliases(entityAliases: EntityAliases): any;
-    updateFilters(filters: Filters): any;
-    updateAliases(aliasIds?: Array<string>): any;
-    dashboardStateChanged(): any;
+    updateCurrentAliasEntity(aliasId: string, currentEntity: EntityInfo): void;
+    updateUserFilter(filter: Filter): void;
+    updateEntityAliases(entityAliases: EntityAliases): void;
+    updateFilters(filters: Filters): void;
+    updateAliases(aliasIds?: Array<string>): void;
+    dashboardStateChanged(): void;
 }
 export interface StateObject {
     id?: string;
@@ -103,6 +108,7 @@ export interface IStateController {
     dashboardCtrl: IDashboardController;
     getStateParams(): StateParams;
     stateChanged(): Observable<string>;
+    stateId(): Observable<string>;
     getStateParamsByStateId(stateId: string): StateParams;
     openState(id: string, params?: StateParams, openRightLayout?: boolean): void;
     updateState(id?: string, params?: StateParams, openRightLayout?: boolean): void;
@@ -147,6 +153,7 @@ export declare class WidgetSubscriptionContext {
     alarmDataService: AlarmDataService;
     utils: UtilsService;
     datePipe: DatePipe;
+    dashboardUtils: DashboardUtilsService;
     raf: RafService;
     widgetUtils: IWidgetUtils;
     getServerTimeDiff: () => Observable<number>;
@@ -185,6 +192,7 @@ export interface WidgetSubscriptionOptions {
     ignoreDataUpdateOnIntervalTick?: boolean;
     targetDeviceAliasIds?: Array<string>;
     targetDeviceIds?: Array<string>;
+    targetDevice?: TargetDevice;
     useDashboardTimewindow?: boolean;
     displayTimewindow?: boolean;
     timeWindowConfig?: Timewindow;
@@ -232,12 +240,11 @@ export interface IWidgetSubscription {
     persistentRequests?: PageData<PersistentRpc>;
     alarms?: PageData<AlarmData>;
     alarmSource?: Datasource;
-    targetDeviceAliasIds?: Array<string>;
-    targetDeviceIds?: Array<string>;
+    targetEntityId?: EntityId;
     rpcEnabled?: boolean;
     executingRpcRequest?: boolean;
     rpcErrorText?: string;
-    rpcRejection?: HttpErrorResponse;
+    rpcRejection?: HttpErrorResponse | Error;
     getFirstEntityInfo(): SubscriptionEntityInfo;
     onAliasesChanged(aliasIds: Array<string>): boolean;
     onFiltersChanged(filterIds: Array<string>): boolean;

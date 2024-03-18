@@ -1,10 +1,11 @@
-import { AfterViewInit, OnDestroy, OnInit } from '@angular/core';
-import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
+import { AfterViewInit, ChangeDetectorRef, OnDestroy, OnInit } from '@angular/core';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator, AbstractControl, ValidationErrors } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { PageComponent } from '@shared/components/page.component';
 import { SchedulerEventSchedule, SchedulerRepeatType, SchedulerTimeUnit } from '@shared/models/scheduler-event.models';
 import { ErrorStateMatcher } from '@angular/material/core';
+import { MatChipListbox } from '@angular/material/chips';
 import * as i0 from "@angular/core";
 interface SchedulerEventScheduleConfig {
     timezone: string;
@@ -23,9 +24,10 @@ interface SchedulerEventScheduleConfig {
 export declare class EndsOnDateErrorStateMatcher implements ErrorStateMatcher {
     isErrorState(control: UntypedFormControl | null): boolean;
 }
-export declare class SchedulerEventScheduleComponent extends PageComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnDestroy {
+export declare class SchedulerEventScheduleComponent extends PageComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnDestroy, Validator {
     protected store: Store<AppState>;
     private fb;
+    private cd;
     modelValue: SchedulerEventScheduleConfig | null;
     endsOnDateMatcher: EndsOnDateErrorStateMatcher;
     scheduleConfigFormGroup: UntypedFormGroup;
@@ -34,12 +36,15 @@ export declare class SchedulerEventScheduleComponent extends PageComponent imple
     schedulerRepeatTypeTranslations: Map<SchedulerRepeatType, string>;
     schedulerTimeUnits: string[];
     schedulerTimeUnitTranslations: Map<SchedulerTimeUnit, string>;
+    weekDays: import("@home/components/scheduler/scheduler-events.models").SchedulerWeekDay[];
     disabled: boolean;
     private lastAppliedTimezone;
+    private destroy$;
     private propagateChange;
-    constructor(store: Store<AppState>, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, fb: UntypedFormBuilder, cd: ChangeDetectorRef);
     private endsOnDateValidator;
     weeklyRepeatControl(index: number): UntypedFormControl;
+    onChipClicked(index: number, chipListBox: MatChipListbox): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -48,6 +53,7 @@ export declare class SchedulerEventScheduleComponent extends PageComponent imple
     setDisabledState(isDisabled: boolean): void;
     private updateEnabledState;
     writeValue(value: SchedulerEventSchedule | null): void;
+    validate(control: AbstractControl): ValidationErrors | null;
     private toSchedulerEventScheduleConfig;
     private fromSchedulerEventScheduleConfig;
     private createDefaultSchedulerEventScheduleConfig;

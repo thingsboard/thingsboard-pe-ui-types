@@ -1,6 +1,6 @@
 import { AliasInfo, IAliasController, StateControllerHolder, StateEntityInfo } from '@core/api/widget-api.models';
 import { Observable, Subject } from 'rxjs';
-import { Datasource } from '@app/shared/models/widget.models';
+import { Datasource, TargetDevice } from '@app/shared/models/widget.models';
 import { EntityService } from '@core/http/entity.service';
 import { UtilsService } from '@core/services/utils.service';
 import { EntityAliases } from '@shared/models/alias.models';
@@ -45,6 +45,8 @@ export declare class AliasController implements IAliasController {
     getEntityAliasId(aliasName: string): string;
     getAliasInfo(aliasId: string): Observable<AliasInfo>;
     resolveSingleEntityInfo(aliasId: string): Observable<EntityInfo>;
+    resolveSingleEntityInfoForDeviceId(deviceId: string): Observable<EntityInfo>;
+    resolveSingleEntityInfoForTargetDevice(targetDevice: TargetDevice): Observable<EntityInfo>;
     private resolveDatasource;
     resolveAlarmSource(alarmSource: Datasource): Observable<Datasource>;
     resolveDatasources(datasources: Array<Datasource>, singleEntity?: boolean, pageSize?: number): Observable<Array<Datasource>>;

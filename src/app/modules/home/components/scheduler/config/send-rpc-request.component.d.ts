@@ -1,12 +1,12 @@
 import { AfterViewInit, OnDestroy, OnInit } from '@angular/core';
-import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, Validator, ValidationErrors } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { SchedulerEventConfiguration } from '@shared/models/scheduler-event.models';
 import { EntityType } from '@shared/models/entity-type.models';
 import { TranslateService } from '@ngx-translate/core';
 import * as i0 from "@angular/core";
-export declare class SendRpcRequestComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnDestroy {
+export declare class SendRpcRequestComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnDestroy, Validator {
     private store;
     private fb;
     private translate;
@@ -24,6 +24,7 @@ export declare class SendRpcRequestComponent implements ControlValueAccessor, On
     ngOnDestroy(): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: SchedulerEventConfiguration | null): void;
+    validate(): ValidationErrors | null;
     private updateModel;
     getMethodValidationText(): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<SendRpcRequestComponent, never>;

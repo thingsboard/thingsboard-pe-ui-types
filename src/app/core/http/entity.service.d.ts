@@ -14,7 +14,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { AssetService } from '@core/http/asset.service';
 import { EntityViewService } from '@core/http/entity-view.service';
-import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
+import { AttributeScope, DataKeyType } from '@shared/models/telemetry/telemetry.models';
 import { RequestConfig } from '@core/http/http-utils';
 import { RuleChainService } from '@core/http/rule-chain.service';
 import { AliasInfo, StateParams, SubscriptionInfo } from '@core/api/widget-api.models';
@@ -94,7 +94,7 @@ export declare class EntityService {
     private getEntityGroupEntitiesByPageLink;
     getEntityGroupEntities(entityGroupId: string, entityGroupType: EntityType, pageSize: number, config?: RequestConfig): Observable<Array<BaseData<EntityId>>>;
     findEntityDataByQuery(query: EntityDataQuery, config?: RequestConfig): Observable<PageData<EntityData>>;
-    findEntityKeysByQuery(query: EntityDataQuery, attributes?: boolean, timeseries?: boolean, config?: RequestConfig): Observable<EntitiesKeysByQuery>;
+    findEntityKeysByQuery(query: EntityDataQuery, attributes?: boolean, timeseries?: boolean, scope?: AttributeScope, config?: RequestConfig): Observable<EntitiesKeysByQuery>;
     findAlarmDataByQuery(query: AlarmDataQuery, config?: RequestConfig): Observable<PageData<AlarmData>>;
     findEntityInfosByFilterAndName(filter: EntityFilter, searchText: string, config?: RequestConfig): Observable<PageData<EntityInfo>>;
     findSingleEntityInfoByEntityFilter(filter: EntityFilter, config?: RequestConfig): Observable<EntityInfo>;
@@ -107,6 +107,7 @@ export declare class EntityService {
     private getAlarmKeys;
     getEntityKeys(entityId: EntityId, query: string, type: DataKeyType, config?: RequestConfig): Observable<Array<string>>;
     getEntityKeysByEntityFilter(filter: EntityFilter, types: DataKeyType[], entityTypes?: EntityType[], config?: RequestConfig): Observable<Array<DataKey>>;
+    getEntityKeysByEntityFilterAndScope(filter: EntityFilter, types: DataKeyType[], entityTypes?: EntityType[], scope?: AttributeScope, config?: RequestConfig): Observable<Array<DataKey>>;
     createDatasourcesFromSubscriptionsInfo(subscriptionsInfo: Array<SubscriptionInfo>): Array<Datasource>;
     createAlarmSourceFromSubscriptionInfo(subscriptionInfo: SubscriptionInfo): Datasource;
     resolveAlias(entityAlias: EntityAlias, stateParams: StateParams): Observable<AliasInfo>;
@@ -125,6 +126,7 @@ export declare class EntityService {
     private createDatasourceKeys;
     getAssignedToEdgeEntitiesByType(edgeId: string, entityType?: EntityType, pageLink?: PageLink): Observable<any>;
     getEdgeEventContent(entity: EdgeEvent): Observable<BaseData<HasId> | RuleChainMetaData | string>;
+    getEntitySubtypesObservable(entityType: EntityType): Observable<Array<string>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<EntityService>;
 }

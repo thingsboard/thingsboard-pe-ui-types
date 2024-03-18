@@ -1,0 +1,37 @@
+import { Injector } from '@angular/core';
+import { Datasource, WidgetSettings, WidgetSettingsComponent } from '@shared/models/widget.models';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { EChartsTooltipTrigger } from '../../chart/echarts-widget.models';
+import { TimeSeriesChartType, TimeSeriesChartYAxisId } from '@home/components/widget/lib/chart/time-series-chart.models';
+import { WidgetConfigComponentData } from '@home/models/widget-component.models';
+import * as i0 from "@angular/core";
+export declare class TimeSeriesChartWidgetSettingsComponent extends WidgetSettingsComponent {
+    protected store: Store<AppState>;
+    private $injector;
+    private fb;
+    get datasource(): Datasource;
+    get yAxisIds(): TimeSeriesChartYAxisId[];
+    TimeSeriesChartType: typeof TimeSeriesChartType;
+    EChartsTooltipTrigger: typeof EChartsTooltipTrigger;
+    legendPositions: import("@shared/models/widget.models").LegendPosition[];
+    legendPositionTranslationMap: Map<import("@shared/models/widget.models").LegendPosition, string>;
+    timeSeriesChartWidgetSettingsForm: UntypedFormGroup;
+    tooltipValuePreviewFn: any;
+    tooltipDatePreviewFn: any;
+    chartType: TimeSeriesChartType;
+    constructor(store: Store<AppState>, $injector: Injector, fb: UntypedFormBuilder);
+    yAxisRemoved(yAxisId: TimeSeriesChartYAxisId): void;
+    protected settingsForm(): UntypedFormGroup;
+    protected onWidgetConfigSet(widgetConfig: WidgetConfigComponentData): void;
+    protected defaultSettings(): WidgetSettings;
+    protected onSettingsSet(settings: WidgetSettings): void;
+    protected validatorTriggers(): string[];
+    protected updateValidators(emitEvent: boolean): void;
+    private removeYaxisId;
+    private _tooltipValuePreviewFn;
+    private _tooltipDatePreviewFn;
+    static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesChartWidgetSettingsComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartWidgetSettingsComponent, "tb-time-series-chart-widget-settings", never, {}, {}, never, never, false, never>;
+}

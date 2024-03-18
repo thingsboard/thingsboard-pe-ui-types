@@ -15,6 +15,7 @@ export declare class DateFormatSelectComponent implements OnInit, ControlValueAc
     customFormatButton: MatButton;
     disabled: boolean;
     excludeLastUpdateAgo: boolean;
+    includeAuto: boolean;
     dateFormatList: DateFormatSettings[];
     dateFormatsCompare: (df1: DateFormatSettings, df2: DateFormatSettings) => boolean;
     dateFormatFormControl: UntypedFormControl;
@@ -30,6 +31,7 @@ export declare class DateFormatSelectComponent implements OnInit, ControlValueAc
     updateModel(value: DateFormatSettings): void;
     dateFormatDisplayValue(value: DateFormatSettings): string;
     openDateFormatSettingsPopup($event: Event, matButton: MatButton): void;
+    openAutoFormatSettingsPopup($event: Event, matButton: MatButton): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DateFormatSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DateFormatSelectComponent, "tb-date-format-select", never, { "disabled": "disabled"; "excludeLastUpdateAgo": "excludeLastUpdateAgo"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DateFormatSelectComponent, "tb-date-format-select", never, { "disabled": "disabled"; "excludeLastUpdateAgo": "excludeLastUpdateAgo"; "includeAuto": "includeAuto"; }, {}, never, never, false, never>;
 }

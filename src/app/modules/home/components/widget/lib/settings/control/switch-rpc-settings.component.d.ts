@@ -8,6 +8,7 @@ import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
 import { WidgetService } from '@core/http/widget.service';
 import { IAliasController } from '@core/api/widget-api.models';
 import { EntityService } from '@core/http/entity.service';
+import { TargetDevice } from '@shared/models/widget.models';
 import * as i0 from "@angular/core";
 export declare type RpcRetrieveValueMethod = 'none' | 'rpc' | 'attribute' | 'timeseries';
 export interface SwitchRpcSettings {
@@ -22,7 +23,7 @@ export interface SwitchRpcSettings {
     requestPersistent: boolean;
     persistentPollingInterval: number;
 }
-export declare function switchRpcDefaultSettings(): SwitchRpcSettings;
+export declare const switchRpcDefaultSettings: () => SwitchRpcSettings;
 export declare class SwitchRpcSettingsComponent extends PageComponent implements OnInit, ControlValueAccessor, Validator {
     protected store: Store<AppState>;
     private translate;
@@ -32,7 +33,7 @@ export declare class SwitchRpcSettingsComponent extends PageComponent implements
     keyInput: ElementRef;
     disabled: boolean;
     aliasController: IAliasController;
-    targetDeviceAliasId: string;
+    targetDevice: TargetDevice;
     dataKeyType: typeof DataKeyType;
     functionScopeVariables: string[];
     private modelValue;
@@ -52,5 +53,5 @@ export declare class SwitchRpcSettingsComponent extends PageComponent implements
     private updateModel;
     private updateValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<SwitchRpcSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SwitchRpcSettingsComponent, "tb-switch-rpc-settings", never, { "disabled": "disabled"; "aliasController": "aliasController"; "targetDeviceAliasId": "targetDeviceAliasId"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SwitchRpcSettingsComponent, "tb-switch-rpc-settings", never, { "disabled": "disabled"; "aliasController": "aliasController"; "targetDevice": "targetDevice"; }, {}, never, never, false, never>;
 }

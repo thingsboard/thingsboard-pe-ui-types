@@ -16,7 +16,6 @@ export declare class SlackConversationAutocompleteComponent implements ControlVa
     private entityService;
     private notificationService;
     private fb;
-    notificationDeliveryMethodTranslateMap: Map<import("@shared/models/notification.models").NotificationDeliveryMethod, string>;
     conversationSlackFormGroup: FormGroup;
     labelText: any;
     requiredText: any;

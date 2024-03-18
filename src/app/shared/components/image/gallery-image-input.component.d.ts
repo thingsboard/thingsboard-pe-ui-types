@@ -1,12 +1,11 @@
-import { ChangeDetectorRef, OnDestroy, OnInit, Renderer2, ViewContainerRef } from '@angular/core';
+import { ChangeDetectorRef, OnDestroy, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { ControlValueAccessor, FormControl } from '@angular/forms';
 import { ImageResourceInfo } from '@shared/models/resource.models';
 import { ImageService } from '@core/http/image.service';
-import { MatButton } from '@angular/material/button';
-import { TbPopoverService } from '@shared/components/popover.service';
+import { MatDialog } from '@angular/material/dialog';
 import * as i0 from "@angular/core";
 export declare enum ImageLinkType {
     none = "none",
@@ -17,10 +16,8 @@ export declare enum ImageLinkType {
 export declare class GalleryImageInputComponent extends PageComponent implements OnInit, OnDestroy, ControlValueAccessor {
     protected store: Store<AppState>;
     private imageService;
+    private dialog;
     private cd;
-    private renderer;
-    private viewContainerRef;
-    private popoverService;
     label: string;
     required: boolean;
     disabled: boolean;
@@ -31,7 +28,7 @@ export declare class GalleryImageInputComponent extends PageComponent implements
     linkType: ImageLinkType;
     externalLinkControl: FormControl<any>;
     private propagateChange;
-    constructor(store: Store<AppState>, imageService: ImageService, cd: ChangeDetectorRef, renderer: Renderer2, viewContainerRef: ViewContainerRef, popoverService: TbPopoverService);
+    constructor(store: Store<AppState>, imageService: ImageService, dialog: MatDialog, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngOnDestroy(): void;
     registerOnChange(fn: any): void;
@@ -43,7 +40,7 @@ export declare class GalleryImageInputComponent extends PageComponent implements
     private reset;
     clearImage(): void;
     setLink($event: Event): void;
-    toggleGallery($event: Event, browseGalleryButton: MatButton): void;
+    openGallery($event: Event): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<GalleryImageInputComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<GalleryImageInputComponent, "tb-gallery-image-input", never, { "label": "label"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

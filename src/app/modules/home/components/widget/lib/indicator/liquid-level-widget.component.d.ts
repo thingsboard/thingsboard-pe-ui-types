@@ -35,6 +35,7 @@ export declare class LiquidLevelWidgetComponent implements OnInit {
     private volume;
     private tooltipContent;
     private widgetUnits;
+    private volumeUnits;
     private capacityUnits;
     constructor(imagePipe: ImagePipe, sanitizer: DomSanitizer, cd: ChangeDetectorRef, resourcesService: ResourcesService, translate: TranslateService);
     ngOnInit(): void;
@@ -49,7 +50,7 @@ export declare class LiquidLevelWidgetComponent implements OnInit {
     private createValueElement;
     private getShape;
     private getTankersParams;
-    private createdErrorMgs;
+    private createdErrorMsg;
     private updateSvg;
     private calculatePosition;
     private updateTooltip;

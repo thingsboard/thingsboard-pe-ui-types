@@ -24,6 +24,7 @@ export declare class SelfRegistrationComponent extends PageComponent implements 
     deleteDisabled: boolean;
     entityTypes: typeof EntityType;
     tinyMceOptions: Record<string, any>;
+    showMainLoadingBar: boolean;
     constructor(store: Store<AppState>, router: Router, selfRegistrationService: SelfRegistrationService, attributeService: AttributeService, translate: TranslateService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     buildSelfRegistrationForm(): void;

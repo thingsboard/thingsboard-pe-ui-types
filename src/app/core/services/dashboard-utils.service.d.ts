@@ -1,7 +1,7 @@
 import { UtilsService } from '@core/services/utils.service';
 import { TimeService } from '@core/services/time.service';
 import { Dashboard, DashboardLayout, DashboardLayoutId, DashboardLayoutsInfo, DashboardState, DashboardStateLayouts, GridSettings } from '@shared/models/dashboard.models';
-import { Widget, WidgetConfig, widgetType, WidgetTypeDescriptor } from '@app/shared/models/widget.models';
+import { Datasource, Widget, WidgetConfig, widgetType, WidgetTypeDescriptor } from '@app/shared/models/widget.models';
 import { EntityAliasFilter } from '@app/shared/models/alias.models';
 import { EntityId } from '@app/shared/models/id/entity-id';
 import { EntityGroupService } from '@core/http/entity-group.service';
@@ -17,6 +17,7 @@ export declare class DashboardUtilsService {
     validateAndUpdateWidget(widget: Widget): Widget;
     private validateAndUpdateWidgetTypeFqn;
     validateAndUpdateWidgetConfig(widgetConfig: WidgetConfig | undefined, type: widgetType): WidgetConfig;
+    validateAndUpdateDatasources(datasources?: Datasource[]): Datasource[];
     createDefaultLayoutData(): DashboardLayout;
     private createDefaultGridSettings;
     createDefaultLayouts(): DashboardStateLayouts;

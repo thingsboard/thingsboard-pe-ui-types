@@ -36,8 +36,10 @@ export declare class ImageGalleryComponent extends PageComponent implements OnIn
     private cd;
     private fb;
     private display;
+    private width;
+    private height;
     pageMode: boolean;
-    popoverMode: boolean;
+    dialogMode: boolean;
     mode: 'list' | 'grid';
     selectionMode: boolean;
     imageSelected: EventEmitter<ImageResourceInfo>;
@@ -99,6 +101,6 @@ export declare class ImageGalleryComponent extends PageComponent implements OnIn
     embedImage($event: Event, image: ImageResourceInfo, itemIndex?: number): void;
     protected updatedRouterParamsAndData(queryParams: object, queryParamsHandling?: QueryParamsHandling): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ImageGalleryComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ImageGalleryComponent, "tb-image-gallery", never, { "pageMode": "pageMode"; "popoverMode": "popoverMode"; "mode": "mode"; "selectionMode": "selectionMode"; }, { "imageSelected": "imageSelected"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ImageGalleryComponent, "tb-image-gallery", never, { "pageMode": "pageMode"; "dialogMode": "dialogMode"; "mode": "mode"; "selectionMode": "selectionMode"; }, { "imageSelected": "imageSelected"; }, never, never, false, never>;
 }
 export {};

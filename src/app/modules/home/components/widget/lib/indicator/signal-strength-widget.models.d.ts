@@ -13,6 +13,7 @@ export interface SignalStrengthWidgetSettings {
     dateFont: Font;
     dateColor: string;
     activeBarsColor: ColorSettings;
+    noSignalRssiValue: number;
     inactiveBarsColor: string;
     showTooltip: boolean;
     showTooltipValue: boolean;

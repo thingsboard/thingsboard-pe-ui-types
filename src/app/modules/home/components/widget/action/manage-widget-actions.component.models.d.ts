@@ -1,4 +1,4 @@
-import { CustomActionDescriptor, WidgetActionDescriptor, WidgetActionSource } from '@app/shared/models/widget.models';
+import { WidgetActionDescriptor, WidgetActionSource } from '@app/shared/models/widget.models';
 import { CollectionViewer, DataSource } from '@angular/cdk/collections';
 import { Observable } from 'rxjs';
 import { PageData } from '@shared/models/page/page-data';
@@ -21,8 +21,7 @@ export interface WidgetActionDescriptorInfo extends WidgetActionDescriptor {
     actionSourceName?: string;
     typeName?: string;
 }
-export declare function toWidgetActionDescriptor(action: WidgetActionDescriptorInfo): WidgetActionDescriptor;
-export declare function toCustomAction(action: WidgetActionDescriptorInfo): CustomActionDescriptor;
+export declare const toWidgetActionDescriptor: (action: WidgetActionDescriptorInfo) => WidgetActionDescriptor;
 export declare class WidgetActionsDatasource implements DataSource<WidgetActionDescriptorInfo> {
     private translate;
     private utils;

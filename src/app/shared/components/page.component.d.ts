@@ -10,6 +10,7 @@ export declare abstract class PageComponent implements OnDestroy {
     isLoading$: Observable<boolean>;
     loadingSubscription: Subscription;
     disabledOnLoadFormControls: Array<AbstractControl>;
+    showMainLoadingBar: boolean;
     resource: typeof Resource;
     operation: typeof Operation;
     protected constructor(store: Store<AppState>);

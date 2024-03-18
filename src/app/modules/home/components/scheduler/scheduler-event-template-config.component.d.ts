@@ -1,12 +1,13 @@
 import { AfterViewInit, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewContainerRef } from '@angular/core';
-import { ControlValueAccessor } from '@angular/forms';
+import { AbstractControl, AsyncValidator, ControlValueAccessor, ValidationErrors } from '@angular/forms';
+import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { SchedulerEventConfiguration } from '@shared/models/scheduler-event.models';
 import { DynamicComponentFactoryService } from '@core/services/dynamic-component-factory.service';
 import { SchedulerEventConfigType } from '@home/components/scheduler/scheduler-event-config.models';
 import * as i0 from "@angular/core";
-export declare class SchedulerEventTemplateConfigComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnChanges, OnDestroy {
+export declare class SchedulerEventTemplateConfigComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnChanges, OnDestroy, AsyncValidator {
     private store;
     private dynamicComponentFactoryService;
     configContentContainer: ViewContainerRef;
@@ -19,6 +20,8 @@ export declare class SchedulerEventTemplateConfigComponent implements ControlVal
     private customSchedulerEventComponentType;
     private configComponentRef;
     private configComponent;
+    private configTemplate;
+    private configComponent$;
     private propagateChange;
     constructor(store: Store<AppState>, dynamicComponentFactoryService: DynamicComponentFactoryService);
     registerOnChange(fn: any): void;
@@ -32,6 +35,8 @@ export declare class SchedulerEventTemplateConfigComponent implements ControlVal
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: SchedulerEventConfiguration | null): void;
     private updateModel;
+    validate(control: AbstractControl): Observable<ValidationErrors | null>;
+    private doValidate;
     static ɵfac: i0.ɵɵFactoryDeclaration<SchedulerEventTemplateConfigComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<SchedulerEventTemplateConfigComponent, "tb-scheduler-event-template-config", never, { "disabled": "disabled"; "schedulerEventConfigTypes": "schedulerEventConfigTypes"; "schedulerEventType": "schedulerEventType"; }, {}, never, never, false, never>;
 }

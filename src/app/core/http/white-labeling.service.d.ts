@@ -68,6 +68,7 @@ export declare class WhiteLabelingService {
     getPlatformName$(): Observable<string>;
     getPlatformVersion(): string;
     getPlatformVersion$(): Observable<string>;
+    getHideConnectivityDialog(): boolean;
     loadLoginWhiteLabelingParams(): Observable<LoginWhiteLabelingParams>;
     private onLoginWlParamsLoaded;
     loadUserWhiteLabelingParams(): Observable<WhiteLabelingParams>;
