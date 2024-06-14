@@ -1,18 +1,20 @@
 import { OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
-import { BarSeriesSettings } from '@home/components/widget/lib/chart/time-series-chart.models';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { DataKeyConfigComponent } from '@home/components/widget/config/data-key-config.component';
+import { ChartBarSettings, ChartLabelPosition, PieChartLabelPosition } from '@home/components/widget/lib/chart/chart.models';
 import * as i0 from "@angular/core";
-export declare class TimeSeriesChartBarSettingsComponent implements OnInit, ControlValueAccessor {
+export declare class ChartBarSettingsComponent implements OnInit, ControlValueAccessor {
     protected store: Store<AppState>;
     private dataKeyConfigComponent;
     private fb;
-    seriesLabelPositions: import("@home/components/widget/lib/chart/time-series-chart.models").SeriesLabelPosition[];
-    seriesLabelPositionTranslations: Map<import("@home/components/widget/lib/chart/time-series-chart.models").SeriesLabelPosition, string>;
+    chartLabelPositions: (ChartLabelPosition | PieChartLabelPosition)[];
+    chartLabelPositionTranslations: Map<ChartLabelPosition | PieChartLabelPosition, string>;
     labelPreviewFn: any;
     disabled: boolean;
+    series: boolean;
+    pieLabelPosition: boolean;
     private modelValue;
     private propagateChange;
     barSettingsFormGroup: UntypedFormGroup;
@@ -21,10 +23,10 @@ export declare class TimeSeriesChartBarSettingsComponent implements OnInit, Cont
     registerOnChange(fn: any): void;
     registerOnTouched(_fn: any): void;
     setDisabledState(isDisabled: boolean): void;
-    writeValue(value: BarSeriesSettings): void;
+    writeValue(value: ChartBarSettings): void;
     private updateValidators;
     private updateModel;
     private _labelPreviewFn;
-    static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesChartBarSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartBarSettingsComponent, "tb-time-series-chart-bar-settings", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<ChartBarSettingsComponent, [null, { optional: true; }, null]>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ChartBarSettingsComponent, "tb-chart-bar-settings", never, { "disabled": "disabled"; "series": "series"; "pieLabelPosition": "pieLabelPosition"; }, {}, never, never, false, never>;
 }

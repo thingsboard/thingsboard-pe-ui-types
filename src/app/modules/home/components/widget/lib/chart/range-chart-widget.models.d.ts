@@ -1,15 +1,54 @@
 import { BackgroundSettings, ColorRange, Font } from '@shared/models/widget-settings.models';
 import { LegendPosition } from '@shared/models/widget.models';
-import { EChartsTooltipWidgetSettings } from '@home/components/widget/lib/chart/echarts-widget.models';
-export interface RangeChartWidgetSettings extends EChartsTooltipWidgetSettings {
+import { LineSeriesStepType, TimeSeriesChartGridSettings, TimeSeriesChartKeySettings, TimeSeriesChartSettings, TimeSeriesChartThreshold, TimeSeriesChartTooltipWidgetSettings, TimeSeriesChartVisualMapPiece, TimeSeriesChartXAxisSettings, TimeSeriesChartYAxisSettings } from '@home/components/widget/lib/chart/time-series-chart.models';
+import { DeepPartial } from '@shared/models/common';
+import { ChartAnimationSettings, ChartLabelPosition, ChartLineType, ChartShape } from '@home/components/widget/lib/chart/chart.models';
+export interface RangeItem {
+    index: number;
+    from?: number;
+    to?: number;
+    color: string;
+    label: string;
+    visible: boolean;
+    enabled: boolean;
+    piece: TimeSeriesChartVisualMapPiece;
+}
+export interface RangeChartWidgetSettings extends TimeSeriesChartTooltipWidgetSettings {
     dataZoom: boolean;
     rangeColors: Array<ColorRange>;
     outOfRangeColor: string;
+    showRangeThresholds: boolean;
+    rangeThreshold: Partial<TimeSeriesChartThreshold>;
     fillArea: boolean;
+    fillAreaOpacity: number;
+    showLine: boolean;
+    step: boolean;
+    stepType: LineSeriesStepType;
+    smooth: boolean;
+    lineType: ChartLineType;
+    lineWidth: number;
+    showPoints: boolean;
+    showPointLabel: boolean;
+    pointLabelPosition: ChartLabelPosition;
+    pointLabelFont: Font;
+    pointLabelColor: string;
+    enablePointLabelBackground: boolean;
+    pointLabelBackground: string;
+    pointShape: ChartShape;
+    pointSize: number;
+    grid: TimeSeriesChartGridSettings;
+    yAxis: TimeSeriesChartYAxisSettings;
+    xAxis: TimeSeriesChartXAxisSettings;
+    animation: ChartAnimationSettings;
+    thresholds: TimeSeriesChartThreshold[];
     showLegend: boolean;
     legendPosition: LegendPosition;
     legendLabelFont: Font;
     legendLabelColor: string;
     background: BackgroundSettings;
+    padding: string;
 }
 export declare const rangeChartDefaultSettings: RangeChartWidgetSettings;
+export declare const rangeChartTimeSeriesSettings: (settings: RangeChartWidgetSettings, rangeItems: RangeItem[], decimals: number, units: string) => DeepPartial<TimeSeriesChartSettings>;
+export declare const rangeChartTimeSeriesKeySettings: (settings: RangeChartWidgetSettings) => DeepPartial<TimeSeriesChartKeySettings>;
+export declare const toRangeItems: (colorRanges: Array<ColorRange>) => RangeItem[];

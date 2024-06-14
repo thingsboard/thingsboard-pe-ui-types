@@ -9,6 +9,7 @@ export declare class HelpService {
     private wl;
     private http;
     private uiSettingsService;
+    private docPlatformPrefix;
     private helpCache;
     private wlHelpBaseUrl;
     constructor(translate: TranslateService, wl: WhiteLabelingService, http: HttpClient, uiSettingsService: UiSettingsService);

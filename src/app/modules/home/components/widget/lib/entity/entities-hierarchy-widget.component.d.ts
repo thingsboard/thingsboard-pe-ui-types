@@ -42,6 +42,7 @@ export declare class EntitiesHierarchyWidgetComponent extends PageComponent impl
     ngAfterViewInit(): void;
     ngOnDestroy(): void;
     onDataUpdated(): void;
+    onEditModeChanged(): void;
     private initializeConfig;
     private enterFilterMode;
     exitFilterMode(): void;

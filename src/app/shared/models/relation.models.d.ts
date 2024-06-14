@@ -20,6 +20,7 @@ export declare const directionTypeTranslations: Map<EntitySearchDirection, strin
 export interface RelationEntityTypeFilter {
     relationType: string;
     entityTypes: Array<EntityType>;
+    negate?: boolean;
 }
 export interface RelationsSearchParameters {
     rootId: string;

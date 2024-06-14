@@ -1,0 +1,36 @@
+import { EventEmitter } from '@angular/core';
+import { ContentType } from '@shared/models/constants';
+import { CustomTranslationService } from '@core/http/custom-translation.service';
+import { ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
+import { UtilsService } from '@core/services/utils.service';
+import { AppState } from '@core/core.state';
+import { Store } from '@ngrx/store';
+import * as i0 from "@angular/core";
+export declare class TranslationMapAdvancedComponent {
+    private store;
+    private utils;
+    private customTranslationService;
+    private route;
+    private fb;
+    private translate;
+    readonly: boolean;
+    localeName: string;
+    changeFullscreen: EventEmitter<boolean>;
+    fullscreen: boolean;
+    ContentType: typeof ContentType;
+    translationForm: FormGroup;
+    translationPlaceholder: string;
+    private readonly localeCode;
+    private loadTranslations;
+    constructor(store: Store<AppState>, utils: UtilsService, customTranslationService: CustomTranslationService, route: ActivatedRoute, fb: FormBuilder, translate: TranslateService);
+    toggleFullscreen(): void;
+    save(): void;
+    private saveTranslations;
+    private deleteTranslation;
+    reset(): void;
+    private validate;
+    static ɵfac: i0.ɵɵFactoryDeclaration<TranslationMapAdvancedComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TranslationMapAdvancedComponent, "tb-translation-map-advanced", never, { "readonly": "readonly"; "localeName": "localeName"; }, { "changeFullscreen": "changeFullscreen"; }, never, never, false, never>;
+}

@@ -1,19 +1,16 @@
-import { ChangeDetectorRef, OnDestroy, Renderer2, ViewContainerRef } from '@angular/core';
+import { ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { ControlValueAccessor, FormControl } from '@angular/forms';
 import { DndDropEvent } from 'ngx-drag-drop';
 import { ImageLinkType } from '@shared/components/image/gallery-image-input.component';
-import { TbPopoverService } from '@shared/components/popover.service';
-import { MatButton } from '@angular/material/button';
+import { MatDialog } from '@angular/material/dialog';
 import * as i0 from "@angular/core";
 export declare class MultipleGalleryImageInputComponent extends PageComponent implements OnDestroy, ControlValueAccessor {
     protected store: Store<AppState>;
+    private dialog;
     private cd;
-    private renderer;
-    private viewContainerRef;
-    private popoverService;
     label: string;
     required: boolean;
     disabled: boolean;
@@ -23,7 +20,7 @@ export declare class MultipleGalleryImageInputComponent extends PageComponent im
     externalLinkControl: FormControl<any>;
     dragIndex: number;
     private propagateChange;
-    constructor(store: Store<AppState>, cd: ChangeDetectorRef, renderer: Renderer2, viewContainerRef: ViewContainerRef, popoverService: TbPopoverService);
+    constructor(store: Store<AppState>, dialog: MatDialog, cd: ChangeDetectorRef);
     ngOnDestroy(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -35,7 +32,7 @@ export declare class MultipleGalleryImageInputComponent extends PageComponent im
     setLink($event: Event): void;
     declineLink($event: Event): void;
     applyLink($event: Event): void;
-    toggleGallery($event: Event, browseGalleryButton: MatButton): void;
+    toggleGallery($event: Event): void;
     imageDragStart(index: number): void;
     imageDragEnd(): void;
     imageDrop(event: DndDropEvent): void;

@@ -42,6 +42,7 @@ export declare class BatteryLevelWidgetComponent implements OnInit, OnDestroy, A
     batteryShapeColor: ColorProcessor;
     backgroundStyle$: Observable<ComponentStyle>;
     overlayStyle: ComponentStyle;
+    padding: string;
     batteryBoxResize$: ResizeObserver;
     hasCardClickAction: boolean;
     private decimals;

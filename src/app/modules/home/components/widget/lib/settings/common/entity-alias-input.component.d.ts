@@ -1,12 +1,10 @@
-import { ChangeDetectorRef, ElementRef, OnInit } from '@angular/core';
+import { ElementRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl } from '@angular/forms';
 import { IAliasController } from '@core/api/widget-api.models';
 import { Observable } from 'rxjs';
-import { TimeSeriesChartThresholdType } from '@home/components/widget/lib/chart/time-series-chart.models';
 import * as i0 from "@angular/core";
 export declare class EntityAliasInputComponent implements ControlValueAccessor, OnInit {
     private fb;
-    private cd;
     hostClass: string;
     entityAliasInput: ElementRef;
     disabled: boolean;
@@ -18,7 +16,7 @@ export declare class EntityAliasInputComponent implements ControlValueAccessor, 
     private entityAliasList;
     private entityAliasDirty;
     private propagateChange;
-    constructor(fb: UntypedFormBuilder, cd: ChangeDetectorRef);
+    constructor(fb: UntypedFormBuilder);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -28,7 +26,6 @@ export declare class EntityAliasInputComponent implements ControlValueAccessor, 
     clearEntityAlias(): void;
     private fetchEntityAliases;
     private updateModel;
-    protected readonly TimeSeriesChartThresholdType: typeof TimeSeriesChartThresholdType;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityAliasInputComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<EntityAliasInputComponent, "tb-entity-alias-input", never, { "disabled": "disabled"; "required": "required"; "aliasController": "aliasController"; }, {}, never, never, false, never>;
 }

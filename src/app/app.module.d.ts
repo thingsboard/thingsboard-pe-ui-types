@@ -9,6 +9,7 @@ import * as i7 from "@modules/login/login.module";
 import * as i8 from "@modules/signup/signup.module";
 import * as i9 from "@home/home.module";
 import * as i10 from "@modules/dashboard/dashboard-routing.module";
+import * as i11 from "@modules/empty-page/empty-page.module";
 export declare class PageNotFoundRoutingModule {
     static ɵfac: i0.ɵɵFactoryDeclaration<PageNotFoundRoutingModule, never>;
     static ɵmod: i0.ɵɵNgModuleDeclaration<PageNotFoundRoutingModule, never, [typeof i1.RouterModule], [typeof i1.RouterModule]>;
@@ -16,6 +17,6 @@ export declare class PageNotFoundRoutingModule {
 }
 export declare class AppModule {
     static ɵfac: i0.ɵɵFactoryDeclaration<AppModule, never>;
-    static ɵmod: i0.ɵɵNgModuleDeclaration<AppModule, [typeof i2.AppComponent], [typeof i3.BrowserModule, typeof i4.BrowserAnimationsModule, typeof i5.AppRoutingModule, typeof i6.CoreModule, typeof i7.LoginModule, typeof i8.SignupModule, typeof i9.HomeModule, typeof i10.DashboardRoutingModule, typeof PageNotFoundRoutingModule], never>;
+    static ɵmod: i0.ɵɵNgModuleDeclaration<AppModule, [typeof i2.AppComponent], [typeof i3.BrowserModule, typeof i4.BrowserAnimationsModule, typeof i5.AppRoutingModule, typeof i6.CoreModule, typeof i7.LoginModule, typeof i8.SignupModule, typeof i9.HomeModule, typeof i10.DashboardRoutingModule, typeof i11.EmptyPageModule, typeof PageNotFoundRoutingModule], never>;
     static ɵinj: i0.ɵɵInjectorDeclaration<AppModule>;
 }

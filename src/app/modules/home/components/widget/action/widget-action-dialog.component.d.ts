@@ -8,8 +8,10 @@ import { Router } from '@angular/router';
 import { DialogComponent } from '@app/shared/components/dialog.component';
 import { WidgetActionCallbacks, WidgetActionDescriptorInfo, WidgetActionsData } from '@home/components/widget/action/manage-widget-actions.component.models';
 import { UtilsService } from '@core/services/utils.service';
-import { WidgetActionSource, WidgetActionType, widgetType } from '@shared/models/widget.models';
+import { CellClickColumnInfo, WidgetActionSource, WidgetActionType, widgetType } from '@shared/models/widget.models';
 import { WidgetService } from '@core/http/widget.service';
+import { MatSelect } from '@angular/material/select';
+import { TranslateService } from '@ngx-translate/core';
 import * as i0 from "@angular/core";
 export interface WidgetActionDialogData {
     isAdd: boolean;
@@ -30,6 +32,7 @@ export declare class WidgetActionDialogComponent extends DialogComponent<WidgetA
     private errorStateMatcher;
     dialogRef: MatDialogRef<WidgetActionDialogComponent, WidgetActionDescriptorInfo>;
     fb: FormBuilder;
+    private translate;
     private destroy$;
     widgetActionFormGroup: FormGroup;
     isAdd: boolean;
@@ -40,19 +43,26 @@ export declare class WidgetActionDialogComponent extends DialogComponent<WidgetA
     submitted: boolean;
     functionScopeVariables: string[];
     private isEntityGroup;
-    constructor(store: Store<AppState>, router: Router, utils: UtilsService, widgetService: WidgetService, data: WidgetActionDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<WidgetActionDialogComponent, WidgetActionDescriptorInfo>, fb: FormBuilder);
+    configuredColumns: Array<CellClickColumnInfo>;
+    usedCellClickColumns: Array<number>;
+    columnIndexSelect: MatSelect;
+    columnIndexPlaceholderText: any;
+    constructor(store: Store<AppState>, router: Router, utils: UtilsService, widgetService: WidgetService, data: WidgetActionDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<WidgetActionDialogComponent, WidgetActionDescriptorInfo>, fb: FormBuilder, translate: TranslateService);
     ngOnInit(): void;
     ngOnDestroy(): void;
     displayShowWidgetActionForm(): boolean;
     customFunctionHelpId(): string;
     getWidgetActionFunctionHelpId(): string | undefined;
     private updateShowWidgetActionForm;
+    private checkColumnIndex;
+    private getCellClickColumnsInfo;
     private validateActionName;
     private checkActionName;
     isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     actionSourceName(actionSource: WidgetActionSource): string;
+    getCellClickColumnInfo(index: number, columnInfo: CellClickColumnInfo): string;
     cancel(): void;
     save(): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<WidgetActionDialogComponent, [null, null, null, null, null, { skipSelf: true; }, null, null]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<WidgetActionDialogComponent, [null, null, null, null, null, { skipSelf: true; }, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<WidgetActionDialogComponent, "tb-widget-action-dialog", never, {}, {}, never, never, false, never>;
 }

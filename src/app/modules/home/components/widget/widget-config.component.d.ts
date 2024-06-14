@@ -109,6 +109,8 @@ export declare class WidgetConfigComponent extends PageComponent implements OnIn
     private fetchEntityKeysForDevice;
     private fetchEntityKeys;
     private fetchDashboardStates;
+    private fetchCellClickColumns;
+    private keysToCellClickColumns;
     private createFilterForDashboardState;
     validate(c: UntypedFormControl): Observable<ValidationErrors | null>;
     private doValidate;

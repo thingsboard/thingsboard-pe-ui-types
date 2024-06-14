@@ -12,12 +12,12 @@ export declare class TimeSeriesChartLineSettingsComponent implements OnInit, Con
     TimeSeriesChartType: typeof TimeSeriesChartType;
     lineSeriesStepTypes: import("@home/components/widget/lib/chart/time-series-chart.models").LineSeriesStepType[];
     lineSeriesStepTypeTranslations: Map<import("@home/components/widget/lib/chart/time-series-chart.models").LineSeriesStepType, string>;
-    timeSeriesLineTypes: import("@home/components/widget/lib/chart/time-series-chart.models").TimeSeriesChartLineType[];
-    timeSeriesLineTypeTranslations: Map<import("@home/components/widget/lib/chart/time-series-chart.models").TimeSeriesChartLineType, string>;
-    seriesLabelPositions: import("@home/components/widget/lib/chart/time-series-chart.models").SeriesLabelPosition[];
-    seriesLabelPositionTranslations: Map<import("@home/components/widget/lib/chart/time-series-chart.models").SeriesLabelPosition, string>;
-    timeSeriesChartShapes: import("@home/components/widget/lib/chart/time-series-chart.models").TimeSeriesChartShape[];
-    timeSeriesChartShapeTranslations: Map<import("@home/components/widget/lib/chart/time-series-chart.models").TimeSeriesChartShape, string>;
+    chartLineTypes: import("@home/components/widget/lib/chart/chart.models").ChartLineType[];
+    chartLineTypeTranslations: Map<import("@home/components/widget/lib/chart/chart.models").ChartLineType, string>;
+    chartLabelPositions: import("@home/components/widget/lib/chart/chart.models").ChartLabelPosition[];
+    chartLabelPositionTranslations: Map<import("@home/components/widget/lib/chart/chart.models").ChartLabelPosition, string>;
+    chartShapes: import("@home/components/widget/lib/chart/chart.models").ChartShape[];
+    chartShapeTranslations: Map<import("@home/components/widget/lib/chart/chart.models").ChartShape, string>;
     pointLabelPreviewFn: any;
     disabled: boolean;
     chartType: TimeSeriesChartType;

@@ -19,6 +19,9 @@ export declare class Lwm2mDeviceConfigServerComponent implements OnInit, Control
     publicKeyOrIdTooltipNamesMap: Map<Lwm2mSecurityType, string>;
     currentSecurityMode: any;
     bootstrapDisabled: boolean;
+    shortServerIdMin: number;
+    shortServerIdMax: number;
+    isBootstrap: boolean;
     removeServer: EventEmitter<any>;
     isTransportWasRunWithBootstrapChange: EventEmitter<boolean>;
     private propagateChange;
@@ -37,5 +40,5 @@ export declare class Lwm2mDeviceConfigServerComponent implements OnInit, Control
     private changeSecurityHostPortFields;
     validate(): ValidationErrors | null;
     static ɵfac: i0.ɵɵFactoryDeclaration<Lwm2mDeviceConfigServerComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mDeviceConfigServerComponent, "tb-profile-lwm2m-device-config-server", never, {}, { "removeServer": "removeServer"; "isTransportWasRunWithBootstrapChange": "isTransportWasRunWithBootstrapChange"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mDeviceConfigServerComponent, "tb-profile-lwm2m-device-config-server", never, { "isBootstrap": "isBootstrap"; }, { "removeServer": "removeServer"; "isTransportWasRunWithBootstrapChange": "isTransportWasRunWithBootstrapChange"; }, never, never, false, never>;
 }

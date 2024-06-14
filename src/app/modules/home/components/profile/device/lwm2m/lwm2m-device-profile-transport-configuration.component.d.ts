@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
-import { Lwm2mProfileConfigModels, ObjectLwM2M } from './lwm2m-profile-config.models';
+import { Lwm2mProfileConfigModels, ObjectLwM2M, ObjectIDVer } from './lwm2m-profile-config.models';
 import { DeviceProfileService } from '@core/http/device-profile.service';
 import { DialogService } from '@core/services/dialog.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -18,6 +18,8 @@ export declare class Lwm2mDeviceProfileTransportConfigurationComponent implement
     private destroy$;
     lwm2mDeviceProfileFormGroup: UntypedFormGroup;
     configurationValue: Lwm2mProfileConfigModels;
+    objectIDVers: ObjectIDVer[];
+    objectIDVerTranslationMap: Map<ObjectIDVer, string>;
     sortFunction: (key: string, value: object) => object;
     get required(): boolean;
     set required(value: boolean);

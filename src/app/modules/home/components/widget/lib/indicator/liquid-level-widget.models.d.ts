@@ -50,6 +50,7 @@ export interface LevelCardWidgetSettings extends WidgetConfig {
     tooltipBackgroundColor: string;
     tooltipBackgroundBlur: number;
     background: BackgroundSettings;
+    padding: string;
 }
 export declare enum Shapes {
     vOval = "Vertical Oval",

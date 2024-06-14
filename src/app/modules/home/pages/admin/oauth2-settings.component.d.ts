@@ -54,6 +54,7 @@ export declare class OAuth2SettingsComponent extends PageComponent implements On
     private buildOAuth2ParamsInfoForm;
     private buildDomainInfoForm;
     private buildMobileInfoForm;
+    private base64Format;
     private buildRegistrationForm;
     private setProviderDefaultValue;
     private changeMapperConfigType;

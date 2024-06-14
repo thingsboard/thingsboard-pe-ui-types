@@ -22,7 +22,6 @@ export declare class AssetProfileComponent extends EntityComponent<AssetProfile>
     entityType: typeof EntityType;
     serviceType: ServiceType;
     edgeRuleChainType: RuleChainType;
-    TB_SERVICE_QUEUE: string;
     assetProfileId: EntityId;
     constructor(store: Store<AppState>, translate: TranslateService, entityValue: AssetProfile, entitiesTableConfigValue: EntityTableConfig<AssetProfile>, fb: UntypedFormBuilder, cd: ChangeDetectorRef);
     hideDelete(): boolean;

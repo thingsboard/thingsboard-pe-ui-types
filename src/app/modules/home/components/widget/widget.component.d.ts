@@ -136,6 +136,7 @@ export declare class WidgetComponent extends PageComponent implements OnInit, Af
     private exportWidgetData;
     private doExportWidgetData;
     private prepareWidgetExportData;
+    private widgetExportDateFormat;
     private getActiveEntityInfo;
     private checkSize;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetComponent, [null, null, null, null, null, null, null, null, null, null, null, { optional: true; }, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]>;

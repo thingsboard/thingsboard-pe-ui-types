@@ -25,6 +25,7 @@ export declare class DataKeysPanelComponent implements ControlValueAccessor, OnI
     datasourceType: DatasourceType;
     entityAliasId: string;
     deviceId: string;
+    hidePanel: boolean;
     hideDataKeyColor: boolean;
     hideUnits: boolean;
     hideDecimals: boolean;
@@ -65,5 +66,5 @@ export declare class DataKeysPanelComponent implements ControlValueAccessor, OnI
     addKey(): void;
     private prepareKeysFormArray;
     static ɵfac: i0.ɵɵFactoryDeclaration<DataKeysPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeysPanelComponent, "tb-data-keys-panel", never, { "disabled": "disabled"; "panelTitle": "panelTitle"; "addKeyTitle": "addKeyTitle"; "keySettingsTitle": "keySettingsTitle"; "removeKeyTitle": "removeKeyTitle"; "noKeysText": "noKeysText"; "requiredKeysText": "requiredKeysText"; "datasourceType": "datasourceType"; "entityAliasId": "entityAliasId"; "deviceId": "deviceId"; "hideDataKeyColor": "hideDataKeyColor"; "hideUnits": "hideUnits"; "hideDecimals": "hideDecimals"; "hideDataKeyUnits": "hideDataKeyUnits"; "hideDataKeyDecimals": "hideDataKeyDecimals"; "hideSourceSelection": "hideSourceSelection"; "timeSeriesChart": "timeSeriesChart"; "showTimeSeriesType": "showTimeSeriesType"; "yAxisIds": "yAxisIds"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeysPanelComponent, "tb-data-keys-panel", never, { "disabled": "disabled"; "panelTitle": "panelTitle"; "addKeyTitle": "addKeyTitle"; "keySettingsTitle": "keySettingsTitle"; "removeKeyTitle": "removeKeyTitle"; "noKeysText": "noKeysText"; "requiredKeysText": "requiredKeysText"; "datasourceType": "datasourceType"; "entityAliasId": "entityAliasId"; "deviceId": "deviceId"; "hidePanel": "hidePanel"; "hideDataKeyColor": "hideDataKeyColor"; "hideUnits": "hideUnits"; "hideDecimals": "hideDecimals"; "hideDataKeyUnits": "hideDataKeyUnits"; "hideDataKeyDecimals": "hideDataKeyDecimals"; "hideSourceSelection": "hideSourceSelection"; "timeSeriesChart": "timeSeriesChart"; "showTimeSeriesType": "showTimeSeriesType"; "yAxisIds": "yAxisIds"; }, {}, never, never, false, never>;
 }

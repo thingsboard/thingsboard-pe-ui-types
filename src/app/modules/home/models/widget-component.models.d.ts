@@ -1,5 +1,5 @@
 import { IDashboardComponent } from '@home/models/dashboard-component.models';
-import { DataSet, Datasource, DatasourceData, FormattedData, JsonSettingsSchema, Widget, WidgetActionDescriptor, WidgetActionSource, WidgetConfig, WidgetControllerDescriptor, WidgetType, widgetType, WidgetTypeDescriptor, WidgetTypeDetails, WidgetTypeParameters, WidgetExportType } from '@shared/models/widget.models';
+import { DataSet, Datasource, DatasourceData, FormattedData, JsonSettingsSchema, Widget, WidgetActionDescriptor, WidgetActionSource, WidgetConfig, WidgetControllerDescriptor, WidgetExportType, WidgetType, widgetType, WidgetTypeDescriptor, WidgetTypeDetails, WidgetTypeParameters } from '@shared/models/widget.models';
 import { Timewindow, WidgetTimewindow } from '@shared/models/time/time.models';
 import { IAliasController, IStateController, IWidgetSubscription, IWidgetUtils, RpcApi, StateParams, SubscriptionEntityInfo, TimewindowFunctions, WidgetActionsApi, WidgetSubscriptionApi } from '@core/api/widget-api.models';
 import { ChangeDetectorRef, Injector, NgModuleRef, NgZone, Type } from '@angular/core';
@@ -47,6 +47,7 @@ import { UserSettingsService } from '@core/http/user-settings.service';
 import { WhiteLabelingService } from '@core/http/white-labeling.service';
 import { DynamicComponentModule } from '@core/services/dynamic-component-factory.service';
 import { DataKeySettingsFunction } from '@home/components/widget/config/data-keys.component.models';
+import { UtilsService } from '@core/services/utils.service';
 export interface IWidgetAction {
     name: string;
     icon: string;
@@ -98,6 +99,7 @@ export declare class WidgetContext {
     customDialog: CustomDialogService;
     resourceService: ResourceService;
     userSettingsService: UserSettingsService;
+    utilsService: UtilsService;
     telemetryWsService: TelemetryWebsocketService;
     telemetrySubscribers?: TelemetrySubscriber[];
     date: DatePipe;
@@ -141,6 +143,7 @@ export declare class WidgetContext {
     }[] | RxJS.Observable<{
         [key: string]: any;
     }[]>;
+    exportDateFormat?: string;
     datasources?: Array<Datasource>;
     data?: Array<DatasourceData>;
     latestData?: Array<DatasourceData>;

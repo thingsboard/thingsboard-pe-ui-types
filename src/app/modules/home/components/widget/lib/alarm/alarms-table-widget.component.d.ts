@@ -90,6 +90,7 @@ export declare class AlarmsTableWidgetComponent extends PageComponent implements
     private columnDefaultVisibility;
     private columnSelectionAvailability;
     private columnExportParameters;
+    private columnsWithCellClick;
     private rowStylesInfo;
     private widgetTimewindowChanged$;
     private searchAction;
@@ -100,6 +101,7 @@ export declare class AlarmsTableWidgetComponent extends PageComponent implements
     ngOnDestroy(): void;
     ngAfterViewInit(): void;
     onDataUpdated(): void;
+    onEditModeChanged(): void;
     pageLinkSortDirection(): SortDirection;
     private initializeConfig;
     private updateAlarmSource;
@@ -117,6 +119,8 @@ export declare class AlarmsTableWidgetComponent extends PageComponent implements
     cellStyle(alarm: AlarmDataInfo, key: EntityColumn, row: number): any;
     cellContent(alarm: AlarmDataInfo, key: EntityColumn, row: number, useSafeHtml?: boolean, isExport?: boolean): SafeHtml;
     private applyCellContentFunction;
+    onCellClick($event: Event, alarm: AlarmDataInfo, key: EntityColumn, columnIndex: number): void;
+    columnHasCellClick(columnIndex: number): boolean;
     onRowClick($event: Event, alarm: AlarmDataInfo): void;
     onActionButtonClick($event: Event, alarm: AlarmDataInfo, actionDescriptor: AlarmWidgetActionDescriptor): void;
     actionEnabled(alarm: AlarmDataInfo, actionDescriptor: AlarmWidgetActionDescriptor): boolean;

@@ -4,10 +4,9 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { BasicWidgetConfigComponent } from '@home/components/widget/config/widget-config.component.models';
 import { WidgetConfigComponentData } from '@home/models/widget-component.models';
-import { DataKey, Datasource } from '@shared/models/widget.models';
+import { DataKey, Datasource, DatasourceType } from '@shared/models/widget.models';
 import { WidgetConfigComponent } from '@home/components/widget/widget-config.component';
-import { EChartsTooltipTrigger } from '@home/components/widget/lib/chart/echarts-widget.models';
-import { TimeSeriesChartType, TimeSeriesChartYAxisId } from '@home/components/widget/lib/chart/time-series-chart.models';
+import { TimeSeriesChartTooltipTrigger, TimeSeriesChartType, TimeSeriesChartYAxisId } from '@home/components/widget/lib/chart/time-series-chart.models';
 import * as i0 from "@angular/core";
 export declare class TimeSeriesChartBasicConfigComponent extends BasicWidgetConfigComponent {
     protected store: Store<AppState>;
@@ -17,15 +16,17 @@ export declare class TimeSeriesChartBasicConfigComponent extends BasicWidgetConf
     get datasource(): Datasource;
     get yAxisIds(): TimeSeriesChartYAxisId[];
     TimeSeriesChartType: typeof TimeSeriesChartType;
-    EChartsTooltipTrigger: typeof EChartsTooltipTrigger;
+    EChartsTooltipTrigger: typeof TimeSeriesChartTooltipTrigger;
     legendPositions: import("@shared/models/widget.models").LegendPosition[];
     legendPositionTranslationMap: Map<import("@shared/models/widget.models").LegendPosition, string>;
     timeSeriesChartWidgetConfigForm: UntypedFormGroup;
     tooltipValuePreviewFn: any;
     tooltipDatePreviewFn: any;
     chartType: TimeSeriesChartType;
+    seriesMode: string;
     constructor(store: Store<AppState>, widgetConfigComponent: WidgetConfigComponent, $injector: Injector, fb: UntypedFormBuilder);
     yAxisRemoved(yAxisId: TimeSeriesChartYAxisId): void;
+    seriesModeChange(seriesMode: string): void;
     protected configForm(): UntypedFormGroup;
     protected setupConfig(widgetConfig: WidgetConfigComponentData): void;
     protected defaultDataKeys(configData: WidgetConfigComponentData): DataKey[];
@@ -35,11 +36,13 @@ export declare class TimeSeriesChartBasicConfigComponent extends BasicWidgetConf
     protected updateValidators(emitEvent: boolean, trigger?: string): void;
     private getSeries;
     private setSeries;
+    private updateSeriesState;
     private removeYaxisId;
     private getCardButtons;
     private setCardButtons;
     private _tooltipValuePreviewFn;
     private _tooltipDatePreviewFn;
+    protected readonly DatasourceType: typeof DatasourceType;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesChartBasicConfigComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartBasicConfigComponent, "tb-time-series-chart-basic-config", never, {}, {}, never, never, false, never>;
 }

@@ -18,6 +18,7 @@ export declare class LiquidLevelWidgetComponent implements OnInit {
     widgetTitlePanel: TemplateRef<any>;
     backgroundStyle$: Observable<ComponentStyle>;
     overlayStyle: ComponentStyle;
+    padding: string;
     hasCardClickAction: boolean;
     errorsMsg: string[];
     private svgParams;

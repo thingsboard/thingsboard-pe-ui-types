@@ -6,10 +6,14 @@ export declare enum SettingsActionTypes {
 export declare class ActionSettingsChangeLanguage implements Action {
     readonly payload: {
         userLang: string;
+        reload: boolean;
+        ignoredLoad: boolean;
     };
     readonly type = SettingsActionTypes.CHANGE_LANGUAGE;
     constructor(payload: {
         userLang: string;
+        reload: boolean;
+        ignoredLoad: boolean;
     });
 }
 export declare class ActionSettingsChangeWhiteLabeling implements Action {

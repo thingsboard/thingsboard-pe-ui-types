@@ -8,6 +8,7 @@ export declare class TimeSeriesNoAggregationBarWidthSettingsComponent implements
     timeSeriesChartNoAggregationBarWidthStrategies: TimeSeriesChartNoAggregationBarWidthStrategy[];
     timeSeriesChartNoAggregationBarWidthStrategyTranslations: Map<TimeSeriesChartNoAggregationBarWidthStrategy, string>;
     disabled: boolean;
+    stroked: boolean;
     private modelValue;
     private propagateChange;
     barWidthSettingsFormGroup: UntypedFormGroup;
@@ -20,5 +21,5 @@ export declare class TimeSeriesNoAggregationBarWidthSettingsComponent implements
     private updateValidators;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesNoAggregationBarWidthSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesNoAggregationBarWidthSettingsComponent, "tb-time-series-no-aggregation-bar-width-settings", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesNoAggregationBarWidthSettingsComponent, "tb-time-series-no-aggregation-bar-width-settings", never, { "disabled": "disabled"; "stroked": "stroked"; }, {}, never, never, false, never>;
 }

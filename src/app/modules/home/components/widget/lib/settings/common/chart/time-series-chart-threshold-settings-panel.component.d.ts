@@ -1,15 +1,16 @@
 import { EventEmitter, OnInit } from '@angular/core';
 import { TbPopoverComponent } from '@shared/components/popover.component';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
-import { TimeSeriesChartShape, TimeSeriesChartThreshold, TimeSeriesChartYAxisId } from '@home/components/widget/lib/chart/time-series-chart.models';
+import { TimeSeriesChartThreshold, TimeSeriesChartYAxisId } from '@home/components/widget/lib/chart/time-series-chart.models';
 import { WidgetConfig } from '@shared/models/widget.models';
+import { ChartShape } from '@home/components/widget/lib/chart/chart.models';
 import * as i0 from "@angular/core";
 export declare class TimeSeriesChartThresholdSettingsPanelComponent implements OnInit {
     private fb;
-    timeSeriesLineTypes: import("@home/components/widget/lib/chart/time-series-chart.models").TimeSeriesChartLineType[];
-    timeSeriesLineTypeTranslations: Map<import("@home/components/widget/lib/chart/time-series-chart.models").TimeSeriesChartLineType, string>;
-    timeSeriesChartShapes: TimeSeriesChartShape[];
-    timeSeriesChartShapeTranslations: Map<TimeSeriesChartShape, string>;
+    chartLineTypes: import("@home/components/widget/lib/chart/chart.models").ChartLineType[];
+    chartLineTypeTranslations: Map<import("@home/components/widget/lib/chart/chart.models").ChartLineType, string>;
+    chartShapes: ChartShape[];
+    chartShapeTranslations: Map<ChartShape, string>;
     timeSeriesThresholdLabelPositions: import("@home/components/widget/lib/chart/time-series-chart.models").ThresholdLabelPosition[];
     timeSeriesThresholdLabelPositionTranslations: Map<import("@home/components/widget/lib/chart/time-series-chart.models").ThresholdLabelPosition, string>;
     labelPreviewFn: any;
@@ -17,6 +18,8 @@ export declare class TimeSeriesChartThresholdSettingsPanelComponent implements O
     widgetConfig: WidgetConfig;
     yAxisIds: TimeSeriesChartYAxisId[];
     popover: TbPopoverComponent<TimeSeriesChartThresholdSettingsPanelComponent>;
+    hideYAxis: boolean;
+    panelTitle: string;
     thresholdSettingsApplied: EventEmitter<Partial<TimeSeriesChartThreshold>>;
     thresholdSettingsFormGroup: UntypedFormGroup;
     constructor(fb: UntypedFormBuilder);
@@ -26,5 +29,5 @@ export declare class TimeSeriesChartThresholdSettingsPanelComponent implements O
     private updateValidators;
     private _labelPreviewFn;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesChartThresholdSettingsPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartThresholdSettingsPanelComponent, "tb-time-series-chart-threshold-settings-panel", never, { "thresholdSettings": "thresholdSettings"; "widgetConfig": "widgetConfig"; "yAxisIds": "yAxisIds"; "popover": "popover"; }, { "thresholdSettingsApplied": "thresholdSettingsApplied"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartThresholdSettingsPanelComponent, "tb-time-series-chart-threshold-settings-panel", never, { "thresholdSettings": "thresholdSettings"; "widgetConfig": "widgetConfig"; "yAxisIds": "yAxisIds"; "popover": "popover"; "hideYAxis": "hideYAxis"; "panelTitle": "panelTitle"; }, { "thresholdSettingsApplied": "thresholdSettingsApplied"; }, never, never, false, never>;
 }

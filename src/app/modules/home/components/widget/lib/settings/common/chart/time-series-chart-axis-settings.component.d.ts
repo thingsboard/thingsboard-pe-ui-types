@@ -15,6 +15,8 @@ export declare class TimeSeriesChartAxisSettingsComponent implements OnInit, Con
     disabled: boolean;
     axisType: 'xAxis' | 'yAxis';
     advanced: boolean;
+    hideUnits: boolean;
+    hideDecimals: boolean;
     private modelValue;
     private propagateChange;
     axisSettingsFormGroup: UntypedFormGroup;
@@ -27,5 +29,5 @@ export declare class TimeSeriesChartAxisSettingsComponent implements OnInit, Con
     private updateValidators;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesChartAxisSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartAxisSettingsComponent, "tb-time-series-chart-axis-settings", never, { "alwaysExpanded": "alwaysExpanded"; "disabled": "disabled"; "axisType": "axisType"; "advanced": "advanced"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartAxisSettingsComponent, "tb-time-series-chart-axis-settings", never, { "alwaysExpanded": "alwaysExpanded"; "disabled": "disabled"; "axisType": "axisType"; "advanced": "advanced"; "hideUnits": "hideUnits"; "hideDecimals": "hideDecimals"; }, {}, never, never, false, never>;
 }

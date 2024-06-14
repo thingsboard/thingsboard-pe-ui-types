@@ -27,6 +27,7 @@ export declare class ValueChartCardWidgetComponent implements OnInit, AfterViewI
     valueColor: ColorProcessor;
     backgroundStyle$: Observable<ComponentStyle>;
     overlayStyle: ComponentStyle;
+    padding: string;
     private lineChart;
     private lineChartDataKey;
     private valueKey;

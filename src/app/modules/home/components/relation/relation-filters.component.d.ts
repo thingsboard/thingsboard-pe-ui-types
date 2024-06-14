@@ -11,6 +11,7 @@ export declare class RelationFiltersComponent extends PageComponent implements C
     private fb;
     disabled: boolean;
     allowedEntityTypes: Array<EntityType | AliasEntityType>;
+    enableNotOption: boolean;
     relationFiltersFormGroup: UntypedFormGroup;
     private destroy$;
     private propagateChange;
@@ -27,5 +28,5 @@ export declare class RelationFiltersComponent extends PageComponent implements C
     private createRelationFilterFormGroup;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<RelationFiltersComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RelationFiltersComponent, "tb-relation-filters", never, { "disabled": "disabled"; "allowedEntityTypes": "allowedEntityTypes"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RelationFiltersComponent, "tb-relation-filters", never, { "disabled": "disabled"; "allowedEntityTypes": "allowedEntityTypes"; "enableNotOption": "enableNotOption"; }, {}, never, never, false, never>;
 }

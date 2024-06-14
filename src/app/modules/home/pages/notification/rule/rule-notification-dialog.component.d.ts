@@ -52,6 +52,7 @@ export declare class RuleNotificationDialogComponent extends DialogComponent<Rul
     rateLimitsTemplateForm: FormGroup;
     edgeCommunicationFailureTemplateForm: FormGroup;
     edgeConnectionTemplateForm: FormGroup;
+    taskProcessingFailureTemplateForm: FormGroup;
     triggerType: typeof TriggerType;
     triggerTypes: TriggerType[];
     triggerTypeTranslationMap: Map<TriggerType, string>;

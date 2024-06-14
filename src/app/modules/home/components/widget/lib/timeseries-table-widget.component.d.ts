@@ -116,6 +116,7 @@ export declare class TimeseriesTableWidgetComponent extends PageComponent implem
     ngAfterViewInit(): void;
     onDataUpdated(): void;
     onLatestDataUpdated(): void;
+    onEditModeChanged(): void;
     private initialize;
     getTabLabel(source: TimeseriesTableSource): string;
     private updateDatasources;

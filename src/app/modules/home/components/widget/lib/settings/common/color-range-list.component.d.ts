@@ -1,12 +1,21 @@
 import { OnDestroy, OnInit } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, FormGroup, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { AbstractControl, ControlValueAccessor, FormControl, FormGroup, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup, ValidationErrors } from '@angular/forms';
 import { TbPopoverComponent } from '@shared/components/popover.component';
+import { CdkDragDrop } from '@angular/cdk/drag-drop';
+import { IAliasController } from '@core/api/widget-api.models';
+import { DataKeysCallbacks } from '@home/components/widget/config/data-keys.component.models';
+import { Datasource } from '@shared/models/widget.models';
 import * as i0 from "@angular/core";
+export declare function advancedRangeValidator(control: AbstractControl): ValidationErrors | null;
 export declare class ColorRangeListComponent implements OnInit, ControlValueAccessor, OnDestroy {
     private fb;
     disabled: boolean;
     popover: TbPopoverComponent;
     panelTitle: string;
+    aliasController: IAliasController;
+    dataKeyCallbacks: DataKeysCallbacks;
+    datasource: Datasource;
+    advancedMode: boolean;
     modelValue: any;
     colorRangeListFormGroup: UntypedFormGroup;
     private destroy$;
@@ -22,9 +31,15 @@ export declare class ColorRangeListComponent implements OnInit, ControlValueAcce
     get rangeListFormArray(): UntypedFormArray;
     get rangeListFormGroups(): FormGroup[];
     trackByRange(index: number, rangeControl: AbstractControl): any;
+    trackByAdvancedRange(index: number, advancedRangeControl: AbstractControl): any;
+    removeAdvancedRange(index: number): void;
+    get advancedRangeFormArray(): UntypedFormArray;
+    get advancedRangeControls(): FormControl[];
     removeRange(index: number): void;
+    rangeDrop(event: CdkDragDrop<string[]>, range: string): void;
+    addAdvancedRange(): void;
     addRange(): void;
     updateModel(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ColorRangeListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ColorRangeListComponent, "tb-color-range-list", never, { "disabled": "disabled"; "popover": "popover"; "panelTitle": "panelTitle"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ColorRangeListComponent, "tb-color-range-list", never, { "disabled": "disabled"; "popover": "popover"; "panelTitle": "panelTitle"; "aliasController": "aliasController"; "dataKeyCallbacks": "dataKeyCallbacks"; "datasource": "datasource"; "advancedMode": "advancedMode"; }, {}, never, never, false, never>;
 }

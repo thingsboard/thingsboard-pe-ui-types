@@ -68,15 +68,18 @@ export declare class EntitiesTableWidgetComponent extends PageComponent implemen
     private columnDefaultVisibility;
     private columnSelectionAvailability;
     private columnExportParameters;
+    private columnsWithCellClick;
     private rowStylesInfo;
     private searchAction;
     private columnDisplayAction;
     private postProcessingFunctionMap;
     constructor(store: Store<AppState>, elementRef: ElementRef, ngZone: NgZone, overlay: Overlay, viewContainerRef: ViewContainerRef, entityService: EntityService, utils: UtilsService, datePipe: DatePipe, translate: TranslateService, domSanitizer: DomSanitizer, cd: ChangeDetectorRef, fb: FormBuilder);
     ngOnInit(): void;
+    private isActionsConfigured;
     ngOnDestroy(): void;
     ngAfterViewInit(): void;
     onDataUpdated(): void;
+    onEditModeChanged(): void;
     pageLinkSortDirection(): SortDirection;
     private initializeConfig;
     private updateDatasources;
@@ -93,6 +96,8 @@ export declare class EntitiesTableWidgetComponent extends PageComponent implemen
     cellContent(entity: EntityData, key: EntityColumn, row: number, useSafeHtml?: boolean, isExport?: boolean): SafeHtml;
     private applyCellContentFunction;
     private defaultContent;
+    onCellClick($event: Event, entity: EntityData, key: EntityColumn, columnIndex: number): void;
+    columnHasCellClick(index: number): boolean;
     onRowClick($event: Event, entity: EntityData, isDouble?: boolean): void;
     onActionButtonClick($event: Event, entity: EntityData, actionDescriptor: WidgetActionDescriptor): void;
     customDataExport(): {

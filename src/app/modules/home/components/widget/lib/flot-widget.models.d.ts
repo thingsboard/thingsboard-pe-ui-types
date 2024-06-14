@@ -1,6 +1,6 @@
 /// <reference types="flot" />
 /// <reference types="src/typings/jquery.flot.typings" />
-import { DataKey, Datasource, DatasourceData, FormattedData, LegendConfig } from '@shared/models/widget.models';
+import { DataKey, DataKeySettingsWithComparison, Datasource, DatasourceData, FormattedData, LegendConfig } from '@shared/models/widget.models';
 import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
 import { ComparisonDuration } from '@shared/models/time/time.models';
 export declare type ChartType = 'line' | 'pie' | 'bar' | 'state' | 'graph';
@@ -162,12 +162,7 @@ export interface TbFlotKeyThreshold {
     lineWidth: number;
     color: string;
 }
-export interface TbFlotKeyComparisonSettings {
-    showValuesForComparison: boolean;
-    comparisonValuesLabel: string;
-    color: string;
-}
-export interface TbFlotKeySettings {
+export interface TbFlotKeySettings extends DataKeySettingsWithComparison {
     excludeFromStacking: boolean;
     hideDataByDefault: boolean;
     disableDataHiding: boolean;
@@ -191,7 +186,6 @@ export interface TbFlotKeySettings {
     axisPosition: TbFlotYAxisPosition;
     axisTicksFormatter: string;
     thresholds: TbFlotKeyThreshold[];
-    comparisonSettings: TbFlotKeyComparisonSettings;
 }
 export interface TbFlotLatestKeySettings {
     useAsThreshold: boolean;

@@ -66,8 +66,10 @@ export declare enum Resource {
     EDGE_GROUP = "EDGE_GROUP",
     OTA_PACKAGE = "OTA_PACKAGE",
     QUEUE = "QUEUE",
+    QUEUE_STATS = "QUEUE_STATS",
     VERSION_CONTROL = "VERSION_CONTROL",
-    NOTIFICATION = "NOTIFICATION"
+    NOTIFICATION = "NOTIFICATION",
+    MOBILE_APP_SETTINGS = "MOBILE_APP_SETTINGS"
 }
 export declare const resourceTypeTranslationMap: Map<Resource, string>;
 export declare const resourceByEntityType: Map<EntityType, Resource>;

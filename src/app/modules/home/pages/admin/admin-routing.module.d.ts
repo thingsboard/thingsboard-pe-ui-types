@@ -1,21 +1,12 @@
 import { ActivatedRouteSnapshot, Resolve, ResolveFn } from '@angular/router';
 import { Observable } from 'rxjs';
 import { MailTemplatesSettings } from '@shared/models/settings.models';
-import { CustomTranslation } from '@shared/models/custom-translation.model';
-import { CustomTranslationService } from '@core/http/custom-translation.service';
 import { CustomMenu } from '@shared/models/custom-menu.models';
 import { CustomMenuService } from '@core/http/custom-menu.service';
 import { OAuth2Service } from '@core/http/oauth2.service';
 import * as i0 from "@angular/core";
 import * as i1 from "@angular/router";
 export declare const mailTemplateSettingsResolver: ResolveFn<MailTemplatesSettings>;
-export declare class CustomTranslationResolver implements Resolve<CustomTranslation> {
-    private customTranslationService;
-    constructor(customTranslationService: CustomTranslationService);
-    resolve(route: ActivatedRouteSnapshot): Observable<CustomTranslation>;
-    static ɵfac: i0.ɵɵFactoryDeclaration<CustomTranslationResolver, never>;
-    static ɵprov: i0.ɵɵInjectableDeclaration<CustomTranslationResolver>;
-}
 export declare class CustomMenuResolver implements Resolve<CustomMenu> {
     private customMenuService;
     constructor(customMenuService: CustomMenuService);

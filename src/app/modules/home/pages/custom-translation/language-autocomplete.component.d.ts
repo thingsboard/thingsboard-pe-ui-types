@@ -1,0 +1,41 @@
+import { ElementRef, OnInit } from '@angular/core';
+import { ControlValueAccessor, FormBuilder } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { CustomTranslationService } from '@core/http/custom-translation.service';
+import { MatAutocomplete } from '@angular/material/autocomplete';
+import * as i0 from "@angular/core";
+type AvailableLocale = [locelCode: string, localeLanguage: string];
+type AvailableLocales = Array<AvailableLocale>;
+export declare class LanguageAutocompleteComponent implements ControlValueAccessor, OnInit {
+    private fb;
+    private customTranslationService;
+    disabled: boolean;
+    excludeLangs: string[];
+    language: import("@angular/forms").FormGroup<{
+        language: import("@angular/forms").FormControl<string | AvailableLocale>;
+    }>;
+    languageInput: ElementRef;
+    languageAutocomplete: MatAutocomplete;
+    filteredTranslation: Observable<AvailableLocales>;
+    searchText: string;
+    private modelValue;
+    private dirty;
+    private allLocales;
+    private propagateChange;
+    constructor(fb: FormBuilder, customTranslationService: CustomTranslationService);
+    registerOnChange(fn: any): void;
+    registerOnTouched(_fn: any): void;
+    ngOnInit(): void;
+    setDisabledState(isDisabled: boolean): void;
+    writeValue(value: string | null): void;
+    updateView(value: string | null): void;
+    onFocus(): void;
+    clear(): void;
+    displayTranslateFn(translate?: AvailableLocale): string | undefined;
+    getLocaleCode(translate?: AvailableLocale | string): string | undefined;
+    private fetchLanguage;
+    private getAllTranslations;
+    static ɵfac: i0.ɵɵFactoryDeclaration<LanguageAutocompleteComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<LanguageAutocompleteComponent, "tb-language-autocomplete", never, { "disabled": "disabled"; "excludeLangs": "excludeLangs"; }, {}, never, never, false, never>;
+}
+export {};

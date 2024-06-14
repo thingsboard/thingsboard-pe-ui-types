@@ -145,6 +145,8 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     set toolbarOpened(toolbarOpened: boolean);
     get rightLayoutOpened(): boolean;
     set rightLayoutOpened(rightLayoutOpened: boolean);
+    get mobileDisplayRightLayoutFirst(): boolean;
+    set mobileDisplayRightLayoutFirst(mobileDisplayRightLayoutFirst: boolean);
     editWidgetComponent: EditWidgetComponent;
     dashboardWidgetSelectComponent: DashboardWidgetSelectComponent;
     constructor(store: Store<AppState>, window: Window, document: Document, breakpointObserver: BreakpointObserver, route: ActivatedRoute, router: Router, utils: UtilsService, reportService: ReportService, dashboardUtils: DashboardUtilsService, authService: AuthService, entityService: EntityService, dialogService: DialogService, widgetComponentService: WidgetComponentService, dashboardService: DashboardService, userPermissionsService: UserPermissionsService, wl: WhiteLabelingService, itembuffer: ItemBufferService, importExport: ImportExportService, solutionsService: SolutionsService, mobileService: MobileService, fb: UntypedFormBuilder, dialog: MatDialog, translate: TranslateService, popoverService: TbPopoverService, renderer: Renderer2, ngZone: NgZone, embeddedValue: any, overlay: Overlay, viewContainerRef: ViewContainerRef, cd: ChangeDetectorRef, sanitizer: DomSanitizer, elRef: ElementRef, injector: Injector);
@@ -225,7 +227,7 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     pasteWidget($event: Event, layoutCtx: DashboardPageLayoutContext, pos: WidgetPosition): void;
     pasteWidgetReference($event: Event, layoutCtx: DashboardPageLayoutContext, pos: WidgetPosition): void;
     removeWidget($event: Event, layoutCtx: DashboardPageLayoutContext, widget: Widget): void;
-    exportWidget($event: Event, layoutCtx: DashboardPageLayoutContext, widget: Widget): void;
+    exportWidget($event: Event, layoutCtx: DashboardPageLayoutContext, widget: Widget, widgetTitle: string): void;
     widgetClicked($event: Event, layoutCtx: DashboardPageLayoutContext, widget: Widget): void;
     widgetMouseDown($event: Event, layoutCtx: DashboardPageLayoutContext, widget: Widget): void;
     prepareDashboardContextMenu(layoutCtx: DashboardPageLayoutContext): Array<DashboardContextMenuItem>;

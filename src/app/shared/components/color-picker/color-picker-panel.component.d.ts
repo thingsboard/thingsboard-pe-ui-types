@@ -11,8 +11,10 @@ export declare class ColorPickerPanelComponent extends PageComponent implements 
     color: string;
     colorClearButton: boolean;
     useThemePalette: boolean;
+    colorCancelButton: boolean;
     popover: TbPopoverComponent<ColorPickerPanelComponent>;
     colorSelected: EventEmitter<string>;
+    colorCancelDialog: EventEmitter<any>;
     colorMode: ColorMode;
     plainColorControl: UntypedFormControl;
     primaryColor: string;
@@ -31,7 +33,8 @@ export declare class ColorPickerPanelComponent extends PageComponent implements 
     selectColor(): void;
     getColor(): any;
     clearColor(): void;
+    cancelColor(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ColorPickerPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ColorPickerPanelComponent, "tb-color-picker-panel", never, { "color": "color"; "colorClearButton": "colorClearButton"; "useThemePalette": "useThemePalette"; "popover": "popover"; }, { "colorSelected": "colorSelected"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ColorPickerPanelComponent, "tb-color-picker-panel", never, { "color": "color"; "colorClearButton": "colorClearButton"; "useThemePalette": "useThemePalette"; "colorCancelButton": "colorCancelButton"; "popover": "popover"; }, { "colorSelected": "colorSelected"; "colorCancelDialog": "colorCancelDialog"; }, never, never, false, never>;
 }
 export {};

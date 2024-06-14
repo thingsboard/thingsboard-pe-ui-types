@@ -24,10 +24,11 @@ export declare class TimeSeriesChartWidgetComponent implements OnInit, OnDestroy
     legendKeys: LegendKey[];
     backgroundStyle$: Observable<ComponentStyle>;
     overlayStyle: ComponentStyle;
-    overlayEnabled: boolean;
     padding: string;
+    legendColumnTitleStyle: ComponentStyle;
     legendLabelStyle: ComponentStyle;
     disabledLegendLabelStyle: ComponentStyle;
+    legendValueStyle: ComponentStyle;
     displayLegendValues: boolean;
     private timeSeriesChart;
     constructor(imagePipe: ImagePipe, sanitizer: DomSanitizer, renderer: Renderer2, cd: ChangeDetectorRef);

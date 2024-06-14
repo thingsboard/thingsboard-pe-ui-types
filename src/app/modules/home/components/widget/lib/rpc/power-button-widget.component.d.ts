@@ -15,6 +15,7 @@ export declare class PowerButtonWidgetComponent extends BasicActionWidgetCompone
     settings: PowerButtonWidgetSettings;
     backgroundStyle$: Observable<ComponentStyle>;
     overlayStyle: ComponentStyle;
+    padding: string;
     value: boolean;
     disabled: boolean;
     private shapeResize$;

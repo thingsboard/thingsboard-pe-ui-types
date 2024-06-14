@@ -38,6 +38,7 @@ export declare class SignalStrengthWidgetComponent implements OnInit, OnDestroy,
     tooltipDateStyle: ComponentStyle;
     backgroundStyle$: Observable<ComponentStyle>;
     overlayStyle: ComponentStyle;
+    padding: string;
     shapeResize$: ResizeObserver;
     hasCardClickAction: boolean;
     private decimals;

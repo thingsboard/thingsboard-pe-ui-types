@@ -20,5 +20,6 @@ export interface ProgressBarWidgetSettings {
     barColor: ColorSettings;
     barBackground: string;
     background: BackgroundSettings;
+    padding: string;
 }
 export declare const progressBarDefaultSettings: ProgressBarWidgetSettings;

@@ -86,6 +86,7 @@ export declare class SchedulerEventsComponent extends PageComponent implements O
     ngOnInit(): void;
     ngOnDestroy(): void;
     ngOnChanges(changes: SimpleChanges): void;
+    onEditModeChanged(): void;
     displayBackButton(): boolean;
     goBack(): void;
     private initializeWidgetConfig;

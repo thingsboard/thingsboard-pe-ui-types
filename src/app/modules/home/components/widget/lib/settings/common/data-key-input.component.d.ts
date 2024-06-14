@@ -31,6 +31,7 @@ export declare class DataKeyInputComponent implements ControlValueAccessor, OnIn
     requiredText: string;
     isLatestDataKeys: boolean;
     editable: boolean;
+    removable: boolean;
     datasourceType: DatasourceType;
     entityAliasId: string;
     entityAlias: string;
@@ -80,5 +81,5 @@ export declare class DataKeyInputComponent implements ControlValueAccessor, OnIn
     private clearKeySearchCache;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<DataKeyInputComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeyInputComponent, "tb-data-key-input", never, { "disabled": "disabled"; "required": "required"; "requiredText": "requiredText"; "isLatestDataKeys": "isLatestDataKeys"; "editable": "editable"; "datasourceType": "datasourceType"; "entityAliasId": "entityAliasId"; "entityAlias": "entityAlias"; "deviceId": "deviceId"; "widgetType": "widgetType"; "callbacks": "callbacks"; "aliasController": "aliasController"; "dataKeyType": "dataKeyType"; "dataKeyTypes": "dataKeyTypes"; "generateKey": "generateKey"; }, { "keyEdit": "keyEdit"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeyInputComponent, "tb-data-key-input", never, { "disabled": "disabled"; "required": "required"; "requiredText": "requiredText"; "isLatestDataKeys": "isLatestDataKeys"; "editable": "editable"; "removable": "removable"; "datasourceType": "datasourceType"; "entityAliasId": "entityAliasId"; "entityAlias": "entityAlias"; "deviceId": "deviceId"; "widgetType": "widgetType"; "callbacks": "callbacks"; "aliasController": "aliasController"; "dataKeyType": "dataKeyType"; "dataKeyTypes": "dataKeyTypes"; "generateKey": "generateKey"; }, { "keyEdit": "keyEdit"; }, never, never, false, never>;
 }

@@ -107,8 +107,10 @@ export declare enum TcpBinaryByteOrder {
 }
 export declare enum TcpTextMessageSeparator {
     SYSTEM_LINE_SEPARATOR = "SYSTEM_LINE_SEPARATOR",
-    NUL_DELIMITER = "NUL_DELIMITER"
+    NUL_DELIMITER = "NUL_DELIMITER",
+    CUSTOM_SEPARATOR = "CUSTOM_SEPARATOR"
 }
+export declare const TcpTextMessageSeparatorTranslation: Map<TcpTextMessageSeparator, string>;
 export declare enum IntegrationCredentialType {
     Anonymous = "anonymous",
     Basic = "basic",

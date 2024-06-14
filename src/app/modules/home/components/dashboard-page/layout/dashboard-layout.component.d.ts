@@ -50,7 +50,7 @@ export declare class DashboardLayoutComponent extends PageComponent implements I
     selectWidget(widgetId: string, delay?: number): void;
     addWidget($event: Event): void;
     onEditWidget($event: Event, widget: Widget): void;
-    onExportWidget($event: Event, widget: Widget): void;
+    onExportWidget($event: Event, widget: Widget, widgetTitle: string): void;
     onRemoveWidget($event: Event, widget: Widget): void;
     onWidgetMouseDown($event: Event, widget: Widget): void;
     onWidgetClicked($event: Event, widget: Widget): void;

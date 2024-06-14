@@ -27,6 +27,7 @@ export interface PowerButtonWidgetSettings {
     mainColorDisabled: string;
     backgroundColorDisabled: string;
     background: BackgroundSettings;
+    padding: string;
 }
 export declare const powerButtonDefaultSettings: PowerButtonWidgetSettings;
 interface PowerButtonColor {

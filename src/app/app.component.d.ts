@@ -22,6 +22,7 @@ export declare class AppComponent implements OnInit {
     setupAuth(): void;
     ngOnInit(): void;
     onActivateComponent($event: any): void;
+    private notifyUserLang;
     static ɵfac: i0.ɵɵFactoryDeclaration<AppComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<AppComponent, "tb-root", never, {}, {}, never, never, false, never>;
 }

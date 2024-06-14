@@ -26,6 +26,7 @@ export interface SignalStrengthWidgetSettings {
     tooltipBackgroundColor: string;
     tooltipBackgroundBlur: number;
     background: BackgroundSettings;
+    padding: string;
 }
 export declare const signalStrengthDefaultSettings: SignalStrengthWidgetSettings;
 export declare const signalBarActive: (rssi: number, index: number) => boolean;

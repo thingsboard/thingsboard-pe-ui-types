@@ -41,6 +41,7 @@ export declare const MediaBreakpoints: {
 };
 export declare const resolveBreakpoint: (breakpoint: string) => string;
 export declare const helpBaseUrl = "https://thingsboard.io";
+export declare const docPlatformPrefix = "/pe";
 export declare const HelpLinks: {
     linksMap: {
         docs: string;
@@ -49,7 +50,6 @@ export declare const HelpLinks: {
         slackSettings: string;
         securitySettings: string;
         oauth2Settings: string;
-        twoFactorAuthSettings: string;
         ruleEngine: string;
         ruleNodeCheckRelation: string;
         ruleNodeCheckExistenceFields: string;
@@ -103,6 +103,9 @@ export declare const HelpLinks: {
         ruleNodeSendSms: string;
         ruleNodeMath: string;
         ruleNodeCalculateDelta: string;
+        ruleNodeRestCallReply: string;
+        ruleNodePushToCloud: string;
+        ruleNodePushToEdge: string;
         ruleNodeIntegrationDownlink: string;
         ruleNodeAddToGroup: string;
         ruleNodeRemoveFromGroup: string;
@@ -111,7 +114,6 @@ export declare const HelpLinks: {
         ruleNodeDuplicateToRelated: string;
         ruleNodeChangeOwner: string;
         ruleNodeGenerateReport: string;
-        ruleNodeRestCallReply: string;
         ruleNodeAggregateLatest: string;
         ruleNodeAggregateStream: string;
         ruleNodeAlarmsCount: string;
@@ -128,8 +130,8 @@ export declare const HelpLinks: {
         entityViews: string;
         entitiesImport: string;
         rulechains: string;
-        dashboards: string;
         lwm2mResourceLibrary: string;
+        dashboards: string;
         otaUpdates: string;
         widgetTypes: string;
         widgetsBundles: string;
@@ -139,8 +141,16 @@ export declare const HelpLinks: {
         widgetsConfigRpc: string;
         widgetsConfigAlarm: string;
         widgetsConfigStatic: string;
-        ruleNodePushToCloud: string;
-        ruleNodePushToEdge: string;
+        queue: string;
+        repositorySettings: string;
+        autoCommitSettings: string;
+        twoFactorAuthentication: string;
+        sentNotification: string;
+        templateNotifications: string;
+        recipientNotifications: string;
+        ruleNotifications: string;
+        jwtSecuritySettings: string;
+        gatewayInstall: string;
         converters: string;
         uplinkConverters: string;
         downlinkConverters: string;
@@ -179,16 +189,7 @@ export declare const HelpLinks: {
         customMenu: string;
         roles: string;
         selfRegistration: string;
-        queue: string;
-        repositorySettings: string;
-        autoCommitSettings: string;
-        twoFactorAuthentication: string;
-        sentNotification: string;
-        templateNotifications: string;
-        recipientNotifications: string;
-        ruleNotifications: string;
-        jwtSecuritySettings: string;
-        gatewayInstall: string;
+        scheduler: string;
     };
 };
 export interface ValueTypeData {

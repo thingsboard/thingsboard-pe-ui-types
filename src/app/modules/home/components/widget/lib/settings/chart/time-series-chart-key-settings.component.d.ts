@@ -4,9 +4,11 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { TimeSeriesChartSeriesType, TimeSeriesChartType, TimeSeriesChartYAxisId } from '@home/components/widget/lib/chart/time-series-chart.models';
 import { WidgetConfigComponentData } from '@home/models/widget-component.models';
+import { WidgetService } from '@core/http/widget.service';
 import * as i0 from "@angular/core";
 export declare class TimeSeriesChartKeySettingsComponent extends WidgetSettingsComponent {
     protected store: Store<AppState>;
+    private widgetService;
     private fb;
     TimeSeriesChartType: typeof TimeSeriesChartType;
     timeSeriesChartTypeTranslations: Map<TimeSeriesChartType, string>;
@@ -16,7 +18,9 @@ export declare class TimeSeriesChartKeySettingsComponent extends WidgetSettingsC
     timeSeriesChartKeySettingsForm: UntypedFormGroup;
     chartType: TimeSeriesChartType;
     yAxisIds: TimeSeriesChartYAxisId[];
-    constructor(store: Store<AppState>, fb: UntypedFormBuilder);
+    comparisonEnabled: boolean;
+    functionScopeVariables: string[];
+    constructor(store: Store<AppState>, widgetService: WidgetService, fb: UntypedFormBuilder);
     protected settingsForm(): UntypedFormGroup;
     protected onWidgetConfigSet(widgetConfig: WidgetConfigComponentData): void;
     protected defaultSettings(): WidgetSettings;

@@ -6,6 +6,7 @@ import { BasicWidgetConfigComponent } from '@home/components/widget/config/widge
 import { WidgetConfigComponentData } from '@home/models/widget-component.models';
 import { DataKey, Datasource } from '@shared/models/widget.models';
 import { WidgetConfigComponent } from '@home/components/widget/widget-config.component';
+import { TimeSeriesChartType } from '@home/components/widget/lib/chart/time-series-chart.models';
 import * as i0 from "@angular/core";
 export declare class BarChartWithLabelsBasicConfigComponent extends BasicWidgetConfigComponent {
     protected store: Store<AppState>;
@@ -31,6 +32,7 @@ export declare class BarChartWithLabelsBasicConfigComponent extends BasicWidgetC
     private setCardButtons;
     private _tooltipValuePreviewFn;
     private _tooltipDatePreviewFn;
+    protected readonly TimeSeriesChartType: typeof TimeSeriesChartType;
     static ɵfac: i0.ɵɵFactoryDeclaration<BarChartWithLabelsBasicConfigComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<BarChartWithLabelsBasicConfigComponent, "tb-bar-chart-with-labels-basic-config", never, {}, {}, never, never, false, never>;
 }

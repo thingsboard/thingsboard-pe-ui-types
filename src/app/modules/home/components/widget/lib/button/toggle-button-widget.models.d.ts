@@ -12,5 +12,6 @@ export interface ToggleButtonWidgetSettings {
     checkedAppearance: WidgetButtonAppearance;
     uncheckedAppearance: WidgetButtonAppearance;
     background: BackgroundSettings;
+    padding: string;
 }
 export declare const toggleButtonDefaultSettings: ToggleButtonWidgetSettings;

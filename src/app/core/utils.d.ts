@@ -41,6 +41,7 @@ export declare function extractType<T extends object>(target: any, keysOfProps: 
 export declare const isEqual: (a: any, b: any) => boolean;
 export declare const isEmpty: (a: any) => boolean;
 export declare const unset: (object: any, path: string | symbol) => boolean;
+export declare const setByPath: <T extends object>(object: T, path: string | number | symbol, value: any) => T;
 export declare const isEqualIgnoreUndefined: (a: any, b: any) => boolean;
 export declare const isArraysEqualIgnoreUndefined: (a: any[], b: any[]) => boolean;
 export declare function mergeDeep<T>(target: T, ...sources: T[]): T;

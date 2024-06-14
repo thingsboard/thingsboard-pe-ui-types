@@ -1,4 +1,4 @@
-import { WidgetActionDescriptor, WidgetActionSource } from '@app/shared/models/widget.models';
+import { CellClickColumnInfo, WidgetActionDescriptor, WidgetActionSource } from '@app/shared/models/widget.models';
 import { CollectionViewer, DataSource } from '@angular/cdk/collections';
 import { Observable } from 'rxjs';
 import { PageData } from '@shared/models/page/page-data';
@@ -7,6 +7,7 @@ import { PageLink } from '@shared/models/page/page-link';
 import { UtilsService } from '@core/services/utils.service';
 export interface WidgetActionCallbacks {
     fetchDashboardStates: (query: string) => Array<string>;
+    fetchCellClickColumns: () => Array<CellClickColumnInfo>;
 }
 export interface WidgetActionsData {
     actionsMap: {

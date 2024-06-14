@@ -9,7 +9,9 @@ export declare class TcpIntegrationFormComponent extends IntegrationForm impleme
     HandlerConfigurationType: typeof TcpHandlerConfigurationType;
     HandlerConfigurationTypeTranslation: Map<HandlerConfigurationType, string>;
     TcpBinaryByteOrder: typeof TcpBinaryByteOrder;
-    TcpTextMessageSeparator: typeof TcpTextMessageSeparator;
+    tcpTextMessageSeparatorList: TcpTextMessageSeparator[];
+    readonly TcpTextMessageSeparator: typeof TcpTextMessageSeparator;
+    readonly TcpTextMessageSeparatorTranslation: Map<TcpTextMessageSeparator, string>;
     private propagateChangePending;
     private propagateChange;
     constructor(fb: UntypedFormBuilder);

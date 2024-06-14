@@ -13,6 +13,7 @@ import * as i0 from "@angular/core";
 export interface DashboardSettingsDialogData {
     settings?: DashboardSettings;
     gridSettings?: GridSettings;
+    isRightLayout?: boolean;
 }
 export declare class DashboardSettingsDialogComponent extends DialogComponent<DashboardSettingsDialogComponent, DashboardSettingsDialogData> implements OnInit, ErrorStateMatcher {
     protected store: Store<AppState>;
@@ -25,6 +26,7 @@ export declare class DashboardSettingsDialogComponent extends DialogComponent<Da
     private statesControllerService;
     settings: DashboardSettings;
     gridSettings: GridSettings;
+    isRightLayout: boolean;
     settingsFormGroup: FormGroup;
     gridSettingsFormGroup: FormGroup;
     stateControllerIds: string[];

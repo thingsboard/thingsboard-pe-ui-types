@@ -61,6 +61,7 @@ export declare class BlobEntitiesComponent extends PageComponent implements OnIn
     ngOnDestroy(): void;
     private initializeWidgetConfig;
     ngAfterViewInit(): void;
+    onEditModeChanged(): void;
     resize(): void;
     updateData(): void;
     onTimewindowChange(): void;

@@ -18,5 +18,6 @@ export interface BatteryLevelWidgetSettings {
     batteryLevelColor: ColorSettings;
     batteryShapeColor: ColorSettings;
     background: BackgroundSettings;
+    padding: string;
 }
 export declare const batteryLevelDefaultSettings: BatteryLevelWidgetSettings;

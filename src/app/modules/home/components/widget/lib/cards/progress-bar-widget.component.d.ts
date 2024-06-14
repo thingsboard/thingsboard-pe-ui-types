@@ -37,6 +37,7 @@ export declare class ProgressBarWidgetComponent implements OnInit, OnDestroy, Af
     value: number;
     backgroundStyle$: Observable<ComponentStyle>;
     overlayStyle: ComponentStyle;
+    padding: string;
     progressBarPanelResize$: ResizeObserver;
     private decimals;
     private units;

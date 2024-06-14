@@ -13,6 +13,7 @@ export declare class TimeSeriesChartThresholdsPanelComponent implements ControlV
     datasource: Datasource;
     widgetConfig: WidgetConfig;
     yAxisIds: TimeSeriesChartYAxisId[];
+    hideYAxis: boolean;
     thresholdsFormGroup: UntypedFormGroup;
     private propagateChange;
     constructor(fb: UntypedFormBuilder);
@@ -35,5 +36,5 @@ export declare class TimeSeriesChartThresholdsPanelComponent implements ControlV
     private updateLatestDataKeys;
     private isThresholdKey;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesChartThresholdsPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartThresholdsPanelComponent, "tb-time-series-chart-thresholds-panel", never, { "disabled": "disabled"; "aliasController": "aliasController"; "dataKeyCallbacks": "dataKeyCallbacks"; "datasource": "datasource"; "widgetConfig": "widgetConfig"; "yAxisIds": "yAxisIds"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartThresholdsPanelComponent, "tb-time-series-chart-thresholds-panel", never, { "disabled": "disabled"; "aliasController": "aliasController"; "dataKeyCallbacks": "dataKeyCallbacks"; "datasource": "datasource"; "widgetConfig": "widgetConfig"; "yAxisIds": "yAxisIds"; "hideYAxis": "hideYAxis"; }, {}, never, never, false, never>;
 }

@@ -1,5 +1,5 @@
 import { Injector } from '@angular/core';
-import { WidgetSettings, WidgetSettingsComponent } from '@shared/models/widget.models';
+import { Datasource, WidgetSettings, WidgetSettingsComponent } from '@shared/models/widget.models';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -8,6 +8,7 @@ export declare class BarChartWithLabelsWidgetSettingsComponent extends WidgetSet
     protected store: Store<AppState>;
     private $injector;
     private fb;
+    get datasource(): Datasource;
     legendPositions: import("@shared/models/widget.models").LegendPosition[];
     legendPositionTranslationMap: Map<import("@shared/models/widget.models").LegendPosition, string>;
     barChartWidgetSettingsForm: UntypedFormGroup;

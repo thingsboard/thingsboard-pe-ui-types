@@ -6,14 +6,17 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { TranslateService } from '@ngx-translate/core';
 import { IAliasController } from '@core/api/widget-api.models';
+import { DataKeysCallbacks } from '@home/components/widget/config/data-keys.component.models';
+import { Datasource } from '@shared/models/widget.models';
 import * as i0 from "@angular/core";
 export declare class TickValueComponent extends PageComponent implements OnInit, ControlValueAccessor {
     protected store: Store<AppState>;
     private translate;
     private fb;
     disabled: boolean;
-    expanded: boolean;
     aliasController: IAliasController;
+    dataKeyCallbacks: DataKeysCallbacks;
+    datasource: Datasource;
     removeTickValue: EventEmitter<any>;
     private modelValue;
     private propagateChange;
@@ -24,9 +27,7 @@ export declare class TickValueComponent extends PageComponent implements OnInit,
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: ValueSourceProperty): void;
-    tickValueText(): string;
-    private valueSourcePropertyText;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<TickValueComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TickValueComponent, "tb-tick-value", never, { "disabled": "disabled"; "expanded": "expanded"; "aliasController": "aliasController"; }, { "removeTickValue": "removeTickValue"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TickValueComponent, "tb-tick-value", never, { "disabled": "disabled"; "aliasController": "aliasController"; "dataKeyCallbacks": "dataKeyCallbacks"; "datasource": "datasource"; }, { "removeTickValue": "removeTickValue"; }, never, never, false, never>;
 }

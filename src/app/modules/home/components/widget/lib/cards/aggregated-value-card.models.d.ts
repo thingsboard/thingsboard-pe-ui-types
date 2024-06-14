@@ -12,6 +12,7 @@ export interface AggregatedValueCardWidgetSettings {
     dateColor: string;
     showChart: boolean;
     background: BackgroundSettings;
+    padding: string;
 }
 export declare enum AggregatedValueCardKeyPosition {
     center = "center",

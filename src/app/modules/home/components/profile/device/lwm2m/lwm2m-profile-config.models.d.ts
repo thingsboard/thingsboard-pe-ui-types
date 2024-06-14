@@ -8,7 +8,7 @@ export declare const ATTRIBUTE = "attribute";
 export declare const TELEMETRY = "telemetry";
 export declare const KEY_NAME = "keyName";
 export declare const DEFAULT_ID_SERVER = 123;
-export declare const DEFAULT_ID_BOOTSTRAP = 111;
+export declare const DEFAULT_ID_BOOTSTRAP = 0;
 export declare const DEFAULT_LOCAL_HOST_NAME = "localhost";
 export declare const DEFAULT_PORT_SERVER_NO_SEC = 5685;
 export declare const DEFAULT_PORT_BOOTSTRAP_NO_SEC = 5687;
@@ -59,6 +59,11 @@ export declare enum PowerMode {
     E_DRX = "E_DRX"
 }
 export declare const PowerModeTranslationMap: Map<PowerMode, string>;
+export declare enum ObjectIDVer {
+    V1_0 = "1.0",
+    V1_1 = "1.1"
+}
+export declare const ObjectIDVerTranslationMap: Map<ObjectIDVer, string>;
 export interface ServerSecurityConfig {
     host?: string;
     port?: number;
@@ -97,7 +102,7 @@ export interface ClientLwM2mSettings {
     edrxCycle?: number;
     pagingTransmissionWindow?: number;
     psmActivityTimer?: number;
-    compositeOperationsSupport: boolean;
+    defaultObjectIDVer: ObjectIDVer;
 }
 export interface ObservableAttributes {
     observe: string[];

@@ -16,6 +16,7 @@ export declare class EntityFilterComponent implements ControlValueAccessor, OnIn
     filterFormGroup: FormGroup;
     aliasFilterTypes: Array<AliasFilterType>;
     entityGroupTypes: Array<EntityType>;
+    listEntityTypes: Array<EntityType | AliasEntityType>;
     aliasFilterType: typeof AliasFilterType;
     aliasFilterTypeTranslations: Map<AliasFilterType, string>;
     entityType: typeof EntityType;

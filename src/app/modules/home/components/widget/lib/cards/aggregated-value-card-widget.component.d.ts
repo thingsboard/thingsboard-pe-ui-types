@@ -33,6 +33,7 @@ export declare class AggregatedValueCardWidgetComponent implements OnInit, After
     dateColor: string;
     backgroundStyle$: Observable<ComponentStyle>;
     overlayStyle: ComponentStyle;
+    padding: string;
     private lineChart;
     private lineChartDataKey;
     private lastUpdateTs;

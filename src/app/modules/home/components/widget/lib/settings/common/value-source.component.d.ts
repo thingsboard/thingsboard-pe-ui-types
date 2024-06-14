@@ -3,7 +3,6 @@ import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@ang
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { TranslateService } from '@ngx-translate/core';
 import { IAliasController } from '@core/api/widget-api.models';
 import { Observable } from 'rxjs';
 import { EntityService } from '@core/http/entity.service';
@@ -17,13 +16,14 @@ export interface ValueSourceProperty {
 }
 export declare class ValueSourceComponent extends PageComponent implements OnInit, ControlValueAccessor {
     protected store: Store<AppState>;
-    private translate;
     private entityService;
     private fb;
     entityAliasInput: ElementRef;
     keyInput: ElementRef;
     disabled: boolean;
     aliasController: IAliasController;
+    entityAliasPlaceholder: string;
+    entityAttributePlaceholder: string;
     private modelValue;
     private propagateChange;
     valueSourceFormGroup: UntypedFormGroup;
@@ -34,7 +34,7 @@ export declare class ValueSourceComponent extends PageComponent implements OnIni
     private latestKeySearchResult;
     private keysFetchObservable$;
     private entityAliasList;
-    constructor(store: Store<AppState>, translate: TranslateService, entityService: EntityService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, entityService: EntityService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -50,5 +50,5 @@ export declare class ValueSourceComponent extends PageComponent implements OnIni
     private updateModel;
     private updateValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<ValueSourceComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ValueSourceComponent, "tb-value-source", never, { "disabled": "disabled"; "aliasController": "aliasController"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ValueSourceComponent, "tb-value-source", never, { "disabled": "disabled"; "aliasController": "aliasController"; "entityAliasPlaceholder": "entityAliasPlaceholder"; "entityAttributePlaceholder": "entityAttributePlaceholder"; }, {}, never, never, false, never>;
 }

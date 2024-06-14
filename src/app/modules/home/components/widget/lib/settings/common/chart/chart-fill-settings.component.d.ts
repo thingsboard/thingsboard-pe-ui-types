@@ -1,15 +1,15 @@
 import { OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
-import { SeriesFillSettings, SeriesFillType } from '@home/components/widget/lib/chart/time-series-chart.models';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
+import { ChartFillSettings, ChartFillType } from '@home/components/widget/lib/chart/chart.models';
 import * as i0 from "@angular/core";
-export declare class TimeSeriesChartFillSettingsComponent implements OnInit, ControlValueAccessor {
+export declare class ChartFillSettingsComponent implements OnInit, ControlValueAccessor {
     protected store: Store<AppState>;
     private fb;
-    seriesFillTypes: SeriesFillType[];
-    seriesFillTypeTranslationMap: Map<SeriesFillType, string>;
-    SeriesFillType: typeof SeriesFillType;
+    chartFillTypes: ChartFillType[];
+    chartFillTypeTranslationMap: Map<ChartFillType, string>;
+    ChartFillType: typeof ChartFillType;
     disabled: boolean;
     title: string;
     fillNoneTitle: string;
@@ -21,9 +21,9 @@ export declare class TimeSeriesChartFillSettingsComponent implements OnInit, Con
     registerOnChange(fn: any): void;
     registerOnTouched(_fn: any): void;
     setDisabledState(isDisabled: boolean): void;
-    writeValue(value: SeriesFillSettings): void;
+    writeValue(value: ChartFillSettings): void;
     private updateValidators;
     private updateModel;
-    static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesChartFillSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartFillSettingsComponent, "tb-time-series-chart-fill-settings", never, { "disabled": "disabled"; "title": "title"; "fillNoneTitle": "fillNoneTitle"; }, {}, never, never, false, never>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<ChartFillSettingsComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ChartFillSettingsComponent, "tb-chart-fill-settings", never, { "disabled": "disabled"; "title": "title"; "fillNoneTitle": "fillNoneTitle"; }, {}, never, never, false, never>;
 }

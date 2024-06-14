@@ -1,26 +1,15 @@
 import * as CanvasGauges from 'canvas-gauges';
 import { FontStyle, FontWeight } from '@home/components/widget/lib/settings.models';
-import { ColorFormats } from 'tinycolor2';
+import { ColorProcessor } from '@shared/models/widget-settings.models';
 import GenericOptions = CanvasGauges.GenericOptions;
 import BaseGauge = CanvasGauges.BaseGauge;
 export type GaugeType = 'arc' | 'donut' | 'horizontalBar' | 'verticalBar';
-export interface DigitalGaugeColorRange {
-    pct: number;
-    color: ColorFormats.RGBA;
-    rgbString: string;
-}
-export interface ColorLevelSetting {
-    value: number;
-    color: string;
-}
-export type levelColors = Array<string | ColorLevelSetting>;
 export interface CanvasDigitalGaugeOptions extends GenericOptions {
     gaugeType?: GaugeType;
     gaugeWithScale?: number;
     dashThickness?: number;
     roundedLineCap?: boolean;
     gaugeColor?: string;
-    levelColors?: levelColors;
     symbol?: string;
     hideValue?: boolean;
     hideMinMax?: boolean;
@@ -41,8 +30,6 @@ export interface CanvasDigitalGaugeOptions extends GenericOptions {
     isMobile?: boolean;
     donutStartAngle?: number;
     donutEndAngle?: number;
-    colorsRange?: DigitalGaugeColorRange[];
-    neonColorsRange?: DigitalGaugeColorRange[];
     neonColorTitle?: string;
     neonColorLabel?: string;
     neonColorValue?: string;
@@ -61,6 +48,7 @@ export interface CanvasDigitalGaugeOptions extends GenericOptions {
     unitTitle?: string;
     showUnitTitle?: boolean;
     showTimestamp?: boolean;
+    barColorProcessor: ColorProcessor;
 }
 interface FontHeightInfo {
     ascent?: number;

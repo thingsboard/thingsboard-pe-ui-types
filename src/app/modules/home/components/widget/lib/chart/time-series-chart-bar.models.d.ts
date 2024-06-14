@@ -1,9 +1,9 @@
 import { LinearGradientObject } from 'zrender/lib/graphic/LinearGradient';
 import { Interval } from '@shared/models/time/time.models';
-import { SeriesLabelOption } from 'echarts/types/src/util/types';
 import { TimeSeriesChartDataItem, TimeSeriesChartNoAggregationBarWidthStrategy } from '@home/components/widget/lib/chart/time-series-chart.models';
 import { CustomSeriesRenderItemParams } from 'echarts';
 import { CustomSeriesRenderItemAPI, CustomSeriesRenderItemReturn } from 'echarts/types/dist/shared';
+import { BarSeriesLabelOption } from 'echarts/types/src/chart/bar/BarSeries';
 export interface BarVisualSettings {
     color: string | LinearGradientObject;
     borderColor: string;
@@ -11,6 +11,8 @@ export interface BarVisualSettings {
     borderRadius: number;
 }
 export interface BarRenderSharedContext {
+    barGap: number;
+    intervalGap: number;
     timeInterval: Interval;
     noAggregationBarWidthStrategy: TimeSeriesChartNoAggregationBarWidthStrategy;
     noAggregationWidthRelative: boolean;
@@ -22,7 +24,10 @@ export interface BarRenderContext {
     barIndex?: number;
     noAggregation?: boolean;
     visualSettings?: BarVisualSettings;
-    labelOption?: SeriesLabelOption;
+    labelOption?: BarSeriesLabelOption;
+    additionalLabelOption?: {
+        [key: string]: any;
+    };
     barStackIndex?: number;
     currentStackItems?: TimeSeriesChartDataItem[];
 }

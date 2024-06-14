@@ -45,7 +45,7 @@ export declare class UtilsService {
     generateColors(datasources: Array<Datasource>): void;
     stringToHslColor(str: string, saturationPercentage: number, lightnessPercentage: number): string;
     currentPerfTime(): number;
-    getQueryParam(name: string): string;
+    getQueryParam(name: string, url?: string): string;
     removeQueryParams(keys: Array<string>): void;
     updateQueryParam(name: string, value: string | null): void;
     private updateUrlQueryString;

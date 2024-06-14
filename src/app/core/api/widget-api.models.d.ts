@@ -4,7 +4,7 @@ import { DataSet, Datasource, DatasourceData, DatasourceType, KeyInfo, LegendCon
 import { TimeService } from '../services/time.service';
 import { DeviceService } from '../http/device.service';
 import { UtilsService } from '@core/services/utils.service';
-import { Timewindow, WidgetTimewindow } from '@shared/models/time/time.models';
+import { ComparisonDuration, SubscriptionTimewindow, Timewindow, WidgetTimewindow } from '@shared/models/time/time.models';
 import { EntityType } from '@shared/models/entity-type.models';
 import { HttpErrorResponse } from '@angular/common/http';
 import { RafService } from '@core/services/raf.service';
@@ -12,7 +12,6 @@ import { EntityAliases } from '@shared/models/alias.models';
 import { EntityInfo } from '@app/shared/models/entity.models';
 import { IDashboardComponent } from '@home/models/dashboard-component.models';
 import { DatePipe } from '@angular/common';
-import moment_ from 'moment';
 import { AlarmData, AlarmDataPageLink, EntityData, EntityDataPageLink, EntityFilter, Filter, FilterInfo, Filters, KeyFilter } from '@shared/models/query/query.models';
 import { EntityDataService } from '@core/api/entity-data.service';
 import { PageData } from '@shared/models/page/page-data';
@@ -200,7 +199,7 @@ export interface WidgetSubscriptionOptions {
     onTimewindowChangeFunction?: (timewindow: Timewindow) => Timewindow;
     legendConfig?: LegendConfig;
     comparisonEnabled?: boolean;
-    timeForComparison?: moment_.unitOfTime.DurationConstructor;
+    timeForComparison?: ComparisonDuration;
     comparisonCustomIntervalValue?: number;
     decimals?: number;
     units?: string;
@@ -233,6 +232,7 @@ export interface IWidgetSubscription {
     }>;
     timeWindowConfig?: Timewindow;
     timeWindow?: WidgetTimewindow;
+    subscriptionTimewindow: SubscriptionTimewindow;
     onTimewindowChangeFunction?: (timewindow: Timewindow) => Timewindow;
     widgetTimewindowChanged$: Observable<WidgetTimewindow>;
     comparisonEnabled?: boolean;

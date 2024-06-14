@@ -17,6 +17,7 @@ export declare class NotificationTemplateConfigurationComponent implements OnDes
     private propagateChange;
     private readonly destroy$;
     private expendedBlocks;
+    private propagateChangePending;
     constructor(fb: FormBuilder, translate: TranslateService);
     ngOnDestroy(): void;
     writeValue(value: Partial<DeliveryMethodsTemplates>): void;
@@ -26,6 +27,7 @@ export declare class NotificationTemplateConfigurationComponent implements OnDes
     validate(): ValidationErrors;
     get notificationTapActionHint(): string;
     expandedForm(name: NotificationDeliveryMethod): boolean;
+    private updateModel;
     private updateExpandedForm;
     private updateDisabledForms;
     private buildForm;

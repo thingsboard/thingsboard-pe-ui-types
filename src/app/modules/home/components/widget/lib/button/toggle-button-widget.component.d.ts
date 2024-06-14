@@ -14,6 +14,7 @@ export declare class ToggleButtonWidgetComponent extends BasicActionWidgetCompon
     settings: ToggleButtonWidgetSettings;
     backgroundStyle$: Observable<ComponentStyle>;
     overlayStyle: ComponentStyle;
+    padding: string;
     value: boolean;
     disabled: boolean;
     autoScale: boolean;

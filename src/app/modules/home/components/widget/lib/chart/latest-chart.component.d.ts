@@ -1,0 +1,55 @@
+import { AfterViewInit, ChangeDetectorRef, ElementRef, OnDestroy, OnInit, Renderer2, TemplateRef } from '@angular/core';
+import { LatestChartDataItem, LatestChartLegendItem, LatestChartSettings, LatestChartWidgetSettings } from '@home/components/widget/lib/chart/latest-chart.models';
+import { WidgetContext } from '@home/models/widget-component.models';
+import { Observable } from 'rxjs';
+import { ComponentStyle } from '@shared/models/widget-settings.models';
+import { TbLatestChart } from '@home/components/widget/lib/chart/latest-chart';
+import { ImagePipe } from '@shared/pipe/image.pipe';
+import { DomSanitizer } from '@angular/platform-browser';
+import { WidgetComponent } from '@home/components/widget/widget.component';
+import { TranslateService } from '@ngx-translate/core';
+import * as i0 from "@angular/core";
+export interface LatestChartComponentCallbacks {
+    createChart: (chartShape: ElementRef<HTMLElement>, renderer: Renderer2) => TbLatestChart<LatestChartSettings>;
+    onItemClick?: ($event: Event, item: LatestChartDataItem) => void;
+}
+export declare class LatestChartComponent implements OnInit, OnDestroy, AfterViewInit {
+    private imagePipe;
+    private sanitizer;
+    private widgetComponent;
+    private renderer;
+    private translate;
+    private cd;
+    chartContent: ElementRef<HTMLElement>;
+    chartShape: ElementRef<HTMLElement>;
+    chartLegend: ElementRef<HTMLElement>;
+    ctx: WidgetContext;
+    widgetTitlePanel: TemplateRef<any>;
+    callbacks: LatestChartComponentCallbacks;
+    settings: LatestChartWidgetSettings;
+    showLegend: boolean;
+    legendClass: string;
+    backgroundStyle$: Observable<ComponentStyle>;
+    overlayStyle: ComponentStyle;
+    padding: string;
+    get legendItems(): LatestChartLegendItem[];
+    legendLabelStyle: ComponentStyle;
+    legendValueStyle: ComponentStyle;
+    disabledLegendLabelStyle: ComponentStyle;
+    disabledLegendValueStyle: ComponentStyle;
+    private shapeResize$;
+    private legendHorizontal;
+    private latestChart;
+    constructor(imagePipe: ImagePipe, sanitizer: DomSanitizer, widgetComponent: WidgetComponent, renderer: Renderer2, translate: TranslateService, cd: ChangeDetectorRef);
+    ngOnInit(): void;
+    ngAfterViewInit(): void;
+    ngOnDestroy(): void;
+    onInit(): void;
+    onDataUpdated(): void;
+    onLegendItemEnter(item: LatestChartLegendItem): void;
+    onLegendItemLeave(item: LatestChartLegendItem): void;
+    toggleLegendItem(item: LatestChartLegendItem): void;
+    private onResize;
+    static ɵfac: i0.ɵɵFactoryDeclaration<LatestChartComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<LatestChartComponent, "tb-latest-chart", never, { "ctx": "ctx"; "widgetTitlePanel": "widgetTitlePanel"; "callbacks": "callbacks"; "settings": "settings"; }, {}, never, never, false, never>;
+}

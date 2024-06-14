@@ -13,5 +13,6 @@ export interface ValueChartCardWidgetSettings {
     valueFont: Font;
     valueColor: ColorSettings;
     background: BackgroundSettings;
+    padding: string;
 }
 export declare const valueChartCardDefaultSettings: ValueChartCardWidgetSettings;

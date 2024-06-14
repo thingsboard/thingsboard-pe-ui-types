@@ -1,5 +1,5 @@
 import { Injector } from '@angular/core';
-import { WidgetSettings, WidgetSettingsComponent } from '@shared/models/widget.models';
+import { Datasource, WidgetSettings, WidgetSettingsComponent } from '@shared/models/widget.models';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -15,6 +15,7 @@ export declare class BatteryLevelWidgetSettingsComponent extends WidgetSettingsC
     batteryLevelWidgetSettingsForm: UntypedFormGroup;
     valuePreviewFn: any;
     get sectionsCountEnabled(): boolean;
+    get datasource(): Datasource;
     constructor(store: Store<AppState>, $injector: Injector, fb: UntypedFormBuilder);
     protected settingsForm(): UntypedFormGroup;
     protected defaultSettings(): WidgetSettings;

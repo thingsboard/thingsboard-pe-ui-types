@@ -30,6 +30,7 @@ export declare class SliderWidgetComponent extends BasicActionWidgetComponent im
     settings: SliderWidgetSettings;
     backgroundStyle$: Observable<ComponentStyle>;
     overlayStyle: ComponentStyle;
+    padding: string;
     value: number;
     private prevValue;
     disabled: boolean;

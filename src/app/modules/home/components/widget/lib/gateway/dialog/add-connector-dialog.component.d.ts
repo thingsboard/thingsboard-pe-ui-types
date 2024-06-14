@@ -1,0 +1,33 @@
+import { OnDestroy } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { FormBuilder, UntypedFormGroup } from '@angular/forms';
+import { BaseData, HasId } from '@shared/models/base-data';
+import { DialogComponent } from '@shared/components/dialog.component';
+import { Router } from '@angular/router';
+import { AddConnectorConfigData, ConnectorType, CreatedConnectorConfigData, GatewayLogLevel } from '@home/components/widget/lib/gateway/gateway-widget.models';
+import { ResourcesService } from '@core/services/resources.service';
+import * as i0 from "@angular/core";
+export declare class AddConnectorDialogComponent extends DialogComponent<AddConnectorDialogComponent, BaseData<HasId>> implements OnDestroy {
+    protected store: Store<AppState>;
+    protected router: Router;
+    data: AddConnectorConfigData;
+    dialogRef: MatDialogRef<AddConnectorDialogComponent, CreatedConnectorConfigData>;
+    private fb;
+    private resourcesService;
+    connectorForm: UntypedFormGroup;
+    connectorType: typeof ConnectorType;
+    gatewayConnectorDefaultTypesTranslatesMap: Map<ConnectorType, string>;
+    gatewayLogLevel: GatewayLogLevel[];
+    submitted: boolean;
+    private destroy$;
+    constructor(store: Store<AppState>, router: Router, data: AddConnectorConfigData, dialogRef: MatDialogRef<AddConnectorDialogComponent, CreatedConnectorConfigData>, fb: FormBuilder, resourcesService: ResourcesService);
+    ngOnDestroy(): void;
+    helpLinkId(): string;
+    cancel(): void;
+    add(): void;
+    private uniqNameRequired;
+    static ɵfac: i0.ɵɵFactoryDeclaration<AddConnectorDialogComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AddConnectorDialogComponent, "tb-add-connector-dialog", never, {}, {}, never, never, false, never>;
+}

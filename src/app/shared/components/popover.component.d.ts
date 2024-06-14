@@ -74,6 +74,9 @@ export declare class TbPopoverComponent<T = any> implements OnDestroy, OnInit {
     tbPopoverInnerStyle: {
         [klass: string]: any;
     };
+    tbPopoverInnerContentStyle: {
+        [klass: string]: any;
+    };
     tbBackdrop: boolean;
     tbMouseEnterDelay?: number;
     tbMouseLeaveDelay?: number;

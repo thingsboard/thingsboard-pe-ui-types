@@ -1,10 +1,13 @@
 import { DataEntry, DataKey, Datasource, DatasourceData, TargetDevice } from '@shared/models/widget.models';
-import { Injector } from '@angular/core';
+import { EventEmitter, Injector } from '@angular/core';
 import { AlarmFilterConfig } from '@shared/models/query/query.models';
 import { Observable } from 'rxjs';
 import { ImagePipe } from '@shared/pipe/image.pipe';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Interval } from '@shared/models/time/time.models';
+import { WidgetContext } from '@home/models/widget-component.models';
+import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
+import { IWidgetSubscription, WidgetSubscriptionCallbacks } from '@core/api/widget-api.models';
 export type ComponentStyle = {
     [klass: string]: any;
 };
@@ -28,26 +31,66 @@ export interface Font {
     style: fontStyle;
     lineHeight: string;
 }
+export declare enum ValueSourceType {
+    constant = "constant",
+    latestKey = "latestKey",
+    entity = "entity"
+}
+export declare const ValueSourceTypes: ValueSourceType[];
+export declare const ValueSourceTypeTranslation: Map<ValueSourceType, string>;
+export interface ValueSourceConfig {
+    type: ValueSourceType;
+    value?: number;
+    latestKeyType?: DataKeyType.attribute | DataKeyType.timeseries;
+    latestKey?: string;
+    entityKeyType?: DataKeyType.attribute | DataKeyType.timeseries;
+    entityAlias?: string;
+    entityKey?: string;
+}
 export declare enum ColorType {
     constant = "constant",
+    gradient = "gradient",
     range = "range",
     function = "function"
 }
 export declare const colorTypeTranslations: Map<ColorType, string>;
+interface AdvancedColorMode {
+    advancedMode?: boolean;
+}
 export interface ColorRange {
     from?: number;
     to?: number;
     color: string;
 }
-export declare const colorRangeIncludes: (range: ColorRange, toCheck: ColorRange) => boolean;
-export declare const filterIncludingColorRanges: (ranges: Array<ColorRange>) => Array<ColorRange>;
-export declare const sortedColorRange: (ranges: Array<ColorRange>) => Array<ColorRange>;
+export interface AdvancedColorRange {
+    from?: ValueSourceConfig;
+    to?: ValueSourceConfig;
+    color: string;
+}
+export interface ColorRangeSettings extends AdvancedColorMode {
+    range?: ColorRange[];
+    rangeAdvanced?: AdvancedColorRange[];
+}
+export interface ColorGradientSettings extends AdvancedColorMode {
+    gradient?: string[];
+    gradientAdvanced?: AdvancedGradient[];
+    minValue?: number;
+    maxValue?: number;
+}
+export interface AdvancedGradient {
+    source: ValueSourceConfig;
+    color: string;
+}
 export interface ColorSettings {
     type: ColorType;
     color: string;
-    rangeList?: ColorRange[];
+    rangeList?: ColorRangeSettings;
+    gradient?: ColorGradientSettings;
     colorFunction?: string;
 }
+export declare const colorRangeIncludes: (range: ColorRange, toCheck: ColorRange) => boolean;
+export declare const filterIncludingColorRanges: (ranges: Array<ColorRange>) => Array<ColorRange>;
+export declare const sortedColorRange: (ranges: Array<ColorRange>) => Array<ColorRange>;
 export interface TimewindowStyle {
     showIcon: boolean;
     icon: string;
@@ -59,16 +102,43 @@ export interface TimewindowStyle {
 }
 export declare const defaultTimewindowStyle: TimewindowStyle;
 export declare const constantColor: (color: string) => ColorSettings;
+export declare const gradientColor: (defaultColor: string, colors: string[], minValue?: number, maxValue?: number) => ColorSettings;
+export declare const defaultGradient: (minValue?: number, maxValue?: number) => ColorGradientSettings;
+export declare const defaultRange: () => ColorRangeSettings;
 export declare const defaultColorFunction: string;
 export declare const cssSizeToStrSize: (size?: number, unit?: cssUnit) => string;
 export declare const resolveCssSize: (strSize?: string) => [number, cssUnit];
 export declare const validateCssSize: (strSize?: string) => string | undefined;
+export interface ColorProcessorSettings {
+    settings: ColorSettings;
+    ctx?: WidgetContext;
+    minGradientValue?: number;
+    maxGradientValue?: number;
+}
 export declare abstract class ColorProcessor {
     protected settings: ColorSettings;
-    static fromSettings(color: ColorSettings): ColorProcessor;
+    static fromSettings(color: ColorSettings, ctx?: WidgetContext): ColorProcessor;
+    static fromColorProcessorSettings(setting: ColorProcessorSettings): ColorProcessor;
     color: string;
+    colorUpdated?: EventEmitter<void>;
     protected constructor(settings: ColorSettings);
     abstract update(value: any): void;
+    destroy(): void;
+}
+export declare abstract class AdvancedModeColorProcessor extends ColorProcessor {
+    protected settings: ColorSettings;
+    protected ctx: WidgetContext;
+    protected sourcesSubscription: IWidgetSubscription;
+    protected advancedMode: boolean;
+    private currentValue;
+    colorUpdated: EventEmitter<void>;
+    protected constructor(settings: ColorSettings, ctx: WidgetContext);
+    abstract updatedAdvancedData(data: Array<DatasourceData>): void;
+    abstract datasourceConfigs(): Array<ValueSourceConfig>;
+    abstract getCurrentConfig(): AdvancedColorMode;
+    update(value: any): void;
+    destroy(): void;
+    private onDataUpdated;
 }
 export type FormatTimeUnit = 'millisecond' | 'second' | 'minute' | 'hour' | 'day' | 'month' | 'year';
 export declare const formatTimeUnits: FormatTimeUnit[];
@@ -163,4 +233,5 @@ export declare const setLabel: (label: string, datasources?: Datasource[]) => vo
 export declare const getSingleTsValue: (data: Array<DatasourceData>) => DataEntry;
 export declare const getSingleTsValueByDataKey: (data: Array<DatasourceData>, dataKey: DataKey) => DataEntry;
 export declare const getLatestSingleTsValue: (data: Array<DatasourceData>) => DataEntry;
+export declare const createValueSubscription: (ctx: WidgetContext, datasourceConfigs: ValueSourceConfig[], onDataUpdated: WidgetSubscriptionCallbacks['onDataUpdated']) => Observable<IWidgetSubscription>;
 export {};

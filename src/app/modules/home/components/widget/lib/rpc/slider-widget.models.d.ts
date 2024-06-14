@@ -40,5 +40,6 @@ export interface SliderWidgetSettings {
     rightIconSizeUnit: cssUnit;
     rightIconColor: string;
     background: BackgroundSettings;
+    padding: string;
 }
 export declare const sliderWidgetDefaultSettings: SliderWidgetSettings;

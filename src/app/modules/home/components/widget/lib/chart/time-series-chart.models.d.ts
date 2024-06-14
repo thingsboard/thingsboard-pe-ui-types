@@ -1,18 +1,75 @@
-import { ECharts, EChartsOption, EChartsSeriesItem, EChartsTooltipWidgetSettings } from '@home/components/widget/lib/chart/echarts-widget.models';
-import { AutoDateFormatSettings, Font } from '@shared/models/widget-settings.models';
-import { XAXisOption, YAXisOption } from 'echarts/types/dist/shared';
+import { ECharts, EChartsOption } from '@home/components/widget/lib/chart/echarts-widget.models';
+import { AutoDateFormatSettings, DateFormatProcessor, DateFormatSettings, Font, ValueSourceConfig } from '@shared/models/widget-settings.models';
+import { CallbackDataParams, TimeAxisBandWidthCalculator, VisualMapComponentOption, XAXisOption, YAXisOption } from 'echarts/types/dist/shared';
 import { CustomSeriesOption, LineSeriesOption } from 'echarts/charts';
-import { ValueAxisBaseOption } from 'echarts/types/src/coord/axisCommonTypes';
+import { TimeAxisBaseOption, ValueAxisBaseOption } from 'echarts/types/src/coord/axisCommonTypes';
+import { LabelFormatterCallback } from 'echarts';
 import { BarRenderContext, BarRenderSharedContext } from '@home/components/widget/lib/chart/time-series-chart-bar.models';
-import { DataKey } from '@shared/models/widget.models';
-import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
+import { DataKey, DataKeySettingsWithComparison, DataSet, Datasource, FormattedData, WidgetComparisonSettings } from '@shared/models/widget.models';
 import { AbstractControl, ValidationErrors } from '@angular/forms';
 import { DatePipe } from '@angular/common';
+import { CartesianAxisOption } from 'echarts/types/src/coord/cartesian/AxisModel';
+import { Interval, WidgetTimewindow } from '@shared/models/time/time.models';
+import { UtilsService } from '@core/services/utils.service';
+import { Renderer2 } from '@angular/core';
+import { ChartAnimationSettings, ChartBarSettings, ChartFillSettings, ChartLabelPosition, ChartLineType, ChartShape } from '@home/components/widget/lib/chart/chart.models';
+type TimeSeriesChartDataEntry = [number, any, number, number];
+type TimeSeriesChartDataSet = {
+    name: string;
+    value: TimeSeriesChartDataEntry;
+}[];
+export declare const toTimeSeriesChartDataSet: (data: DataSet, valueConverter?: (value: any) => any) => TimeSeriesChartDataSet;
+export type TimeSeriesChartTooltipValueFormatFunction = (value: any, latestData: FormattedData, units?: string, decimals?: number) => string;
+export interface TimeSeriesChartDataItem {
+    id: string;
+    datasource: Datasource;
+    dataKey: DataKey;
+    data: TimeSeriesChartDataSet;
+    dataSet?: DataSet;
+    enabled: boolean;
+    units?: string;
+    decimals?: number;
+    latestData?: FormattedData;
+    tooltipValueFormatFunction?: TimeSeriesChartTooltipValueFormatFunction;
+    comparisonItem?: boolean;
+    xAxisIndex: number;
+    yAxisId: TimeSeriesChartYAxisId;
+    yAxisIndex: number;
+    option?: LineSeriesOption | CustomSeriesOption;
+    barRenderContext?: BarRenderContext;
+}
+export declare const timeAxisBandWidthCalculator: TimeAxisBandWidthCalculator;
+export declare const adjustTimeAxisExtentToData: (timeAxisOption: TimeAxisBaseOption, dataItems: TimeSeriesChartDataItem[], defaultMin: number, defaultMax: number) => void;
+export declare enum TimeSeriesChartTooltipTrigger {
+    point = "point",
+    axis = "axis"
+}
+export declare const tooltipTriggerTranslationMap: Map<TimeSeriesChartTooltipTrigger, string>;
+export interface TimeSeriesChartTooltipWidgetSettings {
+    showTooltip: boolean;
+    tooltipTrigger?: TimeSeriesChartTooltipTrigger;
+    tooltipShowFocusedSeries?: boolean;
+    tooltipLabelFont: Font;
+    tooltipLabelColor: string;
+    tooltipValueFont: Font;
+    tooltipValueColor: string;
+    tooltipValueFormatter?: string | TimeSeriesChartTooltipValueFormatFunction;
+    tooltipShowDate: boolean;
+    tooltipDateInterval?: boolean;
+    tooltipDateFormat: DateFormatSettings;
+    tooltipDateFont: Font;
+    tooltipDateColor: string;
+    tooltipBackgroundColor: string;
+    tooltipBackgroundBlur: number;
+}
+export declare const createTooltipValueFormatFunction: (tooltipValueFormatter: string | TimeSeriesChartTooltipValueFormatFunction) => TimeSeriesChartTooltipValueFormatFunction;
+export declare const timeSeriesChartTooltipFormatter: (renderer: Renderer2, tooltipDateFormat: DateFormatProcessor, settings: TimeSeriesChartTooltipWidgetSettings, params: CallbackDataParams[] | CallbackDataParams, valueFormatFunction: TimeSeriesChartTooltipValueFormatFunction, focusedSeriesIndex: number, series?: TimeSeriesChartDataItem[], interval?: Interval) => null | HTMLElement;
 export declare enum TimeSeriesChartType {
     default = "default",
     line = "line",
     bar = "bar",
-    point = "point"
+    point = "point",
+    state = "state"
 }
 export declare const timeSeriesChartTypeTranslations: Map<TimeSeriesChartType, string>;
 export declare enum AxisPosition {
@@ -23,26 +80,6 @@ export declare enum AxisPosition {
 }
 export declare const timeSeriesAxisPositions: AxisPosition[];
 export declare const timeSeriesAxisPositionTranslations: Map<AxisPosition, string>;
-export declare enum TimeSeriesChartShape {
-    emptyCircle = "emptyCircle",
-    circle = "circle",
-    rect = "rect",
-    roundRect = "roundRect",
-    triangle = "triangle",
-    diamond = "diamond",
-    pin = "pin",
-    arrow = "arrow",
-    none = "none"
-}
-export declare const timeSeriesChartShapes: TimeSeriesChartShape[];
-export declare const timeSeriesChartShapeTranslations: Map<TimeSeriesChartShape, string>;
-export declare enum TimeSeriesChartLineType {
-    solid = "solid",
-    dashed = "dashed",
-    dotted = "dotted"
-}
-export declare const timeSeriesLineTypes: TimeSeriesChartLineType[];
-export declare const timeSeriesLineTypeTranslations: Map<TimeSeriesChartLineType, string>;
 export declare enum ThresholdLabelPosition {
     start = "start",
     middle = "middle",
@@ -59,26 +96,12 @@ export declare enum ThresholdLabelPosition {
 }
 export declare const timeSeriesThresholdLabelPositions: ThresholdLabelPosition[];
 export declare const timeSeriesThresholdLabelPositionTranslations: Map<ThresholdLabelPosition, string>;
-export declare enum TimeSeriesChartThresholdType {
+export declare enum TimeSeriesChartStateSourceType {
     constant = "constant",
-    latestKey = "latestKey",
-    entity = "entity"
+    range = "range"
 }
-export declare const timeSeriesThresholdTypes: TimeSeriesChartThresholdType[];
-export declare const timeSeriesThresholdTypeTranslations: Map<TimeSeriesChartThresholdType, string>;
-export declare enum SeriesFillType {
-    none = "none",
-    opacity = "opacity",
-    gradient = "gradient"
-}
-export declare const seriesFillTypes: SeriesFillType[];
-export declare const seriesFillTypeTranslations: Map<SeriesFillType, string>;
-export declare enum SeriesLabelPosition {
-    top = "top",
-    bottom = "bottom"
-}
-export declare const seriesLabelPositions: SeriesLabelPosition[];
-export declare const seriesLabelPositionTranslations: Map<SeriesLabelPosition, string>;
+export declare const timeSeriesStateSourceTypes: TimeSeriesChartStateSourceType[];
+export declare const timeSeriesStateSourceTypeTranslations: Map<TimeSeriesChartStateSourceType, string>;
 export declare enum LineSeriesStepType {
     start = "start",
     middle = "middle",
@@ -134,31 +157,30 @@ export declare const timeSeriesChartYAxisValid: (axis: TimeSeriesChartYAxisSetti
 export declare const timeSeriesChartYAxisValidator: (control: AbstractControl) => ValidationErrors | null;
 export declare const getNextTimeSeriesYAxisId: (axes: TimeSeriesChartYAxisSettings[]) => TimeSeriesChartYAxisId;
 export declare const defaultTimeSeriesChartYAxisSettings: TimeSeriesChartYAxisSettings;
+export declare const defaultTimeSeriesChartXAxisSettings: TimeSeriesChartXAxisSettings;
 export type TimeSeriesChartYAxes = {
     [id: TimeSeriesChartYAxisId]: TimeSeriesChartYAxisSettings;
 };
-export interface TimeSeriesChartThreshold {
-    type: TimeSeriesChartThresholdType;
-    value?: number;
-    latestKey?: string;
-    latestKeyType?: DataKeyType.attribute | DataKeyType.timeseries;
-    entityAlias?: string;
-    entityKey?: string;
-    entityKeyType?: DataKeyType.attribute | DataKeyType.timeseries;
+export interface TimeSeriesChartThreshold extends ValueSourceConfig {
     yAxisId: TimeSeriesChartYAxisId;
     units?: string;
     decimals?: number;
     lineColor: string;
-    lineType: TimeSeriesChartLineType;
+    lineType: ChartLineType | number | number[];
     lineWidth: number;
-    startSymbol: TimeSeriesChartShape;
+    startSymbol: ChartShape;
     startSymbolSize: number;
-    endSymbol: TimeSeriesChartShape;
+    endSymbol: ChartShape;
     endSymbolSize: number;
     showLabel: boolean;
     labelPosition: ThresholdLabelPosition;
     labelFont: Font;
     labelColor: string;
+    enableLabelBackground: boolean;
+    labelBackground: string;
+    additionalLabelOption?: {
+        [key: string]: any;
+    };
 }
 export declare const timeSeriesChartThresholdValid: (threshold: TimeSeriesChartThreshold) => boolean;
 export declare const timeSeriesChartThresholdValidator: (control: AbstractControl) => ValidationErrors | null;
@@ -179,110 +201,88 @@ export interface TimeSeriesChartNoAggregationBarWidthSettings {
     groupWidth?: TimeSeriesChartBarWidth;
     barWidth?: TimeSeriesChartBarWidth;
 }
-export declare enum TimeSeriesChartAnimationEasing {
-    linear = "linear",
-    quadraticIn = "quadraticIn",
-    quadraticOut = "quadraticOut",
-    quadraticInOut = "quadraticInOut",
-    cubicIn = "cubicIn",
-    cubicOut = "cubicOut",
-    cubicInOut = "cubicInOut",
-    quarticIn = "quarticIn",
-    quarticOut = "quarticOut",
-    quarticInOut = "quarticInOut",
-    quinticIn = "quinticIn",
-    quinticOut = "quinticOut",
-    quinticInOut = "quinticInOut",
-    sinusoidalIn = "sinusoidalIn",
-    sinusoidalOut = "sinusoidalOut",
-    sinusoidalInOut = "sinusoidalInOut",
-    exponentialIn = "exponentialIn",
-    exponentialOut = "exponentialOut",
-    exponentialInOut = "exponentialInOut",
-    circularIn = "circularIn",
-    circularOut = "circularOut",
-    circularInOut = "circularInOut",
-    elasticIn = "elasticIn",
-    elasticOut = "elasticOut",
-    elasticInOut = "elasticInOut",
-    backIn = "backIn",
-    backOut = "backOut",
-    backInOut = "backInOut",
-    bounceIn = "bounceIn",
-    bounceOut = "bounceOut",
-    bounceInOut = "bounceInOut"
+export declare const timeSeriesChartNoAggregationBarWidthDefaultSettings: TimeSeriesChartNoAggregationBarWidthSettings;
+export interface TimeSeriesChartBarWidthSettings {
+    barGap: number;
+    intervalGap: number;
 }
-export declare const timeSeriesChartAnimationEasings: TimeSeriesChartAnimationEasing[];
-export interface TimeSeriesChartAnimationSettings {
-    animation: boolean;
-    animationThreshold: number;
-    animationDuration: number;
-    animationEasing: TimeSeriesChartAnimationEasing;
-    animationDelay: number;
-    animationDurationUpdate: number;
-    animationEasingUpdate: TimeSeriesChartAnimationEasing;
-    animationDelayUpdate: number;
+export interface TimeSeriesChartVisualMapPiece {
+    lt?: number;
+    gt?: number;
+    lte?: number;
+    gte?: number;
+    value?: number;
+    color?: string;
 }
-export interface TimeSeriesChartSettings extends EChartsTooltipWidgetSettings {
+export declare const createTimeSeriesChartVisualMapPiece: (color: string, from?: number, to?: number) => TimeSeriesChartVisualMapPiece;
+export interface TimeSeriesChartVisualMapSettings {
+    outOfRangeColor: string;
+    pieces: TimeSeriesChartVisualMapPiece[];
+}
+export interface TimeSeriesChartStateSettings {
+    label: string;
+    value: number;
+    sourceType: TimeSeriesChartStateSourceType;
+    sourceValue?: any;
+    sourceRangeFrom?: number;
+    sourceRangeTo?: number;
+}
+export declare const timeSeriesChartStateValid: (state: TimeSeriesChartStateSettings) => boolean;
+export declare const timeSeriesChartStateValidator: (control: AbstractControl) => ValidationErrors | null;
+export interface TimeSeriesChartComparisonSettings extends WidgetComparisonSettings {
+    comparisonXAxis?: TimeSeriesChartXAxisSettings;
+}
+export interface TimeSeriesChartGridSettings {
+    show: boolean;
+    backgroundColor: string;
+    borderWidth: number;
+    borderColor: string;
+}
+export declare const timeSeriesChartGridDefaultSettings: TimeSeriesChartGridSettings;
+export interface TimeSeriesChartSettings extends TimeSeriesChartTooltipWidgetSettings, TimeSeriesChartComparisonSettings {
     thresholds: TimeSeriesChartThreshold[];
     darkMode: boolean;
     dataZoom: boolean;
     stack: boolean;
+    grid: TimeSeriesChartGridSettings;
     yAxes: TimeSeriesChartYAxes;
     xAxis: TimeSeriesChartXAxisSettings;
-    animation: TimeSeriesChartAnimationSettings;
+    animation: ChartAnimationSettings;
+    barWidthSettings: TimeSeriesChartBarWidthSettings;
     noAggregationBarWidthSettings: TimeSeriesChartNoAggregationBarWidthSettings;
+    visualMapSettings?: TimeSeriesChartVisualMapSettings;
+    states?: TimeSeriesChartStateSettings[];
 }
 export declare const timeSeriesChartDefaultSettings: TimeSeriesChartSettings;
-export interface SeriesFillSettings {
-    type: SeriesFillType;
-    opacity: number;
-    gradient: {
-        start: number;
-        end: number;
-    };
-}
 export interface LineSeriesSettings {
     showLine: boolean;
     step: boolean;
     stepType: LineSeriesStepType;
     smooth: boolean;
-    lineType: TimeSeriesChartLineType;
+    lineType: ChartLineType;
     lineWidth: number;
     showPoints: boolean;
     showPointLabel: boolean;
-    pointLabelPosition: SeriesLabelPosition;
+    pointLabelPosition: ChartLabelPosition;
     pointLabelFont: Font;
     pointLabelColor: string;
-    pointShape: TimeSeriesChartShape;
+    enablePointLabelBackground: boolean;
+    pointLabelBackground: string;
+    pointLabelFormatter?: string | LabelFormatterCallback;
+    pointShape: ChartShape;
     pointSize: number;
-    fillAreaSettings: SeriesFillSettings;
+    fillAreaSettings: ChartFillSettings;
 }
-export interface BarSeriesSettings {
-    showBorder: boolean;
-    borderWidth: number;
-    borderRadius: number;
-    showLabel: boolean;
-    labelPosition: SeriesLabelPosition;
-    labelFont: Font;
-    labelColor: string;
-    backgroundSettings: SeriesFillSettings;
-}
-export interface TimeSeriesChartKeySettings {
+export interface TimeSeriesChartKeySettings extends DataKeySettingsWithComparison {
     yAxisId: TimeSeriesChartYAxisId;
     showInLegend: boolean;
     dataHiddenByDefault: boolean;
     type: TimeSeriesChartSeriesType;
     lineSettings: LineSeriesSettings;
-    barSettings: BarSeriesSettings;
+    barSettings: ChartBarSettings;
+    tooltipValueFormatter?: string | TimeSeriesChartTooltipValueFormatFunction;
 }
 export declare const timeSeriesChartKeyDefaultSettings: TimeSeriesChartKeySettings;
-export interface TimeSeriesChartDataItem extends EChartsSeriesItem {
-    yAxisId: TimeSeriesChartYAxisId;
-    yAxisIndex: number;
-    option?: LineSeriesOption | CustomSeriesOption;
-    barRenderContext?: BarRenderContext;
-}
 type TimeSeriesChartThresholdValue = number | string | (number | string)[];
 export interface TimeSeriesChartThresholdItem {
     id: string;
@@ -295,16 +295,28 @@ export interface TimeSeriesChartThresholdItem {
     settings: TimeSeriesChartThreshold;
     option?: LineSeriesOption;
 }
-export interface TimeSeriesChartYAxis {
+export interface TimeSeriesChartAxis {
     id: string;
+    settings: TimeSeriesChartAxisSettings;
+    option: CartesianAxisOption;
+}
+export interface TimeSeriesChartYAxis extends TimeSeriesChartAxis {
     decimals: number;
     settings: TimeSeriesChartYAxisSettings;
     option: YAXisOption & ValueAxisBaseOption;
 }
-export declare const createTimeSeriesYAxis: (units: string, decimals: number, settings: TimeSeriesChartYAxisSettings, darkMode: boolean) => TimeSeriesChartYAxis;
-export declare const createTimeSeriesXAxisOption: (settings: TimeSeriesChartXAxisSettings, min: number, max: number, datePipe: DatePipe, darkMode: boolean) => XAXisOption;
+export interface TimeSeriesChartXAxis extends TimeSeriesChartAxis {
+    settings: TimeSeriesChartXAxisSettings;
+    option: XAXisOption;
+}
+export declare const createTimeSeriesYAxis: (units: string, decimals: number, settings: TimeSeriesChartYAxisSettings, utils: UtilsService, darkMode: boolean) => TimeSeriesChartYAxis;
+export declare const createTimeSeriesXAxis: (id: string, settings: TimeSeriesChartXAxisSettings, min: number, max: number, datePipe: DatePipe, utils: UtilsService, darkMode: boolean) => TimeSeriesChartXAxis;
+export declare const createTimeSeriesVisualMapOption: (settings: TimeSeriesChartVisualMapSettings, selectedRanges: {
+    [key: number]: boolean;
+}) => VisualMapComponentOption;
+export declare const updateXAxisTimeWindow: (option: XAXisOption, timeWindow: WidgetTimewindow) => void;
 export declare const generateChartData: (dataItems: TimeSeriesChartDataItem[], thresholdItems: TimeSeriesChartThresholdItem[], stack: boolean, noAggregation: boolean, barRenderSharedContext: BarRenderSharedContext, darkMode: boolean) => Array<LineSeriesOption | CustomSeriesOption>;
 export declare const calculateThresholdsOffset: (chart: ECharts, thresholdItems: TimeSeriesChartThresholdItem[], yAxisList: TimeSeriesChartYAxis[]) => [number, number];
 export declare const parseThresholdData: (value: any) => TimeSeriesChartThresholdValue;
-export declare const updateDarkMode: (options: EChartsOption, settings: TimeSeriesChartSettings, yAxisList: TimeSeriesChartYAxis[], dataItems: TimeSeriesChartDataItem[], thresholdDataItems: TimeSeriesChartThresholdItem[], darkMode: boolean) => EChartsOption;
+export declare const updateDarkMode: (options: EChartsOption, xAxisList: TimeSeriesChartXAxis[], yAxisList: TimeSeriesChartYAxis[], dataItems: TimeSeriesChartDataItem[], darkMode: boolean) => EChartsOption;
 export {};

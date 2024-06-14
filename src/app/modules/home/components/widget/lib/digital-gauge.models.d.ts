@@ -1,6 +1,7 @@
 import { GaugeType } from '@home/components/widget/lib/canvas-digital-gauge';
 import { AnimationRule } from '@home/components/widget/lib/analogue-gauge.models';
 import { FontSettings } from '@home/components/widget/lib/settings.models';
+import { AdvancedColorRange, ColorSettings, ValueSourceConfig } from '@shared/models/widget-settings.models';
 export interface AttributeSourceProperty {
     valueSource: string;
     entityAlias?: string;
@@ -17,7 +18,15 @@ export interface ColorLevelSetting {
     color: string;
 }
 export type colorLevel = Array<string | ColorLevelSetting>;
-export type attributesGaugeType = 'levelColors' | 'ticks';
+export declare enum DigitalGaugeType {
+    arc = "arc",
+    donut = "donut",
+    horizontalBar = "horizontalBar",
+    verticalBar = "verticalBar"
+}
+export declare const digitalGaugeLayouts: DigitalGaugeType[];
+export declare const digitalGaugeLayoutTranslations: Map<DigitalGaugeType, string>;
+export declare const digitalGaugeLayoutImages: Map<DigitalGaugeType, string>;
 export interface DigitalGaugeSettings {
     minValue?: number;
     maxValue?: number;
@@ -37,6 +46,7 @@ export interface DigitalGaugeSettings {
     gaugeWidthScale?: number;
     defaultColor?: string;
     gaugeColor?: string;
+    barColor?: ColorSettings;
     useFixedLevelColor?: boolean;
     levelColors?: colorLevel;
     fixedLevelColors?: FixedLevelColors[];
@@ -52,8 +62,12 @@ export interface DigitalGaugeSettings {
     hideValue?: boolean;
     hideMinMax?: boolean;
     showTicks?: boolean;
-    ticksValue?: AttributeSourceProperty[];
+    ticksValue?: ValueSourceConfig[];
     ticks?: number[];
     colorTicks?: string;
     tickWidth?: number;
 }
+export declare const defaultDigitalSimpleGaugeOptions: DigitalGaugeSettings;
+export declare const backwardCompatibilityFixedLevelColors: (fixedLevelColors: FixedLevelColors[]) => AdvancedColorRange[];
+export declare const backwardCompatibilityTicks: (ticksValue: AttributeSourceProperty[] & ValueSourceConfig[]) => ValueSourceConfig[];
+export declare const convertLevelColorsSettingsToColorProcessor: (settings: DigitalGaugeSettings, defaultColor?: string) => void;

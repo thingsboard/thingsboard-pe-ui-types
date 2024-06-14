@@ -7,6 +7,9 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { WidgetService } from '@core/http/widget.service';
 import { ColorSettingsComponent } from '@home/components/widget/lib/settings/common/color-settings.component';
+import { IAliasController } from '@core/api/widget-api.models';
+import { DataKeysCallbacks } from '@home/components/widget/config/data-keys.component.models';
+import { Datasource } from '@shared/models/widget.models';
 import * as i0 from "@angular/core";
 export declare class ColorSettingsPanelComponent extends PageComponent implements OnInit {
     private fb;
@@ -16,6 +19,13 @@ export declare class ColorSettingsPanelComponent extends PageComponent implement
     popover: TbPopoverComponent<ColorSettingsPanelComponent>;
     settingsComponents: ColorSettingsComponent[];
     colorSettingsApplied: EventEmitter<ColorSettings>;
+    aliasController: IAliasController;
+    dataKeyCallbacks: DataKeysCallbacks;
+    datasource: Datasource;
+    rangeAdvancedMode: boolean;
+    gradientAdvancedMode: boolean;
+    minValue: number;
+    maxValue: number;
     colorType: typeof ColorType;
     colorTypes: ColorType[];
     colorTypeTranslationsMap: Map<ColorType, string>;
@@ -27,5 +37,5 @@ export declare class ColorSettingsPanelComponent extends PageComponent implement
     cancel(): void;
     applyColorSettings(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ColorSettingsPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ColorSettingsPanelComponent, "tb-color-settings-panel", never, { "colorSettings": "colorSettings"; "popover": "popover"; "settingsComponents": "settingsComponents"; }, { "colorSettingsApplied": "colorSettingsApplied"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ColorSettingsPanelComponent, "tb-color-settings-panel", never, { "colorSettings": "colorSettings"; "popover": "popover"; "settingsComponents": "settingsComponents"; "aliasController": "aliasController"; "dataKeyCallbacks": "dataKeyCallbacks"; "datasource": "datasource"; "rangeAdvancedMode": "rangeAdvancedMode"; "gradientAdvancedMode": "gradientAdvancedMode"; "minValue": "minValue"; "maxValue": "maxValue"; }, { "colorSettingsApplied": "colorSettingsApplied"; }, never, never, false, never>;
 }

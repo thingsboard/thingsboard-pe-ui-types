@@ -32,7 +32,7 @@ export interface IDashboardController {
     openDashboardState(stateId: string, openRightLayout: boolean): any;
     addWidget($event: Event, layoutCtx: DashboardPageLayoutContext): any;
     editWidget($event: Event, layoutCtx: DashboardPageLayoutContext, widget: Widget): any;
-    exportWidget($event: Event, layoutCtx: DashboardPageLayoutContext, widget: Widget): any;
+    exportWidget($event: Event, layoutCtx: DashboardPageLayoutContext, widget: Widget, widgetTitle: string): any;
     removeWidget($event: Event, layoutCtx: DashboardPageLayoutContext, widget: Widget): any;
     widgetMouseDown($event: Event, layoutCtx: DashboardPageLayoutContext, widget: Widget): any;
     widgetClicked($event: Event, layoutCtx: DashboardPageLayoutContext, widget: Widget): any;
