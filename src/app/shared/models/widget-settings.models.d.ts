@@ -89,7 +89,7 @@ export interface ColorSettings {
     colorFunction?: string;
 }
 export declare const colorRangeIncludes: (range: ColorRange, toCheck: ColorRange) => boolean;
-export declare const filterIncludingColorRanges: (ranges: Array<ColorRange>) => Array<ColorRange>;
+export declare const filterIncludingColorRanges: (ranges: Array<ColorRange> | ColorRangeSettings) => Array<ColorRange>;
 export declare const sortedColorRange: (ranges: Array<ColorRange>) => Array<ColorRange>;
 export interface TimewindowStyle {
     showIcon: boolean;
@@ -210,6 +210,8 @@ export interface BackgroundSettings {
     color?: string;
     overlay: OverlaySettings;
 }
+export declare const isBackgroundSettings: (background: any) => background is BackgroundSettings;
+export declare const colorBackground: (color: string) => BackgroundSettings;
 export declare const iconStyle: (size: number | string, sizeUnit?: cssUnit) => ComponentStyle;
 export declare const textStyle: (font?: Font, letterSpacing?: string) => ComponentStyle;
 export declare const inlineTextStyle: (font?: Font, letterSpacing?: string) => ComponentStyle;

@@ -6,7 +6,8 @@ import { BasicWidgetConfigComponent } from '@home/components/widget/config/widge
 import { WidgetConfigComponentData } from '@home/models/widget-component.models';
 import { DataKey, Datasource, DatasourceType } from '@shared/models/widget.models';
 import { WidgetConfigComponent } from '@home/components/widget/widget-config.component';
-import { TimeSeriesChartTooltipTrigger, TimeSeriesChartType, TimeSeriesChartYAxisId } from '@home/components/widget/lib/chart/time-series-chart.models';
+import { TimeSeriesChartType, TimeSeriesChartYAxisId } from '@home/components/widget/lib/chart/time-series-chart.models';
+import { TimeSeriesChartTooltipTrigger } from '@home/components/widget/lib/chart/time-series-chart-tooltip.models';
 import * as i0 from "@angular/core";
 export declare class TimeSeriesChartBasicConfigComponent extends BasicWidgetConfigComponent {
     protected store: Store<AppState>;

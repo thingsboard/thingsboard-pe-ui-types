@@ -9,6 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { GroupEntityComponent } from '@home/components/group/group-entity.component';
 import { GroupEntityTableConfig } from '@home/models/group/group-entities-table-config.models';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
+import { CMAssigneeType, CMScope } from '@shared/models/custom-menu.models';
 import * as i0 from "@angular/core";
 export declare class UserComponent extends GroupEntityComponent<UserInfo> {
     protected store: Store<AppState>;
@@ -18,6 +19,8 @@ export declare class UserComponent extends GroupEntityComponent<UserInfo> {
     protected cd: ChangeDetectorRef;
     protected translate: TranslateService;
     protected userPermissionsService: UserPermissionsService;
+    CMScope: typeof CMScope;
+    CMAssigneeType: typeof CMAssigneeType;
     authority: typeof Authority;
     loginAsUserEnabled$: import("rxjs").Observable<boolean>;
     whiteLabelingAllowed$: import("rxjs").Observable<boolean>;
@@ -26,6 +29,7 @@ export declare class UserComponent extends GroupEntityComponent<UserInfo> {
     constructor(store: Store<AppState>, entityValue: UserInfo, entitiesTableConfigValue: EntityTableConfig<UserInfo> | GroupEntityTableConfig<UserInfo>, fb: UntypedFormBuilder, cd: ChangeDetectorRef, translate: TranslateService, userPermissionsService: UserPermissionsService);
     hideDelete(): boolean;
     isCurrentUser(): boolean;
+    isUserTenantAdmin(): boolean;
     isUserCredentialsEnabled(): boolean;
     isUserCredentialPresent(): boolean;
     buildForm(entity: UserInfo): UntypedFormGroup;

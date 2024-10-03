@@ -1,6 +1,6 @@
 import { ECharts, EChartsOption } from '@home/components/widget/lib/chart/echarts-widget.models';
-import { AutoDateFormatSettings, DateFormatProcessor, DateFormatSettings, Font, ValueSourceConfig } from '@shared/models/widget-settings.models';
-import { CallbackDataParams, TimeAxisBandWidthCalculator, VisualMapComponentOption, XAXisOption, YAXisOption } from 'echarts/types/dist/shared';
+import { AutoDateFormatSettings, Font, ValueSourceConfig } from '@shared/models/widget-settings.models';
+import { TimeAxisBandWidthCalculator, VisualMapComponentOption, XAXisOption, YAXisOption } from 'echarts/types/dist/shared';
 import { CustomSeriesOption, LineSeriesOption } from 'echarts/charts';
 import { TimeAxisBaseOption, ValueAxisBaseOption } from 'echarts/types/src/coord/axisCommonTypes';
 import { LabelFormatterCallback } from 'echarts';
@@ -9,17 +9,16 @@ import { DataKey, DataKeySettingsWithComparison, DataSet, Datasource, FormattedD
 import { AbstractControl, ValidationErrors } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 import { CartesianAxisOption } from 'echarts/types/src/coord/cartesian/AxisModel';
-import { Interval, WidgetTimewindow } from '@shared/models/time/time.models';
+import { WidgetTimewindow } from '@shared/models/time/time.models';
 import { UtilsService } from '@core/services/utils.service';
-import { Renderer2 } from '@angular/core';
 import { ChartAnimationSettings, ChartBarSettings, ChartFillSettings, ChartLabelPosition, ChartLineType, ChartShape } from '@home/components/widget/lib/chart/chart.models';
+import { TimeSeriesChartTooltipValueFormatFunction, TimeSeriesChartTooltipWidgetSettings } from '@home/components/widget/lib/chart/time-series-chart-tooltip.models';
 type TimeSeriesChartDataEntry = [number, any, number, number];
 type TimeSeriesChartDataSet = {
     name: string;
     value: TimeSeriesChartDataEntry;
 }[];
 export declare const toTimeSeriesChartDataSet: (data: DataSet, valueConverter?: (value: any) => any) => TimeSeriesChartDataSet;
-export type TimeSeriesChartTooltipValueFormatFunction = (value: any, latestData: FormattedData, units?: string, decimals?: number) => string;
 export interface TimeSeriesChartDataItem {
     id: string;
     datasource: Datasource;
@@ -40,30 +39,6 @@ export interface TimeSeriesChartDataItem {
 }
 export declare const timeAxisBandWidthCalculator: TimeAxisBandWidthCalculator;
 export declare const adjustTimeAxisExtentToData: (timeAxisOption: TimeAxisBaseOption, dataItems: TimeSeriesChartDataItem[], defaultMin: number, defaultMax: number) => void;
-export declare enum TimeSeriesChartTooltipTrigger {
-    point = "point",
-    axis = "axis"
-}
-export declare const tooltipTriggerTranslationMap: Map<TimeSeriesChartTooltipTrigger, string>;
-export interface TimeSeriesChartTooltipWidgetSettings {
-    showTooltip: boolean;
-    tooltipTrigger?: TimeSeriesChartTooltipTrigger;
-    tooltipShowFocusedSeries?: boolean;
-    tooltipLabelFont: Font;
-    tooltipLabelColor: string;
-    tooltipValueFont: Font;
-    tooltipValueColor: string;
-    tooltipValueFormatter?: string | TimeSeriesChartTooltipValueFormatFunction;
-    tooltipShowDate: boolean;
-    tooltipDateInterval?: boolean;
-    tooltipDateFormat: DateFormatSettings;
-    tooltipDateFont: Font;
-    tooltipDateColor: string;
-    tooltipBackgroundColor: string;
-    tooltipBackgroundBlur: number;
-}
-export declare const createTooltipValueFormatFunction: (tooltipValueFormatter: string | TimeSeriesChartTooltipValueFormatFunction) => TimeSeriesChartTooltipValueFormatFunction;
-export declare const timeSeriesChartTooltipFormatter: (renderer: Renderer2, tooltipDateFormat: DateFormatProcessor, settings: TimeSeriesChartTooltipWidgetSettings, params: CallbackDataParams[] | CallbackDataParams, valueFormatFunction: TimeSeriesChartTooltipValueFormatFunction, focusedSeriesIndex: number, series?: TimeSeriesChartDataItem[], interval?: Interval) => null | HTMLElement;
 export declare enum TimeSeriesChartType {
     default = "default",
     line = "line",

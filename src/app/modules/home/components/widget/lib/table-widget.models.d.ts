@@ -5,6 +5,7 @@ import { EntityDataSortOrder, EntityKey } from '@shared/models/query/query.model
 import { WidgetContext } from '@home/models/widget-component.models';
 import { UtilsService } from '@core/services/utils.service';
 import { TranslateService } from '@ngx-translate/core';
+import { EntityType } from '@shared/models/entity-type.models';
 type ColumnVisibilityOptions = 'visible' | 'hidden' | 'hidden-mobile';
 type ColumnSelectionOptions = 'enabled' | 'disabled';
 export declare enum columnExportOptions {
@@ -45,7 +46,7 @@ export interface EntityData {
     id: EntityId;
     entityName: string;
     entityLabel?: string;
-    entityType?: string;
+    entityType?: EntityType;
     actionCellButtons?: TableCellButtonActionDescriptor[];
     hasActions?: boolean;
     [key: string]: any;

@@ -131,6 +131,7 @@ export declare class WidgetComponent extends PageComponent implements OnInit, Af
     private cardClick;
     private click;
     private onClick;
+    private onWidgetAction;
     private loadCustomActionResources;
     private processResourcesLoadErrors;
     private exportWidgetData;

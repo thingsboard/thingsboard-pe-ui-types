@@ -1,0 +1,33 @@
+import { AfterViewInit, EventEmitter, OnInit } from '@angular/core';
+import { TbPopoverComponent } from '@shared/components/popover.component';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { WidgetService } from '@core/http/widget.service';
+import { TbEditorCompleter } from '@shared/models/ace/completion.models';
+import { AceHighlightRules } from '@shared/models/ace/ace.models';
+import { JsFuncComponent } from '@shared/components/js-func.component';
+import * as i0 from "@angular/core";
+export declare class ScadaSymbolMetadataTagFunctionPanelComponent implements OnInit, AfterViewInit {
+    private fb;
+    private widgetService;
+    tagFunctionComponent: JsFuncComponent;
+    tagFunction: string;
+    tagFunctionType: 'renderFunction' | 'clickAction';
+    tag: string;
+    completer: TbEditorCompleter;
+    disabled: boolean;
+    popover: TbPopoverComponent<ScadaSymbolMetadataTagFunctionPanelComponent>;
+    tagFunctionApplied: EventEmitter<string>;
+    functionScopeVariables: string[];
+    tagFunctionFormGroup: UntypedFormGroup;
+    panelTitle: string;
+    tagFunctionArgs: string[];
+    tagFunctionHelpId: string;
+    highlightRules: AceHighlightRules;
+    constructor(fb: UntypedFormBuilder, widgetService: WidgetService);
+    ngOnInit(): void;
+    ngAfterViewInit(): void;
+    cancel(): void;
+    applyTagFunction(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<ScadaSymbolMetadataTagFunctionPanelComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ScadaSymbolMetadataTagFunctionPanelComponent, "tb-scada-symbol-metadata-tag-function-panel", never, { "tagFunction": "tagFunction"; "tagFunctionType": "tagFunctionType"; "tag": "tag"; "completer": "completer"; "disabled": "disabled"; "popover": "popover"; }, { "tagFunctionApplied": "tagFunctionApplied"; }, never, never, false, never>;
+}

@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, ElementRef, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ElementRef, NgZone, OnDestroy, OnInit } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { PageComponent } from '@shared/components/page.component';
@@ -22,6 +22,7 @@ export declare class ManageWidgetActionsComponent extends PageComponent implemen
     private dialogs;
     private cd;
     private elementRef;
+    private zone;
     disabled: boolean;
     widgetType: widgetType;
     callbacks: WidgetActionCallbacks;
@@ -47,7 +48,7 @@ export declare class ManageWidgetActionsComponent extends PageComponent implemen
     paginator: MatPaginator;
     sort: MatSort;
     private propagateChange;
-    constructor(store: Store<AppState>, translate: TranslateService, utils: UtilsService, dialog: MatDialog, dialogs: DialogService, cd: ChangeDetectorRef, elementRef: ElementRef);
+    constructor(store: Store<AppState>, translate: TranslateService, utils: UtilsService, dialog: MatDialog, dialogs: DialogService, cd: ChangeDetectorRef, elementRef: ElementRef, zone: NgZone);
     ngOnInit(): void;
     ngOnDestroy(): void;
     ngAfterViewInit(): void;

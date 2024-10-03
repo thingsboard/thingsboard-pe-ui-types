@@ -21,6 +21,7 @@ export declare class EntityAutocompleteComponent implements ControlValueAccessor
     entitySubtypeValue: string;
     entityText: string;
     noEntitiesMatchingText: string;
+    notFoundEntities: string;
     entityRequiredText: string;
     filteredEntities: Observable<Array<BaseData<EntityId>>>;
     searchText: string;
@@ -55,6 +56,7 @@ export declare class EntityAutocompleteComponent implements ControlValueAccessor
     updateView(value: string | EntityId | null, entity: BaseData<EntityId> | null): void;
     displayEntityFn(entity?: BaseData<EntityId>): string | undefined;
     fetchEntities(searchText?: string): Observable<Array<BaseData<EntityId>>>;
+    textIsNotEmpty(text: string): boolean;
     clear(): void;
     checkEntityType(entityType: EntityType | AliasEntityType): EntityType;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityAutocompleteComponent, never>;

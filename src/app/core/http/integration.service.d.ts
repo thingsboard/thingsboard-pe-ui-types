@@ -3,12 +3,13 @@ import { PageLink } from '@shared/models/page/page-link';
 import { RequestConfig } from '@core/http/http-utils';
 import { Observable } from 'rxjs';
 import { PageData } from '@shared/models/page/page-data';
-import { Integration, IntegrationInfo, IntegrationType } from '@shared/models/integration.models';
+import { Integration, IntegrationInfo, IntegrationsConvertersInfo, IntegrationType } from '@shared/models/integration.models';
 import * as i0 from "@angular/core";
 export declare class IntegrationService {
     private http;
     constructor(http: HttpClient);
     getIntegrations(pageLink: PageLink, config?: RequestConfig): Observable<PageData<Integration>>;
+    getIntegrationsConvertersInfo(config?: RequestConfig): Observable<IntegrationsConvertersInfo>;
     getIntegrationsInfo(pageLink: PageLink, isEdgeTemplate: boolean, config?: RequestConfig): Observable<PageData<IntegrationInfo>>;
     getIntegrationsByEdgeTemplate(pageLink: PageLink, isEdgeTemplate: boolean, config?: RequestConfig): Observable<PageData<Integration>>;
     getIntegrationsByIds(integrationIds: Array<string>, config?: RequestConfig): Observable<Array<Integration>>;

@@ -1,8 +1,9 @@
 import { BackgroundSettings, Font } from '@shared/models/widget-settings.models';
 import { LegendPosition } from '@shared/models/widget.models';
 import { DeepPartial } from '@shared/models/common';
-import { TimeSeriesChartGridSettings, TimeSeriesChartKeySettings, TimeSeriesChartNoAggregationBarWidthSettings, TimeSeriesChartSettings, TimeSeriesChartThreshold, TimeSeriesChartTooltipWidgetSettings, TimeSeriesChartXAxisSettings, TimeSeriesChartYAxisSettings } from '@home/components/widget/lib/chart/time-series-chart.models';
+import { TimeSeriesChartGridSettings, TimeSeriesChartKeySettings, TimeSeriesChartNoAggregationBarWidthSettings, TimeSeriesChartSettings, TimeSeriesChartThreshold, TimeSeriesChartXAxisSettings, TimeSeriesChartYAxisSettings } from '@home/components/widget/lib/chart/time-series-chart.models';
 import { ChartAnimationSettings, ChartFillSettings } from '@home/components/widget/lib/chart/chart.models';
+import { TimeSeriesChartTooltipWidgetSettings } from '@home/components/widget/lib/chart/time-series-chart-tooltip.models';
 export interface BarChartWithLabelsWidgetSettings extends TimeSeriesChartTooltipWidgetSettings {
     dataZoom: boolean;
     showBarLabel: boolean;

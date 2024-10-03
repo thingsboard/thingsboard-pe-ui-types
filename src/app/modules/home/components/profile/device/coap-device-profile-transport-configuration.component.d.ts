@@ -1,10 +1,10 @@
 import { OnDestroy, OnInit } from '@angular/core';
-import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { CoapDeviceProfileTransportConfiguration, CoapTransportDeviceType, TransportPayloadType } from '@shared/models/device.models';
 import * as i0 from "@angular/core";
-export declare class CoapDeviceProfileTransportConfigurationComponent implements ControlValueAccessor, OnInit, OnDestroy {
+export declare class CoapDeviceProfileTransportConfigurationComponent implements ControlValueAccessor, OnInit, OnDestroy, Validator {
     private store;
     private fb;
     coapTransportDeviceTypes: CoapTransportDeviceType[];
@@ -13,10 +13,7 @@ export declare class CoapDeviceProfileTransportConfigurationComponent implements
     transportPayloadTypeTranslations: Map<TransportPayloadType, string>;
     coapTransportConfigurationFormGroup: UntypedFormGroup;
     private destroy$;
-    private requiredValue;
     private transportPayloadTypeConfiguration;
-    get required(): boolean;
-    set required(value: boolean);
     disabled: boolean;
     private propagateChange;
     constructor(store: Store<AppState>, fb: UntypedFormBuilder);
@@ -30,7 +27,8 @@ export declare class CoapDeviceProfileTransportConfigurationComponent implements
     private updateCoapDeviceTypeBasedControls;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: CoapDeviceProfileTransportConfiguration | null): void;
+    validate(c: UntypedFormControl): ValidationErrors | null;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<CoapDeviceProfileTransportConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CoapDeviceProfileTransportConfigurationComponent, "tb-coap-device-profile-transport-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CoapDeviceProfileTransportConfigurationComponent, "tb-coap-device-profile-transport-configuration", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
 }

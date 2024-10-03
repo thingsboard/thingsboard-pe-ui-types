@@ -1,8 +1,8 @@
-import { ImageResourceInfo } from '@shared/models/resource.models';
+import { ImageResourceInfo, ResourceSubType } from '@shared/models/resource.models';
 import { ImageService } from '@core/http/image.service';
 import { TranslateService } from '@ngx-translate/core';
 import { PageLink } from '@shared/models/page/page-link';
-import { AfterViewInit, ChangeDetectorRef, ElementRef, EventEmitter, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ElementRef, EventEmitter, NgZone, OnDestroy, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -35,11 +35,13 @@ export declare class ImageGalleryComponent extends PageComponent implements OnIn
     private elementRef;
     private cd;
     private fb;
+    private zone;
     private display;
     private width;
     private height;
     pageMode: boolean;
     dialogMode: boolean;
+    imageSubType: ResourceSubType;
     mode: 'list' | 'grid';
     selectionMode: boolean;
     imageSelected: EventEmitter<ImageResourceInfo>;
@@ -62,11 +64,13 @@ export declare class ImageGalleryComponent extends PageComponent implements OnIn
     gridImagesFilter: GridImagesFilter;
     gridImagesItemSizeStrategy: ItemSizeStrategy;
     authUser: import("../../public-api").AuthUser;
+    actionColumnWidth: string;
+    get isScada(): boolean;
     private updateDataSubscription;
     private widgetResize$;
     private destroy$;
     private destroyListMode$;
-    constructor(store: Store<AppState>, route: ActivatedRoute, router: Router, dialog: MatDialog, translate: TranslateService, imageService: ImageService, dialogService: DialogService, importExportService: ImportExportService, elementRef: ElementRef, cd: ChangeDetectorRef, fb: FormBuilder);
+    constructor(store: Store<AppState>, route: ActivatedRoute, router: Router, dialog: MatDialog, translate: TranslateService, imageService: ImageService, dialogService: DialogService, importExportService: ImportExportService, elementRef: ElementRef, cd: ChangeDetectorRef, fb: FormBuilder, zone: NgZone);
     ngOnInit(): void;
     ngOnDestroy(): void;
     ngAfterViewInit(): void;
@@ -101,6 +105,6 @@ export declare class ImageGalleryComponent extends PageComponent implements OnIn
     embedImage($event: Event, image: ImageResourceInfo, itemIndex?: number): void;
     protected updatedRouterParamsAndData(queryParams: object, queryParamsHandling?: QueryParamsHandling): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ImageGalleryComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ImageGalleryComponent, "tb-image-gallery", never, { "pageMode": "pageMode"; "dialogMode": "dialogMode"; "mode": "mode"; "selectionMode": "selectionMode"; }, { "imageSelected": "imageSelected"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ImageGalleryComponent, "tb-image-gallery", never, { "pageMode": "pageMode"; "dialogMode": "dialogMode"; "imageSubType": "imageSubType"; "mode": "mode"; "selectionMode": "selectionMode"; }, { "imageSelected": "imageSelected"; }, never, never, false, never>;
 }
 export {};

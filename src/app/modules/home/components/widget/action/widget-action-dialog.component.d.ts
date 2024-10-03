@@ -52,6 +52,7 @@ export declare class WidgetActionDialogComponent extends DialogComponent<WidgetA
     ngOnDestroy(): void;
     displayShowWidgetActionForm(): boolean;
     customFunctionHelpId(): string;
+    entityGroupRowClickHint(): string;
     getWidgetActionFunctionHelpId(): string | undefined;
     private updateShowWidgetActionForm;
     private checkColumnIndex;

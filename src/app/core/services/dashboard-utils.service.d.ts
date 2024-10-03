@@ -1,22 +1,27 @@
 import { UtilsService } from '@core/services/utils.service';
 import { TimeService } from '@core/services/time.service';
-import { Dashboard, DashboardLayout, DashboardLayoutId, DashboardLayoutsInfo, DashboardState, DashboardStateLayouts, GridSettings } from '@shared/models/dashboard.models';
-import { Datasource, Widget, WidgetConfig, widgetType, WidgetTypeDescriptor } from '@app/shared/models/widget.models';
+import { BreakpointId, BreakpointInfo, Dashboard, DashboardLayout, DashboardLayoutId, DashboardLayoutsInfo, DashboardState, DashboardStateLayouts, GridSettings } from '@shared/models/dashboard.models';
+import { Datasource, Widget, WidgetConfig, WidgetSize, widgetType, WidgetTypeDescriptor } from '@app/shared/models/widget.models';
 import { EntityAliasFilter } from '@app/shared/models/alias.models';
 import { EntityId } from '@app/shared/models/id/entity-id';
 import { EntityGroupService } from '@core/http/entity-group.service';
 import { Observable } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
+import { DashboardPageLayout } from '@home/components/dashboard-page/dashboard-page.models';
 import * as i0 from "@angular/core";
 export declare class DashboardUtilsService {
     private utils;
     private timeService;
+    private translate;
     private entityGroupService;
-    constructor(utils: UtilsService, timeService: TimeService, entityGroupService: EntityGroupService);
+    private systemBreakpoints;
+    constructor(utils: UtilsService, timeService: TimeService, translate: TranslateService, entityGroupService: EntityGroupService);
     validateAndUpdateDashboard(dashboard: Dashboard): Dashboard;
     createSingleWidgetDashboard(widget: Widget): Dashboard;
     validateAndUpdateWidget(widget: Widget): Widget;
     private validateAndUpdateWidgetTypeFqn;
     validateAndUpdateWidgetConfig(widgetConfig: WidgetConfig | undefined, type: widgetType): WidgetConfig;
+    prepareWidgetForScadaLayout(widget: Widget, isScada: boolean): Widget;
     validateAndUpdateDatasources(datasources?: Datasource[]): Datasource[];
     createDefaultLayoutData(): DashboardLayout;
     private createDefaultGridSettings;
@@ -29,28 +34,44 @@ export declare class DashboardUtilsService {
     private validateAndUpdateState;
     private validateAndUpdateLayout;
     setLayouts(dashboard: Dashboard, targetState: string, newLayouts: DashboardStateLayouts): void;
+    isReferenceWidget(dashboard: Dashboard, widgetId: string): boolean;
     getRootStateId(states: {
         [id: string]: DashboardState;
     }): string;
     getStateLayoutsData(dashboard: Dashboard, targetState: string): DashboardLayoutsInfo;
+    private getBreakpointLayoutData;
     getWidgetsArray(dashboard: Dashboard): Array<Widget>;
     isEmptyDashboard(dashboard: Dashboard): boolean;
     addWidgetToLayout(dashboard: Dashboard, targetState: string, targetLayout: DashboardLayoutId, widget: Widget, originalColumns?: number, originalSize?: {
         sizeX: number;
         sizeY: number;
-    }, row?: number, column?: number): void;
-    removeWidgetFromLayout(dashboard: Dashboard, targetState: string, targetLayout: DashboardLayoutId, widgetId: string): void;
+    }, row?: number, column?: number, breakpoint?: string): void;
+    removeWidgetFromLayout(dashboard: Dashboard, targetState: string, targetLayout: DashboardLayoutId, widgetId: string, breakpoint: BreakpointId): void;
     isSingleLayoutDashboard(dashboard: Dashboard): {
         state: string;
         layout: DashboardLayoutId;
     };
     updateLayoutSettings(layout: DashboardLayout, gridSettings: GridSettings): void;
+    moveWidgets(layout: DashboardLayout, cols: number, rows: number): void;
     removeUnusedWidgets(dashboard: Dashboard): void;
     private validateAndUpdateEntityAliases;
     private validateAndUpdateDeviceAlias;
     private validateAndUpdateEntityAlias;
     private validateAndUpdateEntityAliasSingleTypeFilters;
     private validateAliasId;
+    replaceReferenceWithWidgetCopy(widget: Widget, dashboard: Dashboard, targetState: string, targetLayout: DashboardLayoutId, breakpointId: BreakpointId, isRemoveWidget: boolean): Widget;
+    getDashboardLayoutConfig(layout: DashboardLayout, breakpointId: BreakpointId): DashboardLayout;
+    getOriginalColumns(dashboard: Dashboard, sourceState: string, sourceLayout: DashboardLayoutId, breakpointId: BreakpointId): number;
+    getOriginalSize(dashboard: Dashboard, sourceState: string, sourceLayout: DashboardLayoutId, widget: Widget, breakpointId: BreakpointId): WidgetSize;
+    private loadSystemBreakpoints;
+    getListBreakpoint(): BreakpointInfo[];
+    getBreakpoints(): string[];
+    getBreakpointInfoByValue(breakpointValue: string): BreakpointInfo;
+    getBreakpointInfoById(breakpointId: BreakpointId): BreakpointInfo;
+    getBreakpointName(breakpointId: BreakpointId): string;
+    getBreakpointIcon(breakpointId: BreakpointId): string;
+    getBreakpointSizeDescription(breakpointId: BreakpointId): string;
+    updatedLayoutForBreakpoint(layout: DashboardPageLayout, breakpointId: BreakpointId): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardUtilsService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<DashboardUtilsService>;
 }

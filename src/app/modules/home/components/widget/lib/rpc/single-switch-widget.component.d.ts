@@ -21,6 +21,7 @@ export declare class SingleSwitchWidgetComponent extends BasicActionWidgetCompon
     settings: SingleSwitchWidgetSettings;
     backgroundStyle$: Observable<ComponentStyle>;
     overlayStyle: ComponentStyle;
+    padding: string;
     overlayInset: string;
     value: boolean;
     disabled: boolean;

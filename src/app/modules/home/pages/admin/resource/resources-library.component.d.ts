@@ -17,7 +17,7 @@ export declare class ResourcesLibraryComponent extends EntityComponent<Resource>
     readonly resourceType: typeof ResourceType;
     readonly resourceTypes: ResourceType[];
     readonly resourceTypesTranslationMap: Map<ResourceType, string>;
-    maxResourceSize: number;
+    readonly maxResourceSize: number;
     private destroy$;
     constructor(store: Store<AppState>, translate: TranslateService, entityValue: Resource, entitiesTableConfigValue: EntityTableConfig<Resource>, fb: FormBuilder, cd: ChangeDetectorRef);
     ngOnInit(): void;
@@ -25,11 +25,14 @@ export declare class ResourcesLibraryComponent extends EntityComponent<Resource>
     hideDelete(): boolean;
     buildForm(entity: Resource): FormGroup;
     updateForm(entity: Resource): void;
+    updateFormState(): void;
     prepareFormValue(formValue: Resource): Resource;
     getAllowedExtensions(): string;
     getAcceptType(): string;
     convertToBase64File(data: string): string;
     onResourceIdCopied(): void;
+    private observeResourceTypeChange;
+    private onResourceTypeChange;
     static ɵfac: i0.ɵɵFactoryDeclaration<ResourcesLibraryComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<ResourcesLibraryComponent, "tb-resources-library", never, {}, {}, never, never, false, never>;
 }

@@ -1,0 +1,51 @@
+import { ChangeDetectorRef, ElementRef, EventEmitter, OnInit, Renderer2, ViewContainerRef } from '@angular/core';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
+import { ScadaSymbolBehavior, ScadaSymbolBehaviorType } from '@home/components/widget/lib/scada/scada-symbol.models';
+import { MatButton } from '@angular/material/button';
+import { TbPopoverService } from '@shared/components/popover.service';
+import { ScadaSymbolBehaviorsComponent } from '@home/pages/scada-symbol/metadata-components/scada-symbol-behaviors.component';
+import { IAliasController } from '@core/api/widget-api.models';
+import { WidgetActionCallbacks } from '@home/components/widget/action/manage-widget-actions.component.models';
+import * as i0 from "@angular/core";
+export declare const behaviorValid: (behavior: ScadaSymbolBehavior) => boolean;
+export declare class ScadaSymbolBehaviorRowComponent implements ControlValueAccessor, OnInit, Validator {
+    private fb;
+    private cd;
+    private popoverService;
+    private renderer;
+    private viewContainerRef;
+    private behaviorsComponent;
+    idInput: ElementRef<HTMLInputElement>;
+    editButton: MatButton;
+    scadaSymbolBehaviorTypes: ScadaSymbolBehaviorType[];
+    scadaSymbolBehaviorTypeTranslations: Map<ScadaSymbolBehaviorType, string>;
+    disabled: boolean;
+    index: number;
+    aliasController: IAliasController;
+    callbacks: WidgetActionCallbacks;
+    behaviorRemoved: EventEmitter<any>;
+    behaviorRowFormGroup: UntypedFormGroup;
+    modelValue: ScadaSymbolBehavior;
+    private propagateChange;
+    constructor(fb: UntypedFormBuilder, cd: ChangeDetectorRef, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, behaviorsComponent: ScadaSymbolBehaviorsComponent);
+    ngOnInit(): void;
+    registerOnChange(fn: any): void;
+    registerOnTouched(_fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    writeValue(value: ScadaSymbolBehavior): void;
+    editBehavior($event: Event, matButton: MatButton, add?: boolean, editCanceled?: () => void): void;
+    focus(): void;
+    onAdd(onCanceled: () => void): void;
+    validate(_c: UntypedFormControl): {
+        behaviorIdNotUnique: boolean;
+        behavior?: undefined;
+    } | {
+        behavior: boolean;
+        behaviorIdNotUnique?: undefined;
+    };
+    private behaviorIdValidator;
+    private onTypeChanged;
+    private updateModel;
+    static ɵfac: i0.ɵɵFactoryDeclaration<ScadaSymbolBehaviorRowComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ScadaSymbolBehaviorRowComponent, "tb-scada-symbol-metadata-behavior-row", never, { "disabled": "disabled"; "index": "index"; "aliasController": "aliasController"; "callbacks": "callbacks"; }, { "behaviorRemoved": "behaviorRemoved"; }, never, never, false, never>;
+}

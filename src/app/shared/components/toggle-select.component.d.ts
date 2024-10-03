@@ -10,6 +10,9 @@ export declare class ToggleSelectComponent extends _ToggleBase implements Contro
     selectMediaBreakpoint: string;
     appearance: ToggleHeaderAppearance;
     disablePagination: boolean;
+    fillHeight: boolean;
+    extraPadding: boolean;
+    primaryBackground: boolean;
     modelValue: any;
     private propagateChange;
     constructor(store: Store<AppState>);
@@ -19,5 +22,5 @@ export declare class ToggleSelectComponent extends _ToggleBase implements Contro
     writeValue(value: any): void;
     updateModel(value: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ToggleSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ToggleSelectComponent, "tb-toggle-select", never, { "disabled": "disabled"; "selectMediaBreakpoint": "selectMediaBreakpoint"; "appearance": "appearance"; "disablePagination": "disablePagination"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ToggleSelectComponent, "tb-toggle-select", never, { "disabled": "disabled"; "selectMediaBreakpoint": "selectMediaBreakpoint"; "appearance": "appearance"; "disablePagination": "disablePagination"; "fillHeight": "fillHeight"; "extraPadding": "extraPadding"; "primaryBackground": "primaryBackground"; }, {}, never, never, false, never>;
 }

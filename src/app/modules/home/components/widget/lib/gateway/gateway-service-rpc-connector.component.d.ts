@@ -1,19 +1,16 @@
-import { EventEmitter, OnInit } from '@angular/core';
+import { EventEmitter, OnDestroy, OnInit } from '@angular/core';
 import { ControlValueAccessor, FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { BACnetObjectTypes, BACnetRequestTypes, BLEMethods, CANByteOrders, ConnectorType, HTTPMethods, ModbusCommandTypes, RPCCommand, RPCTemplateConfig, SNMPMethods, SocketEncodings, SocketMethodProcessings } from '@home/components/widget/lib/gateway/gateway-widget.models';
+import { BACnetObjectTypes, BACnetRequestTypes, BLEMethods, CANByteOrders, ConnectorType, HTTPMethods, RPCCommand, RPCTemplateConfig, SNMPMethods, SocketEncodings, SocketMethodProcessings } from '@home/components/widget/lib/gateway/gateway-widget.models';
 import { MatDialog } from '@angular/material/dialog';
 import * as i0 from "@angular/core";
-export declare class GatewayServiceRPCConnectorComponent implements OnInit, ControlValueAccessor {
+export declare class GatewayServiceRPCConnectorComponent implements OnInit, OnDestroy, ControlValueAccessor {
     private fb;
     private dialog;
     connectorType: ConnectorType;
     sendCommand: EventEmitter<RPCCommand>;
     saveTemplate: EventEmitter<RPCTemplateConfig>;
     commandForm: FormGroup;
-    isMQTTWithResponse: FormControl;
-    codesArray: Array<number>;
     ConnectorType: typeof ConnectorType;
-    modbusCommandTypes: ModbusCommandTypes[];
     bACnetRequestTypes: BACnetRequestTypes[];
     bACnetObjectTypes: BACnetObjectTypes[];
     bLEMethods: BLEMethods[];
@@ -28,13 +25,14 @@ export declare class GatewayServiceRPCConnectorComponent implements OnInit, Cont
     SocketMethodProcessingsTranslates: Map<SocketMethodProcessings, string>;
     SNMPMethodsTranslations: Map<SNMPMethods, string>;
     gatewayConnectorDefaultTypesTranslates: Map<ConnectorType, string>;
-    modbusCodesTranslate: Map<number, string>;
     urlPattern: RegExp;
     numbersOnlyPattern: RegExp;
     hexOnlyPattern: RegExp;
     private propagateChange;
+    private destroy$;
     constructor(fb: FormBuilder, dialog: MatDialog);
     ngOnInit(): void;
+    ngOnDestroy(): void;
     connectorParamsFormGroupByType(type: ConnectorType): FormGroup;
     addSNMPoid(value?: string): void;
     removeSNMPoid(index: number): void;
@@ -43,14 +41,7 @@ export declare class GatewayServiceRPCConnectorComponent implements OnInit, Cont
         value: string;
     }): void;
     removeHTTPHeader(index: number): void;
-    addHTTPSecurity(value?: {
-        securityName: string;
-        value: string;
-    }): void;
-    removeHTTPSecurity(index: number): void;
     getFormArrayControls(path: string): FormControl<any>[];
-    addOCPUAArguments(value?: string): void;
-    removeOCPUAArguments(index: number): void;
     openEditJSONDialog($event: Event): void;
     save(): void;
     registerOnChange(fn: any): void;

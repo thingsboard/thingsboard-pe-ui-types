@@ -10,14 +10,22 @@ export interface SaveWidgetTypeAsDialogResult {
     widgetName: string;
     widgetBundleId?: string;
 }
+export interface SaveWidgetTypeAsDialogData {
+    dialogTitle?: string;
+    title?: string;
+    saveAsActionTitle?: string;
+}
 export declare class SaveWidgetTypeAsDialogComponent extends DialogComponent<SaveWidgetTypeAsDialogComponent, SaveWidgetTypeAsDialogResult> implements OnInit {
     protected store: Store<AppState>;
     protected router: Router;
+    private data;
     dialogRef: MatDialogRef<SaveWidgetTypeAsDialogComponent, SaveWidgetTypeAsDialogResult>;
     fb: FormBuilder;
     saveWidgetTypeAsFormGroup: FormGroup;
     bundlesScope: string;
-    constructor(store: Store<AppState>, router: Router, dialogRef: MatDialogRef<SaveWidgetTypeAsDialogComponent, SaveWidgetTypeAsDialogResult>, fb: FormBuilder);
+    dialogTitle: string;
+    saveAsActionTitle: string;
+    constructor(store: Store<AppState>, router: Router, data: SaveWidgetTypeAsDialogData, dialogRef: MatDialogRef<SaveWidgetTypeAsDialogComponent, SaveWidgetTypeAsDialogResult>, fb: FormBuilder);
     ngOnInit(): void;
     cancel(): void;
     saveAs(): void;

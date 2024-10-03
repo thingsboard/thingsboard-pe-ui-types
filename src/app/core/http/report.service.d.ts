@@ -24,9 +24,9 @@ export declare class ReportService {
     private currentDashboardId;
     private receiveWsData;
     private lastWsCommandTimeMs;
-    private waitForMaps;
-    private lastWaitMapTimeMs;
     private waitForWidgets;
+    private lastWaitWidgetTimeMs;
+    private widgetsCount;
     private lastWaitWidgetsTimeMs;
     constructor(window: Window, document: Document, utils: UtilsService, http: HttpClient, router: Router, authService: AuthService);
     loadReportParams(): boolean;
@@ -34,7 +34,9 @@ export declare class ReportService {
     onWsCmdUpdateMessage(message: CmdUpdateMsg): void;
     onDashboardLoaded(widgetsCount: number): void;
     onWaitForMap(): string;
+    onWaitForWidget(): string;
     onMapLoaded(uuid: string): void;
+    onWidgetLoaded(uuid: string): void;
     downloadDashboardReport(dashboardId: string, reportType: ReportType, state?: string, timewindow?: Timewindow): Observable<any>;
     downloadTestReport(reportConfig: ReportParams, reportsServerEndpointUrl?: string): Observable<any>;
     private onWindowMessage;
@@ -43,7 +45,7 @@ export declare class ReportService {
     private waitForReportReady;
     private waitForReportPage;
     private waitForWebsocketData;
-    private waitForMapsLoaded;
+    private waitForWidgetsLoaded;
     private isReportPageDomReady;
     private clearReport;
     private loadUser;

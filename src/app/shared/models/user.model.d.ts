@@ -3,6 +3,7 @@ import { UserId } from './id/user-id';
 import { CustomerId } from './id/customer-id';
 import { Authority } from './authority.enum';
 import { TenantId } from './id/tenant-id';
+import { CustomMenuId } from '@shared/models/id/custom-menu-id';
 export interface User extends BaseData<UserId> {
     tenantId: TenantId;
     customerId: CustomerId;
@@ -11,6 +12,7 @@ export interface User extends BaseData<UserId> {
     authority: Authority;
     firstName: string;
     lastName: string;
+    customMenuId?: CustomMenuId;
     additionalInfo: any;
 }
 export type UserInfo = User & GroupEntityInfo<UserId>;
@@ -19,6 +21,10 @@ export declare enum ActivationMethod {
     SEND_ACTIVATION_MAIL = "SEND_ACTIVATION_MAIL"
 }
 export declare const activationMethodTranslations: Map<ActivationMethod, string>;
+export interface ActivationLinkInfo {
+    value: string;
+    ttlMs: number;
+}
 export interface AuthUser {
     sub: string;
     scopes: string[];

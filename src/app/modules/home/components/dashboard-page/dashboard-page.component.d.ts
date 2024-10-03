@@ -4,8 +4,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UtilsService } from '@core/services/utils.service';
-import { AuthService } from '@core/auth/auth.service';
-import { Dashboard, DashboardConfiguration, WidgetLayout } from '@app/shared/models/dashboard.models';
+import { Dashboard, DashboardConfiguration, LayoutType, WidgetLayout } from '@app/shared/models/dashboard.models';
 import { DashboardContext, DashboardPageLayoutContext, DashboardPageLayouts, IDashboardController } from './dashboard-page.models';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { AuthUser } from '@shared/models/user.model';
@@ -16,7 +15,6 @@ import { DashboardUtilsService } from '@core/services/dashboard-utils.service';
 import { DashboardService } from '@core/http/dashboard.service';
 import { DashboardContextMenuItem, IDashboardComponent, WidgetContextMenuItem } from '../../models/dashboard-component.models';
 import { WidgetComponentService } from '../../components/widget/widget-component.service';
-import { UntypedFormBuilder } from '@angular/forms';
 import { ItemBufferService } from '@core/services/item-buffer.service';
 import { MatDialog } from '@angular/material/dialog';
 import { EditWidgetComponent } from '@home/components/dashboard-page/edit-widget.component';
@@ -32,7 +30,6 @@ import { DashboardWidgetSelectComponent } from '@home/components/dashboard-page/
 import { WhiteLabelingService } from '@core/http/white-labeling.service';
 import { SolutionsService } from '@core/http/solutions.service';
 import { MobileService } from '@core/services/mobile.service';
-import { DomSanitizer } from '@angular/platform-browser';
 import { IAliasController } from '@core/api/widget-api.models';
 import { MatButton } from '@angular/material/button';
 import { TbPopoverService } from '@shared/components/popover.service';
@@ -49,7 +46,6 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     private utils;
     private reportService;
     private dashboardUtils;
-    private authService;
     private entityService;
     private dialogService;
     private widgetComponentService;
@@ -60,7 +56,6 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     private importExport;
     private solutionsService;
     private mobileService;
-    private fb;
     private dialog;
     translate: TranslateService;
     private popoverService;
@@ -70,9 +65,10 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     private overlay;
     private viewContainerRef;
     private cd;
-    private sanitizer;
     elRef: ElementRef;
     private injector;
+    LayoutType: typeof LayoutType;
+    private destroyed;
     private forcePristine;
     get isDirty(): boolean;
     set isDirty(value: boolean);
@@ -94,6 +90,7 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     popoverComponent?: TbPopoverComponent;
     parentAliasController?: IAliasController;
     dashboardContainer: ElementRef<HTMLElement>;
+    dashboardContent: ElementRef<HTMLElement>;
     prevDashboard: Dashboard;
     iframeMode: boolean;
     reportView: boolean;
@@ -129,6 +126,8 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     mainLayoutSize: {
         width: string;
         height: string;
+        maxWidth: string;
+        minWidth: string;
     };
     rightLayoutSize: {
         width: string;
@@ -149,7 +148,8 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     set mobileDisplayRightLayoutFirst(mobileDisplayRightLayoutFirst: boolean);
     editWidgetComponent: EditWidgetComponent;
     dashboardWidgetSelectComponent: DashboardWidgetSelectComponent;
-    constructor(store: Store<AppState>, window: Window, document: Document, breakpointObserver: BreakpointObserver, route: ActivatedRoute, router: Router, utils: UtilsService, reportService: ReportService, dashboardUtils: DashboardUtilsService, authService: AuthService, entityService: EntityService, dialogService: DialogService, widgetComponentService: WidgetComponentService, dashboardService: DashboardService, userPermissionsService: UserPermissionsService, wl: WhiteLabelingService, itembuffer: ItemBufferService, importExport: ImportExportService, solutionsService: SolutionsService, mobileService: MobileService, fb: UntypedFormBuilder, dialog: MatDialog, translate: TranslateService, popoverService: TbPopoverService, renderer: Renderer2, ngZone: NgZone, embeddedValue: any, overlay: Overlay, viewContainerRef: ViewContainerRef, cd: ChangeDetectorRef, sanitizer: DomSanitizer, elRef: ElementRef, injector: Injector);
+    private changeMobileSize;
+    constructor(store: Store<AppState>, window: Window, document: Document, breakpointObserver: BreakpointObserver, route: ActivatedRoute, router: Router, utils: UtilsService, reportService: ReportService, dashboardUtils: DashboardUtilsService, entityService: EntityService, dialogService: DialogService, widgetComponentService: WidgetComponentService, dashboardService: DashboardService, userPermissionsService: UserPermissionsService, wl: WhiteLabelingService, itembuffer: ItemBufferService, importExport: ImportExportService, solutionsService: SolutionsService, mobileService: MobileService, dialog: MatDialog, translate: TranslateService, popoverService: TbPopoverService, renderer: Renderer2, ngZone: NgZone, embeddedValue: any, overlay: Overlay, viewContainerRef: ViewContainerRef, cd: ChangeDetectorRef, elRef: ElementRef, injector: Injector);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     private init;
@@ -177,7 +177,7 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     showRightLayoutSwitch(): boolean;
     toggleLayouts(): void;
     openRightLayout(): void;
-    private updateLayoutSizes;
+    updateLayoutSizes(): void;
     private updateMainLayoutSize;
     private updateRightLayoutSize;
     private calculateWidth;
@@ -193,6 +193,7 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     openDashboardSettings($event: Event): void;
     manageDashboardStates($event: Event): void;
     manageDashboardLayouts($event: Event): void;
+    private moveWidgets;
     private updateDashboardLayouts;
     private updateStates;
     importWidget($event: Event): void;
@@ -215,6 +216,7 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     detailsDrawerOpenedStart(): void;
     detailsDrawerClosed(): void;
     private addWidgetToLayout;
+    private isAddingToScadaLayout;
     private selectTargetLayout;
     private addWidgetToDashboard;
     addWidgetFromType(widget: WidgetInfo): void;
@@ -222,20 +224,27 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     saveWidget(): void;
     onEditWidgetClosed(): void;
     editWidget($event: Event, layoutCtx: DashboardPageLayoutContext, widget: Widget): void;
+    showLayoutConfigInEdit(layoutCtx: DashboardPageLayoutContext): boolean;
+    replaceReferenceWithWidgetCopy($event: Event, layoutCtx: DashboardPageLayoutContext, widget: Widget): void;
     copyWidget($event: Event, layoutCtx: DashboardPageLayoutContext, widget: Widget): void;
     copyWidgetReference($event: Event, layoutCtx: DashboardPageLayoutContext, widget: Widget): void;
     pasteWidget($event: Event, layoutCtx: DashboardPageLayoutContext, pos: WidgetPosition): void;
     pasteWidgetReference($event: Event, layoutCtx: DashboardPageLayoutContext, pos: WidgetPosition): void;
     removeWidget($event: Event, layoutCtx: DashboardPageLayoutContext, widget: Widget): void;
     exportWidget($event: Event, layoutCtx: DashboardPageLayoutContext, widget: Widget, widgetTitle: string): void;
+    dashboardMouseDown($event: Event, layoutCtx: DashboardPageLayoutContext): void;
     widgetClicked($event: Event, layoutCtx: DashboardPageLayoutContext, widget: Widget): void;
     widgetMouseDown($event: Event, layoutCtx: DashboardPageLayoutContext, widget: Widget): void;
     prepareDashboardContextMenu(layoutCtx: DashboardPageLayoutContext): Array<DashboardContextMenuItem>;
-    prepareWidgetContextMenu(layoutCtx: DashboardPageLayoutContext, widget: Widget): Array<WidgetContextMenuItem>;
+    prepareWidgetContextMenu(layoutCtx: DashboardPageLayoutContext, widget: Widget, isReference: boolean): Array<WidgetContextMenuItem>;
     clearSelectedWidgetBundle(): void;
     editWidgetsTypesToDisplay($event: Event): void;
     updateDashboardImage($event: Event): void;
     toggleVersionControl($event: Event, versionControlButton: MatButton): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<DashboardPageComponent, [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, { optional: true; }, null, null, null, null, null, null]>;
+    get showMainLayoutFiller(): boolean;
+    get currentBreakpointValue(): string;
+    private parseBreakpointsResponse;
+    private isMobileSize;
+    static ɵfac: i0.ɵɵFactoryDeclaration<DashboardPageComponent, [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, { optional: true; }, null, null, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<DashboardPageComponent, "tb-dashboard-page", never, { "embedded": "embedded"; "currentState": "currentState"; "hideToolbar": "hideToolbar"; "syncStateWithQueryParam": "syncStateWithQueryParam"; "dashboard": "dashboard"; "parentDashboard": "parentDashboard"; "popoverComponent": "popoverComponent"; "parentAliasController": "parentAliasController"; }, {}, never, never, false, never>;
 }

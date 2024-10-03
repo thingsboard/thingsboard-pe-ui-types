@@ -15,6 +15,7 @@ export declare class TargetDeviceComponent implements ControlValueAccessor, OnIn
     private widgetConfigComponent;
     get aliasController(): IAliasController;
     get entityAliasSelectCallbacks(): EntityAliasSelectCallbacks;
+    get targetDeviceOptional(): boolean;
     targetDeviceType: typeof TargetDeviceType;
     entityType: typeof EntityType;
     disabled: boolean;

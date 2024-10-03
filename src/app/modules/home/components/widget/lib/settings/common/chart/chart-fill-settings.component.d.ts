@@ -11,7 +11,7 @@ export declare class ChartFillSettingsComponent implements OnInit, ControlValueA
     chartFillTypeTranslationMap: Map<ChartFillType, string>;
     ChartFillType: typeof ChartFillType;
     disabled: boolean;
-    title: string;
+    titleText: string;
     fillNoneTitle: string;
     private modelValue;
     private propagateChange;
@@ -25,5 +25,5 @@ export declare class ChartFillSettingsComponent implements OnInit, ControlValueA
     private updateValidators;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<ChartFillSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ChartFillSettingsComponent, "tb-chart-fill-settings", never, { "disabled": "disabled"; "title": "title"; "fillNoneTitle": "fillNoneTitle"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ChartFillSettingsComponent, "tb-chart-fill-settings", never, { "disabled": "disabled"; "titleText": "titleText"; "fillNoneTitle": "fillNoneTitle"; }, {}, never, never, false, never>;
 }

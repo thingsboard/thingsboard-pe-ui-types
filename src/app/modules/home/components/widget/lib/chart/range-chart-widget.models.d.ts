@@ -1,8 +1,9 @@
 import { BackgroundSettings, ColorRange, Font } from '@shared/models/widget-settings.models';
 import { LegendPosition } from '@shared/models/widget.models';
-import { LineSeriesStepType, TimeSeriesChartGridSettings, TimeSeriesChartKeySettings, TimeSeriesChartSettings, TimeSeriesChartThreshold, TimeSeriesChartTooltipWidgetSettings, TimeSeriesChartVisualMapPiece, TimeSeriesChartXAxisSettings, TimeSeriesChartYAxisSettings } from '@home/components/widget/lib/chart/time-series-chart.models';
+import { LineSeriesStepType, TimeSeriesChartGridSettings, TimeSeriesChartKeySettings, TimeSeriesChartSettings, TimeSeriesChartThreshold, TimeSeriesChartVisualMapPiece, TimeSeriesChartXAxisSettings, TimeSeriesChartYAxisSettings } from '@home/components/widget/lib/chart/time-series-chart.models';
 import { DeepPartial } from '@shared/models/common';
 import { ChartAnimationSettings, ChartLabelPosition, ChartLineType, ChartShape } from '@home/components/widget/lib/chart/chart.models';
+import { TimeSeriesChartTooltipWidgetSettings } from '@home/components/widget/lib/chart/time-series-chart-tooltip.models';
 export interface RangeItem {
     index: number;
     from?: number;

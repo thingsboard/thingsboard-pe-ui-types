@@ -8,6 +8,7 @@ import { EntityAliases } from './alias.models';
 import { CustomerId } from '@shared/models/id/customer-id';
 import { Filters } from '@shared/models/query/query.models';
 import { MatDialogRef } from '@angular/material/dialog';
+import { HasTenantId, HasVersion } from '@shared/models/entity.models';
 export interface WidgetLayout {
     sizeX?: number;
     sizeY?: number;
@@ -17,41 +18,75 @@ export interface WidgetLayout {
     mobileOrder?: number;
     col?: number;
     row?: number;
+    resizable?: boolean;
+    preserveAspectRatio?: boolean;
 }
 export interface WidgetLayouts {
     [id: string]: WidgetLayout;
 }
+export declare enum LayoutType {
+    default = "default",
+    scada = "scada",
+    divider = "divider"
+}
+export declare const layoutTypes: LayoutType[];
+export declare const layoutTypeTranslationMap: Map<LayoutType, string>;
+export declare enum ViewFormatType {
+    grid = "grid",
+    list = "list"
+}
+export declare const viewFormatTypes: ViewFormatType[];
+export declare const viewFormatTypeTranslationMap: Map<ViewFormatType, string>;
 export interface GridSettings {
+    layoutType?: LayoutType;
     backgroundColor?: string;
     columns?: number;
+    minColumns?: number;
     margin?: number;
     outerMargin?: boolean;
+    viewFormat?: ViewFormatType;
     backgroundSizeMode?: string;
     backgroundImageUrl?: string;
     autoFillHeight?: boolean;
+    rowHeight?: number;
     mobileAutoFillHeight?: boolean;
     mobileRowHeight?: number;
     mobileDisplayLayoutFirst?: boolean;
     layoutDimension?: LayoutDimension;
-    [key: string]: any;
 }
 export interface DashboardLayout {
     widgets: WidgetLayouts;
     gridSettings: GridSettings;
+    breakpoints?: {
+        [breakpointId in BreakpointId]?: Omit<DashboardLayout, 'breakpoints'>;
+    };
 }
-export interface DashboardLayoutInfo {
+export declare type DashboardLayoutInfo = {
+    [breakpointId in BreakpointId]?: BreakpointLayoutInfo;
+};
+export interface BreakpointLayoutInfo {
     widgetIds?: string[];
     widgetLayouts?: WidgetLayouts;
     gridSettings?: GridSettings;
 }
+export declare type BreakpointSystemId = 'default' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+export declare type BreakpointId = BreakpointSystemId | string;
+export interface BreakpointInfo {
+    id: BreakpointId;
+    maxWidth?: number;
+    minWidth?: number;
+    value?: string;
+}
+export declare const breakpointIdTranslationMap: Map<string, string>;
+export declare const breakpointIdIconMap: Map<string, string>;
 export interface LayoutDimension {
-    type?: LayoutType;
+    type?: LayoutDimensionType;
     fixedWidth?: number;
     fixedLayout?: DashboardLayoutId;
     leftWidthPercentage?: number;
 }
 export declare type DashboardLayoutId = 'main' | 'right';
-export declare type LayoutType = 'percentage' | 'fixed';
+export declare type LayoutDimensionType = 'percentage' | 'fixed';
 export declare type DashboardStateLayouts = {
     [key in DashboardLayoutId]?: DashboardLayout;
 };
@@ -93,7 +128,7 @@ export interface DashboardConfiguration {
     filters?: Filters;
     [key: string]: any;
 }
-export interface Dashboard extends BaseData<DashboardId>, ExportableEntity<DashboardId> {
+export interface Dashboard extends BaseData<DashboardId>, HasTenantId, HasVersion, ExportableEntity<DashboardId> {
     tenantId?: TenantId;
     customerId?: CustomerId;
     title?: string;

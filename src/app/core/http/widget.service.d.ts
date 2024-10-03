@@ -26,7 +26,7 @@ export declare class WidgetService {
     getAllWidgetsBundles(config?: RequestConfig): Observable<Array<WidgetsBundle>>;
     getSystemWidgetsBundles(config?: RequestConfig): Observable<Array<WidgetsBundle>>;
     getTenantWidgetsBundles(config?: RequestConfig): Observable<Array<WidgetsBundle>>;
-    getWidgetBundles(pageLink: PageLink, fullSearch?: boolean, tenantOnly?: boolean, config?: RequestConfig): Observable<PageData<WidgetsBundle>>;
+    getWidgetBundles(pageLink: PageLink, fullSearch?: boolean, tenantOnly?: boolean, scadaFirst?: boolean, config?: RequestConfig): Observable<PageData<WidgetsBundle>>;
     getWidgetsBundle(widgetsBundleId: string, config?: RequestConfig): Observable<WidgetsBundle>;
     exportWidgetsBundle(widgetsBundleId: string, config?: RequestConfig): Observable<WidgetsBundle>;
     getWidgetsBundlesByIds(widgetsBundleIds: Array<string>, config?: RequestConfig): Observable<Array<WidgetsBundle>>;
@@ -40,14 +40,14 @@ export declare class WidgetService {
     getBundleWidgetTypeInfosList(widgetsBundleId: string, config?: RequestConfig): Observable<Array<WidgetTypeInfo>>;
     getBundleWidgetTypeInfos(pageLink: PageLink, widgetsBundleId: string, fullSearch?: boolean, deprecatedFilter?: DeprecatedFilter, widgetTypes?: Array<widgetType>, config?: RequestConfig): Observable<PageData<WidgetTypeInfo>>;
     getWidgetType(fullFqn: string, config?: RequestConfig): Observable<WidgetType>;
-    saveWidgetTypeDetails(widgetInfo: WidgetInfo, id: WidgetTypeId, createdTime: number, config?: RequestConfig): Observable<WidgetTypeDetails>;
+    saveWidgetTypeDetails(widgetInfo: WidgetInfo, id: WidgetTypeId, createdTime: number, version: number, config?: RequestConfig): Observable<WidgetTypeDetails>;
     saveImportedWidgetTypeDetails(widgetTypeDetails: WidgetTypeDetails, config?: RequestConfig): Observable<WidgetTypeDetails>;
     getWidgetTypeById(widgetTypeId: string, config?: RequestConfig): Observable<WidgetTypeDetails>;
     exportWidgetType(widgetTypeId: string, config?: RequestConfig): Observable<WidgetTypeDetails>;
     getWidgetTypeInfoById(widgetTypeId: string, config?: RequestConfig): Observable<WidgetTypeInfo>;
     saveWidgetType(widgetTypeDetails: WidgetTypeDetails, config?: RequestConfig): Observable<WidgetTypeDetails>;
     deleteWidgetType(widgetTypeId: string, config?: RequestConfig): Observable<Object>;
-    getWidgetTypes(pageLink: PageLink, tenantOnly?: boolean, fullSearch?: boolean, deprecatedFilter?: DeprecatedFilter, widgetTypes?: Array<widgetType>, config?: RequestConfig): Observable<PageData<WidgetTypeInfo>>;
+    getWidgetTypes(pageLink: PageLink, tenantOnly?: boolean, fullSearch?: boolean, scadaFirst?: boolean, deprecatedFilter?: DeprecatedFilter, widgetTypes?: Array<widgetType>, config?: RequestConfig): Observable<PageData<WidgetTypeInfo>>;
     addWidgetFqnToWidgetBundle(widgetsBundleId: string, fqn: string, config?: RequestConfig): Observable<void>;
     getWidgetTemplate(widgetTypeParam: widgetType, config?: RequestConfig): Observable<WidgetInfo>;
     clearWidgetInfoInMemoryCache(): void;

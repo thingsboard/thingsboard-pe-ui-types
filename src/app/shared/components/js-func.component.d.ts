@@ -1,5 +1,6 @@
 import { ChangeDetectorRef, ElementRef, OnDestroy, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormControl, Validator } from '@angular/forms';
+import { AceHighlightRules } from '@shared/models/ace/ace.models';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { UtilsService } from '@core/services/utils.service';
@@ -30,6 +31,7 @@ export declare class JsFuncComponent implements OnInit, OnDestroy, ControlValueA
     fillHeight: boolean;
     minHeight: string;
     editorCompleter: TbEditorCompleter;
+    highlightRules: AceHighlightRules;
     globalVariables: Array<string>;
     disableUndefinedCheck: boolean;
     helpId: string;
@@ -66,10 +68,11 @@ export declare class JsFuncComponent implements OnInit, OnDestroy, ControlValueA
     };
     beautifyJs(): void;
     validateOnSubmit(): void;
+    focus(): void;
     private validateJsFunc;
     private cleanupJsErrors;
     writeValue(value: string): void;
     updateView(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<JsFuncComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<JsFuncComponent, "tb-js-func", never, { "functionTitle": "functionTitle"; "functionName": "functionName"; "functionArgs": "functionArgs"; "validationArgs": "validationArgs"; "resultType": "resultType"; "disabled": "disabled"; "fillHeight": "fillHeight"; "minHeight": "minHeight"; "editorCompleter": "editorCompleter"; "globalVariables": "globalVariables"; "disableUndefinedCheck": "disableUndefinedCheck"; "helpId": "helpId"; "scriptLanguage": "scriptLanguage"; "hideBrackets": "hideBrackets"; "noValidate": "noValidate"; "required": "required"; }, {}, never, ["[toolbarSuffixButton]"], false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<JsFuncComponent, "tb-js-func", never, { "functionTitle": "functionTitle"; "functionName": "functionName"; "functionArgs": "functionArgs"; "validationArgs": "validationArgs"; "resultType": "resultType"; "disabled": "disabled"; "fillHeight": "fillHeight"; "minHeight": "minHeight"; "editorCompleter": "editorCompleter"; "highlightRules": "highlightRules"; "globalVariables": "globalVariables"; "disableUndefinedCheck": "disableUndefinedCheck"; "helpId": "helpId"; "scriptLanguage": "scriptLanguage"; "hideBrackets": "hideBrackets"; "noValidate": "noValidate"; "required": "required"; }, {}, never, ["[toolbarPrefixButton]", "[toolbarSuffixButton]"], false, never>;
 }

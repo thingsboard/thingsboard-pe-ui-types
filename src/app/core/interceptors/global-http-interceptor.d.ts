@@ -13,7 +13,6 @@ export declare class GlobalHttpInterceptor implements HttpInterceptor {
     private authService;
     private AUTH_SCHEME;
     private AUTH_HEADER_NAME;
-    private internalUrlPrefixes;
     private activeRequests;
     constructor(store: Store<AppState>, dialogService: DialogService, translate: TranslateService, authService: AuthService);
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>>;
@@ -23,10 +22,8 @@ export declare class GlobalHttpInterceptor implements HttpInterceptor {
     private retryRequest;
     private refreshTokenAndRetry;
     private updateAuthorizationHeader;
-    private isInternalUrlPrefix;
     private isTokenBasedAuthEntryPoint;
     private updateLoadingState;
-    private getInterceptorConfig;
     private showError;
     static ɵfac: i0.ɵɵFactoryDeclaration<GlobalHttpInterceptor, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<GlobalHttpInterceptor>;

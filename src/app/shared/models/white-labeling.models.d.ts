@@ -32,6 +32,7 @@ export interface LoginWhiteLabelingParams extends WhiteLabelingParams {
     pageBackgroundColor?: string;
     darkForeground?: boolean;
     domainName?: string;
+    baseUrl?: string;
     adminSettingsId?: string;
     showNameBottom?: boolean;
 }

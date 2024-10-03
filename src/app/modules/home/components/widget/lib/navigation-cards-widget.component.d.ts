@@ -4,7 +4,7 @@ import { WidgetContext } from '@home/models/widget-component.models';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { MenuService } from '@core/services/menu.service';
-import { HomeSection, HomeSectionPlace } from '@core/services/menu.models';
+import { HomeSection, MenuSection } from '@core/services/menu.models';
 import { Router } from '@angular/router';
 import * as i0 from "@angular/core";
 interface NavigationCardsWidgetSettings {
@@ -26,7 +26,7 @@ export declare class NavigationCardsWidgetComponent extends PageComponent implem
     resize(): void;
     private updateColumnCount;
     navigate($event: Event, path: string): void;
-    sectionPlaces(section: HomeSection): HomeSectionPlace[];
+    sectionPlaces(section: HomeSection): MenuSection[];
     private filterPlace;
     sectionColspan(section: HomeSection): number;
     static ɵfac: i0.ɵɵFactoryDeclaration<NavigationCardsWidgetComponent, never>;

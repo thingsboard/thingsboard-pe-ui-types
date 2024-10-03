@@ -4,7 +4,7 @@ import { AppState } from '@core/core.state';
 import { PageComponent } from '@shared/components/page.component';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { HasConfirmForm } from '@core/guards/confirm-on-exit.guard';
-import { MobileAppService } from '@core/http/mobile-app.service';
+import { MobileApplicationService } from '@core/http/mobile-application.service';
 import { BadgePosition, MobileAppSettings } from '@shared/models/mobile-app.models';
 import { AuthUser } from '@shared/models/user.model';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
@@ -20,7 +20,7 @@ export declare class MobileAppSettingsComponent extends PageComponent implements
     mobileAppSettings: MobileAppSettings;
     private readonly destroy$;
     badgePositionTranslationsMap: Map<BadgePosition, string>;
-    constructor(store: Store<AppState>, mobileAppService: MobileAppService, fb: FormBuilder, userPermissionsService: UserPermissionsService);
+    constructor(store: Store<AppState>, mobileAppService: MobileApplicationService, fb: FormBuilder, userPermissionsService: UserPermissionsService);
     ngOnDestroy(): void;
     isTenantAdmin(): boolean;
     private buildMobileAppSettingsForm;

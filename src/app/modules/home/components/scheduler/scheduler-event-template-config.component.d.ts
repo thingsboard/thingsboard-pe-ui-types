@@ -1,14 +1,11 @@
 import { AfterViewInit, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewContainerRef } from '@angular/core';
 import { AbstractControl, AsyncValidator, ControlValueAccessor, ValidationErrors } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { Store } from '@ngrx/store';
-import { AppState } from '@app/core/core.state';
 import { SchedulerEventConfiguration } from '@shared/models/scheduler-event.models';
 import { DynamicComponentFactoryService } from '@core/services/dynamic-component-factory.service';
 import { SchedulerEventConfigType } from '@home/components/scheduler/scheduler-event-config.models';
 import * as i0 from "@angular/core";
 export declare class SchedulerEventTemplateConfigComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnChanges, OnDestroy, AsyncValidator {
-    private store;
     private dynamicComponentFactoryService;
     configContentContainer: ViewContainerRef;
     private configuration;
@@ -23,9 +20,9 @@ export declare class SchedulerEventTemplateConfigComponent implements ControlVal
     private configTemplate;
     private configComponent$;
     private propagateChange;
-    constructor(store: Store<AppState>, dynamicComponentFactoryService: DynamicComponentFactoryService);
+    constructor(dynamicComponentFactoryService: DynamicComponentFactoryService);
     registerOnChange(fn: any): void;
-    registerOnTouched(fn: any): void;
+    registerOnTouched(_fn: any): void;
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
     private loadTemplate;

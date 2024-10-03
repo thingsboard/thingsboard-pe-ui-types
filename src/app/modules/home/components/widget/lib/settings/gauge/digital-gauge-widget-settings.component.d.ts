@@ -20,9 +20,10 @@ export declare class DigitalGaugeWidgetSettingsComponent extends WidgetSettingsC
     protected settingsForm(): UntypedFormGroup;
     protected defaultSettings(): WidgetSettings;
     protected onSettingsSet(settings: WidgetSettings): void;
+    private maxValueValidation;
     protected prepareOutputSettings(settings: any): any;
     protected validatorTriggers(): string[];
-    protected updateValidators(emitEvent: boolean): void;
+    protected updateValidators(emitEvent: boolean, trigger: string): void;
     protected doUpdateSettings(settingsForm: UntypedFormGroup, settings: WidgetSettings): void;
     private prepareTicksValueFormArray;
     tickValuesFormArray(): UntypedFormArray;

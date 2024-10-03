@@ -1,6 +1,6 @@
 import { AfterViewInit, OnDestroy } from '@angular/core';
 import { DialogComponent } from '@shared/components/dialog.component';
-import { Integration } from '@shared/models/integration.models';
+import { Integration, IntegrationConvertersInfo } from '@shared/models/integration.models';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { Router } from '@angular/router';
@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
 import { StepperSelectionEvent } from '@angular/cdk/stepper';
 import { TranslateService } from '@ngx-translate/core';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
-import { Converter, ConverterType } from '@shared/models/converter.models';
+import { Converter, ConverterSourceType, ConverterType } from '@shared/models/converter.models';
 import { ConverterComponent } from '@home/components/converter/converter.component';
 import { ConverterService } from '@core/http/converter.service';
 import { IntegrationService } from '@core/http/integration.service';
@@ -35,6 +35,7 @@ export declare class IntegrationWizardDialogComponent extends DialogComponent<In
     downlinkDataConverterComponent: ConverterComponent;
     selectedIndex: number;
     converterType: typeof ConverterType;
+    ConverterSourceType: typeof ConverterSourceType;
     isEdgeTemplate: boolean;
     showCheckConnection: boolean;
     integrationType: string;
@@ -46,6 +47,7 @@ export declare class IntegrationWizardDialogComponent extends DialogComponent<In
     uplinkConverterForm: UntypedFormGroup;
     downlinkConverterForm: UntypedFormGroup;
     integrationConfigurationForm: UntypedFormGroup;
+    integrationInfo$: Observable<IntegrationConvertersInfo>;
     uplinkConverter: Converter;
     downlinkConverter: Converter;
     private checkConnectionAllow;
@@ -69,6 +71,7 @@ export declare class IntegrationWizardDialogComponent extends DialogComponent<In
     onIntegrationInfoCopied(type: string): void;
     onIntegrationCheck(): void;
     get isCheckConnectionAvailable(): boolean;
+    private updateIntegrationsInfo;
     private get isRemoteIntegration();
     private get isConnectionStep();
     private generateSecret;

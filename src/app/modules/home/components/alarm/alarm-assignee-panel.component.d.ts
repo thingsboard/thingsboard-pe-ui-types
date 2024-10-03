@@ -49,10 +49,9 @@ export declare class AlarmAssigneePanelComponent implements OnInit, AfterViewIni
     fetchUsers(searchText?: string): Observable<Array<UserEmailInfo>>;
     onFocus(): void;
     clear(): void;
-    getUserDisplayName(entity: User): string;
-    getUserInitials(entity: User): string;
-    getFullName(entity: User): string;
-    getAvatarBgColor(entity: User): string;
+    getUserInitials(entity: UserEmailInfo): string;
+    getFullName(entity: UserEmailInfo): string;
+    getAvatarBgColor(entity: UserEmailInfo): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<AlarmAssigneePanelComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<AlarmAssigneePanelComponent, "tb-alarm-assignee-panel", never, {}, {}, never, never, false, never>;
 }

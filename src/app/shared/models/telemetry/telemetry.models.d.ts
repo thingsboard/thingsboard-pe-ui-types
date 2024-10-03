@@ -7,7 +7,7 @@ import { AlarmCountQuery, AlarmData, AlarmDataQuery, EntityCountQuery, EntityDat
 import { PageData } from '@shared/models/page/page-data';
 import { CmdWrapper, WsService, WsSubscriber } from '@shared/models/websocket/websocket.models';
 import { TelemetryWebsocketService } from '@core/ws/telemetry-websocket.service';
-import { Notification } from '@shared/models/notification.models';
+import { Notification, NotificationType } from '@shared/models/notification.models';
 import { WebsocketService } from '@core/ws/websocket.service';
 export declare const NOT_SUPPORTED = "Not supported!";
 export declare enum DataKeyType {
@@ -96,7 +96,8 @@ export declare enum IntervalType {
     WEEK = "WEEK",
     WEEK_ISO = "WEEK_ISO",
     MONTH = "MONTH",
-    QUARTER = "QUARTER"
+    QUARTER = "QUARTER",
+    CUSTOM = "CUSTOM"
 }
 export declare class TimeseriesSubscriptionCmd extends SubscriptionCmd {
     startTs: number;
@@ -194,9 +195,10 @@ export declare class UnreadCountSubCmd implements WebsocketCmd {
 }
 export declare class UnreadSubCmd implements WebsocketCmd {
     limit: number;
+    types: Array<NotificationType>;
     cmdId: number;
     type: WsCmdType;
-    constructor(limit?: number);
+    constructor(limit?: number, types?: Array<NotificationType>);
 }
 export declare class MarkAsReadCmd implements WebsocketCmd {
     cmdId: number;
@@ -397,10 +399,11 @@ export declare class NotificationSubscriber extends WsSubscriber {
     private notificationCountSubject;
     private notificationsSubject;
     messageLimit: number;
+    notificationType: any[];
     notificationCount$: Observable<number>;
     notifications$: Observable<Notification[]>;
     static createNotificationCountSubscription(websocketService: WebsocketService<WsSubscriber>, zone: NgZone): NotificationSubscriber;
-    static createNotificationsSubscription(websocketService: WebsocketService<WsSubscriber>, zone: NgZone, limit?: number): NotificationSubscriber;
+    static createNotificationsSubscription(websocketService: WebsocketService<WsSubscriber>, zone: NgZone, limit?: number, types?: Array<NotificationType>): NotificationSubscriber;
     static createMarkAsReadCommand(websocketService: WebsocketService<WsSubscriber>, ids: string[]): NotificationSubscriber;
     static createMarkAllAsReadCommand(websocketService: WebsocketService<WsSubscriber>): NotificationSubscriber;
     constructor(websocketService: WsService<any>, zone?: NgZone);

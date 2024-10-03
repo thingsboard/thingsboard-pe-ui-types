@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, ElementRef, OnDestroy, OnInit, Renderer2 } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ElementRef, NgZone, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { BasicActionWidgetComponent } from '@home/components/widget/lib/action/action-widget.models';
 import { ComponentStyle } from '@shared/models/widget-settings.models';
 import { Observable } from 'rxjs';
@@ -11,6 +11,7 @@ export declare class PowerButtonWidgetComponent extends BasicActionWidgetCompone
     protected sanitizer: DomSanitizer;
     private renderer;
     protected cd: ChangeDetectorRef;
+    protected zone: NgZone;
     powerButtonShape: ElementRef<HTMLElement>;
     settings: PowerButtonWidgetSettings;
     backgroundStyle$: Observable<ComponentStyle>;
@@ -25,7 +26,7 @@ export declare class PowerButtonWidgetComponent extends BasicActionWidgetCompone
     private disabledState;
     private onValueSetter;
     private offValueSetter;
-    constructor(imagePipe: ImagePipe, sanitizer: DomSanitizer, renderer: Renderer2, cd: ChangeDetectorRef);
+    constructor(imagePipe: ImagePipe, sanitizer: DomSanitizer, renderer: Renderer2, cd: ChangeDetectorRef, zone: NgZone);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     ngOnDestroy(): void;

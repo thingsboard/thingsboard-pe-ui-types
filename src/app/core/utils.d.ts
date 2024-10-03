@@ -34,6 +34,9 @@ export declare function objToBase64URI(obj: any): string;
 export declare function base64toObj(b64Encoded: string): any;
 export declare function checkNumericStringAndConvert(val: string): number | string;
 export declare const blobToBase64: (blob: Blob) => Observable<string>;
+export declare const blobToText: (blob: Blob) => Observable<string>;
+export declare const updateFileContent: (file: File, newContent: string) => File;
+export declare const createFileFromContent: (content: string, name: string, type: string) => File;
 export declare function hashCode(str: string): number;
 export declare function objectHashCode(obj: any): number;
 export declare function deepClone<T>(target: T, ignoreFields?: string[]): T;
@@ -45,6 +48,7 @@ export declare const setByPath: <T extends object>(object: T, path: string | num
 export declare const isEqualIgnoreUndefined: (a: any, b: any) => boolean;
 export declare const isArraysEqualIgnoreUndefined: (a: any[], b: any[]) => boolean;
 export declare function mergeDeep<T>(target: T, ...sources: T[]): T;
+export declare function mergeDeepIgnoreArray<T>(target: T, ...sources: T[]): T;
 export declare function guid(): string;
 export declare function cloneMetadata<S, T>(sourceType: Type<S>, targetType: Type<T>): void;
 export declare function snakeCase(name: string, separator: string): string;
@@ -82,6 +86,8 @@ export declare function parseHttpErrorMessage(errorResponse: HttpErrorResponse, 
 };
 export declare function genNextLabel(name: string, datasources: Datasource[]): string;
 export declare const getOS: () => string;
+export declare const isSafari: () => boolean;
+export declare const isFirefox: () => boolean;
 export declare const plainColorFromVariable: (variable: string) => string;
 export declare const camelCase: (str: string) => string;
 export declare const convertKeysToCamelCase: (obj: Record<string, any>) => Record<string, any>;

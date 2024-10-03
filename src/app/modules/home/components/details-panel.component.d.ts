@@ -14,6 +14,7 @@ export declare class DetailsPanelComponent extends PageComponent implements OnDe
     isAlwaysEdit: boolean;
     isShowSearch: boolean;
     backgroundColor: string;
+    showCloseDetails: boolean;
     private theFormValue;
     private formSubscription;
     set theForm(value: UntypedFormGroup);
@@ -34,5 +35,5 @@ export declare class DetailsPanelComponent extends PageComponent implements OnDe
     onApplyDetails(): void;
     onToggleSearch(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DetailsPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DetailsPanelComponent, "tb-details-panel", never, { "headerHeightPx": "headerHeightPx"; "headerTitle": "headerTitle"; "headerSubtitle": "headerSubtitle"; "isReadOnly": "isReadOnly"; "isAlwaysEdit": "isAlwaysEdit"; "isShowSearch": "isShowSearch"; "backgroundColor": "backgroundColor"; "theForm": "theForm"; "isEdit": "isEdit"; }, { "closeDetails": "closeDetails"; "toggleDetailsEditMode": "toggleDetailsEditMode"; "applyDetails": "applyDetails"; "closeSearch": "closeSearch"; "isEditChange": "isEditChange"; }, never, [".prefix-title-buttons", ".header-pane", ".search-pane", ".details-buttons", "*"], false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DetailsPanelComponent, "tb-details-panel", never, { "headerHeightPx": "headerHeightPx"; "headerTitle": "headerTitle"; "headerSubtitle": "headerSubtitle"; "isReadOnly": "isReadOnly"; "isAlwaysEdit": "isAlwaysEdit"; "isShowSearch": "isShowSearch"; "backgroundColor": "backgroundColor"; "showCloseDetails": "showCloseDetails"; "theForm": "theForm"; "isEdit": "isEdit"; }, { "closeDetails": "closeDetails"; "toggleDetailsEditMode": "toggleDetailsEditMode"; "applyDetails": "applyDetails"; "closeSearch": "closeSearch"; "isEditChange": "isEditChange"; }, never, [".prefix-title-buttons", ".header-pane", ".search-pane", ".details-buttons", "*"], false, never>;
 }

@@ -28,5 +28,6 @@ export interface ValueCardWidgetSettings {
     dateFont: Font;
     dateColor: ColorSettings;
     background: BackgroundSettings;
+    padding: string;
 }
 export declare const valueCardDefaultSettings: (horizontal: boolean) => ValueCardWidgetSettings;

@@ -10,12 +10,14 @@ import { MenuSection } from '@core/services/menu.models';
 import { TranslateService } from '@ngx-translate/core';
 import { PageLink } from '@shared/models/page/page-link';
 import { PageData } from '@shared/models/page/page-data';
+import { CustomTranslatePipe } from '@shared/pipe/custom-translate.pipe';
 import * as i0 from "@angular/core";
 export declare class QuickLinkComponent extends PageComponent implements OnInit, ControlValueAccessor, ErrorStateMatcher {
     protected store: Store<AppState>;
     private fb;
     private menuService;
     translate: TranslateService;
+    private customTranslate;
     private errorStateMatcher;
     disabled: boolean;
     addOnly: boolean;
@@ -36,7 +38,7 @@ export declare class QuickLinkComponent extends PageComponent implements OnInit,
     editQuickLinkFormGroup: UntypedFormGroup;
     private submitted;
     private dirty;
-    constructor(store: Store<AppState>, fb: UntypedFormBuilder, menuService: MenuService, translate: TranslateService, errorStateMatcher: ErrorStateMatcher);
+    constructor(store: Store<AppState>, fb: UntypedFormBuilder, menuService: MenuService, translate: TranslateService, customTranslate: CustomTranslatePipe, errorStateMatcher: ErrorStateMatcher);
     ngOnInit(): void;
     requiredLinkValidator(control: AbstractControl): ValidationErrors | null;
     isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
@@ -59,6 +61,6 @@ export declare class QuickLinkComponent extends PageComponent implements OnInit,
     delete(): void;
     isEditing(): boolean;
     private updateModel;
-    static ɵfac: i0.ɵɵFactoryDeclaration<QuickLinkComponent, [null, null, null, null, { skipSelf: true; }]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<QuickLinkComponent, [null, null, null, null, null, { skipSelf: true; }]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<QuickLinkComponent, "tb-quick-link", never, { "disabled": "disabled"; "addOnly": "addOnly"; "disableEdit": "disableEdit"; }, { "quickLinkAdded": "quickLinkAdded"; "quickLinkAddCanceled": "quickLinkAddCanceled"; "quickLinkUpdated": "quickLinkUpdated"; "quickLinkDeleted": "quickLinkDeleted"; "editModeChanged": "editModeChanged"; }, never, never, false, never>;
 }

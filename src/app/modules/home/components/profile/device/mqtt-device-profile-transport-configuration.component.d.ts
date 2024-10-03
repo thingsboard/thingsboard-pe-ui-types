@@ -1,19 +1,16 @@
 import { OnDestroy, OnInit } from '@angular/core';
-import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { MqttDeviceProfileTransportConfiguration, TransportPayloadType } from '@shared/models/device.models';
 import * as i0 from "@angular/core";
-export declare class MqttDeviceProfileTransportConfigurationComponent implements ControlValueAccessor, OnInit, OnDestroy {
+export declare class MqttDeviceProfileTransportConfigurationComponent implements ControlValueAccessor, OnInit, OnDestroy, Validator {
     private store;
     private fb;
     transportPayloadTypes: string[];
     transportPayloadTypeTranslations: Map<TransportPayloadType, string>;
     mqttDeviceProfileTransportConfigurationFormGroup: UntypedFormGroup;
     private destroy$;
-    private requiredValue;
-    get required(): boolean;
-    set required(value: boolean);
     disabled: boolean;
     private propagateChange;
     constructor(store: Store<AppState>, fb: UntypedFormBuilder);
@@ -25,10 +22,11 @@ export declare class MqttDeviceProfileTransportConfigurationComponent implements
     get protoPayloadType(): boolean;
     get compatibilityWithJsonPayloadFormatEnabled(): boolean;
     writeValue(value: MqttDeviceProfileTransportConfiguration | null): void;
+    validate(c: UntypedFormControl): ValidationErrors | null;
     private updateModel;
     private updateTransportPayloadBasedControls;
     private validationMQTTTopic;
     private uniqueDeviceTopicValidator;
     static ɵfac: i0.ɵɵFactoryDeclaration<MqttDeviceProfileTransportConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MqttDeviceProfileTransportConfigurationComponent, "tb-mqtt-device-profile-transport-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MqttDeviceProfileTransportConfigurationComponent, "tb-mqtt-device-profile-transport-configuration", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
 }

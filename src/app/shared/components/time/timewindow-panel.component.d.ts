@@ -1,4 +1,4 @@
-import { InjectionToken, OnInit, ViewContainerRef } from '@angular/core';
+import { InjectionToken, OnDestroy, OnInit, ViewContainerRef } from '@angular/core';
 import { AggregationType, HistoryWindowType, RealtimeWindowType, Timewindow, TimewindowType } from '@shared/models/time/time.models';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
@@ -6,6 +6,9 @@ import { AppState } from '@core/core.state';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { TimeService } from '@core/services/time.service';
 import { OverlayRef } from '@angular/cdk/overlay';
+import { ToggleHeaderOption } from '@shared/components/toggle-header.component';
+import { TranslateService } from '@ngx-translate/core';
+import { MatDialog } from '@angular/material/dialog';
 import * as i0 from "@angular/core";
 export interface TimewindowPanelData {
     historyOnly: boolean;
@@ -17,13 +20,15 @@ export interface TimewindowPanelData {
     isEdit: boolean;
 }
 export declare const TIMEWINDOW_PANEL_DATA: InjectionToken<any>;
-export declare class TimewindowPanelComponent extends PageComponent implements OnInit {
+export declare class TimewindowPanelComponent extends PageComponent implements OnInit, OnDestroy {
     data: TimewindowPanelData;
     overlayRef: OverlayRef;
     protected store: Store<AppState>;
     fb: UntypedFormBuilder;
     private timeService;
+    private translate;
     viewContainerRef: ViewContainerRef;
+    private dialog;
     historyOnly: boolean;
     forAllTimeEnabled: boolean;
     quickIntervalOnly: boolean;
@@ -39,27 +44,31 @@ export declare class TimewindowPanelComponent extends PageComponent implements O
     aggregations: string[];
     aggregationTypesTranslations: Map<AggregationType, string>;
     result: Timewindow;
-    constructor(data: TimewindowPanelData, overlayRef: OverlayRef, store: Store<AppState>, fb: UntypedFormBuilder, timeService: TimeService, viewContainerRef: ViewContainerRef);
+    timewindowTypeOptions: ToggleHeaderOption[];
+    realtimeTimewindowOptions: ToggleHeaderOption[];
+    historyTimewindowOptions: ToggleHeaderOption[];
+    realtimeTypeSelectionAvailable: boolean;
+    realtimeIntervalSelectionAvailable: boolean;
+    historyTypeSelectionAvailable: boolean;
+    historyIntervalSelectionAvailable: boolean;
+    aggregationOptionsAvailable: boolean;
+    private destroy$;
+    constructor(data: TimewindowPanelData, overlayRef: OverlayRef, store: Store<AppState>, fb: UntypedFormBuilder, timeService: TimeService, translate: TranslateService, viewContainerRef: ViewContainerRef, dialog: MatDialog);
     ngOnInit(): void;
-    private checkLimit;
+    ngOnDestroy(): void;
     private updateValidators;
-    onTimewindowTypeChange(): void;
+    private onTimewindowTypeChange;
     update(): void;
+    private prepareTimewindowConfig;
+    private updateTimewindowForm;
     cancel(): void;
-    minDatapointsLimit(): number;
-    maxDatapointsLimit(): number;
     minRealtimeAggInterval(): number;
     maxRealtimeAggInterval(): number;
     currentRealtimeTimewindow(): number;
     minHistoryAggInterval(): number;
     maxHistoryAggInterval(): number;
     currentHistoryTimewindow(): any;
-    onHideIntervalChanged(): void;
-    onHideLastIntervalChanged(): void;
-    onHideQuickIntervalChanged(): void;
-    onHideAggregationChanged(): void;
-    onHideAggIntervalChanged(): void;
-    onHideTimezoneChanged(): void;
+    openTimewindowConfig(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimewindowPanelComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<TimewindowPanelComponent, "tb-timewindow-panel", never, {}, {}, never, never, false, never>;
 }

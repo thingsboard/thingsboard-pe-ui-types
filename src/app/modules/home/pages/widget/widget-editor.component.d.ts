@@ -14,7 +14,6 @@ import { TranslateService } from '@ngx-translate/core';
 import { Ace } from 'ace-builds';
 import { CancelAnimationFrame, RafService } from '@core/services/raf.service';
 import { MatDialog } from '@angular/material/dialog';
-import { ResizeObserver } from '@juggle/resize-observer';
 import Timeout = NodeJS.Timeout;
 import * as i0 from "@angular/core";
 export declare class WidgetEditorComponent extends PageComponent implements OnInit, OnDestroy, HasDirtyFlag {

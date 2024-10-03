@@ -9,7 +9,7 @@ import { MatChipGrid, MatChipInputEvent, MatChipRow } from '@angular/material/ch
 import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
 import { DataKey, DatasourceType, JsonSettingsSchema, Widget, widgetType } from '@shared/models/widget.models';
 import { IAliasController } from '@core/api/widget-api.models';
-import { DataKeysCallbacks, DataKeySettingsFunction } from './data-keys.component.models';
+import { DataKeySettingsFunction } from './data-keys.component.models';
 import { UtilsService } from '@core/services/utils.service';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { TruncatePipe } from '@shared/pipe/truncate.pipe';
@@ -18,6 +18,7 @@ import { Dashboard } from '@shared/models/dashboard.models';
 import { DndDropEvent } from 'ngx-drag-drop/lib/dnd-dropzone.directive';
 import { DatasourceComponent } from '@home/components/widget/config/datasource.component';
 import { TbPopoverService } from '@shared/components/popover.service';
+import { WidgetConfigCallbacks } from '@home/components/widget/config/widget-config.component.models';
 import * as i0 from "@angular/core";
 export declare class DataKeysComponent implements ControlValueAccessor, OnInit, OnChanges, ErrorStateMatcher, Validator {
     private store;
@@ -55,7 +56,7 @@ export declare class DataKeysComponent implements ControlValueAccessor, OnInit, 
     dataKeySettingsDirective: string;
     dashboard: Dashboard;
     widget: Widget;
-    callbacks: DataKeysCallbacks;
+    callbacks: WidgetConfigCallbacks;
     entityAliasId: string;
     deviceId: string;
     private requiredValue;

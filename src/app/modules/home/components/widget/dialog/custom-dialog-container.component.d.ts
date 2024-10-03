@@ -1,5 +1,5 @@
 import { MatDialogRef } from '@angular/material/dialog';
-import { NgModuleRef, OnDestroy, Type, ViewContainerRef } from '@angular/core';
+import { OnDestroy, Type, ViewContainerRef } from '@angular/core';
 import { DialogComponent } from '@shared/components/dialog.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -7,13 +7,11 @@ import { Router } from '@angular/router';
 import { CustomDialogComponent } from '@home/components/widget/dialog/custom-dialog.component';
 import { DialogService } from '@core/services/dialog.service';
 import { TranslateService } from '@ngx-translate/core';
-import { DynamicComponentModule } from '@core/services/dynamic-component-factory.service';
 import * as i0 from "@angular/core";
 export interface CustomDialogContainerData {
     controller: (instance: CustomDialogComponent) => void;
     data?: any;
     customComponentType: Type<CustomDialogComponent>;
-    customComponentModuleRef: NgModuleRef<DynamicComponentModule>;
 }
 export declare class CustomDialogContainerComponent extends DialogComponent<CustomDialogContainerComponent> implements OnDestroy {
     protected store: Store<AppState>;

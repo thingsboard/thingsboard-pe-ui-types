@@ -1,23 +1,27 @@
 import { AfterViewInit, NgZone, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
-import { MatFormFieldAppearance } from '@angular/material/form-field';
+import { MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { TranslateService } from '@ngx-translate/core';
 import { MatAutocompleteTrigger } from '@angular/material/autocomplete';
 import { TimezoneInfo } from '@shared/models/time/time.models';
+import { TimeService } from '@core/services/time.service';
 import * as i0 from "@angular/core";
 export declare class TimezoneSelectComponent implements ControlValueAccessor, OnInit, AfterViewInit {
     private store;
     translate: TranslateService;
     private ngZone;
     private fb;
+    private timeService;
     selectTimezoneFormGroup: UntypedFormGroup;
     modelValue: string | null;
     defaultTimezoneId: string;
-    appearance: MatFormFieldAppearance;
     set defaultTimezone(timezone: string);
+    displayLabel: boolean;
+    subscriptSizing: SubscriptSizing;
+    appearance: MatFormFieldAppearance;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
@@ -36,7 +40,7 @@ export declare class TimezoneSelectComponent implements ControlValueAccessor, On
     private localBrowserTimezoneInfoPlaceholder;
     private timezones;
     private propagateChange;
-    constructor(store: Store<AppState>, translate: TranslateService, ngZone: NgZone, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, ngZone: NgZone, fb: UntypedFormBuilder, timeService: TimeService);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -50,7 +54,6 @@ export declare class TimezoneSelectComponent implements ControlValueAccessor, On
     fetchTimezones(searchText?: string): Observable<Array<TimezoneInfo>>;
     clear(): void;
     private loadTimezones;
-    private getLocalBrowserTimezoneInfoPlaceholder;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimezoneSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimezoneSelectComponent, "tb-timezone-select", never, { "appearance": "appearance"; "defaultTimezone": "defaultTimezone"; "required": "required"; "userTimezoneByDefault": "userTimezoneByDefault"; "localBrowserTimezonePlaceholderOnEmpty": "localBrowserTimezonePlaceholderOnEmpty"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimezoneSelectComponent, "tb-timezone-select", never, { "defaultTimezone": "defaultTimezone"; "displayLabel": "displayLabel"; "subscriptSizing": "subscriptSizing"; "appearance": "appearance"; "required": "required"; "userTimezoneByDefault": "userTimezoneByDefault"; "localBrowserTimezonePlaceholderOnEmpty": "localBrowserTimezonePlaceholderOnEmpty"; "disabled": "disabled"; }, {}, never, never, false, never>;
 }

@@ -24,6 +24,8 @@ export declare enum HistoryWindowType {
     INTERVAL = 2,
     FOR_ALL_TIME = 3
 }
+export declare const realtimeWindowTypeTranslations: Map<RealtimeWindowType, string>;
+export declare const historyWindowTypeTranslations: Map<HistoryWindowType, string>;
 export type Interval = number | IntervalType;
 export declare class IntervalMath {
     static max(...values: Interval[]): Interval;
@@ -34,6 +36,12 @@ export interface IntervalWindow {
     interval?: Interval;
     timewindowMs?: number;
     quickInterval?: QuickTimeInterval;
+    disableCustomInterval?: boolean;
+    disableCustomGroupInterval?: boolean;
+    hideInterval?: boolean;
+    hideLastInterval?: boolean;
+    hideQuickInterval?: boolean;
+    hideFixedInterval?: boolean;
 }
 export interface RealtimeWindow extends IntervalWindow {
     realtimeType?: RealtimeWindowType;
@@ -63,9 +71,6 @@ export interface Aggregation {
 export interface Timewindow {
     displayValue?: string;
     displayTimezoneAbbr?: string;
-    hideInterval?: boolean;
-    hideQuickInterval?: boolean;
-    hideLastInterval?: boolean;
     hideAggregation?: boolean;
     hideAggInterval?: boolean;
     hideTimezone?: boolean;

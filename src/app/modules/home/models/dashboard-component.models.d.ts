@@ -27,12 +27,14 @@ export interface WidgetContextMenuItem extends ContextMenuItem {
 }
 export interface DashboardCallbacks {
     onEditWidget?: ($event: Event, widget: Widget) => void;
+    replaceReferenceWithWidgetCopy?: ($event: Event, widget: Widget) => void;
     onExportWidget?: ($event: Event, widget: Widget, widgeTitle: string) => void;
     onRemoveWidget?: ($event: Event, widget: Widget) => void;
     onWidgetMouseDown?: ($event: Event, widget: Widget) => void;
+    onDashboardMouseDown?: ($event: Event) => void;
     onWidgetClicked?: ($event: Event, widget: Widget) => void;
     prepareDashboardContextMenu?: ($event: Event) => Array<DashboardContextMenuItem>;
-    prepareWidgetContextMenu?: ($event: Event, widget: Widget) => Array<WidgetContextMenuItem>;
+    prepareWidgetContextMenu?: ($event: Event, widget: Widget, isReference: boolean) => Array<WidgetContextMenuItem>;
 }
 export interface IDashboardComponent {
     utils: UtilsService;
@@ -88,12 +90,16 @@ export declare class DashboardWidgets implements Iterable<DashboardWidget> {
 export declare class DashboardWidget implements GridsterItem, IDashboardWidget {
     private dashboard;
     widget: Widget;
-    widgetLayout?: WidgetLayout;
+    private widgetLayoutValue?;
     private parentDashboard?;
     private popoverComponent?;
     private highlightedValue;
     private selectedValue;
+    private selectedCallback;
+    resizableHandles: any;
+    resizeEnabled: boolean;
     isFullscreen: boolean;
+    isReference: boolean;
     color: string;
     backgroundColor: string;
     padding: string;
@@ -122,14 +128,25 @@ export declare class DashboardWidget implements GridsterItem, IDashboardWidget {
     widgetId: string;
     private gridsterItemComponentSubject;
     private gridsterItemComponentValue;
+    private aspectRatio;
+    private heightValue;
+    private widthValue;
+    private rowsValue;
+    private colsValue;
     get mobileHide(): boolean;
     get desktopHide(): boolean;
     set gridsterItemComponent(item: GridsterItemComponentInterface);
+    private preserveAspectRatioApplied;
+    private applyPreserveAspectRatio;
     get highlighted(): boolean;
     set highlighted(highlighted: boolean);
+    onSelected(selectedCallback: (selected: boolean) => void): void;
     get selected(): boolean;
     set selected(selected: boolean);
-    constructor(dashboard: IDashboardComponent, widget: Widget, widgetLayout?: WidgetLayout, parentDashboard?: IDashboardComponent, popoverComponent?: TbPopoverComponent);
+    get widgetLayout(): WidgetLayout;
+    set widgetLayout(value: WidgetLayout);
+    private _widgetLayoutUpdated;
+    constructor(dashboard: IDashboardComponent, widget: Widget, widgetLayoutValue?: WidgetLayout, parentDashboard?: IDashboardComponent, popoverComponent?: TbPopoverComponent);
     gridsterItemComponent$(): Observable<GridsterItemComponentInterface>;
     updateWidgetParams(detectChanges?: boolean): void;
     exportWidgetData($event: Event, widgetExportType: WidgetExportType): void;
@@ -137,12 +154,18 @@ export declare class DashboardWidget implements GridsterItem, IDashboardWidget {
     private updateCustomHeaderActions;
     private filterCustomHeaderAction;
     get x(): number;
-    set x(x: number);
+    set x(_: number);
     get y(): number;
-    set y(y: number);
+    set y(_: number);
+    get preserveAspectRatio(): boolean;
     get cols(): number;
     set cols(cols: number);
     get rows(): number;
     set rows(rows: number);
+    get sizeX(): number;
+    set sizeX(sizeX: number);
+    get sizeY(): number;
+    set sizeY(sizeY: number);
     get widgetOrder(): number;
+    updatePosition(x: number, y: number): void;
 }

@@ -9,7 +9,10 @@ export declare enum PowerButtonLayout {
     outlined = "outlined",
     default_volume = "default_volume",
     simplified_volume = "simplified_volume",
-    outlined_volume = "outlined_volume"
+    outlined_volume = "outlined_volume",
+    default_icon = "default_icon",
+    simplified_icon = "simplified_icon",
+    outlined_icon = "outlined_icon"
 }
 export declare const powerButtonLayouts: PowerButtonLayout[];
 export declare const powerButtonLayoutTranslations: Map<PowerButtonLayout, string>;

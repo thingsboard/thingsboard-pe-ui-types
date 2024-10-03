@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, ElementRef, OnInit, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ElementRef, NgZone, OnDestroy, OnInit, ViewContainerRef } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -23,7 +23,7 @@ interface PersistentTableWidgetActionDescriptor extends TableCellButtonActionDes
     details?: boolean;
     delete?: boolean;
 }
-export declare class PersistentTableComponent extends PageComponent implements OnInit {
+export declare class PersistentTableComponent extends PageComponent implements OnInit, OnDestroy, AfterViewInit {
     protected store: Store<AppState>;
     private elementRef;
     private overlay;
@@ -34,6 +34,7 @@ export declare class PersistentTableComponent extends PageComponent implements O
     private deviceService;
     private dialog;
     private cd;
+    private zone;
     ctx: WidgetContext;
     paginator: MatPaginator;
     sort: MatSort;
@@ -62,7 +63,7 @@ export declare class PersistentTableComponent extends PageComponent implements O
     displayedColumns: string[];
     hidePageSize: boolean;
     hasData: boolean;
-    constructor(store: Store<AppState>, elementRef: ElementRef, overlay: Overlay, viewContainerRef: ViewContainerRef, utils: UtilsService, translate: TranslateService, dialogService: DialogService, deviceService: DeviceService, dialog: MatDialog, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, elementRef: ElementRef, overlay: Overlay, viewContainerRef: ViewContainerRef, utils: UtilsService, translate: TranslateService, dialogService: DialogService, deviceService: DeviceService, dialog: MatDialog, cd: ChangeDetectorRef, zone: NgZone);
     ngOnInit(): void;
     ngOnDestroy(): void;
     ngAfterViewInit(): void;

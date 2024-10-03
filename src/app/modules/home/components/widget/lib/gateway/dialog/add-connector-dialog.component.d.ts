@@ -1,4 +1,4 @@
-import { OnDestroy } from '@angular/core';
+import { OnDestroy, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -8,13 +8,15 @@ import { DialogComponent } from '@shared/components/dialog.component';
 import { Router } from '@angular/router';
 import { AddConnectorConfigData, ConnectorType, CreatedConnectorConfigData, GatewayLogLevel } from '@home/components/widget/lib/gateway/gateway-widget.models';
 import { ResourcesService } from '@core/services/resources.service';
+import { LatestVersionConfigPipe } from '@home/components/widget/lib/gateway/pipes/latest-version-config.pipe';
 import * as i0 from "@angular/core";
-export declare class AddConnectorDialogComponent extends DialogComponent<AddConnectorDialogComponent, BaseData<HasId>> implements OnDestroy {
+export declare class AddConnectorDialogComponent extends DialogComponent<AddConnectorDialogComponent, BaseData<HasId>> implements OnInit, OnDestroy {
     protected store: Store<AppState>;
     protected router: Router;
     data: AddConnectorConfigData;
     dialogRef: MatDialogRef<AddConnectorDialogComponent, CreatedConnectorConfigData>;
     private fb;
+    private isLatestVersionConfig;
     private resourcesService;
     connectorForm: UntypedFormGroup;
     connectorType: typeof ConnectorType;
@@ -22,12 +24,15 @@ export declare class AddConnectorDialogComponent extends DialogComponent<AddConn
     gatewayLogLevel: GatewayLogLevel[];
     submitted: boolean;
     private destroy$;
-    constructor(store: Store<AppState>, router: Router, data: AddConnectorConfigData, dialogRef: MatDialogRef<AddConnectorDialogComponent, CreatedConnectorConfigData>, fb: FormBuilder, resourcesService: ResourcesService);
+    constructor(store: Store<AppState>, router: Router, data: AddConnectorConfigData, dialogRef: MatDialogRef<AddConnectorDialogComponent, CreatedConnectorConfigData>, fb: FormBuilder, isLatestVersionConfig: LatestVersionConfigPipe, resourcesService: ResourcesService);
+    ngOnInit(): void;
     ngOnDestroy(): void;
     helpLinkId(): string;
     cancel(): void;
     add(): void;
     private uniqNameRequired;
+    private observeTypeChange;
+    private getDefaultConfig;
     static ɵfac: i0.ɵɵFactoryDeclaration<AddConnectorDialogComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<AddConnectorDialogComponent, "tb-add-connector-dialog", never, {}, {}, never, never, false, never>;
 }

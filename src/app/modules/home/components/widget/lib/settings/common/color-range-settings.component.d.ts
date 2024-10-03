@@ -1,6 +1,6 @@
 import { OnDestroy, OnInit, Renderer2, ViewContainerRef } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
-import { ColorRange, ComponentStyle } from '@shared/models/widget-settings.models';
+import { ColorRange, ColorRangeSettings, ComponentStyle } from '@shared/models/widget-settings.models';
 import { MatButton } from '@angular/material/button';
 import { TbPopoverService } from '@shared/components/popover.service';
 import * as i0 from "@angular/core";
@@ -29,7 +29,7 @@ export declare class ColorRangeSettingsComponent implements OnInit, ControlValue
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
-    writeValue(value: Array<ColorRange>): void;
+    writeValue(value: Array<ColorRange> | ColorRangeSettings): void;
     openColorRangeSettingsPopup($event: Event, matButton: MatButton): void;
     private updateColorStyle;
     static ɵfac: i0.ɵɵFactoryDeclaration<ColorRangeSettingsComponent, never>;

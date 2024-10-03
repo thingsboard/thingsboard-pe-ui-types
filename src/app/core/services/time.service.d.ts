@@ -1,10 +1,13 @@
-import { AggregationType, Interval, TimeInterval, Timewindow } from '@shared/models/time/time.models';
+import { AggregationType, Interval, TimeInterval, Timewindow, TimezoneInfo } from '@shared/models/time/time.models';
 import { HttpClient } from '@angular/common/http';
+import { TranslateService } from '@ngx-translate/core';
 import * as i0 from "@angular/core";
 export declare class TimeService {
     private http;
+    private translate;
     private maxDatapointsLimit;
-    constructor(http: HttpClient);
+    private localBrowserTimezoneInfoPlaceholder;
+    constructor(http: HttpClient, translate: TranslateService);
     setMaxDatapointsLimit(limit: number): void;
     matchesExistingInterval(min: number, max: number, interval: Interval, useCalendarIntervals?: boolean): boolean;
     getIntervals(min: number, max: number, useCalendarIntervals?: boolean): Array<TimeInterval>;
@@ -20,6 +23,7 @@ export declare class TimeService {
     defaultTimewindow(): Timewindow;
     private toBound;
     private toIntervalBound;
+    getLocalBrowserTimezoneInfoPlaceholder(): TimezoneInfo;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<TimeService>;
 }

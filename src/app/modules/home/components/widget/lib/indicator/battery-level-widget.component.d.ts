@@ -4,7 +4,6 @@ import { DatePipe } from '@angular/common';
 import { ColorProcessor, ComponentStyle } from '@shared/models/widget-settings.models';
 import { WidgetComponent } from '@home/components/widget/widget.component';
 import { BatteryLevelLayout, BatteryLevelWidgetSettings } from '@home/components/widget/lib/indicator/battery-level-widget.models';
-import { ResizeObserver } from '@juggle/resize-observer';
 import { Observable } from 'rxjs';
 import { ImagePipe } from '@shared/pipe/image.pipe';
 import { DomSanitizer } from '@angular/platform-browser';

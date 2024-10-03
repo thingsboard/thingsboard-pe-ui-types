@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, ElementRef, EventEmitter, OnDestroy, OnInit, Renderer2 } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ElementRef, EventEmitter, OnChanges, OnDestroy, OnInit, Renderer2, SimpleChanges, ViewContainerRef } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { DashboardWidget, DashboardWidgets } from '@home/models/dashboard-component.models';
 import { Store } from '@ngrx/store';
@@ -7,6 +7,8 @@ import { SafeStyle } from '@angular/platform-browser';
 import { WidgetExportType } from '@shared/models/widget.models';
 import { GridsterItemComponent } from 'angular-gridster2';
 import { UtilsService } from '@core/services/utils.service';
+import { DashboardUtilsService } from '@core/services/dashboard-utils.service';
+import { TbContextMenuEvent } from '@shared/models/jquery-event.models';
 import * as i0 from "@angular/core";
 export declare enum WidgetComponentActionType {
     MOUSE_DOWN = 0,
@@ -14,16 +16,19 @@ export declare enum WidgetComponentActionType {
     CONTEXT_MENU = 2,
     EDIT = 3,
     EXPORT = 4,
-    REMOVE = 5
+    REMOVE = 5,
+    REPLACE_REFERENCE_WITH_WIDGET_COPY = 6
 }
 export declare class WidgetComponentAction {
-    event: MouseEvent;
+    event: MouseEvent | TbContextMenuEvent;
     actionType: WidgetComponentActionType;
 }
-export declare class WidgetContainerComponent extends PageComponent implements OnInit, AfterViewInit, OnDestroy {
+export declare class WidgetContainerComponent extends PageComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy {
     protected store: Store<AppState>;
     private cd;
     private renderer;
+    private container;
+    private dashboardUtils;
     private utils;
     widgetContainerClass: string;
     tbWidgetElement: ElementRef;
@@ -34,6 +39,7 @@ export declare class WidgetContainerComponent extends PageComponent implements O
     };
     backgroundImage: SafeStyle | string;
     isEdit: boolean;
+    isEditingWidget: boolean;
     isPreview: boolean;
     isMobile: boolean;
     dashboardWidgets: DashboardWidgets;
@@ -45,20 +51,39 @@ export declare class WidgetContainerComponent extends PageComponent implements O
     widgetComponentAction: EventEmitter<WidgetComponentAction>;
     widgetExportType: typeof WidgetExportType;
     widgetExportTypeTranslations: Map<WidgetExportType, string>;
+    hovered: boolean;
+    isReferenceWidget: boolean;
+    get widgetEditActionsEnabled(): boolean;
     private cssClass;
-    constructor(store: Store<AppState>, cd: ChangeDetectorRef, renderer: Renderer2, utils: UtilsService);
+    private editWidgetActionsTooltip;
+    constructor(store: Store<AppState>, cd: ChangeDetectorRef, renderer: Renderer2, container: ViewContainerRef, dashboardUtils: DashboardUtilsService, utils: UtilsService);
     ngOnInit(): void;
     ngAfterViewInit(): void;
+    ngOnChanges(changes: SimpleChanges): void;
     ngOnDestroy(): void;
     isHighlighted(widget: DashboardWidget): boolean;
     isNotHighlighted(widget: DashboardWidget): boolean;
     onFullscreenChanged(expanded: boolean): void;
     onMouseDown(event: MouseEvent): void;
     onClicked(event: MouseEvent): void;
-    onContextMenu(event: MouseEvent): void;
+    onContextMenu(event: TbContextMenuEvent): void;
     onEdit(event: MouseEvent): void;
+    onReplaceReferenceWithWidgetCopy(event: MouseEvent): void;
     onExport(event: MouseEvent): void;
     onRemove(event: MouseEvent): void;
+    updateEditWidgetActionsTooltipState(): void;
+    private initEditWidgetActionTooltip;
+    private updateEditWidgetActionsTooltipSelectedState;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetContainerComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetContainerComponent, "tb-widget-container", never, { "gridsterItem": "gridsterItem"; "widget": "widget"; "dashboardStyle": "dashboardStyle"; "backgroundImage": "backgroundImage"; "isEdit": "isEdit"; "isPreview": "isPreview"; "isMobile": "isMobile"; "dashboardWidgets": "dashboardWidgets"; "isEditActionEnabled": "isEditActionEnabled"; "isExportActionEnabled": "isExportActionEnabled"; "isRemoveActionEnabled": "isRemoveActionEnabled"; "disableWidgetInteraction": "disableWidgetInteraction"; }, { "widgetFullscreenChanged": "widgetFullscreenChanged"; "widgetComponentAction": "widgetComponentAction"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetContainerComponent, "tb-widget-container", never, { "gridsterItem": "gridsterItem"; "widget": "widget"; "dashboardStyle": "dashboardStyle"; "backgroundImage": "backgroundImage"; "isEdit": "isEdit"; "isEditingWidget": "isEditingWidget"; "isPreview": "isPreview"; "isMobile": "isMobile"; "dashboardWidgets": "dashboardWidgets"; "isEditActionEnabled": "isEditActionEnabled"; "isExportActionEnabled": "isExportActionEnabled"; "isRemoveActionEnabled": "isRemoveActionEnabled"; "disableWidgetInteraction": "disableWidgetInteraction"; }, { "widgetFullscreenChanged": "widgetFullscreenChanged"; "widgetComponentAction": "widgetComponentAction"; }, never, never, false, never>;
+}
+export declare class EditWidgetActionsTooltipComponent implements AfterViewInit {
+    element: ElementRef<HTMLElement>;
+    cd: ChangeDetectorRef;
+    container: WidgetContainerComponent;
+    viewInited: EventEmitter<any>;
+    constructor(element: ElementRef<HTMLElement>, cd: ChangeDetectorRef);
+    ngAfterViewInit(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<EditWidgetActionsTooltipComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EditWidgetActionsTooltipComponent, "ng-component", never, { "container": "container"; }, { "viewInited": "viewInited"; }, never, never, false, never>;
 }

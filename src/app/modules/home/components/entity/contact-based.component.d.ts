@@ -6,6 +6,7 @@ import { AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { HasId } from '@shared/models/base-data';
 import { EntityComponent } from './entity.component';
 import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
+import { CountryData } from '@shared/models/country.models';
 import * as i0 from "@angular/core";
 export declare abstract class ContactBasedComponent<T extends ContactBased<HasId>> extends EntityComponent<T> implements AfterViewInit {
     protected store: Store<AppState>;
@@ -13,7 +14,8 @@ export declare abstract class ContactBasedComponent<T extends ContactBased<HasId
     protected entityValue: T;
     protected entitiesTableConfigValue: EntityTableConfig<T>;
     protected cd: ChangeDetectorRef;
-    protected constructor(store: Store<AppState>, fb: UntypedFormBuilder, entityValue: T, entitiesTableConfigValue: EntityTableConfig<T>, cd: ChangeDetectorRef);
+    protected countryData: CountryData;
+    protected constructor(store: Store<AppState>, fb: UntypedFormBuilder, entityValue: T, entitiesTableConfigValue: EntityTableConfig<T>, cd: ChangeDetectorRef, countryData: CountryData);
     buildForm(entity: T): UntypedFormGroup;
     updateForm(entity: T): void;
     ngAfterViewInit(): void;

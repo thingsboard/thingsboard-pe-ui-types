@@ -1,0 +1,53 @@
+import { ChangeDetectorRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { ScadaSymbolBehaviorType, ScadaSymbolMetadata, ScadaSymbolObjectSettings, ScadaSymbolPropertyType } from '@home/components/widget/lib/scada/scada-symbol.models';
+import { IAliasController } from '@core/api/widget-api.models';
+import { TargetDevice, widgetType } from '@shared/models/widget.models';
+import { ScadaSymbolBehaviorGroup, ScadaSymbolPropertyRow } from '@home/components/widget/lib/settings/common/scada/scada-symbol-object-settings.models';
+import { WidgetActionCallbacks } from '@home/components/widget/action/manage-widget-actions.component.models';
+import { ImageService } from '@core/http/image.service';
+import * as i0 from "@angular/core";
+export declare class ScadaSymbolObjectSettingsComponent implements OnInit, OnChanges, ControlValueAccessor, Validator {
+    protected store: Store<AppState>;
+    private fb;
+    private imageService;
+    private cd;
+    ScadaSymbolBehaviorType: typeof ScadaSymbolBehaviorType;
+    ScadaSymbolPropertyType: typeof ScadaSymbolPropertyType;
+    disabled: boolean;
+    scadaSymbolUrl: string;
+    scadaSymbolContent: string;
+    scadaSymbolMetadata: ScadaSymbolMetadata;
+    aliasController: IAliasController;
+    targetDevice: TargetDevice;
+    callbacks: WidgetActionCallbacks;
+    widgetType: widgetType;
+    private modelValue;
+    private propagateChange;
+    private validatorTriggers;
+    private validatorSubscription;
+    scadaSymbolObjectSettingsFormGroup: UntypedFormGroup;
+    metadata: ScadaSymbolMetadata;
+    behaviorGroups: ScadaSymbolBehaviorGroup[];
+    propertyRows: ScadaSymbolPropertyRow[];
+    constructor(store: Store<AppState>, fb: UntypedFormBuilder, imageService: ImageService, cd: ChangeDetectorRef);
+    ngOnInit(): void;
+    ngOnChanges(changes: SimpleChanges): void;
+    registerOnChange(fn: any): void;
+    registerOnTouched(_fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    writeValue(value: ScadaSymbolObjectSettings): void;
+    validate(_c: UntypedFormControl): {
+        scadaSymbolObjectSettings: {
+            valid: boolean;
+        };
+    };
+    private loadMetadata;
+    private updateValidators;
+    private setupValue;
+    private updateModel;
+    static ɵfac: i0.ɵɵFactoryDeclaration<ScadaSymbolObjectSettingsComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ScadaSymbolObjectSettingsComponent, "tb-scada-symbol-object-settings", never, { "disabled": "disabled"; "scadaSymbolUrl": "scadaSymbolUrl"; "scadaSymbolContent": "scadaSymbolContent"; "scadaSymbolMetadata": "scadaSymbolMetadata"; "aliasController": "aliasController"; "targetDevice": "targetDevice"; "callbacks": "callbacks"; "widgetType": "widgetType"; }, {}, never, [".tb-scada-symbol-appearance-properties"], false, never>;
+}

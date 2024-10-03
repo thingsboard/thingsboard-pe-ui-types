@@ -2,7 +2,6 @@ import { AfterViewInit, ChangeDetectorRef, ElementRef, OnDestroy, OnInit, Render
 import { WidgetContext } from '@home/models/widget-component.models';
 import { ColorProcessor, ComponentStyle, DateFormatProcessor } from '@shared/models/widget-settings.models';
 import { WidgetComponent } from '@home/components/widget/widget.component';
-import { ResizeObserver } from '@juggle/resize-observer';
 import { SignalStrengthLayout, SignalStrengthWidgetSettings } from '@home/components/widget/lib/indicator/signal-strength-widget.models';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';

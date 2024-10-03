@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, ElementRef, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ElementRef, NgZone, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -28,6 +28,7 @@ export declare class BlobEntitiesComponent extends PageComponent implements OnIn
     private dialogService;
     private cd;
     private fb;
+    private zone;
     blobEntitiesWidgetContainerRef: ElementRef;
     searchInputField: ElementRef;
     paginator: MatPaginator;
@@ -56,7 +57,7 @@ export declare class BlobEntitiesComponent extends PageComponent implements OnIn
     textSearch: import("@angular/forms").FormControl<string>;
     private widgetResize$;
     private destroy$;
-    constructor(store: Store<AppState>, utils: UtilsService, translate: TranslateService, blobEntityService: BlobEntityService, userPermissionsService: UserPermissionsService, dialogService: DialogService, cd: ChangeDetectorRef, fb: FormBuilder);
+    constructor(store: Store<AppState>, utils: UtilsService, translate: TranslateService, blobEntityService: BlobEntityService, userPermissionsService: UserPermissionsService, dialogService: DialogService, cd: ChangeDetectorRef, fb: FormBuilder, zone: NgZone);
     ngOnInit(): void;
     ngOnDestroy(): void;
     private initializeWidgetConfig;

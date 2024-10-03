@@ -6,7 +6,6 @@ import { AppState } from '@core/core.state';
 import { CustomActionDescriptor } from '@shared/models/widget.models';
 import { Ace } from 'ace-builds';
 import { CancelAnimationFrame, RafService } from '@core/services/raf.service';
-import { ResizeObserver } from '@juggle/resize-observer';
 import * as i0 from "@angular/core";
 export declare class CustomActionPrettyResourcesTabsComponent extends PageComponent implements OnInit, OnChanges, OnDestroy {
     protected store: Store<AppState>;

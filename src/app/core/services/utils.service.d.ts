@@ -53,6 +53,7 @@ export declare class UtilsService {
     deepClone<T>(target: T, ignoreFields?: string[]): T;
     isUndefined(value: any): boolean;
     isDefined(value: any): boolean;
+    isDefinedAndNotNull(value: any): boolean;
     defaultValue(value: any, defaultValue: any): any;
     translateText(text: string): string;
     private getEntityIdFromDatasource;

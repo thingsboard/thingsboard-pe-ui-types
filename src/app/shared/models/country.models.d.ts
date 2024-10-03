@@ -5,6 +5,7 @@ export interface Country {
     dialCode: string;
     areaCodes?: string[];
     flag: string;
+    postCodePattern?: RegExp;
 }
 export declare enum CountryISO {
     Afghanistan = "AF",
@@ -14,6 +15,7 @@ export declare enum CountryISO {
     Andorra = "AD",
     Angola = "AO",
     Anguilla = "AI",
+    Antarctica = "AQ",
     AntiguaAndBarbuda = "AG",
     Argentina = "AR",
     Armenia = "AM",
@@ -32,6 +34,8 @@ export declare enum CountryISO {
     Bermuda = "BM",
     Bhutan = "BT",
     Bolivia = "BO",
+    BonaireAndSintEustatiusAndSaba = "BQ",
+    BouvetIsland = "BV",
     BosniaAndHerzegovina = "BA",
     Botswana = "BW",
     Brazil = "BR",
@@ -59,10 +63,10 @@ export declare enum CountryISO {
     CongoRepublicCongoBrazzaville = "CG",
     CookIslands = "CK",
     CostaRica = "CR",
-    CôteDIvoire = "CI",
+    CoteDivoire = "CI",
     Croatia = "HR",
     Cuba = "CU",
-    Curaçao = "CW",
+    Curacao = "CW",
     Cyprus = "CY",
     CzechRepublic = "CZ",
     Denmark = "DK",
@@ -83,6 +87,7 @@ export declare enum CountryISO {
     France = "FR",
     FrenchGuiana = "GF",
     FrenchPolynesia = "PF",
+    FrenchSouthernTerritories = "TF",
     Gabon = "GA",
     Gambia = "GM",
     Georgia = "GE",
@@ -100,6 +105,7 @@ export declare enum CountryISO {
     GuineaBissau = "GW",
     Guyana = "GY",
     Haiti = "HT",
+    HeardIslandandMcDonaldIslands = "HM",
     Honduras = "HN",
     HongKong = "HK",
     Hungary = "HU",
@@ -132,7 +138,6 @@ export declare enum CountryISO {
     Lithuania = "LT",
     Luxembourg = "LU",
     Macau = "MO",
-    Macedonia = "MK",
     Madagascar = "MG",
     Malawi = "MW",
     Malaysia = "MY",
@@ -166,6 +171,7 @@ export declare enum CountryISO {
     Niue = "NU",
     NorfolkIsland = "NF",
     NorthKorea = "KP",
+    NorthMacedonia = "MK",
     NorthernMarianaIslands = "MP",
     Norway = "NO",
     Oman = "OM",
@@ -177,15 +183,16 @@ export declare enum CountryISO {
     Paraguay = "PY",
     Peru = "PE",
     Philippines = "PH",
+    PitcairnIslands = "PN",
     Poland = "PL",
     Portugal = "PT",
     PuertoRico = "PR",
     Qatar = "QA",
-    Réunion = "RE",
+    Reunion = "RE",
     Romania = "RO",
     Russia = "RU",
     Rwanda = "RW",
-    SaintBarthélemy = "BL",
+    SaintBarthelemy = "BL",
     SaintHelena = "SH",
     SaintKittsAndNevis = "KN",
     SaintLucia = "LC",
@@ -194,7 +201,7 @@ export declare enum CountryISO {
     SaintVincentAndTheGrenadines = "VC",
     Samoa = "WS",
     SanMarino = "SM",
-    SãoToméAndPríncipe = "ST",
+    SaoTomeAndPrincipe = "ST",
     SaudiArabia = "SA",
     Senegal = "SN",
     Serbia = "RS",
@@ -207,6 +214,7 @@ export declare enum CountryISO {
     SolomonIslands = "SB",
     Somalia = "SO",
     SouthAfrica = "ZA",
+    SouthGeorgiaAndTheSouthSandwichIslands = "GS",
     SouthKorea = "KR",
     SouthSudan = "SS",
     Spain = "ES",
@@ -249,7 +257,7 @@ export declare enum CountryISO {
     Yemen = "YE",
     Zambia = "ZM",
     Zimbabwe = "ZW",
-    ÅlandIslands = "AX"
+    AlandIslands = "AX"
 }
 export declare class CountryData {
     allCountries: Array<Country>;

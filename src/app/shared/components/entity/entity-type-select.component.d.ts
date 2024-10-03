@@ -19,14 +19,13 @@ export declare class EntityTypeSelectComponent implements ControlValueAccessor, 
     operation: Operation;
     filterAllowedEntityTypes: boolean;
     overrideEntityTypeTranslations: Map<EntityType | AliasEntityType, string>;
-    private showLabelValue;
-    get showLabel(): boolean;
-    set showLabel(value: boolean);
-    private requiredValue;
-    get required(): boolean;
-    set required(value: boolean);
+    showLabel: boolean;
+    required: boolean;
     disabled: boolean;
-    entityTypes: Array<EntityType | AliasEntityType>;
+    additionEntityTypes: {
+        [key in string]: string;
+    };
+    entityTypes: Array<EntityType | AliasEntityType | string>;
     private propagateChange;
     constructor(store: Store<AppState>, entityService: EntityService, translate: TranslateService, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
@@ -39,5 +38,5 @@ export declare class EntityTypeSelectComponent implements ControlValueAccessor, 
     updateView(value: EntityType | AliasEntityType | null): void;
     displayEntityTypeFn(entityType?: EntityType | AliasEntityType | null): string | undefined;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityTypeSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityTypeSelectComponent, "tb-entity-type-select", never, { "allowedEntityTypes": "allowedEntityTypes"; "useAliasEntityTypes": "useAliasEntityTypes"; "operation": "operation"; "filterAllowedEntityTypes": "filterAllowedEntityTypes"; "overrideEntityTypeTranslations": "overrideEntityTypeTranslations"; "showLabel": "showLabel"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityTypeSelectComponent, "tb-entity-type-select", never, { "allowedEntityTypes": "allowedEntityTypes"; "useAliasEntityTypes": "useAliasEntityTypes"; "operation": "operation"; "filterAllowedEntityTypes": "filterAllowedEntityTypes"; "overrideEntityTypeTranslations": "overrideEntityTypeTranslations"; "showLabel": "showLabel"; "required": "required"; "disabled": "disabled"; "additionEntityTypes": "additionEntityTypes"; }, {}, never, never, false, never>;
 }

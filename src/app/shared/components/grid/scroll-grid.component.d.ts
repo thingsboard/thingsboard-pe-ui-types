@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, OnChanges, OnDestroy, OnInit, Renderer2, SimpleChanges, TemplateRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, NgZone, OnChanges, OnDestroy, OnInit, Renderer2, SimpleChanges, TemplateRef } from '@angular/core';
 import { GridEntitiesFetchFunction, ScrollGridColumns, ScrollGridDatasource } from '@shared/components/grid/scroll-grid-datasource';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
@@ -12,6 +12,7 @@ export declare class ScrollGridComponent<T, F> implements OnInit, AfterViewInit,
     private breakpointObserver;
     private cd;
     private renderer;
+    private zone;
     viewport: CdkVirtualScrollViewport;
     columns: ScrollGridColumns | number;
     fetchFunction: GridEntitiesFetchFunction<T, F>;
@@ -29,7 +30,7 @@ export declare class ScrollGridComponent<T, F> implements OnInit, AfterViewInit,
     minBuffer: number;
     maxBuffer: number;
     private contentResize$;
-    constructor(breakpointObserver: BreakpointObserver, cd: ChangeDetectorRef, renderer: Renderer2);
+    constructor(breakpointObserver: BreakpointObserver, cd: ChangeDetectorRef, renderer: Renderer2, zone: NgZone);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     ngOnChanges(changes: SimpleChanges): void;

@@ -1,9 +1,12 @@
 import { OnInit } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 import { FixedWindow } from '@shared/models/time/time.models';
+import { MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class DatetimePeriodComponent implements OnInit, ControlValueAccessor {
     disabled: boolean;
+    subscriptSizing: SubscriptSizing;
+    appearance: MatFormFieldAppearance;
     modelValue: FixedWindow;
     startDate: Date;
     endDate: Date;
@@ -24,5 +27,5 @@ export declare class DatetimePeriodComponent implements OnInit, ControlValueAcce
     onStartDateChange(): void;
     onEndDateChange(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DatetimePeriodComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DatetimePeriodComponent, "tb-datetime-period", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DatetimePeriodComponent, "tb-datetime-period", never, { "disabled": "disabled"; "subscriptSizing": "subscriptSizing"; "appearance": "appearance"; }, {}, never, never, false, never>;
 }

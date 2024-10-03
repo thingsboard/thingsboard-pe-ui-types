@@ -9,7 +9,7 @@ import { Dashboard } from '@shared/models/dashboard.models';
 import { WidgetService } from '@core/http/widget.service';
 import { IAliasController } from '@core/api/widget-api.models';
 import { WidgetConfigComponentData } from '@home/models/widget-component.models';
-import { DataKeysCallbacks } from '@home/components/widget/config/data-keys.component.models';
+import { WidgetConfigCallbacks } from '@home/components/widget/config/widget-config.component.models';
 import * as i0 from "@angular/core";
 export declare class WidgetSettingsComponent implements ControlValueAccessor, OnInit, OnDestroy, AfterViewInit, OnChanges, Validator {
     private translate;
@@ -20,7 +20,7 @@ export declare class WidgetSettingsComponent implements ControlValueAccessor, On
     jsonFormComponent: JsonFormComponent;
     disabled: boolean;
     aliasController: IAliasController;
-    dataKeyCallbacks: DataKeysCallbacks;
+    callbacks: WidgetConfigCallbacks;
     dashboard: Dashboard;
     widget: Widget;
     widgetConfig: WidgetConfigComponentData;
@@ -47,5 +47,5 @@ export declare class WidgetSettingsComponent implements ControlValueAccessor, On
     private validateDefinedDirective;
     validate(control: AbstractControl): ValidationErrors | null;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetSettingsComponent, "tb-widget-settings", never, { "disabled": "disabled"; "aliasController": "aliasController"; "dataKeyCallbacks": "dataKeyCallbacks"; "dashboard": "dashboard"; "widget": "widget"; "widgetConfig": "widgetConfig"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetSettingsComponent, "tb-widget-settings", never, { "disabled": "disabled"; "aliasController": "aliasController"; "callbacks": "callbacks"; "dashboard": "dashboard"; "widget": "widget"; "widgetConfig": "widgetConfig"; }, {}, never, never, false, never>;
 }

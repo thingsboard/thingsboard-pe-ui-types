@@ -12,11 +12,10 @@ export declare class AlarmAssigneeComponent {
     alarm: AlarmInfo;
     allowAssign: boolean;
     alarmReassigned: EventEmitter<boolean>;
+    userAssigned: boolean;
     constructor(utilsService: UtilsService, overlay: Overlay, viewContainerRef: ViewContainerRef, translateService: TranslateService);
     getAssignee(): any;
-    getUserDisplayName(entity: AlarmAssignee): string;
-    getUserInitials(entity: AlarmAssignee): string;
-    getFullName(entity: AlarmAssignee): string;
+    getUserInitials(alarmAssignee: AlarmAssignee): string;
     getAvatarBgColor(entity: AlarmAssignee): string;
     openAlarmAssigneePanel($event: Event, alarm: AlarmInfo): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AlarmAssigneeComponent, never>;

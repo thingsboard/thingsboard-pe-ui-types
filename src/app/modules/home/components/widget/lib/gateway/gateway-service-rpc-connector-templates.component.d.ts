@@ -11,7 +11,9 @@ export declare class GatewayServiceRPCConnectorTemplatesComponent implements OnI
     useTemplate: EventEmitter<any>;
     rpcTemplates: Array<RPCTemplate>;
     readonly originalOrder: () => number;
-    readonly isObject: (value: any) => boolean;
+    readonly isObject: (value: unknown) => boolean;
+    readonly isArray: (value: unknown) => boolean;
+    readonly SNMPMethodsTranslations: Map<import("@home/components/widget/lib/gateway/gateway-widget.models").SNMPMethods, string>;
     constructor(attributeService: AttributeService);
     ngOnInit(): void;
     applyTemplate($event: Event, template: RPCTemplate): void;

@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, ElementRef, OnDestroy, OnInit, QueryList, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ElementRef, NgZone, OnDestroy, OnInit, QueryList, ViewContainerRef } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -70,6 +70,7 @@ export declare class TimeseriesTableWidgetComponent extends PageComponent implem
     private datePipe;
     private cd;
     private fb;
+    private zone;
     ctx: WidgetContext;
     searchInputField: ElementRef;
     paginators: QueryList<MatPaginator>;
@@ -110,7 +111,7 @@ export declare class TimeseriesTableWidgetComponent extends PageComponent implem
     private destroy$;
     private searchAction;
     private columnDisplayAction;
-    constructor(store: Store<AppState>, elementRef: ElementRef, overlay: Overlay, viewContainerRef: ViewContainerRef, utils: UtilsService, translate: TranslateService, domSanitizer: DomSanitizer, datePipe: DatePipe, cd: ChangeDetectorRef, fb: FormBuilder);
+    constructor(store: Store<AppState>, elementRef: ElementRef, overlay: Overlay, viewContainerRef: ViewContainerRef, utils: UtilsService, translate: TranslateService, domSanitizer: DomSanitizer, datePipe: DatePipe, cd: ChangeDetectorRef, fb: FormBuilder, zone: NgZone);
     ngOnInit(): void;
     ngOnDestroy(): void;
     ngAfterViewInit(): void;

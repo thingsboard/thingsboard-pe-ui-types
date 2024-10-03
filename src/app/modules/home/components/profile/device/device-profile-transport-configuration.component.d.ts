@@ -1,17 +1,14 @@
 import { OnInit } from '@angular/core';
-import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { DeviceProfileTransportConfiguration, DeviceTransportType } from '@shared/models/device.models';
 import * as i0 from "@angular/core";
-export declare class DeviceProfileTransportConfigurationComponent implements ControlValueAccessor, OnInit {
+export declare class DeviceProfileTransportConfigurationComponent implements ControlValueAccessor, OnInit, Validator {
     private store;
     private fb;
     deviceTransportType: typeof DeviceTransportType;
     deviceProfileTransportConfigurationFormGroup: UntypedFormGroup;
-    private requiredValue;
-    get required(): boolean;
-    set required(value: boolean);
     disabled: boolean;
     isAdd: boolean;
     transportType: DeviceTransportType;
@@ -23,6 +20,7 @@ export declare class DeviceProfileTransportConfigurationComponent implements Con
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: DeviceProfileTransportConfiguration | null): void;
     private updateModel;
+    validate(c: UntypedFormControl): ValidationErrors | null;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceProfileTransportConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceProfileTransportConfigurationComponent, "tb-device-profile-transport-configuration", never, { "required": "required"; "disabled": "disabled"; "isAdd": "isAdd"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceProfileTransportConfigurationComponent, "tb-device-profile-transport-configuration", never, { "disabled": "disabled"; "isAdd": "isAdd"; }, {}, never, never, false, never>;
 }

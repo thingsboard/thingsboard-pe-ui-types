@@ -22,6 +22,9 @@ export declare class GatewayServiceRPCComponent implements OnInit {
     RPCCommands: Array<string>;
     connectorType: ConnectorType;
     templates: Array<RPCTemplate>;
+    readonly ConnectorType: typeof ConnectorType;
+    readonly gatewayConnectorDefaultTypesTranslates: Map<ConnectorType, string>;
+    readonly typesWithUpdatedParams: Set<ConnectorType>;
     private subscription;
     private subscriptionOptions;
     constructor(fb: FormBuilder, dialog: MatDialog, utils: UtilsService, cd: ChangeDetectorRef, attributeService: AttributeService);

@@ -25,6 +25,7 @@ export declare class ResourcesLibraryTableConfigResolver implements Resolve<Enti
     private openResource;
     downloadResource($event: Event, resource: ResourceInfo): void;
     onResourceAction(action: EntityAction<ResourceInfo>): boolean;
+    private detailsReadonly;
     private isResourceEditable;
     static ɵfac: i0.ɵɵFactoryDeclaration<ResourcesLibraryTableConfigResolver, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<ResourcesLibraryTableConfigResolver>;

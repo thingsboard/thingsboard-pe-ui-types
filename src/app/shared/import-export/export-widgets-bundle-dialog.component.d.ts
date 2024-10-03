@@ -10,6 +10,7 @@ import * as i0 from "@angular/core";
 export interface ExportWidgetsBundleDialogData {
     widgetsBundle: WidgetsBundle;
     includeBundleWidgetsInExport: boolean;
+    ignoreLoading?: boolean;
 }
 export interface ExportWidgetsBundleDialogResult {
     exportWidgets: boolean;
@@ -20,6 +21,7 @@ export declare class ExportWidgetsBundleDialogComponent extends DialogComponent<
     data: ExportWidgetsBundleDialogData;
     dialogRef: MatDialogRef<ExportWidgetsBundleDialogComponent, ExportWidgetsBundleDialogResult>;
     widgetsBundle: WidgetsBundle;
+    ignoreLoading: boolean;
     exportWidgetsFormControl: FormControl<boolean>;
     constructor(store: Store<AppState>, router: Router, data: ExportWidgetsBundleDialogData, dialogRef: MatDialogRef<ExportWidgetsBundleDialogComponent, ExportWidgetsBundleDialogResult>);
     ngOnInit(): void;

@@ -47,11 +47,11 @@ export declare abstract class ValueGetter<V> extends ValueAction {
     protected settings: GetValueSettings<V>;
     protected valueType: ValueType;
     protected valueObserver: Partial<Observer<V>>;
-    static fromSettings<V>(ctx: WidgetContext, settings: GetValueSettings<V>, valueType: ValueType, valueObserver: Partial<Observer<V>>): ValueGetter<V>;
-    private readonly isSimulated;
+    protected simulated: boolean;
+    static fromSettings<V>(ctx: WidgetContext, settings: GetValueSettings<V>, valueType: ValueType, valueObserver: Partial<Observer<V>>, simulated: boolean): ValueGetter<V>;
     private readonly dataConverter;
     private getValueSubscription;
-    protected constructor(ctx: WidgetContext, settings: GetValueSettings<V>, valueType: ValueType, valueObserver: Partial<Observer<V>>);
+    protected constructor(ctx: WidgetContext, settings: GetValueSettings<V>, valueType: ValueType, valueObserver: Partial<Observer<V>>, simulated: boolean);
     getValue(): Observable<V>;
     destroy(): void;
     protected abstract doGetValue(): Observable<any>;
@@ -66,10 +66,10 @@ export declare class ValueToDataConverter<V> {
 export declare abstract class ValueSetter<V> extends ValueAction {
     protected ctx: WidgetContext;
     protected settings: SetValueSettings;
-    static fromSettings<V>(ctx: WidgetContext, settings: SetValueSettings): ValueSetter<V>;
-    private readonly isSimulated;
+    protected simulated: boolean;
+    static fromSettings<V>(ctx: WidgetContext, settings: SetValueSettings, simulated: boolean): ValueSetter<V>;
     private readonly valueToDataConverter;
-    protected constructor(ctx: WidgetContext, settings: SetValueSettings);
+    protected constructor(ctx: WidgetContext, settings: SetValueSettings, simulated: boolean);
     setValue(value: V): Observable<any>;
     protected abstract doSetValue(data: any): Observable<any>;
 }
@@ -78,8 +78,9 @@ export declare class DefaultValueGetter<V> extends ValueGetter<V> {
     protected settings: GetValueSettings<V>;
     protected valueType: ValueType;
     protected valueObserver: Partial<Observer<V>>;
+    protected simulated: boolean;
     private readonly defaultValue;
-    constructor(ctx: WidgetContext, settings: GetValueSettings<V>, valueType: ValueType, valueObserver: Partial<Observer<V>>);
+    constructor(ctx: WidgetContext, settings: GetValueSettings<V>, valueType: ValueType, valueObserver: Partial<Observer<V>>, simulated: boolean);
     protected doGetValue(): Observable<V>;
 }
 export declare class ExecuteRpcValueGetter<V> extends ValueGetter<V> {
@@ -87,8 +88,9 @@ export declare class ExecuteRpcValueGetter<V> extends ValueGetter<V> {
     protected settings: GetValueSettings<V>;
     protected valueType: ValueType;
     protected valueObserver: Partial<Observer<V>>;
+    protected simulated: boolean;
     private readonly executeRpcSettings;
-    constructor(ctx: WidgetContext, settings: GetValueSettings<V>, valueType: ValueType, valueObserver: Partial<Observer<V>>);
+    constructor(ctx: WidgetContext, settings: GetValueSettings<V>, valueType: ValueType, valueObserver: Partial<Observer<V>>, simulated: boolean);
     protected doGetValue(): Observable<V>;
 }
 export declare abstract class TelemetryValueGetter<V, S extends TelemetryValueSettings> extends ValueGetter<V> {
@@ -96,9 +98,10 @@ export declare abstract class TelemetryValueGetter<V, S extends TelemetryValueSe
     protected settings: GetValueSettings<V>;
     protected valueType: ValueType;
     protected valueObserver: Partial<Observer<V>>;
+    protected simulated: boolean;
     protected targetEntityId: EntityId;
     private telemetrySubscriber;
-    protected constructor(ctx: WidgetContext, settings: GetValueSettings<V>, valueType: ValueType, valueObserver: Partial<Observer<V>>);
+    protected constructor(ctx: WidgetContext, settings: GetValueSettings<V>, valueType: ValueType, valueObserver: Partial<Observer<V>>, simulated: boolean);
     protected doGetValue(): Observable<V>;
     private subscribeForTelemetryValue;
     protected scope(): TelemetryType;
@@ -110,7 +113,8 @@ export declare class AttributeValueGetter<V> extends TelemetryValueGetter<V, Get
     protected settings: GetValueSettings<V>;
     protected valueType: ValueType;
     protected valueObserver: Partial<Observer<V>>;
-    constructor(ctx: WidgetContext, settings: GetValueSettings<V>, valueType: ValueType, valueObserver: Partial<Observer<V>>);
+    protected simulated: boolean;
+    constructor(ctx: WidgetContext, settings: GetValueSettings<V>, valueType: ValueType, valueObserver: Partial<Observer<V>>, simulated: boolean);
     protected getTelemetryValueSettings(): GetAttributeValueSettings;
     protected scope(): TelemetryType;
 }
@@ -119,7 +123,8 @@ export declare class TimeSeriesValueGetter<V> extends TelemetryValueGetter<V, Te
     protected settings: GetValueSettings<V>;
     protected valueType: ValueType;
     protected valueObserver: Partial<Observer<V>>;
-    constructor(ctx: WidgetContext, settings: GetValueSettings<V>, valueType: ValueType, valueObserver: Partial<Observer<V>>);
+    protected simulated: boolean;
+    constructor(ctx: WidgetContext, settings: GetValueSettings<V>, valueType: ValueType, valueObserver: Partial<Observer<V>>, simulated: boolean);
     protected getTelemetryValueSettings(): TelemetryValueSettings;
 }
 export declare class DashboardStateGetter<V> extends ValueGetter<V> {
@@ -127,21 +132,24 @@ export declare class DashboardStateGetter<V> extends ValueGetter<V> {
     protected settings: GetValueSettings<V>;
     protected valueType: ValueType;
     protected valueObserver: Partial<Observer<V>>;
-    constructor(ctx: WidgetContext, settings: GetValueSettings<V>, valueType: ValueType, valueObserver: Partial<Observer<V>>);
+    protected simulated: boolean;
+    constructor(ctx: WidgetContext, settings: GetValueSettings<V>, valueType: ValueType, valueObserver: Partial<Observer<V>>, simulated: boolean);
     protected doGetValue(): Observable<string>;
 }
 export declare class ExecuteRpcValueSetter<V> extends ValueSetter<V> {
     protected ctx: WidgetContext;
     protected settings: SetValueSettings;
+    protected simulated: boolean;
     private readonly executeRpcSettings;
-    constructor(ctx: WidgetContext, settings: SetValueSettings);
+    constructor(ctx: WidgetContext, settings: SetValueSettings, simulated: boolean);
     protected doSetValue(data: any): Observable<any>;
 }
 export declare abstract class TelemetryValueSetter<V> extends ValueSetter<V> {
     protected ctx: WidgetContext;
     protected settings: SetValueSettings;
+    protected simulated: boolean;
     protected targetEntityId: EntityId;
-    protected constructor(ctx: WidgetContext, settings: SetValueSettings);
+    protected constructor(ctx: WidgetContext, settings: SetValueSettings, simulated: boolean);
     protected doSetValue(data: any): Observable<V>;
     protected scope(): TelemetryType;
     protected abstract doSetTelemetryValue(data: any): Observable<V>;
@@ -149,15 +157,17 @@ export declare abstract class TelemetryValueSetter<V> extends ValueSetter<V> {
 export declare class AttributeValueSetter<V> extends TelemetryValueSetter<V> {
     protected ctx: WidgetContext;
     protected settings: SetValueSettings;
+    protected simulated: boolean;
     private readonly setAttributeValueSettings;
-    constructor(ctx: WidgetContext, settings: SetValueSettings);
+    constructor(ctx: WidgetContext, settings: SetValueSettings, simulated: boolean);
     protected doSetTelemetryValue(data: any): Observable<any>;
     protected scope(): TelemetryType;
 }
 export declare class TimeSeriesValueSetter<V> extends TelemetryValueSetter<V> {
     protected ctx: WidgetContext;
     protected settings: SetValueSettings;
+    protected simulated: boolean;
     private readonly putTimeSeriesValueSettings;
-    constructor(ctx: WidgetContext, settings: SetValueSettings);
+    constructor(ctx: WidgetContext, settings: SetValueSettings, simulated: boolean);
     protected doSetTelemetryValue(data: any): Observable<any>;
 }

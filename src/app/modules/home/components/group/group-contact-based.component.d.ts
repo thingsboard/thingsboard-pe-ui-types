@@ -8,6 +8,7 @@ import { GroupEntityComponent } from '@home/components/group/group-entity.compon
 import { GroupEntityTableConfig } from '@home/models/group/group-entities-table-config.models';
 import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
+import { CountryData } from '@shared/models/country.models';
 import * as i0 from "@angular/core";
 export declare abstract class GroupContactBasedComponent<T extends ContactBased<HasId>> extends GroupEntityComponent<T> implements AfterViewInit {
     protected store: Store<AppState>;
@@ -15,8 +16,9 @@ export declare abstract class GroupContactBasedComponent<T extends ContactBased<
     protected entityValue: T;
     protected entitiesTableConfigValue: EntityTableConfig<T> | GroupEntityTableConfig<T>;
     protected cd: ChangeDetectorRef;
+    protected countryData: CountryData;
     protected userPermissionsService: UserPermissionsService;
-    protected constructor(store: Store<AppState>, fb: UntypedFormBuilder, entityValue: T, entitiesTableConfigValue: EntityTableConfig<T> | GroupEntityTableConfig<T>, cd: ChangeDetectorRef, userPermissionsService: UserPermissionsService);
+    protected constructor(store: Store<AppState>, fb: UntypedFormBuilder, entityValue: T, entitiesTableConfigValue: EntityTableConfig<T> | GroupEntityTableConfig<T>, cd: ChangeDetectorRef, countryData: CountryData, userPermissionsService: UserPermissionsService);
     buildForm(entity: T): UntypedFormGroup;
     updateForm(entity: T): void;
     ngAfterViewInit(): void;

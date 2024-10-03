@@ -1,43 +1,56 @@
+import { OnDestroy } from '@angular/core';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, FormGroupDirective, NgForm } from '@angular/forms';
+import { FormGroupDirective, NgForm, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DialogComponent } from '@app/shared/components/dialog.component';
-import { UtilsService } from '@core/services/utils.service';
 import { TranslateService } from '@ngx-translate/core';
-import { DashboardLayoutId, DashboardStateLayouts } from '@app/shared/models/dashboard.models';
+import { BreakpointId, DashboardLayout, DashboardLayoutId, DashboardStateLayouts, LayoutType } from '@app/shared/models/dashboard.models';
 import { DashboardUtilsService } from '@core/services/dashboard-utils.service';
 import { LayoutFixedSize, LayoutPercentageSize, LayoutWidthType } from '@home/components/dashboard-page/layout/layout.models';
 import { MatTooltip } from '@angular/material/tooltip';
+import { DialogService } from '@core/services/dialog.service';
 import * as i0 from "@angular/core";
 export interface ManageDashboardLayoutsDialogData {
     layouts: DashboardStateLayouts;
 }
-export declare class ManageDashboardLayoutsDialogComponent extends DialogComponent<ManageDashboardLayoutsDialogComponent, DashboardStateLayouts> implements ErrorStateMatcher {
+export interface DashboardLayoutSettings {
+    icon: string;
+    name: string;
+    descriptionSize?: string;
+    layout: DashboardLayout;
+    breakpoint: BreakpointId;
+}
+export declare class ManageDashboardLayoutsDialogComponent extends DialogComponent<ManageDashboardLayoutsDialogComponent, DashboardStateLayouts> implements ErrorStateMatcher, OnDestroy {
     protected store: Store<AppState>;
     protected router: Router;
     private data;
     private errorStateMatcher;
     protected dialogRef: MatDialogRef<ManageDashboardLayoutsDialogComponent, DashboardStateLayouts>;
     private fb;
-    private utils;
     private dashboardUtils;
     private translate;
     private dialog;
+    private dialogs;
     tooltip: MatTooltip;
     layoutsFormGroup: UntypedFormGroup;
     layoutWidthType: typeof LayoutWidthType;
     layoutPercentageSize: typeof LayoutPercentageSize;
     layoutFixedSize: typeof LayoutFixedSize;
+    layoutTypes: LayoutType[];
+    layoutTypeTranslations: Map<LayoutType, string>;
+    layoutBreakpoints: DashboardLayoutSettings[];
     private readonly layouts;
     private subscriptions;
     private submitted;
-    constructor(store: Store<AppState>, router: Router, data: ManageDashboardLayoutsDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<ManageDashboardLayoutsDialogComponent, DashboardStateLayouts>, fb: UntypedFormBuilder, utils: UtilsService, dashboardUtils: DashboardUtilsService, translate: TranslateService, dialog: MatDialog);
+    allowBreakpointIds: BreakpointId[];
+    selectedBreakpointIds: BreakpointId[];
+    constructor(store: Store<AppState>, router: Router, data: ManageDashboardLayoutsDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<ManageDashboardLayoutsDialogComponent, DashboardStateLayouts>, fb: UntypedFormBuilder, dashboardUtils: DashboardUtilsService, translate: TranslateService, dialog: MatDialog, dialogs: DialogService);
     ngOnDestroy(): void;
     isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
-    openLayoutSettings(layoutId: DashboardLayoutId): void;
+    openLayoutSettings(layoutId: DashboardLayoutId, breakpointId?: BreakpointId): void;
     cancel(): void;
     save(): void;
     buttonFlexValue(): number;
@@ -48,6 +61,12 @@ export declare class ManageDashboardLayoutsDialogComponent extends DialogCompone
     layoutButtonClass(side: DashboardLayoutId, border?: boolean): string;
     layoutButtonText(side: DashboardLayoutId): string;
     showPreviewInputs(side: DashboardLayoutId): boolean;
+    get isDividerLayout(): boolean;
+    addBreakpoint(): void;
+    deleteBreakpoint($event: Event, breakpointId: BreakpointId): void;
+    private createdNewBreakpoint;
+    private addLayoutConfiguration;
+    private sortLayoutBreakpoints;
     static ɵfac: i0.ɵɵFactoryDeclaration<ManageDashboardLayoutsDialogComponent, [null, null, null, { skipSelf: true; }, null, null, null, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<ManageDashboardLayoutsDialogComponent, "tb-manage-dashboard-layouts-dialog", never, {}, {}, never, never, false, never>;
 }

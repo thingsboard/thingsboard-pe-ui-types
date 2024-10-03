@@ -1,4 +1,4 @@
-import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, ChangeDetectorRef, ElementRef, EventEmitter, OnDestroy, OnInit, QueryList } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, ChangeDetectorRef, ElementRef, EventEmitter, NgZone, OnDestroy, OnInit, QueryList } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -38,6 +38,7 @@ export declare class ToggleHeaderComponent extends _ToggleBase implements OnInit
     private cd;
     private platform;
     private breakpointObserver;
+    private zone;
     toggleGroup: ElementRef<HTMLElement>;
     buttonToggleGroup: MatButtonToggleGroup;
     toggleGroupContainer: ElementRef<HTMLElement>;
@@ -59,12 +60,15 @@ export declare class ToggleHeaderComponent extends _ToggleBase implements OnInit
     ignoreMdLgSize: boolean;
     appearance: ToggleHeaderAppearance;
     disabled: boolean;
+    fillHeight: boolean;
+    extraPadding: boolean;
+    primaryBackground: boolean;
     get isMdLg(): boolean;
     private isMdLgValue;
     private useSelectSubject;
     useSelect$: import("rxjs").Observable<boolean>;
     private observeBreakpointSubscription;
-    constructor(store: Store<AppState>, cd: ChangeDetectorRef, platform: Platform, breakpointObserver: BreakpointObserver);
+    constructor(store: Store<AppState>, cd: ChangeDetectorRef, platform: Platform, breakpointObserver: BreakpointObserver, zone: NgZone);
     ngOnInit(): void;
     ngOnDestroy(): void;
     ngAfterViewInit(): void;
@@ -85,5 +89,5 @@ export declare class ToggleHeaderComponent extends _ToggleBase implements OnInit
     private _scrollTo;
     private updateToggleHeaderScrollPosition;
     static ɵfac: i0.ɵɵFactoryDeclaration<ToggleHeaderComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ToggleHeaderComponent, "tb-toggle-header", never, { "value": "value"; "name": "name"; "disablePagination": "disablePagination"; "selectMediaBreakpoint": "selectMediaBreakpoint"; "useSelectOnMdLg": "useSelectOnMdLg"; "ignoreMdLgSize": "ignoreMdLgSize"; "appearance": "appearance"; "disabled": "disabled"; }, { "valueChange": "valueChange"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ToggleHeaderComponent, "tb-toggle-header", never, { "value": "value"; "name": "name"; "disablePagination": "disablePagination"; "selectMediaBreakpoint": "selectMediaBreakpoint"; "useSelectOnMdLg": "useSelectOnMdLg"; "ignoreMdLgSize": "ignoreMdLgSize"; "appearance": "appearance"; "disabled": "disabled"; "fillHeight": "fillHeight"; "extraPadding": "extraPadding"; "primaryBackground": "primaryBackground"; }, { "valueChange": "valueChange"; }, never, never, false, never>;
 }

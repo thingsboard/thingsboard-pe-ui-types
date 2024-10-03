@@ -1,9 +1,9 @@
-import { ChangeDetectorRef, ElementRef, OnDestroy, OnInit, TemplateRef } from '@angular/core';
+import { ChangeDetectorRef, ElementRef, NgZone, OnDestroy, OnInit, TemplateRef } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { AppState } from '@core/core.state';
 import { Store } from '@ngrx/store';
 import { BadgePosition, MobileAppSettings } from '@shared/models/mobile-app.models';
-import { MobileAppService } from '@core/http/mobile-app.service';
+import { MobileApplicationService } from '@core/http/mobile-application.service';
 import { WidgetContext } from '@home/models/widget-component.models';
 import { UtilsService } from '@core/services/utils.service';
 import { Observable } from 'rxjs';
@@ -19,6 +19,7 @@ export declare class MobileAppQrcodeWidgetComponent extends PageComponent implem
     private elementRef;
     private imagePipe;
     private sanitizer;
+    private zone;
     private readonly destroy$;
     private widgetResize$;
     private mobileAppSettingsValue;
@@ -38,7 +39,7 @@ export declare class MobileAppQrcodeWidgetComponent extends PageComponent implem
     widgetTitlePanel: TemplateRef<any>;
     set mobileAppSettings(settings: MobileAppSettings);
     get mobileAppSettings(): MobileAppSettings;
-    constructor(store: Store<AppState>, cd: ChangeDetectorRef, mobileAppService: MobileAppService, utilsService: UtilsService, elementRef: ElementRef, imagePipe: ImagePipe, sanitizer: DomSanitizer);
+    constructor(store: Store<AppState>, cd: ChangeDetectorRef, mobileAppService: MobileApplicationService, utilsService: UtilsService, elementRef: ElementRef, imagePipe: ImagePipe, sanitizer: DomSanitizer, zone: NgZone);
     ngOnInit(): void;
     ngOnDestroy(): void;
     navigateByDeepLink($event: any): void;

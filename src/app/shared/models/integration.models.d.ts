@@ -40,6 +40,15 @@ export declare enum CoapSecurityMode {
     DTLS = "DTLS",
     MIXED = "MIXED"
 }
+export type IntegrationsConvertersInfo = Record<IntegrationType, IntegrationConvertersInfo>;
+export interface IntegrationConvertersInfo {
+    uplink: ConverterInfo;
+    downlink: ConverterInfo;
+}
+export interface ConverterInfo {
+    library: boolean;
+    existing: boolean;
+}
 export declare const coapSecurityModeTranslationsMap: Map<CoapSecurityMode, string>;
 export interface IntegrationTypeInfo {
     name: string;

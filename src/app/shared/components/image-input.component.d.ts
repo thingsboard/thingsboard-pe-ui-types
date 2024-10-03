@@ -21,8 +21,8 @@ export declare class ImageInputComponent extends PageComponent implements AfterV
     private dialog;
     private fileSize;
     private cd;
-    label: string;
     accept: string;
+    label: string;
     emptyImageText: any;
     noImageText: any;
     dropLabel: any;
@@ -40,6 +40,7 @@ export declare class ImageInputComponent extends PageComponent implements AfterV
     showClearButton: boolean;
     showPreview: boolean;
     inputId: string;
+    allowedExtensions: string;
     processImageApiLink: boolean;
     resultAsFile: boolean;
     showFileName: boolean;
@@ -61,7 +62,8 @@ export declare class ImageInputComponent extends PageComponent implements AfterV
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: string): void;
     private updateModel;
+    private filterFile;
     clearImage(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ImageInputComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ImageInputComponent, "tb-image-input", never, { "label": "label"; "accept": "accept"; "emptyImageText": "emptyImageText"; "noImageText": "noImageText"; "dropLabel": "dropLabel"; "maxImageSize": "maxImageSize"; "allowedImageMimeTypes": "allowedImageMimeTypes"; "maxSizeByte": "maxSizeByte"; "required": "required"; "disabled": "disabled"; "showClearButton": "showClearButton"; "showPreview": "showPreview"; "inputId": "inputId"; "processImageApiLink": "processImageApiLink"; "resultAsFile": "resultAsFile"; "showFileName": "showFileName"; "fileName": "fileName"; }, { "imageTypeChanged": "imageTypeChanged"; "imageSizeOverflow": "imageSizeOverflow"; "imageTypeError": "imageTypeError"; "imageCleared": "imageCleared"; "fileNameChanged": "fileNameChanged"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ImageInputComponent, "tb-image-input", never, { "accept": "accept"; "label": "label"; "emptyImageText": "emptyImageText"; "noImageText": "noImageText"; "dropLabel": "dropLabel"; "maxImageSize": "maxImageSize"; "allowedImageMimeTypes": "allowedImageMimeTypes"; "maxSizeByte": "maxSizeByte"; "required": "required"; "disabled": "disabled"; "showClearButton": "showClearButton"; "showPreview": "showPreview"; "inputId": "inputId"; "allowedExtensions": "allowedExtensions"; "processImageApiLink": "processImageApiLink"; "resultAsFile": "resultAsFile"; "showFileName": "showFileName"; "fileName": "fileName"; }, { "imageTypeChanged": "imageTypeChanged"; "imageSizeOverflow": "imageSizeOverflow"; "imageTypeError": "imageTypeError"; "imageCleared": "imageCleared"; "fileNameChanged": "fileNameChanged"; }, never, never, false, never>;
 }

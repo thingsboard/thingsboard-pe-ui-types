@@ -34,9 +34,11 @@ export declare class RecentDashboardsWidgetComponent extends PageComponent imple
     dashboardsLink: string;
     hasDashboardsAccess: boolean;
     dirty: boolean;
+    private isFullscreenMode;
     constructor(store: Store<AppState>, cd: ChangeDetectorRef, userPermissionsService: UserPermissionsService, userSettingService: UserSettingsService);
     ngOnInit(): void;
     reload(): void;
+    createDashboardUrl(id: string): string;
     toggleValueChange(value: 'last' | 'starred'): void;
     private initLastVisitedDashboardsDataSource;
     ngAfterViewInit(): void;

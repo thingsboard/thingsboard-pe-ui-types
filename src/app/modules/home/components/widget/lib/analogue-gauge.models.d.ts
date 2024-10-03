@@ -40,12 +40,15 @@ export interface AnalogueGaugeSettings {
     animationDuration: number;
     animationRule: AnimationRule;
 }
+interface BaseGaugeModel extends BaseGauge {
+    _value?: number;
+}
 export declare abstract class TbBaseGauge<S, O extends GenericOptions> {
     protected ctx: WidgetContext;
     private gauge;
     protected constructor(ctx: WidgetContext, canvasId: string);
     protected abstract createGaugeOptions(gaugeElement: HTMLElement, settings: S): O;
-    protected abstract createGauge(gaugeData: O): BaseGauge;
+    protected abstract createGauge(gaugeData: O): BaseGaugeModel;
     update(): void;
     mobileModeChanged(): void;
     resize(): void;
@@ -56,3 +59,4 @@ export declare abstract class TbAnalogueGauge<S extends AnalogueGaugeSettings, O
     protected createGaugeOptions(gaugeElement: HTMLElement, settings: S): O;
     protected abstract prepareGaugeOptions(settings: S, gaugeData: O): any;
 }
+export {};

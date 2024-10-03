@@ -39,6 +39,7 @@ export declare class WidgetTypeAutocompleteComponent implements ControlValueAcce
     getWidgetTypes(pageLink: PageLink, result?: Array<WidgetTypeInfo>): Observable<Array<WidgetTypeInfo>>;
     onFocus(): void;
     clear(): void;
+    textIsNotEmpty(text: string): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetTypeAutocompleteComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<WidgetTypeAutocompleteComponent, "tb-widget-type-autocomplete", never, { "label": "label"; "placeholder": "placeholder"; "floatLabel": "floatLabel"; "appearance": "appearance"; "subscriptSizing": "subscriptSizing"; "required": "required"; "disabled": "disabled"; "excludeWidgetTypeIds": "excludeWidgetTypeIds"; }, {}, never, ["[tb-error]", "[tb-hint]"], false, never>;
 }

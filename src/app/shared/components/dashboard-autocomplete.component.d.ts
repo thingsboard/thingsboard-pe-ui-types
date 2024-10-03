@@ -54,6 +54,7 @@ export declare class DashboardAutocompleteComponent implements ControlValueAcces
     getDashboards(pageLink: PageLink): Observable<PageData<DashboardInfo>>;
     onFocus(): void;
     clear(): void;
+    textIsNotEmpty(text: string): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardAutocompleteComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<DashboardAutocompleteComponent, "tb-dashboard-autocomplete", never, { "useIdValue": "useIdValue"; "selectFirstDashboard": "selectFirstDashboard"; "label": "label"; "placeholder": "placeholder"; "userId": "userId"; "tenantId": "tenantId"; "operation": "operation"; "floatLabel": "floatLabel"; "appearance": "appearance"; "subscriptSizing": "subscriptSizing"; "inlineField": "inlineField"; "requiredText": "requiredText"; "required": "required"; "disabled": "disabled"; }, {}, never, ["[tb-error]", "[tb-hint]"], false, never>;
 }

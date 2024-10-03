@@ -8,7 +8,6 @@ import { UtilsService } from '@core/services/utils.service';
 import { TranslateService } from '@ngx-translate/core';
 import { MatDialog } from '@angular/material/dialog';
 import { EntityService } from '@core/http/entity.service';
-import { DataKeysCallbacks } from '@home/components/widget/config/data-keys.component.models';
 import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
 import { Observable } from 'rxjs';
 import { JsFuncComponent } from '@shared/components/js-func.component';
@@ -18,6 +17,7 @@ import { IAliasController } from '@core/api/widget-api.models';
 import { AggregationType } from '@shared/models/time/time.models';
 import { WidgetConfigComponentData } from '@home/models/widget-component.models';
 import { WidgetComponentService } from '@home/components/widget/widget-component.service';
+import { WidgetConfigCallbacks } from '@home/components/widget/config/widget-config.component.models';
 import * as i0 from "@angular/core";
 export declare class DataKeyConfigComponent extends PageComponent implements OnInit, ControlValueAccessor, Validator {
     protected store: Store<AppState>;
@@ -41,7 +41,7 @@ export declare class DataKeyConfigComponent extends PageComponent implements OnI
     dataKeyConfigMode: DataKeyConfigMode;
     deviceId: string;
     entityAliasId: string;
-    callbacks: DataKeysCallbacks;
+    callbacks: WidgetConfigCallbacks;
     dashboard: Dashboard;
     aliasController: IAliasController;
     widget: Widget;

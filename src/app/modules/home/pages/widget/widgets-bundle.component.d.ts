@@ -12,10 +12,11 @@ export declare class WidgetsBundleComponent extends EntityComponent<WidgetsBundl
     protected entitiesTableConfigValue: EntityTableConfig<WidgetsBundle>;
     protected fb: UntypedFormBuilder;
     protected cd: ChangeDetectorRef;
+    standalone: boolean;
     constructor(store: Store<AppState>, entityValue: WidgetsBundle, entitiesTableConfigValue: EntityTableConfig<WidgetsBundle>, fb: UntypedFormBuilder, cd: ChangeDetectorRef);
     hideDelete(): boolean;
     buildForm(entity: WidgetsBundle): UntypedFormGroup;
     updateForm(entity: WidgetsBundle): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<WidgetsBundleComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetsBundleComponent, "tb-widgets-bundle", never, {}, {}, never, never, false, never>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<WidgetsBundleComponent, [null, { optional: true; }, { optional: true; }, null, null]>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetsBundleComponent, "tb-widgets-bundle", never, { "standalone": "standalone"; }, {}, never, never, false, never>;
 }

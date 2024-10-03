@@ -3,6 +3,7 @@ import { Subject, Subscription } from 'rxjs';
 import { BreadCrumb } from './breadcrumb';
 import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { MenuSection } from '@core/services/menu.models';
 import { MenuService } from '@core/services/menu.service';
 import { UtilsService } from '@core/services/utils.service';
 import { BroadcastService } from '@core/services/broadcast.service';
@@ -28,8 +29,8 @@ export declare class BreadcrumbComponent implements OnInit, OnDestroy {
     ngOnInit(): void;
     ngOnDestroy(): void;
     private lastChild;
-    buildBreadCrumbs(route: ActivatedRouteSnapshot, breadcrumbs?: Array<BreadCrumb>, lastChild?: ActivatedRouteSnapshot): Array<BreadCrumb>;
-    trackByBreadcrumbs(index: number, breadcrumb: BreadCrumb): string;
+    buildBreadCrumbs(route: ActivatedRouteSnapshot, availableMenuSections: MenuSection[], breadcrumbs?: Array<BreadCrumb>, lastChild?: ActivatedRouteSnapshot): Array<BreadCrumb>;
+    trackByBreadcrumbs(_index: number, breadcrumb: BreadCrumb): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<BreadcrumbComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<BreadcrumbComponent, "tb-breadcrumb", never, {}, {}, never, never, false, never>;
 }

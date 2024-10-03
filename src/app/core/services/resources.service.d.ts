@@ -19,7 +19,6 @@ export declare class ResourcesService {
     private injector;
     private loadedJsonResources;
     private loadedResources;
-    private loadedModules;
     private loadedModulesAndFactories;
     private anchor;
     constructor(document: any, store: Store<AppState>, compiler: Compiler, http: HttpClient, injector: Injector);
@@ -27,7 +26,6 @@ export declare class ResourcesService {
     loadResource(url: string): Observable<any>;
     downloadResource(downloadUrl: string, config?: RequestConfig): Observable<any>;
     loadFactories(resourceId: string | TbResourceId, modulesMap: IModulesMap): Observable<ModulesWithFactories>;
-    loadModules(resourceId: string | TbResourceId, modulesMap: IModulesMap): Observable<Type<any>[]>;
     private extractNgModules;
     private isPrimitive;
     private loadResourceByType;

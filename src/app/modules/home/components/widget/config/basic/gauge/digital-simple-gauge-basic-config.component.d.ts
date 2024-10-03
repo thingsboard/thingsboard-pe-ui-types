@@ -26,6 +26,7 @@ export declare class DigitalSimpleGaugeBasicConfigComponent extends BasicWidgetC
     protected setupDefaults(configData: WidgetConfigComponentData): void;
     protected onConfigSet(configData: WidgetConfigComponentData): void;
     protected prepareOutputConfig(config: any): WidgetConfigComponentData;
+    private maxValueValidation;
     protected validatorTriggers(): string[];
     protected updateValidators(emitEvent: boolean, trigger?: string): void;
     private getCardButtons;

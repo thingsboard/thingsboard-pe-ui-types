@@ -35,6 +35,7 @@ export declare class GatewayStatisticsComponent implements AfterViewInit {
     private subscriptionOptions;
     constructor(fb: FormBuilder, attributeService: AttributeService, utils: UtilsService);
     ngAfterViewInit(): void;
+    navigateToStatistics(): void;
     sortData(): void;
     onLegendKeyHiddenChange(index: number): void;
     private createChartsSubscription;

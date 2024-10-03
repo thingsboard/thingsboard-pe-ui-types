@@ -33,3 +33,11 @@ export declare class Range implements Ace.Range {
     setStart(row: number, column: number): void;
     toScreenRange(session: Ace.EditSession): Ace.Range;
 }
+export interface AceHighlightRules {
+    [group: string]: Array<AceHighlightRule>;
+}
+export interface AceHighlightRule {
+    regex: RegExp | string;
+    token: string;
+    next?: string;
+}

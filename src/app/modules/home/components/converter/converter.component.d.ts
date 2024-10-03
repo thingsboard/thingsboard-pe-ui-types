@@ -11,6 +11,7 @@ import { EntityTableConfig } from '@home/models/entity/entities-table-config.mod
 import { MatDialog } from '@angular/material/dialog';
 import { ScriptLanguage } from '@shared/models/rule-node.models';
 import { IntegrationType } from '@shared/models/integration.models';
+import { ConverterLibraryService } from '@core/http/converter-library.service';
 import * as i0 from "@angular/core";
 export declare class ConverterComponent extends EntityComponent<Converter> implements OnInit, OnDestroy {
     protected store: Store<AppState>;
@@ -18,6 +19,7 @@ export declare class ConverterComponent extends EntityComponent<Converter> imple
     private converterService;
     private dialog;
     private resourcesService;
+    private converterLibraryService;
     protected entityValue: Converter;
     protected entitiesTableConfigValue: EntityTableConfig<Converter>;
     protected fb: FormBuilder;
@@ -27,6 +29,10 @@ export declare class ConverterComponent extends EntityComponent<Converter> imple
     set integrationType(value: IntegrationType);
     get integrationType(): IntegrationType;
     set convertorName(value: string);
+    libraryInfo: {
+        vendorName: string;
+        modelName: string;
+    };
     integrationName: string;
     converterType: typeof ConverterType;
     converterTypes: string[];
@@ -35,7 +41,7 @@ export declare class ConverterComponent extends EntityComponent<Converter> imple
     scriptLanguage: typeof ScriptLanguage;
     private defaultUpdateOnlyKeysByIntegrationType;
     private destroy$;
-    constructor(store: Store<AppState>, translate: TranslateService, converterService: ConverterService, dialog: MatDialog, resourcesService: ResourcesService, entityValue: Converter, entitiesTableConfigValue: EntityTableConfig<Converter>, fb: FormBuilder, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, translate: TranslateService, converterService: ConverterService, dialog: MatDialog, resourcesService: ResourcesService, converterLibraryService: ConverterLibraryService, entityValue: Converter, entitiesTableConfigValue: EntityTableConfig<Converter>, fb: FormBuilder, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngOnDestroy(): void;
     hideDelete(): boolean;
@@ -43,11 +49,16 @@ export declare class ConverterComponent extends EntityComponent<Converter> imple
     private checkIsNewConverter;
     private updatedOnlyKeysValue;
     private converterTypeChanged;
+    private onSetDefaultScriptBody;
+    private getTargetField;
+    private getTargetTemplateUrl;
     private setupDefaultScriptBody;
     updateForm(entity: Converter): void;
     onConverterIdCopied($event: any): void;
     openConverterTestDialog(): void;
+    private getLibraryDebugIn;
+    private getDefaultDebugIn;
     showConverterTestDialog(debugIn: ConverterDebugInput, setFirstTab?: boolean): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<ConverterComponent, [null, null, null, null, null, { optional: true; }, { optional: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ConverterComponent, "tb-converter", never, { "hideType": "hideType"; "integrationType": "integrationType"; "convertorName": "convertorName"; "integrationName": "integrationName"; }, {}, never, never, false, never>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<ConverterComponent, [null, null, null, null, null, null, { optional: true; }, { optional: true; }, null, null]>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ConverterComponent, "tb-converter", never, { "hideType": "hideType"; "integrationType": "integrationType"; "convertorName": "convertorName"; "libraryInfo": "libraryInfo"; "integrationName": "integrationName"; }, {}, never, never, false, never>;
 }

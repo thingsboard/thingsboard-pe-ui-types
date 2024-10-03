@@ -2,7 +2,7 @@ import { IDashboardComponent } from '@home/models/dashboard-component.models';
 import { DataSet, Datasource, DatasourceData, FormattedData, JsonSettingsSchema, Widget, WidgetActionDescriptor, WidgetActionSource, WidgetConfig, WidgetControllerDescriptor, WidgetExportType, WidgetType, widgetType, WidgetTypeDescriptor, WidgetTypeDetails, WidgetTypeParameters } from '@shared/models/widget.models';
 import { Timewindow, WidgetTimewindow } from '@shared/models/time/time.models';
 import { IAliasController, IStateController, IWidgetSubscription, IWidgetUtils, RpcApi, StateParams, SubscriptionEntityInfo, TimewindowFunctions, WidgetActionsApi, WidgetSubscriptionApi } from '@core/api/widget-api.models';
-import { ChangeDetectorRef, Injector, NgModuleRef, NgZone, Type } from '@angular/core';
+import { ChangeDetectorRef, Injector, NgZone, Type } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { RafService } from '@core/services/raf.service';
 import { WidgetTypeId } from '@shared/models/id/widget-type-id';
@@ -45,7 +45,6 @@ import { ImagePipe, MillisecondsToTimeStringPipe, TelemetrySubscriber } from '@a
 import { UserId } from '@shared/models/id/user-id';
 import { UserSettingsService } from '@core/http/user-settings.service';
 import { WhiteLabelingService } from '@core/http/white-labeling.service';
-import { DynamicComponentModule } from '@core/services/dynamic-component-factory.service';
 import { DataKeySettingsFunction } from '@home/components/widget/config/data-keys.component.models';
 import { UtilsService } from '@core/services/utils.service';
 export interface IWidgetAction {
@@ -83,6 +82,8 @@ export declare class WidgetContext {
     set changeDetector(cd: ChangeDetectorRef);
     set containerChangeDetector(cd: ChangeDetectorRef);
     get currentUser(): AuthUser;
+    get dashboardPageElement(): HTMLElement;
+    get dashboardContentElement(): HTMLElement;
     authService: AuthService;
     deviceService: DeviceService;
     assetService: AssetService;
@@ -386,6 +387,7 @@ export interface WidgetInfo extends WidgetTypeDescriptor, WidgetControllerDescri
     widgetName: string;
     fullFqn: string;
     deprecated: boolean;
+    scada: boolean;
     typeSettingsSchema?: string | any;
     typeDataKeySettingsSchema?: string | any;
     typeLatestDataKeySettingsSchema?: string | any;
@@ -393,7 +395,6 @@ export interface WidgetInfo extends WidgetTypeDescriptor, WidgetControllerDescri
     description?: string;
     tags?: string[];
     componentType?: Type<IDynamicWidgetComponent>;
-    componentModuleRef?: NgModuleRef<DynamicComponentModule>;
 }
 export interface WidgetConfigComponentData {
     widgetName: string;
@@ -436,6 +437,6 @@ export interface WidgetTypeInstance {
 }
 export declare const toWidgetInfo: (widgetTypeEntity: WidgetType) => WidgetInfo;
 export declare const detailsToWidgetInfo: (widgetTypeDetailsEntity: WidgetTypeDetails) => WidgetInfo;
-export declare const toWidgetType: (widgetInfo: WidgetInfo, id: WidgetTypeId, tenantId: TenantId, createdTime: number) => WidgetType;
-export declare const toWidgetTypeDetails: (widgetInfo: WidgetInfo, id: WidgetTypeId, tenantId: TenantId, createdTime: number) => WidgetTypeDetails;
+export declare const toWidgetType: (widgetInfo: WidgetInfo, id: WidgetTypeId, tenantId: TenantId, createdTime: number, version: number) => WidgetType;
+export declare const toWidgetTypeDetails: (widgetInfo: WidgetInfo, id: WidgetTypeId, tenantId: TenantId, createdTime: number, version: number) => WidgetTypeDetails;
 export declare const updateEntityParams: (params: StateParams, targetEntityParamName?: string, targetEntityId?: EntityId, entityName?: string, entityLabel?: string) => void;

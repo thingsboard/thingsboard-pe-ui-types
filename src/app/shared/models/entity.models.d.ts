@@ -3,6 +3,7 @@ import { AttributeData } from './telemetry/telemetry.models';
 import { EntityId } from '@shared/models/id/entity-id';
 import { DeviceCredentialMQTTBasic } from '@shared/models/device.models';
 import { Lwm2mSecurityConfigModels } from '@shared/models/lwm2m-security-config.models';
+import { TenantId } from '@shared/models/id/tenant-id';
 export interface EntityInfo {
     name?: string;
     label?: string;
@@ -65,3 +66,9 @@ export interface EntitiesKeysByQuery {
 export declare const entityFields: {
     [fieldName: string]: EntityField;
 };
+export interface HasTenantId {
+    tenantId?: TenantId;
+}
+export interface HasVersion {
+    version?: number;
+}

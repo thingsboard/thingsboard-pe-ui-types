@@ -26,6 +26,7 @@ export declare class NotificationComponent implements OnInit {
     navigate($event: Event): void;
     alarmColorSeverity(alpha: number): string;
     notificationColor(): string;
+    notificationBackgroundColor(): string;
     notificationIconColor(): object;
     static ɵfac: i0.ɵɵFactoryDeclaration<NotificationComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<NotificationComponent, "tb-notification", never, { "notification": "notification"; "onClose": "onClose"; "preview": "preview"; }, { "markAsRead": "markAsRead"; }, never, never, false, never>;

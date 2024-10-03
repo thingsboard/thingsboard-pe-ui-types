@@ -8,6 +8,10 @@ export declare enum ResourceType {
     JKS = "JKS",
     JS_MODULE = "JS_MODULE"
 }
+export declare enum ResourceSubType {
+    IMAGE = "IMAGE",
+    SCADA_SYMBOL = "SCADA_SYMBOL"
+}
 export declare const ResourceTypeMIMETypes: Map<ResourceType, string>;
 export declare const ResourceTypeExtension: Map<ResourceType, string>;
 export declare const ResourceTypeTranslationMap: Map<ResourceType, string>;
@@ -16,6 +20,7 @@ export interface TbResourceInfo<D> extends Omit<BaseData<TbResourceId>, 'name' |
     resourceKey?: string;
     title?: string;
     resourceType: ResourceType;
+    resourceSubType?: ResourceSubType;
     fileName: string;
     public: boolean;
     publicResourceKey?: string;
@@ -45,6 +50,7 @@ export interface ImageExportData {
     mediaType: string;
     fileName: string;
     title: string;
+    subType: string;
     resourceKey: string;
     public: boolean;
     publicResourceKey: string;

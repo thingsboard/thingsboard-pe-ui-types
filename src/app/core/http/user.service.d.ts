@@ -1,5 +1,5 @@
 import { RequestConfig } from './http-utils';
-import { User, UserEmailInfo, UserInfo } from '@shared/models/user.model';
+import { ActivationLinkInfo, User, UserEmailInfo, UserInfo } from '@shared/models/user.model';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { PageLink } from '@shared/models/page/page-link';
@@ -21,6 +21,7 @@ export declare class UserService {
     saveUser(user: User, sendActivationMail?: boolean, entityGroupIds?: string | string[], config?: RequestConfig): Observable<User>;
     deleteUser(userId: string, config?: RequestConfig): Observable<Object>;
     getActivationLink(userId: string, config?: RequestConfig): Observable<string>;
+    getActivationLinkInfo(userId: string, config?: RequestConfig): Observable<ActivationLinkInfo>;
     sendActivationEmail(email: string, config?: RequestConfig): Observable<Object>;
     setUserCredentialsEnabled(userId: string, userCredentialsEnabled?: boolean, config?: RequestConfig): Observable<any>;
     findUsersByQuery(pageLink: PageLink, config?: RequestConfig): Observable<PageData<UserEmailInfo>>;

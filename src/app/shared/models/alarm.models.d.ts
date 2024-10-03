@@ -122,3 +122,5 @@ export declare class AlarmQueryV2 {
     constructor(entityId: EntityId, pageLink: TimePageLink, alarmFilter: AlarmFilter);
     toQuery(): string;
 }
+export declare const getUserDisplayName: (alarmAssignee: AlarmAssignee | AlarmCommentInfo) => string;
+export declare const getUserInitials: (alarmAssignee: AlarmAssignee) => string;

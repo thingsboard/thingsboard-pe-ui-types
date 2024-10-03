@@ -50,6 +50,10 @@ export declare const HelpLinks: {
         slackSettings: string;
         securitySettings: string;
         oauth2Settings: string;
+        oauth2Apple: string;
+        oauth2Facebook: string;
+        oauth2Github: string;
+        oauth2Google: string;
         ruleEngine: string;
         ruleNodeCheckRelation: string;
         ruleNodeCheckExistenceFields: string;
@@ -92,6 +96,7 @@ export declare const HelpLinks: {
         ruleNodeSaveToCustomTable: string;
         ruleNodeRuleChain: string;
         ruleNodeOutputNode: string;
+        ruleNodeAwsLambda: string;
         ruleNodeAwsSns: string;
         ruleNodeAwsSqs: string;
         ruleNodeKafka: string;
@@ -151,6 +156,9 @@ export declare const HelpLinks: {
         ruleNotifications: string;
         jwtSecuritySettings: string;
         gatewayInstall: string;
+        scada: string;
+        scadaSymbolDev: string;
+        scadaSymbolDevAnimation: string;
         converters: string;
         uplinkConverters: string;
         downlinkConverters: string;

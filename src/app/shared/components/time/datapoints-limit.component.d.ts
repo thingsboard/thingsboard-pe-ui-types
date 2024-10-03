@@ -1,0 +1,31 @@
+import { OnDestroy, OnInit } from '@angular/core';
+import { ControlValueAccessor, FormBuilder, FormGroup, ValidationErrors, Validator } from '@angular/forms';
+import { TimeService } from '@core/services/time.service';
+import * as i0 from "@angular/core";
+export declare class DatapointsLimitComponent implements ControlValueAccessor, Validator, OnInit, OnDestroy {
+    private fb;
+    private timeService;
+    datapointsLimitFormGroup: FormGroup;
+    modelValue: number | null;
+    private requiredValue;
+    get required(): boolean;
+    set required(value: boolean);
+    disabled: boolean;
+    private propagateChange;
+    private destroy$;
+    constructor(fb: FormBuilder, timeService: TimeService);
+    registerOnChange(fn: any): void;
+    registerOnTouched(fn: any): void;
+    ngOnInit(): void;
+    updateValidators(): void;
+    setDisabledState(isDisabled: boolean): void;
+    private checkLimit;
+    writeValue(value: number | null): void;
+    updateView(value: number | null): void;
+    validate(): ValidationErrors;
+    minDatapointsLimit(): number;
+    maxDatapointsLimit(): number;
+    ngOnDestroy(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<DatapointsLimitComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DatapointsLimitComponent, "tb-datapoints-limit", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+}

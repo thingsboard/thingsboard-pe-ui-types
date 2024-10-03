@@ -3,9 +3,10 @@ import { Datasource, WidgetSettings, WidgetSettingsComponent } from '@shared/mod
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { TimeSeriesChartTooltipTrigger, TimeSeriesChartType, TimeSeriesChartYAxisId } from '@home/components/widget/lib/chart/time-series-chart.models';
+import { TimeSeriesChartType, TimeSeriesChartYAxisId } from '@home/components/widget/lib/chart/time-series-chart.models';
 import { WidgetConfigComponentData } from '@home/models/widget-component.models';
 import { WidgetService } from '@core/http/widget.service';
+import { TimeSeriesChartTooltipTrigger } from '@home/components/widget/lib/chart/time-series-chart-tooltip.models';
 import * as i0 from "@angular/core";
 export declare class TimeSeriesChartWidgetSettingsComponent extends WidgetSettingsComponent {
     protected store: Store<AppState>;

@@ -3,6 +3,7 @@ import { ControlValueAccessor, NgForm } from '@angular/forms';
 import { ValueType } from '@shared/models/constants';
 import { MatDialog } from '@angular/material/dialog';
 import { BreakpointObserver } from '@angular/cdk/layout';
+import { TranslateService } from '@ngx-translate/core';
 import * as i0 from "@angular/core";
 type Layout = 'column' | 'row';
 export interface ValueInputLayout {
@@ -14,6 +15,7 @@ export interface ValueInputLayout {
 export declare class ValueInputComponent implements OnInit, OnDestroy, OnChanges, ControlValueAccessor {
     private breakpointObserver;
     private cd;
+    private translate;
     dialog: MatDialog;
     disabled: boolean;
     requiredText: string;
@@ -31,7 +33,7 @@ export declare class ValueInputComponent implements OnInit, OnDestroy, OnChanges
     computedLayout: Layout;
     private propagateChange;
     private _subscription;
-    constructor(breakpointObserver: BreakpointObserver, cd: ChangeDetectorRef, dialog: MatDialog);
+    constructor(breakpointObserver: BreakpointObserver, cd: ChangeDetectorRef, translate: TranslateService, dialog: MatDialog);
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
     ngOnDestroy(): void;

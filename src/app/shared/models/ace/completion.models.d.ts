@@ -33,6 +33,7 @@ export declare class TbEditorCompleter implements Ace.Completer {
     private editorCompletions;
     identifierRegexps: RegExp[];
     constructor(editorCompletions: TbEditorCompletions);
+    updateCompletions(completions: TbEditorCompletions): void;
     getCompletions(editor: Ace.Editor, session: Ace.EditSession, position: Ace.Point, prefix: string, callback: Ace.CompleterCallback): void;
     private resolvePath;
     private prepareCompletions;

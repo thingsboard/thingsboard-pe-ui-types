@@ -47,7 +47,6 @@ export declare class AlarmAssigneeSelectPanelComponent implements OnInit, AfterV
     fetchUsers(searchText?: string): Observable<Array<UserEmailInfo>>;
     onFocus(): void;
     clear(): void;
-    getUserDisplayName(entity: UserEmailInfo): string;
     getUserInitials(entity: UserEmailInfo): string;
     getFullName(entity: UserEmailInfo): string;
     getAvatarBgColor(entity: UserEmailInfo): string;

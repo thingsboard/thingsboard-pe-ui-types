@@ -37,6 +37,7 @@ export declare class ValueCardWidgetComponent implements OnInit, AfterViewInit, 
     dateColor: ColorProcessor;
     backgroundStyle$: Observable<ComponentStyle>;
     overlayStyle: ComponentStyle;
+    padding: string;
     private panelResize$;
     private horizontal;
     private decimals;

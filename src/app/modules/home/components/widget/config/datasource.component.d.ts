@@ -10,6 +10,7 @@ import { FilterSelectCallbacks } from '@home/components/filter/filter-select.com
 import { DataKeysCallbacks, DataKeySettingsFunction } from '@home/components/widget/config/data-keys.component.models';
 import { EntityType } from '@shared/models/entity-type.models';
 import { DatasourcesComponent } from '@home/components/widget/config/datasources.component';
+import { WidgetConfigCallbacks } from '@home/components/widget/config/widget-config.component.models';
 import * as i0 from "@angular/core";
 export declare class DatasourceComponent implements ControlValueAccessor, OnInit, Validator {
     private fb;
@@ -20,6 +21,7 @@ export declare class DatasourceComponent implements ControlValueAccessor, OnInit
     get aliasController(): IAliasController;
     get entityAliasSelectCallbacks(): EntityAliasSelectCallbacks;
     get filterSelectCallbacks(): FilterSelectCallbacks;
+    get callbacks(): WidgetConfigCallbacks;
     get dataKeysCallbacks(): DataKeysCallbacks;
     get hasAdditionalLatestDataKeys(): boolean;
     get dataKeysOptional(): boolean;

@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, ElementRef, EventEmitter, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, ElementRef, EventEmitter, NgZone, OnDestroy, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { MatSort } from '@angular/material/sort';
 import { PageLink } from '@shared/models/page/page-link';
@@ -30,6 +30,7 @@ export declare class TranslationMapTableComponent extends PageComponent implemen
     private router;
     private route;
     private translate;
+    private zone;
     searchInputField: ElementRef;
     sort: MatSort;
     paginator: MatPaginator;
@@ -55,7 +56,7 @@ export declare class TranslationMapTableComponent extends PageComponent implemen
     private tableResize$;
     private destroy$;
     private defaultSortOrder;
-    constructor(store: Store<AppState>, fb: FormBuilder, customTranslationService: CustomTranslationService, cd: ChangeDetectorRef, elementRef: ElementRef, router: Router, route: ActivatedRoute, translate: TranslateService);
+    constructor(store: Store<AppState>, fb: FormBuilder, customTranslationService: CustomTranslationService, cd: ChangeDetectorRef, elementRef: ElementRef, router: Router, route: ActivatedRoute, translate: TranslateService, zone: NgZone);
     ngOnInit(): void;
     ngOnDestroy(): void;
     trackByLocale(index: number, translate: CustomTranslationMap): string;

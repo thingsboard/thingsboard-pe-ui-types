@@ -15,7 +15,7 @@ import { WhiteLabelingService } from '@core/http/white-labeling.service';
 import { CustomMenuService } from '@core/http/custom-menu.service';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { MatDialog } from '@angular/material/dialog';
-import { OAuth2ClientInfo } from '@shared/models/oauth2.models';
+import { OAuth2ClientLoginInfo } from '@shared/models/oauth2.models';
 import { TwoFactorAuthProviderType, TwoFaProviderInfo } from '@shared/models/two-factor-auth.models';
 import { UserPasswordPolicy } from '@shared/models/settings.models';
 import * as i0 from "@angular/core";
@@ -34,7 +34,7 @@ export declare class AuthService {
     private dialog;
     constructor(store: Store<AppState>, http: HttpClient, userService: UserService, whiteLabelingService: WhiteLabelingService, customMenuService: CustomMenuService, userPermissionsService: UserPermissionsService, timeService: TimeService, router: Router, zone: NgZone, utils: UtilsService, translate: TranslateService, dialog: MatDialog);
     redirectUrl: string;
-    oauth2Clients: Array<OAuth2ClientInfo>;
+    oauth2Clients: Array<OAuth2ClientLoginInfo>;
     twoFactorAuthProviders: Array<TwoFaProviderInfo>;
     private refreshTokenSubject;
     private jwtHelper;
@@ -58,7 +58,7 @@ export declare class AuthService {
     logout(captureLastUrl?: boolean, ignoreRequest?: boolean): void;
     private notifyUserLoaded;
     gotoDefaultPlace(isAuthenticated: boolean): void;
-    loadOAuth2Clients(): Observable<Array<OAuth2ClientInfo>>;
+    loadOAuth2Clients(): Observable<Array<OAuth2ClientLoginInfo>>;
     getAvailableTwoFaLoginProviders(): Observable<Array<TwoFaProviderInfo>>;
     forceDefaultPlace(authState?: AuthState, path?: string, params?: any): boolean;
     defaultUrl(isAuthenticated: boolean, authState?: AuthState, path?: string, params?: any, data?: any): UrlTree;

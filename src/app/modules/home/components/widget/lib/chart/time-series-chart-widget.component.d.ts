@@ -6,8 +6,10 @@ import { ImagePipe } from '@shared/pipe/image.pipe';
 import { DomSanitizer } from '@angular/platform-browser';
 import { LegendConfig, LegendData, LegendKey } from '@shared/models/widget.models';
 import { TimeSeriesChartWidgetSettings } from '@home/components/widget/lib/chart/time-series-chart-widget.models';
+import { WidgetComponent } from '@home/components/widget/widget.component';
 import * as i0 from "@angular/core";
 export declare class TimeSeriesChartWidgetComponent implements OnInit, OnDestroy, AfterViewInit {
+    widgetComponent: WidgetComponent;
     private imagePipe;
     private sanitizer;
     private renderer;
@@ -31,7 +33,7 @@ export declare class TimeSeriesChartWidgetComponent implements OnInit, OnDestroy
     legendValueStyle: ComponentStyle;
     displayLegendValues: boolean;
     private timeSeriesChart;
-    constructor(imagePipe: ImagePipe, sanitizer: DomSanitizer, renderer: Renderer2, cd: ChangeDetectorRef);
+    constructor(widgetComponent: WidgetComponent, imagePipe: ImagePipe, sanitizer: DomSanitizer, renderer: Renderer2, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     ngOnDestroy(): void;

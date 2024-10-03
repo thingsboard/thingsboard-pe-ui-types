@@ -19,6 +19,8 @@ export interface AddWidgetDialogData {
     stateController: IStateController;
     widget: Widget;
     widgetInfo: WidgetInfo;
+    showLayoutConfig: boolean;
+    isDefaultBreakpoint: boolean;
 }
 export declare class AddWidgetDialogComponent extends DialogComponent<AddWidgetDialogComponent, Widget> implements OnInit, ErrorStateMatcher {
     protected store: Store<AppState>;
@@ -34,6 +36,8 @@ export declare class AddWidgetDialogComponent extends DialogComponent<AddWidgetD
     aliasController: IAliasController;
     stateController: IStateController;
     widget: Widget;
+    showLayoutConfig: boolean;
+    isDefaultBreakpoint: boolean;
     widgetConfig: WidgetConfigComponentData;
     previewMode: boolean;
     hideHeader: boolean;

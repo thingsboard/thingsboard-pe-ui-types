@@ -1,8 +1,8 @@
 import { Type } from '@angular/core';
-import { ControlValueAccessor } from '@angular/forms';
+import { ControlValueAccessor, Validator } from '@angular/forms';
 export interface SchedulerEventConfigType {
     name: string;
-    componentType?: Type<ControlValueAccessor>;
+    componentType?: Type<ControlValueAccessor & Validator>;
     template?: string;
     originator?: boolean;
     msgType?: boolean;

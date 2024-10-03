@@ -1,0 +1,55 @@
+import { OnDestroy, OnInit } from '@angular/core';
+import { AggregationType, HistoryWindowType, RealtimeWindowType, Timewindow, TimewindowType } from '@shared/models/time/time.models';
+import { PageComponent } from '@shared/components/page.component';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { TimeService } from '@core/services/time.service';
+import { ToggleHeaderOption } from '@shared/components/toggle-header.component';
+import { TranslateService } from '@ngx-translate/core';
+import { MatDialogRef } from '@angular/material/dialog';
+import * as i0 from "@angular/core";
+export interface TimewindowConfigDialogData {
+    quickIntervalOnly: boolean;
+    aggregation: boolean;
+    timewindow: Timewindow;
+}
+export declare class TimewindowConfigDialogComponent extends PageComponent implements OnInit, OnDestroy {
+    data: TimewindowConfigDialogData;
+    dialogRef: MatDialogRef<TimewindowConfigDialogComponent, Timewindow>;
+    protected store: Store<AppState>;
+    fb: FormBuilder;
+    private timeService;
+    private translate;
+    quickIntervalOnly: boolean;
+    aggregation: boolean;
+    timewindow: Timewindow;
+    timewindowForm: FormGroup;
+    historyTypes: typeof HistoryWindowType;
+    realtimeTypes: typeof RealtimeWindowType;
+    timewindowTypes: typeof TimewindowType;
+    aggregationTypes: typeof AggregationType;
+    aggregations: string[];
+    aggregationTypesTranslations: Map<AggregationType, string>;
+    result: Timewindow;
+    timewindowTypeOptions: ToggleHeaderOption[];
+    realtimeTimewindowOptions: ToggleHeaderOption[];
+    historyTimewindowOptions: ToggleHeaderOption[];
+    realtimeTypeSelectionAvailable: boolean;
+    private destroy$;
+    constructor(data: TimewindowConfigDialogData, dialogRef: MatDialogRef<TimewindowConfigDialogComponent, Timewindow>, store: Store<AppState>, fb: FormBuilder, timeService: TimeService, translate: TranslateService);
+    ngOnInit(): void;
+    ngOnDestroy(): void;
+    private updateValidators;
+    private onTimewindowTypeChange;
+    update(): void;
+    cancel(): void;
+    minRealtimeAggInterval(): number;
+    maxRealtimeAggInterval(): number;
+    currentRealtimeTimewindow(): number;
+    minHistoryAggInterval(): number;
+    maxHistoryAggInterval(): number;
+    currentHistoryTimewindow(): any;
+    static ɵfac: i0.ɵɵFactoryDeclaration<TimewindowConfigDialogComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimewindowConfigDialogComponent, "tb-timewindow-config-dialog", never, {}, {}, never, never, false, never>;
+}

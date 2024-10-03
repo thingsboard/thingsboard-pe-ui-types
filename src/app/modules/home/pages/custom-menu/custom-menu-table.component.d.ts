@@ -1,0 +1,35 @@
+import { OnInit, Renderer2, ViewContainerRef } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { DatePipe } from '@angular/common';
+import { MatDialog } from '@angular/material/dialog';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { Router } from '@angular/router';
+import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
+import { CustomMenuInfo } from '@shared/models/custom-menu.models';
+import { CustomMenuService } from '@core/http/custom-menu.service';
+import { UserPermissionsService } from '@core/http/user-permissions.service';
+import { TbPopoverService } from '@shared/components/popover.service';
+import * as i0 from "@angular/core";
+export declare class CustomMenuTableComponent implements OnInit {
+    private customMenuService;
+    private userPermissionsService;
+    private translate;
+    private datePipe;
+    private dialog;
+    private store;
+    private router;
+    private popoverService;
+    private renderer;
+    private viewContainerRef;
+    readonly customMenuTableConfig: EntityTableConfig<CustomMenuInfo, import("../../../../shared/public-api").PageLink, CustomMenuInfo>;
+    constructor(customMenuService: CustomMenuService, userPermissionsService: UserPermissionsService, translate: TranslateService, datePipe: DatePipe, dialog: MatDialog, store: Store<AppState>, router: Router, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef);
+    ngOnInit(): void;
+    private addCustomMenu;
+    private updateCustomMenuName;
+    private manageCustomMenuAssignees;
+    private openCustomMenuConfig;
+    private deleteCustomMenu;
+    static ɵfac: i0.ɵɵFactoryDeclaration<CustomMenuTableComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CustomMenuTableComponent, "tb-custom-menu-table", never, {}, {}, never, never, false, never>;
+}

@@ -6,7 +6,7 @@ import { DeviceCredentialsId } from '@shared/models/id/device-credentials-id';
 import { EntitySearchQuery } from '@shared/models/relation.models';
 import { DeviceProfileId } from '@shared/models/id/device-profile-id';
 import { RuleChainId } from '@shared/models/id/rule-chain-id';
-import { EntityInfoData } from '@shared/models/entity.models';
+import { EntityInfoData, HasTenantId, HasVersion } from '@shared/models/entity.models';
 import { FilterPredicateValue, KeyFilter } from '@shared/models/query/query.models';
 import { TimeUnit } from '@shared/models/time/time.models';
 import { AbstractControl, ValidationErrors } from '@angular/forms';
@@ -209,7 +209,7 @@ export interface DeviceProfileData {
     alarms?: Array<DeviceProfileAlarm>;
     provisionConfiguration?: DeviceProvisionConfiguration;
 }
-export interface DeviceProfile extends BaseData<DeviceProfileId>, ExportableEntity<DeviceProfileId> {
+export interface DeviceProfile extends BaseData<DeviceProfileId>, HasTenantId, HasVersion, ExportableEntity<DeviceProfileId> {
     tenantId?: TenantId;
     name: string;
     description?: string;
@@ -270,7 +270,7 @@ export declare enum SnmpAuthenticationProtocol {
     SHA_256 = "SHA_256",
     SHA_384 = "SHA_384",
     SHA_512 = "SHA_512",
-    MD5 = "MD%"
+    MD5 = "MD5"
 }
 export declare const SnmpAuthenticationProtocolTranslationMap: Map<SnmpAuthenticationProtocol, string>;
 export declare enum SnmpPrivacyProtocol {
@@ -302,7 +302,7 @@ export interface DeviceData {
     configuration: DeviceConfiguration;
     transportConfiguration: DeviceTransportConfiguration;
 }
-export interface Device extends BaseData<DeviceId>, ExportableEntity<DeviceId> {
+export interface Device extends BaseData<DeviceId>, HasTenantId, HasVersion, ExportableEntity<DeviceId> {
     tenantId?: TenantId;
     customerId?: CustomerId;
     name?: string;
@@ -337,7 +337,7 @@ export declare enum DeviceCredentialsType {
 }
 export declare const credentialTypeNames: Map<DeviceCredentialsType, string>;
 export declare const credentialTypesByTransportType: Map<DeviceTransportType, DeviceCredentialsType[]>;
-export interface DeviceCredentials extends BaseData<DeviceCredentialsId> {
+export interface DeviceCredentials extends BaseData<DeviceCredentialsId>, HasTenantId {
     deviceId: DeviceId;
     credentialsType: DeviceCredentialsType;
     credentialsId: string;

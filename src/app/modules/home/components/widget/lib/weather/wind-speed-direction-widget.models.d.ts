@@ -19,5 +19,6 @@ export interface WindSpeedDirectionWidgetSettings {
     minorTicksColor: string;
     minorTicksFont: Font;
     background: BackgroundSettings;
+    padding: string;
 }
 export declare const windSpeedDirectionDefaultSettings: WindSpeedDirectionWidgetSettings;

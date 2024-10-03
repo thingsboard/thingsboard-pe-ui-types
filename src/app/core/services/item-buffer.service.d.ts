@@ -1,4 +1,4 @@
-import { Dashboard, DashboardLayoutId } from '@app/shared/models/dashboard.models';
+import { BreakpointId, Dashboard, DashboardLayoutId } from '@app/shared/models/dashboard.models';
 import { AliasesInfo } from '@shared/models/alias.models';
 import { Widget, WidgetPosition, WidgetSize } from '@shared/models/widget.models';
 import { DashboardUtilsService } from '@core/services/dashboard-utils.service';
@@ -23,6 +23,7 @@ export interface WidgetReference {
     widgetId: string;
     originalSize: WidgetSize;
     originalColumns: number;
+    breakpoint: string;
 }
 export interface RuleNodeConnection {
     isInputSource: boolean;
@@ -44,22 +45,20 @@ export declare class ItemBufferService {
     private namespace;
     private delimiter;
     constructor(dashboardUtils: DashboardUtilsService, ruleChainService: RuleChainService, utils: UtilsService);
-    prepareWidgetItem(dashboard: Dashboard, sourceState: string, sourceLayout: DashboardLayoutId, widget: Widget): WidgetItem;
-    copyWidget(dashboard: Dashboard, sourceState: string, sourceLayout: DashboardLayoutId, widget: Widget): void;
-    copyWidgetReference(dashboard: Dashboard, sourceState: string, sourceLayout: DashboardLayoutId, widget: Widget): void;
+    prepareWidgetItem(dashboard: Dashboard, sourceState: string, sourceLayout: DashboardLayoutId, widget: Widget, breakpoint: BreakpointId): WidgetItem;
+    copyWidget(dashboard: Dashboard, sourceState: string, sourceLayout: DashboardLayoutId, widget: Widget, breakpoint: BreakpointId): void;
+    copyWidgetReference(dashboard: Dashboard, sourceState: string, sourceLayout: DashboardLayoutId, widget: Widget, breakpoint: BreakpointId): void;
     hasWidget(): boolean;
-    canPasteWidgetReference(dashboard: Dashboard, state: string, layout: DashboardLayoutId): boolean;
-    pasteWidget(targetDashboard: Dashboard, targetState: string, targetLayout: DashboardLayoutId, position: WidgetPosition, onAliasesUpdateFunction: () => void, onFiltersUpdateFunction: () => void): Observable<Widget>;
-    pasteWidgetReference(targetDashboard: Dashboard, targetState: string, targetLayout: DashboardLayoutId, position: WidgetPosition): Observable<Widget>;
-    addWidgetToDashboard(dashboard: Dashboard, targetState: string, targetLayout: DashboardLayoutId, widget: Widget, aliasesInfo: AliasesInfo, filtersInfo: FiltersInfo, onAliasesUpdateFunction: () => void, onFiltersUpdateFunction: () => void, originalColumns: number, originalSize: WidgetSize, row: number, column: number): Observable<Dashboard>;
+    canPasteWidgetReference(dashboard: Dashboard, state: string, layout: DashboardLayoutId, breakpoint: string): boolean;
+    pasteWidget(targetDashboard: Dashboard, targetState: string, targetLayout: DashboardLayoutId, breakpoint: string, position: WidgetPosition, onAliasesUpdateFunction: () => void, onFiltersUpdateFunction: () => void): Observable<Widget>;
+    pasteWidgetReference(targetDashboard: Dashboard, targetState: string, targetLayout: DashboardLayoutId, breakpoint: string, position: WidgetPosition): Observable<Widget>;
+    addWidgetToDashboard(dashboard: Dashboard, targetState: string, targetLayout: DashboardLayoutId, widget: Widget, aliasesInfo: AliasesInfo, filtersInfo: FiltersInfo, onAliasesUpdateFunction: () => void, onFiltersUpdateFunction: () => void, originalColumns: number, originalSize: WidgetSize, row: number, column: number, breakpoint?: string): Observable<Dashboard>;
     copyRuleNodes(nodes: FcRuleNode[], connections: RuleNodeConnection[]): void;
     hasRuleNodes(): boolean;
     pasteRuleNodes(x: number, y: number): RuleNodesReference;
     hasRuleChainImport(): boolean;
     storeRuleChainImport(ruleChainImport: RuleChainImport): void;
     getRuleChainImport(): RuleChainImport;
-    private getOriginalColumns;
-    private getOriginalSize;
     private prepareAliasInfo;
     private prepareFilterInfo;
     private prepareWidgetReference;

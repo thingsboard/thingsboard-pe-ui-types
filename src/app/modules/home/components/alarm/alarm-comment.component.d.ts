@@ -26,6 +26,7 @@ interface AlarmCommentsDisplayData {
     commentText?: string;
     isSystemComment?: boolean;
     avatarBgColor?: string;
+    userExists?: boolean;
 }
 export declare class AlarmCommentComponent implements OnInit {
     protected store: Store<AppState>;
@@ -66,7 +67,6 @@ export declare class AlarmCommentComponent implements OnInit {
     onCommentMouseLeave(displayDataIndex: number): void;
     getUserInitials(userName: string): string;
     getCurrentUserBgColor(userDisplayName: string): string;
-    private getUserDisplayName;
     getAlarmCommentFormControl(): AbstractControl;
     getAlarmCommentEditFormControl(): AbstractControl;
     private clearCommentInput;

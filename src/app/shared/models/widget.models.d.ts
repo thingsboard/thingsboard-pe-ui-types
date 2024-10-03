@@ -17,7 +17,9 @@ import { Dashboard } from '@shared/models/dashboard.models';
 import { IAliasController } from '@core/api/widget-api.models';
 import { WidgetConfigComponentData } from '@home/models/widget-component.models';
 import { ComponentStyle, Font, TimewindowStyle } from '@shared/models/widget-settings.models';
+import { HasTenantId, HasVersion } from '@shared/models/entity.models';
 import { DataKeysCallbacks, DataKeySettingsFunction } from '@home/components/widget/config/data-keys.component.models';
+import { WidgetConfigCallbacks } from '@home/components/widget/config/widget-config.component.models';
 import * as i0 from "@angular/core";
 export declare enum widgetType {
     timeseries = "timeseries",
@@ -89,6 +91,7 @@ export interface WidgetTypeParameters {
     defaultLatestDataKeysFunction?: (configComponent: any, configData: any) => DataKey[];
     dataKeySettingsFunction?: DataKeySettingsFunction;
     displayRpcMessageToast?: boolean;
+    targetDeviceOptional?: boolean;
 }
 export interface WidgetControllerDescriptor {
     widgetTypeFunction?: any;
@@ -100,11 +103,12 @@ export interface WidgetControllerDescriptor {
         [actionSourceId: string]: WidgetActionSource;
     };
 }
-export interface BaseWidgetType extends BaseData<WidgetTypeId> {
+export interface BaseWidgetType extends BaseData<WidgetTypeId>, HasTenantId, HasVersion {
     tenantId: TenantId;
     fqn: string;
     name: string;
     deprecated: boolean;
+    scada: boolean;
 }
 export declare const fullWidgetTypeFqn: (type: BaseWidgetType) => string;
 export declare const widgetTypeFqn: (fullFqn: string) => string;
@@ -288,6 +292,7 @@ export interface LegendData {
     data: Array<LegendKeyData>;
 }
 export declare enum WidgetActionType {
+    doNothing = "doNothing",
     openDashboardState = "openDashboardState",
     updateDashboardState = "updateDashboardState",
     openDashboard = "openDashboard",
@@ -442,6 +447,8 @@ export interface WidgetConfig {
     displayTimewindow?: boolean;
     timewindow?: Timewindow;
     timewindowStyle?: TimewindowStyle;
+    resizable?: boolean;
+    preserveAspectRatio?: boolean;
     desktopHide?: boolean;
     mobileHide?: boolean;
     mobileHeight?: number;
@@ -514,6 +521,7 @@ export interface WidgetSize {
 }
 export interface IWidgetSettingsComponent {
     aliasController: IAliasController;
+    callbacks: WidgetConfigCallbacks;
     dataKeyCallbacks: DataKeysCallbacks;
     dashboard: Dashboard;
     widget: Widget;
@@ -527,6 +535,7 @@ export interface IWidgetSettingsComponent {
 export declare abstract class WidgetSettingsComponent extends PageComponent implements IWidgetSettingsComponent, OnInit, AfterViewInit {
     protected store: Store<AppState>;
     aliasController: IAliasController;
+    callbacks: WidgetConfigCallbacks;
     dataKeyCallbacks: DataKeysCallbacks;
     dashboard: Dashboard;
     widget: Widget;

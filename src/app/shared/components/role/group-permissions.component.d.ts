@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, ElementRef, EventEmitter, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ElementRef, EventEmitter, NgZone, OnDestroy, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { PageLink } from '@shared/models/page/page-link';
 import { MatPaginator } from '@angular/material/paginator';
@@ -15,7 +15,7 @@ import { RoleService } from '@core/http/role.service';
 import { GroupPermission, GroupPermissionFullInfo } from '@shared/models/group-permission.models';
 import { FormBuilder } from '@angular/forms';
 import * as i0 from "@angular/core";
-export declare class GroupPermissionsComponent extends PageComponent implements AfterViewInit, OnInit {
+export declare class GroupPermissionsComponent extends PageComponent implements AfterViewInit, OnInit, OnDestroy {
     protected store: Store<AppState>;
     private roleService;
     translate: TranslateService;
@@ -25,6 +25,7 @@ export declare class GroupPermissionsComponent extends PageComponent implements 
     private cd;
     private elementRef;
     private fb;
+    private zone;
     groupPermissionsMode: 'group' | 'registration';
     displayedColumns: string[];
     columnsWidth: {
@@ -58,7 +59,7 @@ export declare class GroupPermissionsComponent extends PageComponent implements 
     textSearch: import("@angular/forms").FormControl<string>;
     private widgetResize$;
     private destroy$;
-    constructor(store: Store<AppState>, roleService: RoleService, translate: TranslateService, dialog: MatDialog, userPermissionsService: UserPermissionsService, dialogService: DialogService, cd: ChangeDetectorRef, elementRef: ElementRef, fb: FormBuilder);
+    constructor(store: Store<AppState>, roleService: RoleService, translate: TranslateService, dialog: MatDialog, userPermissionsService: UserPermissionsService, dialogService: DialogService, cd: ChangeDetectorRef, elementRef: ElementRef, fb: FormBuilder, zone: NgZone);
     ngOnInit(): void;
     ngOnDestroy(): void;
     private entityGroupUpdated;

@@ -23,6 +23,8 @@ export declare class EditWidgetComponent extends PageComponent implements OnInit
     widgetEditMode: boolean;
     widget: Widget;
     widgetLayout: WidgetLayout;
+    showLayoutConfig: boolean;
+    isDefaultBreakpoint: boolean;
     applyWidgetConfig: EventEmitter<void>;
     revertWidgetConfig: EventEmitter<void>;
     widgetFormGroup: UntypedFormGroup;
@@ -38,5 +40,5 @@ export declare class EditWidgetComponent extends PageComponent implements OnInit
     onRevertWidgetConfig(): void;
     private loadWidgetConfig;
     static ɵfac: i0.ɵɵFactoryDeclaration<EditWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EditWidgetComponent, "tb-edit-widget", never, { "dashboard": "dashboard"; "aliasController": "aliasController"; "stateController": "stateController"; "widgetEditMode": "widgetEditMode"; "widget": "widget"; "widgetLayout": "widgetLayout"; }, { "applyWidgetConfig": "applyWidgetConfig"; "revertWidgetConfig": "revertWidgetConfig"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EditWidgetComponent, "tb-edit-widget", never, { "dashboard": "dashboard"; "aliasController": "aliasController"; "stateController": "stateController"; "widgetEditMode": "widgetEditMode"; "widget": "widget"; "widgetLayout": "widgetLayout"; "showLayoutConfig": "showLayoutConfig"; "isDefaultBreakpoint": "isDefaultBreakpoint"; }, { "applyWidgetConfig": "applyWidgetConfig"; "revertWidgetConfig": "revertWidgetConfig"; }, never, never, false, never>;
 }

@@ -39,5 +39,6 @@ export interface SingleSwitchWidgetSettings {
     offLabelFont: Font;
     offLabelColor: string;
     background: BackgroundSettings;
+    padding: string;
 }
 export declare const singleSwitchDefaultSettings: SingleSwitchWidgetSettings;

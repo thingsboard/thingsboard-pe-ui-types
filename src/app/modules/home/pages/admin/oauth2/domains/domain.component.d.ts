@@ -1,0 +1,32 @@
+import { ChangeDetectorRef } from '@angular/core';
+import { EntityComponent } from '@home/components/entity/entity.component';
+import { DomainInfo } from '@shared/models/oauth2.models';
+import { AppState } from '@core/core.state';
+import { OAuth2Service } from '@core/http/oauth2.service';
+import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
+import { TranslateService } from '@ngx-translate/core';
+import { Store } from '@ngrx/store';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { EntityType } from '@shared/models/entity-type.models';
+import * as i0 from "@angular/core";
+export declare class DomainComponent extends EntityComponent<DomainInfo> {
+    protected store: Store<AppState>;
+    protected translate: TranslateService;
+    private oauth2Service;
+    protected entityValue: DomainInfo;
+    protected entitiesTableConfigValue: EntityTableConfig<DomainInfo>;
+    protected cd: ChangeDetectorRef;
+    fb: UntypedFormBuilder;
+    private window;
+    private dialog;
+    private loginProcessingUrl;
+    entityType: typeof EntityType;
+    constructor(store: Store<AppState>, translate: TranslateService, oauth2Service: OAuth2Service, entityValue: DomainInfo, entitiesTableConfigValue: EntityTableConfig<DomainInfo>, cd: ChangeDetectorRef, fb: UntypedFormBuilder, window: Window, dialog: MatDialog);
+    buildForm(entity: DomainInfo): UntypedFormGroup;
+    updateForm(entity: DomainInfo): void;
+    redirectURI(): string;
+    createClient($event: Event): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<DomainComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DomainComponent, "tb-domain", never, {}, {}, never, never, false, never>;
+}

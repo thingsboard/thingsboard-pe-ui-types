@@ -26,7 +26,7 @@ export declare class TbTimeSeriesChart {
     private timeSeriesChart;
     private timeSeriesChartOptions;
     private readonly tooltipDateFormat;
-    private readonly tooltipValueFormatFunction;
+    private readonly timeSeriesChartTooltip;
     private readonly stateValueConverter;
     private yMinSubject;
     private yMaxSubject;
@@ -44,7 +44,7 @@ export declare class TbTimeSeriesChart {
     latestUpdated(): void;
     keyEnter(dataKey: DataKey): void;
     keyLeave(dataKey: DataKey): void;
-    toggleKey(dataKey: DataKey): void;
+    toggleKey(dataKey: DataKey, dataIndex?: number): void;
     toggleVisualMapRange(index: number): void;
     destroy(): void;
     resize(): void;

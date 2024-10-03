@@ -14,6 +14,7 @@ export declare class AliasController implements IAliasController {
     private stateControllerHolder;
     private origEntityAliases;
     private origFilters;
+    private origUserFilters?;
     entityAliasesChangedSubject: Subject<string[]>;
     entityAliasesChanged: Observable<Array<string>>;
     filtersChangedSubject: Subject<string[]>;
@@ -32,7 +33,7 @@ export declare class AliasController implements IAliasController {
     resolvedAliasesToStateEntities: {
         [aliasId: string]: StateEntityInfo;
     };
-    constructor(utils: UtilsService, entityService: EntityService, translate: TranslateService, stateControllerHolder: StateControllerHolder, origEntityAliases: EntityAliases, origFilters: Filters);
+    constructor(utils: UtilsService, entityService: EntityService, translate: TranslateService, stateControllerHolder: StateControllerHolder, origEntityAliases: EntityAliases, origFilters: Filters, origUserFilters?: Filters);
     updateEntityAliases(newEntityAliases: EntityAliases): void;
     updateFilters(newFilters: Filters): void;
     updateAliases(aliasIds?: Array<string>): void;
@@ -40,6 +41,7 @@ export declare class AliasController implements IAliasController {
     setAliasUnresolved(aliasId: string): void;
     getEntityAliases(): EntityAliases;
     getFilters(): Filters;
+    getUserFilters(): Filters;
     getFilterInfo(filterId: string): FilterInfo;
     getKeyFilters(filterId: string): Array<KeyFilter>;
     getEntityAliasId(aliasName: string): string;

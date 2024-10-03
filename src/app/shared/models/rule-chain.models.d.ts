@@ -4,8 +4,9 @@ import { RuleChainId } from '@shared/models/id/rule-chain-id';
 import { RuleNodeId } from '@shared/models/id/rule-node-id';
 import { RuleNode, RuleNodeComponentDescriptor } from '@shared/models/rule-node.models';
 import { ComponentType } from '@shared/models/component-descriptor.models';
+import { HasTenantId, HasVersion } from '@shared/models/entity.models';
 import { EntityGroupParams } from '@shared/models/entity-group.models';
-export interface RuleChain extends BaseData<RuleChainId>, ExportableEntity<RuleChainId> {
+export interface RuleChain extends BaseData<RuleChainId>, HasTenantId, HasVersion, ExportableEntity<RuleChainId> {
     tenantId: TenantId;
     name: string;
     firstRuleNodeId: RuleNodeId;
@@ -16,7 +17,7 @@ export interface RuleChain extends BaseData<RuleChainId>, ExportableEntity<RuleC
     additionalInfo?: any;
     isDefault?: boolean;
 }
-export interface RuleChainMetaData {
+export interface RuleChainMetaData extends HasVersion {
     ruleChainId: RuleChainId;
     firstNodeIndex?: number;
     nodes: Array<RuleNode>;

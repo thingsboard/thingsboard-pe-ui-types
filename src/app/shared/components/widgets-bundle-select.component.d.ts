@@ -1,26 +1,30 @@
-import { OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectorRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { WidgetsBundle } from '@shared/models/widgets-bundle.model';
 import { WidgetService } from '@core/http/widget.service';
+import { MatDialog } from '@angular/material/dialog';
 import * as i0 from "@angular/core";
 export declare class WidgetsBundleSelectComponent implements ControlValueAccessor, OnInit, OnChanges {
     private store;
     private widgetService;
+    private dialog;
+    private cd;
     bundlesScope: 'system' | 'tenant';
     selectFirstBundle: boolean;
     selectBundleAlias: string;
     required: boolean;
     disabled: boolean;
     excludeBundleIds: Array<string>;
+    createNew: boolean;
     widgetsBundles$: Observable<Array<WidgetsBundle>>;
     widgetsBundles: Array<WidgetsBundle>;
     widgetsBundle: WidgetsBundle | null;
     onTouched: () => void;
     private propagateChange;
-    constructor(store: Store<AppState>, widgetService: WidgetService);
+    constructor(store: Store<AppState>, widgetService: WidgetService, dialog: MatDialog, cd: ChangeDetectorRef);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
@@ -32,6 +36,8 @@ export declare class WidgetsBundleSelectComponent implements ControlValueAccesso
     private selectWidgetsBundleByAlias;
     private updateView;
     private getWidgetsBundles;
+    compareById(f1: WidgetsBundle, f2: WidgetsBundle): boolean;
+    openWidgetsBundleDialog($event: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetsBundleSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetsBundleSelectComponent, "tb-widgets-bundle-select", never, { "bundlesScope": "bundlesScope"; "selectFirstBundle": "selectFirstBundle"; "selectBundleAlias": "selectBundleAlias"; "required": "required"; "disabled": "disabled"; "excludeBundleIds": "excludeBundleIds"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetsBundleSelectComponent, "tb-widgets-bundle-select", never, { "bundlesScope": "bundlesScope"; "selectFirstBundle": "selectFirstBundle"; "selectBundleAlias": "selectBundleAlias"; "required": "required"; "disabled": "disabled"; "excludeBundleIds": "excludeBundleIds"; "createNew": "createNew"; }, {}, never, never, false, never>;
 }

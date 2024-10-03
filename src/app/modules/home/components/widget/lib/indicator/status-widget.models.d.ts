@@ -31,5 +31,6 @@ export interface StatusWidgetSettings {
     layout: StatusWidgetLayout;
     onState: StatusWidgetStateSettings;
     offState: StatusWidgetStateSettings;
+    padding: string;
 }
 export declare const statusWidgetDefaultSettings: StatusWidgetSettings;

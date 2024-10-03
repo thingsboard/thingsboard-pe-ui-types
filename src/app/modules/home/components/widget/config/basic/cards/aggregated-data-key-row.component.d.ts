@@ -5,10 +5,10 @@ import { WidgetConfigComponent } from '@home/components/widget/widget-config.com
 import { ComparisonResultType, DataKey, DatasourceType, JsonSettingsSchema, Widget } from '@shared/models/widget.models';
 import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
 import { AggregationType } from '@shared/models/time/time.models';
-import { DataKeysCallbacks } from '@home/components/widget/config/data-keys.component.models';
 import { TranslateService } from '@ngx-translate/core';
 import { TruncatePipe } from '@shared/pipe/truncate.pipe';
 import { AggregatedValueCardKeyPosition } from '@home/components/widget/lib/cards/aggregated-value-card.models';
+import { WidgetConfigCallbacks } from '@home/components/widget/config/widget-config.component.models';
 import * as i0 from "@angular/core";
 export declare class AggregatedDataKeyRowComponent implements ControlValueAccessor, OnInit, OnChanges {
     private fb;
@@ -30,7 +30,7 @@ export declare class AggregatedDataKeyRowComponent implements ControlValueAccess
     keyRowFormGroup: UntypedFormGroup;
     modelValue: DataKey;
     valuePreviewFn: any;
-    get callbacks(): DataKeysCallbacks;
+    get callbacks(): WidgetConfigCallbacks;
     get widget(): Widget;
     get latestDataKeySettingsSchema(): JsonSettingsSchema;
     get latestDataKeySettingsDirective(): string;

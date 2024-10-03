@@ -2,14 +2,11 @@ import { AfterViewInit, ChangeDetectorRef, ElementRef, OnDestroy, OnInit, Render
 import { WidgetContext } from '@home/models/widget-component.models';
 import { WindSpeedDirectionLayout, WindSpeedDirectionWidgetSettings } from '@home/components/widget/lib/weather/wind-speed-direction-widget.models';
 import { ColorProcessor, ComponentStyle } from '@shared/models/widget-settings.models';
-import { WidgetComponent } from '@home/components/widget/widget.component';
-import { ResizeObserver } from '@juggle/resize-observer';
 import { Observable } from 'rxjs';
 import { ImagePipe } from '@shared/pipe/image.pipe';
 import { DomSanitizer } from '@angular/platform-browser';
 import * as i0 from "@angular/core";
 export declare class WindSpeedDirectionWidgetComponent implements OnInit, OnDestroy, AfterViewInit {
-    private widgetComponent;
     private imagePipe;
     private sanitizer;
     private renderer;
@@ -22,6 +19,7 @@ export declare class WindSpeedDirectionWidgetComponent implements OnInit, OnDest
     centerValueColor: ColorProcessor;
     backgroundStyle$: Observable<ComponentStyle>;
     overlayStyle: ComponentStyle;
+    padding: string;
     shapeResize$: ResizeObserver;
     hasCardClickAction: boolean;
     private decimals;
@@ -34,7 +32,7 @@ export declare class WindSpeedDirectionWidgetComponent implements OnInit, OnDest
     private centerValueDataKey;
     private windDirection;
     private centerValueText;
-    constructor(widgetComponent: WidgetComponent, imagePipe: ImagePipe, sanitizer: DomSanitizer, renderer: Renderer2, cd: ChangeDetectorRef);
+    constructor(imagePipe: ImagePipe, sanitizer: DomSanitizer, renderer: Renderer2, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     ngOnDestroy(): void;

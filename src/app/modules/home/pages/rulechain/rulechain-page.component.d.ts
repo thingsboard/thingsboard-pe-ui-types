@@ -29,6 +29,7 @@ import { DebugEventType, DebugRuleNodeEventBody, EventType } from '@shared/model
 import { MatMiniFabButton } from '@angular/material/button';
 import { TbPopoverService } from '@shared/components/popover.service';
 import { MatDrawer } from '@angular/material/sidenav';
+import { TbContextMenuEvent } from '@shared/models/jquery-event.models';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import * as i0 from "@angular/core";
 export declare class RuleChainPageComponent extends PageComponent implements AfterViewInit, OnInit, OnDestroy, HasDirtyFlag, ISearchableComponent, AfterViewChecked {
@@ -62,7 +63,7 @@ export declare class RuleChainPageComponent extends PageComponent implements Aft
         x: string;
         y: string;
     };
-    contextMenuEvent: MouseEvent;
+    contextMenuEvent: TbContextMenuEvent;
     ruleNodeTypeDescriptorsMap: Map<RuleNodeType, import("@shared/models/rule-node.models").RuleNodeTypeDescriptor>;
     ruleNodeTypesLibraryArray: RuleNodeType[];
     isImport: boolean;
@@ -149,7 +150,7 @@ export declare class RuleChainPageComponent extends PageComponent implements Aft
     updateRuleChainLibrary(): void;
     private loadRuleChainLibrary;
     private createRuleChainModel;
-    openRuleChainContextMenu($event: MouseEvent): void;
+    openRuleChainContextMenu($event: TbContextMenuEvent): void;
     onRuleChainContextMenuMouseLeave(): void;
     private prepareContextMenu;
     private prepareRuleChainContextMenu;

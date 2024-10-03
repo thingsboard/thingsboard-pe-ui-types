@@ -1,4 +1,4 @@
-import { AfterViewInit, ElementRef } from '@angular/core';
+import { AfterViewInit, ElementRef, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { PageLink } from '@shared/models/page/page-link';
 import { MatSort } from '@angular/material/sort';
@@ -7,7 +7,7 @@ import { WidgetContext } from '@home/models/widget-component.models';
 import { MatPaginator } from '@angular/material/paginator';
 import { GatewayLogData, GatewayStatus, LogLink } from './gateway-widget.models';
 import * as i0 from "@angular/core";
-export declare class GatewayLogsComponent implements AfterViewInit {
+export declare class GatewayLogsComponent implements OnInit, AfterViewInit {
     pageLink: PageLink;
     dataSource: MatTableDataSource<GatewayLogData>;
     displayedColumns: string[];
@@ -21,11 +21,14 @@ export declare class GatewayLogsComponent implements AfterViewInit {
     activeLink: LogLink;
     gatewayLogLinks: Array<LogLink>;
     constructor();
+    ngOnInit(): void;
     ngAfterViewInit(): void;
+    private updateWidgetTitle;
     private updateData;
     onTabChanged(link: LogLink): void;
     statusClass(status: GatewayStatus): string;
     statusClassMsg(status?: GatewayStatus): string;
+    trackByLogTs(_: number, log: GatewayLogData): number;
     private changeSubscription;
     static ɵfac: i0.ɵɵFactoryDeclaration<GatewayLogsComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<GatewayLogsComponent, "tb-gateway-logs", never, { "ctx": "ctx"; "dialogRef": "dialogRef"; }, {}, never, never, false, never>;

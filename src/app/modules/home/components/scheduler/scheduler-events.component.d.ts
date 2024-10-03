@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, ElementRef, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ElementRef, NgZone, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -36,6 +36,7 @@ export declare class SchedulerEventsComponent extends PageComponent implements O
     private route;
     private cd;
     private fb;
+    private zone;
     schedulerEventWidgetContainerRef: ElementRef;
     searchInputField: ElementRef;
     paginator: MatPaginator;
@@ -82,7 +83,7 @@ export declare class SchedulerEventsComponent extends PageComponent implements O
     private widgetResize$;
     private destroy$;
     private schedulerEventConfigTypes;
-    constructor(store: Store<AppState>, utils: UtilsService, translate: TranslateService, schedulerEventService: SchedulerEventService, userPermissionsService: UserPermissionsService, dialogService: DialogService, dialog: MatDialog, router: Router, route: ActivatedRoute, cd: ChangeDetectorRef, fb: FormBuilder);
+    constructor(store: Store<AppState>, utils: UtilsService, translate: TranslateService, schedulerEventService: SchedulerEventService, userPermissionsService: UserPermissionsService, dialogService: DialogService, dialog: MatDialog, router: Router, route: ActivatedRoute, cd: ChangeDetectorRef, fb: FormBuilder, zone: NgZone);
     ngOnInit(): void;
     ngOnDestroy(): void;
     ngOnChanges(changes: SimpleChanges): void;

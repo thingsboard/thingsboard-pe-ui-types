@@ -4,6 +4,7 @@ import { CustomerId } from '@shared/models/id/customer-id';
 import { EntityViewId } from '@shared/models/id/entity-view-id';
 import { EntityId } from '@shared/models/id/entity-id';
 import { EntitySearchQuery } from '@shared/models/relation.models';
+import { HasTenantId, HasVersion } from '@shared/models/entity.models';
 export interface AttributesEntityView {
     cs: Array<string>;
     ss: Array<string>;
@@ -13,7 +14,7 @@ export interface TelemetryEntityView {
     timeseries: Array<string>;
     attributes: AttributesEntityView;
 }
-export interface EntityView extends BaseData<EntityViewId>, ExportableEntity<EntityViewId> {
+export interface EntityView extends BaseData<EntityViewId>, HasTenantId, HasVersion, ExportableEntity<EntityViewId> {
     tenantId: TenantId;
     customerId: CustomerId;
     entityId: EntityId;
