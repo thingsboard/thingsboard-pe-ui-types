@@ -43,5 +43,5 @@ export declare class ScrollGridComponent<T, F> implements OnInit, AfterViewInit,
     deleteItem(index: number): void;
     private onContentResize;
     static ɵfac: i0.ɵɵFactoryDeclaration<ScrollGridComponent<any, any>, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ScrollGridComponent<any, any>, "tb-scroll-grid", never, { "columns": "columns"; "fetchFunction": "fetchFunction"; "filter": "filter"; "itemSize": "itemSize"; "gap": "gap"; "itemCard": "itemCard"; "loadingCell": "loadingCell"; "dataLoading": "dataLoading"; "noData": "noData"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ScrollGridComponent<any, any>, "tb-scroll-grid", never, { "columns": { "alias": "columns"; "required": false; }; "fetchFunction": { "alias": "fetchFunction"; "required": false; }; "filter": { "alias": "filter"; "required": false; }; "itemSize": { "alias": "itemSize"; "required": false; }; "gap": { "alias": "gap"; "required": false; }; "itemCard": { "alias": "itemCard"; "required": false; }; "loadingCell": { "alias": "loadingCell"; "required": false; }; "dataLoading": { "alias": "dataLoading"; "required": false; }; "noData": { "alias": "noData"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -25,5 +25,5 @@ export declare class ShareEntityGroupComponent implements ControlValueAccessor, 
     private updateValidators;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<ShareEntityGroupComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ShareEntityGroupComponent, "tb-share-entity-group", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ShareEntityGroupComponent, "tb-share-entity-group", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

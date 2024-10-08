@@ -7,7 +7,7 @@ export declare function interpolateOnLineSegment(pointA: FormattedData, pointB: 
     [key: string]: number;
 };
 export declare function findAngle(startPoint: FormattedData, endPoint: FormattedData, latKeyName: string, lngKeyName: string): number;
-export declare function getDefCenterPosition(position: any): [number, number];
+export declare function getDefCenterPosition(position: string | [number, number]): [number, number];
 export interface ImageWithAspect {
     url: string;
     aspect: number;
@@ -21,7 +21,7 @@ export declare const parseWithTranslation: {
     prepareProcessPattern(template: string, forceTranslate?: boolean): string;
     setTranslate(translateFn: TranslateFunc): void;
 };
-export declare function functionValueCalculator(useFunction: boolean, func: (...args: any[]) => any, params: any[], defaultValue: any): any;
+export declare function functionValueCalculator<T>(useFunction: boolean, func: (...args: any[]) => any, params: any[], defaultValue: T): T;
 export declare function calculateNewPointCoordinate(coordinate: number, imageSize: number): number;
 export declare function createLoadingDiv(loadingText: string): JQuery<HTMLElement>;
 export declare function checkLngLat(point: L.LatLng, southWest: L.LatLng, northEast: L.LatLng, offset?: number): L.LatLng;

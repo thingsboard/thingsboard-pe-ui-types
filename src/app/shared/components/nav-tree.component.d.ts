@@ -52,5 +52,5 @@ export declare class NavTreeComponent implements OnInit {
     ngOnInit(): void;
     private initTree;
     static ɵfac: i0.ɵɵFactoryDeclaration<NavTreeComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<NavTreeComponent, "tb-nav-tree", never, { "enableSearch": "enableSearch"; "loadNodes": "loadNodes"; "searchCallback": "searchCallback"; "onNodeSelected": "onNodeSelected"; "onNodesInserted": "onNodesInserted"; "editCallbacks": "editCallbacks"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NavTreeComponent, "tb-nav-tree", never, { "enableSearch": { "alias": "enableSearch"; "required": false; }; "loadNodes": { "alias": "loadNodes"; "required": false; }; "searchCallback": { "alias": "searchCallback"; "required": false; }; "onNodeSelected": { "alias": "onNodeSelected"; "required": false; }; "onNodesInserted": { "alias": "onNodesInserted"; "required": false; }; "editCallbacks": { "alias": "editCallbacks"; "required": false; }; }, {}, never, never, false, never>;
 }

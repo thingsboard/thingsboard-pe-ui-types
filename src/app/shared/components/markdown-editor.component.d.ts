@@ -32,5 +32,5 @@ export declare class MarkdownEditorComponent implements OnInit, ControlValueAcce
     private updateView;
     private onAceEditorResize;
     static ɵfac: i0.ɵɵFactoryDeclaration<MarkdownEditorComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MarkdownEditorComponent, "tb-markdown-editor", never, { "label": "label"; "disabled": "disabled"; "readonly": "readonly"; "helpId": "helpId"; "required": "required"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MarkdownEditorComponent, "tb-markdown-editor", never, { "label": { "alias": "label"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "readonly": { "alias": "readonly"; "required": false; }; "helpId": { "alias": "helpId"; "required": false; }; "required": { "alias": "required"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -73,7 +73,7 @@ export declare class BlobEntitiesComponent extends PageComponent implements OnIn
     deleteBlobEntities($event: Event): void;
     downloadBlobEntity($event: any, blobEntity: BlobEntityWithCustomerInfo): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<BlobEntitiesComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<BlobEntitiesComponent, "tb-blob-entities", never, { "widgetMode": "widgetMode"; "ctx": "ctx"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<BlobEntitiesComponent, "tb-blob-entities", never, { "widgetMode": { "alias": "widgetMode"; "required": false; }; "ctx": { "alias": "ctx"; "required": false; }; }, {}, never, never, false, never>;
 }
 declare class BlobEntitiesDatasource implements DataSource<BlobEntityWithCustomerInfo> {
     private blobEntityService;

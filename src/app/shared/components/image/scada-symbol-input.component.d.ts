@@ -42,5 +42,5 @@ export declare class ScadaSymbolInputComponent extends PageComponent implements 
     clearSymbol(): void;
     openGallery($event: Event): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ScadaSymbolInputComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ScadaSymbolInputComponent, "tb-scada-symbol-input", never, { "label": "label"; "required": "required"; "disabled": "disabled"; "scadaSymbolContent": "scadaSymbolContent"; "scadaSymbolMetadata": "scadaSymbolMetadata"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ScadaSymbolInputComponent, "tb-scada-symbol-input", never, { "label": { "alias": "label"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "scadaSymbolContent": { "alias": "scadaSymbolContent"; "required": false; }; "scadaSymbolMetadata": { "alias": "scadaSymbolMetadata"; "required": false; }; }, {}, never, never, false, never>;
 }

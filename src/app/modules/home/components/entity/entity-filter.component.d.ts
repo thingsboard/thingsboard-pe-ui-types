@@ -37,5 +37,5 @@ export declare class EntityFilterComponent implements ControlValueAccessor, OnIn
     private filterTypeChanged;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityFilterComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityFilterComponent, "tb-entity-filter", never, { "disabled": "disabled"; "allowedEntityTypes": "allowedEntityTypes"; "resolveMultiple": "resolveMultiple"; }, { "resolveMultipleChanged": "resolveMultipleChanged"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityFilterComponent, "tb-entity-filter", never, { "disabled": { "alias": "disabled"; "required": false; }; "allowedEntityTypes": { "alias": "allowedEntityTypes"; "required": false; }; "resolveMultiple": { "alias": "resolveMultiple"; "required": false; }; }, { "resolveMultipleChanged": "resolveMultipleChanged"; }, never, never, false, never>;
 }

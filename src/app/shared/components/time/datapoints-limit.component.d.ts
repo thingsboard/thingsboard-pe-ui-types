@@ -27,5 +27,5 @@ export declare class DatapointsLimitComponent implements ControlValueAccessor, V
     maxDatapointsLimit(): number;
     ngOnDestroy(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DatapointsLimitComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DatapointsLimitComponent, "tb-datapoints-limit", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DatapointsLimitComponent, "tb-datapoints-limit", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -19,7 +19,7 @@ export declare class ToggleOption {
     get viewValue(): string;
     constructor(_element: ElementRef<HTMLElement>);
     static ɵfac: i0.ɵɵFactoryDeclaration<ToggleOption, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<ToggleOption, "tb-toggle-option", never, { "value": "value"; }, {}, never, never, false, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<ToggleOption, "tb-toggle-option", never, { "value": { "alias": "value"; "required": false; }; }, {}, never, never, false, never>;
 }
 export declare abstract class _ToggleBase extends PageComponent implements AfterContentInit, OnDestroy {
     protected store: Store<AppState>;
@@ -31,7 +31,7 @@ export declare abstract class _ToggleBase extends PageComponent implements After
     ngOnDestroy(): void;
     private syncToggleHeaderOptions;
     static ɵfac: i0.ɵɵFactoryDeclaration<_ToggleBase, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<_ToggleBase, never, never, { "options": "options"; }, {}, ["toggleOptions"], never, false, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<_ToggleBase, never, never, { "options": { "alias": "options"; "required": false; }; }, {}, ["toggleOptions"], never, false, never>;
 }
 export declare class ToggleHeaderComponent extends _ToggleBase implements OnInit, AfterViewInit, AfterContentInit, AfterContentChecked, AfterViewChecked, OnDestroy {
     protected store: Store<AppState>;
@@ -89,5 +89,5 @@ export declare class ToggleHeaderComponent extends _ToggleBase implements OnInit
     private _scrollTo;
     private updateToggleHeaderScrollPosition;
     static ɵfac: i0.ɵɵFactoryDeclaration<ToggleHeaderComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ToggleHeaderComponent, "tb-toggle-header", never, { "value": "value"; "name": "name"; "disablePagination": "disablePagination"; "selectMediaBreakpoint": "selectMediaBreakpoint"; "useSelectOnMdLg": "useSelectOnMdLg"; "ignoreMdLgSize": "ignoreMdLgSize"; "appearance": "appearance"; "disabled": "disabled"; "fillHeight": "fillHeight"; "extraPadding": "extraPadding"; "primaryBackground": "primaryBackground"; }, { "valueChange": "valueChange"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ToggleHeaderComponent, "tb-toggle-header", never, { "value": { "alias": "value"; "required": false; }; "name": { "alias": "name"; "required": false; }; "disablePagination": { "alias": "disablePagination"; "required": false; }; "selectMediaBreakpoint": { "alias": "selectMediaBreakpoint"; "required": false; }; "useSelectOnMdLg": { "alias": "useSelectOnMdLg"; "required": false; }; "ignoreMdLgSize": { "alias": "ignoreMdLgSize"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "fillHeight": { "alias": "fillHeight"; "required": false; }; "extraPadding": { "alias": "extraPadding"; "required": false; }; "primaryBackground": { "alias": "primaryBackground"; "required": false; }; }, { "valueChange": "valueChange"; }, never, never, false, never>;
 }

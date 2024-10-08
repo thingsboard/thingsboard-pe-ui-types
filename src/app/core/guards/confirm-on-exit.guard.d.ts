@@ -1,4 +1,4 @@
-import { ActivatedRouteSnapshot, CanDeactivate, RouterStateSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -15,7 +15,7 @@ export interface HasDirtyFlag {
     isDirty: boolean;
     confirmOnExitMessage?: string;
 }
-export declare class ConfirmOnExitGuard implements CanDeactivate<HasConfirmForm & HasDirtyFlag> {
+export declare class ConfirmOnExitGuard {
     private store;
     private dialogService;
     private translate;

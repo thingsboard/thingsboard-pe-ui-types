@@ -48,5 +48,5 @@ export declare class DeviceInfoFilterComponent implements OnInit, OnDestroy, Con
     private deviceFilterUpdated;
     private updateButtonDisplayValue;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceInfoFilterComponent, [{ optional: true; }, { optional: true; }, null, null, null, null, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceInfoFilterComponent, "tb-device-info-filter", never, { "disabled": "disabled"; "buttonMode": "buttonMode"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceInfoFilterComponent, "tb-device-info-filter", never, { "disabled": { "alias": "disabled"; "required": false; }; "buttonMode": { "alias": "buttonMode"; "required": false; }; }, {}, never, never, false, never>;
 }

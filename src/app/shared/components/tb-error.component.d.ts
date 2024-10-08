@@ -9,5 +9,5 @@ export declare class TbErrorComponent {
     noMargin: boolean;
     set error(value: any);
     static ɵfac: i0.ɵɵFactoryDeclaration<TbErrorComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TbErrorComponent, "tb-error", never, { "noMargin": "noMargin"; "error": "error"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TbErrorComponent, "tb-error", never, { "noMargin": { "alias": "noMargin"; "required": false; }; "error": { "alias": "error"; "required": false; }; }, {}, never, never, false, never>;
 }

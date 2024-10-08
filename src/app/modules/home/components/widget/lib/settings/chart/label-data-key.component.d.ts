@@ -30,5 +30,5 @@ export declare class LabelDataKeyComponent extends PageComponent implements OnIn
     labelDataKeyText(): string;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<LabelDataKeyComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<LabelDataKeyComponent, "tb-label-data-key", never, { "disabled": "disabled"; "expanded": "expanded"; }, { "removeLabelDataKey": "removeLabelDataKey"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<LabelDataKeyComponent, "tb-label-data-key", never, { "disabled": { "alias": "disabled"; "required": false; }; "expanded": { "alias": "expanded"; "required": false; }; }, { "removeLabelDataKey": "removeLabelDataKey"; }, never, never, false, never>;
 }

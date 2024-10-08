@@ -142,6 +142,6 @@ export declare class MultipleInputWidgetComponent extends PageComponent implemen
     openEditJSONDialog($event: Event, key: MultipleInputWidgetDataKey, source: MultipleInputWidgetSource): void;
     invalid(): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<MultipleInputWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MultipleInputWidgetComponent, "tb-multiple-input-widget ", never, { "ctx": "ctx"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MultipleInputWidgetComponent, "tb-multiple-input-widget ", never, { "ctx": { "alias": "ctx"; "required": false; }; }, {}, never, never, false, never>;
 }
 export {};

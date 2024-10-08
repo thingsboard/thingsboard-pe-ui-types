@@ -21,5 +21,5 @@ export declare class ColorRangePanelComponent extends PageComponent implements O
     cancel(): void;
     applyColorRangeSettings(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ColorRangePanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ColorRangePanelComponent, "tb-color-range-panel", never, { "colorRangeSettings": "colorRangeSettings"; "popover": "popover"; "settingsComponents": "settingsComponents"; }, { "colorRangeApplied": "colorRangeApplied"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ColorRangePanelComponent, "tb-color-range-panel", never, { "colorRangeSettings": { "alias": "colorRangeSettings"; "required": false; }; "popover": { "alias": "popover"; "required": false; }; "settingsComponents": { "alias": "settingsComponents"; "required": false; }; }, { "colorRangeApplied": "colorRangeApplied"; }, never, never, false, never>;
 }

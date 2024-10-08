@@ -235,5 +235,5 @@ export declare const setLabel: (label: string, datasources?: Datasource[]) => vo
 export declare const getSingleTsValue: (data: Array<DatasourceData>) => DataEntry;
 export declare const getSingleTsValueByDataKey: (data: Array<DatasourceData>, dataKey: DataKey) => DataEntry;
 export declare const getLatestSingleTsValue: (data: Array<DatasourceData>) => DataEntry;
-export declare const createValueSubscription: (ctx: WidgetContext, datasourceConfigs: ValueSourceConfig[], onDataUpdated: WidgetSubscriptionCallbacks['onDataUpdated']) => Observable<IWidgetSubscription>;
+export declare const createValueSubscription: (ctx: WidgetContext, datasourceConfigs: ValueSourceConfig[], onDataUpdated: WidgetSubscriptionCallbacks["onDataUpdated"]) => Observable<IWidgetSubscription>;
 export {};

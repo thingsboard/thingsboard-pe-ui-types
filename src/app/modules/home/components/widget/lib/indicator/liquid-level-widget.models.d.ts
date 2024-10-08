@@ -101,7 +101,7 @@ export declare const LiquidWidgetDataSourceTypeTranslations: Map<LiquidWidgetDat
 export declare const ShapesTranslations: Map<Shapes, string>;
 export declare const levelCardDefaultSettings: LevelCardWidgetSettings;
 export declare const convertLiters: (value: number, units: CapacityUnits, conversionType: ConversionType) => number;
-export declare const extractValue: <T>(attributes: Array<AttributeData>, attributeName: string) => T;
+export declare const extractValue: <T>(attributes: Array<AttributeData>, attributeName: string) => T | undefined;
 export declare const valueContainerStyleDefaults: string;
 export declare const valueTextStyleDefaults: string;
 export declare const volumeTextStyleDefaults: string;
@@ -113,7 +113,7 @@ export declare const createAbsoluteLayout: (values?: {
     volumeStyle: string;
 }, units?: string) => string;
 export declare const createPercentLayout: (value?: number | string, valueTextStyle?: string) => string;
-export declare const optionsFilter: (searchText: string) => (key: DataKey) => boolean;
+export declare const optionsFilter: (searchText: string) => ((key: DataKey) => boolean);
 export declare const fetchEntityKeysForDevice: (deviceId: string, dataKeyTypes: Array<DataKeyType>, entityService: EntityService) => Observable<Array<DataKey>>;
 export declare const fetchEntityKeys: (entityAliasId: string, dataKeyTypes: Array<DataKeyType>, entityService: EntityService, aliasController: IAliasController) => Observable<Array<DataKey>>;
 export declare const createShapeLayout: (svg: string, layout: LevelCardLayout, sanitizer: DomSanitizer) => SafeUrl;

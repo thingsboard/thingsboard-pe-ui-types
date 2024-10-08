@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import { CmdWrapper, WsService, WsSubscriber } from '@shared/models/websocket/websocket.models';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';

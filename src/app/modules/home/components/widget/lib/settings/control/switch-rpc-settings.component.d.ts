@@ -53,5 +53,5 @@ export declare class SwitchRpcSettingsComponent extends PageComponent implements
     private updateModel;
     private updateValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<SwitchRpcSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SwitchRpcSettingsComponent, "tb-switch-rpc-settings", never, { "disabled": "disabled"; "aliasController": "aliasController"; "targetDevice": "targetDevice"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SwitchRpcSettingsComponent, "tb-switch-rpc-settings", never, { "disabled": { "alias": "disabled"; "required": false; }; "aliasController": { "alias": "aliasController"; "required": false; }; "targetDevice": { "alias": "targetDevice"; "required": false; }; }, {}, never, never, false, never>;
 }

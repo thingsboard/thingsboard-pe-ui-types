@@ -21,9 +21,9 @@ export interface TbEditorCompletion {
     return?: FunctionArgType;
     children?: TbEditorCompletions;
 }
-interface TbEditorAceCompletion extends Ace.Completion {
+interface TbEditorAceCompletion extends Ace.SnippetCompletion {
     isTbEditorAceCompletion: true;
-    snippet: string;
+    title: string;
     description?: string;
     type?: string;
     args?: FunctionArg[];
@@ -39,9 +39,7 @@ export declare class TbEditorCompleter implements Ace.Completer {
     private prepareCompletions;
     private toAceCompletionsList;
     private toAceCompletion;
-    getDocTooltip(completion: TbEditorAceCompletion): {
-        docHTML: string;
-    };
+    getDocTooltip(completion: TbEditorAceCompletion): TbEditorAceCompletion;
     private createDocHTML;
 }
 export {};

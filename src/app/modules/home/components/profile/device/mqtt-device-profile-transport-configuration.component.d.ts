@@ -28,5 +28,5 @@ export declare class MqttDeviceProfileTransportConfigurationComponent implements
     private validationMQTTTopic;
     private uniqueDeviceTopicValidator;
     static ɵfac: i0.ɵɵFactoryDeclaration<MqttDeviceProfileTransportConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MqttDeviceProfileTransportConfigurationComponent, "tb-mqtt-device-profile-transport-configuration", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MqttDeviceProfileTransportConfigurationComponent, "tb-mqtt-device-profile-transport-configuration", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

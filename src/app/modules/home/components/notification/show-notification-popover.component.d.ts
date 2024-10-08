@@ -29,5 +29,5 @@ export declare class ShowNotificationPopoverComponent extends PageComponent impl
     viewAll($event: Event): void;
     trackById(index: number, item: NotificationRequest): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<ShowNotificationPopoverComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ShowNotificationPopoverComponent, "tb-show-notification-popover", never, { "onClose": "onClose"; "counter": "counter"; "popoverComponent": "popoverComponent"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ShowNotificationPopoverComponent, "tb-show-notification-popover", never, { "onClose": { "alias": "onClose"; "required": false; }; "counter": { "alias": "counter"; "required": false; }; "popoverComponent": { "alias": "popoverComponent"; "required": false; }; }, {}, never, never, false, never>;
 }

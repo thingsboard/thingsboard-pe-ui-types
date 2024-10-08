@@ -27,5 +27,5 @@ export declare class EntityAliasInputComponent implements ControlValueAccessor, 
     private fetchEntityAliases;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityAliasInputComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityAliasInputComponent, "tb-entity-alias-input", never, { "disabled": "disabled"; "required": "required"; "aliasController": "aliasController"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityAliasInputComponent, "tb-entity-alias-input", never, { "disabled": { "alias": "disabled"; "required": false; }; "required": { "alias": "required"; "required": false; }; "aliasController": { "alias": "aliasController"; "required": false; }; }, {}, never, never, false, never>;
 }

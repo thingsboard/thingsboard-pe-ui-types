@@ -33,5 +33,5 @@ export declare class ColorRangeSettingsComponent implements OnInit, ControlValue
     openColorRangeSettingsPopup($event: Event, matButton: MatButton): void;
     private updateColorStyle;
     static ɵfac: i0.ɵɵFactoryDeclaration<ColorRangeSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ColorRangeSettingsComponent, "tb-color-range-settings", never, { "disabled": "disabled"; "settingsKey": "settingsKey"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ColorRangeSettingsComponent, "tb-color-range-settings", never, { "disabled": { "alias": "disabled"; "required": false; }; "settingsKey": { "alias": "settingsKey"; "required": false; }; }, {}, never, never, false, never>;
 }

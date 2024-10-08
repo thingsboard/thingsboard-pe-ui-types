@@ -59,5 +59,5 @@ export declare class EdgeEntityGroupListComponent implements ControlValueAccesso
     onFocus(): void;
     clear(value?: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EdgeEntityGroupListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EdgeEntityGroupListComponent, "tb-edge-entity-group-list", never, { "groupType": "groupType"; "excludeGroupAll": "excludeGroupAll"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EdgeEntityGroupListComponent, "tb-edge-entity-group-list", never, { "groupType": { "alias": "groupType"; "required": false; }; "excludeGroupAll": { "alias": "excludeGroupAll"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

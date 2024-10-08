@@ -1,19 +1,18 @@
-import { AfterViewInit, ElementRef, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, ElementRef, OnDestroy } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { WidgetContext } from '@home/models/widget-component.models';
 import { UtilsService } from '@core/services/utils.service';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { MatSlideToggle } from '@angular/material/slide-toggle';
 import { ThemePalette } from '@angular/material/core';
 import * as i0 from "@angular/core";
 type SwitchType = 'switch' | 'slide-toggle';
-export declare class SwitchComponent extends PageComponent implements OnInit, AfterViewInit, OnDestroy {
+export declare class SwitchComponent extends PageComponent implements AfterViewInit, OnDestroy {
     private utils;
     protected store: Store<AppState>;
     switchElementRef: ElementRef<HTMLElement>;
     switchContainerRef: ElementRef<HTMLElement>;
-    matSlideToggleRef: MatSlideToggle;
+    matSlideToggleRef: ElementRef<HTMLElement>;
     onoffContainerRef: ElementRef<HTMLElement>;
     onLabelRef: ElementRef<HTMLElement>;
     offLabelRef: ElementRef<HTMLElement>;
@@ -58,7 +57,6 @@ export declare class SwitchComponent extends PageComponent implements OnInit, Af
     private switchError;
     private switchResize$;
     constructor(utils: UtilsService, store: Store<AppState>);
-    ngOnInit(): void;
     ngAfterViewInit(): void;
     ngOnDestroy(): void;
     private init;
@@ -74,6 +72,6 @@ export declare class SwitchComponent extends PageComponent implements OnInit, Af
     private onDataUpdated;
     private onDataUpdateError;
     static ɵfac: i0.ɵɵFactoryDeclaration<SwitchComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SwitchComponent, "tb-switch", never, { "ctx": "ctx"; "switchType": "switchType"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SwitchComponent, "tb-switch", never, { "ctx": { "alias": "ctx"; "required": false; }; "switchType": { "alias": "switchType"; "required": false; }; }, {}, never, never, false, never>;
 }
 export {};

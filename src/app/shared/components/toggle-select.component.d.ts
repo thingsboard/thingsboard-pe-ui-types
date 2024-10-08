@@ -22,5 +22,5 @@ export declare class ToggleSelectComponent extends _ToggleBase implements Contro
     writeValue(value: any): void;
     updateModel(value: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ToggleSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ToggleSelectComponent, "tb-toggle-select", never, { "disabled": "disabled"; "selectMediaBreakpoint": "selectMediaBreakpoint"; "appearance": "appearance"; "disablePagination": "disablePagination"; "fillHeight": "fillHeight"; "extraPadding": "extraPadding"; "primaryBackground": "primaryBackground"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ToggleSelectComponent, "tb-toggle-select", never, { "disabled": { "alias": "disabled"; "required": false; }; "selectMediaBreakpoint": { "alias": "selectMediaBreakpoint"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "disablePagination": { "alias": "disablePagination"; "required": false; }; "fillHeight": { "alias": "fillHeight"; "required": false; }; "extraPadding": { "alias": "extraPadding"; "required": false; }; "primaryBackground": { "alias": "primaryBackground"; "required": false; }; }, {}, never, never, false, never>;
 }

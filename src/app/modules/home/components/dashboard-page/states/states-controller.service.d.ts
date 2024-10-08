@@ -1,18 +1,17 @@
-import { ComponentFactory, ComponentFactoryResolver, Type } from '@angular/core';
+import { Type } from '@angular/core';
 import { IStateControllerComponent } from '@home/components/dashboard-page/states/state-controller.models';
 import * as i0 from "@angular/core";
 export interface StateControllerData {
-    factory: ComponentFactory<IStateControllerComponent>;
+    component: Type<IStateControllerComponent>;
 }
 export declare class StatesControllerService {
-    private componentFactoryResolver;
     statesControllers: {
         [stateControllerId: string]: StateControllerData;
     };
     statesControllerStates: {
         [stateControllerInstanceId: string]: any;
     };
-    constructor(componentFactoryResolver: ComponentFactoryResolver);
+    constructor();
     registerStatesController(stateControllerId: string, stateControllerComponent: Type<IStateControllerComponent>): void;
     getStateControllers(): {
         [stateControllerId: string]: StateControllerData;

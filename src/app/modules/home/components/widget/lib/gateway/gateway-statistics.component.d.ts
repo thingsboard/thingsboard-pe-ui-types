@@ -50,5 +50,5 @@ export declare class GatewayStatisticsComponent implements AfterViewInit {
     private isDataOnlyNumbers;
     private changeSubscription;
     static ɵfac: i0.ɵɵFactoryDeclaration<GatewayStatisticsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<GatewayStatisticsComponent, "tb-gateway-statistics", never, { "ctx": "ctx"; "general": "general"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GatewayStatisticsComponent, "tb-gateway-statistics", never, { "ctx": { "alias": "ctx"; "required": false; }; "general": { "alias": "general"; "required": false; }; }, {}, never, never, false, never>;
 }

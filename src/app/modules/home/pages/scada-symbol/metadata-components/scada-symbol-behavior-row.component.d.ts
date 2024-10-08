@@ -47,5 +47,5 @@ export declare class ScadaSymbolBehaviorRowComponent implements ControlValueAcce
     private onTypeChanged;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<ScadaSymbolBehaviorRowComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ScadaSymbolBehaviorRowComponent, "tb-scada-symbol-metadata-behavior-row", never, { "disabled": "disabled"; "index": "index"; "aliasController": "aliasController"; "callbacks": "callbacks"; }, { "behaviorRemoved": "behaviorRemoved"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ScadaSymbolBehaviorRowComponent, "tb-scada-symbol-metadata-behavior-row", never, { "disabled": { "alias": "disabled"; "required": false; }; "index": { "alias": "index"; "required": false; }; "aliasController": { "alias": "aliasController"; "required": false; }; "callbacks": { "alias": "callbacks"; "required": false; }; }, { "behaviorRemoved": "behaviorRemoved"; }, never, never, false, never>;
 }

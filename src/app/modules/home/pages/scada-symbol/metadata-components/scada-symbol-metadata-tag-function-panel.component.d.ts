@@ -29,5 +29,5 @@ export declare class ScadaSymbolMetadataTagFunctionPanelComponent implements OnI
     cancel(): void;
     applyTagFunction(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ScadaSymbolMetadataTagFunctionPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ScadaSymbolMetadataTagFunctionPanelComponent, "tb-scada-symbol-metadata-tag-function-panel", never, { "tagFunction": "tagFunction"; "tagFunctionType": "tagFunctionType"; "tag": "tag"; "completer": "completer"; "disabled": "disabled"; "popover": "popover"; }, { "tagFunctionApplied": "tagFunctionApplied"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ScadaSymbolMetadataTagFunctionPanelComponent, "tb-scada-symbol-metadata-tag-function-panel", never, { "tagFunction": { "alias": "tagFunction"; "required": false; }; "tagFunctionType": { "alias": "tagFunctionType"; "required": false; }; "tag": { "alias": "tag"; "required": false; }; "completer": { "alias": "completer"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "popover": { "alias": "popover"; "required": false; }; }, { "tagFunctionApplied": "tagFunctionApplied"; }, never, never, false, never>;
 }

@@ -1,4 +1,4 @@
-import { ComponentFactory } from '@angular/core';
+import { Type } from '@angular/core';
 import { RequestConfig } from './http-utils';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -19,7 +19,7 @@ export declare class RuleChainService {
     private resourcesService;
     private translate;
     private ruleNodeComponentsMap;
-    private ruleNodeConfigFactories;
+    private ruleNodeConfigComponents;
     private ruleNodeComponentsType;
     constructor(http: HttpClient, componentDescriptorService: ComponentDescriptorService, resourcesService: ResourcesService, translate: TranslateService);
     getRuleChains(pageLink: PageLink, type?: RuleChainType, config?: RequestConfig): Observable<PageData<RuleChain>>;
@@ -32,7 +32,7 @@ export declare class RuleChainService {
     getRuleChainMetadata(ruleChainId: string, config?: RequestConfig): Observable<RuleChainMetaData>;
     saveRuleChainMetadata(ruleChainMetaData: RuleChainMetaData, config?: RequestConfig): Observable<RuleChainMetaData>;
     getRuleNodeComponents(modulesMap: IModulesMap, ruleChainType: RuleChainType, config?: RequestConfig): Observable<Array<RuleNodeComponentDescriptor>>;
-    getRuleNodeConfigFactory(directive: string): ComponentFactory<IRuleNodeConfigurationComponent>;
+    getRuleNodeConfigComponent(directive: string): Type<IRuleNodeConfigurationComponent>;
     getRuleNodeComponentByClazz(ruleChainType: RuleChainType, clazz: string): RuleNodeComponentDescriptor;
     getRuleNodeSupportedLinks(component: RuleNodeComponentDescriptor): {
         [label: string]: LinkLabel;

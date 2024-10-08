@@ -42,5 +42,5 @@ export declare class GalleryImageInputComponent extends PageComponent implements
     setLink($event: Event): void;
     openGallery($event: Event): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<GalleryImageInputComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<GalleryImageInputComponent, "tb-gallery-image-input", never, { "label": "label"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GalleryImageInputComponent, "tb-gallery-image-input", never, { "label": { "alias": "label"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

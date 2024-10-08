@@ -36,5 +36,5 @@ export declare class TargetDeviceComponent implements ControlValueAccessor, OnIn
     private targetDeviceUpdated;
     private updateValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<TargetDeviceComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TargetDeviceComponent, "tb-target-device", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TargetDeviceComponent, "tb-target-device", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

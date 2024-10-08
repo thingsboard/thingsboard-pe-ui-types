@@ -22,5 +22,5 @@ export declare class ModbusSecurityConfigComponent implements ControlValueAccess
     private updateMasterEnabling;
     private observeValueChanges;
     static ɵfac: i0.ɵɵFactoryDeclaration<ModbusSecurityConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ModbusSecurityConfigComponent, "tb-modbus-security-config", never, { "isMaster": "isMaster"; }, {}, never, never, true, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ModbusSecurityConfigComponent, "tb-modbus-security-config", never, { "isMaster": { "alias": "isMaster"; "required": false; }; }, {}, never, never, true, never>;
 }

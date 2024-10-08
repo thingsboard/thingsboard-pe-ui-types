@@ -16,5 +16,5 @@ export declare class WidgetsBundleSearchComponent implements ControlValueAccesso
     clear($event: Event): void;
     toggleFocus(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetsBundleSearchComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetsBundleSearchComponent, "tb-widgets-bundle-search", never, { "placeholder": "placeholder"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetsBundleSearchComponent, "tb-widgets-bundle-search", never, { "placeholder": { "alias": "placeholder"; "required": false; }; }, {}, never, never, false, never>;
 }

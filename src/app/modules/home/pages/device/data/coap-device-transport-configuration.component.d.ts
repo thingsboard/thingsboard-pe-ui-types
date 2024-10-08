@@ -23,5 +23,5 @@ export declare class CoapDeviceTransportConfigurationComponent implements Contro
     writeValue(value: CoapDeviceTransportConfiguration | null): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<CoapDeviceTransportConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CoapDeviceTransportConfigurationComponent, "tb-coap-device-transport-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CoapDeviceTransportConfigurationComponent, "tb-coap-device-transport-configuration", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -50,5 +50,5 @@ export declare class ValueSourceComponent extends PageComponent implements OnIni
     private updateModel;
     private updateValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<ValueSourceComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ValueSourceComponent, "tb-value-source", never, { "disabled": "disabled"; "aliasController": "aliasController"; "entityAliasPlaceholder": "entityAliasPlaceholder"; "entityAttributePlaceholder": "entityAttributePlaceholder"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ValueSourceComponent, "tb-value-source", never, { "disabled": { "alias": "disabled"; "required": false; }; "aliasController": { "alias": "aliasController"; "required": false; }; "entityAliasPlaceholder": { "alias": "entityAliasPlaceholder"; "required": false; }; "entityAttributePlaceholder": { "alias": "entityAttributePlaceholder"; "required": false; }; }, {}, never, never, false, never>;
 }

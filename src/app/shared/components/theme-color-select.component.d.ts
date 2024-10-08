@@ -31,5 +31,5 @@ export declare class ThemeColorSelectComponent extends PageComponent implements 
     writeValue(value: string): void;
     selectColor(hue: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ThemeColorSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ThemeColorSelectComponent, "tb-theme-color-select", never, { "palette": "palette"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ThemeColorSelectComponent, "tb-theme-color-select", never, { "palette": { "alias": "palette"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -29,5 +29,5 @@ export declare class TimeSeriesChartAxisSettingsComponent implements OnInit, Con
     private updateValidators;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesChartAxisSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartAxisSettingsComponent, "tb-time-series-chart-axis-settings", never, { "alwaysExpanded": "alwaysExpanded"; "disabled": "disabled"; "axisType": "axisType"; "advanced": "advanced"; "hideUnits": "hideUnits"; "hideDecimals": "hideDecimals"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartAxisSettingsComponent, "tb-time-series-chart-axis-settings", never, { "alwaysExpanded": { "alias": "alwaysExpanded"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "axisType": { "alias": "axisType"; "required": false; }; "advanced": { "alias": "advanced"; "required": false; }; "hideUnits": { "alias": "hideUnits"; "required": false; }; "hideDecimals": { "alias": "hideDecimals"; "required": false; }; }, {}, never, never, false, never>;
 }

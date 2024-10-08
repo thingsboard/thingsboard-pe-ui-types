@@ -34,5 +34,5 @@ export declare class UnitInputComponent implements ControlValueAccessor, OnInit 
     clear(): void;
     private unitsConstant;
     static ɵfac: i0.ɵɵFactoryDeclaration<UnitInputComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<UnitInputComponent, "tb-unit-input", never, { "disabled": "disabled"; "required": "required"; "tagFilter": "tagFilter"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<UnitInputComponent, "tb-unit-input", never, { "disabled": { "alias": "disabled"; "required": false; }; "required": { "alias": "required"; "required": false; }; "tagFilter": { "alias": "tagFilter"; "required": false; }; }, {}, never, never, false, never>;
 }

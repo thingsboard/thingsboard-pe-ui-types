@@ -26,5 +26,5 @@ export declare class EscalationsComponent implements ControlValueAccessor, Valid
     validate(c: AbstractControl): ValidationErrors | null;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<EscalationsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EscalationsComponent, "tb-escalations-component", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EscalationsComponent, "tb-escalations-component", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

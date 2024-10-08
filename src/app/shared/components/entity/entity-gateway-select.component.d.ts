@@ -49,5 +49,5 @@ export declare class EntityGatewaySelectComponent implements ControlValueAccesso
     private loadGatewayList;
     private updateView;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityGatewaySelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGatewaySelectComponent, "tb-entity-gateway-select", never, { "required": "required"; "newGatewayType": "newGatewayType"; "deviceName": "deviceName"; "isStateForm": "isStateForm"; }, { "gatewayNameExist": "gatewayNameExist"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGatewaySelectComponent, "tb-entity-gateway-select", never, { "required": { "alias": "required"; "required": false; }; "newGatewayType": { "alias": "newGatewayType"; "required": false; }; "deviceName": { "alias": "deviceName"; "required": false; }; "isStateForm": { "alias": "isStateForm"; "required": false; }; }, { "gatewayNameExist": "gatewayNameExist"; }, never, never, false, never>;
 }

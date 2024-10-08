@@ -23,5 +23,5 @@ export declare class Lwm2mDeviceTransportConfigurationComponent implements Contr
     writeValue(value: Lwm2mDeviceTransportConfiguration | null): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<Lwm2mDeviceTransportConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mDeviceTransportConfigurationComponent, "tb-lwm2m-device-transport-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mDeviceTransportConfigurationComponent, "tb-lwm2m-device-transport-configuration", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -30,6 +30,6 @@ export declare class AttributeKeyValueTableComponent extends PageComponent imple
     addKeyVal(): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<AttributeKeyValueTableComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AttributeKeyValueTableComponent, "tb-attribute-key-value-table", never, { "disabled": "disabled"; "titleText": "titleText"; "requiredPrompt": "requiredPrompt"; "required": "required"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AttributeKeyValueTableComponent, "tb-attribute-key-value-table", never, { "disabled": { "alias": "disabled"; "required": false; }; "titleText": { "alias": "titleText"; "required": false; }; "requiredPrompt": { "alias": "requiredPrompt"; "required": false; }; "required": { "alias": "required"; "required": false; }; }, {}, never, never, false, never>;
 }
 export declare function attributeKeyValueValidator(required: boolean): ValidatorFn;

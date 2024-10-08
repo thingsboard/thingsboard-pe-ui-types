@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, ComponentFactoryResolver, ElementRef, NgZone, OnDestroy, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ElementRef, NgZone, OnDestroy, ViewContainerRef } from '@angular/core';
 import { MatSnackBar, MatSnackBarRef } from '@angular/material/snack-bar';
 import { NotificationMessage } from '@app/core/notification/notification.models';
 import { ToastNotificationService } from '@core/services/toast-notification.service';
@@ -10,7 +10,6 @@ export declare class ToastDirective implements AfterViewInit, OnDestroy {
     private elementRef;
     private viewContainerRef;
     private notificationService;
-    private componentFactoryResolver;
     private snackBar;
     private ngZone;
     private breakpointObserver;
@@ -22,14 +21,14 @@ export declare class ToastDirective implements AfterViewInit, OnDestroy {
     private toastComponentRef;
     private currentMessage;
     private dismissTimeout;
-    constructor(elementRef: ElementRef, viewContainerRef: ViewContainerRef, notificationService: ToastNotificationService, componentFactoryResolver: ComponentFactoryResolver, snackBar: MatSnackBar, ngZone: NgZone, breakpointObserver: BreakpointObserver, cd: ChangeDetectorRef);
+    constructor(elementRef: ElementRef, viewContainerRef: ViewContainerRef, notificationService: ToastNotificationService, snackBar: MatSnackBar, ngZone: NgZone, breakpointObserver: BreakpointObserver, cd: ChangeDetectorRef);
     ngAfterViewInit(): void;
     private showToastPanel;
     private showSnackBar;
     private shouldDisplayMessage;
     ngOnDestroy(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ToastDirective, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<ToastDirective, "[tb-toast]", never, { "toastTarget": "toastTarget"; }, {}, never, never, false, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<ToastDirective, "[tb-toast]", never, { "toastTarget": { "alias": "toastTarget"; "required": false; }; }, {}, never, never, false, never>;
 }
 interface ToastPanelData {
     notification: NotificationMessage;

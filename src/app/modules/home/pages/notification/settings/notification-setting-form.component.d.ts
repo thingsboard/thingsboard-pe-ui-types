@@ -23,5 +23,5 @@ export declare class NotificationSettingFormComponent implements ControlValueAcc
     writeValue(value: NotificationUserSetting): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<NotificationSettingFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<NotificationSettingFormComponent, "tb-notification-setting-form", never, { "disabled": "disabled"; "deliveryMethods": "deliveryMethods"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NotificationSettingFormComponent, "tb-notification-setting-form", never, { "disabled": { "alias": "disabled"; "required": false; }; "deliveryMethods": { "alias": "deliveryMethods"; "required": false; }; }, {}, never, never, false, never>;
 }

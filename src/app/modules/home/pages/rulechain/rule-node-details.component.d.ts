@@ -39,5 +39,5 @@ export declare class RuleNodeDetailsComponent extends PageComponent implements O
     isSingleton(): boolean;
     isSingletonEditAllowed(): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<RuleNodeDetailsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RuleNodeDetailsComponent, "tb-rule-node", never, { "ruleNode": "ruleNode"; "ruleChainId": "ruleChainId"; "ruleChainType": "ruleChainType"; "disabled": "disabled"; "isAdd": "isAdd"; }, { "initRuleNode": "initRuleNode"; "changeScript": "changeScript"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RuleNodeDetailsComponent, "tb-rule-node", never, { "ruleNode": { "alias": "ruleNode"; "required": false; }; "ruleChainId": { "alias": "ruleChainId"; "required": false; }; "ruleChainType": { "alias": "ruleChainType"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "isAdd": { "alias": "isAdd"; "required": false; }; }, { "initRuleNode": "initRuleNode"; "changeScript": "changeScript"; }, never, never, false, never>;
 }

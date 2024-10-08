@@ -1,4 +1,4 @@
-import { Resolve, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { User } from '@shared/models/user.model';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -8,7 +8,7 @@ import { TwoFactorAuthProviderType } from '@shared/models/two-factor-auth.models
 import { TwoFactorAuthenticationService } from '@core/http/two-factor-authentication.service';
 import * as i0 from "@angular/core";
 import * as i1 from "@angular/router";
-export declare class UserProfileResolver implements Resolve<User> {
+export declare class UserProfileResolver {
     private store;
     private userService;
     constructor(store: Store<AppState>, userService: UserService);
@@ -16,7 +16,7 @@ export declare class UserProfileResolver implements Resolve<User> {
     static ɵfac: i0.ɵɵFactoryDeclaration<UserProfileResolver, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<UserProfileResolver>;
 }
-export declare class UserTwoFAProvidersResolver implements Resolve<Array<TwoFactorAuthProviderType>> {
+export declare class UserTwoFAProvidersResolver {
     private twoFactorAuthService;
     constructor(twoFactorAuthService: TwoFactorAuthenticationService);
     resolve(): Observable<Array<TwoFactorAuthProviderType>>;

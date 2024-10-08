@@ -36,6 +36,6 @@ export declare class DocLinksWidgetComponent extends PageComponent implements On
     edit(): void;
     addLink(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DocLinksWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DocLinksWidgetComponent, "tb-doc-links-widget", never, { "ctx": "ctx"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DocLinksWidgetComponent, "tb-doc-links-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; }, {}, never, never, false, never>;
 }
 export {};

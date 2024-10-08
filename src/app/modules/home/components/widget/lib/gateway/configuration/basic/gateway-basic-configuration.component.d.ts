@@ -69,5 +69,5 @@ export declare class GatewayBasicConfigurationComponent implements OnDestroy, Co
     private updateAccessTokenCredentials;
     private updateMqttBasicCredentials;
     static ɵfac: i0.ɵɵFactoryDeclaration<GatewayBasicConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<GatewayBasicConfigurationComponent, "tb-gateway-basic-configuration", never, { "device": "device"; "dialogMode": "dialogMode"; }, { "initialCredentialsUpdated": "initialCredentialsUpdated"; }, never, never, true, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GatewayBasicConfigurationComponent, "tb-gateway-basic-configuration", never, { "device": { "alias": "device"; "required": false; }; "dialogMode": { "alias": "dialogMode"; "required": false; }; }, { "initialCredentialsUpdated": "initialCredentialsUpdated"; }, never, never, true, never>;
 }

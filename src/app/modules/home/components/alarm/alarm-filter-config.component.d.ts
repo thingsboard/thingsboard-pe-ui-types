@@ -60,5 +60,5 @@ export declare class AlarmFilterConfigComponent implements OnInit, OnDestroy, Co
     private updateButtonDisplayValue;
     private customTranslate;
     static ɵfac: i0.ɵɵFactoryDeclaration<AlarmFilterConfigComponent, [{ optional: true; }, { optional: true; }, null, null, null, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmFilterConfigComponent, "tb-alarm-filter-config", never, { "disabled": "disabled"; "buttonMode": "buttonMode"; "userMode": "userMode"; "propagatedFilter": "propagatedFilter"; "initialAlarmFilterConfig": "initialAlarmFilterConfig"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmFilterConfigComponent, "tb-alarm-filter-config", never, { "disabled": { "alias": "disabled"; "required": false; }; "buttonMode": { "alias": "buttonMode"; "required": false; }; "userMode": { "alias": "userMode"; "required": false; }; "propagatedFilter": { "alias": "propagatedFilter"; "required": false; }; "initialAlarmFilterConfig": { "alias": "initialAlarmFilterConfig"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -29,5 +29,5 @@ export declare class DeviceProfileProvisionConfigurationComponent implements Con
     onProvisionCopied(isKey: boolean): void;
     private resetFormControls;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceProfileProvisionConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceProfileProvisionConfigurationComponent, "tb-device-profile-provision-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceProfileProvisionConfigurationComponent, "tb-device-profile-provision-configuration", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

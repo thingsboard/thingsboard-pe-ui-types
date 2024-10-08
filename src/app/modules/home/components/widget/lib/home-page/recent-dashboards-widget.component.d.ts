@@ -47,7 +47,7 @@ export declare class RecentDashboardsWidgetComponent extends PageComponent imple
     toggleDashboardStar(dashboard: AbstractUserDashboardInfo): void;
     onStarDashboard(dashboard: DashboardInfo): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<RecentDashboardsWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RecentDashboardsWidgetComponent, "tb-recent-dashboards-widget", never, { "ctx": "ctx"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RecentDashboardsWidgetComponent, "tb-recent-dashboards-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; }, {}, never, never, false, never>;
 }
 export declare class LastVisitedDashboardsDataSource implements DataSource<LastVisitedDashboardInfo> {
     private lastVisitedDashboards;

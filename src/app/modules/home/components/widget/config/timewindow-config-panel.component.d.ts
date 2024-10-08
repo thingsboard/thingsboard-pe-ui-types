@@ -32,5 +32,5 @@ export declare class TimewindowConfigPanelComponent implements ControlValueAcces
     setDisabledState(isDisabled: boolean): void;
     private updateTimewindowConfigEnabledState;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimewindowConfigPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimewindowConfigPanelComponent, "tb-timewindow-config-panel", never, { "disabled": "disabled"; "onlyHistoryTimewindow": "onlyHistoryTimewindow"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimewindowConfigPanelComponent, "tb-timewindow-config-panel", never, { "disabled": { "alias": "disabled"; "required": false; }; "onlyHistoryTimewindow": { "alias": "onlyHistoryTimewindow"; "required": false; }; }, {}, never, never, false, never>;
 }

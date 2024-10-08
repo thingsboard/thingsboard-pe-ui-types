@@ -29,5 +29,5 @@ export declare class SmppSmsProviderConfigurationComponent implements ControlVal
     writeValue(value: AwsSnsSmsProviderConfiguration | null): void;
     private updateValue;
     static ɵfac: i0.ɵɵFactoryDeclaration<SmppSmsProviderConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SmppSmsProviderConfigurationComponent, "tb-smpp-sms-provider-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SmppSmsProviderConfigurationComponent, "tb-smpp-sms-provider-configuration", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

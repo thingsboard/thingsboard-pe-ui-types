@@ -40,5 +40,5 @@ export declare class ScadaSymbolWidgetComponent implements OnInit, AfterViewInit
     onScadaSymbolObjectMessage(message: string): void;
     private initObject;
     static ɵfac: i0.ɵɵFactoryDeclaration<ScadaSymbolWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ScadaSymbolWidgetComponent, "tb-scada-symbol-widget", never, { "ctx": "ctx"; "widgetTitlePanel": "widgetTitlePanel"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ScadaSymbolWidgetComponent, "tb-scada-symbol-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; }, {}, never, never, false, never>;
 }

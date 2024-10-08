@@ -19,5 +19,5 @@ export declare class TruncateWithTooltipDirective implements OnInit, AfterViewIn
     private showTooltip;
     private hideTooltip;
     static ɵfac: i0.ɵɵFactoryDeclaration<TruncateWithTooltipDirective, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<TruncateWithTooltipDirective, "[tbTruncateWithTooltip]", never, { "text": "tbTruncateWithTooltip"; "tooltipEnabled": "tooltipEnabled"; "position": "position"; }, {}, never, never, false, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<TruncateWithTooltipDirective, "[tbTruncateWithTooltip]", never, { "text": { "alias": "tbTruncateWithTooltip"; "required": false; }; "tooltipEnabled": { "alias": "tooltipEnabled"; "required": false; }; "position": { "alias": "position"; "required": false; }; }, {}, never, never, false, never>;
 }

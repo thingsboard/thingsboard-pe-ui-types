@@ -1,4 +1,4 @@
-import { ActivatedRouteSnapshot, Resolve, Router } from '@angular/router';
+import { ActivatedRouteSnapshot, Router } from '@angular/router';
 import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
 import { TranslateService } from '@ngx-translate/core';
 import { DatePipe } from '@angular/common';
@@ -9,7 +9,7 @@ import { UtilsService } from '@core/services/utils.service';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { EntityAction } from '@home/models/entity/entity-component.models';
 import * as i0 from "@angular/core";
-export declare class ConvertersTableConfigResolver implements Resolve<EntityTableConfig<Converter>> {
+export declare class ConvertersTableConfigResolver {
     private converterService;
     private userPermissionsService;
     private translate;

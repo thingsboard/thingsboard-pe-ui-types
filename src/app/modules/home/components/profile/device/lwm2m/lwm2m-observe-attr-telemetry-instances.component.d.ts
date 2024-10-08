@@ -35,5 +35,5 @@ export declare class Lwm2mObserveAttrTelemetryInstancesComponent implements Cont
     disableObserveInstance: (instance: AbstractControl) => boolean;
     observeInstance: (instance: AbstractControl) => boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<Lwm2mObserveAttrTelemetryInstancesComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mObserveAttrTelemetryInstancesComponent, "tb-profile-lwm2m-observe-attr-telemetry-instances", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mObserveAttrTelemetryInstancesComponent, "tb-profile-lwm2m-observe-attr-telemetry-instances", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

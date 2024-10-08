@@ -26,5 +26,5 @@ export declare class PermissionListComponent extends PageComponent implements Co
     addPermission(): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<PermissionListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PermissionListComponent, "tb-permission-list", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PermissionListComponent, "tb-permission-list", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

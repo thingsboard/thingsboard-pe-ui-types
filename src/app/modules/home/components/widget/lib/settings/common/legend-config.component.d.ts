@@ -28,5 +28,5 @@ export declare class LegendConfigComponent implements OnInit, OnDestroy, Control
     private getShowValues;
     private setShowValues;
     static ɵfac: i0.ɵɵFactoryDeclaration<LegendConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<LegendConfigComponent, "tb-legend-config", never, { "disabled": "disabled"; "hideDirection": "hideDirection"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<LegendConfigComponent, "tb-legend-config", never, { "disabled": { "alias": "disabled"; "required": false; }; "hideDirection": { "alias": "hideDirection"; "required": false; }; }, {}, never, never, false, never>;
 }

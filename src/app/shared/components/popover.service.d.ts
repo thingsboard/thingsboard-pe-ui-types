@@ -1,14 +1,12 @@
-import { ComponentFactory, ComponentFactoryResolver, ComponentRef, Injector, Renderer2, Type, ViewContainerRef } from '@angular/core';
+import { ComponentRef, Injector, Renderer2, Type, ViewContainerRef } from '@angular/core';
 import { PopoverPreferredPlacement } from '@shared/components/popover.models';
 import { TbPopoverComponent } from '@shared/components/popover.component';
 import { ComponentType } from '@angular/cdk/portal';
 import * as i0 from "@angular/core";
 export declare class TbPopoverService {
-    private resolver;
     private helpMarkdownComponent;
     private popoverWithTriggers;
-    componentFactory: ComponentFactory<TbPopoverComponent>;
-    constructor(resolver: ComponentFactoryResolver, helpMarkdownComponent: ComponentType<any>);
+    constructor(helpMarkdownComponent: ComponentType<any>);
     hasPopover(trigger: Element): boolean;
     hidePopover(trigger: Element): boolean;
     createPopoverRef(hostView: ViewContainerRef): ComponentRef<TbPopoverComponent>;

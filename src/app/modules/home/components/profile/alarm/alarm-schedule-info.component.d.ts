@@ -21,5 +21,5 @@ export declare class AlarmScheduleInfoComponent implements ControlValueAccessor,
     private updateScheduleText;
     openScheduleDialog($event: Event): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AlarmScheduleInfoComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmScheduleInfoComponent, "tb-alarm-schedule-info", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmScheduleInfoComponent, "tb-alarm-schedule-info", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

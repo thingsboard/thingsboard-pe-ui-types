@@ -30,5 +30,5 @@ export declare class WidgetButtonCustomStyleComponent implements OnInit, OnChang
     private updateModel;
     private updatePreviewAppearance;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetButtonCustomStyleComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetButtonCustomStyleComponent, "tb-widget-button-custom-style", never, { "disabled": "disabled"; "appearance": "appearance"; "borderRadius": "borderRadius"; "autoScale": "autoScale"; "state": "state"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetButtonCustomStyleComponent, "tb-widget-button-custom-style", never, { "disabled": { "alias": "disabled"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "borderRadius": { "alias": "borderRadius"; "required": false; }; "autoScale": { "alias": "autoScale"; "required": false; }; "state": { "alias": "state"; "required": false; }; }, {}, never, never, false, never>;
 }

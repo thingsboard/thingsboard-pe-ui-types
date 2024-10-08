@@ -32,5 +32,5 @@ export declare class CustomMenuItemComponent implements ControlValueAccessor, On
     private updateValidators;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<CustomMenuItemComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CustomMenuItemComponent, "tb-custom-menu-item", never, { "disabled": "disabled"; "scope": "scope"; "menuItemTypeEditable": "menuItemTypeEditable"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CustomMenuItemComponent, "tb-custom-menu-item", never, { "disabled": { "alias": "disabled"; "required": false; }; "scope": { "alias": "scope"; "required": false; }; "menuItemTypeEditable": { "alias": "menuItemTypeEditable"; "required": false; }; }, {}, never, never, false, never>;
 }

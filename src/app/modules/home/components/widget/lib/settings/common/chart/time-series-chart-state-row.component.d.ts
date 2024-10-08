@@ -22,5 +22,5 @@ export declare class TimeSeriesChartStateRowComponent implements ControlValueAcc
     private updateValidators;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesChartStateRowComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartStateRowComponent, "tb-time-series-chart-state-row", never, { "disabled": "disabled"; }, { "stateRemoved": "stateRemoved"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartStateRowComponent, "tb-time-series-chart-state-row", never, { "disabled": { "alias": "disabled"; "required": false; }; }, { "stateRemoved": "stateRemoved"; }, never, never, false, never>;
 }

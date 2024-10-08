@@ -5,7 +5,7 @@ import * as i0 from "@angular/core";
 export declare class OpcUaMappingComponent implements ControlValueAccessor, Validator, OnDestroy {
     private fb;
     opcMappingForm: UntypedFormGroup;
-    OpcMappingTypes: OpcMappingType[];
+    OpcMappingTypes: Array<OpcMappingType>;
     OpcMappingType: typeof OpcMappingType;
     OpcMappingTypeTranslation: Map<OpcMappingType, string>;
     disabled: boolean;
@@ -25,5 +25,5 @@ export declare class OpcUaMappingComponent implements ControlValueAccessor, Vali
     private createdFormGroup;
     private updateModels;
     static ɵfac: i0.ɵɵFactoryDeclaration<OpcUaMappingComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<OpcUaMappingComponent, "tb-opc-ua-mapping", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<OpcUaMappingComponent, "tb-opc-ua-mapping", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

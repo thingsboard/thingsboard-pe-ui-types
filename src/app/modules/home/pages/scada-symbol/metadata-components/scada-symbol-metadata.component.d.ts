@@ -50,5 +50,5 @@ export declare class ScadaSymbolMetadataComponent extends PageComponent implemen
     private updateModel;
     private updateFunctionCompleters;
     static ɵfac: i0.ɵɵFactoryDeclaration<ScadaSymbolMetadataComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ScadaSymbolMetadataComponent, "tb-scada-symbol-metadata", never, { "aliasController": "aliasController"; "callbacks": "callbacks"; "disabled": "disabled"; "tags": "tags"; }, {}, never, [".tb-scada-symbol-metadata-header-prefix", ".tb-scada-symbol-metadata-header-suffix"], false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ScadaSymbolMetadataComponent, "tb-scada-symbol-metadata", never, { "aliasController": { "alias": "aliasController"; "required": false; }; "callbacks": { "alias": "callbacks"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "tags": { "alias": "tags"; "required": false; }; }, {}, never, [".tb-scada-symbol-metadata-header-prefix", ".tb-scada-symbol-metadata-header-suffix"], false, never>;
 }

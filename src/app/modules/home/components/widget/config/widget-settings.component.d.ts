@@ -1,4 +1,4 @@
-import { AfterViewInit, ComponentFactoryResolver, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewContainerRef } from '@angular/core';
+import { OnChanges, OnDestroy, SimpleChanges, ViewContainerRef } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
@@ -11,9 +11,8 @@ import { IAliasController } from '@core/api/widget-api.models';
 import { WidgetConfigComponentData } from '@home/models/widget-component.models';
 import { WidgetConfigCallbacks } from '@home/components/widget/config/widget-config.component.models';
 import * as i0 from "@angular/core";
-export declare class WidgetSettingsComponent implements ControlValueAccessor, OnInit, OnDestroy, AfterViewInit, OnChanges, Validator {
+export declare class WidgetSettingsComponent implements ControlValueAccessor, OnDestroy, OnChanges, Validator {
     private translate;
-    private cfr;
     private widgetService;
     private fb;
     definedSettingsContainer: ViewContainerRef;
@@ -32,13 +31,11 @@ export declare class WidgetSettingsComponent implements ControlValueAccessor, On
     private definedSettingsComponent;
     private widgetSettingsFormData;
     private propagateChange;
-    constructor(translate: TranslateService, cfr: ComponentFactoryResolver, widgetService: WidgetService, fb: UntypedFormBuilder);
+    constructor(translate: TranslateService, widgetService: WidgetService, fb: UntypedFormBuilder);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
-    ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
     ngOnDestroy(): void;
-    ngAfterViewInit(): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: JsonFormComponentData): void;
     useDefinedDirective(): boolean;
@@ -47,5 +44,5 @@ export declare class WidgetSettingsComponent implements ControlValueAccessor, On
     private validateDefinedDirective;
     validate(control: AbstractControl): ValidationErrors | null;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetSettingsComponent, "tb-widget-settings", never, { "disabled": "disabled"; "aliasController": "aliasController"; "callbacks": "callbacks"; "dashboard": "dashboard"; "widget": "widget"; "widgetConfig": "widgetConfig"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetSettingsComponent, "tb-widget-settings", never, { "disabled": { "alias": "disabled"; "required": false; }; "aliasController": { "alias": "aliasController"; "required": false; }; "callbacks": { "alias": "callbacks"; "required": false; }; "dashboard": { "alias": "dashboard"; "required": false; }; "widget": { "alias": "widget"; "required": false; }; "widgetConfig": { "alias": "widgetConfig"; "required": false; }; }, {}, never, never, false, never>;
 }

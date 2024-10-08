@@ -17,5 +17,5 @@ export declare class SelectDashboardBreakpointComponent implements OnInit, OnDes
     getIcon(breakpointId: BreakpointId): string;
     getSizeDescription(breakpointId: BreakpointId): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<SelectDashboardBreakpointComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SelectDashboardBreakpointComponent, "tb-select-dashboard-breakpoint", never, { "dashboardCtrl": "dashboardCtrl"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SelectDashboardBreakpointComponent, "tb-select-dashboard-breakpoint", never, { "dashboardCtrl": { "alias": "dashboardCtrl"; "required": false; }; }, {}, never, never, false, never>;
 }

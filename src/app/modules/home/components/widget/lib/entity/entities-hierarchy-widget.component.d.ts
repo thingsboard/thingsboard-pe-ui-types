@@ -60,5 +60,5 @@ export declare class EntitiesHierarchyWidgetComponent extends PageComponent impl
     private prepareNodeRelationQuery;
     private prepareNodeRelationsQueryFilter;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntitiesHierarchyWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntitiesHierarchyWidgetComponent, "tb-entities-hierarchy-widget", never, { "ctx": "ctx"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntitiesHierarchyWidgetComponent, "tb-entities-hierarchy-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; }, {}, never, never, false, never>;
 }

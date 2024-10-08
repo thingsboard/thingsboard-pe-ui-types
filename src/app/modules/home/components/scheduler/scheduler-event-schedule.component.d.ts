@@ -63,6 +63,6 @@ export declare class SchedulerEventScheduleComponent extends PageComponent imple
     private dateTimeToUtcTime;
     private dateToUtcTime;
     static ɵfac: i0.ɵɵFactoryDeclaration<SchedulerEventScheduleComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SchedulerEventScheduleComponent, "tb-scheduler-event-schedule", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SchedulerEventScheduleComponent, "tb-scheduler-event-schedule", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }
 export {};

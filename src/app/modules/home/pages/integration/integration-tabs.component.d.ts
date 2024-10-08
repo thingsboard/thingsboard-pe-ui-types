@@ -13,5 +13,5 @@ export declare class IntegrationTabsComponent extends EntityTabsComponent<Integr
     constructor(store: Store<AppState>);
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<IntegrationTabsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<IntegrationTabsComponent, "tb-integration-tabs", never, { "defaultEventType": "defaultEventType"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<IntegrationTabsComponent, "tb-integration-tabs", never, { "defaultEventType": { "alias": "defaultEventType"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -1,17 +1,15 @@
 import React from 'react';
 import { JsonFormFieldProps, JsonFormFieldState } from '@shared/components/json-form/react/json-form.models';
 declare const _default: {
-    new <P extends JsonFormFieldProps>(props: any): {
+    new <P extends JsonFormFieldProps>(props: P): {
         componentDidMount(): void;
         onChangeValidate(e: any, forceUpdate?: boolean): void;
         defaultValue(): any;
-        render(): JSX.Element;
-        context: any;
+        render(): React.JSX.Element;
+        context: unknown;
         setState<K extends keyof JsonFormFieldState>(state: JsonFormFieldState | ((prevState: Readonly<JsonFormFieldState>, props: Readonly<P>) => JsonFormFieldState | Pick<JsonFormFieldState, K>) | Pick<JsonFormFieldState, K>, callback?: () => void): void;
         forceUpdate(callback?: () => void): void;
-        readonly props: Readonly<P> & Readonly<{
-            children?: React.ReactNode;
-        }>;
+        readonly props: Readonly<P>;
         state: Readonly<JsonFormFieldState>;
         refs: {
             [key: string]: React.ReactInstance;
@@ -28,6 +26,6 @@ declare const _default: {
         componentWillUpdate?(nextProps: Readonly<P>, nextState: Readonly<JsonFormFieldState>, nextContext: any): void;
         UNSAFE_componentWillUpdate?(nextProps: Readonly<P>, nextState: Readonly<JsonFormFieldState>, nextContext: any): void;
     };
-    contextType?: React.Context<any>;
+    contextType?: React.Context<any> | undefined;
 };
 export default _default;

@@ -50,5 +50,5 @@ export declare class QueueAutocompleteComponent implements ControlValueAccessor,
     getDescription(value: any): any;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<QueueAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<QueueAutocompleteComponent, "tb-queue-autocomplete", never, { "labelText": "labelText"; "requiredText": "requiredText"; "autocompleteHint": "autocompleteHint"; "subscriptSizing": "subscriptSizing"; "required": "required"; "queueType": "queueType"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<QueueAutocompleteComponent, "tb-queue-autocomplete", never, { "labelText": { "alias": "labelText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "autocompleteHint": { "alias": "autocompleteHint"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "required": { "alias": "required"; "required": false; }; "queueType": { "alias": "queueType"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

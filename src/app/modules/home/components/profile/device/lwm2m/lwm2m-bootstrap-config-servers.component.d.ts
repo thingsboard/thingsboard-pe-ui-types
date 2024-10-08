@@ -42,5 +42,5 @@ export declare class Lwm2mBootstrapConfigServersComponent implements OnInit, Con
     private removeBootstrapServerConfig;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<Lwm2mBootstrapConfigServersComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mBootstrapConfigServersComponent, "tb-profile-lwm2m-bootstrap-config-servers", never, { "disabled": "disabled"; "isTransportWasRunWithBootstrap": "isTransportWasRunWithBootstrap"; "isBootstrapServerUpdateEnable": "isBootstrapServerUpdateEnable"; }, { "isTransportWasRunWithBootstrapChange": "isTransportWasRunWithBootstrapChange"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mBootstrapConfigServersComponent, "tb-profile-lwm2m-bootstrap-config-servers", never, { "disabled": { "alias": "disabled"; "required": false; }; "isTransportWasRunWithBootstrap": { "alias": "isTransportWasRunWithBootstrap"; "required": false; }; "isBootstrapServerUpdateEnable": { "alias": "isBootstrapServerUpdateEnable"; "required": false; }; }, { "isTransportWasRunWithBootstrapChange": "isTransportWasRunWithBootstrapChange"; }, never, never, false, never>;
 }

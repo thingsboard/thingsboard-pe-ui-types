@@ -6,5 +6,5 @@ export declare class MenuLinkComponent implements OnInit {
     constructor();
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<MenuLinkComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MenuLinkComponent, "tb-menu-link", never, { "section": "section"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MenuLinkComponent, "tb-menu-link", never, { "section": { "alias": "section"; "required": false; }; }, {}, never, never, false, never>;
 }

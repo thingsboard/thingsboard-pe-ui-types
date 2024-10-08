@@ -23,5 +23,5 @@ export declare class TcpIntegrationFormComponent extends IntegrationForm impleme
     private updateModels;
     private updateHandleConfigurationField;
     static ɵfac: i0.ɵɵFactoryDeclaration<TcpIntegrationFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TcpIntegrationFormComponent, "tb-tcp-integration-form", never, { "isSetDownlink": "isSetDownlink"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TcpIntegrationFormComponent, "tb-tcp-integration-form", never, { "isSetDownlink": { "alias": "isSetDownlink"; "required": false; }; }, {}, never, never, false, never>;
 }

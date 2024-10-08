@@ -35,5 +35,5 @@ export declare class SchedulerEventTemplateConfigComponent implements ControlVal
     validate(control: AbstractControl): Observable<ValidationErrors | null>;
     private doValidate;
     static ɵfac: i0.ɵɵFactoryDeclaration<SchedulerEventTemplateConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SchedulerEventTemplateConfigComponent, "tb-scheduler-event-template-config", never, { "disabled": "disabled"; "schedulerEventConfigTypes": "schedulerEventConfigTypes"; "schedulerEventType": "schedulerEventType"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SchedulerEventTemplateConfigComponent, "tb-scheduler-event-template-config", never, { "disabled": { "alias": "disabled"; "required": false; }; "schedulerEventConfigTypes": { "alias": "schedulerEventConfigTypes"; "required": false; }; "schedulerEventType": { "alias": "schedulerEventType"; "required": false; }; }, {}, never, never, false, never>;
 }

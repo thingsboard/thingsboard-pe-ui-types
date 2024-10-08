@@ -33,5 +33,5 @@ export declare class GpioItemComponent extends PageComponent implements OnInit, 
     numberText(value: any, minValue: number): string;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<GpioItemComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<GpioItemComponent, "tb-gpio-item", never, { "disabled": "disabled"; "expanded": "expanded"; "hasColor": "hasColor"; }, { "removeGpioItem": "removeGpioItem"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GpioItemComponent, "tb-gpio-item", never, { "disabled": { "alias": "disabled"; "required": false; }; "expanded": { "alias": "expanded"; "required": false; }; "hasColor": { "alias": "hasColor"; "required": false; }; }, { "removeGpioItem": "removeGpioItem"; }, never, never, false, never>;
 }

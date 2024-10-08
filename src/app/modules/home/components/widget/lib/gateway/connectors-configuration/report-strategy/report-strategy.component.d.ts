@@ -24,5 +24,5 @@ export declare class ReportStrategyComponent implements ControlValueAccessor, On
     private observeStrategyToggle;
     private onTypeChange;
     static ɵfac: i0.ɵɵFactoryDeclaration<ReportStrategyComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ReportStrategyComponent, "tb-report-strategy", never, { "isExpansionMode": "isExpansionMode"; "defaultValue": "defaultValue"; }, {}, never, never, true, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ReportStrategyComponent, "tb-report-strategy", never, { "isExpansionMode": { "alias": "isExpansionMode"; "required": false; }; "defaultValue": { "alias": "defaultValue"; "required": false; }; }, {}, never, never, true, never>;
 }

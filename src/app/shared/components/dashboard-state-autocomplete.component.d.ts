@@ -49,5 +49,5 @@ export declare class DashboardStateAutocompleteComponent implements ControlValue
     private createFilterForDashboardState;
     private clearDashboardStateCache;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardStateAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardStateAutocompleteComponent, "tb-dashboard-state-autocomplete", never, { "label": "label"; "placeholder": "placeholder"; "required": "required"; "disabled": "disabled"; "dashboardId": "dashboardId"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardStateAutocompleteComponent, "tb-dashboard-state-autocomplete", never, { "label": { "alias": "label"; "required": false; }; "placeholder": { "alias": "placeholder"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "dashboardId": { "alias": "dashboardId"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -1,4 +1,4 @@
-import { ActivatedRoute, ActivatedRouteSnapshot, Resolve, Router } from '@angular/router';
+import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 import { CellActionDescriptor, EntityColumn, EntityTableConfig, GroupActionDescriptor, HeaderActionDescriptor } from '@home/models/entity/entities-table-config.models';
 import { TranslateService } from '@ngx-translate/core';
 import { DatePipe } from '@angular/common';
@@ -21,7 +21,7 @@ import { PageLink } from '@shared/models/page/page-link';
 import { EntityId } from '@shared/models/id/entity-id';
 import { WhiteLabelingService } from '@core/http/white-labeling.service';
 import * as i0 from "@angular/core";
-export declare class DevicesTableConfigResolver implements Resolve<EntityTableConfig<DeviceInfo>> {
+export declare class DevicesTableConfigResolver {
     private allEntitiesTableConfigService;
     private store;
     private userPermissionsService;

@@ -8,5 +8,5 @@ export declare class SolutionTemplateVideoComponent extends PageComponent {
     solutionTemplate: SolutionTemplateInfo;
     constructor(store: Store<AppState>);
     static ɵfac: i0.ɵɵFactoryDeclaration<SolutionTemplateVideoComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SolutionTemplateVideoComponent, "tb-solution-template-video", never, { "solutionTemplate": "solutionTemplate"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SolutionTemplateVideoComponent, "tb-solution-template-video", never, { "solutionTemplate": { "alias": "solutionTemplate"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -66,5 +66,5 @@ export declare class DatasourceComponent implements ControlValueAccessor, OnInit
     private datasourceUpdated;
     private updateValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<DatasourceComponent, [null, { optional: true; }, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DatasourceComponent, "tb-datasource", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DatasourceComponent, "tb-datasource", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

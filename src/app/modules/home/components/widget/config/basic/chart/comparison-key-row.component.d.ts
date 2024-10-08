@@ -20,5 +20,5 @@ export declare class ComparisonKeyRowComponent implements ControlValueAccessor, 
     private updateValidators;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<ComparisonKeyRowComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ComparisonKeyRowComponent, "tb-comparison-key-row", never, { "disabled": "disabled"; "datasourceType": "datasourceType"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ComparisonKeyRowComponent, "tb-comparison-key-row", never, { "disabled": { "alias": "disabled"; "required": false; }; "datasourceType": { "alias": "datasourceType"; "required": false; }; }, {}, never, never, false, never>;
 }

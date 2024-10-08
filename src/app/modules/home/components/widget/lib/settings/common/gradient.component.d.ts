@@ -47,5 +47,5 @@ export declare class GradientComponent implements OnInit, ControlValueAccessor, 
     addGradient(advanced?: boolean): void;
     updateModel(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<GradientComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<GradientComponent, "tb-gradient", never, { "disabled": "disabled"; "popover": "popover"; "panelTitle": "panelTitle"; "aliasController": "aliasController"; "dataKeyCallbacks": "dataKeyCallbacks"; "datasource": "datasource"; "minValue": "minValue"; "maxValue": "maxValue"; "advancedMode": "advancedMode"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GradientComponent, "tb-gradient", never, { "disabled": { "alias": "disabled"; "required": false; }; "popover": { "alias": "popover"; "required": false; }; "panelTitle": { "alias": "panelTitle"; "required": false; }; "aliasController": { "alias": "aliasController"; "required": false; }; "dataKeyCallbacks": { "alias": "dataKeyCallbacks"; "required": false; }; "datasource": { "alias": "datasource"; "required": false; }; "minValue": { "alias": "minValue"; "required": false; }; "maxValue": { "alias": "maxValue"; "required": false; }; "advancedMode": { "alias": "advancedMode"; "required": false; }; }, {}, never, never, false, never>;
 }

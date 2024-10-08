@@ -44,5 +44,5 @@ export declare class TimeSeriesChartWidgetComponent implements OnInit, OnDestroy
     onLegendKeyLeave(legendKey: LegendKey): void;
     toggleLegendKey(legendKey: LegendKey): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesChartWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartWidgetComponent, "tb-time-series-chart-widget", never, { "ctx": "ctx"; "widgetTitlePanel": "widgetTitlePanel"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartWidgetComponent, "tb-time-series-chart-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; }, {}, never, never, false, never>;
 }

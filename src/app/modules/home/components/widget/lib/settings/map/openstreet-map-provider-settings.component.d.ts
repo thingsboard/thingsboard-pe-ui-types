@@ -30,5 +30,5 @@ export declare class OpenStreetMapProviderSettingsComponent extends PageComponen
     private updateModel;
     private updateValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<OpenStreetMapProviderSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<OpenStreetMapProviderSettingsComponent, "tb-openstreet-map-provider-settings", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<OpenStreetMapProviderSettingsComponent, "tb-openstreet-map-provider-settings", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

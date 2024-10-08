@@ -31,5 +31,5 @@ export declare class GatewayLogsComponent implements OnInit, AfterViewInit {
     trackByLogTs(_: number, log: GatewayLogData): number;
     private changeSubscription;
     static ɵfac: i0.ɵɵFactoryDeclaration<GatewayLogsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<GatewayLogsComponent, "tb-gateway-logs", never, { "ctx": "ctx"; "dialogRef": "dialogRef"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GatewayLogsComponent, "tb-gateway-logs", never, { "ctx": { "alias": "ctx"; "required": false; }; "dialogRef": { "alias": "dialogRef"; "required": false; }; }, {}, never, never, false, never>;
 }

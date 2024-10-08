@@ -42,6 +42,6 @@ export declare class ImageReferencesComponent implements OnInit {
     private toReferencedEntitiesList;
     private toReferencedEntitiesEntries;
     static ɵfac: i0.ɵɵFactoryDeclaration<ImageReferencesComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ImageReferencesComponent, "tb-image-references", never, { "references": "references"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ImageReferencesComponent, "tb-image-references", never, { "references": { "alias": "references"; "required": false; }; }, {}, never, never, false, never>;
 }
 export {};

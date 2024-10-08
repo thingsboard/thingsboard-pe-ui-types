@@ -29,5 +29,5 @@ export declare class TickValueComponent extends PageComponent implements OnInit,
     writeValue(value: ValueSourceProperty): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<TickValueComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TickValueComponent, "tb-tick-value", never, { "disabled": "disabled"; "aliasController": "aliasController"; "dataKeyCallbacks": "dataKeyCallbacks"; "datasource": "datasource"; }, { "removeTickValue": "removeTickValue"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TickValueComponent, "tb-tick-value", never, { "disabled": { "alias": "disabled"; "required": false; }; "aliasController": { "alias": "aliasController"; "required": false; }; "dataKeyCallbacks": { "alias": "dataKeyCallbacks"; "required": false; }; "datasource": { "alias": "datasource"; "required": false; }; }, { "removeTickValue": "removeTickValue"; }, never, never, false, never>;
 }

@@ -18,5 +18,5 @@ export declare class PolarAreaWidgetComponent implements OnInit {
     onInit(): void;
     onDataUpdated(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<PolarAreaWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PolarAreaWidgetComponent, "tb-polar-area-chart-widget", never, { "ctx": "ctx"; "widgetTitlePanel": "widgetTitlePanel"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PolarAreaWidgetComponent, "tb-polar-area-chart-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; }, {}, never, never, false, never>;
 }

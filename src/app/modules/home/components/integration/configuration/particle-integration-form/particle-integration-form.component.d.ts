@@ -28,5 +28,5 @@ export declare class ParticleIntegrationFormComponent extends IntegrationForm im
     private updateEnableFields;
     updatedValidationPrivateNetwork(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ParticleIntegrationFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ParticleIntegrationFormComponent, "tb-particle-integration-form", never, { "routingKey": "routingKey"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ParticleIntegrationFormComponent, "tb-particle-integration-form", never, { "routingKey": { "alias": "routingKey"; "required": false; }; }, {}, never, never, false, never>;
 }

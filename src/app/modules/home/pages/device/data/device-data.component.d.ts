@@ -24,5 +24,5 @@ export declare class DeviceDataComponent implements ControlValueAccessor, OnInit
     validate(): ValidationErrors | null;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceDataComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceDataComponent, "tb-device-data", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceDataComponent, "tb-device-data", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

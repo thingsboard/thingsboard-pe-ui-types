@@ -1,4 +1,4 @@
-import { Resolve, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
 import { OtaPackage, OtaPackageInfo } from '@shared/models/ota-package.models';
 import { TranslateService } from '@ngx-translate/core';
@@ -11,7 +11,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import * as i0 from "@angular/core";
-export declare class OtaUpdateTableConfigResolve implements Resolve<EntityTableConfig<OtaPackage, PageLink, OtaPackageInfo>> {
+export declare class OtaUpdateTableConfigResolve {
     private translate;
     private datePipe;
     private store;

@@ -24,5 +24,5 @@ export declare class AzureServicesBusIntegrationFormComponent extends Integratio
     validate(): ValidationErrors | null;
     private downlinkConverterChanged;
     static ɵfac: i0.ɵɵFactoryDeclaration<AzureServicesBusIntegrationFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AzureServicesBusIntegrationFormComponent, "tb-azure-services-bus-integration-form", never, { "isSetDownlink": "isSetDownlink"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AzureServicesBusIntegrationFormComponent, "tb-azure-services-bus-integration-form", never, { "isSetDownlink": { "alias": "isSetDownlink"; "required": false; }; }, {}, never, never, false, never>;
 }

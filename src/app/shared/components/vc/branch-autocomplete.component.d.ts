@@ -54,5 +54,5 @@ export declare class BranchAutocompleteComponent implements ControlValueAccessor
     private getBranches;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<BranchAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<BranchAutocompleteComponent, "tb-branch-autocomplete", never, { "subscriptSizing": "subscriptSizing"; "required": "required"; "disabled": "disabled"; "selectDefaultBranch": "selectDefaultBranch"; "selectionMode": "selectionMode"; "emptyPlaceholder": "emptyPlaceholder"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<BranchAutocompleteComponent, "tb-branch-autocomplete", never, { "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "selectDefaultBranch": { "alias": "selectDefaultBranch"; "required": false; }; "selectionMode": { "alias": "selectionMode"; "required": false; }; "emptyPlaceholder": { "alias": "emptyPlaceholder"; "required": false; }; }, {}, never, never, false, never>;
 }

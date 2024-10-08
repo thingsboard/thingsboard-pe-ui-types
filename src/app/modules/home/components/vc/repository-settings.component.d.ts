@@ -41,5 +41,5 @@ export declare class RepositorySettingsComponent extends PageComponent implement
     changePrivateKeyPasswordChanged(): void;
     updateValidators(emitEvent?: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<RepositorySettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RepositorySettingsComponent, "tb-repository-settings", never, { "detailsMode": "detailsMode"; "popoverComponent": "popoverComponent"; "hideLoadingBar": "hideLoadingBar"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RepositorySettingsComponent, "tb-repository-settings", never, { "detailsMode": { "alias": "detailsMode"; "required": false; }; "popoverComponent": { "alias": "popoverComponent"; "required": false; }; "hideLoadingBar": { "alias": "hideLoadingBar"; "required": false; }; }, {}, never, never, false, never>;
 }

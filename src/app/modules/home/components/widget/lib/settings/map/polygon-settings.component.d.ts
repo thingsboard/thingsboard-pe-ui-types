@@ -35,5 +35,5 @@ export declare class PolygonSettingsComponent extends PageComponent implements O
     private updateModel;
     private updateValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<PolygonSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PolygonSettingsComponent, "tb-polygon-settings", never, { "disabled": "disabled"; "widget": "widget"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PolygonSettingsComponent, "tb-polygon-settings", never, { "disabled": { "alias": "disabled"; "required": false; }; "widget": { "alias": "widget"; "required": false; }; }, {}, never, never, false, never>;
 }

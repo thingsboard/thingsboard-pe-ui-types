@@ -67,6 +67,6 @@ export declare class WidgetActionComponent implements ControlValueAccessor, OnIn
     private getStateDisplayType;
     private widgetActionUpdated;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetActionComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetActionComponent, "tb-widget-action", never, { "disabled": "disabled"; "widgetType": "widgetType"; "callbacks": "callbacks"; "customFunctionArgs": "customFunctionArgs"; "customFunctionHelpId": "customFunctionHelpId"; "widgetActionTypes": "widgetActionTypes"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetActionComponent, "tb-widget-action", never, { "disabled": { "alias": "disabled"; "required": false; }; "widgetType": { "alias": "widgetType"; "required": false; }; "callbacks": { "alias": "callbacks"; "required": false; }; "customFunctionArgs": { "alias": "customFunctionArgs"; "required": false; }; "customFunctionHelpId": { "alias": "customFunctionHelpId"; "required": false; }; "widgetActionTypes": { "alias": "widgetActionTypes"; "required": false; }; }, {}, never, never, false, never>;
 }
 export {};

@@ -21,5 +21,5 @@ export declare class OpcServerConfigComponent implements ControlValueAccessor, V
     validate(): ValidationErrors | null;
     writeValue(serverConfig: ServerConfig): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<OpcServerConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<OpcServerConfigComponent, "tb-opc-server-config", never, { "hideNewFields": "hideNewFields"; }, {}, never, never, true, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<OpcServerConfigComponent, "tb-opc-server-config", never, { "hideNewFields": { "alias": "hideNewFields"; "required": false; }; }, {}, never, never, true, never>;
 }

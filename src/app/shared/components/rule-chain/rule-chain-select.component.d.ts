@@ -23,5 +23,5 @@ export declare class RuleChainSelectComponent implements ControlValueAccessor {
     openRuleChainSelectPanel($event: Event): void;
     private updateView;
     static ɵfac: i0.ɵɵFactoryDeclaration<RuleChainSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RuleChainSelectComponent, "tb-rule-chain-select", never, { "tooltipPosition": "tooltipPosition"; "required": "required"; "disabled": "disabled"; "ruleChainType": "ruleChainType"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RuleChainSelectComponent, "tb-rule-chain-select", never, { "tooltipPosition": { "alias": "tooltipPosition"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "ruleChainType": { "alias": "ruleChainType"; "required": false; }; }, {}, never, never, false, never>;
 }

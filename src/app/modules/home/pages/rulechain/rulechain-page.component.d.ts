@@ -1,4 +1,3 @@
-/// <reference types="tooltipster" />
 import { AfterViewChecked, AfterViewInit, ChangeDetectorRef, EventEmitter, OnDestroy, OnInit, QueryList, Renderer2, ViewContainerRef } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';

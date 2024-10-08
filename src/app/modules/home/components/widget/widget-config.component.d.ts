@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, ComponentFactoryResolver, OnDestroy, OnInit, ViewContainerRef } from '@angular/core';
+import { ChangeDetectorRef, OnDestroy, OnInit, ViewContainerRef } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -24,7 +24,6 @@ export declare class WidgetConfigComponent extends PageComponent implements OnIn
     private entityService;
     private dialog;
     translate: TranslateService;
-    private cfr;
     private fb;
     private cd;
     basicModeContainer: ViewContainerRef;
@@ -71,7 +70,7 @@ export declare class WidgetConfigComponent extends PageComponent implements OnIn
     private advancedSettingsSubscription;
     private actionsSettingsSubscription;
     private defaultConfigFormsType;
-    constructor(store: Store<AppState>, utils: UtilsService, entityService: EntityService, dialog: MatDialog, translate: TranslateService, cfr: ComponentFactoryResolver, fb: UntypedFormBuilder, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, utils: UtilsService, entityService: EntityService, dialog: MatDialog, translate: TranslateService, fb: UntypedFormBuilder, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngOnDestroy(): void;
     private removeChangeSubscriptions;
@@ -119,5 +118,5 @@ export declare class WidgetConfigComponent extends PageComponent implements OnIn
     validate(c: UntypedFormControl): Observable<ValidationErrors | null>;
     private doValidate;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetConfigComponent, "tb-widget-config", never, { "forceExpandDatasources": "forceExpandDatasources"; "aliasController": "aliasController"; "dashboard": "dashboard"; "widget": "widget"; "functionsOnly": "functionsOnly"; "hideHeader": "hideHeader"; "hideToggleHeader": "hideToggleHeader"; "isAdd": "isAdd"; "showLayoutConfig": "showLayoutConfig"; "isDefaultBreakpoint": "isDefaultBreakpoint"; "disabled": "disabled"; }, {}, never, [".tb-widget-config-header-prefix", ".tb-widget-config-header-suffix"], false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetConfigComponent, "tb-widget-config", never, { "forceExpandDatasources": { "alias": "forceExpandDatasources"; "required": false; }; "aliasController": { "alias": "aliasController"; "required": false; }; "dashboard": { "alias": "dashboard"; "required": false; }; "widget": { "alias": "widget"; "required": false; }; "functionsOnly": { "alias": "functionsOnly"; "required": false; }; "hideHeader": { "alias": "hideHeader"; "required": false; }; "hideToggleHeader": { "alias": "hideToggleHeader"; "required": false; }; "isAdd": { "alias": "isAdd"; "required": false; }; "showLayoutConfig": { "alias": "showLayoutConfig"; "required": false; }; "isDefaultBreakpoint": { "alias": "isDefaultBreakpoint"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, [".tb-widget-config-header-prefix", ".tb-widget-config-header-suffix"], false, never>;
 }

@@ -44,5 +44,5 @@ export declare class ClientComponent extends EntityComponent<OAuth2Client, PageL
     private formBasicGroup;
     private setProviderDefaultValue;
     static ɵfac: i0.ɵɵFactoryDeclaration<ClientComponent, [null, null, null, { optional: true; }, { optional: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ClientComponent, "tb-client", never, { "createNewDialog": "createNewDialog"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ClientComponent, "tb-client", never, { "createNewDialog": { "alias": "createNewDialog"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -75,7 +75,7 @@ export declare class WidgetContainerComponent extends PageComponent implements O
     private initEditWidgetActionTooltip;
     private updateEditWidgetActionsTooltipSelectedState;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetContainerComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetContainerComponent, "tb-widget-container", never, { "gridsterItem": "gridsterItem"; "widget": "widget"; "dashboardStyle": "dashboardStyle"; "backgroundImage": "backgroundImage"; "isEdit": "isEdit"; "isEditingWidget": "isEditingWidget"; "isPreview": "isPreview"; "isMobile": "isMobile"; "dashboardWidgets": "dashboardWidgets"; "isEditActionEnabled": "isEditActionEnabled"; "isExportActionEnabled": "isExportActionEnabled"; "isRemoveActionEnabled": "isRemoveActionEnabled"; "disableWidgetInteraction": "disableWidgetInteraction"; }, { "widgetFullscreenChanged": "widgetFullscreenChanged"; "widgetComponentAction": "widgetComponentAction"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetContainerComponent, "tb-widget-container", never, { "gridsterItem": { "alias": "gridsterItem"; "required": false; }; "widget": { "alias": "widget"; "required": false; }; "dashboardStyle": { "alias": "dashboardStyle"; "required": false; }; "backgroundImage": { "alias": "backgroundImage"; "required": false; }; "isEdit": { "alias": "isEdit"; "required": false; }; "isEditingWidget": { "alias": "isEditingWidget"; "required": false; }; "isPreview": { "alias": "isPreview"; "required": false; }; "isMobile": { "alias": "isMobile"; "required": false; }; "dashboardWidgets": { "alias": "dashboardWidgets"; "required": false; }; "isEditActionEnabled": { "alias": "isEditActionEnabled"; "required": false; }; "isExportActionEnabled": { "alias": "isExportActionEnabled"; "required": false; }; "isRemoveActionEnabled": { "alias": "isRemoveActionEnabled"; "required": false; }; "disableWidgetInteraction": { "alias": "disableWidgetInteraction"; "required": false; }; }, { "widgetFullscreenChanged": "widgetFullscreenChanged"; "widgetComponentAction": "widgetComponentAction"; }, never, never, false, never>;
 }
 export declare class EditWidgetActionsTooltipComponent implements AfterViewInit {
     element: ElementRef<HTMLElement>;
@@ -85,5 +85,5 @@ export declare class EditWidgetActionsTooltipComponent implements AfterViewInit 
     constructor(element: ElementRef<HTMLElement>, cd: ChangeDetectorRef);
     ngAfterViewInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EditWidgetActionsTooltipComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EditWidgetActionsTooltipComponent, "ng-component", never, { "container": "container"; }, { "viewInited": "viewInited"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EditWidgetActionsTooltipComponent, "ng-component", never, { "container": { "alias": "container"; "required": false; }; }, { "viewInited": "viewInited"; }, never, never, false, never>;
 }

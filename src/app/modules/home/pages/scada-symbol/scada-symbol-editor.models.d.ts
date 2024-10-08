@@ -1,4 +1,3 @@
-/// <reference types="tooltipster" />
 import { ImageResourceInfo } from '@shared/models/resource.models';
 import { Box, Element, Svg } from '@svgdotjs/svg.js';
 import { NgZone, ViewContainerRef } from '@angular/core';

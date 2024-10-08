@@ -1,5 +1,3 @@
-import { AfterViewInit, ComponentFactoryResolver, Injector } from '@angular/core';
-import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -20,15 +18,12 @@ export interface AddDeviceProfileDialogData {
     deviceProfileName: string;
     transportType: DeviceTransportType;
 }
-export declare class AddDeviceProfileDialogComponent extends DialogComponent<AddDeviceProfileDialogComponent, DeviceProfile> implements AfterViewInit {
+export declare class AddDeviceProfileDialogComponent extends DialogComponent<AddDeviceProfileDialogComponent, DeviceProfile> {
     protected store: Store<AppState>;
     protected router: Router;
     data: AddDeviceProfileDialogData;
     dialogRef: MatDialogRef<AddDeviceProfileDialogComponent, DeviceProfile>;
-    private componentFactoryResolver;
-    private injector;
     private breakpointObserver;
-    private errorStateMatcher;
     private deviceProfileService;
     private fb;
     addDeviceProfileStepper: MatStepper;
@@ -48,9 +43,8 @@ export declare class AddDeviceProfileDialogComponent extends DialogComponent<Add
     provisionConfigFormGroup: UntypedFormGroup;
     serviceType: ServiceType;
     edgeRuleChainType: RuleChainType;
-    constructor(store: Store<AppState>, router: Router, data: AddDeviceProfileDialogData, dialogRef: MatDialogRef<AddDeviceProfileDialogComponent, DeviceProfile>, componentFactoryResolver: ComponentFactoryResolver, injector: Injector, breakpointObserver: BreakpointObserver, errorStateMatcher: ErrorStateMatcher, deviceProfileService: DeviceProfileService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, router: Router, data: AddDeviceProfileDialogData, dialogRef: MatDialogRef<AddDeviceProfileDialogComponent, DeviceProfile>, breakpointObserver: BreakpointObserver, deviceProfileService: DeviceProfileService, fb: UntypedFormBuilder);
     private deviceProfileTransportTypeChanged;
-    ngAfterViewInit(): void;
     cancel(): void;
     previousStep(): void;
     nextStep(): void;
@@ -60,6 +54,6 @@ export declare class AddDeviceProfileDialogComponent extends DialogComponent<Add
     changeStep($event: StepperSelectionEvent): void;
     private get maxStepperIndex();
     allValid(): boolean;
-    static ɵfac: i0.ɵɵFactoryDeclaration<AddDeviceProfileDialogComponent, [null, null, null, null, null, null, null, { skipSelf: true; }, null, null]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<AddDeviceProfileDialogComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<AddDeviceProfileDialogComponent, "tb-add-device-profile-dialog", never, {}, {}, never, never, false, never>;
 }

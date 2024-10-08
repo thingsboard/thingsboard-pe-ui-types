@@ -24,5 +24,5 @@ export declare class GenerateReportComponent implements ControlValueAccessor, On
     validate(): ValidationErrors | null;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<GenerateReportComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<GenerateReportComponent, "tb-generate-report-event-config", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GenerateReportComponent, "tb-generate-report-event-config", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

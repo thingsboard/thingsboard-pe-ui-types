@@ -35,5 +35,5 @@ export declare class RangeChartWidgetComponent implements OnInit, OnDestroy, Aft
     onDataUpdated(): void;
     toggleRangeItem(item: RangeItem): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<RangeChartWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RangeChartWidgetComponent, "tb-range-chart-widget", never, { "ctx": "ctx"; "widgetTitlePanel": "widgetTitlePanel"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RangeChartWidgetComponent, "tb-range-chart-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -56,5 +56,5 @@ export declare class EntityAliasSelectComponent implements ControlValueAccessor,
     entityAliasEnter($event: KeyboardEvent): void;
     createEntityAlias($event: Event, alias: string, focusOnCancel?: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityAliasSelectComponent, [null, { skipSelf: true; }, null, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityAliasSelectComponent, "tb-entity-alias-select", never, { "aliasController": "aliasController"; "allowedEntityTypes": "allowedEntityTypes"; "callbacks": "callbacks"; "showLabel": "showLabel"; "tbRequired": "tbRequired"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityAliasSelectComponent, "tb-entity-alias-select", never, { "aliasController": { "alias": "aliasController"; "required": false; }; "allowedEntityTypes": { "alias": "allowedEntityTypes"; "required": false; }; "callbacks": { "alias": "callbacks"; "required": false; }; "showLabel": { "alias": "showLabel"; "required": false; }; "tbRequired": { "alias": "tbRequired"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

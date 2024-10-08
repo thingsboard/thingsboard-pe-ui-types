@@ -29,5 +29,5 @@ export declare class BackgroundSettingsComponent implements OnInit, ControlValue
     openBackgroundSettingsPopup($event: Event, matButton: MatButton): void;
     private updateBackgroundStyle;
     static ɵfac: i0.ɵɵFactoryDeclaration<BackgroundSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<BackgroundSettingsComponent, "tb-background-settings", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<BackgroundSettingsComponent, "tb-background-settings", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

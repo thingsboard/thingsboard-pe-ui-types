@@ -2,12 +2,12 @@ import { MarkedOptions, MarkedRenderer } from 'ngx-markdown';
 import { TranslateService } from '@ngx-translate/core';
 import { Clipboard } from '@angular/cdk/clipboard';
 import * as i0 from "@angular/core";
-export declare class MarkedOptionsService extends MarkedOptions {
+export declare class MarkedOptionsService implements MarkedOptions {
     private translate;
     private clipboardService;
     private readonly window;
     private readonly document;
-    renderer: MarkedRenderer<never>;
+    renderer: MarkedRenderer;
     headerIds: boolean;
     gfm: boolean;
     breaks: boolean;

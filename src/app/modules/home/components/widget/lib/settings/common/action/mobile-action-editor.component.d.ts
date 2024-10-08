@@ -28,5 +28,5 @@ export declare class MobileActionEditorComponent implements ControlValueAccessor
     private updateMobileActionType;
     protected readonly WidgetActionType: typeof WidgetActionType;
     static ɵfac: i0.ɵɵFactoryDeclaration<MobileActionEditorComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MobileActionEditorComponent, "tb-mobile-action-editor", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MobileActionEditorComponent, "tb-mobile-action-editor", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

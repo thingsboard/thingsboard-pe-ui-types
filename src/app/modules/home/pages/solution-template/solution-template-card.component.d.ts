@@ -25,5 +25,5 @@ export declare class SolutionTemplateCardComponent extends PageComponent impleme
     openInstructions(): void;
     deleteSolutionTemplate(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SolutionTemplateCardComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SolutionTemplateCardComponent, "tb-solution-template-card", never, { "solutionTemplate": "solutionTemplate"; }, { "solutionTemplateChanged": "solutionTemplateChanged"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SolutionTemplateCardComponent, "tb-solution-template-card", never, { "solutionTemplate": { "alias": "solutionTemplate"; "required": false; }; }, { "solutionTemplateChanged": "solutionTemplateChanged"; }, never, never, false, never>;
 }

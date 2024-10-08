@@ -17,5 +17,5 @@ export declare class TimeSeriesChartAxisSettingsPanelComponent implements OnInit
     cancel(): void;
     applyAxisSettings(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesChartAxisSettingsPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartAxisSettingsPanelComponent, "tb-time-series-chart-axis-settings-panel", never, { "axisType": "axisType"; "panelTitle": "panelTitle"; "axisSettings": "axisSettings"; "advanced": "advanced"; "popover": "popover"; }, { "axisSettingsApplied": "axisSettingsApplied"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartAxisSettingsPanelComponent, "tb-time-series-chart-axis-settings-panel", never, { "axisType": { "alias": "axisType"; "required": false; }; "panelTitle": { "alias": "panelTitle"; "required": false; }; "axisSettings": { "alias": "axisSettings"; "required": false; }; "advanced": { "alias": "advanced"; "required": false; }; "popover": { "alias": "popover"; "required": false; }; }, { "axisSettingsApplied": "axisSettingsApplied"; }, never, never, false, never>;
 }

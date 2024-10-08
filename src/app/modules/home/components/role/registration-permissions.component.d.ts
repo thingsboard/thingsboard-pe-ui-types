@@ -18,5 +18,5 @@ export declare class RegistrationPermissionsComponent extends PageComponent impl
     writeValue(permissions: Array<GroupPermission>): void;
     registrationPermissionsChanged(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<RegistrationPermissionsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RegistrationPermissionsComponent, "tb-registration-permissions", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RegistrationPermissionsComponent, "tb-registration-permissions", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

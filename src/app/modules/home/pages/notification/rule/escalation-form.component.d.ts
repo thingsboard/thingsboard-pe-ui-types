@@ -32,5 +32,5 @@ export declare class EscalationFormComponent implements ControlValueAccessor, On
     };
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<EscalationFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EscalationFormComponent, "tb-escalation-form", never, { "disabled": "disabled"; "systemEscalation": "systemEscalation"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EscalationFormComponent, "tb-escalation-form", never, { "disabled": { "alias": "disabled"; "required": false; }; "systemEscalation": { "alias": "systemEscalation"; "required": false; }; }, {}, never, never, false, never>;
 }

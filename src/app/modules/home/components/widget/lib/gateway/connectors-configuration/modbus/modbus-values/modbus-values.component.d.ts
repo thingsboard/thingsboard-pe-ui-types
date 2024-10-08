@@ -35,5 +35,5 @@ export declare class ModbusValuesComponent implements ControlValueAccessor, Vali
     private observeValuesChanges;
     private getSingleRegisterState;
     static ɵfac: i0.ɵɵFactoryDeclaration<ModbusValuesComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ModbusValuesComponent, "tb-modbus-values", never, { "singleMode": "singleMode"; "hideNewFields": "hideNewFields"; }, {}, never, never, true, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ModbusValuesComponent, "tb-modbus-values", never, { "singleMode": { "alias": "singleMode"; "required": false; }; "hideNewFields": { "alias": "hideNewFields"; "required": false; }; }, {}, never, never, true, never>;
 }

@@ -36,6 +36,6 @@ export declare class LanguageAutocompleteComponent implements ControlValueAccess
     private fetchLanguage;
     private getAllTranslations;
     static ɵfac: i0.ɵɵFactoryDeclaration<LanguageAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<LanguageAutocompleteComponent, "tb-language-autocomplete", never, { "disabled": "disabled"; "excludeLangs": "excludeLangs"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<LanguageAutocompleteComponent, "tb-language-autocomplete", never, { "disabled": { "alias": "disabled"; "required": false; }; "excludeLangs": { "alias": "excludeLangs"; "required": false; }; }, {}, never, never, false, never>;
 }
 export {};

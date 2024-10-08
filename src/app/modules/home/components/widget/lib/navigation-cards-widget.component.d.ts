@@ -30,6 +30,6 @@ export declare class NavigationCardsWidgetComponent extends PageComponent implem
     private filterPlace;
     sectionColspan(section: HomeSection): number;
     static ɵfac: i0.ɵɵFactoryDeclaration<NavigationCardsWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<NavigationCardsWidgetComponent, "tb-navigation-cards-widget", never, { "ctx": "ctx"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NavigationCardsWidgetComponent, "tb-navigation-cards-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; }, {}, never, never, false, never>;
 }
 export {};

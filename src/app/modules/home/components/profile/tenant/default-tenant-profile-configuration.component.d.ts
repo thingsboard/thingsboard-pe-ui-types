@@ -26,5 +26,5 @@ export declare class DefaultTenantProfileConfigurationComponent implements Contr
     writeValue(value: DefaultTenantProfileConfiguration | null): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<DefaultTenantProfileConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DefaultTenantProfileConfigurationComponent, "tb-default-tenant-profile-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DefaultTenantProfileConfigurationComponent, "tb-default-tenant-profile-configuration", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

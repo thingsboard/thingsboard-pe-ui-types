@@ -22,5 +22,5 @@ export declare class TimeSeriesChartAxisSettingsButtonComponent implements OnIni
     writeValue(value: TimeSeriesChartAxisSettings): void;
     openAxisSettingsPopup($event: Event, matButton: MatButton): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesChartAxisSettingsButtonComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartAxisSettingsButtonComponent, "tb-time-series-chart-axis-settings-button", never, { "disabled": "disabled"; "axisType": "axisType"; "panelTitle": "panelTitle"; "advanced": "advanced"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartAxisSettingsButtonComponent, "tb-time-series-chart-axis-settings-button", never, { "disabled": { "alias": "disabled"; "required": false; }; "axisType": { "alias": "axisType"; "required": false; }; "panelTitle": { "alias": "panelTitle"; "required": false; }; "advanced": { "alias": "advanced"; "required": false; }; }, {}, never, never, false, never>;
 }

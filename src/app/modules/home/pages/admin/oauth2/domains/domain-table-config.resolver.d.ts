@@ -1,4 +1,4 @@
-import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
+import { ActivatedRouteSnapshot } from '@angular/router';
 import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
 import { DomainInfo } from '@shared/models/oauth2.models';
 import { UtilsService } from '@core/services/utils.service';
@@ -6,7 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { DatePipe } from '@angular/common';
 import { DomainService } from '@app/core/http/domain.service';
 import * as i0 from "@angular/core";
-export declare class DomainTableConfigResolver implements Resolve<EntityTableConfig<DomainInfo>> {
+export declare class DomainTableConfigResolver {
     private translate;
     private datePipe;
     private utilsService;

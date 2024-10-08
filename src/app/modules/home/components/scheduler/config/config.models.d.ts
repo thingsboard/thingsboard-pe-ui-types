@@ -14,4 +14,4 @@ export declare const safeMerge: <T>(defaults: T | {
     [key: string]: any;
 }, value: Partial<T> | {
     [key: string]: any;
-}) => T;
+} | null) => T;

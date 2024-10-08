@@ -27,5 +27,5 @@ export declare class CopyButtonComponent {
     get matTooltipText(): string;
     get matTooltipPosition(): TooltipPosition;
     static ɵfac: i0.ɵɵFactoryDeclaration<CopyButtonComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CopyButtonComponent, "tb-copy-button", never, { "copyText": "copyText"; "disabled": "disabled"; "mdiIcon": "mdiIcon"; "icon": "icon"; "tooltipText": "tooltipText"; "tooltipPosition": "tooltipPosition"; "style": "style"; "color": "color"; "miniButton": "miniButton"; }, { "successCopied": "successCopied"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CopyButtonComponent, "tb-copy-button", never, { "copyText": { "alias": "copyText"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "mdiIcon": { "alias": "mdiIcon"; "required": false; }; "icon": { "alias": "icon"; "required": false; }; "tooltipText": { "alias": "tooltipText"; "required": false; }; "tooltipPosition": { "alias": "tooltipPosition"; "required": false; }; "style": { "alias": "style"; "required": false; }; "color": { "alias": "color"; "required": false; }; "miniButton": { "alias": "miniButton"; "required": false; }; }, { "successCopied": "successCopied"; }, never, never, false, never>;
 }

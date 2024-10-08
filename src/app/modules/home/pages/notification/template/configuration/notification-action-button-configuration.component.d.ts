@@ -24,5 +24,5 @@ export declare class NotificationActionButtonConfigurationComponent implements C
     validate(): ValidationErrors | null;
     writeValue(obj: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<NotificationActionButtonConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<NotificationActionButtonConfigurationComponent, "tb-notification-action-button-configuration", never, { "actionTitle": "actionTitle"; "sliderHint": "sliderHint"; "hideButtonText": "hideButtonText"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NotificationActionButtonConfigurationComponent, "tb-notification-action-button-configuration", never, { "actionTitle": { "alias": "actionTitle"; "required": false; }; "sliderHint": { "alias": "sliderHint"; "required": false; }; "hideButtonText": { "alias": "hideButtonText"; "required": false; }; }, {}, never, never, false, never>;
 }

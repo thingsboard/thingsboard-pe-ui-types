@@ -14,5 +14,5 @@ export declare class MenuToggleComponent implements OnInit {
     toggleSection(event: MouseEvent): void;
     trackBySectionPages(index: number, section: MenuSection): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<MenuToggleComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MenuToggleComponent, "tb-menu-toggle", never, { "section": "section"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MenuToggleComponent, "tb-menu-toggle", never, { "section": { "alias": "section"; "required": false; }; }, {}, never, never, false, never>;
 }

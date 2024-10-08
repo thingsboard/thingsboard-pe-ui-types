@@ -33,5 +33,5 @@ export declare class PaletteComponent extends PageComponent implements AfterView
     private updatePaletteColors;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<PaletteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PaletteComponent, "tb-palette", never, { "label": "label"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PaletteComponent, "tb-palette", never, { "label": { "alias": "label"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

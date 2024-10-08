@@ -23,5 +23,5 @@ export declare class TenantProfileDataComponent implements ControlValueAccessor,
     writeValue(value: TenantProfileData | null): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<TenantProfileDataComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TenantProfileDataComponent, "tb-tenant-profile-data", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TenantProfileDataComponent, "tb-tenant-profile-data", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

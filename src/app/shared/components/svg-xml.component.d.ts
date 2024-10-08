@@ -45,5 +45,5 @@ export declare class SvgXmlComponent implements OnInit, OnDestroy, ControlValueA
     writeValue(value: string): void;
     updateView(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SvgXmlComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SvgXmlComponent, "tb-svg-xml", never, { "label": "label"; "disabled": "disabled"; "fillHeight": "fillHeight"; "noLabel": "noLabel"; "minHeight": "minHeight"; "required": "required"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SvgXmlComponent, "tb-svg-xml", never, { "label": { "alias": "label"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "fillHeight": { "alias": "fillHeight"; "required": false; }; "noLabel": { "alias": "noLabel"; "required": false; }; "minHeight": { "alias": "minHeight"; "required": false; }; "required": { "alias": "required"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -48,5 +48,5 @@ export declare class ProgressBarWidgetComponent implements OnInit, OnDestroy, Af
     onDataUpdated(): void;
     private onResize;
     static ɵfac: i0.ɵɵFactoryDeclaration<ProgressBarWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ProgressBarWidgetComponent, "tb-progress-bar-widget", never, { "ctx": "ctx"; "widgetTitlePanel": "widgetTitlePanel"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ProgressBarWidgetComponent, "tb-progress-bar-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -33,5 +33,5 @@ export declare class CommonMapSettingsComponent extends PageComponent implements
     private updateModel;
     private updateValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<CommonMapSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CommonMapSettingsComponent, "tb-common-map-settings", never, { "disabled": "disabled"; "provider": "provider"; "widget": "widget"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CommonMapSettingsComponent, "tb-common-map-settings", never, { "disabled": { "alias": "disabled"; "required": false; }; "provider": { "alias": "provider"; "required": false; }; "widget": { "alias": "widget"; "required": false; }; }, {}, never, never, false, never>;
 }

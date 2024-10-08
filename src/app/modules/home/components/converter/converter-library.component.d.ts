@@ -43,5 +43,5 @@ export declare class ConverterLibraryComponent implements ControlValueAccessor, 
     trackByName(_: any, item: Vendor | Model): string;
     private updateScriptLangEnable;
     static ɵfac: i0.ɵɵFactoryDeclaration<ConverterLibraryComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ConverterLibraryComponent, "tb-converter-library", never, { "converterType": "converterType"; "integrationType": "integrationType"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ConverterLibraryComponent, "tb-converter-library", never, { "converterType": { "alias": "converterType"; "required": false; }; "integrationType": { "alias": "integrationType"; "required": false; }; }, {}, never, never, false, never>;
 }

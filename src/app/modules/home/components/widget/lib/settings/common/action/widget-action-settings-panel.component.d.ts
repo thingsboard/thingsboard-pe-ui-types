@@ -22,5 +22,5 @@ export declare class WidgetActionSettingsPanelComponent extends PageComponent im
     cancel(): void;
     applyWidgetAction(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetActionSettingsPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetActionSettingsPanelComponent, "tb-widget-action-settings-panel", never, { "widgetAction": "widgetAction"; "panelTitle": "panelTitle"; "widgetType": "widgetType"; "callbacks": "callbacks"; "popover": "popover"; }, { "widgetActionApplied": "widgetActionApplied"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetActionSettingsPanelComponent, "tb-widget-action-settings-panel", never, { "widgetAction": { "alias": "widgetAction"; "required": false; }; "panelTitle": { "alias": "panelTitle"; "required": false; }; "widgetType": { "alias": "widgetType"; "required": false; }; "callbacks": { "alias": "callbacks"; "required": false; }; "popover": { "alias": "popover"; "required": false; }; }, { "widgetActionApplied": "widgetActionApplied"; }, never, never, false, never>;
 }

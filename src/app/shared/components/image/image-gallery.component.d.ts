@@ -105,6 +105,6 @@ export declare class ImageGalleryComponent extends PageComponent implements OnIn
     embedImage($event: Event, image: ImageResourceInfo, itemIndex?: number): void;
     protected updatedRouterParamsAndData(queryParams: object, queryParamsHandling?: QueryParamsHandling): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ImageGalleryComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ImageGalleryComponent, "tb-image-gallery", never, { "pageMode": "pageMode"; "dialogMode": "dialogMode"; "imageSubType": "imageSubType"; "mode": "mode"; "selectionMode": "selectionMode"; }, { "imageSelected": "imageSelected"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ImageGalleryComponent, "tb-image-gallery", never, { "pageMode": { "alias": "pageMode"; "required": false; }; "dialogMode": { "alias": "dialogMode"; "required": false; }; "imageSubType": { "alias": "imageSubType"; "required": false; }; "mode": { "alias": "mode"; "required": false; }; "selectionMode": { "alias": "selectionMode"; "required": false; }; }, { "imageSelected": "imageSelected"; }, never, never, false, never>;
 }
 export {};

@@ -22,7 +22,7 @@ export declare class ImageCardsSelectOptionDirective {
     get viewValue(): string;
     constructor(_element: ElementRef<HTMLElement>);
     static ɵfac: i0.ɵɵFactoryDeclaration<ImageCardsSelectOptionDirective, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<ImageCardsSelectOptionDirective, "tb-image-cards-select-option", never, { "value": "value"; "image": "image"; }, {}, never, never, false, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<ImageCardsSelectOptionDirective, "tb-image-cards-select-option", never, { "value": { "alias": "value"; "required": false; }; "image": { "alias": "image"; "required": false; }; }, {}, never, never, false, never>;
 }
 export declare class ImageCardsSelectComponent implements ControlValueAccessor, OnInit, OnChanges, AfterContentInit, OnDestroy {
     private breakpointObserver;
@@ -54,5 +54,5 @@ export declare class ImageCardsSelectComponent implements ControlValueAccessor, 
     toggleSelectPanel($event: Event): void;
     private updateDisplayValue;
     static ɵfac: i0.ɵɵFactoryDeclaration<ImageCardsSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ImageCardsSelectComponent, "tb-image-cards-select", never, { "disabled": "disabled"; "cols": "cols"; "rowHeight": "rowHeight"; "label": "label"; }, {}, ["imageCardsSelectOptions"], never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ImageCardsSelectComponent, "tb-image-cards-select", never, { "disabled": { "alias": "disabled"; "required": false; }; "cols": { "alias": "cols"; "required": false; }; "rowHeight": { "alias": "rowHeight"; "required": false; }; "label": { "alias": "label"; "required": false; }; }, {}, ["imageCardsSelectOptions"], never, false, never>;
 }

@@ -1,4 +1,3 @@
-/// <reference types="src/typings/rawloader.typings" />
 import { NgZone, Renderer2 } from '@angular/core';
 import { ExceptionData } from '@app/shared/models/error.models';
 import { TranslateService } from '@ngx-translate/core';

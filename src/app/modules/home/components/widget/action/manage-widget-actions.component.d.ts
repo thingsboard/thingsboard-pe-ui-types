@@ -71,5 +71,5 @@ export declare class ManageWidgetActionsComponent extends PageComponent implemen
     }): void;
     private onActionsUpdated;
     static ɵfac: i0.ɵɵFactoryDeclaration<ManageWidgetActionsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ManageWidgetActionsComponent, "tb-manage-widget-actions", never, { "disabled": "disabled"; "widgetType": "widgetType"; "callbacks": "callbacks"; "actionSources": "actionSources"; "actionTypes": "actionTypes"; "customFunctionArgs": "customFunctionArgs"; "isEntityGroup": "isEntityGroup"; "outlinedBorder": "outlinedBorder"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ManageWidgetActionsComponent, "tb-manage-widget-actions", never, { "disabled": { "alias": "disabled"; "required": false; }; "widgetType": { "alias": "widgetType"; "required": false; }; "callbacks": { "alias": "callbacks"; "required": false; }; "actionSources": { "alias": "actionSources"; "required": false; }; "actionTypes": { "alias": "actionTypes"; "required": false; }; "customFunctionArgs": { "alias": "customFunctionArgs"; "required": false; }; "isEntityGroup": { "alias": "isEntityGroup"; "required": false; }; "outlinedBorder": { "alias": "outlinedBorder"; "required": false; }; }, {}, never, never, false, never>;
 }

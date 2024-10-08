@@ -35,6 +35,6 @@ export declare class ColorPickerPanelComponent extends PageComponent implements 
     clearColor(): void;
     cancelColor(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ColorPickerPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ColorPickerPanelComponent, "tb-color-picker-panel", never, { "color": "color"; "colorClearButton": "colorClearButton"; "useThemePalette": "useThemePalette"; "colorCancelButton": "colorCancelButton"; "popover": "popover"; }, { "colorSelected": "colorSelected"; "colorCancelDialog": "colorCancelDialog"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ColorPickerPanelComponent, "tb-color-picker-panel", never, { "color": { "alias": "color"; "required": false; }; "colorClearButton": { "alias": "colorClearButton"; "required": false; }; "useThemePalette": { "alias": "useThemePalette"; "required": false; }; "colorCancelButton": { "alias": "colorCancelButton"; "required": false; }; "popover": { "alias": "popover"; "required": false; }; }, { "colorSelected": "colorSelected"; "colorCancelDialog": "colorCancelDialog"; }, never, never, false, never>;
 }
 export {};

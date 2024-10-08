@@ -45,5 +45,5 @@ export declare class CountWidgetComponent implements OnInit, AfterViewInit, OnDe
     cardClick($event: Event): void;
     private onResize;
     static ɵfac: i0.ɵɵFactoryDeclaration<CountWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CountWidgetComponent, "tb-count-widget", never, { "ctx": "ctx"; "widgetTitlePanel": "widgetTitlePanel"; "alarmElseEntity": "alarmElseEntity"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CountWidgetComponent, "tb-count-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; "alarmElseEntity": { "alias": "alarmElseEntity"; "required": false; }; }, {}, never, never, false, never>;
 }

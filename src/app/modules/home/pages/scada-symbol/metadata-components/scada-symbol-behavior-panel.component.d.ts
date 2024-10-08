@@ -36,5 +36,5 @@ export declare class ScadaSymbolBehaviorPanelComponent implements OnInit {
     applyBehaviorSettings(): void;
     private updateValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<ScadaSymbolBehaviorPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ScadaSymbolBehaviorPanelComponent, "tb-scada-symbol-behavior-panel", never, { "isAdd": "isAdd"; "behavior": "behavior"; "aliasController": "aliasController"; "callbacks": "callbacks"; "disabled": "disabled"; "popover": "popover"; }, { "behaviorSettingsApplied": "behaviorSettingsApplied"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ScadaSymbolBehaviorPanelComponent, "tb-scada-symbol-behavior-panel", never, { "isAdd": { "alias": "isAdd"; "required": false; }; "behavior": { "alias": "behavior"; "required": false; }; "aliasController": { "alias": "aliasController"; "required": false; }; "callbacks": { "alias": "callbacks"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "popover": { "alias": "popover"; "required": false; }; }, { "behaviorSettingsApplied": "behaviorSettingsApplied"; }, never, never, false, never>;
 }

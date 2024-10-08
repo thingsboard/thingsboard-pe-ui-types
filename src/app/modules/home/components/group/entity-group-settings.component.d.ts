@@ -27,5 +27,5 @@ export declare class EntityGroupSettingsComponent extends PageComponent implemen
     private propagateChange;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityGroupSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupSettingsComponent, "tb-entity-group-settings", never, { "entityType": "entityType"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupSettingsComponent, "tb-entity-group-settings", never, { "entityType": { "alias": "entityType"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

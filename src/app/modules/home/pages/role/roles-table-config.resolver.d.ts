@@ -1,4 +1,4 @@
-import { Resolve, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
 import { TranslateService } from '@ngx-translate/core';
 import { DatePipe } from '@angular/common';
@@ -7,7 +7,7 @@ import { Role } from '@shared/models/role.models';
 import { RoleService } from '@core/http/role.service';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import * as i0 from "@angular/core";
-export declare class RolesTableConfigResolver implements Resolve<EntityTableConfig<Role>> {
+export declare class RolesTableConfigResolver {
     private roleService;
     private userPermissionsService;
     private translate;

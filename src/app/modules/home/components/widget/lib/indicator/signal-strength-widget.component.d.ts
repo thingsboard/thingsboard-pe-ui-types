@@ -64,5 +64,5 @@ export declare class SignalStrengthWidgetComponent implements OnInit, OnDestroy,
     private renderCenterText;
     private onResize;
     static ɵfac: i0.ɵɵFactoryDeclaration<SignalStrengthWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SignalStrengthWidgetComponent, "tb-signal-strength-widget", never, { "ctx": "ctx"; "widgetTitlePanel": "widgetTitlePanel"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SignalStrengthWidgetComponent, "tb-signal-strength-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; }, {}, never, never, false, never>;
 }

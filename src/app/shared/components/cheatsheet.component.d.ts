@@ -15,5 +15,5 @@ export declare class TbCheatSheetComponent implements OnInit, OnDestroy {
     toggleCheatSheet(): void;
     ngOnDestroy(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TbCheatSheetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TbCheatSheetComponent, "tb-hotkeys-cheatsheet", never, { "title": "title"; "hotkeys": "hotkeys"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TbCheatSheetComponent, "tb-hotkeys-cheatsheet", never, { "title": { "alias": "title"; "required": false; }; "hotkeys": { "alias": "hotkeys"; "required": false; }; }, {}, never, never, false, never>;
 }

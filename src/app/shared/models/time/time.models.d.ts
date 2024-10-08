@@ -1,5 +1,5 @@
 import { TimeService } from '@core/services/time.service';
-import * as moment_ from 'moment';
+import moment_ from 'moment';
 import { IntervalType } from '@shared/models/telemetry/telemetry.models';
 export declare const SECOND = 1000;
 export declare const MINUTE: number;

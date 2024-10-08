@@ -1,4 +1,4 @@
-import L, { LatLngBounds, LatLngLiteral, LatLngTuple } from 'leaflet';
+import L, { LatLngBounds, LatLngLiteral, LatLngTuple, PointExpression } from 'leaflet';
 import LeafletMap from '../leaflet-map';
 import { CircleData, PosFunction, WidgetUnitedMapSettings } from '../map-models';
 import { WidgetContext } from '@home/models/widget-component.models';
@@ -15,9 +15,9 @@ export declare class ImageMap extends LeafletMap {
     private mapImage;
     private imageFromUrl;
     private imageFromAlias;
-    updateBounds(updateImage?: boolean, lastCenterPos?: any): void;
+    updateBounds(updateImage?: boolean, lastCenterPos?: L.Point): void;
     onResize(updateImage?: boolean): void;
-    fitBounds(bounds: LatLngBounds, padding?: LatLngTuple): void;
+    fitBounds(_bounds: LatLngBounds, _padding?: PointExpression): void;
     initMap(updateImage?: boolean): void;
     extractPosition(data: FormattedData): {
         x: number;
@@ -27,11 +27,11 @@ export declare class ImageMap extends LeafletMap {
         x: number;
         y: number;
     }): L.LatLng;
-    convertPosition(data: any, dsData: FormattedData[]): L.LatLng;
+    convertPosition(data: FormattedData, dsData: FormattedData[]): L.LatLng;
     convertPositionPolygon(expression: (LatLngTuple | LatLngTuple[] | LatLngTuple[][])[]): any;
-    pointToLatLng(x: any, y: any): L.LatLng;
+    pointToLatLng(x: number, y: number): L.LatLng;
     latLngToPoint(latLng: LatLngLiteral): L.Point;
-    convertToCustomFormat(position: L.LatLng, offset?: number, width?: number, height?: number): {
+    convertToCustomFormat(position: L.LatLng, _offset?: number, width?: number, height?: number): {
         [key: string]: any;
     };
     convertToPolygonFormat(points: Array<any>, width?: number, height?: number): Array<any>;

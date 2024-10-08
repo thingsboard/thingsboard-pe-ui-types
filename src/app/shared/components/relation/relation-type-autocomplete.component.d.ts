@@ -39,5 +39,5 @@ export declare class RelationTypeAutocompleteComponent implements ControlValueAc
     fetchRelationTypes(searchText?: string, strictMatch?: boolean): Observable<Array<string>>;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<RelationTypeAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RelationTypeAutocompleteComponent, "tb-relation-type-autocomplete", never, { "showLabel": "showLabel"; "additionalClasses": "additionalClasses"; "appearance": "appearance"; "required": "required"; "disabled": "disabled"; "subscriptSizing": "subscriptSizing"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RelationTypeAutocompleteComponent, "tb-relation-type-autocomplete", never, { "showLabel": { "alias": "showLabel"; "required": false; }; "additionalClasses": { "alias": "additionalClasses"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; }, {}, never, never, false, never>;
 }

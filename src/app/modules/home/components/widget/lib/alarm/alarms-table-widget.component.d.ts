@@ -147,7 +147,7 @@ export declare class AlarmsTableWidgetComponent extends PageComponent implements
     getAvatarBgColor(alarmAssignee: AlarmAssignee): string;
     openAlarmAssigneePanel($event: Event, entity: AlarmInfo): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AlarmsTableWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmsTableWidgetComponent, "tb-alarms-table-widget", never, { "ctx": "ctx"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmsTableWidgetComponent, "tb-alarms-table-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; }, {}, never, never, false, never>;
 }
 declare class AlarmsDatasource implements DataSource<AlarmDataInfo> {
     private subscription;

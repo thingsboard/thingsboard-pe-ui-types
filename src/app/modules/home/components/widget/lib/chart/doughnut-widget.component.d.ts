@@ -18,5 +18,5 @@ export declare class DoughnutWidgetComponent implements OnInit {
     onInit(): void;
     onDataUpdated(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DoughnutWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DoughnutWidgetComponent, "tb-doughnut-widget", never, { "ctx": "ctx"; "widgetTitlePanel": "widgetTitlePanel"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DoughnutWidgetComponent, "tb-doughnut-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; }, {}, never, never, false, never>;
 }

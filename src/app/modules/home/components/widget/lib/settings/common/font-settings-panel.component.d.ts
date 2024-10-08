@@ -37,5 +37,5 @@ export declare class FontSettingsPanelComponent extends PageComponent implements
     clearFont(): void;
     private updatePreviewStyle;
     static ɵfac: i0.ɵɵFactoryDeclaration<FontSettingsPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FontSettingsPanelComponent, "tb-font-settings-panel", never, { "font": "font"; "previewText": "previewText"; "initialPreviewStyle": "initialPreviewStyle"; "clearButton": "clearButton"; "autoScale": "autoScale"; "disabledLineHeight": "disabledLineHeight"; "forceSizeUnit": "forceSizeUnit"; "popover": "popover"; }, { "fontApplied": "fontApplied"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FontSettingsPanelComponent, "tb-font-settings-panel", never, { "font": { "alias": "font"; "required": false; }; "previewText": { "alias": "previewText"; "required": false; }; "initialPreviewStyle": { "alias": "initialPreviewStyle"; "required": false; }; "clearButton": { "alias": "clearButton"; "required": false; }; "autoScale": { "alias": "autoScale"; "required": false; }; "disabledLineHeight": { "alias": "disabledLineHeight"; "required": false; }; "forceSizeUnit": { "alias": "forceSizeUnit"; "required": false; }; "popover": { "alias": "popover"; "required": false; }; }, { "fontApplied": "fontApplied"; }, never, never, false, never>;
 }

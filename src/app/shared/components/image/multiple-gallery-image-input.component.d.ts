@@ -37,5 +37,5 @@ export declare class MultipleGalleryImageInputComponent extends PageComponent im
     imageDragEnd(): void;
     imageDrop(event: DndDropEvent): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<MultipleGalleryImageInputComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MultipleGalleryImageInputComponent, "tb-multiple-gallery-image-input", never, { "label": "label"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MultipleGalleryImageInputComponent, "tb-multiple-gallery-image-input", never, { "label": { "alias": "label"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

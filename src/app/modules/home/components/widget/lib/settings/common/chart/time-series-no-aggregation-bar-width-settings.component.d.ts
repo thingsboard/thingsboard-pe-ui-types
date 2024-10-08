@@ -21,5 +21,5 @@ export declare class TimeSeriesNoAggregationBarWidthSettingsComponent implements
     private updateValidators;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesNoAggregationBarWidthSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesNoAggregationBarWidthSettingsComponent, "tb-time-series-no-aggregation-bar-width-settings", never, { "disabled": "disabled"; "stroked": "stroked"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesNoAggregationBarWidthSettingsComponent, "tb-time-series-no-aggregation-bar-width-settings", never, { "disabled": { "alias": "disabled"; "required": false; }; "stroked": { "alias": "stroked"; "required": false; }; }, {}, never, never, false, never>;
 }

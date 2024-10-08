@@ -38,7 +38,7 @@ export declare class ModbusMasterTableComponent implements ControlValueAccessor,
     private updateTableData;
     private pushDataAsFormArrays;
     static ɵfac: i0.ɵɵFactoryDeclaration<ModbusMasterTableComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ModbusMasterTableComponent, "tb-modbus-master-table", never, { "isLegacy": "isLegacy"; }, {}, never, never, true, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ModbusMasterTableComponent, "tb-modbus-master-table", never, { "isLegacy": { "alias": "isLegacy"; "required": false; }; }, {}, never, never, true, never>;
 }
 export declare class SlavesDatasource extends TbTableDatasource<SlaveConfig> {
     constructor();

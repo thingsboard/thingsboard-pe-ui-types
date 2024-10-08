@@ -23,5 +23,5 @@ export declare class FlotThresholdComponent extends PageComponent implements OnI
     writeValue(value: TbFlotKeyThreshold): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<FlotThresholdComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FlotThresholdComponent, "tb-flot-threshold", never, { "disabled": "disabled"; "aliasController": "aliasController"; }, { "removeThreshold": "removeThreshold"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FlotThresholdComponent, "tb-flot-threshold", never, { "disabled": { "alias": "disabled"; "required": false; }; "aliasController": { "alias": "aliasController"; "required": false; }; }, { "removeThreshold": "removeThreshold"; }, never, never, false, never>;
 }

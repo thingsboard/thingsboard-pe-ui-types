@@ -4,6 +4,6 @@ import 'leaflet.gridlayer.googlemutant';
 import { WidgetContext } from '@home/models/widget-component.models';
 export declare class GoogleMap extends LeafletMap {
     private resource;
-    constructor(ctx: WidgetContext, $container: any, options: WidgetUnitedMapSettings);
+    constructor(ctx: WidgetContext, $container: HTMLElement, options: WidgetUnitedMapSettings);
     private loadGoogle;
 }

@@ -41,7 +41,7 @@ export declare class GatewayServiceRPCConnectorComponent implements OnInit, OnDe
         value: string;
     }): void;
     removeHTTPHeader(index: number): void;
-    getFormArrayControls(path: string): FormControl<any>[];
+    getFormArrayControls(path: string): FormControl[];
     openEditJSONDialog($event: Event): void;
     save(): void;
     registerOnChange(fn: any): void;
@@ -49,5 +49,5 @@ export declare class GatewayServiceRPCConnectorComponent implements OnInit, OnDe
     clearFromArrayByName(name: string): void;
     writeValue(value: RPCTemplateConfig): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<GatewayServiceRPCConnectorComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<GatewayServiceRPCConnectorComponent, "tb-gateway-service-rpc-connector", never, { "connectorType": "connectorType"; }, { "sendCommand": "sendCommand"; "saveTemplate": "saveTemplate"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GatewayServiceRPCConnectorComponent, "tb-gateway-service-rpc-connector", never, { "connectorType": { "alias": "connectorType"; "required": false; }; }, { "sendCommand": "sendCommand"; "saveTemplate": "saveTemplate"; }, never, never, false, never>;
 }

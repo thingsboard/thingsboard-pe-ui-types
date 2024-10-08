@@ -21,5 +21,5 @@ export declare class TimewindowStyleComponent implements OnInit, ControlValueAcc
     writeValue(value: TimewindowStyle): void;
     openTimewindowStylePopup($event: Event, matButton: MatButton): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimewindowStyleComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimewindowStyleComponent, "tb-timewindow-style", never, { "disabled": "disabled"; "previewValue": "previewValue"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimewindowStyleComponent, "tb-timewindow-style", never, { "disabled": { "alias": "disabled"; "required": false; }; "previewValue": { "alias": "previewValue"; "required": false; }; }, {}, never, never, false, never>;
 }

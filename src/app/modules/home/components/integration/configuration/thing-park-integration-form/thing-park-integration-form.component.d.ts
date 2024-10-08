@@ -28,5 +28,5 @@ export declare class ThingParkIntegrationFormComponent extends IntegrationForm i
     onHttpEndpointCopied(): void;
     updatedValidationPrivateNetwork(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ThingParkIntegrationFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ThingParkIntegrationFormComponent, "tb-thing-spark-integration-form", never, { "routingKey": "routingKey"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ThingParkIntegrationFormComponent, "tb-thing-spark-integration-form", never, { "routingKey": { "alias": "routingKey"; "required": false; }; }, {}, never, never, false, never>;
 }

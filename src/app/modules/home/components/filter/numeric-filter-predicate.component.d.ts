@@ -23,5 +23,5 @@ export declare class NumericFilterPredicateComponent implements ControlValueAcce
     writeValue(predicate: NumericFilterPredicate): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<NumericFilterPredicateComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<NumericFilterPredicateComponent, "tb-numeric-filter-predicate", never, { "disabled": "disabled"; "allowUserDynamicSource": "allowUserDynamicSource"; "onlyUserDynamicSource": "onlyUserDynamicSource"; "valueType": "valueType"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NumericFilterPredicateComponent, "tb-numeric-filter-predicate", never, { "disabled": { "alias": "disabled"; "required": false; }; "allowUserDynamicSource": { "alias": "allowUserDynamicSource"; "required": false; }; "onlyUserDynamicSource": { "alias": "onlyUserDynamicSource"; "required": false; }; "valueType": { "alias": "valueType"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -19,5 +19,5 @@ export declare class AlarmAssigneeComponent {
     getAvatarBgColor(entity: AlarmAssignee): string;
     openAlarmAssigneePanel($event: Event, alarm: AlarmInfo): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AlarmAssigneeComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmAssigneeComponent, "tb-alarm-assignee", never, { "alarm": "alarm"; "allowAssign": "allowAssign"; }, { "alarmReassigned": "alarmReassigned"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmAssigneeComponent, "tb-alarm-assignee", never, { "alarm": { "alias": "alarm"; "required": false; }; "allowAssign": { "alias": "allowAssign"; "required": false; }; }, { "alarmReassigned": "alarmReassigned"; }, never, never, false, never>;
 }

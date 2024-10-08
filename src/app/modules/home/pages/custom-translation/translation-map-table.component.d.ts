@@ -77,7 +77,7 @@ export declare class TranslationMapTableComponent extends PageComponent implemen
     private resetTranslationEdit;
     returnDefaultTranslation($event: Event, translation: CustomTranslationEditInfo): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TranslationMapTableComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TranslationMapTableComponent, "tb-translation-map-table", never, { "localeCode": "localeCode"; "localeName": "localeName"; "readonly": "readonly"; }, { "changeFullscreen": "changeFullscreen"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TranslationMapTableComponent, "tb-translation-map-table", never, { "localeCode": { "alias": "localeCode"; "required": false; }; "localeName": { "alias": "localeName"; "required": false; }; "readonly": { "alias": "readonly"; "required": false; }; }, { "changeFullscreen": "changeFullscreen"; }, never, never, false, never>;
 }
 export declare class CustomTranslationMapDatasource implements DataSource<CustomTranslationEditInfo> {
     private customTranslationService;

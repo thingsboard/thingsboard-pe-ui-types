@@ -18,5 +18,5 @@ export declare class WidgetsBundleComponent extends EntityComponent<WidgetsBundl
     buildForm(entity: WidgetsBundle): UntypedFormGroup;
     updateForm(entity: WidgetsBundle): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetsBundleComponent, [null, { optional: true; }, { optional: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetsBundleComponent, "tb-widgets-bundle", never, { "standalone": "standalone"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetsBundleComponent, "tb-widgets-bundle", never, { "standalone": { "alias": "standalone"; "required": false; }; }, {}, never, never, false, never>;
 }

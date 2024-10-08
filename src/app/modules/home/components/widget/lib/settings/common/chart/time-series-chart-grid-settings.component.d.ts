@@ -20,5 +20,5 @@ export declare class TimeSeriesChartGridSettingsComponent implements OnInit, Con
     private updateValidators;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesChartGridSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartGridSettingsComponent, "tb-time-series-chart-grid-settings", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartGridSettingsComponent, "tb-time-series-chart-grid-settings", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

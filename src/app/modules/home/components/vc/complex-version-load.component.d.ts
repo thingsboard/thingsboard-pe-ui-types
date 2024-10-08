@@ -35,5 +35,5 @@ export declare class ComplexVersionLoadComponent extends PageComponent implement
     cancel(): void;
     restore(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ComplexVersionLoadComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ComplexVersionLoadComponent, "tb-complex-version-load", never, { "versionName": "versionName"; "versionId": "versionId"; "onClose": "onClose"; "popoverComponent": "popoverComponent"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ComplexVersionLoadComponent, "tb-complex-version-load", never, { "versionName": { "alias": "versionName"; "required": false; }; "versionId": { "alias": "versionId"; "required": false; }; "onClose": { "alias": "onClose"; "required": false; }; "popoverComponent": { "alias": "popoverComponent"; "required": false; }; }, {}, never, never, false, never>;
 }

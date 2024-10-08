@@ -30,7 +30,7 @@ export declare class MailServerComponent extends PageComponent implements OnInit
     adminSettings: AdminSettings<MailServerSettings>;
     smtpProtocols: SmtpProtocol[];
     showChangePassword: boolean;
-    protocols: DomainSchema[];
+    protocols: (DomainSchema.HTTP | DomainSchema.HTTPS)[];
     domainSchemaTranslations: Map<DomainSchema, string>;
     mailServerOauth2Provider: typeof MailServerOauth2Provider;
     tlsVersions: string[];

@@ -15,5 +15,5 @@ export declare abstract class EntityTableHeaderComponent<T extends BaseData<HasI
     ngOnInit(): void;
     protected setEntitiesTableConfig(entitiesTableConfig: C): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityTableHeaderComponent<any, any, any, any>, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<EntityTableHeaderComponent<any, any, any, any>, never, never, { "entitiesTableConfig": "entitiesTableConfig"; }, {}, never, never, false, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<EntityTableHeaderComponent<any, any, any, any>, never, never, { "entitiesTableConfig": { "alias": "entitiesTableConfig"; "required": false; }; }, {}, never, never, false, never>;
 }

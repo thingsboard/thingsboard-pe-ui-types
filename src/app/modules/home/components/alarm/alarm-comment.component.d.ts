@@ -75,6 +75,6 @@ export declare class AlarmCommentComponent implements OnInit {
     private getDataElementByCommentId;
     private getDataForExport;
     static ɵfac: i0.ɵɵFactoryDeclaration<AlarmCommentComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmCommentComponent, "tb-alarm-comment", never, { "alarmId": "alarmId"; "alarmActivityOnly": "alarmActivityOnly"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmCommentComponent, "tb-alarm-comment", never, { "alarmId": { "alias": "alarmId"; "required": false; }; "alarmActivityOnly": { "alias": "alarmActivityOnly"; "required": false; }; }, {}, never, never, false, never>;
 }
 export {};

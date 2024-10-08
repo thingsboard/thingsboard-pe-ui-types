@@ -25,5 +25,5 @@ export declare class RpcButtonStyleComponent extends PageComponent implements On
     writeValue(value: RpcButtonStyle): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<RpcButtonStyleComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RpcButtonStyleComponent, "tb-rpc-button-style", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RpcButtonStyleComponent, "tb-rpc-button-style", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

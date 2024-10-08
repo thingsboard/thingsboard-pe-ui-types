@@ -1,4 +1,4 @@
-import { ActivatedRouteSnapshot, Resolve, Router } from '@angular/router';
+import { ActivatedRouteSnapshot, Router } from '@angular/router';
 import { CellActionDescriptor, EntityColumn, EntityTableConfig, GroupActionDescriptor, HeaderActionDescriptor } from '@home/models/entity/entities-table-config.models';
 import { TranslateService } from '@ngx-translate/core';
 import { DatePipe } from '@angular/common';
@@ -17,7 +17,7 @@ import { UtilsService } from '@core/services/utils.service';
 import { AllEntitiesTableConfigService } from '@home/components/entity/all-entities-table-config.service';
 import { AuthUser } from '@shared/models/user.model';
 import * as i0 from "@angular/core";
-export declare class AssetsTableConfigResolver implements Resolve<EntityTableConfig<AssetInfo>> {
+export declare class AssetsTableConfigResolver {
     private allEntitiesTableConfigService;
     private store;
     private broadcast;

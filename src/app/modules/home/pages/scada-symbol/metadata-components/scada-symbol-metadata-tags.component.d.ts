@@ -35,5 +35,5 @@ export declare class ScadaSymbolMetadataTagsComponent implements ControlValueAcc
     private setupTags;
     private prepareTagsFormArray;
     static ɵfac: i0.ɵɵFactoryDeclaration<ScadaSymbolMetadataTagsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ScadaSymbolMetadataTagsComponent, "tb-scada-symbol-metadata-tags", never, { "disabled": "disabled"; "tags": "tags"; "elementStateRenderFunctionCompleter": "elementStateRenderFunctionCompleter"; "clickActionFunctionCompleter": "clickActionFunctionCompleter"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ScadaSymbolMetadataTagsComponent, "tb-scada-symbol-metadata-tags", never, { "disabled": { "alias": "disabled"; "required": false; }; "tags": { "alias": "tags"; "required": false; }; "elementStateRenderFunctionCompleter": { "alias": "elementStateRenderFunctionCompleter"; "required": false; }; "clickActionFunctionCompleter": { "alias": "clickActionFunctionCompleter"; "required": false; }; }, {}, never, never, false, never>;
 }

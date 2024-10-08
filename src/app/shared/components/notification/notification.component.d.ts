@@ -29,5 +29,5 @@ export declare class NotificationComponent implements OnInit {
     notificationBackgroundColor(): string;
     notificationIconColor(): object;
     static ɵfac: i0.ɵɵFactoryDeclaration<NotificationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<NotificationComponent, "tb-notification", never, { "notification": "notification"; "onClose": "onClose"; "preview": "preview"; }, { "markAsRead": "markAsRead"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NotificationComponent, "tb-notification", never, { "notification": { "alias": "notification"; "required": false; }; "onClose": { "alias": "onClose"; "required": false; }; "preview": { "alias": "preview"; "required": false; }; }, { "markAsRead": "markAsRead"; }, never, never, false, never>;
 }

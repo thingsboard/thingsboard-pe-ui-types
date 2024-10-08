@@ -22,5 +22,5 @@ export declare class DeviceProfileTransportConfigurationComponent implements Con
     private updateModel;
     validate(c: UntypedFormControl): ValidationErrors | null;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceProfileTransportConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceProfileTransportConfigurationComponent, "tb-device-profile-transport-configuration", never, { "disabled": "disabled"; "isAdd": "isAdd"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceProfileTransportConfigurationComponent, "tb-device-profile-transport-configuration", never, { "disabled": { "alias": "disabled"; "required": false; }; "isAdd": { "alias": "isAdd"; "required": false; }; }, {}, never, never, false, never>;
 }

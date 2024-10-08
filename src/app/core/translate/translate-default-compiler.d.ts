@@ -2,7 +2,7 @@ import { MessageFormatConfig, TranslateMessageFormatCompiler } from 'ngx-transla
 import * as i0 from "@angular/core";
 export declare class TranslateDefaultCompiler extends TranslateMessageFormatCompiler {
     constructor(config?: MessageFormatConfig);
-    compile(value: string, lang: string): (params: any) => string;
+    compile(value: string, lang: string): any;
     compileTranslations(translations: any, lang: string): any;
     private defaultCompile;
     private checkIsPlural;

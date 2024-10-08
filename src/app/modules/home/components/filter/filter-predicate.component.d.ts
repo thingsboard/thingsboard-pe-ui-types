@@ -23,5 +23,5 @@ export declare class FilterPredicateComponent implements ControlValueAccessor, V
     writeValue(predicate: KeyFilterPredicateInfo): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<FilterPredicateComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FilterPredicateComponent, "tb-filter-predicate", never, { "disabled": "disabled"; "valueType": "valueType"; "key": "key"; "displayUserParameters": "displayUserParameters"; "allowUserDynamicSource": "allowUserDynamicSource"; "onlyUserDynamicSource": "onlyUserDynamicSource"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FilterPredicateComponent, "tb-filter-predicate", never, { "disabled": { "alias": "disabled"; "required": false; }; "valueType": { "alias": "valueType"; "required": false; }; "key": { "alias": "key"; "required": false; }; "displayUserParameters": { "alias": "displayUserParameters"; "required": false; }; "allowUserDynamicSource": { "alias": "allowUserDynamicSource"; "required": false; }; "onlyUserDynamicSource": { "alias": "onlyUserDynamicSource"; "required": false; }; }, {}, never, never, false, never>;
 }

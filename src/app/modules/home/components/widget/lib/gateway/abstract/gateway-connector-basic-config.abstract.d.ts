@@ -22,5 +22,5 @@ export declare abstract class GatewayConnectorBasicConfigDirective<InputBasicCon
     protected abstract getMappedValue(config: InputBasicConfig): OutputBasicConfig;
     protected abstract initBasicFormGroup(): FormGroup;
     static ɵfac: i0.ɵɵFactoryDeclaration<GatewayConnectorBasicConfigDirective<any, any>, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<GatewayConnectorBasicConfigDirective<any, any>, never, never, { "generalTabContent": "generalTabContent"; }, { "initialized": "initialized"; }, never, never, false, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<GatewayConnectorBasicConfigDirective<any, any>, never, never, { "generalTabContent": { "alias": "generalTabContent"; "required": false; }; }, { "initialized": "initialized"; }, never, never, false, never>;
 }

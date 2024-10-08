@@ -30,5 +30,5 @@ export declare class MapEditorSettingsComponent extends PageComponent implements
     private updateModel;
     private updateValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<MapEditorSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MapEditorSettingsComponent, "tb-map-editor-settings", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MapEditorSettingsComponent, "tb-map-editor-settings", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

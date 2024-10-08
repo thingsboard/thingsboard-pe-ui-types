@@ -24,5 +24,5 @@ export declare class RateLimitsComponent implements ControlValueAccessor, OnInit
     private updateRateLimitsInfo;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<RateLimitsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RateLimitsComponent, "tb-rate-limits", never, { "disabled": "disabled"; "type": "type"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RateLimitsComponent, "tb-rate-limits", never, { "disabled": { "alias": "disabled"; "required": false; }; "type": { "alias": "type"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -24,5 +24,5 @@ export declare class DeviceTransportConfigurationComponent implements ControlVal
     validate(): ValidationErrors | null;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceTransportConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceTransportConfigurationComponent, "tb-device-transport-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceTransportConfigurationComponent, "tb-device-transport-configuration", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

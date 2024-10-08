@@ -1,4 +1,4 @@
-import { Resolve, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
 import { TranslateService } from '@ngx-translate/core';
 import { DatePipe } from '@angular/common';
@@ -12,7 +12,7 @@ import { BaseWidgetType, WidgetTypeDetails, WidgetTypeInfo } from '@shared/model
 import { MatDialog } from '@angular/material/dialog';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import * as i0 from "@angular/core";
-export declare class WidgetTypesTableConfigResolver implements Resolve<EntityTableConfig<WidgetTypeInfo | WidgetTypeDetails>> {
+export declare class WidgetTypesTableConfigResolver {
     private store;
     private dialog;
     private widgetsService;

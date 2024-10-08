@@ -36,5 +36,5 @@ export declare class AggregatedDataKeysPanelComponent implements ControlValueAcc
     addKey(): void;
     private prepareKeysFormArray;
     static ɵfac: i0.ɵɵFactoryDeclaration<AggregatedDataKeysPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AggregatedDataKeysPanelComponent, "tb-aggregated-data-keys-panel", never, { "disabled": "disabled"; "datasourceType": "datasourceType"; "keyName": "keyName"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AggregatedDataKeysPanelComponent, "tb-aggregated-data-keys-panel", never, { "disabled": { "alias": "disabled"; "required": false; }; "datasourceType": { "alias": "datasourceType"; "required": false; }; "keyName": { "alias": "keyName"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -33,5 +33,5 @@ export declare class TripAnimationPathSettingsComponent extends PageComponent im
     private updateModel;
     private updateValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<TripAnimationPathSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TripAnimationPathSettingsComponent, "tb-trip-animation-path-settings", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TripAnimationPathSettingsComponent, "tb-trip-animation-path-settings", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

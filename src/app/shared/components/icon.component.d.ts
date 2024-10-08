@@ -39,6 +39,6 @@ export declare class TbIconComponent extends _TbIconBase implements AfterContent
     private _cacheChildrenWithExternalReferences;
     private _prependPathToReferences;
     static ɵfac: i0.ɵɵFactoryDeclaration<TbIconComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TbIconComponent, "tb-icon", ["tbIcon"], { "color": "color"; }, {}, never, ["*"], false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TbIconComponent, "tb-icon", ["tbIcon"], { "color": { "alias": "color"; "required": false; }; }, {}, never, ["*"], false, never>;
 }
 export {};

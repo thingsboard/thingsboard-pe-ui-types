@@ -51,5 +51,5 @@ export declare class LatestChartComponent implements OnInit, OnDestroy, AfterVie
     toggleLegendItem(item: LatestChartLegendItem): void;
     private onResize;
     static ɵfac: i0.ɵɵFactoryDeclaration<LatestChartComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<LatestChartComponent, "tb-latest-chart", never, { "ctx": "ctx"; "widgetTitlePanel": "widgetTitlePanel"; "callbacks": "callbacks"; "settings": "settings"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<LatestChartComponent, "tb-latest-chart", never, { "ctx": { "alias": "ctx"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; "callbacks": { "alias": "callbacks"; "required": false; }; "settings": { "alias": "settings"; "required": false; }; }, {}, never, never, false, never>;
 }

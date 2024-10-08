@@ -36,5 +36,5 @@ export declare class MarkersSettingsComponent extends PageComponent implements O
     private updateModel;
     private updateValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<MarkersSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MarkersSettingsComponent, "tb-markers-settings", never, { "disabled": "disabled"; "provider": "provider"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MarkersSettingsComponent, "tb-markers-settings", never, { "disabled": { "alias": "disabled"; "required": false; }; "provider": { "alias": "provider"; "required": false; }; }, {}, never, never, false, never>;
 }

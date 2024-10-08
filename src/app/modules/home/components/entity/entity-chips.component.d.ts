@@ -13,5 +13,5 @@ export declare class EntityChipsComponent {
     constructor(userPermissionsService: UserPermissionsService);
     update(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityChipsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityChipsComponent, "tb-entity-chips", never, { "entity": "entity"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityChipsComponent, "tb-entity-chips", never, { "entity": { "alias": "entity"; "required": false; }; }, {}, never, never, false, never>;
 }

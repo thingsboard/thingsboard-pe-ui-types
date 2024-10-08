@@ -28,5 +28,5 @@ export declare class SendRpcRequestComponent implements ControlValueAccessor, On
     private updateModel;
     getMethodValidationText(): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<SendRpcRequestComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SendRpcRequestComponent, "tb-send-rpc-request-event-config", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SendRpcRequestComponent, "tb-send-rpc-request-event-config", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

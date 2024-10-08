@@ -23,5 +23,5 @@ export declare class TimezonePanelComponent extends PageComponent implements OnI
     update(): void;
     cancel(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimezonePanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimezonePanelComponent, "tb-timezone-panel", never, { "timezone": "timezone"; "userTimezoneByDefault": "userTimezoneByDefault"; "localBrowserTimezonePlaceholderOnEmpty": "localBrowserTimezonePlaceholderOnEmpty"; "defaultTimezone": "defaultTimezone"; "onClose": "onClose"; "popoverComponent": "popoverComponent"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimezonePanelComponent, "tb-timezone-panel", never, { "timezone": { "alias": "timezone"; "required": false; }; "userTimezoneByDefault": { "alias": "userTimezoneByDefault"; "required": false; }; "localBrowserTimezonePlaceholderOnEmpty": { "alias": "localBrowserTimezonePlaceholderOnEmpty"; "required": false; }; "defaultTimezone": { "alias": "defaultTimezone"; "required": false; }; "onClose": { "alias": "onClose"; "required": false; }; "popoverComponent": { "alias": "popoverComponent"; "required": false; }; }, {}, never, never, false, never>;
 }

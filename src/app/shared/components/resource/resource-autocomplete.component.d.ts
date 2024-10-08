@@ -37,5 +37,5 @@ export declare class ResourceAutocompleteComponent implements ControlValueAccess
     private updateView;
     private fetchResources;
     static ɵfac: i0.ɵɵFactoryDeclaration<ResourceAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ResourceAutocompleteComponent, "tb-resource-autocomplete", never, { "disabled": "disabled"; "required": "required"; "appearance": "appearance"; "subscriptSizing": "subscriptSizing"; "placeholder": "placeholder"; "hideRequiredMarker": "hideRequiredMarker"; "allowAutocomplete": "allowAutocomplete"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ResourceAutocompleteComponent, "tb-resource-autocomplete", never, { "disabled": { "alias": "disabled"; "required": false; }; "required": { "alias": "required"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "placeholder": { "alias": "placeholder"; "required": false; }; "hideRequiredMarker": { "alias": "hideRequiredMarker"; "required": false; }; "allowAutocomplete": { "alias": "allowAutocomplete"; "required": false; }; }, {}, never, never, false, never>;
 }

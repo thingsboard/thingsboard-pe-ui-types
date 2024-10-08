@@ -1,8 +1,7 @@
-import { ChangeDetectorRef, ElementRef, OnChanges, OnDestroy, OnInit, Renderer2, SimpleChanges, ViewContainerRef } from '@angular/core';
+import { ChangeDetectorRef, ElementRef, OnChanges, OnDestroy, Renderer2, SimpleChanges, ViewContainerRef } from '@angular/core';
 import { ControlValueAccessor, UntypedFormControl, Validator } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { TranslateService } from '@ngx-translate/core';
 import { JsonFormProps } from './react/json-form.models';
 import { DialogService } from '@app/core/services/dialog.service';
 import { JsonFormComponentData } from './json-form-component.models';
@@ -10,9 +9,8 @@ import { GroupInfo } from '@shared/models/widget.models';
 import { WhiteLabelingService } from '@core/http/white-labeling.service';
 import { TbPopoverService } from '@shared/components/popover.service';
 import * as i0 from "@angular/core";
-export declare class JsonFormComponent implements OnInit, ControlValueAccessor, Validator, OnChanges, OnDestroy {
+export declare class JsonFormComponent implements ControlValueAccessor, Validator, OnChanges, OnDestroy {
     elementRef: ElementRef;
-    private translate;
     private dialogs;
     private popoverService;
     private renderer;
@@ -34,12 +32,12 @@ export declare class JsonFormComponent implements OnInit, ControlValueAccessor, 
     isModelValid: boolean;
     isFullscreen: boolean;
     fullscreenFinishFn: (el: Element) => void;
+    private reactRoot;
     private propagateChange;
     private propagateChangePending;
     private writingValue;
     private updateViewPending;
-    constructor(elementRef: ElementRef, translate: TranslateService, dialogs: DialogService, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, whiteLabelingService: WhiteLabelingService, store: Store<AppState>, cd: ChangeDetectorRef);
-    ngOnInit(): void;
+    constructor(elementRef: ElementRef, dialogs: DialogService, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, whiteLabelingService: WhiteLabelingService, store: Store<AppState>, cd: ChangeDetectorRef);
     ngOnDestroy(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -61,5 +59,5 @@ export declare class JsonFormComponent implements OnInit, ControlValueAccessor, 
     private destroyReactSchemaForm;
     private validateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<JsonFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<JsonFormComponent, "tb-json-form", never, { "required": "required"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<JsonFormComponent, "tb-json-form", never, { "required": { "alias": "required"; "required": false; }; }, {}, never, never, false, never>;
 }

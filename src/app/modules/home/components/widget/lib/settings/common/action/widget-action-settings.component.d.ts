@@ -29,5 +29,5 @@ export declare class WidgetActionSettingsComponent implements OnInit, ControlVal
     openActionSettingsPopup($event: Event, matButton: MatButton): void;
     private updateDisplayValue;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetActionSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetActionSettingsComponent, "tb-widget-action-settings", never, { "panelTitle": "panelTitle"; "widgetType": "widgetType"; "callbacks": "callbacks"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetActionSettingsComponent, "tb-widget-action-settings", never, { "panelTitle": { "alias": "panelTitle"; "required": false; }; "widgetType": { "alias": "widgetType"; "required": false; }; "callbacks": { "alias": "callbacks"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

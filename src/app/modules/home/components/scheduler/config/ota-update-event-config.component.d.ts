@@ -35,5 +35,5 @@ export declare class OtaUpdateEventConfigComponent implements ControlValueAccess
     private updateModel;
     currentEntity(entity: EntityId | EntityGroupInfo | null): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<OtaUpdateEventConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<OtaUpdateEventConfigComponent, "tb-ota-update-event-config", never, { "schedulerEventType": "schedulerEventType"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<OtaUpdateEventConfigComponent, "tb-ota-update-event-config", never, { "schedulerEventType": { "alias": "schedulerEventType"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

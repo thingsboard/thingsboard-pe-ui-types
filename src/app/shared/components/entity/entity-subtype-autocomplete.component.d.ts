@@ -50,5 +50,5 @@ export declare class EntitySubTypeAutocompleteComponent implements ControlValueA
     getSubTypes(): Observable<Array<string>>;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntitySubTypeAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntitySubTypeAutocompleteComponent, "tb-entity-subtype-autocomplete", never, { "entityType": "entityType"; "required": "required"; "disabled": "disabled"; "excludeSubTypes": "excludeSubTypes"; "appearance": "appearance"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntitySubTypeAutocompleteComponent, "tb-entity-subtype-autocomplete", never, { "entityType": { "alias": "entityType"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "excludeSubTypes": { "alias": "excludeSubTypes"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; }, {}, never, never, false, never>;
 }

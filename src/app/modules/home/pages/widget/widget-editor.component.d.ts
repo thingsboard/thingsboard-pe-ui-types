@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import { PageComponent } from '@shared/components/page.component';
 import { ElementRef, EventEmitter, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';

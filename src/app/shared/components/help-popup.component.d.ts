@@ -31,5 +31,5 @@ export declare class HelpPopupComponent implements OnChanges, OnDestroy {
     toggleHelp(): void;
     ngOnDestroy(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<HelpPopupComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<HelpPopupComponent, "[tb-help-popup], [tb-help-popup-content]", never, { "helpId": "tb-help-popup"; "helpContent": "tb-help-popup-content"; "triggerText": "trigger-text"; "triggerStyle": "trigger-style"; "helpPopupPlacement": "tb-help-popup-placement"; "helpPopupStyle": "tb-help-popup-style"; "hintMode": "hintMode"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<HelpPopupComponent, "[tb-help-popup], [tb-help-popup-content]", never, { "helpId": { "alias": "tb-help-popup"; "required": false; }; "helpContent": { "alias": "tb-help-popup-content"; "required": false; }; "triggerText": { "alias": "trigger-text"; "required": false; }; "triggerStyle": { "alias": "trigger-style"; "required": false; }; "helpPopupPlacement": { "alias": "tb-help-popup-placement"; "required": false; }; "helpPopupStyle": { "alias": "tb-help-popup-style"; "required": false; }; "hintMode": { "alias": "hintMode"; "required": false; }; }, {}, never, never, false, never>;
 }

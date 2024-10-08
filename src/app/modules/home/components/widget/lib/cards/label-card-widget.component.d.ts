@@ -35,5 +35,5 @@ export declare class LabelCardWidgetComponent implements OnInit, AfterViewInit, 
     cardClick($event: Event): void;
     private onResize;
     static ɵfac: i0.ɵɵFactoryDeclaration<LabelCardWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<LabelCardWidgetComponent, "tb-label-card-widget", never, { "ctx": "ctx"; "widgetTitlePanel": "widgetTitlePanel"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<LabelCardWidgetComponent, "tb-label-card-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; }, {}, never, never, false, never>;
 }

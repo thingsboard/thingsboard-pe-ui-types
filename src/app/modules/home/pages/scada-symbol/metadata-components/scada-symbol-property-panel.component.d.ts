@@ -27,5 +27,5 @@ export declare class ScadaSymbolPropertyPanelComponent implements OnInit {
     applyPropertySettings(): void;
     private updateValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<ScadaSymbolPropertyPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ScadaSymbolPropertyPanelComponent, "tb-scada-symbol-property-panel", never, { "isAdd": "isAdd"; "property": "property"; "booleanPropertyIds": "booleanPropertyIds"; "disabled": "disabled"; "popover": "popover"; }, { "propertySettingsApplied": "propertySettingsApplied"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ScadaSymbolPropertyPanelComponent, "tb-scada-symbol-property-panel", never, { "isAdd": { "alias": "isAdd"; "required": false; }; "property": { "alias": "property"; "required": false; }; "booleanPropertyIds": { "alias": "booleanPropertyIds"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "popover": { "alias": "popover"; "required": false; }; }, { "propertySettingsApplied": "propertySettingsApplied"; }, never, never, false, never>;
 }

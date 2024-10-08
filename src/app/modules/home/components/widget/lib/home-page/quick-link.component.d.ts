@@ -62,5 +62,5 @@ export declare class QuickLinkComponent extends PageComponent implements OnInit,
     isEditing(): boolean;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<QuickLinkComponent, [null, null, null, null, null, { skipSelf: true; }]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<QuickLinkComponent, "tb-quick-link", never, { "disabled": "disabled"; "addOnly": "addOnly"; "disableEdit": "disableEdit"; }, { "quickLinkAdded": "quickLinkAdded"; "quickLinkAddCanceled": "quickLinkAddCanceled"; "quickLinkUpdated": "quickLinkUpdated"; "quickLinkDeleted": "quickLinkDeleted"; "editModeChanged": "editModeChanged"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<QuickLinkComponent, "tb-quick-link", never, { "disabled": { "alias": "disabled"; "required": false; }; "addOnly": { "alias": "addOnly"; "required": false; }; "disableEdit": { "alias": "disableEdit"; "required": false; }; }, { "quickLinkAdded": "quickLinkAdded"; "quickLinkAddCanceled": "quickLinkAddCanceled"; "quickLinkUpdated": "quickLinkUpdated"; "quickLinkDeleted": "quickLinkDeleted"; "editModeChanged": "editModeChanged"; }, never, never, false, never>;
 }

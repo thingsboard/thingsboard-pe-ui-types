@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, ComponentRef, ElementRef, Injector, NgZone, OnChanges, OnDestroy, OnInit, Renderer2, SimpleChanges, TemplateRef, ViewContainerRef } from '@angular/core';
+import { ChangeDetectorRef, ComponentRef, ElementRef, Injector, NgZone, OnChanges, OnDestroy, OnInit, Renderer2, SimpleChanges, TemplateRef, ViewContainerRef } from '@angular/core';
 import { DashboardWidget } from '@home/models/dashboard-component.models';
 import { Widget, WidgetTypeParameters } from '@shared/models/widget.models';
 import { PageComponent } from '@shared/components/page.component';
@@ -30,7 +30,7 @@ import { TbPopoverService } from '@shared/components/popover.service';
 import { IModulesMap } from '@modules/common/modules-map.models';
 import { DashboardUtilsService } from '@core/services/dashboard-utils.service';
 import * as i0 from "@angular/core";
-export declare class WidgetComponent extends PageComponent implements OnInit, AfterViewInit, OnChanges, OnDestroy {
+export declare class WidgetComponent extends PageComponent implements OnInit, OnChanges, OnDestroy {
     protected store: Store<AppState>;
     private route;
     private router;
@@ -96,7 +96,6 @@ export declare class WidgetComponent extends PageComponent implements OnInit, Af
     private rxSubscriptions;
     constructor(store: Store<AppState>, route: ActivatedRoute, router: Router, widgetComponentService: WidgetComponentService, elementRef: ElementRef, injector: Injector, dialog: MatDialog, renderer: Renderer2, popoverService: TbPopoverService, embedDashboardDialogComponent: ComponentType<any>, dashboardPageComponent: ComponentType<any>, modulesMap: IModulesMap, widgetService: WidgetService, resources: ResourcesService, timeService: TimeService, deviceService: DeviceService, entityService: EntityService, dashboardService: DashboardService, importExport: ImportExportService, entityDataService: EntityDataService, alarmDataService: AlarmDataService, translate: TranslateService, utils: UtilsService, datePipe: DatePipe, dashboardUtils: DashboardUtilsService, mobileService: MobileService, raf: RafService, ngZone: NgZone, cd: ChangeDetectorRef);
     ngOnInit(): void;
-    ngAfterViewInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
     ngOnDestroy(): void;
     private displayWidgetInstance;
@@ -141,5 +140,5 @@ export declare class WidgetComponent extends PageComponent implements OnInit, Af
     private getActiveEntityInfo;
     private checkSize;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetComponent, [null, null, null, null, null, null, null, null, null, null, null, { optional: true; }, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetComponent, "tb-widget", never, { "widgetTitlePanel": "widgetTitlePanel"; "isEdit": "isEdit"; "isPreview": "isPreview"; "isMobile": "isMobile"; "dashboardWidget": "dashboardWidget"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetComponent, "tb-widget", never, { "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; "isEdit": { "alias": "isEdit"; "required": false; }; "isPreview": { "alias": "isPreview"; "required": false; }; "isMobile": { "alias": "isMobile"; "required": false; }; "dashboardWidget": { "alias": "dashboardWidget"; "required": false; }; }, {}, never, never, false, never>;
 }

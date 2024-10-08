@@ -27,5 +27,5 @@ export declare class AdvancedRangeComponent extends PageComponent implements OnI
     writeValue(value: AdvancedColorRange): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<AdvancedRangeComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AdvancedRangeComponent, "tb-advanced-range", never, { "disabled": "disabled"; "aliasController": "aliasController"; "dataKeyCallbacks": "dataKeyCallbacks"; "datasource": "datasource"; }, { "removeAdvancedRange": "removeAdvancedRange"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AdvancedRangeComponent, "tb-advanced-range", never, { "disabled": { "alias": "disabled"; "required": false; }; "aliasController": { "alias": "aliasController"; "required": false; }; "dataKeyCallbacks": { "alias": "dataKeyCallbacks"; "required": false; }; "datasource": { "alias": "datasource"; "required": false; }; }, { "removeAdvancedRange": "removeAdvancedRange"; }, never, never, false, never>;
 }

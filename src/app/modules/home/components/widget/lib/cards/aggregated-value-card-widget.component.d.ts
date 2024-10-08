@@ -53,5 +53,5 @@ export declare class AggregatedValueCardWidgetComponent implements OnInit, After
     private updateLastUpdateTs;
     private onValueCardValuesResize;
     static ɵfac: i0.ɵɵFactoryDeclaration<AggregatedValueCardWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AggregatedValueCardWidgetComponent, "tb-aggregated-value-card-widget", never, { "ctx": "ctx"; "widgetTitlePanel": "widgetTitlePanel"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AggregatedValueCardWidgetComponent, "tb-aggregated-value-card-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; }, {}, never, never, false, never>;
 }

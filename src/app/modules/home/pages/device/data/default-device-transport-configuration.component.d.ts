@@ -21,5 +21,5 @@ export declare class DefaultDeviceTransportConfigurationComponent implements Con
     writeValue(value: DefaultDeviceTransportConfiguration | null): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<DefaultDeviceTransportConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DefaultDeviceTransportConfigurationComponent, "tb-default-device-transport-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DefaultDeviceTransportConfigurationComponent, "tb-default-device-transport-configuration", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

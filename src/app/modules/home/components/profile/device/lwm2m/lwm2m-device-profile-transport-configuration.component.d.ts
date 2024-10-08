@@ -54,5 +54,5 @@ export declare class Lwm2mDeviceProfileTransportConfigurationComponent implement
     private removeAttributesFromJson;
     get clientSettingsFormGroup(): UntypedFormGroup;
     static ɵfac: i0.ɵɵFactoryDeclaration<Lwm2mDeviceProfileTransportConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mDeviceProfileTransportConfigurationComponent, "tb-profile-lwm2m-device-transport-configuration", never, { "isAdd": "isAdd"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mDeviceProfileTransportConfigurationComponent, "tb-profile-lwm2m-device-transport-configuration", never, { "isAdd": { "alias": "isAdd"; "required": false; }; }, {}, never, never, false, never>;
 }

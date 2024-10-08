@@ -34,5 +34,5 @@ export declare class DeviceProfileAlarmsComponent implements ControlValueAccesso
     };
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceProfileAlarmsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceProfileAlarmsComponent, "tb-device-profile-alarms", never, { "required": "required"; "disabled": "disabled"; "deviceProfileId": "deviceProfileId"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceProfileAlarmsComponent, "tb-device-profile-alarms", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "deviceProfileId": { "alias": "deviceProfileId"; "required": false; }; }, {}, never, never, false, never>;
 }

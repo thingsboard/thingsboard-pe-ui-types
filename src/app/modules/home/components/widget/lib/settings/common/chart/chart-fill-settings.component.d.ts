@@ -25,5 +25,5 @@ export declare class ChartFillSettingsComponent implements OnInit, ControlValueA
     private updateValidators;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<ChartFillSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ChartFillSettingsComponent, "tb-chart-fill-settings", never, { "disabled": "disabled"; "titleText": "titleText"; "fillNoneTitle": "fillNoneTitle"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ChartFillSettingsComponent, "tb-chart-fill-settings", never, { "disabled": { "alias": "disabled"; "required": false; }; "titleText": { "alias": "titleText"; "required": false; }; "fillNoneTitle": { "alias": "fillNoneTitle"; "required": false; }; }, {}, never, never, false, never>;
 }

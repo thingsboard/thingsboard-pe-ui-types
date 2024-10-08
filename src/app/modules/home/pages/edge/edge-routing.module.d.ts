@@ -1,9 +1,9 @@
-import { ActivatedRouteSnapshot, Resolve, Route } from '@angular/router';
+import { ActivatedRouteSnapshot, Route } from '@angular/router';
 import { Observable } from 'rxjs';
 import { EdgeService } from '@core/http/edge.service';
 import * as i0 from "@angular/core";
 import * as i1 from "@angular/router";
-export declare class EdgeTitleResolver implements Resolve<string> {
+export declare class EdgeTitleResolver {
     private edgeService;
     constructor(edgeService: EdgeService);
     resolve(route: ActivatedRouteSnapshot): Observable<string>;

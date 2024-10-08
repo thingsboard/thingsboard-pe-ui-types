@@ -12,5 +12,5 @@ export declare abstract class IntegrationForm implements OnDestroy {
     protected updatedValidationPrivateNetwork(): void;
     ngOnDestroy(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<IntegrationForm, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<IntegrationForm, never, never, { "executeRemotelyTemplate": "executeRemotelyTemplate"; "genericAdditionalInfoTemplate": "genericAdditionalInfoTemplate"; "disabled": "disabled"; "allowLocalNetwork": "allowLocalNetwork"; }, {}, never, never, false, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<IntegrationForm, never, never, { "executeRemotelyTemplate": { "alias": "executeRemotelyTemplate"; "required": false; }; "genericAdditionalInfoTemplate": { "alias": "genericAdditionalInfoTemplate"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "allowLocalNetwork": { "alias": "allowLocalNetwork"; "required": false; }; }, {}, never, never, false, never>;
 }

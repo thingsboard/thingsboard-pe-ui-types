@@ -1,4 +1,4 @@
-import { ActivatedRouteSnapshot, Resolve, Router } from '@angular/router';
+import { ActivatedRouteSnapshot, Router } from '@angular/router';
 import { EntityTableColumn, EntityTableConfig } from '@home/models/entity/entities-table-config.models';
 import { QueueInfo, ServiceType } from '@shared/models/queue.models';
 import { Store } from '@ngrx/store';
@@ -12,7 +12,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { QueueService } from '@core/http/queue.service';
 import { EntityAction } from '@home/models/entity/entity-component.models';
 import * as i0 from "@angular/core";
-export declare class QueuesTableConfigResolver implements Resolve<EntityTableConfig<QueueInfo>> {
+export declare class QueuesTableConfigResolver {
     private store;
     private broadcast;
     private queueService;

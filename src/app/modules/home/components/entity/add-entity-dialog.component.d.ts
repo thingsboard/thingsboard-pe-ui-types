@@ -1,4 +1,4 @@
-import { ComponentFactoryResolver, Injector, OnInit } from '@angular/core';
+import { Injector, OnInit } from '@angular/core';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
@@ -19,7 +19,6 @@ export declare class AddEntityDialogComponent extends DialogComponent<AddEntityD
     protected router: Router;
     data: AddEntityDialogData<BaseData<HasId>>;
     dialogRef: MatDialogRef<AddEntityDialogComponent, BaseData<HasId>>;
-    private componentFactoryResolver;
     private injector;
     private errorStateMatcher;
     entityComponent: EntityComponent<BaseData<HasId>>;
@@ -32,12 +31,12 @@ export declare class AddEntityDialogComponent extends DialogComponent<AddEntityD
     entity: BaseData<EntityId>;
     submitted: boolean;
     entityDetailsFormAnchor: TbAnchorComponent;
-    constructor(store: Store<AppState>, router: Router, data: AddEntityDialogData<BaseData<HasId>>, dialogRef: MatDialogRef<AddEntityDialogComponent, BaseData<HasId>>, componentFactoryResolver: ComponentFactoryResolver, injector: Injector, errorStateMatcher: ErrorStateMatcher);
+    constructor(store: Store<AppState>, router: Router, data: AddEntityDialogData<BaseData<HasId>>, dialogRef: MatDialogRef<AddEntityDialogComponent, BaseData<HasId>>, injector: Injector, errorStateMatcher: ErrorStateMatcher);
     ngOnInit(): void;
     helpLinkId(): string;
     isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     cancel(): void;
     add(): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<AddEntityDialogComponent, [null, null, null, null, null, null, { skipSelf: true; }]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<AddEntityDialogComponent, [null, null, null, null, null, { skipSelf: true; }]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<AddEntityDialogComponent, "tb-add-entity-dialog", never, {}, {}, never, never, false, never>;
 }

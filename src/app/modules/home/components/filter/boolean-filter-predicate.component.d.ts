@@ -22,5 +22,5 @@ export declare class BooleanFilterPredicateComponent implements ControlValueAcce
     writeValue(predicate: BooleanFilterPredicate): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<BooleanFilterPredicateComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<BooleanFilterPredicateComponent, "tb-boolean-filter-predicate", never, { "disabled": "disabled"; "allowUserDynamicSource": "allowUserDynamicSource"; "onlyUserDynamicSource": "onlyUserDynamicSource"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<BooleanFilterPredicateComponent, "tb-boolean-filter-predicate", never, { "disabled": { "alias": "disabled"; "required": false; }; "allowUserDynamicSource": { "alias": "allowUserDynamicSource"; "required": false; }; "onlyUserDynamicSource": { "alias": "onlyUserDynamicSource"; "required": false; }; }, {}, never, never, false, never>;
 }

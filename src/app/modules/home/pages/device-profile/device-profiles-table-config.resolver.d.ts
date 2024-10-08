@@ -1,4 +1,4 @@
-import { Resolve, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { EntityTableConfig, HeaderActionDescriptor } from '@home/models/entity/entities-table-config.models';
 import { TranslateService } from '@ngx-translate/core';
 import { DatePipe } from '@angular/common';
@@ -12,7 +12,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ImportExportService } from '@shared/import-export/import-export.service';
 import { HomeDialogsService } from '@home/dialogs/home-dialogs.service';
 import * as i0 from "@angular/core";
-export declare class DeviceProfilesTableConfigResolver implements Resolve<EntityTableConfig<DeviceProfile>> {
+export declare class DeviceProfilesTableConfigResolver {
     private deviceProfileService;
     private importExport;
     private userPermissionsService;

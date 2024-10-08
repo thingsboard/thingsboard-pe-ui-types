@@ -18,5 +18,5 @@ export declare class RadarChartWidgetComponent implements OnInit {
     onInit(): void;
     onDataUpdated(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<RadarChartWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RadarChartWidgetComponent, "tb-radar-chart-widget", never, { "ctx": "ctx"; "widgetTitlePanel": "widgetTitlePanel"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RadarChartWidgetComponent, "tb-radar-chart-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; }, {}, never, never, false, never>;
 }

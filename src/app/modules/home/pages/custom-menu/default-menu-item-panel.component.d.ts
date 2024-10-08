@@ -33,5 +33,5 @@ export declare class DefaultMenuItemPanelComponent implements OnInit {
     private updateCleanupState;
     private homeTypeChanged;
     static ɵfac: i0.ɵɵFactoryDeclaration<DefaultMenuItemPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DefaultMenuItemPanelComponent, "tb-default-menu-item-panel", never, { "disabled": "disabled"; "scope": "scope"; "menuItem": "menuItem"; "popover": "popover"; }, { "defaultMenuItemApplied": "defaultMenuItemApplied"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DefaultMenuItemPanelComponent, "tb-default-menu-item-panel", never, { "disabled": { "alias": "disabled"; "required": false; }; "scope": { "alias": "scope"; "required": false; }; "menuItem": { "alias": "menuItem"; "required": false; }; "popover": { "alias": "popover"; "required": false; }; }, { "defaultMenuItemApplied": "defaultMenuItemApplied"; }, never, never, false, never>;
 }

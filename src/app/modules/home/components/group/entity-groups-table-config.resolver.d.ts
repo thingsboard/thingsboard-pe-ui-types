@@ -1,4 +1,4 @@
-import { ActivatedRoute, ActivatedRouteSnapshot, Resolve, Router } from '@angular/router';
+import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { DatePipe } from '@angular/common';
 import { UtilsService } from '@core/services/utils.service';
@@ -12,7 +12,7 @@ import { EntityGroupsTableConfig } from './entity-groups-table-config';
 import { MatDialog } from '@angular/material/dialog';
 import { EdgeService } from '@core/http/edge.service';
 import * as i0 from "@angular/core";
-export declare class EntityGroupsTableConfigResolver implements Resolve<EntityGroupsTableConfig> {
+export declare class EntityGroupsTableConfigResolver {
     private entityGroupService;
     private customerService;
     private edgeService;

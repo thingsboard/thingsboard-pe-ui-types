@@ -109,7 +109,7 @@ export declare class EntitiesTableWidgetComponent extends PageComponent implemen
     private queryEntityDataToExportedData;
     private clearCache;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntitiesTableWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntitiesTableWidgetComponent, "tb-entities-table-widget", never, { "ctx": "ctx"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntitiesTableWidgetComponent, "tb-entities-table-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; }, {}, never, never, false, never>;
 }
 declare class EntityDatasource implements DataSource<EntityData> {
     private translate;

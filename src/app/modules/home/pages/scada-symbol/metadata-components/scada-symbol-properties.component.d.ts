@@ -36,5 +36,5 @@ export declare class ScadaSymbolPropertiesComponent implements ControlValueAcces
     addProperty(): void;
     private preparePropertiesFormArray;
     static ɵfac: i0.ɵɵFactoryDeclaration<ScadaSymbolPropertiesComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ScadaSymbolPropertiesComponent, "tb-scada-symbol-metadata-properties", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ScadaSymbolPropertiesComponent, "tb-scada-symbol-metadata-properties", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

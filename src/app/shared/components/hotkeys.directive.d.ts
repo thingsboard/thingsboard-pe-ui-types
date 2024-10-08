@@ -14,5 +14,5 @@ export declare class TbHotkeysDirective implements OnInit, OnDestroy {
     private bindEvent;
     ngOnDestroy(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TbHotkeysDirective, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<TbHotkeysDirective, "[tb-hotkeys]", never, { "hotkeys": "tb-hotkeys"; "cheatSheet": "cheatSheet"; }, {}, never, never, false, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<TbHotkeysDirective, "[tb-hotkeys]", never, { "hotkeys": { "alias": "tb-hotkeys"; "required": false; }; "cheatSheet": { "alias": "cheatSheet"; "required": false; }; }, {}, never, never, false, never>;
 }

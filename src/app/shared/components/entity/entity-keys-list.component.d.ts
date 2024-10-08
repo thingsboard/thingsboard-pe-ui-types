@@ -49,5 +49,5 @@ export declare class EntityKeysListComponent implements ControlValueAccessor, On
     fetchKeys(searchText?: string): Observable<Array<string>>;
     clear(value?: string, emitEvent?: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityKeysListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityKeysListComponent, "tb-entity-keys-list", never, { "entityId": "entityId"; "keysText": "keysText"; "dataKeyType": "dataKeyType"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityKeysListComponent, "tb-entity-keys-list", never, { "entityId": { "alias": "entityId"; "required": false; }; "keysText": { "alias": "keysText"; "required": false; }; "dataKeyType": { "alias": "dataKeyType"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

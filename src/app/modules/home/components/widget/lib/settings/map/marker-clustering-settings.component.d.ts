@@ -31,5 +31,5 @@ export declare class MarkerClusteringSettingsComponent extends PageComponent imp
     private updateModel;
     private updateValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<MarkerClusteringSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MarkerClusteringSettingsComponent, "tb-marker-clustering-settings", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MarkerClusteringSettingsComponent, "tb-marker-clustering-settings", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

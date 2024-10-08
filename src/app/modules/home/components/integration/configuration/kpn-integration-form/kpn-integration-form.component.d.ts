@@ -27,5 +27,5 @@ export declare class KpnIntegrationFormComponent extends IntegrationForm impleme
     private updateModels;
     private updateEnableFields;
     static ɵfac: i0.ɵɵFactoryDeclaration<KpnIntegrationFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<KpnIntegrationFormComponent, "tb-kpn-integration-form", never, { "routingKey": "routingKey"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<KpnIntegrationFormComponent, "tb-kpn-integration-form", never, { "routingKey": { "alias": "routingKey"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -21,5 +21,5 @@ export declare class AlarmDynamicValue implements ControlValueAccessor, OnInit {
     setDisabledState(isDisabled: boolean): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<AlarmDynamicValue, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmDynamicValue, "tb-alarm-dynamic-value", never, { "helpId": "helpId"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmDynamicValue, "tb-alarm-dynamic-value", never, { "helpId": { "alias": "helpId"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -18,5 +18,5 @@ export declare class PieChartWidgetComponent implements OnInit {
     onInit(): void;
     onDataUpdated(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<PieChartWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PieChartWidgetComponent, "tb-pie-chart-widget", never, { "ctx": "ctx"; "widgetTitlePanel": "widgetTitlePanel"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PieChartWidgetComponent, "tb-pie-chart-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; }, {}, never, never, false, never>;
 }

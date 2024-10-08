@@ -35,5 +35,5 @@ export declare class BarChartWithLabelsWidgetComponent implements OnInit, OnDest
     onLegendKeyLeave(key: DataKey): void;
     toggleLegendKey(key: DataKey): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<BarChartWithLabelsWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<BarChartWithLabelsWidgetComponent, "tb-bar-chart-with-labels-widget", never, { "ctx": "ctx"; "widgetTitlePanel": "widgetTitlePanel"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<BarChartWithLabelsWidgetComponent, "tb-bar-chart-with-labels-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -5,7 +5,7 @@ import * as i0 from "@angular/core";
 export declare class TimeUnitSelectComponent implements OnInit, OnDestroy, ControlValueAccessor, Validator {
     private fb;
     timeUnitSelectFormGroup: UntypedFormGroup;
-    timeUnits: (TimeUnit | TimeUnitMilli.MILLISECONDS)[];
+    timeUnits: (TimeUnit.SECONDS | TimeUnit.MINUTES | TimeUnit.HOURS | TimeUnitMilli)[];
     timeUnitTranslations: Map<FullTimeUnit, string>;
     private destroy$;
     private timeUnitToTimeMap;
@@ -28,5 +28,5 @@ export declare class TimeUnitSelectComponent implements OnInit, OnDestroy, Contr
     private updateModel;
     private calculateTimeUnit;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeUnitSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeUnitSelectComponent, "tb-time-unit-select", never, { "disabled": "disabled"; "labelText": "labelText"; "requiredText": "requiredText"; "patternText": "patternText"; "minTime": "minTime"; "minText": "minText"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeUnitSelectComponent, "tb-time-unit-select", never, { "disabled": { "alias": "disabled"; "required": false; }; "labelText": { "alias": "labelText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "patternText": { "alias": "patternText"; "required": false; }; "minTime": { "alias": "minTime"; "required": false; }; "minText": { "alias": "minText"; "required": false; }; }, {}, never, never, false, never>;
 }

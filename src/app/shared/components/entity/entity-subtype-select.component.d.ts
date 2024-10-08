@@ -44,5 +44,5 @@ export declare class EntitySubTypeSelectComponent implements ControlValueAccesso
     findSubTypes(searchText: string): Observable<Array<string>>;
     getSubTypes(): Observable<Array<string>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntitySubTypeSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntitySubTypeSelectComponent, "tb-entity-subtype-select", never, { "subscriptSizing": "subscriptSizing"; "entityType": "entityType"; "showLabel": "showLabel"; "required": "required"; "disabled": "disabled"; "typeTranslatePrefix": "typeTranslatePrefix"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntitySubTypeSelectComponent, "tb-entity-subtype-select", never, { "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "entityType": { "alias": "entityType"; "required": false; }; "showLabel": { "alias": "showLabel"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "typeTranslatePrefix": { "alias": "typeTranslatePrefix"; "required": false; }; }, {}, never, never, false, never>;
 }

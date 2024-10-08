@@ -20,5 +20,5 @@ export declare class DateFormatSettingsPanelComponent extends PageComponent impl
     cancel(): void;
     applyDateFormat(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DateFormatSettingsPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DateFormatSettingsPanelComponent, "tb-date-format-settings-panel", never, { "dateFormat": "dateFormat"; "popover": "popover"; }, { "dateFormatApplied": "dateFormatApplied"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DateFormatSettingsPanelComponent, "tb-date-format-settings-panel", never, { "dateFormat": { "alias": "dateFormat"; "required": false; }; "popover": { "alias": "popover"; "required": false; }; }, { "dateFormatApplied": "dateFormatApplied"; }, never, never, false, never>;
 }

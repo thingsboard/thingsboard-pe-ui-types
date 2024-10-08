@@ -25,5 +25,5 @@ export declare class FontSettingsComponent implements OnInit, ControlValueAccess
     writeValue(value: Font): void;
     openFontSettingsPopup($event: Event, matButton: MatButton): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<FontSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FontSettingsComponent, "tb-font-settings", never, { "disabled": "disabled"; "previewText": "previewText"; "initialPreviewStyle": "initialPreviewStyle"; "clearButton": "clearButton"; "autoScale": "autoScale"; "disabledLineHeight": "disabledLineHeight"; "forceSizeUnit": "forceSizeUnit"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FontSettingsComponent, "tb-font-settings", never, { "disabled": { "alias": "disabled"; "required": false; }; "previewText": { "alias": "previewText"; "required": false; }; "initialPreviewStyle": { "alias": "initialPreviewStyle"; "required": false; }; "clearButton": { "alias": "clearButton"; "required": false; }; "autoScale": { "alias": "autoScale"; "required": false; }; "disabledLineHeight": { "alias": "disabledLineHeight"; "required": false; }; "forceSizeUnit": { "alias": "forceSizeUnit"; "required": false; }; }, {}, never, never, false, never>;
 }

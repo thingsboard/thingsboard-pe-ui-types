@@ -33,5 +33,5 @@ export declare class GettingStartedWidgetComponent extends PageComponent impleme
     updateSelectedIndex(event: StepperSelectionEvent): void;
     updateCompletedSteps(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<GettingStartedWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<GettingStartedWidgetComponent, "tb-getting-started-widget", never, { "ctx": "ctx"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GettingStartedWidgetComponent, "tb-getting-started-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; }, {}, never, never, false, never>;
 }

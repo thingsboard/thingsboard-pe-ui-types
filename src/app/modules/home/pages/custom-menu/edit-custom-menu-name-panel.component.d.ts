@@ -16,5 +16,5 @@ export declare class EditCustomMenuNamePanelComponent implements OnInit {
     cancel(): void;
     applyName(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EditCustomMenuNamePanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EditCustomMenuNamePanelComponent, "tb-edit-custom-menu-name-panel", never, { "customMenuId": "customMenuId"; "name": "name"; "popover": "popover"; }, { "nameApplied": "nameApplied"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EditCustomMenuNamePanelComponent, "tb-edit-custom-menu-name-panel", never, { "customMenuId": { "alias": "customMenuId"; "required": false; }; "name": { "alias": "name"; "required": false; }; "popover": { "alias": "popover"; "required": false; }; }, { "nameApplied": "nameApplied"; }, never, never, false, never>;
 }

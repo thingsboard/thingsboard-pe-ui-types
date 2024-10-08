@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, ComponentFactoryResolver, ComponentRef, EventEmitter, Injector, OnDestroy, QueryList } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ComponentRef, EventEmitter, Injector, OnDestroy, QueryList } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -17,7 +17,6 @@ export declare class EntityDetailsPanelComponent extends PageComponent implement
     protected store: Store<AppState>;
     protected injector: Injector;
     protected cd: ChangeDetectorRef;
-    protected componentFactoryResolver: ComponentFactoryResolver;
     closeEntityDetails: EventEmitter<void>;
     entityUpdated: EventEmitter<BaseData<HasId>>;
     entityAction: EventEmitter<EntityAction<BaseData<HasId>>>;
@@ -42,7 +41,7 @@ export declare class EntityDetailsPanelComponent extends PageComponent implement
     protected subscriptions: Subscription[];
     protected viewInited: boolean;
     protected pendingTabs: MatTab[];
-    constructor(store: Store<AppState>, injector: Injector, cd: ChangeDetectorRef, componentFactoryResolver: ComponentFactoryResolver);
+    constructor(store: Store<AppState>, injector: Injector, cd: ChangeDetectorRef);
     set entityId(entityId: HasId);
     set entitiesTableConfig(entitiesTableConfig: EntityTableConfig<BaseData<HasId>>);
     get entitiesTableConfig(): EntityTableConfig<BaseData<HasId>>;
@@ -61,5 +60,5 @@ export declare class EntityDetailsPanelComponent extends PageComponent implement
     saveEntity(emitEntityUpdated?: boolean): Observable<BaseData<HasId>>;
     ngAfterViewInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityDetailsPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityDetailsPanelComponent, "tb-entity-details-panel", never, { "entityId": "entityId"; "entitiesTableConfig": "entitiesTableConfig"; }, { "closeEntityDetails": "closeEntityDetails"; "entityUpdated": "entityUpdated"; "entityAction": "entityAction"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityDetailsPanelComponent, "tb-entity-details-panel", never, { "entityId": { "alias": "entityId"; "required": false; }; "entitiesTableConfig": { "alias": "entitiesTableConfig"; "required": false; }; }, { "closeEntityDetails": "closeEntityDetails"; "entityUpdated": "entityUpdated"; "entityAction": "entityAction"; }, never, never, false, never>;
 }

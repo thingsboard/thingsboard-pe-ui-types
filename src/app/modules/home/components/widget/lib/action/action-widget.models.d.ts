@@ -25,7 +25,7 @@ export declare abstract class BasicActionWidgetComponent implements OnInit, OnDe
     private onError;
     protected updateValue<V>(valueSetter: ValueSetter<V>, value: V, setValueObserver?: Partial<Observer<void>>): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<BasicActionWidgetComponent, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<BasicActionWidgetComponent, never, never, { "ctx": "ctx"; "widgetTitlePanel": "widgetTitlePanel"; }, {}, never, never, false, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<BasicActionWidgetComponent, never, never, { "ctx": { "alias": "ctx"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; }, {}, never, never, false, never>;
 }
 export declare class DataToValueConverter<V> {
     private settings;

@@ -27,5 +27,5 @@ export declare class EmailConfigComponent extends PageComponent implements Contr
     private createDefaultEmailConfig;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<EmailConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EmailConfigComponent, "tb-email-config", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EmailConfigComponent, "tb-email-config", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

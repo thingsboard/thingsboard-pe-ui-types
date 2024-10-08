@@ -40,5 +40,5 @@ export declare class GatewayConfigurationComponent implements AfterViewInit, OnD
     private updateFormControls;
     private logsToObj;
     static ɵfac: i0.ɵɵFactoryDeclaration<GatewayConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<GatewayConfigurationComponent, "tb-gateway-configuration", never, { "device": "device"; "dialogRef": "dialogRef"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GatewayConfigurationComponent, "tb-gateway-configuration", never, { "device": { "alias": "device"; "required": false; }; "dialogRef": { "alias": "dialogRef"; "required": false; }; }, {}, never, never, false, never>;
 }

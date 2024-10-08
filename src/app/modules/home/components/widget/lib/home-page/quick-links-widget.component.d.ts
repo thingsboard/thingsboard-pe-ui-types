@@ -37,6 +37,6 @@ export declare class QuickLinksWidgetComponent extends PageComponent implements 
     edit(): void;
     addLink(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<QuickLinksWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<QuickLinksWidgetComponent, "tb-quick-links-widget", never, { "ctx": "ctx"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<QuickLinksWidgetComponent, "tb-quick-links-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; }, {}, never, never, false, never>;
 }
 export {};

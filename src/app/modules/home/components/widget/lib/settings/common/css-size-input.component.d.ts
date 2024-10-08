@@ -26,5 +26,5 @@ export declare class CssSizeInputComponent implements OnInit, ControlValueAccess
     };
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<CssSizeInputComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CssSizeInputComponent, "tb-css-size-input", never, { "disabled": "disabled"; "required": "required"; "requiredText": "requiredText"; "allowEmptyUnit": "allowEmptyUnit"; "flex": "flex"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CssSizeInputComponent, "tb-css-size-input", never, { "disabled": { "alias": "disabled"; "required": false; }; "required": { "alias": "required"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "allowEmptyUnit": { "alias": "allowEmptyUnit"; "required": false; }; "flex": { "alias": "flex"; "required": false; }; }, {}, never, never, false, never>;
 }

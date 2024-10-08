@@ -55,6 +55,6 @@ export declare class DashboardWidgetSelectComponent implements OnInit {
     isObject(value: any): boolean;
     private toWidgetInfo;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardWidgetSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardWidgetSelectComponent, "tb-dashboard-widget-select", never, { "aliasController": "aliasController"; "scadaFirst": "scadaFirst"; "search": "search"; "filterWidgetTypes": "filterWidgetTypes"; "selectWidgetMode": "selectWidgetMode"; "deprecatedFilter": "deprecatedFilter"; }, { "widgetSelected": "widgetSelected"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardWidgetSelectComponent, "tb-dashboard-widget-select", never, { "aliasController": { "alias": "aliasController"; "required": false; }; "scadaFirst": { "alias": "scadaFirst"; "required": false; }; "search": { "alias": "search"; "required": false; }; "filterWidgetTypes": { "alias": "filterWidgetTypes"; "required": false; }; "selectWidgetMode": { "alias": "selectWidgetMode"; "required": false; }; "deprecatedFilter": { "alias": "deprecatedFilter"; "required": false; }; }, { "widgetSelected": "widgetSelected"; }, never, never, false, never>;
 }
 export {};

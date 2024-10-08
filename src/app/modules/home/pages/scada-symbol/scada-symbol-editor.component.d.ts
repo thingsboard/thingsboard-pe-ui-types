@@ -44,6 +44,6 @@ export declare class ScadaSymbolEditorComponent implements OnInit, OnDestroy, Af
     private updateEditObjectContent;
     private updateZoomButtonsState;
     static ɵfac: i0.ɵɵFactoryDeclaration<ScadaSymbolEditorComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ScadaSymbolEditorComponent, "tb-scada-symbol-editor", never, { "data": "data"; "editObjectCallbacks": "editObjectCallbacks"; "readonly": "readonly"; "showHiddenElements": "showHiddenElements"; }, { "updateScadaSymbol": "updateScadaSymbol"; "downloadScadaSymbol": "downloadScadaSymbol"; "showHiddenElementsChange": "showHiddenElementsChange"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ScadaSymbolEditorComponent, "tb-scada-symbol-editor", never, { "data": { "alias": "data"; "required": false; }; "editObjectCallbacks": { "alias": "editObjectCallbacks"; "required": false; }; "readonly": { "alias": "readonly"; "required": false; }; "showHiddenElements": { "alias": "showHiddenElements"; "required": false; }; }, { "updateScadaSymbol": "updateScadaSymbol"; "downloadScadaSymbol": "downloadScadaSymbol"; "showHiddenElementsChange": "showHiddenElementsChange"; }, never, never, false, never>;
 }
 export {};

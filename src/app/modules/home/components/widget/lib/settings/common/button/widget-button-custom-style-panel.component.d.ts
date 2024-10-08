@@ -35,5 +35,5 @@ export declare class WidgetButtonCustomStylePanelComponent extends PageComponent
     private updateValidators;
     private updatePreviewAppearance;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetButtonCustomStylePanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetButtonCustomStylePanelComponent, "tb-widget-button-custom-style-panel", never, { "appearance": "appearance"; "borderRadius": "borderRadius"; "autoScale": "autoScale"; "state": "state"; "customStyle": "customStyle"; "popover": "popover"; }, { "customStyleApplied": "customStyleApplied"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetButtonCustomStylePanelComponent, "tb-widget-button-custom-style-panel", never, { "appearance": { "alias": "appearance"; "required": false; }; "borderRadius": { "alias": "borderRadius"; "required": false; }; "autoScale": { "alias": "autoScale"; "required": false; }; "state": { "alias": "state"; "required": false; }; "customStyle": { "alias": "customStyle"; "required": false; }; "popover": { "alias": "popover"; "required": false; }; }, { "customStyleApplied": "customStyleApplied"; }, never, never, false, never>;
 }

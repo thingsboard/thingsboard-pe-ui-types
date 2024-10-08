@@ -15,5 +15,5 @@ export declare class TbCheckboxComponent implements ControlValueAccessor {
     setDisabledState(isDisabled: boolean): void;
     writeValue(obj: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TbCheckboxComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TbCheckboxComponent, "tb-checkbox", never, { "disabled": "disabled"; "trueValue": "trueValue"; "falseValue": "falseValue"; }, { "valueChange": "valueChange"; }, never, ["*"], false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TbCheckboxComponent, "tb-checkbox", never, { "disabled": { "alias": "disabled"; "required": false; }; "trueValue": { "alias": "trueValue"; "required": false; }; "falseValue": { "alias": "falseValue"; "required": false; }; }, { "valueChange": "valueChange"; }, never, ["*"], false, never>;
 }

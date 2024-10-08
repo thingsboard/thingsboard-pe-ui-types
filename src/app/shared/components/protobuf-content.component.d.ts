@@ -40,5 +40,5 @@ export declare class ProtobufContentComponent implements OnInit, ControlValueAcc
     onFullscreen(): void;
     private onAceEditorResize;
     static ɵfac: i0.ɵɵFactoryDeclaration<ProtobufContentComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ProtobufContentComponent, "tb-protobuf-content", never, { "label": "label"; "disabled": "disabled"; "fillHeight": "fillHeight"; "editorStyle": "editorStyle"; "tbPlaceholder": "tbPlaceholder"; "readonly": "readonly"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ProtobufContentComponent, "tb-protobuf-content", never, { "label": { "alias": "label"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "fillHeight": { "alias": "fillHeight"; "required": false; }; "editorStyle": { "alias": "editorStyle"; "required": false; }; "tbPlaceholder": { "alias": "tbPlaceholder"; "required": false; }; "readonly": { "alias": "readonly"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -34,5 +34,5 @@ export declare class TimeSeriesChartLineSettingsComponent implements OnInit, Con
     private updateModel;
     private _pointLabelPreviewFn;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesChartLineSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartLineSettingsComponent, "tb-time-series-chart-line-settings", never, { "disabled": "disabled"; "chartType": "chartType"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartLineSettingsComponent, "tb-time-series-chart-line-settings", never, { "disabled": { "alias": "disabled"; "required": false; }; "chartType": { "alias": "chartType"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -1,4 +1,4 @@
-import { Router } from '@angular/router';
+import { ActivationEnd, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Actions } from '@ngrx/effects';
 import { TranslateService } from '@ngx-translate/core';
@@ -23,9 +23,9 @@ export declare class SettingsEffects {
     private reportService;
     constructor(actions$: Actions<SettingsActions>, store: Store<AppState>, utils: UtilsService, router: Router, localStorageService: LocalStorageService, titleService: TitleService, faviconService: FaviconService, translate: TranslateService, reportService: ReportService);
     setTranslateServiceLanguage: import("rxjs").Observable<[import("./settings.actions").ActionSettingsChangeLanguage, import("./settings.models").SettingsState]> & import("@ngrx/effects").CreateEffectMetadata;
-    setTitle: import("rxjs").Observable<import("@angular/router").Event | SettingsActions> & import("@ngrx/effects").CreateEffectMetadata;
+    setTitle: import("rxjs").Observable<ActivationEnd | SettingsActions> & import("@ngrx/effects").CreateEffectMetadata;
     setFavicon: import("rxjs").Observable<import("./settings.actions").ActionSettingsChangeWhiteLabeling> & import("@ngrx/effects").CreateEffectMetadata;
-    setPublicId: import("rxjs").Observable<import("@angular/router").Event> & import("@ngrx/effects").CreateEffectMetadata;
+    setPublicId: import("rxjs").Observable<ActivationEnd> & import("@ngrx/effects").CreateEffectMetadata;
     static ɵfac: i0.ɵɵFactoryDeclaration<SettingsEffects, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<SettingsEffects>;
 }

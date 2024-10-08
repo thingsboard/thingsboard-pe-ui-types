@@ -30,5 +30,5 @@ export declare class DataKeySelectOptionComponent extends PageComponent implemen
     writeValue(value: DataKeySelectOption): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<DataKeySelectOptionComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeySelectOptionComponent, "tb-datakey-select-option", never, { "disabled": "disabled"; "expanded": "expanded"; }, { "removeSelectOption": "removeSelectOption"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeySelectOptionComponent, "tb-datakey-select-option", never, { "disabled": { "alias": "disabled"; "required": false; }; "expanded": { "alias": "expanded"; "required": false; }; }, { "removeSelectOption": "removeSelectOption"; }, never, never, false, never>;
 }

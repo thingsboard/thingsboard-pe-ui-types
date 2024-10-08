@@ -22,5 +22,5 @@ export declare class LedLightComponent implements OnInit, AfterViewInit, OnChang
     private update;
     private draw;
     static ɵfac: i0.ɵɵFactoryDeclaration<LedLightComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<LedLightComponent, "tb-led-light", never, { "size": "size"; "colorOn": "colorOn"; "colorOff": "colorOff"; "offOpacity": "offOpacity"; "enabled": "enabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<LedLightComponent, "tb-led-light", never, { "size": { "alias": "size"; "required": false; }; "colorOn": { "alias": "colorOn"; "required": false; }; "colorOff": { "alias": "colorOff"; "required": false; }; "offOpacity": { "alias": "offOpacity"; "required": false; }; "enabled": { "alias": "enabled"; "required": false; }; }, {}, never, never, false, never>;
 }

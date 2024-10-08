@@ -35,5 +35,5 @@ export declare class AlarmAssigneeSelectComponent implements OnInit, ControlValu
     getAvatarBgColor(): string;
     openAlarmAssigneeSelectPanel($event: Event): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AlarmAssigneeSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmAssigneeSelectComponent, "tb-alarm-assignee-select", never, { "disabled": "disabled"; "inline": "inline"; "userMode": "userMode"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmAssigneeSelectComponent, "tb-alarm-assignee-select", never, { "disabled": { "alias": "disabled"; "required": false; }; "inline": { "alias": "inline"; "required": false; }; "userMode": { "alias": "userMode"; "required": false; }; }, {}, never, never, false, never>;
 }

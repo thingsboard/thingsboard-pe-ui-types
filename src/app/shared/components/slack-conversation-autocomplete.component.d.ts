@@ -50,5 +50,5 @@ export declare class SlackConversationAutocompleteComponent implements ControlVa
     private clearSlackCache;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SlackConversationAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SlackConversationAutocompleteComponent, "tb-slack-conversation-autocomplete", never, { "labelText": "labelText"; "requiredText": "requiredText"; "required": "required"; "disabled": "disabled"; "slackChanelType": "slackChanelType"; "token": "token"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SlackConversationAutocompleteComponent, "tb-slack-conversation-autocomplete", never, { "labelText": { "alias": "labelText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "slackChanelType": { "alias": "slackChanelType"; "required": false; }; "token": { "alias": "token"; "required": false; }; }, {}, never, never, false, never>;
 }

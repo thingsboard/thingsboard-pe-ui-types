@@ -71,5 +71,5 @@ export declare class CustomMenuItemRowComponent implements ControlValueAccessor,
     private actualPageIndex;
     private preparePagesFormArray;
     static ɵfac: i0.ɵɵFactoryDeclaration<CustomMenuItemRowComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CustomMenuItemRowComponent, "tb-custom-menu-item-row", never, { "disabled": "disabled"; "scope": "scope"; "showHidden": "showHidden"; "childDrag": "childDrag"; "level": "level"; "maxIconNameBlockWidth": "maxIconNameBlockWidth"; "hideItems": "hideItems"; }, { "menuItemRemoved": "menuItemRemoved"; }, never, [".tb-custom-menu-item-row-prefix"], false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CustomMenuItemRowComponent, "tb-custom-menu-item-row", never, { "disabled": { "alias": "disabled"; "required": false; }; "scope": { "alias": "scope"; "required": false; }; "showHidden": { "alias": "showHidden"; "required": false; }; "childDrag": { "alias": "childDrag"; "required": false; }; "level": { "alias": "level"; "required": false; }; "maxIconNameBlockWidth": { "alias": "maxIconNameBlockWidth"; "required": false; }; "hideItems": { "alias": "hideItems"; "required": false; }; }, { "menuItemRemoved": "menuItemRemoved"; }, never, [".tb-custom-menu-item-row-prefix"], false, never>;
 }

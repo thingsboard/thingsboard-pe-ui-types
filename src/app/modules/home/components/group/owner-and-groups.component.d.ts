@@ -41,5 +41,5 @@ export declare class OwnerAndGroupsComponent extends PageComponent implements On
     ownerId(): EntityId | null;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<OwnerAndGroupsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<OwnerAndGroupsComponent, "tb-owner-and-groups", never, { "disabled": "disabled"; "entityType": "entityType"; "defaultOwnerId": "defaultOwnerId"; "skipDefaultPermissionCheck": "skipDefaultPermissionCheck"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<OwnerAndGroupsComponent, "tb-owner-and-groups", never, { "disabled": { "alias": "disabled"; "required": false; }; "entityType": { "alias": "entityType"; "required": false; }; "defaultOwnerId": { "alias": "defaultOwnerId"; "required": false; }; "skipDefaultPermissionCheck": { "alias": "skipDefaultPermissionCheck"; "required": false; }; }, {}, never, never, false, never>;
 }

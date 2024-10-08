@@ -23,5 +23,5 @@ export declare class TimewindowStylePanelComponent extends PageComponent impleme
     private updateTimewindowStyleEnabledState;
     private updatePreviewStyle;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimewindowStylePanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimewindowStylePanelComponent, "tb-timewindow-style-panel", never, { "timewindowStyle": "timewindowStyle"; "previewValue": "previewValue"; "popover": "popover"; }, { "timewindowStyleApplied": "timewindowStyleApplied"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimewindowStylePanelComponent, "tb-timewindow-style-panel", never, { "timewindowStyle": { "alias": "timewindowStyle"; "required": false; }; "previewValue": { "alias": "previewValue"; "required": false; }; "popover": { "alias": "popover"; "required": false; }; }, { "timewindowStyleApplied": "timewindowStyleApplied"; }, never, never, false, never>;
 }

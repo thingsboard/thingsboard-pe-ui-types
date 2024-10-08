@@ -31,5 +31,5 @@ export declare class LabelWidgetLabelComponent extends PageComponent implements 
     writeValue(value: LabelWidgetLabel): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<LabelWidgetLabelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<LabelWidgetLabelComponent, "tb-label-widget-label", never, { "disabled": "disabled"; "expanded": "expanded"; }, { "removeLabel": "removeLabel"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<LabelWidgetLabelComponent, "tb-label-widget-label", never, { "disabled": { "alias": "disabled"; "required": false; }; "expanded": { "alias": "expanded"; "required": false; }; }, { "removeLabel": "removeLabel"; }, never, never, false, never>;
 }

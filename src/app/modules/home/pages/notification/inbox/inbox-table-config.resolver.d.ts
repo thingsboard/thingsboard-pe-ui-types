@@ -4,10 +4,10 @@ import { Notification } from '@shared/models/notification.models';
 import { NotificationService } from '@core/http/notification.service';
 import { TranslateService } from '@ngx-translate/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
+import { ActivatedRouteSnapshot } from '@angular/router';
 import { UtilsService } from '@core/services/utils.service';
 import * as i0 from "@angular/core";
-export declare class InboxTableConfigResolver implements Resolve<EntityTableConfig<Notification>> {
+export declare class InboxTableConfigResolver {
     private notificationService;
     private translate;
     private dialog;

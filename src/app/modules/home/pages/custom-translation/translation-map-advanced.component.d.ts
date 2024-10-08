@@ -32,5 +32,5 @@ export declare class TranslationMapAdvancedComponent {
     reset(): void;
     private validate;
     static ɵfac: i0.ɵɵFactoryDeclaration<TranslationMapAdvancedComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TranslationMapAdvancedComponent, "tb-translation-map-advanced", never, { "readonly": "readonly"; "localeName": "localeName"; }, { "changeFullscreen": "changeFullscreen"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TranslationMapAdvancedComponent, "tb-translation-map-advanced", never, { "readonly": { "alias": "readonly"; "required": false; }; "localeName": { "alias": "localeName"; "required": false; }; }, { "changeFullscreen": "changeFullscreen"; }, never, never, false, never>;
 }

@@ -36,5 +36,5 @@ export declare class GatewayServiceRPCComponent implements OnInit {
     private updateTemplates;
     private onDataUpdateError;
     static ɵfac: i0.ɵɵFactoryDeclaration<GatewayServiceRPCComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<GatewayServiceRPCComponent, "tb-gateway-service-rpc", never, { "ctx": "ctx"; "dialogRef": "dialogRef"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GatewayServiceRPCComponent, "tb-gateway-service-rpc", never, { "ctx": { "alias": "ctx"; "required": false; }; "dialogRef": { "alias": "dialogRef"; "required": false; }; }, {}, never, never, false, never>;
 }

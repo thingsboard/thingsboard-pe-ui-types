@@ -65,5 +65,5 @@ export declare class LiquidLevelWidgetComponent implements OnInit {
     private convertTooltipData;
     cardClick($event: Event): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<LiquidLevelWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<LiquidLevelWidgetComponent, "tb-liquid-level-widget", never, { "ctx": "ctx"; "widgetTitlePanel": "widgetTitlePanel"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<LiquidLevelWidgetComponent, "tb-liquid-level-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; }, {}, never, never, false, never>;
 }

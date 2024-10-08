@@ -40,5 +40,5 @@ export declare class DocLinkComponent extends PageComponent implements OnInit, C
     isEditing(): boolean;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<DocLinkComponent, [null, null, { skipSelf: true; }]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DocLinkComponent, "tb-doc-link", never, { "disabled": "disabled"; "addOnly": "addOnly"; "disableEdit": "disableEdit"; }, { "docLinkAdded": "docLinkAdded"; "docLinkAddCanceled": "docLinkAddCanceled"; "docLinkUpdated": "docLinkUpdated"; "docLinkDeleted": "docLinkDeleted"; "editModeChanged": "editModeChanged"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DocLinkComponent, "tb-doc-link", never, { "disabled": { "alias": "disabled"; "required": false; }; "addOnly": { "alias": "addOnly"; "required": false; }; "disableEdit": { "alias": "disableEdit"; "required": false; }; }, { "docLinkAdded": "docLinkAdded"; "docLinkAddCanceled": "docLinkAddCanceled"; "docLinkUpdated": "docLinkUpdated"; "docLinkDeleted": "docLinkDeleted"; "editModeChanged": "editModeChanged"; }, never, never, false, never>;
 }

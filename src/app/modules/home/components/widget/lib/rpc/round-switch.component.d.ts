@@ -61,5 +61,5 @@ export declare class RoundSwitchComponent extends PageComponent implements OnIni
     private onDataUpdated;
     private onDataUpdateError;
     static ɵfac: i0.ɵɵFactoryDeclaration<RoundSwitchComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RoundSwitchComponent, "tb-round-switch", never, { "ctx": "ctx"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RoundSwitchComponent, "tb-round-switch", never, { "ctx": { "alias": "ctx"; "required": false; }; }, {}, never, never, false, never>;
 }

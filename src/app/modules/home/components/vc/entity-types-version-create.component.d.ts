@@ -49,5 +49,5 @@ export declare class EntityTypesVersionCreateComponent extends PageComponent imp
     isGroupEntityType(entityType: EntityType): boolean;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityTypesVersionCreateComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityTypesVersionCreateComponent, "tb-entity-types-version-create", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityTypesVersionCreateComponent, "tb-entity-types-version-create", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

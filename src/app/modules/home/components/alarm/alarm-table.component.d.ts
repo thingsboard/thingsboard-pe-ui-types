@@ -45,5 +45,5 @@ export declare class AlarmTableComponent implements OnInit {
     constructor(alarmService: AlarmService, entityService: EntityService, dialogService: DialogService, userPermissionsService: UserPermissionsService, translate: TranslateService, datePipe: DatePipe, dialog: MatDialog, store: Store<AppState>, overlay: Overlay, viewContainerRef: ViewContainerRef, cd: ChangeDetectorRef, utilsService: UtilsService, route: ActivatedRoute, router: Router);
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AlarmTableComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmTableComponent, "tb-alarm-table", never, { "active": "active"; "entityId": "entityId"; "writeEnabled": "writeEnabled"; "removeEnabled": "removeEnabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmTableComponent, "tb-alarm-table", never, { "active": { "alias": "active"; "required": false; }; "entityId": { "alias": "entityId"; "required": false; }; "writeEnabled": { "alias": "writeEnabled"; "required": false; }; "removeEnabled": { "alias": "removeEnabled"; "required": false; }; }, {}, never, never, false, never>;
 }

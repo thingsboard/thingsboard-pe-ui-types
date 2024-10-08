@@ -19,5 +19,5 @@ export declare class DefaultDeviceProfileTransportConfigurationComponent impleme
     validate(c: UntypedFormControl): ValidationErrors | null;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<DefaultDeviceProfileTransportConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DefaultDeviceProfileTransportConfigurationComponent, "tb-default-device-profile-transport-configuration", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DefaultDeviceProfileTransportConfigurationComponent, "tb-default-device-profile-transport-configuration", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

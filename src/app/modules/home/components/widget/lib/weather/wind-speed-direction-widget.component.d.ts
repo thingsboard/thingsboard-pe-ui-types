@@ -45,5 +45,5 @@ export declare class WindSpeedDirectionWidgetComponent implements OnInit, OnDest
     private renderCenterValueText;
     private onResize;
     static ɵfac: i0.ɵɵFactoryDeclaration<WindSpeedDirectionWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WindSpeedDirectionWidgetComponent, "tb-wind-speed-direction-widget", never, { "ctx": "ctx"; "widgetTitlePanel": "widgetTitlePanel"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WindSpeedDirectionWidgetComponent, "tb-wind-speed-direction-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; }, {}, never, never, false, never>;
 }

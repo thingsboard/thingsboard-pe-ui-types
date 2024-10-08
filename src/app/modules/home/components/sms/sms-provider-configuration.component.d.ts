@@ -25,5 +25,5 @@ export declare class SmsProviderConfigurationComponent implements ControlValueAc
     private smsProviderTypeChanged;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<SmsProviderConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SmsProviderConfigurationComponent, "tb-sms-provider-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SmsProviderConfigurationComponent, "tb-sms-provider-configuration", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

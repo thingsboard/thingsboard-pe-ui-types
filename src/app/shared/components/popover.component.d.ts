@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, ComponentFactory, ComponentFactoryResolver, ComponentRef, ElementRef, EventEmitter, Injector, OnChanges, OnDestroy, OnInit, Renderer2, SimpleChanges, TemplateRef, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ComponentRef, ElementRef, EventEmitter, Injector, OnChanges, OnDestroy, OnInit, Renderer2, SimpleChanges, TemplateRef, Type, ViewContainerRef } from '@angular/core';
 import { Direction, Directionality } from '@angular/cdk/bidi';
 import { CdkConnectedOverlay, CdkOverlayOrigin, ConnectedOverlayPositionChange, ConnectionPositionPair, NoopScrollStrategy } from '@angular/cdk/overlay';
 import { Subject } from 'rxjs';
@@ -9,7 +9,6 @@ export type TbPopoverTrigger = 'click' | 'focus' | 'hover' | null;
 export declare class TbPopoverDirective implements OnChanges, OnDestroy, AfterViewInit {
     private elementRef;
     private hostView;
-    private resolver;
     private renderer;
     content?: string | TemplateRef<void>;
     context?: any | null;
@@ -26,13 +25,12 @@ export declare class TbPopoverDirective implements OnChanges, OnDestroy, AfterVi
     };
     tbPopoverBackdrop: boolean;
     readonly visibleChange: EventEmitter<boolean>;
-    componentFactory: ComponentFactory<TbPopoverComponent>;
     component?: TbPopoverComponent;
     private readonly destroy$;
     private readonly triggerDisposables;
     private delayTimer?;
     private internalVisible;
-    constructor(elementRef: ElementRef, hostView: ViewContainerRef, resolver: ComponentFactoryResolver, renderer: Renderer2);
+    constructor(elementRef: ElementRef, hostView: ViewContainerRef, renderer: Renderer2);
     ngOnChanges(changes: SimpleChanges): void;
     ngAfterViewInit(): void;
     ngOnDestroy(): void;
@@ -49,7 +47,7 @@ export declare class TbPopoverDirective implements OnChanges, OnDestroy, AfterVi
     private removeTriggerListeners;
     private clearTogglingTimer;
     static ɵfac: i0.ɵɵFactoryDeclaration<TbPopoverDirective, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<TbPopoverDirective, "[tb-popover]", ["tbPopover"], { "content": "tbPopoverContent"; "context": "tbPopoverContext"; "trigger": "tbPopoverTrigger"; "placement": "tbPopoverPlacement"; "origin": "tbPopoverOrigin"; "visible": "tbPopoverVisible"; "showCloseButton": "tbPopoverShowCloseButton"; "mouseEnterDelay": "tbPopoverMouseEnterDelay"; "mouseLeaveDelay": "tbPopoverMouseLeaveDelay"; "overlayClassName": "tbPopoverOverlayClassName"; "overlayStyle": "tbPopoverOverlayStyle"; "tbPopoverBackdrop": "tbPopoverBackdrop"; }, { "visibleChange": "tbPopoverVisibleChange"; }, never, never, false, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<TbPopoverDirective, "[tb-popover]", ["tbPopover"], { "content": { "alias": "tbPopoverContent"; "required": false; }; "context": { "alias": "tbPopoverContext"; "required": false; }; "trigger": { "alias": "tbPopoverTrigger"; "required": false; }; "placement": { "alias": "tbPopoverPlacement"; "required": false; }; "origin": { "alias": "tbPopoverOrigin"; "required": false; }; "visible": { "alias": "tbPopoverVisible"; "required": false; }; "showCloseButton": { "alias": "tbPopoverShowCloseButton"; "required": false; }; "mouseEnterDelay": { "alias": "tbPopoverMouseEnterDelay"; "required": false; }; "mouseLeaveDelay": { "alias": "tbPopoverMouseLeaveDelay"; "required": false; }; "overlayClassName": { "alias": "tbPopoverOverlayClassName"; "required": false; }; "overlayStyle": { "alias": "tbPopoverOverlayStyle"; "required": false; }; "tbPopoverBackdrop": { "alias": "tbPopoverBackdrop"; "required": false; }; }, { "visibleChange": "tbPopoverVisibleChange"; }, never, never, false, never>;
 }
 export declare class TbPopoverComponent<T = any> implements OnDestroy, OnInit {
     cdr: ChangeDetectorRef;
@@ -60,7 +58,7 @@ export declare class TbPopoverComponent<T = any> implements OnDestroy, OnInit {
     popoverRoot: ElementRef<HTMLElement>;
     popover: ElementRef<HTMLElement>;
     tbContent: string | TemplateRef<void> | null;
-    tbComponentFactory: ComponentFactory<T> | null;
+    tbComponent: Type<T> | null;
     tbComponentRef: ComponentRef<T> | null;
     tbComponentContext: any;
     tbComponentInjector: Injector | null;

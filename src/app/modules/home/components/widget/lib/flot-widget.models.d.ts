@@ -1,5 +1,3 @@
-/// <reference types="flot" />
-/// <reference types="src/typings/jquery.flot.typings" />
 import { DataKey, DataKeySettingsWithComparison, Datasource, DatasourceData, FormattedData, LegendConfig } from '@shared/models/widget.models';
 import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
 import { ComparisonDuration } from '@shared/models/time/time.models';

@@ -1,4 +1,4 @@
-import { Resolve, ResolveFn, Routes } from '@angular/router';
+import { ResolveFn, Routes } from '@angular/router';
 import { User } from '@shared/models/user.model';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -6,7 +6,7 @@ import { UserService } from '@core/http/user.service';
 import { Observable } from 'rxjs';
 import * as i0 from "@angular/core";
 import * as i1 from "@angular/router";
-export declare class UserProfileResolver implements Resolve<User> {
+export declare class UserProfileResolver {
     private store;
     private userService;
     constructor(store: Store<AppState>, userService: UserService);

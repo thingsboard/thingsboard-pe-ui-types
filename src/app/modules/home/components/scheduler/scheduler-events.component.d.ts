@@ -129,7 +129,7 @@ export declare class SchedulerEventsComponent extends PageComponent implements O
     enableSchedulerEvent($event: any, schedulerEvent: SchedulerEventWithCustomerInfo): void;
     private updatedRouterQueryParams;
     static ɵfac: i0.ɵɵFactoryDeclaration<SchedulerEventsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SchedulerEventsComponent, "tb-scheduler-events", never, { "widgetMode": "widgetMode"; "ctx": "ctx"; "edgeId": "edgeId"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SchedulerEventsComponent, "tb-scheduler-events", never, { "widgetMode": { "alias": "widgetMode"; "required": false; }; "ctx": { "alias": "ctx"; "required": false; }; "edgeId": { "alias": "edgeId"; "required": false; }; }, {}, never, never, false, never>;
 }
 declare class SchedulerEventsDatasource implements DataSource<SchedulerEventWithCustomerInfo> {
     private schedulerEventService;

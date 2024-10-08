@@ -32,5 +32,5 @@ export declare class WidgetFontComponent extends PageComponent implements OnInit
     writeValue(value: WidgetFont): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetFontComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetFontComponent, "tb-widget-font", never, { "disabled": "disabled"; "hasShadowColor": "hasShadowColor"; "sizeTitle": "sizeTitle"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetFontComponent, "tb-widget-font", never, { "disabled": { "alias": "disabled"; "required": false; }; "hasShadowColor": { "alias": "hasShadowColor"; "required": false; }; "sizeTitle": { "alias": "sizeTitle"; "required": false; }; }, {}, never, never, false, never>;
 }

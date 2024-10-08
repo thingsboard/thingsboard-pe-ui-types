@@ -1,4 +1,4 @@
-import { ActivatedRouteSnapshot, Resolve, Router } from '@angular/router';
+import { ActivatedRouteSnapshot, Router } from '@angular/router';
 import { CellActionDescriptor, EntityColumn, EntityTableConfig, GroupActionDescriptor, HeaderActionDescriptor } from '@home/models/entity/entities-table-config.models';
 import { TranslateService } from '@ngx-translate/core';
 import { DatePipe } from '@angular/common';
@@ -15,7 +15,7 @@ import { AuthUser } from '@shared/models/user.model';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { AuthState } from '@core/auth/auth.models';
 import * as i0 from "@angular/core";
-export declare class CustomersTableConfigResolver implements Resolve<EntityTableConfig<CustomerInfo>> {
+export declare class CustomersTableConfigResolver {
     private allEntitiesTableConfigService;
     private userPermissionsService;
     private customerService;

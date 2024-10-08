@@ -16,5 +16,5 @@ export declare class EllipsisChipListDirective implements OnDestroy {
     private applyMaxChipTextWidth;
     ngOnDestroy(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EllipsisChipListDirective, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<EllipsisChipListDirective, "[tb-ellipsis-chip-list]", never, { "chips": "tb-ellipsis-chip-list"; }, {}, never, never, true, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<EllipsisChipListDirective, "[tb-ellipsis-chip-list]", never, { "chips": { "alias": "tb-ellipsis-chip-list"; "required": false; }; }, {}, never, never, true, never>;
 }

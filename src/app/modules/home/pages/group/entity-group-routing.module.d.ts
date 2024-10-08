@@ -1,10 +1,10 @@
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot, Router, RouterStateSnapshot } from '@angular/router';
 import { EntityGroupService } from '@core/http/entity-group.service';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import * as i0 from "@angular/core";
 import * as i1 from "@angular/router";
-export declare class RedirectToEntityGroup implements CanActivate {
+export declare class RedirectToEntityGroup {
     private router;
     private entityGroupService;
     private store;

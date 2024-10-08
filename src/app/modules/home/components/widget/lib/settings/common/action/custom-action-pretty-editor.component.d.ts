@@ -1,4 +1,3 @@
-/// <reference types="src/typings/split.js.typings" />
 import { AfterViewInit, ElementRef, OnDestroy, OnInit, QueryList } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
@@ -26,5 +25,5 @@ export declare class CustomActionPrettyEditorComponent extends PageComponent imp
     writeValue(obj: CustomActionDescriptor): void;
     onActionUpdated(valid?: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<CustomActionPrettyEditorComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CustomActionPrettyEditorComponent, "tb-custom-action-pretty-editor", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CustomActionPrettyEditorComponent, "tb-custom-action-pretty-editor", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

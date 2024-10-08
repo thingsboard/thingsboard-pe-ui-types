@@ -37,5 +37,5 @@ export declare class DeviceProfileAlarmComponent implements ControlValueAccessor
     get alarmTypeTitle(): string;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceProfileAlarmComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceProfileAlarmComponent, "tb-device-profile-alarm", never, { "disabled": "disabled"; "expanded": "expanded"; "deviceProfileId": "deviceProfileId"; }, { "removeAlarm": "removeAlarm"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceProfileAlarmComponent, "tb-device-profile-alarm", never, { "disabled": { "alias": "disabled"; "required": false; }; "expanded": { "alias": "expanded"; "required": false; }; "deviceProfileId": { "alias": "deviceProfileId"; "required": false; }; }, { "removeAlarm": "removeAlarm"; }, never, never, false, never>;
 }

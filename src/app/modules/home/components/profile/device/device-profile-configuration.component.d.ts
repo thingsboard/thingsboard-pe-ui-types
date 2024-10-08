@@ -22,5 +22,5 @@ export declare class DeviceProfileConfigurationComponent implements ControlValue
     writeValue(value: DeviceProfileConfiguration | null): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceProfileConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceProfileConfigurationComponent, "tb-device-profile-configuration", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceProfileConfigurationComponent, "tb-device-profile-configuration", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

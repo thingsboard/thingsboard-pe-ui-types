@@ -50,5 +50,5 @@ export declare class PhoneInputComponent implements OnInit, ControlValueAccessor
     writeValue(phoneNumber: any): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<PhoneInputComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PhoneInputComponent, "tb-phone-input", never, { "disabled": "disabled"; "defaultCountry": "defaultCountry"; "enableFlagsSelect": "enableFlagsSelect"; "required": "required"; "floatLabel": "floatLabel"; "appearance": "appearance"; "placeholder": "placeholder"; "label": "label"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PhoneInputComponent, "tb-phone-input", never, { "disabled": { "alias": "disabled"; "required": false; }; "defaultCountry": { "alias": "defaultCountry"; "required": false; }; "enableFlagsSelect": { "alias": "enableFlagsSelect"; "required": false; }; "required": { "alias": "required"; "required": false; }; "floatLabel": { "alias": "floatLabel"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "placeholder": { "alias": "placeholder"; "required": false; }; "label": { "alias": "label"; "required": false; }; }, {}, never, never, false, never>;
 }

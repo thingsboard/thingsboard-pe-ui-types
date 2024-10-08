@@ -41,5 +41,5 @@ export declare class TimeSeriesChartThresholdRowComponent implements ControlValu
     private updateValidators;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesChartThresholdRowComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartThresholdRowComponent, "tb-time-series-chart-threshold-row", never, { "disabled": "disabled"; "yAxisIds": "yAxisIds"; "hideYAxis": "hideYAxis"; }, { "thresholdRemoved": "thresholdRemoved"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartThresholdRowComponent, "tb-time-series-chart-threshold-row", never, { "disabled": { "alias": "disabled"; "required": false; }; "yAxisIds": { "alias": "yAxisIds"; "required": false; }; "hideYAxis": { "alias": "hideYAxis"; "required": false; }; }, { "thresholdRemoved": "thresholdRemoved"; }, never, never, false, never>;
 }

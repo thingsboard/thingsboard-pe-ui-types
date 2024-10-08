@@ -1,7 +1,6 @@
-/// <reference types="tooltipster" />
-import L, { FeatureGroup, LatLngBounds, LatLngTuple } from 'leaflet';
+import L, { FeatureGroup, LatLngBounds, LatLngTuple, PointExpression } from 'leaflet';
 import 'leaflet-providers';
-import { MarkerClusterGroup, MarkerClusterGroupOptions } from 'leaflet.markercluster/dist/leaflet.markercluster';
+import 'leaflet.markercluster';
 import '@geoman-io/leaflet-geoman-free';
 import { CircleData, MarkerIconInfo, WidgetPolygonSettings, WidgetPolylineSettings, WidgetUnitedMapSettings } from './map-models';
 import { Marker } from './markers';
@@ -24,7 +23,7 @@ export default abstract class LeafletMap {
     options: WidgetUnitedMapSettings;
     bounds: L.LatLngBounds;
     datasources: FormattedData[];
-    markersCluster: MarkerClusterGroup;
+    markersCluster: L.MarkerClusterGroup;
     points: FeatureGroup;
     markersData: FormattedData[];
     polygonsData: FormattedData[];
@@ -56,7 +55,7 @@ export default abstract class LeafletMap {
     savePolygonLocation: (e: FormattedData, coordinates?: Array<any>) => Observable<any>;
     translateService: TranslateService;
     tooltipInstances: ITooltipsterInstance[];
-    clusteringSettings: MarkerClusterGroupOptions;
+    clusteringSettings: L.MarkerClusterGroupOptions;
     protected constructor(ctx: WidgetContext, $container: HTMLElement, options: WidgetUnitedMapSettings);
     private initMarkerClusterSettings;
     private selectEntityWithoutLocationDialog;
@@ -73,7 +72,7 @@ export default abstract class LeafletMap {
     invalidateSize(): void;
     onResize(): void;
     getCenter(): L.LatLng;
-    fitBounds(bounds: LatLngBounds, padding?: LatLngTuple): void;
+    fitBounds(bounds: LatLngBounds, padding?: PointExpression): void;
     extractPosition(data: FormattedData): {
         x: number;
         y: number;
@@ -82,7 +81,7 @@ export default abstract class LeafletMap {
         x: number;
         y: number;
     }): L.LatLng;
-    convertPosition(data: FormattedData, dsData: FormattedData[]): L.LatLng;
+    convertPosition(data: FormattedData, _dsData: FormattedData[]): L.LatLng;
     convertPositionPolygon(expression: (LatLngTuple | LatLngTuple[] | LatLngTuple[][])[]): any;
     convertToCustomFormat(position: L.LatLng, offset?: number): object;
     convertToPolygonFormat(points: Array<any>): Array<any>;

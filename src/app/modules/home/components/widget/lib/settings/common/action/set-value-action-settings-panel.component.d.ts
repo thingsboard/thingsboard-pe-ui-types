@@ -39,5 +39,5 @@ export declare class SetValueActionSettingsPanelComponent extends PageComponent 
     applySetValueSettings(): void;
     private updateValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<SetValueActionSettingsPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SetValueActionSettingsPanelComponent, "tb-set-value-action-settings-panel", never, { "panelTitle": "panelTitle"; "valueType": "valueType"; "setValueSettings": "setValueSettings"; "aliasController": "aliasController"; "targetDevice": "targetDevice"; "widgetType": "widgetType"; "popover": "popover"; }, { "setValueSettingsApplied": "setValueSettingsApplied"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SetValueActionSettingsPanelComponent, "tb-set-value-action-settings-panel", never, { "panelTitle": { "alias": "panelTitle"; "required": false; }; "valueType": { "alias": "valueType"; "required": false; }; "setValueSettings": { "alias": "setValueSettings"; "required": false; }; "aliasController": { "alias": "aliasController"; "required": false; }; "targetDevice": { "alias": "targetDevice"; "required": false; }; "widgetType": { "alias": "widgetType"; "required": false; }; "popover": { "alias": "popover"; "required": false; }; }, { "setValueSettingsApplied": "setValueSettingsApplied"; }, never, never, false, never>;
 }

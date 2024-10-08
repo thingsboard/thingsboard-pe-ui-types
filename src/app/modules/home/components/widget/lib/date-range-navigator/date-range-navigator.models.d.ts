@@ -1,4 +1,4 @@
-import * as _moment from 'moment';
+import _moment from 'moment';
 export type DateRangeInterval = 'hour' | 'day' | 'week' | 'twoWeeks' | 'month' | 'threeMonths' | 'sixMonths';
 export interface DateRangeNavigatorSettings {
     hidePicker: boolean;

@@ -30,5 +30,5 @@ export declare class CoapDeviceProfileTransportConfigurationComponent implements
     validate(c: UntypedFormControl): ValidationErrors | null;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<CoapDeviceProfileTransportConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CoapDeviceProfileTransportConfigurationComponent, "tb-coap-device-profile-transport-configuration", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CoapDeviceProfileTransportConfigurationComponent, "tb-coap-device-profile-transport-configuration", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

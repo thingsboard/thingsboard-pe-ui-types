@@ -51,5 +51,5 @@ export declare class OwnerAutocompleteComponent implements ControlValueAccessor,
     clear(): void;
     textIsNotEmpty(text: string): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<OwnerAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<OwnerAutocompleteComponent, "tb-owner-autocomplete", never, { "excludeOwnerIds": "excludeOwnerIds"; "placeholderText": "placeholderText"; "notFoundText": "notFoundText"; "requiredText": "requiredText"; "required": "required"; "useOwnerInfoValue": "useOwnerInfoValue"; "defaultOwnerId": "defaultOwnerId"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<OwnerAutocompleteComponent, "tb-owner-autocomplete", never, { "excludeOwnerIds": { "alias": "excludeOwnerIds"; "required": false; }; "placeholderText": { "alias": "placeholderText"; "required": false; }; "notFoundText": { "alias": "notFoundText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "required": { "alias": "required"; "required": false; }; "useOwnerInfoValue": { "alias": "useOwnerInfoValue"; "required": false; }; "defaultOwnerId": { "alias": "defaultOwnerId"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

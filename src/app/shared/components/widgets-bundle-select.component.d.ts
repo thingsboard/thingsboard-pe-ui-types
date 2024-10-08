@@ -39,5 +39,5 @@ export declare class WidgetsBundleSelectComponent implements ControlValueAccesso
     compareById(f1: WidgetsBundle, f2: WidgetsBundle): boolean;
     openWidgetsBundleDialog($event: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetsBundleSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetsBundleSelectComponent, "tb-widgets-bundle-select", never, { "bundlesScope": "bundlesScope"; "selectFirstBundle": "selectFirstBundle"; "selectBundleAlias": "selectBundleAlias"; "required": "required"; "disabled": "disabled"; "excludeBundleIds": "excludeBundleIds"; "createNew": "createNew"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetsBundleSelectComponent, "tb-widgets-bundle-select", never, { "bundlesScope": { "alias": "bundlesScope"; "required": false; }; "selectFirstBundle": { "alias": "selectFirstBundle"; "required": false; }; "selectBundleAlias": { "alias": "selectBundleAlias"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "excludeBundleIds": { "alias": "excludeBundleIds"; "required": false; }; "createNew": { "alias": "createNew"; "required": false; }; }, {}, never, never, false, never>;
 }

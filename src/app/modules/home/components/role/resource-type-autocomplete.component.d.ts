@@ -43,6 +43,6 @@ export declare class ResourceTypeAutocompleteComponent implements ControlValueAc
     fetchResources(searchText?: string): Observable<Array<ResourceTypeInfo>>;
     clear(value?: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ResourceTypeAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ResourceTypeAutocompleteComponent, "tb-resource-type-autocomplete", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ResourceTypeAutocompleteComponent, "tb-resource-type-autocomplete", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }
 export {};

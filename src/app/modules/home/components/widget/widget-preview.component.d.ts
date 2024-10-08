@@ -21,5 +21,5 @@ export declare class WidgetPreviewComponent extends PageComponent implements OnI
     ngOnChanges(changes: SimpleChanges): void;
     private loadPreviewWidget;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetPreviewComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetPreviewComponent, "tb-widget-preview", never, { "aliasController": "aliasController"; "stateController": "stateController"; "dashboardTimewindow": "dashboardTimewindow"; "widget": "widget"; "widgetConfig": "widgetConfig"; "previewWidth": "previewWidth"; "previewHeight": "previewHeight"; }, {}, never, [".tb-preview-panel-content"], false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetPreviewComponent, "tb-widget-preview", never, { "aliasController": { "alias": "aliasController"; "required": false; }; "stateController": { "alias": "stateController"; "required": false; }; "dashboardTimewindow": { "alias": "dashboardTimewindow"; "required": false; }; "widget": { "alias": "widget"; "required": false; }; "widgetConfig": { "alias": "widgetConfig"; "required": false; }; "previewWidth": { "alias": "previewWidth"; "required": false; }; "previewHeight": { "alias": "previewHeight"; "required": false; }; }, {}, never, [".tb-preview-panel-content"], false, never>;
 }

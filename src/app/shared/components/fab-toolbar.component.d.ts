@@ -35,6 +35,6 @@ export declare class FabToolbarComponent extends MatFabToolbarMixinBase implemen
     private onFabToolbarResize;
     private triggerOpenClose;
     static ɵfac: i0.ɵɵFactoryDeclaration<FabToolbarComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FabToolbarComponent, "mat-fab-toolbar", never, { "isOpen": "isOpen"; "direction": "direction"; "color": "color"; }, {}, never, ["*"], false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FabToolbarComponent, "mat-fab-toolbar", never, { "isOpen": { "alias": "isOpen"; "required": false; }; "direction": { "alias": "direction"; "required": false; }; "color": { "alias": "color"; "required": false; }; }, {}, never, ["*"], false, never>;
 }
 export {};

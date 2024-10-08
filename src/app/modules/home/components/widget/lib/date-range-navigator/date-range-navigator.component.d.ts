@@ -44,7 +44,7 @@ export declare class DateRangeNavigatorWidgetComponent extends PageComponent imp
     private updateStorageDate;
     private saveIntoStorage;
     static ɵfac: i0.ɵɵFactoryDeclaration<DateRangeNavigatorWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DateRangeNavigatorWidgetComponent, "tb-date-range-navigator-widget", never, { "ctx": "ctx"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DateRangeNavigatorWidgetComponent, "tb-date-range-navigator-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; }, {}, never, never, false, never>;
 }
 export interface DateRangeNavigatorPanelData {
     model: DateRangeNavigatorModel;

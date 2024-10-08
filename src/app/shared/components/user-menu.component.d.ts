@@ -23,5 +23,5 @@ export declare class UserMenuComponent implements OnInit, OnDestroy {
     openAccount(): void;
     logout(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<UserMenuComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<UserMenuComponent, "tb-user-menu", never, { "displayUserInfo": "displayUserInfo"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<UserMenuComponent, "tb-user-menu", never, { "displayUserInfo": { "alias": "displayUserInfo"; "required": false; }; }, {}, never, never, false, never>;
 }

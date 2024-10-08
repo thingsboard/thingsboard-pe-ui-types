@@ -24,5 +24,5 @@ export declare class SecurityConfigComponent implements ControlValueAccessor, On
     registerOnTouched(fn: () => void): void;
     private updateValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<SecurityConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SecurityConfigComponent, "tb-security-config", never, { "title": "title"; "extendCertificatesModel": "extendCertificatesModel"; }, {}, never, never, true, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SecurityConfigComponent, "tb-security-config", never, { "title": { "alias": "title"; "required": false; }; "extendCertificatesModel": { "alias": "extendCertificatesModel"; "required": false; }; }, {}, never, never, true, never>;
 }

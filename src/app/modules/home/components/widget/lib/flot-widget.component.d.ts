@@ -27,5 +27,5 @@ export declare class FlotWidgetComponent implements OnInit {
     onEditModeChanged(): void;
     onDestroy(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<FlotWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FlotWidgetComponent, "tb-flot-widget", never, { "ctx": "ctx"; "chartType": "chartType"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FlotWidgetComponent, "tb-flot-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; "chartType": { "alias": "chartType"; "required": false; }; }, {}, never, never, false, never>;
 }

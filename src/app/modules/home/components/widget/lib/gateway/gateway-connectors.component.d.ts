@@ -121,5 +121,5 @@ export declare class GatewayConnectorComponent extends PageComponent implements 
     private toggleReportStrategy;
     private setClientData;
     static ɵfac: i0.ɵɵFactoryDeclaration<GatewayConnectorComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<GatewayConnectorComponent, "tb-gateway-connector", never, { "ctx": "ctx"; "device": "device"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GatewayConnectorComponent, "tb-gateway-connector", never, { "ctx": { "alias": "ctx"; "required": false; }; "device": { "alias": "device"; "required": false; }; }, {}, never, never, false, never>;
 }

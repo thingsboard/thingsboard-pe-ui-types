@@ -33,5 +33,5 @@ export declare class NotificationTemplateConfigurationComponent implements OnDes
     private buildForm;
     private buildDeliveryMethodControl;
     static ɵfac: i0.ɵɵFactoryDeclaration<NotificationTemplateConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<NotificationTemplateConfigurationComponent, "tb-template-configuration", never, { "predefinedDeliveryMethodsTemplate": "predefinedDeliveryMethodsTemplate"; "notificationType": "notificationType"; "interacted": "interacted"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NotificationTemplateConfigurationComponent, "tb-template-configuration", never, { "predefinedDeliveryMethodsTemplate": { "alias": "predefinedDeliveryMethodsTemplate"; "required": false; }; "notificationType": { "alias": "notificationType"; "required": false; }; "interacted": { "alias": "interacted"; "required": false; }; }, {}, never, never, false, never>;
 }

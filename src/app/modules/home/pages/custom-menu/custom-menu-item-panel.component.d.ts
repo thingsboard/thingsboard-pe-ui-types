@@ -18,5 +18,5 @@ export declare class CustomMenuItemPanelComponent implements OnInit {
     cancel(): void;
     apply(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<CustomMenuItemPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CustomMenuItemPanelComponent, "tb-custom-menu-item-panel", never, { "disabled": "disabled"; "scope": "scope"; "subItem": "subItem"; "menuItem": "menuItem"; "popover": "popover"; }, { "customMenuItemApplied": "customMenuItemApplied"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CustomMenuItemPanelComponent, "tb-custom-menu-item-panel", never, { "disabled": { "alias": "disabled"; "required": false; }; "scope": { "alias": "scope"; "required": false; }; "subItem": { "alias": "subItem"; "required": false; }; "menuItem": { "alias": "menuItem"; "required": false; }; "popover": { "alias": "popover"; "required": false; }; }, { "customMenuItemApplied": "customMenuItemApplied"; }, never, never, false, never>;
 }

@@ -31,5 +31,5 @@ export declare class EntityGroupColumnsComponent extends PageComponent implement
     onDrop(event: CdkDragDrop<string[]>): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityGroupColumnsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupColumnsComponent, "tb-entity-group-columns", never, { "disabled": "disabled"; "entityType": "entityType"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupColumnsComponent, "tb-entity-group-columns", never, { "disabled": { "alias": "disabled"; "required": false; }; "entityType": { "alias": "entityType"; "required": false; }; }, {}, never, never, false, never>;
 }

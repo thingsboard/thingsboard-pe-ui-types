@@ -48,5 +48,5 @@ export declare class AggregatedDataKeyRowComponent implements ControlValueAccess
     private updateModel;
     private _valuePreviewFn;
     static ɵfac: i0.ɵɵFactoryDeclaration<AggregatedDataKeyRowComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AggregatedDataKeyRowComponent, "tb-aggregated-data-key-row", never, { "disabled": "disabled"; "datasourceType": "datasourceType"; "keyName": "keyName"; "index": "index"; }, { "keyRemoved": "keyRemoved"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AggregatedDataKeyRowComponent, "tb-aggregated-data-key-row", never, { "disabled": { "alias": "disabled"; "required": false; }; "datasourceType": { "alias": "datasourceType"; "required": false; }; "keyName": { "alias": "keyName"; "required": false; }; "index": { "alias": "index"; "required": false; }; }, { "keyRemoved": "keyRemoved"; }, never, never, false, never>;
 }

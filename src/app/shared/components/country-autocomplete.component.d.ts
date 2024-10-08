@@ -40,5 +40,5 @@ export declare class CountryAutocompleteComponent implements OnInit, ControlValu
     private fetchCountries;
     private updateView;
     static ɵfac: i0.ɵɵFactoryDeclaration<CountryAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CountryAutocompleteComponent, "tb-country-autocomplete", never, { "labelText": "labelText"; "requiredText": "requiredText"; "autocompleteHint": "autocompleteHint"; "disabled": "disabled"; "required": "required"; "subscriptSizing": "subscriptSizing"; }, { "selectCountryCode": "selectCountryCode"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CountryAutocompleteComponent, "tb-country-autocomplete", never, { "labelText": { "alias": "labelText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "autocompleteHint": { "alias": "autocompleteHint"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "required": { "alias": "required"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; }, { "selectCountryCode": "selectCountryCode"; }, never, never, false, never>;
 }

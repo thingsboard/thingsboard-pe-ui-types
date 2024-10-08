@@ -47,5 +47,5 @@ export declare class TimeintervalComponent implements OnInit, ControlValueAccess
     private onDaysChange;
     ngOnDestroy(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeintervalComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeintervalComponent, "tb-timeinterval", never, { "min": "min"; "max": "max"; "predefinedName": "predefinedName"; "isEdit": "isEdit"; "disabledAdvanced": "disabledAdvanced"; "useCalendarIntervals": "useCalendarIntervals"; "disabled": "disabled"; "subscriptSizing": "subscriptSizing"; "appearance": "appearance"; }, {}, never, ["*"], false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeintervalComponent, "tb-timeinterval", never, { "min": { "alias": "min"; "required": false; }; "max": { "alias": "max"; "required": false; }; "predefinedName": { "alias": "predefinedName"; "required": false; }; "isEdit": { "alias": "isEdit"; "required": false; }; "disabledAdvanced": { "alias": "disabledAdvanced"; "required": false; }; "useCalendarIntervals": { "alias": "useCalendarIntervals"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; }, {}, never, ["*"], false, never>;
 }

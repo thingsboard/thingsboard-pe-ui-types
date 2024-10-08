@@ -55,5 +55,5 @@ export declare class TimezoneSelectComponent implements ControlValueAccessor, On
     clear(): void;
     private loadTimezones;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimezoneSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimezoneSelectComponent, "tb-timezone-select", never, { "defaultTimezone": "defaultTimezone"; "displayLabel": "displayLabel"; "subscriptSizing": "subscriptSizing"; "appearance": "appearance"; "required": "required"; "userTimezoneByDefault": "userTimezoneByDefault"; "localBrowserTimezonePlaceholderOnEmpty": "localBrowserTimezonePlaceholderOnEmpty"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimezoneSelectComponent, "tb-timezone-select", never, { "defaultTimezone": { "alias": "defaultTimezone"; "required": false; }; "displayLabel": { "alias": "displayLabel"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "required": { "alias": "required"; "required": false; }; "userTimezoneByDefault": { "alias": "userTimezoneByDefault"; "required": false; }; "localBrowserTimezonePlaceholderOnEmpty": { "alias": "localBrowserTimezonePlaceholderOnEmpty"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

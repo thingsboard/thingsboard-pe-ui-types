@@ -19,5 +19,5 @@ export declare class ComparisonKeysTableComponent implements ControlValueAccesso
     trackByKey(_index: number, keyControl: AbstractControl): any;
     private prepareKeysFormArray;
     static ɵfac: i0.ɵɵFactoryDeclaration<ComparisonKeysTableComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ComparisonKeysTableComponent, "tb-comparison-keys-table", never, { "disabled": "disabled"; "datasourceType": "datasourceType"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ComparisonKeysTableComponent, "tb-comparison-keys-table", never, { "disabled": { "alias": "disabled"; "required": false; }; "datasourceType": { "alias": "datasourceType"; "required": false; }; }, {}, never, never, false, never>;
 }

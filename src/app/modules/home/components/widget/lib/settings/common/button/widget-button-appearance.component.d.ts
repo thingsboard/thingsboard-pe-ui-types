@@ -26,5 +26,5 @@ export declare class WidgetButtonAppearanceComponent implements OnInit, ControlV
     private updateModel;
     private updateValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetButtonAppearanceComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetButtonAppearanceComponent, "tb-widget-button-appearance", never, { "disabled": "disabled"; "borderRadius": "borderRadius"; "autoScale": "autoScale"; "withAutoScale": "withAutoScale"; "withBorderRadius": "withBorderRadius"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetButtonAppearanceComponent, "tb-widget-button-appearance", never, { "disabled": { "alias": "disabled"; "required": false; }; "borderRadius": { "alias": "borderRadius"; "required": false; }; "autoScale": { "alias": "autoScale"; "required": false; }; "withAutoScale": { "alias": "withAutoScale"; "required": false; }; "withBorderRadius": { "alias": "withBorderRadius"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -106,5 +106,5 @@ export declare class AttributeTableComponent extends PageComponent implements Af
     addWidgetToDashboard(): void;
     exitWidgetMode(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AttributeTableComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AttributeTableComponent, "tb-attribute-table", never, { "disableAttributeScopeSelection": "disableAttributeScopeSelection"; "defaultAttributeScope": "defaultAttributeScope"; "active": "active"; "entityId": "entityId"; "entityName": "entityName"; "readonly": "readonly"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AttributeTableComponent, "tb-attribute-table", never, { "disableAttributeScopeSelection": { "alias": "disableAttributeScopeSelection"; "required": false; }; "defaultAttributeScope": { "alias": "defaultAttributeScope"; "required": false; }; "active": { "alias": "active"; "required": false; }; "entityId": { "alias": "entityId"; "required": false; }; "entityName": { "alias": "entityName"; "required": false; }; "readonly": { "alias": "readonly"; "required": false; }; }, {}, never, never, false, never>;
 }

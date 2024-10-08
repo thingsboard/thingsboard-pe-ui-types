@@ -39,5 +39,5 @@ export declare class AliasesEntityAutocompleteComponent implements ControlValueA
     getEntityInfos(searchText: string): Observable<PageData<EntityInfo>>;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AliasesEntityAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AliasesEntityAutocompleteComponent, "tb-aliases-entity-autocomplete", never, { "alias": "alias"; "entityFilter": "entityFilter"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AliasesEntityAutocompleteComponent, "tb-aliases-entity-autocomplete", never, { "alias": { "alias": "alias"; "required": false; }; "entityFilter": { "alias": "entityFilter"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

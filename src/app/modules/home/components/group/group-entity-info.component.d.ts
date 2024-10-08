@@ -17,5 +17,5 @@ export declare class GroupEntityInfoComponent {
     constructor(store: Store<AppState>, userPermissionsService: UserPermissionsService);
     update(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<GroupEntityInfoComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<GroupEntityInfoComponent, "tb-group-entity-info", never, { "groupEntity": "groupEntity"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GroupEntityInfoComponent, "tb-group-entity-info", never, { "groupEntity": { "alias": "groupEntity"; "required": false; }; }, {}, never, never, false, never>;
 }

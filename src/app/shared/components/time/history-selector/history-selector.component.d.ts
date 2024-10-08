@@ -30,5 +30,5 @@ export declare class HistorySelectorComponent implements OnChanges {
     moveEnd(): void;
     changeIndex(index: number): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<HistorySelectorComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<HistorySelectorComponent, "tb-history-selector", never, { "settings": "settings"; "minTime": "minTime"; "maxTime": "maxTime"; "step": "step"; "anchors": "anchors"; "useAnchors": "useAnchors"; }, { "timeUpdated": "timeUpdated"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<HistorySelectorComponent, "tb-history-selector", never, { "settings": { "alias": "settings"; "required": false; }; "minTime": { "alias": "minTime"; "required": false; }; "maxTime": { "alias": "maxTime"; "required": false; }; "step": { "alias": "step"; "required": false; }; "anchors": { "alias": "anchors"; "required": false; }; "useAnchors": { "alias": "useAnchors"; "required": false; }; }, { "timeUpdated": "timeUpdated"; }, never, never, false, never>;
 }

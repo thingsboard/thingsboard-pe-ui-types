@@ -31,5 +31,5 @@ export declare class BackgroundSettingsPanelComponent extends PageComponent impl
     private updateValidators;
     private updateBackgroundStyle;
     static ɵfac: i0.ɵɵFactoryDeclaration<BackgroundSettingsPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<BackgroundSettingsPanelComponent, "tb-background-settings-panel", never, { "backgroundSettings": "backgroundSettings"; "popover": "popover"; }, { "backgroundSettingsApplied": "backgroundSettingsApplied"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<BackgroundSettingsPanelComponent, "tb-background-settings-panel", never, { "backgroundSettings": { "alias": "backgroundSettings"; "required": false; }; "popover": { "alias": "popover"; "required": false; }; }, { "backgroundSettingsApplied": "backgroundSettingsApplied"; }, never, never, false, never>;
 }

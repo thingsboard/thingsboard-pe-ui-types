@@ -6,5 +6,5 @@ export declare class DeviceGatewayCommandComponent {
     constructor(deviceService: DeviceService);
     download($event: Event): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceGatewayCommandComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceGatewayCommandComponent, "tb-gateway-command", never, { "deviceId": "deviceId"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceGatewayCommandComponent, "tb-gateway-command", never, { "deviceId": { "alias": "deviceId"; "required": false; }; }, {}, never, never, false, never>;
 }

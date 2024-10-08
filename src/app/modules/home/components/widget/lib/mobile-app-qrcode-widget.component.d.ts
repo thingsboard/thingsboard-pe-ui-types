@@ -46,5 +46,5 @@ export declare class MobileAppQrcodeWidgetComponent extends PageComponent implem
     private initMobileAppQRCode;
     private updateQRCode;
     static ɵfac: i0.ɵɵFactoryDeclaration<MobileAppQrcodeWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MobileAppQrcodeWidgetComponent, "tb-mobile-app-qrcode-widget", never, { "ctx": "ctx"; "widgetTitlePanel": "widgetTitlePanel"; "mobileAppSettings": "mobileAppSettings"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MobileAppQrcodeWidgetComponent, "tb-mobile-app-qrcode-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; "mobileAppSettings": { "alias": "mobileAppSettings"; "required": false; }; }, {}, never, never, false, never>;
 }

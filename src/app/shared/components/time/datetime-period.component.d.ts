@@ -27,5 +27,5 @@ export declare class DatetimePeriodComponent implements OnInit, ControlValueAcce
     onStartDateChange(): void;
     onEndDateChange(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DatetimePeriodComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DatetimePeriodComponent, "tb-datetime-period", never, { "disabled": "disabled"; "subscriptSizing": "subscriptSizing"; "appearance": "appearance"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DatetimePeriodComponent, "tb-datetime-period", never, { "disabled": { "alias": "disabled"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; }, {}, never, never, false, never>;
 }

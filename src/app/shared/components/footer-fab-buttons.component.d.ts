@@ -28,5 +28,5 @@ export declare class FooterFabButtonsComponent extends PageComponent {
     hideItems(): void;
     onToggleFab(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<FooterFabButtonsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FooterFabButtonsComponent, "tb-footer-fab-buttons", never, { "footerFabButtons": "footerFabButtons"; "relative": "relative"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FooterFabButtonsComponent, "tb-footer-fab-buttons", never, { "footerFabButtons": { "alias": "footerFabButtons"; "required": false; }; "relative": { "alias": "relative"; "required": false; }; }, {}, never, never, false, never>;
 }

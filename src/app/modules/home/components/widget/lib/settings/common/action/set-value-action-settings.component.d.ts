@@ -33,5 +33,5 @@ export declare class SetValueActionSettingsComponent implements OnInit, ControlV
     openActionSettingsPopup($event: Event, matButton: MatButton): void;
     private updateDisplayValue;
     static ɵfac: i0.ɵɵFactoryDeclaration<SetValueActionSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SetValueActionSettingsComponent, "tb-set-value-action-settings", never, { "panelTitle": "panelTitle"; "valueType": "valueType"; "aliasController": "aliasController"; "targetDevice": "targetDevice"; "widgetType": "widgetType"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SetValueActionSettingsComponent, "tb-set-value-action-settings", never, { "panelTitle": { "alias": "panelTitle"; "required": false; }; "valueType": { "alias": "valueType"; "required": false; }; "aliasController": { "alias": "aliasController"; "required": false; }; "targetDevice": { "alias": "targetDevice"; "required": false; }; "widgetType": { "alias": "widgetType"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

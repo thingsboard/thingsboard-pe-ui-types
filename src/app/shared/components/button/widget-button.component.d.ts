@@ -38,5 +38,5 @@ export declare class WidgetButtonComponent implements OnInit, AfterViewInit, OnD
     private updateAutoScale;
     private onResize;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetButtonComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetButtonComponent, "tb-widget-button", never, { "appearance": "appearance"; "borderRadius": "borderRadius"; "autoScale": "autoScale"; "disabled": "disabled"; "activated": "activated"; "hovered": "hovered"; "pressed": "pressed"; "disableEvents": "disableEvents"; "ctx": "ctx"; }, { "clicked": "clicked"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetButtonComponent, "tb-widget-button", never, { "appearance": { "alias": "appearance"; "required": false; }; "borderRadius": { "alias": "borderRadius"; "required": false; }; "autoScale": { "alias": "autoScale"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "activated": { "alias": "activated"; "required": false; }; "hovered": { "alias": "hovered"; "required": false; }; "pressed": { "alias": "pressed"; "required": false; }; "disableEvents": { "alias": "disableEvents"; "required": false; }; "ctx": { "alias": "ctx"; "required": false; }; }, { "clicked": "clicked"; }, never, never, false, never>;
 }

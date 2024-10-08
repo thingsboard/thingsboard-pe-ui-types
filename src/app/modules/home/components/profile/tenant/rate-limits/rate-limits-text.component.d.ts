@@ -11,5 +11,5 @@ export declare class RateLimitsTextComponent implements OnChanges {
     ngOnChanges(changes: SimpleChanges): void;
     private updateView;
     static ɵfac: i0.ɵɵFactoryDeclaration<RateLimitsTextComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RateLimitsTextComponent, "tb-rate-limits-text", never, { "rateLimitsArray": "rateLimitsArray"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RateLimitsTextComponent, "tb-rate-limits-text", never, { "rateLimitsArray": { "alias": "rateLimitsArray"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

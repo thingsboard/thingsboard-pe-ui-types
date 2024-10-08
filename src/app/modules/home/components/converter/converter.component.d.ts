@@ -60,5 +60,5 @@ export declare class ConverterComponent extends EntityComponent<Converter> imple
     private getDefaultDebugIn;
     showConverterTestDialog(debugIn: ConverterDebugInput, setFirstTab?: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ConverterComponent, [null, null, null, null, null, null, { optional: true; }, { optional: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ConverterComponent, "tb-converter", never, { "hideType": "hideType"; "integrationType": "integrationType"; "convertorName": "convertorName"; "libraryInfo": "libraryInfo"; "integrationName": "integrationName"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ConverterComponent, "tb-converter", never, { "hideType": { "alias": "hideType"; "required": false; }; "integrationType": { "alias": "integrationType"; "required": false; }; "convertorName": { "alias": "convertorName"; "required": false; }; "libraryInfo": { "alias": "libraryInfo"; "required": false; }; "integrationName": { "alias": "integrationName"; "required": false; }; }, {}, never, never, false, never>;
 }

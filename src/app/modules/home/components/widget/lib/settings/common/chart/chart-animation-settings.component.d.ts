@@ -19,5 +19,5 @@ export declare class ChartAnimationSettingsComponent implements OnInit, ControlV
     private updateValidators;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<ChartAnimationSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ChartAnimationSettingsComponent, "tb-chart-animation-settings", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ChartAnimationSettingsComponent, "tb-chart-animation-settings", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

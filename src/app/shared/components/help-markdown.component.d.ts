@@ -23,5 +23,5 @@ export declare class HelpMarkdownComponent implements OnDestroy, OnInit, OnChang
     onMarkdownReady(): void;
     markdownClick($event: MouseEvent): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<HelpMarkdownComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<HelpMarkdownComponent, "tb-help-markdown", never, { "helpId": "helpId"; "helpContent": "helpContent"; "visible": "visible"; "style": "style"; }, { "markdownReady": "markdownReady"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<HelpMarkdownComponent, "tb-help-markdown", never, { "helpId": { "alias": "helpId"; "required": false; }; "helpContent": { "alias": "helpContent"; "required": false; }; "visible": { "alias": "visible"; "required": false; }; "style": { "alias": "style"; "required": false; }; }, { "markdownReady": "markdownReady"; }, never, never, false, never>;
 }

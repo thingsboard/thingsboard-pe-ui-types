@@ -36,5 +36,5 @@ export declare class ValueSourceDataKeyComponent extends PageComponent implement
     private updateModel;
     private updateValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<ValueSourceDataKeyComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ValueSourceDataKeyComponent, "tb-value-source-data-key", never, { "disabled": "disabled"; "aliasController": "aliasController"; "dataKeyCallbacks": "dataKeyCallbacks"; "datasource": "datasource"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ValueSourceDataKeyComponent, "tb-value-source-data-key", never, { "disabled": { "alias": "disabled"; "required": false; }; "aliasController": { "alias": "aliasController"; "required": false; }; "dataKeyCallbacks": { "alias": "dataKeyCallbacks"; "required": false; }; "datasource": { "alias": "datasource"; "required": false; }; }, {}, never, never, false, never>;
 }

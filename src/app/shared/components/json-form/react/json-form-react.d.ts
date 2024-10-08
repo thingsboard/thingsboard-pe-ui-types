@@ -3,6 +3,6 @@ import { JsonFormProps } from './json-form.models';
 declare class ReactSchemaForm extends React.Component<JsonFormProps, {}> {
     static defaultProps: JsonFormProps;
     constructor(props: any);
-    render(): JSX.Element;
+    render(): React.JSX.Element;
 }
 export default ReactSchemaForm;

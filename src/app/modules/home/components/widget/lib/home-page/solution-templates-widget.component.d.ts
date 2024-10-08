@@ -30,5 +30,5 @@ export declare class SolutionTemplatesWidgetComponent extends PageComponent impl
     reload(): void;
     planText(level: SolutionTemplateLevel): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<SolutionTemplatesWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SolutionTemplatesWidgetComponent, "tb-solution-templates-widget", never, { "ctx": "ctx"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SolutionTemplatesWidgetComponent, "tb-solution-templates-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; }, {}, never, never, false, never>;
 }

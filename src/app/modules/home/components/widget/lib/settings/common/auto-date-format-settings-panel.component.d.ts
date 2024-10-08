@@ -26,5 +26,5 @@ export declare class AutoDateFormatSettingsPanelComponent extends PageComponent 
     cancel(): void;
     applyAutoDateFormatSettings(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AutoDateFormatSettingsPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AutoDateFormatSettingsPanelComponent, "tb-auto-date-format-settings-panel", never, { "autoDateFormatSettings": "autoDateFormatSettings"; "defaultValues": "defaultValues"; "popover": "popover"; }, { "autoDateFormatSettingsApplied": "autoDateFormatSettingsApplied"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AutoDateFormatSettingsPanelComponent, "tb-auto-date-format-settings-panel", never, { "autoDateFormatSettings": { "alias": "autoDateFormatSettings"; "required": false; }; "defaultValues": { "alias": "defaultValues"; "required": false; }; "popover": { "alias": "popover"; "required": false; }; }, { "autoDateFormatSettingsApplied": "autoDateFormatSettingsApplied"; }, never, never, false, never>;
 }

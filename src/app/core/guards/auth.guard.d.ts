@@ -1,5 +1,5 @@
 import { NgZone } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, Router, RouterStateSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot, Router, RouterStateSnapshot } from '@angular/router';
 import { AuthService } from '../auth/auth.service';
 import { Store } from '@ngrx/store';
 import { AppState } from '../core.state';
@@ -15,7 +15,7 @@ import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { MobileService } from '@core/services/mobile.service';
 import { ReportService } from '@core/http/report.service';
 import * as i0 from "@angular/core";
-export declare class AuthGuard implements CanActivate, CanActivateChild {
+export declare class AuthGuard {
     private store;
     private router;
     private authService;

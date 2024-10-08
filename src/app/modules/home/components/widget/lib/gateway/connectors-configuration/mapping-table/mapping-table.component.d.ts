@@ -47,7 +47,7 @@ export declare class MappingTableComponent implements ControlValueAccessor, Vali
     private getMappingValue;
     private setMappingColumns;
     static ɵfac: i0.ɵɵFactoryDeclaration<MappingTableComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MappingTableComponent, "tb-mapping-table", never, { "required": "required"; "mappingType": "mappingType"; }, {}, never, never, true, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MappingTableComponent, "tb-mapping-table", never, { "required": { "alias": "required"; "required": false; }; "mappingType": { "alias": "mappingType"; "required": false; }; }, {}, never, never, true, never>;
 }
 export declare class MappingDatasource extends TbTableDatasource<MappingValue> {
     constructor();

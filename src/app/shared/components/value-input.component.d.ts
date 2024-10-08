@@ -49,6 +49,6 @@ export declare class ValueInputComponent implements OnInit, OnDestroy, OnChanges
     private updateModelToValueType;
     private _computeLayout;
     static ɵfac: i0.ɵɵFactoryDeclaration<ValueInputComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ValueInputComponent, "tb-value-input", never, { "disabled": "disabled"; "requiredText": "requiredText"; "valueType": "valueType"; "trueLabel": "trueLabel"; "falseLabel": "falseLabel"; "layout": "layout"; "stringNotRequired": "stringNotRequired"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ValueInputComponent, "tb-value-input", never, { "disabled": { "alias": "disabled"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "valueType": { "alias": "valueType"; "required": false; }; "trueLabel": { "alias": "trueLabel"; "required": false; }; "falseLabel": { "alias": "falseLabel"; "required": false; }; "layout": { "alias": "layout"; "required": false; }; "stringNotRequired": { "alias": "stringNotRequired"; "required": false; }; }, {}, never, never, false, never>;
 }
 export {};

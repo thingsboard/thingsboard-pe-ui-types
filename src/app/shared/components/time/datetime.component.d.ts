@@ -25,5 +25,5 @@ export declare class DatetimeComponent implements OnInit, ControlValueAccessor {
     updateView(value: number | null): void;
     onDateChange(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DatetimeComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DatetimeComponent, "tb-datetime", never, { "required": "required"; "disabled": "disabled"; "dateText": "dateText"; "timeText": "timeText"; "showLabel": "showLabel"; "minDate": "minDate"; "maxDate": "maxDate"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DatetimeComponent, "tb-datetime", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "dateText": { "alias": "dateText"; "required": false; }; "timeText": { "alias": "timeText"; "required": false; }; "showLabel": { "alias": "showLabel"; "required": false; }; "minDate": { "alias": "minDate"; "required": false; }; "maxDate": { "alias": "maxDate"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -20,5 +20,5 @@ export declare class StatusWidgetStateSettingsComponent implements OnInit, OnCha
     private updateValidators;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<StatusWidgetStateSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<StatusWidgetStateSettingsComponent, "tb-status-widget-state-settings", never, { "disabled": "disabled"; "layout": "layout"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<StatusWidgetStateSettingsComponent, "tb-status-widget-state-settings", never, { "disabled": { "alias": "disabled"; "required": false; }; "layout": { "alias": "layout"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -12,12 +12,12 @@ export declare class GatewayServiceRPCConnectorTemplatesComponent implements OnI
     rpcTemplates: Array<RPCTemplate>;
     readonly originalOrder: () => number;
     readonly isObject: (value: unknown) => boolean;
-    readonly isArray: (value: unknown) => boolean;
+    readonly isArray: (value: unknown) => value is any[];
     readonly SNMPMethodsTranslations: Map<import("@home/components/widget/lib/gateway/gateway-widget.models").SNMPMethods, string>;
     constructor(attributeService: AttributeService);
     ngOnInit(): void;
     applyTemplate($event: Event, template: RPCTemplate): void;
     deleteTemplate($event: Event, template: RPCTemplate): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<GatewayServiceRPCConnectorTemplatesComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<GatewayServiceRPCConnectorTemplatesComponent, "tb-gateway-service-rpc-connector-templates", never, { "connectorType": "connectorType"; "ctx": "ctx"; "rpcTemplates": "rpcTemplates"; }, { "saveTemplate": "saveTemplate"; "useTemplate": "useTemplate"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GatewayServiceRPCConnectorTemplatesComponent, "tb-gateway-service-rpc-connector-templates", never, { "connectorType": { "alias": "connectorType"; "required": false; }; "ctx": { "alias": "ctx"; "required": false; }; "rpcTemplates": { "alias": "rpcTemplates"; "required": false; }; }, { "saveTemplate": "saveTemplate"; "useTemplate": "useTemplate"; }, never, never, false, never>;
 }

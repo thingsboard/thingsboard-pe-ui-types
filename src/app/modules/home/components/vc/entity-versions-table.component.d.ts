@@ -77,7 +77,7 @@ export declare class EntityVersionsTableComponent extends PageComponent implemen
     updateData(): void;
     private resetSortAndFilter;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityVersionsTableComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityVersionsTableComponent, "tb-entity-versions-table", never, { "singleEntityMode": "singleEntityMode"; "popoverComponent": "popoverComponent"; "onBeforeCreateVersion": "onBeforeCreateVersion"; "active": "active"; "externalEntityId": "externalEntityId"; "entityId": "entityId"; "groupType": "groupType"; "entityName": "entityName"; }, { "versionRestored": "versionRestored"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityVersionsTableComponent, "tb-entity-versions-table", never, { "singleEntityMode": { "alias": "singleEntityMode"; "required": false; }; "popoverComponent": { "alias": "popoverComponent"; "required": false; }; "onBeforeCreateVersion": { "alias": "onBeforeCreateVersion"; "required": false; }; "active": { "alias": "active"; "required": false; }; "externalEntityId": { "alias": "externalEntityId"; "required": false; }; "entityId": { "alias": "entityId"; "required": false; }; "groupType": { "alias": "groupType"; "required": false; }; "entityName": { "alias": "entityName"; "required": false; }; }, { "versionRestored": "versionRestored"; }, never, never, false, never>;
 }
 declare class EntityVersionsDatasource implements DataSource<EntityVersion> {
     private entitiesVersionControlService;

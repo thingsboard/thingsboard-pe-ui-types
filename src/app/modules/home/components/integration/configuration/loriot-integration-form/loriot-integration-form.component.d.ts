@@ -30,5 +30,5 @@ export declare class LoriotIntegrationFormComponent extends IntegrationForm impl
     private updateEnableFields;
     updatedValidationPrivateNetwork(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<LoriotIntegrationFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<LoriotIntegrationFormComponent, "tb-loriot-integration-form", never, { "routingKey": "routingKey"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<LoriotIntegrationFormComponent, "tb-loriot-integration-form", never, { "routingKey": { "alias": "routingKey"; "required": false; }; }, {}, never, never, false, never>;
 }

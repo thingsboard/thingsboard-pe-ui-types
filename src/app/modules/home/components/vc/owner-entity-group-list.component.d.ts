@@ -37,5 +37,5 @@ export declare class OwnerEntityGroupListComponent extends PageComponent impleme
     addOwnerEntityGroup(): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<OwnerEntityGroupListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<OwnerEntityGroupListComponent, "tb-owner-entity-group-list", never, { "disabled": "disabled"; "entityType": "entityType"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<OwnerEntityGroupListComponent, "tb-owner-entity-group-list", never, { "disabled": { "alias": "disabled"; "required": false; }; "entityType": { "alias": "entityType"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -27,7 +27,7 @@ export interface CircleData {
 }
 export type GenericFunction = (data: FormattedData, dsData: FormattedData[], dsIndex: number) => string;
 export type MarkerImageFunction = (data: FormattedData, markerImages: string[], dsData: FormattedData[], dsIndex: number) => MarkerImageInfo;
-export type PosFunction = (origXPos: any, origYPos: any, data: FormattedData, dsData: FormattedData[], dsIndex: number, aspect: number) => {
+export type PosFunction = (origXPos: number, origYPos: number, data: FormattedData, dsData: FormattedData[], dsIndex: number, aspect: number) => {
     x: number;
     y: number;
 };

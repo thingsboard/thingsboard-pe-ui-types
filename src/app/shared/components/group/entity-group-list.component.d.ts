@@ -65,5 +65,5 @@ export declare class EntityGroupListComponent implements ControlValueAccessor, O
     entityGroupEnter($event: KeyboardEvent): void;
     createEntityGroup($event: Event, groupName: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityGroupListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupListComponent, "tb-entity-group-list", never, { "groupType": "groupType"; "ownerId": "ownerId"; "excludeGroupAll": "excludeGroupAll"; "labelText": "labelText"; "required": "required"; "useGroupInfoValue": "useGroupInfoValue"; "createGroupFunction": "createGroupFunction"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupListComponent, "tb-entity-group-list", never, { "groupType": { "alias": "groupType"; "required": false; }; "ownerId": { "alias": "ownerId"; "required": false; }; "excludeGroupAll": { "alias": "excludeGroupAll"; "required": false; }; "labelText": { "alias": "labelText"; "required": false; }; "required": { "alias": "required"; "required": false; }; "useGroupInfoValue": { "alias": "useGroupInfoValue"; "required": false; }; "createGroupFunction": { "alias": "createGroupFunction"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

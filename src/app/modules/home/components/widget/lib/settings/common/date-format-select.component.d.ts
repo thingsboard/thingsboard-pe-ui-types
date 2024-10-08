@@ -33,5 +33,5 @@ export declare class DateFormatSelectComponent implements OnInit, ControlValueAc
     openDateFormatSettingsPopup($event: Event, matButton: MatButton): void;
     openAutoFormatSettingsPopup($event: Event, matButton: MatButton): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DateFormatSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DateFormatSelectComponent, "tb-date-format-select", never, { "disabled": "disabled"; "excludeLastUpdateAgo": "excludeLastUpdateAgo"; "includeAuto": "includeAuto"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DateFormatSelectComponent, "tb-date-format-select", never, { "disabled": { "alias": "disabled"; "required": false; }; "excludeLastUpdateAgo": { "alias": "excludeLastUpdateAgo"; "required": false; }; "includeAuto": { "alias": "includeAuto"; "required": false; }; }, {}, never, never, false, never>;
 }

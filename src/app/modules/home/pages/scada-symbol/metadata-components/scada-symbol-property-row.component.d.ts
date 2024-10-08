@@ -45,5 +45,5 @@ export declare class ScadaSymbolPropertyRowComponent implements ControlValueAcce
     private onTypeChanged;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<ScadaSymbolPropertyRowComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ScadaSymbolPropertyRowComponent, "tb-scada-symbol-metadata-property-row", never, { "disabled": "disabled"; "index": "index"; "booleanPropertyIds": "booleanPropertyIds"; }, { "propertyRemoved": "propertyRemoved"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ScadaSymbolPropertyRowComponent, "tb-scada-symbol-metadata-property-row", never, { "disabled": { "alias": "disabled"; "required": false; }; "index": { "alias": "index"; "required": false; }; "booleanPropertyIds": { "alias": "booleanPropertyIds"; "required": false; }; }, { "propertyRemoved": "propertyRemoved"; }, never, never, false, never>;
 }

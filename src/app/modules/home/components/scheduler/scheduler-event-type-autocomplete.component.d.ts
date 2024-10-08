@@ -46,6 +46,6 @@ export declare class SchedulerEventTypeAutocompleteComponent implements ControlV
     fetchSchedulerEventTypes(searchText?: string): Observable<Array<SchedulerEventTypeInfo>>;
     clear(value?: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SchedulerEventTypeAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SchedulerEventTypeAutocompleteComponent, "tb-scheduler-event-type-autocomplete", never, { "required": "required"; "disabled": "disabled"; "schedulerEventConfigTypes": "schedulerEventConfigTypes"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SchedulerEventTypeAutocompleteComponent, "tb-scheduler-event-type-autocomplete", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "schedulerEventConfigTypes": { "alias": "schedulerEventConfigTypes"; "required": false; }; }, {}, never, never, false, never>;
 }
 export {};

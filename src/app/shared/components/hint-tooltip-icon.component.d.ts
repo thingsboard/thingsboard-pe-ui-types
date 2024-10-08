@@ -5,5 +5,5 @@ export declare class HintTooltipIconComponent {
     tooltipPosition: TooltipPosition;
     hintIcon: string;
     static ɵfac: i0.ɵɵFactoryDeclaration<HintTooltipIconComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<HintTooltipIconComponent, "[tb-hint-tooltip-icon]", never, { "tooltipText": "tb-hint-tooltip-icon"; "tooltipPosition": "tooltipPosition"; "hintIcon": "hintIcon"; }, {}, never, ["*"], false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<HintTooltipIconComponent, "[tb-hint-tooltip-icon]", never, { "tooltipText": { "alias": "tb-hint-tooltip-icon"; "required": false; }; "tooltipPosition": { "alias": "tooltipPosition"; "required": false; }; "hintIcon": { "alias": "hintIcon"; "required": false; }; }, {}, never, ["*"], false, never>;
 }

@@ -28,7 +28,7 @@ export declare class MappingDialogComponent extends DialogComponent<MappingDialo
     ConvertorTypeEnum: typeof ConvertorType;
     ConvertorTypeTranslationsMap: Map<ConvertorType, string>;
     sourceTypes: SourceType[];
-    OPCUaSourceTypes: OPCUaSourceType[];
+    OPCUaSourceTypes: Array<OPCUaSourceType>;
     OPCUaSourceTypesEnum: typeof OPCUaSourceType;
     sourceTypesEnum: typeof SourceType;
     SourceTypeTranslationsMap: Map<SourceType | OPCUaSourceType, string>;

@@ -47,5 +47,5 @@ export declare class ValueChartCardWidgetComponent implements OnInit, AfterViewI
     private onResize;
     private setValueFontSize;
     static ɵfac: i0.ɵɵFactoryDeclaration<ValueChartCardWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ValueChartCardWidgetComponent, "tb-value-chart-card-widget", never, { "ctx": "ctx"; "widgetTitlePanel": "widgetTitlePanel"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ValueChartCardWidgetComponent, "tb-value-chart-card-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; }, {}, never, never, false, never>;
 }

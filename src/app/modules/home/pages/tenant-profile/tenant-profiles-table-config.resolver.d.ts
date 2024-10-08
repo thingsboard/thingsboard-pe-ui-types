@@ -1,4 +1,4 @@
-import { Resolve, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { TenantProfile } from '@shared/models/tenant.model';
 import { EntityTableConfig, HeaderActionDescriptor } from '@home/models/entity/entities-table-config.models';
 import { TranslateService } from '@ngx-translate/core';
@@ -10,7 +10,7 @@ import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { UtilsService } from '@core/services/utils.service';
 import { ImportExportService } from '@shared/import-export/import-export.service';
 import * as i0 from "@angular/core";
-export declare class TenantProfilesTableConfigResolver implements Resolve<EntityTableConfig<TenantProfile>> {
+export declare class TenantProfilesTableConfigResolver {
     private tenantProfileService;
     private importExport;
     private translate;

@@ -50,6 +50,6 @@ export declare class TargetSelectComponent implements ControlValueAccessor, OnDe
     deviceLoaded(device: any): void;
     updateView(value: FormValue | null): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TargetSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TargetSelectComponent, "tb-target-select", never, { "required": "required"; "disabled": "disabled"; }, { "currentEntity": "currentEntity"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TargetSelectComponent, "tb-target-select", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, { "currentEntity": "currentEntity"; }, never, never, false, never>;
 }
 export {};

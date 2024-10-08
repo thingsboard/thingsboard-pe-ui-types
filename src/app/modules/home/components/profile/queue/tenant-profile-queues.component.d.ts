@@ -33,5 +33,5 @@ export declare class TenantProfileQueuesComponent implements ControlValueAccesso
     validate(c: AbstractControl): ValidationErrors | null;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<TenantProfileQueuesComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TenantProfileQueuesComponent, "tb-tenant-profile-queues", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TenantProfileQueuesComponent, "tb-tenant-profile-queues", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

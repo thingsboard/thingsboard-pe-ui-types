@@ -22,5 +22,5 @@ export declare class TenantProfileComponent extends EntityComponent<TenantProfil
     updateFormState(): void;
     onTenantProfileIdCopied(event: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TenantProfileComponent, [null, null, { optional: true; }, { optional: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TenantProfileComponent, "tb-tenant-profile", never, { "standalone": "standalone"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TenantProfileComponent, "tb-tenant-profile", never, { "standalone": { "alias": "standalone"; "required": false; }; }, {}, never, never, false, never>;
 }

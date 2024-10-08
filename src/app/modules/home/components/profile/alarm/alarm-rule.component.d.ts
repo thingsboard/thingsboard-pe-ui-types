@@ -33,5 +33,5 @@ export declare class AlarmRuleComponent implements ControlValueAccessor, OnInit,
     get alarmDetailsText(): string;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<AlarmRuleComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmRuleComponent, "tb-alarm-rule", never, { "disabled": "disabled"; "required": "required"; "deviceProfileId": "deviceProfileId"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmRuleComponent, "tb-alarm-rule", never, { "disabled": { "alias": "disabled"; "required": false; }; "required": { "alias": "required"; "required": false; }; "deviceProfileId": { "alias": "deviceProfileId"; "required": false; }; }, {}, never, never, false, never>;
 }

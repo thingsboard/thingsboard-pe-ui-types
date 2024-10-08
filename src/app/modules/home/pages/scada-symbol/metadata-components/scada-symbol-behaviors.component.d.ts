@@ -39,5 +39,5 @@ export declare class ScadaSymbolBehaviorsComponent implements ControlValueAccess
     addBehavior(): void;
     private prepareBehaviorsFormArray;
     static ɵfac: i0.ɵɵFactoryDeclaration<ScadaSymbolBehaviorsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ScadaSymbolBehaviorsComponent, "tb-scada-symbol-metadata-behaviors", never, { "aliasController": "aliasController"; "callbacks": "callbacks"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ScadaSymbolBehaviorsComponent, "tb-scada-symbol-metadata-behaviors", never, { "aliasController": { "alias": "aliasController"; "required": false; }; "callbacks": { "alias": "callbacks"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

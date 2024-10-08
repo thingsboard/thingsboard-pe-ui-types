@@ -32,5 +32,5 @@ export declare class DeviceInfoTableComponent extends PageComponent implements C
     validate(): ValidationErrors | null;
     updateView(value: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceInfoTableComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceInfoTableComponent, "tb-device-info-table", never, { "useSource": "useSource"; "required": "required"; "sourceTypes": "sourceTypes"; "deviceInfoType": "deviceInfoType"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceInfoTableComponent, "tb-device-info-table", never, { "useSource": { "alias": "useSource"; "required": false; }; "required": { "alias": "required"; "required": false; }; "sourceTypes": { "alias": "sourceTypes"; "required": false; }; "deviceInfoType": { "alias": "deviceInfoType"; "required": false; }; }, {}, never, never, false, never>;
 }

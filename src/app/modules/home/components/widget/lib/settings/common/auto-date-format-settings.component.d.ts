@@ -20,5 +20,5 @@ export declare class AutoDateFormatSettingsComponent implements OnInit, ControlV
     writeValue(value: AutoDateFormatSettings): void;
     openAutoFormatSettingsPopup($event: Event, matButton: MatButton): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AutoDateFormatSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AutoDateFormatSettingsComponent, "tb-auto-date-format-settings", never, { "disabled": "disabled"; "defaultValues": "defaultValues"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AutoDateFormatSettingsComponent, "tb-auto-date-format-settings", never, { "disabled": { "alias": "disabled"; "required": false; }; "defaultValues": { "alias": "defaultValues"; "required": false; }; }, {}, never, never, false, never>;
 }

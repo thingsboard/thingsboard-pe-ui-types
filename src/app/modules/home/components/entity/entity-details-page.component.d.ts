@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, ComponentFactoryResolver, Injector, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Injector, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
@@ -17,7 +17,6 @@ export declare class EntityDetailsPageComponent extends EntityDetailsPanelCompon
     private router;
     protected injector: Injector;
     protected cd: ChangeDetectorRef;
-    protected componentFactoryResolver: ComponentFactoryResolver;
     private broadcast;
     private translate;
     private dialogService;
@@ -30,7 +29,7 @@ export declare class EntityDetailsPageComponent extends EntityDetailsPanelCompon
     set entitiesTableConfig(entitiesTableConfig: EntityTableConfig<BaseData<HasId>>);
     get entitiesTableConfig(): EntityTableConfig<BaseData<HasId>>;
     'tb-absolute-fill': any;
-    constructor(route: ActivatedRoute, router: Router, injector: Injector, cd: ChangeDetectorRef, componentFactoryResolver: ComponentFactoryResolver, broadcast: BroadcastService, translate: TranslateService, dialogService: DialogService, store: Store<AppState>);
+    constructor(route: ActivatedRoute, router: Router, injector: Injector, cd: ChangeDetectorRef, broadcast: BroadcastService, translate: TranslateService, dialogService: DialogService, store: Store<AppState>);
     ngOnInit(): void;
     ngOnDestroy(): void;
     reload(): void;

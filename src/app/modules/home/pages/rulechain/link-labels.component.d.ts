@@ -56,5 +56,5 @@ export declare class LinkLabelsComponent implements ControlValueAccessor, OnInit
     clear(value?: string): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<LinkLabelsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<LinkLabelsComponent, "tb-link-labels", never, { "required": "required"; "disabled": "disabled"; "allowCustom": "allowCustom"; "allowedLabels": "allowedLabels"; "sourceRuleChainId": "sourceRuleChainId"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<LinkLabelsComponent, "tb-link-labels", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "allowCustom": { "alias": "allowCustom"; "required": false; }; "allowedLabels": { "alias": "allowedLabels"; "required": false; }; "sourceRuleChainId": { "alias": "sourceRuleChainId"; "required": false; }; }, {}, never, never, false, never>;
 }

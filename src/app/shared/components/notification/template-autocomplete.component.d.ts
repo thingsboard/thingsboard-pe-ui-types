@@ -52,5 +52,5 @@ export declare class TemplateAutocompleteComponent implements ControlValueAccess
     private fetchTemplate;
     private reset;
     static ɵfac: i0.ɵɵFactoryDeclaration<TemplateAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TemplateAutocompleteComponent, "tb-template-autocomplete", never, { "required": "required"; "allowCreate": "allowCreate"; "allowEdit": "allowEdit"; "disabled": "disabled"; "notificationTypes": "notificationTypes"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TemplateAutocompleteComponent, "tb-template-autocomplete", never, { "required": { "alias": "required"; "required": false; }; "allowCreate": { "alias": "allowCreate"; "required": false; }; "allowEdit": { "alias": "allowEdit"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "notificationTypes": { "alias": "notificationTypes"; "required": false; }; }, {}, never, never, false, never>;
 }

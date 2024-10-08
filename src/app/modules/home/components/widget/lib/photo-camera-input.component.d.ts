@@ -66,5 +66,5 @@ export declare class PhotoCameraInputWidgetComponent extends PageComponent imple
     private inititedVideoStream;
     get textMessage(): "" | "widgets.input-widgets.enable-https-use-widget" | "widgets.input-widgets.no-support-web-camera" | "widgets.input-widgets.no-entity-selected" | "widgets.input-widgets.no-datakey-selected" | "widgets.input-widgets.no-found-your-camera" | "widgets.input-widgets.no-permission-camera";
     static ɵfac: i0.ɵɵFactoryDeclaration<PhotoCameraInputWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PhotoCameraInputWidgetComponent, "tb-photo-camera-widget", never, { "ctx": "ctx"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PhotoCameraInputWidgetComponent, "tb-photo-camera-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; }, {}, never, never, false, never>;
 }

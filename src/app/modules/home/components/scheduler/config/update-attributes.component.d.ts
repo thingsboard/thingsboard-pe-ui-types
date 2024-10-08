@@ -32,5 +32,5 @@ export declare class UpdateAttributesComponent implements ControlValueAccessor, 
     private prepareInputConfig;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<UpdateAttributesComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<UpdateAttributesComponent, "tb-update-attributes-event-config", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<UpdateAttributesComponent, "tb-update-attributes-event-config", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

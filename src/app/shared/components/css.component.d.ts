@@ -44,5 +44,5 @@ export declare class CssComponent implements OnInit, OnDestroy, ControlValueAcce
     writeValue(value: string): void;
     updateView(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<CssComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CssComponent, "tb-css", never, { "label": "label"; "disabled": "disabled"; "fillHeight": "fillHeight"; "required": "required"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CssComponent, "tb-css", never, { "label": { "alias": "label"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "fillHeight": { "alias": "fillHeight"; "required": false; }; "required": { "alias": "required"; "required": false; }; }, {}, never, never, false, never>;
 }

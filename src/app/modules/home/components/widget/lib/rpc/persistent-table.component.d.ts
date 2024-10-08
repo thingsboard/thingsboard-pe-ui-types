@@ -78,7 +78,7 @@ export declare class PersistentTableComponent extends PageComponent implements O
     onActionButtonClick($event: Event, persistentRpc: PersistentRpc, actionDescriptor: PersistentTableWidgetActionDescriptor): void;
     private editFilter;
     static ɵfac: i0.ɵɵFactoryDeclaration<PersistentTableComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PersistentTableComponent, "tb-persistent-table-widget", never, { "ctx": "ctx"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PersistentTableComponent, "tb-persistent-table-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; }, {}, never, never, false, never>;
 }
 declare class PersistentDatasource implements DataSource<PersistentRpcData> {
     private translate;

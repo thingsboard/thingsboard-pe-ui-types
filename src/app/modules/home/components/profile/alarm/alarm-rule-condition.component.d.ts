@@ -32,5 +32,5 @@ export declare class AlarmRuleConditionComponent implements ControlValueAccessor
     private updateSpecText;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<AlarmRuleConditionComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmRuleConditionComponent, "tb-alarm-rule-condition", never, { "disabled": "disabled"; "deviceProfileId": "deviceProfileId"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmRuleConditionComponent, "tb-alarm-rule-condition", never, { "disabled": { "alias": "disabled"; "required": false; }; "deviceProfileId": { "alias": "deviceProfileId"; "required": false; }; }, {}, never, never, false, never>;
 }

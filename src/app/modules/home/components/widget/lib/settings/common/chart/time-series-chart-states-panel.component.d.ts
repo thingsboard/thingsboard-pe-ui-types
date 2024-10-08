@@ -24,5 +24,5 @@ export declare class TimeSeriesChartStatesPanelComponent implements ControlValue
     addState(): void;
     private prepareStatesFormArray;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesChartStatesPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartStatesPanelComponent, "tb-time-series-chart-states-panel", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartStatesPanelComponent, "tb-time-series-chart-states-panel", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -1,4 +1,4 @@
-import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
+import { ActivatedRouteSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 import { TenantSolutionTemplateDetails, TenantSolutionTemplateInfo } from '@shared/models/solution-template.models';
 import { SolutionsService } from '@core/http/solutions.service';
@@ -6,14 +6,14 @@ import { SolutionTemplateDetailsComponent } from '@home/pages/solution-template/
 import { BreadCrumbLabelFunction } from '@shared/components/breadcrumb';
 import * as i0 from "@angular/core";
 import * as i1 from "@angular/router";
-export declare class SolutionTemplateInfosResolver implements Resolve<Array<TenantSolutionTemplateInfo>> {
+export declare class SolutionTemplateInfosResolver {
     private solutionService;
     constructor(solutionService: SolutionsService);
     resolve(): Observable<Array<TenantSolutionTemplateInfo>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<SolutionTemplateInfosResolver, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<SolutionTemplateInfosResolver>;
 }
-export declare class SolutionTemplateDetailsResolver implements Resolve<TenantSolutionTemplateDetails> {
+export declare class SolutionTemplateDetailsResolver {
     private solutionService;
     constructor(solutionService: SolutionsService);
     resolve(route: ActivatedRouteSnapshot): Observable<TenantSolutionTemplateDetails>;

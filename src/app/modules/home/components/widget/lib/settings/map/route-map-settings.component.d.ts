@@ -29,5 +29,5 @@ export declare class RouteMapSettingsComponent extends PageComponent implements 
     };
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<RouteMapSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RouteMapSettingsComponent, "tb-route-map-settings", never, { "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RouteMapSettingsComponent, "tb-route-map-settings", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

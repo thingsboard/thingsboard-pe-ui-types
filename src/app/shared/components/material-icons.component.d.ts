@@ -35,5 +35,5 @@ export declare class MaterialIconsComponent extends PageComponent implements OnI
     private calculatePanelSize;
     private checkSize;
     static ɵfac: i0.ɵɵFactoryDeclaration<MaterialIconsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MaterialIconsComponent, "tb-material-icons", never, { "selectedIcon": "selectedIcon"; "iconClearButton": "iconClearButton"; "popover": "popover"; }, { "iconSelected": "iconSelected"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MaterialIconsComponent, "tb-material-icons", never, { "selectedIcon": { "alias": "selectedIcon"; "required": false; }; "iconClearButton": { "alias": "iconClearButton"; "required": false; }; "popover": { "alias": "popover"; "required": false; }; }, { "iconSelected": "iconSelected"; }, never, never, false, never>;
 }

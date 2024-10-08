@@ -33,5 +33,5 @@ export declare class UsageInfoWidgetComponent extends PageComponent implements O
     progressValue(value: number, max: number): number;
     private isItemCritical;
     static ɵfac: i0.ɵɵFactoryDeclaration<UsageInfoWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<UsageInfoWidgetComponent, "tb-usage-info-widget", never, { "ctx": "ctx"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<UsageInfoWidgetComponent, "tb-usage-info-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; }, {}, never, never, false, never>;
 }

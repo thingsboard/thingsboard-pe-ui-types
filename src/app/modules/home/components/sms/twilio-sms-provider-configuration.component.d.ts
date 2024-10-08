@@ -22,5 +22,5 @@ export declare class TwilioSmsProviderConfigurationComponent implements ControlV
     writeValue(value: TwilioSmsProviderConfiguration | null): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<TwilioSmsProviderConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TwilioSmsProviderConfigurationComponent, "tb-twilio-sms-provider-configuration", never, { "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TwilioSmsProviderConfigurationComponent, "tb-twilio-sms-provider-configuration", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }
