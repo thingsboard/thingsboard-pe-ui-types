@@ -11,7 +11,7 @@ export declare class FlotWidgetComponent implements OnInit {
     legendConfig: LegendConfig;
     legendData: LegendData;
     isLegendFirst: boolean;
-    legendContainerLayoutType: string;
+    legendContainerLayoutType: 'flex-row' | 'flex-col';
     legendStyle: {
         [klass: string]: any;
     };

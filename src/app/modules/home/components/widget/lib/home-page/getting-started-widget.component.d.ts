@@ -24,6 +24,7 @@ export declare class GettingStartedWidgetComponent extends PageComponent impleme
     gettingStarted: GettingStarted;
     allCompleted: boolean;
     helpBaseUrl: string;
+    docsLink: string;
     baseUrl: string;
     constructor(store: Store<AppState>, cd: ChangeDetectorRef, userSettingsService: UserSettingsService, wl: WhiteLabelingService, dialog: MatDialog);
     ngOnInit(): void;

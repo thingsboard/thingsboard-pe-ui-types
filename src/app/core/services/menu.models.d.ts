@@ -80,6 +80,7 @@ export declare enum MenuId {
     devices = "devices",
     assets = "assets",
     entity_views = "entity_views",
+    gateways = "gateways",
     profiles = "profiles",
     device_profiles = "device_profiles",
     asset_profiles = "asset_profiles",

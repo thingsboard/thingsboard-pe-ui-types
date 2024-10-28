@@ -64,7 +64,6 @@ export declare class ImageGalleryComponent extends PageComponent implements OnIn
     gridImagesFilter: GridImagesFilter;
     gridImagesItemSizeStrategy: ItemSizeStrategy;
     authUser: import("../../public-api").AuthUser;
-    actionColumnWidth: string;
     get isScada(): boolean;
     private updateDataSubscription;
     private widgetResize$;

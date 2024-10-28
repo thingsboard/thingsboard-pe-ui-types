@@ -33,6 +33,7 @@ export declare class ResourcesService {
     downloadResource(downloadUrl: string, config?: RequestConfig): Observable<any>;
     loadModulesWithComponents(resourceId: string | TbResourceId, modulesMap: IModulesMap): Observable<ModulesWithComponents>;
     private extractModulesWithComponents;
+    private patchModulesWithFlexLayout;
     private loadResourceByType;
     private getDownloadUrl;
     private getMetaInfo;

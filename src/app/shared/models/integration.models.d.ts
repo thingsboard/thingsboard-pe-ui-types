@@ -426,7 +426,6 @@ export interface RabbitMqIntegration {
         password: string;
         downlinkTopic: string;
         queues: string;
-        routingKeys: string;
         connectionTimeout: number;
         handshakeTimeout: number;
         pollPeriod: number;

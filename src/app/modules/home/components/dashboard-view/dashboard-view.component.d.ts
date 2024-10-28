@@ -4,11 +4,11 @@ import { PageComponent } from '@shared/components/page.component';
 import { Dashboard } from '@shared/models/dashboard.models';
 import { ActivatedRoute } from '@angular/router';
 import * as i0 from "@angular/core";
-export declare class ApiUsageComponent extends PageComponent {
+export declare class DashboardViewComponent extends PageComponent {
     protected store: Store<AppState>;
     private route;
-    apiUsageDashboard: Dashboard;
+    dashboard: Dashboard;
     constructor(store: Store<AppState>, route: ActivatedRoute);
-    static ɵfac: i0.ɵɵFactoryDeclaration<ApiUsageComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ApiUsageComponent, "tb-api-usage", never, {}, {}, never, never, false, never>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<DashboardViewComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardViewComponent, "tb-dashboard-view", never, {}, {}, never, never, false, never>;
 }

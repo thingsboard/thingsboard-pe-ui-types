@@ -42,10 +42,7 @@ export declare class DashboardUtilsService {
     private getBreakpointLayoutData;
     getWidgetsArray(dashboard: Dashboard): Array<Widget>;
     isEmptyDashboard(dashboard: Dashboard): boolean;
-    addWidgetToLayout(dashboard: Dashboard, targetState: string, targetLayout: DashboardLayoutId, widget: Widget, originalColumns?: number, originalSize?: {
-        sizeX: number;
-        sizeY: number;
-    }, row?: number, column?: number, breakpoint?: string): void;
+    addWidgetToLayout(dashboard: Dashboard, targetState: string, targetLayout: DashboardLayoutId, widget: Widget, originalColumns?: number, originalSize?: WidgetSize, row?: number, column?: number, breakpoint?: string): void;
     removeWidgetFromLayout(dashboard: Dashboard, targetState: string, targetLayout: DashboardLayoutId, widgetId: string, breakpoint: BreakpointId): void;
     isSingleLayoutDashboard(dashboard: Dashboard): {
         state: string;

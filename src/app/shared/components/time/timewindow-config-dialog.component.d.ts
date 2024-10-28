@@ -23,7 +23,6 @@ export declare class TimewindowConfigDialogComponent extends PageComponent imple
     private translate;
     quickIntervalOnly: boolean;
     aggregation: boolean;
-    timewindow: Timewindow;
     timewindowForm: FormGroup;
     historyTypes: typeof HistoryWindowType;
     realtimeTypes: typeof RealtimeWindowType;
@@ -36,6 +35,7 @@ export declare class TimewindowConfigDialogComponent extends PageComponent imple
     realtimeTimewindowOptions: ToggleHeaderOption[];
     historyTimewindowOptions: ToggleHeaderOption[];
     realtimeTypeSelectionAvailable: boolean;
+    private timewindow;
     private destroy$;
     constructor(data: TimewindowConfigDialogData, dialogRef: MatDialogRef<TimewindowConfigDialogComponent, Timewindow>, store: Store<AppState>, fb: FormBuilder, timeService: TimeService, translate: TranslateService);
     ngOnInit(): void;

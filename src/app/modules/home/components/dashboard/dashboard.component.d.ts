@@ -116,7 +116,7 @@ export declare class DashboardComponent extends PageComponent implements IDashbo
     highlightWidget(widgetId: string, delay?: number): void;
     selectWidget(widgetId: string, delay?: number): void;
     getSelectedWidget(): Widget;
-    getEventGridPosition(event: Event): WidgetPosition;
+    getEventGridPosition(event: TbContextMenuEvent | KeyboardEvent): WidgetPosition;
     resetHighlight(): void;
     private scrollToWidget;
     private onGridsterParentResize;

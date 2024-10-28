@@ -56,6 +56,7 @@ export declare class WhiteLabelingService {
     getAccentPalette(): ColorPalette;
     getLoginPrimaryPalette(): ColorPalette;
     getLoginAccentPalette(): ColorPalette;
+    getDocsUrl(): string;
     getHelpLinkBaseUrl(): string;
     getHelpLinkBaseUrl$(): Observable<string>;
     getUiHelpBaseUrl(): string;

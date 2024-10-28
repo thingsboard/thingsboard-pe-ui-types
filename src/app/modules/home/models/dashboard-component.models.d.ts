@@ -9,6 +9,7 @@ import { IAliasController, IStateController } from '@app/core/api/widget-api.mod
 import { UtilsService } from '@core/services/utils.service';
 import { TbPopoverComponent } from '@shared/components/popover.component';
 import { ComponentStyle } from '@shared/models/widget-settings.models';
+import { TbContextMenuEvent } from '@shared/models/jquery-event.models';
 export interface WidgetsData {
     widgets: Array<Widget>;
     widgetLayouts?: WidgetLayouts;
@@ -20,10 +21,10 @@ export interface ContextMenuItem {
     value: string;
 }
 export interface DashboardContextMenuItem extends ContextMenuItem {
-    action: (contextMenuEvent: MouseEvent) => void;
+    action: (contextMenuEvent: TbContextMenuEvent) => void;
 }
 export interface WidgetContextMenuItem extends ContextMenuItem {
-    action: (contextMenuEvent: MouseEvent, widget: Widget) => void;
+    action: (contextMenuEvent: TbContextMenuEvent, widget: Widget) => void;
 }
 export interface DashboardCallbacks {
     onEditWidget?: ($event: Event, widget: Widget) => void;
@@ -55,7 +56,7 @@ export interface IDashboardComponent {
     highlightWidget(widgetId: string, delay?: number): any;
     selectWidget(widgetId: string, delay?: number): any;
     getSelectedWidget(): Widget;
-    getEventGridPosition(event: Event): WidgetPosition;
+    getEventGridPosition(event: TbContextMenuEvent | KeyboardEvent): WidgetPosition;
     notifyGridsterOptionsChanged(): any;
     pauseChangeNotifications(): any;
     resumeChangeNotifications(): any;

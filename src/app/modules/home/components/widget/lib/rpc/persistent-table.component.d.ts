@@ -77,6 +77,7 @@ export declare class PersistentTableComponent extends PageComponent implements O
     private sendRequests;
     onActionButtonClick($event: Event, persistentRpc: PersistentRpc, actionDescriptor: PersistentTableWidgetActionDescriptor): void;
     private editFilter;
+    protected readonly rpcStatusColorsMap: Map<RpcStatus, string>;
     static ɵfac: i0.ɵɵFactoryDeclaration<PersistentTableComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<PersistentTableComponent, "tb-persistent-table-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; }, {}, never, never, false, never>;
 }

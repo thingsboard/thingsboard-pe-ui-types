@@ -36,7 +36,7 @@ export declare class DeviceCheckConnectivityDialogComponent extends DialogCompon
     showDontShowAgain: boolean;
     dialogTitle: string;
     notShowAgain: boolean;
-    helpBaseUrl: string;
+    docsLink: string;
     httpTabIndex: number;
     mqttTabIndex: number;
     coapTabIndex: number;

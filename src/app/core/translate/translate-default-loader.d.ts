@@ -7,6 +7,7 @@ export declare class TranslateDefaultLoader implements TranslateLoader {
     isAuthenticated: boolean;
     constructor(http: HttpClient);
     getTranslation(lang: string): Observable<object>;
+    private loadSystemLang;
     static ɵfac: i0.ɵɵFactoryDeclaration<TranslateDefaultLoader, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<TranslateDefaultLoader>;
 }
