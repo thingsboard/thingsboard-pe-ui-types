@@ -5,6 +5,7 @@ import { AfterViewInit, ChangeDetectorRef, OnDestroy, OnInit, TemplateRef } from
 import { DataToValueSettings, GetAttributeValueSettings, GetValueSettings, SetValueSettings, TelemetryValueSettings, ValueActionSettings, ValueToDataSettings } from '@shared/models/action-widget-settings.models';
 import { ValueType } from '@shared/models/constants';
 import { EntityId } from '@shared/models/id/entity-id';
+import { HttpClient } from '@angular/common/http';
 import * as i0 from "@angular/core";
 export declare abstract class BasicActionWidgetComponent implements OnInit, OnDestroy, AfterViewInit {
     protected cd: ChangeDetectorRef;
@@ -28,12 +29,13 @@ export declare abstract class BasicActionWidgetComponent implements OnInit, OnDe
     static ɵdir: i0.ɵɵDirectiveDeclaration<BasicActionWidgetComponent, never, never, { "ctx": { "alias": "ctx"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; }, {}, never, never, false, never>;
 }
 export declare class DataToValueConverter<V> {
+    private http;
     private settings;
     private valueType;
-    private readonly dataToValueFunction;
+    private readonly dataToValueFunction$;
     private readonly compareToValue;
-    constructor(settings: DataToValueSettings, valueType: ValueType);
-    dataToValue(data: any): V;
+    constructor(http: HttpClient, settings: DataToValueSettings, valueType: ValueType);
+    dataToValue(data: any): Observable<V>;
 }
 export declare abstract class ValueAction {
     protected ctx: WidgetContext;
@@ -57,11 +59,12 @@ export declare abstract class ValueGetter<V> extends ValueAction {
     protected abstract doGetValue(): Observable<any>;
 }
 export declare class ValueToDataConverter<V> {
-    protected settings: ValueToDataSettings;
+    private http;
+    private settings;
     private readonly constantValue;
-    private readonly valueToDataFunction;
-    constructor(settings: ValueToDataSettings);
-    valueToData(value: V): any;
+    private readonly valueToDataFunction$;
+    constructor(http: HttpClient, settings: ValueToDataSettings);
+    valueToData(value: V): Observable<any>;
 }
 export declare abstract class ValueSetter<V> extends ValueAction {
     protected ctx: WidgetContext;
@@ -126,6 +129,19 @@ export declare class TimeSeriesValueGetter<V> extends TelemetryValueGetter<V, Te
     protected simulated: boolean;
     constructor(ctx: WidgetContext, settings: GetValueSettings<V>, valueType: ValueType, valueObserver: Partial<Observer<V>>, simulated: boolean);
     protected getTelemetryValueSettings(): TelemetryValueSettings;
+}
+export declare class AlarmStatusValueGetter<V> extends ValueGetter<V> {
+    protected ctx: WidgetContext;
+    protected settings: GetValueSettings<V>;
+    protected valueType: ValueType;
+    protected valueObserver: Partial<Observer<V>>;
+    protected simulated: boolean;
+    protected targetEntityId: EntityId;
+    private telemetrySubscriber;
+    constructor(ctx: WidgetContext, settings: GetValueSettings<V>, valueType: ValueType, valueObserver: Partial<Observer<V>>, simulated: boolean);
+    protected doGetValue(): Observable<boolean>;
+    private subscribeForTelemetryValue;
+    destroy(): void;
 }
 export declare class DashboardStateGetter<V> extends ValueGetter<V> {
     protected ctx: WidgetContext;

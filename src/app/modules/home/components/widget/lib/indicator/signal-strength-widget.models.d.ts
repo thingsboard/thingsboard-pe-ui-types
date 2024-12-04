@@ -29,4 +29,4 @@ export interface SignalStrengthWidgetSettings {
     padding: string;
 }
 export declare const signalStrengthDefaultSettings: SignalStrengthWidgetSettings;
-export declare const signalBarActive: (rssi: number, index: number) => boolean;
+export declare const signalBarActive: (rssi: number, index: number, minSignal: number) => boolean;

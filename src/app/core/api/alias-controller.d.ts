@@ -30,6 +30,12 @@ export declare class AliasController implements IAliasController {
     resolvedAliasesObservable: {
         [aliasId: string]: Observable<AliasInfo>;
     };
+    resolvedDevices: {
+        [deviceId: string]: EntityInfo;
+    };
+    resolvedDevicesObservable: {
+        [deviceId: string]: Observable<EntityInfo>;
+    };
     resolvedAliasesToStateEntities: {
         [aliasId: string]: StateEntityInfo;
     };

@@ -1,6 +1,7 @@
 import { TimeService } from '@core/services/time.service';
 import moment_ from 'moment';
 import { IntervalType } from '@shared/models/telemetry/telemetry.models';
+import { FormGroup } from '@angular/forms';
 export declare const SECOND = 1000;
 export declare const MINUTE: number;
 export declare const HOUR: number;
@@ -32,6 +33,20 @@ export declare class IntervalMath {
     static min(...values: Interval[]): Interval;
     static numberValue(value: Interval): number;
 }
+export interface TimewindowAdvancedParams {
+    allowedLastIntervals?: Array<Interval>;
+    allowedQuickIntervals?: Array<QuickTimeInterval>;
+    lastAggIntervalsConfig?: TimewindowAggIntervalsConfig;
+    quickAggIntervalsConfig?: TimewindowAggIntervalsConfig;
+}
+export type TimewindowInterval = Interval | QuickTimeInterval;
+export interface TimewindowAggIntervalsConfig {
+    [key: string]: TimewindowAggIntervalOptions;
+}
+export interface TimewindowAggIntervalOptions {
+    aggIntervals?: Array<Interval>;
+    defaultAggInterval?: Interval;
+}
 export interface IntervalWindow {
     interval?: Interval;
     timewindowMs?: number;
@@ -42,6 +57,7 @@ export interface IntervalWindow {
     hideLastInterval?: boolean;
     hideQuickInterval?: boolean;
     hideFixedInterval?: boolean;
+    advancedParams?: TimewindowAdvancedParams;
 }
 export interface RealtimeWindow extends IntervalWindow {
     realtimeType?: RealtimeWindowType;
@@ -71,6 +87,7 @@ export interface Aggregation {
 export interface Timewindow {
     displayValue?: string;
     displayTimezoneAbbr?: string;
+    allowedAggTypes?: Array<AggregationType>;
     hideAggregation?: boolean;
     hideAggInterval?: boolean;
     hideTimezone?: boolean;
@@ -102,6 +119,13 @@ export interface WidgetTimewindow {
     timezone?: string;
     tsOffset?: number;
     stDiff?: number;
+}
+export interface TimewindowIntervalOption {
+    name: string;
+    translateParams?: {
+        [key: string]: any;
+    };
+    value: TimewindowInterval;
 }
 export declare enum QuickTimeInterval {
     YESTERDAY = "YESTERDAY",
@@ -137,6 +161,13 @@ export declare const defaultTimewindow: (timeService: TimeService) => Timewindow
 export declare const initModelFromDefaultTimewindow: (value: Timewindow, quickIntervalOnly: boolean, historyOnly: boolean, timeService: TimeService) => Timewindow;
 export declare const toHistoryTimewindow: (timewindow: Timewindow, startTimeMs: number, endTimeMs: number, interval: Interval, timeService: TimeService) => Timewindow;
 export declare const timewindowTypeChanged: (newTimewindow: Timewindow, oldTimewindow: Timewindow) => boolean;
+export declare const updateFormValuesOnTimewindowTypeChange: (selectedTab: TimewindowType, quickIntervalOnly: boolean, timewindowForm: FormGroup, realtimeDisableCustomInterval: boolean, historyDisableCustomInterval: boolean, realtimeAdvancedParams?: TimewindowAdvancedParams, historyAdvancedParams?: TimewindowAdvancedParams) => void;
+export declare const currentRealtimeTimewindow: (timewindow: Timewindow) => number;
+export declare const currentHistoryTimewindow: (timewindow: Timewindow) => number;
+export declare const realtimeAllowedAggIntervals: (timewindow: Timewindow, advancedParams: TimewindowAdvancedParams) => Array<Interval>;
+export declare const historyAllowedAggIntervals: (timewindow: Timewindow, advancedParams: TimewindowAdvancedParams) => Array<Interval>;
+export declare const realtimeDefaultAggInterval: (timewindow: Timewindow, advancedParams: TimewindowAdvancedParams) => Interval;
+export declare const historyDefaultAggInterval: (timewindow: Timewindow, advancedParams: TimewindowAdvancedParams) => Interval;
 export declare const getTimezone: (tz: string) => moment_.Moment;
 export declare const calculateTsOffset: (timezone?: string) => number;
 export declare const isHistoryTypeTimewindow: (timewindow: Timewindow) => boolean;
@@ -158,6 +189,7 @@ export interface TimeInterval {
     value: Interval;
 }
 export declare const defaultTimeIntervals: TimeInterval[];
+export declare const intervalValuesToTimeIntervals: (intervalValues: Array<Interval>) => Array<TimeInterval>;
 export declare enum TimeUnit {
     SECONDS = "SECONDS",
     MINUTES = "MINUTES",

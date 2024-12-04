@@ -138,6 +138,7 @@ export interface Dashboard extends BaseData<DashboardId>, HasTenantId, HasVersio
     mobileOrder?: number;
     configuration?: DashboardConfiguration;
     dialogRef?: MatDialogRef<any>;
+    resources?: Array<any>;
 }
 export type DashboardInfo = Dashboard & GroupEntityInfo<DashboardId>;
 export interface HomeDashboard extends Dashboard {

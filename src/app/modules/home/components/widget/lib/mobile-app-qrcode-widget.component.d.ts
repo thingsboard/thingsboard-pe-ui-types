@@ -2,7 +2,7 @@ import { ChangeDetectorRef, ElementRef, NgZone, OnDestroy, OnInit, TemplateRef }
 import { PageComponent } from '@shared/components/page.component';
 import { AppState } from '@core/core.state';
 import { Store } from '@ngrx/store';
-import { BadgePosition, MobileAppSettings } from '@shared/models/mobile-app.models';
+import { BadgePosition, QrCodeSettings } from '@shared/models/mobile-app.models';
 import { MobileApplicationService } from '@core/http/mobile-application.service';
 import { WidgetContext } from '@home/models/widget-component.models';
 import { UtilsService } from '@core/services/utils.service';
@@ -37,12 +37,12 @@ export declare class MobileAppQrcodeWidgetComponent extends PageComponent implem
     qrCodeSVG: string;
     ctx: WidgetContext;
     widgetTitlePanel: TemplateRef<any>;
-    set mobileAppSettings(settings: MobileAppSettings);
-    get mobileAppSettings(): MobileAppSettings;
+    set mobileAppSettings(settings: QrCodeSettings);
+    get mobileAppSettings(): QrCodeSettings;
     constructor(store: Store<AppState>, cd: ChangeDetectorRef, mobileAppService: MobileApplicationService, utilsService: UtilsService, elementRef: ElementRef, imagePipe: ImagePipe, sanitizer: DomSanitizer, zone: NgZone);
     ngOnInit(): void;
     ngOnDestroy(): void;
-    navigateByDeepLink($event: any): void;
+    navigateByDeepLink($event: Event): void;
     private initMobileAppQRCode;
     private updateQRCode;
     static ɵfac: i0.ɵɵFactoryDeclaration<MobileAppQrcodeWidgetComponent, never>;

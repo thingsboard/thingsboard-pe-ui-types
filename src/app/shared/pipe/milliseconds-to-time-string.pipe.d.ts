@@ -4,7 +4,9 @@ import * as i0 from "@angular/core";
 export declare class MillisecondsToTimeStringPipe implements PipeTransform {
     private translate;
     constructor(translate: TranslateService);
-    transform(millseconds: number, shortFormat?: boolean): string;
+    transform(milliSeconds: number, shortFormat?: boolean, onlyFirstDigit?: boolean): string;
+    private extractTimeUnits;
+    private formatTimeString;
     static ɵfac: i0.ɵɵFactoryDeclaration<MillisecondsToTimeStringPipe, never>;
     static ɵpipe: i0.ɵɵPipeDeclaration<MillisecondsToTimeStringPipe, "milliSecondsToTimeString", false>;
 }

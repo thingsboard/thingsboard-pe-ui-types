@@ -9,6 +9,7 @@ import { EntityId } from '@shared/models/id/entity-id';
 import { EntityGroupInfo } from '@shared/models/entity-group.models';
 import { EntityInfoData } from '@shared/models/entity.models';
 import { EntityGroupService } from '@core/http/entity-group.service';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class EntityGroupSelectComponent implements ControlValueAccessor, OnInit, AfterViewInit {
     private store;
@@ -28,6 +29,7 @@ export declare class EntityGroupSelectComponent implements ControlValueAccessor,
     requiredText: string;
     ownerId: EntityId;
     originator: string;
+    appearance: MatFormFieldAppearance;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
@@ -48,5 +50,5 @@ export declare class EntityGroupSelectComponent implements ControlValueAccessor,
     getCurrentGroupType(): EntityType;
     updateView(groupId: string | null): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityGroupSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupSelectComponent, "tb-entity-group-select", never, { "allowedGroupTypes": { "alias": "allowedGroupTypes"; "required": false; }; "excludeGroupTypes": { "alias": "excludeGroupTypes"; "required": false; }; "defaultGroupType": { "alias": "defaultGroupType"; "required": false; }; "excludeGroupIds": { "alias": "excludeGroupIds"; "required": false; }; "excludeGroupAll": { "alias": "excludeGroupAll"; "required": false; }; "placeholderText": { "alias": "placeholderText"; "required": false; }; "notFoundText": { "alias": "notFoundText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "ownerId": { "alias": "ownerId"; "required": false; }; "originator": { "alias": "originator"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, { "currentGroupType": "currentGroupType"; "currentGroupInfo": "currentGroupInfo"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupSelectComponent, "tb-entity-group-select", never, { "allowedGroupTypes": { "alias": "allowedGroupTypes"; "required": false; }; "excludeGroupTypes": { "alias": "excludeGroupTypes"; "required": false; }; "defaultGroupType": { "alias": "defaultGroupType"; "required": false; }; "excludeGroupIds": { "alias": "excludeGroupIds"; "required": false; }; "excludeGroupAll": { "alias": "excludeGroupAll"; "required": false; }; "placeholderText": { "alias": "placeholderText"; "required": false; }; "notFoundText": { "alias": "notFoundText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "ownerId": { "alias": "ownerId"; "required": false; }; "originator": { "alias": "originator"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, { "currentGroupType": "currentGroupType"; "currentGroupInfo": "currentGroupInfo"; }, never, never, false, never>;
 }

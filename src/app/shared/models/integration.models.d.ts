@@ -3,6 +3,7 @@ import { IntegrationId } from '@shared/models/id/integration-id';
 import { ConverterId } from '@shared/models/id/converter-id';
 import { EntityGroupParams } from '@shared/models/entity-group.models';
 import { ActivatedRouteSnapshot } from '@angular/router';
+import { HasDebugSettings } from '@shared/models/entity.models';
 export declare enum IntegrationType {
     MQTT = "MQTT",
     HTTP = "HTTP",
@@ -67,9 +68,8 @@ export interface IntegrationMetaData {
         [k: string]: string;
     };
 }
-export interface IntegrationBasic extends BaseData<IntegrationId>, ExportableEntity<IntegrationId> {
+export interface IntegrationBasic extends BaseData<IntegrationId>, ExportableEntity<IntegrationId>, HasDebugSettings {
     type: IntegrationType;
-    debugMode: boolean;
     enabled: boolean;
     remote: boolean;
     allowCreateDevicesOrAssets: boolean;
@@ -254,6 +254,9 @@ export interface AzureEventHubIntegration {
         connectionString: string;
         consumerGroup?: string;
         iotHubName?: string;
+        storageConnectionString?: string;
+        containerName?: string;
+        enablePersistentCheckpoints?: boolean;
     };
 }
 export interface AzureServicesBusIntegration {

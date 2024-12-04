@@ -16,6 +16,7 @@ export declare class AzureEventHubIntegrationFormComponent extends IntegrationFo
     setDisabledState(isDisabled: boolean): void;
     private updateModels;
     validate(): ValidationErrors | null;
+    private updateEnableFields;
     private downlinkConverterChanged;
     static ɵfac: i0.ɵɵFactoryDeclaration<AzureEventHubIntegrationFormComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<AzureEventHubIntegrationFormComponent, "tb-azure-event-hub-integration-form", never, { "isSetDownlink": { "alias": "isSetDownlink"; "required": false; }; }, {}, never, never, false, never>;

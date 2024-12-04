@@ -6,6 +6,7 @@ import { TelemetryWebsocketService } from '@core/ws/telemetry-websocket.service'
 import { UtilsService } from '@core/services/utils.service';
 import { EntityDataSubscription, EntityDataSubscriptionOptions } from '@core/api/entity-data-subscription';
 import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 import * as i0 from "@angular/core";
 export interface EntityDataListener {
     subscriptionType: widgetType;
@@ -32,7 +33,8 @@ export interface EntityDataLoadResult {
 export declare class EntityDataService {
     private telemetryService;
     private utils;
-    constructor(telemetryService: TelemetryWebsocketService, utils: UtilsService);
+    private http;
+    constructor(telemetryService: TelemetryWebsocketService, utils: UtilsService, http: HttpClient);
     private static isUnresolvedDatasource;
     private static toSubscriptionDataKey;
     prepareSubscription(listener: EntityDataListener, ignoreDataUpdateOnIntervalTick?: boolean): Observable<EntityDataLoadResult>;

@@ -3,13 +3,14 @@ import LeafletMap from '../leaflet-map';
 import { CircleData, PosFunction, WidgetUnitedMapSettings } from '../map-models';
 import { WidgetContext } from '@home/models/widget-component.models';
 import { FormattedData } from '@shared/models/widget.models';
+import { CompiledTbFunction } from '@shared/models/js-function.models';
 export declare class ImageMap extends LeafletMap {
     imageOverlay: L.ImageOverlay;
     aspect: number;
     width: number;
     height: number;
     imageUrl: string;
-    posFunction: PosFunction;
+    posFunction: CompiledTbFunction<PosFunction>;
     private mapUuid;
     constructor(ctx: WidgetContext, $container: HTMLElement, options: WidgetUnitedMapSettings);
     private mapImage;

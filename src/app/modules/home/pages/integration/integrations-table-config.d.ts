@@ -11,6 +11,11 @@ import { EdgeService } from '@core/http/edge.service';
 import { DialogService } from '@core/services/dialog.service';
 import { EntityAction } from '@home/models/entity/entity-component.models';
 import { PageLink } from '@shared/models/page/page-link';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { DurationLeftPipe } from '@shared/pipe/duration-left.pipe';
+import { TbPopoverService } from '@shared/components/popover.service';
+import { DestroyRef } from '@angular/core';
 export declare class IntegrationsTableConfig extends EntityTableConfig<Integration, PageLink, IntegrationInfo> {
     private integrationService;
     private userPermissionsService;
@@ -21,15 +26,25 @@ export declare class IntegrationsTableConfig extends EntityTableConfig<Integrati
     private utils;
     private dialogService;
     private dialog;
+    private store;
+    private durationLeft;
+    private popoverService;
+    private destroyRef;
     private params;
-    constructor(integrationService: IntegrationService, userPermissionsService: UserPermissionsService, edgeService: EdgeService, translate: TranslateService, datePipe: DatePipe, router: Router, utils: UtilsService, dialogService: DialogService, dialog: MatDialog, params: IntegrationParams);
+    readonly integrationDebugPerTenantLimitsConfiguration: string;
+    readonly maxDebugModeDurationMinutes: number;
+    constructor(integrationService: IntegrationService, userPermissionsService: UserPermissionsService, edgeService: EdgeService, translate: TranslateService, datePipe: DatePipe, router: Router, utils: UtilsService, dialogService: DialogService, dialog: MatDialog, store: Store<AppState>, durationLeft: DurationLeftPipe, popoverService: TbPopoverService, destroyRef: DestroyRef, params: IntegrationParams);
+    private isDebugActive;
     private configureEntityTableColumns;
     private configureGroupActions;
     private configureAddActions;
     private configureCellActions;
+    private getDebugConfigLabel;
     private saveIntegration;
     openIntegration($event: Event, integration: Integration, params?: IntegrationParams): void;
     onIntegrationAction(action: EntityAction<Integration>, params: IntegrationParams): boolean;
+    onOpenDebugConfig($event: Event, { debugSettings, id }: IntegrationInfo): void;
+    private onDebugConfigChanged;
     private configureEntityFunctions;
     private configureIntegrationScope;
     private configureTableTitle;
@@ -39,5 +54,4 @@ export declare class IntegrationsTableConfig extends EntityTableConfig<Integrati
     private addIntegration;
     private integrationStatus;
     private integrationStatusStyle;
-    private toggleDebugMode;
 }

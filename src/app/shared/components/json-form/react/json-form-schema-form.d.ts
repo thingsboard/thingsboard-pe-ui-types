@@ -4,6 +4,7 @@ import tinycolor from 'tinycolor2';
 import { MouseEvent } from 'react';
 declare class ThingsboardSchemaForm extends React.Component<JsonFormProps, any> {
     private hasConditions;
+    private conditionFunction;
     private readonly mapper;
     constructor(props: JsonFormProps);
     onChange(key: (string | number)[], val: any, forceUpdate?: boolean): void;

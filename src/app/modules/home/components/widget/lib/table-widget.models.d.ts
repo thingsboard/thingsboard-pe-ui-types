@@ -6,6 +6,8 @@ import { WidgetContext } from '@home/models/widget-component.models';
 import { UtilsService } from '@core/services/utils.service';
 import { TranslateService } from '@ngx-translate/core';
 import { EntityType } from '@shared/models/entity-type.models';
+import { CompiledTbFunction, TbFunction } from '@shared/models/js-function.models';
+import { Observable } from 'rxjs';
 type ColumnVisibilityOptions = 'visible' | 'hidden' | 'hidden-mobile';
 type ColumnSelectionOptions = 'enabled' | 'disabled';
 export declare enum columnExportOptions {
@@ -22,17 +24,17 @@ export interface TableWidgetSettings {
     displayPagination: boolean;
     defaultPageSize: number;
     useRowStyleFunction: boolean;
-    rowStyleFunction?: string;
+    rowStyleFunction?: TbFunction;
     reserveSpaceForHiddenAction?: boolean;
 }
 export interface TableWidgetDataKeySettings {
     customTitle?: string;
     columnWidth?: string;
     useCellStyleFunction: boolean;
-    cellStyleFunction?: string;
+    cellStyleFunction?: TbFunction;
     useCellContentFunction: boolean;
     useCellContentFunctionOnExport: boolean;
-    cellContentFunction?: string;
+    cellContentFunction?: TbFunction;
     defaultColumnVisibility?: ColumnVisibilityOptions;
     columnSelectionToDisplay?: ColumnSelectionOptions;
     columnExportOption?: columnExportOptions;
@@ -40,7 +42,7 @@ export interface TableWidgetDataKeySettings {
 export type ShowCellButtonActionFunction = (ctx: WidgetContext, data: EntityData | AlarmDataInfo | FormattedData) => boolean;
 export interface TableCellButtonActionDescriptor extends WidgetActionDescriptor {
     useShowActionCellButtonFunction: boolean;
-    showActionCellButtonFunction: ShowCellButtonActionFunction;
+    showActionCellButtonFunction: CompiledTbFunction<ShowCellButtonActionFunction>;
 }
 export interface EntityData {
     id: EntityId;
@@ -65,22 +67,25 @@ export interface DisplayColumn {
     includeToExport?: columnExportOptions;
 }
 export type CellContentFunction = (...args: any[]) => string;
-export interface CellContentInfo {
+export interface CellContentFunctionInfo {
     useCellContentFunction: boolean;
     useCellContentFunctionOnExport?: boolean;
-    cellContentFunction?: CellContentFunction;
+    cellContentFunction?: CompiledTbFunction<CellContentFunction>;
+}
+export interface CellContentInfo {
+    contentFunction: Observable<CellContentFunctionInfo>;
     units?: string;
     decimals?: number;
 }
 export type CellStyleFunction = (...args: any[]) => any;
 export interface CellStyleInfo {
     useCellStyleFunction: boolean;
-    cellStyleFunction?: CellStyleFunction;
+    cellStyleFunction?: CompiledTbFunction<CellStyleFunction>;
 }
 export type RowStyleFunction = (...args: any[]) => any;
 export interface RowStyleInfo {
     useRowStyleFunction: boolean;
-    rowStyleFunction?: RowStyleFunction;
+    rowStyleFunction?: CompiledTbFunction<RowStyleFunction>;
 }
 export declare function entityDataSortOrderFromString(strSortOrder: string, columns: EntityColumn[]): EntityDataSortOrder;
 export declare function findColumnByEntityKey(key: EntityKey, columns: EntityColumn[]): EntityColumn;
@@ -97,14 +102,14 @@ export declare function toAlarmColumnDef(name: string, columns: EntityColumn[]):
 export declare function fromAlarmColumnDef(def: string, columns: EntityColumn[]): string;
 export declare function getEntityValue(entity: any, key: DataKey): any;
 export declare function getAlarmValue(alarm: AlarmDataInfo, key: EntityColumn): any;
-export declare function getRowStyleInfo(settings: TableWidgetSettings, ...args: string[]): RowStyleInfo;
-export declare function getCellStyleInfo(keySettings: TableWidgetDataKeySettings, ...args: string[]): CellStyleInfo;
-export declare function getCellContentInfo(keySettings: TableWidgetDataKeySettings, ...args: string[]): CellContentInfo;
+export declare function getRowStyleInfo(widgetContext: WidgetContext, settings: TableWidgetSettings, ...args: string[]): Observable<RowStyleInfo>;
+export declare function getCellStyleInfo(widgetContext: WidgetContext, keySettings: TableWidgetDataKeySettings, ...args: string[]): Observable<CellStyleInfo>;
+export declare function getCellContentFunctionInfo(widgetContext: WidgetContext, keySettings: TableWidgetDataKeySettings, ...args: string[]): Observable<CellContentFunctionInfo>;
 export declare function getColumnWidth(keySettings: TableWidgetDataKeySettings): string;
 export declare function widthStyle(width: string): any;
 export declare function getColumnDefaultVisibility(keySettings: TableWidgetDataKeySettings, ctx?: WidgetContext): boolean;
 export declare function getColumnSelectionAvailability(keySettings: TableWidgetDataKeySettings): boolean;
-export declare function getTableCellButtonActions(widgetContext: WidgetContext): TableCellButtonActionDescriptor[];
+export declare function getTableCellButtonActions(widgetContext: WidgetContext): Observable<TableCellButtonActionDescriptor[]>;
 export declare function checkHasActions(cellButtonActions: TableCellButtonActionDescriptor[]): boolean;
 export declare function prepareTableCellButtonActions(widgetContext: WidgetContext, cellButtonActions: TableCellButtonActionDescriptor[], data: EntityData | AlarmDataInfo | FormattedData, reserveSpaceForHiddenAction?: boolean): TableCellButtonActionDescriptor[];
 export declare function noDataMessage(noDataDisplayMessage: string, defaultMessage: string, utils: UtilsService, translate: TranslateService): string;

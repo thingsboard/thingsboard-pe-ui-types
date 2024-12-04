@@ -77,8 +77,6 @@ export declare enum MailTemplate {
     accountLockout = "accountLockout",
     resetPassword = "resetPassword",
     passwordWasReset = "passwordWasReset",
-    userActivated = "userActivated",
-    userRegistered = "userRegistered",
     apiUsageStateEnabled = "apiUsageStateEnabled",
     apiUsageStateWarning = "apiUsageStateWarning",
     apiUsageStateDisabled = "apiUsageStateDisabled",

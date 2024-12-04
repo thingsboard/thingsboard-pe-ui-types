@@ -11,6 +11,7 @@ import { DatePipe } from '@angular/common';
 import { ActivatedRouteSnapshot, Router } from '@angular/router';
 import { UtilsService } from '@core/services/utils.service';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
+import { CustomTranslatePipe } from '@shared/pipe/custom-translate.pipe';
 export declare class RuleChainsTableConfig extends EntityTableConfig<RuleChain> {
     private ruleChainService;
     private dialogService;
@@ -21,10 +22,11 @@ export declare class RuleChainsTableConfig extends EntityTableConfig<RuleChain> 
     private translate;
     private datePipe;
     private router;
+    private customTranslate;
     private utils;
     private userPermissionsService;
     private params;
-    constructor(ruleChainService: RuleChainService, dialogService: DialogService, dialog: MatDialog, importExport: ImportExportService, itembuffer: ItemBufferService, edgeService: EdgeService, translate: TranslateService, datePipe: DatePipe, router: Router, utils: UtilsService, userPermissionsService: UserPermissionsService, params: ActivatedRouteSnapshot | RuleChainParams);
+    constructor(ruleChainService: RuleChainService, dialogService: DialogService, dialog: MatDialog, importExport: ImportExportService, itembuffer: ItemBufferService, edgeService: EdgeService, translate: TranslateService, datePipe: DatePipe, router: Router, customTranslate: CustomTranslatePipe, utils: UtilsService, userPermissionsService: UserPermissionsService, params: ActivatedRouteSnapshot | RuleChainParams);
     private setComponentsData;
     private configureEntityTableColumns;
     private configureGroupActions;

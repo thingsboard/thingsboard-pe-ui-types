@@ -26,6 +26,7 @@ export declare class RuleNodeDetailsComponent extends PageComponent implements O
     entityType: typeof EntityType;
     serviceType: ServiceType;
     ruleNodeFormGroup: UntypedFormGroup;
+    readonly ruleChainDebugPerTenantLimitsConfiguration: string;
     private destroy$;
     constructor(store: Store<AppState>, fb: UntypedFormBuilder, router: Router);
     private buildForm;
@@ -34,6 +35,7 @@ export declare class RuleNodeDetailsComponent extends PageComponent implements O
     ngOnDestroy(): void;
     ngOnChanges(changes: SimpleChanges): void;
     validate(): void;
+    onSingleModeChange($event: Event): void;
     openRuleChain($event: Event): void;
     isAddQueue(): boolean;
     isSingleton(): boolean;

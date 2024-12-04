@@ -1,0 +1,36 @@
+import { OnInit } from '@angular/core';
+import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { TimeService } from '@core/services/time.service';
+import { MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
+import { Interval, TimeInterval, TimewindowAggIntervalOptions } from '@shared/models/time/time.models';
+import * as i0 from "@angular/core";
+export declare class GroupingIntervalOptionsComponent implements OnInit, ControlValueAccessor {
+    private timeService;
+    private fb;
+    min: number;
+    max: number;
+    useCalendarIntervals: boolean;
+    disabled: boolean;
+    subscriptSizing: SubscriptSizing;
+    appearance: MatFormFieldAppearance;
+    allIntervals: Array<TimeInterval>;
+    allIntervalValues: Array<Interval>;
+    selectedIntervals: Array<TimeInterval>;
+    timeintervalFormGroup: FormGroup;
+    private modelValue;
+    private rendered;
+    private propagateChangeValue;
+    private propagateChange;
+    constructor(timeService: TimeService, fb: FormBuilder);
+    ngOnInit(): void;
+    registerOnChange(fn: any): void;
+    registerOnTouched(fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    writeValue(intervalOptions: TimewindowAggIntervalOptions): void;
+    private updateIntervalsList;
+    private setIntervals;
+    private setSelectedIntervals;
+    private updateView;
+    static ɵfac: i0.ɵɵFactoryDeclaration<GroupingIntervalOptionsComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GroupingIntervalOptionsComponent, "tb-grouping-interval-options", never, { "min": { "alias": "min"; "required": false; }; "max": { "alias": "max"; "required": false; }; "useCalendarIntervals": { "alias": "useCalendarIntervals"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; }, {}, never, never, false, never>;
+}

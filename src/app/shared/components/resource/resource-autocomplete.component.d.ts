@@ -1,7 +1,7 @@
 import { ElementRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, FormBuilder } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { ResourceInfo } from '@shared/models/resource.models';
+import { ResourceInfo, ResourceSubType } from '@shared/models/resource.models';
 import { TbResourceId } from '@shared/models/id/tb-resource-id';
 import { ResourceService } from '@core/http/resource.service';
 import { MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
@@ -13,22 +13,25 @@ export declare class ResourceAutocompleteComponent implements ControlValueAccess
     required: boolean;
     appearance: MatFormFieldAppearance;
     subscriptSizing: SubscriptSizing;
+    inlineField: boolean;
     placeholder: string;
     hideRequiredMarker: boolean;
     allowAutocomplete: boolean;
+    subType: ResourceSubType;
     resourceFormGroup: import("@angular/forms").FormGroup<{
-        resource: import("@angular/forms").FormControl<any>;
+        resource: import("@angular/forms").FormControl<string | ResourceInfo>;
     }>;
     filteredResources$: Observable<Array<ResourceInfo>>;
     searchText: string;
     resourceInput: ElementRef;
+    resource: ResourceInfo;
     private modelValue;
     private dirty;
     private propagateChange;
     constructor(fb: FormBuilder, resourceService: ResourceService);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
-    registerOnTouched(fn: any): void;
+    registerOnTouched(_fn: any): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: string | TbResourceId): void;
     displayResourceFn(resource?: ResourceInfo | string): string;
@@ -37,5 +40,5 @@ export declare class ResourceAutocompleteComponent implements ControlValueAccess
     private updateView;
     private fetchResources;
     static ɵfac: i0.ɵɵFactoryDeclaration<ResourceAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ResourceAutocompleteComponent, "tb-resource-autocomplete", never, { "disabled": { "alias": "disabled"; "required": false; }; "required": { "alias": "required"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "placeholder": { "alias": "placeholder"; "required": false; }; "hideRequiredMarker": { "alias": "hideRequiredMarker"; "required": false; }; "allowAutocomplete": { "alias": "allowAutocomplete"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ResourceAutocompleteComponent, "tb-resource-autocomplete", never, { "disabled": { "alias": "disabled"; "required": false; }; "required": { "alias": "required"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "inlineField": { "alias": "inlineField"; "required": false; }; "placeholder": { "alias": "placeholder"; "required": false; }; "hideRequiredMarker": { "alias": "hideRequiredMarker"; "required": false; }; "allowAutocomplete": { "alias": "allowAutocomplete"; "required": false; }; "subType": { "alias": "subType"; "required": false; }; }, {}, never, never, false, never>;
 }

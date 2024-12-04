@@ -1,10 +1,13 @@
 import { AttributeScope } from '@shared/models/telemetry/telemetry.models';
 import { widgetType } from '@shared/models/widget.models';
+import { AlarmSeverity } from '@shared/models/alarm.models';
+import { TbFunction } from '@shared/models/js-function.models';
 export declare enum GetValueAction {
     DO_NOTHING = "DO_NOTHING",
     EXECUTE_RPC = "EXECUTE_RPC",
     GET_ATTRIBUTE = "GET_ATTRIBUTE",
     GET_TIME_SERIES = "GET_TIME_SERIES",
+    GET_ALARM_STATUS = "GET_ALARM_STATUS",
     GET_DASHBOARD_STATE = "GET_DASHBOARD_STATE"
 }
 export declare const getValueActions: GetValueAction[];
@@ -15,6 +18,10 @@ export interface RpcSettings {
     requestTimeout: number;
     requestPersistent: boolean;
     persistentPollingInterval: number;
+}
+export interface AlarmStatusSettings {
+    severityList: Array<AlarmSeverity>;
+    typeList: Array<string>;
 }
 export interface TelemetryValueSettings {
     key: string;
@@ -31,7 +38,7 @@ export declare enum DataToValueType {
 }
 export interface DataToValueSettings {
     type: DataToValueType;
-    dataToValueFunction: string;
+    dataToValueFunction: TbFunction;
     compareToValue?: any;
 }
 export interface ValueActionSettings {
@@ -43,6 +50,7 @@ export interface GetValueSettings<V> extends ValueActionSettings {
     executeRpc?: RpcSettings;
     getAttribute: GetAttributeValueSettings;
     getTimeSeries: TelemetryValueSettings;
+    getAlarmStatus: AlarmStatusSettings;
     dataToValue: DataToValueSettings;
 }
 export declare enum SetValueAction {
@@ -62,7 +70,7 @@ export declare enum ValueToDataType {
 export interface ValueToDataSettings {
     type: ValueToDataType;
     constantValue: any;
-    valueToDataFunction: string;
+    valueToDataFunction: TbFunction;
 }
 export interface SetValueSettings extends ValueActionSettings {
     action: SetValueAction;

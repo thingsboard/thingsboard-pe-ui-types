@@ -1,8 +1,6 @@
-import { ChangeDetectorRef, ElementRef, OnChanges, OnInit, Renderer2, SimpleChanges, ViewContainerRef } from '@angular/core';
-import { ControlValueAccessor, FormGroupDirective, NgForm, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
+import { DestroyRef, ElementRef, OnChanges, OnInit, Renderer2, SimpleChanges, ViewContainerRef } from '@angular/core';
+import { ControlValueAccessor, FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, Validator } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { Store } from '@ngrx/store';
-import { AppState } from '@app/core/core.state';
 import { TranslateService } from '@ngx-translate/core';
 import { MatAutocomplete, MatAutocompleteTrigger } from '@angular/material/autocomplete';
 import { MatChipGrid, MatChipInputEvent, MatChipRow } from '@angular/material/chips';
@@ -12,7 +10,6 @@ import { IAliasController } from '@core/api/widget-api.models';
 import { DataKeySettingsFunction } from './data-keys.component.models';
 import { UtilsService } from '@core/services/utils.service';
 import { ErrorStateMatcher } from '@angular/material/core';
-import { TruncatePipe } from '@shared/pipe/truncate.pipe';
 import { MatDialog } from '@angular/material/dialog';
 import { Dashboard } from '@shared/models/dashboard.models';
 import { DndDropEvent } from 'ngx-drag-drop/lib/dnd-dropzone.directive';
@@ -21,26 +18,23 @@ import { TbPopoverService } from '@shared/components/popover.service';
 import { WidgetConfigCallbacks } from '@home/components/widget/config/widget-config.component.models';
 import * as i0 from "@angular/core";
 export declare class DataKeysComponent implements ControlValueAccessor, OnInit, OnChanges, ErrorStateMatcher, Validator {
-    private store;
     private errorStateMatcher;
     private datasourceComponent;
-    translate: TranslateService;
+    private translate;
     private utils;
     private dialog;
     private fb;
-    private cd;
     private popoverService;
     private viewContainerRef;
     private renderer;
-    truncate: TruncatePipe;
+    private destroyRef;
     get hideDataKeyLabel(): boolean;
     get hideDataKeyColor(): boolean;
     get hideDataKeyUnits(): boolean;
     get hideDataKeyDecimals(): boolean;
-    datasourceTypes: typeof DatasourceType;
     widgetTypes: typeof widgetType;
     dataKeyTypes: typeof DataKeyType;
-    keysListFormGroup: UntypedFormGroup;
+    keysListFormGroup: FormGroup;
     modelValue: Array<DataKey> | null;
     widgetType: widgetType;
     datasourceType: DatasourceType;
@@ -85,21 +79,21 @@ export declare class DataKeysComponent implements ControlValueAccessor, OnInit, 
     private propagateChange;
     private keysRequired;
     private keysValidator;
-    constructor(store: Store<AppState>, errorStateMatcher: ErrorStateMatcher, datasourceComponent: DatasourceComponent, translate: TranslateService, utils: UtilsService, dialog: MatDialog, fb: UntypedFormBuilder, cd: ChangeDetectorRef, popoverService: TbPopoverService, viewContainerRef: ViewContainerRef, renderer: Renderer2, truncate: TruncatePipe);
+    constructor(errorStateMatcher: ErrorStateMatcher, datasourceComponent: DatasourceComponent, translate: TranslateService, utils: UtilsService, dialog: MatDialog, fb: FormBuilder, popoverService: TbPopoverService, viewContainerRef: ViewContainerRef, renderer: Renderer2, destroyRef: DestroyRef);
     updateValidators(): void;
     private _keysRequired;
     private _keysValidator;
     registerOnChange(fn: any): void;
-    registerOnTouched(fn: any): void;
+    registerOnTouched(_fn: any): void;
     ngOnInit(): void;
     maxDataKeysText(): string;
     private updateParams;
     private reset;
     ngOnChanges(changes: SimpleChanges): void;
-    isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
+    isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: Array<DataKey> | null): void;
-    validate(c: UntypedFormControl): {
+    validate(_c: FormControl): {
         dataKeys: {
             valid: boolean;
         };
@@ -129,6 +123,6 @@ export declare class DataKeysComponent implements ControlValueAccessor, OnInit, 
     get dragDisabled(): boolean;
     get maxDataKeysSet(): boolean;
     private clearSearchCache;
-    static ɵfac: i0.ɵɵFactoryDeclaration<DataKeysComponent, [null, { skipSelf: true; }, null, null, null, null, null, null, null, null, null, null]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<DataKeysComponent, [{ skipSelf: true; }, null, null, null, null, null, null, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<DataKeysComponent, "tb-data-keys", never, { "widgetType": { "alias": "widgetType"; "required": false; }; "datasourceType": { "alias": "datasourceType"; "required": false; }; "maxDataKeys": { "alias": "maxDataKeys"; "required": false; }; "optDataKeys": { "alias": "optDataKeys"; "required": false; }; "latestDataKeys": { "alias": "latestDataKeys"; "required": false; }; "simpleDataKeysLabel": { "alias": "simpleDataKeysLabel"; "required": false; }; "aliasController": { "alias": "aliasController"; "required": false; }; "datakeySettingsSchema": { "alias": "datakeySettingsSchema"; "required": false; }; "datakeySettingsFunction": { "alias": "datakeySettingsFunction"; "required": false; }; "dataKeySettingsDirective": { "alias": "dataKeySettingsDirective"; "required": false; }; "dashboard": { "alias": "dashboard"; "required": false; }; "widget": { "alias": "widget"; "required": false; }; "callbacks": { "alias": "callbacks"; "required": false; }; "entityAliasId": { "alias": "entityAliasId"; "required": false; }; "deviceId": { "alias": "deviceId"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

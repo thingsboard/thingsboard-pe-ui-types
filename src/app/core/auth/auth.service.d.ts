@@ -32,7 +32,8 @@ export declare class AuthService {
     private utils;
     private translate;
     private dialog;
-    constructor(store: Store<AppState>, http: HttpClient, userService: UserService, whiteLabelingService: WhiteLabelingService, customMenuService: CustomMenuService, userPermissionsService: UserPermissionsService, timeService: TimeService, router: Router, zone: NgZone, utils: UtilsService, translate: TranslateService, dialog: MatDialog);
+    private document;
+    constructor(store: Store<AppState>, http: HttpClient, userService: UserService, whiteLabelingService: WhiteLabelingService, customMenuService: CustomMenuService, userPermissionsService: UserPermissionsService, timeService: TimeService, router: Router, zone: NgZone, utils: UtilsService, translate: TranslateService, dialog: MatDialog, document: Document);
     redirectUrl: string;
     oauth2Clients: Array<OAuth2ClientLoginInfo>;
     twoFactorAuthProviders: Array<TwoFaProviderInfo>;

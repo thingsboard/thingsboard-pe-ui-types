@@ -8,13 +8,14 @@ import { EntityGroupService } from '@core/http/entity-group.service';
 import { PageLink } from '@shared/models/page/page-link';
 import { PageData } from '@shared/models/page/page-data';
 import { EntityInfoData } from '@shared/models/entity.models';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class EntityGroupAutocompleteComponent implements ControlValueAccessor, OnInit, OnDestroy {
     translate: TranslateService;
     private entityGroupService;
     private fb;
     selectEntityGroupFormGroup: FormGroup;
-    modelValue: string | null;
+    modelValue: EntityId | string | null;
     private groupTypeValue;
     get groupType(): EntityType;
     set groupType(value: EntityType);
@@ -30,6 +31,8 @@ export declare class EntityGroupAutocompleteComponent implements ControlValueAcc
     get required(): boolean;
     set required(value: boolean);
     disabled: boolean;
+    appearance: MatFormFieldAppearance;
+    useFullEntityId: boolean;
     entityGroupLoaded: EventEmitter<EntityInfoData>;
     entityGroupInput: ElementRef<HTMLInputElement>;
     filteredEntityGroups: Observable<Array<EntityInfoData>>;
@@ -48,11 +51,11 @@ export declare class EntityGroupAutocompleteComponent implements ControlValueAcc
     writeValue(value: string | EntityInfoData | null): void;
     onFocus(): void;
     reset(keepEntityGroup?: boolean): void;
-    updateView(value: string | null, entityGroup: EntityInfoData | string | null): void;
+    updateView(value: EntityId | string | null, entityGroup: EntityInfoData | string | null): void;
     displayEntityGroupFn(entityGroup?: EntityInfoData): string | undefined;
     fetchEntityGroups(searchText?: string): Observable<Array<EntityInfoData>>;
     getEntityGroups(pageLink: PageLink): Observable<PageData<EntityInfoData>>;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityGroupAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupAutocompleteComponent, "tb-entity-group-autocomplete", never, { "groupType": { "alias": "groupType"; "required": false; }; "ownerId": { "alias": "ownerId"; "required": false; }; "excludeGroupIds": { "alias": "excludeGroupIds"; "required": false; }; "excludeGroupAll": { "alias": "excludeGroupAll"; "required": false; }; "placeholderText": { "alias": "placeholderText"; "required": false; }; "notFoundText": { "alias": "notFoundText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, { "entityGroupLoaded": "entityGroupLoaded"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupAutocompleteComponent, "tb-entity-group-autocomplete", never, { "groupType": { "alias": "groupType"; "required": true; }; "ownerId": { "alias": "ownerId"; "required": false; }; "excludeGroupIds": { "alias": "excludeGroupIds"; "required": false; }; "excludeGroupAll": { "alias": "excludeGroupAll"; "required": false; }; "placeholderText": { "alias": "placeholderText"; "required": false; }; "notFoundText": { "alias": "notFoundText"; "required": true; }; "requiredText": { "alias": "requiredText"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "useFullEntityId": { "alias": "useFullEntityId"; "required": false; }; }, { "entityGroupLoaded": "entityGroupLoaded"; }, never, never, false, never>;
 }

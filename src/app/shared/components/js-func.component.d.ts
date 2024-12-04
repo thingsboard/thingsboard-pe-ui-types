@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, ElementRef, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, ElementRef, OnDestroy, OnInit, Renderer2, ViewContainerRef } from '@angular/core';
 import { ControlValueAccessor, UntypedFormControl, Validator } from '@angular/forms';
 import { AceHighlightRules } from '@shared/models/ace/ace.models';
 import { Store } from '@ngrx/store';
@@ -8,6 +8,10 @@ import { TranslateService } from '@ngx-translate/core';
 import { RafService } from '@core/services/raf.service';
 import { TbEditorCompleter } from '@shared/models/ace/completion.models';
 import { ScriptLanguage } from '@shared/models/rule-node.models';
+import { TbFunction } from '@shared/models/js-function.models';
+import { TbPopoverService } from '@shared/components/popover.service';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import * as i0 from "@angular/core";
 export declare class JsFuncComponent implements OnInit, OnDestroy, ControlValueAccessor, Validator {
     elementRef: ElementRef;
@@ -16,8 +20,13 @@ export declare class JsFuncComponent implements OnInit, OnDestroy, ControlValueA
     protected store: Store<AppState>;
     private raf;
     private cd;
+    private popoverService;
+    private renderer;
+    private viewContainerRef;
+    private http;
     javascriptEditorElmRef: ElementRef;
     private jsEditor;
+    private initialCompleters;
     private editorsResizeCaf;
     private editorResize$;
     private ignoreChange;
@@ -37,6 +46,8 @@ export declare class JsFuncComponent implements OnInit, OnDestroy, ControlValueA
     helpId: string;
     scriptLanguage: ScriptLanguage;
     hideBrackets: boolean;
+    hideLabel: boolean;
+    withModules: boolean;
     private noValidateValue;
     get noValidate(): boolean;
     set noValidate(value: boolean);
@@ -46,6 +57,9 @@ export declare class JsFuncComponent implements OnInit, OnDestroy, ControlValueA
     functionLabel: string;
     fullscreen: boolean;
     modelValue: string;
+    modules: {
+        [alias: string]: string;
+    };
     functionValid: boolean;
     validationError: string;
     errorShowed: boolean;
@@ -53,8 +67,9 @@ export declare class JsFuncComponent implements OnInit, OnDestroy, ControlValueA
     errorAnnotationId: number;
     private functionArgsString;
     private propagateChange;
+    private _onTouched;
     hasErrors: boolean;
-    constructor(elementRef: ElementRef, utils: UtilsService, translate: TranslateService, store: Store<AppState>, raf: RafService, cd: ChangeDetectorRef);
+    constructor(elementRef: ElementRef, utils: UtilsService, translate: TranslateService, store: Store<AppState>, raf: RafService, cd: ChangeDetectorRef, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, http: HttpClient);
     ngOnInit(): void;
     ngOnDestroy(): void;
     private onAceEditorResize;
@@ -67,12 +82,16 @@ export declare class JsFuncComponent implements OnInit, OnDestroy, ControlValueA
         };
     };
     beautifyJs(): void;
-    validateOnSubmit(): void;
+    validateOnSubmit(): Observable<void>;
     focus(): void;
     private validateJsFunc;
     private cleanupJsErrors;
-    writeValue(value: string): void;
-    updateView(): void;
+    writeValue(value: TbFunction): void;
+    updateView(force?: boolean): void;
+    editModules($event: Event, element: Element): void;
+    private propagateValue;
+    private updateJsWorkerGlobals;
+    updateCompleters(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<JsFuncComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<JsFuncComponent, "tb-js-func", never, { "functionTitle": { "alias": "functionTitle"; "required": false; }; "functionName": { "alias": "functionName"; "required": false; }; "functionArgs": { "alias": "functionArgs"; "required": false; }; "validationArgs": { "alias": "validationArgs"; "required": false; }; "resultType": { "alias": "resultType"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "fillHeight": { "alias": "fillHeight"; "required": false; }; "minHeight": { "alias": "minHeight"; "required": false; }; "editorCompleter": { "alias": "editorCompleter"; "required": false; }; "highlightRules": { "alias": "highlightRules"; "required": false; }; "globalVariables": { "alias": "globalVariables"; "required": false; }; "disableUndefinedCheck": { "alias": "disableUndefinedCheck"; "required": false; }; "helpId": { "alias": "helpId"; "required": false; }; "scriptLanguage": { "alias": "scriptLanguage"; "required": false; }; "hideBrackets": { "alias": "hideBrackets"; "required": false; }; "noValidate": { "alias": "noValidate"; "required": false; }; "required": { "alias": "required"; "required": false; }; }, {}, never, ["[toolbarPrefixButton]", "[toolbarSuffixButton]"], false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<JsFuncComponent, "tb-js-func", never, { "functionTitle": { "alias": "functionTitle"; "required": false; }; "functionName": { "alias": "functionName"; "required": false; }; "functionArgs": { "alias": "functionArgs"; "required": false; }; "validationArgs": { "alias": "validationArgs"; "required": false; }; "resultType": { "alias": "resultType"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "fillHeight": { "alias": "fillHeight"; "required": false; }; "minHeight": { "alias": "minHeight"; "required": false; }; "editorCompleter": { "alias": "editorCompleter"; "required": false; }; "highlightRules": { "alias": "highlightRules"; "required": false; }; "globalVariables": { "alias": "globalVariables"; "required": false; }; "disableUndefinedCheck": { "alias": "disableUndefinedCheck"; "required": false; }; "helpId": { "alias": "helpId"; "required": false; }; "scriptLanguage": { "alias": "scriptLanguage"; "required": false; }; "hideBrackets": { "alias": "hideBrackets"; "required": false; }; "hideLabel": { "alias": "hideLabel"; "required": false; }; "withModules": { "alias": "withModules"; "required": false; }; "noValidate": { "alias": "noValidate"; "required": false; }; "required": { "alias": "required"; "required": false; }; }, {}, never, ["[toolbarStartButton]", "[toolbarPrefixButton]", "[toolbarSuffixButton]"], false, never>;
 }

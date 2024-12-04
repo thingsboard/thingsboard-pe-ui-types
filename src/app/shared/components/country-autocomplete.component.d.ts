@@ -2,7 +2,7 @@ import { ElementRef, EventEmitter, OnInit } from '@angular/core';
 import { Country, CountryData } from '@shared/models/country.models';
 import { ControlValueAccessor, FormBuilder, FormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { SubscriptSizing } from '@angular/material/form-field';
+import { SubscriptSizing, MatFormFieldAppearance } from '@angular/material/form-field';
 import { TranslateService } from '@ngx-translate/core';
 import * as i0 from "@angular/core";
 export declare class CountryAutocompleteComponent implements OnInit, ControlValueAccessor, Validator {
@@ -14,6 +14,7 @@ export declare class CountryAutocompleteComponent implements OnInit, ControlValu
     autocompleteHint: string;
     disabled: boolean;
     required: boolean;
+    appearance: MatFormFieldAppearance;
     subscriptSizing: SubscriptSizing;
     countryInput: ElementRef;
     selectCountryCode: EventEmitter<string>;
@@ -40,5 +41,5 @@ export declare class CountryAutocompleteComponent implements OnInit, ControlValu
     private fetchCountries;
     private updateView;
     static ɵfac: i0.ɵɵFactoryDeclaration<CountryAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CountryAutocompleteComponent, "tb-country-autocomplete", never, { "labelText": { "alias": "labelText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "autocompleteHint": { "alias": "autocompleteHint"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "required": { "alias": "required"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; }, { "selectCountryCode": "selectCountryCode"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CountryAutocompleteComponent, "tb-country-autocomplete", never, { "labelText": { "alias": "labelText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "autocompleteHint": { "alias": "autocompleteHint"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "required": { "alias": "required"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; }, { "selectCountryCode": "selectCountryCode"; }, never, never, false, never>;
 }

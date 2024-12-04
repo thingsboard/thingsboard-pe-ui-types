@@ -61,6 +61,7 @@ export interface DefaultTenantProfileConfiguration {
     rpcTtlDays: number;
     queueStatsTtlDays: number;
     ruleEngineExceptionsTtlDays: number;
+    blobEntityTtlDays: number;
 }
 export type TenantProfileConfigurations = DefaultTenantProfileConfiguration;
 export interface TenantProfileConfiguration extends TenantProfileConfigurations {

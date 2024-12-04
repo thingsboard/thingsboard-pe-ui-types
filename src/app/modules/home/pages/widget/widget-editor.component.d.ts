@@ -1,5 +1,5 @@
 import { PageComponent } from '@shared/components/page.component';
-import { ElementRef, EventEmitter, OnDestroy, OnInit } from '@angular/core';
+import { ElementRef, EventEmitter, OnDestroy, OnInit, Renderer2, ViewContainerRef } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { WidgetService } from '@core/http/widget.service';
@@ -13,7 +13,10 @@ import { TranslateService } from '@ngx-translate/core';
 import { Ace } from 'ace-builds';
 import { CancelAnimationFrame, RafService } from '@core/services/raf.service';
 import { MatDialog } from '@angular/material/dialog';
+import { HttpClient } from '@angular/common/http';
 import Timeout = NodeJS.Timeout;
+import { TbPopoverService } from '@shared/components/popover.service';
+import { MatIconButton } from '@angular/material/button';
 import * as i0 from "@angular/core";
 export declare class WidgetEditorComponent extends PageComponent implements OnInit, OnDestroy, HasDirtyFlag {
     protected store: Store<AppState>;
@@ -24,6 +27,10 @@ export declare class WidgetEditorComponent extends PageComponent implements OnIn
     private translate;
     private raf;
     private dialog;
+    private popoverService;
+    private renderer;
+    private viewContainerRef;
+    private http;
     topPanelElmRef: ElementRef;
     topLeftPanelElmRef: ElementRef;
     topRightPanelElmRef: ElementRef;
@@ -68,6 +75,7 @@ export declare class WidgetEditorComponent extends PageComponent implements OnIn
     dataKeyJsonSettingsEditor: Ace.Editor;
     latestDataKeyJsonSettingsEditor: Ace.Editor;
     jsEditor: Ace.Editor;
+    private initialCompleters;
     aceResize$: ResizeObserver;
     onWindowMessageListener: any;
     iframeWidgetEditModeInited: boolean;
@@ -80,7 +88,7 @@ export declare class WidgetEditorComponent extends PageComponent implements OnIn
     hotKeys: Hotkey[];
     updateBreadcrumbs: EventEmitter<any>;
     private rxSubscriptions;
-    constructor(store: Store<AppState>, window: Window, route: ActivatedRoute, router: Router, widgetService: WidgetService, translate: TranslateService, raf: RafService, dialog: MatDialog);
+    constructor(store: Store<AppState>, window: Window, route: ActivatedRoute, router: Router, widgetService: WidgetService, translate: TranslateService, raf: RafService, dialog: MatDialog, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, http: HttpClient);
     private init;
     ngOnInit(): void;
     ngOnDestroy(): void;
@@ -115,7 +123,17 @@ export declare class WidgetEditorComponent extends PageComponent implements OnIn
     removeResource(index: number): void;
     addResource(): void;
     widgetTypeChanged(): void;
+    editControllerScriptModules($event: Event, button: MatIconButton): void;
+    get controllerScriptBody(): string;
+    set controllerScriptBody(controllerScriptBody: string);
+    get controllerScriptModules(): {
+        [alias: string]: string;
+    };
+    set controllerScriptModules(modules: {
+        [alias: string]: string;
+    });
     get confirmOnExitMessage(): string;
+    private updateControllerScriptCompleters;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetEditorComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<WidgetEditorComponent, "tb-widget-editor", never, {}, {}, never, never, false, never>;
 }

@@ -108,6 +108,7 @@ export declare class WidgetConfigComponent extends PageComponent implements OnIn
     generateDataKey(chip: any, type: DataKeyType, datakeySettingsSchema: JsonSettingsSchema, isLatestDataKey: boolean, dataKeySettingsFunction: DataKeySettingsFunction): DataKey;
     private genNextColor;
     private createEntityAlias;
+    private editEntityAlias;
     private createFilter;
     private fetchEntityKeysForDevice;
     private fetchEntityKeys;

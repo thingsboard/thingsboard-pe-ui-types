@@ -4,7 +4,6 @@ import { TenantId } from '@shared/models/id/tenant-id';
 import { HasTenantId } from './entity.models';
 import { DomainId } from './id/domain-id';
 import { HasUUID } from '@shared/models/id/has-uuid';
-import { MobileAppId } from '@shared/models/id/mobile-app-id';
 export declare enum DomainSchema {
     HTTP = "HTTP",
     HTTPS = "HTTPS",
@@ -41,6 +40,7 @@ export interface OAuth2RegistrationInfo {
     additionalInfo: string;
 }
 export declare enum ClientAuthenticationMethod {
+    NONE = "NONE",
     BASIC = "BASIC",
     POST = "POST"
 }
@@ -54,15 +54,6 @@ export interface HasOauth2Clients {
     oauth2ClientInfos?: Array<OAuth2ClientInfo> | Array<string>;
 }
 export interface DomainInfo extends Domain, HasOauth2Clients {
-    oauth2ClientInfos?: Array<OAuth2ClientInfo> | Array<string>;
-}
-export interface MobileApp extends BaseData<MobileAppId>, HasTenantId {
-    tenantId?: TenantId;
-    pkgName: string;
-    appSecret: string;
-    oauth2Enabled: boolean;
-}
-export interface MobileAppInfo extends MobileApp, HasOauth2Clients {
     oauth2ClientInfos?: Array<OAuth2ClientInfo> | Array<string>;
 }
 export interface OAuth2Client extends BaseData<OAuth2ClientId>, HasTenantId {

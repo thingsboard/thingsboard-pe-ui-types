@@ -61,7 +61,7 @@ export declare class CustomMenuItemRowComponent implements ControlValueAccessor,
     visiblePagesControls(): Array<AbstractControl>;
     trackByPage(_index: number, pageControl: AbstractControl): any;
     removeCustomPage(index: number): void;
-    addCustomPage(): void;
+    addCustomPage(button: MatButton): void;
     private afterMenuItemEdit;
     private updateIconNameBlockWidth;
     private updateCleanupState;

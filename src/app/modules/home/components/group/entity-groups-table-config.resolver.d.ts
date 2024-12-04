@@ -1,4 +1,4 @@
-import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
+import { ActivatedRouteSnapshot, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { DatePipe } from '@angular/common';
 import { UtilsService } from '@core/services/utils.service';
@@ -11,6 +11,7 @@ import { CustomerService } from '@core/http/customer.service';
 import { EntityGroupsTableConfig } from './entity-groups-table-config';
 import { MatDialog } from '@angular/material/dialog';
 import { EdgeService } from '@core/http/edge.service';
+import { CustomTranslatePipe } from '@shared/pipe/custom-translate.pipe';
 import * as i0 from "@angular/core";
 export declare class EntityGroupsTableConfigResolver {
     private entityGroupService;
@@ -20,11 +21,11 @@ export declare class EntityGroupsTableConfigResolver {
     private translate;
     private datePipe;
     private utils;
-    private route;
     private router;
     private dialog;
     private homeDialogs;
-    constructor(entityGroupService: EntityGroupService, customerService: CustomerService, edgeService: EdgeService, userPermissionsService: UserPermissionsService, translate: TranslateService, datePipe: DatePipe, utils: UtilsService, route: ActivatedRoute, router: Router, dialog: MatDialog, homeDialogs: HomeDialogsService);
+    private customTranslate;
+    constructor(entityGroupService: EntityGroupService, customerService: CustomerService, edgeService: EdgeService, userPermissionsService: UserPermissionsService, translate: TranslateService, datePipe: DatePipe, utils: UtilsService, router: Router, dialog: MatDialog, homeDialogs: HomeDialogsService, customTranslate: CustomTranslatePipe);
     resolve(route: ActivatedRouteSnapshot): Observable<EntityGroupsTableConfig> | EntityGroupsTableConfig;
     resolveEntityGroupTableConfig(params: EntityGroupParams, resolveCustomer?: boolean, customerTitle?: string): Observable<EntityGroupsTableConfig> | EntityGroupsTableConfig;
     private resolveEdgeInfo;

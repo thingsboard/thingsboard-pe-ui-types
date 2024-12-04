@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { SelfRegistrationParams, SignUpSelfRegistrationParams } from '@shared/models/self-register.models';
+import { SignUpSelfRegistrationParams, WebSelfRegistrationParams } from '@shared/models/self-register.models';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { RequestConfig } from '@core/http/http-utils';
@@ -14,9 +14,9 @@ export declare class SelfRegistrationService {
     loadPrivacyPolicy(): Observable<string>;
     loadTermsOfUse(): Observable<string>;
     isAvailablePage(): Observable<any>;
-    saveSelfRegistrationParams(selfRegistrationParams: SelfRegistrationParams, config?: RequestConfig): Observable<SelfRegistrationParams>;
-    getSelfRegistrationParams(config?: RequestConfig): Observable<SelfRegistrationParams>;
-    deleteSelfRegistrationParams(domainName: string, config?: RequestConfig): Observable<Object>;
+    saveSelfRegistrationParams(selfRegistrationParams: WebSelfRegistrationParams, config?: RequestConfig): Observable<WebSelfRegistrationParams>;
+    getSelfRegistrationParams(config?: RequestConfig): Observable<WebSelfRegistrationParams>;
+    deleteSelfRegistrationParams(config?: RequestConfig): Observable<Object>;
     static ɵfac: i0.ɵɵFactoryDeclaration<SelfRegistrationService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<SelfRegistrationService>;
 }

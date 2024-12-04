@@ -8,6 +8,7 @@ import { ImportExportService } from '@shared/import-export/import-export.service
 import { UtilsService } from '@core/services/utils.service';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { EntityAction } from '@home/models/entity/entity-component.models';
+import { CustomTranslatePipe } from '@shared/pipe/custom-translate.pipe';
 import * as i0 from "@angular/core";
 export declare class ConvertersTableConfigResolver {
     private converterService;
@@ -17,8 +18,9 @@ export declare class ConvertersTableConfigResolver {
     private datePipe;
     private router;
     private utils;
+    private customTranslate;
     private readonly config;
-    constructor(converterService: ConverterService, userPermissionsService: UserPermissionsService, translate: TranslateService, importExport: ImportExportService, datePipe: DatePipe, router: Router, utils: UtilsService);
+    constructor(converterService: ConverterService, userPermissionsService: UserPermissionsService, translate: TranslateService, importExport: ImportExportService, datePipe: DatePipe, router: Router, utils: UtilsService, customTranslate: CustomTranslatePipe);
     resolve(route: ActivatedRouteSnapshot): EntityTableConfig<Converter>;
     private configureEntityFunctions;
     private saveConverter;

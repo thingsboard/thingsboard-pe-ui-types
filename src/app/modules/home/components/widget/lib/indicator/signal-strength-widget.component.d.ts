@@ -52,6 +52,7 @@ export declare class SignalStrengthWidgetComponent implements OnInit, OnDestroy,
     private rssi;
     private noSignal;
     private noData;
+    private noSignalRssiValue;
     constructor(widgetComponent: WidgetComponent, imagePipe: ImagePipe, sanitizer: DomSanitizer, translate: TranslateService, renderer: Renderer2, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngAfterViewInit(): void;

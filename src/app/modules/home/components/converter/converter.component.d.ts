@@ -39,6 +39,7 @@ export declare class ConverterComponent extends EntityComponent<Converter> imple
     converterTypeTranslations: Map<ConverterType, string>;
     tbelEnabled: boolean;
     scriptLanguage: typeof ScriptLanguage;
+    readonly converterDebugPerTenantLimitsConfiguration: string;
     private defaultUpdateOnlyKeysByIntegrationType;
     private destroy$;
     constructor(store: Store<AppState>, translate: TranslateService, converterService: ConverterService, dialog: MatDialog, resourcesService: ResourcesService, converterLibraryService: ConverterLibraryService, entityValue: Converter, entitiesTableConfigValue: EntityTableConfig<Converter>, fb: FormBuilder, cd: ChangeDetectorRef);

@@ -1,10 +1,9 @@
-import { OnInit } from '@angular/core';
 import { AuthService } from '@core/auth/auth.service';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { PageComponent } from '@shared/components/page.component';
-import { UntypedFormBuilder } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { SignupService } from '@core/http/signup.service';
 import { DialogService } from '@core/services/dialog.service';
@@ -13,9 +12,8 @@ import { SelfRegistrationService } from '@core/http/self-register.service';
 import { WhiteLabelingService } from '@core/http/white-labeling.service';
 import { MatDialog } from '@angular/material/dialog';
 import * as i0 from "@angular/core";
-export declare class SignupComponent extends PageComponent implements OnInit {
+export declare class SignupComponent extends PageComponent {
     protected store: Store<AppState>;
-    private route;
     private router;
     private authService;
     private signupService;
@@ -25,16 +23,23 @@ export declare class SignupComponent extends PageComponent implements OnInit {
     private translate;
     private reCaptchaV3Service;
     private dialog;
-    fb: UntypedFormBuilder;
+    private fb;
     recaptchaComponent: ReCaptcha2Component;
-    signup: import("@angular/forms").UntypedFormGroup;
+    signup: import("@angular/forms").FormGroup<{
+        fields: import("@angular/forms").FormGroup<{
+            EMAIL: import("@angular/forms").FormControl<string>;
+            FIRST_NAME: import("@angular/forms").FormControl<string>;
+            LAST_NAME: import("@angular/forms").FormControl<string>;
+            PASSWORD: import("@angular/forms").FormControl<string>;
+        }>;
+        recaptchaResponse: import("@angular/forms").FormControl<string>;
+    }>;
     passwordCheck: string;
     acceptPrivacyPolicy: boolean;
     acceptTermsOfUse: boolean;
     signupParams: import("../../../../shared/models/self-register.models").SignUpSelfRegistrationParams;
     class: string;
-    constructor(store: Store<AppState>, route: ActivatedRoute, router: Router, authService: AuthService, signupService: SignupService, wl: WhiteLabelingService, selfRegistrationService: SelfRegistrationService, dialogService: DialogService, translate: TranslateService, reCaptchaV3Service: ReCaptchaV3Service, dialog: MatDialog, fb: UntypedFormBuilder);
-    ngOnInit(): void;
+    constructor(store: Store<AppState>, router: Router, authService: AuthService, signupService: SignupService, wl: WhiteLabelingService, selfRegistrationService: SelfRegistrationService, dialogService: DialogService, translate: TranslateService, reCaptchaV3Service: ReCaptchaV3Service, dialog: MatDialog, fb: FormBuilder);
     signUp(): void;
     private executeSignup;
     promptToResendEmailVerification(): void;

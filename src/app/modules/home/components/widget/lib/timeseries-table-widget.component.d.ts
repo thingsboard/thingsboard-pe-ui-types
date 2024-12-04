@@ -38,7 +38,7 @@ interface TimeseriesHeader {
     show: boolean;
     columnDefaultVisibility?: boolean;
     columnSelectionAvailability?: boolean;
-    styleInfo: CellStyleInfo;
+    styleInfo: Observable<CellStyleInfo>;
     contentInfo: CellContentInfo;
     order?: number;
 }
@@ -134,9 +134,9 @@ export declare class TimeseriesTableWidgetComponent extends PageComponent implem
     trackByRowTimestamp(index: number): number;
     trackByActionCellDescriptionId(index: number, action: WidgetActionDescriptor): string;
     trackBySourcesIndex(index: number, source: TimeseriesTableSource): string;
-    rowStyle(source: TimeseriesTableSource, row: TimeseriesRow, index: number): any;
-    cellStyle(source: TimeseriesTableSource, header: TimeseriesHeader, index: number, row: TimeseriesRow, value: any, rowIndex: number): any;
-    cellContent(source: TimeseriesTableSource, header: TimeseriesHeader, index: number, row: TimeseriesRow, value: any, rowIndex: number): SafeHtml;
+    rowStyle(source: TimeseriesTableSource, row: TimeseriesRow, index: number): Observable<any>;
+    cellStyle(source: TimeseriesTableSource, header: TimeseriesHeader, index: number, row: TimeseriesRow, value: any, rowIndex: number): Observable<any>;
+    cellContent(source: TimeseriesTableSource, header: TimeseriesHeader, index: number, row: TimeseriesRow, value: any, rowIndex: number): Observable<SafeHtml>;
     onRowClick($event: Event, row: TimeseriesRow): void;
     onActionButtonClick($event: Event, row: TimeseriesRow, actionDescriptor: WidgetActionDescriptor): void;
     isActiveTab(index: number): boolean;
@@ -146,9 +146,7 @@ export declare class TimeseriesTableWidgetComponent extends PageComponent implem
     private loadCurrentSourceRow;
     private clearCache;
     private includeColumnInExport;
-    customDataExport(): {
-        [key: string]: any;
-    }[] | Observable<{
+    customDataExport(): Observable<{
         [key: string]: any;
     }[]>;
     private checkProperty;
@@ -168,8 +166,10 @@ declare class TimeseriesDatasource implements DataSource<TimeseriesRow> {
     countCellButtonAction: number;
     private reserveSpaceForHiddenAction;
     private cellButtonActions;
-    private readonly usedShowCellActionFunction;
+    private usedShowCellActionFunction;
+    private inited;
     constructor(source: TimeseriesTableSource, hideEmptyLines: boolean, dateFormatFilter: string, datePipe: DatePipe, widgetContext: WidgetContext);
+    private init;
     connect(collectionViewer: CollectionViewer): Observable<TimeseriesRow[] | ReadonlyArray<TimeseriesRow>>;
     disconnect(collectionViewer: CollectionViewer): void;
     loadRows(): void;

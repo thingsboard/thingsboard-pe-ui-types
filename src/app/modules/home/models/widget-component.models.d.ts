@@ -2,7 +2,7 @@ import { IDashboardComponent } from '@home/models/dashboard-component.models';
 import { DataSet, Datasource, DatasourceData, FormattedData, JsonSettingsSchema, Widget, WidgetActionDescriptor, WidgetActionSource, WidgetConfig, WidgetControllerDescriptor, WidgetExportType, WidgetType, widgetType, WidgetTypeDescriptor, WidgetTypeDetails, WidgetTypeParameters } from '@shared/models/widget.models';
 import { Timewindow, WidgetTimewindow } from '@shared/models/time/time.models';
 import { IAliasController, IStateController, IWidgetSubscription, IWidgetUtils, RpcApi, StateParams, SubscriptionEntityInfo, TimewindowFunctions, WidgetActionsApi, WidgetSubscriptionApi } from '@core/api/widget-api.models';
-import { ChangeDetectorRef, Injector, NgZone, Type } from '@angular/core';
+import { ChangeDetectorRef, InjectionToken, Injector, NgZone, TemplateRef, Type } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { RafService } from '@core/services/raf.service';
 import { WidgetTypeId } from '@shared/models/id/widget-type-id';
@@ -41,12 +41,15 @@ import { TbPopoverComponent } from '@shared/components/popover.component';
 import { EntityId } from '@shared/models/id/entity-id';
 import { ReportService } from '@core/http/report.service';
 import { AlarmQuery, AlarmSearchStatus, AlarmStatus } from '@app/shared/models/alarm.models';
-import { ImagePipe, MillisecondsToTimeStringPipe, TelemetrySubscriber } from '@app/shared/public-api';
+import { ImagePipe } from '@shared/pipe/image.pipe';
+import { MillisecondsToTimeStringPipe } from '@shared/pipe/milliseconds-to-time-string.pipe';
+import { SharedTelemetrySubscriber, TelemetrySubscriber } from '@shared/models/telemetry/telemetry.models';
 import { UserId } from '@shared/models/id/user-id';
 import { UserSettingsService } from '@core/http/user-settings.service';
 import { WhiteLabelingService } from '@core/http/white-labeling.service';
 import { DataKeySettingsFunction } from '@home/components/widget/config/data-keys.component.models';
 import { UtilsService } from '@core/services/utils.service';
+import { CompiledTbFunction } from '@shared/models/js-function.models';
 export interface IWidgetAction {
     name: string;
     icon: string;
@@ -57,7 +60,7 @@ export interface WidgetHeaderAction extends IWidgetAction {
     displayName: string;
     descriptor: WidgetActionDescriptor;
     useShowWidgetHeaderActionFunction: boolean;
-    showWidgetHeaderActionFunction: ShowWidgetHeaderActionFunction;
+    showWidgetHeaderActionFunction: CompiledTbFunction<ShowWidgetHeaderActionFunction>;
 }
 export interface WidgetAction extends IWidgetAction {
     show: boolean;
@@ -102,7 +105,7 @@ export declare class WidgetContext {
     userSettingsService: UserSettingsService;
     utilsService: UtilsService;
     telemetryWsService: TelemetryWebsocketService;
-    telemetrySubscribers?: TelemetrySubscriber[];
+    telemetrySubscribers?: Array<TelemetrySubscriber | SharedTelemetrySubscriber>;
     date: DatePipe;
     imagePipe: ImagePipe;
     milliSecondsToTimeString: MillisecondsToTimeStringPipe;
@@ -372,6 +375,9 @@ export declare class LabelVariablePattern {
     update(): void;
     destroy(): void;
 }
+export declare const widgetContextToken: InjectionToken<WidgetContext>;
+export declare const widgetErrorMessagesToken: InjectionToken<string[]>;
+export declare const widgetTitlePanelToken: InjectionToken<TemplateRef<any>>;
 export interface IDynamicWidgetComponent {
     readonly ctx: WidgetContext;
     readonly errorMessages: string[];

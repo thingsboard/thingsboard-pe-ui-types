@@ -69,6 +69,8 @@ export declare class AlarmCommentComponent implements OnInit {
     getCurrentUserBgColor(userDisplayName: string): string;
     getAlarmCommentFormControl(): AbstractControl;
     getAlarmCommentEditFormControl(): AbstractControl;
+    getAlarmCommentValue(): string;
+    private getAlarmCommentEditValue;
     private clearCommentInput;
     private clearCommentEditInput;
     private getAlarmCommentById;

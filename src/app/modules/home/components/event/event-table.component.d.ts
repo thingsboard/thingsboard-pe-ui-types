@@ -9,6 +9,8 @@ import { EventService } from '@core/http/event.service';
 import { DialogService } from '@core/services/dialog.service';
 import { DebugEventType, EventBody, EventType } from '@shared/models/event.models';
 import { Overlay } from '@angular/cdk/overlay';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
 import * as i0 from "@angular/core";
 export declare class EventTableComponent implements OnInit, AfterViewInit, OnDestroy {
     private eventService;
@@ -18,6 +20,7 @@ export declare class EventTableComponent implements OnInit, AfterViewInit, OnDes
     private dialog;
     private overlay;
     private viewContainerRef;
+    private store;
     private cd;
     tenantId: string;
     defaultEventType: EventType | DebugEventType;
@@ -37,7 +40,7 @@ export declare class EventTableComponent implements OnInit, AfterViewInit, OnDes
     entitiesTable: EntitiesTableComponent;
     eventTableConfig: EventTableConfig;
     private isEmptyData$;
-    constructor(eventService: EventService, dialogService: DialogService, translate: TranslateService, datePipe: DatePipe, dialog: MatDialog, overlay: Overlay, viewContainerRef: ViewContainerRef, cd: ChangeDetectorRef);
+    constructor(eventService: EventService, dialogService: DialogService, translate: TranslateService, datePipe: DatePipe, dialog: MatDialog, overlay: Overlay, viewContainerRef: ViewContainerRef, store: Store<AppState>, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     ngOnDestroy(): void;

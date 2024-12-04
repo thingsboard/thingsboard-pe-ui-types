@@ -1,0 +1,30 @@
+import { TargetDevice, WidgetSettings, WidgetSettingsComponent, widgetType } from '@shared/models/widget.models';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { ValueType } from '@shared/models/constants';
+import { SegmentedButtonAppearanceType, SegmentedButtonColorStylesType, WidgetButtonToggleState } from '@home/components/widget/lib/button/segmented-button-widget.models';
+import * as i0 from "@angular/core";
+export declare class SegmentedButtonWidgetSettingsComponent extends WidgetSettingsComponent {
+    protected store: Store<AppState>;
+    private fb;
+    get targetDevice(): TargetDevice;
+    get widgetType(): widgetType;
+    get borderRadius(): string;
+    segmentedButtonAppearanceType: SegmentedButtonAppearanceType;
+    segmentedButtonColorStylesType: SegmentedButtonColorStylesType;
+    widgetButtonToggleStates: WidgetButtonToggleState[];
+    widgetButtonToggleStatesTranslationsMap: Map<WidgetButtonToggleState, string>;
+    segmentedButtonLayouts: import("@home/components/widget/lib/button/segmented-button-widget.models").SegmentedButtonLayout[];
+    segmentedButtonLayoutTranslationMap: Map<import("@home/components/widget/lib/button/segmented-button-widget.models").SegmentedButtonLayout, string>;
+    segmentedButtonLayoutImageMap: Map<import("@home/components/widget/lib/button/segmented-button-widget.models").SegmentedButtonLayout, string>;
+    segmentedButtonLayoutBorderMap: Map<import("@home/components/widget/lib/button/segmented-button-widget.models").SegmentedButtonLayout, string>;
+    valueType: typeof ValueType;
+    segmentedButtonWidgetSettingsForm: UntypedFormGroup;
+    constructor(store: Store<AppState>, fb: UntypedFormBuilder);
+    protected settingsForm(): UntypedFormGroup;
+    protected defaultSettings(): WidgetSettings;
+    protected onSettingsSet(settings: WidgetSettings): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<SegmentedButtonWidgetSettingsComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SegmentedButtonWidgetSettingsComponent, "tb-segmented-button-widget-settings", never, {}, {}, never, never, false, never>;
+}

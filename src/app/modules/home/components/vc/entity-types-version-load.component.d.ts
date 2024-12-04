@@ -21,7 +21,7 @@ export declare class EntityTypesVersionLoadComponent extends PageComponent imple
     private propagateChange;
     entityTypesVersionLoadFormGroup: UntypedFormGroup;
     entityTypes: typeof EntityType;
-    entityTypesWithoutRelatedData: Set<EntityType>;
+    entityTypesWithoutRelatedData: Set<EntityType | import("@shared/models/entity-type.models").AliasEntityType>;
     loading: boolean;
     overrideEntityTypeTranslationsMap: Map<EntityType | import("@shared/models/entity-type.models").AliasEntityType, string>;
     constructor(store: Store<AppState>, translate: TranslateService, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, fb: UntypedFormBuilder);

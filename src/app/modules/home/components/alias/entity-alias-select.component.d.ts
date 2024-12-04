@@ -1,8 +1,6 @@
-import { AfterViewInit, ElementRef, OnInit } from '@angular/core';
-import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, FormGroupDirective, NgForm } from '@angular/forms';
+import { ElementRef, OnInit } from '@angular/core';
+import { ControlValueAccessor, FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { Store } from '@ngrx/store';
-import { AppState } from '@app/core/core.state';
 import { TranslateService } from '@ngx-translate/core';
 import { EntityType } from '@shared/models/entity-type.models';
 import { EntityService } from '@core/http/entity.service';
@@ -13,14 +11,13 @@ import { MatAutocomplete, MatAutocompleteTrigger } from '@angular/material/autoc
 import { EntityAliasSelectCallbacks } from './entity-alias-select.component.models';
 import { ErrorStateMatcher } from '@angular/material/core';
 import * as i0 from "@angular/core";
-export declare class EntityAliasSelectComponent implements ControlValueAccessor, OnInit, AfterViewInit, ErrorStateMatcher {
-    private store;
+export declare class EntityAliasSelectComponent implements ControlValueAccessor, OnInit, ErrorStateMatcher {
     private errorStateMatcher;
     private entityService;
     translate: TranslateService;
     truncate: TruncatePipe;
     private fb;
-    selectEntityAliasFormGroup: UntypedFormGroup;
+    selectEntityAliasFormGroup: FormGroup;
     modelValue: string | null;
     aliasController: IAliasController;
     allowedEntityTypes: Array<EntityType>;
@@ -28,23 +25,19 @@ export declare class EntityAliasSelectComponent implements ControlValueAccessor,
     showLabel: boolean;
     entityAliasAutocomplete: MatAutocomplete;
     autoCompleteTrigger: MatAutocompleteTrigger;
-    private requiredValue;
-    get tbRequired(): boolean;
-    set tbRequired(value: boolean);
+    tbRequired: boolean;
     disabled: boolean;
     entityAliasInput: ElementRef;
     entityAliasList: Array<EntityAlias>;
     filteredEntityAliases: Observable<Array<EntityAlias>>;
     searchText: string;
     private dirty;
-    private creatingEntityAlias;
     private propagateChange;
-    constructor(store: Store<AppState>, errorStateMatcher: ErrorStateMatcher, entityService: EntityService, translate: TranslateService, truncate: TruncatePipe, fb: UntypedFormBuilder);
+    constructor(errorStateMatcher: ErrorStateMatcher, entityService: EntityService, translate: TranslateService, truncate: TruncatePipe, fb: FormBuilder);
     registerOnChange(fn: any): void;
-    registerOnTouched(fn: any): void;
+    registerOnTouched(_fn: any): void;
     ngOnInit(): void;
-    isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
-    ngAfterViewInit(): void;
+    isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: string | null): void;
     onFocus(): void;
@@ -54,7 +47,8 @@ export declare class EntityAliasSelectComponent implements ControlValueAccessor,
     clear(value?: string): void;
     textIsNotEmpty(text: string): boolean;
     entityAliasEnter($event: KeyboardEvent): void;
+    editEntityAlias($event: Event): void;
     createEntityAlias($event: Event, alias: string, focusOnCancel?: boolean): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<EntityAliasSelectComponent, [null, { skipSelf: true; }, null, null, null, null]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<EntityAliasSelectComponent, [{ skipSelf: true; }, null, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<EntityAliasSelectComponent, "tb-entity-alias-select", never, { "aliasController": { "alias": "aliasController"; "required": false; }; "allowedEntityTypes": { "alias": "allowedEntityTypes"; "required": false; }; "callbacks": { "alias": "callbacks"; "required": false; }; "showLabel": { "alias": "showLabel"; "required": false; }; "tbRequired": { "alias": "tbRequired"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

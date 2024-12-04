@@ -20,6 +20,7 @@ export declare class IntegrationComponent extends EntityComponent<Integration, P
     protected cd: ChangeDetectorRef;
     converterType: typeof ConverterType;
     integrationScope: 'tenant' | 'edges' | 'edge';
+    readonly integrationDebugPerTenantLimitsConfiguration: string;
     private integrationType;
     constructor(store: Store<AppState>, translate: TranslateService, entityValue: Integration, entitiesTableConfigValue: EntityTableConfig<Integration, PageLink, IntegrationInfo>, fb: UntypedFormBuilder, integrationService: IntegrationService, cd: ChangeDetectorRef);
     ngOnInit(): void;

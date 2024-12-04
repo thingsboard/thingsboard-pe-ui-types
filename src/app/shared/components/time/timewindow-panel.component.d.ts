@@ -1,5 +1,5 @@
 import { InjectionToken, OnDestroy, OnInit, ViewContainerRef } from '@angular/core';
-import { AggregationType, HistoryWindowType, RealtimeWindowType, Timewindow, TimewindowType } from '@shared/models/time/time.models';
+import { AggregationType, HistoryWindowType, Interval, QuickTimeInterval, RealtimeWindowType, Timewindow, TimewindowAdvancedParams, TimewindowType } from '@shared/models/time/time.models';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -41,8 +41,6 @@ export declare class TimewindowPanelComponent extends PageComponent implements O
     realtimeTypes: typeof RealtimeWindowType;
     timewindowTypes: typeof TimewindowType;
     aggregationTypes: typeof AggregationType;
-    aggregations: string[];
-    aggregationTypesTranslations: Map<AggregationType, string>;
     result: Timewindow;
     timewindowTypeOptions: ToggleHeaderOption[];
     realtimeTimewindowOptions: ToggleHeaderOption[];
@@ -52,6 +50,17 @@ export declare class TimewindowPanelComponent extends PageComponent implements O
     historyTypeSelectionAvailable: boolean;
     historyIntervalSelectionAvailable: boolean;
     aggregationOptionsAvailable: boolean;
+    realtimeDisableCustomInterval: boolean;
+    realtimeDisableCustomGroupInterval: boolean;
+    historyDisableCustomInterval: boolean;
+    historyDisableCustomGroupInterval: boolean;
+    realtimeAdvancedParams: TimewindowAdvancedParams;
+    realtimeAllowedLastIntervals: Array<Interval>;
+    realtimeAllowedQuickIntervals: Array<QuickTimeInterval>;
+    historyAdvancedParams: TimewindowAdvancedParams;
+    historyAllowedLastIntervals: Array<Interval>;
+    historyAllowedQuickIntervals: Array<QuickTimeInterval>;
+    allowedAggTypes: Array<AggregationType>;
     private destroy$;
     constructor(data: TimewindowPanelData, overlayRef: OverlayRef, store: Store<AppState>, fb: UntypedFormBuilder, timeService: TimeService, translate: TranslateService, viewContainerRef: ViewContainerRef, dialog: MatDialog);
     ngOnInit(): void;
@@ -62,13 +71,16 @@ export declare class TimewindowPanelComponent extends PageComponent implements O
     private prepareTimewindowConfig;
     private updateTimewindowForm;
     cancel(): void;
-    minRealtimeAggInterval(): number;
-    maxRealtimeAggInterval(): number;
-    currentRealtimeTimewindow(): number;
-    minHistoryAggInterval(): number;
-    maxHistoryAggInterval(): number;
-    currentHistoryTimewindow(): any;
+    get minRealtimeAggInterval(): number;
+    get maxRealtimeAggInterval(): number;
+    private currentRealtimeTimewindow;
+    get minHistoryAggInterval(): number;
+    get maxHistoryAggInterval(): number;
+    private currentHistoryTimewindow;
+    get realtimeAllowedAggIntervals(): Array<Interval>;
+    get historyAllowedAggIntervals(): Array<Interval>;
     openTimewindowConfig(): void;
+    private updateTimewindowAdvancedParams;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimewindowPanelComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<TimewindowPanelComponent, "tb-timewindow-panel", never, {}, {}, never, never, false, never>;
 }

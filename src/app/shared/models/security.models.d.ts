@@ -69,7 +69,11 @@ export declare enum Resource {
     QUEUE_STATS = "QUEUE_STATS",
     VERSION_CONTROL = "VERSION_CONTROL",
     NOTIFICATION = "NOTIFICATION",
-    MOBILE_APP_SETTINGS = "MOBILE_APP_SETTINGS"
+    MOBILE_APP_SETTINGS = "MOBILE_APP_SETTINGS",
+    MOBILE_APP_BUNDLE = "MOBILE_APP_BUNDLE",
+    MOBILE_APP = "MOBILE_APP",
+    OAUTH2_CLIENT = "OAUTH2_CLIENT",
+    DOMAIN = "DOMAIN"
 }
 export declare const resourceTypeTranslationMap: Map<Resource, string>;
 export declare const resourceByEntityType: Map<EntityType, Resource>;

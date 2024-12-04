@@ -10,11 +10,14 @@ export declare enum ResourceType {
 }
 export declare enum ResourceSubType {
     IMAGE = "IMAGE",
-    SCADA_SYMBOL = "SCADA_SYMBOL"
+    SCADA_SYMBOL = "SCADA_SYMBOL",
+    EXTENSION = "EXTENSION",
+    MODULE = "MODULE"
 }
 export declare const ResourceTypeMIMETypes: Map<ResourceType, string>;
 export declare const ResourceTypeExtension: Map<ResourceType, string>;
 export declare const ResourceTypeTranslationMap: Map<ResourceType, string>;
+export declare const ResourceSubTypeTranslationMap: Map<ResourceSubType, string>;
 export interface TbResourceInfo<D> extends Omit<BaseData<TbResourceId>, 'name' | 'label'>, ExportableEntity<TbResourceId> {
     tenantId?: TenantId;
     resourceKey?: string;
@@ -24,6 +27,8 @@ export interface TbResourceInfo<D> extends Omit<BaseData<TbResourceId>, 'name' |
     fileName: string;
     public: boolean;
     publicResourceKey?: string;
+    readonly link?: string;
+    readonly publicLink?: string;
     descriptor?: D;
 }
 export type ResourceInfo = TbResourceInfo<any>;
@@ -39,10 +44,7 @@ export interface ImageDescriptor {
     etag: string;
     previewDescriptor: ImageDescriptor;
 }
-export interface ImageResourceInfo extends TbResourceInfo<ImageDescriptor> {
-    link?: string;
-    publicLink?: string;
-}
+export type ImageResourceInfo = TbResourceInfo<ImageDescriptor>;
 export interface ImageResource extends ImageResourceInfo {
     base64?: string;
 }
@@ -57,6 +59,7 @@ export interface ImageExportData {
     data: string;
 }
 export type ImageResourceType = 'tenant' | 'system';
+export type TBResourceScope = 'tenant' | 'system';
 export type ImageReferences = Array<BaseData<HasId> | WhiteLabeling>;
 export interface ImageResourceInfoWithReferences extends ImageResourceInfo {
     references: ImageReferences;
@@ -71,17 +74,28 @@ export interface ImageDeleteResult {
 export declare const toImageDeleteResult: (image: ImageResourceInfo, e?: any) => ImageDeleteResult;
 export declare const imageResourceType: (imageInfo: ImageResourceInfo) => ImageResourceType;
 export declare const TB_IMAGE_PREFIX = "tb-image;";
+export declare const TB_RESOURCE_PREFIX = "tb-resource;";
 export declare const IMAGES_URL_REGEXP: RegExp;
 export declare const IMAGES_URL_PREFIX = "/api/images";
+export declare const RESOURCES_URL_REGEXP: RegExp;
 export declare const PUBLIC_IMAGES_URL_PREFIX = "/api/images/public";
 export declare const IMAGE_BASE64_URL_PREFIX = "data:image/";
 export declare const removeTbImagePrefix: (url: string) => string;
+export declare const removeTbResourcePrefix: (url: string) => string;
 export declare const removeTbImagePrefixFromUrls: (urls: string[]) => string[];
 export declare const prependTbImagePrefix: (url: string) => string;
 export declare const prependTbImagePrefixToUrls: (urls: string[]) => string[];
+export declare const prependTbResourcePrefix: (url: string) => string;
 export declare const isImageResourceUrl: (url: string) => boolean;
+export declare const isJSResourceUrl: (url: string) => boolean;
+export declare const isJSResource: (url: string) => boolean;
 export declare const extractParamsFromImageResourceUrl: (url: string) => {
     type: ImageResourceType;
+    key: string;
+};
+export declare const extractParamsFromJSResourceUrl: (url: string) => {
+    type: ResourceType;
+    scope: TBResourceScope;
     key: string;
 };
 export declare const isBase64DataImageUrl: (url: string) => boolean;

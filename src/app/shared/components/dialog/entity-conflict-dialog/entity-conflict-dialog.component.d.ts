@@ -1,12 +1,11 @@
 import { MatDialogRef } from '@angular/material/dialog';
 import { ImportExportService } from '@shared/import-export/import-export.service';
-import { EntityInfoData } from '@shared/models/entity.models';
+import { VersionedEntity } from '@shared/models/entity.models';
 import { EntityId } from '@shared/models/id/entity-id';
-import { RuleChainMetaData } from '@shared/models/rule-chain.models';
 import * as i0 from "@angular/core";
 interface EntityConflictDialogData {
     message: string;
-    entity: EntityInfoData | RuleChainMetaData;
+    entity: VersionedEntity;
 }
 export declare class EntityConflictDialogComponent {
     data: EntityConflictDialogData;

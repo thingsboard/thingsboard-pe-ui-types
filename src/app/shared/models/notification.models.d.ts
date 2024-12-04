@@ -291,6 +291,7 @@ interface SlackDeliveryMethodNotificationTemplate {
 interface MicrosoftTeamsDeliveryMethodNotificationTemplate {
     subject?: string;
     button: NotificationButtonConfig;
+    themeColor?: string;
 }
 interface MobileDeliveryMethodNotificationTemplate {
     subject: string;
@@ -357,7 +358,9 @@ export declare enum NotificationType {
     RATE_LIMITS = "RATE_LIMITS",
     EDGE_CONNECTION = "EDGE_CONNECTION",
     EDGE_COMMUNICATION_FAILURE = "EDGE_COMMUNICATION_FAILURE",
-    TASK_PROCESSING_FAILURE = "TASK_PROCESSING_FAILURE"
+    TASK_PROCESSING_FAILURE = "TASK_PROCESSING_FAILURE",
+    USER_ACTIVATED = "USER_ACTIVATED",
+    USER_REGISTERED = "USER_REGISTERED"
 }
 export declare const NotificationTypeIcons: Map<NotificationType, string>;
 export declare const AlarmSeverityNotificationColors: Map<AlarmSeverity, string>;

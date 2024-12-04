@@ -9,7 +9,11 @@ export declare class MapWidgetController implements MapWidgetInterface {
     mapProvider: MapProviders;
     private drawRoutes;
     ctx: WidgetContext;
-    constructor(mapProvider: MapProviders, drawRoutes: boolean, ctx: WidgetContext, $element: HTMLElement, isEdit?: boolean);
+    private updatePending;
+    private latestUpdatePending;
+    private resizePending;
+    private destroyed;
+    constructor(mapProvider: MapProviders, drawRoutes: boolean, ctx: WidgetContext, $element: HTMLElement, isEdit?: boolean, mapLoaded?: (map: LeafletMap) => void);
     map: LeafletMap;
     provider: MapProviders;
     schema: JsonSettingsSchema;
@@ -28,7 +32,7 @@ export declare class MapWidgetController implements MapWidgetInterface {
     saveLocation(e: FormattedData, values: {
         [key: string]: any;
     }): Observable<any>;
-    initSettings(settings: UnitedMapSettings, isEditMap?: boolean): WidgetUnitedMapSettings;
+    initSettings(settings: UnitedMapSettings, isEditMap?: boolean): Promise<WidgetUnitedMapSettings>;
     update(): void;
     latestDataUpdate(): void;
     resize(): void;

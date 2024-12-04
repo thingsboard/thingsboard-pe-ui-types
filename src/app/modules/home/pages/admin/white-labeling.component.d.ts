@@ -1,24 +1,29 @@
-import { OnDestroy, OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { PageComponent } from '@shared/components/page.component';
 import { ActivatedRoute } from '@angular/router';
-import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { FormGroupDirective, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { HasConfirmForm } from '@core/guards/confirm-on-exit.guard';
+import { Operation, Resource } from '@shared/models/security.models';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { WhiteLabelingService } from '@core/http/white-labeling.service';
 import { Observable } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { UiSettingsService } from '@core/http/ui-settings.service';
+import { EntityType } from '@shared/models/entity-type.models';
+import { EntityId } from '@shared/models/id/entity-id';
+import { BaseData } from '@shared/models/base-data';
 import * as i0 from "@angular/core";
-export declare class WhiteLabelingComponent extends PageComponent implements OnInit, OnDestroy, HasConfirmForm {
+export declare class WhiteLabelingComponent extends PageComponent implements OnInit, HasConfirmForm {
     protected store: Store<AppState>;
     private route;
     private userPermissionsService;
     private whiteLabelingService;
     private uiSettingsService;
     private dialog;
-    fb: UntypedFormBuilder;
+    private fb;
+    private destroyRef;
     private window;
     wlSettings: UntypedFormGroup;
     private whiteLabelingParams;
@@ -32,10 +37,11 @@ export declare class WhiteLabelingComponent extends PageComponent implements OnI
         name: string;
         value: boolean;
     }[];
-    private destroy$;
-    constructor(store: Store<AppState>, route: ActivatedRoute, userPermissionsService: UserPermissionsService, whiteLabelingService: WhiteLabelingService, uiSettingsService: UiSettingsService, dialog: MatDialog, fb: UntypedFormBuilder, window: Window);
+    readonly EntityType: typeof EntityType;
+    readonly operation: typeof Operation;
+    readonly resource: typeof Resource;
+    constructor(store: Store<AppState>, route: ActivatedRoute, userPermissionsService: UserPermissionsService, whiteLabelingService: WhiteLabelingService, uiSettingsService: UiSettingsService, dialog: MatDialog, fb: UntypedFormBuilder, destroyRef: DestroyRef, window: Window);
     ngOnInit(): void;
-    ngOnDestroy(): void;
     private loadWhiteLabelingParams;
     buildWhiteLabelingSettingsForm(): void;
     private updateValidators;
@@ -44,6 +50,10 @@ export declare class WhiteLabelingComponent extends PageComponent implements OnI
     save(): void;
     confirmForm(): UntypedFormGroup;
     onExit(): Observable<any>;
+    delete(form: FormGroupDirective): void;
+    private setWhiteLabelingParams;
+    domainChange(domain: BaseData<EntityId>): void;
+    createDomain(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<WhiteLabelingComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<WhiteLabelingComponent, "tb-white-labeling", never, {}, {}, never, never, false, never>;
 }

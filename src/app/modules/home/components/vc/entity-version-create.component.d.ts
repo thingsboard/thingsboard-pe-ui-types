@@ -26,6 +26,7 @@ export declare class EntityVersionCreateComponent extends PageComponent implemen
     popoverComponent: TbPopoverComponent;
     createVersionFormGroup: UntypedFormGroup;
     entityTypes: typeof EntityType;
+    entityTypesWithoutRelatedData: Set<EntityType | import("@shared/models/entity-type.models").AliasEntityType>;
     resultMessage: string;
     versionCreateResult$: Observable<VersionCreationResult>;
     private versionCreateResultSubscription;

@@ -8,11 +8,11 @@ import { Role } from '@shared/models/role.models';
 import { EntityId } from '@shared/models/id/entity-id';
 export interface GroupPermission extends BaseData<GroupPermissionId> {
     tenantId?: TenantId;
-    userGroupId: EntityGroupId;
+    userGroupId?: EntityGroupId;
     roleId: RoleId;
     entityGroupId?: EntityGroupId;
     entityGroupType?: EntityType;
-    isPublic: boolean;
+    isPublic?: boolean;
 }
 export interface GroupPermissionInfo extends GroupPermission {
     role: Role;

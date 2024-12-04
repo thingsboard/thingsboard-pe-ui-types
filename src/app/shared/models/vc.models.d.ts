@@ -7,7 +7,7 @@ import { RuleChain, RuleChainMetaData } from '@shared/models/rule-chain.models';
 import { EntityGroup } from '@shared/models/entity-group.models';
 import { GroupPermission } from '@shared/models/group-permission.models';
 export declare const exportableEntityTypes: Array<EntityType>;
-export declare const entityTypesWithoutRelatedData: Set<EntityType>;
+export declare const entityTypesWithoutRelatedData: Set<EntityType | AliasEntityType>;
 export interface VersionCreateConfig {
     saveRelations: boolean;
     saveAttributes: boolean;

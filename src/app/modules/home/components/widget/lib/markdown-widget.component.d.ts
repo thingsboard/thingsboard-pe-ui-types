@@ -5,11 +5,13 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { FormattedData } from '@shared/models/widget.models';
 import { UtilsService } from '@core/services/utils.service';
+import { CompiledTbFunction, TbFunction } from '@shared/models/js-function.models';
+import { Observable } from 'rxjs';
 import * as i0 from "@angular/core";
 interface MarkdownWidgetSettings {
     markdownTextPattern: string;
     useMarkdownTextFunction: boolean;
-    markdownTextFunction: string;
+    markdownTextFunction: TbFunction;
     applyDefaultMarkdownStyle: boolean;
     markdownCss: string;
 }
@@ -21,7 +23,7 @@ export declare class MarkdownWidgetComponent extends PageComponent implements On
     widgetComponentsModule: Type<any>;
     private cd;
     settings: MarkdownWidgetSettings;
-    markdownTextFunction: MarkdownTextFunction;
+    markdownTextFunction: Observable<CompiledTbFunction<MarkdownTextFunction>>;
     markdownClass: string;
     ctx: WidgetContext;
     markdownText: string;
@@ -30,6 +32,7 @@ export declare class MarkdownWidgetComponent extends PageComponent implements On
     constructor(store: Store<AppState>, utils: UtilsService, homeComponentsModule: Type<any>, widgetComponentsModule: Type<any>, cd: ChangeDetectorRef);
     ngOnInit(): void;
     onDataUpdated(): void;
+    private updateMarkdownText;
     markdownClick($event: MouseEvent): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<MarkdownWidgetComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<MarkdownWidgetComponent, "tb-markdown-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; }, {}, never, never, false, never>;

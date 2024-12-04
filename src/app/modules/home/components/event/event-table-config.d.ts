@@ -12,6 +12,8 @@ import { DialogService } from '@core/services/dialog.service';
 import { ContentType } from '@shared/models/constants';
 import { Overlay } from '@angular/cdk/overlay';
 import { ChangeDetectorRef, EventEmitter, ViewContainerRef } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
 export declare class EventTableConfig extends EntityTableConfig<Event, TimePageLink> {
     private eventService;
     private dialogService;
@@ -26,6 +28,7 @@ export declare class EventTableConfig extends EntityTableConfig<Event, TimePageL
     private overlay;
     private viewContainerRef;
     private cd;
+    private store;
     private isReadOnly;
     testButtonLabel?: string;
     private debugEventSelected?;
@@ -33,10 +36,11 @@ export declare class EventTableConfig extends EntityTableConfig<Event, TimePageL
     hideClearEventAction: boolean;
     private filterParams;
     private filterColumns;
+    private readonly maxDebugModeDurationMinutes;
     set eventType(eventType: EventType | DebugEventType);
     get eventType(): EventType | DebugEventType;
     eventTypes: Array<EventType | DebugEventType>;
-    constructor(eventService: EventService, dialogService: DialogService, translate: TranslateService, datePipe: DatePipe, dialog: MatDialog, entityId: EntityId, tenantId: string, defaultEventType: EventType | DebugEventType, disabledEventTypes: Array<EventType | DebugEventType>, debugEventTypes: Array<DebugEventType>, overlay: Overlay, viewContainerRef: ViewContainerRef, cd: ChangeDetectorRef, isReadOnly: boolean, testButtonLabel?: string, debugEventSelected?: EventEmitter<EventBody>);
+    constructor(eventService: EventService, dialogService: DialogService, translate: TranslateService, datePipe: DatePipe, dialog: MatDialog, entityId: EntityId, tenantId: string, defaultEventType: EventType | DebugEventType, disabledEventTypes: Array<EventType | DebugEventType>, debugEventTypes: Array<DebugEventType>, overlay: Overlay, viewContainerRef: ViewContainerRef, cd: ChangeDetectorRef, store: Store<AppState>, isReadOnly: boolean, testButtonLabel?: string, debugEventSelected?: EventEmitter<EventBody>);
     clearEvents($event: any): void;
     fetchEvents(pageLink: TimePageLink): Observable<PageData<Event>>;
     updateColumns(updateTableColumns?: boolean): void;

@@ -1,0 +1,35 @@
+import { OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
+import { MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
+import { AggregationType } from '@shared/models/time/time.models';
+import * as i0 from "@angular/core";
+export declare class AggregationTypeSelectComponent implements ControlValueAccessor, OnInit, OnChanges {
+    private translate;
+    private fb;
+    aggregationTypeFormGroup: FormGroup;
+    modelValue: AggregationType | null;
+    allowedAggregationTypes: Array<AggregationType>;
+    required: boolean;
+    disabled: boolean;
+    displayLabel: boolean;
+    labelText: string;
+    get label(): string;
+    subscriptSizing: SubscriptSizing;
+    appearance: MatFormFieldAppearance;
+    aggregationTypes: Array<AggregationType>;
+    private defaultLabel;
+    private allAggregationTypes;
+    private propagateChange;
+    constructor(translate: TranslateService, fb: FormBuilder);
+    registerOnChange(fn: any): void;
+    registerOnTouched(fn: any): void;
+    ngOnInit(): void;
+    ngOnChanges({ allowedAggregationTypes }: SimpleChanges): void;
+    setDisabledState(isDisabled: boolean): void;
+    writeValue(value: AggregationType | null): void;
+    updateView(value: AggregationType | null): void;
+    displayAggregationTypeFn(aggregationType?: AggregationType | null): string | undefined;
+    static ɵfac: i0.ɵɵFactoryDeclaration<AggregationTypeSelectComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AggregationTypeSelectComponent, "tb-aggregation-type-select", never, { "allowedAggregationTypes": { "alias": "allowedAggregationTypes"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "displayLabel": { "alias": "displayLabel"; "required": false; }; "labelText": { "alias": "labelText"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; }, {}, never, ["[matSuffix]"], false, never>;
+}

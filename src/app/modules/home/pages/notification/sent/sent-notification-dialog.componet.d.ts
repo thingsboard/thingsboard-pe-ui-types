@@ -41,6 +41,7 @@ export declare class SentNotificationDialogComponent extends TemplateConfigurati
     preview: NotificationRequestPreview;
     dialogTitle: string;
     showRefresh: boolean;
+    tinyMceOptions: Record<string, any>;
     private authUser;
     private authState;
     private allowNotificationDeliveryMethods;

@@ -37,6 +37,7 @@ export declare enum EntityType {
     NOTIFICATION_TEMPLATE = "NOTIFICATION_TEMPLATE",
     OAUTH2_CLIENT = "OAUTH2_CLIENT",
     DOMAIN = "DOMAIN",
+    MOBILE_APP_BUNDLE = "MOBILE_APP_BUNDLE",
     MOBILE_APP = "MOBILE_APP"
 }
 export declare enum AliasEntityType {

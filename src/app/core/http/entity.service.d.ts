@@ -47,6 +47,8 @@ import { TenantProfileService } from '@core/http/tenant-profile.service';
 import { AlarmService } from '@core/http/alarm.service';
 import { ResourceService } from '@core/http/resource.service';
 import { OAuth2Service } from '@core/http/oauth2.service';
+import { MobileAppService } from '@core/http/mobile-app.service';
+import { DomainService } from '@core/http/domain.service';
 import * as i0 from "@angular/core";
 export declare class EntityService {
     private http;
@@ -80,7 +82,9 @@ export declare class EntityService {
     private alarmService;
     private resourceService;
     private oauth2Service;
-    constructor(http: HttpClient, store: Store<AppState>, deviceService: DeviceService, assetService: AssetService, entityViewService: EntityViewService, edgeService: EdgeService, tenantService: TenantService, customerService: CustomerService, userService: UserService, ruleChainService: RuleChainService, dashboardService: DashboardService, entityRelationService: EntityRelationService, attributeService: AttributeService, otaPackageService: OtaPackageService, widgetService: WidgetService, deviceProfileService: DeviceProfileService, tenantProfileService: TenantProfileService, assetProfileService: AssetProfileService, converterService: ConverterService, integrationService: IntegrationService, schedulerEventService: SchedulerEventService, blobEntityService: BlobEntityService, roleService: RoleService, entityGroupService: EntityGroupService, userPermissionsService: UserPermissionsService, utils: UtilsService, queueService: QueueService, notificationService: NotificationService, alarmService: AlarmService, resourceService: ResourceService, oauth2Service: OAuth2Service);
+    private mobileAppService;
+    private domainService;
+    constructor(http: HttpClient, store: Store<AppState>, deviceService: DeviceService, assetService: AssetService, entityViewService: EntityViewService, edgeService: EdgeService, tenantService: TenantService, customerService: CustomerService, userService: UserService, ruleChainService: RuleChainService, dashboardService: DashboardService, entityRelationService: EntityRelationService, attributeService: AttributeService, otaPackageService: OtaPackageService, widgetService: WidgetService, deviceProfileService: DeviceProfileService, tenantProfileService: TenantProfileService, assetProfileService: AssetProfileService, converterService: ConverterService, integrationService: IntegrationService, schedulerEventService: SchedulerEventService, blobEntityService: BlobEntityService, roleService: RoleService, entityGroupService: EntityGroupService, userPermissionsService: UserPermissionsService, utils: UtilsService, queueService: QueueService, notificationService: NotificationService, alarmService: AlarmService, resourceService: ResourceService, oauth2Service: OAuth2Service, mobileAppService: MobileAppService, domainService: DomainService);
     private getEntityObservable;
     private saveEntityObservable;
     getEntity(entityType: EntityType, entityId: string, config?: RequestConfig): Observable<BaseData<EntityId>>;

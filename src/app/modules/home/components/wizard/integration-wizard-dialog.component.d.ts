@@ -50,6 +50,7 @@ export declare class IntegrationWizardDialogComponent extends DialogComponent<In
     integrationInfo$: Observable<IntegrationConvertersInfo>;
     uplinkConverter: Converter;
     downlinkConverter: Converter;
+    readonly integrationDebugPerTenantLimitsConfiguration: string;
     private checkConnectionAllow;
     private destroy$;
     constructor(store: Store<AppState>, router: Router, data: IntegrationWizardData<Integration>, dialogRef: MatDialogRef<IntegrationWizardDialogComponent, Integration>, breakpointObserver: BreakpointObserver, converterService: ConverterService, integrationService: IntegrationService, translate: TranslateService, fb: UntypedFormBuilder);

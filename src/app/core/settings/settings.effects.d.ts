@@ -18,10 +18,11 @@ export declare class SettingsEffects {
     private router;
     private localStorageService;
     private titleService;
-    private faviconService;
     private translate;
+    private document;
+    private faviconService;
     private reportService;
-    constructor(actions$: Actions<SettingsActions>, store: Store<AppState>, utils: UtilsService, router: Router, localStorageService: LocalStorageService, titleService: TitleService, faviconService: FaviconService, translate: TranslateService, reportService: ReportService);
+    constructor(actions$: Actions<SettingsActions>, store: Store<AppState>, utils: UtilsService, router: Router, localStorageService: LocalStorageService, titleService: TitleService, translate: TranslateService, document: Document, faviconService: FaviconService, reportService: ReportService);
     setTranslateServiceLanguage: import("rxjs").Observable<[import("./settings.actions").ActionSettingsChangeLanguage, import("./settings.models").SettingsState]> & import("@ngrx/effects").CreateEffectMetadata;
     setTitle: import("rxjs").Observable<ActivationEnd | SettingsActions> & import("@ngrx/effects").CreateEffectMetadata;
     setFavicon: import("rxjs").Observable<import("./settings.actions").ActionSettingsChangeWhiteLabeling> & import("@ngrx/effects").CreateEffectMetadata;

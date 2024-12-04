@@ -10,7 +10,7 @@ export declare class DomainService {
     constructor(http: HttpClient);
     saveDomain(domain: Domain, oauth2ClientIds: Array<string>, config?: RequestConfig): Observable<Domain>;
     updateOauth2Clients(id: string, oauth2ClientIds: Array<string>, config?: RequestConfig): Observable<void>;
-    getTenantDomainInfos(pageLink: PageLink, config?: RequestConfig): Observable<PageData<DomainInfo>>;
+    getDomainInfos(pageLink: PageLink, config?: RequestConfig): Observable<PageData<DomainInfo>>;
     getDomainInfoById(id: string, config?: RequestConfig): Observable<DomainInfo>;
     deleteDomain(id: string, config?: RequestConfig): Observable<void>;
     static ɵfac: i0.ɵɵFactoryDeclaration<DomainService, never>;

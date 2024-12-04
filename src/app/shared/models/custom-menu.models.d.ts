@@ -37,6 +37,7 @@ export interface MenuItem {
     icon?: string;
     visible?: boolean;
     pages?: MenuItem[];
+    id?: MenuId;
 }
 export interface DefaultMenuItem extends MenuItem, MenuReference {
     id: MenuId;

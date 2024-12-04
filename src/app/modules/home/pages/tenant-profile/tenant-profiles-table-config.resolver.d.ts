@@ -9,6 +9,7 @@ import { DialogService } from '@core/services/dialog.service';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { UtilsService } from '@core/services/utils.service';
 import { ImportExportService } from '@shared/import-export/import-export.service';
+import { CustomTranslatePipe } from '@shared/pipe/custom-translate.pipe';
 import * as i0 from "@angular/core";
 export declare class TenantProfilesTableConfigResolver {
     private tenantProfileService;
@@ -17,10 +18,11 @@ export declare class TenantProfilesTableConfigResolver {
     private datePipe;
     private router;
     private dialogService;
+    private customTranslate;
     private utils;
     private userPermissionService;
     private readonly config;
-    constructor(tenantProfileService: TenantProfileService, importExport: ImportExportService, translate: TranslateService, datePipe: DatePipe, router: Router, dialogService: DialogService, utils: UtilsService, userPermissionService: UserPermissionsService);
+    constructor(tenantProfileService: TenantProfileService, importExport: ImportExportService, translate: TranslateService, datePipe: DatePipe, router: Router, dialogService: DialogService, customTranslate: CustomTranslatePipe, utils: UtilsService, userPermissionService: UserPermissionsService);
     resolve(): EntityTableConfig<TenantProfile>;
     configureAddActions(): Array<HeaderActionDescriptor>;
     private openTenantProfile;

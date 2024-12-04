@@ -1,25 +1,21 @@
 import { MatDialogRef } from '@angular/material/dialog';
 import { InjectionToken } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { AppState } from '@core/core.state';
 import { Router } from '@angular/router';
 import { PageComponent } from '@shared/components/page.component';
-import { CustomDialogContainerComponent } from './custom-dialog-container.component';
 import { UntypedFormBuilder } from '@angular/forms';
 import * as i0 from "@angular/core";
-export declare const CUSTOM_DIALOG_DATA: InjectionToken<any>;
+export declare const CUSTOM_DIALOG_DATA: InjectionToken<CustomDialogData>;
 export interface CustomDialogData {
     controller: (instance: CustomDialogComponent) => void;
     [key: string]: any;
 }
 export declare class CustomDialogComponent extends PageComponent {
-    protected store: Store<AppState>;
-    protected router: Router;
-    dialogRef: MatDialogRef<CustomDialogContainerComponent>;
-    fb: UntypedFormBuilder;
-    data: CustomDialogData;
     [key: string]: any;
-    constructor(store: Store<AppState>, router: Router, dialogRef: MatDialogRef<CustomDialogContainerComponent>, fb: UntypedFormBuilder, data: CustomDialogData);
+    protected router: Router;
+    dialogRef: MatDialogRef<any, any>;
+    data: CustomDialogData;
+    fb: UntypedFormBuilder;
+    constructor();
     static ɵfac: i0.ɵɵFactoryDeclaration<CustomDialogComponent, never>;
     static ɵdir: i0.ɵɵDirectiveDeclaration<CustomDialogComponent, never, never, {}, {}, never, never, false, never>;
 }

@@ -1,9 +1,10 @@
-import { OnInit } from '@angular/core';
-import { ControlValueAccessor } from '@angular/forms';
+import { OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
 import { QuickTimeInterval } from '@shared/models/time/time.models';
 import { MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
-export declare class QuickTimeIntervalComponent implements OnInit, ControlValueAccessor {
+export declare class QuickTimeIntervalComponent implements OnInit, ControlValueAccessor, OnChanges {
+    private fb;
     private allIntervals;
     modelValue: QuickTimeInterval;
     timeIntervalTranslationMap: Map<QuickTimeInterval, string>;
@@ -11,17 +12,22 @@ export declare class QuickTimeIntervalComponent implements OnInit, ControlValueA
     displayLabel: boolean;
     disabled: boolean;
     onlyCurrentInterval: boolean;
+    allowedIntervals: Array<QuickTimeInterval>;
     subscriptSizing: SubscriptSizing;
     appearance: MatFormFieldAppearance;
+    intervals: Array<QuickTimeInterval>;
+    private allAvailableIntervals;
+    quickIntervalFormGroup: FormGroup;
     private propagateChange;
-    constructor();
-    get intervals(): QuickTimeInterval[];
+    constructor(fb: FormBuilder);
     ngOnInit(): void;
+    ngOnChanges({ allowedIntervals }: SimpleChanges): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
-    writeValue(interval: QuickTimeInterval): void;
-    onIntervalChange(): void;
+    writeValue(value: QuickTimeInterval): void;
+    updateView(value: QuickTimeInterval | null): void;
+    private getAllAvailableIntervals;
     static ɵfac: i0.ɵɵFactoryDeclaration<QuickTimeIntervalComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<QuickTimeIntervalComponent, "tb-quick-time-interval", never, { "displayLabel": { "alias": "displayLabel"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "onlyCurrentInterval": { "alias": "onlyCurrentInterval"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<QuickTimeIntervalComponent, "tb-quick-time-interval", never, { "displayLabel": { "alias": "displayLabel"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "onlyCurrentInterval": { "alias": "onlyCurrentInterval"; "required": false; }; "allowedIntervals": { "alias": "allowedIntervals"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; }, {}, never, ["[matSuffix]"], false, never>;
 }

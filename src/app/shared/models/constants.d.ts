@@ -123,6 +123,10 @@ export declare const HelpLinks: {
         ruleNodeAggregateStream: string;
         ruleNodeAlarmsCount: string;
         ruleNodeAlarmsCountDeprecated: string;
+        ruleNodeAcknowledge: string;
+        ruleNodeCheckpoint: string;
+        ruleNodeSendNotification: string;
+        ruleNodeSendSlack: string;
         tenants: string;
         tenantProfiles: string;
         customers: string;
@@ -159,6 +163,9 @@ export declare const HelpLinks: {
         scada: string;
         scadaSymbolDev: string;
         scadaSymbolDevAnimation: string;
+        mobileApplication: string;
+        mobileBundle: string;
+        mobileQrCode: string;
         converters: string;
         uplinkConverters: string;
         downlinkConverters: string;
@@ -181,6 +188,7 @@ export declare const HelpLinks: {
         integrationChirpStack: string;
         integrationAzureEventHub: string;
         integrationAzureIoTHub: string;
+        integrationAzureServiceBus: string;
         integrationOpcUa: string;
         integrationUdp: string;
         integrationTcp: string;
@@ -191,6 +199,7 @@ export declare const HelpLinks: {
         integrationCoAP: string;
         integrationKpn: string;
         integrationCustom: string;
+        integrationTuya: string;
         whiteLabeling: string;
         entityGroups: string;
         customTranslation: string;

@@ -9,6 +9,9 @@ export declare class TripAnimationComponent implements OnInit, AfterViewInit, On
     private cd;
     private sanitizer;
     private mapResize$;
+    private initialized;
+    private updatePending;
+    private mapWidgetUpdatePending;
     constructor(cd: ChangeDetectorRef, sanitizer: DomSanitizer);
     ctx: WidgetContext;
     mapContainer: any;
@@ -36,6 +39,10 @@ export declare class TripAnimationComponent implements OnInit, AfterViewInit, On
     ngAfterViewInit(): void;
     ngOnDestroy(): void;
     timeUpdated(time: number): void;
+    private initializeFunctions;
+    private update;
+    private latestDataUpdate;
+    private updateMapWidget;
     private updateCurrentData;
     setActiveTrip(): void;
     private calculateLastPoints;

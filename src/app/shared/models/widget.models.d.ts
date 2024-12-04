@@ -20,6 +20,7 @@ import { ComponentStyle, Font, TimewindowStyle } from '@shared/models/widget-set
 import { HasTenantId, HasVersion } from '@shared/models/entity.models';
 import { DataKeysCallbacks, DataKeySettingsFunction } from '@home/components/widget/config/data-keys.component.models';
 import { WidgetConfigCallbacks } from '@home/components/widget/config/widget-config.component.models';
+import { TbFunction } from '@shared/models/js-function.models';
 import * as i0 from "@angular/core";
 export declare enum widgetType {
     timeseries = "timeseries",
@@ -56,7 +57,7 @@ export interface WidgetTypeDescriptor {
     resources: Array<WidgetResource>;
     templateHtml: string;
     templateCss: string;
-    controllerScript: string;
+    controllerScript: TbFunction;
     settingsSchema?: string | any;
     dataKeySettingsSchema?: string | any;
     latestDataKeySettingsSchema?: string | any;
@@ -126,6 +127,7 @@ export interface WidgetTypeDetails extends WidgetType, ExportableEntity<WidgetTy
     image: string;
     description: string;
     tags: string[];
+    resources?: Array<any>;
 }
 export declare enum DeprecatedFilter {
     ALL = "ALL",
@@ -171,8 +173,8 @@ export interface KeyInfo {
     comparisonResultType?: ComparisonResultType;
     label?: string;
     color?: string;
-    funcBody?: string;
-    postFuncBody?: string;
+    funcBody?: TbFunction;
+    postFuncBody?: TbFunction;
     units?: string;
     decimals?: number;
 }
@@ -342,31 +344,31 @@ export interface WidgetMobileActionResult<T extends MobileActionResult> {
     hasError: boolean;
 }
 export interface ProcessImageDescriptor {
-    processImageFunction: string;
+    processImageFunction: TbFunction;
 }
 export interface ProcessLaunchResultDescriptor {
-    processLaunchResultFunction?: string;
+    processLaunchResultFunction?: TbFunction;
 }
 export interface LaunchMapDescriptor extends ProcessLaunchResultDescriptor {
-    getLocationFunction: string;
+    getLocationFunction: TbFunction;
 }
 export interface ScanQrCodeDescriptor {
-    processQrCodeFunction: string;
+    processQrCodeFunction: TbFunction;
 }
 export interface MakePhoneCallDescriptor extends ProcessLaunchResultDescriptor {
-    getPhoneNumberFunction: string;
+    getPhoneNumberFunction: TbFunction;
 }
 export interface GetLocationDescriptor {
-    processLocationFunction: string;
+    processLocationFunction: TbFunction;
 }
 export type WidgetMobileActionDescriptors = ProcessImageDescriptor & LaunchMapDescriptor & ScanQrCodeDescriptor & MakePhoneCallDescriptor & GetLocationDescriptor;
 export interface WidgetMobileActionDescriptor extends WidgetMobileActionDescriptors {
     type: WidgetMobileActionType;
-    handleErrorFunction?: string;
-    handleEmptyResultFunction?: string;
+    handleErrorFunction?: TbFunction;
+    handleEmptyResultFunction?: TbFunction;
 }
 export interface CustomActionDescriptor {
-    customFunction?: string;
+    customFunction?: TbFunction;
     customResources?: Array<WidgetResource>;
     customHtml?: string;
     customCss?: string;
@@ -403,7 +405,7 @@ export interface WidgetActionDescriptor extends WidgetAction {
     icon: string;
     displayName?: string;
     useShowWidgetActionFunction?: boolean;
-    showWidgetActionFunction?: string;
+    showWidgetActionFunction?: TbFunction;
     columnIndex?: number;
 }
 export declare const actionDescriptorToAction: (descriptor: WidgetActionDescriptor) => WidgetAction;

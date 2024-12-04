@@ -1,0 +1,30 @@
+import { AfterViewInit, OnDestroy } from '@angular/core';
+import { ErrorStateMatcher } from '@angular/material/core';
+import { DialogComponent } from '@shared/components/dialog.component';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { Router } from '@angular/router';
+import { MatDialogRef } from '@angular/material/dialog';
+import { FormGroupDirective, NgForm, UntypedFormControl } from '@angular/forms';
+import { Domain } from '@shared/models/oauth2.models';
+import { DomainService } from '@core/http/domain.service';
+import { DomainComponent } from '@home/pages/admin/oauth2/domains/domain.component';
+import * as i0 from "@angular/core";
+export declare class DomainDialogComponent extends DialogComponent<DomainDialogComponent, Domain> implements OnDestroy, AfterViewInit, ErrorStateMatcher {
+    protected store: Store<AppState>;
+    protected router: Router;
+    protected dialogRef: MatDialogRef<DomainDialogComponent, Domain>;
+    private domainService;
+    private errorStateMatcher;
+    submitted: boolean;
+    addTitle: string;
+    helpId: string;
+    domainComponent: DomainComponent;
+    constructor(store: Store<AppState>, router: Router, dialogRef: MatDialogRef<DomainDialogComponent, Domain>, domainService: DomainService, errorStateMatcher: ErrorStateMatcher);
+    ngAfterViewInit(): void;
+    isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
+    cancel(): void;
+    save(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<DomainDialogComponent, [null, null, null, null, { skipSelf: true; }]>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DomainDialogComponent, "tb-mobile-app-dialog", never, {}, {}, never, never, false, never>;
+}

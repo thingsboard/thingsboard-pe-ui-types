@@ -1,5 +1,5 @@
 import { OnDestroy, OnInit } from '@angular/core';
-import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup, Validator, ValidationErrors } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -9,6 +9,7 @@ export declare class KeyValMapComponent extends PageComponent implements Control
     protected store: Store<AppState>;
     private fb;
     disabled: boolean;
+    isValueRequired: boolean;
     titleText: string;
     keyPlaceholderText: string;
     valuePlaceholderText: string;
@@ -31,14 +32,10 @@ export declare class KeyValMapComponent extends PageComponent implements Control
     }): void;
     removeKeyVal(index: number): void;
     addKeyVal(): void;
-    validate(c: UntypedFormControl): {
-        keyVals: {
-            valid: boolean;
-        };
-    };
+    validate(): ValidationErrors | null;
     get isSingleMode(): boolean;
     get isSinglePredefinedKey(): boolean;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<KeyValMapComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<KeyValMapComponent, "tb-key-val-map", never, { "disabled": { "alias": "disabled"; "required": false; }; "titleText": { "alias": "titleText"; "required": false; }; "keyPlaceholderText": { "alias": "keyPlaceholderText"; "required": false; }; "valuePlaceholderText": { "alias": "valuePlaceholderText"; "required": false; }; "noDataText": { "alias": "noDataText"; "required": false; }; "singlePredefinedKey": { "alias": "singlePredefinedKey"; "required": false; }; "isStrokedButton": { "alias": "isStrokedButton"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<KeyValMapComponent, "tb-key-val-map", never, { "disabled": { "alias": "disabled"; "required": false; }; "isValueRequired": { "alias": "isValueRequired"; "required": false; }; "titleText": { "alias": "titleText"; "required": false; }; "keyPlaceholderText": { "alias": "keyPlaceholderText"; "required": false; }; "valuePlaceholderText": { "alias": "valuePlaceholderText"; "required": false; }; "noDataText": { "alias": "noDataText"; "required": false; }; "singlePredefinedKey": { "alias": "singlePredefinedKey"; "required": false; }; "isStrokedButton": { "alias": "isStrokedButton"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; }, {}, never, never, false, never>;
 }

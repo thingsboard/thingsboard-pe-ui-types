@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, EventEmitter, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, EventEmitter, OnDestroy, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -20,7 +20,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { GridType } from 'angular-gridster2';
 import { WidgetService } from '@core/http/widget.service';
 import * as i0 from "@angular/core";
-export declare class ScadaSymbolComponent extends PageComponent implements OnInit, OnDestroy, AfterViewInit, HasDirtyFlag, ScadaSymbolEditObjectCallbacks {
+export declare class ScadaSymbolComponent extends PageComponent implements OnInit, OnDestroy, HasDirtyFlag, ScadaSymbolEditObjectCallbacks {
     protected store: Store<AppState>;
     private route;
     private fb;
@@ -63,7 +63,6 @@ export declare class ScadaSymbolComponent extends PageComponent implements OnIni
     set isDirty(value: boolean);
     constructor(store: Store<AppState>, route: ActivatedRoute, fb: UntypedFormBuilder, cd: ChangeDetectorRef, entityService: EntityService, utils: UtilsService, translate: TranslateService, imageService: ImageService, widgetService: WidgetService, dialog: MatDialog);
     ngOnInit(): void;
-    ngAfterViewInit(): void;
     ngOnDestroy(): void;
     onApplyScadaSymbolConfig(): void;
     onRevertScadaSymbolConfig(): void;

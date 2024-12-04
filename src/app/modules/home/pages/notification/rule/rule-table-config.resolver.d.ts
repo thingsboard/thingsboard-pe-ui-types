@@ -5,6 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRouteSnapshot } from '@angular/router';
 import { DatePipe } from '@angular/common';
+import { CustomTranslatePipe } from '@shared/pipe/custom-translate.pipe';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import * as i0 from "@angular/core";
 export declare class RuleTableConfigResolver {
@@ -12,9 +13,10 @@ export declare class RuleTableConfigResolver {
     private translate;
     private dialog;
     private datePipe;
+    private customTranslate;
     private userPermissionsService;
     private readonly config;
-    constructor(notificationService: NotificationService, translate: TranslateService, dialog: MatDialog, datePipe: DatePipe, userPermissionsService: UserPermissionsService);
+    constructor(notificationService: NotificationService, translate: TranslateService, dialog: MatDialog, datePipe: DatePipe, customTranslate: CustomTranslatePipe, userPermissionsService: UserPermissionsService);
     resolve(route: ActivatedRouteSnapshot): EntityTableConfig<NotificationRule>;
     private configureCellActions;
     private editRule;

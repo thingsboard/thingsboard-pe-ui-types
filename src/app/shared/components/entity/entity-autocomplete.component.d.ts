@@ -1,5 +1,5 @@
 import { AfterViewInit, ElementRef, EventEmitter, OnInit } from '@angular/core';
-import { MatFormFieldAppearance } from '@angular/material/form-field';
+import { MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
@@ -38,7 +38,11 @@ export declare class EntityAutocompleteComponent implements ControlValueAccessor
     appearance: MatFormFieldAppearance;
     required: boolean;
     disabled: boolean;
+    allowCreateNew: boolean;
+    subscriptSizing: SubscriptSizing;
+    additionalClasses: Array<string>;
     entityChanged: EventEmitter<BaseData<EntityId>>;
+    createNew: EventEmitter<void>;
     entityInput: ElementRef;
     get requiredErrorText(): string;
     get label(): string;
@@ -59,6 +63,7 @@ export declare class EntityAutocompleteComponent implements ControlValueAccessor
     textIsNotEmpty(text: string): boolean;
     clear(): void;
     checkEntityType(entityType: EntityType | AliasEntityType): EntityType;
+    createNewEntity($event: Event): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityAutocompleteComponent, "tb-entity-autocomplete", never, { "entityType": { "alias": "entityType"; "required": false; }; "entitySubtype": { "alias": "entitySubtype"; "required": false; }; "excludeEntityIds": { "alias": "excludeEntityIds"; "required": false; }; "labelText": { "alias": "labelText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "useFullEntityId": { "alias": "useFullEntityId"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, { "entityChanged": "entityChanged"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityAutocompleteComponent, "tb-entity-autocomplete", never, { "entityType": { "alias": "entityType"; "required": false; }; "entitySubtype": { "alias": "entitySubtype"; "required": false; }; "excludeEntityIds": { "alias": "excludeEntityIds"; "required": false; }; "labelText": { "alias": "labelText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "useFullEntityId": { "alias": "useFullEntityId"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "allowCreateNew": { "alias": "allowCreateNew"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "additionalClasses": { "alias": "additionalClasses"; "required": false; }; }, { "entityChanged": "entityChanged"; "createNew": "createNew"; }, never, never, false, never>;
 }

@@ -1,20 +1,19 @@
-import { OnDestroy, OnInit } from '@angular/core';
+import { OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
 import { TimeService } from '@core/services/time.service';
 import { MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
 import { Interval, TimeInterval } from '@shared/models/time/time.models';
 import * as i0 from "@angular/core";
-export declare class TimeintervalComponent implements OnInit, ControlValueAccessor, OnDestroy {
+export declare class TimeintervalComponent implements OnInit, ControlValueAccessor, OnChanges, OnDestroy {
     private timeService;
     private fb;
     minValue: number;
     maxValue: number;
-    disabledAdvancedState: boolean;
     set min(min: number);
     set max(max: number);
     predefinedName: string;
-    isEdit: boolean;
-    set disabledAdvanced(disabledAdvanced: boolean);
+    disabledAdvanced: boolean;
+    allowedIntervals: Array<Interval>;
     useCalendarIntervals: boolean;
     disabled: boolean;
     subscriptSizing: SubscriptSizing;
@@ -30,6 +29,7 @@ export declare class TimeintervalComponent implements OnInit, ControlValueAccess
     private destroy$;
     constructor(timeService: TimeService, fb: FormBuilder);
     ngOnInit(): void;
+    ngOnChanges({ disabledAdvanced, allowedIntervals }: SimpleChanges): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
@@ -47,5 +47,6 @@ export declare class TimeintervalComponent implements OnInit, ControlValueAccess
     private onDaysChange;
     ngOnDestroy(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeintervalComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeintervalComponent, "tb-timeinterval", never, { "min": { "alias": "min"; "required": false; }; "max": { "alias": "max"; "required": false; }; "predefinedName": { "alias": "predefinedName"; "required": false; }; "isEdit": { "alias": "isEdit"; "required": false; }; "disabledAdvanced": { "alias": "disabledAdvanced"; "required": false; }; "useCalendarIntervals": { "alias": "useCalendarIntervals"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; }, {}, never, ["*"], false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeintervalComponent, "tb-timeinterval", never, { "min": { "alias": "min"; "required": false; }; "max": { "alias": "max"; "required": false; }; "predefinedName": { "alias": "predefinedName"; "required": false; }; "disabledAdvanced": { "alias": "disabledAdvanced"; "required": false; }; "allowedIntervals": { "alias": "allowedIntervals"; "required": false; }; "useCalendarIntervals": { "alias": "useCalendarIntervals"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; }, {}, never, ["*", "[matSuffix]"], false, never>;
+    static ngAcceptInputType_disabledAdvanced: unknown;
 }

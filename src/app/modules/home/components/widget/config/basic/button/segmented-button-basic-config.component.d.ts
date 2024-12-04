@@ -1,0 +1,32 @@
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { BasicWidgetConfigComponent } from '@home/components/widget/config/widget-config.component.models';
+import { WidgetConfigComponentData } from '@home/models/widget-component.models';
+import { TargetDevice } from '@shared/models/widget.models';
+import { WidgetConfigComponent } from '@home/components/widget/widget-config.component';
+import { ValueType } from '@shared/models/constants';
+import { SegmentedButtonAppearanceType, SegmentedButtonColorStylesType, WidgetButtonToggleState } from '@home/components/widget/lib/button/segmented-button-widget.models';
+import * as i0 from "@angular/core";
+export declare class SegmentedButtonBasicConfigComponent extends BasicWidgetConfigComponent {
+    protected store: Store<AppState>;
+    protected widgetConfigComponent: WidgetConfigComponent;
+    private fb;
+    get targetDevice(): TargetDevice;
+    segmentedButtonAppearanceType: SegmentedButtonAppearanceType;
+    segmentedButtonColorStylesType: SegmentedButtonColorStylesType;
+    widgetButtonToggleStates: WidgetButtonToggleState[];
+    widgetButtonToggleStatesTranslationsMap: Map<WidgetButtonToggleState, string>;
+    segmentedButtonLayouts: import("@home/components/widget/lib/button/segmented-button-widget.models").SegmentedButtonLayout[];
+    segmentedButtonLayoutTranslationMap: Map<import("@home/components/widget/lib/button/segmented-button-widget.models").SegmentedButtonLayout, string>;
+    segmentedButtonLayoutImageMap: Map<import("@home/components/widget/lib/button/segmented-button-widget.models").SegmentedButtonLayout, string>;
+    segmentedButtonLayoutBorderMap: Map<import("@home/components/widget/lib/button/segmented-button-widget.models").SegmentedButtonLayout, string>;
+    valueType: typeof ValueType;
+    segmentedButtonWidgetConfigForm: UntypedFormGroup;
+    constructor(store: Store<AppState>, widgetConfigComponent: WidgetConfigComponent, fb: UntypedFormBuilder);
+    protected configForm(): UntypedFormGroup;
+    protected onConfigSet(configData: WidgetConfigComponentData): void;
+    protected prepareOutputConfig(config: any): WidgetConfigComponentData;
+    static ɵfac: i0.ɵɵFactoryDeclaration<SegmentedButtonBasicConfigComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SegmentedButtonBasicConfigComponent, "tb-segmented-button-basic-config", never, {}, {}, never, never, false, never>;
+}

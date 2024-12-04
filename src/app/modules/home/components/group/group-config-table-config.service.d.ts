@@ -11,6 +11,8 @@ import { HomeDialogsService } from '@home/dialogs/home-dialogs.service';
 import { Router } from '@angular/router';
 import { EntityGroupParams } from '@shared/models/entity-group.models';
 import { GroupEntityTableConfig } from '@home/models/group/group-entities-table-config.models';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 import * as i0 from "@angular/core";
 export declare class GroupConfigTableConfigService<T extends BaseData<HasId>> {
     protected entityGroupService: EntityGroupService;
@@ -23,9 +25,10 @@ export declare class GroupConfigTableConfigService<T extends BaseData<HasId>> {
     protected dialog: MatDialog;
     protected homeDialogs: HomeDialogsService;
     protected router: Router;
+    protected http: HttpClient;
     protected injector: Injector;
-    constructor(entityGroupService: EntityGroupService, userPermissionsService: UserPermissionsService, telemetryWsService: TelemetryWebsocketService, zone: NgZone, translate: TranslateService, utils: UtilsService, datePipe: DatePipe, dialog: MatDialog, homeDialogs: HomeDialogsService, router: Router, injector: Injector);
-    prepareConfiguration(params: EntityGroupParams, config: GroupEntityTableConfig<T>): GroupEntityTableConfig<T>;
+    constructor(entityGroupService: EntityGroupService, userPermissionsService: UserPermissionsService, telemetryWsService: TelemetryWebsocketService, zone: NgZone, translate: TranslateService, utils: UtilsService, datePipe: DatePipe, dialog: MatDialog, homeDialogs: HomeDialogsService, router: Router, http: HttpClient, injector: Injector);
+    prepareConfiguration(params: EntityGroupParams, config: GroupEntityTableConfig<T>): Observable<GroupEntityTableConfig<T>>;
     private changeEntitiesOwner;
     private addEntitiesToEntityGroup;
     private moveEntitiesToEntityGroup;

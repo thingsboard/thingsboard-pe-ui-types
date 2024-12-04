@@ -4,18 +4,20 @@ import { WidgetContext } from '@home/models/widget-component.models';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { FormattedData } from '@shared/models/widget.models';
+import { CompiledTbFunction, TbFunction } from '@shared/models/js-function.models';
+import { Observable } from 'rxjs';
 import * as i0 from "@angular/core";
 interface QrCodeWidgetSettings {
     qrCodeTextPattern: string;
     useQrCodeTextFunction: boolean;
-    qrCodeTextFunction: string;
+    qrCodeTextFunction: TbFunction;
 }
 type QrCodeTextFunction = (data: FormattedData[]) => string;
 export declare class QrCodeWidgetComponent extends PageComponent implements OnInit, AfterViewInit {
     protected store: Store<AppState>;
     protected cd: ChangeDetectorRef;
     settings: QrCodeWidgetSettings;
-    qrCodeTextFunction: QrCodeTextFunction;
+    qrCodeTextFunction: Observable<CompiledTbFunction<QrCodeTextFunction>>;
     ctx: WidgetContext;
     qrCodeText: string;
     invalidQrCodeText: boolean;

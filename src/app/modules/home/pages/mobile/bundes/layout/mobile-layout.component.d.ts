@@ -1,0 +1,50 @@
+import { ElementRef } from '@angular/core';
+import { AbstractControl, ControlValueAccessor, FormArray, FormBuilder, FormControl, Validator } from '@angular/forms';
+import { MobileLayoutConfig, MobilePage } from '@shared/models/mobile-app.models';
+import { CdkDragDrop } from '@angular/cdk/drag-drop';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { MatDialog } from '@angular/material/dialog';
+import * as i0 from "@angular/core";
+export declare class MobileLayoutComponent implements ControlValueAccessor, Validator {
+    private fb;
+    private breakpointObserver;
+    private dialog;
+    readonly: boolean;
+    mobilePagesContainer: ElementRef<HTMLElement>;
+    pagesForm: import("@angular/forms").FormGroup<{
+        pages: FormArray<FormControl<MobilePage>>;
+    }>;
+    maxIconNameBlockWidth: number;
+    showHiddenPages: FormControl<boolean>;
+    private hideItemsSubject;
+    hideItems$: import("rxjs").Observable<void>;
+    private propagateChange;
+    constructor(fb: FormBuilder, breakpointObserver: BreakpointObserver, dialog: MatDialog);
+    registerOnChange(fn: any): void;
+    registerOnTouched(_fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    writeValue(layout: MobileLayoutConfig): void;
+    validate(_c: FormControl): {
+        invalidLayoutForm: boolean;
+    };
+    hideAll(): void;
+    resetToDefault(): void;
+    get dragEnabled(): boolean;
+    visibleMobilePagesControls(): Array<AbstractControl>;
+    mobileItemDrop(event: CdkDragDrop<string[]>): void;
+    trackByMenuItem(_index: number, menuItemControl: AbstractControl): any;
+    addCustomMobilePage(index?: number): void;
+    isCustom(menuItemControl: AbstractControl): boolean;
+    removeCustomPage(index: number): void;
+    showMenuDivider(index: number): boolean;
+    getDividerLabel(index: number): string;
+    private updateModel;
+    private prepareMobilePages;
+    private prepareMobilePagesFormArray;
+    private computeMaxIconNameBlockWidth;
+    private pagesFormArray;
+    private actualMobilePageIndex;
+    static ɵfac: i0.ɵɵFactoryDeclaration<MobileLayoutComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MobileLayoutComponent, "tb-mobile-layout", never, { "readonly": { "alias": "readonly"; "required": false; }; }, {}, never, never, false, never>;
+    static ngAcceptInputType_readonly: unknown;
+}

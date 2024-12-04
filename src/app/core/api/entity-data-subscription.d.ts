@@ -6,6 +6,8 @@ import { UtilsService } from '@core/services/utils.service';
 import { EntityDataListener, EntityDataLoadResult } from '@core/api/entity-data.service';
 import { Observable } from 'rxjs';
 import { TelemetryWebsocketService } from '@core/ws/telemetry-websocket.service';
+import { CompiledTbFunction, TbFunction } from '@shared/models/js-function.models';
+import { HttpClient } from '@angular/common/http';
 declare type DataKeyFunction = (time: number, prevValue: any) => any;
 declare type DataKeyPostFunction = (time: number, value: any, prevValue: any, timePrev: number, prevOrigValue: any) => any;
 export interface SubscriptionDataKey {
@@ -16,10 +18,10 @@ export interface SubscriptionDataKey {
     timeForComparison?: ComparisonDuration;
     comparisonCustomIntervalValue?: number;
     comparisonResultType?: ComparisonResultType;
-    funcBody: string;
-    func?: DataKeyFunction;
-    postFuncBody: string;
-    postFunc?: DataKeyPostFunction;
+    funcBody: TbFunction;
+    func?: CompiledTbFunction<DataKeyFunction>;
+    postFuncBody: TbFunction;
+    postFunc?: CompiledTbFunction<DataKeyPostFunction>;
     index?: number;
     listIndex?: number;
     key?: string;
@@ -44,7 +46,8 @@ export declare class EntityDataSubscription {
     private listener;
     private telemetryService;
     private utils;
-    constructor(listener: EntityDataListener, telemetryService: TelemetryWebsocketService, utils: UtilsService);
+    private http;
+    constructor(listener: EntityDataListener, telemetryService: TelemetryWebsocketService, utils: UtilsService, http: HttpClient);
     private entityDataSubscriptionOptions;
     private datasourceType;
     private history;

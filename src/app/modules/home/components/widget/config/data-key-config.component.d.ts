@@ -85,7 +85,7 @@ export declare class DataKeyConfigComponent extends PageComponent implements OnI
     private fetchKeys;
     private getKeys;
     private createKeyFilter;
-    validateOnSubmit(): void;
+    validateOnSubmit(): Observable<void>;
     validate(c: UntypedFormControl): {
         dataKey: {
             valid: boolean;

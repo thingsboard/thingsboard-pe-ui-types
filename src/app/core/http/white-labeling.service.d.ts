@@ -80,6 +80,8 @@ export declare class WhiteLabelingService {
     getCurrentLoginWhiteLabelParams(): Observable<LoginWhiteLabelingParams>;
     saveWhiteLabelParams(wlParams: WhiteLabelingParams): Observable<WhiteLabelingParams>;
     saveLoginWhiteLabelParams(wlParams: LoginWhiteLabelingParams): Observable<LoginWhiteLabelingParams>;
+    deleteCurrentLoginWhiteLabelParams(config?: RequestConfig): Observable<void>;
+    deleteCurrentWhiteLabelParams(config?: RequestConfig): Observable<WhiteLabelingParams>;
     isWhiteLabelingAllowed(): Observable<boolean>;
     isCustomerWhiteLabelingAllowed(): Observable<boolean>;
     saveMailTemplates(mailTemplates: MailTemplatesSettings, config?: RequestConfig): Observable<MailTemplatesSettings>;

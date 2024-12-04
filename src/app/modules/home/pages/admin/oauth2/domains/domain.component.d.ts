@@ -27,6 +27,6 @@ export declare class DomainComponent extends EntityComponent<DomainInfo> {
     updateForm(entity: DomainInfo): void;
     redirectURI(): string;
     createClient($event: Event): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<DomainComponent, never>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<DomainComponent, [null, null, null, { optional: true; }, { optional: true; }, null, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<DomainComponent, "tb-domain", never, {}, {}, never, never, false, never>;
 }

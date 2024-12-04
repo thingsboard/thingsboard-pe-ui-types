@@ -1,5 +1,5 @@
 import { Ace } from 'ace-builds';
-export type tbMetaType = 'object' | 'function' | 'service' | 'property' | 'argument';
+export type tbMetaType = 'object' | 'function' | 'service' | 'property' | 'argument' | 'constant' | 'module';
 export type TbEditorCompletions = {
     [name: string]: TbEditorCompletion;
 };
