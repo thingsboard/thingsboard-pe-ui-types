@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
@@ -20,17 +20,18 @@ export declare class UserFilterDialogComponent extends DialogComponent<UserFilte
     dialogRef: MatDialogRef<UserFilterDialogComponent, Filter>;
     private fb;
     translate: TranslateService;
+    private destroyRef;
     filter: Filter;
     userFilterFormGroup: UntypedFormGroup;
     valueTypeEnum: typeof EntityKeyValueType;
     submitted: boolean;
-    constructor(store: Store<AppState>, router: Router, data: UserFilterDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<UserFilterDialogComponent, Filter>, fb: UntypedFormBuilder, translate: TranslateService);
+    constructor(store: Store<AppState>, router: Router, data: UserFilterDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<UserFilterDialogComponent, Filter>, fb: UntypedFormBuilder, translate: TranslateService, destroyRef: DestroyRef);
     private createUserInputFormControl;
     userInputsFormArray(): UntypedFormArray;
     ngOnInit(): void;
     isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     cancel(): void;
     save(): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<UserFilterDialogComponent, [null, null, null, { skipSelf: true; }, null, null, null]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<UserFilterDialogComponent, [null, null, null, { skipSelf: true; }, null, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<UserFilterDialogComponent, "tb-user-filter-dialog", never, {}, {}, never, never, false, never>;
 }

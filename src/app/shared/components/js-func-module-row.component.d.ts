@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, EventEmitter, OnInit } from '@angular/core';
+import { ChangeDetectorRef, DestroyRef, EventEmitter, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { JsFuncModulesComponent } from '@shared/components/js-func-modules.component';
 import { ResourceSubType } from '@shared/models/resource.models';
@@ -17,6 +17,7 @@ export declare class JsFuncModuleRowComponent implements ControlValueAccessor, O
     private modulesComponent;
     private http;
     private translate;
+    private destroyRef;
     ResourceSubType: typeof ResourceSubType;
     resourceAutocomplete: ResourceAutocompleteComponent;
     index: number;
@@ -26,17 +27,23 @@ export declare class JsFuncModuleRowComponent implements ControlValueAccessor, O
     moduleDescription: any;
     moduleSourceCode: any;
     private propagateChange;
-    constructor(fb: UntypedFormBuilder, cd: ChangeDetectorRef, modulesComponent: JsFuncModulesComponent, http: HttpClient, translate: TranslateService);
+    constructor(fb: UntypedFormBuilder, cd: ChangeDetectorRef, modulesComponent: JsFuncModulesComponent, http: HttpClient, translate: TranslateService, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(_fn: any): void;
     writeValue(value: JsFuncModuleRow): void;
     validate(_c: UntypedFormControl): {
         moduleAliasNotUnique: boolean;
+        invalidVariableName?: undefined;
+        module?: undefined;
+    } | {
+        invalidVariableName: boolean;
+        moduleAliasNotUnique?: undefined;
         module?: undefined;
     } | {
         module: boolean;
         moduleAliasNotUnique?: undefined;
+        invalidVariableName?: undefined;
     };
     private loadModuleDescription;
     private loadModuleSourceCode;

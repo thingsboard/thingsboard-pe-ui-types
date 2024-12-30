@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
@@ -13,6 +13,7 @@ export declare class PolygonSettingsComponent extends PageComponent implements O
     private translate;
     private widgetService;
     private fb;
+    private destroyRef;
     disabled: boolean;
     widget: Widget;
     functionScopeVariables: string[];
@@ -21,7 +22,7 @@ export declare class PolygonSettingsComponent extends PageComponent implements O
     polygonSettingsFormGroup: UntypedFormGroup;
     showTooltipActions: ShowTooltipAction[];
     showTooltipActionTranslations: Map<ShowTooltipAction, string>;
-    constructor(store: Store<AppState>, translate: TranslateService, widgetService: WidgetService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, widgetService: WidgetService, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

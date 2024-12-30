@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
@@ -11,6 +11,7 @@ export declare class MapProviderSettingsComponent extends PageComponent implemen
     protected store: Store<AppState>;
     private translate;
     private fb;
+    private destroyRef;
     aliasController: IAliasController;
     disabled: boolean;
     ignoreImageMap: boolean;
@@ -20,7 +21,7 @@ export declare class MapProviderSettingsComponent extends PageComponent implemen
     mapProviders: MapProviders[];
     mapProvider: typeof MapProviders;
     mapProviderTranslations: Map<MapProviders, string>;
-    constructor(store: Store<AppState>, translate: TranslateService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

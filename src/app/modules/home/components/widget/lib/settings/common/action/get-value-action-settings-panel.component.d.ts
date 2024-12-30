@@ -1,4 +1,4 @@
-import { EventEmitter, OnInit } from '@angular/core';
+import { DestroyRef, EventEmitter, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { TbPopoverComponent } from '@shared/components/popover.component';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
@@ -17,6 +17,7 @@ export declare class GetValueActionSettingsPanelComponent extends PageComponent 
     private fb;
     private widgetService;
     protected store: Store<AppState>;
+    private destroyRef;
     getValueSettings: GetValueSettings<any>;
     panelTitle: string;
     valueType: ValueType;
@@ -40,7 +41,7 @@ export declare class GetValueActionSettingsPanelComponent extends PageComponent 
     getValueSettingsFormGroup: UntypedFormGroup;
     alarmSeverities: AlarmSeverity[];
     alarmSeverityTranslationMap: Map<AlarmSeverity, string>;
-    constructor(fb: UntypedFormBuilder, widgetService: WidgetService, store: Store<AppState>);
+    constructor(fb: UntypedFormBuilder, widgetService: WidgetService, store: Store<AppState>, destroyRef: DestroyRef);
     ngOnInit(): void;
     cancel(): void;
     applyGetValueSettings(): void;

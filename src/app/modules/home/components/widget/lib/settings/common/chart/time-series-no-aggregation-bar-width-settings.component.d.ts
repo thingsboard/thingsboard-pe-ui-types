@@ -1,9 +1,10 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { TimeSeriesChartNoAggregationBarWidthSettings, TimeSeriesChartNoAggregationBarWidthStrategy } from '@home/components/widget/lib/chart/time-series-chart.models';
 import * as i0 from "@angular/core";
 export declare class TimeSeriesNoAggregationBarWidthSettingsComponent implements OnInit, ControlValueAccessor {
     private fb;
+    private destroyRef;
     TimeSeriesChartNoAggregationBarWidthStrategy: typeof TimeSeriesChartNoAggregationBarWidthStrategy;
     timeSeriesChartNoAggregationBarWidthStrategies: TimeSeriesChartNoAggregationBarWidthStrategy[];
     timeSeriesChartNoAggregationBarWidthStrategyTranslations: Map<TimeSeriesChartNoAggregationBarWidthStrategy, string>;
@@ -12,7 +13,7 @@ export declare class TimeSeriesNoAggregationBarWidthSettingsComponent implements
     private modelValue;
     private propagateChange;
     barWidthSettingsFormGroup: UntypedFormGroup;
-    constructor(fb: UntypedFormBuilder);
+    constructor(fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(_fn: any): void;

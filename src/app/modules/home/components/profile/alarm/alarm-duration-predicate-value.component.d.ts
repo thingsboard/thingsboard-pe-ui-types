@@ -1,10 +1,11 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { DynamicValueSourceType, FilterPredicateValue } from '@shared/models/query/query.models';
 import { AlarmConditionType } from '@shared/models/device.models';
 import * as i0 from "@angular/core";
 export declare class AlarmDurationPredicateValueComponent implements ControlValueAccessor, OnInit {
     private fb;
+    private destroyRef;
     private readonly inheritModeForSources;
     set alarmConditionType(alarmConditionType: AlarmConditionType);
     defaultValuePlaceholder: string;
@@ -17,7 +18,7 @@ export declare class AlarmDurationPredicateValueComponent implements ControlValu
     dynamicMode: boolean;
     inheritMode: boolean;
     private propagateChange;
-    constructor(fb: UntypedFormBuilder);
+    constructor(fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

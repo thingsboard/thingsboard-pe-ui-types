@@ -1,4 +1,4 @@
-import { AfterViewInit, ElementRef, QueryList } from '@angular/core';
+import { AfterViewInit, DestroyRef, ElementRef, QueryList } from '@angular/core';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
@@ -28,6 +28,7 @@ export declare class ConverterTestDialogComponent extends DialogComponent<Conver
     fb: UntypedFormBuilder;
     wl: WhiteLabelingService;
     private converterService;
+    private destroyRef;
     width: string;
     height: string;
     topPanelElmRef: QueryList<ElementRef<HTMLElement>>;
@@ -45,7 +46,7 @@ export declare class ConverterTestDialogComponent extends DialogComponent<Conver
     contentTypesInfoMap: Map<ContentType, import("@shared/models/constants").ContentTypeData>;
     scriptLanguage: typeof ScriptLanguage;
     scriptLang: ScriptLanguage;
-    constructor(store: Store<AppState>, router: Router, data: ConverterTestDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<ConverterTestDialogComponent, string>, fb: UntypedFormBuilder, wl: WhiteLabelingService, converterService: ConverterService);
+    constructor(store: Store<AppState>, router: Router, data: ConverterTestDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<ConverterTestDialogComponent, string>, fb: UntypedFormBuilder, wl: WhiteLabelingService, converterService: ConverterService, destroyRef: DestroyRef);
     init(): void;
     private prepareStringContent;
     private convertContent;
@@ -58,6 +59,6 @@ export declare class ConverterTestDialogComponent extends DialogComponent<Conver
     private testConverter;
     private checkInputParamErrors;
     save(): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<ConverterTestDialogComponent, [null, null, null, { skipSelf: true; }, null, null, null, null]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<ConverterTestDialogComponent, [null, null, null, { skipSelf: true; }, null, null, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<ConverterTestDialogComponent, "tb-converter-test-dialog", never, {}, {}, never, never, false, never>;
 }

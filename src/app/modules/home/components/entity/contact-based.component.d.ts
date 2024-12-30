@@ -2,7 +2,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { UntypedFormBuilder, UntypedFormGroup, ValidatorFn } from '@angular/forms';
 import { ContactBased } from '@shared/models/contact-based.model';
-import { AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, DestroyRef } from '@angular/core';
 import { HasId } from '@shared/models/base-data';
 import { EntityComponent } from './entity.component';
 import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
@@ -15,6 +15,7 @@ export declare abstract class ContactBasedComponent<T extends ContactBased<HasId
     protected entitiesTableConfigValue: EntityTableConfig<T>;
     protected cd: ChangeDetectorRef;
     protected countryData: CountryData;
+    protected destroyRef: DestroyRef;
     protected constructor(store: Store<AppState>, fb: UntypedFormBuilder, entityValue: T, entitiesTableConfigValue: EntityTableConfig<T>, cd: ChangeDetectorRef, countryData: CountryData);
     buildForm(entity: T): UntypedFormGroup;
     updateForm(entity: T): void;

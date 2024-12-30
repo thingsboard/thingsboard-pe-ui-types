@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { TimeSeriesChartThreshold, TimeSeriesChartYAxisId } from '@home/components/widget/lib/chart/time-series-chart.models';
 import { IAliasController } from '@core/api/widget-api.models';
@@ -7,6 +7,7 @@ import { Datasource, WidgetConfig } from '@shared/models/widget.models';
 import * as i0 from "@angular/core";
 export declare class TimeSeriesChartThresholdsPanelComponent implements ControlValueAccessor, OnInit, Validator {
     private fb;
+    private destroyRef;
     disabled: boolean;
     aliasController: IAliasController;
     dataKeyCallbacks: DataKeysCallbacks;
@@ -16,7 +17,7 @@ export declare class TimeSeriesChartThresholdsPanelComponent implements ControlV
     hideYAxis: boolean;
     thresholdsFormGroup: UntypedFormGroup;
     private propagateChange;
-    constructor(fb: UntypedFormBuilder);
+    constructor(fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

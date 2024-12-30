@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
@@ -38,6 +38,7 @@ export declare class SelectEntityGroupDialogComponent extends DialogComponent<Se
     private errorStateMatcher;
     dialogRef: MatDialogRef<SelectEntityGroupDialogComponent, SelectEntityGroupDialogResult>;
     fb: UntypedFormBuilder;
+    private destroyRef;
     selectEntityGroupFormGroup: UntypedFormGroup;
     submitted: boolean;
     ownerId: EntityId;
@@ -50,13 +51,13 @@ export declare class SelectEntityGroupDialogComponent extends DialogComponent<Se
     excludeGroupIds: Array<string>;
     onEntityGroupSelected: (result: SelectEntityGroupDialogResult) => Observable<boolean>;
     createEnabled: boolean;
-    constructor(store: Store<AppState>, router: Router, userPermissionsService: UserPermissionsService, entityGroupService: EntityGroupService, data: SelectEntityGroupDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<SelectEntityGroupDialogComponent, SelectEntityGroupDialogResult>, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, router: Router, userPermissionsService: UserPermissionsService, entityGroupService: EntityGroupService, data: SelectEntityGroupDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<SelectEntityGroupDialogComponent, SelectEntityGroupDialogResult>, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     private updateDisabledState;
     isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     cancel(): void;
     selectEntityGroup(): void;
     private groupSelected;
-    static ɵfac: i0.ɵɵFactoryDeclaration<SelectEntityGroupDialogComponent, [null, null, null, null, null, { skipSelf: true; }, null, null]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<SelectEntityGroupDialogComponent, [null, null, null, null, null, { skipSelf: true; }, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<SelectEntityGroupDialogComponent, "tb-select-entity-group-dialog", never, {}, {}, never, never, false, never>;
 }

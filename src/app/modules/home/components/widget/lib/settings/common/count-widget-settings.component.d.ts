@@ -3,11 +3,12 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { CountCardLayout, CountWidgetSettings } from '@home/components/widget/lib/count/count-widget.models';
 import { PageComponent } from '@shared/components/page.component';
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import * as i0 from "@angular/core";
 export declare class CountWidgetSettingsComponent extends PageComponent implements OnInit, ControlValueAccessor {
     protected store: Store<AppState>;
     private fb;
+    private destroyRef;
     disabled: boolean;
     alarmElseEntity: boolean;
     private propagateChange;
@@ -15,7 +16,7 @@ export declare class CountWidgetSettingsComponent extends PageComponent implemen
     countCardLayoutTranslationMap: Map<CountCardLayout, string>;
     countCardLayoutImageMap: Map<CountCardLayout, string>;
     countWidgetConfigForm: UntypedFormGroup;
-    constructor(store: Store<AppState>, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

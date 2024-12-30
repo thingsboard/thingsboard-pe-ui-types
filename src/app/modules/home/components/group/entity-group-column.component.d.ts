@@ -1,4 +1,4 @@
-import { AfterViewInit, EventEmitter, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, DestroyRef, EventEmitter, OnDestroy, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -11,6 +11,7 @@ export declare class EntityGroupColumnComponent extends PageComponent implements
     protected store: Store<AppState>;
     private dialog;
     private fb;
+    private destroyRef;
     modelValue: EntityGroupColumn | null;
     columnFormGroup: UntypedFormGroup;
     entityType: EntityType;
@@ -27,7 +28,7 @@ export declare class EntityGroupColumnComponent extends PageComponent implements
     sortOrders: string[];
     entityGroupColumnTypeTranslations: Map<EntityGroupColumnType, string>;
     entityGroupSortOrderTranslations: Map<EntityGroupSortOrder, string>;
-    constructor(store: Store<AppState>, dialog: MatDialog, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, dialog: MatDialog, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

@@ -1,10 +1,11 @@
-import { ElementRef, OnInit } from '@angular/core';
+import { DestroyRef, ElementRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl } from '@angular/forms';
 import { IAliasController } from '@core/api/widget-api.models';
 import { Observable } from 'rxjs';
 import * as i0 from "@angular/core";
 export declare class EntityAliasInputComponent implements ControlValueAccessor, OnInit {
     private fb;
+    private destroyRef;
     hostClass: string;
     entityAliasInput: ElementRef;
     disabled: boolean;
@@ -16,7 +17,7 @@ export declare class EntityAliasInputComponent implements ControlValueAccessor, 
     private entityAliasList;
     private entityAliasDirty;
     private propagateChange;
-    constructor(fb: UntypedFormBuilder);
+    constructor(fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

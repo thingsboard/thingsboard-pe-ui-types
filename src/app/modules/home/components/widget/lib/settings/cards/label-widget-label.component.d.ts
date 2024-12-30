@@ -1,4 +1,4 @@
-import { EventEmitter, OnInit } from '@angular/core';
+import { DestroyRef, EventEmitter, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
@@ -17,13 +17,14 @@ export declare class LabelWidgetLabelComponent extends PageComponent implements 
     protected store: Store<AppState>;
     private translate;
     private fb;
+    private destroyRef;
     disabled: boolean;
     expanded: boolean;
     removeLabel: EventEmitter<any>;
     private modelValue;
     private propagateChange;
     labelWidgetLabelFormGroup: UntypedFormGroup;
-    constructor(store: Store<AppState>, translate: TranslateService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

@@ -43,6 +43,8 @@ export declare class DashboardUtilsService {
     getWidgetsArray(dashboard: Dashboard): Array<Widget>;
     isEmptyDashboard(dashboard: Dashboard): boolean;
     addWidgetToLayout(dashboard: Dashboard, targetState: string, targetLayout: DashboardLayoutId, widget: Widget, originalColumns?: number, originalSize?: WidgetSize, row?: number, column?: number, breakpoint?: string): void;
+    private widgetPossiblePosition;
+    private hasWidgetCollision;
     removeWidgetFromLayout(dashboard: Dashboard, targetState: string, targetLayout: DashboardLayoutId, widgetId: string, breakpoint: BreakpointId): void;
     isSingleLayoutDashboard(dashboard: Dashboard): {
         state: string;

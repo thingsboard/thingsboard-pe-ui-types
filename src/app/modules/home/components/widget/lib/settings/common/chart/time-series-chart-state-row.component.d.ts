@@ -1,10 +1,11 @@
-import { ChangeDetectorRef, EventEmitter, OnInit } from '@angular/core';
+import { ChangeDetectorRef, DestroyRef, EventEmitter, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { TimeSeriesChartStateSettings, TimeSeriesChartStateSourceType } from '@home/components/widget/lib/chart/time-series-chart.models';
 import * as i0 from "@angular/core";
 export declare class TimeSeriesChartStateRowComponent implements ControlValueAccessor, OnInit {
     private fb;
     private cd;
+    private destroyRef;
     TimeSeriesChartStateSourceType: typeof TimeSeriesChartStateSourceType;
     timeSeriesStateSourceTypes: TimeSeriesChartStateSourceType[];
     timeSeriesStateSourceTypeTranslations: Map<TimeSeriesChartStateSourceType, string>;
@@ -13,7 +14,7 @@ export declare class TimeSeriesChartStateRowComponent implements ControlValueAcc
     stateFormGroup: UntypedFormGroup;
     modelValue: TimeSeriesChartStateSettings;
     private propagateChange;
-    constructor(fb: UntypedFormBuilder, cd: ChangeDetectorRef);
+    constructor(fb: UntypedFormBuilder, cd: ChangeDetectorRef, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

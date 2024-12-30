@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { DeviceProfileAlarmRule } from '@shared/models/device.models';
 import { MatDialog } from '@angular/material/dialog';
@@ -9,6 +9,7 @@ export declare class AlarmRuleComponent implements ControlValueAccessor, OnInit,
     private dialog;
     private utils;
     private fb;
+    private destroyRef;
     disabled: boolean;
     private requiredValue;
     get required(): boolean;
@@ -18,7 +19,7 @@ export declare class AlarmRuleComponent implements ControlValueAccessor, OnInit,
     alarmRuleFormGroup: UntypedFormGroup;
     expandAlarmDetails: boolean;
     private propagateChange;
-    constructor(dialog: MatDialog, utils: UtilsService, fb: UntypedFormBuilder);
+    constructor(dialog: MatDialog, utils: UtilsService, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;

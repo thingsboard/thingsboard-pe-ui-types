@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { EntityType } from '@shared/models/entity-type.models';
@@ -21,6 +21,7 @@ export declare class OwnerAndGroupsComponent extends PageComponent implements On
     private fb;
     private userPermissionsService;
     private homeDialogs;
+    private destroyRef;
     disabled: boolean;
     entityType: EntityType;
     defaultOwnerId: EntityId | null;
@@ -32,7 +33,7 @@ export declare class OwnerAndGroupsComponent extends PageComponent implements On
     private ownerDisabled;
     private groupsDisabled;
     createGroupFunction: CreateEntityGroupFunction;
-    constructor(store: Store<AppState>, translate: TranslateService, fb: UntypedFormBuilder, userPermissionsService: UserPermissionsService, homeDialogs: HomeDialogsService);
+    constructor(store: Store<AppState>, translate: TranslateService, fb: UntypedFormBuilder, userPermissionsService: UserPermissionsService, homeDialogs: HomeDialogsService, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

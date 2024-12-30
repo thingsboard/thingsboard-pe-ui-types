@@ -1,4 +1,4 @@
-import { ChangeDetectorRef } from '@angular/core';
+import { ChangeDetectorRef, DestroyRef } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
@@ -19,6 +19,7 @@ export declare class DeviceProfileComponent extends EntityComponent<DeviceProfil
     protected entitiesTableConfigValue: EntityTableConfig<DeviceProfile>;
     protected fb: UntypedFormBuilder;
     protected cd: ChangeDetectorRef;
+    private destroyRef;
     standalone: boolean;
     entityType: typeof EntityType;
     deviceProfileTypes: DeviceProfileType[];
@@ -32,7 +33,7 @@ export declare class DeviceProfileComponent extends EntityComponent<DeviceProfil
     edgeRuleChainType: RuleChainType;
     deviceProfileId: EntityId;
     otaUpdateType: typeof OtaUpdateType;
-    constructor(store: Store<AppState>, translate: TranslateService, entityValue: DeviceProfile, entitiesTableConfigValue: EntityTableConfig<DeviceProfile>, fb: UntypedFormBuilder, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, translate: TranslateService, entityValue: DeviceProfile, entitiesTableConfigValue: EntityTableConfig<DeviceProfile>, fb: UntypedFormBuilder, cd: ChangeDetectorRef, destroyRef: DestroyRef);
     hideDelete(): boolean;
     buildForm(entity: DeviceProfile): UntypedFormGroup;
     private checkIsNewDeviceProfile;
@@ -41,6 +42,6 @@ export declare class DeviceProfileComponent extends EntityComponent<DeviceProfil
     updateForm(entity: DeviceProfile): void;
     prepareFormValue(formValue: any): any;
     onDeviceProfileIdCopied(event: any): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<DeviceProfileComponent, [null, null, { optional: true; }, { optional: true; }, null, null]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<DeviceProfileComponent, [null, null, { optional: true; }, { optional: true; }, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<DeviceProfileComponent, "tb-device-profile", never, { "standalone": { "alias": "standalone"; "required": false; }; }, {}, never, never, false, never>;
 }

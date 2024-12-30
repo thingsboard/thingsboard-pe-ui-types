@@ -62,6 +62,8 @@ export interface IDashboardComponent {
     resumeChangeNotifications(): any;
     notifyLayoutUpdated(): any;
 }
+export declare const maxGridsterCol = 3000;
+export declare const maxGridsterRow = 3000;
 export declare class DashboardWidgets implements Iterable<DashboardWidget> {
     private dashboard;
     private widgetsDiffer;

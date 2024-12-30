@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, EventEmitter, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectorRef, DestroyRef, EventEmitter, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { TimeSeriesChartThreshold, TimeSeriesChartYAxisId } from '@home/components/widget/lib/chart/time-series-chart.models';
 import { TimeSeriesChartThresholdsPanelComponent } from '@home/components/widget/lib/settings/common/chart/time-series-chart-thresholds-panel.component';
@@ -12,6 +12,7 @@ export declare class TimeSeriesChartThresholdRowComponent implements ControlValu
     private fb;
     private thresholdsPanel;
     private cd;
+    private destroyRef;
     DataKeyType: typeof DataKeyType;
     DatasourceType: typeof DatasourceType;
     TimeSeriesChartThresholdType: typeof ValueSourceType;
@@ -31,7 +32,7 @@ export declare class TimeSeriesChartThresholdRowComponent implements ControlValu
     entityKeyFormControl: UntypedFormControl;
     thresholdSettingsFormControl: UntypedFormControl;
     private propagateChange;
-    constructor(fb: UntypedFormBuilder, thresholdsPanel: TimeSeriesChartThresholdsPanelComponent, cd: ChangeDetectorRef);
+    constructor(fb: UntypedFormBuilder, thresholdsPanel: TimeSeriesChartThresholdsPanelComponent, cd: ChangeDetectorRef, destroyRef: DestroyRef);
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
     registerOnChange(fn: any): void;

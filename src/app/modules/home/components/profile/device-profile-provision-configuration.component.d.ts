@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { DeviceProvisionConfiguration, DeviceProvisionType } from '@shared/models/device.models';
 import { Store } from '@ngrx/store';
@@ -9,6 +9,7 @@ export declare class DeviceProfileProvisionConfigurationComponent implements Con
     protected store: Store<AppState>;
     private fb;
     private translate;
+    private destroyRef;
     provisionConfigurationFormGroup: UntypedFormGroup;
     deviceProvisionType: typeof DeviceProvisionType;
     deviceProvisionTypes: string[];
@@ -18,7 +19,7 @@ export declare class DeviceProfileProvisionConfigurationComponent implements Con
     set required(value: boolean);
     disabled: boolean;
     private propagateChange;
-    constructor(store: Store<AppState>, fb: UntypedFormBuilder, translate: TranslateService);
+    constructor(store: Store<AppState>, fb: UntypedFormBuilder, translate: TranslateService, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

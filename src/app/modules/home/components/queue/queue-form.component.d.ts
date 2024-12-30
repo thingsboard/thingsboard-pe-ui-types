@@ -1,11 +1,12 @@
-import { OnDestroy, OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { UtilsService } from '@core/services/utils.service';
 import { QueueInfo, QueueProcessingStrategyTypes, QueueSubmitStrategyTypes } from '@shared/models/queue.models';
 import * as i0 from "@angular/core";
-export declare class QueueFormComponent implements ControlValueAccessor, OnInit, OnDestroy, Validator {
+export declare class QueueFormComponent implements ControlValueAccessor, OnInit, Validator {
     private utils;
     private fb;
+    private destroyRef;
     disabled: boolean;
     newQueue: boolean;
     systemQueue: boolean;
@@ -20,12 +21,10 @@ export declare class QueueFormComponent implements ControlValueAccessor, OnInit,
     private modelValue;
     private propagateChange;
     private propagateChangePending;
-    private valueChange$;
-    constructor(utils: UtilsService, fb: UntypedFormBuilder);
+    constructor(utils: UtilsService, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
-    ngOnDestroy(): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: QueueInfo): void;
     validate(c: UntypedFormControl): {

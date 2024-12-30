@@ -1,10 +1,11 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { AlarmSchedule, AlarmScheduleType } from '@shared/models/device.models';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 import * as i0 from "@angular/core";
 export declare class AlarmScheduleComponent implements ControlValueAccessor, Validator, OnInit {
     private fb;
+    private destroyRef;
     disabled: boolean;
     alarmScheduleForm: UntypedFormGroup;
     alarmScheduleTypes: string[];
@@ -17,7 +18,7 @@ export declare class AlarmScheduleComponent implements ControlValueAccessor, Val
     private modelValue;
     private defaultItems;
     private propagateChange;
-    constructor(fb: UntypedFormBuilder);
+    constructor(fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     validateDayOfWeeks(control: AbstractControl): ValidationErrors | null;
     validateItems(control: AbstractControl): ValidationErrors | null;

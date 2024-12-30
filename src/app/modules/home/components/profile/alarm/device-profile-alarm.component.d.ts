@@ -1,4 +1,4 @@
-import { EventEmitter, OnInit } from '@angular/core';
+import { DestroyRef, EventEmitter, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { DeviceProfileAlarm } from '@shared/models/device.models';
 import { MatDialog } from '@angular/material/dialog';
@@ -10,6 +10,7 @@ export declare class DeviceProfileAlarmComponent implements ControlValueAccessor
     private dialog;
     private utils;
     private fb;
+    private destroyRef;
     disabled: boolean;
     removeAlarm: EventEmitter<any>;
     separatorKeysCodes: number[];
@@ -19,7 +20,7 @@ export declare class DeviceProfileAlarmComponent implements ControlValueAccessor
     alarmFormGroup: UntypedFormGroup;
     private propagateChange;
     private propagateChangePending;
-    constructor(dialog: MatDialog, utils: UtilsService, fb: UntypedFormBuilder);
+    constructor(dialog: MatDialog, utils: UtilsService, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;

@@ -1,4 +1,4 @@
-import { ChangeDetectorRef } from '@angular/core';
+import { ChangeDetectorRef, DestroyRef } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { EntityComponent } from '../../components/entity/entity.component';
@@ -17,10 +17,11 @@ export declare class RoleComponent extends EntityComponent<Role> {
     protected entitiesTableConfigValue: EntityTableConfig<Role>;
     protected fb: UntypedFormBuilder;
     protected cd: ChangeDetectorRef;
+    private destroyRef;
     roleType: typeof RoleType;
     roleTypes: string[];
     roleTypeTranslations: Map<RoleType, string>;
-    constructor(store: Store<AppState>, translate: TranslateService, dialog: MatDialog, entityValue: Role, entitiesTableConfigValue: EntityTableConfig<Role>, fb: UntypedFormBuilder, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, translate: TranslateService, dialog: MatDialog, entityValue: Role, entitiesTableConfigValue: EntityTableConfig<Role>, fb: UntypedFormBuilder, cd: ChangeDetectorRef, destroyRef: DestroyRef);
     ngOnInit(): void;
     hideDelete(): boolean;
     buildForm(entity: Role): UntypedFormGroup;

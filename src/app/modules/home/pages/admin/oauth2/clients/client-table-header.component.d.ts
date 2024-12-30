@@ -6,6 +6,7 @@ import { PageLink } from '@shared/models/page/page-link';
 import * as i0 from "@angular/core";
 export declare class ClientTableHeaderComponent extends EntityTableHeaderComponent<OAuth2Client, PageLink, OAuth2ClientInfo> {
     protected store: Store<AppState>;
+    width: string;
     constructor(store: Store<AppState>);
     static ɵfac: i0.ɵɵFactoryDeclaration<ClientTableHeaderComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<ClientTableHeaderComponent, "tb-client-table-header", never, {}, {}, never, never, false, never>;

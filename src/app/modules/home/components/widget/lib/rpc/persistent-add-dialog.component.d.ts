@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { DialogComponent } from '@shared/components/dialog.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -14,10 +14,11 @@ export declare class PersistentAddDialogComponent extends DialogComponent<Persis
     dialogRef: MatDialogRef<PersistentAddDialogComponent, RequestData>;
     private fb;
     private translate;
+    private destroyRef;
     persistentFormGroup: UntypedFormGroup;
     rpcMessageTypeText: string;
     private requestData;
-    constructor(store: Store<AppState>, router: Router, dialogRef: MatDialogRef<PersistentAddDialogComponent, RequestData>, fb: UntypedFormBuilder, translate: TranslateService);
+    constructor(store: Store<AppState>, router: Router, dialogRef: MatDialogRef<PersistentAddDialogComponent, RequestData>, fb: UntypedFormBuilder, translate: TranslateService, destroyRef: DestroyRef);
     save(): void;
     ngOnInit(): void;
     close(): void;

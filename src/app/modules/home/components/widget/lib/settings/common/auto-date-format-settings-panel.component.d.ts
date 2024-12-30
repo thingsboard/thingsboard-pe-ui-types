@@ -1,4 +1,4 @@
-import { EventEmitter, OnInit } from '@angular/core';
+import { DestroyRef, EventEmitter, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { AutoDateFormatSettings, FormatTimeUnit } from '@shared/models/widget-settings.models';
 import { TbPopoverComponent } from '@shared/components/popover.component';
@@ -11,6 +11,7 @@ export declare class AutoDateFormatSettingsPanelComponent extends PageComponent 
     private date;
     private fb;
     protected store: Store<AppState>;
+    private destroyRef;
     formatTimeUnits: FormatTimeUnit[];
     formatTimeUnitTranslations: Map<FormatTimeUnit, string>;
     autoDateFormatSettings: AutoDateFormatSettings;
@@ -21,7 +22,7 @@ export declare class AutoDateFormatSettingsPanelComponent extends PageComponent 
     previewText: {
         [unit in FormatTimeUnit]: string;
     };
-    constructor(date: DatePipe, fb: UntypedFormBuilder, store: Store<AppState>);
+    constructor(date: DatePipe, fb: UntypedFormBuilder, store: Store<AppState>, destroyRef: DestroyRef);
     ngOnInit(): void;
     cancel(): void;
     applyAutoDateFormatSettings(): void;

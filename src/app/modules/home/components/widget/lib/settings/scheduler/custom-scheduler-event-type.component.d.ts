@@ -1,4 +1,4 @@
-import { EventEmitter, OnInit } from '@angular/core';
+import { DestroyRef, EventEmitter, OnInit } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
@@ -15,13 +15,14 @@ export declare class CustomSchedulerEventTypeComponent extends PageComponent imp
     private translate;
     private domSanitizer;
     private fb;
+    private destroyRef;
     disabled: boolean;
     expanded: boolean;
     removeCustomSchedulerEventType: EventEmitter<any>;
     private modelValue;
     private propagateChange;
     customSchedulerEventTypeFormGroup: UntypedFormGroup;
-    constructor(store: Store<AppState>, translate: TranslateService, domSanitizer: DomSanitizer, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, domSanitizer: DomSanitizer, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

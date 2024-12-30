@@ -9,6 +9,7 @@ import { AuthState } from '@core/auth/auth.models';
 import { AuthUser } from '@shared/models/user.model';
 import { MailTemplate, MailTemplatesSettings } from '@shared/models/settings.models';
 import { WhiteLabelingService } from '@core/http/white-labeling.service';
+import { EditorOptions } from 'tinymce';
 import * as i0 from "@angular/core";
 export declare class MailTemplatesComponent extends PageComponent implements OnInit, HasDirtyFlag {
     protected store: Store<AppState>;
@@ -24,7 +25,7 @@ export declare class MailTemplatesComponent extends PageComponent implements OnI
     useSystemMailSettings: boolean;
     readonly: boolean;
     isDirty: boolean;
-    tinyMceOptions: Record<string, any>;
+    tinyMceOptions: Partial<EditorOptions>;
     constructor(store: Store<AppState>, route: ActivatedRoute, wl: WhiteLabelingService, userPermissionsService: UserPermissionsService);
     ngOnInit(): void;
     isTenantAdmin(): boolean;

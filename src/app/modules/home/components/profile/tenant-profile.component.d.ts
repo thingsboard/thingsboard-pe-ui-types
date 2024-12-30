@@ -1,4 +1,4 @@
-import { ChangeDetectorRef } from '@angular/core';
+import { ChangeDetectorRef, DestroyRef } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
@@ -14,13 +14,14 @@ export declare class TenantProfileComponent extends EntityComponent<TenantProfil
     protected entitiesTableConfigValue: EntityTableConfig<TenantProfile>;
     protected fb: UntypedFormBuilder;
     protected cd: ChangeDetectorRef;
+    private destroyRef;
     standalone: boolean;
-    constructor(store: Store<AppState>, translate: TranslateService, entityValue: TenantProfile, entitiesTableConfigValue: EntityTableConfig<TenantProfile>, fb: UntypedFormBuilder, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, translate: TranslateService, entityValue: TenantProfile, entitiesTableConfigValue: EntityTableConfig<TenantProfile>, fb: UntypedFormBuilder, cd: ChangeDetectorRef, destroyRef: DestroyRef);
     hideDelete(): boolean;
     buildForm(entity: TenantProfile): UntypedFormGroup;
     updateForm(entity: TenantProfile): void;
     updateFormState(): void;
     onTenantProfileIdCopied(event: any): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<TenantProfileComponent, [null, null, { optional: true; }, { optional: true; }, null, null]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<TenantProfileComponent, [null, null, { optional: true; }, { optional: true; }, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<TenantProfileComponent, "tb-tenant-profile", never, { "standalone": { "alias": "standalone"; "required": false; }; }, {}, never, never, false, never>;
 }

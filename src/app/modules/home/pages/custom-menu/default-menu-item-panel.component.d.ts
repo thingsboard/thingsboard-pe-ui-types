@@ -1,4 +1,4 @@
-import { EventEmitter, OnInit } from '@angular/core';
+import { DestroyRef, EventEmitter, OnInit } from '@angular/core';
 import { CMScope, DefaultMenuItem, HomeMenuItemType } from '@shared/models/custom-menu.models';
 import { TbPopoverComponent } from '@shared/components/popover.component';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
@@ -10,6 +10,7 @@ export declare class DefaultMenuItemPanelComponent implements OnInit {
     private fb;
     private store;
     private translate;
+    private destroyRef;
     HomeMenuItemType: typeof HomeMenuItemType;
     homeMenuItemTypes: HomeMenuItemType[];
     homeMenuItemTypeTranslations: Map<HomeMenuItemType, string>;
@@ -24,7 +25,7 @@ export declare class DefaultMenuItemPanelComponent implements OnInit {
     isHomeTypeEditable: boolean;
     isCleanupEnabled: boolean;
     private defaultMenuSection;
-    constructor(fb: UntypedFormBuilder, store: Store<AppState>, translate: TranslateService);
+    constructor(fb: UntypedFormBuilder, store: Store<AppState>, translate: TranslateService, destroyRef: DestroyRef);
     ngOnInit(): void;
     cancel(): void;
     apply(): void;

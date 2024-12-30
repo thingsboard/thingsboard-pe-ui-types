@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { WidgetContext } from '@home/models/widget-component.models';
 import { Store } from '@ngrx/store';
@@ -28,6 +28,7 @@ export declare class JsonInputWidgetComponent extends PageComponent implements O
     private fb;
     private attributeService;
     private translate;
+    private destroyRef;
     ctx: WidgetContext;
     settings: JsonInputWidgetSettings;
     private widgetConfig;
@@ -40,7 +41,7 @@ export declare class JsonInputWidgetComponent extends PageComponent implements O
     originalValue: any;
     attributeUpdateFormGroup: UntypedFormGroup;
     toastTargetId: string;
-    constructor(store: Store<AppState>, utils: UtilsService, fb: UntypedFormBuilder, attributeService: AttributeService, translate: TranslateService);
+    constructor(store: Store<AppState>, utils: UtilsService, fb: UntypedFormBuilder, attributeService: AttributeService, translate: TranslateService, destroyRef: DestroyRef);
     ngOnInit(): void;
     private initializeConfig;
     private validateDatasources;

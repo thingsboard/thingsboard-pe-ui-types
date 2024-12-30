@@ -1,4 +1,4 @@
-import { ElementRef, OnInit } from '@angular/core';
+import { DestroyRef, ElementRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
@@ -13,6 +13,7 @@ export declare class DatasourcesKeyAutocompleteComponent extends PageComponent i
     private translate;
     private entityService;
     private fb;
+    private destroyRef;
     keyInput: ElementRef;
     disabled: boolean;
     datasources: Array<Datasource>;
@@ -25,7 +26,7 @@ export declare class DatasourcesKeyAutocompleteComponent extends PageComponent i
     keyFormGroup: UntypedFormGroup;
     filteredKeys: Observable<Array<string>>;
     keySearchText: string;
-    constructor(store: Store<AppState>, translate: TranslateService, entityService: EntityService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, entityService: EntityService, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

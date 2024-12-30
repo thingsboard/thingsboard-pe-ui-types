@@ -1,0 +1,33 @@
+import { ChangeDetectorRef, EventEmitter, OnInit } from '@angular/core';
+import { PageComponent } from '@shared/components/page.component';
+import { TbPopoverComponent } from '@shared/components/popover.component';
+import { FormBuilder } from '@angular/forms';
+import { EntityDebugSettings } from '@shared/models/entity.models';
+import * as i0 from "@angular/core";
+export declare class EntityDebugSettingsPanelComponent extends PageComponent implements OnInit {
+    private fb;
+    private cd;
+    popover: TbPopoverComponent<EntityDebugSettingsPanelComponent>;
+    failuresEnabled: boolean;
+    allEnabled: boolean;
+    entityLabel: string;
+    allEnabledUntil: number;
+    maxDebugModeDuration: number;
+    debugLimitsConfiguration: string;
+    onFailuresControl: import("@angular/forms").FormControl<boolean>;
+    debugAllControl: import("@angular/forms").FormControl<boolean>;
+    maxMessagesCount: string;
+    maxTimeFrameDuration: number;
+    initialAllEnabled: boolean;
+    isDebugAllActive$: import("rxjs").Observable<boolean>;
+    onSettingsApplied: EventEmitter<EntityDebugSettings>;
+    constructor(fb: FormBuilder, cd: ChangeDetectorRef);
+    ngOnInit(): void;
+    onCancel(): void;
+    onApply(): void;
+    onReset(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<EntityDebugSettingsPanelComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityDebugSettingsPanelComponent, "tb-entity-debug-settings-panel", never, { "popover": { "alias": "popover"; "required": false; }; "failuresEnabled": { "alias": "failuresEnabled"; "required": false; }; "allEnabled": { "alias": "allEnabled"; "required": false; }; "entityLabel": { "alias": "entityLabel"; "required": false; }; "allEnabledUntil": { "alias": "allEnabledUntil"; "required": false; }; "maxDebugModeDuration": { "alias": "maxDebugModeDuration"; "required": false; }; "debugLimitsConfiguration": { "alias": "debugLimitsConfiguration"; "required": false; }; }, {}, never, never, true, never>;
+    static ngAcceptInputType_failuresEnabled: unknown;
+    static ngAcceptInputType_allEnabled: unknown;
+}

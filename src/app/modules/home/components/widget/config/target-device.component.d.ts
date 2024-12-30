@@ -1,5 +1,5 @@
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { UtilsService } from '@core/services/utils.service';
 import { TranslateService } from '@ngx-translate/core';
 import { WidgetConfigComponent } from '@home/components/widget/widget-config.component';
@@ -13,6 +13,7 @@ export declare class TargetDeviceComponent implements ControlValueAccessor, OnIn
     private utils;
     translate: TranslateService;
     private widgetConfigComponent;
+    private destroyRef;
     get aliasController(): IAliasController;
     get entityAliasSelectCallbacks(): EntityAliasSelectCallbacks;
     get targetDeviceOptional(): boolean;
@@ -22,7 +23,7 @@ export declare class TargetDeviceComponent implements ControlValueAccessor, OnIn
     widgetEditMode: boolean;
     targetDeviceFormGroup: UntypedFormGroup;
     private propagateChange;
-    constructor(fb: UntypedFormBuilder, utils: UtilsService, translate: TranslateService, widgetConfigComponent: WidgetConfigComponent);
+    constructor(fb: UntypedFormBuilder, utils: UtilsService, translate: TranslateService, widgetConfigComponent: WidgetConfigComponent, destroyRef: DestroyRef);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;

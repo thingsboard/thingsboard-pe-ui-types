@@ -1,4 +1,4 @@
-import { EventEmitter, OnInit } from '@angular/core';
+import { DestroyRef, EventEmitter, OnInit } from '@angular/core';
 import { TbPopoverComponent } from '@shared/components/popover.component';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { ScadaSymbolBehavior, ScadaSymbolBehaviorType } from '@app/modules/home/components/widget/lib/scada/scada-symbol.models';
@@ -12,6 +12,7 @@ import * as i0 from "@angular/core";
 export declare class ScadaSymbolBehaviorPanelComponent implements OnInit {
     private fb;
     private widgetService;
+    private destroyRef;
     widgetType: typeof widgetType;
     ScadaSymbolBehaviorType: typeof ScadaSymbolBehaviorType;
     ValueType: typeof ValueType;
@@ -30,7 +31,7 @@ export declare class ScadaSymbolBehaviorPanelComponent implements OnInit {
     functionScopeVariables: string[];
     panelTitle: string;
     behaviorFormGroup: UntypedFormGroup;
-    constructor(fb: UntypedFormBuilder, widgetService: WidgetService);
+    constructor(fb: UntypedFormBuilder, widgetService: WidgetService, destroyRef: DestroyRef);
     ngOnInit(): void;
     cancel(): void;
     applyBehaviorSettings(): void;

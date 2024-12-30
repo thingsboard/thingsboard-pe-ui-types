@@ -1,4 +1,4 @@
-import { OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { DestroyRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
@@ -12,6 +12,7 @@ export declare class MarkersSettingsComponent extends PageComponent implements O
     private translate;
     private widgetService;
     private fb;
+    private destroyRef;
     disabled: boolean;
     provider: MapProviders;
     mapProvider: typeof MapProviders;
@@ -21,7 +22,7 @@ export declare class MarkersSettingsComponent extends PageComponent implements O
     markersSettingsFormGroup: UntypedFormGroup;
     showTooltipActions: ShowTooltipAction[];
     showTooltipActionTranslations: Map<ShowTooltipAction, string>;
-    constructor(store: Store<AppState>, translate: TranslateService, widgetService: WidgetService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, widgetService: WidgetService, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
     registerOnChange(fn: any): void;

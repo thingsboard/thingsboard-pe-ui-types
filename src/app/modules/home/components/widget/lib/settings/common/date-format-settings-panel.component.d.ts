@@ -1,4 +1,4 @@
-import { EventEmitter, OnInit } from '@angular/core';
+import { DestroyRef, EventEmitter, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { DateFormatSettings } from '@shared/models/widget-settings.models';
 import { TbPopoverComponent } from '@shared/components/popover.component';
@@ -10,12 +10,13 @@ import * as i0 from "@angular/core";
 export declare class DateFormatSettingsPanelComponent extends PageComponent implements OnInit {
     private date;
     protected store: Store<AppState>;
+    private destroyRef;
     dateFormat: DateFormatSettings;
     popover: TbPopoverComponent<DateFormatSettingsPanelComponent>;
     dateFormatApplied: EventEmitter<DateFormatSettings>;
     dateFormatFormControl: UntypedFormControl;
     previewText: string;
-    constructor(date: DatePipe, store: Store<AppState>);
+    constructor(date: DatePipe, store: Store<AppState>, destroyRef: DestroyRef);
     ngOnInit(): void;
     cancel(): void;
     applyDateFormat(): void;

@@ -1,9 +1,10 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { WidgetButtonAppearance } from '@shared/components/button/widget-button.models';
 import * as i0 from "@angular/core";
 export declare class WidgetButtonAppearanceComponent implements OnInit, ControlValueAccessor {
     private fb;
+    private destroyRef;
     disabled: boolean;
     borderRadius: string;
     autoScale: boolean;
@@ -17,7 +18,7 @@ export declare class WidgetButtonAppearanceComponent implements OnInit, ControlV
     modelValue: WidgetButtonAppearance;
     appearanceFormGroup: UntypedFormGroup;
     private propagateChange;
-    constructor(fb: UntypedFormBuilder);
+    constructor(fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

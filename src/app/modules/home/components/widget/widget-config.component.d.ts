@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, OnDestroy, OnInit, ViewContainerRef } from '@angular/core';
+import { ChangeDetectorRef, DestroyRef, OnDestroy, OnInit, ViewContainerRef } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -26,6 +26,7 @@ export declare class WidgetConfigComponent extends PageComponent implements OnIn
     translate: TranslateService;
     private fb;
     private cd;
+    private destroyRef;
     basicModeContainer: ViewContainerRef;
     widgetTypes: typeof widgetType;
     widgetConfigModes: typeof WidgetConfigMode;
@@ -70,7 +71,7 @@ export declare class WidgetConfigComponent extends PageComponent implements OnIn
     private advancedSettingsSubscription;
     private actionsSettingsSubscription;
     private defaultConfigFormsType;
-    constructor(store: Store<AppState>, utils: UtilsService, entityService: EntityService, dialog: MatDialog, translate: TranslateService, fb: UntypedFormBuilder, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, utils: UtilsService, entityService: EntityService, dialog: MatDialog, translate: TranslateService, fb: UntypedFormBuilder, cd: ChangeDetectorRef, destroyRef: DestroyRef);
     ngOnInit(): void;
     ngOnDestroy(): void;
     private removeChangeSubscriptions;

@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { LineSeriesSettings, TimeSeriesChartType } from '@home/components/widget/lib/chart/time-series-chart.models';
 import { Store } from '@ngrx/store';
@@ -9,6 +9,7 @@ export declare class TimeSeriesChartLineSettingsComponent implements OnInit, Con
     protected store: Store<AppState>;
     private dataKeyConfigComponent;
     private fb;
+    private destroyRef;
     TimeSeriesChartType: typeof TimeSeriesChartType;
     lineSeriesStepTypes: import("@home/components/widget/lib/chart/time-series-chart.models").LineSeriesStepType[];
     lineSeriesStepTypeTranslations: Map<import("@home/components/widget/lib/chart/time-series-chart.models").LineSeriesStepType, string>;
@@ -24,7 +25,7 @@ export declare class TimeSeriesChartLineSettingsComponent implements OnInit, Con
     private modelValue;
     private propagateChange;
     lineSettingsFormGroup: UntypedFormGroup;
-    constructor(store: Store<AppState>, dataKeyConfigComponent: DataKeyConfigComponent, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, dataKeyConfigComponent: DataKeyConfigComponent, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(_fn: any): void;

@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -7,6 +7,7 @@ import * as i0 from "@angular/core";
 export declare class ChartFillSettingsComponent implements OnInit, ControlValueAccessor {
     protected store: Store<AppState>;
     private fb;
+    private destroyRef;
     chartFillTypes: ChartFillType[];
     chartFillTypeTranslationMap: Map<ChartFillType, string>;
     ChartFillType: typeof ChartFillType;
@@ -16,7 +17,7 @@ export declare class ChartFillSettingsComponent implements OnInit, ControlValueA
     private modelValue;
     private propagateChange;
     fillSettingsFormGroup: UntypedFormGroup;
-    constructor(store: Store<AppState>, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(_fn: any): void;

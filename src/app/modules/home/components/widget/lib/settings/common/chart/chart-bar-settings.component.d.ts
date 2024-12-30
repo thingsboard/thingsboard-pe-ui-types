@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -9,6 +9,7 @@ export declare class ChartBarSettingsComponent implements OnInit, ControlValueAc
     protected store: Store<AppState>;
     private dataKeyConfigComponent;
     private fb;
+    private destroyRef;
     chartLabelPositions: (ChartLabelPosition | PieChartLabelPosition)[];
     chartLabelPositionTranslations: Map<ChartLabelPosition | PieChartLabelPosition, string>;
     labelPreviewFn: any;
@@ -18,7 +19,7 @@ export declare class ChartBarSettingsComponent implements OnInit, ControlValueAc
     private modelValue;
     private propagateChange;
     barSettingsFormGroup: UntypedFormGroup;
-    constructor(store: Store<AppState>, dataKeyConfigComponent: DataKeyConfigComponent, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, dataKeyConfigComponent: DataKeyConfigComponent, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(_fn: any): void;
@@ -27,6 +28,6 @@ export declare class ChartBarSettingsComponent implements OnInit, ControlValueAc
     private updateValidators;
     private updateModel;
     private _labelPreviewFn;
-    static ɵfac: i0.ɵɵFactoryDeclaration<ChartBarSettingsComponent, [null, { optional: true; }, null]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<ChartBarSettingsComponent, [null, { optional: true; }, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<ChartBarSettingsComponent, "tb-chart-bar-settings", never, { "disabled": { "alias": "disabled"; "required": false; }; "series": { "alias": "series"; "required": false; }; "pieLabelPosition": { "alias": "pieLabelPosition"; "required": false; }; }, {}, never, never, false, never>;
 }

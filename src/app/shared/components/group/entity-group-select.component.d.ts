@@ -1,4 +1,4 @@
-import { AfterViewInit, EventEmitter, OnInit } from '@angular/core';
+import { AfterViewInit, DestroyRef, EventEmitter, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -17,6 +17,7 @@ export declare class EntityGroupSelectComponent implements ControlValueAccessor,
     private entityGroupService;
     translate: TranslateService;
     private fb;
+    private destroyRef;
     entityGroupSelectFormGroup: UntypedFormGroup;
     modelValue: string;
     allowedGroupTypes: Array<EntityType>;
@@ -39,7 +40,7 @@ export declare class EntityGroupSelectComponent implements ControlValueAccessor,
     displayGroupTypeSelect: boolean;
     entityGroupTypes: Array<EntityType>;
     private propagateChange;
-    constructor(store: Store<AppState>, entityService: EntityService, entityGroupService: EntityGroupService, translate: TranslateService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, entityService: EntityService, entityGroupService: EntityGroupService, translate: TranslateService, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;

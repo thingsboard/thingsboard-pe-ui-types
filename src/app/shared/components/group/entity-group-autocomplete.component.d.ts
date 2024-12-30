@@ -48,7 +48,7 @@ export declare class EntityGroupAutocompleteComponent implements ControlValueAcc
     ngOnDestroy(): void;
     getCurrentEntityGroup(): EntityInfoData | null;
     setDisabledState(isDisabled: boolean): void;
-    writeValue(value: string | EntityInfoData | null): void;
+    writeValue(value: string | EntityInfoData | EntityId | null): void;
     onFocus(): void;
     reset(keepEntityGroup?: boolean): void;
     updateView(value: EntityId | string | null, entityGroup: EntityInfoData | string | null): void;

@@ -1,4 +1,4 @@
-import { EventEmitter, OnInit } from '@angular/core';
+import { DestroyRef, EventEmitter, OnInit } from '@angular/core';
 import { TbPopoverComponent } from '@shared/components/popover.component';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { TimeSeriesChartThreshold, TimeSeriesChartYAxisId } from '@home/components/widget/lib/chart/time-series-chart.models';
@@ -7,6 +7,7 @@ import { ChartShape } from '@home/components/widget/lib/chart/chart.models';
 import * as i0 from "@angular/core";
 export declare class TimeSeriesChartThresholdSettingsPanelComponent implements OnInit {
     private fb;
+    private destroyRef;
     chartLineTypes: import("@home/components/widget/lib/chart/chart.models").ChartLineType[];
     chartLineTypeTranslations: Map<import("@home/components/widget/lib/chart/chart.models").ChartLineType, string>;
     chartShapes: ChartShape[];
@@ -22,7 +23,7 @@ export declare class TimeSeriesChartThresholdSettingsPanelComponent implements O
     panelTitle: string;
     thresholdSettingsApplied: EventEmitter<Partial<TimeSeriesChartThreshold>>;
     thresholdSettingsFormGroup: UntypedFormGroup;
-    constructor(fb: UntypedFormBuilder);
+    constructor(fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     cancel(): void;
     applyThresholdSettings(): void;

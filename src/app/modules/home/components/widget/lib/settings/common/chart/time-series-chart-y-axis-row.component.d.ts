@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, EventEmitter, OnInit, Renderer2, ViewContainerRef } from '@angular/core';
+import { ChangeDetectorRef, DestroyRef, EventEmitter, OnInit, Renderer2, ViewContainerRef } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { AxisPosition, TimeSeriesChartYAxisSettings } from '@home/components/widget/lib/chart/time-series-chart.models';
 import { MatButton } from '@angular/material/button';
@@ -12,6 +12,7 @@ export declare class TimeSeriesChartYAxisRowComponent implements ControlValueAcc
     private renderer;
     private viewContainerRef;
     private cd;
+    private destroyRef;
     axisPositions: AxisPosition[];
     timeSeriesAxisPositionTranslations: Map<AxisPosition, string>;
     disabled: boolean;
@@ -20,7 +21,7 @@ export declare class TimeSeriesChartYAxisRowComponent implements ControlValueAcc
     axisFormGroup: UntypedFormGroup;
     modelValue: TimeSeriesChartYAxisSettings;
     private propagateChange;
-    constructor(fb: UntypedFormBuilder, translate: TranslateService, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, cd: ChangeDetectorRef);
+    constructor(fb: UntypedFormBuilder, translate: TranslateService, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, cd: ChangeDetectorRef, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(_fn: any): void;

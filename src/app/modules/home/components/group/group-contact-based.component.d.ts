@@ -2,7 +2,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { UntypedFormBuilder, UntypedFormGroup, ValidatorFn } from '@angular/forms';
 import { ContactBased } from '@shared/models/contact-based.model';
-import { AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, DestroyRef } from '@angular/core';
 import { HasId } from '@shared/models/base-data';
 import { GroupEntityComponent } from '@home/components/group/group-entity.component';
 import { GroupEntityTableConfig } from '@home/models/group/group-entities-table-config.models';
@@ -18,6 +18,7 @@ export declare abstract class GroupContactBasedComponent<T extends ContactBased<
     protected cd: ChangeDetectorRef;
     protected countryData: CountryData;
     protected userPermissionsService: UserPermissionsService;
+    protected destroyRef: DestroyRef;
     protected constructor(store: Store<AppState>, fb: UntypedFormBuilder, entityValue: T, entitiesTableConfigValue: EntityTableConfig<T> | GroupEntityTableConfig<T>, cd: ChangeDetectorRef, countryData: CountryData, userPermissionsService: UserPermissionsService);
     buildForm(entity: T): UntypedFormGroup;
     updateForm(entity: T): void;

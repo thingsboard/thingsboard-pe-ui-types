@@ -1,6 +1,7 @@
 import { EventEmitter, OnInit } from '@angular/core';
 import { FormBuilder, FormControl } from '@angular/forms';
 import { TbPopoverComponent } from '@shared/components/popover.component';
+import { EditorOptions } from 'tinymce';
 import * as i0 from "@angular/core";
 export declare class EditorPanelComponent implements OnInit {
     private fb;
@@ -10,7 +11,7 @@ export declare class EditorPanelComponent implements OnInit {
     popover: TbPopoverComponent<EditorPanelComponent>;
     editorContentApplied: EventEmitter<string>;
     editorControl: FormControl<string>;
-    tinyMceOptions: Record<string, any>;
+    tinyMceOptions: Partial<EditorOptions>;
     constructor(fb: FormBuilder);
     ngOnInit(): void;
     cancel(): void;

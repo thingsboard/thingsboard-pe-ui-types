@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectorRef, DestroyRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { WidgetConfigComponent } from '@home/components/widget/widget-config.component';
@@ -15,6 +15,7 @@ export declare class DataKeysPanelComponent implements ControlValueAccessor, OnI
     private cd;
     private utils;
     private widgetConfigComponent;
+    private destroyRef;
     disabled: boolean;
     panelTitle: string;
     addKeyTitle: string;
@@ -46,7 +47,7 @@ export declare class DataKeysPanelComponent implements ControlValueAccessor, OnI
     get dragEnabled(): boolean;
     get noKeys(): boolean;
     private propagateChange;
-    constructor(fb: UntypedFormBuilder, dialog: MatDialog, cd: ChangeDetectorRef, utils: UtilsService, widgetConfigComponent: WidgetConfigComponent);
+    constructor(fb: UntypedFormBuilder, dialog: MatDialog, cd: ChangeDetectorRef, utils: UtilsService, widgetConfigComponent: WidgetConfigComponent, destroyRef: DestroyRef);
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
     private updateParams;

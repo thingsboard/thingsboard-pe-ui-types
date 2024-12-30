@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -7,6 +7,7 @@ import * as i0 from "@angular/core";
 export declare class SmsProviderConfigurationComponent implements ControlValueAccessor, OnInit {
     private store;
     private fb;
+    private destroyRef;
     smsProviderType: typeof SmsProviderType;
     smsProviderTypes: string[];
     smsProviderTypeTranslations: Map<SmsProviderType, string>;
@@ -16,7 +17,7 @@ export declare class SmsProviderConfigurationComponent implements ControlValueAc
     set required(value: boolean);
     disabled: boolean;
     private propagateChange;
-    constructor(store: Store<AppState>, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;

@@ -22,7 +22,7 @@ export declare class OtaPackageAutocompleteComponent implements ControlValueAcce
     private otaUpdateType;
     get type(): OtaUpdateType;
     set type(value: OtaUpdateType);
-    private deviceProfile;
+    private deviceProfileIdValue;
     get deviceProfileId(): string;
     set deviceProfileId(value: string);
     deviceGroupId: string;

@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { EntityType } from '@shared/models/entity-type.models';
@@ -10,13 +10,14 @@ export declare class OwnerEntityGroupListComponent extends PageComponent impleme
     protected store: Store<AppState>;
     private translate;
     private fb;
+    private destroyRef;
     disabled: boolean;
     entityType: EntityType;
     ownerEntityGroupListFormGroup: UntypedFormGroup;
     modelValue: Array<string> | null;
     currentUser: import("../../../../shared/public-api").AuthUser;
     private propagateChange;
-    constructor(store: Store<AppState>, translate: TranslateService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
@@ -25,6 +25,7 @@ export declare class UploadImageDialogComponent extends DialogComponent<UploadIm
     private errorStateMatcher;
     dialogRef: MatDialogRef<UploadImageDialogComponent, UploadImageDialogResult>;
     fb: UntypedFormBuilder;
+    private destroyRef;
     uploadImageFormGroup: UntypedFormGroup;
     uploadImage: boolean;
     submitted: boolean;
@@ -32,12 +33,12 @@ export declare class UploadImageDialogComponent extends DialogComponent<UploadIm
     get isScada(): boolean;
     private scadaSymbolContent;
     private scadaSymbolMetadata;
-    constructor(store: Store<AppState>, router: Router, imageService: ImageService, data: UploadImageDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<UploadImageDialogComponent, UploadImageDialogResult>, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, router: Router, imageService: ImageService, data: UploadImageDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<UploadImageDialogComponent, UploadImageDialogResult>, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     imageFileNameChanged(fileName: string): void;
     isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     cancel(): void;
     upload(): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<UploadImageDialogComponent, [null, null, null, null, { skipSelf: true; }, null, null]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<UploadImageDialogComponent, [null, null, null, null, { skipSelf: true; }, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<UploadImageDialogComponent, "tb-upload-image-dialog", never, {}, {}, never, never, false, never>;
 }

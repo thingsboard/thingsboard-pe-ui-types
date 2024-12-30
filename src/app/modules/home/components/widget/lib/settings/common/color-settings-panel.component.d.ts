@@ -1,4 +1,4 @@
-import { EventEmitter, OnInit } from '@angular/core';
+import { DestroyRef, EventEmitter, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { ColorSettings, ColorType } from '@shared/models/widget-settings.models';
 import { TbPopoverComponent } from '@shared/components/popover.component';
@@ -15,6 +15,7 @@ export declare class ColorSettingsPanelComponent extends PageComponent implement
     private fb;
     private widgetService;
     protected store: Store<AppState>;
+    private destroyRef;
     colorSettings: ColorSettings;
     popover: TbPopoverComponent<ColorSettingsPanelComponent>;
     settingsComponents: ColorSettingsComponent[];
@@ -31,7 +32,7 @@ export declare class ColorSettingsPanelComponent extends PageComponent implement
     colorTypeTranslationsMap: Map<ColorType, string>;
     colorSettingsFormGroup: UntypedFormGroup;
     functionScopeVariables: string[];
-    constructor(fb: UntypedFormBuilder, widgetService: WidgetService, store: Store<AppState>);
+    constructor(fb: UntypedFormBuilder, widgetService: WidgetService, store: Store<AppState>, destroyRef: DestroyRef);
     ngOnInit(): void;
     copyColorSettings(comp: ColorSettingsComponent): void;
     cancel(): void;

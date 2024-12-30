@@ -1,4 +1,4 @@
-import { EventEmitter, OnInit } from '@angular/core';
+import { DestroyRef, EventEmitter, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, ValidatorFn } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
@@ -17,6 +17,7 @@ export declare class GpioItemComponent extends PageComponent implements OnInit, 
     protected store: Store<AppState>;
     private translate;
     private fb;
+    private destroyRef;
     disabled: boolean;
     expanded: boolean;
     hasColor: boolean;
@@ -24,7 +25,7 @@ export declare class GpioItemComponent extends PageComponent implements OnInit, 
     private modelValue;
     private propagateChange;
     gpioItemFormGroup: UntypedFormGroup;
-    constructor(store: Store<AppState>, translate: TranslateService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

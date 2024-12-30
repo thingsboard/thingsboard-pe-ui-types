@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, EventEmitter, OnInit } from '@angular/core';
+import { ChangeDetectorRef, DestroyRef, EventEmitter, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { BackgroundSettings, BackgroundType, ComponentStyle } from '@shared/models/widget-settings.models';
 import { TbPopoverComponent } from '@shared/components/popover.component';
@@ -15,6 +15,7 @@ export declare class BackgroundSettingsPanelComponent extends PageComponent impl
     private sanitizer;
     protected store: Store<AppState>;
     private cd;
+    private destroyRef;
     backgroundSettings: BackgroundSettings;
     popover: TbPopoverComponent<BackgroundSettingsPanelComponent>;
     backgroundSettingsApplied: EventEmitter<BackgroundSettings>;
@@ -24,7 +25,7 @@ export declare class BackgroundSettingsPanelComponent extends PageComponent impl
     backgroundSettingsFormGroup: UntypedFormGroup;
     backgroundStyle$: Observable<ComponentStyle>;
     overlayStyle: ComponentStyle;
-    constructor(fb: UntypedFormBuilder, imagePipe: ImagePipe, sanitizer: DomSanitizer, store: Store<AppState>, cd: ChangeDetectorRef);
+    constructor(fb: UntypedFormBuilder, imagePipe: ImagePipe, sanitizer: DomSanitizer, store: Store<AppState>, cd: ChangeDetectorRef, destroyRef: DestroyRef);
     ngOnInit(): void;
     cancel(): void;
     applyColorSettings(): void;

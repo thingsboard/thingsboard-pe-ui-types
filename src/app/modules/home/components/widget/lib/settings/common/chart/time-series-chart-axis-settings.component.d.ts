@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { AxisPosition, TimeSeriesChartAxisSettings, TimeSeriesChartYAxisSettings } from '@home/components/widget/lib/chart/time-series-chart.models';
 import { WidgetService } from '@core/http/widget.service';
@@ -6,6 +6,7 @@ import * as i0 from "@angular/core";
 export declare class TimeSeriesChartAxisSettingsComponent implements OnInit, ControlValueAccessor {
     private fb;
     private widgetService;
+    private destroyRef;
     alwaysExpanded: boolean;
     settingsExpanded: boolean;
     axisPositions: AxisPosition[];
@@ -20,7 +21,7 @@ export declare class TimeSeriesChartAxisSettingsComponent implements OnInit, Con
     private modelValue;
     private propagateChange;
     axisSettingsFormGroup: UntypedFormGroup;
-    constructor(fb: UntypedFormBuilder, widgetService: WidgetService);
+    constructor(fb: UntypedFormBuilder, widgetService: WidgetService, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(_fn: any): void;

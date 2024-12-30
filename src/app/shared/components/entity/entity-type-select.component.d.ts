@@ -1,4 +1,4 @@
-import { AfterViewInit, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { AfterViewInit, DestroyRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -13,6 +13,7 @@ export declare class EntityTypeSelectComponent implements ControlValueAccessor, 
     private entityService;
     translate: TranslateService;
     private fb;
+    private destroyRef;
     entityTypeFormGroup: UntypedFormGroup;
     modelValue: EntityType | AliasEntityType | null;
     allowedEntityTypes: Array<EntityType | AliasEntityType>;
@@ -29,7 +30,7 @@ export declare class EntityTypeSelectComponent implements ControlValueAccessor, 
     appearance: MatFormFieldAppearance;
     entityTypes: Array<EntityType | AliasEntityType | string>;
     private propagateChange;
-    constructor(store: Store<AppState>, entityService: EntityService, translate: TranslateService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, entityService: EntityService, translate: TranslateService, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;

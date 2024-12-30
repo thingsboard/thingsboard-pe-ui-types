@@ -18,6 +18,7 @@ export declare class ResourceAutocompleteComponent implements ControlValueAccess
     hideRequiredMarker: boolean;
     allowAutocomplete: boolean;
     subType: ResourceSubType;
+    ResourceSubType: typeof ResourceSubType;
     resourceFormGroup: import("@angular/forms").FormGroup<{
         resource: import("@angular/forms").FormControl<string | ResourceInfo>;
     }>;
@@ -38,6 +39,7 @@ export declare class ResourceAutocompleteComponent implements ControlValueAccess
     clear(): void;
     onFocus(): void;
     private updateView;
+    textIsNotEmpty(text: string): boolean;
     private fetchResources;
     static ɵfac: i0.ɵɵFactoryDeclaration<ResourceAutocompleteComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<ResourceAutocompleteComponent, "tb-resource-autocomplete", never, { "disabled": { "alias": "disabled"; "required": false; }; "required": { "alias": "required"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "inlineField": { "alias": "inlineField"; "required": false; }; "placeholder": { "alias": "placeholder"; "required": false; }; "hideRequiredMarker": { "alias": "hideRequiredMarker"; "required": false; }; "allowAutocomplete": { "alias": "allowAutocomplete"; "required": false; }; "subType": { "alias": "subType"; "required": false; }; }, {}, never, never, false, never>;

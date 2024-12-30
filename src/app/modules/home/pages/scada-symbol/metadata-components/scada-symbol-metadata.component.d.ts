@@ -1,4 +1,4 @@
-import { OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { DestroyRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { ScadaSymbolMetadata } from '@home/components/widget/lib/scada/scada-symbol.models';
@@ -18,6 +18,7 @@ export declare class ScadaSymbolMetadataComponent extends PageComponent implemen
     private fb;
     private translate;
     private customTranslate;
+    private destroyRef;
     private wl;
     symbolMetadataTags: ScadaSymbolMetadataTagsComponent;
     aliasController: IAliasController;
@@ -33,7 +34,7 @@ export declare class ScadaSymbolMetadataComponent extends PageComponent implemen
     elementStateRenderFunctionCompleter: TbEditorCompleter;
     clickActionFunctionCompleter: TbEditorCompleter;
     highlightRules: import("../../../../../shared/models/ace/ace.models").AceHighlightRules;
-    constructor(store: Store<AppState>, fb: UntypedFormBuilder, translate: TranslateService, customTranslate: CustomTranslatePipe, wl: WhiteLabelingService);
+    constructor(store: Store<AppState>, fb: UntypedFormBuilder, translate: TranslateService, customTranslate: CustomTranslatePipe, destroyRef: DestroyRef, wl: WhiteLabelingService);
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
     registerOnChange(fn: any): void;

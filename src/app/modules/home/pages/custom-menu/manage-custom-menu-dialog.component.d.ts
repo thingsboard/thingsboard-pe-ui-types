@@ -1,4 +1,4 @@
-import { OnDestroy, OnInit } from '@angular/core';
+import { DestroyRef, OnDestroy, OnInit } from '@angular/core';
 import { DialogComponent } from '@shared/components/dialog.component';
 import { CMAssigneeType, CMScope, CustomMenu, CustomMenuInfo } from '@shared/models/custom-menu.models';
 import { Store } from '@ngrx/store';
@@ -36,6 +36,7 @@ export declare class ManageCustomMenuDialogComponent extends DialogComponent<Man
     private dialogService;
     private translate;
     private fb;
+    private destroyRef;
     Authority: typeof Authority;
     EntityType: typeof EntityType;
     CMAssigneeType: typeof CMAssigneeType;
@@ -47,7 +48,7 @@ export declare class ManageCustomMenuDialogComponent extends DialogComponent<Man
     customMenuScopes: CMScope[];
     assigneeTypes: CMAssigneeType[];
     fetchUsersFunction: any;
-    constructor(store: Store<AppState>, router: Router, data: ManageCustomMenuDialogData, dialogRef: MatDialogRef<ManageCustomMenuDialogComponent, ManageCustomMenuDialogResult>, customMenuService: CustomMenuService, userService: UserService, dialogService: DialogService, translate: TranslateService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, router: Router, data: ManageCustomMenuDialogData, dialogRef: MatDialogRef<ManageCustomMenuDialogComponent, ManageCustomMenuDialogResult>, customMenuService: CustomMenuService, userService: UserService, dialogService: DialogService, translate: TranslateService, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     private updateAssigneeTypes;
     private updateAssignToList;

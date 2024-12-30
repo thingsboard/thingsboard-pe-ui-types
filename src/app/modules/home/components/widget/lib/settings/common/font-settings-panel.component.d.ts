@@ -1,4 +1,4 @@
-import { ElementRef, EventEmitter, OnInit } from '@angular/core';
+import { DestroyRef, ElementRef, EventEmitter, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { ComponentStyle, cssUnit, Font } from '@shared/models/widget-settings.models';
 import { TbPopoverComponent } from '@shared/components/popover.component';
@@ -10,6 +10,7 @@ import * as i0 from "@angular/core";
 export declare class FontSettingsPanelComponent extends PageComponent implements OnInit {
     private fb;
     protected store: Store<AppState>;
+    private destroyRef;
     font: Font;
     previewText: string;
     initialPreviewStyle: ComponentStyle;
@@ -28,7 +29,7 @@ export declare class FontSettingsPanelComponent extends PageComponent implements
     filteredFontFamilies: Observable<Array<string>>;
     familySearchText: string;
     previewStyle: ComponentStyle;
-    constructor(fb: UntypedFormBuilder, store: Store<AppState>);
+    constructor(fb: UntypedFormBuilder, store: Store<AppState>, destroyRef: DestroyRef);
     ngOnInit(): void;
     clearFamily(): void;
     cancel(): void;

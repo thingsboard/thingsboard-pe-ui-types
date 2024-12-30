@@ -2,7 +2,7 @@ import { WidgetActionCallbacks } from '@home/components/widget/action/manage-wid
 import { DatasourceCallbacks } from '@home/components/widget/config/datasource.component.models';
 import { WidgetConfigComponentData } from '@home/models/widget-component.models';
 import { Observable } from 'rxjs';
-import { AfterViewInit, EventEmitter, OnInit } from '@angular/core';
+import { AfterViewInit, DestroyRef, EventEmitter, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -32,6 +32,7 @@ export declare abstract class BasicWidgetConfigComponent extends PageComponent i
     get widgetEditMode(): boolean;
     widgetConfigChangedEmitter: EventEmitter<WidgetConfigComponentData>;
     widgetConfigChanged: Observable<WidgetConfigComponentData>;
+    protected destroyRef: DestroyRef;
     protected constructor(store: Store<AppState>, widgetConfigComponent: WidgetConfigComponent);
     ngOnInit(): void;
     ngAfterViewInit(): void;

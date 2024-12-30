@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
@@ -8,11 +8,12 @@ import * as i0 from "@angular/core";
 export declare class TbScriptLangComponent extends PageComponent implements ControlValueAccessor, OnInit {
     protected store: Store<AppState>;
     private fb;
+    private destroyRef;
     scriptLangFormGroup: UntypedFormGroup;
     scriptLanguage: typeof ScriptLanguage;
     disabled: boolean;
     private propagateChange;
-    constructor(store: Store<AppState>, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

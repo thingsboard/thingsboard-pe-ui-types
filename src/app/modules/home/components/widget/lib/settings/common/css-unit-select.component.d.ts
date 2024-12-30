@@ -1,8 +1,9 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormControl } from '@angular/forms';
 import { cssUnit } from '@shared/models/widget-settings.models';
 import * as i0 from "@angular/core";
 export declare class CssUnitSelectComponent implements OnInit, ControlValueAccessor {
+    private destroyRef;
     disabled: boolean;
     allowEmpty: boolean;
     width: string;
@@ -10,7 +11,7 @@ export declare class CssUnitSelectComponent implements OnInit, ControlValueAcces
     cssUnitFormControl: UntypedFormControl;
     modelValue: cssUnit;
     private propagateChange;
-    constructor();
+    constructor(destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

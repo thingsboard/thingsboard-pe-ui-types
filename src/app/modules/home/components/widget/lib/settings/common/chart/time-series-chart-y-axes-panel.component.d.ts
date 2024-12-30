@@ -1,17 +1,18 @@
-import { EventEmitter, OnInit } from '@angular/core';
+import { DestroyRef, EventEmitter, OnInit } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { TimeSeriesChartYAxes } from '@home/components/widget/lib/chart/time-series-chart.models';
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import * as i0 from "@angular/core";
 export declare class TimeSeriesChartYAxesPanelComponent implements ControlValueAccessor, OnInit, Validator {
     private fb;
+    private destroyRef;
     disabled: boolean;
     advanced: boolean;
     axisRemoved: EventEmitter<string>;
     yAxesFormGroup: UntypedFormGroup;
     get dragEnabled(): boolean;
     private propagateChange;
-    constructor(fb: UntypedFormBuilder);
+    constructor(fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

@@ -1,4 +1,4 @@
-import { OnInit, Renderer2, ViewContainerRef } from '@angular/core';
+import { DestroyRef, OnInit, Renderer2, ViewContainerRef } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { EntityTypeVersionLoadConfig } from '@shared/models/vc.models';
@@ -16,6 +16,7 @@ export declare class EntityTypesVersionLoadComponent extends PageComponent imple
     private renderer;
     private viewContainerRef;
     private fb;
+    private destroyRef;
     disabled: boolean;
     private modelValue;
     private propagateChange;
@@ -24,7 +25,7 @@ export declare class EntityTypesVersionLoadComponent extends PageComponent imple
     entityTypesWithoutRelatedData: Set<EntityType | import("@shared/models/entity-type.models").AliasEntityType>;
     loading: boolean;
     overrideEntityTypeTranslationsMap: Map<EntityType | import("@shared/models/entity-type.models").AliasEntityType, string>;
-    constructor(store: Store<AppState>, translate: TranslateService, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

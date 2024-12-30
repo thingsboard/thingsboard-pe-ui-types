@@ -14,6 +14,8 @@ import { UiSettingsService } from '@core/http/ui-settings.service';
 import { EntityType } from '@shared/models/entity-type.models';
 import { EntityId } from '@shared/models/id/entity-id';
 import { BaseData } from '@shared/models/base-data';
+import { DialogService } from '@core/services/dialog.service';
+import { TranslateService } from '@ngx-translate/core';
 import * as i0 from "@angular/core";
 export declare class WhiteLabelingComponent extends PageComponent implements OnInit, HasConfirmForm {
     protected store: Store<AppState>;
@@ -22,8 +24,10 @@ export declare class WhiteLabelingComponent extends PageComponent implements OnI
     private whiteLabelingService;
     private uiSettingsService;
     private dialog;
+    private dialogService;
     private fb;
     private destroyRef;
+    private translate;
     private window;
     wlSettings: UntypedFormGroup;
     private whiteLabelingParams;
@@ -40,7 +44,7 @@ export declare class WhiteLabelingComponent extends PageComponent implements OnI
     readonly EntityType: typeof EntityType;
     readonly operation: typeof Operation;
     readonly resource: typeof Resource;
-    constructor(store: Store<AppState>, route: ActivatedRoute, userPermissionsService: UserPermissionsService, whiteLabelingService: WhiteLabelingService, uiSettingsService: UiSettingsService, dialog: MatDialog, fb: UntypedFormBuilder, destroyRef: DestroyRef, window: Window);
+    constructor(store: Store<AppState>, route: ActivatedRoute, userPermissionsService: UserPermissionsService, whiteLabelingService: WhiteLabelingService, uiSettingsService: UiSettingsService, dialog: MatDialog, dialogService: DialogService, fb: UntypedFormBuilder, destroyRef: DestroyRef, translate: TranslateService, window: Window);
     ngOnInit(): void;
     private loadWhiteLabelingParams;
     buildWhiteLabelingSettingsForm(): void;

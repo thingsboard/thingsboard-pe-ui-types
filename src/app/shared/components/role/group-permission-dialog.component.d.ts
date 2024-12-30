@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
@@ -27,6 +27,7 @@ export declare class GroupPermissionDialogComponent extends DialogComponent<Grou
     private errorStateMatcher;
     dialogRef: MatDialogRef<GroupPermissionDialogComponent, boolean | GroupPermission>;
     fb: UntypedFormBuilder;
+    private destroyRef;
     groupPermissionFormGroup: UntypedFormGroup;
     isAdd: boolean;
     isUserGroup: boolean;
@@ -36,12 +37,12 @@ export declare class GroupPermissionDialogComponent extends DialogComponent<Grou
     roleTypeTranslations: Map<RoleType, string>;
     entityType: typeof EntityType;
     submitted: boolean;
-    constructor(store: Store<AppState>, router: Router, data: GroupPermissionDialogData, roleService: RoleService, userPermissionsService: UserPermissionsService, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<GroupPermissionDialogComponent, boolean | GroupPermission>, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, router: Router, data: GroupPermissionDialogData, roleService: RoleService, userPermissionsService: UserPermissionsService, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<GroupPermissionDialogComponent, boolean | GroupPermission>, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     private updateEnabledState;
     isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     cancel(): void;
     save(): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<GroupPermissionDialogComponent, [null, null, null, null, null, { skipSelf: true; }, null, null]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<GroupPermissionDialogComponent, [null, null, null, null, null, { skipSelf: true; }, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<GroupPermissionDialogComponent, "tb-group-permission-dialog", never, {}, {}, never, never, false, never>;
 }

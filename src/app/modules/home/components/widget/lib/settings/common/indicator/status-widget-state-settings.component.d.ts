@@ -1,16 +1,17 @@
-import { OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { DestroyRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { StatusWidgetLayout, StatusWidgetStateSettings } from '@home/components/widget/lib/indicator/status-widget.models';
 import * as i0 from "@angular/core";
 export declare class StatusWidgetStateSettingsComponent implements OnInit, OnChanges, ControlValueAccessor {
     private fb;
+    private destroyRef;
     StatusWidgetLayout: typeof StatusWidgetLayout;
     disabled: boolean;
     layout: StatusWidgetLayout;
     private modelValue;
     private propagateChange;
     stateSettingsFormGroup: UntypedFormGroup;
-    constructor(fb: UntypedFormBuilder);
+    constructor(fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
     registerOnChange(fn: any): void;

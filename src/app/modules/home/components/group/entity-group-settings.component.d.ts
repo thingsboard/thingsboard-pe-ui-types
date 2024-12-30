@@ -1,4 +1,4 @@
-import { AfterViewInit, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, DestroyRef, OnDestroy, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -9,6 +9,7 @@ import * as i0 from "@angular/core";
 export declare class EntityGroupSettingsComponent extends PageComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnDestroy {
     protected store: Store<AppState>;
     private fb;
+    private destroyRef;
     modelValue: EntityGroupSettings | null;
     settingsFormGroup: UntypedFormGroup;
     entityType: EntityType;
@@ -16,7 +17,7 @@ export declare class EntityGroupSettingsComponent extends PageComponent implemen
     entityGroupDetailsModes: string[];
     entityGroupDetailsModeTranslations: Map<EntityGroupDetailsMode, string>;
     entityTypes: typeof EntityType;
-    constructor(store: Store<AppState>, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

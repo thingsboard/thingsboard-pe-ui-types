@@ -1,4 +1,4 @@
-import { AfterViewInit, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, DestroyRef, OnDestroy, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
@@ -15,6 +15,7 @@ export declare class EntitySubTypeSelectComponent implements ControlValueAccesso
     translate: TranslateService;
     private fb;
     private entityService;
+    private destroyRef;
     subTypeFormGroup: UntypedFormGroup;
     modelValue: string | null;
     subscriptSizing: SubscriptSizing;
@@ -31,7 +32,7 @@ export declare class EntitySubTypeSelectComponent implements ControlValueAccesso
     subTypesLoaded: boolean;
     private broadcastSubscription;
     private propagateChange;
-    constructor(store: Store<AppState>, broadcast: BroadcastService, translate: TranslateService, fb: UntypedFormBuilder, entityService: EntityService);
+    constructor(store: Store<AppState>, broadcast: BroadcastService, translate: TranslateService, fb: UntypedFormBuilder, entityService: EntityService, destroyRef: DestroyRef);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;

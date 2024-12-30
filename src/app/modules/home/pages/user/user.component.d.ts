@@ -31,7 +31,7 @@ export declare class UserComponent extends GroupEntityComponent<UserInfo> {
     isCurrentUser(): boolean;
     isUserTenantAdmin(): boolean;
     isUserCredentialsEnabled(): boolean;
-    isUserCredentialPresent(): boolean;
+    isUserActivated(): boolean;
     buildForm(entity: UserInfo): UntypedFormGroup;
     updateForm(entity: UserInfo): void;
     onUserIdCopied($event: any): void;

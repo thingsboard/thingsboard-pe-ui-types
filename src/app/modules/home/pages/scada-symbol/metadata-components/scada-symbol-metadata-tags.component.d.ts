@@ -1,4 +1,4 @@
-import { OnChanges, OnInit, QueryList, SimpleChanges } from '@angular/core';
+import { DestroyRef, OnChanges, OnInit, QueryList, SimpleChanges } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { ScadaSymbolTag } from '@home/components/widget/lib/scada/scada-symbol.models';
 import { ScadaSymbolMetadataTagComponent } from '@home/pages/scada-symbol/metadata-components/scada-symbol-metadata-tag.component';
@@ -6,6 +6,7 @@ import { TbEditorCompleter } from '@shared/models/ace/completion.models';
 import * as i0 from "@angular/core";
 export declare class ScadaSymbolMetadataTagsComponent implements ControlValueAccessor, OnInit, Validator, OnChanges {
     private fb;
+    private destroyRef;
     styleDisplay: string;
     styleOverflow: string;
     metadataTags: QueryList<ScadaSymbolMetadataTagComponent>;
@@ -16,7 +17,7 @@ export declare class ScadaSymbolMetadataTagsComponent implements ControlValueAcc
     tagsFormGroup: UntypedFormGroup;
     private modelValue;
     private propagateChange;
-    constructor(fb: UntypedFormBuilder);
+    constructor(fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
     registerOnChange(fn: any): void;

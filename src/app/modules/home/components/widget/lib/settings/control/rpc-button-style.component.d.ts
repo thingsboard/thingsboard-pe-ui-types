@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
@@ -13,11 +13,12 @@ export interface RpcButtonStyle {
 export declare class RpcButtonStyleComponent extends PageComponent implements OnInit, ControlValueAccessor {
     protected store: Store<AppState>;
     private fb;
+    private destroyRef;
     disabled: boolean;
     private modelValue;
     private propagateChange;
     rpcButtonStyleFormGroup: UntypedFormGroup;
-    constructor(store: Store<AppState>, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

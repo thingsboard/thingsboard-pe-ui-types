@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { ChartType, TbFlotSettings } from '@home/components/widget/lib/flot-widget.models';
@@ -14,13 +14,14 @@ export declare class FlotWidgetSettingsComponent extends PageComponent implement
     private translate;
     private widgetService;
     private fb;
+    private destroyRef;
     disabled: boolean;
     chartType: ChartType;
     functionScopeVariables: string[];
     private modelValue;
     private propagateChange;
     flotSettingsFormGroup: UntypedFormGroup;
-    constructor(store: Store<AppState>, translate: TranslateService, widgetService: WidgetService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, widgetService: WidgetService, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

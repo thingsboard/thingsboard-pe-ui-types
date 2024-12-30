@@ -1,4 +1,4 @@
-import { ElementRef, OnInit } from '@angular/core';
+import { DestroyRef, ElementRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
@@ -30,6 +30,7 @@ export declare class SwitchRpcSettingsComponent extends PageComponent implements
     private widgetService;
     private entityService;
     private fb;
+    private destroyRef;
     keyInput: ElementRef;
     disabled: boolean;
     aliasController: IAliasController;
@@ -39,7 +40,7 @@ export declare class SwitchRpcSettingsComponent extends PageComponent implements
     private modelValue;
     private propagateChange;
     switchRpcSettingsFormGroup: UntypedFormGroup;
-    constructor(store: Store<AppState>, translate: TranslateService, widgetService: WidgetService, entityService: EntityService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, widgetService: WidgetService, entityService: EntityService, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

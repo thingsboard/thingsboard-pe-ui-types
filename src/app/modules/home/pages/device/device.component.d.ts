@@ -1,4 +1,4 @@
-import { ChangeDetectorRef } from '@angular/core';
+import { ChangeDetectorRef, DestroyRef } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
@@ -26,11 +26,12 @@ export declare class DeviceComponent extends GroupEntityComponent<DeviceInfo> {
     protected fb: UntypedFormBuilder;
     protected cd: ChangeDetectorRef;
     protected userPermissionsService: UserPermissionsService;
+    private destroyRef;
     private wl;
     entityType: typeof EntityType;
     deviceCredentials$: Subject<DeviceCredentials>;
     otaUpdateType: typeof OtaUpdateType;
-    constructor(store: Store<AppState>, translate: TranslateService, deviceService: DeviceService, clipboardService: ClipboardService, entityValue: DeviceInfo, entitiesTableConfigValue: EntityTableConfig<DeviceInfo> | GroupEntityTableConfig<DeviceInfo>, fb: UntypedFormBuilder, cd: ChangeDetectorRef, userPermissionsService: UserPermissionsService, wl: WhiteLabelingService);
+    constructor(store: Store<AppState>, translate: TranslateService, deviceService: DeviceService, clipboardService: ClipboardService, entityValue: DeviceInfo, entitiesTableConfigValue: EntityTableConfig<DeviceInfo> | GroupEntityTableConfig<DeviceInfo>, fb: UntypedFormBuilder, cd: ChangeDetectorRef, userPermissionsService: UserPermissionsService, destroyRef: DestroyRef, wl: WhiteLabelingService);
     ngOnInit(): void;
     hideDelete(): boolean;
     showConnectivityDialog(): boolean;

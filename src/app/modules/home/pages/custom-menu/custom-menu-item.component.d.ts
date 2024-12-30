@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { CMItemLinkType, CMItemType, CMScope, CustomMenuItem } from '@shared/models/custom-menu.models';
 import { Store } from '@ngrx/store';
@@ -7,6 +7,7 @@ import * as i0 from "@angular/core";
 export declare class CustomMenuItemComponent implements ControlValueAccessor, OnInit, Validator {
     private fb;
     private store;
+    private destroyRef;
     CMItemType: typeof CMItemType;
     CMItemLinkType: typeof CMItemLinkType;
     cmItemTypes: CMItemType[];
@@ -20,7 +21,7 @@ export declare class CustomMenuItemComponent implements ControlValueAccessor, On
     modelValue: CustomMenuItem;
     menuItemFormGroup: UntypedFormGroup;
     private propagateChange;
-    constructor(fb: UntypedFormBuilder, store: Store<AppState>);
+    constructor(fb: UntypedFormBuilder, store: Store<AppState>, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

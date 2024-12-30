@@ -7,7 +7,6 @@ export declare class RateLimitsListComponent implements ControlValueAccessor, Va
     disabled: boolean;
     rateLimitsListFormGroup: UntypedFormGroup;
     rateLimitsArray: Array<RateLimits>;
-    private valueChangeSubscription;
     private destroy$;
     private propagateChange;
     constructor(fb: UntypedFormBuilder);

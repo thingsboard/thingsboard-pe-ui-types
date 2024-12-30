@@ -2,6 +2,7 @@ import { OnDestroy } from '@angular/core';
 import { ControlValueAccessor, FormBuilder, FormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { DeliveryMethodsTemplates, NotificationDeliveryMethod, NotificationType } from '@shared/models/notification.models';
 import { TranslateService } from '@ngx-translate/core';
+import { EditorOptions } from 'tinymce';
 import * as i0 from "@angular/core";
 export declare class NotificationTemplateConfigurationComponent implements OnDestroy, ControlValueAccessor, Validator {
     private fb;
@@ -13,7 +14,7 @@ export declare class NotificationTemplateConfigurationComponent implements OnDes
     interacted: boolean;
     readonly NotificationDeliveryMethod: typeof NotificationDeliveryMethod;
     readonly NotificationTemplateTypeTranslateMap: Map<NotificationType, import("@shared/models/notification.models").NotificationTemplateTypeTranslate>;
-    tinyMceOptions: Record<string, any>;
+    tinyMceOptions: Partial<EditorOptions>;
     private propagateChange;
     private readonly destroy$;
     private expendedBlocks;

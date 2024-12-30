@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { EntityTypeVersionCreateConfig, SyncStrategy } from '@shared/models/vc.models';
@@ -11,6 +11,7 @@ export declare class EntityTypesVersionCreateComponent extends PageComponent imp
     protected store: Store<AppState>;
     private translate;
     private fb;
+    private destroyRef;
     disabled: boolean;
     private modelValue;
     private propagateChange;
@@ -21,7 +22,7 @@ export declare class EntityTypesVersionCreateComponent extends PageComponent imp
     entityTypesWithoutRelatedData: Set<EntityType | import("@shared/models/entity-type.models").AliasEntityType>;
     loading: boolean;
     overrideEntityTypeTranslationsMap: Map<EntityType | import("@shared/models/entity-type.models").AliasEntityType, string>;
-    constructor(store: Store<AppState>, translate: TranslateService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

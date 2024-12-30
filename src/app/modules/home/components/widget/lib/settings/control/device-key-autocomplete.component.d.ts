@@ -1,4 +1,4 @@
-import { ElementRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { DestroyRef, ElementRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
@@ -13,6 +13,7 @@ export declare class DeviceKeyAutocompleteComponent extends PageComponent implem
     protected store: Store<AppState>;
     private entityService;
     private fb;
+    private destroyRef;
     keyInput: ElementRef;
     disabled: boolean;
     aliasController: IAliasController;
@@ -32,7 +33,7 @@ export declare class DeviceKeyAutocompleteComponent extends PageComponent implem
     keySearchText: string;
     private latestKeySearchResult;
     private keysFetchObservable$;
-    constructor(store: Store<AppState>, entityService: EntityService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, entityService: EntityService, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
     registerOnChange(fn: any): void;

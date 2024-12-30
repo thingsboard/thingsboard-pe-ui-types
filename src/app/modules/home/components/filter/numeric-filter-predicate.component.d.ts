@@ -1,9 +1,10 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { EntityKeyValueType, NumericFilterPredicate, NumericOperation } from '@shared/models/query/query.models';
 import * as i0 from "@angular/core";
 export declare class NumericFilterPredicateComponent implements ControlValueAccessor, Validator, OnInit {
     private fb;
+    private destroyRef;
     disabled: boolean;
     allowUserDynamicSource: boolean;
     onlyUserDynamicSource: boolean;
@@ -14,7 +15,7 @@ export declare class NumericFilterPredicateComponent implements ControlValueAcce
     numericOperationEnum: typeof NumericOperation;
     numericOperationTranslations: Map<NumericOperation, string>;
     private propagateChange;
-    constructor(fb: UntypedFormBuilder);
+    constructor(fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

@@ -1,4 +1,4 @@
-import { OnInit, QueryList } from '@angular/core';
+import { DestroyRef, OnInit, QueryList } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { ScadaSymbolBehavior } from '@home/components/widget/lib/scada/scada-symbol.models';
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
@@ -10,6 +10,7 @@ import * as i0 from "@angular/core";
 export declare class ScadaSymbolBehaviorsComponent implements ControlValueAccessor, OnInit, Validator {
     private fb;
     private translate;
+    private destroyRef;
     styleDisplay: string;
     styleOverflow: string;
     behaviorRows: QueryList<ScadaSymbolBehaviorRowComponent>;
@@ -20,7 +21,7 @@ export declare class ScadaSymbolBehaviorsComponent implements ControlValueAccess
     errorText: string;
     get dragEnabled(): boolean;
     private propagateChange;
-    constructor(fb: UntypedFormBuilder, translate: TranslateService);
+    constructor(fb: UntypedFormBuilder, translate: TranslateService, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

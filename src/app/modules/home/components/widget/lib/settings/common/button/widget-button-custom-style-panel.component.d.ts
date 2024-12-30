@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, EventEmitter, OnInit } from '@angular/core';
+import { ChangeDetectorRef, DestroyRef, EventEmitter, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { TbPopoverComponent } from '@shared/components/popover.component';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
@@ -11,6 +11,7 @@ export declare class WidgetButtonCustomStylePanelComponent extends PageComponent
     private fb;
     protected store: Store<AppState>;
     private cd;
+    private destroyRef;
     widgetButtonPreview: WidgetButtonComponent;
     appearance: WidgetButtonAppearance;
     borderRadius: string;
@@ -26,7 +27,7 @@ export declare class WidgetButtonCustomStylePanelComponent extends PageComponent
     previewAppearance: WidgetButtonAppearance;
     copyFromStates: WidgetButtonState[];
     customStyleFormGroup: UntypedFormGroup;
-    constructor(fb: UntypedFormBuilder, store: Store<AppState>, cd: ChangeDetectorRef);
+    constructor(fb: UntypedFormBuilder, store: Store<AppState>, cd: ChangeDetectorRef, destroyRef: DestroyRef);
     ngOnInit(): void;
     copyStyle(state: WidgetButtonState): void;
     cancel(): void;

@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { Datasource, DatasourceType, JsonSettingsSchema, Widget, widgetType } from '@shared/models/widget.models';
 import { AlarmSearchStatus } from '@shared/models/alarm.models';
@@ -16,6 +16,7 @@ export declare class DatasourceComponent implements ControlValueAccessor, OnInit
     private fb;
     private datasourcesComponent;
     private widgetConfigComponent;
+    private destroyRef;
     get basicMode(): boolean;
     get widgetType(): widgetType;
     get aliasController(): IAliasController;
@@ -51,7 +52,7 @@ export declare class DatasourceComponent implements ControlValueAccessor, OnInit
     alarmSearchStatus: typeof AlarmSearchStatus;
     datasourceFormGroup: UntypedFormGroup;
     private propagateChange;
-    constructor(fb: UntypedFormBuilder, datasourcesComponent: DatasourcesComponent, widgetConfigComponent: WidgetConfigComponent);
+    constructor(fb: UntypedFormBuilder, datasourcesComponent: DatasourcesComponent, widgetConfigComponent: WidgetConfigComponent, destroyRef: DestroyRef);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
@@ -65,6 +66,6 @@ export declare class DatasourceComponent implements ControlValueAccessor, OnInit
     isDataKeysOptional(type?: DatasourceType): boolean;
     private datasourceUpdated;
     private updateValidators;
-    static ɵfac: i0.ɵɵFactoryDeclaration<DatasourceComponent, [null, { optional: true; }, null]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<DatasourceComponent, [null, { optional: true; }, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<DatasourceComponent, "tb-datasource", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

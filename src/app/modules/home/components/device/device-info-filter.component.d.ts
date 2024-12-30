@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, ElementRef, InjectionToken, OnDestroy, OnInit, TemplateRef, ViewContainerRef } from '@angular/core';
+import { ChangeDetectorRef, DestroyRef, ElementRef, InjectionToken, OnDestroy, OnInit, TemplateRef, ViewContainerRef } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { TranslateService } from '@ngx-translate/core';
@@ -21,6 +21,7 @@ export declare class DeviceInfoFilterComponent implements OnInit, OnDestroy, Con
     private viewContainerRef;
     private deviceProfileService;
     private cd;
+    private destroyRef;
     deviceFilterPanel: TemplateRef<any>;
     disabled: boolean;
     buttonMode: boolean;
@@ -32,7 +33,7 @@ export declare class DeviceInfoFilterComponent implements OnInit, OnDestroy, Con
     private deviceProfileInfo;
     private deviceInfoFilter;
     private propagateChange;
-    constructor(data: DeviceFilterConfigData | undefined, overlayRef: OverlayRef, fb: UntypedFormBuilder, translate: TranslateService, overlay: Overlay, nativeElement: ElementRef, viewContainerRef: ViewContainerRef, deviceProfileService: DeviceProfileService, cd: ChangeDetectorRef);
+    constructor(data: DeviceFilterConfigData | undefined, overlayRef: OverlayRef, fb: UntypedFormBuilder, translate: TranslateService, overlay: Overlay, nativeElement: ElementRef, viewContainerRef: ViewContainerRef, deviceProfileService: DeviceProfileService, cd: ChangeDetectorRef, destroyRef: DestroyRef);
     ngOnInit(): void;
     ngOnDestroy(): void;
     registerOnChange(fn: any): void;
@@ -47,6 +48,6 @@ export declare class DeviceInfoFilterComponent implements OnInit, OnDestroy, Con
     private updateDeviceInfoFilterForm;
     private deviceFilterUpdated;
     private updateButtonDisplayValue;
-    static ɵfac: i0.ɵɵFactoryDeclaration<DeviceInfoFilterComponent, [{ optional: true; }, { optional: true; }, null, null, null, null, null, null, null]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<DeviceInfoFilterComponent, [{ optional: true; }, { optional: true; }, null, null, null, null, null, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<DeviceInfoFilterComponent, "tb-device-info-filter", never, { "disabled": { "alias": "disabled"; "required": false; }; "buttonMode": { "alias": "buttonMode"; "required": false; }; }, {}, never, never, false, never>;
 }

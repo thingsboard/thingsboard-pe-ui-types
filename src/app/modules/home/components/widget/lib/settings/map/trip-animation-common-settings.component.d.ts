@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
@@ -13,13 +13,14 @@ export declare class TripAnimationCommonSettingsComponent extends PageComponent 
     private translate;
     private widgetService;
     private fb;
+    private destroyRef;
     disabled: boolean;
     widget: Widget;
     functionScopeVariables: string[];
     private modelValue;
     private propagateChange;
     tripAnimationCommonSettingsFormGroup: UntypedFormGroup;
-    constructor(store: Store<AppState>, translate: TranslateService, widgetService: WidgetService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, widgetService: WidgetService, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

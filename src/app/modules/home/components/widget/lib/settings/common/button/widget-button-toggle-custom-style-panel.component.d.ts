@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, EventEmitter, OnInit } from '@angular/core';
+import { ChangeDetectorRef, DestroyRef, EventEmitter, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { TbPopoverComponent } from '@shared/components/popover.component';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
@@ -11,6 +11,7 @@ export declare class WidgetButtonToggleCustomStylePanelComponent extends PageCom
     private fb;
     protected store: Store<AppState>;
     private cd;
+    private destroyRef;
     widgetButtonTogglePreview: WidgetButtonToggleComponent;
     appearance: ButtonToggleAppearance;
     value: boolean;
@@ -28,7 +29,7 @@ export declare class WidgetButtonToggleCustomStylePanelComponent extends PageCom
     copyFromStates: WidgetButtonToggleState[];
     customStyleFormGroup: UntypedFormGroup;
     style: SegmentedButtonStyles;
-    constructor(fb: UntypedFormBuilder, store: Store<AppState>, cd: ChangeDetectorRef);
+    constructor(fb: UntypedFormBuilder, store: Store<AppState>, cd: ChangeDetectorRef, destroyRef: DestroyRef);
     ngOnInit(): void;
     copyStyle(state: WidgetButtonToggleState): void;
     cancel(): void;

@@ -1,10 +1,11 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { AwsSnsSmsProviderConfiguration, BindTypes, CodingSchemes, NumberingPlanIdentification, TypeOfNumber } from '@shared/models/settings.models';
 import * as i0 from "@angular/core";
 export declare class SmppSmsProviderConfigurationComponent implements ControlValueAccessor, OnInit {
     private fb;
-    constructor(fb: UntypedFormBuilder);
+    private destroyRef;
+    constructor(fb: UntypedFormBuilder, destroyRef: DestroyRef);
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);

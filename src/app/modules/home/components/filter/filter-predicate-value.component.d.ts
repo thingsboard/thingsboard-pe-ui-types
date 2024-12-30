@@ -1,9 +1,10 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { DynamicValueSourceType, EntityKeyValueType, FilterPredicateValue, StringOperation } from '@shared/models/query/query.models';
 import * as i0 from "@angular/core";
 export declare class FilterPredicateValueComponent implements ControlValueAccessor, Validator, OnInit {
     private fb;
+    private destroyRef;
     private readonly inheritModeForSources;
     disabled: boolean;
     set allowUserDynamicSource(allow: boolean);
@@ -22,7 +23,7 @@ export declare class FilterPredicateValueComponent implements ControlValueAccess
     hintText: string;
     private propagateChange;
     private propagateChangePending;
-    constructor(fb: UntypedFormBuilder);
+    constructor(fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

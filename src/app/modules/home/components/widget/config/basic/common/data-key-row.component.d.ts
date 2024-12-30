@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, EventEmitter, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectorRef, DestroyRef, EventEmitter, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, ValidationErrors } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { WidgetConfigComponent } from '@home/components/widget/widget-config.component';
@@ -17,6 +17,7 @@ export declare class DataKeyRowComponent implements ControlValueAccessor, OnInit
     private dialog;
     private cd;
     private widgetConfigComponent;
+    private destroyRef;
     timeSeriesChartSeriesTypes: TimeSeriesChartSeriesType[];
     timeSeriesChartSeriesTypeTranslations: Map<TimeSeriesChartSeriesType, string>;
     timeSeriesChartSeriesTypeIcons: Map<TimeSeriesChartSeriesType, string>;
@@ -58,7 +59,7 @@ export declare class DataKeyRowComponent implements ControlValueAccessor, OnInit
     get displayUnitsOrDigits(): boolean;
     get isLatestDataKeys(): boolean;
     private propagateChange;
-    constructor(fb: UntypedFormBuilder, dialog: MatDialog, cd: ChangeDetectorRef, widgetConfigComponent: WidgetConfigComponent);
+    constructor(fb: UntypedFormBuilder, dialog: MatDialog, cd: ChangeDetectorRef, widgetConfigComponent: WidgetConfigComponent, destroyRef: DestroyRef);
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
     registerOnChange(fn: any): void;

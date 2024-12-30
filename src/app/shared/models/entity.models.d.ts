@@ -73,10 +73,10 @@ export interface HasTenantId {
 export interface HasVersion {
     version?: number;
 }
-export interface HasDebugSettings {
-    debugSettings?: DebugSettings;
+export interface HasEntityDebugSettings {
+    debugSettings?: EntityDebugSettings;
 }
-export interface DebugSettings {
+export interface EntityDebugSettings {
     failuresEnabled?: boolean;
     allEnabled?: boolean;
     allEnabledUntil?: number;

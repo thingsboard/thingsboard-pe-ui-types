@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -7,6 +7,7 @@ import * as i0 from "@angular/core";
 export declare class DeviceDataComponent implements ControlValueAccessor, OnInit, Validator {
     private store;
     private fb;
+    private destroyRef;
     deviceDataFormGroup: UntypedFormGroup;
     private requiredValue;
     get required(): boolean;
@@ -15,7 +16,7 @@ export declare class DeviceDataComponent implements ControlValueAccessor, OnInit
     displayDeviceConfiguration: boolean;
     displayTransportConfiguration: boolean;
     private propagateChange;
-    constructor(store: Store<AppState>, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;

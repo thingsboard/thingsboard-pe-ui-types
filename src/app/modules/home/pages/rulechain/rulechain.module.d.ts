@@ -12,9 +12,9 @@ import * as i10 from "@shared/shared.module";
 import * as i11 from "@modules/home/components/home-components.module";
 import * as i12 from "@modules/home/pages/rulechain/rulechain-routing.module";
 import * as i13 from "@shared/pipe/duration-left.pipe";
-import * as i14 from "@home/components/debug-settings/debug-settings-button.component";
+import * as i14 from "@home/components/entity/debug/entity-debug-settings-button.component";
 export declare class RuleChainModule {
     static ɵfac: i0.ɵɵFactoryDeclaration<RuleChainModule, never>;
-    static ɵmod: i0.ɵɵNgModuleDeclaration<RuleChainModule, [typeof i1.RuleChainComponent, typeof i2.RuleChainTabsComponent, typeof i3.RuleChainPageComponent, typeof i4.RuleNodeComponent, typeof i5.RuleNodeDetailsComponent, typeof i6.RuleNodeConfigComponent, typeof i7.LinkLabelsComponent, typeof i8.RuleNodeLinkComponent, typeof i3.AddRuleNodeLinkDialogComponent, typeof i3.AddRuleNodeDialogComponent, typeof i3.CreateNestedRuleChainDialogComponent], [typeof i9.CommonModule, typeof i10.SharedModule, typeof i11.HomeComponentsModule, typeof i12.RuleChainRoutingModule, typeof i13.DurationLeftPipe, typeof i14.DebugSettingsButtonComponent], never>;
+    static ɵmod: i0.ɵɵNgModuleDeclaration<RuleChainModule, [typeof i1.RuleChainComponent, typeof i2.RuleChainTabsComponent, typeof i3.RuleChainPageComponent, typeof i4.RuleNodeComponent, typeof i5.RuleNodeDetailsComponent, typeof i6.RuleNodeConfigComponent, typeof i7.LinkLabelsComponent, typeof i8.RuleNodeLinkComponent, typeof i3.AddRuleNodeLinkDialogComponent, typeof i3.AddRuleNodeDialogComponent, typeof i3.CreateNestedRuleChainDialogComponent], [typeof i9.CommonModule, typeof i10.SharedModule, typeof i11.HomeComponentsModule, typeof i12.RuleChainRoutingModule, typeof i13.DurationLeftPipe, typeof i14.EntityDebugSettingsButtonComponent], never>;
     static ɵinj: i0.ɵɵInjectorDeclaration<RuleChainModule>;
 }

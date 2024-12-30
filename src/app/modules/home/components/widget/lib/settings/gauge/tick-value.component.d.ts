@@ -1,5 +1,5 @@
 import { ValueSourceProperty } from '@home/components/widget/lib/settings/common/value-source.component';
-import { EventEmitter, OnInit } from '@angular/core';
+import { DestroyRef, EventEmitter, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
@@ -13,6 +13,7 @@ export declare class TickValueComponent extends PageComponent implements OnInit,
     protected store: Store<AppState>;
     private translate;
     private fb;
+    private destroyRef;
     disabled: boolean;
     aliasController: IAliasController;
     dataKeyCallbacks: DataKeysCallbacks;
@@ -21,7 +22,7 @@ export declare class TickValueComponent extends PageComponent implements OnInit,
     private modelValue;
     private propagateChange;
     tickValueFormGroup: UntypedFormGroup;
-    constructor(store: Store<AppState>, translate: TranslateService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

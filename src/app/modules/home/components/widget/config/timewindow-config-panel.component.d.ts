@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { WidgetConfigComponent } from '@home/components/widget/widget-config.component';
 import { WidgetConfig, widgetType } from '@shared/models/widget.models';
@@ -18,13 +18,14 @@ export declare class TimewindowConfigPanelComponent implements ControlValueAcces
     private fb;
     translate: TranslateService;
     private widgetConfigComponent;
+    private destroyRef;
     widgetTypes: typeof widgetType;
     get widgetType(): widgetType;
     disabled: boolean;
     onlyHistoryTimewindow: boolean;
     timewindowConfig: UntypedFormGroup;
     private propagateChange;
-    constructor(fb: UntypedFormBuilder, translate: TranslateService, widgetConfigComponent: WidgetConfigComponent);
+    constructor(fb: UntypedFormBuilder, translate: TranslateService, widgetConfigComponent: WidgetConfigComponent, destroyRef: DestroyRef);
     ngOnInit(): void;
     writeValue(data?: TimewindowConfigData): void;
     registerOnChange(fn: any): void;

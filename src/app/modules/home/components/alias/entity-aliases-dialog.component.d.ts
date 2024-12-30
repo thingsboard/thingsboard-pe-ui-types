@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
@@ -34,6 +34,7 @@ export declare class EntityAliasesDialogComponent extends DialogComponent<Entity
     private translate;
     private dialogs;
     private dialog;
+    private destroyRef;
     title: string;
     disableAdd: boolean;
     allowedEntityTypes: Array<EntityType | AliasEntityType>;
@@ -42,7 +43,7 @@ export declare class EntityAliasesDialogComponent extends DialogComponent<Entity
     };
     entityAliasesFormGroup: UntypedFormGroup;
     submitted: boolean;
-    constructor(store: Store<AppState>, router: Router, data: EntityAliasesDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<EntityAliasesDialogComponent, EntityAliases>, fb: UntypedFormBuilder, dashboardUtils: DashboardUtilsService, translate: TranslateService, dialogs: DialogService, dialog: MatDialog);
+    constructor(store: Store<AppState>, router: Router, data: EntityAliasesDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<EntityAliasesDialogComponent, EntityAliases>, fb: UntypedFormBuilder, dashboardUtils: DashboardUtilsService, translate: TranslateService, dialogs: DialogService, dialog: MatDialog, destroyRef: DestroyRef);
     private addWidgetTitleToWidgetsMap;
     private createEntityAliasFormControl;
     entityAliasesFormArray(): UntypedFormArray;
@@ -54,6 +55,6 @@ export declare class EntityAliasesDialogComponent extends DialogComponent<Entity
     private openAliasDialog;
     cancel(): void;
     save(): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<EntityAliasesDialogComponent, [null, null, null, { skipSelf: true; }, null, null, null, null, null, null]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<EntityAliasesDialogComponent, [null, null, null, { skipSelf: true; }, null, null, null, null, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<EntityAliasesDialogComponent, "tb-entity-aliases-dialog", never, {}, {}, never, never, false, never>;
 }

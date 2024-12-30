@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, ElementRef, EventEmitter, OnInit, Renderer2, ViewContainerRef } from '@angular/core';
+import { ChangeDetectorRef, DestroyRef, ElementRef, EventEmitter, OnInit, Renderer2, ViewContainerRef } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { ScadaSymbolProperty, ScadaSymbolPropertyType } from '@home/components/widget/lib/scada/scada-symbol.models';
 import { MatButton } from '@angular/material/button';
@@ -14,6 +14,7 @@ export declare class ScadaSymbolPropertyRowComponent implements ControlValueAcce
     private renderer;
     private viewContainerRef;
     private propertiesComponent;
+    private destroyRef;
     idInput: ElementRef<HTMLInputElement>;
     editButton: MatButton;
     scadaSymbolPropertyTypes: ScadaSymbolPropertyType[];
@@ -25,7 +26,7 @@ export declare class ScadaSymbolPropertyRowComponent implements ControlValueAcce
     propertyRowFormGroup: UntypedFormGroup;
     modelValue: ScadaSymbolProperty;
     private propagateChange;
-    constructor(fb: UntypedFormBuilder, cd: ChangeDetectorRef, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, propertiesComponent: ScadaSymbolPropertiesComponent);
+    constructor(fb: UntypedFormBuilder, cd: ChangeDetectorRef, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, propertiesComponent: ScadaSymbolPropertiesComponent, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

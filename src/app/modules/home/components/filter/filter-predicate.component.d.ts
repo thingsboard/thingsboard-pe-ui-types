@@ -1,9 +1,10 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { EntityKeyValueType, FilterPredicateType, KeyFilterPredicateInfo } from '@shared/models/query/query.models';
 import * as i0 from "@angular/core";
 export declare class FilterPredicateComponent implements ControlValueAccessor, Validator, OnInit {
     private fb;
+    private destroyRef;
     disabled: boolean;
     valueType: EntityKeyValueType;
     key: string;
@@ -14,7 +15,7 @@ export declare class FilterPredicateComponent implements ControlValueAccessor, V
     type: FilterPredicateType;
     filterPredicateType: typeof FilterPredicateType;
     private propagateChange;
-    constructor(fb: UntypedFormBuilder);
+    constructor(fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

@@ -1,3 +1,4 @@
+import { DestroyRef } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { PageComponent } from '@shared/components/page.component';
@@ -17,12 +18,13 @@ export declare class SecuritySettingsComponent extends PageComponent implements 
     private dialogService;
     private translate;
     private fb;
+    private destroyRef;
     securitySettingsFormGroup: UntypedFormGroup;
     jwtSecuritySettingsFormGroup: UntypedFormGroup;
     showMainLoadingBar: boolean;
     private securitySettings;
     private jwtSettings;
-    constructor(store: Store<AppState>, router: Router, adminService: AdminService, authService: AuthService, dialogService: DialogService, translate: TranslateService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, router: Router, adminService: AdminService, authService: AuthService, dialogService: DialogService, translate: TranslateService, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     buildSecuritySettingsForm(): void;
     buildJwtSecuritySettingsForm(): void;
     save(): void;

@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectorRef, DestroyRef, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -9,11 +9,12 @@ import { ScadaSymbolBehaviorGroup, ScadaSymbolPropertyRow } from '@home/componen
 import { WidgetActionCallbacks } from '@home/components/widget/action/manage-widget-actions.component.models';
 import { ImageService } from '@core/http/image.service';
 import * as i0 from "@angular/core";
-export declare class ScadaSymbolObjectSettingsComponent implements OnInit, OnChanges, ControlValueAccessor, Validator {
+export declare class ScadaSymbolObjectSettingsComponent implements OnInit, OnChanges, ControlValueAccessor, Validator, OnDestroy {
     protected store: Store<AppState>;
     private fb;
     private imageService;
     private cd;
+    private destroyRef;
     ScadaSymbolBehaviorType: typeof ScadaSymbolBehaviorType;
     ScadaSymbolPropertyType: typeof ScadaSymbolPropertyType;
     disabled: boolean;
@@ -32,9 +33,10 @@ export declare class ScadaSymbolObjectSettingsComponent implements OnInit, OnCha
     metadata: ScadaSymbolMetadata;
     behaviorGroups: ScadaSymbolBehaviorGroup[];
     propertyRows: ScadaSymbolPropertyRow[];
-    constructor(store: Store<AppState>, fb: UntypedFormBuilder, imageService: ImageService, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, fb: UntypedFormBuilder, imageService: ImageService, cd: ChangeDetectorRef, destroyRef: DestroyRef);
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
+    ngOnDestroy(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(_fn: any): void;
     setDisabledState(isDisabled: boolean): void;

@@ -3,7 +3,7 @@ import { IntegrationId } from '@shared/models/id/integration-id';
 import { ConverterId } from '@shared/models/id/converter-id';
 import { EntityGroupParams } from '@shared/models/entity-group.models';
 import { ActivatedRouteSnapshot } from '@angular/router';
-import { HasDebugSettings } from '@shared/models/entity.models';
+import { HasEntityDebugSettings } from '@shared/models/entity.models';
 export declare enum IntegrationType {
     MQTT = "MQTT",
     HTTP = "HTTP",
@@ -68,7 +68,7 @@ export interface IntegrationMetaData {
         [k: string]: string;
     };
 }
-export interface IntegrationBasic extends BaseData<IntegrationId>, ExportableEntity<IntegrationId>, HasDebugSettings {
+export interface IntegrationBasic extends BaseData<IntegrationId>, ExportableEntity<IntegrationId>, HasEntityDebugSettings {
     type: IntegrationType;
     enabled: boolean;
     remote: boolean;

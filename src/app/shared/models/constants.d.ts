@@ -163,6 +163,7 @@ export declare const HelpLinks: {
         scada: string;
         scadaSymbolDev: string;
         scadaSymbolDevAnimation: string;
+        domains: string;
         mobileApplication: string;
         mobileBundle: string;
         mobileQrCode: string;

@@ -1,4 +1,4 @@
-import { OnInit, Renderer2, ViewContainerRef } from '@angular/core';
+import { DestroyRef, OnInit, Renderer2, ViewContainerRef } from '@angular/core';
 import { ControlValueAccessor, UntypedFormControl } from '@angular/forms';
 import { DateFormatSettings } from '@shared/models/widget-settings.models';
 import { TranslateService } from '@ngx-translate/core';
@@ -12,6 +12,7 @@ export declare class DateFormatSelectComponent implements OnInit, ControlValueAc
     private popoverService;
     private renderer;
     private viewContainerRef;
+    private destroyRef;
     customFormatButton: MatButton;
     disabled: boolean;
     excludeLastUpdateAgo: boolean;
@@ -22,7 +23,7 @@ export declare class DateFormatSelectComponent implements OnInit, ControlValueAc
     modelValue: DateFormatSettings;
     private propagateChange;
     private formatCache;
-    constructor(translate: TranslateService, date: DatePipe, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef);
+    constructor(translate: TranslateService, date: DatePipe, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

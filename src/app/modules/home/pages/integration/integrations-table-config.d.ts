@@ -32,7 +32,7 @@ export declare class IntegrationsTableConfig extends EntityTableConfig<Integrati
     private destroyRef;
     private params;
     readonly integrationDebugPerTenantLimitsConfiguration: string;
-    readonly maxDebugModeDurationMinutes: number;
+    readonly maxDebugModeDuration: number;
     constructor(integrationService: IntegrationService, userPermissionsService: UserPermissionsService, edgeService: EdgeService, translate: TranslateService, datePipe: DatePipe, router: Router, utils: UtilsService, dialogService: DialogService, dialog: MatDialog, store: Store<AppState>, durationLeft: DurationLeftPipe, popoverService: TbPopoverService, destroyRef: DestroyRef, params: IntegrationParams);
     private isDebugActive;
     private configureEntityTableColumns;

@@ -3,7 +3,6 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { PageComponent } from '@shared/components/page.component';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
 import { AdminSettings, MailConfigTemplate, MailServerOauth2Provider, MailServerSettings, SmtpProtocol } from '@shared/models/settings.models';
 import { AdminService } from '@core/http/admin.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -12,15 +11,10 @@ import { AuthState } from '@core/auth/auth.models';
 import { AuthUser } from '@shared/models/user.model';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { DomainSchema } from '@shared/models/oauth2.models';
-import { AuthService } from '@core/auth/auth.service';
-import { MatChipInputEvent } from '@angular/material/chips';
 import * as i0 from "@angular/core";
 export declare class MailServerComponent extends PageComponent implements OnInit, OnDestroy, HasConfirmForm {
     protected store: Store<AppState>;
-    private router;
-    private route;
     private adminService;
-    private authService;
     private translate;
     private userPermissionsService;
     fb: FormBuilder;
@@ -30,7 +24,7 @@ export declare class MailServerComponent extends PageComponent implements OnInit
     adminSettings: AdminSettings<MailServerSettings>;
     smtpProtocols: SmtpProtocol[];
     showChangePassword: boolean;
-    protocols: (DomainSchema.HTTP | DomainSchema.HTTPS)[];
+    protocols: DomainSchema[];
     domainSchemaTranslations: Map<DomainSchema, string>;
     mailServerOauth2Provider: typeof MailServerOauth2Provider;
     tlsVersions: string[];
@@ -38,7 +32,6 @@ export declare class MailServerComponent extends PageComponent implements OnInit
     helpLink: string;
     templates: Map<string, MailConfigTemplate>;
     templateProvider: string[];
-    readonly separatorKeysCodes: number[];
     private destroy$;
     private DOMAIN_AND_PORT_REGEXP;
     private URL_REGEXP;
@@ -67,7 +60,7 @@ export declare class MailServerComponent extends PageComponent implements OnInit
         providerTenantId: import("@angular/forms").FormControl<string>;
         authUri: import("@angular/forms").FormControl<string>;
         tokenUri: import("@angular/forms").FormControl<string>;
-        scope: import("@angular/forms").FormControl<any>;
+        scope: import("@angular/forms").FormControl<string[]>;
         redirectUri: import("@angular/forms").FormControl<string>;
     }>;
     private defaultConfiguration;
@@ -75,7 +68,7 @@ export declare class MailServerComponent extends PageComponent implements OnInit
         name: import("@angular/forms").FormControl<string>;
         scheme: import("@angular/forms").FormControl<DomainSchema>;
     }>;
-    constructor(store: Store<AppState>, router: Router, route: ActivatedRoute, adminService: AdminService, authService: AuthService, translate: TranslateService, userPermissionsService: UserPermissionsService, fb: FormBuilder, window: Window);
+    constructor(store: Store<AppState>, adminService: AdminService, translate: TranslateService, userPermissionsService: UserPermissionsService, fb: FormBuilder, window: Window);
     ngOnInit(): void;
     ngOnDestroy(): void;
     private initTemplates;
@@ -97,9 +90,6 @@ export declare class MailServerComponent extends PageComponent implements OnInit
     get accessTokenStatus(): string;
     confirmForm(): FormGroup;
     private get mailSettingsFormValue();
-    trackByParams(index: number): number;
-    removeScope(i: number): void;
-    addScope(event: MatChipInputEvent): void;
     toggleEditMode(path: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<MailServerComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<MailServerComponent, "tb-mail-server", never, {}, {}, never, never, false, never>;

@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -7,13 +7,14 @@ import * as i0 from "@angular/core";
 export declare class DeviceProfileTransportConfigurationComponent implements ControlValueAccessor, OnInit, Validator {
     private store;
     private fb;
+    private destroyRef;
     deviceTransportType: typeof DeviceTransportType;
     deviceProfileTransportConfigurationFormGroup: UntypedFormGroup;
     disabled: boolean;
     isAdd: boolean;
     transportType: DeviceTransportType;
     private propagateChange;
-    constructor(store: Store<AppState>, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;

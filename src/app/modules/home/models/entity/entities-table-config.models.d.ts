@@ -144,6 +144,7 @@ export declare class EntityTableConfig<T extends BaseData<HasId>, P extends Page
     selectionEnabled: boolean;
     searchEnabled: boolean;
     addEnabled: boolean;
+    addAsTextButton: boolean;
     entitiesDeleteEnabled: boolean;
     detailsPanelEnabled: boolean;
     hideDetailsTabsOnEdit: boolean;

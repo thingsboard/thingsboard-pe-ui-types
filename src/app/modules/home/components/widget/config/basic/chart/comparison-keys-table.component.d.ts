@@ -1,15 +1,16 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { DataKey, DatasourceType } from '@shared/models/widget.models';
 import * as i0 from "@angular/core";
 export declare class ComparisonKeysTableComponent implements ControlValueAccessor, OnInit {
     private fb;
+    private destroyRef;
     disabled: boolean;
     datasourceType: DatasourceType;
     keysListFormGroup: UntypedFormGroup;
     get noKeys(): boolean;
     private propagateChange;
-    constructor(fb: UntypedFormBuilder);
+    constructor(fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(_fn: any): void;

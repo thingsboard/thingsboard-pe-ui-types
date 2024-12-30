@@ -402,4 +402,5 @@ export interface NotificationUserSetting {
         [key: string]: boolean;
     };
 }
+export declare const singleNotificationTypeTemplate: (type: NotificationType) => type is NotificationType.USER_ACTIVATED | NotificationType.USER_REGISTERED;
 export {};

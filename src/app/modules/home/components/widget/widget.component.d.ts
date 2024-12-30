@@ -67,8 +67,8 @@ export declare class WidgetComponent extends PageComponent implements OnInit, On
     isPreview: boolean;
     isMobile: boolean;
     dashboardWidget: DashboardWidget;
-    widgetContentContainer: ViewContainerRef;
     widget: Widget;
+    widgetContentContainer: ViewContainerRef;
     widgetInfo: WidgetInfo;
     errorMessages: string[];
     widgetContext: WidgetContext;
@@ -142,5 +142,5 @@ export declare class WidgetComponent extends PageComponent implements OnInit, On
     private getActiveEntityInfo;
     private checkSize;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetComponent, [null, null, null, null, null, null, null, null, null, null, null, { optional: true; }, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetComponent, "tb-widget", never, { "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; "isEdit": { "alias": "isEdit"; "required": false; }; "isPreview": { "alias": "isPreview"; "required": false; }; "isMobile": { "alias": "isMobile"; "required": false; }; "dashboardWidget": { "alias": "dashboardWidget"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetComponent, "tb-widget", never, { "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; "isEdit": { "alias": "isEdit"; "required": false; }; "isPreview": { "alias": "isPreview"; "required": false; }; "isMobile": { "alias": "isMobile"; "required": false; }; "dashboardWidget": { "alias": "dashboardWidget"; "required": false; }; "widget": { "alias": "widget"; "required": false; }; }, {}, never, never, false, never>;
 }

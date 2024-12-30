@@ -1,4 +1,4 @@
-import { ElementRef, OnInit } from '@angular/core';
+import { DestroyRef, ElementRef, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -28,6 +28,7 @@ export declare class DataKeyConfigComponent extends PageComponent implements OnI
     private widgetService;
     private widgetComponentService;
     private fb;
+    private destroyRef;
     dataKeyConfigModes: typeof DataKeyConfigMode;
     dataKeyTypes: typeof DataKeyType;
     widgetTypes: typeof widgetType;
@@ -71,7 +72,7 @@ export declare class DataKeyConfigComponent extends PageComponent implements OnI
     private fetchObservable$;
     keySearchText: string;
     functionScopeVariables: string[];
-    constructor(store: Store<AppState>, utils: UtilsService, entityService: EntityService, dialog: MatDialog, translate: TranslateService, widgetService: WidgetService, widgetComponentService: WidgetComponentService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, utils: UtilsService, entityService: EntityService, dialog: MatDialog, translate: TranslateService, widgetService: WidgetService, widgetComponentService: WidgetComponentService, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

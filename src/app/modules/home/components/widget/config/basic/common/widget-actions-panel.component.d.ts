@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, OnInit } from '@angular/core';
+import { ChangeDetectorRef, DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { WidgetConfigComponent } from '@home/components/widget/widget-config.component';
 import { WidgetActionDescriptor } from '@shared/models/widget.models';
@@ -9,10 +9,11 @@ export declare class WidgetActionsPanelComponent implements ControlValueAccessor
     private dialog;
     private cd;
     private widgetConfigComponent;
+    private destroyRef;
     disabled: boolean;
     actionsFormGroup: UntypedFormGroup;
     private propagateChange;
-    constructor(fb: UntypedFormBuilder, dialog: MatDialog, cd: ChangeDetectorRef, widgetConfigComponent: WidgetConfigComponent);
+    constructor(fb: UntypedFormBuilder, dialog: MatDialog, cd: ChangeDetectorRef, widgetConfigComponent: WidgetConfigComponent, destroyRef: DestroyRef);
     ngOnInit(): void;
     writeValue(actions?: {
         [actionSourceId: string]: Array<WidgetActionDescriptor>;

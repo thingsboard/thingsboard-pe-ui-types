@@ -1,4 +1,4 @@
-import { ElementRef, OnInit } from '@angular/core';
+import { DestroyRef, ElementRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
@@ -18,6 +18,7 @@ export declare class ValueSourceComponent extends PageComponent implements OnIni
     protected store: Store<AppState>;
     private entityService;
     private fb;
+    private destroyRef;
     entityAliasInput: ElementRef;
     keyInput: ElementRef;
     disabled: boolean;
@@ -34,7 +35,7 @@ export declare class ValueSourceComponent extends PageComponent implements OnIni
     private latestKeySearchResult;
     private keysFetchObservable$;
     private entityAliasList;
-    constructor(store: Store<AppState>, entityService: EntityService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, entityService: EntityService, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

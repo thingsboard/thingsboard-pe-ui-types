@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, ElementRef, OnInit, Renderer2, ViewContainerRef } from '@angular/core';
+import { ChangeDetectorRef, DestroyRef, ElementRef, OnInit, Renderer2, ViewContainerRef } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -16,6 +16,7 @@ export declare class ColorInputComponent extends PageComponent implements OnInit
     private viewContainerRef;
     private fb;
     private cd;
+    private destroyRef;
     asBoxInput: boolean;
     icon: string;
     label: string;
@@ -32,7 +33,7 @@ export declare class ColorInputComponent extends PageComponent implements OnInit
     private modelValue;
     private propagateChange;
     colorFormGroup: UntypedFormGroup;
-    constructor(store: Store<AppState>, dialogs: DialogService, translate: TranslateService, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, fb: UntypedFormBuilder, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, dialogs: DialogService, translate: TranslateService, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, fb: UntypedFormBuilder, cd: ChangeDetectorRef, destroyRef: DestroyRef);
     ngOnInit(): void;
     updateValidators(): void;
     registerOnChange(fn: any): void;

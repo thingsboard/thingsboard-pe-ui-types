@@ -1,17 +1,18 @@
-import { ChangeDetectorRef, OnInit } from '@angular/core';
+import { ChangeDetectorRef, DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { DataKey, DatasourceType } from '@shared/models/widget.models';
 import * as i0 from "@angular/core";
 export declare class ComparisonKeyRowComponent implements ControlValueAccessor, OnInit {
     private fb;
     private cd;
+    private destroyRef;
     disabled: boolean;
     datasourceType: DatasourceType;
     keyFormControl: UntypedFormControl;
     keyRowFormGroup: UntypedFormGroup;
     modelValue: DataKey;
     private propagateChange;
-    constructor(fb: UntypedFormBuilder, cd: ChangeDetectorRef);
+    constructor(fb: UntypedFormBuilder, cd: ChangeDetectorRef, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(_fn: any): void;

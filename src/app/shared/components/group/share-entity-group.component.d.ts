@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -9,6 +9,7 @@ import * as i0 from "@angular/core";
 export declare class ShareEntityGroupComponent implements ControlValueAccessor, OnInit {
     private store;
     private fb;
+    private destroyRef;
     entityType: typeof EntityType;
     roleType: typeof RoleType;
     shareEntityGroupFormGroup: UntypedFormGroup;
@@ -16,7 +17,7 @@ export declare class ShareEntityGroupComponent implements ControlValueAccessor, 
     private shareGroupRequest;
     private propagateChange;
     private propagateChangePending;
-    constructor(store: Store<AppState>, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;

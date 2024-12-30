@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, FormBuilder, FormControl, FormGroup, Validator } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
@@ -10,13 +10,14 @@ export declare class HereMapProviderSettingsComponent extends PageComponent impl
     protected store: Store<AppState>;
     private translate;
     private fb;
+    private destroyRef;
     disabled: boolean;
     private modelValue;
     private propagateChange;
     providerSettingsFormGroup: FormGroup;
     hereMapProviders: HereMapProvider[];
     hereMapProviderTranslations: Map<HereMapProvider, string>;
-    constructor(store: Store<AppState>, translate: TranslateService, fb: FormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, fb: FormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

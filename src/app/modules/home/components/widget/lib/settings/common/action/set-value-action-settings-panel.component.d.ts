@@ -1,4 +1,4 @@
-import { EventEmitter, OnInit } from '@angular/core';
+import { DestroyRef, EventEmitter, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { TbPopoverComponent } from '@shared/components/popover.component';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
@@ -15,6 +15,7 @@ export declare class SetValueActionSettingsPanelComponent extends PageComponent 
     private fb;
     private widgetService;
     protected store: Store<AppState>;
+    private destroyRef;
     panelTitle: string;
     valueType: ValueType;
     setValueSettings: SetValueSettings;
@@ -33,7 +34,7 @@ export declare class SetValueActionSettingsPanelComponent extends PageComponent 
     functionScopeVariables: string[];
     ValueType: typeof ValueType;
     setValueSettingsFormGroup: UntypedFormGroup;
-    constructor(fb: UntypedFormBuilder, widgetService: WidgetService, store: Store<AppState>);
+    constructor(fb: UntypedFormBuilder, widgetService: WidgetService, store: Store<AppState>, destroyRef: DestroyRef);
     ngOnInit(): void;
     cancel(): void;
     applySetValueSettings(): void;

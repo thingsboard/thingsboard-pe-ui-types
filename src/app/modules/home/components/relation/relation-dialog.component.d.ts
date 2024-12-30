@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
@@ -24,6 +24,7 @@ export declare class RelationDialogComponent extends DialogComponent<RelationDia
     private errorStateMatcher;
     dialogRef: MatDialogRef<RelationDialogComponent, boolean>;
     fb: UntypedFormBuilder;
+    private destroyRef;
     relationFormGroup: UntypedFormGroup;
     isAdd: boolean;
     direction: EntitySearchDirection;
@@ -32,11 +33,11 @@ export declare class RelationDialogComponent extends DialogComponent<RelationDia
     additionalInfo: UntypedFormControl;
     additionalInfoEdit: JsonObjectEditComponent;
     submitted: boolean;
-    constructor(store: Store<AppState>, router: Router, data: RelationDialogData, entityRelationService: EntityRelationService, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<RelationDialogComponent, boolean>, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, router: Router, data: RelationDialogData, entityRelationService: EntityRelationService, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<RelationDialogComponent, boolean>, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     cancel(): void;
     save(): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<RelationDialogComponent, [null, null, null, null, { skipSelf: true; }, null, null]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<RelationDialogComponent, [null, null, null, null, { skipSelf: true; }, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<RelationDialogComponent, "tb-relation-dialog", never, {}, {}, never, never, false, never>;
 }

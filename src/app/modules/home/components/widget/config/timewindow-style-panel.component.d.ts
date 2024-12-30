@@ -1,4 +1,4 @@
-import { EventEmitter, OnInit } from '@angular/core';
+import { DestroyRef, EventEmitter, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { TimewindowStyle } from '@shared/models/widget-settings.models';
 import { TbPopoverComponent } from '@shared/components/popover.component';
@@ -10,13 +10,14 @@ import * as i0 from "@angular/core";
 export declare class TimewindowStylePanelComponent extends PageComponent implements OnInit {
     private fb;
     protected store: Store<AppState>;
+    private destroyRef;
     timewindowStyle: TimewindowStyle;
     previewValue: Timewindow;
     popover: TbPopoverComponent<TimewindowStylePanelComponent>;
     timewindowStyleApplied: EventEmitter<TimewindowStyle>;
     timewindowStyleFormGroup: UntypedFormGroup;
     previewTimewindowStyle: TimewindowStyle;
-    constructor(fb: UntypedFormBuilder, store: Store<AppState>);
+    constructor(fb: UntypedFormBuilder, store: Store<AppState>, destroyRef: DestroyRef);
     ngOnInit(): void;
     cancel(): void;
     applyTimewindowStyle(): void;

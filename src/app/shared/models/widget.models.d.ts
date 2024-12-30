@@ -8,7 +8,7 @@ import { EntityId } from '@shared/models/id/entity-id';
 import { AlarmFilter, AlarmFilterConfig, EntityDataPageLink, EntityFilter, KeyFilter } from '@shared/models/query/query.models';
 import { PopoverPlacement } from '@shared/components/popover.models';
 import { PageComponent } from '@shared/components/page.component';
-import { AfterViewInit, EventEmitter, OnInit, Type } from '@angular/core';
+import { AfterViewInit, DestroyRef, EventEmitter, OnInit, Type } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { UntypedFormGroup } from '@angular/forms';
@@ -553,6 +553,7 @@ export declare abstract class WidgetSettingsComponent extends PageComponent impl
     get settings(): WidgetSettings;
     settingsChangedEmitter: EventEmitter<WidgetSettings>;
     settingsChanged: Observable<WidgetSettings>;
+    protected destroyRef: DestroyRef;
     protected constructor(store: Store<AppState>);
     ngOnInit(): void;
     ngAfterViewInit(): void;

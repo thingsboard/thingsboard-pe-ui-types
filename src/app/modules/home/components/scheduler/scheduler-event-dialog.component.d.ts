@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
@@ -27,6 +27,7 @@ export declare class SchedulerEventDialogComponent extends DialogComponent<Sched
     private errorStateMatcher;
     dialogRef: MatDialogRef<SchedulerEventDialogComponent, boolean>;
     fb: UntypedFormBuilder;
+    private destroyRef;
     schedulerEventFormGroup: UntypedFormGroup;
     schedulerEventConfigTypes: {
         [eventType: string]: SchedulerEventConfigType;
@@ -36,12 +37,12 @@ export declare class SchedulerEventDialogComponent extends DialogComponent<Sched
     schedulerEvent: SchedulerEvent;
     defaultEventType: string;
     submitted: boolean;
-    constructor(store: Store<AppState>, router: Router, data: SchedulerEventDialogData, schedulerEventService: SchedulerEventService, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<SchedulerEventDialogComponent, boolean>, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, router: Router, data: SchedulerEventDialogData, schedulerEventService: SchedulerEventService, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<SchedulerEventDialogComponent, boolean>, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     cancel(): void;
     save(): void;
     private deepTrim;
-    static ɵfac: i0.ɵɵFactoryDeclaration<SchedulerEventDialogComponent, [null, null, null, null, { skipSelf: true; }, null, null]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<SchedulerEventDialogComponent, [null, null, null, null, { skipSelf: true; }, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<SchedulerEventDialogComponent, "tb-scheduler-event-dialog", never, {}, {}, never, never, false, never>;
 }

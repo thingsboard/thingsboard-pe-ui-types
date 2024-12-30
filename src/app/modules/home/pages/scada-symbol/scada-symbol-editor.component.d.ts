@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, ElementRef, EventEmitter, NgZone, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, DestroyRef, ElementRef, EventEmitter, NgZone, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { ScadaSymbolEditObject, ScadaSymbolEditObjectCallbacks } from '@home/pages/scada-symbol/scada-symbol-editor.models';
 import { TbAnchorComponent } from '@shared/components/tb-anchor.component';
 import { FormControl } from '@angular/forms';
@@ -10,6 +10,7 @@ type editorModeType = 'svg' | 'xml';
 export declare class ScadaSymbolEditorComponent implements OnInit, OnDestroy, AfterViewInit, OnChanges {
     private cd;
     private zone;
+    private destroyRef;
     scadaSymbolShape: ElementRef<HTMLElement>;
     tooltipsContainer: ElementRef<HTMLElement>;
     tooltipsContainerComponent: TbAnchorComponent;
@@ -29,7 +30,7 @@ export declare class ScadaSymbolEditorComponent implements OnInit, OnDestroy, Af
     private editorModeValue;
     get editorMode(): editorModeType;
     set editorMode(value: editorModeType);
-    constructor(cd: ChangeDetectorRef, zone: NgZone);
+    constructor(cd: ChangeDetectorRef, zone: NgZone, destroyRef: DestroyRef);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     ngOnChanges(changes: SimpleChanges): void;

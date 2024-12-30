@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, OnInit } from '@angular/core';
+import { ChangeDetectorRef, DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
@@ -13,6 +13,7 @@ export declare class ValueSourceDataKeyComponent extends PageComponent implement
     protected store: Store<AppState>;
     private fb;
     private cd;
+    private destroyRef;
     dataKeyType: typeof DataKeyType;
     datasourceType: typeof DatasourceType;
     valueSourceDataKeyType: typeof ValueSourceType;
@@ -27,7 +28,7 @@ export declare class ValueSourceDataKeyComponent extends PageComponent implement
     entityKeyFormControl: UntypedFormControl;
     private modelValue;
     private propagateChange;
-    constructor(store: Store<AppState>, fb: UntypedFormBuilder, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, fb: UntypedFormBuilder, cd: ChangeDetectorRef, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

@@ -5,7 +5,7 @@ import { ContentType } from '@shared/models/constants';
 import { ActivatedRouteSnapshot } from '@angular/router';
 import { IntegrationType } from '@shared/models/integration.models';
 import { ScriptLanguage } from '@shared/models/rule-node.models';
-import { HasDebugSettings } from '@shared/models/entity.models';
+import { HasEntityDebugSettings } from '@shared/models/entity.models';
 export declare enum ConverterType {
     UPLINK = "UPLINK",
     DOWNLINK = "DOWNLINK"
@@ -18,7 +18,7 @@ export type DefaultUpdateOnlyKeys = {
     [key in IntegrationType]?: Array<string>;
 };
 export declare const converterTypeTranslationMap: Map<ConverterType, string>;
-export interface Converter extends BaseData<ConverterId>, ExportableEntity<ConverterId>, HasDebugSettings {
+export interface Converter extends BaseData<ConverterId>, ExportableEntity<ConverterId>, HasEntityDebugSettings {
     tenantId?: TenantId;
     name: string;
     type: ConverterType;

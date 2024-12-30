@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, OnInit, Renderer2, ViewContainerRef } from '@angular/core';
+import { ChangeDetectorRef, DestroyRef, OnInit, Renderer2, ViewContainerRef } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -17,6 +17,7 @@ export declare class MaterialIconSelectComponent extends PageComponent implement
     private viewContainerRef;
     private fb;
     private cd;
+    private destroyRef;
     asBoxInput: boolean;
     label: any;
     color: string;
@@ -29,7 +30,7 @@ export declare class MaterialIconSelectComponent extends PageComponent implement
     private modelValue;
     private propagateChange;
     materialIconFormGroup: UntypedFormGroup;
-    constructor(store: Store<AppState>, dialogs: DialogService, translate: TranslateService, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, fb: UntypedFormBuilder, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, dialogs: DialogService, translate: TranslateService, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, fb: UntypedFormBuilder, cd: ChangeDetectorRef, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

@@ -1,4 +1,4 @@
-import { OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { DestroyRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
@@ -11,6 +11,7 @@ export declare class CommonMapSettingsComponent extends PageComponent implements
     protected store: Store<AppState>;
     private translate;
     private fb;
+    private destroyRef;
     disabled: boolean;
     provider: MapProviders;
     widget: Widget;
@@ -18,7 +19,7 @@ export declare class CommonMapSettingsComponent extends PageComponent implements
     private modelValue;
     private propagateChange;
     commonMapSettingsFormGroup: UntypedFormGroup;
-    constructor(store: Store<AppState>, translate: TranslateService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
     registerOnChange(fn: any): void;

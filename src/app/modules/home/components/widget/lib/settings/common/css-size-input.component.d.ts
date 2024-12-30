@@ -1,8 +1,9 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import * as i0 from "@angular/core";
 export declare class CssSizeInputComponent implements OnInit, ControlValueAccessor, Validator {
     private fb;
+    private destroyRef;
     get hostWidth(): string;
     get hostFlex(): string;
     disabled: boolean;
@@ -13,7 +14,7 @@ export declare class CssSizeInputComponent implements OnInit, ControlValueAccess
     cssSizeFormGroup: UntypedFormGroup;
     modelValue: string;
     private propagateChange;
-    constructor(fb: UntypedFormBuilder);
+    constructor(fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

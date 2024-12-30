@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { WidgetActionType, WidgetMobileActionDescriptor, WidgetMobileActionType } from '@shared/models/widget.models';
 import { WidgetService } from '@core/http/widget.service';
@@ -6,6 +6,7 @@ import * as i0 from "@angular/core";
 export declare class MobileActionEditorComponent implements ControlValueAccessor, OnInit {
     private fb;
     private widgetService;
+    private destroyRef;
     mobileActionTypes: string[];
     mobileActionTypeTranslations: Map<WidgetMobileActionType, string>;
     mobileActionType: typeof WidgetMobileActionType;
@@ -18,7 +19,7 @@ export declare class MobileActionEditorComponent implements ControlValueAccessor
     set required(value: boolean);
     disabled: boolean;
     private propagateChange;
-    constructor(fb: UntypedFormBuilder, widgetService: WidgetService);
+    constructor(fb: UntypedFormBuilder, widgetService: WidgetService, destroyRef: DestroyRef);
     registerOnChange(fn: any): void;
     registerOnTouched(_fn: any): void;
     ngOnInit(): void;

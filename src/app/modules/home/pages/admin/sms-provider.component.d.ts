@@ -1,3 +1,4 @@
+import { DestroyRef } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { PageComponent } from '@shared/components/page.component';
@@ -15,13 +16,14 @@ export declare class SmsProviderComponent extends PageComponent implements HasCo
     private dialog;
     private userPermissionsService;
     fb: FormBuilder;
+    private destroyRef;
     smsProvider: FormGroup;
     private adminSettings;
     notificationSettingsForm: FormGroup;
     private notificationSettings;
     private readonly authUser;
     readonly: boolean;
-    constructor(store: Store<AppState>, adminService: AdminService, notificationService: NotificationService, dialog: MatDialog, userPermissionsService: UserPermissionsService, fb: FormBuilder);
+    constructor(store: Store<AppState>, adminService: AdminService, notificationService: NotificationService, dialog: MatDialog, userPermissionsService: UserPermissionsService, fb: FormBuilder, destroyRef: DestroyRef);
     private setSmsProviderSettings;
     private setNotificationSettings;
     isTenantAdmin(): boolean;

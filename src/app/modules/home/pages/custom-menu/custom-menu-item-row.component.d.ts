@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, EventEmitter, OnChanges, OnDestroy, OnInit, Renderer2, SimpleChanges, ViewContainerRef } from '@angular/core';
+import { ChangeDetectorRef, DestroyRef, EventEmitter, OnChanges, OnDestroy, OnInit, Renderer2, SimpleChanges, ViewContainerRef } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { CMScope, HomeMenuItemType, MenuItem } from '@shared/models/custom-menu.models';
 import { TbPopoverService } from '@shared/components/popover.service';
@@ -18,6 +18,7 @@ export declare class CustomMenuItemRowComponent implements ControlValueAccessor,
     private popoverService;
     private renderer;
     private viewContainerRef;
+    private destroyRef;
     homeMenuItemTypeTranslations: Map<HomeMenuItemType, string>;
     disabled: boolean;
     scope: CMScope;
@@ -43,7 +44,7 @@ export declare class CustomMenuItemRowComponent implements ControlValueAccessor,
     get pagesDragEnabled(): boolean;
     private propagateChange;
     private hideItemsSubscription;
-    constructor(fb: UntypedFormBuilder, cd: ChangeDetectorRef, translate: TranslateService, customTranslate: CustomTranslatePipe, dialog: MatDialog, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef);
+    constructor(fb: UntypedFormBuilder, cd: ChangeDetectorRef, translate: TranslateService, customTranslate: CustomTranslatePipe, dialog: MatDialog, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, destroyRef: DestroyRef);
     ngOnInit(): void;
     ngOnDestroy(): void;
     ngOnChanges(changes: SimpleChanges): void;

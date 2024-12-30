@@ -1,4 +1,4 @@
-import { OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { DestroyRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, FormControl, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { WidgetConfigComponent } from '@home/components/widget/widget-config.component';
 import { Datasource, DatasourceType, WidgetConfigMode } from '@shared/models/widget.models';
@@ -11,6 +11,7 @@ export declare class DatasourcesComponent implements ControlValueAccessor, OnIni
     private utils;
     translate: TranslateService;
     private widgetConfigComponent;
+    private destroyRef;
     datasourceType: typeof DatasourceType;
     get isAlarmSource(): boolean;
     get basicMode(): boolean;
@@ -35,7 +36,7 @@ export declare class DatasourcesComponent implements ControlValueAccessor, OnIni
     datasourceError: string[];
     datasourcesMode: DatasourceType;
     private propagateChange;
-    constructor(fb: UntypedFormBuilder, utils: UtilsService, translate: TranslateService, widgetConfigComponent: WidgetConfigComponent);
+    constructor(fb: UntypedFormBuilder, utils: UtilsService, translate: TranslateService, widgetConfigComponent: WidgetConfigComponent, destroyRef: DestroyRef);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;

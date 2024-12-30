@@ -17,10 +17,9 @@ export declare class RuleTableConfigResolver {
     private userPermissionsService;
     private readonly config;
     constructor(notificationService: NotificationService, translate: TranslateService, dialog: MatDialog, datePipe: DatePipe, customTranslate: CustomTranslatePipe, userPermissionsService: UserPermissionsService);
-    resolve(route: ActivatedRouteSnapshot): EntityTableConfig<NotificationRule>;
+    resolve(_route: ActivatedRouteSnapshot): EntityTableConfig<NotificationRule>;
     private configureCellActions;
     private editRule;
-    private onTargetAction;
     private toggleEnableMode;
     static ɵfac: i0.ɵɵFactoryDeclaration<RuleTableConfigResolver, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<RuleTableConfigResolver>;

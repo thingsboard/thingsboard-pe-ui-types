@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, OnInit } from '@angular/core';
+import { ChangeDetectorRef, DestroyRef, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { FormGroupDirective, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
@@ -18,6 +18,7 @@ export declare class RepositorySettingsComponent extends PageComponent implement
     private userPermissionsService;
     private cd;
     fb: UntypedFormBuilder;
+    private destroyRef;
     detailsMode: boolean;
     popoverComponent: TbPopoverComponent;
     hideLoadingBar: boolean;
@@ -32,7 +33,7 @@ export declare class RepositorySettingsComponent extends PageComponent implement
     changePrivateKeyPassword: boolean;
     readonly: boolean;
     allowDelete: boolean;
-    constructor(store: Store<AppState>, adminService: AdminService, dialogService: DialogService, translate: TranslateService, userPermissionsService: UserPermissionsService, cd: ChangeDetectorRef, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, adminService: AdminService, dialogService: DialogService, translate: TranslateService, userPermissionsService: UserPermissionsService, cd: ChangeDetectorRef, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     checkAccess(): void;
     save(): void;

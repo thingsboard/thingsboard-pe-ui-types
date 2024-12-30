@@ -1,4 +1,4 @@
-import { ElementRef, OnInit } from '@angular/core';
+import { DestroyRef, ElementRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
@@ -14,6 +14,7 @@ export declare class ImageMapProviderSettingsComponent extends PageComponent imp
     private translate;
     private entityService;
     private fb;
+    private destroyRef;
     entityAliasInput: ElementRef;
     keyInput: ElementRef;
     disabled: boolean;
@@ -28,7 +29,7 @@ export declare class ImageMapProviderSettingsComponent extends PageComponent imp
     private latestKeySearchResult;
     private keysFetchObservable$;
     private entityAliasList;
-    constructor(store: Store<AppState>, translate: TranslateService, entityService: EntityService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, translate: TranslateService, entityService: EntityService, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

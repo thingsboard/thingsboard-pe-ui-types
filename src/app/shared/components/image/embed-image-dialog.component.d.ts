@@ -1,5 +1,5 @@
 import { ImageResourceInfo } from '@shared/models/resource.models';
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { DialogComponent } from '@shared/components/dialog.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -19,11 +19,12 @@ export declare class EmbedImageDialogComponent extends DialogComponent<EmbedImag
     private data;
     dialogRef: MatDialogRef<EmbedImageDialogComponent, ImageResourceInfo>;
     fb: UntypedFormBuilder;
+    private destroyRef;
     image: ImageResourceInfo;
     readonly: boolean;
     imageChanged: boolean;
     publicStatusControl: FormControl<boolean>;
-    constructor(store: Store<AppState>, router: Router, imageService: ImageService, data: EmbedImageDialogData, dialogRef: MatDialogRef<EmbedImageDialogComponent, ImageResourceInfo>, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, router: Router, imageService: ImageService, data: EmbedImageDialogData, dialogRef: MatDialogRef<EmbedImageDialogComponent, ImageResourceInfo>, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     cancel(): void;
     embedToHtmlCode(): string;

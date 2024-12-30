@@ -1,13 +1,14 @@
-import { OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { TimeSeriesChartStateSettings } from '@home/components/widget/lib/chart/time-series-chart.models';
 import * as i0 from "@angular/core";
 export declare class TimeSeriesChartStatesPanelComponent implements ControlValueAccessor, OnInit, Validator {
     private fb;
+    private destroyRef;
     disabled: boolean;
     statesFormGroup: UntypedFormGroup;
     private propagateChange;
-    constructor(fb: UntypedFormBuilder);
+    constructor(fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

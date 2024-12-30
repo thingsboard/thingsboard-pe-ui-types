@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, DestroyRef, OnDestroy, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -18,6 +18,7 @@ export declare class GalleryImageInputComponent extends PageComponent implements
     private imageService;
     private dialog;
     private cd;
+    private destroyRef;
     label: string;
     required: boolean;
     disabled: boolean;
@@ -28,7 +29,7 @@ export declare class GalleryImageInputComponent extends PageComponent implements
     linkType: ImageLinkType;
     externalLinkControl: FormControl<any>;
     private propagateChange;
-    constructor(store: Store<AppState>, imageService: ImageService, dialog: MatDialog, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, imageService: ImageService, dialog: MatDialog, cd: ChangeDetectorRef, destroyRef: DestroyRef);
     ngOnInit(): void;
     ngOnDestroy(): void;
     registerOnChange(fn: any): void;

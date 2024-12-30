@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, EventEmitter, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectorRef, DestroyRef, EventEmitter, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { WidgetConfigComponent } from '@home/components/widget/widget-config.component';
@@ -17,6 +17,7 @@ export declare class AggregatedDataKeyRowComponent implements ControlValueAccess
     translate: TranslateService;
     truncate: TruncatePipe;
     private widgetConfigComponent;
+    private destroyRef;
     aggregatedValueCardKeyPositions: AggregatedValueCardKeyPosition[];
     aggregatedValueCardKeyPositionTranslationMap: Map<AggregatedValueCardKeyPosition, string>;
     dataKeyTypes: typeof DataKeyType;
@@ -36,7 +37,7 @@ export declare class AggregatedDataKeyRowComponent implements ControlValueAccess
     get latestDataKeySettingsDirective(): string;
     get isEntityDatasource(): boolean;
     private propagateChange;
-    constructor(fb: UntypedFormBuilder, dialog: MatDialog, cd: ChangeDetectorRef, translate: TranslateService, truncate: TruncatePipe, widgetConfigComponent: WidgetConfigComponent);
+    constructor(fb: UntypedFormBuilder, dialog: MatDialog, cd: ChangeDetectorRef, translate: TranslateService, truncate: TruncatePipe, widgetConfigComponent: WidgetConfigComponent, destroyRef: DestroyRef);
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
     registerOnChange(fn: any): void;
