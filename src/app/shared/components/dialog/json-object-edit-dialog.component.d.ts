@@ -12,6 +12,7 @@ export interface JsonObjectEditDialogData {
     title?: string;
     saveLabel?: string;
     cancelLabel?: string;
+    fillHeight?: boolean;
 }
 export declare class JsonObjectEditDialogComponent extends DialogComponent<JsonObjectEditDialogComponent, object> {
     protected store: Store<AppState>;

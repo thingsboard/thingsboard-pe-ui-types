@@ -1,0 +1,25 @@
+import { DestroyRef, OnInit } from '@angular/core';
+import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
+import { EntitySearchDirection, PageComponent } from '@shared/public-api';
+import { RelationsQuery } from '../rule-node-config.models';
+import * as i0 from "@angular/core";
+export declare class RelationsQueryConfigOldComponent extends PageComponent implements ControlValueAccessor, OnInit {
+    private fb;
+    private destroyRef;
+    disabled: boolean;
+    private requiredValue;
+    get required(): boolean;
+    set required(value: boolean);
+    directionTypes: string[];
+    directionTypeTranslations: Map<EntitySearchDirection, string>;
+    relationsQueryFormGroup: FormGroup;
+    private propagateChange;
+    constructor(fb: FormBuilder, destroyRef: DestroyRef);
+    ngOnInit(): void;
+    registerOnChange(fn: any): void;
+    registerOnTouched(_fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    writeValue(query: RelationsQuery): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<RelationsQueryConfigOldComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RelationsQueryConfigOldComponent, "tb-relations-query-config-old", never, { "disabled": { "alias": "disabled"; "required": false; }; "required": { "alias": "required"; "required": false; }; }, {}, never, never, false, never>;
+}

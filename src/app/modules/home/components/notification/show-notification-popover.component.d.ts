@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, NgZone, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, NgZone, OnDestroy } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { TbPopoverComponent } from '@shared/components/popover.component';
 import { Store } from '@ngrx/store';
@@ -8,7 +8,7 @@ import { NotificationWebsocketService } from '@core/ws/notification-websocket.se
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import * as i0 from "@angular/core";
-export declare class ShowNotificationPopoverComponent extends PageComponent implements OnDestroy, OnInit {
+export declare class ShowNotificationPopoverComponent extends PageComponent implements OnDestroy {
     protected store: Store<AppState>;
     private notificationWsService;
     private zone;
@@ -18,11 +18,8 @@ export declare class ShowNotificationPopoverComponent extends PageComponent impl
     counter: BehaviorSubject<number>;
     popoverComponent: TbPopoverComponent;
     private notificationSubscriber;
-    private notificationCountSubscriber;
     notifications$: Observable<Notification[]>;
-    loadNotification: boolean;
     constructor(store: Store<AppState>, notificationWsService: NotificationWebsocketService, zone: NgZone, cd: ChangeDetectorRef, router: Router);
-    ngOnInit(): void;
     ngOnDestroy(): void;
     markAsRead(id: string): void;
     markAsAllRead($event: Event): void;

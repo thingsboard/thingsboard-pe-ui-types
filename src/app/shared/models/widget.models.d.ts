@@ -17,10 +17,11 @@ import { Dashboard } from '@shared/models/dashboard.models';
 import { IAliasController } from '@core/api/widget-api.models';
 import { WidgetConfigComponentData } from '@home/models/widget-component.models';
 import { ComponentStyle, Font, TimewindowStyle } from '@shared/models/widget-settings.models';
-import { HasTenantId, HasVersion } from '@shared/models/entity.models';
-import { DataKeysCallbacks, DataKeySettingsFunction } from '@home/components/widget/config/data-keys.component.models';
+import { EntityInfoData, HasTenantId, HasVersion } from '@shared/models/entity.models';
+import { DataKeysCallbacks, DataKeySettingsFunction } from '@home/components/widget/lib/settings/common/key/data-keys.component.models';
 import { WidgetConfigCallbacks } from '@home/components/widget/config/widget-config.component.models';
 import { TbFunction } from '@shared/models/js-function.models';
+import { FormProperty } from '@shared/models/dynamic-form.models';
 import * as i0 from "@angular/core";
 export declare enum widgetType {
     timeseries = "timeseries",
@@ -58,9 +59,9 @@ export interface WidgetTypeDescriptor {
     templateHtml: string;
     templateCss: string;
     controllerScript: TbFunction;
-    settingsSchema?: string | any;
-    dataKeySettingsSchema?: string | any;
-    latestDataKeySettingsSchema?: string | any;
+    settingsForm?: FormProperty[];
+    dataKeySettingsForm?: FormProperty[];
+    latestDataKeySettingsForm?: FormProperty[];
     settingsDirective?: string;
     dataKeySettingsDirective?: string;
     latestDataKeySettingsDirective?: string;
@@ -86,25 +87,28 @@ export interface WidgetTypeParameters {
     previewWidth?: string;
     previewHeight?: string;
     embedTitlePanel?: boolean;
+    embedActionsPanel?: boolean;
     overflowVisible?: boolean;
+    hideDataTab?: boolean;
     hideDataSettings?: boolean;
     defaultDataKeysFunction?: (configComponent: any, configData: any) => DataKey[];
     defaultLatestDataKeysFunction?: (configComponent: any, configData: any) => DataKey[];
     dataKeySettingsFunction?: DataKeySettingsFunction;
     displayRpcMessageToast?: boolean;
     targetDeviceOptional?: boolean;
+    additionalWidgetActionTypes?: WidgetActionType[];
 }
 export interface WidgetControllerDescriptor {
     widgetTypeFunction?: any;
-    settingsSchema?: string | any;
-    dataKeySettingsSchema?: string | any;
-    latestDataKeySettingsSchema?: string | any;
+    settingsForm?: FormProperty[];
+    dataKeySettingsForm?: FormProperty[];
+    latestDataKeySettingsForm?: FormProperty[];
     typeParameters?: WidgetTypeParameters;
     actionSources?: {
         [actionSourceId: string]: WidgetActionSource;
     };
 }
-export interface BaseWidgetType extends BaseData<WidgetTypeId>, HasTenantId, HasVersion {
+export interface BaseWidgetType extends BaseData<WidgetTypeId>, HasTenantId, HasVersion, ExportableEntity<WidgetTypeId> {
     tenantId: TenantId;
     fqn: string;
     name: string;
@@ -114,6 +118,7 @@ export interface BaseWidgetType extends BaseData<WidgetTypeId>, HasTenantId, Has
 export declare const fullWidgetTypeFqn: (type: BaseWidgetType) => string;
 export declare const widgetTypeFqn: (fullFqn: string) => string;
 export declare const isValidWidgetFullFqn: (fullFqn: string) => boolean;
+export declare const migrateWidgetTypeToDynamicForms: <T extends WidgetType>(widgetType: T) => T;
 export interface WidgetType extends BaseWidgetType {
     descriptor: WidgetTypeDescriptor;
 }
@@ -122,6 +127,7 @@ export interface WidgetTypeInfo extends BaseWidgetType {
     description: string;
     tags: string[];
     widgetType: widgetType;
+    bundles?: EntityInfoData[];
 }
 export interface WidgetTypeDetails extends WidgetType, ExportableEntity<WidgetTypeId> {
     image: string;
@@ -246,8 +252,8 @@ export interface TargetDevice {
 export declare const targetDeviceValid: (targetDevice?: TargetDevice) => boolean;
 export declare const datasourcesHasAggregation: (datasources?: Array<Datasource>) => boolean;
 export declare const datasourcesHasOnlyComparisonAggregation: (datasources?: Array<Datasource>) => boolean;
-export interface FormattedData {
-    $datasource: Datasource;
+export interface FormattedData<D extends Datasource = Datasource> {
+    $datasource: D;
     entityName: string;
     deviceName: string;
     entityId: string;
@@ -293,6 +299,16 @@ export interface LegendData {
     keys: Array<LegendKey>;
     data: Array<LegendKeyData>;
 }
+export declare enum WidgetHeaderActionButtonType {
+    basic = "basic",
+    raised = "raised",
+    stroked = "stroked",
+    flat = "flat",
+    icon = "icon",
+    miniFab = "miniFab"
+}
+export declare const WidgetHeaderActionButtonTypes: WidgetHeaderActionButtonType[];
+export declare const widgetHeaderActionButtonTypeTranslationMap: Map<WidgetHeaderActionButtonType, string>;
 export declare enum WidgetActionType {
     doNothing = "doNothing",
     openDashboardState = "openDashboardState",
@@ -301,7 +317,8 @@ export declare enum WidgetActionType {
     custom = "custom",
     customPretty = "customPretty",
     mobileAction = "mobileAction",
-    openURL = "openURL"
+    openURL = "openURL",
+    placeMapItem = "placeMapItem"
 }
 export declare enum WidgetMobileActionType {
     takePictureFromGallery = "takePictureFromGallery",
@@ -311,11 +328,19 @@ export declare enum WidgetMobileActionType {
     scanQrCode = "scanQrCode",
     makePhoneCall = "makePhoneCall",
     getLocation = "getLocation",
-    takeScreenshot = "takeScreenshot"
+    takeScreenshot = "takeScreenshot",
+    deviceProvision = "deviceProvision"
+}
+export declare enum MapItemType {
+    marker = "marker",
+    polygon = "polygon",
+    rectangle = "rectangle",
+    circle = "circle"
 }
 export declare const widgetActionTypes: WidgetActionType[];
 export declare const widgetActionTypeTranslationMap: Map<WidgetActionType, string>;
 export declare const widgetMobileActionTypeTranslationMap: Map<WidgetMobileActionType, string>;
+export declare const mapItemTypeTranslationMap: Map<MapItemType, string>;
 export declare enum WidgetExportType {
     csv = "csv",
     xls = "xls",
@@ -336,12 +361,18 @@ export interface MobileLocationResult {
     latitude: number;
     longitude: number;
 }
-export type MobileActionResult = MobileLaunchResult & MobileImageResult & MobileQrCodeResult & MobileLocationResult;
+export interface MobileDeviceProvisionResult {
+    deviceName: string;
+}
+export type MobileActionResult = MobileLaunchResult & MobileImageResult & MobileQrCodeResult & MobileLocationResult & MobileDeviceProvisionResult;
 export interface WidgetMobileActionResult<T extends MobileActionResult> {
     result?: T;
     hasResult: boolean;
     error?: string;
     hasError: boolean;
+}
+export interface ProvisionSuccessDescriptor {
+    handleProvisionSuccessFunction: TbFunction;
 }
 export interface ProcessImageDescriptor {
     processImageFunction: TbFunction;
@@ -361,7 +392,7 @@ export interface MakePhoneCallDescriptor extends ProcessLaunchResultDescriptor {
 export interface GetLocationDescriptor {
     processLocationFunction: TbFunction;
 }
-export type WidgetMobileActionDescriptors = ProcessImageDescriptor & LaunchMapDescriptor & ScanQrCodeDescriptor & MakePhoneCallDescriptor & GetLocationDescriptor;
+export type WidgetMobileActionDescriptors = ProcessImageDescriptor & LaunchMapDescriptor & ScanQrCodeDescriptor & MakePhoneCallDescriptor & GetLocationDescriptor & ProvisionSuccessDescriptor;
 export interface WidgetMobileActionDescriptor extends WidgetMobileActionDescriptors {
     type: WidgetMobileActionType;
     handleErrorFunction?: TbFunction;
@@ -375,6 +406,7 @@ export interface CustomActionDescriptor {
     customImports?: Type<any>[];
 }
 export interface WidgetAction extends CustomActionDescriptor {
+    name?: string;
     type: WidgetActionType;
     targetDashboardId?: string;
     targetDashboardStateId?: string;
@@ -398,11 +430,32 @@ export interface WidgetAction extends CustomActionDescriptor {
     stateEntityParamName?: string;
     mobileAction?: WidgetMobileActionDescriptor;
     url?: string;
+    mapItemType?: MapItemType;
+    mapItemTooltips?: MapItemTooltips;
 }
+export interface MapItemTooltips {
+    placeMarker?: string;
+    firstVertex?: string;
+    continueLine?: string;
+    finishPoly?: string;
+    startRect?: string;
+    finishRect?: string;
+    startCircle?: string;
+    finishCircle?: string;
+}
+export declare const mapItemTooltipsTranslation: Required<MapItemTooltips>;
 export interface WidgetActionDescriptor extends WidgetAction {
     id: string;
     name: string;
+    buttonType?: WidgetHeaderActionButtonType;
+    showIcon?: boolean;
     icon: string;
+    buttonColor?: string;
+    buttonFillColor?: string;
+    buttonBorderColor?: string;
+    customButtonStyle?: {
+        [key: string]: string;
+    };
     displayName?: string;
     useShowWidgetActionFunction?: boolean;
     showWidgetActionFunction?: TbFunction;
@@ -496,22 +549,10 @@ export interface WidgetInfo extends BaseWidgetInfo {
     description?: string;
     deprecated?: boolean;
 }
-export interface GroupInfo {
-    formIndex: number;
-    GroupTitle: string;
-}
-export interface JsonSchema {
-    type: string;
-    title?: string;
-    properties: {
-        [key: string]: any;
-    };
-    required?: string[];
-}
-export interface JsonSettingsSchema {
-    schema?: JsonSchema;
-    form?: any[];
-    groupInfoes?: GroupInfo[];
+export interface DynamicFormData {
+    settingsForm?: FormProperty[];
+    model?: any;
+    settingsDirective?: string;
 }
 export interface WidgetPosition {
     row: number;
@@ -527,6 +568,7 @@ export interface IWidgetSettingsComponent {
     aliasController: IAliasController;
     callbacks: WidgetConfigCallbacks;
     dataKeyCallbacks: DataKeysCallbacks;
+    functionsOnly: boolean;
     dashboard: Dashboard;
     widget: Widget;
     widgetConfig: WidgetConfigComponentData;
@@ -541,6 +583,7 @@ export declare abstract class WidgetSettingsComponent extends PageComponent impl
     aliasController: IAliasController;
     callbacks: WidgetConfigCallbacks;
     dataKeyCallbacks: DataKeysCallbacks;
+    functionsOnly: boolean;
     dashboard: Dashboard;
     widget: Widget;
     widgetConfigValue: WidgetConfigComponentData;

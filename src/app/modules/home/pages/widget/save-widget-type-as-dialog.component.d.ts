@@ -5,6 +5,7 @@ import { AppState } from '@core/core.state';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { DialogComponent } from '@shared/components/dialog.component';
 import { Router } from '@angular/router';
+import { UserPermissionsService } from '@core/http/user-permissions.service';
 import * as i0 from "@angular/core";
 export interface SaveWidgetTypeAsDialogResult {
     widgetName: string;
@@ -21,11 +22,13 @@ export declare class SaveWidgetTypeAsDialogComponent extends DialogComponent<Sav
     private data;
     dialogRef: MatDialogRef<SaveWidgetTypeAsDialogComponent, SaveWidgetTypeAsDialogResult>;
     fb: FormBuilder;
+    private userPermissionsService;
     saveWidgetTypeAsFormGroup: FormGroup;
     bundlesScope: string;
     dialogTitle: string;
     saveAsActionTitle: string;
-    constructor(store: Store<AppState>, router: Router, data: SaveWidgetTypeAsDialogData, dialogRef: MatDialogRef<SaveWidgetTypeAsDialogComponent, SaveWidgetTypeAsDialogResult>, fb: FormBuilder);
+    showSelectWidgetBundle: boolean;
+    constructor(store: Store<AppState>, router: Router, data: SaveWidgetTypeAsDialogData, dialogRef: MatDialogRef<SaveWidgetTypeAsDialogComponent, SaveWidgetTypeAsDialogResult>, fb: FormBuilder, userPermissionsService: UserPermissionsService);
     ngOnInit(): void;
     cancel(): void;
     saveAs(): void;

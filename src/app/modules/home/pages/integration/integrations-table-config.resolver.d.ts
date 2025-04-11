@@ -11,10 +11,7 @@ import { EdgeService } from '@core/http/edge.service';
 import { DialogService } from '@core/services/dialog.service';
 import { MatDialog } from '@angular/material/dialog';
 import { PageLink } from '@shared/models/page/page-link';
-import { Store } from '@ngrx/store';
-import { AppState } from '@core/core.state';
-import { DurationLeftPipe } from '@shared/pipe/duration-left.pipe';
-import { TbPopoverService } from '@shared/components/popover.service';
+import { EntityDebugSettingsService } from '@home/components/entity/debug/entity-debug-settings.service';
 import * as i0 from "@angular/core";
 export declare class IntegrationsTableConfigResolver {
     private integrationService;
@@ -25,12 +22,10 @@ export declare class IntegrationsTableConfigResolver {
     private router;
     private utils;
     private dialogService;
-    private store;
-    private durationLeft;
-    private popoverService;
+    private entityDebugSettingsService;
     private destroyRef;
     private dialog;
-    constructor(integrationService: IntegrationService, userPermissionsService: UserPermissionsService, edgeService: EdgeService, translate: TranslateService, datePipe: DatePipe, router: Router, utils: UtilsService, dialogService: DialogService, store: Store<AppState>, durationLeft: DurationLeftPipe, popoverService: TbPopoverService, destroyRef: DestroyRef, dialog: MatDialog);
+    constructor(integrationService: IntegrationService, userPermissionsService: UserPermissionsService, edgeService: EdgeService, translate: TranslateService, datePipe: DatePipe, router: Router, utils: UtilsService, dialogService: DialogService, entityDebugSettingsService: EntityDebugSettingsService, destroyRef: DestroyRef, dialog: MatDialog);
     resolve(route: ActivatedRouteSnapshot): EntityTableConfig<Integration, PageLink, IntegrationInfo>;
     resolveIntegrationsTableConfig(params: IntegrationParams): EntityTableConfig<Integration, PageLink, IntegrationInfo>;
     static ɵfac: i0.ɵɵFactoryDeclaration<IntegrationsTableConfigResolver, never>;

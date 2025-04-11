@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, EventEmitter, OnChanges } from '@angular/core';
-import { HistorySelectSettings } from '@app/modules/home/components/widget/lib/maps/map-models';
+import { HistorySelectSettings } from '@app/modules/home/components/widget/lib/maps-legacy/map-models';
 import * as i0 from "@angular/core";
 export declare class HistorySelectorComponent implements OnChanges {
     private cd;

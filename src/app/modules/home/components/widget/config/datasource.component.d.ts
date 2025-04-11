@@ -1,16 +1,17 @@
 import { DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
-import { Datasource, DatasourceType, JsonSettingsSchema, Widget, widgetType } from '@shared/models/widget.models';
+import { Datasource, DatasourceType, Widget, widgetType } from '@shared/models/widget.models';
 import { AlarmSearchStatus } from '@shared/models/alarm.models';
 import { Dashboard } from '@shared/models/dashboard.models';
 import { WidgetConfigComponent } from '@home/components/widget/widget-config.component';
 import { IAliasController } from '@core/api/widget-api.models';
-import { EntityAliasSelectCallbacks } from '@home/components/alias/entity-alias-select.component.models';
-import { FilterSelectCallbacks } from '@home/components/filter/filter-select.component.models';
-import { DataKeysCallbacks, DataKeySettingsFunction } from '@home/components/widget/config/data-keys.component.models';
+import { EntityAliasSelectCallbacks } from '@home/components/widget/lib/settings/common/alias/entity-alias-select.component.models';
+import { FilterSelectCallbacks } from '@home/components/widget/lib/settings/common/filter/filter-select.component.models';
+import { DataKeysCallbacks, DataKeySettingsFunction } from '@home/components/widget/lib/settings/common/key/data-keys.component.models';
 import { EntityType } from '@shared/models/entity-type.models';
 import { DatasourcesComponent } from '@home/components/widget/config/datasources.component';
 import { WidgetConfigCallbacks } from '@home/components/widget/config/widget-config.component.models';
+import { FormProperty } from '@shared/models/dynamic-form.models';
 import * as i0 from "@angular/core";
 export declare class DatasourceComponent implements ControlValueAccessor, OnInit, Validator {
     private fb;
@@ -27,10 +28,11 @@ export declare class DatasourceComponent implements ControlValueAccessor, OnInit
     get hasAdditionalLatestDataKeys(): boolean;
     get dataKeysOptional(): boolean;
     get datasourcesOptional(): boolean;
+    get entityAliasOptional(): boolean;
     get maxDataKeys(): number;
-    get dataKeySettingsSchema(): JsonSettingsSchema;
+    get dataKeySettingsForm(): FormProperty[];
     get dataKeySettingsDirective(): string;
-    get latestDataKeySettingsSchema(): JsonSettingsSchema;
+    get latestDataKeySettingsForm(): FormProperty[];
     get latestDataKeySettingsDirective(): string;
     get dataKeySettingsFunction(): DataKeySettingsFunction;
     get dashboard(): Dashboard;
@@ -43,6 +45,7 @@ export declare class DatasourceComponent implements ControlValueAccessor, OnInit
     get hideDataKeyDecimals(): boolean;
     get hideDataKeys(): boolean;
     get hideLatestDataKeys(): boolean;
+    get hideAlarmFilter(): boolean;
     disabled: boolean;
     widgetTypes: typeof widgetType;
     entityType: typeof EntityType;

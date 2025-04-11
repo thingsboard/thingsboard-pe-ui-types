@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, ElementRef, OnDestroy, OnInit, Renderer2, TemplateRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ElementRef, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { LatestChartDataItem, LatestChartLegendItem, LatestChartSettings, LatestChartWidgetSettings } from '@home/components/widget/lib/chart/latest-chart.models';
 import { WidgetContext } from '@home/models/widget-component.models';
 import { Observable } from 'rxjs';
@@ -14,9 +14,9 @@ export interface LatestChartComponentCallbacks {
     onItemClick?: ($event: Event, item: LatestChartDataItem) => void;
 }
 export declare class LatestChartComponent implements OnInit, OnDestroy, AfterViewInit {
+    widgetComponent: WidgetComponent;
     private imagePipe;
     private sanitizer;
-    private widgetComponent;
     private renderer;
     private translate;
     private cd;
@@ -24,7 +24,6 @@ export declare class LatestChartComponent implements OnInit, OnDestroy, AfterVie
     chartShape: ElementRef<HTMLElement>;
     chartLegend: ElementRef<HTMLElement>;
     ctx: WidgetContext;
-    widgetTitlePanel: TemplateRef<any>;
     callbacks: LatestChartComponentCallbacks;
     settings: LatestChartWidgetSettings;
     showLegend: boolean;
@@ -40,7 +39,7 @@ export declare class LatestChartComponent implements OnInit, OnDestroy, AfterVie
     private shapeResize$;
     private legendHorizontal;
     private latestChart;
-    constructor(imagePipe: ImagePipe, sanitizer: DomSanitizer, widgetComponent: WidgetComponent, renderer: Renderer2, translate: TranslateService, cd: ChangeDetectorRef);
+    constructor(widgetComponent: WidgetComponent, imagePipe: ImagePipe, sanitizer: DomSanitizer, renderer: Renderer2, translate: TranslateService, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     ngOnDestroy(): void;
@@ -51,5 +50,5 @@ export declare class LatestChartComponent implements OnInit, OnDestroy, AfterVie
     toggleLegendItem(item: LatestChartLegendItem): void;
     private onResize;
     static ɵfac: i0.ɵɵFactoryDeclaration<LatestChartComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<LatestChartComponent, "tb-latest-chart", never, { "ctx": { "alias": "ctx"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; "callbacks": { "alias": "callbacks"; "required": false; }; "settings": { "alias": "settings"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<LatestChartComponent, "tb-latest-chart", never, { "ctx": { "alias": "ctx"; "required": false; }; "callbacks": { "alias": "callbacks"; "required": false; }; "settings": { "alias": "settings"; "required": false; }; }, {}, never, never, false, never>;
 }

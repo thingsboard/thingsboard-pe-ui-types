@@ -30,6 +30,7 @@ export declare class EntityVersionCreateComponent extends PageComponent implemen
     resultMessage: string;
     versionCreateResult$: Observable<VersionCreationResult>;
     private versionCreateResultSubscription;
+    readonly typesWithCalculatedFields: Set<EntityType | import("@shared/models/entity-type.models").AliasEntityType>;
     constructor(store: Store<AppState>, entitiesVersionControlService: EntitiesVersionControlService, cd: ChangeDetectorRef, translate: TranslateService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     ngOnDestroy(): void;

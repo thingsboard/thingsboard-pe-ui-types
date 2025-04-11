@@ -1,0 +1,34 @@
+import { ChangeDetectorRef, DestroyRef, Renderer2 } from '@angular/core';
+import { EntityId } from '@shared/models/id/entity-id';
+import { EntitiesTableComponent } from '@home/components/entity/entities-table.component';
+import { TranslateService } from '@ngx-translate/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { CalculatedFieldsTableConfig } from '@home/components/calculated-fields/calculated-fields-table-config';
+import { CalculatedFieldsService } from '@core/http/calculated-fields.service';
+import { ImportExportService } from '@shared/import-export/import-export.service';
+import { EntityDebugSettingsService } from '@home/components/entity/debug/entity-debug-settings.service';
+import { DatePipe } from '@angular/common';
+import * as i0 from "@angular/core";
+export declare class CalculatedFieldsTableComponent {
+    private calculatedFieldsService;
+    private translate;
+    private dialog;
+    private store;
+    private datePipe;
+    private cd;
+    private renderer;
+    private importExportService;
+    private entityDebugSettingsService;
+    private destroyRef;
+    entitiesTable: EntitiesTableComponent;
+    active: import("@angular/core").InputSignal<boolean>;
+    entityId: import("@angular/core").InputSignal<EntityId>;
+    entityName: import("@angular/core").InputSignal<string>;
+    readonly: import("@angular/core").InputSignal<boolean>;
+    calculatedFieldsTableConfig: CalculatedFieldsTableConfig;
+    constructor(calculatedFieldsService: CalculatedFieldsService, translate: TranslateService, dialog: MatDialog, store: Store<AppState>, datePipe: DatePipe, cd: ChangeDetectorRef, renderer: Renderer2, importExportService: ImportExportService, entityDebugSettingsService: EntityDebugSettingsService, destroyRef: DestroyRef);
+    static ɵfac: i0.ɵɵFactoryDeclaration<CalculatedFieldsTableComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CalculatedFieldsTableComponent, "tb-calculated-fields-table", never, { "active": { "alias": "active"; "required": false; "isSignal": true; }; "entityId": { "alias": "entityId"; "required": false; "isSignal": true; }; "entityName": { "alias": "entityName"; "required": false; "isSignal": true; }; "readonly": { "alias": "readonly"; "required": false; "isSignal": true; }; }, {}, never, never, false, never>;
+}

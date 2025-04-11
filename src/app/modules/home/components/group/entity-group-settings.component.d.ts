@@ -12,6 +12,7 @@ export declare class EntityGroupSettingsComponent extends PageComponent implemen
     private destroyRef;
     modelValue: EntityGroupSettings | null;
     settingsFormGroup: UntypedFormGroup;
+    pageStepSizeValues: any[];
     entityType: EntityType;
     disabled: boolean;
     entityGroupDetailsModes: string[];

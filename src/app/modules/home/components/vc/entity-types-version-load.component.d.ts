@@ -25,6 +25,7 @@ export declare class EntityTypesVersionLoadComponent extends PageComponent imple
     entityTypesWithoutRelatedData: Set<EntityType | import("@shared/models/entity-type.models").AliasEntityType>;
     loading: boolean;
     overrideEntityTypeTranslationsMap: Map<EntityType | import("@shared/models/entity-type.models").AliasEntityType, string>;
+    readonly typesWithCalculatedFields: Set<EntityType | import("@shared/models/entity-type.models").AliasEntityType>;
     constructor(store: Store<AppState>, translate: TranslateService, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;

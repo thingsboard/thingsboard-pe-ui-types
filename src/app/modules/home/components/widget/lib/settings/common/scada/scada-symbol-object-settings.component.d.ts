@@ -1,22 +1,21 @@
-import { ChangeDetectorRef, DestroyRef, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectorRef, DestroyRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { ScadaSymbolBehaviorType, ScadaSymbolMetadata, ScadaSymbolObjectSettings, ScadaSymbolPropertyType } from '@home/components/widget/lib/scada/scada-symbol.models';
+import { ScadaSymbolBehaviorType, ScadaSymbolMetadata, ScadaSymbolObjectSettings } from '@home/components/widget/lib/scada/scada-symbol.models';
 import { IAliasController } from '@core/api/widget-api.models';
 import { TargetDevice, widgetType } from '@shared/models/widget.models';
-import { ScadaSymbolBehaviorGroup, ScadaSymbolPropertyRow } from '@home/components/widget/lib/settings/common/scada/scada-symbol-object-settings.models';
+import { ScadaSymbolBehaviorGroup } from '@home/components/widget/lib/settings/common/scada/scada-symbol-object-settings.models';
 import { WidgetActionCallbacks } from '@home/components/widget/action/manage-widget-actions.component.models';
 import { ImageService } from '@core/http/image.service';
 import * as i0 from "@angular/core";
-export declare class ScadaSymbolObjectSettingsComponent implements OnInit, OnChanges, ControlValueAccessor, Validator, OnDestroy {
+export declare class ScadaSymbolObjectSettingsComponent implements OnInit, OnChanges, ControlValueAccessor, Validator {
     protected store: Store<AppState>;
     private fb;
     private imageService;
     private cd;
     private destroyRef;
     ScadaSymbolBehaviorType: typeof ScadaSymbolBehaviorType;
-    ScadaSymbolPropertyType: typeof ScadaSymbolPropertyType;
     disabled: boolean;
     scadaSymbolUrl: string;
     scadaSymbolContent: string;
@@ -27,16 +26,12 @@ export declare class ScadaSymbolObjectSettingsComponent implements OnInit, OnCha
     widgetType: widgetType;
     private modelValue;
     private propagateChange;
-    private validatorTriggers;
-    private validatorSubscription;
     scadaSymbolObjectSettingsFormGroup: UntypedFormGroup;
     metadata: ScadaSymbolMetadata;
     behaviorGroups: ScadaSymbolBehaviorGroup[];
-    propertyRows: ScadaSymbolPropertyRow[];
     constructor(store: Store<AppState>, fb: UntypedFormBuilder, imageService: ImageService, cd: ChangeDetectorRef, destroyRef: DestroyRef);
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
-    ngOnDestroy(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(_fn: any): void;
     setDisabledState(isDisabled: boolean): void;
@@ -47,7 +42,6 @@ export declare class ScadaSymbolObjectSettingsComponent implements OnInit, OnCha
         };
     };
     private loadMetadata;
-    private updateValidators;
     private setupValue;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<ScadaSymbolObjectSettingsComponent, never>;

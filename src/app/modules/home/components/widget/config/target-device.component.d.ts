@@ -6,7 +6,7 @@ import { WidgetConfigComponent } from '@home/components/widget/widget-config.com
 import { TargetDevice, TargetDeviceType } from '@shared/models/widget.models';
 import { EntityType } from '@shared/models/entity-type.models';
 import { IAliasController } from '@core/api/widget-api.models';
-import { EntityAliasSelectCallbacks } from '@home/components/alias/entity-alias-select.component.models';
+import { EntityAliasSelectCallbacks } from '@home/components/widget/lib/settings/common/alias/entity-alias-select.component.models';
 import * as i0 from "@angular/core";
 export declare class TargetDeviceComponent implements ControlValueAccessor, OnInit, Validator {
     private fb;

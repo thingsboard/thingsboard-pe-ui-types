@@ -27,6 +27,7 @@ export declare class AutoCommitSettingsComponent extends PageComponent implement
     overrideEntityTypeTranslationsMap: Map<EntityType | import("@shared/models/entity-type.models").AliasEntityType, string>;
     readonly: boolean;
     allowDelete: boolean;
+    readonly typesWithCalculatedFields: Set<EntityType | import("@shared/models/entity-type.models").AliasEntityType>;
     constructor(store: Store<AppState>, adminService: AdminService, dialogService: DialogService, sanitizer: DomSanitizer, translate: TranslateService, userPermissionsService: UserPermissionsService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     entityTypesFormGroupArray(): UntypedFormGroup[];

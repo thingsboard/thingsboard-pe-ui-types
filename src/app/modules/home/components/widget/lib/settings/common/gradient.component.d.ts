@@ -5,7 +5,7 @@ import { TbPopoverComponent } from '@shared/components/popover.component';
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import { IAliasController } from '@core/api/widget-api.models';
 import { DomSanitizer } from '@angular/platform-browser';
-import { DataKeysCallbacks } from '@home/components/widget/config/data-keys.component.models';
+import { DataKeysCallbacks } from '@home/components/widget/lib/settings/common/key/data-keys.component.models';
 import { Datasource } from '@shared/models/widget.models';
 import * as i0 from "@angular/core";
 export declare class GradientComponent implements OnInit, ControlValueAccessor, OnDestroy {

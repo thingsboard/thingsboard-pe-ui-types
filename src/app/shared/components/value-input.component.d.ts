@@ -20,8 +20,12 @@ export declare class ValueInputComponent implements OnInit, OnDestroy, OnChanges
     disabled: boolean;
     requiredText: string;
     valueType: ValueType;
+    allowedValueTypes: ValueType[];
     trueLabel: string;
     falseLabel: string;
+    shortBooleanField: boolean;
+    required: boolean;
+    hideJsonEdit: boolean;
     layout: ValueInputLayout | Layout;
     inputForm: NgForm;
     stringNotRequired: boolean;
@@ -49,6 +53,6 @@ export declare class ValueInputComponent implements OnInit, OnDestroy, OnChanges
     private updateModelToValueType;
     private _computeLayout;
     static ɵfac: i0.ɵɵFactoryDeclaration<ValueInputComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ValueInputComponent, "tb-value-input", never, { "disabled": { "alias": "disabled"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "valueType": { "alias": "valueType"; "required": false; }; "trueLabel": { "alias": "trueLabel"; "required": false; }; "falseLabel": { "alias": "falseLabel"; "required": false; }; "layout": { "alias": "layout"; "required": false; }; "stringNotRequired": { "alias": "stringNotRequired"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ValueInputComponent, "tb-value-input", never, { "disabled": { "alias": "disabled"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "valueType": { "alias": "valueType"; "required": false; }; "allowedValueTypes": { "alias": "allowedValueTypes"; "required": false; }; "trueLabel": { "alias": "trueLabel"; "required": false; }; "falseLabel": { "alias": "falseLabel"; "required": false; }; "shortBooleanField": { "alias": "shortBooleanField"; "required": false; }; "required": { "alias": "required"; "required": false; }; "hideJsonEdit": { "alias": "hideJsonEdit"; "required": false; }; "layout": { "alias": "layout"; "required": false; }; "stringNotRequired": { "alias": "stringNotRequired"; "required": false; }; }, {}, never, never, false, never>;
 }
 export {};

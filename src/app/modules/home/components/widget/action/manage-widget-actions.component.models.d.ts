@@ -33,8 +33,8 @@ export declare class WidgetActionsDatasource implements DataSource<WidgetActionD
     private actionsMap;
     private actionSources;
     constructor(translate: TranslateService, utils: UtilsService);
-    connect(collectionViewer: CollectionViewer): Observable<WidgetActionDescriptorInfo[] | ReadonlyArray<WidgetActionDescriptorInfo>>;
-    disconnect(collectionViewer: CollectionViewer): void;
+    connect(_collectionViewer: CollectionViewer): Observable<WidgetActionDescriptorInfo[] | ReadonlyArray<WidgetActionDescriptorInfo>>;
+    disconnect(_collectionViewer: CollectionViewer): void;
     setActions(actionsData: WidgetActionsData): void;
     loadActions(pageLink: PageLink, reload?: boolean): Observable<PageData<WidgetActionDescriptorInfo>>;
     fetchActions(pageLink: PageLink): Observable<PageData<WidgetActionDescriptorInfo>>;

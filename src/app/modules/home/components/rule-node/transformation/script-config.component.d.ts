@@ -1,0 +1,31 @@
+import { EventEmitter } from '@angular/core';
+import { NodeScriptTestService } from '@core/public-api';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
+import type { JsFuncComponent } from '@shared/components/js-func.component';
+import { RuleNodeConfiguration, RuleNodeConfigurationComponent, ScriptLanguage } from '@app/shared/models/rule-node.models';
+import { DebugRuleNodeEventBody } from '@shared/models/event.models';
+import * as i0 from "@angular/core";
+export declare class TransformScriptConfigComponent extends RuleNodeConfigurationComponent {
+    private fb;
+    private nodeScriptTestService;
+    private translate;
+    jsFuncComponent: JsFuncComponent;
+    tbelFuncComponent: JsFuncComponent;
+    scriptConfigForm: FormGroup;
+    tbelEnabled: boolean;
+    scriptLanguage: typeof ScriptLanguage;
+    changeScript: EventEmitter<void>;
+    readonly hasScript = true;
+    readonly testScriptLabel = "rule-node-config.test-transformer-function";
+    constructor(fb: FormBuilder, nodeScriptTestService: NodeScriptTestService, translate: TranslateService);
+    protected configForm(): FormGroup;
+    protected onConfigurationSet(configuration: RuleNodeConfiguration): void;
+    protected validatorTriggers(): string[];
+    protected updateValidators(emitEvent: boolean): void;
+    protected prepareInputConfig(configuration: RuleNodeConfiguration): RuleNodeConfiguration;
+    testScript(debugEventBody?: DebugRuleNodeEventBody): void;
+    protected onValidate(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<TransformScriptConfigComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TransformScriptConfigComponent, "tb-transformation-node-script-config", never, {}, {}, never, never, false, never>;
+}

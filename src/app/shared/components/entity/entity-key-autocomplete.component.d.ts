@@ -1,0 +1,31 @@
+import { ElementRef, OnChanges, SimpleChanges } from '@angular/core';
+import { ControlValueAccessor, FormBuilder, ValidationErrors, Validator } from '@angular/forms';
+import { Subject } from 'rxjs';
+import { EntityService } from '@core/http/entity.service';
+import { AttributeScope, DataKeyType } from '@shared/models/telemetry/telemetry.models';
+import { EntityFilter } from '@shared/models/query/query.models';
+import * as i0 from "@angular/core";
+export declare class EntityKeyAutocompleteComponent implements ControlValueAccessor, Validator, OnChanges {
+    private fb;
+    private entityService;
+    keyInput: ElementRef;
+    entityFilter: import("@angular/core").InputSignal<EntityFilter>;
+    dataKeyType: import("@angular/core").InputSignal<DataKeyType>;
+    keyScopeType: import("@angular/core").InputSignal<AttributeScope>;
+    keyControl: import("@angular/forms").FormControl<string>;
+    searchText: string;
+    keyInputSubject: Subject<void>;
+    private propagateChange;
+    private cachedResult;
+    keys$: import("rxjs").Observable<string[]>;
+    filteredKeys$: import("rxjs").Observable<string[]>;
+    constructor(fb: FormBuilder, entityService: EntityService);
+    ngOnChanges(changes: SimpleChanges): void;
+    clear(): void;
+    registerOnChange(onChange: (value: string) => void): void;
+    registerOnTouched(_: any): void;
+    validate(): ValidationErrors | null;
+    writeValue(value: string): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<EntityKeyAutocompleteComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityKeyAutocompleteComponent, "tb-entity-key-autocomplete", never, { "entityFilter": { "alias": "entityFilter"; "required": true; "isSignal": true; }; "dataKeyType": { "alias": "dataKeyType"; "required": true; "isSignal": true; }; "keyScopeType": { "alias": "keyScopeType"; "required": false; "isSignal": true; }; }, {}, never, never, false, never>;
+}

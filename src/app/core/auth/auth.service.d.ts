@@ -50,7 +50,7 @@ export declare class AuthService {
     publicLogin(publicId: string): Observable<LoginResponse>;
     sendResetPasswordLink(email: string): Observable<Object>;
     activate(activateToken: string, password: string, sendActivationMail: boolean): Observable<LoginResponse>;
-    resetPassword(resetToken: string, password: string): Observable<LoginResponse>;
+    resetPassword(resetToken: string, password: string): Observable<void>;
     changePassword(currentPassword: string, newPassword: string, config?: RequestConfig): Observable<LoginResponse>;
     getUserPasswordPolicy(): Observable<UserPasswordPolicy>;
     activateByEmailCode(emailCode: string): Observable<LoginResponse>;

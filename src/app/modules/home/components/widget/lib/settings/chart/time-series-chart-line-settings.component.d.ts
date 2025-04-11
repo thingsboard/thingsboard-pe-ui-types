@@ -3,7 +3,7 @@ import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@ang
 import { LineSeriesSettings, TimeSeriesChartType } from '@home/components/widget/lib/chart/time-series-chart.models';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { DataKeyConfigComponent } from '@home/components/widget/config/data-key-config.component';
+import { DataKeyConfigComponent } from '@home/components/widget/lib/settings/common/key/data-key-config.component';
 import * as i0 from "@angular/core";
 export declare class TimeSeriesChartLineSettingsComponent implements OnInit, ControlValueAccessor {
     protected store: Store<AppState>;

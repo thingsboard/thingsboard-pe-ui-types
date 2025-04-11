@@ -5,13 +5,11 @@ import { ComponentDescriptor } from '@shared/models/component-descriptor.models'
 import { FcEdge, FcNode } from 'ngx-flowchart';
 import { Observable } from 'rxjs';
 import { PageComponent } from '@shared/components/page.component';
-import { AfterViewInit, EventEmitter, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { AppState } from '@core/core.state';
+import { AfterViewInit, DestroyRef, EventEmitter, OnInit } from '@angular/core';
 import { UntypedFormGroup } from '@angular/forms';
 import { RuleChainType } from '@shared/models/rule-chain.models';
 import { DebugRuleNodeEventBody } from '@shared/models/event.models';
-import { HasEntityDebugSettings } from '@shared/models/entity.models';
+import { EntityTestScriptResult, HasEntityDebugSettings } from '@shared/models/entity.models';
 import * as i0 from "@angular/core";
 export interface RuleNodeConfiguration {
     [key: string]: any;
@@ -64,7 +62,6 @@ export interface IRuleNodeConfigurationComponent {
     [key: string]: any;
 }
 export declare abstract class RuleNodeConfigurationComponent extends PageComponent implements IRuleNodeConfigurationComponent, OnInit, AfterViewInit {
-    protected store: Store<AppState>;
     ruleNodeId: string;
     ruleChainId: string;
     hasScript: boolean;
@@ -72,13 +69,13 @@ export declare abstract class RuleNodeConfigurationComponent extends PageCompone
     configurationValue: RuleNodeConfiguration;
     private configurationSet;
     private disabledValue;
-    private destroyRef;
+    protected destroyRef: DestroyRef;
     set disabled(value: boolean);
     set configuration(value: RuleNodeConfiguration);
     get configuration(): RuleNodeConfiguration;
     configurationChangedEmiter: EventEmitter<RuleNodeConfiguration>;
     configurationChanged: Observable<RuleNodeConfiguration>;
-    protected constructor(store: Store<AppState>);
+    protected constructor(...args: unknown[]);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     validate(): void;
@@ -156,10 +153,7 @@ export interface TestScriptInputParams {
     };
     msgType: string;
 }
-export interface TestScriptResult {
-    output: string;
-    error: string;
-}
+export type TestScriptResult = EntityTestScriptResult;
 export declare enum MessageType {
     POST_ATTRIBUTES_REQUEST = "POST_ATTRIBUTES_REQUEST",
     POST_TELEMETRY_REQUEST = "POST_TELEMETRY_REQUEST",

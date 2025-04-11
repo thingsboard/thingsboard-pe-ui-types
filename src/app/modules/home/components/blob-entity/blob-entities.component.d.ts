@@ -43,8 +43,8 @@ export declare class BlobEntitiesComponent extends PageComponent implements OnIn
     displayType: boolean;
     displayCustomer: boolean;
     displayPagination: boolean;
-    pageSizeOptions: any;
-    defaultPageSize: number;
+    pageSizeOptions: any[];
+    defaultPageSize: any;
     defaultSortOrder: string;
     defaultType: string;
     hidePageSize: boolean;

@@ -62,5 +62,5 @@ export declare class LiquidLevelCardWidgetSettingsComponent extends WidgetSettin
     fetchOptions(searchText: string): Observable<Array<string>>;
     private getKeys;
     static ɵfac: i0.ɵɵFactoryDeclaration<LiquidLevelCardWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<LiquidLevelCardWidgetSettingsComponent, "liquid-level-card-widget-settings", never, {}, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<LiquidLevelCardWidgetSettingsComponent, "tb-liquid-level-card-widget-settings", never, {}, {}, never, never, false, never>;
 }

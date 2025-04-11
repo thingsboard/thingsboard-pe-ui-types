@@ -19,6 +19,7 @@ import { ScadaSymbolMetadataComponent } from '@home/pages/scada-symbol/metadata-
 import { MatDialog } from '@angular/material/dialog';
 import { GridType } from 'angular-gridster2';
 import { WidgetService } from '@core/http/widget.service';
+import { UserPermissionsService } from '@core/http/user-permissions.service';
 import * as i0 from "@angular/core";
 export declare class ScadaSymbolComponent extends PageComponent implements OnInit, OnDestroy, HasDirtyFlag, ScadaSymbolEditObjectCallbacks {
     protected store: Store<AppState>;
@@ -30,6 +31,7 @@ export declare class ScadaSymbolComponent extends PageComponent implements OnIni
     private translate;
     private imageService;
     private widgetService;
+    private userPermissionsService;
     private dialog;
     widgetType: typeof widgetType;
     GridType: typeof GridType;
@@ -59,9 +61,10 @@ export declare class ScadaSymbolComponent extends PageComponent implements OnIni
     private authUser;
     readonly: boolean;
     showHiddenElements: boolean;
+    showCreateWidgetButton: boolean;
     get isDirty(): boolean;
     set isDirty(value: boolean);
-    constructor(store: Store<AppState>, route: ActivatedRoute, fb: UntypedFormBuilder, cd: ChangeDetectorRef, entityService: EntityService, utils: UtilsService, translate: TranslateService, imageService: ImageService, widgetService: WidgetService, dialog: MatDialog);
+    constructor(store: Store<AppState>, route: ActivatedRoute, fb: UntypedFormBuilder, cd: ChangeDetectorRef, entityService: EntityService, utils: UtilsService, translate: TranslateService, imageService: ImageService, widgetService: WidgetService, userPermissionsService: UserPermissionsService, dialog: MatDialog);
     ngOnInit(): void;
     ngOnDestroy(): void;
     onApplyScadaSymbolConfig(): void;

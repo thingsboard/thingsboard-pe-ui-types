@@ -1,8 +1,8 @@
-import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, ChangeDetectorRef, ElementRef, EventEmitter, NgZone, OnDestroy, OnInit, QueryList } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, ChangeDetectorRef, ElementRef, EventEmitter, NgZone, OnChanges, OnDestroy, OnInit, QueryList, SimpleChanges } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { Subject } from 'rxjs';
+import { Observable, ReplaySubject, Subject } from 'rxjs';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Platform } from '@angular/cdk/platform';
 import { MatButtonToggleGroup } from '@angular/material/button-toggle';
@@ -10,16 +10,21 @@ import * as i0 from "@angular/core";
 export interface ToggleHeaderOption {
     name: string;
     value: any;
+    error$?: Observable<string>;
 }
 export type ToggleHeaderAppearance = 'fill' | 'fill-invert' | 'stroked';
 export type ScrollDirection = 'after' | 'before';
-export declare class ToggleOption {
+export declare class ToggleOption implements OnChanges, OnDestroy {
     private _element;
     value: any;
+    error: string;
+    currentError: ReplaySubject<string>;
     get viewValue(): string;
     constructor(_element: ElementRef<HTMLElement>);
+    ngOnChanges(changes: SimpleChanges): void;
+    ngOnDestroy(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ToggleOption, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<ToggleOption, "tb-toggle-option", never, { "value": { "alias": "value"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<ToggleOption, "tb-toggle-option", never, { "value": { "alias": "value"; "required": false; }; "error": { "alias": "error"; "required": false; }; }, {}, never, never, false, never>;
 }
 export declare abstract class _ToggleBase extends PageComponent implements AfterContentInit, OnDestroy {
     protected store: Store<AppState>;
@@ -66,7 +71,7 @@ export declare class ToggleHeaderComponent extends _ToggleBase implements OnInit
     get isMdLg(): boolean;
     private isMdLgValue;
     private useSelectSubject;
-    useSelect$: import("rxjs").Observable<boolean>;
+    useSelect$: Observable<boolean>;
     private observeBreakpointSubscription;
     constructor(store: Store<AppState>, cd: ChangeDetectorRef, platform: Platform, breakpointObserver: BreakpointObserver, zone: NgZone);
     ngOnInit(): void;

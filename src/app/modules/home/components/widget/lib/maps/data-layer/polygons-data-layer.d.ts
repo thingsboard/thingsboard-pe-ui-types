@@ -1,0 +1,55 @@
+import { MapDataLayerType, PolygonsDataLayerSettings, TbMapDatasource, TbPolygonCoordinates, TbPolygonRawCoordinates } from '@shared/models/widget/maps/map.models';
+import L from 'leaflet';
+import { DataKey, FormattedData } from '@shared/models/widget.models';
+import { TbShapesDataLayer } from '@home/components/widget/lib/maps/data-layer/shapes-data-layer';
+import { TbMap } from '@home/components/widget/lib/maps/map';
+import { Observable } from 'rxjs';
+import { TbLatestDataLayerItem, UnplacedMapDataItem } from '@home/components/widget/lib/maps/data-layer/latest-map-data-layer';
+declare class TbPolygonDataLayerItem extends TbLatestDataLayerItem<PolygonsDataLayerSettings, TbPolygonsDataLayer> {
+    protected settings: PolygonsDataLayerSettings;
+    protected dataLayer: TbPolygonsDataLayer;
+    private polygonContainer;
+    private polygon;
+    private polygonStyleInfo;
+    private editing;
+    constructor(data: FormattedData<TbMapDatasource>, dsData: FormattedData<TbMapDatasource>[], settings: PolygonsDataLayerSettings, dataLayer: TbPolygonsDataLayer);
+    isEditing(): boolean;
+    updateBubblingMouseEvents(): void;
+    remove(): void;
+    protected create(data: FormattedData<TbMapDatasource>, dsData: FormattedData<TbMapDatasource>[]): L.Layer;
+    protected unbindLabel(): void;
+    protected bindLabel(content: L.Content): void;
+    protected doUpdate(data: FormattedData<TbMapDatasource>, dsData: FormattedData<TbMapDatasource>[]): void;
+    protected doInvalidateCoordinates(data: FormattedData<TbMapDatasource>, _dsData: FormattedData<TbMapDatasource>[]): void;
+    protected addItemClass(clazz: string): void;
+    protected removeItemClass(clazz: string): void;
+    protected enableDrag(): void;
+    protected disableDrag(): void;
+    protected onSelected(): L.TB.ToolbarButtonOptions[];
+    protected onDeselected(): void;
+    protected canDeselect(cancel?: boolean): boolean;
+    protected removeDataItemTitle(): string;
+    protected removeDataItem(): Observable<any>;
+    private enablePolygonEditMode;
+    private disablePolygonEditMode;
+    private enablePolygonCutMode;
+    private disablePolygonCutMode;
+    private enablePolygonRotateMode;
+    private disablePolygonRotateMode;
+    private savePolygonCoordinates;
+    private updatePolygonShape;
+}
+export declare class TbPolygonsDataLayer extends TbShapesDataLayer<PolygonsDataLayerSettings, TbPolygonsDataLayer> {
+    protected map: TbMap<any>;
+    constructor(map: TbMap<any>, inputSettings: PolygonsDataLayerSettings);
+    dataLayerType(): MapDataLayerType;
+    placeItem(item: UnplacedMapDataItem, layer: L.Layer): void;
+    extractPolygonCoordinates(data: FormattedData<TbMapDatasource>): TbPolygonRawCoordinates;
+    savePolygonCoordinates(data: FormattedData<TbMapDatasource>, coordinates: TbPolygonCoordinates): Observable<TbPolygonRawCoordinates>;
+    protected getDataKeys(): DataKey[];
+    protected defaultBaseSettings(map: TbMap<any>): Partial<PolygonsDataLayerSettings>;
+    protected doSetup(): Observable<any>;
+    protected isValidLayerData(layerData: FormattedData<TbMapDatasource>): boolean;
+    protected createLayerItem(data: FormattedData<TbMapDatasource>, dsData: FormattedData<TbMapDatasource>[]): TbPolygonDataLayerItem;
+}
+export {};

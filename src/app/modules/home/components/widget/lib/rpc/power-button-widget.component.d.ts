@@ -5,11 +5,13 @@ import { Observable } from 'rxjs';
 import { ImagePipe } from '@shared/pipe/image.pipe';
 import { DomSanitizer } from '@angular/platform-browser';
 import { PowerButtonWidgetSettings } from '@home/components/widget/lib/rpc/power-button-widget.models';
+import { MatIconRegistry } from '@angular/material/icon';
 import * as i0 from "@angular/core";
 export declare class PowerButtonWidgetComponent extends BasicActionWidgetComponent implements OnInit, AfterViewInit, OnDestroy {
     protected imagePipe: ImagePipe;
     protected sanitizer: DomSanitizer;
     private renderer;
+    private iconRegistry;
     protected cd: ChangeDetectorRef;
     protected zone: NgZone;
     powerButtonShape: ElementRef<HTMLElement>;
@@ -26,7 +28,7 @@ export declare class PowerButtonWidgetComponent extends BasicActionWidgetCompone
     private disabledState;
     private onValueSetter;
     private offValueSetter;
-    constructor(imagePipe: ImagePipe, sanitizer: DomSanitizer, renderer: Renderer2, cd: ChangeDetectorRef, zone: NgZone);
+    constructor(imagePipe: ImagePipe, sanitizer: DomSanitizer, renderer: Renderer2, iconRegistry: MatIconRegistry, cd: ChangeDetectorRef, zone: NgZone);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     ngOnDestroy(): void;

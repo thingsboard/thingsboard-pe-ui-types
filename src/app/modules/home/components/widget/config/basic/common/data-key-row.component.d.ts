@@ -2,13 +2,14 @@ import { ChangeDetectorRef, DestroyRef, EventEmitter, OnChanges, OnInit, SimpleC
 import { AbstractControl, ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, ValidationErrors } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { WidgetConfigComponent } from '@home/components/widget/widget-config.component';
-import { DataKey, DatasourceType, JsonSettingsSchema, Widget, widgetType } from '@shared/models/widget.models';
+import { DataKey, DatasourceType, Widget, widgetType } from '@shared/models/widget.models';
 import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
-import { DataKeySettingsFunction } from '@home/components/widget/config/data-keys.component.models';
+import { DataKeySettingsFunction } from '@home/components/widget/lib/settings/common/key/data-keys.component.models';
 import { Dashboard } from '@shared/models/dashboard.models';
 import { IAliasController } from '@core/api/widget-api.models';
 import { TimeSeriesChartSeriesType, TimeSeriesChartYAxisId } from '@home/components/widget/lib/chart/time-series-chart.models';
 import { WidgetConfigCallbacks } from '@home/components/widget/config/widget-config.component.models';
+import { FormProperty } from '@shared/models/dynamic-form.models';
 import * as i0 from "@angular/core";
 export declare const dataKeyValid: (key: DataKey) => boolean;
 export declare const dataKeyRowValidator: (control: AbstractControl) => ValidationErrors | null;
@@ -50,9 +51,9 @@ export declare class DataKeyRowComponent implements ControlValueAccessor, OnInit
     get widget(): Widget;
     get dashboard(): Dashboard;
     get aliasController(): IAliasController;
-    get dataKeySettingsSchema(): JsonSettingsSchema;
+    get dataKeySettingsForm(): FormProperty[];
     get dataKeySettingsDirective(): string;
-    get latestDataKeySettingsSchema(): JsonSettingsSchema;
+    get latestDataKeySettingsForm(): FormProperty[];
     get latestDataKeySettingsDirective(): string;
     get dataKeySettingsFunction(): DataKeySettingsFunction;
     get isEntityDatasource(): boolean;

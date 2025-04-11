@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, ElementRef, OnDestroy, OnInit, Renderer2, ViewContainerRef } from '@angular/core';
+import { ChangeDetectorRef, ElementRef, OnChanges, OnDestroy, OnInit, Renderer2, SimpleChanges, ViewContainerRef } from '@angular/core';
 import { ControlValueAccessor, UntypedFormControl, Validator } from '@angular/forms';
 import { AceHighlightRules } from '@shared/models/ace/ace.models';
 import { Store } from '@ngrx/store';
@@ -13,7 +13,7 @@ import { TbPopoverService } from '@shared/components/popover.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import * as i0 from "@angular/core";
-export declare class JsFuncComponent implements OnInit, OnDestroy, ControlValueAccessor, Validator {
+export declare class JsFuncComponent implements OnInit, OnChanges, OnDestroy, ControlValueAccessor, Validator {
     elementRef: ElementRef;
     private utils;
     private translate;
@@ -31,6 +31,7 @@ export declare class JsFuncComponent implements OnInit, OnDestroy, ControlValueA
     private editorResize$;
     private ignoreChange;
     toastTargetId: string;
+    label: string;
     functionTitle: string;
     functionName: string;
     functionArgs: Array<string>;
@@ -42,6 +43,7 @@ export declare class JsFuncComponent implements OnInit, OnDestroy, ControlValueA
     editorCompleter: TbEditorCompleter;
     highlightRules: AceHighlightRules;
     globalVariables: Array<string>;
+    helpPopupStyle: Record<string, any>;
     disableUndefinedCheck: boolean;
     helpId: string;
     scriptLanguage: ScriptLanguage;
@@ -71,6 +73,7 @@ export declare class JsFuncComponent implements OnInit, OnDestroy, ControlValueA
     hasErrors: boolean;
     constructor(elementRef: ElementRef, utils: UtilsService, translate: TranslateService, store: Store<AppState>, raf: RafService, cd: ChangeDetectorRef, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, http: HttpClient);
     ngOnInit(): void;
+    ngOnChanges(changes: SimpleChanges): void;
     ngOnDestroy(): void;
     private onAceEditorResize;
     registerOnChange(fn: any): void;
@@ -82,6 +85,9 @@ export declare class JsFuncComponent implements OnInit, OnDestroy, ControlValueA
         };
     };
     beautifyJs(): void;
+    private updateFunctionArgsString;
+    private updateFunctionLabel;
+    private updatedScriptLanguage;
     validateOnSubmit(): Observable<void>;
     focus(): void;
     private validateJsFunc;
@@ -90,8 +96,10 @@ export declare class JsFuncComponent implements OnInit, OnDestroy, ControlValueA
     updateView(force?: boolean): void;
     editModules($event: Event, element: Element): void;
     private propagateValue;
+    private updateByChangesPropName;
+    private updateHighlightRules;
     private updateJsWorkerGlobals;
     updateCompleters(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<JsFuncComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<JsFuncComponent, "tb-js-func", never, { "functionTitle": { "alias": "functionTitle"; "required": false; }; "functionName": { "alias": "functionName"; "required": false; }; "functionArgs": { "alias": "functionArgs"; "required": false; }; "validationArgs": { "alias": "validationArgs"; "required": false; }; "resultType": { "alias": "resultType"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "fillHeight": { "alias": "fillHeight"; "required": false; }; "minHeight": { "alias": "minHeight"; "required": false; }; "editorCompleter": { "alias": "editorCompleter"; "required": false; }; "highlightRules": { "alias": "highlightRules"; "required": false; }; "globalVariables": { "alias": "globalVariables"; "required": false; }; "disableUndefinedCheck": { "alias": "disableUndefinedCheck"; "required": false; }; "helpId": { "alias": "helpId"; "required": false; }; "scriptLanguage": { "alias": "scriptLanguage"; "required": false; }; "hideBrackets": { "alias": "hideBrackets"; "required": false; }; "hideLabel": { "alias": "hideLabel"; "required": false; }; "withModules": { "alias": "withModules"; "required": false; }; "noValidate": { "alias": "noValidate"; "required": false; }; "required": { "alias": "required"; "required": false; }; }, {}, never, ["[toolbarStartButton]", "[toolbarPrefixButton]", "[toolbarSuffixButton]"], false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<JsFuncComponent, "tb-js-func", never, { "label": { "alias": "label"; "required": false; }; "functionTitle": { "alias": "functionTitle"; "required": false; }; "functionName": { "alias": "functionName"; "required": false; }; "functionArgs": { "alias": "functionArgs"; "required": false; }; "validationArgs": { "alias": "validationArgs"; "required": false; }; "resultType": { "alias": "resultType"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "fillHeight": { "alias": "fillHeight"; "required": false; }; "minHeight": { "alias": "minHeight"; "required": false; }; "editorCompleter": { "alias": "editorCompleter"; "required": false; }; "highlightRules": { "alias": "highlightRules"; "required": false; }; "globalVariables": { "alias": "globalVariables"; "required": false; }; "helpPopupStyle": { "alias": "helpPopupStyle"; "required": false; }; "disableUndefinedCheck": { "alias": "disableUndefinedCheck"; "required": false; }; "helpId": { "alias": "helpId"; "required": false; }; "scriptLanguage": { "alias": "scriptLanguage"; "required": false; }; "hideBrackets": { "alias": "hideBrackets"; "required": false; }; "hideLabel": { "alias": "hideLabel"; "required": false; }; "withModules": { "alias": "withModules"; "required": false; }; "noValidate": { "alias": "noValidate"; "required": false; }; "required": { "alias": "required"; "required": false; }; }, {}, never, ["[toolbarStartButton]", "[toolbarPrefixButton]", "[toolbarSuffixButton]"], false, never>;
 }

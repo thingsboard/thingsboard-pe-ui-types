@@ -269,3 +269,4 @@ export declare function entityPageDataChanged(prevPageData: PageData<EntityData>
 export declare const entityInfoFields: EntityKey[];
 export declare function entityDataToEntityInfo(entityData: EntityData): EntityInfo;
 export declare function updateDatasourceFromEntityInfo(datasource: Datasource, entity: EntityInfo, createFilter?: boolean): void;
+export declare const getFilterId: (filters: Filters, filterInfo: FilterInfo) => string;

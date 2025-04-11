@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 import { MatDialogRef } from '@angular/material/dialog';
 import { FormGroupDirective, NgForm, UntypedFormControl } from '@angular/forms';
 import { MobileApp } from '@shared/models/mobile-app.models';
-import { MobileAppComponent } from '@home/pages/mobile/applications/mobile-app.component';
+import type { MobileAppComponent } from '@home/pages/mobile/applications/mobile-app.component';
 import { PlatformType } from '@shared/models/oauth2.models';
 import { MobileAppService } from '@core/http/mobile-app.service';
 import * as i0 from "@angular/core";

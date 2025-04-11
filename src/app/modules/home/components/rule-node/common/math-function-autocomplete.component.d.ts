@@ -1,0 +1,35 @@
+import { ElementRef, OnInit } from '@angular/core';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
+import { FunctionData, MathFunction } from '../rule-node-config.models';
+import * as i0 from "@angular/core";
+export declare class MathFunctionAutocompleteComponent implements ControlValueAccessor, OnInit {
+    translate: TranslateService;
+    private fb;
+    private requiredValue;
+    get required(): boolean;
+    set required(value: boolean);
+    disabled: boolean;
+    operationInput: ElementRef;
+    mathFunctionForm: UntypedFormGroup;
+    modelValue: MathFunction | null;
+    searchText: string;
+    filteredOptions: Observable<FunctionData[]>;
+    private dirty;
+    private mathOperation;
+    private propagateChange;
+    constructor(translate: TranslateService, fb: UntypedFormBuilder);
+    ngOnInit(): void;
+    private _filter;
+    registerOnChange(fn: any): void;
+    registerOnTouched(_fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    mathFunctionDisplayFn(value: MathFunction | null): string;
+    writeValue(value: MathFunction | null): void;
+    updateView(value: MathFunction | null): void;
+    onFocus(): void;
+    clear(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<MathFunctionAutocompleteComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MathFunctionAutocompleteComponent, "tb-math-function-autocomplete", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
+}

@@ -1,0 +1,32 @@
+import { DestroyRef, OnInit, Renderer2, ViewContainerRef } from '@angular/core';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { WidgetAction } from '@shared/models/widget.models';
+import { TbPopoverService } from '@shared/components/popover.service';
+import { MapSettingsContext } from '@home/components/widget/lib/settings/common/map/map-settings.component.models';
+import { MatButton } from '@angular/material/button';
+import { TranslateService } from '@ngx-translate/core';
+import * as i0 from "@angular/core";
+export declare class MapTooltipTagActionsComponent implements ControlValueAccessor, OnInit {
+    private fb;
+    private popoverService;
+    private renderer;
+    private viewContainerRef;
+    private translate;
+    private destroyRef;
+    disabled: boolean;
+    context: MapSettingsContext;
+    actionsFormGroup: UntypedFormGroup;
+    private propagateChange;
+    constructor(fb: UntypedFormBuilder, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, translate: TranslateService, destroyRef: DestroyRef);
+    ngOnInit(): void;
+    writeValue(actions?: WidgetAction[]): void;
+    registerOnChange(fn: any): void;
+    registerOnTouched(fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    removeAction(index: number): void;
+    addAction($event: Event, matButton: MatButton): void;
+    editAction($event: Event, matButton: MatButton, index: number): void;
+    private openActionSettingsPopup;
+    static ɵfac: i0.ɵɵFactoryDeclaration<MapTooltipTagActionsComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MapTooltipTagActionsComponent, "tb-map-tooltip-tag-actions-panel", never, { "disabled": { "alias": "disabled"; "required": false; }; "context": { "alias": "context"; "required": false; }; }, {}, never, never, false, never>;
+}

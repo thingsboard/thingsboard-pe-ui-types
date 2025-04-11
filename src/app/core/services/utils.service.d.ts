@@ -9,6 +9,7 @@ import { WidgetContext } from '@app/modules/home/models/widget-component.models'
 import { AttributeData, TelemetryType } from '@shared/models/telemetry/telemetry.models';
 import { EntityId } from '@shared/models/id/entity-id';
 import { DatePipe } from '@angular/common';
+import { FormProperty } from '@shared/models/dynamic-form.models';
 import * as i0 from "@angular/core";
 export declare class UtilsService {
     private window;
@@ -26,16 +27,15 @@ export declare class UtilsService {
     constructor(window: Window, document: Document, zone: NgZone, datePipe: DatePipe, translate: TranslateService);
     getPredefinedFunctionsList(): Array<string>;
     getPredefinedFunctionBody(func: string): string;
-    getDefaultDatasource(dataKeySchema: any): Datasource;
+    getDefaultDatasource(dataKeyForm: FormProperty[]): Datasource;
     private initDefaultAlarmDataKeys;
     getDefaultAlarmDataKeys(): Array<DataKey>;
     defaultAlarmFieldContent(key: DataKey | {
         name: string;
     }, value: any): string;
-    generateObjectFromJsonSchema(schema: any): any;
     processWidgetException(exception: any): ExceptionData;
     parseException(exception: any, lineOffset?: number): ExceptionData;
-    customTranslation(translationValue: string, defaultValue: string): string;
+    customTranslation(translationValue: string, defaultValue?: string): string;
     private doTranslate;
     guid(): string;
     getMaterialColor(index: number): string;

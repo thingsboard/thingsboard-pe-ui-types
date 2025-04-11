@@ -3,10 +3,9 @@ import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, ValidationE
 import { Observable } from 'rxjs';
 import { ObjectLwM2M } from './lwm2m-profile-config.models';
 import { DeviceProfileService } from '@core/http/device-profile.service';
-import { TruncatePipe } from '@shared/pipe/truncate.pipe';
+import { MatAutocompleteTrigger } from '@angular/material/autocomplete';
 import * as i0 from "@angular/core";
 export declare class Lwm2mObjectListComponent implements ControlValueAccessor, OnInit, Validator {
-    truncate: TruncatePipe;
     private deviceProfileService;
     private fb;
     private requiredValue;
@@ -21,11 +20,12 @@ export declare class Lwm2mObjectListComponent implements ControlValueAccessor, O
     addList: EventEmitter<any>;
     removeList: EventEmitter<any>;
     objectInput: ElementRef<HTMLInputElement>;
+    matAutocompleteTrigger: MatAutocompleteTrigger;
     private propagateChange;
-    constructor(truncate: TruncatePipe, deviceProfileService: DeviceProfileService, fb: UntypedFormBuilder);
+    constructor(deviceProfileService: DeviceProfileService, fb: UntypedFormBuilder);
     private updateValidators;
     registerOnChange(fn: any): void;
-    registerOnTouched(fn: any): void;
+    registerOnTouched(_fn: any): void;
     ngOnInit(): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: ObjectLwM2M[]): void;

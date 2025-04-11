@@ -1,8 +1,8 @@
 import { IDashboardComponent } from '@home/models/dashboard-component.models';
-import { DataSet, Datasource, DatasourceData, FormattedData, JsonSettingsSchema, Widget, WidgetActionDescriptor, WidgetActionSource, WidgetConfig, WidgetControllerDescriptor, WidgetExportType, WidgetType, widgetType, WidgetTypeDescriptor, WidgetTypeDetails, WidgetTypeParameters } from '@shared/models/widget.models';
+import { DataSet, Datasource, DatasourceData, FormattedData, Widget, WidgetActionDescriptor, WidgetActionSource, WidgetConfig, WidgetControllerDescriptor, WidgetExportType, WidgetHeaderActionButtonType, WidgetType, widgetType, WidgetTypeDescriptor, WidgetTypeDetails, WidgetTypeParameters } from '@shared/models/widget.models';
 import { Timewindow, WidgetTimewindow } from '@shared/models/time/time.models';
 import { IAliasController, IStateController, IWidgetSubscription, IWidgetUtils, RpcApi, StateParams, SubscriptionEntityInfo, TimewindowFunctions, WidgetActionsApi, WidgetSubscriptionApi } from '@core/api/widget-api.models';
-import { ChangeDetectorRef, InjectionToken, Injector, NgZone, TemplateRef, Type } from '@angular/core';
+import { ChangeDetectorRef, InjectionToken, Injector, NgZone, Renderer2, TemplateRef, Type, ViewContainerRef } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { RafService } from '@core/services/raf.service';
 import { WidgetTypeId } from '@shared/models/id/widget-type-id';
@@ -47,9 +47,11 @@ import { SharedTelemetrySubscriber, TelemetrySubscriber } from '@shared/models/t
 import { UserId } from '@shared/models/id/user-id';
 import { UserSettingsService } from '@core/http/user-settings.service';
 import { WhiteLabelingService } from '@core/http/white-labeling.service';
-import { DataKeySettingsFunction } from '@home/components/widget/config/data-keys.component.models';
+import { DataKeySettingsFunction } from '@home/components/widget/lib/settings/common/key/data-keys.component.models';
 import { UtilsService } from '@core/services/utils.service';
 import { CompiledTbFunction } from '@shared/models/js-function.models';
+import { FormProperty } from '@shared/models/dynamic-form.models';
+import { ExportableEntity } from '@shared/models/base-data';
 export interface IWidgetAction {
     name: string;
     icon: string;
@@ -59,6 +61,14 @@ export type ShowWidgetHeaderActionFunction = (ctx: WidgetContext, data: Formatte
 export interface WidgetHeaderAction extends IWidgetAction {
     displayName: string;
     descriptor: WidgetActionDescriptor;
+    buttonType?: WidgetHeaderActionButtonType;
+    showIcon?: boolean;
+    buttonColor?: string;
+    buttonFillColor?: string;
+    buttonBorderColor?: string;
+    customButtonStyle?: {
+        [key: string]: string;
+    };
     useShowWidgetHeaderActionFunction: boolean;
     showWidgetHeaderActionFunction: CompiledTbFunction<ShowWidgetHeaderActionFunction>;
 }
@@ -113,6 +123,8 @@ export declare class WidgetContext {
     http: HttpClient;
     sanitizer: DomSanitizer;
     router: Router;
+    renderer: Renderer2;
+    widgetContentContainer: ViewContainerRef;
     reportService: ReportService;
     wl: WhiteLabelingService;
     private changeDetectorValue;
@@ -156,6 +168,7 @@ export declare class WidgetContext {
     }>;
     timeWindow?: WidgetTimewindow;
     embedTitlePanel?: boolean;
+    embedActionsPanel?: boolean;
     overflowVisible?: boolean;
     hideTitlePanel: boolean;
     widgetTitle?: string;
@@ -389,14 +402,14 @@ export interface IDynamicWidgetComponent {
     raf: RafService;
     [key: string]: any;
 }
-export interface WidgetInfo extends WidgetTypeDescriptor, WidgetControllerDescriptor {
+export interface WidgetInfo extends WidgetTypeDescriptor, WidgetControllerDescriptor, ExportableEntity<WidgetTypeId> {
     widgetName: string;
     fullFqn: string;
     deprecated: boolean;
     scada: boolean;
-    typeSettingsSchema?: string | any;
-    typeDataKeySettingsSchema?: string | any;
-    typeLatestDataKeySettingsSchema?: string | any;
+    typeSettingsForm?: FormProperty[];
+    typeDataKeySettingsForm?: FormProperty[];
+    typeLatestDataKeySettingsForm?: FormProperty[];
     image?: string;
     description?: string;
     tags?: string[];
@@ -412,9 +425,9 @@ export interface WidgetConfigComponentData {
         [actionSourceId: string]: WidgetActionSource;
     };
     isDataEnabled: boolean;
-    settingsSchema: JsonSettingsSchema;
-    dataKeySettingsSchema: JsonSettingsSchema;
-    latestDataKeySettingsSchema: JsonSettingsSchema;
+    settingsForm: FormProperty[];
+    dataKeySettingsForm: FormProperty[];
+    latestDataKeySettingsForm: FormProperty[];
     dataKeySettingsFunction: DataKeySettingsFunction;
     settingsDirective: string;
     dataKeySettingsDirective: string;
@@ -425,9 +438,9 @@ export interface WidgetConfigComponentData {
 export declare const MissingWidgetType: WidgetInfo;
 export declare const ErrorWidgetType: WidgetInfo;
 export interface WidgetTypeInstance {
-    getSettingsSchema?: () => string;
-    getDataKeySettingsSchema?: () => string;
-    getLatestDataKeySettingsSchema?: () => string;
+    getSettingsForm?: () => FormProperty[];
+    getDataKeySettingsForm?: () => FormProperty[];
+    getLatestDataKeySettingsForm?: () => FormProperty[];
     typeParameters?: () => WidgetTypeParameters;
     useCustomDatasources?: () => boolean;
     actionSources?: () => {

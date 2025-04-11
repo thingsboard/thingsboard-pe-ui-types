@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, ElementRef, OnDestroy, OnInit, Renderer2, TemplateRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ElementRef, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { WidgetContext } from '@home/models/widget-component.models';
 import { ComponentStyle } from '@shared/models/widget-settings.models';
 import { Observable } from 'rxjs';
@@ -6,8 +6,10 @@ import { ImagePipe } from '@shared/pipe/image.pipe';
 import { DomSanitizer } from '@angular/platform-browser';
 import { BarChartWithLabelsWidgetSettings } from '@home/components/widget/lib/chart/bar-chart-with-labels-widget.models';
 import { DataKey } from '@shared/models/widget.models';
+import { WidgetComponent } from '@home/components/widget/widget.component';
 import * as i0 from "@angular/core";
 export declare class BarChartWithLabelsWidgetComponent implements OnInit, OnDestroy, AfterViewInit {
+    widgetComponent: WidgetComponent;
     private imagePipe;
     private sanitizer;
     private renderer;
@@ -15,7 +17,6 @@ export declare class BarChartWithLabelsWidgetComponent implements OnInit, OnDest
     chartShape: ElementRef<HTMLElement>;
     settings: BarChartWithLabelsWidgetSettings;
     ctx: WidgetContext;
-    widgetTitlePanel: TemplateRef<any>;
     showLegend: boolean;
     legendClass: string;
     backgroundStyle$: Observable<ComponentStyle>;
@@ -25,7 +26,7 @@ export declare class BarChartWithLabelsWidgetComponent implements OnInit, OnDest
     legendLabelStyle: ComponentStyle;
     disabledLegendLabelStyle: ComponentStyle;
     private timeSeriesChart;
-    constructor(imagePipe: ImagePipe, sanitizer: DomSanitizer, renderer: Renderer2, cd: ChangeDetectorRef);
+    constructor(widgetComponent: WidgetComponent, imagePipe: ImagePipe, sanitizer: DomSanitizer, renderer: Renderer2, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     ngOnDestroy(): void;
@@ -35,5 +36,5 @@ export declare class BarChartWithLabelsWidgetComponent implements OnInit, OnDest
     onLegendKeyLeave(key: DataKey): void;
     toggleLegendKey(key: DataKey): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<BarChartWithLabelsWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<BarChartWithLabelsWidgetComponent, "tb-bar-chart-with-labels-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<BarChartWithLabelsWidgetComponent, "tb-bar-chart-with-labels-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; }, {}, never, never, false, never>;
 }

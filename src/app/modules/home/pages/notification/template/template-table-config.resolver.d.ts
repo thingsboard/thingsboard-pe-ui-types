@@ -21,6 +21,7 @@ export declare class TemplateTableConfigResolver {
     resolve(_route: ActivatedRouteSnapshot): EntityTableConfig<NotificationTemplate>;
     private configureCellActions;
     private editTemplate;
+    private notificationTemplateDialog;
     static ɵfac: i0.ɵɵFactoryDeclaration<TemplateTableConfigResolver, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<TemplateTableConfigResolver>;
 }

@@ -1,4 +1,4 @@
-import { OnInit, EventEmitter } from '@angular/core';
+import { EventEmitter } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { PageComponent } from '@shared/components/page.component';
@@ -9,7 +9,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogService } from '@core/services/dialog.service';
 import { TranslateService } from '@ngx-translate/core';
 import * as i0 from "@angular/core";
-export declare class SolutionTemplateCardComponent extends PageComponent implements OnInit {
+export declare class SolutionTemplateCardComponent extends PageComponent {
     protected store: Store<AppState>;
     private solutionsService;
     private dialog;
@@ -19,7 +19,6 @@ export declare class SolutionTemplateCardComponent extends PageComponent impleme
     solutionTemplate: TenantSolutionTemplateInfo;
     solutionTemplateChanged: EventEmitter<any>;
     constructor(store: Store<AppState>, solutionsService: SolutionsService, dialog: MatDialog, dialogService: DialogService, translate: TranslateService, router: Router);
-    ngOnInit(): void;
     openSolutionTemplateDetails(): void;
     installSolutionTemplate(): void;
     openInstructions(): void;

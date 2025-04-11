@@ -1,0 +1,31 @@
+import { DestroyRef, EventEmitter, OnInit } from '@angular/core';
+import { TbPopoverComponent } from '@shared/components/popover.component';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { MapDataLayerType, ShapeFillStripeSettings } from '@shared/models/widget/maps/map.models';
+import { DomSanitizer } from '@angular/platform-browser';
+import { ComponentStyle } from '@shared/models/widget-settings.models';
+import { MapSettingsContext } from '@home/components/widget/lib/settings/common/map/map-settings.component.models';
+import { DatasourceType } from '@shared/models/widget.models';
+import * as i0 from "@angular/core";
+export declare class ShapeFillStripeSettingsPanelComponent implements OnInit {
+    private fb;
+    private sanitizer;
+    private popover;
+    private destroyRef;
+    shapeFillStripeSettings: ShapeFillStripeSettings;
+    context: MapSettingsContext;
+    dsType: DatasourceType;
+    dsEntityAliasId: string;
+    dsDeviceId: string;
+    dataLayerType: MapDataLayerType;
+    shapeFillStripeSettingsApplied: EventEmitter<ShapeFillStripeSettings>;
+    stripePreviewStyle: ComponentStyle;
+    shapeFillStripeSettingsFormGroup: UntypedFormGroup;
+    constructor(fb: UntypedFormBuilder, sanitizer: DomSanitizer, popover: TbPopoverComponent, destroyRef: DestroyRef);
+    ngOnInit(): void;
+    cancel(): void;
+    applyShapeFillStripeSettings(): void;
+    private updatePreview;
+    static ɵfac: i0.ɵɵFactoryDeclaration<ShapeFillStripeSettingsPanelComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ShapeFillStripeSettingsPanelComponent, "tb-shape-fill-stripe-settings-panel", never, { "shapeFillStripeSettings": { "alias": "shapeFillStripeSettings"; "required": false; }; "context": { "alias": "context"; "required": false; }; "dsType": { "alias": "dsType"; "required": false; }; "dsEntityAliasId": { "alias": "dsEntityAliasId"; "required": false; }; "dsDeviceId": { "alias": "dsDeviceId"; "required": false; }; "dataLayerType": { "alias": "dataLayerType"; "required": false; }; }, { "shapeFillStripeSettingsApplied": "shapeFillStripeSettingsApplied"; }, never, never, false, never>;
+}

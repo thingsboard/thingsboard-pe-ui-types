@@ -2,13 +2,14 @@ import { ChangeDetectorRef, DestroyRef, EventEmitter, OnChanges, OnInit, SimpleC
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { WidgetConfigComponent } from '@home/components/widget/widget-config.component';
-import { ComparisonResultType, DataKey, DatasourceType, JsonSettingsSchema, Widget } from '@shared/models/widget.models';
+import { ComparisonResultType, DataKey, DatasourceType, Widget } from '@shared/models/widget.models';
 import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
 import { AggregationType } from '@shared/models/time/time.models';
 import { TranslateService } from '@ngx-translate/core';
 import { TruncatePipe } from '@shared/pipe/truncate.pipe';
 import { AggregatedValueCardKeyPosition } from '@home/components/widget/lib/cards/aggregated-value-card.models';
 import { WidgetConfigCallbacks } from '@home/components/widget/config/widget-config.component.models';
+import { FormProperty } from '@shared/models/dynamic-form.models';
 import * as i0 from "@angular/core";
 export declare class AggregatedDataKeyRowComponent implements ControlValueAccessor, OnInit, OnChanges {
     private fb;
@@ -33,7 +34,7 @@ export declare class AggregatedDataKeyRowComponent implements ControlValueAccess
     valuePreviewFn: any;
     get callbacks(): WidgetConfigCallbacks;
     get widget(): Widget;
-    get latestDataKeySettingsSchema(): JsonSettingsSchema;
+    get latestDataKeySettingsForm(): FormProperty[];
     get latestDataKeySettingsDirective(): string;
     get isEntityDatasource(): boolean;
     private propagateChange;

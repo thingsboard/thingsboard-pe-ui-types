@@ -18,8 +18,8 @@ export declare class RecipientTableConfigResolver {
     private readonly config;
     constructor(notificationService: NotificationService, translate: TranslateService, dialog: MatDialog, datePipe: DatePipe, customTranslate: CustomTranslatePipe, userPermissionsService: UserPermissionsService);
     resolve(_route: ActivatedRouteSnapshot): EntityTableConfig<NotificationTarget>;
-    private configureCellActions;
     private editTarget;
+    private notificationTargetDialog;
     static ɵfac: i0.ɵɵFactoryDeclaration<RecipientTableConfigResolver, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<RecipientTableConfigResolver>;
 }

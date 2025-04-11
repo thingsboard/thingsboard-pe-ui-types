@@ -46,6 +46,7 @@ export declare const HelpLinks: {
     linksMap: {
         docs: string;
         outgoingMailSettings: string;
+        mailTemplates: string;
         smsProviderSettings: string;
         slackSettings: string;
         securitySettings: string;
@@ -167,6 +168,8 @@ export declare const HelpLinks: {
         mobileApplication: string;
         mobileBundle: string;
         mobileQrCode: string;
+        calculatedField: string;
+        timewindowSettings: string;
         converters: string;
         uplinkConverters: string;
         downlinkConverters: string;

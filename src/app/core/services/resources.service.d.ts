@@ -15,6 +15,7 @@ export interface ModulesWithComponents {
     modules: ModuleInfo[];
     standaloneComponents: ɵComponentDef<any>[];
 }
+export type ComponentsSelectorMap<T> = Record<string, Type<T>>;
 export declare const flatModulesWithComponents: (modulesWithComponentsList: ModulesWithComponents[]) => ModulesWithComponents;
 export declare const modulesWithComponentsToTypes: (modulesWithComponents: ModulesWithComponents) => Type<any>[];
 export declare const componentTypeBySelector: (modulesWithComponents: ModulesWithComponents, selector: string) => Type<any> | undefined;
@@ -32,8 +33,8 @@ export declare class ResourcesService {
     loadResource(url: string): Observable<any>;
     downloadResource(downloadUrl: string, config?: RequestConfig): Observable<any>;
     loadModulesWithComponents(resourceId: string | TbResourceId, modulesMap: IModulesMap): Observable<ModulesWithComponents>;
+    extractComponentsFromModule<T>(module: any, instanceFilter?: any, isCamelCaseSelector?: boolean): ComponentsSelectorMap<T>;
     private extractModulesWithComponents;
-    private patchModulesWithFlexLayout;
     private loadResourceByType;
     private getDownloadUrl;
     private getMetaInfo;

@@ -23,6 +23,9 @@ export declare class EntityFilterComponent implements ControlValueAccessor, OnIn
     directionTypes: string[];
     directionTypeTranslations: Map<EntitySearchDirection, string>;
     directionTypeEnum: typeof EntitySearchDirection;
+    schedulerEventConfigTypes: {
+        [eventType: string]: import("@home/components/scheduler/scheduler-event-config.models").SchedulerEventConfigType;
+    };
     private propagateChange;
     private destroy$;
     private subscriptions;

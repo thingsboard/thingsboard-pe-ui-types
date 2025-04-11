@@ -1,6 +1,6 @@
 import { Type } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Datasource, DatasourceData, FormattedData, ReplaceInfo } from '@app/shared/models/widget.models';
+import { DataKey, Datasource, DatasourceData, FormattedData, ReplaceInfo } from '@app/shared/models/widget.models';
 import { EntityId } from '@shared/models/id/entity-id';
 import { EntityType } from '@shared/models/entity-type.models';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
@@ -58,9 +58,9 @@ export declare function insertVariable(pattern: string, name: string, value: any
 export declare const createLabelFromDatasource: (datasource: Datasource, pattern: string) => string;
 export declare const createLabelFromSubscriptionEntityInfo: (entityInfo: SubscriptionEntityInfo, pattern: string) => string;
 export declare const hasDatasourceLabelsVariables: (pattern: string) => boolean;
-export declare function formattedDataFormDatasourceData(input: DatasourceData[], dataIndex?: number, ts?: number): FormattedData[];
-export declare function formattedDataArrayFromDatasourceData(input: DatasourceData[]): FormattedData[][];
-export declare function formattedDataFromDatasource(datasource: Datasource, dsIndex: number): FormattedData;
+export declare function formattedDataFormDatasourceData<D extends Datasource = Datasource>(input: DatasourceData[], dataIndex?: number, ts?: number, groupFunction?: (el: DatasourceData) => any): FormattedData<D>[];
+export declare function formattedDataArrayFromDatasourceData<D extends Datasource = Datasource>(input: DatasourceData[], groupFunction?: (el: DatasourceData) => any): FormattedData<D>[][];
+export declare function formattedDataFromDatasource<D extends Datasource = Datasource>(datasource: D, dsIndex: number): FormattedData<D>;
 export declare function flatFormattedData(input: FormattedData[]): FormattedData;
 export declare function flatDataWithoutOverride(input: FormattedData[]): FormattedData;
 export declare function mergeFormattedData(first: FormattedData[], second: FormattedData[]): FormattedData[];
@@ -86,11 +86,13 @@ export declare function parseHttpErrorMessage(errorResponse: HttpErrorResponse, 
     message: string;
     timeout: number;
 };
-export declare function genNextLabel(name: string, datasources: Datasource[]): string;
+export declare const genNextLabel: (name: string, datasources: Datasource[]) => string;
+export declare const genNextLabelForDataKeys: (name: string, dataKeys: DataKey[]) => string;
 export declare const getOS: () => string;
 export declare const isSafari: () => boolean;
 export declare const isFirefox: () => boolean;
 export declare const plainColorFromVariable: (variable: string) => string;
 export declare const camelCase: (str: string) => string;
+export declare const capitalize: (str: string) => string;
 export declare const convertKeysToCamelCase: (obj: Record<string, any>) => Record<string, any>;
 export declare const unwrapModule: (module: any) => any;

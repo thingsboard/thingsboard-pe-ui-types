@@ -6,6 +6,7 @@ import { DataToValueSettings, GetAttributeValueSettings, GetValueSettings, SetVa
 import { ValueType } from '@shared/models/constants';
 import { EntityId } from '@shared/models/id/entity-id';
 import { HttpClient } from '@angular/common/http';
+import { StateObject } from '@core/api/widget-api.models';
 import * as i0 from "@angular/core";
 export declare abstract class BasicActionWidgetComponent implements OnInit, OnDestroy, AfterViewInit {
     protected cd: ChangeDetectorRef;
@@ -151,6 +152,15 @@ export declare class DashboardStateGetter<V> extends ValueGetter<V> {
     protected simulated: boolean;
     constructor(ctx: WidgetContext, settings: GetValueSettings<V>, valueType: ValueType, valueObserver: Partial<Observer<V>>, simulated: boolean);
     protected doGetValue(): Observable<string>;
+}
+export declare class DashboardStateWithParamsGetter<V> extends ValueGetter<V> {
+    protected ctx: WidgetContext;
+    protected settings: GetValueSettings<V>;
+    protected valueType: ValueType;
+    protected valueObserver: Partial<Observer<V>>;
+    protected simulated: boolean;
+    constructor(ctx: WidgetContext, settings: GetValueSettings<V>, valueType: ValueType, valueObserver: Partial<Observer<V>>, simulated: boolean);
+    protected doGetValue(): Observable<StateObject>;
 }
 export declare class ExecuteRpcValueSetter<V> extends ValueSetter<V> {
     protected ctx: WidgetContext;

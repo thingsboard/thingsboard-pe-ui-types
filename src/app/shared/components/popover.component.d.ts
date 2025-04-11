@@ -66,9 +66,6 @@ export declare class TbPopoverComponent<T = any> implements OnDestroy, OnInit {
         [klass: string]: any;
     };
     tbOverlayClassName: string;
-    tbOverlayStyle: {
-        [klass: string]: any;
-    };
     tbPopoverInnerStyle: {
         [klass: string]: any;
     };
@@ -80,6 +77,7 @@ export declare class TbPopoverComponent<T = any> implements OnDestroy, OnInit {
     tbMouseLeaveDelay?: number;
     tbHideOnClickOutside: boolean;
     tbShowCloseButton: boolean;
+    tbModal: boolean;
     tbAnimationState: string;
     tbHideStart: Subject<void>;
     tbVisibleChange: Subject<boolean>;
@@ -98,6 +96,13 @@ export declare class TbPopoverComponent<T = any> implements OnDestroy, OnInit {
     protected trigger: TbPopoverTrigger;
     set tbPlacement(value: PopoverPreferredPlacement);
     get hasBackdrop(): boolean;
+    get backdropClass(): string;
+    set tbOverlayStyle(value: {
+        [klass: string]: any;
+    });
+    get tbOverlayStyle(): {
+        [klass: string]: any;
+    };
     preferredPlacement: PopoverPlacement;
     strictPosition: boolean;
     origin: CdkOverlayOrigin;
@@ -109,6 +114,7 @@ export declare class TbPopoverComponent<T = any> implements OnDestroy, OnInit {
     scrollStrategy: NoopScrollStrategy;
     private parentScrollSubscription;
     private intersectionObserver;
+    private _tbOverlayStyle;
     constructor(cdr: ChangeDetectorRef, renderer: Renderer2, animationBuilder: AnimationBuilder, directionality: Directionality);
     ngOnInit(): void;
     ngOnDestroy(): void;

@@ -31,10 +31,13 @@ export declare class StringItemsListComponent implements ControlValueAccessor, O
     appearance: MatFormFieldAppearance;
     editable: boolean;
     subscriptSizing: SubscriptSizing;
+    fieldClass: string;
     predefinedValues: StringItemsOption[];
+    fetchOptionsFn: (searchText?: string) => Observable<Array<StringItemsOption>>;
+    allowUserValue: boolean;
     get itemsControl(): AbstractControl;
     get itemControl(): AbstractControl;
-    onTouched: () => void;
+    private onTouched;
     private propagateChange;
     private dirty;
     constructor(fb: FormBuilder);
@@ -44,13 +47,15 @@ export declare class StringItemsListComponent implements ControlValueAccessor, O
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: Array<string> | null): void;
-    addItem(event: MatChipInputEvent): void;
+    addOnBlur(event: FocusEvent): void;
+    addOnEnd(event: MatChipInputEvent): void;
     removeItems(item: StringItemsOption): void;
     onFocus(): void;
     displayValueFn(values?: StringItemsOption): string | undefined;
+    private addItem;
     private add;
     private fetchValues;
     private clear;
     static ɵfac: i0.ɵɵFactoryDeclaration<StringItemsListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<StringItemsListComponent, "tb-string-items-list", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "label": { "alias": "label"; "required": false; }; "placeholder": { "alias": "placeholder"; "required": false; }; "hint": { "alias": "hint"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "floatLabel": { "alias": "floatLabel"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "editable": { "alias": "editable"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "predefinedValues": { "alias": "predefinedValues"; "required": false; }; }, {}, never, ["[matHintEnd]", "[matSuffix]"], false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<StringItemsListComponent, "tb-string-items-list", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "label": { "alias": "label"; "required": false; }; "placeholder": { "alias": "placeholder"; "required": false; }; "hint": { "alias": "hint"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "floatLabel": { "alias": "floatLabel"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "editable": { "alias": "editable"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "fieldClass": { "alias": "fieldClass"; "required": false; }; "predefinedValues": { "alias": "predefinedValues"; "required": false; }; "fetchOptionsFn": { "alias": "fetchOptionsFn"; "required": false; }; "allowUserValue": { "alias": "allowUserValue"; "required": false; }; }, {}, never, ["[matHintEnd]", "[matSuffix]"], false, never>;
 }

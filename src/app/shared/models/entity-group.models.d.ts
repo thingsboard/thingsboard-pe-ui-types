@@ -33,6 +33,8 @@ export interface EntityGroupSettings {
     detailsMode: EntityGroupDetailsMode;
     displayPagination: boolean;
     defaultPageSize: number;
+    pageStepIncrement: number;
+    pageStepCount: number;
     enableCredentialsManagement: boolean;
     enableLoginAsUser: boolean;
     enableUsersManagement: boolean;
@@ -78,6 +80,7 @@ export interface EntityGroupColumn {
     title?: string;
     sortOrder: EntityGroupSortOrder;
     mobileHide: boolean;
+    disableSorting?: boolean;
     useCellStyleFunction?: boolean;
     cellStyleFunction?: TbFunction;
     useCellContentFunction?: string;

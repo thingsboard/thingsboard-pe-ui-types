@@ -8,7 +8,8 @@ export declare enum GetValueAction {
     GET_ATTRIBUTE = "GET_ATTRIBUTE",
     GET_TIME_SERIES = "GET_TIME_SERIES",
     GET_ALARM_STATUS = "GET_ALARM_STATUS",
-    GET_DASHBOARD_STATE = "GET_DASHBOARD_STATE"
+    GET_DASHBOARD_STATE = "GET_DASHBOARD_STATE",
+    GET_DASHBOARD_STATE_OBJECT = "GET_DASHBOARD_STATE_OBJECT"
 }
 export declare const getValueActions: GetValueAction[];
 export declare const getValueActionsByWidgetType: (type: widgetType) => GetValueAction[];

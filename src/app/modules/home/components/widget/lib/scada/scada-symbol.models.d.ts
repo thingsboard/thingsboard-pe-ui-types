@@ -8,6 +8,7 @@ import { Font } from '@shared/models/widget-settings.models';
 import { WidgetAction } from '@shared/models/widget.models';
 import { MatIconRegistry } from '@angular/material/icon';
 import { RafService } from '@core/services/raf.service';
+import { FormProperty } from '@shared/models/dynamic-form.models';
 export interface ScadaSymbolApi {
     generateElementId: () => string;
     formatValue: (value: any, dec?: number, units?: string, showZeroDecimals?: boolean) => string | undefined;
@@ -79,39 +80,6 @@ export interface ScadaSymbolBehaviorAction extends ScadaSymbolBehaviorBase {
     defaultWidgetActionSettings?: WidgetAction;
 }
 export type ScadaSymbolBehavior = ScadaSymbolBehaviorValue & ScadaSymbolBehaviorAction;
-export declare enum ScadaSymbolPropertyType {
-    text = "text",
-    number = "number",
-    switch = "switch",
-    color = "color",
-    color_settings = "color_settings",
-    font = "font",
-    units = "units",
-    icon = "icon"
-}
-export declare const scadaSymbolPropertyTypes: ScadaSymbolPropertyType[];
-export declare const scadaSymbolPropertyTypeTranslations: Map<ScadaSymbolPropertyType, string>;
-export declare const scadaSymbolPropertyRowClasses: string[];
-export declare const scadaSymbolPropertyFieldClasses: string[];
-export interface ScadaSymbolPropertyBase {
-    id: string;
-    name: string;
-    type: ScadaSymbolPropertyType;
-    default: any;
-    required?: boolean;
-    subLabel?: string;
-    divider?: boolean;
-    fieldSuffix?: string;
-    disableOnProperty?: string;
-    rowClass?: string;
-    fieldClass?: string;
-}
-export interface ScadaSymbolNumberProperty extends ScadaSymbolPropertyBase {
-    min?: number;
-    max?: number;
-    step?: number;
-}
-export type ScadaSymbolProperty = ScadaSymbolPropertyBase & ScadaSymbolNumberProperty;
 export interface ScadaSymbolMetadata {
     title: string;
     description?: string;
@@ -122,7 +90,7 @@ export interface ScadaSymbolMetadata {
     stateRender?: ScadaSymbolStateRenderFunction;
     tags: ScadaSymbolTag[];
     behavior: ScadaSymbolBehavior[];
-    properties: ScadaSymbolProperty[];
+    properties: FormProperty[];
 }
 export declare const emptyMetadata: (width?: number, height?: number) => ScadaSymbolMetadata;
 export declare const applyTbNamespaceToSvgContent: (svgContent: string) => string;
@@ -203,7 +171,9 @@ export declare class ScadaSymbolObject {
     private enableElement;
     private elements;
     private getProperty;
+    private getSettingsValue;
     private getPropertyValue;
+    private convertPropertyValue;
 }
 interface ScadaSymbolAnimation {
     running(): boolean;

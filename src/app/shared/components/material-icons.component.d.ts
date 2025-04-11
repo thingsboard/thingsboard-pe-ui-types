@@ -18,7 +18,8 @@ export declare class MaterialIconsComponent extends PageComponent implements OnI
     iconsPanel: CdkVirtualScrollViewport;
     selectedIcon: string;
     iconClearButton: boolean;
-    popover: TbPopoverComponent<MaterialIconsComponent>;
+    showTitle: boolean;
+    popover: TbPopoverComponent;
     iconSelected: EventEmitter<string>;
     iconRows$: Observable<MaterialIcon[][]>;
     showAllSubject: BehaviorSubject<boolean>;
@@ -35,5 +36,5 @@ export declare class MaterialIconsComponent extends PageComponent implements OnI
     private calculatePanelSize;
     private checkSize;
     static ɵfac: i0.ɵɵFactoryDeclaration<MaterialIconsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MaterialIconsComponent, "tb-material-icons", never, { "selectedIcon": { "alias": "selectedIcon"; "required": false; }; "iconClearButton": { "alias": "iconClearButton"; "required": false; }; "popover": { "alias": "popover"; "required": false; }; }, { "iconSelected": "iconSelected"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MaterialIconsComponent, "tb-material-icons", never, { "selectedIcon": { "alias": "selectedIcon"; "required": false; }; "iconClearButton": { "alias": "iconClearButton"; "required": false; }; "showTitle": { "alias": "showTitle"; "required": false; }; "popover": { "alias": "popover"; "required": false; }; }, { "iconSelected": "iconSelected"; }, never, never, false, never>;
 }

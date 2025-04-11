@@ -8,11 +8,14 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { Converter, ConverterType } from '@shared/models/converter.models';
 import { ConverterComponent } from '@home/components/converter/converter.component';
 import { ConverterService } from '@core/http/converter.service';
+import { IntegrationType } from '@shared/models/integration.models';
 import * as i0 from "@angular/core";
 export interface AddConverterDialogData {
     name: string;
     edgeTemplate?: boolean;
     type: ConverterType;
+    integrationType?: IntegrationType;
+    disabledIntegrationType?: boolean;
 }
 export declare class AddConverterDialogComponent extends DialogComponent<AddConverterDialogComponent, BaseData<HasId>> implements OnInit, AfterViewInit {
     protected store: Store<AppState>;

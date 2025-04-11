@@ -6,11 +6,13 @@ import { AppState } from '@app/core/core.state';
 import { WidgetsBundle } from '@shared/models/widgets-bundle.model';
 import { WidgetService } from '@core/http/widget.service';
 import { MatDialog } from '@angular/material/dialog';
+import { UserPermissionsService } from '@core/http/user-permissions.service';
 import * as i0 from "@angular/core";
 export declare class WidgetsBundleSelectComponent implements ControlValueAccessor, OnInit, OnChanges {
     private store;
     private widgetService;
     private dialog;
+    private userPermissionsService;
     private cd;
     bundlesScope: 'system' | 'tenant';
     selectFirstBundle: boolean;
@@ -24,7 +26,7 @@ export declare class WidgetsBundleSelectComponent implements ControlValueAccesso
     widgetsBundle: WidgetsBundle | null;
     onTouched: () => void;
     private propagateChange;
-    constructor(store: Store<AppState>, widgetService: WidgetService, dialog: MatDialog, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, widgetService: WidgetService, dialog: MatDialog, userPermissionsService: UserPermissionsService, cd: ChangeDetectorRef);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;

@@ -67,5 +67,5 @@ export declare class LiquidLevelCardBasicConfigComponent extends BasicWidgetConf
     fetchOptions(searchText: string): Observable<Array<string>>;
     private getKeys;
     static ɵfac: i0.ɵɵFactoryDeclaration<LiquidLevelCardBasicConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<LiquidLevelCardBasicConfigComponent, "liquid-level-card-basic-config", never, {}, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<LiquidLevelCardBasicConfigComponent, "tb-liquid-level-card-basic-config", never, {}, {}, never, never, false, never>;
 }

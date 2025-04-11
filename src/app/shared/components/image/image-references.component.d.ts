@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { ImageReferences } from '@shared/models/resource.models';
+import { ResourceReferences } from '@shared/models/resource.models';
 import { TranslateService } from '@ngx-translate/core';
 import { EntityService } from '@core/http/entity.service';
 import { BaseData, HasId } from '@shared/models/base-data';
@@ -27,7 +27,7 @@ export declare class ImageReferencesComponent implements OnInit {
     private entityService;
     private cd;
     private translate;
-    references: ImageReferences;
+    references: ResourceReferences;
     popoverComponent: TbPopoverComponent<ImageReferencesComponent>;
     contentReady: boolean;
     authUser: import("../../public-api").AuthUser;

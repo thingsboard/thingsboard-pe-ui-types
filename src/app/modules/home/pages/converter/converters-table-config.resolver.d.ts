@@ -1,3 +1,4 @@
+import { DestroyRef } from '@angular/core';
 import { ActivatedRouteSnapshot, Router } from '@angular/router';
 import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
 import { TranslateService } from '@ngx-translate/core';
@@ -9,6 +10,7 @@ import { UtilsService } from '@core/services/utils.service';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { EntityAction } from '@home/models/entity/entity-component.models';
 import { CustomTranslatePipe } from '@shared/pipe/custom-translate.pipe';
+import { EntityDebugSettingsService } from '@home/components/entity/debug/entity-debug-settings.service';
 import * as i0 from "@angular/core";
 export declare class ConvertersTableConfigResolver {
     private converterService;
@@ -18,16 +20,21 @@ export declare class ConvertersTableConfigResolver {
     private datePipe;
     private router;
     private utils;
+    private entityDebugSettingsService;
+    private destroyRef;
     private customTranslate;
     private readonly config;
-    constructor(converterService: ConverterService, userPermissionsService: UserPermissionsService, translate: TranslateService, importExport: ImportExportService, datePipe: DatePipe, router: Router, utils: UtilsService, customTranslate: CustomTranslatePipe);
+    constructor(converterService: ConverterService, userPermissionsService: UserPermissionsService, translate: TranslateService, importExport: ImportExportService, datePipe: DatePipe, router: Router, utils: UtilsService, entityDebugSettingsService: EntityDebugSettingsService, destroyRef: DestroyRef, customTranslate: CustomTranslatePipe);
     resolve(route: ActivatedRouteSnapshot): EntityTableConfig<Converter>;
     private configureEntityFunctions;
     private saveConverter;
     openConverter($event: Event, converter: Converter): void;
+    onOpenDebugConfig($event: Event, converter: Converter): void;
+    private openDebugEventDetails;
     exportConverter($event: Event, converter: Converter): void;
-    importConverter($event: Event): void;
+    importConverter(_$event: Event): void;
     onConverterAction(action: EntityAction<Converter>): boolean;
+    private onDebugConfigChanged;
     private configureTableTitle;
     static ɵfac: i0.ɵɵFactoryDeclaration<ConvertersTableConfigResolver, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<ConvertersTableConfigResolver>;

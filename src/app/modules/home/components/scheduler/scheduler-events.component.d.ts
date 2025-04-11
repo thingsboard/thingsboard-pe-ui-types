@@ -57,7 +57,7 @@ export declare class SchedulerEventsComponent extends PageComponent implements O
     mode: string;
     displayPagination: boolean;
     pageSizeOptions: Array<number>;
-    defaultPageSize: number;
+    defaultPageSize: any;
     defaultSortOrder: string;
     defaultEventType: string;
     hidePageSize: boolean;

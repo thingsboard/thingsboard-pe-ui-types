@@ -48,10 +48,10 @@ export declare class EntitiesTableComponent extends PageComponent implements IEn
     cellTooltipCache: Array<string>;
     cellStyleCache: Array<any>;
     selectionEnabled: any;
-    defaultPageSize: number;
+    defaultPageSize: any;
     displayPagination: boolean;
     hidePageSize: boolean;
-    pageSizeOptions: any;
+    pageSizeOptions: any[];
     pageLink: PageLink;
     pageMode: boolean;
     textSearchMode: boolean;

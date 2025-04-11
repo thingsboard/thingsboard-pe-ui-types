@@ -172,3 +172,4 @@ export interface EntityAliasFilterResult {
     entityFilter: EntityFilter;
     entityParamName?: string;
 }
+export declare const getEntityAliasId: (entityAliases: EntityAliases, aliasInfo: EntityAliasInfo) => string;

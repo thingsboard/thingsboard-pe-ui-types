@@ -1,4 +1,4 @@
-import { AfterViewInit, OnDestroy } from '@angular/core';
+import { AfterViewInit, DestroyRef } from '@angular/core';
 import { DialogComponent } from '@shared/components/dialog.component';
 import { Integration, IntegrationConvertersInfo } from '@shared/models/integration.models';
 import { Store } from '@ngrx/store';
@@ -16,11 +16,12 @@ import { Converter, ConverterSourceType, ConverterType } from '@shared/models/co
 import { ConverterComponent } from '@home/components/converter/converter.component';
 import { ConverterService } from '@core/http/converter.service';
 import { IntegrationService } from '@core/http/integration.service';
+import { EntityType } from '@shared/models/entity-type.models';
 import * as i0 from "@angular/core";
 export interface IntegrationWizardData<T> extends AddEntityDialogData<T> {
     edgeTemplate: boolean;
 }
-export declare class IntegrationWizardDialogComponent extends DialogComponent<IntegrationWizardDialogComponent, Integration> implements AfterViewInit, OnDestroy {
+export declare class IntegrationWizardDialogComponent extends DialogComponent<IntegrationWizardDialogComponent, Integration> implements AfterViewInit {
     protected store: Store<AppState>;
     protected router: Router;
     data: IntegrationWizardData<Integration>;
@@ -30,6 +31,7 @@ export declare class IntegrationWizardDialogComponent extends DialogComponent<In
     private integrationService;
     private translate;
     private fb;
+    private destroyRef;
     addIntegrationWizardStepper: MatStepper;
     uplinkDataConverterComponent: ConverterComponent;
     downlinkDataConverterComponent: ConverterComponent;
@@ -50,13 +52,11 @@ export declare class IntegrationWizardDialogComponent extends DialogComponent<In
     integrationInfo$: Observable<IntegrationConvertersInfo>;
     uplinkConverter: Converter;
     downlinkConverter: Converter;
-    readonly integrationDebugPerTenantLimitsConfiguration: string;
+    EntityType: typeof EntityType;
     private checkConnectionAllow;
-    private destroy$;
-    constructor(store: Store<AppState>, router: Router, data: IntegrationWizardData<Integration>, dialogRef: MatDialogRef<IntegrationWizardDialogComponent, Integration>, breakpointObserver: BreakpointObserver, converterService: ConverterService, integrationService: IntegrationService, translate: TranslateService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, router: Router, data: IntegrationWizardData<Integration>, dialogRef: MatDialogRef<IntegrationWizardDialogComponent, Integration>, breakpointObserver: BreakpointObserver, converterService: ConverterService, integrationService: IntegrationService, translate: TranslateService, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngAfterViewInit(): void;
     createConvertorName(type: ConverterType): any;
-    ngOnDestroy(): void;
     add(): void;
     get helpLinkId(): string;
     private createUplinkConverter;

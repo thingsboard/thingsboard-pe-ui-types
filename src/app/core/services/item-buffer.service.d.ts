@@ -15,6 +15,7 @@ export interface WidgetItem {
     filtersInfo: FiltersInfo;
     originalSize: WidgetSize;
     originalColumns: number;
+    widgetExportInfo?: any;
 }
 export interface WidgetReference {
     dashboardId: string;
@@ -52,7 +53,7 @@ export declare class ItemBufferService {
     canPasteWidgetReference(dashboard: Dashboard, state: string, layout: DashboardLayoutId, breakpoint: string): boolean;
     pasteWidget(targetDashboard: Dashboard, targetState: string, targetLayout: DashboardLayoutId, breakpoint: string, position: WidgetPosition, onAliasesUpdateFunction: () => void, onFiltersUpdateFunction: () => void): Observable<Widget>;
     pasteWidgetReference(targetDashboard: Dashboard, targetState: string, targetLayout: DashboardLayoutId, breakpoint: string, position: WidgetPosition): Observable<Widget>;
-    addWidgetToDashboard(dashboard: Dashboard, targetState: string, targetLayout: DashboardLayoutId, widget: Widget, aliasesInfo: AliasesInfo, filtersInfo: FiltersInfo, onAliasesUpdateFunction: () => void, onFiltersUpdateFunction: () => void, originalColumns: number, originalSize: WidgetSize, row: number, column: number, breakpoint?: string): Observable<Dashboard>;
+    addWidgetToDashboard(dashboard: Dashboard, targetState: string, targetLayout: DashboardLayoutId, widget: Widget, aliasesInfo: AliasesInfo, filtersInfo: FiltersInfo, onAliasesUpdateFunction: () => void, onFiltersUpdateFunction: () => void, originalColumns: number, originalSize: WidgetSize, row: number, column: number, breakpoint?: string, widgetExportInfo?: any): Observable<Dashboard>;
     copyRuleNodes(nodes: FcRuleNode[], connections: RuleNodeConnection[]): void;
     hasRuleNodes(): boolean;
     pasteRuleNodes(x: number, y: number): RuleNodesReference;
@@ -64,12 +65,6 @@ export declare class ItemBufferService {
     private prepareWidgetReference;
     private updateAliases;
     private updateFilters;
-    private isEntityAliasEqual;
-    private getEntityAliasId;
-    private createEntityAliasName;
-    private isFilterEqual;
-    private getFilterId;
-    private createFilterName;
     private storeSet;
     private storeGet;
     private storeHas;

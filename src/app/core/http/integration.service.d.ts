@@ -7,9 +7,11 @@ import { Integration, IntegrationInfo, IntegrationsConvertersInfo, IntegrationTy
 import * as i0 from "@angular/core";
 export declare class IntegrationService {
     private http;
+    private integrationsConvertersInfo$;
     constructor(http: HttpClient);
     getIntegrations(pageLink: PageLink, config?: RequestConfig): Observable<PageData<Integration>>;
     getIntegrationsConvertersInfo(config?: RequestConfig): Observable<IntegrationsConvertersInfo>;
+    getIntegrationsConvertersInfoCached(config?: RequestConfig): Observable<IntegrationsConvertersInfo>;
     getIntegrationsInfo(pageLink: PageLink, isEdgeTemplate: boolean, config?: RequestConfig): Observable<PageData<IntegrationInfo>>;
     getIntegrationsByEdgeTemplate(pageLink: PageLink, isEdgeTemplate: boolean, config?: RequestConfig): Observable<PageData<Integration>>;
     getIntegrationsByIds(integrationIds: Array<string>, config?: RequestConfig): Observable<Array<Integration>>;

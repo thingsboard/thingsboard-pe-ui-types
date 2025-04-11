@@ -45,3 +45,4 @@ export * from './window-message.model';
 export * from './entity-group.models';
 export * from './usage.models';
 export * from './query/query.models';
+export * from './regex.constants';

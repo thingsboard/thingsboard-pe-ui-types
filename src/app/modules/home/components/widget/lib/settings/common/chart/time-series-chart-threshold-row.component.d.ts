@@ -4,7 +4,7 @@ import { TimeSeriesChartThreshold, TimeSeriesChartYAxisId } from '@home/componen
 import { TimeSeriesChartThresholdsPanelComponent } from '@home/components/widget/lib/settings/common/chart/time-series-chart-thresholds-panel.component';
 import { IAliasController } from '@core/api/widget-api.models';
 import { Datasource, DatasourceType, WidgetConfig } from '@shared/models/widget.models';
-import { DataKeysCallbacks } from '@home/components/widget/config/data-keys.component.models';
+import { DataKeysCallbacks } from '@home/components/widget/lib/settings/common/key/data-keys.component.models';
 import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
 import { ValueSourceType } from '@shared/models/widget-settings.models';
 import * as i0 from "@angular/core";

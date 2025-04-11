@@ -38,7 +38,8 @@ export declare enum EntityType {
     OAUTH2_CLIENT = "OAUTH2_CLIENT",
     DOMAIN = "DOMAIN",
     MOBILE_APP_BUNDLE = "MOBILE_APP_BUNDLE",
-    MOBILE_APP = "MOBILE_APP"
+    MOBILE_APP = "MOBILE_APP",
+    CALCULATED_FIELD = "CALCULATED_FIELD"
 }
 export declare enum AliasEntityType {
     CURRENT_CUSTOMER = "CURRENT_CUSTOMER",

@@ -2,7 +2,7 @@ import { WidgetContext } from '@home/models/widget-component.models';
 import { TimeSeriesChartSettings, TimeSeriesChartType } from '@home/components/widget/lib/chart/time-series-chart.models';
 import { DataKey } from '@shared/models/widget.models';
 import { Renderer2 } from '@angular/core';
-import { DataKeySettingsFunction } from '@home/components/widget/config/data-keys.component.models';
+import { DataKeySettingsFunction } from '@home/components/widget/lib/settings/common/key/data-keys.component.models';
 import { DeepPartial } from '@shared/models/common';
 export declare class TbTimeSeriesChart {
     private ctx;
@@ -37,6 +37,7 @@ export declare class TbTimeSeriesChart {
     private highlightedDataKey;
     private barRenderSharedContext;
     private latestData;
+    private onParentScroll;
     yMin$: import("rxjs").Observable<number>;
     yMax$: import("rxjs").Observable<number>;
     constructor(ctx: WidgetContext, inputSettings: DeepPartial<TimeSeriesChartSettings>, chartElement: HTMLElement, renderer: Renderer2, autoResize?: boolean);
@@ -67,6 +68,7 @@ export declare class TbTimeSeriesChart {
     private scaleYAxis;
     private minTopOffset;
     private minBottomOffset;
+    private _onParentScroll;
     private onResize;
     private animationEnabled;
     private updateBarsAnimation;

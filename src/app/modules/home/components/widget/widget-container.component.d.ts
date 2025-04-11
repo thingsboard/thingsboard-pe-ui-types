@@ -9,6 +9,8 @@ import { GridsterItemComponent } from 'angular-gridster2';
 import { UtilsService } from '@core/services/utils.service';
 import { DashboardUtilsService } from '@core/services/dashboard-utils.service';
 import { TbContextMenuEvent } from '@shared/models/jquery-event.models';
+import { WidgetHeaderActionButtonType } from '@shared/models/widget.models';
+import { WidgetComponent } from '@home/components/widget/widget.component';
 import * as i0 from "@angular/core";
 export declare enum WidgetComponentActionType {
     MOUSE_DOWN = 0,
@@ -52,8 +54,8 @@ export declare class WidgetContainerComponent extends PageComponent implements O
     widgetExportType: typeof WidgetExportType;
     widgetExportTypeTranslations: Map<WidgetExportType, string>;
     hovered: boolean;
-    isReferenceWidget: boolean;
     get widgetEditActionsEnabled(): boolean;
+    widgetHeaderActionButtonType: typeof WidgetHeaderActionButtonType;
     private cssClass;
     private editWidgetActionsTooltip;
     constructor(store: Store<AppState>, cd: ChangeDetectorRef, renderer: Renderer2, container: ViewContainerRef, dashboardUtils: DashboardUtilsService, utils: UtilsService);
@@ -65,6 +67,7 @@ export declare class WidgetContainerComponent extends PageComponent implements O
     isNotHighlighted(widget: DashboardWidget): boolean;
     onFullscreenChanged(expanded: boolean): void;
     onMouseDown(event: MouseEvent): void;
+    widgetActionAbsolute(widgetComponent: WidgetComponent, absolute?: boolean): boolean;
     onClicked(event: MouseEvent): void;
     onContextMenu(event: TbContextMenuEvent): void;
     onEdit(event: MouseEvent): void;

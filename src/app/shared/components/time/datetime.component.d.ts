@@ -1,14 +1,21 @@
 import { OnInit } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
+import { FloatLabelType, MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
+import { MatDatetimepickerType } from '@mat-datetimepicker/core/datetimepicker/datetimepicker-type';
 import * as i0 from "@angular/core";
 export declare class DatetimeComponent implements OnInit, ControlValueAccessor {
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
+    floatLabel: FloatLabelType;
+    subscriptSizing: SubscriptSizing;
+    appearance: MatFormFieldAppearance;
+    type: MatDatetimepickerType;
     disabled: boolean;
     dateText: string;
-    timeText: string;
     showLabel: boolean;
+    allowClear: boolean;
+    fieldClass: string;
     minDateValue: Date | null;
     set minDate(minDate: number | null);
     maxDateValue: Date | null;
@@ -24,6 +31,7 @@ export declare class DatetimeComponent implements OnInit, ControlValueAccessor {
     writeValue(datetime: number | null): void;
     updateView(value: number | null): void;
     onDateChange(): void;
+    clear($event: Event): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DatetimeComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DatetimeComponent, "tb-datetime", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "dateText": { "alias": "dateText"; "required": false; }; "timeText": { "alias": "timeText"; "required": false; }; "showLabel": { "alias": "showLabel"; "required": false; }; "minDate": { "alias": "minDate"; "required": false; }; "maxDate": { "alias": "maxDate"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DatetimeComponent, "tb-datetime", never, { "required": { "alias": "required"; "required": false; }; "floatLabel": { "alias": "floatLabel"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "type": { "alias": "type"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "dateText": { "alias": "dateText"; "required": false; }; "showLabel": { "alias": "showLabel"; "required": false; }; "allowClear": { "alias": "allowClear"; "required": false; }; "fieldClass": { "alias": "fieldClass"; "required": false; }; "minDate": { "alias": "minDate"; "required": false; }; "maxDate": { "alias": "maxDate"; "required": false; }; }, {}, never, never, false, never>;
 }

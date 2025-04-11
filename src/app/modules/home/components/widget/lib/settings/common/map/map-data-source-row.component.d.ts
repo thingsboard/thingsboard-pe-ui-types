@@ -1,0 +1,33 @@
+import { ChangeDetectorRef, DestroyRef, EventEmitter, OnInit } from '@angular/core';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { MapDataSourceSettings } from '@shared/models/widget/maps/map.models';
+import { DatasourceType, widgetType } from '@shared/models/widget.models';
+import { EntityType } from '@shared/models/entity-type.models';
+import { MapSettingsContext } from '@home/components/widget/lib/settings/common/map/map-settings.component.models';
+import * as i0 from "@angular/core";
+export declare class MapDataSourceRowComponent implements ControlValueAccessor, OnInit {
+    private fb;
+    private cd;
+    private destroyRef;
+    DatasourceType: typeof DatasourceType;
+    EntityType: typeof EntityType;
+    widgetType: typeof widgetType;
+    datasourceTypes: Array<DatasourceType>;
+    datasourceTypesTranslations: Map<DatasourceType, string>;
+    disabled: boolean;
+    context: MapSettingsContext;
+    dataSourceRemoved: EventEmitter<any>;
+    dataSourceFormGroup: UntypedFormGroup;
+    modelValue: MapDataSourceSettings;
+    private propagateChange;
+    constructor(fb: UntypedFormBuilder, cd: ChangeDetectorRef, destroyRef: DestroyRef);
+    ngOnInit(): void;
+    registerOnChange(fn: any): void;
+    registerOnTouched(_fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    writeValue(value: MapDataSourceSettings): void;
+    private updateValidators;
+    private updateModel;
+    static ɵfac: i0.ɵɵFactoryDeclaration<MapDataSourceRowComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MapDataSourceRowComponent, "tb-map-data-source-row", never, { "disabled": { "alias": "disabled"; "required": false; }; "context": { "alias": "context"; "required": false; }; }, { "dataSourceRemoved": "dataSourceRemoved"; }, never, never, false, never>;
+}

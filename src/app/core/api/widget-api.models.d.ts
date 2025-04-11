@@ -41,12 +41,17 @@ export interface IWidgetUtils {
     formatValue: (value: any, dec?: number, units?: string, showZeroDecimals?: boolean) => string | undefined;
     getEntityDetailsPageURL: (id: string, entityType: EntityType) => string;
 }
+export interface PlaceMapItemActionData {
+    action: WidgetAction | WidgetActionDescriptor;
+    additionalParams?: any;
+    afterPlaceItemCallback: ($event: Event, descriptor: WidgetAction, entityId?: EntityId, entityName?: string, additionalParams?: any, entityLabel?: string) => void;
+}
 export interface WidgetActionsApi {
     actionDescriptorsBySourceId: {
         [sourceId: string]: Array<WidgetActionDescriptor>;
     };
     getActionDescriptors: (actionSourceId: string) => Array<WidgetActionDescriptor>;
-    handleWidgetAction: ($event: Event, descriptor: WidgetActionDescriptor, entityId?: EntityId, entityName?: string, additionalParams?: any, entityLabel?: string) => void;
+    handleWidgetAction: ($event: Event, descriptor: WidgetAction, entityId?: EntityId, entityName?: string, additionalParams?: any, entityLabel?: string) => void;
     onWidgetAction: ($event: Event, action: WidgetAction) => void;
     elementClick: ($event: Event) => void;
     cardClick: ($event: Event) => void;
@@ -56,6 +61,7 @@ export interface WidgetActionsApi {
     openDashboardStateInPopover: ($event: Event, targetDashboardStateId: string, params?: StateParams, hideDashboardToolbar?: boolean, preferredPlacement?: PopoverPlacement, hideOnClickOutside?: boolean, popoverWidth?: string, popoverHeight?: string, popoverStyle?: {
         [klass: string]: any;
     }) => void;
+    placeMapItem: (action: PlaceMapItemActionData) => void;
 }
 export interface AliasInfo {
     alias?: string;

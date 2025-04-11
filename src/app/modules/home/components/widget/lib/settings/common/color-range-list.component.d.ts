@@ -3,7 +3,7 @@ import { AbstractControl, ControlValueAccessor, FormControl, FormGroup, UntypedF
 import { TbPopoverComponent } from '@shared/components/popover.component';
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import { IAliasController } from '@core/api/widget-api.models';
-import { DataKeysCallbacks } from '@home/components/widget/config/data-keys.component.models';
+import { DataKeysCallbacks } from '@home/components/widget/lib/settings/common/key/data-keys.component.models';
 import { Datasource } from '@shared/models/widget.models';
 import * as i0 from "@angular/core";
 export declare function advancedRangeValidator(control: AbstractControl): ValidationErrors | null;
@@ -15,6 +15,8 @@ export declare class ColorRangeListComponent implements OnInit, ControlValueAcce
     aliasController: IAliasController;
     dataKeyCallbacks: DataKeysCallbacks;
     datasource: Datasource;
+    simpleRange: boolean;
+    useThemePalette: boolean;
     advancedMode: boolean;
     modelValue: any;
     colorRangeListFormGroup: UntypedFormGroup;
@@ -41,5 +43,5 @@ export declare class ColorRangeListComponent implements OnInit, ControlValueAcce
     addRange(): void;
     updateModel(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ColorRangeListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ColorRangeListComponent, "tb-color-range-list", never, { "disabled": { "alias": "disabled"; "required": false; }; "popover": { "alias": "popover"; "required": false; }; "panelTitle": { "alias": "panelTitle"; "required": false; }; "aliasController": { "alias": "aliasController"; "required": false; }; "dataKeyCallbacks": { "alias": "dataKeyCallbacks"; "required": false; }; "datasource": { "alias": "datasource"; "required": false; }; "advancedMode": { "alias": "advancedMode"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ColorRangeListComponent, "tb-color-range-list", never, { "disabled": { "alias": "disabled"; "required": false; }; "popover": { "alias": "popover"; "required": false; }; "panelTitle": { "alias": "panelTitle"; "required": false; }; "aliasController": { "alias": "aliasController"; "required": false; }; "dataKeyCallbacks": { "alias": "dataKeyCallbacks"; "required": false; }; "datasource": { "alias": "datasource"; "required": false; }; "simpleRange": { "alias": "simpleRange"; "required": false; }; "useThemePalette": { "alias": "useThemePalette"; "required": false; }; "advancedMode": { "alias": "advancedMode"; "required": false; }; }, {}, never, never, false, never>;
 }

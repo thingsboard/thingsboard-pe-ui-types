@@ -2,7 +2,7 @@ import { ChangeDetectorRef, DestroyRef, OnDestroy, OnInit, ViewContainerRef } fr
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { DataKey, JsonSettingsSchema, Widget, WidgetConfigMode, widgetType } from '@shared/models/widget.models';
+import { DataKey, Widget, WidgetConfigMode, widgetType } from '@shared/models/widget.models';
 import { AsyncValidator, ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, ValidationErrors } from '@angular/forms';
 import { WidgetConfigComponentData } from '@home/models/widget-component.models';
 import { IAliasController } from '@core/api/widget-api.models';
@@ -16,7 +16,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { EntityService } from '@core/http/entity.service';
 import { Dashboard } from '@shared/models/dashboard.models';
 import { ToggleHeaderOption } from '@shared/components/toggle-header.component';
-import { DataKeySettingsFunction } from '@home/components/widget/config/data-keys.component.models';
+import { DataKeySettingsFunction } from '@home/components/widget/lib/settings/common/key/data-keys.component.models';
+import { FormProperty } from '@shared/models/dynamic-form.models';
+import { WidgetService } from '@core/http/widget.service';
 import * as i0 from "@angular/core";
 export declare class WidgetConfigComponent extends PageComponent implements OnInit, OnDestroy, ControlValueAccessor, AsyncValidator {
     protected store: Store<AppState>;
@@ -26,6 +28,7 @@ export declare class WidgetConfigComponent extends PageComponent implements OnIn
     translate: TranslateService;
     private fb;
     private cd;
+    private widgetService;
     private destroyRef;
     basicModeContainer: ViewContainerRef;
     widgetTypes: typeof widgetType;
@@ -71,7 +74,7 @@ export declare class WidgetConfigComponent extends PageComponent implements OnIn
     private advancedSettingsSubscription;
     private actionsSettingsSubscription;
     private defaultConfigFormsType;
-    constructor(store: Store<AppState>, utils: UtilsService, entityService: EntityService, dialog: MatDialog, translate: TranslateService, fb: UntypedFormBuilder, cd: ChangeDetectorRef, destroyRef: DestroyRef);
+    constructor(store: Store<AppState>, utils: UtilsService, entityService: EntityService, dialog: MatDialog, translate: TranslateService, fb: UntypedFormBuilder, cd: ChangeDetectorRef, widgetService: WidgetService, destroyRef: DestroyRef);
     ngOnInit(): void;
     ngOnDestroy(): void;
     private removeChangeSubscriptions;
@@ -89,7 +92,7 @@ export declare class WidgetConfigComponent extends PageComponent implements OnIn
     private setupDefaultConfig;
     private updateWidgetSettingsEnabledState;
     private updateLayoutEnabledState;
-    private updateSchemaForm;
+    private updateAdvancedForm;
     private updateDataSettings;
     private updateTargetDeviceSettings;
     private updateWidgetSettings;
@@ -98,6 +101,7 @@ export declare class WidgetConfigComponent extends PageComponent implements OnIn
     private updateActionSettings;
     get hasBasicModeDirective(): boolean;
     get useDefinedBasicModeDirective(): boolean;
+    get displayData(): boolean;
     get displayAppearance(): boolean;
     get displayAdvancedAppearance(): boolean;
     get displayTimewindowConfig(): boolean;
@@ -106,7 +110,7 @@ export declare class WidgetConfigComponent extends PageComponent implements OnIn
     get displayUnitsConfig(): boolean;
     get displayNoDataDisplayMessageConfig(): boolean;
     onlyHistoryTimewindow(): boolean;
-    generateDataKey(chip: any, type: DataKeyType, datakeySettingsSchema: JsonSettingsSchema, isLatestDataKey: boolean, dataKeySettingsFunction: DataKeySettingsFunction): DataKey;
+    generateDataKey(chip: any, type: DataKeyType, dataKeySettingsForm: FormProperty[], isLatestDataKey: boolean, dataKeySettingsFunction: DataKeySettingsFunction): DataKey;
     private genNextColor;
     private createEntityAlias;
     private editEntityAlias;

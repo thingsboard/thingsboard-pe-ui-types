@@ -58,7 +58,7 @@ export declare class PersistentTableComponent extends PageComponent implements O
     enableStickyHeader: boolean;
     enableStickyAction: boolean;
     pageLink: PageLink;
-    pageSizeOptions: any;
+    pageSizeOptions: any[];
     actionCellButtonAction: PersistentTableWidgetActionDescriptor[];
     displayedColumns: string[];
     hidePageSize: boolean;

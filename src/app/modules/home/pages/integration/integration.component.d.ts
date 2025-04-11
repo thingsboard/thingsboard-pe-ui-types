@@ -9,6 +9,7 @@ import { Integration, IntegrationInfo } from '@shared/models/integration.models'
 import { ConverterType } from '@shared/models/converter.models';
 import { IntegrationService } from '@core/http/integration.service';
 import { PageLink } from '@shared/models/page/page-link';
+import { EntityType } from '@shared/models/entity-type.models';
 import * as i0 from "@angular/core";
 export declare class IntegrationComponent extends EntityComponent<Integration, PageLink, IntegrationInfo> implements OnInit {
     protected store: Store<AppState>;
@@ -20,7 +21,7 @@ export declare class IntegrationComponent extends EntityComponent<Integration, P
     protected cd: ChangeDetectorRef;
     converterType: typeof ConverterType;
     integrationScope: 'tenant' | 'edges' | 'edge';
-    readonly integrationDebugPerTenantLimitsConfiguration: string;
+    EntityType: typeof EntityType;
     private integrationType;
     constructor(store: Store<AppState>, translate: TranslateService, entityValue: Integration, entitiesTableConfigValue: EntityTableConfig<Integration, PageLink, IntegrationInfo>, fb: UntypedFormBuilder, integrationService: IntegrationService, cd: ChangeDetectorRef);
     ngOnInit(): void;

@@ -63,6 +63,7 @@ export declare class EntityDataSubscription {
     private latestValues;
     private aggTsValues;
     private aggTsComparisonValues;
+    private subscribeSubscription;
     private entityDataResolveSubject;
     private pageData;
     private prematureUpdates;

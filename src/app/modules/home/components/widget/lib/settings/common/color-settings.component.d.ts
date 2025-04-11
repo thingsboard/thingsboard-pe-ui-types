@@ -4,7 +4,7 @@ import { ColorSettings, ColorType, ComponentStyle } from '@shared/models/widget-
 import { MatButton } from '@angular/material/button';
 import { TbPopoverService } from '@shared/components/popover.service';
 import { IAliasController } from '@core/api/widget-api.models';
-import { DataKeysCallbacks } from '@home/components/widget/config/data-keys.component.models';
+import { DataKeysCallbacks } from '@home/components/widget/lib/settings/common/key/data-keys.component.models';
 import { Datasource } from '@shared/models/widget.models';
 import * as i0 from "@angular/core";
 export declare class ColorSettingsComponentService {

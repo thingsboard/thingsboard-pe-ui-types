@@ -12,6 +12,7 @@ export interface VersionCreateConfig {
     saveRelations: boolean;
     saveAttributes: boolean;
     saveCredentials: boolean;
+    saveCalculatedFields: boolean;
     savePermissions: boolean;
     saveGroupEntities: boolean;
 }
@@ -54,6 +55,7 @@ export interface VersionLoadConfig {
     loadRelations: boolean;
     loadAttributes: boolean;
     loadCredentials: boolean;
+    loadCalculatedFields: boolean;
     loadPermissions: boolean;
     loadGroupEntities: boolean;
     autoGenerateIntegrationKey: boolean;
@@ -167,7 +169,9 @@ export interface EntityDataInfo {
     hasRelations: boolean;
     hasAttributes: boolean;
     hasCredentials: boolean;
+    hasCalculatedFields: boolean;
     hasPermissions: boolean;
     hasGroupEntities: boolean;
 }
 export declare const overrideEntityTypeTranslations: Map<EntityType | AliasEntityType, string>;
+export declare const typesWithCalculatedFields: Set<EntityType | AliasEntityType>;

@@ -39,14 +39,15 @@ export declare class GetValueActionSettingsPanelComponent extends PageComponent 
     functionScopeVariables: string[];
     ValueType: typeof ValueType;
     getValueSettingsFormGroup: UntypedFormGroup;
+    entityType: typeof EntityType;
     alarmSeverities: AlarmSeverity[];
     alarmSeverityTranslationMap: Map<AlarmSeverity, string>;
     constructor(fb: UntypedFormBuilder, widgetService: WidgetService, store: Store<AppState>, destroyRef: DestroyRef);
     ngOnInit(): void;
     cancel(): void;
     applyGetValueSettings(): void;
+    getParseValueFunctionHelpId(): string;
     private updateValidators;
-    protected readonly entityType: typeof EntityType;
     static ɵfac: i0.ɵɵFactoryDeclaration<GetValueActionSettingsPanelComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<GetValueActionSettingsPanelComponent, "tb-get-value-action-settings-panel", never, { "getValueSettings": { "alias": "getValueSettings"; "required": false; }; "panelTitle": { "alias": "panelTitle"; "required": false; }; "valueType": { "alias": "valueType"; "required": false; }; "trueLabel": { "alias": "trueLabel"; "required": false; }; "falseLabel": { "alias": "falseLabel"; "required": false; }; "stateLabel": { "alias": "stateLabel"; "required": false; }; "aliasController": { "alias": "aliasController"; "required": false; }; "targetDevice": { "alias": "targetDevice"; "required": false; }; "widgetType": { "alias": "widgetType"; "required": false; }; "popover": { "alias": "popover"; "required": false; }; }, { "getValueSettingsApplied": "getValueSettingsApplied"; }, never, never, false, never>;
 }

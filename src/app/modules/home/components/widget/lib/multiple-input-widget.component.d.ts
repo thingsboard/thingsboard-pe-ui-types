@@ -15,7 +15,7 @@ import { MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-
 import * as i0 from "@angular/core";
 type FieldAlignment = 'row' | 'column';
 type MultipleInputWidgetDataKeyType = 'server' | 'shared' | 'timeseries';
-export type MultipleInputWidgetDataKeyValueType = 'string' | 'double' | 'integer' | 'JSON' | 'booleanCheckbox' | 'booleanSwitch' | 'dateTime' | 'date' | 'time' | 'select' | 'color';
+export type MultipleInputWidgetDataKeyValueType = 'string' | 'double' | 'integer' | 'JSON' | 'booleanCheckbox' | 'booleanSwitch' | 'dateTime' | 'date' | 'time' | 'select' | 'radio' | 'color';
 export type MultipleInputWidgetDataKeyEditableType = 'editable' | 'disabled' | 'readonly';
 type ConvertGetValueFunction = (value: any, ctx: WidgetContext) => any;
 type ConvertSetValueFunction = (value: any, originValue: any, ctx: WidgetContext) => any;
@@ -43,6 +43,9 @@ interface MultipleInputWidgetDataKeySettings {
     dataKeyValueType: MultipleInputWidgetDataKeyValueType;
     slideToggleLabelPosition?: 'after' | 'before';
     selectOptions: MultipleInputWidgetSelectOption[];
+    radioColor: string;
+    radioColumns: number;
+    radioLabelPosition?: 'after' | 'before';
     required: boolean;
     isEditable: MultipleInputWidgetDataKeyEditableType;
     disabledOnDataKey: string;
@@ -128,6 +131,7 @@ export declare class MultipleInputWidgetComponent extends PageComponent implemen
     private resize;
     getGroupTitle(datasource: Datasource): string;
     getErrorMessageText(keySettings: MultipleInputWidgetDataKeySettings, errorType: string): string;
+    radioButtonSelectedColor(radioColor: string): string;
     getTranslatedErrorText(errorMessage: string, defaultMessage: string, messageValues?: object): string;
     getCustomTranslationText(value: any): string;
     visibleKeys(source: MultipleInputWidgetSource): MultipleInputWidgetDataKey[];

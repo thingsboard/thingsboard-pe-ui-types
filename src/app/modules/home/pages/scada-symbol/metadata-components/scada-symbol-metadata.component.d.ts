@@ -25,7 +25,7 @@ export declare class ScadaSymbolMetadataComponent extends PageComponent implemen
     callbacks: WidgetActionCallbacks;
     disabled: boolean;
     tags: string[];
-    private modelValue;
+    modelValue: ScadaSymbolMetadata;
     private propagateChange;
     metadataFormGroup: UntypedFormGroup;
     headerOptions: ToggleHeaderOption[];

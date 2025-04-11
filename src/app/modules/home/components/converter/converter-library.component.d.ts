@@ -11,6 +11,7 @@ export declare class ConverterLibraryComponent implements ControlValueAccessor, 
     private converterLibraryService;
     converterType: ConverterType;
     integrationType: IntegrationType;
+    set interacted(interacted: boolean);
     modelInput: ElementRef;
     vendorInput: ElementRef;
     dataConverterComponent: ConverterComponent;
@@ -40,8 +41,7 @@ export declare class ConverterLibraryComponent implements ControlValueAccessor, 
     onLinkClick(event: MouseEvent, url: string): void;
     clearModel(): void;
     clearVendor(): void;
-    trackByName(_: any, item: Vendor | Model): string;
     private updateScriptLangEnable;
     static ɵfac: i0.ɵɵFactoryDeclaration<ConverterLibraryComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ConverterLibraryComponent, "tb-converter-library", never, { "converterType": { "alias": "converterType"; "required": false; }; "integrationType": { "alias": "integrationType"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ConverterLibraryComponent, "tb-converter-library", never, { "converterType": { "alias": "converterType"; "required": false; }; "integrationType": { "alias": "integrationType"; "required": false; }; "interacted": { "alias": "interacted"; "required": false; }; }, {}, never, never, false, never>;
 }

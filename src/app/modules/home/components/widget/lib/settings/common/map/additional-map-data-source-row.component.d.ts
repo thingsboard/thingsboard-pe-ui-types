@@ -1,0 +1,38 @@
+import { ChangeDetectorRef, DestroyRef, EventEmitter, OnInit } from '@angular/core';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { AdditionalMapDataSourceSettings } from '@shared/models/widget/maps/map.models';
+import { DatasourceType, widgetType } from '@shared/models/widget.models';
+import { EntityType } from '@shared/models/entity-type.models';
+import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
+import { MapSettingsContext } from '@home/components/widget/lib/settings/common/map/map-settings.component.models';
+import * as i0 from "@angular/core";
+export declare class AdditionalMapDataSourceRowComponent implements ControlValueAccessor, OnInit {
+    private fb;
+    private cd;
+    private destroyRef;
+    DatasourceType: typeof DatasourceType;
+    DataKeyType: typeof DataKeyType;
+    EntityType: typeof EntityType;
+    widgetType: typeof widgetType;
+    datasourceTypes: Array<DatasourceType>;
+    datasourceTypesTranslations: Map<DatasourceType, string>;
+    disabled: boolean;
+    context: MapSettingsContext;
+    dataSourceRemoved: EventEmitter<any>;
+    dataSourceFormGroup: UntypedFormGroup;
+    generateAdditionalDataKey: any;
+    modelValue: AdditionalMapDataSourceSettings;
+    private propagateChange;
+    constructor(fb: UntypedFormBuilder, cd: ChangeDetectorRef, destroyRef: DestroyRef);
+    ngOnInit(): void;
+    registerOnChange(fn: any): void;
+    registerOnTouched(_fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    writeValue(value: AdditionalMapDataSourceSettings): void;
+    private generateDataKey;
+    private onDsTypeChanged;
+    private updateValidators;
+    private updateModel;
+    static ɵfac: i0.ɵɵFactoryDeclaration<AdditionalMapDataSourceRowComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AdditionalMapDataSourceRowComponent, "tb-additional-map-data-source-row", never, { "disabled": { "alias": "disabled"; "required": false; }; "context": { "alias": "context"; "required": false; }; }, { "dataSourceRemoved": "dataSourceRemoved"; }, never, never, false, never>;
+}

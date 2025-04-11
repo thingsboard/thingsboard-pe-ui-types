@@ -1,0 +1,35 @@
+import { ChangeDetectorRef, Renderer2, ViewContainerRef } from '@angular/core';
+import { ControlValueAccessor } from '@angular/forms';
+import { MatButton } from '@angular/material/button';
+import { TbPopoverService } from '@shared/components/popover.service';
+import { MapDataLayerType, ShapeFillStripeSettings } from '@shared/models/widget/maps/map.models';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { MapSettingsContext } from '@home/components/widget/lib/settings/common/map/map-settings.component.models';
+import { DatasourceType } from '@shared/models/widget.models';
+import * as i0 from "@angular/core";
+export declare class ShapeFillStripeSettingsComponent implements ControlValueAccessor {
+    private popoverService;
+    private sanitizer;
+    private renderer;
+    private cd;
+    private viewContainerRef;
+    disabled: boolean;
+    context: MapSettingsContext;
+    dsType: DatasourceType;
+    dsEntityAliasId: string;
+    dsDeviceId: string;
+    dataLayerType: MapDataLayerType;
+    modelValue: ShapeFillStripeSettings;
+    stripePreviewUrl: SafeUrl;
+    private propagateChange;
+    constructor(popoverService: TbPopoverService, sanitizer: DomSanitizer, renderer: Renderer2, cd: ChangeDetectorRef, viewContainerRef: ViewContainerRef);
+    registerOnChange(fn: any): void;
+    registerOnTouched(_fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    writeValue(value: ShapeFillStripeSettings): void;
+    openStripeSettingsPopup($event: Event, matButton: MatButton): void;
+    private updatePreview;
+    static ɵfac: i0.ɵɵFactoryDeclaration<ShapeFillStripeSettingsComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ShapeFillStripeSettingsComponent, "tb-shape-fill-stripe-settings", never, { "disabled": { "alias": "disabled"; "required": false; }; "context": { "alias": "context"; "required": false; }; "dsType": { "alias": "dsType"; "required": false; }; "dsEntityAliasId": { "alias": "dsEntityAliasId"; "required": false; }; "dsDeviceId": { "alias": "dsDeviceId"; "required": false; }; "dataLayerType": { "alias": "dataLayerType"; "required": false; }; }, {}, never, never, false, never>;
+}
+export declare const generateStripePreviewUrl: (settings: ShapeFillStripeSettings, previewWidth?: number, previewHeight?: number) => string;

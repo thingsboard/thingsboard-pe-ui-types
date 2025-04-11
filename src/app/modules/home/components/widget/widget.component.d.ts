@@ -1,10 +1,9 @@
 import { ChangeDetectorRef, ComponentRef, ElementRef, Injector, NgZone, OnChanges, OnDestroy, OnInit, Renderer2, SimpleChanges, TemplateRef, ViewContainerRef } from '@angular/core';
 import { DashboardWidget } from '@home/models/dashboard-component.models';
-import { Widget, WidgetTypeParameters } from '@shared/models/widget.models';
+import { Widget, WidgetHeaderActionButtonType, WidgetTypeParameters } from '@shared/models/widget.models';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { WidgetService } from '@core/http/widget.service';
 import { UtilsService } from '@core/services/utils.service';
 import { IDynamicWidgetComponent, WidgetContext, WidgetInfo, WidgetTypeInstance } from '@home/models/widget-component.models';
 import { SubscriptionMessage, WidgetSubscriptionContext } from '@core/api/widget-api.models';
@@ -44,7 +43,6 @@ export declare class WidgetComponent extends PageComponent implements OnInit, On
     private embedDashboardDialogComponent;
     private dashboardPageComponent;
     private modulesMap;
-    private widgetService;
     private resources;
     private timeService;
     private deviceService;
@@ -63,6 +61,7 @@ export declare class WidgetComponent extends PageComponent implements OnInit, On
     private cd;
     private http;
     widgetTitlePanel: TemplateRef<any>;
+    widgetHeaderActionsPanel: TemplateRef<any>;
     isEdit: boolean;
     isPreview: boolean;
     isMobile: boolean;
@@ -96,8 +95,11 @@ export declare class WidgetComponent extends PageComponent implements OnInit, On
     private widgetResize$;
     private cssParser;
     private rxSubscriptions;
-    constructor(store: Store<AppState>, route: ActivatedRoute, router: Router, widgetComponentService: WidgetComponentService, elementRef: ElementRef, injector: Injector, dialog: MatDialog, renderer: Renderer2, popoverService: TbPopoverService, embedDashboardDialogComponent: ComponentType<any>, dashboardPageComponent: ComponentType<any>, modulesMap: IModulesMap, widgetService: WidgetService, resources: ResourcesService, timeService: TimeService, deviceService: DeviceService, entityService: EntityService, dashboardService: DashboardService, importExport: ImportExportService, entityDataService: EntityDataService, alarmDataService: AlarmDataService, translate: TranslateService, utils: UtilsService, datePipe: DatePipe, dashboardUtils: DashboardUtilsService, mobileService: MobileService, raf: RafService, ngZone: NgZone, cd: ChangeDetectorRef, http: HttpClient);
+    constructor(store: Store<AppState>, route: ActivatedRoute, router: Router, widgetComponentService: WidgetComponentService, elementRef: ElementRef, injector: Injector, dialog: MatDialog, renderer: Renderer2, popoverService: TbPopoverService, embedDashboardDialogComponent: ComponentType<any>, dashboardPageComponent: ComponentType<any>, modulesMap: IModulesMap, resources: ResourcesService, timeService: TimeService, deviceService: DeviceService, entityService: EntityService, dashboardService: DashboardService, importExport: ImportExportService, entityDataService: EntityDataService, alarmDataService: AlarmDataService, translate: TranslateService, utils: UtilsService, datePipe: DatePipe, dashboardUtils: DashboardUtilsService, mobileService: MobileService, raf: RafService, ngZone: NgZone, cd: ChangeDetectorRef, http: HttpClient);
     ngOnInit(): void;
+    headerButtonStyle(buttonType: WidgetHeaderActionButtonType, customButtonStyle: {
+        [key: string]: string;
+    }, buttonColor: string, backgroundColor: string, borderColor: string): {};
     ngOnChanges(changes: SimpleChanges): void;
     ngOnDestroy(): void;
     private displayWidgetInstance;
@@ -133,6 +135,7 @@ export declare class WidgetComponent extends PageComponent implements OnInit, On
     private click;
     private onClick;
     private onWidgetAction;
+    private executeCustomPrettyAction;
     private loadCustomActionResources;
     private processResourcesLoadErrors;
     private exportWidgetData;
@@ -141,6 +144,6 @@ export declare class WidgetComponent extends PageComponent implements OnInit, On
     private widgetExportDateFormat;
     private getActiveEntityInfo;
     private checkSize;
-    static ɵfac: i0.ɵɵFactoryDeclaration<WidgetComponent, [null, null, null, null, null, null, null, null, null, null, null, { optional: true; }, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetComponent, "tb-widget", never, { "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; "isEdit": { "alias": "isEdit"; "required": false; }; "isPreview": { "alias": "isPreview"; "required": false; }; "isMobile": { "alias": "isMobile"; "required": false; }; "dashboardWidget": { "alias": "dashboardWidget"; "required": false; }; "widget": { "alias": "widget"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<WidgetComponent, [null, null, null, null, null, null, null, null, null, null, null, { optional: true; }, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetComponent, "tb-widget", never, { "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; "widgetHeaderActionsPanel": { "alias": "widgetHeaderActionsPanel"; "required": false; }; "isEdit": { "alias": "isEdit"; "required": false; }; "isPreview": { "alias": "isPreview"; "required": false; }; "isMobile": { "alias": "isMobile"; "required": false; }; "dashboardWidget": { "alias": "dashboardWidget"; "required": false; }; "widget": { "alias": "widget"; "required": false; }; }, {}, never, never, false, never>;
 }

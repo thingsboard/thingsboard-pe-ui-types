@@ -1,0 +1,45 @@
+import { DestroyRef, OnInit } from '@angular/core';
+import { ControlValueAccessor, FormArray, FormBuilder, FormGroup, Validator } from '@angular/forms';
+import { PageComponent } from '@shared/public-api';
+import { CdkDragDrop } from '@angular/cdk/drag-drop';
+import { ArgumentType, AttributeScope, MathFunction } from './../rule-node-config.models';
+import * as i0 from "@angular/core";
+export declare class ArgumentsMapConfigComponent extends PageComponent implements ControlValueAccessor, OnInit, Validator {
+    private fb;
+    private destroyRef;
+    disabled: boolean;
+    private functionValue;
+    get function(): MathFunction;
+    set function(funcName: MathFunction);
+    maxArgs: number;
+    minArgs: number;
+    displayArgumentName: boolean;
+    mathFunctionMap: Map<MathFunction, import("./../rule-node-config.models").FunctionData>;
+    ArgumentType: typeof ArgumentType;
+    argumentsFormGroup: FormGroup;
+    attributeScopeMap: Map<AttributeScope, string>;
+    argumentTypeMap: Map<ArgumentType, import("./../rule-node-config.models").ArgumentTypeData>;
+    arguments: ArgumentType[];
+    attributeScope: AttributeScope[];
+    private propagateChange;
+    constructor(fb: FormBuilder, destroyRef: DestroyRef);
+    ngOnInit(): void;
+    onDrop(event: CdkDragDrop<string[]>): void;
+    get argumentsFormArray(): FormArray;
+    registerOnChange(fn: any): void;
+    registerOnTouched(_fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    writeValue(argumentsList: Array<any>): void;
+    removeArgument(index: number): void;
+    addArgument(emitEvent?: boolean): void;
+    validate(): {
+        argumentsRequired: boolean;
+    };
+    private setupArgumentsFormGroup;
+    private createArgumentControl;
+    private updateArgumentControlValidators;
+    private updateArgumentNames;
+    private updateModel;
+    static ɵfac: i0.ɵɵFactoryDeclaration<ArgumentsMapConfigComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ArgumentsMapConfigComponent, "tb-arguments-map-config", never, { "disabled": { "alias": "disabled"; "required": false; }; "function": { "alias": "function"; "required": false; }; }, {}, never, never, false, never>;
+}

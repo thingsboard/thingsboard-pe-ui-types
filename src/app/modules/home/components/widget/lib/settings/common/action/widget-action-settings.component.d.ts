@@ -3,7 +3,7 @@ import { ControlValueAccessor } from '@angular/forms';
 import { MatButton } from '@angular/material/button';
 import { TbPopoverService } from '@shared/components/popover.service';
 import { TranslateService } from '@ngx-translate/core';
-import { WidgetAction, widgetType } from '@shared/models/widget.models';
+import { WidgetAction, WidgetActionType, widgetType } from '@shared/models/widget.models';
 import { WidgetActionCallbacks } from '@home/components/widget/action/manage-widget-actions.component.models';
 import * as i0 from "@angular/core";
 export declare class WidgetActionSettingsComponent implements OnInit, ControlValueAccessor {
@@ -17,6 +17,7 @@ export declare class WidgetActionSettingsComponent implements OnInit, ControlVal
     widgetType: widgetType;
     callbacks: WidgetActionCallbacks;
     disabled: boolean;
+    additionalWidgetActionTypes: WidgetActionType[];
     modelValue: WidgetAction;
     displayValue: string;
     private propagateChange;
@@ -29,5 +30,5 @@ export declare class WidgetActionSettingsComponent implements OnInit, ControlVal
     openActionSettingsPopup($event: Event, matButton: MatButton): void;
     private updateDisplayValue;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetActionSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetActionSettingsComponent, "tb-widget-action-settings", never, { "panelTitle": { "alias": "panelTitle"; "required": false; }; "widgetType": { "alias": "widgetType"; "required": false; }; "callbacks": { "alias": "callbacks"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetActionSettingsComponent, "tb-widget-action-settings", never, { "panelTitle": { "alias": "panelTitle"; "required": false; }; "widgetType": { "alias": "widgetType"; "required": false; }; "callbacks": { "alias": "callbacks"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "additionalWidgetActionTypes": { "alias": "additionalWidgetActionTypes"; "required": false; }; }, {}, never, never, false, never>;
 }

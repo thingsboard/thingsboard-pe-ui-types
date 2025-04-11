@@ -14,9 +14,10 @@ import { Ace } from 'ace-builds';
 import { CancelAnimationFrame, RafService } from '@core/services/raf.service';
 import { MatDialog } from '@angular/material/dialog';
 import { HttpClient } from '@angular/common/http';
-import Timeout = NodeJS.Timeout;
 import { TbPopoverService } from '@shared/components/popover.service';
 import { MatIconButton } from '@angular/material/button';
+import { CustomTranslatePipe } from '@shared/pipe/custom-translate.pipe';
+import Timeout = NodeJS.Timeout;
 import * as i0 from "@angular/core";
 export declare class WidgetEditorComponent extends PageComponent implements OnInit, OnDestroy, HasDirtyFlag {
     protected store: Store<AppState>;
@@ -30,6 +31,7 @@ export declare class WidgetEditorComponent extends PageComponent implements OnIn
     private popoverService;
     private renderer;
     private viewContainerRef;
+    private customTranslate;
     private http;
     topPanelElmRef: ElementRef;
     topLeftPanelElmRef: ElementRef;
@@ -39,9 +41,6 @@ export declare class WidgetEditorComponent extends PageComponent implements OnIn
     framePanelElmRef: ElementRef;
     htmlInputElmRef: ElementRef;
     cssInputElmRef: ElementRef;
-    settingsJsonInputElmRef: ElementRef;
-    dataKeySettingsJsonInputElmRef: ElementRef;
-    latestDataKeySettingsJsonInputElmRef: ElementRef;
     javascriptInputElmRef: ElementRef;
     widgetIFrameElmRef: ElementRef<HTMLIFrameElement>;
     iframe: JQuery<HTMLIFrameElement>;
@@ -60,9 +59,6 @@ export declare class WidgetEditorComponent extends PageComponent implements OnIn
     fullscreen: boolean;
     htmlFullscreen: boolean;
     cssFullscreen: boolean;
-    jsonSettingsFullscreen: boolean;
-    jsonDataKeySettingsFullscreen: boolean;
-    jsonLatestDataKeySettingsFullscreen: boolean;
     javascriptFullscreen: boolean;
     iFrameFullscreen: boolean;
     aceEditors: Ace.Editor[];
@@ -71,9 +67,6 @@ export declare class WidgetEditorComponent extends PageComponent implements OnIn
     };
     htmlEditor: Ace.Editor;
     cssEditor: Ace.Editor;
-    jsonSettingsEditor: Ace.Editor;
-    dataKeyJsonSettingsEditor: Ace.Editor;
-    latestDataKeyJsonSettingsEditor: Ace.Editor;
     jsEditor: Ace.Editor;
     private initialCompleters;
     aceResize$: ResizeObserver;
@@ -88,7 +81,7 @@ export declare class WidgetEditorComponent extends PageComponent implements OnIn
     hotKeys: Hotkey[];
     updateBreadcrumbs: EventEmitter<any>;
     private rxSubscriptions;
-    constructor(store: Store<AppState>, window: Window, route: ActivatedRoute, router: Router, widgetService: WidgetService, translate: TranslateService, raf: RafService, dialog: MatDialog, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, http: HttpClient);
+    constructor(store: Store<AppState>, window: Window, route: ActivatedRoute, router: Router, widgetService: WidgetService, translate: TranslateService, raf: RafService, dialog: MatDialog, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, customTranslate: CustomTranslatePipe, http: HttpClient);
     private init;
     ngOnInit(): void;
     ngOnDestroy(): void;
@@ -116,13 +109,13 @@ export declare class WidgetEditorComponent extends PageComponent implements OnIn
     saveAsDisabled(): boolean;
     beautifyCss(): void;
     beautifyHtml(): void;
-    beautifyJson(): void;
-    beautifyDataKeyJson(): void;
-    beautifyLatestDataKeyJson(): void;
     beautifyJs(): void;
     removeResource(index: number): void;
     addResource(): void;
     widgetTypeChanged(): void;
+    settingsFormUpdated(): void;
+    dataKeySettingsFormUpdated(): void;
+    latestDataKeySettingsFormUpdated(): void;
     editControllerScriptModules($event: Event, button: MatIconButton): void;
     get controllerScriptBody(): string;
     set controllerScriptBody(controllerScriptBody: string);

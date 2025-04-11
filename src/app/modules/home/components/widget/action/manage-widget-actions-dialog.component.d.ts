@@ -1,4 +1,4 @@
-import { widgetType } from '@shared/models/widget.models';
+import { WidgetActionType, widgetType } from '@shared/models/widget.models';
 import { WidgetActionCallbacks, WidgetActionsData } from '@home/components/widget/action/manage-widget-actions.component.models';
 import { OnInit } from '@angular/core';
 import { DialogComponent } from '@shared/components/dialog.component';
@@ -13,6 +13,8 @@ export interface ManageWidgetActionsDialogData {
     actionsData: WidgetActionsData;
     callbacks: WidgetActionCallbacks;
     widgetType: widgetType;
+    defaultIconColor?: string;
+    additionalWidgetActionTypes?: WidgetActionType[];
 }
 export declare class ManageWidgetActionsDialogComponent extends DialogComponent<ManageWidgetActionsDialogComponent, WidgetActionsData> implements OnInit {
     protected store: Store<AppState>;
@@ -20,7 +22,7 @@ export declare class ManageWidgetActionsDialogComponent extends DialogComponent<
     data: ManageWidgetActionsDialogData;
     private fb;
     dialogRef: MatDialogRef<ManageWidgetActionsDialogComponent, WidgetActionsData>;
-    widgetActionTypesList: import("@shared/models/widget.models").WidgetActionType[];
+    widgetActionTypesList: WidgetActionType[];
     actionSources: {
         [actionSourceId: string]: import("@shared/models/widget.models").WidgetActionSource;
     };

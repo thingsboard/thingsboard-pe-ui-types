@@ -1,0 +1,53 @@
+import { DestroyRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
+import { MapDataLayerType, MapSetting, MapType } from '@shared/models/widget/maps/map.models';
+import { IAliasController } from '@core/api/widget-api.models';
+import { WidgetConfigCallbacks } from '@home/components/widget/config/widget-config.component.models';
+import { Widget } from '@shared/models/widget.models';
+import { MapSettingsContext } from '@home/components/widget/lib/settings/common/map/map-settings.component.models';
+import { MatDialog } from '@angular/material/dialog';
+import * as i0 from "@angular/core";
+export declare class MapSettingsComponent implements OnInit, ControlValueAccessor, Validator, OnChanges {
+    private fb;
+    private dialog;
+    private destroyRef;
+    mapControlPositions: import("@shared/models/widget/maps/map.models").MapControlsPosition[];
+    mapControlsPositionTranslationMap: Map<import("@shared/models/widget/maps/map.models").MapControlsPosition, string>;
+    mapZoomActions: import("@shared/models/widget/maps/map.models").MapZoomAction[];
+    mapZoomActionTranslationMap: Map<import("@shared/models/widget/maps/map.models").MapZoomAction, string>;
+    mapScales: import("@shared/models/widget/maps/map.models").MapScale[];
+    mapScaleTranslationMap: Map<import("@shared/models/widget/maps/map.models").MapScale, string>;
+    MapType: typeof MapType;
+    trip: boolean;
+    disabled: boolean;
+    functionsOnly: boolean;
+    aliasController: IAliasController;
+    callbacks: WidgetConfigCallbacks;
+    widget: Widget;
+    context: MapSettingsContext;
+    private modelValue;
+    private propagateChange;
+    mapSettingsFormGroup: UntypedFormGroup;
+    dataLayerMode: MapDataLayerType;
+    showDragButtonModeButtonSettings: boolean;
+    constructor(fb: UntypedFormBuilder, dialog: MatDialog, destroyRef: DestroyRef);
+    ngOnInit(): void;
+    registerOnChange(fn: any): void;
+    registerOnTouched(_fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    ngOnChanges(changes: SimpleChanges): void;
+    writeValue(value: MapSetting): void;
+    validate(_c: UntypedFormControl): {
+        mapSettings: {
+            valid: boolean;
+        };
+    };
+    private updateValidators;
+    private mapTypeChanged;
+    private updateDragButtonModeSettings;
+    private updateModel;
+    private editKey;
+    private generateDataKey;
+    static ɵfac: i0.ɵɵFactoryDeclaration<MapSettingsComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MapSettingsComponent, "tb-map-settings", never, { "trip": { "alias": "trip"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "functionsOnly": { "alias": "functionsOnly"; "required": false; }; "aliasController": { "alias": "aliasController"; "required": false; }; "callbacks": { "alias": "callbacks"; "required": false; }; "widget": { "alias": "widget"; "required": false; }; }, {}, never, never, false, never>;
+}

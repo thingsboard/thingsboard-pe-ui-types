@@ -74,6 +74,12 @@ export interface DefaultTenantProfileConfiguration {
     queueStatsTtlDays: number;
     ruleEngineExceptionsTtlDays: number;
     blobEntityTtlDays: number;
+    maxCalculatedFieldsPerEntity: number;
+    maxArgumentsPerCF: number;
+    maxDataPointsPerRollingArg: number;
+    maxStateSizeInKBytes: number;
+    maxSingleValueArgumentSizeInKBytes: number;
+    calculatedFieldDebugEventsRateLimit: string;
 }
 export type TenantProfileConfigurations = DefaultTenantProfileConfiguration;
 export interface TenantProfileConfiguration extends TenantProfileConfigurations {

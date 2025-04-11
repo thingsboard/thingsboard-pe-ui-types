@@ -41,3 +41,5 @@ export interface AceHighlightRule {
     token: string;
     next?: string;
 }
+export declare const dotOperatorHighlightRule: AceHighlightRule;
+export declare const endGroupHighlightRule: AceHighlightRule;

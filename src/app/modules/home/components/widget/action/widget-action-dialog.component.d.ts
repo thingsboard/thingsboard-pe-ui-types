@@ -1,4 +1,4 @@
-import { OnDestroy, OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 import { DialogComponent } from '@app/shared/components/dialog.component';
 import { WidgetActionCallbacks, WidgetActionDescriptorInfo, WidgetActionsData } from '@home/components/widget/action/manage-widget-actions.component.models';
 import { UtilsService } from '@core/services/utils.service';
-import { CellClickColumnInfo, WidgetActionSource, WidgetActionType, widgetType } from '@shared/models/widget.models';
+import { CellClickColumnInfo, WidgetActionSource, WidgetActionType, WidgetHeaderActionButtonType, widgetType } from '@shared/models/widget.models';
 import { WidgetService } from '@core/http/widget.service';
 import { MatSelect } from '@angular/material/select';
 import { TranslateService } from '@ngx-translate/core';
@@ -21,9 +21,11 @@ export interface WidgetActionDialogData {
     customFunctionArgs: string[];
     action?: WidgetActionDescriptorInfo;
     widgetType: widgetType;
+    defaultIconColor?: string;
+    additionalWidgetActionTypes?: WidgetActionType[];
     isEntityGroup?: boolean;
 }
-export declare class WidgetActionDialogComponent extends DialogComponent<WidgetActionDialogComponent, WidgetActionDescriptorInfo> implements OnInit, OnDestroy, ErrorStateMatcher {
+export declare class WidgetActionDialogComponent extends DialogComponent<WidgetActionDialogComponent, WidgetActionDescriptorInfo> implements OnInit, ErrorStateMatcher {
     protected store: Store<AppState>;
     protected router: Router;
     private utils;
@@ -33,23 +35,27 @@ export declare class WidgetActionDialogComponent extends DialogComponent<WidgetA
     dialogRef: MatDialogRef<WidgetActionDialogComponent, WidgetActionDescriptorInfo>;
     fb: FormBuilder;
     private translate;
-    private destroy$;
+    private destroyRef;
     widgetActionFormGroup: FormGroup;
     isAdd: boolean;
     action: WidgetActionDescriptorInfo;
     customFunctionArgs: string[];
     widgetActionTypes: WidgetActionType[];
+    defaultIconColor: string;
     customActionEditorCompleter: import("../../../../../shared/models/ace/completion.models").TbEditorCompleter;
     submitted: boolean;
     functionScopeVariables: string[];
     private isEntityGroup;
     configuredColumns: Array<CellClickColumnInfo>;
     usedCellClickColumns: Array<number>;
+    widgetHeaderActionButtonType: typeof WidgetHeaderActionButtonType;
+    widgetHeaderActionButtonTypes: WidgetHeaderActionButtonType[];
+    widgetHeaderActionButtonTypeTranslationMap: Map<WidgetHeaderActionButtonType, string>;
     columnIndexSelect: MatSelect;
     columnIndexPlaceholderText: any;
-    constructor(store: Store<AppState>, router: Router, utils: UtilsService, widgetService: WidgetService, data: WidgetActionDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<WidgetActionDialogComponent, WidgetActionDescriptorInfo>, fb: FormBuilder, translate: TranslateService);
+    constructor(store: Store<AppState>, router: Router, utils: UtilsService, widgetService: WidgetService, data: WidgetActionDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<WidgetActionDialogComponent, WidgetActionDescriptorInfo>, fb: FormBuilder, translate: TranslateService, destroyRef: DestroyRef);
     ngOnInit(): void;
-    ngOnDestroy(): void;
+    private widgetHeaderButtonValidators;
     displayShowWidgetActionForm(): boolean;
     customFunctionHelpId(): string;
     entityGroupRowClickHint(): string;
@@ -64,6 +70,6 @@ export declare class WidgetActionDialogComponent extends DialogComponent<WidgetA
     getCellClickColumnInfo(index: number, columnInfo: CellClickColumnInfo): string;
     cancel(): void;
     save(): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<WidgetActionDialogComponent, [null, null, null, null, null, { skipSelf: true; }, null, null, null]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<WidgetActionDialogComponent, [null, null, null, null, null, { skipSelf: true; }, null, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<WidgetActionDialogComponent, "tb-widget-action-dialog", never, {}, {}, never, never, false, never>;
 }

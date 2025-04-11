@@ -4,6 +4,7 @@ export declare const getDefaultProcessImageFunction: (type: WidgetMobileActionTy
 export declare const getDefaultProcessLaunchResultFunction: (type: WidgetMobileActionType) => TbFunction;
 export declare const getDefaultProcessQrCodeFunction: () => string;
 export declare const getDefaultProcessLocationFunction: () => string;
+export declare const getDefaultProvisionSuccessFunction: () => string;
 export declare const getDefaultGetLocationFunction: () => string;
 export declare const getDefaultGetPhoneNumberFunction: () => string;
 export declare const getDefaultHandleEmptyResultFunction: (type: WidgetMobileActionType) => TbFunction;

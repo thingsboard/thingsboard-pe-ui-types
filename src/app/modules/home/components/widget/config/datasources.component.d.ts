@@ -29,6 +29,7 @@ export declare class DatasourcesComponent implements ControlValueAccessor, OnIni
     hideDataKeyDecimals: boolean;
     hideDataKeys: boolean;
     hideLatestDataKeys: boolean;
+    hideAlarmFilter: boolean;
     forceSingleDatasource: boolean;
     configMode: WidgetConfigMode;
     datasourcesFormGroup: UntypedFormGroup;
@@ -36,6 +37,7 @@ export declare class DatasourcesComponent implements ControlValueAccessor, OnIni
     datasourceError: string[];
     datasourcesMode: DatasourceType;
     private propagateChange;
+    private propagateChangePending;
     constructor(fb: UntypedFormBuilder, utils: UtilsService, translate: TranslateService, widgetConfigComponent: WidgetConfigComponent, destroyRef: DestroyRef);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -72,11 +74,11 @@ export declare class DatasourcesComponent implements ControlValueAccessor, OnIni
     onDatasourceDrop(event: CdkDragDrop<string[]>): void;
     removeDatasource(index: number): void;
     addDatasource(emitEvent?: boolean): void;
-    private get dataKeySettingsSchema();
+    private get dataKeySettingsForm();
     private get dataKeySettingsFunction();
     private get dataKeysCallbacks();
     private get hasAdditionalLatestDataKeys();
     private get datasourcesOptional();
     static ɵfac: i0.ɵɵFactoryDeclaration<DatasourcesComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DatasourcesComponent, "tb-datasources", never, { "disabled": { "alias": "disabled"; "required": false; }; "hideDatasourcesMode": { "alias": "hideDatasourcesMode"; "required": false; }; "hideDatasourceLabel": { "alias": "hideDatasourceLabel"; "required": false; }; "displayDatasourceFilterForBasicMode": { "alias": "displayDatasourceFilterForBasicMode"; "required": false; }; "hideDataKeyLabel": { "alias": "hideDataKeyLabel"; "required": false; }; "hideDataKeyColor": { "alias": "hideDataKeyColor"; "required": false; }; "hideDataKeyUnits": { "alias": "hideDataKeyUnits"; "required": false; }; "hideDataKeyDecimals": { "alias": "hideDataKeyDecimals"; "required": false; }; "hideDataKeys": { "alias": "hideDataKeys"; "required": false; }; "hideLatestDataKeys": { "alias": "hideLatestDataKeys"; "required": false; }; "forceSingleDatasource": { "alias": "forceSingleDatasource"; "required": false; }; "configMode": { "alias": "configMode"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DatasourcesComponent, "tb-datasources", never, { "disabled": { "alias": "disabled"; "required": false; }; "hideDatasourcesMode": { "alias": "hideDatasourcesMode"; "required": false; }; "hideDatasourceLabel": { "alias": "hideDatasourceLabel"; "required": false; }; "displayDatasourceFilterForBasicMode": { "alias": "displayDatasourceFilterForBasicMode"; "required": false; }; "hideDataKeyLabel": { "alias": "hideDataKeyLabel"; "required": false; }; "hideDataKeyColor": { "alias": "hideDataKeyColor"; "required": false; }; "hideDataKeyUnits": { "alias": "hideDataKeyUnits"; "required": false; }; "hideDataKeyDecimals": { "alias": "hideDataKeyDecimals"; "required": false; }; "hideDataKeys": { "alias": "hideDataKeys"; "required": false; }; "hideLatestDataKeys": { "alias": "hideLatestDataKeys"; "required": false; }; "hideAlarmFilter": { "alias": "hideAlarmFilter"; "required": false; }; "forceSingleDatasource": { "alias": "forceSingleDatasource"; "required": false; }; "configMode": { "alias": "configMode"; "required": false; }; }, {}, never, never, false, never>;
 }

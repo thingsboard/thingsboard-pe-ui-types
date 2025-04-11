@@ -1,0 +1,63 @@
+import { AfterViewInit, DestroyRef, ElementRef, OnDestroy } from '@angular/core';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
+import { DialogComponent } from '@shared/components/dialog.component';
+import { ContentType } from '@shared/models/constants';
+import { JsonContentComponent } from '@shared/components/json-content.component';
+import { ScriptLanguage } from '@shared/models/rule-node.models';
+import { CalculatedFieldsService } from '@core/http/calculated-fields.service';
+import { ArgumentType, CalculatedFieldTestScriptInputParams } from '@shared/models/calculated-field.models';
+import { TbEditorCompleter } from '@shared/models/ace/completion.models';
+import { AceHighlightRules } from '@shared/models/ace/ace.models';
+import * as i0 from "@angular/core";
+export interface CalculatedFieldTestScriptDialogData extends CalculatedFieldTestScriptInputParams {
+    argumentsEditorCompleter: TbEditorCompleter;
+    argumentsHighlightRules: AceHighlightRules;
+    openCalculatedFieldEdit?: boolean;
+    readonly: boolean;
+}
+export declare class CalculatedFieldScriptTestDialogComponent extends DialogComponent<CalculatedFieldScriptTestDialogComponent, string> implements AfterViewInit, OnDestroy {
+    protected store: Store<AppState>;
+    protected router: Router;
+    data: CalculatedFieldTestScriptDialogData;
+    protected dialogRef: MatDialogRef<CalculatedFieldScriptTestDialogComponent, string>;
+    private dialog;
+    private fb;
+    private destroyRef;
+    private calculatedFieldService;
+    leftPanelElmRef: ElementRef<HTMLElement>;
+    rightPanelElmRef: ElementRef<HTMLElement>;
+    topRightPanelElmRef: ElementRef<HTMLElement>;
+    bottomRightPanelElmRef: ElementRef<HTMLElement>;
+    testScriptContainer: ElementRef<HTMLElement>;
+    expressionContent: JsonContentComponent;
+    calculatedFieldScriptTestFormGroup: import("@angular/forms").FormGroup<{
+        expression: import("@angular/forms").FormControl<string>;
+        arguments: import("@angular/forms").FormControl<any>;
+        output: import("@angular/forms").FormControl<any>;
+    }>;
+    argumentsTypeMap: Map<string, ArgumentType>;
+    readonly ContentType: typeof ContentType;
+    readonly ScriptLanguage: typeof ScriptLanguage;
+    readonly functionArgs: string[];
+    private testScriptResize;
+    private splitObjects;
+    constructor(store: Store<AppState>, router: Router, data: CalculatedFieldTestScriptDialogData, dialogRef: MatDialogRef<CalculatedFieldScriptTestDialogComponent, string>, dialog: MatDialog, fb: FormBuilder, destroyRef: DestroyRef, calculatedFieldService: CalculatedFieldsService);
+    ngAfterViewInit(): void;
+    ngOnDestroy(): void;
+    cancel(): void;
+    onTestScript(): void;
+    save(): void;
+    private testScript;
+    private checkInputParamErrors;
+    private observeResize;
+    private updateSizes;
+    private getTestArguments;
+    private getArgumentsValue;
+    private initSplitLayout;
+    static ɵfac: i0.ɵɵFactoryDeclaration<CalculatedFieldScriptTestDialogComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CalculatedFieldScriptTestDialogComponent, "tb-calculated-field-script-test-dialog", never, {}, {}, never, never, false, never>;
+}

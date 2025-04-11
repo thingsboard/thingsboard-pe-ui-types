@@ -8,7 +8,7 @@ import * as i0 from "@angular/core";
 export declare class DomainService {
     private http;
     constructor(http: HttpClient);
-    saveDomain(domain: Domain, oauth2ClientIds: Array<string>, config?: RequestConfig): Observable<Domain>;
+    saveDomain(domain: Domain, oauth2ClientIds?: Array<string>, config?: RequestConfig): Observable<Domain>;
     updateOauth2Clients(id: string, oauth2ClientIds: Array<string>, config?: RequestConfig): Observable<void>;
     getDomainInfos(pageLink: PageLink, config?: RequestConfig): Observable<PageData<DomainInfo>>;
     getDomainInfoById(id: string, config?: RequestConfig): Observable<DomainInfo>;

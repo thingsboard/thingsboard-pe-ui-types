@@ -26,6 +26,7 @@ export declare class MarkdownWidgetComponent extends PageComponent implements On
     markdownTextFunction: Observable<CompiledTbFunction<MarkdownTextFunction>>;
     markdownClass: string;
     ctx: WidgetContext;
+    data: FormattedData[];
     markdownText: string;
     additionalStyles: string[];
     applyDefaultMarkdownStyle: boolean;

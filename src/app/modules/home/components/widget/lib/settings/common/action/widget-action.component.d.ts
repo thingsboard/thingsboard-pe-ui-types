@@ -1,6 +1,6 @@
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { ElementRef, OnInit } from '@angular/core';
-import { WidgetAction, WidgetActionType, widgetType } from '@shared/models/widget.models';
+import { MapItemType, WidgetAction, WidgetActionType, widgetType } from '@shared/models/widget.models';
 import { WidgetService } from '@core/http/widget.service';
 import { WidgetActionCallbacks } from '@home/components/widget/action/manage-widget-actions.component.models';
 import { Observable } from 'rxjs';
@@ -24,9 +24,15 @@ export declare class WidgetActionComponent implements ControlValueAccessor, OnIn
     callbacks: WidgetActionCallbacks;
     customFunctionArgs: string[];
     customFunctionHelpId: string;
-    widgetActionTypes: WidgetActionType[];
+    withName: boolean;
+    actionNames: string[];
+    additionalWidgetActionTypes: import("@angular/core").InputSignal<WidgetActionType[]>;
+    widgetActionTypes: import("@angular/core").InputSignal<WidgetActionType[]>;
+    actionTypes: import("@angular/core").Signal<WidgetActionType[]>;
     widgetActionTypeTranslations: Map<WidgetActionType, string>;
     widgetActionType: typeof WidgetActionType;
+    mapItemTypes: MapItemType[];
+    mapItemTypeTranslationMap: Map<MapItemType, string>;
     allStateDisplayTypes: readonly ["normal", "separateDialog", "popover"];
     allPopoverPlacements: readonly ["top", "topLeft", "topRight", "right", "rightTop", "rightBottom", "bottom", "bottomLeft", "bottomRight", "left", "leftTop", "leftBottom"];
     WidgetType: typeof widgetType;
@@ -65,8 +71,10 @@ export declare class WidgetActionComponent implements ControlValueAccessor, OnIn
     private fetchDashboardStates;
     private createFilterForDashboardState;
     private getStateDisplayType;
+    private validateActionName;
+    private checkActionName;
     private widgetActionUpdated;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetActionComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetActionComponent, "tb-widget-action", never, { "disabled": { "alias": "disabled"; "required": false; }; "widgetType": { "alias": "widgetType"; "required": false; }; "callbacks": { "alias": "callbacks"; "required": false; }; "customFunctionArgs": { "alias": "customFunctionArgs"; "required": false; }; "customFunctionHelpId": { "alias": "customFunctionHelpId"; "required": false; }; "widgetActionTypes": { "alias": "widgetActionTypes"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetActionComponent, "tb-widget-action", never, { "disabled": { "alias": "disabled"; "required": false; }; "widgetType": { "alias": "widgetType"; "required": false; }; "callbacks": { "alias": "callbacks"; "required": false; }; "customFunctionArgs": { "alias": "customFunctionArgs"; "required": false; }; "customFunctionHelpId": { "alias": "customFunctionHelpId"; "required": false; }; "withName": { "alias": "withName"; "required": false; }; "actionNames": { "alias": "actionNames"; "required": false; }; "additionalWidgetActionTypes": { "alias": "additionalWidgetActionTypes"; "required": false; "isSignal": true; }; "widgetActionTypes": { "alias": "widgetActionTypes"; "required": false; "isSignal": true; }; }, {}, never, never, false, never>;
 }
 export {};

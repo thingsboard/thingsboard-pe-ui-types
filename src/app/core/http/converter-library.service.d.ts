@@ -8,11 +8,11 @@ export declare class ConverterLibraryService {
     private http;
     private readonly baseUrl;
     constructor(http: HttpClient);
-    getVendors(integrationType: IntegrationType, config?: RequestConfig): Observable<Vendor[]>;
+    getVendors(integrationType: IntegrationType, converterType: ConverterType, config?: RequestConfig): Observable<Vendor[]>;
     getModels(integrationType: IntegrationType, vendorName: string, converterType: ConverterType, config?: RequestConfig): Observable<Model[]>;
     getConverter(integrationType: IntegrationType, vendorName: string, modelName: string, converterType: ConverterType, config?: RequestConfig): Observable<Converter>;
-    getConverterMetaData(integrationType: IntegrationType, vendorName: string, modelName: string, converterType: ConverterType, config?: RequestConfig): Observable<Object>;
-    getConverterPayload(integrationType: IntegrationType, vendorName: string, modelName: string, converterType: ConverterType, config?: RequestConfig): Observable<Object>;
+    getConverterMetaData(integrationType: IntegrationType, vendorName: string, modelName: string, converterType: ConverterType, config?: RequestConfig): Observable<string>;
+    getConverterPayload(integrationType: IntegrationType, vendorName: string, modelName: string, converterType: ConverterType, config?: RequestConfig): Observable<string>;
     static ɵfac: i0.ɵɵFactoryDeclaration<ConverterLibraryService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<ConverterLibraryService>;
 }

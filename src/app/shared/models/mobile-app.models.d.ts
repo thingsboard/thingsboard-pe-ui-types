@@ -4,6 +4,7 @@ import { OAuth2ClientInfo, PlatformType } from '@shared/models/oauth2.models';
 import { MobileAppBundleId } from '@shared/models/id/mobile-app-bundle-id';
 import { HasTenantId } from '@shared/models/entity.models';
 import { MobileSelfRegistrationParams } from '@shared/models/self-register.models';
+export declare const WEB_URL_REGEX: RegExp;
 export interface QrCodeSettings extends HasTenantId {
     useSystemSettings: boolean;
     useDefaultApp: boolean;

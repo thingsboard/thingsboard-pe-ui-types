@@ -41,7 +41,7 @@ export declare class EntitiesTableWidgetComponent extends PageComponent implemen
     enableStickyHeader: boolean;
     enableStickyAction: boolean;
     showCellActionsMenu: boolean;
-    pageSizeOptions: any;
+    pageSizeOptions: any[];
     pageLink: EntityDataPageLink;
     sortOrderProperty: string;
     textSearchMode: boolean;

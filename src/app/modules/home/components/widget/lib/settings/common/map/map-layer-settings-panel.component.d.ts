@@ -1,0 +1,37 @@
+import { DestroyRef, EventEmitter, OnInit } from '@angular/core';
+import { TbPopoverComponent } from '@shared/components/popover.component';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { MapLayerSettings, MapProvider } from '@shared/models/widget/maps/map.models';
+import { TranslateService } from '@ngx-translate/core';
+import * as i0 from "@angular/core";
+export declare class MapLayerSettingsPanelComponent implements OnInit {
+    private fb;
+    private translate;
+    private destroyRef;
+    MapProvider: typeof MapProvider;
+    mapProviders: MapProvider[];
+    mapProviderTranslationMap: Map<MapProvider, string>;
+    openStreetLayerTypes: import("@shared/models/widget/maps/map.models").OpenStreetLayerType[];
+    openStreetMapLayerTranslationMap: Map<import("@shared/models/widget/maps/map.models").OpenStreetLayerType, string>;
+    googleMapLayerTypes: import("@shared/models/widget/maps/map.models").GoogleLayerType[];
+    googleMapLayerTranslationMap: Map<import("@shared/models/widget/maps/map.models").GoogleLayerType, string>;
+    hereLayerTypes: import("@shared/models/widget/maps/map.models").HereLayerType[];
+    hereLayerTranslationMap: Map<import("@shared/models/widget/maps/map.models").HereLayerType, string>;
+    tencentLayerTypes: import("@shared/models/widget/maps/map.models").TencentLayerType[];
+    tencentLayerTranslationMap: Map<import("@shared/models/widget/maps/map.models").TencentLayerType, string>;
+    referenceLayerTypes: import("@shared/models/widget/maps/map.models").ReferenceLayerType[];
+    referenceLayerTypeTranslationMap: Map<import("@shared/models/widget/maps/map.models").ReferenceLayerType, string>;
+    mapLayerSettings: MapLayerSettings;
+    popover: TbPopoverComponent<MapLayerSettingsPanelComponent>;
+    mapLayerSettingsApplied: EventEmitter<MapLayerSettings>;
+    layerFormGroup: UntypedFormGroup;
+    constructor(fb: UntypedFormBuilder, translate: TranslateService, destroyRef: DestroyRef);
+    ngOnInit(): void;
+    cancel(): void;
+    labelPlaceholder(): string;
+    applyLayerSettings(): void;
+    private onProviderChanged;
+    private updateValidators;
+    static ɵfac: i0.ɵɵFactoryDeclaration<MapLayerSettingsPanelComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MapLayerSettingsPanelComponent, "tb-map-layer-settings-panel", never, { "mapLayerSettings": { "alias": "mapLayerSettings"; "required": false; }; "popover": { "alias": "popover"; "required": false; }; }, { "mapLayerSettingsApplied": "mapLayerSettingsApplied"; }, never, never, false, never>;
+}

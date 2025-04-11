@@ -7,9 +7,11 @@ export declare class SchedulerEventsWidgetSettingsComponent extends WidgetSettin
     protected store: Store<AppState>;
     private fb;
     schedulerEventsWidgetSettingsForm: UntypedFormGroup;
+    pageStepSizeValues: any[];
     constructor(store: Store<AppState>, fb: UntypedFormBuilder);
     protected settingsForm(): UntypedFormGroup;
     protected defaultSettings(): WidgetSettings;
+    protected prepareInputSettings(settings: WidgetSettings): WidgetSettings;
     protected onSettingsSet(settings: WidgetSettings): void;
     protected doUpdateSettings(settingsForm: UntypedFormGroup, settings: WidgetSettings): void;
     private prepareCustomEventTypesFormArray;
@@ -18,7 +20,7 @@ export declare class SchedulerEventsWidgetSettingsComponent extends WidgetSettin
     removeCustomEventType(index: number): void;
     addCustomEventType(): void;
     protected validatorTriggers(): string[];
-    protected updateValidators(emitEvent: boolean): void;
+    protected updateValidators(emitEvent: boolean, trigger: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SchedulerEventsWidgetSettingsComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<SchedulerEventsWidgetSettingsComponent, "tb-scheduler-events-widget-settings", never, {}, {}, never, never, false, never>;
 }

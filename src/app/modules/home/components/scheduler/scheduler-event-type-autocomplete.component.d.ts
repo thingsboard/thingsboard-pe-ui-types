@@ -1,51 +1,44 @@
-import { AfterViewInit, ElementRef, OnDestroy, OnInit } from '@angular/core';
-import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
+import { ElementRef, OnInit } from '@angular/core';
+import { ControlValueAccessor, FormBuilder, FormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { Store } from '@ngrx/store';
-import { AppState } from '@app/core/core.state';
 import { TranslateService } from '@ngx-translate/core';
-import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { SchedulerEventConfigType } from '@home/components/scheduler/scheduler-event-config.models';
 import * as i0 from "@angular/core";
 interface SchedulerEventTypeInfo {
     name: string;
     value: string;
 }
-export declare class SchedulerEventTypeAutocompleteComponent implements ControlValueAccessor, OnInit, AfterViewInit, Validator, OnDestroy {
-    private store;
-    translate: TranslateService;
-    private userPermissionsService;
+export declare class SchedulerEventTypeAutocompleteComponent implements ControlValueAccessor, OnInit, Validator {
+    private translate;
     private fb;
-    schedulerEventTypeFormGroup: UntypedFormGroup;
-    modelValue: string | null;
-    private requiredValue;
-    get required(): boolean;
-    set required(value: boolean);
+    schedulerEventTypeFormGroup: FormGroup;
+    required: boolean;
     disabled: boolean;
     schedulerEventConfigTypes: {
         [eventType: string]: SchedulerEventConfigType;
     };
+    label: any;
+    placeholder: any;
     schedulerEventTypeInput: ElementRef<HTMLInputElement>;
     filteredSchedulerEventTypes: Observable<Array<SchedulerEventTypeInfo>>;
-    schedulerEventTypes: Array<SchedulerEventTypeInfo>;
     searchText: string;
     private dirty;
+    private schedulerEventTypes;
+    private modelValue;
     private propagateChange;
-    constructor(store: Store<AppState>, translate: TranslateService, userPermissionsService: UserPermissionsService, fb: UntypedFormBuilder);
+    constructor(translate: TranslateService, fb: FormBuilder);
     registerOnChange(fn: any): void;
-    registerOnTouched(fn: any): void;
+    registerOnTouched(_fn: any): void;
     ngOnInit(): void;
-    ngAfterViewInit(): void;
-    ngOnDestroy(): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: string | null): void;
     validate(): ValidationErrors | null;
     onFocus(): void;
-    updateView(value: SchedulerEventTypeInfo | string | null): void;
+    private updateView;
     displaySchedulerEventTypeFn(eventType?: SchedulerEventTypeInfo): string | undefined;
-    fetchSchedulerEventTypes(searchText?: string): Observable<Array<SchedulerEventTypeInfo>>;
+    private fetchSchedulerEventTypes;
     clear(value?: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SchedulerEventTypeAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SchedulerEventTypeAutocompleteComponent, "tb-scheduler-event-type-autocomplete", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "schedulerEventConfigTypes": { "alias": "schedulerEventConfigTypes"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SchedulerEventTypeAutocompleteComponent, "tb-scheduler-event-type-autocomplete", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "schedulerEventConfigTypes": { "alias": "schedulerEventConfigTypes"; "required": false; }; "label": { "alias": "label"; "required": false; }; "placeholder": { "alias": "placeholder"; "required": false; }; }, {}, never, never, false, never>;
 }
 export {};

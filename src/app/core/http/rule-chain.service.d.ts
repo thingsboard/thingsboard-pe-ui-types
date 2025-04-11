@@ -20,9 +20,9 @@ export declare class RuleChainService {
     private translate;
     private ruleNodeComponentsMap;
     private ruleNodeConfigComponents;
-    private ruleNodeComponentsType;
     constructor(http: HttpClient, componentDescriptorService: ComponentDescriptorService, resourcesService: ResourcesService, translate: TranslateService);
     getRuleChains(pageLink: PageLink, type?: RuleChainType, config?: RequestConfig): Observable<PageData<RuleChain>>;
+    getRuleChainsByIds(ruleChainIds: Array<string>, config?: RequestConfig): Observable<Array<RuleChain>>;
     getRuleChain(ruleChainId: string, config?: RequestConfig): Observable<RuleChain>;
     getRuleChainOutputLabels(ruleChainId: string, config?: RequestConfig): Observable<Array<string>>;
     createDefaultRuleChain(ruleChainName: string, config?: RequestConfig): Observable<RuleChain>;
@@ -41,6 +41,7 @@ export declare class RuleChainService {
     ruleNodeSourceRuleChainId(component: RuleNodeComponentDescriptor, config: RuleNodeConfiguration): string;
     getLatestRuleNodeDebugInput(ruleNodeId: string, config?: RequestConfig): Observable<DebugRuleNodeEventBody>;
     testScript(inputParams: TestScriptInputParams, scriptLang?: ScriptLanguage, config?: RequestConfig): Observable<TestScriptResult>;
+    registerSystemRuleNodeConfigModule(module: any): void;
     private loadRuleNodeComponents;
     private resolveRuleNodeComponentsUiResources;
     private resolveRuleNodeComponentUiResources;

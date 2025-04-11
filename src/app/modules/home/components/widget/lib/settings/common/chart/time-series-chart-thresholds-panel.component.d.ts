@@ -2,7 +2,7 @@ import { DestroyRef, OnInit } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { TimeSeriesChartThreshold, TimeSeriesChartYAxisId } from '@home/components/widget/lib/chart/time-series-chart.models';
 import { IAliasController } from '@core/api/widget-api.models';
-import { DataKeysCallbacks } from '@home/components/widget/config/data-keys.component.models';
+import { DataKeysCallbacks } from '@home/components/widget/lib/settings/common/key/data-keys.component.models';
 import { Datasource, WidgetConfig } from '@shared/models/widget.models';
 import * as i0 from "@angular/core";
 export declare class TimeSeriesChartThresholdsPanelComponent implements ControlValueAccessor, OnInit, Validator {

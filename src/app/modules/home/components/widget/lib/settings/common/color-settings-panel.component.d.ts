@@ -8,7 +8,7 @@ import { AppState } from '@core/core.state';
 import { WidgetService } from '@core/http/widget.service';
 import { ColorSettingsComponent } from '@home/components/widget/lib/settings/common/color-settings.component';
 import { IAliasController } from '@core/api/widget-api.models';
-import { DataKeysCallbacks } from '@home/components/widget/config/data-keys.component.models';
+import { DataKeysCallbacks } from '@home/components/widget/lib/settings/common/key/data-keys.component.models';
 import { Datasource } from '@shared/models/widget.models';
 import * as i0 from "@angular/core";
 export declare class ColorSettingsPanelComponent extends PageComponent implements OnInit {
@@ -34,6 +34,7 @@ export declare class ColorSettingsPanelComponent extends PageComponent implement
     functionScopeVariables: string[];
     constructor(fb: UntypedFormBuilder, widgetService: WidgetService, store: Store<AppState>, destroyRef: DestroyRef);
     ngOnInit(): void;
+    updateValidators(): void;
     copyColorSettings(comp: ColorSettingsComponent): void;
     cancel(): void;
     applyColorSettings(): void;
