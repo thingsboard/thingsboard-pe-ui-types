@@ -36,6 +36,7 @@ export declare class IntegrationsTableConfig extends EntityTableConfig<Integrati
     onIntegrationAction(action: EntityAction<Integration>, params: IntegrationParams): boolean;
     onOpenDebugConfig($event: Event, entity: IntegrationInfo): void;
     private openDebugEventDetails;
+    private openDetailsEventTab;
     private onDebugConfigChanged;
     private configureEntityFunctions;
     private configureIntegrationScope;
