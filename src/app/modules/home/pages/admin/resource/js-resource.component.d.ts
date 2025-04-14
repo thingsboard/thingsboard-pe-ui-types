@@ -35,7 +35,6 @@ export declare class JsResourceComponent extends EntityComponent<Resource> imple
     private observeResourceSubTypeChange;
     private onResourceSubTypeChange;
     private updateResourceSubTypeFieldsState;
-    protected readonly highlightRules: import("../../../../../shared/models/ace/ace.models").AceHighlightRules;
     static ɵfac: i0.ɵɵFactoryDeclaration<JsResourceComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<JsResourceComponent, "tb-js-resource", never, {}, {}, never, never, false, never>;
 }

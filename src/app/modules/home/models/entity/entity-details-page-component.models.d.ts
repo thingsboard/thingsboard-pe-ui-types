@@ -4,4 +4,5 @@ export interface IEntityDetailsPageComponent {
     entityComponent: EntityComponent<BaseData<HasId>>;
     onToggleEditMode(isEdit: boolean): void;
     reload(): void;
+    goBack(): void;
 }

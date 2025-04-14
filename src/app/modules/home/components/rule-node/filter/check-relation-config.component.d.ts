@@ -12,7 +12,7 @@ export declare class CheckRelationConfigComponent extends RuleNodeConfigurationC
     protected prepareInputConfig(configuration: RuleNodeConfiguration): RuleNodeConfiguration;
     protected onConfigurationSet(configuration: RuleNodeConfiguration): void;
     protected validatorTriggers(): string[];
-    protected updateValidators(emitEvent: boolean): void;
+    protected updateValidators(_emitEvent: boolean, trigger: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<CheckRelationConfigComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<CheckRelationConfigComponent, "tb-filter-node-check-relation-config", never, {}, {}, never, never, false, never>;
 }
