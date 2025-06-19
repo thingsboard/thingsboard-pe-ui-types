@@ -50,6 +50,7 @@ export declare class ValueStepperWidgetComponent extends BasicActionWidgetCompon
     private valueSetterRight;
     private leftDisabledState$;
     private rightDisabledState$;
+    private valueFormat;
     protected destroyRef: DestroyRef;
     constructor(imagePipe: ImagePipe, sanitizer: DomSanitizer, renderer: Renderer2, iconRegistry: MatIconRegistry, utils: UtilsService, elementRef: ElementRef, cd: ChangeDetectorRef, zone: NgZone);
     ngOnInit(): void;

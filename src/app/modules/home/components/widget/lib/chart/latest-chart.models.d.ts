@@ -1,5 +1,5 @@
 import { DataKey, Datasource, LegendPosition } from '@shared/models/widget.models';
-import { BackgroundSettings, Font } from '@shared/models/widget-settings.models';
+import { BackgroundSettings, Font, ValueFormatProcessor } from '@shared/models/widget-settings.models';
 import { Renderer2 } from '@angular/core';
 import { CallbackDataParams } from 'echarts/types/dist/shared';
 import { ChartAnimationSettings } from '@home/components/widget/lib/chart/chart.models';
@@ -29,6 +29,7 @@ export interface LatestChartTooltipSettings {
     showTooltip: boolean;
     tooltipValueType: LatestChartTooltipValueType;
     tooltipValueDecimals: number;
+    tooltipValueFormater: ValueFormatProcessor;
     tooltipValueFont: Font;
     tooltipValueColor: string;
     tooltipBackgroundColor: string;
@@ -53,4 +54,4 @@ export interface LatestChartWidgetSettings extends LatestChartSettings {
     padding: string;
 }
 export declare const latestChartWidgetDefaultSettings: LatestChartWidgetSettings;
-export declare const latestChartTooltipFormatter: (renderer: Renderer2, settings: LatestChartTooltipSettings, params: CallbackDataParams, units: string, total: number, dataItems: LatestChartDataItem[]) => null | HTMLElement;
+export declare const latestChartTooltipFormatter: (renderer: Renderer2, settings: LatestChartTooltipSettings, params: CallbackDataParams, total: number, dataItems: LatestChartDataItem[]) => null | HTMLElement;

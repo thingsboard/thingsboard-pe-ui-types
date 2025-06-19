@@ -75,7 +75,9 @@ export declare enum Resource {
     MOBILE_APP_BUNDLE = "MOBILE_APP_BUNDLE",
     MOBILE_APP = "MOBILE_APP",
     OAUTH2_CLIENT = "OAUTH2_CLIENT",
-    DOMAIN = "DOMAIN"
+    DOMAIN = "DOMAIN",
+    SECRET = "SECRET",
+    JOB = "JOB"
 }
 export declare const resourceTypeTranslationMap: Map<Resource, string>;
 export declare const resourceByEntityType: Map<EntityType, Resource>;

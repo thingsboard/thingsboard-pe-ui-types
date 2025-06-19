@@ -1,0 +1,37 @@
+import { OnInit, Renderer2, ViewContainerRef } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
+import { UserPermissionsService } from '@core/http/user-permissions.service';
+import { TbPopoverService } from '@shared/components/popover.service';
+import { SecretStorage } from '@shared/models/secret-storage.models';
+import { SecretStorageService } from '@core/http/secret-storage.service';
+import { CustomTranslatePipe } from '@shared/pipe/custom-translate.pipe';
+import { DialogService } from '@core/services/dialog.service';
+import * as i0 from "@angular/core";
+export declare class SecretStorageTableComponent implements OnInit {
+    private secretStorageService;
+    private userPermissionsService;
+    private translate;
+    private dialogService;
+    private dialog;
+    private store;
+    private popoverService;
+    private renderer;
+    private viewContainerRef;
+    private customTranslate;
+    readonly secretStorageTableConfig: EntityTableConfig<SecretStorage, import("../../../../shared/public-api").PageLink, SecretStorage>;
+    constructor(secretStorageService: SecretStorageService, userPermissionsService: UserPermissionsService, translate: TranslateService, dialogService: DialogService, dialog: MatDialog, store: Store<AppState>, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, customTranslate: CustomTranslatePipe);
+    ngOnInit(): void;
+    private onSecretAction;
+    private configureCellActions;
+    private changeValue;
+    private addSecret;
+    private updateSecretDescription;
+    private deleteSecret;
+    private deleteSecrets;
+    static ɵfac: i0.ɵɵFactoryDeclaration<SecretStorageTableComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SecretStorageTableComponent, "tb-secret-storage-table", never, {}, {}, never, never, false, never>;
+}

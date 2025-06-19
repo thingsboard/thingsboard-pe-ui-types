@@ -11,6 +11,7 @@ export declare class RuleNodeConfigComponent implements ControlValueAccessor, On
     private fb;
     definedConfigContainer: ViewContainerRef;
     jsonObjectEditComponent: JsonObjectEditComponent;
+    readonly styleDisplay = "block";
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);

@@ -23,6 +23,7 @@ export declare class DashboardUtilsService {
     validateAndUpdateWidgetConfig(widgetConfig: WidgetConfig | undefined, type: widgetType): WidgetConfig;
     prepareWidgetForScadaLayout(widget: Widget, isScada: boolean): Widget;
     validateAndUpdateDatasources(datasources?: Datasource[]): Datasource[];
+    getWidgetDatasources(widget: Widget): Datasource[];
     createDefaultLayoutData(): DashboardLayout;
     private createDefaultGridSettings;
     createDefaultLayouts(): DashboardStateLayouts;

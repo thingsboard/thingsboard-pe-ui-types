@@ -1,5 +1,6 @@
 import { GetValueSettings, SetValueSettings } from '@shared/models/action-widget-settings.models';
 import { BackgroundSettings, cssUnit, Font } from '@shared/models/widget-settings.models';
+import { TbUnit } from '@shared/models/unit.models';
 export declare enum SliderLayout {
     default = "default",
     extended = "extended",
@@ -15,7 +16,7 @@ export interface SliderWidgetSettings {
     layout: SliderLayout;
     autoScale: boolean;
     showValue: boolean;
-    valueUnits: string;
+    valueUnits: TbUnit;
     valueDecimals: number;
     valueFont: Font;
     valueColor: string;

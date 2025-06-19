@@ -10,6 +10,8 @@ import { CalculatedFieldsService } from '@core/http/calculated-fields.service';
 import { ImportExportService } from '@shared/import-export/import-export.service';
 import { EntityDebugSettingsService } from '@home/components/entity/debug/entity-debug-settings.service';
 import { DatePipe } from '@angular/common';
+import { TbPopoverService } from '@shared/components/popover.service';
+import { UserPermissionsService } from '@core/http/user-permissions.service';
 import * as i0 from "@angular/core";
 export declare class CalculatedFieldsTableComponent {
     private calculatedFieldsService;
@@ -22,13 +24,17 @@ export declare class CalculatedFieldsTableComponent {
     private importExportService;
     private entityDebugSettingsService;
     private destroyRef;
+    private popoverService;
+    private userPermissionsService;
     entitiesTable: EntitiesTableComponent;
     active: import("@angular/core").InputSignal<boolean>;
     entityId: import("@angular/core").InputSignal<EntityId>;
     entityName: import("@angular/core").InputSignal<string>;
+    ownerId: import("@angular/core").InputSignal<EntityId>;
     readonly: import("@angular/core").InputSignal<boolean>;
+    hideClearEventAction: import("@angular/core").InputSignal<boolean>;
     calculatedFieldsTableConfig: CalculatedFieldsTableConfig;
-    constructor(calculatedFieldsService: CalculatedFieldsService, translate: TranslateService, dialog: MatDialog, store: Store<AppState>, datePipe: DatePipe, cd: ChangeDetectorRef, renderer: Renderer2, importExportService: ImportExportService, entityDebugSettingsService: EntityDebugSettingsService, destroyRef: DestroyRef);
+    constructor(calculatedFieldsService: CalculatedFieldsService, translate: TranslateService, dialog: MatDialog, store: Store<AppState>, datePipe: DatePipe, cd: ChangeDetectorRef, renderer: Renderer2, importExportService: ImportExportService, entityDebugSettingsService: EntityDebugSettingsService, destroyRef: DestroyRef, popoverService: TbPopoverService, userPermissionsService: UserPermissionsService);
     static ɵfac: i0.ɵɵFactoryDeclaration<CalculatedFieldsTableComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CalculatedFieldsTableComponent, "tb-calculated-fields-table", never, { "active": { "alias": "active"; "required": false; "isSignal": true; }; "entityId": { "alias": "entityId"; "required": false; "isSignal": true; }; "entityName": { "alias": "entityName"; "required": false; "isSignal": true; }; "readonly": { "alias": "readonly"; "required": false; "isSignal": true; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CalculatedFieldsTableComponent, "tb-calculated-fields-table", never, { "active": { "alias": "active"; "required": false; "isSignal": true; }; "entityId": { "alias": "entityId"; "required": false; "isSignal": true; }; "entityName": { "alias": "entityName"; "required": false; "isSignal": true; }; "ownerId": { "alias": "ownerId"; "required": false; "isSignal": true; }; "readonly": { "alias": "readonly"; "required": false; "isSignal": true; }; "hideClearEventAction": { "alias": "hideClearEventAction"; "required": false; "isSignal": true; }; }, {}, never, never, false, never>;
 }

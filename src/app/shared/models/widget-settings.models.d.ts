@@ -8,6 +8,8 @@ import { Interval } from '@shared/models/time/time.models';
 import { WidgetContext } from '@home/models/widget-component.models';
 import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
 import { IWidgetSubscription, WidgetSubscriptionCallbacks } from '@core/api/widget-api.models';
+import { UnitService } from '@core/services/unit.service';
+import { TbUnit } from '@shared/models/unit.models';
 export type ComponentStyle = {
     [klass: string]: any;
 };
@@ -193,6 +195,36 @@ export declare class AutoDateFormatProcessor extends DateFormatProcessor {
     constructor($injector: Injector, settings: DateFormatSettings);
     update(ts: string | number | Date, interval?: Interval): string;
 }
+export interface ValueFormatSettings {
+    decimals?: number;
+    units?: TbUnit;
+    showZeroDecimals?: boolean;
+    ignoreUnitSymbol?: boolean;
+}
+export declare abstract class ValueFormatProcessor {
+    protected settings: ValueFormatSettings;
+    protected isDefinedDecimals: boolean;
+    protected hideZeroDecimals: boolean;
+    protected unitSymbol: string;
+    static fromSettings($injector: Injector, settings: ValueFormatSettings): ValueFormatProcessor;
+    static fromSettings(unitService: UnitService, settings: ValueFormatSettings): ValueFormatProcessor;
+    protected constructor(settings: ValueFormatSettings);
+    abstract format(value: any): string;
+    protected formatValue(value: number): string;
+}
+export declare class SimpleValueFormatProcessor extends ValueFormatProcessor {
+    protected settings: ValueFormatSettings;
+    constructor(settings: ValueFormatSettings);
+    format(value: any): string;
+}
+export declare class UnitConverterValueFormatProcessor extends ValueFormatProcessor {
+    protected unitServiceOrInjector: Injector | UnitService;
+    protected settings: ValueFormatSettings;
+    private readonly unitConverter;
+    constructor(unitServiceOrInjector: Injector | UnitService, settings: ValueFormatSettings);
+    format(value: any): string;
+}
+export declare const createValueFormatterFromSettings: (ctx: WidgetContext) => ValueFormatProcessor;
 export declare const tsToFormatTimeUnit: (ts: string | number | Date) => FormatTimeUnit;
 export declare enum BackgroundType {
     image = "image",

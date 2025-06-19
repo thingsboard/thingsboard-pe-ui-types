@@ -1,6 +1,6 @@
 import * as CanvasGauges from 'canvas-gauges';
 import { FontStyle, FontWeight } from '@home/components/widget/lib/settings.models';
-import { ColorProcessor } from '@shared/models/widget-settings.models';
+import { ColorProcessor, ValueFormatProcessor } from '@shared/models/widget-settings.models';
 import GenericOptions = CanvasGauges.GenericOptions;
 import BaseGauge = CanvasGauges.BaseGauge;
 export type GaugeType = 'arc' | 'donut' | 'horizontalBar' | 'verticalBar';
@@ -49,6 +49,7 @@ export interface CanvasDigitalGaugeOptions extends GenericOptions {
     showUnitTitle?: boolean;
     showTimestamp?: boolean;
     barColorProcessor: ColorProcessor;
+    valueFormat: ValueFormatProcessor;
 }
 interface FontHeightInfo {
     ascent?: number;

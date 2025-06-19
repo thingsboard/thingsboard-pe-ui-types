@@ -38,6 +38,7 @@ export declare class TbTimeSeriesChart {
     private barRenderSharedContext;
     private latestData;
     private onParentScroll;
+    private unitService;
     yMin$: import("rxjs").Observable<number>;
     yMax$: import("rxjs").Observable<number>;
     constructor(ctx: WidgetContext, inputSettings: DeepPartial<TimeSeriesChartSettings>, chartElement: HTMLElement, renderer: Renderer2, autoResize?: boolean);

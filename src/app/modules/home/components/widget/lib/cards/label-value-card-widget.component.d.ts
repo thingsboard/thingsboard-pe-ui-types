@@ -33,8 +33,7 @@ export declare class LabelValueCardWidgetComponent implements OnInit, AfterViewI
     iconColor: ColorProcessor;
     hasCardClickAction: boolean;
     private panelResize$;
-    private decimals;
-    private units;
+    private valueFormat;
     constructor(imagePipe: ImagePipe, sanitizer: DomSanitizer, renderer: Renderer2, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngAfterViewInit(): void;

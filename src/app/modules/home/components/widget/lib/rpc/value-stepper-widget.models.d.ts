@@ -1,6 +1,7 @@
 import { GetValueSettings, SetValueSettings } from '@shared/models/action-widget-settings.models';
 import { WidgetButtonCustomStyles } from '@shared/components/button/widget-button.models';
 import { BackgroundSettings, cssUnit, Font } from '@shared/models/widget-settings.models';
+import { TbUnit } from '@shared/models/unit.models';
 export declare enum ValueStepperType {
     simplified = "simplified",
     default = "default",
@@ -29,7 +30,7 @@ export interface ValueStepperAppearance {
     maxValueRange: number;
     valueStep: number;
     showValueBox: boolean;
-    valueUnits: string;
+    valueUnits: TbUnit;
     valueDecimals: number;
     valueFont: Font;
     valueColor: string;

@@ -1,6 +1,6 @@
 import { AfterViewInit, ChangeDetectorRef, DestroyRef, OnChanges, Renderer2, SimpleChanges, ViewContainerRef } from '@angular/core';
 import { ControlValueAccessor, FormBuilder, ValidationErrors, Validator } from '@angular/forms';
-import { ArgumentEntityType, ArgumentType, CalculatedFieldArgument, CalculatedFieldArgumentValue, CalculatedFieldType } from '@shared/models/calculated-field.models';
+import { ArgumentEntityType, ArgumentType, CalculatedFieldArgument, CalculatedFieldArgumentValue, CalculatedFieldType, CFArgumentDynamicSourceType } from '@shared/models/calculated-field.models';
 import { MatButton } from '@angular/material/button';
 import { TbPopoverService } from '@shared/components/popover.service';
 import { EntityId } from '@shared/models/id/entity-id';
@@ -23,6 +23,7 @@ export declare class CalculatedFieldArgumentsTableComponent implements ControlVa
     entityId: EntityId;
     tenantId: string;
     entityName: string;
+    ownerId: EntityId;
     calculatedFieldType: CalculatedFieldType;
     readonly: boolean;
     sort: MatSort;
@@ -37,6 +38,7 @@ export declare class CalculatedFieldArgumentsTableComponent implements ControlVa
     readonly entityTypeTranslations: Map<EntityType | import("@shared/models/entity-type.models").AliasEntityType, import("@shared/models/entity-type.models").EntityTypeTranslation>;
     readonly ArgumentTypeTranslations: Map<ArgumentType, string>;
     readonly ArgumentEntityType: typeof ArgumentEntityType;
+    readonly CFArgumentDynamicSourceType: typeof CFArgumentDynamicSourceType;
     readonly ArgumentType: typeof ArgumentType;
     readonly CalculatedFieldType: typeof CalculatedFieldType;
     readonly maxArgumentsPerCF: number;
@@ -62,7 +64,7 @@ export declare class CalculatedFieldArgumentsTableComponent implements ControlVa
     private getSortValue;
     private sortData;
     static ɵfac: i0.ɵɵFactoryDeclaration<CalculatedFieldArgumentsTableComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CalculatedFieldArgumentsTableComponent, "tb-calculated-field-arguments-table", never, { "entityId": { "alias": "entityId"; "required": false; }; "tenantId": { "alias": "tenantId"; "required": false; }; "entityName": { "alias": "entityName"; "required": false; }; "calculatedFieldType": { "alias": "calculatedFieldType"; "required": false; }; "readonly": { "alias": "readonly"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CalculatedFieldArgumentsTableComponent, "tb-calculated-field-arguments-table", never, { "entityId": { "alias": "entityId"; "required": false; }; "tenantId": { "alias": "tenantId"; "required": false; }; "entityName": { "alias": "entityName"; "required": false; }; "ownerId": { "alias": "ownerId"; "required": false; }; "calculatedFieldType": { "alias": "calculatedFieldType"; "required": false; }; "readonly": { "alias": "readonly"; "required": false; }; }, {}, never, never, false, never>;
     static ngAcceptInputType_readonly: unknown;
 }
 declare class CalculatedFieldArgumentDatasource extends TbTableDatasource<CalculatedFieldArgumentValue> {

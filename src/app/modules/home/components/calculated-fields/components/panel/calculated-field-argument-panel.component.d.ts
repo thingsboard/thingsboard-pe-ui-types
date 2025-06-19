@@ -22,6 +22,7 @@ export declare class CalculatedFieldArgumentPanelComponent implements OnInit, Af
     entityId: EntityId;
     tenantId: string;
     entityName: string;
+    ownerId: EntityId;
     calculatedFieldType: CalculatedFieldType;
     usedArgumentNames: string[];
     entityAutocomplete: EntityAutocompleteComponent;
@@ -76,5 +77,5 @@ export declare class CalculatedFieldArgumentPanelComponent implements OnInit, Af
     private forbiddenArgumentNameValidator;
     private observeUpdatePosition;
     static ɵfac: i0.ɵɵFactoryDeclaration<CalculatedFieldArgumentPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CalculatedFieldArgumentPanelComponent, "tb-calculated-field-argument-panel", never, { "buttonTitle": { "alias": "buttonTitle"; "required": false; }; "argument": { "alias": "argument"; "required": false; }; "entityId": { "alias": "entityId"; "required": false; }; "tenantId": { "alias": "tenantId"; "required": false; }; "entityName": { "alias": "entityName"; "required": false; }; "calculatedFieldType": { "alias": "calculatedFieldType"; "required": false; }; "usedArgumentNames": { "alias": "usedArgumentNames"; "required": false; }; }, { "argumentsDataApplied": "argumentsDataApplied"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CalculatedFieldArgumentPanelComponent, "tb-calculated-field-argument-panel", never, { "buttonTitle": { "alias": "buttonTitle"; "required": false; }; "argument": { "alias": "argument"; "required": false; }; "entityId": { "alias": "entityId"; "required": false; }; "tenantId": { "alias": "tenantId"; "required": false; }; "entityName": { "alias": "entityName"; "required": false; }; "ownerId": { "alias": "ownerId"; "required": false; }; "calculatedFieldType": { "alias": "calculatedFieldType"; "required": false; }; "usedArgumentNames": { "alias": "usedArgumentNames"; "required": false; }; }, { "argumentsDataApplied": "argumentsDataApplied"; }, never, never, false, never>;
 }

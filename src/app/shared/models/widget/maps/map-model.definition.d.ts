@@ -1,6 +1,6 @@
 import { EntityAliasInfo } from '@shared/models/alias.models';
 import { FilterInfo } from '@shared/models/query/query.models';
-import { WidgetExportDefinition } from '@shared/models/widget/widget-export.models';
+import { WidgetModelDefinition } from '@shared/models/widget/widget-model.definition';
 interface AliasFilterPair {
     alias?: EntityAliasInfo;
     filter?: FilterInfo;
@@ -20,5 +20,5 @@ interface MapDatasourcesInfo {
     circles?: ExportDataSourceInfo;
     additionalDataSources?: ExportDataSourceInfo;
 }
-export declare const MapExportDefinition: WidgetExportDefinition<MapDatasourcesInfo>;
+export declare const MapModelDefinition: WidgetModelDefinition<MapDatasourcesInfo>;
 export {};

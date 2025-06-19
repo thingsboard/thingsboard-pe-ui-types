@@ -27,6 +27,7 @@ export declare enum EntityType {
     TB_RESOURCE = "TB_RESOURCE",
     EDGE = "EDGE",
     OTA_PACKAGE = "OTA_PACKAGE",
+    JOB = "JOB",
     RPC = "RPC",
     QUEUE = "QUEUE",
     QUEUE_STATS = "QUEUE_STATS",
@@ -39,7 +40,8 @@ export declare enum EntityType {
     DOMAIN = "DOMAIN",
     MOBILE_APP_BUNDLE = "MOBILE_APP_BUNDLE",
     MOBILE_APP = "MOBILE_APP",
-    CALCULATED_FIELD = "CALCULATED_FIELD"
+    CALCULATED_FIELD = "CALCULATED_FIELD",
+    SECRET = "SECRET"
 }
 export declare enum AliasEntityType {
     CURRENT_CUSTOMER = "CURRENT_CUSTOMER",

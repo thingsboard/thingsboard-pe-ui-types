@@ -2,6 +2,7 @@ import { ControlValueAccessor, FormBuilder, FormControl, FormGroup, ValidationEr
 import { IntegrationForm } from '@home/components/integration/configuration/integration-form';
 import { ThingsStartHostType } from '@home/components/integration/integration.models';
 import { IntegrationCredentialType, TtnIntegration } from '@shared/models/integration.models';
+import { MqttVersion } from '@shared/models/mqtt.models';
 import * as i0 from "@angular/core";
 export declare class TtnIntegrationFormComponent extends IntegrationForm implements ControlValueAccessor, Validator {
     protected fb: FormBuilder;
@@ -12,6 +13,7 @@ export declare class TtnIntegrationFormComponent extends IntegrationForm impleme
     ThingsStartHostTypes: (string | ThingsStartHostType)[];
     ThingsStartHostTypeTranslation: Map<ThingsStartHostType, string>;
     IntegrationCredentialType: typeof IntegrationCredentialType;
+    MqttVersion: typeof MqttVersion;
     hostRegionSuffix: string;
     hideSelectVersion: boolean;
     private downlinkPattern;

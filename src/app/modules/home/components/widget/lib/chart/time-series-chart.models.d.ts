@@ -13,6 +13,7 @@ import { WidgetTimewindow } from '@shared/models/time/time.models';
 import { UtilsService } from '@core/services/utils.service';
 import { ChartAnimationSettings, ChartBarSettings, ChartFillSettings, ChartLabelPosition, ChartLineType, ChartShape } from '@home/components/widget/lib/chart/chart.models';
 import { TimeSeriesChartTooltipValueFormatFunction, TimeSeriesChartTooltipWidgetSettings } from '@home/components/widget/lib/chart/time-series-chart-tooltip.models';
+import { TbUnitConverter } from '@shared/models/unit.models';
 type TimeSeriesChartDataEntry = [number, any, number, number];
 type TimeSeriesChartDataSet = {
     name: string;
@@ -36,6 +37,7 @@ export interface TimeSeriesChartDataItem {
     yAxisIndex: number;
     option?: LineSeriesOption | CustomSeriesOption;
     barRenderContext?: BarRenderContext;
+    unitConvertor?: TbUnitConverter;
 }
 export declare const timeAxisBandWidthCalculator: TimeAxisBandWidthCalculator;
 export declare const adjustTimeAxisExtentToData: (timeAxisOption: TimeAxisBaseOption, dataItems: TimeSeriesChartDataItem[], defaultMin: number, defaultMax: number) => void;
@@ -269,6 +271,7 @@ export interface TimeSeriesChartThresholdItem {
     value: TimeSeriesChartThresholdValue;
     settings: TimeSeriesChartThreshold;
     option?: LineSeriesOption;
+    unitConvertor?: TbUnitConverter;
 }
 export interface TimeSeriesChartAxis {
     id: string;
@@ -284,7 +287,7 @@ export interface TimeSeriesChartXAxis extends TimeSeriesChartAxis {
     settings: TimeSeriesChartXAxisSettings;
     option: XAXisOption;
 }
-export declare const createTimeSeriesYAxis: (units: string, decimals: number, settings: TimeSeriesChartYAxisSettings, utils: UtilsService, darkMode: boolean) => TimeSeriesChartYAxis;
+export declare const createTimeSeriesYAxis: (units: string, decimals: number, settings: TimeSeriesChartYAxisSettings, utils: UtilsService, darkMode: boolean, unitConvertor: (x: number) => number) => TimeSeriesChartYAxis;
 export declare const createTimeSeriesXAxis: (id: string, settings: TimeSeriesChartXAxisSettings, min: number, max: number, datePipe: DatePipe, utils: UtilsService, darkMode: boolean) => TimeSeriesChartXAxis;
 export declare const createTimeSeriesVisualMapOption: (settings: TimeSeriesChartVisualMapSettings, selectedRanges: {
     [key: number]: boolean;
@@ -292,6 +295,6 @@ export declare const createTimeSeriesVisualMapOption: (settings: TimeSeriesChart
 export declare const updateXAxisTimeWindow: (option: XAXisOption, timeWindow: WidgetTimewindow) => void;
 export declare const generateChartData: (dataItems: TimeSeriesChartDataItem[], thresholdItems: TimeSeriesChartThresholdItem[], stack: boolean, noAggregation: boolean, barRenderSharedContext: BarRenderSharedContext, darkMode: boolean) => Array<LineSeriesOption | CustomSeriesOption>;
 export declare const calculateThresholdsOffset: (chart: ECharts, thresholdItems: TimeSeriesChartThresholdItem[], yAxisList: TimeSeriesChartYAxis[]) => [number, number];
-export declare const parseThresholdData: (value: any) => TimeSeriesChartThresholdValue;
+export declare const parseThresholdData: (value: any, valueConvertor?: TbUnitConverter) => TimeSeriesChartThresholdValue;
 export declare const updateDarkMode: (options: EChartsOption, xAxisList: TimeSeriesChartXAxis[], yAxisList: TimeSeriesChartYAxis[], dataItems: TimeSeriesChartDataItem[], darkMode: boolean) => EChartsOption;
 export {};

@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
-import { Lwm2mProfileConfigModels, ObjectLwM2M, ObjectIDVer } from './lwm2m-profile-config.models';
+import { Lwm2mProfileConfigModels, ObjectLwM2M, ObjectIDVer, ObserveStrategy } from './lwm2m-profile-config.models';
 import { DeviceProfileService } from '@core/http/device-profile.service';
 import { DialogService } from '@core/services/dialog.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -19,6 +19,8 @@ export declare class Lwm2mDeviceProfileTransportConfigurationComponent implement
     configurationValue: Lwm2mProfileConfigModels;
     objectIDVers: ObjectIDVer[];
     objectIDVerTranslationMap: Map<ObjectIDVer, string>;
+    observeStrategyList: ObserveStrategy[];
+    observeStrategyMap: Map<ObserveStrategy, import("./lwm2m-profile-config.models").ObserveStrategyData>;
     sortFunction: (key: string, value: object) => object;
     isAdd: boolean;
     private propagateChange;
@@ -53,6 +55,7 @@ export declare class Lwm2mDeviceProfileTransportConfigurationComponent implement
     private removeKeyNameFromJson;
     private removeAttributesFromJson;
     get clientSettingsFormGroup(): UntypedFormGroup;
+    private updateObserveStrategy;
     static ɵfac: i0.ɵɵFactoryDeclaration<Lwm2mDeviceProfileTransportConfigurationComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mDeviceProfileTransportConfigurationComponent, "tb-profile-lwm2m-device-transport-configuration", never, { "isAdd": { "alias": "isAdd"; "required": false; }; }, {}, never, never, false, never>;
 }

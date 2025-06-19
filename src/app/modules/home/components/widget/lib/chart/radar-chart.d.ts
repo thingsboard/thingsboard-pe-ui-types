@@ -10,6 +10,7 @@ export declare class TbRadarChart extends TbLatestChart<RadarChartSettings> {
     protected defaultSettings(): RadarChartSettings;
     protected prepareLatestChartOption(): void;
     protected doUpdateSeriesData(): void;
+    private findMaxDataItem;
     protected forceRedrawOnResize(): boolean;
     keyEnter(dataKey: DataKey): void;
     keyLeave(dataKey: DataKey): void;

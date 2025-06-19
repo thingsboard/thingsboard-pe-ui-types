@@ -5,9 +5,11 @@ import { ColorProcessor, ComponentStyle } from '@shared/models/widget-settings.m
 import { Observable } from 'rxjs';
 import { ImagePipe } from '@shared/pipe/image.pipe';
 import { DomSanitizer } from '@angular/platform-browser';
+import { UnitService } from '@core/services/unit.service';
 import * as i0 from "@angular/core";
 export declare class WindSpeedDirectionWidgetComponent implements OnInit, OnDestroy, AfterViewInit {
     private imagePipe;
+    private unitService;
     private sanitizer;
     private renderer;
     private cd;
@@ -22,17 +24,17 @@ export declare class WindSpeedDirectionWidgetComponent implements OnInit, OnDest
     padding: string;
     shapeResize$: ResizeObserver;
     hasCardClickAction: boolean;
-    private decimals;
-    private units;
     private drawSvgShapePending;
     private svgShape;
     private arrow;
     private centerValueTextNode;
+    private units;
+    private valueFormat;
     private windDirectionDataKey;
     private centerValueDataKey;
     private windDirection;
     private centerValueText;
-    constructor(imagePipe: ImagePipe, sanitizer: DomSanitizer, renderer: Renderer2, cd: ChangeDetectorRef);
+    constructor(imagePipe: ImagePipe, unitService: UnitService, sanitizer: DomSanitizer, renderer: Renderer2, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     ngOnDestroy(): void;

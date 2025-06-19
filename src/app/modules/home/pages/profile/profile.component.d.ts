@@ -10,6 +10,8 @@ import { HasConfirmForm } from '@core/guards/confirm-on-exit.guard';
 import { TranslateService } from '@ngx-translate/core';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from '@core/auth/auth.service';
+import { UnitSystem } from '@shared/models/unit.models';
+import { UnitService } from '@core/services/unit.service';
 import * as i0 from "@angular/core";
 export declare class ProfileComponent extends PageComponent implements OnInit, HasConfirmForm {
     protected store: Store<AppState>;
@@ -17,13 +19,15 @@ export declare class ProfileComponent extends PageComponent implements OnInit, H
     private userService;
     private authService;
     private translate;
-    fb: UntypedFormBuilder;
+    private unitService;
+    private fb;
     authorities: typeof Authority;
     profile: UntypedFormGroup;
     user: User;
     languageList: [locelCode: string, localeLanguage: string];
+    UnitSystems: UnitSystem[];
     authState: import("../../../../core/public-api").AuthState;
-    constructor(store: Store<AppState>, route: ActivatedRoute, userService: UserService, authService: AuthService, translate: TranslateService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, route: ActivatedRoute, userService: UserService, authService: AuthService, translate: TranslateService, unitService: UnitService, fb: UntypedFormBuilder);
     ngOnInit(): void;
     private buildProfileForm;
     save(): void;

@@ -61,9 +61,20 @@ export declare enum PowerMode {
 export declare const PowerModeTranslationMap: Map<PowerMode, string>;
 export declare enum ObjectIDVer {
     V1_0 = "1.0",
-    V1_1 = "1.1"
+    V1_1 = "1.1",
+    V1_2 = "1.2"
 }
 export declare const ObjectIDVerTranslationMap: Map<ObjectIDVer, string>;
+export interface ObserveStrategyData {
+    name: string;
+    description: string;
+}
+export declare enum ObserveStrategy {
+    SINGLE = "SINGLE",
+    COMPOSITE_ALL = "COMPOSITE_ALL",
+    COMPOSITE_BY_OBJECT = "COMPOSITE_BY_OBJECT"
+}
+export declare const ObserveStrategyMap: Map<ObserveStrategy, ObserveStrategyData>;
 export interface ServerSecurityConfig {
     host?: string;
     port?: number;
@@ -94,6 +105,7 @@ export interface Lwm2mProfileConfigModels {
 }
 export interface ClientLwM2mSettings {
     clientOnlyObserveAfterConnect: number;
+    useObject19ForOtaInfo?: boolean;
     fwUpdateStrategy: number;
     swUpdateStrategy: number;
     fwUpdateResource?: string;
@@ -110,6 +122,7 @@ export interface ObservableAttributes {
     telemetry: string[];
     keyName: {};
     attributeLwm2m: AttributesNameValueMap;
+    observeStrategy: ObserveStrategy;
 }
 export declare function getDefaultProfileObserveAttrConfig(): ObservableAttributes;
 export declare function getDefaultProfileClientLwM2mSettingsConfig(): ClientLwM2mSettings;

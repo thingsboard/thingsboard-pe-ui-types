@@ -16,12 +16,13 @@ import { Observable } from 'rxjs';
 import { Dashboard } from '@shared/models/dashboard.models';
 import { IAliasController } from '@core/api/widget-api.models';
 import { WidgetConfigComponentData } from '@home/models/widget-component.models';
-import { ComponentStyle, Font, TimewindowStyle } from '@shared/models/widget-settings.models';
+import { ComponentStyle, Font, TimewindowStyle, ValueFormatProcessor } from '@shared/models/widget-settings.models';
 import { EntityInfoData, HasTenantId, HasVersion } from '@shared/models/entity.models';
 import { DataKeysCallbacks, DataKeySettingsFunction } from '@home/components/widget/lib/settings/common/key/data-keys.component.models';
 import { WidgetConfigCallbacks } from '@home/components/widget/config/widget-config.component.models';
 import { TbFunction } from '@shared/models/js-function.models';
 import { FormProperty } from '@shared/models/dynamic-form.models';
+import { TbUnit } from '@shared/models/unit.models';
 import * as i0 from "@angular/core";
 export declare enum widgetType {
     timeseries = "timeseries",
@@ -96,6 +97,7 @@ export interface WidgetTypeParameters {
     dataKeySettingsFunction?: DataKeySettingsFunction;
     displayRpcMessageToast?: boolean;
     targetDeviceOptional?: boolean;
+    supportsUnitConversion?: boolean;
     additionalWidgetActionTypes?: WidgetActionType[];
 }
 export interface WidgetControllerDescriptor {
@@ -162,6 +164,7 @@ export interface LegendConfig {
     showAvg: boolean;
     showTotal: boolean;
     showLatest: boolean;
+    valueFormat: ValueFormatProcessor;
 }
 export declare const defaultLegendConfig: (wType: widgetType) => LegendConfig;
 export declare enum ComparisonResultType {
@@ -181,7 +184,7 @@ export interface KeyInfo {
     color?: string;
     funcBody?: TbFunction;
     postFuncBody?: TbFunction;
-    units?: string;
+    units?: TbUnit;
     decimals?: number;
 }
 export declare const dataKeyAggregationTypeHintTranslationMap: Map<AggregationType, string>;
@@ -286,6 +289,7 @@ export interface DatasourceData extends DataSetHolder {
 export interface LegendKey {
     dataKey: DataKey;
     dataIndex: number;
+    valueFormat: ValueFormatProcessor;
 }
 export interface LegendKeyData {
     min: string;
@@ -516,7 +520,7 @@ export interface WidgetConfig {
     widgetStyle?: ComponentStyle;
     widgetCss?: string;
     titleStyle?: ComponentStyle;
-    units?: string;
+    units?: TbUnit;
     decimals?: number;
     noDataDisplayMessage?: string;
     pageSize?: number;

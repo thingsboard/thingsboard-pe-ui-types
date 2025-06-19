@@ -1,18 +1,14 @@
 import { AfterViewInit, ChangeDetectorRef, ElementRef, OnDestroy, OnInit, Renderer2, TemplateRef } from '@angular/core';
 import { WidgetContext } from '@home/models/widget-component.models';
-import { DatePipe } from '@angular/common';
 import { ColorProcessor, ComponentStyle } from '@shared/models/widget-settings.models';
-import { WidgetComponent } from '@home/components/widget/widget.component';
 import { BatteryLevelLayout, BatteryLevelWidgetSettings } from '@home/components/widget/lib/indicator/battery-level-widget.models';
 import { Observable } from 'rxjs';
 import { ImagePipe } from '@shared/pipe/image.pipe';
 import { DomSanitizer } from '@angular/platform-browser';
 import * as i0 from "@angular/core";
 export declare class BatteryLevelWidgetComponent implements OnInit, OnDestroy, AfterViewInit {
-    private date;
     private imagePipe;
     private sanitizer;
-    private widgetComponent;
     private renderer;
     private cd;
     batteryLevelContent: ElementRef<HTMLElement>;
@@ -44,9 +40,8 @@ export declare class BatteryLevelWidgetComponent implements OnInit, OnDestroy, A
     padding: string;
     batteryBoxResize$: ResizeObserver;
     hasCardClickAction: boolean;
-    private decimals;
-    private units;
-    constructor(date: DatePipe, imagePipe: ImagePipe, sanitizer: DomSanitizer, widgetComponent: WidgetComponent, renderer: Renderer2, cd: ChangeDetectorRef);
+    private valueFormat;
+    constructor(imagePipe: ImagePipe, sanitizer: DomSanitizer, renderer: Renderer2, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     ngOnDestroy(): void;

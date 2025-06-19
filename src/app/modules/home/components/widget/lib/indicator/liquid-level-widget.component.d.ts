@@ -6,6 +6,7 @@ import { ResourcesService } from '@core/services/resources.service';
 import { TranslateService } from '@ngx-translate/core';
 import { ImagePipe } from '@shared/pipe/image.pipe';
 import { DomSanitizer } from '@angular/platform-browser';
+import { UnitService } from '@core/services/unit.service';
 import * as i0 from "@angular/core";
 export declare class LiquidLevelWidgetComponent implements OnInit {
     private imagePipe;
@@ -13,6 +14,7 @@ export declare class LiquidLevelWidgetComponent implements OnInit {
     private cd;
     private resourcesService;
     private translate;
+    private unitService;
     liquidLevelContent: ElementRef<HTMLElement>;
     ctx: WidgetContext;
     widgetTitlePanel: TemplateRef<any>;
@@ -36,9 +38,13 @@ export declare class LiquidLevelWidgetComponent implements OnInit {
     private volume;
     private tooltipContent;
     private widgetUnits;
+    private widgetUnitsSymbol;
+    private widgetUnitsConvertor;
     private volumeUnits;
+    private tooltipUnitSymbol;
+    private tooltipUnitConvertor;
     private capacityUnits;
-    constructor(imagePipe: ImagePipe, sanitizer: DomSanitizer, cd: ChangeDetectorRef, resourcesService: ResourcesService, translate: TranslateService);
+    constructor(imagePipe: ImagePipe, sanitizer: DomSanitizer, cd: ChangeDetectorRef, resourcesService: ResourcesService, translate: TranslateService, unitService: UnitService);
     ngOnInit(): void;
     private declareStyles;
     private getData;

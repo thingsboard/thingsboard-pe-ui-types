@@ -5,7 +5,6 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { WidgetConfigComponentData } from '@home/models/widget-component.models';
 import { LevelCardLayout, LiquidWidgetDataSourceType, Shapes } from '@home/components/widget/lib/indicator/liquid-level-widget.models';
-import { UnitsType } from '@shared/models/unit.models';
 import { ImageCardsSelectComponent } from '@home/components/widget/lib/settings/common/image-cards-select.component';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
@@ -35,7 +34,6 @@ export declare class LiquidLevelCardWidgetSettingsComponent extends WidgetSettin
     shapes: Shapes[];
     shapesImageMap: Map<Shapes, string>;
     ShapesTranslationMap: Map<Shapes, string>;
-    unitsType: typeof UnitsType;
     levelCardWidgetSettingsForm: FormGroup;
     valuePreviewFn: any;
     tooltipValuePreviewFn: any;

@@ -28,7 +28,9 @@ export declare class OtaUpdateComponent extends EntityComponent<OtaPackage> impl
     onPackageIdCopied(): void;
     onPackageChecksumCopied(): void;
     onPackageDirectUrlCopied(): void;
-    prepareFormValue(formValue: any): any;
+    prepareFormValue(formValue: OtaPackage & {
+        generateChecksum?: boolean;
+    }): any;
     static ɵfac: i0.ɵɵFactoryDeclaration<OtaUpdateComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<OtaUpdateComponent, "tb-ota-update", never, {}, {}, never, never, false, never>;
 }

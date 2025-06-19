@@ -13,6 +13,8 @@ import { CalculatedField } from '@shared/models/calculated-field.models';
 import { ImportExportService } from '@shared/import-export/import-export.service';
 import { EntityDebugSettingsService } from '@home/components/entity/debug/entity-debug-settings.service';
 import { DatePipe } from '@angular/common';
+import { TbPopoverService } from '@shared/components/popover.service';
+import { UserPermissionsService } from '@core/http/user-permissions.service';
 export declare class CalculatedFieldsTableConfig extends EntityTableConfig<CalculatedField> {
     private calculatedFieldsService;
     private translate;
@@ -22,16 +24,20 @@ export declare class CalculatedFieldsTableConfig extends EntityTableConfig<Calcu
     private store;
     private destroyRef;
     private renderer;
-    entityName: string;
+    private entityName;
+    private ownerId;
     private importExportService;
     private entityDebugSettingsService;
     private readonly;
+    private hideClearEventAction;
+    private popoverService;
+    private userPermissionsService;
     readonly tenantId: string;
     additionalDebugActionConfig: {
         title: any;
         action: (calculatedField: CalculatedField) => any;
     };
-    constructor(calculatedFieldsService: CalculatedFieldsService, translate: TranslateService, dialog: MatDialog, datePipe: DatePipe, entityId: EntityId, store: Store<AppState>, destroyRef: DestroyRef, renderer: Renderer2, entityName: string, importExportService: ImportExportService, entityDebugSettingsService: EntityDebugSettingsService, readonly?: boolean);
+    constructor(calculatedFieldsService: CalculatedFieldsService, translate: TranslateService, dialog: MatDialog, datePipe: DatePipe, entityId: EntityId, store: Store<AppState>, destroyRef: DestroyRef, renderer: Renderer2, entityName: string, ownerId: EntityId, importExportService: ImportExportService, entityDebugSettingsService: EntityDebugSettingsService, readonly: boolean, hideClearEventAction: boolean, popoverService: TbPopoverService, userPermissionsService: UserPermissionsService);
     private getExpressionLabel;
     fetchCalculatedFields(pageLink: PageLink): Observable<PageData<CalculatedField>>;
     onOpenDebugConfig($event: Event, calculatedField: CalculatedField): void;
@@ -43,4 +49,5 @@ export declare class CalculatedFieldsTableConfig extends EntityTableConfig<Calcu
     private updateImportedCalculatedField;
     private onDebugConfigChanged;
     private getTestScriptDialog;
+    private openReprocessing;
 }

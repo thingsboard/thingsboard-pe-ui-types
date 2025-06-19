@@ -40,8 +40,7 @@ export declare class ValueCardWidgetComponent implements OnInit, AfterViewInit, 
     padding: string;
     private panelResize$;
     private horizontal;
-    private decimals;
-    private units;
+    private valueFormat;
     constructor(imagePipe: ImagePipe, sanitizer: DomSanitizer, renderer: Renderer2, widgetComponent: WidgetComponent, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngAfterViewInit(): void;

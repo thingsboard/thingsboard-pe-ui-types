@@ -10,6 +10,7 @@ import { EntityDataListener } from '@core/api/entity-data.service';
 import { AlarmData, AlarmDataPageLink, EntityDataPageLink, KeyFilter } from '@shared/models/query/query.models';
 import { AlarmDataListener } from '@core/api/alarm-data.service';
 import { EventEmitter } from '@angular/core';
+import { TbUnit } from '@shared/models/unit.models';
 export declare class WidgetSubscription implements IWidgetSubscription {
     options: WidgetSubscriptionOptions;
     id: string;
@@ -46,7 +47,7 @@ export declare class WidgetSubscription implements IWidgetSubscription {
     stateData: boolean;
     datasourcesOptional: boolean;
     decimals: number;
-    units: string;
+    units: TbUnit;
     comparisonEnabled: boolean;
     timeForComparison: ComparisonDuration;
     comparisonCustomIntervalValue: number;

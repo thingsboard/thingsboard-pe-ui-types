@@ -5,8 +5,6 @@ import { WidgetConfigComponent } from '@home/components/widget/widget-config.com
 import { ComparisonResultType, DataKey, DatasourceType, Widget } from '@shared/models/widget.models';
 import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
 import { AggregationType } from '@shared/models/time/time.models';
-import { TranslateService } from '@ngx-translate/core';
-import { TruncatePipe } from '@shared/pipe/truncate.pipe';
 import { AggregatedValueCardKeyPosition } from '@home/components/widget/lib/cards/aggregated-value-card.models';
 import { WidgetConfigCallbacks } from '@home/components/widget/config/widget-config.component.models';
 import { FormProperty } from '@shared/models/dynamic-form.models';
@@ -15,8 +13,6 @@ export declare class AggregatedDataKeyRowComponent implements ControlValueAccess
     private fb;
     private dialog;
     private cd;
-    translate: TranslateService;
-    truncate: TruncatePipe;
     private widgetConfigComponent;
     private destroyRef;
     aggregatedValueCardKeyPositions: AggregatedValueCardKeyPosition[];
@@ -36,9 +32,8 @@ export declare class AggregatedDataKeyRowComponent implements ControlValueAccess
     get widget(): Widget;
     get latestDataKeySettingsForm(): FormProperty[];
     get latestDataKeySettingsDirective(): string;
-    get isEntityDatasource(): boolean;
     private propagateChange;
-    constructor(fb: UntypedFormBuilder, dialog: MatDialog, cd: ChangeDetectorRef, translate: TranslateService, truncate: TruncatePipe, widgetConfigComponent: WidgetConfigComponent, destroyRef: DestroyRef);
+    constructor(fb: UntypedFormBuilder, dialog: MatDialog, cd: ChangeDetectorRef, widgetConfigComponent: WidgetConfigComponent, destroyRef: DestroyRef);
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
     registerOnChange(fn: any): void;

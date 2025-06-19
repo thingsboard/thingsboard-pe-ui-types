@@ -17,6 +17,7 @@ export interface TimeSeriesChartTooltipWidgetSettings {
     tooltipValueFormatter?: string | TimeSeriesChartTooltipValueFormatFunction;
     tooltipShowDate: boolean;
     tooltipDateInterval?: boolean;
+    tooltipHideZeroValues?: boolean;
     tooltipDateFormat: DateFormatSettings;
     tooltipDateFont: Font;
     tooltipDateColor: string;

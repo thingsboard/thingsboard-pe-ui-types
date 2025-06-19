@@ -17,6 +17,7 @@ export declare class TimeSeriesChartYAxisRowComponent implements ControlValueAcc
     timeSeriesAxisPositionTranslations: Map<AxisPosition, string>;
     disabled: boolean;
     advanced: boolean;
+    supportsUnitConversion: boolean;
     axisRemoved: EventEmitter<any>;
     axisFormGroup: UntypedFormGroup;
     modelValue: TimeSeriesChartYAxisSettings;
@@ -31,5 +32,5 @@ export declare class TimeSeriesChartYAxisRowComponent implements ControlValueAcc
     private updateValidators;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesChartYAxisRowComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartYAxisRowComponent, "tb-time-series-chart-y-axis-row", never, { "disabled": { "alias": "disabled"; "required": false; }; "advanced": { "alias": "advanced"; "required": false; }; }, { "axisRemoved": "axisRemoved"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartYAxisRowComponent, "tb-time-series-chart-y-axis-row", never, { "disabled": { "alias": "disabled"; "required": false; }; "advanced": { "alias": "advanced"; "required": false; }; "supportsUnitConversion": { "alias": "supportsUnitConversion"; "required": false; }; }, { "axisRemoved": "axisRemoved"; }, never, never, false, never>;
 }

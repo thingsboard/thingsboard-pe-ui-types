@@ -1,7 +1,6 @@
 import { AfterViewInit, ChangeDetectorRef, ElementRef, OnDestroy, OnInit, Renderer2, TemplateRef } from '@angular/core';
 import { WidgetContext } from '@home/models/widget-component.models';
 import { ColorProcessor, ComponentStyle } from '@shared/models/widget-settings.models';
-import { WidgetComponent } from '@home/components/widget/widget.component';
 import { ValueChartCardLayout, ValueChartCardWidgetSettings } from '@home/components/widget/lib/cards/value-chart-card-widget.models';
 import { Observable } from 'rxjs';
 import { ImagePipe } from '@shared/pipe/image.pipe';
@@ -11,7 +10,6 @@ export declare class ValueChartCardWidgetComponent implements OnInit, AfterViewI
     private imagePipe;
     private sanitizer;
     private renderer;
-    private widgetComponent;
     private cd;
     chartElement: ElementRef;
     valueChartCardContent: ElementRef<HTMLElement>;
@@ -32,10 +30,9 @@ export declare class ValueChartCardWidgetComponent implements OnInit, AfterViewI
     private lineChartDataKey;
     private valueKey;
     private contentResize$;
-    private decimals;
-    private units;
     private valueFontSize;
-    constructor(imagePipe: ImagePipe, sanitizer: DomSanitizer, renderer: Renderer2, widgetComponent: WidgetComponent, cd: ChangeDetectorRef);
+    private valueFormat;
+    constructor(imagePipe: ImagePipe, sanitizer: DomSanitizer, renderer: Renderer2, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     ngOnDestroy(): void;

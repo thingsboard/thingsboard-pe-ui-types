@@ -63,7 +63,10 @@ export interface DefaultTenantProfileConfiguration {
     maxWsSubscriptionsPerRegularUser: number;
     maxWsSubscriptionsPerPublicUser: number;
     wsUpdatesPerSessionRateLimit: string;
-    cassandraQueryTenantRateLimitsConfiguration: string;
+    cassandraWriteQueryTenantCoreRateLimits: string;
+    cassandraReadQueryTenantCoreRateLimits: string;
+    cassandraWriteQueryTenantRuleEngineRateLimits: string;
+    cassandraReadQueryTenantRuleEngineRateLimits: string;
     edgeEventRateLimits?: string;
     edgeEventRateLimitsPerEdge?: string;
     edgeUplinkMessagesRateLimits?: string;

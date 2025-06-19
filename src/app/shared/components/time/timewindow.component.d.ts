@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, ElementRef, OnChanges, OnInit, SimpleChanges, ViewContainerRef } from '@angular/core';
+import { ChangeDetectorRef, DestroyRef, ElementRef, OnChanges, OnInit, SimpleChanges, ViewContainerRef } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { MillisecondsToTimeStringPipe } from '@shared/pipe/milliseconds-to-time-string.pipe';
@@ -17,7 +17,9 @@ export declare class TimewindowComponent implements ControlValueAccessor, OnInit
     private datePipe;
     private cd;
     private nativeElement;
-    viewContainerRef: ViewContainerRef;
+    private viewContainerRef;
+    private destroyRef;
+    panelContainer: ViewContainerRef;
     historyOnlyValue: boolean;
     set historyOnly(val: boolean);
     get historyOnly(): boolean;
@@ -42,13 +44,14 @@ export declare class TimewindowComponent implements ControlValueAccessor, OnInit
     tooltipPosition: TooltipPosition;
     timewindowStyle: TimewindowStyle;
     disabled: boolean;
+    panelMode: boolean;
     innerValue: Timewindow;
     timewindowDisabled: boolean;
     computedTimewindowStyle: TimewindowStyle;
     timewindowComponentStyle: ComponentStyle;
     timewindowIconStyle: ComponentStyle;
     private propagateChange;
-    constructor(overlay: Overlay, translate: TranslateService, timeService: TimeService, millisecondsToTimeStringPipe: MillisecondsToTimeStringPipe, datePipe: DatePipe, cd: ChangeDetectorRef, nativeElement: ElementRef, viewContainerRef: ViewContainerRef);
+    constructor(overlay: Overlay, translate: TranslateService, timeService: TimeService, millisecondsToTimeStringPipe: MillisecondsToTimeStringPipe, datePipe: DatePipe, cd: ChangeDetectorRef, nativeElement: ElementRef, viewContainerRef: ViewContainerRef, destroyRef: DestroyRef);
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
     toggleTimewindow($event: Event): void;
@@ -62,6 +65,7 @@ export declare class TimewindowComponent implements ControlValueAccessor, OnInit
     displayValue(): string;
     updateDisplayValue(): void;
     private isTimewindowDisabled;
+    private createPanel;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimewindowComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimewindowComponent, "tb-timewindow", never, { "historyOnly": { "alias": "historyOnly"; "required": false; }; "noMargin": { "alias": "noMargin"; "required": false; }; "noPadding": { "alias": "noPadding"; "required": false; }; "disablePanel": { "alias": "disablePanel"; "required": false; }; "forAllTimeEnabled": { "alias": "forAllTimeEnabled"; "required": false; }; "alwaysDisplayTypePrefix": { "alias": "alwaysDisplayTypePrefix"; "required": false; }; "quickIntervalOnly": { "alias": "quickIntervalOnly"; "required": false; }; "aggregation": { "alias": "aggregation"; "required": false; }; "timezone": { "alias": "timezone"; "required": false; }; "isToolbar": { "alias": "isToolbar"; "required": false; }; "asButton": { "alias": "asButton"; "required": false; }; "strokedButton": { "alias": "strokedButton"; "required": false; }; "flatButton": { "alias": "flatButton"; "required": false; }; "displayTimewindowValue": { "alias": "displayTimewindowValue"; "required": false; }; "hideLabel": { "alias": "hideLabel"; "required": false; }; "isEdit": { "alias": "isEdit"; "required": false; }; "tooltipPosition": { "alias": "tooltipPosition"; "required": false; }; "timewindowStyle": { "alias": "timewindowStyle"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimewindowComponent, "tb-timewindow", never, { "historyOnly": { "alias": "historyOnly"; "required": false; }; "noMargin": { "alias": "noMargin"; "required": false; }; "noPadding": { "alias": "noPadding"; "required": false; }; "disablePanel": { "alias": "disablePanel"; "required": false; }; "forAllTimeEnabled": { "alias": "forAllTimeEnabled"; "required": false; }; "alwaysDisplayTypePrefix": { "alias": "alwaysDisplayTypePrefix"; "required": false; }; "quickIntervalOnly": { "alias": "quickIntervalOnly"; "required": false; }; "aggregation": { "alias": "aggregation"; "required": false; }; "timezone": { "alias": "timezone"; "required": false; }; "isToolbar": { "alias": "isToolbar"; "required": false; }; "asButton": { "alias": "asButton"; "required": false; }; "strokedButton": { "alias": "strokedButton"; "required": false; }; "flatButton": { "alias": "flatButton"; "required": false; }; "displayTimewindowValue": { "alias": "displayTimewindowValue"; "required": false; }; "hideLabel": { "alias": "hideLabel"; "required": false; }; "isEdit": { "alias": "isEdit"; "required": false; }; "tooltipPosition": { "alias": "tooltipPosition"; "required": false; }; "timewindowStyle": { "alias": "timewindowStyle"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "panelMode": { "alias": "panelMode"; "required": false; }; }, {}, never, never, false, never>;
 }

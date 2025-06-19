@@ -4,14 +4,16 @@ import '@svgdotjs/svg.panzoom.js';
 import { GetValueSettings, SetValueSettings } from '@shared/models/action-widget-settings.models';
 import { Observer } from 'rxjs';
 import { WidgetContext } from '@home/models/widget-component.models';
-import { Font } from '@shared/models/widget-settings.models';
+import { Font, ValueFormatSettings } from '@shared/models/widget-settings.models';
 import { WidgetAction } from '@shared/models/widget.models';
 import { MatIconRegistry } from '@angular/material/icon';
 import { RafService } from '@core/services/raf.service';
 import { FormProperty } from '@shared/models/dynamic-form.models';
+import { TbUnit } from '@shared/models/unit.models';
 export interface ScadaSymbolApi {
     generateElementId: () => string;
-    formatValue: (value: any, dec?: number, units?: string, showZeroDecimals?: boolean) => string | undefined;
+    formatValue(value: any, dec?: number, units?: string, showZeroDecimals?: boolean): string | undefined;
+    formatValue(value: any, settings: ValueFormatSettings): string;
     text: (element: Element | Element[], text: string) => void;
     font: (element: Element | Element[], font: Font, color: string) => void;
     icon: (element: Element | Element[], icon: string, size?: number, color?: string, center?: boolean) => void;
@@ -19,10 +21,16 @@ export interface ScadaSymbolApi {
     cssAnimation: (element: Element) => ScadaSymbolAnimation | undefined;
     resetCssAnimation: (element: Element) => void;
     finishCssAnimation: (element: Element) => void;
+    connectorAnimation: (element: Element) => ConnectorScadaSymbolAnimation | undefined;
+    connectorAnimate: (element: Element, path: string, reversedPath: string) => ConnectorScadaSymbolAnimation;
+    resetConnectorAnimation: (element: Element) => void;
+    finishConnectorAnimation: (element: Element) => void;
     disable: (element: Element | Element[]) => void;
     enable: (element: Element | Element[]) => void;
     callAction: (event: Event, behaviorId: string, value?: any, observer?: Partial<Observer<void>>) => void;
     setValue: (valueId: string, value: any) => void;
+    unitSymbol: (unit: TbUnit) => string;
+    convertUnitValue: (value: any, unit: TbUnit) => number;
 }
 export interface ScadaSymbolContext {
     api: ScadaSymbolApi;
@@ -134,12 +142,14 @@ export declare class ScadaSymbolObject {
     private settings;
     private context;
     private cssAnimations;
+    private connectorAnimations;
     private svgShape;
     private box;
     private valueGetters;
     private valueActions;
     private valueSetters;
     private stateValueSubjects;
+    private valueProcessor;
     private readonly shapeResize$;
     private readonly destroy$;
     private scale;
@@ -156,6 +166,9 @@ export declare class ScadaSymbolObject {
     private resize;
     private onValue;
     private setValue;
+    private unitSymbol;
+    private convertUnitValue;
+    private formatValue;
     private onStateValueChanged;
     private renderState;
     private normalizeValue;
@@ -167,6 +180,10 @@ export declare class ScadaSymbolObject {
     private cssAnimation;
     private resetCssAnimation;
     private finishCssAnimation;
+    private connectorAnimate;
+    private connectorAnimation;
+    private resetConnectorAnimation;
+    private finishConnectorAnimation;
     private disableElement;
     private enableElement;
     private elements;
@@ -196,5 +213,14 @@ interface ScadaSymbolAnimation {
     relative(x: number, y: number): ScadaSymbolAnimation;
     scale(x: number, y?: number, cx?: number, cy?: number): ScadaSymbolAnimation;
     attr(attr: string | object, value?: any): ScadaSymbolAnimation;
+}
+type StrokeLineCap = 'butt' | 'round ' | 'square';
+interface ConnectorScadaSymbolAnimation {
+    play(): void;
+    stop(): void;
+    finish(): void;
+    flowAppearance(width: number, color: string, lineCap: StrokeLineCap, dashWidth: number, dashGap: number): ConnectorScadaSymbolAnimation;
+    duration(speed: number): ConnectorScadaSymbolAnimation;
+    direction(direction: boolean): ConnectorScadaSymbolAnimation;
 }
 export {};

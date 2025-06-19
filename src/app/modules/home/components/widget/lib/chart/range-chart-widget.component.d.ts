@@ -26,6 +26,7 @@ export declare class RangeChartWidgetComponent implements OnInit, OnDestroy, Aft
     visibleRangeItems: RangeItem[];
     private decimals;
     private units;
+    private unitConvertor;
     private rangeItems;
     private timeSeriesChart;
     constructor(widgetComponent: WidgetComponent, imagePipe: ImagePipe, sanitizer: DomSanitizer, renderer: Renderer2, cd: ChangeDetectorRef);

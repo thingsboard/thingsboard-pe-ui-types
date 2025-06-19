@@ -40,8 +40,7 @@ export declare class SignalStrengthWidgetComponent implements OnInit, OnDestroy,
     padding: string;
     shapeResize$: ResizeObserver;
     hasCardClickAction: boolean;
-    private decimals;
-    private units;
+    private valueFormat;
     private drawSvgShapePending;
     private svgShape;
     private bars;

@@ -59,6 +59,7 @@ export declare class DataKeyRowComponent implements ControlValueAccessor, OnInit
     get isEntityDatasource(): boolean;
     get displayUnitsOrDigits(): boolean;
     get isLatestDataKeys(): boolean;
+    get supportsUnitConversion(): boolean;
     private propagateChange;
     constructor(fb: UntypedFormBuilder, dialog: MatDialog, cd: ChangeDetectorRef, widgetConfigComponent: WidgetConfigComponent, destroyRef: DestroyRef);
     ngOnInit(): void;

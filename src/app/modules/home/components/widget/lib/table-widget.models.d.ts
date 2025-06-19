@@ -8,6 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { EntityType } from '@shared/models/entity-type.models';
 import { CompiledTbFunction, TbFunction } from '@shared/models/js-function.models';
 import { Observable } from 'rxjs';
+import type { ValueFormatProcessor } from '@shared/models/widget-settings.models';
 type ColumnVisibilityOptions = 'visible' | 'hidden' | 'hidden-mobile';
 type ColumnSelectionOptions = 'enabled' | 'disabled';
 export declare enum columnExportOptions {
@@ -77,8 +78,7 @@ export interface CellContentFunctionInfo {
 }
 export interface CellContentInfo {
     contentFunction: Observable<CellContentFunctionInfo>;
-    units?: string;
-    decimals?: number;
+    valueFormat: ValueFormatProcessor;
 }
 export type CellStyleFunction = (...args: any[]) => any;
 export interface CellStyleInfo {
@@ -119,4 +119,6 @@ export declare function noDataMessage(noDataDisplayMessage: string, defaultMessa
 export declare function constructTableCssString(widgetConfig: WidgetConfig): string;
 export declare function getHeaderTitle(dataKey: DataKey, keySettings: TableWidgetDataKeySettings, utils: UtilsService): string;
 export declare function buildPageStepSizeValues(pageStepCount: number, pageStepIncrement: number): Array<number>;
+export declare function isValidPageStepIncrement(value: number): boolean;
+export declare function isValidPageStepCount(value: number): boolean;
 export {};

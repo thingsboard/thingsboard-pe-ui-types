@@ -6,6 +6,7 @@ export declare class TbCanvasDigitalGauge {
     private localSettings;
     private ticksSourcesSubscription;
     private readonly barColorProcessor;
+    private readonly valueFormat;
     private gauge;
     private static toRadians;
     init(): void;

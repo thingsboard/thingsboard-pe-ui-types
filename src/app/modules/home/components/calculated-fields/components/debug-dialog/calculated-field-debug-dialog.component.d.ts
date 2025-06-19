@@ -12,6 +12,7 @@ export interface CalculatedFieldDebugDialogData {
     tenantId: string;
     value: CalculatedField;
     getTestScriptDialogFn: CalculatedFieldTestScriptFn;
+    hideClearEventAction: boolean;
 }
 export declare class CalculatedFieldDebugDialogComponent extends DialogComponent<CalculatedFieldDebugDialogComponent, string> implements AfterViewInit {
     protected store: Store<AppState>;

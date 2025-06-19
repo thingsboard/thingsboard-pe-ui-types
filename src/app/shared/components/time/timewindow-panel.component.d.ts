@@ -1,4 +1,4 @@
-import { InjectionToken, OnDestroy, OnInit, ViewContainerRef } from '@angular/core';
+import { EventEmitter, InjectionToken, OnDestroy, OnInit, ViewContainerRef } from '@angular/core';
 import { AggregationType, HistoryWindowType, Interval, QuickTimeInterval, RealtimeWindowType, Timewindow, TimewindowAdvancedParams, TimewindowType } from '@shared/models/time/time.models';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
@@ -18,6 +18,7 @@ export interface TimewindowPanelData {
     aggregation: boolean;
     timezone: boolean;
     isEdit: boolean;
+    panelMode: boolean;
 }
 export declare const TIMEWINDOW_PANEL_DATA: InjectionToken<any>;
 export declare class TimewindowPanelComponent extends PageComponent implements OnInit, OnDestroy {
@@ -29,12 +30,14 @@ export declare class TimewindowPanelComponent extends PageComponent implements O
     private translate;
     viewContainerRef: ViewContainerRef;
     private dialog;
+    changeTimewindow: EventEmitter<Timewindow>;
     historyOnly: boolean;
     forAllTimeEnabled: boolean;
     quickIntervalOnly: boolean;
     aggregation: boolean;
     timezone: boolean;
     isEdit: boolean;
+    panelMode: boolean;
     timewindow: Timewindow;
     timewindowForm: UntypedFormGroup;
     historyTypes: typeof HistoryWindowType;
@@ -81,6 +84,6 @@ export declare class TimewindowPanelComponent extends PageComponent implements O
     get historyAllowedAggIntervals(): Array<Interval>;
     openTimewindowConfig(): void;
     private updateTimewindowAdvancedParams;
-    static ɵfac: i0.ɵɵFactoryDeclaration<TimewindowPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimewindowPanelComponent, "tb-timewindow-panel", never, {}, {}, never, never, false, never>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<TimewindowPanelComponent, [null, { optional: true; }, null, null, null, null, null, null]>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimewindowPanelComponent, "tb-timewindow-panel", never, {}, { "changeTimewindow": "changeTimewindow"; }, never, never, false, never>;
 }

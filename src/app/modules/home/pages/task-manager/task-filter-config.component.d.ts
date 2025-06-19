@@ -1,0 +1,47 @@
+import { ElementRef, OnDestroy, TemplateRef, ViewContainerRef } from '@angular/core';
+import { ControlValueAccessor, FormBuilder } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
+import { JobFilter, JobStatus } from '@shared/models/job.models';
+import { Overlay } from '@angular/cdk/overlay';
+import { StringItemsOption } from '@shared/components/string-items-list.component';
+import { EntityType } from '@shared/models/entity-type.models';
+import { UserPermissionsService } from '@core/http/user-permissions.service';
+import * as i0 from "@angular/core";
+export declare class TaskFilterConfigComponent implements ControlValueAccessor, OnDestroy {
+    private translate;
+    private fb;
+    private overlay;
+    private nativeElement;
+    private viewContainerRef;
+    private userPermissionsService;
+    taskFilterPanel: TemplateRef<any>;
+    disabled: boolean;
+    jobStatuses: JobStatus[];
+    jobStatusTranslations: Map<JobStatus, string>;
+    jobTypes: StringItemsOption[];
+    buttonDisplayValue: any;
+    filteredEntityType: EntityType[];
+    tasksFilterConfigForm: import("@angular/forms").FormGroup<{
+        statuses: import("@angular/forms").FormControl<any>;
+        types: import("@angular/forms").FormControl<any>;
+        entities: import("@angular/forms").FormControl<any>;
+    }>;
+    private taskFilterConfig;
+    private propagateChange;
+    private tasksFilterOverlayRef;
+    private resizeWindows;
+    constructor(translate: TranslateService, fb: FormBuilder, overlay: Overlay, nativeElement: ElementRef, viewContainerRef: ViewContainerRef, userPermissionsService: UserPermissionsService);
+    ngOnDestroy(): void;
+    registerOnChange(fn: any): void;
+    registerOnTouched(_fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    writeValue(jobFilter: JobFilter): void;
+    toggleJobFilterPanel($event: Event): void;
+    update(): void;
+    cancel(): void;
+    reset(): void;
+    private updateButtonDisplayValue;
+    static ɵfac: i0.ɵɵFactoryDeclaration<TaskFilterConfigComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TaskFilterConfigComponent, "tb-task-filter-config", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
+    static ngAcceptInputType_disabled: unknown;
+}

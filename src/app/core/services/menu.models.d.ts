@@ -133,7 +133,10 @@ export declare enum MenuId {
     converter_templates = "converter_templates",
     scheduler = "scheduler",
     roles = "roles",
-    self_registration = "self_registration"
+    self_registration = "self_registration",
+    task_manager = "task_manager",
+    trendz_settings = "trendz_settings",
+    secrets = "secrets"
 }
 export declare const menuSectionMap: Map<MenuId, MenuSection>;
 export declare const defaultUserMenuMap: Map<Authority, MenuReference[]>;

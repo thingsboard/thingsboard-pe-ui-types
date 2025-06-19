@@ -22,6 +22,7 @@ export type DefaultUpdateOnlyKeys = {
     [key in IntegrationType]?: Array<string>;
 };
 export declare const converterTypeTranslationMap: Map<ConverterType, string>;
+export declare const converterTypeTitleTranslationMap: Map<ConverterType, string>;
 export type ConverterVersion = 1 | 2;
 export interface Converter extends BaseData<ConverterId>, ExportableEntity<ConverterId>, HasEntityDebugSettings {
     tenantId?: TenantId;
@@ -117,10 +118,9 @@ export declare enum ConverterSourceType {
     LIBRARY = "library",
     SKIP = "skip"
 }
-export interface ConverterLibraryValue {
+export interface ConverterLibraryInfo {
     vendor: string;
     model: string;
-    converter: Converter;
 }
 export interface Vendor {
     name: string;

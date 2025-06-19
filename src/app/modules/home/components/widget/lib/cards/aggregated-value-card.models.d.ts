@@ -1,5 +1,6 @@
-import { BackgroundSettings, ColorProcessor, ColorSettings, ComponentStyle, DateFormatSettings, Font } from '@shared/models/widget-settings.models';
+import { BackgroundSettings, ColorProcessor, ColorSettings, ComponentStyle, DateFormatSettings, Font, ValueFormatProcessor } from '@shared/models/widget-settings.models';
 import { DataEntry, DataKey, DatasourceData } from '@shared/models/widget.models';
+import { Injector } from '@angular/core';
 export interface AggregatedValueCardWidgetSettings {
     autoScale: boolean;
     showSubtitle: boolean;
@@ -38,8 +39,9 @@ export interface AggregatedValueCardValue {
     showArrow: boolean;
     upArrow: boolean;
     downArrow: boolean;
+    valueFormat: ValueFormatProcessor;
 }
-export declare const computeAggregatedCardValue: (dataKeys: DataKey[], keyName: string, position: AggregatedValueCardKeyPosition) => AggregatedValueCardValue;
+export declare const computeAggregatedCardValue: (dataKeys: DataKey[], keyName: string, position: AggregatedValueCardKeyPosition, $injector: Injector, widgetDecimal: number) => AggregatedValueCardValue;
 export declare const getTsValueByLatestDataKey: (latestData: Array<DatasourceData>, dataKey: DataKey) => DataEntry;
 export declare const aggregatedValueCardDefaultSettings: AggregatedValueCardWidgetSettings;
 export declare const aggregatedValueCardDefaultKeySettings: AggregatedValueCardKeySettings;

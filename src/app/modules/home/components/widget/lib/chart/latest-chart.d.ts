@@ -7,6 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { DataKey } from '@shared/models/widget.models';
 import * as echarts from 'echarts/core';
 import { Svg } from '@svgdotjs/svg.js';
+import { ValueFormatProcessor } from '@shared/models/widget-settings.models';
 export declare abstract class TbLatestChart<S extends LatestChartSettings> {
     protected ctx: WidgetContext;
     private readonly inputSettings;
@@ -16,8 +17,7 @@ export declare abstract class TbLatestChart<S extends LatestChartSettings> {
     private autoResize;
     private readonly shapeResize$;
     protected readonly settings: S;
-    protected readonly decimals: number;
-    protected readonly units: string;
+    protected valueFormatter: ValueFormatProcessor;
     protected total: number;
     protected totalText: string;
     protected latestChart: ECharts;
@@ -27,6 +27,7 @@ export declare abstract class TbLatestChart<S extends LatestChartSettings> {
     private legendItems;
     private itemClick;
     protected constructor(ctx: WidgetContext, inputSettings: DeepPartial<S>, chartElement: HTMLElement, renderer: Renderer2, translate: TranslateService, autoResize?: boolean);
+    private prepareValueFormat;
     private setupData;
     getLegendItems(): LatestChartLegendItem[];
     update(): void;

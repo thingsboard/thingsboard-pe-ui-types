@@ -1,4 +1,3 @@
-import { Injector } from '@angular/core';
 import { WidgetSettings, WidgetSettingsComponent } from '@shared/models/widget.models';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
@@ -7,7 +6,6 @@ import { WindSpeedDirectionLayout } from '@home/components/widget/lib/weather/wi
 import * as i0 from "@angular/core";
 export declare class WindSpeedDirectionWidgetSettingsComponent extends WidgetSettingsComponent {
     protected store: Store<AppState>;
-    private $injector;
     private fb;
     get hasCenterValue(): boolean;
     get majorTicksFontEnabled(): boolean;
@@ -17,7 +15,7 @@ export declare class WindSpeedDirectionWidgetSettingsComponent extends WidgetSet
     windSpeedDirectionLayoutImageMap: Map<WindSpeedDirectionLayout, string>;
     windSpeedDirectionWidgetSettingsForm: UntypedFormGroup;
     centerValuePreviewFn: any;
-    constructor(store: Store<AppState>, $injector: Injector, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, fb: UntypedFormBuilder);
     protected settingsForm(): UntypedFormGroup;
     protected defaultSettings(): WidgetSettings;
     protected onSettingsSet(settings: WidgetSettings): void;

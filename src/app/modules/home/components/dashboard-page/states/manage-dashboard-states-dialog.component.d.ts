@@ -15,6 +15,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { DialogService } from '@core/services/dialog.service';
 import { UtilsService } from '@core/services/utils.service';
 import { Widget } from '@shared/models/widget.models';
+import { DomSanitizer } from '@angular/platform-browser';
 import * as i0 from "@angular/core";
 export interface ManageDashboardStatesDialogData {
     states: {
@@ -49,6 +50,7 @@ export declare class ManageDashboardStatesDialogComponent extends DialogComponen
     private dialogs;
     private utils;
     private dialog;
+    private sanitizer;
     statesFormGroup: UntypedFormGroup;
     states: {
         [id: string]: DashboardState;
@@ -72,7 +74,7 @@ export declare class ManageDashboardStatesDialogComponent extends DialogComponen
         widgets: {
             [id: string]: Widget;
         };
-    }>, fb: UntypedFormBuilder, translate: TranslateService, dialogs: DialogService, utils: UtilsService, dialog: MatDialog);
+    }>, fb: UntypedFormBuilder, translate: TranslateService, dialogs: DialogService, utils: UtilsService, dialog: MatDialog, sanitizer: DomSanitizer);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     updateData(reload?: boolean): void;
@@ -89,6 +91,6 @@ export declare class ManageDashboardStatesDialogComponent extends DialogComponen
     isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     cancel(): void;
     save(): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<ManageDashboardStatesDialogComponent, [null, null, null, { skipSelf: true; }, null, null, null, null, null, null]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<ManageDashboardStatesDialogComponent, [null, null, null, { skipSelf: true; }, null, null, null, null, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<ManageDashboardStatesDialogComponent, "tb-manage-dashboard-states-dialog", never, {}, {}, never, never, false, never>;
 }

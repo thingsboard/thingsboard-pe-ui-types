@@ -33,6 +33,7 @@ export interface DataKeyConfigDialogData {
     hideDataKeyColor?: boolean;
     hideDataKeyUnits?: boolean;
     hideDataKeyDecimals?: boolean;
+    supportsUnitConversion?: boolean;
 }
 export declare class DataKeyConfigDialogComponent extends DialogComponent<DataKeyConfigDialogComponent, DataKey> implements OnInit, ErrorStateMatcher {
     protected store: Store<AppState>;

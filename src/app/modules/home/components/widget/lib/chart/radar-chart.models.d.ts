@@ -21,6 +21,7 @@ export interface RadarChartSettings extends LatestChartSettings {
     labelFont: Font;
     labelColor: string;
     fillAreaSettings: ChartFillSettings;
+    normalizeAxes: boolean;
     axisShowLabel: boolean;
     axisLabelFont: Font;
     axisShowTickLabels: boolean;

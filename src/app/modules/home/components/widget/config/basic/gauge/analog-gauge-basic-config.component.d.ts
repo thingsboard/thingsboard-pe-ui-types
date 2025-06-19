@@ -14,6 +14,7 @@ export declare class GaugeBasicConfigComponent extends BasicWidgetConfigComponen
     colorType: typeof ColorType;
     radialGaugeWidgetConfigForm: UntypedFormGroup;
     valuePreviewFn: any;
+    unitsPreviewFn: any;
     constructor(store: Store<AppState>, widgetConfigComponent: WidgetConfigComponent, fb: UntypedFormBuilder);
     protected configForm(): UntypedFormGroup;
     protected setupDefaults(configData: WidgetConfigComponentData): void;
@@ -24,4 +25,5 @@ export declare class GaugeBasicConfigComponent extends BasicWidgetConfigComponen
     private getCardButtons;
     private setCardButtons;
     private _valuePreviewFn;
+    private _unitsPreviewFn;
 }

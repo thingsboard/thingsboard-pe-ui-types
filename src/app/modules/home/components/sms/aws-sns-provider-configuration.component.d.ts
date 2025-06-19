@@ -13,6 +13,7 @@ export declare class AwsSnsProviderConfigurationComponent implements ControlValu
     get required(): boolean;
     set required(value: boolean);
     disabled: boolean;
+    isRuleNode: boolean;
     private propagateChange;
     constructor(store: Store<AppState>, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     registerOnChange(fn: any): void;
@@ -22,5 +23,6 @@ export declare class AwsSnsProviderConfigurationComponent implements ControlValu
     writeValue(value: AwsSnsSmsProviderConfiguration | null): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<AwsSnsProviderConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AwsSnsProviderConfigurationComponent, "tb-aws-sns-provider-configuration", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AwsSnsProviderConfigurationComponent, "tb-aws-sns-provider-configuration", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "isRuleNode": { "alias": "isRuleNode"; "required": false; }; }, {}, never, never, false, never>;
+    static ngAcceptInputType_isRuleNode: unknown;
 }

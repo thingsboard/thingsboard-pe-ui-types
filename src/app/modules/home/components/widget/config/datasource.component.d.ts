@@ -35,6 +35,7 @@ export declare class DatasourceComponent implements ControlValueAccessor, OnInit
     get latestDataKeySettingsForm(): FormProperty[];
     get latestDataKeySettingsDirective(): string;
     get dataKeySettingsFunction(): DataKeySettingsFunction;
+    get supportsUnitConversion(): boolean;
     get dashboard(): Dashboard;
     get widget(): Widget;
     get hideDatasourceLabel(): boolean;

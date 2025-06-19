@@ -33,6 +33,7 @@ export type PropertyConditionFunction = (property: FormProperty, model: any) => 
 export interface FormPropertyBase {
     id: string;
     name: string;
+    hint?: string;
     group?: string;
     type: FormPropertyType;
     default: any;
@@ -94,7 +95,10 @@ export interface FormHtmlSection extends FormPropertyBase {
     htmlClassList?: string[];
     htmlContent?: string;
 }
-export type FormProperty = FormPropertyBase & FormTextareaProperty & FormNumberProperty & FormSelectProperty & FormRadiosProperty & FormDateTimeProperty & FormJavascriptProperty & FormMarkdownProperty & FormFieldSetProperty & FormArrayProperty & FormHtmlSection;
+export interface FormUnitProperty extends FormPropertyBase {
+    supportsUnitConversion?: boolean;
+}
+export type FormProperty = FormPropertyBase & FormTextareaProperty & FormNumberProperty & FormSelectProperty & FormRadiosProperty & FormDateTimeProperty & FormJavascriptProperty & FormMarkdownProperty & FormFieldSetProperty & FormArrayProperty & FormHtmlSection & FormUnitProperty;
 export declare const cleanupFormProperties: (properties: FormProperty[]) => FormProperty[];
 export declare const cleanupFormProperty: (property: FormProperty) => FormProperty;
 export declare enum FormPropertyContainerType {
@@ -110,6 +114,7 @@ export interface FormPropertyContainerBase {
     visible: boolean;
 }
 export interface FormPropertyRow extends FormPropertyContainerBase {
+    hint?: string;
     properties?: FormProperty[];
     switch?: FormProperty;
     rowClass?: string;

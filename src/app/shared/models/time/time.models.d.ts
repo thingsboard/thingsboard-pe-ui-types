@@ -221,3 +221,7 @@ export declare const calculateAggIntervalWithSubscriptionTimeWindow: (subsTw: Su
 export declare const calculateAggIntervalWithWidgetTimeWindow: (widgetTimeWindow: WidgetTimewindow, timestamp: number) => [number, number];
 export declare const calculateInterval: (startTime: number, endTime: number, interval: Interval, tsOffset: number, timezone: string, timestamp: number) => [number, number];
 export declare const getCurrentTimeForComparison: (timeForComparison: moment_.unitOfTime.DurationConstructor, tz?: string) => moment_.Moment;
+export declare const getTimePageLinkInterval: (timewindow: Timewindow) => {
+    startTime?: number;
+    endTime?: number;
+};

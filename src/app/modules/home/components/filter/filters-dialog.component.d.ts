@@ -1,9 +1,8 @@
-import { OnInit } from '@angular/core';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, FormGroupDirective, NgForm } from '@angular/forms';
+import { FormGroupDirective, NgForm, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DialogComponent } from '@app/shared/components/dialog.component';
 import { Widget } from '@shared/models/widget.models';
@@ -22,7 +21,7 @@ export interface FiltersDialogData {
     singleFilter?: Filter;
     customTitle?: string;
 }
-export declare class FiltersDialogComponent extends DialogComponent<FiltersDialogComponent, Filters> implements OnInit, ErrorStateMatcher {
+export declare class FiltersDialogComponent extends DialogComponent<FiltersDialogComponent, Filters> implements ErrorStateMatcher {
     protected store: Store<AppState>;
     protected router: Router;
     data: FiltersDialogData;
@@ -45,7 +44,6 @@ export declare class FiltersDialogComponent extends DialogComponent<FiltersDialo
     constructor(store: Store<AppState>, router: Router, data: FiltersDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<FiltersDialogComponent, Filters>, fb: UntypedFormBuilder, utils: UtilsService, dashboardUtils: DashboardUtilsService, translate: TranslateService, dialogs: DialogService, dialog: MatDialog);
     private createFilterFormControl;
     filtersFormArray(): UntypedFormArray;
-    ngOnInit(): void;
     isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     removeFilter(index: number): void;
     private getNextDuplicatedName;

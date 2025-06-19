@@ -24,6 +24,8 @@ export declare function isBoolean(value: any): boolean;
 export declare function isString(value: any): boolean;
 export declare function isArray(value: any): boolean;
 export declare function isLiteralObject(value: any): boolean;
+export declare const isDate: (obj: any) => boolean;
+export declare const isFile: (obj: any) => boolean;
 export declare const formatValue: (value: any, dec?: number, units?: string, showZeroDecimals?: boolean) => string | undefined;
 export declare const formatNumberValue: (value: any, dec?: number) => number | undefined;
 export declare function objectValues(obj: any): any[];

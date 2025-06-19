@@ -42,10 +42,11 @@ export declare class SignupComponent extends PageComponent {
     constructor(store: Store<AppState>, router: Router, authService: AuthService, signupService: SignupService, wl: WhiteLabelingService, selfRegistrationService: SelfRegistrationService, dialogService: DialogService, translate: TranslateService, reCaptchaV3Service: ReCaptchaV3Service, dialog: MatDialog, fb: FormBuilder);
     signUp(): void;
     private executeSignup;
-    promptToResendEmailVerification(): void;
-    validateSignUpRequest(): boolean;
+    private promptToResendEmailVerification;
+    private validateSignUpRequest;
     openPrivacyPolicy($event: Event): void;
     openTermsOfUse($event: Event): void;
+    private get emailToURLParam();
     static ɵfac: i0.ɵɵFactoryDeclaration<SignupComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<SignupComponent, "tb-signup", never, {}, {}, never, never, false, never>;
 }

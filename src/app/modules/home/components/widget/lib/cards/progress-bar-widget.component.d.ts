@@ -1,6 +1,5 @@
 import { AfterViewInit, ChangeDetectorRef, ElementRef, OnDestroy, OnInit, Renderer2, TemplateRef } from '@angular/core';
 import { WidgetContext } from '@home/models/widget-component.models';
-import { DatePipe } from '@angular/common';
 import { ColorProcessor, ComponentStyle } from '@shared/models/widget-settings.models';
 import { WidgetComponent } from '@home/components/widget/widget.component';
 import { ProgressBarLayout, ProgressBarWidgetSettings } from './progress-bar-widget.models';
@@ -9,7 +8,6 @@ import { ImagePipe } from '@shared/pipe/image.pipe';
 import { DomSanitizer } from '@angular/platform-browser';
 import * as i0 from "@angular/core";
 export declare class ProgressBarWidgetComponent implements OnInit, OnDestroy, AfterViewInit {
-    private date;
     private imagePipe;
     private sanitizer;
     private widgetComponent;
@@ -37,10 +35,9 @@ export declare class ProgressBarWidgetComponent implements OnInit, OnDestroy, Af
     backgroundStyle$: Observable<ComponentStyle>;
     overlayStyle: ComponentStyle;
     padding: string;
-    progressBarPanelResize$: ResizeObserver;
-    private decimals;
-    private units;
-    constructor(date: DatePipe, imagePipe: ImagePipe, sanitizer: DomSanitizer, widgetComponent: WidgetComponent, renderer: Renderer2, cd: ChangeDetectorRef);
+    private progressBarPanelResize$;
+    private valueFormat;
+    constructor(imagePipe: ImagePipe, sanitizer: DomSanitizer, widgetComponent: WidgetComponent, renderer: Renderer2, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     ngOnDestroy(): void;

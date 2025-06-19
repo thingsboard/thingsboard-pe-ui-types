@@ -7,6 +7,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { UtilsService } from '@core/services/utils.service';
 import { SliderLayout, SliderWidgetSettings } from '@home/components/widget/lib/rpc/slider-widget.models';
 import { WidgetComponent } from '@home/components/widget/widget.component';
+import { UnitService } from '@core/services/unit.service';
 import * as i0 from "@angular/core";
 export declare class SliderWidgetComponent extends BasicActionWidgetComponent implements OnInit, AfterViewInit, OnDestroy {
     protected imagePipe: ImagePipe;
@@ -16,6 +17,7 @@ export declare class SliderWidgetComponent extends BasicActionWidgetComponent im
     private widgetComponent;
     protected cd: ChangeDetectorRef;
     private elementRef;
+    private unitService;
     sliderContent: ElementRef<HTMLElement>;
     sliderValueContainer: ElementRef<HTMLElement>;
     sliderValue: ElementRef<HTMLElement>;
@@ -45,14 +47,17 @@ export declare class SliderWidgetComponent extends BasicActionWidgetComponent im
     rightIconStyle: ComponentStyle;
     showTicks: boolean;
     ticksStyle: ComponentStyle;
+    tickMinText: number;
+    tickMaxText: number;
     sliderStep: number;
     autoScale: boolean;
     showWidgetTitlePanel: boolean;
     sliderValueText: any;
     private panelResize$;
     private valueSetter;
+    private valueFormat;
     private sliderCssClass;
-    constructor(imagePipe: ImagePipe, sanitizer: DomSanitizer, renderer: Renderer2, utils: UtilsService, widgetComponent: WidgetComponent, cd: ChangeDetectorRef, elementRef: ElementRef);
+    constructor(imagePipe: ImagePipe, sanitizer: DomSanitizer, renderer: Renderer2, utils: UtilsService, widgetComponent: WidgetComponent, cd: ChangeDetectorRef, elementRef: ElementRef, unitService: UnitService);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     ngOnDestroy(): void;

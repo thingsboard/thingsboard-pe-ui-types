@@ -15,6 +15,7 @@ export declare class TimeSeriesChartThresholdsPanelComponent implements ControlV
     widgetConfig: WidgetConfig;
     yAxisIds: TimeSeriesChartYAxisId[];
     hideYAxis: boolean;
+    supportsUnitConversion: boolean;
     thresholdsFormGroup: UntypedFormGroup;
     private propagateChange;
     constructor(fb: UntypedFormBuilder, destroyRef: DestroyRef);
@@ -37,5 +38,5 @@ export declare class TimeSeriesChartThresholdsPanelComponent implements ControlV
     private updateLatestDataKeys;
     private isThresholdKey;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesChartThresholdsPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartThresholdsPanelComponent, "tb-time-series-chart-thresholds-panel", never, { "disabled": { "alias": "disabled"; "required": false; }; "aliasController": { "alias": "aliasController"; "required": false; }; "dataKeyCallbacks": { "alias": "dataKeyCallbacks"; "required": false; }; "datasource": { "alias": "datasource"; "required": false; }; "widgetConfig": { "alias": "widgetConfig"; "required": false; }; "yAxisIds": { "alias": "yAxisIds"; "required": false; }; "hideYAxis": { "alias": "hideYAxis"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartThresholdsPanelComponent, "tb-time-series-chart-thresholds-panel", never, { "disabled": { "alias": "disabled"; "required": false; }; "aliasController": { "alias": "aliasController"; "required": false; }; "dataKeyCallbacks": { "alias": "dataKeyCallbacks"; "required": false; }; "datasource": { "alias": "datasource"; "required": false; }; "widgetConfig": { "alias": "widgetConfig"; "required": false; }; "yAxisIds": { "alias": "yAxisIds"; "required": false; }; "hideYAxis": { "alias": "hideYAxis"; "required": false; }; "supportsUnitConversion": { "alias": "supportsUnitConversion"; "required": false; }; }, {}, never, never, false, never>;
 }

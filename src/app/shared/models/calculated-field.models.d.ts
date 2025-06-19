@@ -8,6 +8,7 @@ import { AliasFilterType } from '@shared/models/alias.models';
 import { Observable } from 'rxjs';
 import { TbEditorCompleter } from '@shared/models/ace/completion.models';
 import { AceHighlightRules } from '@shared/models/ace/ace.models';
+import { JobStatus } from '@shared/models/job.models';
 export interface CalculatedField extends Omit<BaseData<CalculatedFieldId>, 'label'>, HasVersion, HasEntityDebugSettings, HasTenantId, ExportableEntity<CalculatedFieldId> {
     configuration: CalculatedFieldConfiguration;
     type: CalculatedFieldType;
@@ -35,7 +36,8 @@ export declare enum ArgumentEntityType {
     Device = "DEVICE",
     Asset = "ASSET",
     Customer = "CUSTOMER",
-    Tenant = "TENANT"
+    Tenant = "TENANT",
+    Owner = "CURRENT_OWNER"
 }
 export declare const ArgumentEntityTypeTranslations: Map<ArgumentEntityType, string>;
 export declare enum ArgumentType {
@@ -54,10 +56,14 @@ export declare enum OutputType {
 }
 export declare const OutputTypeTranslations: Map<OutputType, string>;
 export declare const ArgumentTypeTranslations: Map<ArgumentType, string>;
+export declare enum CFArgumentDynamicSourceType {
+    CURRENT_OWNER = "CURRENT_OWNER"
+}
 export interface CalculatedFieldArgument {
     refEntityKey: RefEntityKey;
     defaultValue?: string;
     refEntityId?: RefEntityId;
+    refDynamicSource?: CFArgumentDynamicSourceType;
     limit?: number;
     timeWindow?: number;
 }
@@ -118,6 +124,11 @@ export interface CalculatedFieldRollingTelemetryArgumentValue<ValueType = unknow
         endTs: number;
     };
     values: CalculatedFieldSingleArgumentValue<ValueType>[];
+}
+export interface CalculatedFieldReprocessingValidation {
+    isValid: boolean;
+    message: string;
+    lastJobStatus: JobStatus;
 }
 export type CalculatedFieldSingleArgumentValue<ValueType = unknown> = CalculatedFieldAttributeArgumentValue<ValueType> & CalculatedFieldLatestTelemetryArgumentValue<ValueType>;
 export type CalculatedFieldArgumentEventValue<ValueType = unknown> = CalculatedFieldAttributeArgumentValue<ValueType> | CalculatedFieldLatestTelemetryArgumentValue<ValueType> | CalculatedFieldRollingTelemetryArgumentValue<ValueType>;

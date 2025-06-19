@@ -15,6 +15,7 @@ import { ExceptionData } from '@shared/models/error.models';
 import { WidgetComponentService } from './widget-component.service';
 import { Timewindow } from '@shared/models/time/time.models';
 import { CancelAnimationFrame, RafService } from '@core/services/raf.service';
+import { UnitService } from '@core/services/unit.service';
 import { DashboardService } from '@core/http/dashboard.service';
 import { EntityService } from '@core/http/entity.service';
 import { DatePipe } from '@angular/common';
@@ -57,6 +58,7 @@ export declare class WidgetComponent extends PageComponent implements OnInit, On
     private dashboardUtils;
     private mobileService;
     private raf;
+    private unitService;
     private ngZone;
     private cd;
     private http;
@@ -95,7 +97,7 @@ export declare class WidgetComponent extends PageComponent implements OnInit, On
     private widgetResize$;
     private cssParser;
     private rxSubscriptions;
-    constructor(store: Store<AppState>, route: ActivatedRoute, router: Router, widgetComponentService: WidgetComponentService, elementRef: ElementRef, injector: Injector, dialog: MatDialog, renderer: Renderer2, popoverService: TbPopoverService, embedDashboardDialogComponent: ComponentType<any>, dashboardPageComponent: ComponentType<any>, modulesMap: IModulesMap, resources: ResourcesService, timeService: TimeService, deviceService: DeviceService, entityService: EntityService, dashboardService: DashboardService, importExport: ImportExportService, entityDataService: EntityDataService, alarmDataService: AlarmDataService, translate: TranslateService, utils: UtilsService, datePipe: DatePipe, dashboardUtils: DashboardUtilsService, mobileService: MobileService, raf: RafService, ngZone: NgZone, cd: ChangeDetectorRef, http: HttpClient);
+    constructor(store: Store<AppState>, route: ActivatedRoute, router: Router, widgetComponentService: WidgetComponentService, elementRef: ElementRef, injector: Injector, dialog: MatDialog, renderer: Renderer2, popoverService: TbPopoverService, embedDashboardDialogComponent: ComponentType<any>, dashboardPageComponent: ComponentType<any>, modulesMap: IModulesMap, resources: ResourcesService, timeService: TimeService, deviceService: DeviceService, entityService: EntityService, dashboardService: DashboardService, importExport: ImportExportService, entityDataService: EntityDataService, alarmDataService: AlarmDataService, translate: TranslateService, utils: UtilsService, datePipe: DatePipe, dashboardUtils: DashboardUtilsService, mobileService: MobileService, raf: RafService, unitService: UnitService, ngZone: NgZone, cd: ChangeDetectorRef, http: HttpClient);
     ngOnInit(): void;
     headerButtonStyle(buttonType: WidgetHeaderActionButtonType, customButtonStyle: {
         [key: string]: string;
@@ -144,6 +146,6 @@ export declare class WidgetComponent extends PageComponent implements OnInit, On
     private widgetExportDateFormat;
     private getActiveEntityInfo;
     private checkSize;
-    static ɵfac: i0.ɵɵFactoryDeclaration<WidgetComponent, [null, null, null, null, null, null, null, null, null, null, null, { optional: true; }, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<WidgetComponent, [null, null, null, null, null, null, null, null, null, null, null, { optional: true; }, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<WidgetComponent, "tb-widget", never, { "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; "widgetHeaderActionsPanel": { "alias": "widgetHeaderActionsPanel"; "required": false; }; "isEdit": { "alias": "isEdit"; "required": false; }; "isPreview": { "alias": "isPreview"; "required": false; }; "isMobile": { "alias": "isMobile"; "required": false; }; "dashboardWidget": { "alias": "dashboardWidget"; "required": false; }; "widget": { "alias": "widget"; "required": false; }; }, {}, never, never, false, never>;
 }

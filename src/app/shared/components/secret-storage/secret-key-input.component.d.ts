@@ -1,0 +1,38 @@
+import { DestroyRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { PageComponent } from '@shared/components/page.component';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { SecretStorageService } from '@core/http/secret-storage.service';
+import { UserPermissionsService } from '@core/http/user-permissions.service';
+import * as i0 from "@angular/core";
+export declare class SecretKeyInputComponent extends PageComponent implements OnInit, ControlValueAccessor, OnChanges {
+    private secretStorageService;
+    private userPermissionsService;
+    private dialog;
+    private fb;
+    private destroyRef;
+    label: string;
+    requiredText: string;
+    required: boolean;
+    disabled: boolean;
+    readonly: boolean;
+    secretStorageKey: string;
+    private modelValue;
+    private propagateChange;
+    secretKeyFormGroup: UntypedFormGroup;
+    constructor(secretStorageService: SecretStorageService, userPermissionsService: UserPermissionsService, dialog: MatDialog, fb: UntypedFormBuilder, destroyRef: DestroyRef);
+    ngOnInit(): void;
+    ngOnChanges(changes: SimpleChanges): void;
+    private updateValidators;
+    registerOnChange(fn: any): void;
+    registerOnTouched(fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    writeValue(value: string): void;
+    private updateModel;
+    remove($event: Event): void;
+    openSecretKeyDialog($event: Event): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<SecretKeyInputComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SecretKeyInputComponent, "tb-secret-key-input", never, { "label": { "alias": "label"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "readonly": { "alias": "readonly"; "required": false; }; }, {}, never, never, false, never>;
+    static ngAcceptInputType_required: unknown;
+    static ngAcceptInputType_readonly: unknown;
+}

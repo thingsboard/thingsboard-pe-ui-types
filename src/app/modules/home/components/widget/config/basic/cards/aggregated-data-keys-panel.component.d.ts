@@ -1,17 +1,12 @@
-import { ChangeDetectorRef, DestroyRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { DestroyRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
 import { WidgetConfigComponent } from '@home/components/widget/widget-config.component';
-import { DataKey, DatasourceType, widgetType } from '@shared/models/widget.models';
+import { DataKey, DatasourceType } from '@shared/models/widget.models';
 import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
-import { UtilsService } from '@core/services/utils.service';
 import { DataKeysCallbacks } from '@home/components/widget/lib/settings/common/key/data-keys.component.models';
 import * as i0 from "@angular/core";
 export declare class AggregatedDataKeysPanelComponent implements ControlValueAccessor, OnInit, OnChanges {
     private fb;
-    private dialog;
-    private cd;
-    private utils;
     private widgetConfigComponent;
     private destroyRef;
     disabled: boolean;
@@ -19,11 +14,9 @@ export declare class AggregatedDataKeysPanelComponent implements ControlValueAcc
     keyName: string;
     dataKeyType: DataKeyType;
     keysListFormGroup: UntypedFormGroup;
-    get widgetType(): widgetType;
     get callbacks(): DataKeysCallbacks;
-    get noKeys(): boolean;
     private propagateChange;
-    constructor(fb: UntypedFormBuilder, dialog: MatDialog, cd: ChangeDetectorRef, utils: UtilsService, widgetConfigComponent: WidgetConfigComponent, destroyRef: DestroyRef);
+    constructor(fb: UntypedFormBuilder, widgetConfigComponent: WidgetConfigComponent, destroyRef: DestroyRef);
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
     private updateParams;

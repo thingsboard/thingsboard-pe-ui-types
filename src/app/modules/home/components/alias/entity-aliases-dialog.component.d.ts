@@ -1,4 +1,4 @@
-import { DestroyRef, OnInit } from '@angular/core';
+import { DestroyRef } from '@angular/core';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
@@ -23,7 +23,7 @@ export interface EntityAliasesDialogData {
     singleEntityAlias?: EntityAlias;
     customTitle?: string;
 }
-export declare class EntityAliasesDialogComponent extends DialogComponent<EntityAliasesDialogComponent, EntityAliases> implements OnInit, ErrorStateMatcher {
+export declare class EntityAliasesDialogComponent extends DialogComponent<EntityAliasesDialogComponent, EntityAliases> implements ErrorStateMatcher {
     protected store: Store<AppState>;
     protected router: Router;
     data: EntityAliasesDialogData;
@@ -47,7 +47,6 @@ export declare class EntityAliasesDialogComponent extends DialogComponent<Entity
     private addWidgetTitleToWidgetsMap;
     private createEntityAliasFormControl;
     entityAliasesFormArray(): UntypedFormArray;
-    ngOnInit(): void;
     isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     removeAlias(index: number): void;
     addAlias(): void;

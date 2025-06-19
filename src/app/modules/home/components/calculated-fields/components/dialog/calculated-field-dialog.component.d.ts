@@ -20,6 +20,7 @@ export interface CalculatedFieldDialogData {
     entityId: EntityId;
     tenantId: string;
     entityName?: string;
+    ownerId: EntityId;
     additionalDebugActionConfig: AdditionalDebugActionConfig<(calculatedField: CalculatedField) => void>;
     getTestScriptDialogFn: CalculatedFieldTestScriptFn;
     isDirty?: boolean;
@@ -47,6 +48,7 @@ export declare class CalculatedFieldDialogComponent extends DialogComponent<Calc
                 type: import("@angular/forms").FormControl<OutputType>;
                 decimalsByDefault: import("@angular/forms").FormControl<number>;
             }>;
+            useLatestTs: import("@angular/forms").FormControl<boolean>;
         }>;
     }>;
     functionArgs$: Observable<string[]>;

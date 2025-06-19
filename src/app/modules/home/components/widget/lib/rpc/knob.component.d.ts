@@ -1,21 +1,15 @@
-import { ElementRef, OnDestroy, OnInit } from '@angular/core';
-import { PageComponent } from '@shared/components/page.component';
+import { ChangeDetectorRef, ElementRef, OnDestroy, OnInit } from '@angular/core';
 import { WidgetContext } from '@home/models/widget-component.models';
-import { UtilsService } from '@core/services/utils.service';
-import { Store } from '@ngrx/store';
-import { AppState } from '@core/core.state';
+import { BasicActionWidgetComponent } from '@home/components/widget/lib/action/action-widget.models';
 import * as i0 from "@angular/core";
-export declare class KnobComponent extends PageComponent implements OnInit, OnDestroy {
-    private utils;
-    protected store: Store<AppState>;
+export declare class KnobComponent extends BasicActionWidgetComponent implements OnInit, OnDestroy {
+    protected cd: ChangeDetectorRef;
     knobRef: ElementRef<HTMLElement>;
     knobContainerRef: ElementRef<HTMLElement>;
     knobTopPointerContainerRef: ElementRef<HTMLElement>;
     knobTopPointerRef: ElementRef<HTMLElement>;
     knobValueContainerRef: ElementRef<HTMLElement>;
     knobValueRef: ElementRef<HTMLElement>;
-    knobErrorContainerRef: ElementRef<HTMLElement>;
-    knobErrorRef: ElementRef<HTMLElement>;
     knobTitleContainerRef: ElementRef<HTMLElement>;
     knobTitleRef: ElementRef<HTMLElement>;
     knobMinmaxContainerRef: ElementRef<HTMLElement>;
@@ -23,11 +17,11 @@ export declare class KnobComponent extends PageComponent implements OnInit, OnDe
     canvasBarElementRef: ElementRef<HTMLElement>;
     ctx: WidgetContext;
     value: string;
-    error: string;
     title: string;
     minValue: number;
     maxValue: number;
     newValue: number;
+    private decimals;
     private startDeg;
     private currentDeg;
     private rotation;
@@ -35,12 +29,6 @@ export declare class KnobComponent extends PageComponent implements OnInit, OnDe
     private moving;
     private minDeg;
     private maxDeg;
-    private isSimulated;
-    private requestTimeout;
-    private requestPersistent;
-    private persistentPollingInterval;
-    private getValueMethod;
-    private setValueMethod;
     private executingUpdateValue;
     private scheduledValue;
     private rpcValue;
@@ -52,15 +40,15 @@ export declare class KnobComponent extends PageComponent implements OnInit, OnDe
     private knobValue;
     private knobTitleContainer;
     private knobTitle;
-    private knobErrorContainer;
-    private knobError;
     private knobMinmaxContainer;
     private minmaxLabel;
     private textMeasure;
     private canvasBarElement;
     private canvasBar;
     private knobResize$;
-    constructor(utils: UtilsService, store: Store<AppState>);
+    private valueSetter;
+    private valueFormat;
+    constructor(cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngOnDestroy(): void;
     private init;
@@ -75,9 +63,7 @@ export declare class KnobComponent extends PageComponent implements OnInit, OnDe
     private updateColor;
     private onValue;
     private formatValue;
-    private rpcRequestValue;
     private rpcUpdateValue;
-    private onError;
     static ɵfac: i0.ɵɵFactoryDeclaration<KnobComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<KnobComponent, "tb-knob", never, { "ctx": { "alias": "ctx"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -81,7 +81,6 @@ export declare class EntitiesTableComponent extends PageComponent implements IEn
     addEnabled(): boolean;
     clearSelection(): void;
     updateData(closeDetails?: boolean, reloadEntity?: boolean): void;
-    private getTimePageLinkInterval;
     private dataLoaded;
     onRowClick($event: Event, entity: any): void;
     toggleEntityDetails($event: Event, entity: any): void;
