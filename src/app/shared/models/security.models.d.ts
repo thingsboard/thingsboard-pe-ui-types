@@ -52,6 +52,8 @@ export declare enum Resource {
     INTEGRATION = "INTEGRATION",
     SCHEDULER_EVENT = "SCHEDULER_EVENT",
     BLOB_ENTITY = "BLOB_ENTITY",
+    REPORT_TEMPLATE = "REPORT_TEMPLATE",
+    REPORT = "REPORT",
     CUSTOMER_GROUP = "CUSTOMER_GROUP",
     DEVICE_GROUP = "DEVICE_GROUP",
     ASSET_GROUP = "ASSET_GROUP",
@@ -77,7 +79,8 @@ export declare enum Resource {
     OAUTH2_CLIENT = "OAUTH2_CLIENT",
     DOMAIN = "DOMAIN",
     SECRET = "SECRET",
-    JOB = "JOB"
+    JOB = "JOB",
+    AI_MODEL = "AI_MODEL"
 }
 export declare const resourceTypeTranslationMap: Map<Resource, string>;
 export declare const resourceByEntityType: Map<EntityType, Resource>;

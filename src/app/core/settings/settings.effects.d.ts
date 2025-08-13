@@ -8,7 +8,7 @@ import { LocalStorageService } from '@app/core/local-storage/local-storage.servi
 import { TitleService } from '@app/core/services/title.service';
 import { UtilsService } from '@core/services/utils.service';
 import { FaviconService } from '@core/services/favicon.service';
-import { ReportService } from '@core/http/report.service';
+import { DashboardReportService } from '@core/http/dashboard-report.service';
 import * as i0 from "@angular/core";
 export declare const SETTINGS_KEY = "SETTINGS";
 export declare class SettingsEffects {
@@ -22,7 +22,7 @@ export declare class SettingsEffects {
     private document;
     private faviconService;
     private reportService;
-    constructor(actions$: Actions<SettingsActions>, store: Store<AppState>, utils: UtilsService, router: Router, localStorageService: LocalStorageService, titleService: TitleService, translate: TranslateService, document: Document, faviconService: FaviconService, reportService: ReportService);
+    constructor(actions$: Actions<SettingsActions>, store: Store<AppState>, utils: UtilsService, router: Router, localStorageService: LocalStorageService, titleService: TitleService, translate: TranslateService, document: Document, faviconService: FaviconService, reportService: DashboardReportService);
     setTranslateServiceLanguage: import("rxjs").Observable<[import("./settings.actions").ActionSettingsChangeLanguage, import("./settings.models").SettingsState]> & import("@ngrx/effects").CreateEffectMetadata;
     setTitle: import("rxjs").Observable<ActivationEnd | SettingsActions> & import("@ngrx/effects").CreateEffectMetadata;
     setFavicon: import("rxjs").Observable<import("./settings.actions").ActionSettingsChangeWhiteLabeling> & import("@ngrx/effects").CreateEffectMetadata;

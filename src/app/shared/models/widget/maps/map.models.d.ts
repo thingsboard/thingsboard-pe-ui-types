@@ -443,6 +443,7 @@ export declare const isCutPolygon: (data: TbPolygonCoordinates | TbPolygonRawCoo
 export declare const parseCenterPosition: (position: string | [number, number]) => [number, number];
 export declare const updateDataKeyToNewDsType: (dataKey: DataKey | null, newDsType: DatasourceType, timeSeries?: boolean) => boolean;
 export declare const mergeMapDatasources: (target: TbMapDatasource[], source: TbMapDatasource[]) => TbMapDatasource[];
+export declare const loadImageSize: (imageUrl: string) => Observable<[number, number]>;
 export interface ImageWithAspect {
     url: string;
     width: number;

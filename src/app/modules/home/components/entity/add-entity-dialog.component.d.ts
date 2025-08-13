@@ -17,13 +17,13 @@ import * as i0 from "@angular/core";
 export declare class AddEntityDialogComponent extends DialogComponent<AddEntityDialogComponent, BaseData<HasId>> implements OnInit, ErrorStateMatcher {
     protected store: Store<AppState>;
     protected router: Router;
-    data: AddEntityDialogData<BaseData<HasId>>;
+    data: AddEntityDialogData<BaseData<EntityId>>;
     dialogRef: MatDialogRef<AddEntityDialogComponent, BaseData<HasId>>;
     private injector;
     private errorStateMatcher;
     entityComponent: EntityComponent<BaseData<HasId>>;
     detailsForm: UntypedFormGroup;
-    entitiesTableConfig: EntityTableConfig<BaseData<HasId>>;
+    entitiesTableConfig: EntityTableConfig<BaseData<EntityId>>;
     customerId: string;
     entityType: EntityType;
     translations: EntityTypeTranslation;
@@ -31,7 +31,7 @@ export declare class AddEntityDialogComponent extends DialogComponent<AddEntityD
     entity: BaseData<EntityId>;
     submitted: boolean;
     entityDetailsFormAnchor: TbAnchorComponent;
-    constructor(store: Store<AppState>, router: Router, data: AddEntityDialogData<BaseData<HasId>>, dialogRef: MatDialogRef<AddEntityDialogComponent, BaseData<HasId>>, injector: Injector, errorStateMatcher: ErrorStateMatcher);
+    constructor(store: Store<AppState>, router: Router, data: AddEntityDialogData<BaseData<EntityId>>, dialogRef: MatDialogRef<AddEntityDialogComponent, BaseData<HasId>>, injector: Injector, errorStateMatcher: ErrorStateMatcher);
     ngOnInit(): void;
     helpLinkId(): string;
     isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;

@@ -1,23 +1,17 @@
-import { AfterViewInit, ElementRef, OnInit } from '@angular/core';
-import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, FormGroupDirective, NgForm } from '@angular/forms';
+import { DestroyRef, ElementRef, OnInit } from '@angular/core';
+import { ControlValueAccessor, FormGroupDirective, NgForm, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { Store } from '@ngrx/store';
-import { AppState } from '@app/core/core.state';
-import { TranslateService } from '@ngx-translate/core';
 import { IAliasController } from '@core/api/widget-api.models';
-import { TruncatePipe } from '@shared/pipe/truncate.pipe';
-import { MatAutocomplete, MatAutocompleteTrigger } from '@angular/material/autocomplete';
+import { MatAutocomplete } from '@angular/material/autocomplete';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { FilterSelectCallbacks } from './filter-select.component.models';
 import { Filter } from '@shared/models/query/query.models';
 import { MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
-export declare class FilterSelectComponent implements ControlValueAccessor, OnInit, AfterViewInit, ErrorStateMatcher {
-    private store;
+export declare class FilterSelectComponent implements ControlValueAccessor, OnInit, ErrorStateMatcher {
     private errorStateMatcher;
-    translate: TranslateService;
-    truncate: TruncatePipe;
     private fb;
+    private destroyRef;
     selectFilterFormGroup: UntypedFormGroup;
     modelValue: string | null;
     aliasController: IAliasController;
@@ -27,24 +21,19 @@ export declare class FilterSelectComponent implements ControlValueAccessor, OnIn
     appearance: MatFormFieldAppearance;
     subscriptSizing: SubscriptSizing;
     filterAutocomplete: MatAutocomplete;
-    autoCompleteTrigger: MatAutocompleteTrigger;
-    private requiredValue;
-    get tbRequired(): boolean;
-    set tbRequired(value: boolean);
+    tbRequired: boolean;
     disabled: boolean;
     filterInput: ElementRef;
-    filterList: Array<Filter>;
     filteredFilters: Observable<Array<Filter>>;
     searchText: string;
     private dirty;
-    private creatingFilter;
+    private filterList;
     private propagateChange;
-    constructor(store: Store<AppState>, errorStateMatcher: ErrorStateMatcher, translate: TranslateService, truncate: TruncatePipe, fb: UntypedFormBuilder);
+    constructor(errorStateMatcher: ErrorStateMatcher, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     registerOnChange(fn: any): void;
-    registerOnTouched(fn: any): void;
+    registerOnTouched(_fn: any): void;
     ngOnInit(): void;
     isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
-    ngAfterViewInit(): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: string | null): void;
     onFocus(): void;
@@ -55,6 +44,7 @@ export declare class FilterSelectComponent implements ControlValueAccessor, OnIn
     textIsNotEmpty(text: string): boolean;
     filterEnter($event: KeyboardEvent): void;
     createFilter($event: Event, filter: string, focusOnCancel?: boolean): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<FilterSelectComponent, [null, { skipSelf: true; }, null, null, null]>;
+    private loadFilters;
+    static ɵfac: i0.ɵɵFactoryDeclaration<FilterSelectComponent, [{ skipSelf: true; }, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<FilterSelectComponent, "tb-filter-select", never, { "aliasController": { "alias": "aliasController"; "required": false; }; "callbacks": { "alias": "callbacks"; "required": false; }; "showLabel": { "alias": "showLabel"; "required": false; }; "inlineField": { "alias": "inlineField"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "tbRequired": { "alias": "tbRequired"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

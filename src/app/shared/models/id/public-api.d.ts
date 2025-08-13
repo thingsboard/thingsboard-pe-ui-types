@@ -30,3 +30,6 @@ export * from './widgets-bundle-id';
 export * from './edge-id';
 export * from './asset-id';
 export * from './secret-storage-id';
+export * from './ai-model-id';
+export * from './report-template-id';
+export * from './report-id';

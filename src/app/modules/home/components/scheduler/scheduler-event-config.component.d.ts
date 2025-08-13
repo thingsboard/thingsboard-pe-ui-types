@@ -1,17 +1,11 @@
-import { AfterViewInit, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
-import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, Validator, AbstractControl, ValidationErrors } from '@angular/forms';
-import { Store } from '@ngrx/store';
-import { AppState } from '@app/core/core.state';
-import { TranslateService } from '@ngx-translate/core';
-import { UserPermissionsService } from '@core/http/user-permissions.service';
+import { DestroyRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { AbstractControl, ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { SchedulerEventConfiguration } from '@shared/models/scheduler-event.models';
 import { SchedulerEventConfigType } from '@home/components/scheduler/scheduler-event-config.models';
 import * as i0 from "@angular/core";
-export declare class SchedulerEventConfigComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnChanges, OnDestroy, Validator {
-    private store;
-    translate: TranslateService;
-    private userPermissionsService;
+export declare class SchedulerEventConfigComponent implements ControlValueAccessor, OnInit, OnChanges, Validator {
     private fb;
+    private destroyRef;
     schedulerEventConfigFormGroup: UntypedFormGroup;
     modelValue: SchedulerEventConfiguration | null;
     disabled: boolean;
@@ -23,21 +17,22 @@ export declare class SchedulerEventConfigComponent implements ControlValueAccess
     showOriginator: boolean;
     showMsgType: boolean;
     showMetadata: boolean;
-    private destroy$;
+    private clearMsgBody;
+    private clearMetadata;
+    private clearMsgType;
+    private clearOriginator;
     private propagateChange;
-    constructor(store: Store<AppState>, translate: TranslateService, userPermissionsService: UserPermissionsService, fb: UntypedFormBuilder);
+    constructor(fb: UntypedFormBuilder, destroyRef: DestroyRef);
     registerOnChange(fn: any): void;
-    registerOnTouched(fn: any): void;
+    registerOnTouched(_fn: any): void;
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
     private buildSchedulerEventConfigForm;
-    ngAfterViewInit(): void;
-    ngOnDestroy(): void;
     setDisabledState(isDisabled: boolean): void;
     private updateEnabledState;
     writeValue(value: SchedulerEventConfiguration | null): void;
     updateView(): void;
-    validate(control: AbstractControl): ValidationErrors | null;
+    validate(_control: AbstractControl): ValidationErrors | null;
     static ɵfac: i0.ɵɵFactoryDeclaration<SchedulerEventConfigComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<SchedulerEventConfigComponent, "tb-scheduler-event-config", never, { "disabled": { "alias": "disabled"; "required": false; }; "schedulerEventConfigTypes": { "alias": "schedulerEventConfigTypes"; "required": false; }; "schedulerEventType": { "alias": "schedulerEventType"; "required": false; }; }, {}, never, never, false, never>;
 }

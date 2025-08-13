@@ -1,4 +1,4 @@
-import { NotificationDeliveryMethod, NotificationRequest, NotificationRequestPreview, NotificationType } from '@shared/models/notification.models';
+import { NotificationDeliveryMethod, NotificationRequest, NotificationRequestPreview } from '@shared/models/notification.models';
 import { OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -6,7 +6,6 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { AbstractControl, FormBuilder, FormGroup } from '@angular/forms';
 import { NotificationService } from '@core/http/notification.service';
 import { Observable } from 'rxjs';
-import { EntityType } from '@shared/models/entity-type.models';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatStepper } from '@angular/material/stepper';
 import { StepperOrientation, StepperSelectionEvent } from '@angular/cdk/stepper';
@@ -34,15 +33,12 @@ export declare class SentNotificationDialogComponent extends TemplateConfigurati
     createNotification: MatStepper;
     stepperOrientation: Observable<StepperOrientation>;
     isAdd: boolean;
-    entityType: typeof EntityType;
-    notificationType: typeof NotificationType;
     notificationRequestForm: FormGroup;
     selectedIndex: number;
     preview: NotificationRequestPreview;
     dialogTitle: string;
     showRefresh: boolean;
     tinyMceOptions: Record<string, any>;
-    private authUser;
     private authState;
     private allowNotificationDeliveryMethods;
     constructor(store: Store<AppState>, router: Router, dialogRef: MatDialogRef<SentNotificationDialogComponent, NotificationRequest>, data: RequestNotificationDialogData, breakpointObserver: BreakpointObserver, fb: FormBuilder, notificationService: NotificationService, dialog: MatDialog, translate: TranslateService, userPermissionsService: UserPermissionsService);
@@ -57,8 +53,6 @@ export declare class SentNotificationDialogComponent extends TemplateConfigurati
     private getPreview;
     private get notificationFormValue();
     private allValid;
-    private isSysAdmin;
-    private isTenantAdmin;
     minDate(): Date;
     maxDate(): Date;
     createTarget($event: Event, button: MatButton): void;

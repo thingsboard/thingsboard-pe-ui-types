@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 import { NotificationDeliveryMethod } from '@shared/models/notification.models';
 import { NotificationService } from '@core/http/notification.service';
 import { DialogService } from '@core/services/dialog.service';
+import { UserPermissionsService } from '@core/http/user-permissions.service';
 import * as i0 from "@angular/core";
 export declare class NotificationSettingsComponent extends PageComponent implements OnInit, HasConfirmForm {
     protected store: Store<AppState>;
@@ -17,11 +18,13 @@ export declare class NotificationSettingsComponent extends PageComponent impleme
     private dialogService;
     private notificationService;
     private fb;
+    private userPermissionsService;
     notificationSettings: UntypedFormGroup;
     notificationDeliveryMethods: NotificationDeliveryMethod[];
     notificationDeliveryMethodInfoMap: Map<NotificationDeliveryMethod, import("@shared/models/notification.models").NotificationDeliveryMethodInfo>;
+    readonly: boolean;
     private deliveryMethods;
-    constructor(store: Store<AppState>, route: ActivatedRoute, translate: TranslateService, dialogService: DialogService, notificationService: NotificationService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, route: ActivatedRoute, translate: TranslateService, dialogService: DialogService, notificationService: NotificationService, fb: UntypedFormBuilder, userPermissionsService: UserPermissionsService);
     ngOnInit(): void;
     private buildNotificationSettingsForm;
     private patchNotificationSettings;

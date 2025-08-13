@@ -5,8 +5,10 @@ import { EntityTableConfig } from '@home/models/entity/entities-table-config.mod
 import { EntityId } from '@shared/models/id/entity-id';
 import { EntityInfoData } from '@shared/models/entity.models';
 import { CalculatedFieldId } from '@shared/models/id/calculated-field-id';
+import { Report } from '@shared/models/report.models';
 export declare enum JobType {
-    CF_REPROCESSING = "CF_REPROCESSING"
+    CF_REPROCESSING = "CF_REPROCESSING",
+    REPORT = "REPORT"
 }
 export declare const jobTypeTranslations: Map<JobType, string>;
 export declare enum JobStatus {
@@ -34,7 +36,7 @@ export interface CfReprocessingTaskFailure extends BasicTaskFailure {
 export interface CfReprocessingTaskResult extends BasicTaskResult {
     failure: CfReprocessingTaskFailure;
 }
-export type TaskResult = CfReprocessingTaskResult;
+export type TaskResult = CfReprocessingTaskResult & BasicTaskFailure;
 export interface BasicJobConfiguration {
     tasksKey: string;
     toReprocess: TaskResult[];
@@ -58,7 +60,10 @@ export interface BasicJobResult {
     finishTs?: number;
     cancellationTs?: number;
 }
-export type JobResult = BasicJobResult;
+export interface ReportJobResult {
+    report: Report;
+}
+export type JobResult = BasicJobResult & ReportJobResult;
 export interface Job extends Omit<BaseData<JobId>, 'label' | 'ownerId' | 'customerId' | 'name'> {
     type: JobType;
     key: string;

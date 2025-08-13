@@ -23,7 +23,6 @@ export declare class MailServerComponent extends PageComponent implements OnInit
     authUser: AuthUser;
     adminSettings: AdminSettings<MailServerSettings>;
     smtpProtocols: SmtpProtocol[];
-    showChangePassword: boolean;
     protocols: DomainSchema[];
     domainSchemaTranslations: Map<DomainSchema, string>;
     mailServerOauth2Provider: typeof MailServerOauth2Provider;
@@ -51,7 +50,6 @@ export declare class MailServerComponent extends PageComponent implements OnInit
         proxyUser: import("@angular/forms").FormControl<string>;
         proxyPassword: import("@angular/forms").FormControl<string>;
         username: import("@angular/forms").FormControl<string>;
-        changePassword: import("@angular/forms").FormControl<boolean>;
         password: import("@angular/forms").FormControl<string>;
         enableOauth2: import("@angular/forms").FormControl<boolean>;
         providerId: import("@angular/forms").FormControl<string>;
@@ -79,7 +77,6 @@ export declare class MailServerComponent extends PageComponent implements OnInit
     private enableProviderTenantIdChanged;
     private updateValidators;
     private enableProxyChanged;
-    private enableMailPassword;
     private enableTls;
     sendTestMail(): void;
     save(): void;

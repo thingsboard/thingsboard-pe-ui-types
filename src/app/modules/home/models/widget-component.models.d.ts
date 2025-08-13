@@ -39,7 +39,7 @@ import { Observable } from 'rxjs';
 import * as RxJSOperators from 'rxjs/operators';
 import { TbPopoverComponent } from '@shared/components/popover.component';
 import { EntityId } from '@shared/models/id/entity-id';
-import { ReportService } from '@core/http/report.service';
+import { DashboardReportService } from '@core/http/dashboard-report.service';
 import { AlarmQuery, AlarmSearchStatus, AlarmStatus } from '@app/shared/models/alarm.models';
 import { ImagePipe } from '@shared/pipe/image.pipe';
 import { MillisecondsToTimeStringPipe } from '@shared/pipe/milliseconds-to-time-string.pipe';
@@ -128,7 +128,7 @@ export declare class WidgetContext {
     router: Router;
     renderer: Renderer2;
     widgetContentContainer: ViewContainerRef;
-    reportService: ReportService;
+    reportService: DashboardReportService;
     wl: WhiteLabelingService;
     private changeDetectorValue;
     private containerChangeDetectorValue;

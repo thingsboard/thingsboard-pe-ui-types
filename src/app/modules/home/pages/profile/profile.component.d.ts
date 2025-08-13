@@ -12,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 import { AuthService } from '@core/auth/auth.service';
 import { UnitSystem } from '@shared/models/unit.models';
 import { UnitService } from '@core/services/unit.service';
+import { UserPermissionsService } from '@core/http/user-permissions.service';
 import * as i0 from "@angular/core";
 export declare class ProfileComponent extends PageComponent implements OnInit, HasConfirmForm {
     protected store: Store<AppState>;
@@ -21,13 +22,15 @@ export declare class ProfileComponent extends PageComponent implements OnInit, H
     private translate;
     private unitService;
     private fb;
+    private userPermissionsService;
     authorities: typeof Authority;
     profile: UntypedFormGroup;
     user: User;
     languageList: [locelCode: string, localeLanguage: string];
     UnitSystems: UnitSystem[];
     authState: import("../../../../core/public-api").AuthState;
-    constructor(store: Store<AppState>, route: ActivatedRoute, userService: UserService, authService: AuthService, translate: TranslateService, unitService: UnitService, fb: UntypedFormBuilder);
+    readonly: boolean;
+    constructor(store: Store<AppState>, route: ActivatedRoute, userService: UserService, authService: AuthService, translate: TranslateService, unitService: UnitService, fb: UntypedFormBuilder, userPermissionsService: UserPermissionsService);
     ngOnInit(): void;
     private buildProfileForm;
     save(): void;

@@ -13,6 +13,9 @@ interface ReferencedEntityInfo {
     entity: BaseData<HasId> | WhiteLabeling;
     typeName: string;
     detailsUrl: string;
+    queryParams?: {
+        [key: string]: string;
+    };
     isWl: boolean;
 }
 interface HolderReferencedEntities {
@@ -39,6 +42,8 @@ export declare class ImageReferencesComponent implements OnInit {
     isSystem(id: EntityId): boolean;
     holderName(id: EntityId): string;
     private hasNotSameAuthLevelEntities;
+    private getAdminSettingsPageURL;
+    getAdminSettingsName(entity: BaseData<EntityId>): any;
     private toReferencedEntitiesList;
     private toReferencedEntitiesEntries;
     static ɵfac: i0.ɵɵFactoryDeclaration<ImageReferencesComponent, never>;

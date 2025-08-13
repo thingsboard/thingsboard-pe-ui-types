@@ -1,4 +1,4 @@
-import { BaseData } from '@shared/models/base-data';
+import { BaseData, ExportableEntity } from '@shared/models/base-data';
 import { TenantId } from '@shared/models/id/tenant-id';
 import { OtaPackageId } from '@shared/models/id/ota-package-id';
 import { DeviceProfileId } from '@shared/models/id/device-profile-id';
@@ -30,7 +30,7 @@ export interface OtaPagesIds {
     firmwareId?: OtaPackageId;
     softwareId?: OtaPackageId;
 }
-export interface OtaPackageInfo extends BaseData<OtaPackageId> {
+export interface OtaPackageInfo extends Omit<BaseData<OtaPackageId>, 'label'>, ExportableEntity<OtaPackageId> {
     tenantId?: TenantId;
     type: OtaUpdateType;
     deviceProfileId?: DeviceProfileId;

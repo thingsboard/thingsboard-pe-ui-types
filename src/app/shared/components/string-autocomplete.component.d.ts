@@ -16,6 +16,7 @@ export declare class StringAutocompleteComponent implements ControlValueAccessor
     additionalClass: string | string[] | Record<string, boolean | undefined | null>;
     appearance: MatFormFieldAppearance;
     label: string;
+    panelWidth: string;
     tooltipClass: string;
     errorText: string;
     showInlineError: boolean;
@@ -35,5 +36,5 @@ export declare class StringAutocompleteComponent implements ControlValueAccessor
     setDisabledState(isDisabled: boolean): void;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<StringAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<StringAutocompleteComponent, "tb-string-autocomplete", never, { "disabled": { "alias": "disabled"; "required": false; }; "required": { "alias": "required"; "required": false; }; "fetchOptionsFn": { "alias": "fetchOptionsFn"; "required": false; }; "placeholderText": { "alias": "placeholderText"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "additionalClass": { "alias": "additionalClass"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "label": { "alias": "label"; "required": false; }; "tooltipClass": { "alias": "tooltipClass"; "required": false; }; "errorText": { "alias": "errorText"; "required": false; }; "showInlineError": { "alias": "showInlineError"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<StringAutocompleteComponent, "tb-string-autocomplete", never, { "disabled": { "alias": "disabled"; "required": false; }; "required": { "alias": "required"; "required": false; }; "fetchOptionsFn": { "alias": "fetchOptionsFn"; "required": false; }; "placeholderText": { "alias": "placeholderText"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "additionalClass": { "alias": "additionalClass"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "label": { "alias": "label"; "required": false; }; "panelWidth": { "alias": "panelWidth"; "required": false; }; "tooltipClass": { "alias": "tooltipClass"; "required": false; }; "errorText": { "alias": "errorText"; "required": false; }; "showInlineError": { "alias": "showInlineError"; "required": false; }; }, {}, never, never, false, never>;
 }

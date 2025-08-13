@@ -1,0 +1,30 @@
+import { ElementRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { CdkDragStart } from '@angular/cdk/drag-drop';
+import { TbReportFormat } from '@shared/models/report.models';
+import { TranslateService } from '@ngx-translate/core';
+import * as i0 from "@angular/core";
+export declare class ReportComponentLibraryComponent implements OnInit, OnChanges {
+    private translate;
+    subReport: boolean;
+    format: TbReportFormat;
+    filter: string;
+    libraryDragOriginList: import("@angular/core").Signal<ElementRef<any>>;
+    libraryDragActiveList: import("@angular/core").Signal<ElementRef<any>>;
+    reportComponentIds: string[];
+    reportComponentsLibrary: Map<string, import("@home/pages/reporting/template/components/report-component.models").ReportComponentLibraryItem<import("@shared/models/report-component.models").ReportComponentConfig>>;
+    private reportComponentsTitleMap;
+    private itemDragEntered;
+    constructor(translate: TranslateService);
+    ngOnInit(): void;
+    ngOnChanges(changes: SimpleChanges): void;
+    dropListEnterPredicate(): boolean;
+    dragStarted(event: CdkDragStart): void;
+    dragEnded(): void;
+    dragEntered(): void;
+    dragReleased(): void;
+    private updateReportComponentIds;
+    private copyExistingLibItemsToActiveList;
+    private setActiveListVisibility;
+    static ɵfac: i0.ɵɵFactoryDeclaration<ReportComponentLibraryComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ReportComponentLibraryComponent, "tb-report-component-library", never, { "subReport": { "alias": "subReport"; "required": false; }; "format": { "alias": "format"; "required": false; }; "filter": { "alias": "filter"; "required": false; }; }, {}, never, never, false, never>;
+}

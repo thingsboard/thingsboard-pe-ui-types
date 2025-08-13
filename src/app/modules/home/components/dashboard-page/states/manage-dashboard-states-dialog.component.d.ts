@@ -1,9 +1,7 @@
 import { AfterViewInit, ElementRef, OnInit } from '@angular/core';
-import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { FormGroupDirective, NgForm, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DialogComponent } from '@app/shared/components/dialog.component';
 import { DashboardState } from '@app/shared/models/dashboard.models';
@@ -25,56 +23,37 @@ export interface ManageDashboardStatesDialogData {
         [id: string]: Widget;
     };
 }
-export declare class ManageDashboardStatesDialogComponent extends DialogComponent<ManageDashboardStatesDialogComponent, {
+export interface ManageDashboardStatesDialogResult {
     states: {
         [id: string]: DashboardState;
     };
-    widgets: {
+    addWidgets?: {
         [id: string]: Widget;
     };
-}> implements OnInit, ErrorStateMatcher, AfterViewInit {
+}
+export declare class ManageDashboardStatesDialogComponent extends DialogComponent<ManageDashboardStatesDialogComponent, ManageDashboardStatesDialogResult> implements OnInit, AfterViewInit {
     protected store: Store<AppState>;
     protected router: Router;
     data: ManageDashboardStatesDialogData;
-    private errorStateMatcher;
-    dialogRef: MatDialogRef<ManageDashboardStatesDialogComponent, {
-        states: {
-            [id: string]: DashboardState;
-        };
-        widgets: {
-            [id: string]: Widget;
-        };
-    }>;
-    private fb;
+    dialogRef: MatDialogRef<ManageDashboardStatesDialogComponent, ManageDashboardStatesDialogResult>;
     private translate;
     private dialogs;
     private utils;
     private dialog;
     private sanitizer;
-    statesFormGroup: UntypedFormGroup;
-    states: {
-        [id: string]: DashboardState;
-    };
-    widgets: {
-        [id: string]: Widget;
-    };
+    searchInputField: ElementRef;
+    paginator: MatPaginator;
+    sort: MatSort;
+    isDirty: boolean;
     displayedColumns: string[];
     pageLink: PageLink;
     textSearchMode: boolean;
     dataSource: DashboardStatesDatasource;
-    submitted: boolean;
-    stateNames: Set<string>;
-    searchInputField: ElementRef;
-    paginator: MatPaginator;
-    sort: MatSort;
-    constructor(store: Store<AppState>, router: Router, data: ManageDashboardStatesDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<ManageDashboardStatesDialogComponent, {
-        states: {
-            [id: string]: DashboardState;
-        };
-        widgets: {
-            [id: string]: Widget;
-        };
-    }>, fb: UntypedFormBuilder, translate: TranslateService, dialogs: DialogService, utils: UtilsService, dialog: MatDialog, sanitizer: DomSanitizer);
+    private states;
+    private widgets;
+    private stateNames;
+    private addWidgets;
+    constructor(store: Store<AppState>, router: Router, data: ManageDashboardStatesDialogData, dialogRef: MatDialogRef<ManageDashboardStatesDialogComponent, ManageDashboardStatesDialogResult>, translate: TranslateService, dialogs: DialogService, utils: UtilsService, dialog: MatDialog, sanitizer: DomSanitizer);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     updateData(reload?: boolean): void;
@@ -86,11 +65,9 @@ export declare class ManageDashboardStatesDialogComponent extends DialogComponen
     openStateDialog($event: Event, state?: DashboardStateInfo): void;
     saveState(state: DashboardStateInfo, prevStateId: string, prevStateName: string): void;
     duplicateState($event: Event, state: DashboardStateInfo): void;
-    private getNextDuplicatedName;
     private onStatesUpdated;
-    isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     cancel(): void;
     save(): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<ManageDashboardStatesDialogComponent, [null, null, null, { skipSelf: true; }, null, null, null, null, null, null, null]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<ManageDashboardStatesDialogComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<ManageDashboardStatesDialogComponent, "tb-manage-dashboard-states-dialog", never, {}, {}, never, never, false, never>;
 }

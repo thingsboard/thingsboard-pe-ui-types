@@ -49,6 +49,9 @@ import { ResourceService } from '@core/http/resource.service';
 import { OAuth2Service } from '@core/http/oauth2.service';
 import { MobileAppService } from '@core/http/mobile-app.service';
 import { DomainService } from '@core/http/domain.service';
+import { AiModelService } from '@core/http/ai-model.service';
+import { ReportTemplateService } from '@core/http/report-template.service';
+import { ReportService } from './report.service';
 import * as i0 from "@angular/core";
 export declare class EntityService {
     private http;
@@ -73,6 +76,8 @@ export declare class EntityService {
     private integrationService;
     private schedulerEventService;
     private blobEntityService;
+    private reportTemplateService;
+    private reportService;
     private roleService;
     private entityGroupService;
     private userPermissionsService;
@@ -84,7 +89,8 @@ export declare class EntityService {
     private oauth2Service;
     private mobileAppService;
     private domainService;
-    constructor(http: HttpClient, store: Store<AppState>, deviceService: DeviceService, assetService: AssetService, entityViewService: EntityViewService, edgeService: EdgeService, tenantService: TenantService, customerService: CustomerService, userService: UserService, ruleChainService: RuleChainService, dashboardService: DashboardService, entityRelationService: EntityRelationService, attributeService: AttributeService, otaPackageService: OtaPackageService, widgetService: WidgetService, deviceProfileService: DeviceProfileService, tenantProfileService: TenantProfileService, assetProfileService: AssetProfileService, converterService: ConverterService, integrationService: IntegrationService, schedulerEventService: SchedulerEventService, blobEntityService: BlobEntityService, roleService: RoleService, entityGroupService: EntityGroupService, userPermissionsService: UserPermissionsService, utils: UtilsService, queueService: QueueService, notificationService: NotificationService, alarmService: AlarmService, resourceService: ResourceService, oauth2Service: OAuth2Service, mobileAppService: MobileAppService, domainService: DomainService);
+    private aiModelService;
+    constructor(http: HttpClient, store: Store<AppState>, deviceService: DeviceService, assetService: AssetService, entityViewService: EntityViewService, edgeService: EdgeService, tenantService: TenantService, customerService: CustomerService, userService: UserService, ruleChainService: RuleChainService, dashboardService: DashboardService, entityRelationService: EntityRelationService, attributeService: AttributeService, otaPackageService: OtaPackageService, widgetService: WidgetService, deviceProfileService: DeviceProfileService, tenantProfileService: TenantProfileService, assetProfileService: AssetProfileService, converterService: ConverterService, integrationService: IntegrationService, schedulerEventService: SchedulerEventService, blobEntityService: BlobEntityService, reportTemplateService: ReportTemplateService, reportService: ReportService, roleService: RoleService, entityGroupService: EntityGroupService, userPermissionsService: UserPermissionsService, utils: UtilsService, queueService: QueueService, notificationService: NotificationService, alarmService: AlarmService, resourceService: ResourceService, oauth2Service: OAuth2Service, mobileAppService: MobileAppService, domainService: DomainService, aiModelService: AiModelService);
     private getEntityObservable;
     private saveEntityObservable;
     getEntity(entityType: EntityType, entityId: string, config?: RequestConfig): Observable<BaseData<EntityId>>;
@@ -125,7 +131,6 @@ export declare class EntityService {
     private getUpdateEntityTasks;
     saveEntityData(entityId: EntityId, entityData: ImportEntityData, config?: RequestConfig): Observable<any>;
     private getStateEntityInfo;
-    private resolveAliasEntityId;
     private createDatasourceFromSubscriptionInfo;
     private validateSubscriptionInfo;
     private prepareEntityFilterFromSubscriptionInfo;

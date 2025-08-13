@@ -12,7 +12,7 @@ export declare class DynamicFormPropertyPanelComponent implements OnInit {
     FormPropertyType: typeof FormPropertyType;
     ContentType: typeof ContentType;
     formPropertyTypes: FormPropertyType[];
-    arrayItemFormPropertyTypes: (FormPropertyType.text | FormPropertyType.number | FormPropertyType.password | FormPropertyType.textarea | FormPropertyType.switch | FormPropertyType.select | FormPropertyType.radios | FormPropertyType.datetime | FormPropertyType.image | FormPropertyType.javascript | FormPropertyType.json | FormPropertyType.html | FormPropertyType.css | FormPropertyType.markdown | FormPropertyType.color | FormPropertyType.color_settings | FormPropertyType.font | FormPropertyType.units | FormPropertyType.icon | FormPropertyType.fieldset | FormPropertyType.htmlSection)[];
+    arrayItemFormPropertyTypes: (FormPropertyType.text | FormPropertyType.number | FormPropertyType.password | FormPropertyType.textarea | FormPropertyType.switch | FormPropertyType.select | FormPropertyType.radios | FormPropertyType.datetime | FormPropertyType.image | FormPropertyType.javascript | FormPropertyType.json | FormPropertyType.html | FormPropertyType.css | FormPropertyType.markdown | FormPropertyType.color | FormPropertyType.color_settings | FormPropertyType.font | FormPropertyType.units | FormPropertyType.icon | FormPropertyType.cssSize | FormPropertyType.fieldset | FormPropertyType.htmlSection)[];
     formPropertyTypeTranslations: Map<FormPropertyType, string>;
     formPropertyRowClasses: StringItemsOption[];
     formPropertyFieldClasses: StringItemsOption[];

@@ -20,6 +20,7 @@ export interface FiltersDialogData {
     disableAdd?: boolean;
     singleFilter?: Filter;
     customTitle?: string;
+    disableUserEdit?: boolean;
 }
 export declare class FiltersDialogComponent extends DialogComponent<FiltersDialogComponent, Filters> implements ErrorStateMatcher {
     protected store: Store<AppState>;
@@ -35,6 +36,7 @@ export declare class FiltersDialogComponent extends DialogComponent<FiltersDialo
     private dialog;
     title: string;
     disableAdd: boolean;
+    disableUserEdit: boolean;
     filterToWidgetsMap: {
         [filterId: string]: Array<string>;
     };

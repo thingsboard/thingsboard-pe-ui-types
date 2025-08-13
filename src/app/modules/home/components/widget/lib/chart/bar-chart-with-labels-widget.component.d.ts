@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, ElementRef, OnDestroy, OnInit, Renderer2 } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ElementRef, OnDestroy, OnInit, Renderer2, TemplateRef } from '@angular/core';
 import { WidgetContext } from '@home/models/widget-component.models';
 import { ComponentStyle } from '@shared/models/widget-settings.models';
 import { Observable } from 'rxjs';
@@ -17,6 +17,7 @@ export declare class BarChartWithLabelsWidgetComponent implements OnInit, OnDest
     chartShape: ElementRef<HTMLElement>;
     settings: BarChartWithLabelsWidgetSettings;
     ctx: WidgetContext;
+    widgetTitlePanel: TemplateRef<any>;
     showLegend: boolean;
     legendClass: string;
     backgroundStyle$: Observable<ComponentStyle>;
@@ -36,5 +37,5 @@ export declare class BarChartWithLabelsWidgetComponent implements OnInit, OnDest
     onLegendKeyLeave(key: DataKey): void;
     toggleLegendKey(key: DataKey): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<BarChartWithLabelsWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<BarChartWithLabelsWidgetComponent, "tb-bar-chart-with-labels-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<BarChartWithLabelsWidgetComponent, "tb-bar-chart-with-labels-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; }, {}, never, never, false, never>;
 }

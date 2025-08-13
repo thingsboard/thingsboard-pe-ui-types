@@ -10,7 +10,6 @@ export declare class SmppSmsProviderConfigurationComponent implements ControlVal
     get required(): boolean;
     set required(value: boolean);
     disabled: boolean;
-    isRuleNode: boolean;
     smppSmsProviderConfigurationFormGroup: UntypedFormGroup;
     smppVersions: {
         value: number;
@@ -31,6 +30,5 @@ export declare class SmppSmsProviderConfigurationComponent implements ControlVal
     writeValue(value: AwsSnsSmsProviderConfiguration | null): void;
     private updateValue;
     static ɵfac: i0.ɵɵFactoryDeclaration<SmppSmsProviderConfigurationComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SmppSmsProviderConfigurationComponent, "tb-smpp-sms-provider-configuration", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "isRuleNode": { "alias": "isRuleNode"; "required": false; }; }, {}, never, never, false, never>;
-    static ngAcceptInputType_isRuleNode: unknown;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SmppSmsProviderConfigurationComponent, "tb-smpp-sms-provider-configuration", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -27,6 +27,10 @@ export declare enum AliasFilterType {
 }
 export declare const edgeAliasFilterTypes: string[];
 export declare const aliasFilterTypeTranslationMap: Map<AliasFilterType, string>;
+declare const reportAliasFilterTypeTranslationMap: Map<AliasFilterType, string>;
+export { reportAliasFilterTypeTranslationMap };
+declare const subReportAliasFilterTypeTranslationMap: Map<AliasFilterType, string>;
+export { subReportAliasFilterTypeTranslationMap };
 export interface SingleEntityFilter {
     singleEntity?: EntityId;
 }

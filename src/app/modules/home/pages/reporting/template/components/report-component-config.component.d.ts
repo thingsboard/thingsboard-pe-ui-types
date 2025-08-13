@@ -1,0 +1,52 @@
+import { DestroyRef, EventEmitter, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ReportComponentConfig } from '@shared/models/report-component.models';
+import { TbAnchorComponent } from '@shared/components/tb-anchor.component';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { ReportComponentContext, ReportVariable } from '@home/pages/reporting/template/components/report-component.models';
+import { Datasource, widgetType } from '@shared/models/widget.models';
+import { WidgetConfigCallbacks } from '@home/components/widget/config/widget-config.component.models';
+import * as i0 from "@angular/core";
+export declare class ReportComponentConfigComponent implements OnInit, OnChanges {
+    width: string;
+    context: ReportComponentContext;
+    reportComponent: ReportComponentConfig;
+    reportComponentUpdated: EventEmitter<any>;
+    reportConfigContainer: TbAnchorComponent;
+    reportConfigForm: FormGroup;
+    private reportConfigComponentRef;
+    private reportConfigComponent;
+    constructor();
+    ngOnInit(): void;
+    ngOnChanges(changes: SimpleChanges): void;
+    private init;
+    static ɵfac: i0.ɵɵFactoryDeclaration<ReportComponentConfigComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ReportComponentConfigComponent, "tb-report-component-config", never, { "context": { "alias": "context"; "required": false; }; "reportComponent": { "alias": "reportComponent"; "required": false; }; }, { "reportComponentUpdated": "reportComponentUpdated"; }, never, never, false, never>;
+}
+export declare abstract class AbstractReportComponentConfig<C extends ReportComponentConfig = ReportComponentConfig> implements OnInit {
+    height: string;
+    context: ReportComponentContext;
+    reportConfigUpdated: EventEmitter<C>;
+    get isPlainFormat(): boolean;
+    get datasource(): Datasource;
+    protected destroyRef: DestroyRef;
+    protected fb: FormBuilder;
+    widgetType: typeof widgetType;
+    callbacks: WidgetConfigCallbacks;
+    reportConfigForm: FormGroup;
+    private reportComponentConfig;
+    private hasLayoutConfig;
+    ngOnInit(): void;
+    setupConfig(reportComponentConfig: C): FormGroup;
+    variables(): ReportVariable[];
+    variableNames(): string[];
+    private updateModel;
+    private fetchEntityKeys;
+    private fetchEntityKeysForDevice;
+    private generateDataKey;
+    private genNextColor;
+    protected buildForm(_reportComponentConfig: C): FormGroup;
+    protected prepareOutputConfig(config: any): C;
+    protected getDataSources(): Datasource[];
+    static ɵfac: i0.ɵɵFactoryDeclaration<AbstractReportComponentConfig<any>, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<AbstractReportComponentConfig<any>, never, never, { "context": { "alias": "context"; "required": false; }; }, { "reportConfigUpdated": "reportConfigUpdated"; }, never, never, false, never>;
+}

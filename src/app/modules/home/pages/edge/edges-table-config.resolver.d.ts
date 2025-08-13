@@ -34,7 +34,7 @@ export declare class EdgesTableConfigResolver {
     private dialog;
     constructor(allEntitiesTableConfigService: AllEntitiesTableConfigService<EdgeInfo>, userPermissionsService: UserPermissionsService, store: Store<AppState>, broadcast: BroadcastService, edgeService: EdgeService, customerService: CustomerService, dialogService: DialogService, homeDialogs: HomeDialogsService, translate: TranslateService, utils: UtilsService, datePipe: DatePipe, router: Router, dialog: MatDialog);
     resolve(route: ActivatedRouteSnapshot): Observable<EntityTableConfig<EdgeInfo>>;
-    configDefaults(config: EntityTableConfig<EdgeInfo>): void;
+    configDefaults(authUser: AuthUser, config: EntityTableConfig<EdgeInfo>): void;
     configureColumns(authUser: AuthUser, config: EntityTableConfig<EdgeInfo>): Array<EntityColumn<EdgeInfo>>;
     configureEntityFunctions(config: EntityTableConfig<EdgeInfo>): void;
     configureCellActions(authUser: AuthUser, config: EntityTableConfig<EdgeInfo>): Array<CellActionDescriptor<EdgeInfo>>;

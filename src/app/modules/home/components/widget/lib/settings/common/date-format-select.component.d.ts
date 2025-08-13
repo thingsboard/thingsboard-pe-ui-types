@@ -17,6 +17,8 @@ export declare class DateFormatSelectComponent implements OnInit, ControlValueAc
     disabled: boolean;
     excludeLastUpdateAgo: boolean;
     includeAuto: boolean;
+    includeMilliseconds: boolean;
+    asStringFormat: boolean;
     dateFormatList: DateFormatSettings[];
     dateFormatsCompare: (df1: DateFormatSettings, df2: DateFormatSettings) => boolean;
     dateFormatFormControl: UntypedFormControl;
@@ -28,11 +30,11 @@ export declare class DateFormatSelectComponent implements OnInit, ControlValueAc
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
-    writeValue(value: DateFormatSettings): void;
+    writeValue(value: DateFormatSettings | string): void;
     updateModel(value: DateFormatSettings): void;
     dateFormatDisplayValue(value: DateFormatSettings): string;
     openDateFormatSettingsPopup($event: Event, matButton: MatButton): void;
     openAutoFormatSettingsPopup($event: Event, matButton: MatButton): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DateFormatSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DateFormatSelectComponent, "tb-date-format-select", never, { "disabled": { "alias": "disabled"; "required": false; }; "excludeLastUpdateAgo": { "alias": "excludeLastUpdateAgo"; "required": false; }; "includeAuto": { "alias": "includeAuto"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DateFormatSelectComponent, "tb-date-format-select", never, { "disabled": { "alias": "disabled"; "required": false; }; "excludeLastUpdateAgo": { "alias": "excludeLastUpdateAgo"; "required": false; }; "includeAuto": { "alias": "includeAuto"; "required": false; }; "includeMilliseconds": { "alias": "includeMilliseconds"; "required": false; }; "asStringFormat": { "alias": "asStringFormat"; "required": false; }; }, {}, never, never, false, never>;
 }

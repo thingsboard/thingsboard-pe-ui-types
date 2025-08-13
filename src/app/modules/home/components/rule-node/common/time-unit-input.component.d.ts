@@ -1,7 +1,7 @@
 import { DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, FormBuilder, ValidationErrors, Validator } from '@angular/forms';
 import { TimeUnit } from '../rule-node-config.models';
-import { SubscriptSizing } from '@angular/material/form-field';
+import { MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class TimeUnitInputComponent implements ControlValueAccessor, Validator, OnInit {
     private fb;
@@ -14,6 +14,8 @@ export declare class TimeUnitInputComponent implements ControlValueAccessor, Val
     maxTime: number;
     maxErrorText: string;
     subscriptSizing: SubscriptSizing;
+    appearance: MatFormFieldAppearance;
+    inlineField: boolean;
     timeUnits: TimeUnit[];
     timeUnitTranslations: Map<TimeUnit, string>;
     timeInputForm: import("@angular/forms").FormGroup<{
@@ -25,6 +27,7 @@ export declare class TimeUnitInputComponent implements ControlValueAccessor, Val
     private propagateChange;
     constructor(fb: FormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
+    get hasError(): string;
     registerOnChange(fn: any): void;
     registerOnTouched(_fn: any): void;
     setDisabledState(isDisabled: boolean): void;
@@ -33,5 +36,5 @@ export declare class TimeUnitInputComponent implements ControlValueAccessor, Val
     private updatedModel;
     private parseTime;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeUnitInputComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeUnitInputComponent, "tb-time-unit-input", never, { "labelText": { "alias": "labelText"; "required": false; }; "required": { "alias": "required"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "minTime": { "alias": "minTime"; "required": false; }; "minErrorText": { "alias": "minErrorText"; "required": false; }; "maxTime": { "alias": "maxTime"; "required": false; }; "maxErrorText": { "alias": "maxErrorText"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; }, {}, never, ["[matSuffix]"], false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeUnitInputComponent, "tb-time-unit-input", never, { "labelText": { "alias": "labelText"; "required": false; }; "required": { "alias": "required"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "minTime": { "alias": "minTime"; "required": false; }; "minErrorText": { "alias": "minErrorText"; "required": false; }; "maxTime": { "alias": "maxTime"; "required": false; }; "maxErrorText": { "alias": "maxErrorText"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "inlineField": { "alias": "inlineField"; "required": false; }; }, {}, never, ["[matSuffix]"], false, never>;
 }

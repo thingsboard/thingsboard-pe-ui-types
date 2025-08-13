@@ -2,7 +2,7 @@ import { DestroyRef, ElementRef, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { ComparisonResultType, DataKey, DataKeyConfigMode, Widget, widgetType } from '@shared/models/widget.models';
+import { ComparisonResultType, DataKey, DataKeyConfigMode, Datasource, Widget, widgetType } from '@shared/models/widget.models';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { UtilsService } from '@core/services/utils.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -19,6 +19,7 @@ import { WidgetConfigComponentData } from '@home/models/widget-component.models'
 import { WidgetComponentService } from '@home/components/widget/widget-component.service';
 import { WidgetConfigCallbacks } from '@home/components/widget/config/widget-config.component.models';
 import { FormProperty } from '@shared/models/dynamic-form.models';
+import { ScriptLanguage } from '@shared/models/rule-node.models';
 import * as i0 from "@angular/core";
 export declare class DataKeyConfigComponent extends PageComponent implements OnInit, ControlValueAccessor, Validator {
     protected store: Store<AppState>;
@@ -31,6 +32,7 @@ export declare class DataKeyConfigComponent extends PageComponent implements OnI
     private fb;
     private destroyRef;
     dataKeyConfigModes: typeof DataKeyConfigMode;
+    ScriptLanguage: typeof ScriptLanguage;
     dataKeyTypes: typeof DataKeyType;
     widgetTypes: typeof widgetType;
     aggregations: string[];
@@ -47,10 +49,12 @@ export declare class DataKeyConfigComponent extends PageComponent implements OnI
     dashboard: Dashboard;
     aliasController: IAliasController;
     widget: Widget;
+    datasources: Datasource[];
     widgetType: widgetType;
     dataKeySettingsForm: FormProperty[];
     dataKeySettingsDirective: string;
     showPostProcessing: boolean;
+    reportMode: boolean;
     hideDataKeyName: boolean;
     hideDataKeyLabel: boolean;
     hideDataKeyColor: boolean;
@@ -100,6 +104,7 @@ export declare class DataKeyConfigComponent extends PageComponent implements OnI
         };
         dataKey?: undefined;
     };
+    private getDatasources;
     static ɵfac: i0.ɵɵFactoryDeclaration<DataKeyConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeyConfigComponent, "tb-data-key-config", never, { "dataKeyConfigMode": { "alias": "dataKeyConfigMode"; "required": false; }; "deviceId": { "alias": "deviceId"; "required": false; }; "entityAliasId": { "alias": "entityAliasId"; "required": false; }; "callbacks": { "alias": "callbacks"; "required": false; }; "dashboard": { "alias": "dashboard"; "required": false; }; "aliasController": { "alias": "aliasController"; "required": false; }; "widget": { "alias": "widget"; "required": false; }; "widgetType": { "alias": "widgetType"; "required": false; }; "dataKeySettingsForm": { "alias": "dataKeySettingsForm"; "required": false; }; "dataKeySettingsDirective": { "alias": "dataKeySettingsDirective"; "required": false; }; "showPostProcessing": { "alias": "showPostProcessing"; "required": false; }; "hideDataKeyName": { "alias": "hideDataKeyName"; "required": false; }; "hideDataKeyLabel": { "alias": "hideDataKeyLabel"; "required": false; }; "hideDataKeyColor": { "alias": "hideDataKeyColor"; "required": false; }; "hideDataKeyUnits": { "alias": "hideDataKeyUnits"; "required": false; }; "hideDataKeyDecimals": { "alias": "hideDataKeyDecimals"; "required": false; }; "supportsUnitConversion": { "alias": "supportsUnitConversion"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeyConfigComponent, "tb-data-key-config", never, { "dataKeyConfigMode": { "alias": "dataKeyConfigMode"; "required": false; }; "deviceId": { "alias": "deviceId"; "required": false; }; "entityAliasId": { "alias": "entityAliasId"; "required": false; }; "callbacks": { "alias": "callbacks"; "required": false; }; "dashboard": { "alias": "dashboard"; "required": false; }; "aliasController": { "alias": "aliasController"; "required": false; }; "widget": { "alias": "widget"; "required": false; }; "datasources": { "alias": "datasources"; "required": false; }; "widgetType": { "alias": "widgetType"; "required": false; }; "dataKeySettingsForm": { "alias": "dataKeySettingsForm"; "required": false; }; "dataKeySettingsDirective": { "alias": "dataKeySettingsDirective"; "required": false; }; "showPostProcessing": { "alias": "showPostProcessing"; "required": false; }; "reportMode": { "alias": "reportMode"; "required": false; }; "hideDataKeyName": { "alias": "hideDataKeyName"; "required": false; }; "hideDataKeyLabel": { "alias": "hideDataKeyLabel"; "required": false; }; "hideDataKeyColor": { "alias": "hideDataKeyColor"; "required": false; }; "hideDataKeyUnits": { "alias": "hideDataKeyUnits"; "required": false; }; "hideDataKeyDecimals": { "alias": "hideDataKeyDecimals"; "required": false; }; "supportsUnitConversion": { "alias": "supportsUnitConversion"; "required": false; }; }, {}, never, never, false, never>;
 }

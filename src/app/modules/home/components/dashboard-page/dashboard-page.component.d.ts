@@ -21,10 +21,10 @@ import { EditWidgetComponent } from '@home/components/dashboard-page/edit-widget
 import { TranslateService } from '@ngx-translate/core';
 import { ImportExportService } from '@shared/import-export/import-export.service';
 import { AuthState } from '@app/core/auth/auth.models';
-import { ReportService } from '@core/http/report.service';
+import { DashboardReportService } from '@core/http/dashboard-report.service';
 import { EntityGroupInfo } from '@shared/models/entity-group.models';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
-import { ReportType } from '@shared/models/report.models';
+import { DashboardReportType } from '@shared/models/dashboard-report.models';
 import { Overlay } from '@angular/cdk/overlay';
 import { DashboardWidgetSelectComponent } from '@home/components/dashboard-page/dashboard-widget-select.component';
 import { WhiteLabelingService } from '@core/http/white-labeling.service';
@@ -149,7 +149,7 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     editWidgetComponent: EditWidgetComponent;
     dashboardWidgetSelectComponent: DashboardWidgetSelectComponent;
     private changeMobileSize;
-    constructor(store: Store<AppState>, window: Window, document: Document, breakpointObserver: BreakpointObserver, route: ActivatedRoute, router: Router, utils: UtilsService, reportService: ReportService, dashboardUtils: DashboardUtilsService, entityService: EntityService, dialogService: DialogService, widgetComponentService: WidgetComponentService, dashboardService: DashboardService, userPermissionsService: UserPermissionsService, wl: WhiteLabelingService, itembuffer: ItemBufferService, importExport: ImportExportService, solutionsService: SolutionsService, mobileService: MobileService, dialog: MatDialog, translate: TranslateService, popoverService: TbPopoverService, renderer: Renderer2, ngZone: NgZone, embeddedValue: any, overlay: Overlay, viewContainerRef: ViewContainerRef, cd: ChangeDetectorRef, elRef: ElementRef, injector: Injector);
+    constructor(store: Store<AppState>, window: Window, document: Document, breakpointObserver: BreakpointObserver, route: ActivatedRoute, router: Router, utils: UtilsService, reportService: DashboardReportService, dashboardUtils: DashboardUtilsService, entityService: EntityService, dialogService: DialogService, widgetComponentService: WidgetComponentService, dashboardService: DashboardService, userPermissionsService: UserPermissionsService, wl: WhiteLabelingService, itembuffer: ItemBufferService, importExport: ImportExportService, solutionsService: SolutionsService, mobileService: MobileService, dialog: MatDialog, translate: TranslateService, popoverService: TbPopoverService, renderer: Renderer2, ngZone: NgZone, embeddedValue: any, overlay: Overlay, viewContainerRef: ViewContainerRef, cd: ChangeDetectorRef, elRef: ElementRef, injector: Injector);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     private init;
@@ -187,7 +187,7 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     isSystemAdmin(): boolean;
     canEdit(): boolean;
     exportDashboard($event: Event): void;
-    generateDashboardReport($event: Event, reportType: ReportType): void;
+    generateDashboardReport($event: Event, reportType: DashboardReportType): void;
     openEntityAliases($event: Event): void;
     openFilters($event: Event): void;
     openDashboardSettings($event: Event): void;

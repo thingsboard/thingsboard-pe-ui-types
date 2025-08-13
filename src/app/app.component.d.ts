@@ -6,7 +6,7 @@ import { LocalStorageService } from '@core/local-storage/local-storage.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
 import { AuthService } from '@core/auth/auth.service';
-import { ReportService } from '@core/http/report.service';
+import { DashboardReportService } from '@core/http/dashboard-report.service';
 import * as i0 from "@angular/core";
 export declare class AppComponent {
     private store;
@@ -16,7 +16,7 @@ export declare class AppComponent {
     private domSanitizer;
     private authService;
     private reportService;
-    constructor(store: Store<AppState>, storageService: LocalStorageService, translate: TranslateService, matIconRegistry: MatIconRegistry, domSanitizer: DomSanitizer, authService: AuthService, reportService: ReportService);
+    constructor(store: Store<AppState>, storageService: LocalStorageService, translate: TranslateService, matIconRegistry: MatIconRegistry, domSanitizer: DomSanitizer, authService: AuthService, reportService: DashboardReportService);
     setupTranslate(): void;
     setupAuth(): void;
     onActivateComponent(_$event: any): void;

@@ -7,6 +7,10 @@ export interface SchedulerEventConfigType {
     originator?: boolean;
     msgType?: boolean;
     metadata?: boolean;
+    clearMsgBody?: boolean;
+    clearMetadata?: boolean;
+    clearOriginator?: boolean;
+    clearMsgType?: boolean;
 }
 export declare const defaultSchedulerEventConfigTypes: {
     [eventType: string]: SchedulerEventConfigType;

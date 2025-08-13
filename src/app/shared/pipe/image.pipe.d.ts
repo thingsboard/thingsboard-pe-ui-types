@@ -6,6 +6,7 @@ import * as i0 from "@angular/core";
 export interface UrlHolder {
     url?: string;
 }
+export type CustomImageUrlCallback = (url: string) => Observable<SafeUrl | string> | null;
 export declare class ImagePipe implements PipeTransform {
     private imageService;
     private sanitizer;

@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, DestroyRef, OnInit } from '@angular/core';
+import { DestroyRef, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { FormGroupDirective, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
@@ -16,7 +16,6 @@ export declare class RepositorySettingsComponent extends PageComponent implement
     private dialogService;
     private translate;
     private userPermissionsService;
-    private cd;
     fb: UntypedFormBuilder;
     private destroyRef;
     detailsMode: boolean;
@@ -27,19 +26,13 @@ export declare class RepositorySettingsComponent extends PageComponent implement
     repositoryAuthMethod: typeof RepositoryAuthMethod;
     repositoryAuthMethods: RepositoryAuthMethod[];
     repositoryAuthMethodTranslations: Map<RepositoryAuthMethod, string>;
-    showChangePassword: boolean;
-    changePassword: boolean;
-    showChangePrivateKeyPassword: boolean;
-    changePrivateKeyPassword: boolean;
     readonly: boolean;
     allowDelete: boolean;
-    constructor(store: Store<AppState>, adminService: AdminService, dialogService: DialogService, translate: TranslateService, userPermissionsService: UserPermissionsService, cd: ChangeDetectorRef, fb: UntypedFormBuilder, destroyRef: DestroyRef);
+    constructor(store: Store<AppState>, adminService: AdminService, dialogService: DialogService, translate: TranslateService, userPermissionsService: UserPermissionsService, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     checkAccess(): void;
     save(): void;
     delete(formDirective: FormGroupDirective): void;
-    changePasswordChanged(): void;
-    changePrivateKeyPasswordChanged(): void;
     updateValidators(emitEvent?: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<RepositorySettingsComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<RepositorySettingsComponent, "tb-repository-settings", never, { "detailsMode": { "alias": "detailsMode"; "required": false; }; "popoverComponent": { "alias": "popoverComponent"; "required": false; }; "hideLoadingBar": { "alias": "hideLoadingBar"; "required": false; }; }, {}, never, never, false, never>;

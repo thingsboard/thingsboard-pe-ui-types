@@ -17,6 +17,7 @@ export interface DefaultTenantProfileConfiguration {
     maxIntegrations: number;
     maxConverters: number;
     maxSchedulerEvents: number;
+    maxGeneratedReports: number;
     maxResourcesInBytes: number;
     maxOtaPackagesInBytes: number;
     maxResourceSize: number;

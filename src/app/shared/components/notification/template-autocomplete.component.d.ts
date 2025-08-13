@@ -11,6 +11,7 @@ import { NotificationTemplate, NotificationType } from '@shared/models/notificat
 import { NotificationService } from '@core/http/notification.service';
 import { MatDialog } from '@angular/material/dialog';
 import { MatButton } from '@angular/material/button';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class TemplateAutocompleteComponent implements ControlValueAccessor, OnInit {
     private store;
@@ -25,6 +26,7 @@ export declare class TemplateAutocompleteComponent implements ControlValueAccess
     required: boolean;
     allowCreate: boolean;
     allowEdit: boolean;
+    appearance: MatFormFieldAppearance;
     disabled: boolean;
     private notificationTypeValue;
     get notificationTypes(): NotificationType;
@@ -47,10 +49,11 @@ export declare class TemplateAutocompleteComponent implements ControlValueAccess
     clear(): void;
     editTemplate($event: Event): void;
     createTemplate($event: Event, button: MatButton): void;
+    createTemplateByName($event: Event, name?: string): void;
     private openNotificationTemplateDialog;
     private updateView;
     private fetchTemplate;
     private reset;
     static ɵfac: i0.ɵɵFactoryDeclaration<TemplateAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TemplateAutocompleteComponent, "tb-template-autocomplete", never, { "required": { "alias": "required"; "required": false; }; "allowCreate": { "alias": "allowCreate"; "required": false; }; "allowEdit": { "alias": "allowEdit"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "notificationTypes": { "alias": "notificationTypes"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TemplateAutocompleteComponent, "tb-template-autocomplete", never, { "required": { "alias": "required"; "required": false; }; "allowCreate": { "alias": "allowCreate"; "required": false; }; "allowEdit": { "alias": "allowEdit"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "notificationTypes": { "alias": "notificationTypes"; "required": false; }; }, {}, never, never, false, never>;
 }

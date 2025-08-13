@@ -7,6 +7,7 @@ import { AliasEntityType, EntityType } from '@shared/models/entity-type.models';
 import { EntityService } from '@core/http/entity.service';
 import { EntityId } from '@shared/models/id/entity-id';
 import { Operation } from '@shared/models/security.models';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class EntitySelectComponent implements ControlValueAccessor, OnInit, AfterViewInit {
     private store;
@@ -24,6 +25,7 @@ export declare class EntitySelectComponent implements ControlValueAccessor, OnIn
     additionEntityTypes: {
         [entityType in string]: string;
     };
+    appearance: MatFormFieldAppearance;
     displayEntityTypeSelect: boolean;
     AliasEntityType: typeof AliasEntityType;
     entityTypeNullUUID: Set<AliasEntityType | EntityType | string>;
@@ -38,5 +40,5 @@ export declare class EntitySelectComponent implements ControlValueAccessor, OnIn
     writeValue(value: EntityId | null): void;
     updateView(entityType: EntityType | AliasEntityType | null, entityId: string | null): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntitySelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntitySelectComponent, "tb-entity-select", never, { "allowedEntityTypes": { "alias": "allowedEntityTypes"; "required": false; }; "useAliasEntityTypes": { "alias": "useAliasEntityTypes"; "required": false; }; "operation": { "alias": "operation"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "additionEntityTypes": { "alias": "additionEntityTypes"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntitySelectComponent, "tb-entity-select", never, { "allowedEntityTypes": { "alias": "allowedEntityTypes"; "required": false; }; "useAliasEntityTypes": { "alias": "useAliasEntityTypes"; "required": false; }; "operation": { "alias": "operation"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "additionEntityTypes": { "alias": "additionEntityTypes"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; }, {}, never, never, false, never>;
 }

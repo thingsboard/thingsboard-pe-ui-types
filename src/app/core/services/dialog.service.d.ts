@@ -13,7 +13,7 @@ export declare class DialogService {
     confirm(title: string, message: string, cancel?: string, ok?: string, fullscreen?: boolean): Observable<boolean>;
     alert(title: string, message: string, ok?: string, fullscreen?: boolean): Observable<boolean>;
     errorAlert(title: string, message: string, error: any, ok?: string, fullscreen?: boolean): Observable<boolean>;
-    colorPicker(color: string, colorClearButton?: boolean, useThemePalette?: boolean): Observable<ColorPickerDialogResult>;
+    colorPicker(color: string, colorClearButton?: boolean, useThemePalette?: boolean, disableAlpha?: boolean): Observable<ColorPickerDialogResult>;
     materialIconPicker(icon: string, iconClearButton?: boolean): Observable<MaterialIconsDialogResult>;
     permissionDenied(): void;
     forbidden(): Observable<boolean>;

@@ -196,6 +196,7 @@ export declare enum MessageType {
     FIRMWARE_UPDATED = "FIRMWARE_UPDATED",
     SOFTWARE_UPDATED = "SOFTWARE_UPDATED",
     generateReport = "generateReport",
+    generateDashboardReport = "generateDashboardReport",
     OWNER_CHANGED = "OWNER_CHANGED"
 }
 export declare const messageTypeNames: Map<MessageType, string>;

@@ -176,6 +176,7 @@ export declare const comparisonResultTypeTranslationMap: Map<ComparisonResultTyp
 export interface KeyInfo {
     name: string;
     aggregationType?: AggregationType;
+    timewindow?: Timewindow;
     comparisonEnabled?: boolean;
     timeForComparison?: ComparisonDuration;
     comparisonCustomIntervalValue?: number;

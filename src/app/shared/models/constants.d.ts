@@ -86,8 +86,11 @@ export declare const HelpLinks: {
         ruleNodeCalculatedFields: string;
         ruleNodeClearAlarm: string;
         ruleNodeCreateAlarm: string;
+        ruleNodeCopyToView: string;
         ruleNodeCreateRelation: string;
         ruleNodeDeleteRelation: string;
+        ruleNodeDeviceState: string;
+        ruleNodeMessageCount: string;
         ruleNodeMsgDelay: string;
         ruleNodeMsgGenerator: string;
         ruleNodeGpsGeofencingEvents: string;
@@ -95,10 +98,12 @@ export declare const HelpLinks: {
         ruleNodeRpcCallReply: string;
         ruleNodeRpcCallRequest: string;
         ruleNodeSaveAttributes: string;
+        ruleNodeDeleteAttributes: string;
         ruleNodeSaveTimeseries: string;
         ruleNodeSaveToCustomTable: string;
         ruleNodeRuleChain: string;
         ruleNodeOutputNode: string;
+        ruleNodeAiRequest: string;
         ruleNodeAwsLambda: string;
         ruleNodeAwsSns: string;
         ruleNodeAwsSqs: string;
@@ -114,6 +119,7 @@ export declare const HelpLinks: {
         ruleNodeRestCallReply: string;
         ruleNodePushToCloud: string;
         ruleNodePushToEdge: string;
+        ruleNodeDeviceProfile: string;
         ruleNodeIntegrationDownlink: string;
         ruleNodeAddToGroup: string;
         ruleNodeRemoveFromGroup: string;
@@ -172,6 +178,7 @@ export declare const HelpLinks: {
         mobileBundle: string;
         mobileQrCode: string;
         calculatedField: string;
+        aiModels: string;
         timewindowSettings: string;
         converters: string;
         uplinkConverters: string;
@@ -189,7 +196,6 @@ export declare const HelpLinks: {
         integrationAwsIoT: string;
         integrationAwsSQS: string;
         integrationAwsKinesis: string;
-        integrationIbmWatsonIoT: string;
         integrationTheThingsNetwork: string;
         integrationTheThingsIndustries: string;
         integrationChirpStack: string;
@@ -214,6 +220,9 @@ export declare const HelpLinks: {
         roles: string;
         selfRegistration: string;
         scheduler: string;
+        reportTemplates: string;
+        scheduledReports: string;
+        reports: string;
         trendzSettings: string;
         secretStorage: string;
     };

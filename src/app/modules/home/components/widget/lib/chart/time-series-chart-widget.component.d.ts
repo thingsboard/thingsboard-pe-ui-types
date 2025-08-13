@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, ElementRef, OnDestroy, OnInit, Renderer2 } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ElementRef, OnDestroy, OnInit, Renderer2, TemplateRef } from '@angular/core';
 import { WidgetContext } from '@home/models/widget-component.models';
 import { Observable } from 'rxjs';
 import { ComponentStyle } from '@shared/models/widget-settings.models';
@@ -17,6 +17,7 @@ export declare class TimeSeriesChartWidgetComponent implements OnInit, OnDestroy
     chartShape: ElementRef<HTMLElement>;
     settings: TimeSeriesChartWidgetSettings;
     ctx: WidgetContext;
+    widgetTitlePanel: TemplateRef<any>;
     horizontalLegendPosition: boolean;
     showLegend: boolean;
     legendClass: string;
@@ -43,5 +44,5 @@ export declare class TimeSeriesChartWidgetComponent implements OnInit, OnDestroy
     onLegendKeyLeave(legendKey: LegendKey): void;
     toggleLegendKey(legendKey: LegendKey): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesChartWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartWidgetComponent, "tb-time-series-chart-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartWidgetComponent, "tb-time-series-chart-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; }, {}, never, never, false, never>;
 }

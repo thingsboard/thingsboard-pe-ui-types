@@ -18,6 +18,7 @@ export declare class AlarmAssigneeSelectComponent implements OnInit, ControlValu
     disabled: boolean;
     inline: boolean;
     userMode: boolean;
+    disableAssignedToCurrentUserOption: boolean;
     assigneeFormGroup: UntypedFormGroup;
     assignee?: User | UserEmailInfo;
     assigneeOption?: AlarmAssigneeOption;
@@ -35,5 +36,5 @@ export declare class AlarmAssigneeSelectComponent implements OnInit, ControlValu
     getAvatarBgColor(): string;
     openAlarmAssigneeSelectPanel($event: Event): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AlarmAssigneeSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmAssigneeSelectComponent, "tb-alarm-assignee-select", never, { "disabled": { "alias": "disabled"; "required": false; }; "inline": { "alias": "inline"; "required": false; }; "userMode": { "alias": "userMode"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmAssigneeSelectComponent, "tb-alarm-assignee-select", never, { "disabled": { "alias": "disabled"; "required": false; }; "inline": { "alias": "inline"; "required": false; }; "userMode": { "alias": "userMode"; "required": false; }; "disableAssignedToCurrentUserOption": { "alias": "disableAssignedToCurrentUserOption"; "required": false; }; }, {}, never, never, false, never>;
 }

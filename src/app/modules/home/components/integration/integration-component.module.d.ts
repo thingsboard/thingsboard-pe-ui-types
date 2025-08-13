@@ -23,23 +23,22 @@ import * as i21 from "@home/components/integration/configuration/pubsub-integrat
 import * as i22 from "@home/components/integration/configuration/apache-pulsar-integration-form/apache-pulsar-integration-form.component";
 import * as i23 from "@home/components/integration/configuration/custom-integration-form/custom-integration-form.component";
 import * as i24 from "@home/components/integration/configuration/aws-kinesis-integration-form/aws-kinesis-integration-form.component";
-import * as i25 from "@home/components/integration/configuration/ibm-watson-iot-integration-form/ibm-watson-iot-integration-form.component";
-import * as i26 from "@home/components/integration/configuration/aws-sqs-integration-form/aws-sqs-integration-form.component";
-import * as i27 from "@home/components/integration/configuration/udp-integration-form/udp-integration-form.component";
-import * as i28 from "@home/components/integration/configuration/azure-event-hub-integration-form/azure-event-hub-integration-form.component";
-import * as i29 from "@home/components/integration/configuration/tcp-integration-form/tcp-integration-form.component";
-import * as i30 from "@home/components/integration/configuration/coap-integration-form/coap-integration-form.component";
-import * as i31 from "@home/components/integration/configuration/thing-park-integration-form/thing-park-integration-form.component";
-import * as i32 from "@home/components/integration/configuration/thing-park-integration-form/thing-park-enterprise-integration-form.component";
-import * as i33 from "@home/components/integration/configuration/kafka-integration-form/kafka-integration-form.component";
-import * as i34 from "@home/components/integration/configuration/rabbit-mq-integration-form/rabbit-mq-integration-form.component";
-import * as i35 from "@home/components/integration/configuration/azure-iot-hub-integration-form/azure-iot-hub-integration-form.component";
-import * as i36 from "@home/components/integration/configuration/tuya-integration-form/tuya-integration-form.component";
-import * as i37 from "@home/components/integration/configuration/azure-services-bus-integration-form/azure-services-bus-integration-form.component";
-import * as i38 from "@angular/common";
-import * as i39 from "@shared/shared.module";
+import * as i25 from "@home/components/integration/configuration/aws-sqs-integration-form/aws-sqs-integration-form.component";
+import * as i26 from "@home/components/integration/configuration/udp-integration-form/udp-integration-form.component";
+import * as i27 from "@home/components/integration/configuration/azure-event-hub-integration-form/azure-event-hub-integration-form.component";
+import * as i28 from "@home/components/integration/configuration/tcp-integration-form/tcp-integration-form.component";
+import * as i29 from "@home/components/integration/configuration/coap-integration-form/coap-integration-form.component";
+import * as i30 from "@home/components/integration/configuration/thing-park-integration-form/thing-park-integration-form.component";
+import * as i31 from "@home/components/integration/configuration/thing-park-integration-form/thing-park-enterprise-integration-form.component";
+import * as i32 from "@home/components/integration/configuration/kafka-integration-form/kafka-integration-form.component";
+import * as i33 from "@home/components/integration/configuration/rabbit-mq-integration-form/rabbit-mq-integration-form.component";
+import * as i34 from "@home/components/integration/configuration/azure-iot-hub-integration-form/azure-iot-hub-integration-form.component";
+import * as i35 from "@home/components/integration/configuration/tuya-integration-form/tuya-integration-form.component";
+import * as i36 from "@home/components/integration/configuration/azure-services-bus-integration-form/azure-services-bus-integration-form.component";
+import * as i37 from "@angular/common";
+import * as i38 from "@shared/shared.module";
 export declare class IntegrationComponentModule {
     static ɵfac: i0.ɵɵFactoryDeclaration<IntegrationComponentModule, never>;
-    static ɵmod: i0.ɵɵNgModuleDeclaration<IntegrationComponentModule, [typeof i1.IntegrationTypeSelectComponent, typeof i2.IntegrationConfigurationComponent, typeof i3.IntegrationCredentialsComponent, typeof i4.MqttTopicFiltersComponent, typeof i5.CertUploadComponent, typeof i6.MqttIntegrationFormComponent, typeof i7.HttpIntegrationFormComponent, typeof i8.SigfoxIntegrationFormComponent, typeof i9.TtnIntegrationFormComponent, typeof i10.TtiIntegrationFormComponent, typeof i11.AwsIotIntegrationFormComponent, typeof i12.OceanConnectIntegrationFormComponent, typeof i13.TMobileIotIntegrationFormComponent, typeof i14.OpcUaIntegrationFormComponent, typeof i15.OpcUaMappingComponent, typeof i16.OpcUaSubscriptionComponent, typeof i17.LoriotIntegrationFormComponent, typeof i18.ChirpStackIntegrationFormComponent, typeof i19.ParticleIntegrationFormComponent, typeof i20.KpnIntegrationFormComponent, typeof i21.PubSubIntegrationFormComponent, typeof i22.ApachePulsarIntegrationFormComponent, typeof i23.CustomIntegrationFormComponent, typeof i24.AwsKinesisIntegrationFormComponent, typeof i25.IbmWatsonIotIntegrationFormComponent, typeof i26.AwsSqsIntegrationFormComponent, typeof i27.UdpIntegrationFormComponent, typeof i28.AzureEventHubIntegrationFormComponent, typeof i29.TcpIntegrationFormComponent, typeof i30.CoapIntegrationFormComponent, typeof i31.ThingParkIntegrationFormComponent, typeof i32.ThingParkEnterpriseIntegrationFormComponent, typeof i33.KafkaIntegrationFormComponent, typeof i34.RabbitMqIntegrationFormComponent, typeof i35.AzureIotHubIntegrationFormComponent, typeof i36.TuyaIntegrationFormComponent, typeof i37.AzureServicesBusIntegrationFormComponent], [typeof i38.CommonModule, typeof i39.SharedModule], [typeof i1.IntegrationTypeSelectComponent, typeof i2.IntegrationConfigurationComponent]>;
+    static ɵmod: i0.ɵɵNgModuleDeclaration<IntegrationComponentModule, [typeof i1.IntegrationTypeSelectComponent, typeof i2.IntegrationConfigurationComponent, typeof i3.IntegrationCredentialsComponent, typeof i4.MqttTopicFiltersComponent, typeof i5.CertUploadComponent, typeof i6.MqttIntegrationFormComponent, typeof i7.HttpIntegrationFormComponent, typeof i8.SigfoxIntegrationFormComponent, typeof i9.TtnIntegrationFormComponent, typeof i10.TtiIntegrationFormComponent, typeof i11.AwsIotIntegrationFormComponent, typeof i12.OceanConnectIntegrationFormComponent, typeof i13.TMobileIotIntegrationFormComponent, typeof i14.OpcUaIntegrationFormComponent, typeof i15.OpcUaMappingComponent, typeof i16.OpcUaSubscriptionComponent, typeof i17.LoriotIntegrationFormComponent, typeof i18.ChirpStackIntegrationFormComponent, typeof i19.ParticleIntegrationFormComponent, typeof i20.KpnIntegrationFormComponent, typeof i21.PubSubIntegrationFormComponent, typeof i22.ApachePulsarIntegrationFormComponent, typeof i23.CustomIntegrationFormComponent, typeof i24.AwsKinesisIntegrationFormComponent, typeof i25.AwsSqsIntegrationFormComponent, typeof i26.UdpIntegrationFormComponent, typeof i27.AzureEventHubIntegrationFormComponent, typeof i28.TcpIntegrationFormComponent, typeof i29.CoapIntegrationFormComponent, typeof i30.ThingParkIntegrationFormComponent, typeof i31.ThingParkEnterpriseIntegrationFormComponent, typeof i32.KafkaIntegrationFormComponent, typeof i33.RabbitMqIntegrationFormComponent, typeof i34.AzureIotHubIntegrationFormComponent, typeof i35.TuyaIntegrationFormComponent, typeof i36.AzureServicesBusIntegrationFormComponent], [typeof i37.CommonModule, typeof i38.SharedModule], [typeof i1.IntegrationTypeSelectComponent, typeof i2.IntegrationConfigurationComponent]>;
     static ɵinj: i0.ɵɵInjectorDeclaration<IntegrationComponentModule>;
 }

@@ -20,6 +20,7 @@ export declare class DatasourceComponent implements ControlValueAccessor, OnInit
     private destroyRef;
     get basicMode(): boolean;
     get widgetType(): widgetType;
+    get allowFunctions(): boolean;
     get aliasController(): IAliasController;
     get entityAliasSelectCallbacks(): EntityAliasSelectCallbacks;
     get filterSelectCallbacks(): FilterSelectCallbacks;
@@ -28,6 +29,7 @@ export declare class DatasourceComponent implements ControlValueAccessor, OnInit
     get hasAdditionalLatestDataKeys(): boolean;
     get dataKeysOptional(): boolean;
     get datasourcesOptional(): boolean;
+    get datasources(): Datasource[];
     get entityAliasOptional(): boolean;
     get maxDataKeys(): number;
     get dataKeySettingsForm(): FormProperty[];
@@ -40,6 +42,7 @@ export declare class DatasourceComponent implements ControlValueAccessor, OnInit
     get widget(): Widget;
     get hideDatasourceLabel(): boolean;
     get displayDatasourceFilterForBasicMode(): boolean;
+    get reportMode(): boolean;
     get hideDataKeyLabel(): boolean;
     get hideDataKeyColor(): boolean;
     get hideDataKeyUnits(): boolean;
@@ -70,6 +73,6 @@ export declare class DatasourceComponent implements ControlValueAccessor, OnInit
     isDataKeysOptional(type?: DatasourceType): boolean;
     private datasourceUpdated;
     private updateValidators;
-    static ɵfac: i0.ɵɵFactoryDeclaration<DatasourceComponent, [null, { optional: true; }, null, null]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<DatasourceComponent, [null, { optional: true; }, { optional: true; }, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<DatasourceComponent, "tb-datasource", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

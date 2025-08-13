@@ -12,6 +12,7 @@ import { EntityType } from '@shared/models/entity-type.models';
 import { ApiFeature, ApiUsageStateValue } from '@shared/models/api-usage.models';
 import { LimitedApi } from '@shared/models/limited-api.models';
 import { IntegrationType } from '@shared/models/integration.models';
+import { ReportTemplateId } from '@shared/models/id/report-template-id';
 export interface Notification {
     readonly id: NotificationId;
     readonly requestId: NotificationRequestId;
@@ -256,6 +257,10 @@ export interface NotificationTemplate extends Omit<BaseData<NotificationTemplate
 }
 interface NotificationTemplateConfig {
     deliveryMethodsTemplates: DeliveryMethodsTemplates;
+    attachReport: boolean;
+    reportTemplateId: ReportTemplateId;
+    userId: UserId;
+    timezone: string;
 }
 export type DeliveryMethodsTemplates = {
     [key in NotificationDeliveryMethod]: DeliveryMethodNotificationTemplate;
@@ -366,7 +371,8 @@ export declare enum NotificationType {
     TASK_PROCESSING_FAILURE = "TASK_PROCESSING_FAILURE",
     RESOURCES_SHORTAGE = "RESOURCES_SHORTAGE",
     USER_ACTIVATED = "USER_ACTIVATED",
-    USER_REGISTERED = "USER_REGISTERED"
+    USER_REGISTERED = "USER_REGISTERED",
+    REPORT_GENERATED = "REPORT_GENERATED"
 }
 export declare const NotificationTypeIcons: Map<NotificationType, string>;
 export declare const AlarmSeverityNotificationColors: Map<AlarmSeverity, string>;

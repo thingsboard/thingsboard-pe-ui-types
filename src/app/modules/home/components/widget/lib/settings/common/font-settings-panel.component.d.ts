@@ -1,6 +1,6 @@
 import { DestroyRef, ElementRef, EventEmitter, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
-import { ComponentStyle, cssUnit, Font } from '@shared/models/widget-settings.models';
+import { ComponentStyle, cssUnit, Font, fontStyle, fontWeight } from '@shared/models/widget-settings.models';
 import { TbPopoverComponent } from '@shared/components/popover.component';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
@@ -11,6 +11,7 @@ export declare class FontSettingsPanelComponent extends PageComponent implements
     private fb;
     protected store: Store<AppState>;
     private destroyRef;
+    private popover;
     font: Font;
     previewText: string;
     initialPreviewStyle: ComponentStyle;
@@ -18,18 +19,19 @@ export declare class FontSettingsPanelComponent extends PageComponent implements
     autoScale: boolean;
     disabledLineHeight: boolean;
     forceSizeUnit: cssUnit;
-    popover: TbPopoverComponent<FontSettingsPanelComponent>;
+    allowedFontWeights: fontWeight[];
+    allowedFontStyles: fontStyle[];
     fontApplied: EventEmitter<Font>;
     familyInput: ElementRef;
-    fontWeightsList: readonly ["normal", "bold", "bolder", "lighter", "100", "200", "300", "400", "500", "600", "700", "800", "900"];
-    fontWeightTranslationsMap: Map<"bold" | "normal" | "lighter" | "900" | "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "bolder", string>;
-    fontStylesList: readonly ["normal", "italic", "oblique"];
-    fontStyleTranslationsMap: Map<"normal" | "italic" | "oblique", string>;
+    fontWeightsList: string[];
+    fontWeightTranslationsMap: Map<string, string>;
+    fontStylesList: string[];
+    fontStyleTranslationsMap: Map<string, string>;
     fontFormGroup: UntypedFormGroup;
     filteredFontFamilies: Observable<Array<string>>;
     familySearchText: string;
     previewStyle: ComponentStyle;
-    constructor(fb: UntypedFormBuilder, store: Store<AppState>, destroyRef: DestroyRef);
+    constructor(fb: UntypedFormBuilder, store: Store<AppState>, destroyRef: DestroyRef, popover: TbPopoverComponent);
     ngOnInit(): void;
     clearFamily(): void;
     cancel(): void;
@@ -38,5 +40,5 @@ export declare class FontSettingsPanelComponent extends PageComponent implements
     clearFont(): void;
     private updatePreviewStyle;
     static ɵfac: i0.ɵɵFactoryDeclaration<FontSettingsPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FontSettingsPanelComponent, "tb-font-settings-panel", never, { "font": { "alias": "font"; "required": false; }; "previewText": { "alias": "previewText"; "required": false; }; "initialPreviewStyle": { "alias": "initialPreviewStyle"; "required": false; }; "clearButton": { "alias": "clearButton"; "required": false; }; "autoScale": { "alias": "autoScale"; "required": false; }; "disabledLineHeight": { "alias": "disabledLineHeight"; "required": false; }; "forceSizeUnit": { "alias": "forceSizeUnit"; "required": false; }; "popover": { "alias": "popover"; "required": false; }; }, { "fontApplied": "fontApplied"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FontSettingsPanelComponent, "tb-font-settings-panel", never, { "font": { "alias": "font"; "required": false; }; "previewText": { "alias": "previewText"; "required": false; }; "initialPreviewStyle": { "alias": "initialPreviewStyle"; "required": false; }; "clearButton": { "alias": "clearButton"; "required": false; }; "autoScale": { "alias": "autoScale"; "required": false; }; "disabledLineHeight": { "alias": "disabledLineHeight"; "required": false; }; "forceSizeUnit": { "alias": "forceSizeUnit"; "required": false; }; "allowedFontWeights": { "alias": "allowedFontWeights"; "required": false; }; "allowedFontStyles": { "alias": "allowedFontStyles"; "required": false; }; }, { "fontApplied": "fontApplied"; }, never, never, false, never>;
 }

@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, ElementRef, OnDestroy, OnInit } from '@angular/core';
-import { ControlValueAccessor, UntypedFormControl, Validator, AbstractControl, ValidationErrors } from '@angular/forms';
+import { AbstractControl, ControlValueAccessor, UntypedFormControl, ValidationErrors, Validator } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { RafService } from '@core/services/raf.service';
@@ -10,6 +10,7 @@ export declare class JsonObjectEditComponent implements OnInit, ControlValueAcce
     protected store: Store<AppState>;
     private raf;
     private cd;
+    position: string;
     jsonEditorElmRef: ElementRef;
     private jsonEditor;
     private editorsResizeCaf;
@@ -52,5 +53,5 @@ export declare class JsonObjectEditComponent implements OnInit, ControlValueAcce
     updateView(): void;
     onFullscreen(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<JsonObjectEditComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<JsonObjectEditComponent, "tb-json-object-edit", never, { "label": { "alias": "label"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "fillHeight": { "alias": "fillHeight"; "required": false; }; "editorStyle": { "alias": "editorStyle"; "required": false; }; "sort": { "alias": "sort"; "required": false; }; "jsonRequired": { "alias": "jsonRequired"; "required": false; }; "readonly": { "alias": "readonly"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<JsonObjectEditComponent, "tb-json-object-edit", never, { "label": { "alias": "label"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "fillHeight": { "alias": "fillHeight"; "required": false; }; "editorStyle": { "alias": "editorStyle"; "required": false; }; "sort": { "alias": "sort"; "required": false; }; "jsonRequired": { "alias": "jsonRequired"; "required": false; }; "readonly": { "alias": "readonly"; "required": false; }; }, {}, never, ["[toolbarSuffixButton]"], false, never>;
 }

@@ -17,6 +17,9 @@ export interface EntityAliasDialogData {
     allowedEntityTypes: Array<EntityType | AliasEntityType>;
     entityAliases: EntityAliases | Array<EntityAlias>;
     alias?: EntityAlias;
+    disableResolveMultiple?: boolean;
+    reportMode?: boolean;
+    subReport?: boolean;
 }
 export declare class EntityAliasDialogComponent extends DialogComponent<EntityAliasDialogComponent, EntityAlias> implements OnInit, ErrorStateMatcher {
     protected store: Store<AppState>;
@@ -29,9 +32,12 @@ export declare class EntityAliasDialogComponent extends DialogComponent<EntityAl
     translate: TranslateService;
     private entityService;
     isAdd: boolean;
+    disableResolveMultiple: boolean;
     allowedEntityTypes: Array<EntityType | AliasEntityType>;
     entityAliases: Array<EntityAlias>;
     alias: EntityAlias;
+    reportMode: boolean;
+    subReport: boolean;
     entityAliasFormGroup: UntypedFormGroup;
     submitted: boolean;
     constructor(store: Store<AppState>, router: Router, data: EntityAliasDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<EntityAliasDialogComponent, EntityAlias>, fb: UntypedFormBuilder, utils: UtilsService, translate: TranslateService, entityService: EntityService);

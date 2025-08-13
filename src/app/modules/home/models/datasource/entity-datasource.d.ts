@@ -11,6 +11,7 @@ export declare class EntitiesDataSource<T extends BaseData<HasId>, P extends Pag
     protected dataLoadedFunction: (col?: number, row?: number) => void;
     private entitiesSubject;
     private pageDataSubject;
+    private currentLoadSubscription;
     pageData$: Observable<PageData<T>>;
     selection: SelectionModel<T>;
     currentEntity: T;

@@ -14,6 +14,7 @@ export interface FilterDialogData {
     isAdd: boolean;
     filters: Filters | Array<Filter>;
     filter?: Filter;
+    disableUserEdit?: boolean;
 }
 export declare class FilterDialogComponent extends DialogComponent<FilterDialogComponent, Filter> implements OnInit, ErrorStateMatcher {
     protected store: Store<AppState>;
@@ -25,6 +26,7 @@ export declare class FilterDialogComponent extends DialogComponent<FilterDialogC
     private utils;
     translate: TranslateService;
     isAdd: boolean;
+    disableUserEdit: boolean;
     filters: Array<Filter>;
     filter: Filter;
     filterFormGroup: UntypedFormGroup;

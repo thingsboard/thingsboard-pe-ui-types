@@ -375,8 +375,8 @@ import * as SchedulerEventTemplateConfigComponent from '@home/components/schedul
 import * as SendRpcRequestComponent from '@home/components/scheduler/config/send-rpc-request.component';
 import * as UpdateAttributesComponent from '@home/components/scheduler/config/update-attributes.component';
 import * as AttributeKeyValueTableComponent from '@home/components/scheduler/config/attribute-key-value-table.component';
-import * as GenerateReportComponent from '@home/components/scheduler/config/generate-report.component';
-import * as ReportConfigComponent from '@home/components/scheduler/config/report-config.component';
+import * as GenerateReportComponent from '@home/components/scheduler/config/generate-dashboard-report.component';
+import * as ReportConfigComponent from '@home/components/scheduler/config/dashboard-report-config.component';
 import * as SelectDashboardStateDialogComponent from '@home/components/scheduler/config/select-dashboard-state-dialog.component';
 import * as EmailConfigComponent from '@home/components/scheduler/config/email-config.component';
 import * as SchedulerEventScheduleComponent from '@home/components/scheduler/scheduler-event-schedule.component';
@@ -396,6 +396,7 @@ import * as SecretKeyInputComponent from '@shared/components/secret-storage/secr
 import * as SecretFileInputComponent from '@shared/components/secret-storage/secret-file-input.component';
 import * as SecretStorageDialogComponent from '@shared/components/secret-storage/secret-storage-dialog.component';
 import * as SecretAutocompleteComponent from '@shared/components/secret-storage/secret-autocomplete.component';
+import * as AIModelDialogComponent from '@home/components/ai-model/ai-model-dialog.component';
 
 import { IModulesMap } from '@modules/common/modules-map.models';
 import { Observable, of } from 'rxjs';
@@ -774,7 +775,8 @@ class ModulesMap implements IModulesMap {
     '@home/components/scheduler/config/email-config.component': EmailConfigComponent,
     '@home/components/scheduler/scheduler-event-schedule.component': SchedulerEventScheduleComponent,
     '@home/components/profile/queue/tenant-profile-queues.component': TenantProfileQueuesComponent,
-    '@home/components/queue/queue-form.component': QueueFormComponent
+    '@home/components/queue/queue-form.component': QueueFormComponent,
+    '@home/components/ai-model/ai-model-dialog.component': AIModelDialogComponent,
   };
 
   init(): Observable<any> {

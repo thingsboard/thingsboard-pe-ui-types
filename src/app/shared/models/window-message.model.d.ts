@@ -1,4 +1,4 @@
-export type WindowMessageType = 'openReport' | 'clearReport' | 'reportResult' | 'widgetException' | 'widgetEditModeInited' | 'widgetEditUpdated' | 'dashboardStateSelected' | 'openDashboardMessage' | 'reloadUserMessage' | 'toggleDashboardLayout' | 'resetRecaptcha' | 'widgetEditModeToggle';
+export type WindowMessageType = 'openReport' | 'clearReport' | 'reportResult' | 'waitReportWidgets' | 'widgetException' | 'widgetEditModeInited' | 'widgetEditUpdated' | 'dashboardStateSelected' | 'openDashboardMessage' | 'reloadUserMessage' | 'toggleDashboardLayout' | 'resetRecaptcha' | 'widgetEditModeToggle';
 export interface WindowMessage {
     type: WindowMessageType;
     data?: any;
@@ -21,7 +21,11 @@ export interface OpenReportMessage {
     state?: string;
     reportTimewindow?: object;
 }
+export interface WaitWidgetsMessage {
+    timeout: number;
+}
 export interface ReportResultMessage {
     success: boolean;
     error?: string;
+    pageHeight?: number;
 }

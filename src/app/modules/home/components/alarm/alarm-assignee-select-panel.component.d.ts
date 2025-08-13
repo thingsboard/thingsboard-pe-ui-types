@@ -14,6 +14,7 @@ export interface AlarmAssigneeSelectPanelData {
     assigneeId?: string;
     assigneeOption?: AlarmAssigneeOption;
     userMode?: boolean;
+    disableAssignedToCurrentUserOption?: boolean;
 }
 export declare class AlarmAssigneeSelectPanelComponent implements OnInit, AfterViewInit, OnDestroy {
     data: AlarmAssigneeSelectPanelData;
@@ -26,6 +27,7 @@ export declare class AlarmAssigneeSelectPanelComponent implements OnInit, AfterV
     private dirty;
     assigneeId?: string;
     assigneeOption?: AlarmAssigneeOption;
+    disableAssignedToCurrentUserOption: boolean;
     assigneeNotSetText: string;
     assignedToCurrentUserText: string;
     selectUserFormGroup: FormGroup;

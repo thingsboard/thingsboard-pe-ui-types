@@ -1,3 +1,6 @@
+import { SchedulerEventSchedule } from '@shared/models/scheduler-event.models';
+import { TranslateService } from '@ngx-translate/core';
+import _moment from 'moment';
 export declare enum schedulerCalendarView {
     month = "month",
     week = "week",
@@ -39,3 +42,4 @@ export interface SchedulerWeekDay {
     label: string;
     tooltip: string;
 }
+export declare const scheduleInfo: (schedule: SchedulerEventSchedule, translate: TranslateService, startTime?: _moment.Moment) => string;

@@ -1,0 +1,35 @@
+import { ChangeDetectorRef, DestroyRef } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { EntityComponent } from '@home/components/entity/entity.component';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
+import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
+import { MatDialog } from '@angular/material/dialog';
+import { ReportTemplate, ReportTemplateType, TbReportFormat } from '@shared/models/report.models';
+import * as i0 from "@angular/core";
+export declare class ReportTemplateFormComponent extends EntityComponent<ReportTemplate> {
+    protected store: Store<AppState>;
+    protected translate: TranslateService;
+    private dialog;
+    protected entityValue: ReportTemplate;
+    protected entitiesTableConfigValue: EntityTableConfig<ReportTemplate>;
+    protected fb: UntypedFormBuilder;
+    protected cd: ChangeDetectorRef;
+    private destroyRef;
+    ReportTemplateType: typeof ReportTemplateType;
+    reportTemplateTypes: ReportTemplateType[];
+    reportTemplateTypeTranslationMap: Map<ReportTemplateType, string>;
+    TbReportFormat: typeof TbReportFormat;
+    reportFormats: TbReportFormat[];
+    constructor(store: Store<AppState>, translate: TranslateService, dialog: MatDialog, entityValue: ReportTemplate, entitiesTableConfigValue: EntityTableConfig<ReportTemplate>, fb: UntypedFormBuilder, cd: ChangeDetectorRef, destroyRef: DestroyRef);
+    ngOnInit(): void;
+    hideDelete(): boolean;
+    buildForm(entity: ReportTemplate): UntypedFormGroup;
+    updateForm(entity: ReportTemplate): void;
+    updateFormState(): void;
+    prepareFormValue(value: ReportTemplate): ReportTemplate;
+    onReportTemplateIdCopied(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<ReportTemplateFormComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ReportTemplateFormComponent, "tb-report-template-form", never, {}, {}, never, never, false, never>;
+}

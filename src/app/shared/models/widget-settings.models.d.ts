@@ -1,5 +1,6 @@
 import { DataEntry, DataKey, Datasource, DatasourceData, TargetDevice } from '@shared/models/widget.models';
 import { EventEmitter, Injector } from '@angular/core';
+import { DatePipe } from '@angular/common';
 import { AlarmFilterConfig } from '@shared/models/query/query.models';
 import { Observable } from 'rxjs';
 import { ImagePipe } from '@shared/pipe/image.pipe';
@@ -13,18 +14,25 @@ import { TbUnit } from '@shared/models/unit.models';
 export type ComponentStyle = {
     [klass: string]: any;
 };
-export declare const cssUnits: readonly ["px", "em", "%", "rem", "pt", "pc", "in", "cm", "mm", "ex", "ch", "vw", "vh", "vmin", "vmax"];
+export declare const cssUnits: string[];
 type cssUnitTuple = typeof cssUnits;
 export type cssUnit = cssUnitTuple[number];
-export declare const fontWeights: readonly ["normal", "bold", "bolder", "lighter", "100", "200", "300", "400", "500", "600", "700", "800", "900"];
+export declare const fontWeights: string[];
 type fontWeightTuple = typeof fontWeights;
 export type fontWeight = fontWeightTuple[number];
-export declare const fontWeightTranslations: Map<"bold" | "normal" | "lighter" | "900" | "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "bolder", string>;
-export declare const fontStyles: readonly ["normal", "italic", "oblique"];
+export declare const fontWeightTranslations: Map<string, string>;
+export declare const fontStyles: string[];
 type fontStyleTuple = typeof fontStyles;
 export type fontStyle = fontStyleTuple[number];
-export declare const fontStyleTranslations: Map<"normal" | "italic" | "oblique", string>;
+export declare const fontStyleTranslations: Map<string, string>;
 export declare const commonFonts: string[];
+export declare const alignments: string[];
+type alignmentTuple = typeof alignments;
+export type alignment = alignmentTuple[number];
+export declare const alignmentTranslations: Map<string, string>;
+export declare const alignmentIcons: Map<string, string>;
+export declare const horizontalAlignments: alignment[];
+export declare const verticalAlignments: alignment[];
 export interface Font {
     size: number;
     sizeUnit: cssUnit;
@@ -159,11 +167,14 @@ export interface DateFormatSettings {
 export declare const simpleDateFormat: (format: string) => DateFormatSettings;
 export declare const lastUpdateAgoDateFormat: () => DateFormatSettings;
 export declare const customDateFormat: (format: string) => DateFormatSettings;
+export declare const toDateFormatSettings: (strFormat: string) => DateFormatSettings;
 export declare const defaultAutoDateFormatSettings: AutoDateFormatSettings;
 export declare const autoDateFormat: () => DateFormatSettings;
+export declare const millisecondsDateFormat: () => DateFormatSettings;
 export declare const dateFormats: DateFormatSettings[];
 export declare const dateFormatsWithAuto: DateFormatSettings[];
 export declare const compareDateFormats: (df1: DateFormatSettings, df2: DateFormatSettings) => boolean;
+export declare const dateFormatPreview: (date: DatePipe, format: string) => string;
 export declare abstract class DateFormatProcessor {
     protected $injector: Injector;
     protected settings: DateFormatSettings;

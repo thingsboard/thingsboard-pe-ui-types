@@ -1,0 +1,30 @@
+import { DestroyRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { ReportTemplateSettings, TbReportFormat } from '@shared/models/report.models';
+import * as i0 from "@angular/core";
+export declare class ReportTemplateSettingsComponent implements OnInit, OnChanges, ControlValueAccessor {
+    private fb;
+    private destroyRef;
+    pageSizes: import("@shared/models/report.models").PageSize[];
+    paperSizeDisplayMap: Map<import("@shared/models/report.models").PageSize, string>;
+    pageOrientations: import("@shared/models/report.models").PageOrientation[];
+    pageOrientationTranslationMap: Map<import("@shared/models/report.models").PageOrientation, string>;
+    TbReportFormat: typeof TbReportFormat;
+    disabled: boolean;
+    subReport: boolean;
+    format: TbReportFormat;
+    private modelValue;
+    private propagateChange;
+    settingsFormGroup: UntypedFormGroup;
+    constructor(fb: UntypedFormBuilder, destroyRef: DestroyRef);
+    ngOnInit(): void;
+    ngOnChanges(changes: SimpleChanges): void;
+    registerOnChange(fn: any): void;
+    registerOnTouched(_fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    writeValue(value: ReportTemplateSettings): void;
+    private updateValidators;
+    private updateModel;
+    static ɵfac: i0.ɵɵFactoryDeclaration<ReportTemplateSettingsComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ReportTemplateSettingsComponent, "tb-report-template-settings", never, { "disabled": { "alias": "disabled"; "required": false; }; "subReport": { "alias": "subReport"; "required": false; }; "format": { "alias": "format"; "required": false; }; }, {}, never, never, false, never>;
+}

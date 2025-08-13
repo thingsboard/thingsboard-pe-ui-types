@@ -5,8 +5,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { UtilsService } from '@core/services/utils.service';
 import { SecretStorageService } from '@core/http/secret-storage.service';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
 import * as i0 from "@angular/core";
 export declare class SecretFileInputComponent extends PageComponent implements OnInit, ControlValueAccessor, OnChanges {
+    protected store: Store<AppState>;
     private dialog;
     private secretStorageService;
     private userPermissionsService;
@@ -21,11 +24,15 @@ export declare class SecretFileInputComponent extends PageComponent implements O
     disabled: boolean;
     readonly: boolean;
     fileNameChanged: EventEmitter<string | string[]>;
+    accept: string;
+    maxSizeByte: number;
+    allowedExtensions: string;
     secretStorageFile: string;
+    allowSecret: boolean;
     private modelValue;
     private propagateChange;
     secretFileFormGroup: UntypedFormGroup;
-    constructor(dialog: MatDialog, secretStorageService: SecretStorageService, userPermissionsService: UserPermissionsService, utils: UtilsService, fb: UntypedFormBuilder, destroyRef: DestroyRef);
+    constructor(store: Store<AppState>, dialog: MatDialog, secretStorageService: SecretStorageService, userPermissionsService: UserPermissionsService, utils: UtilsService, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
     private updateValidators;
@@ -38,7 +45,7 @@ export declare class SecretFileInputComponent extends PageComponent implements O
     remove($event: Event): void;
     openSecretKeyDialog($event: Event): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SecretFileInputComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SecretFileInputComponent, "tb-secret-file-input", never, { "label": { "alias": "label"; "required": false; }; "noFileText": { "alias": "noFileText"; "required": false; }; "existingFileName": { "alias": "existingFileName"; "required": false; }; "inputId": { "alias": "inputId"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "readonly": { "alias": "readonly"; "required": false; }; }, { "fileNameChanged": "fileNameChanged"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SecretFileInputComponent, "tb-secret-file-input", never, { "label": { "alias": "label"; "required": false; }; "noFileText": { "alias": "noFileText"; "required": false; }; "existingFileName": { "alias": "existingFileName"; "required": false; }; "inputId": { "alias": "inputId"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "readonly": { "alias": "readonly"; "required": false; }; "accept": { "alias": "accept"; "required": false; }; "maxSizeByte": { "alias": "maxSizeByte"; "required": false; }; "allowedExtensions": { "alias": "allowedExtensions"; "required": false; }; }, { "fileNameChanged": "fileNameChanged"; }, never, never, false, never>;
     static ngAcceptInputType_required: unknown;
     static ngAcceptInputType_readonly: unknown;
 }

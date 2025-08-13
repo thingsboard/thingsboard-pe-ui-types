@@ -13,7 +13,7 @@ import { WidgetTimewindow } from '@shared/models/time/time.models';
 import { UtilsService } from '@core/services/utils.service';
 import { ChartAnimationSettings, ChartBarSettings, ChartFillSettings, ChartLabelPosition, ChartLineType, ChartShape } from '@home/components/widget/lib/chart/chart.models';
 import { TimeSeriesChartTooltipValueFormatFunction, TimeSeriesChartTooltipWidgetSettings } from '@home/components/widget/lib/chart/time-series-chart-tooltip.models';
-import { TbUnitConverter } from '@shared/models/unit.models';
+import { TbUnit, TbUnitConverter } from '@shared/models/unit.models';
 type TimeSeriesChartDataEntry = [number, any, number, number];
 type TimeSeriesChartDataSet = {
     name: string;
@@ -121,7 +121,7 @@ export type TimeSeriesChartTicksFormatter = (value: any) => string;
 export interface TimeSeriesChartYAxisSettings extends TimeSeriesChartAxisSettings {
     id?: TimeSeriesChartYAxisId;
     order?: number;
-    units?: string;
+    units?: TbUnit;
     decimals?: number;
     interval?: number;
     splitNumber?: number;

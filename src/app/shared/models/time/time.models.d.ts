@@ -157,6 +157,7 @@ export declare const QuickTimeIntervalTranslationMap: Map<QuickTimeInterval, str
 export declare const IntervalTypeValuesMap: Map<IntervalType, number>;
 export declare const forAllTimeInterval: () => Timewindow;
 export declare const historyInterval: (timewindowMs: number) => Timewindow;
+export declare const historyQuickInterval: (interval: QuickTimeInterval) => Timewindow;
 export declare const defaultTimewindow: (timeService: TimeService) => Timewindow;
 export declare const initModelFromDefaultTimewindow: (value: Timewindow, quickIntervalOnly: boolean, historyOnly: boolean, timeService: TimeService) => Timewindow;
 export declare const toHistoryTimewindow: (timewindow: Timewindow, startTimeMs: number, endTimeMs: number, interval: Interval, timeService: TimeService) => Timewindow;

@@ -7,7 +7,8 @@ export declare class CssUnitSelectComponent implements OnInit, ControlValueAcces
     disabled: boolean;
     allowEmpty: boolean;
     width: string;
-    cssUnitsList: readonly ["px", "em", "%", "rem", "pt", "pc", "in", "cm", "mm", "ex", "ch", "vw", "vh", "vmin", "vmax"];
+    allowedCssUnits: cssUnit[];
+    cssUnitsList: string[];
     cssUnitFormControl: UntypedFormControl;
     modelValue: cssUnit;
     private propagateChange;
@@ -19,5 +20,5 @@ export declare class CssUnitSelectComponent implements OnInit, ControlValueAcces
     writeValue(value: cssUnit): void;
     updateModel(value: cssUnit): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<CssUnitSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CssUnitSelectComponent, "tb-css-unit-select", never, { "disabled": { "alias": "disabled"; "required": false; }; "allowEmpty": { "alias": "allowEmpty"; "required": false; }; "width": { "alias": "width"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CssUnitSelectComponent, "tb-css-unit-select", never, { "disabled": { "alias": "disabled"; "required": false; }; "allowEmpty": { "alias": "allowEmpty"; "required": false; }; "width": { "alias": "width"; "required": false; }; "allowedCssUnits": { "alias": "allowedCssUnits"; "required": false; }; }, {}, never, never, false, never>;
 }

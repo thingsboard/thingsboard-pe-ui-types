@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, DestroyRef, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, DestroyRef, EventEmitter, OnDestroy, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -21,7 +21,12 @@ export declare class GalleryImageInputComponent extends PageComponent implements
     private destroyRef;
     label: string;
     required: boolean;
+    detectImageSize: boolean;
     disabled: boolean;
+    imageSize: EventEmitter<{
+        width: number;
+        height: number;
+    }>;
     imageUrl: string;
     imageResource: ImageResourceInfo;
     loadingImageResource: boolean;
@@ -42,6 +47,7 @@ export declare class GalleryImageInputComponent extends PageComponent implements
     clearImage(): void;
     setLink($event: Event): void;
     openGallery($event: Event): void;
+    private imageLoaded;
     static ɵfac: i0.ɵɵFactoryDeclaration<GalleryImageInputComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<GalleryImageInputComponent, "tb-gallery-image-input", never, { "label": { "alias": "label"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GalleryImageInputComponent, "tb-gallery-image-input", never, { "label": { "alias": "label"; "required": false; }; "required": { "alias": "required"; "required": false; }; "detectImageSize": { "alias": "detectImageSize"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, { "imageSize": "imageSize"; }, never, never, false, never>;
 }

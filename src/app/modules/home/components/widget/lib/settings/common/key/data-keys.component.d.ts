@@ -5,7 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { MatAutocomplete, MatAutocompleteTrigger } from '@angular/material/autocomplete';
 import { MatChipGrid, MatChipInputEvent, MatChipRow } from '@angular/material/chips';
 import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
-import { DataKey, DatasourceType, Widget, widgetType } from '@shared/models/widget.models';
+import { DataKey, Datasource, DatasourceType, Widget, widgetType } from '@shared/models/widget.models';
 import { IAliasController } from '@core/api/widget-api.models';
 import { DataKeySettingsFunction } from './data-keys.component.models';
 import { UtilsService } from '@core/services/utils.service';
@@ -33,6 +33,7 @@ export declare class DataKeysComponent implements ControlValueAccessor, OnInit, 
     appearance: MatFormFieldAppearance;
     subscriptSizing: SubscriptSizing;
     inlineField: boolean;
+    reportMode: boolean;
     hideDataKeyLabel: boolean;
     hideDataKeyColor: boolean;
     hideDataKeyUnits: boolean;
@@ -60,6 +61,7 @@ export declare class DataKeysComponent implements ControlValueAccessor, OnInit, 
     callbacks: WidgetConfigCallbacks;
     entityAliasId: string;
     deviceId: string;
+    datasources: Datasource[];
     generateKey: (key: DataKey) => DataKey;
     private requiredValue;
     get required(): boolean;
@@ -132,5 +134,5 @@ export declare class DataKeysComponent implements ControlValueAccessor, OnInit, 
     get maxDataKeysSet(): boolean;
     private clearSearchCache;
     static ɵfac: i0.ɵɵFactoryDeclaration<DataKeysComponent, [{ skipSelf: true; }, null, null, null, null, null, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeysComponent, "tb-data-keys", never, { "label": { "alias": "label"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "inlineField": { "alias": "inlineField"; "required": false; }; "hideDataKeyLabel": { "alias": "hideDataKeyLabel"; "required": false; }; "hideDataKeyColor": { "alias": "hideDataKeyColor"; "required": false; }; "hideDataKeyUnits": { "alias": "hideDataKeyUnits"; "required": false; }; "hideDataKeyDecimals": { "alias": "hideDataKeyDecimals"; "required": false; }; "disableDrag": { "alias": "disableDrag"; "required": false; }; "widgetType": { "alias": "widgetType"; "required": false; }; "datasourceType": { "alias": "datasourceType"; "required": false; }; "maxDataKeys": { "alias": "maxDataKeys"; "required": false; }; "optDataKeys": { "alias": "optDataKeys"; "required": false; }; "latestDataKeys": { "alias": "latestDataKeys"; "required": false; }; "simpleDataKeysLabel": { "alias": "simpleDataKeysLabel"; "required": false; }; "supportsUnitConversion": { "alias": "supportsUnitConversion"; "required": false; }; "aliasController": { "alias": "aliasController"; "required": false; }; "dataKeySettingsForm": { "alias": "dataKeySettingsForm"; "required": false; }; "datakeySettingsFunction": { "alias": "datakeySettingsFunction"; "required": false; }; "dataKeySettingsDirective": { "alias": "dataKeySettingsDirective"; "required": false; }; "dashboard": { "alias": "dashboard"; "required": false; }; "widget": { "alias": "widget"; "required": false; }; "callbacks": { "alias": "callbacks"; "required": false; }; "entityAliasId": { "alias": "entityAliasId"; "required": false; }; "deviceId": { "alias": "deviceId"; "required": false; }; "generateKey": { "alias": "generateKey"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeysComponent, "tb-data-keys", never, { "label": { "alias": "label"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "inlineField": { "alias": "inlineField"; "required": false; }; "reportMode": { "alias": "reportMode"; "required": false; }; "hideDataKeyLabel": { "alias": "hideDataKeyLabel"; "required": false; }; "hideDataKeyColor": { "alias": "hideDataKeyColor"; "required": false; }; "hideDataKeyUnits": { "alias": "hideDataKeyUnits"; "required": false; }; "hideDataKeyDecimals": { "alias": "hideDataKeyDecimals"; "required": false; }; "disableDrag": { "alias": "disableDrag"; "required": false; }; "widgetType": { "alias": "widgetType"; "required": false; }; "datasourceType": { "alias": "datasourceType"; "required": false; }; "maxDataKeys": { "alias": "maxDataKeys"; "required": false; }; "optDataKeys": { "alias": "optDataKeys"; "required": false; }; "latestDataKeys": { "alias": "latestDataKeys"; "required": false; }; "simpleDataKeysLabel": { "alias": "simpleDataKeysLabel"; "required": false; }; "supportsUnitConversion": { "alias": "supportsUnitConversion"; "required": false; }; "aliasController": { "alias": "aliasController"; "required": false; }; "dataKeySettingsForm": { "alias": "dataKeySettingsForm"; "required": false; }; "datakeySettingsFunction": { "alias": "datakeySettingsFunction"; "required": false; }; "dataKeySettingsDirective": { "alias": "dataKeySettingsDirective"; "required": false; }; "dashboard": { "alias": "dashboard"; "required": false; }; "widget": { "alias": "widget"; "required": false; }; "callbacks": { "alias": "callbacks"; "required": false; }; "entityAliasId": { "alias": "entityAliasId"; "required": false; }; "deviceId": { "alias": "deviceId"; "required": false; }; "datasources": { "alias": "datasources"; "required": false; }; "generateKey": { "alias": "generateKey"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

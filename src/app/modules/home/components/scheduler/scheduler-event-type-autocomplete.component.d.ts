@@ -3,6 +3,7 @@ import { ControlValueAccessor, FormBuilder, FormGroup, ValidationErrors, Validat
 import { Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { SchedulerEventConfigType } from '@home/components/scheduler/scheduler-event-config.models';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 interface SchedulerEventTypeInfo {
     name: string;
@@ -19,6 +20,7 @@ export declare class SchedulerEventTypeAutocompleteComponent implements ControlV
     };
     label: any;
     placeholder: any;
+    appearance: MatFormFieldAppearance;
     schedulerEventTypeInput: ElementRef<HTMLInputElement>;
     filteredSchedulerEventTypes: Observable<Array<SchedulerEventTypeInfo>>;
     searchText: string;
@@ -39,6 +41,6 @@ export declare class SchedulerEventTypeAutocompleteComponent implements ControlV
     private fetchSchedulerEventTypes;
     clear(value?: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SchedulerEventTypeAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SchedulerEventTypeAutocompleteComponent, "tb-scheduler-event-type-autocomplete", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "schedulerEventConfigTypes": { "alias": "schedulerEventConfigTypes"; "required": false; }; "label": { "alias": "label"; "required": false; }; "placeholder": { "alias": "placeholder"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SchedulerEventTypeAutocompleteComponent, "tb-scheduler-event-type-autocomplete", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "schedulerEventConfigTypes": { "alias": "schedulerEventConfigTypes"; "required": false; }; "label": { "alias": "label"; "required": false; }; "placeholder": { "alias": "placeholder"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; }, {}, never, never, false, never>;
 }
 export {};

@@ -8,11 +8,13 @@ import { EntityType } from '@shared/models/entity-type.models';
 import { BaseData } from '@shared/models/base-data';
 import { EntityId } from '@shared/models/id/entity-id';
 import { EntityService } from '@core/http/entity.service';
+import { Router } from '@angular/router';
 import * as i0 from "@angular/core";
 export declare class EntityAutocompleteComponent implements ControlValueAccessor, OnInit {
     private store;
     private entityService;
     private fb;
+    private router;
     selectEntityFormGroup: UntypedFormGroup;
     private modelValue;
     private entityTypeValue;
@@ -39,6 +41,8 @@ export declare class EntityAutocompleteComponent implements ControlValueAccessor
     required: boolean;
     disabled: boolean;
     allowCreateNew: boolean;
+    newTabDetailsButton: boolean;
+    newTabDetailsButtonHint: string;
     subscriptSizing: SubscriptSizing;
     additionalClasses: Array<string>;
     entityChanged: EventEmitter<BaseData<EntityId>>;
@@ -46,7 +50,7 @@ export declare class EntityAutocompleteComponent implements ControlValueAccessor
     entityInput: ElementRef;
     get requiredErrorText(): string;
     get label(): string;
-    constructor(store: Store<AppState>, entityService: EntityService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, entityService: EntityService, fb: UntypedFormBuilder, router: Router);
     registerOnChange(fn: any): void;
     registerOnTouched(_fn: any): void;
     ngOnInit(): void;
@@ -63,7 +67,8 @@ export declare class EntityAutocompleteComponent implements ControlValueAccessor
     clear(): void;
     private checkEntityType;
     createNewEntity($event: Event): void;
+    openEntityDetailsNewTab($event: Event): void;
     get showEntityLink(): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityAutocompleteComponent, "tb-entity-autocomplete", never, { "entityType": { "alias": "entityType"; "required": false; }; "entitySubtype": { "alias": "entitySubtype"; "required": false; }; "excludeEntityIds": { "alias": "excludeEntityIds"; "required": false; }; "labelText": { "alias": "labelText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "placeholder": { "alias": "placeholder"; "required": false; }; "useFullEntityId": { "alias": "useFullEntityId"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "inlineField": { "alias": "inlineField"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "allowCreateNew": { "alias": "allowCreateNew"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "additionalClasses": { "alias": "additionalClasses"; "required": false; }; }, { "entityChanged": "entityChanged"; "createNew": "createNew"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityAutocompleteComponent, "tb-entity-autocomplete", never, { "entityType": { "alias": "entityType"; "required": false; }; "entitySubtype": { "alias": "entitySubtype"; "required": false; }; "excludeEntityIds": { "alias": "excludeEntityIds"; "required": false; }; "labelText": { "alias": "labelText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "placeholder": { "alias": "placeholder"; "required": false; }; "useFullEntityId": { "alias": "useFullEntityId"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "inlineField": { "alias": "inlineField"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "allowCreateNew": { "alias": "allowCreateNew"; "required": false; }; "newTabDetailsButton": { "alias": "newTabDetailsButton"; "required": false; }; "newTabDetailsButtonHint": { "alias": "newTabDetailsButtonHint"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "additionalClasses": { "alias": "additionalClasses"; "required": false; }; }, { "entityChanged": "entityChanged"; "createNew": "createNew"; }, never, never, false, never>;
 }

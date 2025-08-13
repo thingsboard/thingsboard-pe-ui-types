@@ -7,12 +7,17 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { Router } from '@angular/router';
 import { MatDialogRef } from '@angular/material/dialog';
+import { EntityType } from '@shared/models/entity-type.models';
+import { ReportTemplateType } from '@app/shared/models/report.models';
 import * as i0 from "@angular/core";
 export declare abstract class TemplateConfiguration<T, R = any> extends DialogComponent<T, R> implements OnDestroy {
     protected store: Store<AppState>;
     protected router: Router;
     protected dialogRef: MatDialogRef<T, R>;
     protected fb: FormBuilder;
+    notificationType: typeof NotificationType;
+    ReportTemplateType: typeof ReportTemplateType;
+    entityType: typeof EntityType;
     templateNotificationForm: FormGroup;
     notificationTemplateConfigurationForm: FormGroup;
     notificationDeliveryMethods: NotificationDeliveryMethod[];
@@ -21,10 +26,15 @@ export declare abstract class TemplateConfiguration<T, R = any> extends DialogCo
     deliveryConfiguration: Partial<DeliveryMethodsTemplates>;
     protected readonly destroy$: Subject<void>;
     protected deliveryMethodFormsMap: Map<NotificationDeliveryMethod, FormGroup>;
+    private authUser;
     protected constructor(store: Store<AppState>, router: Router, dialogRef: MatDialogRef<T, R>, fb: FormBuilder);
     ngOnDestroy(): void;
     atLeastOne(): (group: FormGroup) => ValidationErrors | null;
+    isSysAdmin(): boolean;
+    isTenantAdmin(): boolean;
     protected getNotificationTemplateValue(): NotificationTemplate;
+    protected updateValidators(): void;
+    protected updateAttachReportValidators(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TemplateConfiguration<any, any>, never>;
     static ɵdir: i0.ɵɵDirectiveDeclaration<TemplateConfiguration<any, any>, never, never, {}, {}, never, never, false, never>;
 }

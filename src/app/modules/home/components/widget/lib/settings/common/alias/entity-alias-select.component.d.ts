@@ -1,13 +1,11 @@
-import { ElementRef, OnInit } from '@angular/core';
+import { DestroyRef, ElementRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { TranslateService } from '@ngx-translate/core';
 import { EntityType } from '@shared/models/entity-type.models';
 import { EntityService } from '@core/http/entity.service';
 import { EntityAlias } from '@shared/models/alias.models';
 import { IAliasController } from '@core/api/widget-api.models';
-import { TruncatePipe } from '@shared/pipe/truncate.pipe';
-import { MatAutocomplete, MatAutocompleteTrigger } from '@angular/material/autocomplete';
+import { MatAutocomplete } from '@angular/material/autocomplete';
 import { EntityAliasSelectCallbacks } from './entity-alias-select.component.models';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
@@ -15,9 +13,8 @@ import * as i0 from "@angular/core";
 export declare class EntityAliasSelectComponent implements ControlValueAccessor, OnInit, ErrorStateMatcher {
     private errorStateMatcher;
     private entityService;
-    translate: TranslateService;
-    truncate: TruncatePipe;
     private fb;
+    private destroyRef;
     selectEntityAliasFormGroup: FormGroup;
     modelValue: string | null;
     aliasController: IAliasController;
@@ -25,19 +22,18 @@ export declare class EntityAliasSelectComponent implements ControlValueAccessor,
     callbacks: EntityAliasSelectCallbacks;
     showLabel: boolean;
     entityAliasAutocomplete: MatAutocomplete;
-    autoCompleteTrigger: MatAutocompleteTrigger;
     tbRequired: boolean;
     disabled: boolean;
     inlineField: boolean;
     appearance: MatFormFieldAppearance;
     subscriptSizing: SubscriptSizing;
     entityAliasInput: ElementRef;
-    entityAliasList: Array<EntityAlias>;
     filteredEntityAliases: Observable<Array<EntityAlias>>;
     searchText: string;
     private dirty;
+    private entityAliasList;
     private propagateChange;
-    constructor(errorStateMatcher: ErrorStateMatcher, entityService: EntityService, translate: TranslateService, truncate: TruncatePipe, fb: FormBuilder);
+    constructor(errorStateMatcher: ErrorStateMatcher, entityService: EntityService, fb: FormBuilder, destroyRef: DestroyRef);
     registerOnChange(fn: any): void;
     registerOnTouched(_fn: any): void;
     ngOnInit(): void;
@@ -53,6 +49,7 @@ export declare class EntityAliasSelectComponent implements ControlValueAccessor,
     entityAliasEnter($event: KeyboardEvent): void;
     editEntityAlias($event: Event): void;
     createEntityAlias($event: Event, alias: string, focusOnCancel?: boolean): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<EntityAliasSelectComponent, [{ skipSelf: true; }, null, null, null, null]>;
+    private loadEntityAliases;
+    static ɵfac: i0.ɵɵFactoryDeclaration<EntityAliasSelectComponent, [{ skipSelf: true; }, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<EntityAliasSelectComponent, "tb-entity-alias-select", never, { "aliasController": { "alias": "aliasController"; "required": false; }; "allowedEntityTypes": { "alias": "allowedEntityTypes"; "required": false; }; "callbacks": { "alias": "callbacks"; "required": false; }; "showLabel": { "alias": "showLabel"; "required": false; }; "tbRequired": { "alias": "tbRequired"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "inlineField": { "alias": "inlineField"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; }, {}, never, never, false, never>;
 }

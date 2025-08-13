@@ -25,7 +25,6 @@ export declare enum IntegrationType {
     AWS_SQS = "AWS_SQS",
     AZURE_IOT_HUB = "AZURE_IOT_HUB",
     CUSTOM = "CUSTOM",
-    IBM_WATSON_IOT = "IBM_WATSON_IOT",
     KAFKA = "KAFKA",
     LORIOT = "LORIOT",
     OCEANCONNECT = "OCEANCONNECT",
@@ -63,7 +62,7 @@ export interface IntegrationTypeInfo {
     hideDownlink?: boolean;
 }
 export declare const integrationTypeInfoMap: Map<IntegrationType, IntegrationTypeInfo>;
-export type IntegrationConfiguration = ApachePulsarIntegration | HttpIntegration | ThingParkIntegration | LoriotIntegration | MqttIntegration | AwsIotIntegration | AwsSqsIntegration | AwsKinesisIntegration | IbmWatsonIotIntegration | TtnIntegration | ChipStackIntegration | ParticleIntegration | KpnIntegration | AzureEventHubIntegration | AzureIotHubIntegration | OpcUaIntegration | UpdIntegration | TcpIntegration | KafkaIntegration | RabbitMqIntegration | PubSubIntegration | CoapIntegration | TuyaIntegration | CustomIntegration;
+export type IntegrationConfiguration = ApachePulsarIntegration | HttpIntegration | ThingParkIntegration | LoriotIntegration | MqttIntegration | AwsIotIntegration | AwsSqsIntegration | AwsKinesisIntegration | TtnIntegration | ChipStackIntegration | ParticleIntegration | KpnIntegration | AzureEventHubIntegration | AzureIotHubIntegration | OpcUaIntegration | UpdIntegration | TcpIntegration | KafkaIntegration | RabbitMqIntegration | PubSubIntegration | CoapIntegration | TuyaIntegration | CustomIntegration;
 export declare function getIntegrationHelpLink(integration: Integration): string;
 export interface IntegrationMetaData {
     metadata?: {
@@ -331,13 +330,6 @@ export interface HttpIntegration {
         [key: string]: string;
     } | null;
     replaceNoContentToOk: boolean;
-}
-export interface IbmWatsonIotIntegration extends Topics {
-    clientConfiguration: {
-        connectTimeoutSec: number;
-        maxBytesInMessage: number;
-        credentials: BasicCredentials;
-    };
 }
 export interface KafkaIntegration {
     clientConfiguration: {

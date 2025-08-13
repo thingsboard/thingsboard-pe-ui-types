@@ -36,6 +36,8 @@ import { ImageResourceInfo, ImageResourceType } from '@shared/models/resource.mo
 import { FormProperty } from '@shared/models/dynamic-form.models';
 import { CalculatedFieldsService } from '@core/http/calculated-fields.service';
 import { CalculatedField } from '@shared/models/calculated-field.models';
+import { ReportTemplateService } from '@core/http/report-template.service';
+import { ReportTemplate } from '@shared/models/report.models';
 import * as i0 from "@angular/core";
 export type editMissingAliasesFunction = (widgets: Array<Widget>, isSingleWidget: boolean, customTitle: string, missingEntityAliases: EntityAliases) => Observable<EntityAliases>;
 export declare class ImportExportService {
@@ -59,12 +61,15 @@ export declare class ImportExportService {
     private utils;
     private itembuffer;
     private calculatedFieldsService;
+    private reportTemplateService;
     private dialog;
-    constructor(window: Window, document: Document, store: Store<AppState>, translate: TranslateService, dashboardService: DashboardService, dashboardUtils: DashboardUtilsService, widgetService: WidgetService, deviceProfileService: DeviceProfileService, assetProfileService: AssetProfileService, tenantProfileService: TenantProfileService, entityService: EntityService, ruleChainService: RuleChainService, converterService: ConverterService, deviceService: DeviceService, assetService: AssetService, edgeService: EdgeService, imageService: ImageService, utils: UtilsService, itembuffer: ItemBufferService, calculatedFieldsService: CalculatedFieldsService, dialog: MatDialog);
+    constructor(window: Window, document: Document, store: Store<AppState>, translate: TranslateService, dashboardService: DashboardService, dashboardUtils: DashboardUtilsService, widgetService: WidgetService, deviceProfileService: DeviceProfileService, assetProfileService: AssetProfileService, tenantProfileService: TenantProfileService, entityService: EntityService, ruleChainService: RuleChainService, converterService: ConverterService, deviceService: DeviceService, assetService: AssetService, edgeService: EdgeService, imageService: ImageService, utils: UtilsService, itembuffer: ItemBufferService, calculatedFieldsService: CalculatedFieldsService, reportTemplateService: ReportTemplateService, dialog: MatDialog);
     exportFormProperties(properties: FormProperty[], fileName: string): void;
     importFormProperties(): Observable<FormProperty[]>;
     exportImage(type: ImageResourceType, key: string): void;
     importImage(): Observable<ImageResourceInfo>;
+    exportReportTemplate(reportTemplateId: string): void;
+    importReportTemplate(): Observable<ReportTemplate>;
     exportCalculatedField(calculatedFieldId: string): void;
     openCalculatedFieldImportDialog(): Observable<CalculatedField>;
     exportDashboard(dashboardId: string): void;
@@ -120,6 +125,7 @@ export declare class ImportExportService {
     private handleExportError;
     private validateImportedFormProperties;
     private validateImportedImage;
+    private validateImportedReportTemplate;
     private validateImportedDashboard;
     private validateImportedWidget;
     private validateImportedWidgetTypeDetails;
@@ -134,10 +140,11 @@ export declare class ImportExportService {
     private prepareImport;
     private openImportDialog;
     private exportToPc;
-    private exportJson;
+    exportJson(data: any, filename: string): void;
     private downloadFile;
     private prepareProfileExport;
     private prepareCalculatedFieldExport;
+    private prepareReportTemplateExport;
     private getIncludeResourcesPreference;
     private openExportDialog;
     private updateUserSettingsIncludeResourcesIfNeeded;

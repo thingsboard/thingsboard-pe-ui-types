@@ -199,6 +199,7 @@ export declare class EntityTableConfig<T extends BaseData<HasId>, P extends Page
     entityAdded: EntityVoidFunction<T>;
     entityUpdated: EntityVoidFunction<T>;
     entitiesDeleted: EntityIdsVoidFunction<T>;
+    defaultEntity: () => T;
     getTable(): IEntitiesTableComponent;
     setTable(table: IEntitiesTableComponent): void;
     getEntityDetailsPage(): IEntityDetailsPageComponent;

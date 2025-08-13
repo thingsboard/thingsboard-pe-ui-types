@@ -4,6 +4,7 @@ import { LineSeriesStepType, TimeSeriesChartGridSettings, TimeSeriesChartKeySett
 import { DeepPartial } from '@shared/models/common';
 import { ChartAnimationSettings, ChartLabelPosition, ChartLineType, ChartShape } from '@home/components/widget/lib/chart/chart.models';
 import { TimeSeriesChartTooltipWidgetSettings } from '@home/components/widget/lib/chart/time-series-chart-tooltip.models';
+import { TbUnit } from '@shared/models/unit.models';
 export interface RangeItem {
     index: number;
     from?: number;
@@ -50,6 +51,6 @@ export interface RangeChartWidgetSettings extends TimeSeriesChartTooltipWidgetSe
     padding: string;
 }
 export declare const rangeChartDefaultSettings: RangeChartWidgetSettings;
-export declare const rangeChartTimeSeriesSettings: (settings: RangeChartWidgetSettings, rangeItems: RangeItem[], decimals: number, units: string, valueConvertor: (x: number) => number) => DeepPartial<TimeSeriesChartSettings>;
+export declare const rangeChartTimeSeriesSettings: (settings: RangeChartWidgetSettings, rangeItems: RangeItem[], decimals: number, units: TbUnit) => DeepPartial<TimeSeriesChartSettings>;
 export declare const rangeChartTimeSeriesKeySettings: (settings: RangeChartWidgetSettings) => DeepPartial<TimeSeriesChartKeySettings>;
 export declare const toRangeItems: (colorRanges: Array<ColorRange>, valueFormat: ValueFormatProcessor) => RangeItem[];

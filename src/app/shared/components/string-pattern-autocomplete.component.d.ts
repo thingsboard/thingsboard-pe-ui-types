@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, DestroyRef, ElementRef, OnChanges, OnInit, SimpleChanges, TemplateRef, ViewContainerRef } from '@angular/core';
+import { ChangeDetectorRef, DestroyRef, ElementRef, OnChanges, OnInit, QueryList, SimpleChanges, TemplateRef, ViewContainerRef } from '@angular/core';
 import { ControlValueAccessor, FormBuilder, FormControl } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
@@ -14,6 +14,7 @@ export declare class StringPatternAutocompleteComponent implements ControlValueA
     inputRef: ElementRef;
     highlightTextRef: ElementRef;
     autocompleteTemplate: TemplateRef<any>;
+    optionItems: QueryList<ElementRef<HTMLElement>>;
     disabled: boolean;
     required: boolean;
     predefinedValues: Array<string>;
@@ -25,13 +26,17 @@ export declare class StringPatternAutocompleteComponent implements ControlValueA
     tooltipClass: string;
     errorText: string;
     showInlineError: boolean;
+    predefinedValuesButton: boolean;
     patternSymbol: string;
+    brackets: 'curly' | 'square';
     selectionFormControl: FormControl;
     filteredOptions: Array<string>;
     searchText: string;
     highlightedHtml: string;
+    activeOptionIndex: number;
     private modelValue;
     private overlayRef;
+    private predefinedValuesButtonMode;
     private propagateChange;
     constructor(fb: FormBuilder, overlay: Overlay, translate: TranslateService, viewContainerRef: ViewContainerRef, destroyRef: DestroyRef, cd: ChangeDetectorRef);
     ngOnInit(): void;
@@ -43,6 +48,7 @@ export declare class StringPatternAutocompleteComponent implements ControlValueA
     setDisabledState(isDisabled: boolean): void;
     onInputScroll(event: Event): void;
     optionSelected(value: string): void;
+    openValues($event: MouseEvent): void;
     private updateView;
     private onSelectionChange;
     private getHighlightHtml;
@@ -51,6 +57,8 @@ export declare class StringPatternAutocompleteComponent implements ControlValueA
     private closeAutocomplete;
     private getOverlayPosition;
     private setStrategyPositions;
+    private setActiveOption;
+    private handleKeydown;
     static ɵfac: i0.ɵɵFactoryDeclaration<StringPatternAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<StringPatternAutocompleteComponent, "tb-string-pattern-autocomplete", never, { "disabled": { "alias": "disabled"; "required": false; }; "required": { "alias": "required"; "required": false; }; "predefinedValues": { "alias": "predefinedValues"; "required": true; }; "placeholderText": { "alias": "placeholderText"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "additionalClass": { "alias": "additionalClass"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "label": { "alias": "label"; "required": false; }; "tooltipClass": { "alias": "tooltipClass"; "required": false; }; "errorText": { "alias": "errorText"; "required": false; }; "showInlineError": { "alias": "showInlineError"; "required": false; }; "patternSymbol": { "alias": "patternSymbol"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<StringPatternAutocompleteComponent, "tb-string-pattern-autocomplete", never, { "disabled": { "alias": "disabled"; "required": false; }; "required": { "alias": "required"; "required": false; }; "predefinedValues": { "alias": "predefinedValues"; "required": true; }; "placeholderText": { "alias": "placeholderText"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "additionalClass": { "alias": "additionalClass"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "label": { "alias": "label"; "required": false; }; "tooltipClass": { "alias": "tooltipClass"; "required": false; }; "errorText": { "alias": "errorText"; "required": false; }; "showInlineError": { "alias": "showInlineError"; "required": false; }; "predefinedValuesButton": { "alias": "predefinedValuesButton"; "required": false; }; "patternSymbol": { "alias": "patternSymbol"; "required": false; }; "brackets": { "alias": "brackets"; "required": false; }; }, {}, never, never, false, never>;
 }

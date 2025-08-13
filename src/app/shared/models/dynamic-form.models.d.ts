@@ -1,5 +1,6 @@
 import { CustomTranslatePipe } from '@shared/pipe/custom-translate.pipe';
 import { TbEditorCompletion, TbEditorCompletions } from '@shared/models/ace/completion.models';
+import { cssUnit, fontStyle, fontWeight } from '@shared/models/widget-settings.models';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 export declare enum FormPropertyType {
     text = "text",
@@ -21,6 +22,7 @@ export declare enum FormPropertyType {
     font = "font",
     units = "units",
     icon = "icon",
+    cssSize = "cssSize",
     fieldset = "fieldset",
     array = "array",
     htmlSection = "htmlSection"
@@ -56,6 +58,11 @@ export interface FormNumberProperty extends FormPropertyBase {
     min?: number;
     max?: number;
     step?: number;
+}
+export interface FormFontProperty extends FormPropertyBase {
+    forceSizeUnit?: cssUnit;
+    allowedFontWeights?: fontWeight[];
+    allowedFontStyles?: fontStyle[];
 }
 export interface FormFieldSetProperty extends FormPropertyBase {
     properties?: FormProperty[];
@@ -98,7 +105,10 @@ export interface FormHtmlSection extends FormPropertyBase {
 export interface FormUnitProperty extends FormPropertyBase {
     supportsUnitConversion?: boolean;
 }
-export type FormProperty = FormPropertyBase & FormTextareaProperty & FormNumberProperty & FormSelectProperty & FormRadiosProperty & FormDateTimeProperty & FormJavascriptProperty & FormMarkdownProperty & FormFieldSetProperty & FormArrayProperty & FormHtmlSection & FormUnitProperty;
+export interface FormCssSizeProperty extends FormPropertyBase {
+    allowedCssUnits?: cssUnit[];
+}
+export type FormProperty = FormPropertyBase & FormTextareaProperty & FormNumberProperty & FormFontProperty & FormSelectProperty & FormRadiosProperty & FormDateTimeProperty & FormJavascriptProperty & FormMarkdownProperty & FormFieldSetProperty & FormArrayProperty & FormHtmlSection & FormUnitProperty & FormCssSizeProperty;
 export declare const cleanupFormProperties: (properties: FormProperty[]) => FormProperty[];
 export declare const cleanupFormProperty: (property: FormProperty) => FormProperty;
 export declare enum FormPropertyContainerType {

@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, ElementRef, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, ElementRef, OnDestroy, OnInit, TemplateRef } from '@angular/core';
 import { MapWidgetSettings } from '@home/components/widget/lib/maps/map-widget.models';
 import { WidgetContext } from '@home/models/widget-component.models';
 import { Observable } from 'rxjs';
@@ -15,6 +15,7 @@ export declare class MapWidgetComponent implements OnInit, OnDestroy {
     mapElement: ElementRef<HTMLElement>;
     settings: MapWidgetSettings;
     ctx: WidgetContext;
+    widgetTitlePanel: TemplateRef<any>;
     backgroundStyle$: Observable<ComponentStyle>;
     overlayStyle: ComponentStyle;
     padding: string;
@@ -24,5 +25,5 @@ export declare class MapWidgetComponent implements OnInit, OnDestroy {
     ngOnDestroy(): void;
     onInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<MapWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MapWidgetComponent, "tb-map-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MapWidgetComponent, "tb-map-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; }, {}, never, never, false, never>;
 }

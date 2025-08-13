@@ -13,6 +13,7 @@ import { PageLink } from '@shared/models/page/page-link';
 import { EntityInfoData } from '@shared/models/entity.models';
 import { PageData } from '@shared/models/page/page-data';
 import { TruncatePipe } from '@shared/pipe/truncate.pipe';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export type CreateEntityGroupFunction = (groupType: EntityType, groupName?: string, ownerId?: EntityId) => Observable<EntityInfoData>;
 export declare class EntityGroupListComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnChanges {
@@ -29,6 +30,7 @@ export declare class EntityGroupListComponent implements ControlValueAccessor, O
     set ownerId(value: EntityId);
     excludeGroupAll: boolean;
     labelText: string;
+    appearance: MatFormFieldAppearance;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
@@ -65,5 +67,5 @@ export declare class EntityGroupListComponent implements ControlValueAccessor, O
     entityGroupEnter($event: KeyboardEvent): void;
     createEntityGroup($event: Event, groupName: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityGroupListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupListComponent, "tb-entity-group-list", never, { "groupType": { "alias": "groupType"; "required": false; }; "ownerId": { "alias": "ownerId"; "required": false; }; "excludeGroupAll": { "alias": "excludeGroupAll"; "required": false; }; "labelText": { "alias": "labelText"; "required": false; }; "required": { "alias": "required"; "required": false; }; "useGroupInfoValue": { "alias": "useGroupInfoValue"; "required": false; }; "createGroupFunction": { "alias": "createGroupFunction"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupListComponent, "tb-entity-group-list", never, { "groupType": { "alias": "groupType"; "required": false; }; "ownerId": { "alias": "ownerId"; "required": false; }; "excludeGroupAll": { "alias": "excludeGroupAll"; "required": false; }; "labelText": { "alias": "labelText"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "required": { "alias": "required"; "required": false; }; "useGroupInfoValue": { "alias": "useGroupInfoValue"; "required": false; }; "createGroupFunction": { "alias": "createGroupFunction"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }
