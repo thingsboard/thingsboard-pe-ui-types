@@ -14,6 +14,8 @@ export declare class TimeSeriesChartThresholdSettingsComponent implements OnInit
     yAxisIds: TimeSeriesChartYAxisId[];
     hideYAxis: boolean;
     boxButton: boolean;
+    supportsUnitConversion: boolean;
+    reportMode: boolean;
     icon: string;
     title: string;
     private modelValue;
@@ -26,5 +28,5 @@ export declare class TimeSeriesChartThresholdSettingsComponent implements OnInit
     writeValue(value: Partial<TimeSeriesChartThreshold>): void;
     openThresholdSettingsPopup($event: Event, matButton: MatButton): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesChartThresholdSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartThresholdSettingsComponent, "tb-time-series-chart-threshold-settings", never, { "disabled": { "alias": "disabled"; "required": false; }; "widgetConfig": { "alias": "widgetConfig"; "required": false; }; "yAxisIds": { "alias": "yAxisIds"; "required": false; }; "hideYAxis": { "alias": "hideYAxis"; "required": false; }; "boxButton": { "alias": "boxButton"; "required": false; }; "icon": { "alias": "icon"; "required": false; }; "title": { "alias": "title"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartThresholdSettingsComponent, "tb-time-series-chart-threshold-settings", never, { "disabled": { "alias": "disabled"; "required": false; }; "widgetConfig": { "alias": "widgetConfig"; "required": false; }; "yAxisIds": { "alias": "yAxisIds"; "required": false; }; "hideYAxis": { "alias": "hideYAxis"; "required": false; }; "boxButton": { "alias": "boxButton"; "required": false; }; "supportsUnitConversion": { "alias": "supportsUnitConversion"; "required": false; }; "reportMode": { "alias": "reportMode"; "required": false; }; "icon": { "alias": "icon"; "required": false; }; "title": { "alias": "title"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -1,12 +1,15 @@
 import { FormGroup } from '@angular/forms';
-import { AlarmTableReportComponentConfig, WidgetConfigMode } from '@app/shared/public-api';
 import { AbstractReportComponentConfig } from '@home/pages/reporting/template/components/report-component-config.component';
+import { DataKeySettingsFormFunction } from '@home/components/widget/lib/settings/common/key/data-keys.component.models';
+import { AlarmTableReportComponentConfig } from '@shared/models/report-component.models';
+import { WidgetConfigMode } from '@shared/models/widget.models';
 import * as i0 from "@angular/core";
 export declare class AlarmTableConfigComponent extends AbstractReportComponentConfig<AlarmTableReportComponentConfig> {
     get columnLabels(): string[];
     settingsTab: 'data' | 'layout';
     basicMode: WidgetConfigMode;
-    TableReportColumnSettingsForm: import("@app/shared/public-api").FormProperty[];
+    dataKeySettingsFormFunction: DataKeySettingsFormFunction;
+    private getDataKeySettingsForm;
     protected buildForm(reportComponentConfig: AlarmTableReportComponentConfig): FormGroup;
     protected prepareOutputConfig(config: any): AlarmTableReportComponentConfig;
     private getColumns;

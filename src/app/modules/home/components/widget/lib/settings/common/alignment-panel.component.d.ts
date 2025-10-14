@@ -7,10 +7,11 @@ export declare class AlignmentPanelComponent implements OnInit {
     alignmentIcons: Map<string, string>;
     alignment: alignment;
     horizontal: boolean;
+    allowedAlignments: alignment[];
     alignmentSelected: EventEmitter<string>;
     constructor();
     ngOnInit(): void;
     selectAlignment(alignment: alignment): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AlignmentPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AlignmentPanelComponent, "tb-alignment-panel", never, { "alignment": { "alias": "alignment"; "required": false; }; "horizontal": { "alias": "horizontal"; "required": false; }; }, { "alignmentSelected": "alignmentSelected"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AlignmentPanelComponent, "tb-alignment-panel", never, { "alignment": { "alias": "alignment"; "required": false; }; "horizontal": { "alias": "horizontal"; "required": false; }; "allowedAlignments": { "alias": "allowedAlignments"; "required": false; }; }, { "alignmentSelected": "alignmentSelected"; }, never, never, false, never>;
 }

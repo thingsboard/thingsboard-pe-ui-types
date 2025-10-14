@@ -2,6 +2,7 @@ import { ElementRef, EventEmitter, Renderer2 } from '@angular/core';
 import { HeaderFooter, TbReportFormat } from '@shared/models/report.models';
 import { ReportComponentConfig } from '@shared/models/report-component.models';
 import { ReportComponentsComponent } from '@home/pages/reporting/template/components/report-components.component';
+import { ReportComponentContext } from '@home/pages/reporting/template/components/report-component.models';
 import * as i0 from "@angular/core";
 export declare class ReportTemplateHeaderFooterComponent {
     private renderer;
@@ -17,6 +18,7 @@ export declare class ReportTemplateHeaderFooterComponent {
     marginLeft: number;
     marginRight: number;
     marginBottom: number;
+    context: ReportComponentContext;
     componentsChanged: EventEmitter<any>;
     componentEdit: EventEmitter<ReportComponentConfig>;
     componentRemoved: EventEmitter<ReportComponentConfig>;
@@ -39,5 +41,5 @@ export declare class ReportTemplateHeaderFooterComponent {
     reportComponentRemoved(reportComponent: ReportComponentConfig): void;
     toggleExpanded(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ReportTemplateHeaderFooterComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ReportTemplateHeaderFooterComponent, "tb-report-template-header-footer", never, { "header": { "alias": "header"; "required": false; }; "headerFooter": { "alias": "headerFooter"; "required": false; }; "headerToggleValue": { "alias": "headerToggleValue"; "required": false; }; "format": { "alias": "format"; "required": false; }; "background": { "alias": "background"; "required": false; }; "width": { "alias": "width"; "required": false; }; "scale": { "alias": "scale"; "required": false; }; "marginTop": { "alias": "marginTop"; "required": false; }; "marginLeft": { "alias": "marginLeft"; "required": false; }; "marginRight": { "alias": "marginRight"; "required": false; }; "marginBottom": { "alias": "marginBottom"; "required": false; }; }, { "componentsChanged": "componentsChanged"; "componentEdit": "componentEdit"; "componentRemoved": "componentRemoved"; "currentHeaderChanged": "currentHeaderChanged"; "enabledHeaderChanged": "enabledHeaderChanged"; "expandAnimationStart": "expandAnimationStart"; "expandAnimationFinish": "expandAnimationFinish"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ReportTemplateHeaderFooterComponent, "tb-report-template-header-footer", never, { "header": { "alias": "header"; "required": false; }; "headerFooter": { "alias": "headerFooter"; "required": false; }; "headerToggleValue": { "alias": "headerToggleValue"; "required": false; }; "format": { "alias": "format"; "required": false; }; "background": { "alias": "background"; "required": false; }; "width": { "alias": "width"; "required": false; }; "scale": { "alias": "scale"; "required": false; }; "marginTop": { "alias": "marginTop"; "required": false; }; "marginLeft": { "alias": "marginLeft"; "required": false; }; "marginRight": { "alias": "marginRight"; "required": false; }; "marginBottom": { "alias": "marginBottom"; "required": false; }; "context": { "alias": "context"; "required": false; }; }, { "componentsChanged": "componentsChanged"; "componentEdit": "componentEdit"; "componentRemoved": "componentRemoved"; "currentHeaderChanged": "currentHeaderChanged"; "enabledHeaderChanged": "enabledHeaderChanged"; "expandAnimationStart": "expandAnimationStart"; "expandAnimationFinish": "expandAnimationFinish"; }, never, never, false, never>;
 }

@@ -184,6 +184,7 @@ export interface KeyInfo {
     label?: string;
     color?: string;
     funcBody?: TbFunction;
+    builtInFunc?: (time: number, prevValue: any) => any;
     postFuncBody?: TbFunction;
     units?: TbUnit;
     decimals?: number;
@@ -556,6 +557,7 @@ export interface WidgetInfo extends BaseWidgetInfo {
 }
 export interface DynamicFormData {
     settingsForm?: FormProperty[];
+    settingsFormTrimDefaults?: boolean;
     model?: any;
     settingsDirective?: string;
 }
@@ -581,6 +583,7 @@ export interface IWidgetSettingsComponent {
     settings: WidgetSettings;
     settingsChanged: Observable<WidgetSettings>;
     validateSettings(): boolean;
+    reportMode: boolean;
     [key: string]: any;
 }
 export declare abstract class WidgetSettingsComponent extends PageComponent implements IWidgetSettingsComponent, OnInit, AfterViewInit {
@@ -591,6 +594,7 @@ export declare abstract class WidgetSettingsComponent extends PageComponent impl
     functionsOnly: boolean;
     dashboard: Dashboard;
     widget: Widget;
+    reportMode: boolean;
     widgetConfigValue: WidgetConfigComponentData;
     set widgetConfig(value: WidgetConfigComponentData);
     get widgetConfig(): WidgetConfigComponentData;

@@ -41,7 +41,6 @@ import { ReportTemplate } from '@shared/models/report.models';
 import * as i0 from "@angular/core";
 export type editMissingAliasesFunction = (widgets: Array<Widget>, isSingleWidget: boolean, customTitle: string, missingEntityAliases: EntityAliases) => Observable<EntityAliases>;
 export declare class ImportExportService {
-    private window;
     private document;
     private store;
     private translate;
@@ -63,7 +62,7 @@ export declare class ImportExportService {
     private calculatedFieldsService;
     private reportTemplateService;
     private dialog;
-    constructor(window: Window, document: Document, store: Store<AppState>, translate: TranslateService, dashboardService: DashboardService, dashboardUtils: DashboardUtilsService, widgetService: WidgetService, deviceProfileService: DeviceProfileService, assetProfileService: AssetProfileService, tenantProfileService: TenantProfileService, entityService: EntityService, ruleChainService: RuleChainService, converterService: ConverterService, deviceService: DeviceService, assetService: AssetService, edgeService: EdgeService, imageService: ImageService, utils: UtilsService, itembuffer: ItemBufferService, calculatedFieldsService: CalculatedFieldsService, reportTemplateService: ReportTemplateService, dialog: MatDialog);
+    constructor(document: Document, store: Store<AppState>, translate: TranslateService, dashboardService: DashboardService, dashboardUtils: DashboardUtilsService, widgetService: WidgetService, deviceProfileService: DeviceProfileService, assetProfileService: AssetProfileService, tenantProfileService: TenantProfileService, entityService: EntityService, ruleChainService: RuleChainService, converterService: ConverterService, deviceService: DeviceService, assetService: AssetService, edgeService: EdgeService, imageService: ImageService, utils: UtilsService, itembuffer: ItemBufferService, calculatedFieldsService: CalculatedFieldsService, reportTemplateService: ReportTemplateService, dialog: MatDialog);
     exportFormProperties(properties: FormProperty[], fileName: string): void;
     importFormProperties(): Observable<FormProperty[]>;
     exportImage(type: ImageResourceType, key: string): void;
@@ -104,17 +103,17 @@ export declare class ImportExportService {
     private processCSVCell;
     exportCsv(data: {
         [key: string]: any;
-    }[], filename: string): void;
+    }[], filename: string, normalizeFileName?: boolean): void;
     exportXls(data: {
         [key: string]: any;
-    }[], filename: string): void;
+    }[], filename: string, normalizeFileName?: boolean): void;
     exportXlsx(data: {
         [key: string]: any;
-    }[], filename: string, dateFormat?: string): void;
+    }[], filename: string, dateFormat?: string, normalizeFileName?: boolean): void;
     private formatDataAccordingToLocale;
     private validateImportedConverter;
-    exportText(data: string | Array<string>, filename: string): void;
-    exportJSZip(data: object, filename: string): Observable<void>;
+    exportText(data: string | Array<string>, filename: string, normalizeFileName?: boolean): void;
+    exportJSZip(data: object, filename: string, normalizeFileName?: boolean): Observable<void>;
     private prepareRuleChain;
     private prepareRuleChainMetaData;
     private validateImportedRuleChain;
@@ -140,7 +139,8 @@ export declare class ImportExportService {
     private prepareImport;
     private openImportDialog;
     private exportToPc;
-    exportJson(data: any, filename: string): void;
+    exportJson(data: any, filename: string, normalizeFileName?: boolean): void;
+    private prepareFilename;
     private downloadFile;
     private prepareProfileExport;
     private prepareCalculatedFieldExport;

@@ -1,7 +1,7 @@
 import { DestroyRef, ElementRef, InjectionToken, OnInit, TemplateRef, ViewContainerRef } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';
-import { ReportTemplateType, ReportFilter } from '@shared/models/report.models';
+import { ReportFilter, ReportTemplateType } from '@shared/models/report.models';
 import { EntityType } from '@shared/models/entity-type.models';
 import * as i0 from "@angular/core";
 export declare const REPORT_FILTER_DATA: InjectionToken<any>;

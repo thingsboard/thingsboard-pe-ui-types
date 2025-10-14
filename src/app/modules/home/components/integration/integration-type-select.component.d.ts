@@ -36,7 +36,7 @@ export declare class IntegrationTypeSelectComponent implements ControlValueAcces
     onFocus(): void;
     selectedType(): void;
     clear(): void;
-    displayIntegrationTypeFn(inegration?: IntegrationInfo): string | undefined;
+    displayIntegrationTypeFn(integration?: IntegrationInfo): string;
     private updateView;
     private fetchIntegrationTypes;
     private filterIntegrationType;

@@ -35,7 +35,7 @@ export interface TimeSeriesChartDataItem {
     xAxisIndex: number;
     yAxisId: TimeSeriesChartYAxisId;
     yAxisIndex: number;
-    option?: LineSeriesOption | CustomSeriesOption;
+    option?: LineSeriesOption;
     barRenderContext?: BarRenderContext;
     unitConvertor?: TbUnitConverter;
 }
@@ -296,5 +296,6 @@ export declare const updateXAxisTimeWindow: (option: XAXisOption, timeWindow: Wi
 export declare const generateChartData: (dataItems: TimeSeriesChartDataItem[], thresholdItems: TimeSeriesChartThresholdItem[], stack: boolean, noAggregation: boolean, barRenderSharedContext: BarRenderSharedContext, darkMode: boolean) => Array<LineSeriesOption | CustomSeriesOption>;
 export declare const calculateThresholdsOffset: (chart: ECharts, thresholdItems: TimeSeriesChartThresholdItem[], yAxisList: TimeSeriesChartYAxis[]) => [number, number];
 export declare const parseThresholdData: (value: any, valueConvertor?: TbUnitConverter) => TimeSeriesChartThresholdValue;
+export declare const dataKeySeriesType: (settings: any) => TimeSeriesChartSeriesType;
 export declare const updateDarkMode: (options: EChartsOption, xAxisList: TimeSeriesChartXAxis[], yAxisList: TimeSeriesChartYAxis[], dataItems: TimeSeriesChartDataItem[], darkMode: boolean) => EChartsOption;
 export {};

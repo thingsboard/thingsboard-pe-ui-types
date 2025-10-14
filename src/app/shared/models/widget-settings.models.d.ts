@@ -174,7 +174,7 @@ export declare const millisecondsDateFormat: () => DateFormatSettings;
 export declare const dateFormats: DateFormatSettings[];
 export declare const dateFormatsWithAuto: DateFormatSettings[];
 export declare const compareDateFormats: (df1: DateFormatSettings, df2: DateFormatSettings) => boolean;
-export declare const dateFormatPreview: (date: DatePipe, format: string) => string;
+export declare const dateFormatPreview: (date: DatePipe, format: string, timezone?: string) => string;
 export declare abstract class DateFormatProcessor {
     protected $injector: Injector;
     protected settings: DateFormatSettings;

@@ -16,6 +16,7 @@ export declare class ChartBarSettingsComponent implements OnInit, ControlValueAc
     disabled: boolean;
     series: boolean;
     pieLabelPosition: boolean;
+    reportMode: boolean;
     private modelValue;
     private propagateChange;
     barSettingsFormGroup: UntypedFormGroup;
@@ -29,5 +30,5 @@ export declare class ChartBarSettingsComponent implements OnInit, ControlValueAc
     private updateModel;
     private _labelPreviewFn;
     static ɵfac: i0.ɵɵFactoryDeclaration<ChartBarSettingsComponent, [null, { optional: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ChartBarSettingsComponent, "tb-chart-bar-settings", never, { "disabled": { "alias": "disabled"; "required": false; }; "series": { "alias": "series"; "required": false; }; "pieLabelPosition": { "alias": "pieLabelPosition"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ChartBarSettingsComponent, "tb-chart-bar-settings", never, { "disabled": { "alias": "disabled"; "required": false; }; "series": { "alias": "series"; "required": false; }; "pieLabelPosition": { "alias": "pieLabelPosition"; "required": false; }; "reportMode": { "alias": "reportMode"; "required": false; }; }, {}, never, never, false, never>;
 }

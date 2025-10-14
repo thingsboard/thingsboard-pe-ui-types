@@ -1,12 +1,15 @@
 import { FormGroup } from '@angular/forms';
-import { EntityTableReportComponentConfig, WidgetConfigMode } from '@app/shared/public-api';
 import { AbstractReportComponentConfig } from '@home/pages/reporting/template/components/report-component-config.component';
+import { EntityTableReportComponentConfig } from '@shared/models/report-component.models';
+import { WidgetConfigMode } from '@shared/models/widget.models';
+import { DataKeySettingsFormFunction } from '@home/components/widget/lib/settings/common/key/data-keys.component.models';
 import * as i0 from "@angular/core";
 export declare class EntityTableConfigComponent extends AbstractReportComponentConfig<EntityTableReportComponentConfig> {
     get columnLabels(): string[];
     settingsTab: 'data' | 'layout';
     basicMode: WidgetConfigMode;
-    TableReportColumnSettingsForm: import("@app/shared/public-api").FormProperty[];
+    dataKeySettingsFormFunction: DataKeySettingsFormFunction;
+    private getDataKeySettingsForm;
     protected buildForm(reportComponentConfig: EntityTableReportComponentConfig): FormGroup;
     protected prepareOutputConfig(config: any): any;
     private getColumns;

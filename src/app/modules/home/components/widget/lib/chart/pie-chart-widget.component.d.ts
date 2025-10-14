@@ -4,12 +4,14 @@ import { WidgetComponent } from '@home/components/widget/widget.component';
 import { TranslateService } from '@ngx-translate/core';
 import { LatestChartComponent, LatestChartComponentCallbacks } from '@home/components/widget/lib/chart/latest-chart.component';
 import { PieChartWidgetSettings } from '@home/components/widget/lib/chart/pie-chart-widget.models';
+import { ChartWidgetComponent } from '@home/components/widget/lib/chart/chart.models';
 import * as i0 from "@angular/core";
-export declare class PieChartWidgetComponent implements OnInit {
+export declare class PieChartWidgetComponent implements OnInit, ChartWidgetComponent {
     private widgetComponent;
     private translate;
     latestChart: LatestChartComponent;
     ctx: WidgetContext;
+    reportMode: boolean;
     widgetTitlePanel: TemplateRef<any>;
     settings: PieChartWidgetSettings;
     callbacks: LatestChartComponentCallbacks;
@@ -17,6 +19,6 @@ export declare class PieChartWidgetComponent implements OnInit {
     ngOnInit(): void;
     onInit(): void;
     onDataUpdated(): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<PieChartWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PieChartWidgetComponent, "tb-pie-chart-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<PieChartWidgetComponent, [{ optional: true; }, null]>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PieChartWidgetComponent, "tb-pie-chart-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; "reportMode": { "alias": "reportMode"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; }, {}, never, never, false, never>;
 }

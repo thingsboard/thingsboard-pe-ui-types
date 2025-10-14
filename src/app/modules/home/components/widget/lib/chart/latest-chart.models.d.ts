@@ -41,6 +41,7 @@ export interface LatestChartSettings extends LatestChartTooltipSettings {
     sortSeries: boolean;
     showTotal?: boolean;
     showLegend: boolean;
+    legendShowTotal: boolean;
     animation: ChartAnimationSettings;
 }
 export declare const latestChartDefaultSettings: LatestChartSettings;

@@ -25,8 +25,10 @@ export declare class DynamicFormComponent implements OnInit, OnChanges, ControlV
     stroked: boolean;
     noPadding: boolean;
     noBorder: boolean;
+    trimDefaults: boolean;
     private modelValue;
     private propagateChange;
+    private defaults;
     private validatorTriggers;
     propertiesFormGroup: UntypedFormGroup;
     propertyGroups: FormPropertyGroup[];
@@ -50,5 +52,5 @@ export declare class DynamicFormComponent implements OnInit, OnChanges, ControlV
     private setupValue;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<DynamicFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DynamicFormComponent, "tb-dynamic-form", never, { "disabled": { "alias": "disabled"; "required": false; }; "properties": { "alias": "properties"; "required": false; }; "title": { "alias": "title"; "required": false; }; "isArrayItem": { "alias": "isArrayItem"; "required": false; }; "stroked": { "alias": "stroked"; "required": false; }; "noPadding": { "alias": "noPadding"; "required": false; }; "noBorder": { "alias": "noBorder"; "required": false; }; }, {}, never, [".tb-properties-content"], false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DynamicFormComponent, "tb-dynamic-form", never, { "disabled": { "alias": "disabled"; "required": false; }; "properties": { "alias": "properties"; "required": false; }; "title": { "alias": "title"; "required": false; }; "isArrayItem": { "alias": "isArrayItem"; "required": false; }; "stroked": { "alias": "stroked"; "required": false; }; "noPadding": { "alias": "noPadding"; "required": false; }; "noBorder": { "alias": "noBorder"; "required": false; }; "trimDefaults": { "alias": "trimDefaults"; "required": false; }; }, {}, never, [".tb-properties-content"], false, never>;
 }

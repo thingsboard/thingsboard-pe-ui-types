@@ -7,8 +7,9 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { LegendConfig, LegendData, LegendKey } from '@shared/models/widget.models';
 import { TimeSeriesChartWidgetSettings } from '@home/components/widget/lib/chart/time-series-chart-widget.models';
 import { WidgetComponent } from '@home/components/widget/widget.component';
+import { ChartWidgetComponent } from '@home/components/widget/lib/chart/chart.models';
 import * as i0 from "@angular/core";
-export declare class TimeSeriesChartWidgetComponent implements OnInit, OnDestroy, AfterViewInit {
+export declare class TimeSeriesChartWidgetComponent implements ChartWidgetComponent, OnInit, OnDestroy, AfterViewInit {
     widgetComponent: WidgetComponent;
     private imagePipe;
     private sanitizer;
@@ -18,6 +19,7 @@ export declare class TimeSeriesChartWidgetComponent implements OnInit, OnDestroy
     settings: TimeSeriesChartWidgetSettings;
     ctx: WidgetContext;
     widgetTitlePanel: TemplateRef<any>;
+    reportMode: boolean;
     horizontalLegendPosition: boolean;
     showLegend: boolean;
     legendClass: string;
@@ -43,6 +45,6 @@ export declare class TimeSeriesChartWidgetComponent implements OnInit, OnDestroy
     onLegendKeyEnter(legendKey: LegendKey): void;
     onLegendKeyLeave(legendKey: LegendKey): void;
     toggleLegendKey(legendKey: LegendKey): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesChartWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartWidgetComponent, "tb-time-series-chart-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesChartWidgetComponent, [{ optional: true; }, null, null, null, null]>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartWidgetComponent, "tb-time-series-chart-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; "reportMode": { "alias": "reportMode"; "required": false; }; }, {}, never, never, false, never>;
 }

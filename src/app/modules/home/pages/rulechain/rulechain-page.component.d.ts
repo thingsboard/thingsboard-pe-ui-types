@@ -30,6 +30,7 @@ import { TbPopoverService } from '@shared/components/popover.service';
 import { MatDrawer } from '@angular/material/sidenav';
 import { TbContextMenuEvent } from '@shared/models/jquery-event.models';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
+import { DomSanitizer } from '@angular/platform-browser';
 import * as i0 from "@angular/core";
 export declare class RuleChainPageComponent extends PageComponent implements AfterViewInit, OnInit, OnDestroy, HasDirtyFlag, ISearchableComponent, AfterViewChecked {
     protected store: Store<AppState>;
@@ -44,6 +45,7 @@ export declare class RuleChainPageComponent extends PageComponent implements Aft
     private renderer;
     private viewContainerRef;
     private changeDetector;
+    private sanitizer;
     dialog: MatDialog;
     dialogService: DialogService;
     fb: FormBuilder;
@@ -136,7 +138,7 @@ export declare class RuleChainPageComponent extends PageComponent implements Aft
     updateBreadcrumbs: EventEmitter<any>;
     private destroy$;
     private tooltipTimeout;
-    constructor(store: Store<AppState>, route: ActivatedRoute, router: Router, ruleChainService: RuleChainService, authService: AuthService, translate: TranslateService, itembuffer: ItemBufferService, userPermissionsService: UserPermissionsService, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, changeDetector: ChangeDetectorRef, dialog: MatDialog, dialogService: DialogService, fb: FormBuilder);
+    constructor(store: Store<AppState>, route: ActivatedRoute, router: Router, ruleChainService: RuleChainService, authService: AuthService, translate: TranslateService, itembuffer: ItemBufferService, userPermissionsService: UserPermissionsService, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, changeDetector: ChangeDetectorRef, sanitizer: DomSanitizer, dialog: MatDialog, dialogService: DialogService, fb: FormBuilder);
     ngOnInit(): void;
     ngAfterViewChecked(): void;
     ngAfterViewInit(): void;

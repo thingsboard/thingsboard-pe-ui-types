@@ -1,4 +1,4 @@
-import { IWidgetSubscription, SubscriptionEntityInfo, WidgetSubscriptionCallbacks, WidgetSubscriptionContext, WidgetSubscriptionOptions } from '@core/api/widget-api.models';
+import { IWidgetSubscription, SubscriptionEntityInfo, WidgetDataGenerationOptions, WidgetSubscriptionCallbacks, WidgetSubscriptionContext, WidgetSubscriptionOptions } from '@core/api/widget-api.models';
 import { DataSetHolder, Datasource, DatasourceData, LegendConfig, LegendData, TargetDevice, widgetType } from '@app/shared/models/widget.models';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ComparisonDuration, SubscriptionTimewindow, Timewindow, WidgetTimewindow } from '@app/shared/models/time/time.models';
@@ -31,6 +31,7 @@ export declare class WidgetSubscription implements IWidgetSubscription {
     pageSize: number;
     warnOnPageDataOverflow: boolean;
     ignoreDataUpdateOnIntervalTick: boolean;
+    dataGenerationOptions: WidgetDataGenerationOptions;
     get firstDatasource(): Datasource;
     datasourcePages: PageData<Datasource>[];
     dataPages: PageData<Array<DatasourceData>>[];

@@ -1,11 +1,13 @@
-import { ElementRef, EventEmitter, OnChanges, OnInit, QueryList, SimpleChanges } from '@angular/core';
+import { AfterViewInit, ElementRef, EventEmitter, OnChanges, OnDestroy, OnInit, QueryList, SimpleChanges } from '@angular/core';
 import { ReportComponentConfig } from '@shared/models/report-component.models';
-import { CdkDragDrop, CdkDragEnter, CdkDragExit, CdkDragStart } from '@angular/cdk/drag-drop';
+import { CdkDrag, CdkDragDrop, CdkDragEnter, CdkDragExit, CdkDragMove, CdkDragRelease, CdkDragStart, CdkDropList } from '@angular/cdk/drag-drop';
 import { ReportComponentComponent } from '@home/pages/reporting/template/components/report-component.component';
+import { ReportComponentContext } from '@home/pages/reporting/template/components/report-component.models';
 import { TbReportFormat } from '@shared/models/report.models';
 import * as i0 from "@angular/core";
-export declare class ReportComponentsComponent implements OnInit, OnChanges {
+export declare class ReportComponentsComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy {
     element: ElementRef<HTMLElement>;
+    dropList?: CdkDropList;
     position: string;
     format: TbReportFormat;
     background: string;
@@ -16,26 +18,35 @@ export declare class ReportComponentsComponent implements OnInit, OnChanges {
     marginTop: number;
     marginBottom: number;
     reportComponents: ReportComponentConfig[];
+    context: ReportComponentContext;
     componentsChanged: EventEmitter<any>;
     componentRemoved: EventEmitter<ReportComponentConfig>;
     componentEdit: EventEmitter<ReportComponentConfig>;
     reportComponentComponents: QueryList<ReportComponentComponent>;
     reportsComponentHeight: number;
     showNoReportComponents: boolean;
+    allowDropPredicate: (drag: CdkDrag, drop: CdkDropList) => boolean;
     constructor(element: ElementRef<HTMLElement>);
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
+    ngAfterViewInit(): void;
+    ngOnDestroy(): void;
     dropListEnter(event: CdkDragEnter): void;
     dropListExit(event: CdkDragExit): void;
     componentDrop(event: CdkDragDrop<any[]>): void;
+    isDropAllowed(drag: CdkDrag, drop: CdkDropList): boolean;
+    dragMoved(event: CdkDragMove): void;
+    dragReleased(event: CdkDragRelease): void;
     onComponentEdit(reportComponent: ReportComponentConfig): void;
     duplicateComponent(reportComponent: ReportComponentConfig): void;
     componentRemove(reportComponent: ReportComponentConfig): void;
+    childComponentRemove(reportComponent: ReportComponentConfig): void;
+    childrenComponentsChanged(): void;
     componentUpdated(reportComponent: ReportComponentConfig): boolean;
     componentSelected(reportComponent: ReportComponentConfig): void;
     componentDragStarted(_event: CdkDragStart): void;
     componentDragEnded(): void;
     private updateListHeight;
     static ɵfac: i0.ɵɵFactoryDeclaration<ReportComponentsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ReportComponentsComponent, "tb-report-components", never, { "format": { "alias": "format"; "required": false; }; "background": { "alias": "background"; "required": false; }; "width": { "alias": "width"; "required": false; }; "scale": { "alias": "scale"; "required": false; }; "marginLeft": { "alias": "marginLeft"; "required": false; }; "marginRight": { "alias": "marginRight"; "required": false; }; "marginTop": { "alias": "marginTop"; "required": false; }; "marginBottom": { "alias": "marginBottom"; "required": false; }; "reportComponents": { "alias": "reportComponents"; "required": false; }; }, { "componentsChanged": "componentsChanged"; "componentRemoved": "componentRemoved"; "componentEdit": "componentEdit"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ReportComponentsComponent, "tb-report-components", never, { "format": { "alias": "format"; "required": false; }; "background": { "alias": "background"; "required": false; }; "width": { "alias": "width"; "required": false; }; "scale": { "alias": "scale"; "required": false; }; "marginLeft": { "alias": "marginLeft"; "required": false; }; "marginRight": { "alias": "marginRight"; "required": false; }; "marginTop": { "alias": "marginTop"; "required": false; }; "marginBottom": { "alias": "marginBottom"; "required": false; }; "reportComponents": { "alias": "reportComponents"; "required": false; }; "context": { "alias": "context"; "required": false; }; }, { "componentsChanged": "componentsChanged"; "componentRemoved": "componentRemoved"; "componentEdit": "componentEdit"; }, never, never, false, never>;
 }

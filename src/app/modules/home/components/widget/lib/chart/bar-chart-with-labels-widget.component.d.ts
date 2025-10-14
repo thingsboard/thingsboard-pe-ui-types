@@ -7,8 +7,9 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { BarChartWithLabelsWidgetSettings } from '@home/components/widget/lib/chart/bar-chart-with-labels-widget.models';
 import { DataKey } from '@shared/models/widget.models';
 import { WidgetComponent } from '@home/components/widget/widget.component';
+import { ChartWidgetComponent } from '@home/components/widget/lib/chart/chart.models';
 import * as i0 from "@angular/core";
-export declare class BarChartWithLabelsWidgetComponent implements OnInit, OnDestroy, AfterViewInit {
+export declare class BarChartWithLabelsWidgetComponent implements ChartWidgetComponent, OnInit, OnDestroy, AfterViewInit {
     widgetComponent: WidgetComponent;
     private imagePipe;
     private sanitizer;
@@ -18,6 +19,7 @@ export declare class BarChartWithLabelsWidgetComponent implements OnInit, OnDest
     settings: BarChartWithLabelsWidgetSettings;
     ctx: WidgetContext;
     widgetTitlePanel: TemplateRef<any>;
+    reportMode: boolean;
     showLegend: boolean;
     legendClass: string;
     backgroundStyle$: Observable<ComponentStyle>;
@@ -33,9 +35,10 @@ export declare class BarChartWithLabelsWidgetComponent implements OnInit, OnDest
     ngOnDestroy(): void;
     onInit(): void;
     onDataUpdated(): void;
+    onLatestDataUpdated(): void;
     onLegendKeyEnter(key: DataKey): void;
     onLegendKeyLeave(key: DataKey): void;
     toggleLegendKey(key: DataKey): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<BarChartWithLabelsWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<BarChartWithLabelsWidgetComponent, "tb-bar-chart-with-labels-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<BarChartWithLabelsWidgetComponent, [{ optional: true; }, null, null, null, null]>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<BarChartWithLabelsWidgetComponent, "tb-bar-chart-with-labels-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; "reportMode": { "alias": "reportMode"; "required": false; }; }, {}, never, never, false, never>;
 }

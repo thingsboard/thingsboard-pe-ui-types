@@ -1,13 +1,17 @@
 import { AfterViewInit, ChangeDetectorRef, DestroyRef, ElementRef, EventEmitter, OnChanges, OnDestroy, OnInit, Renderer2, SimpleChanges, ViewContainerRef } from '@angular/core';
 import { ReportComponentConfig } from '@shared/models/report-component.models';
-import { ReportComponentTypeData } from '@home/pages/reporting/template/components/report-component.models';
+import { ReportComponentContext, ReportComponentTypeData } from '@home/pages/reporting/template/components/report-component.models';
 import { TbAnchorComponent } from '@shared/components/tb-anchor.component';
 import { ReportComponentsComponent } from '@home/pages/reporting/template/components/report-components.component';
 import { TbReportFormat } from '@shared/models/report.models';
 import * as i0 from "@angular/core";
-export declare class ReportComponentComponent implements OnInit, AfterViewInit, OnChanges, OnDestroy {
+export interface IReportComponent {
+    selected: boolean;
+    componentUpdated(): void;
+}
+export declare class ReportComponentComponent implements IReportComponent, OnInit, AfterViewInit, OnChanges, OnDestroy {
     private reportComponents;
-    private elementRef;
+    elementRef: ElementRef<HTMLElement>;
     private container;
     private renderer;
     private destroyRef;
@@ -31,23 +35,32 @@ export declare class ReportComponentComponent implements OnInit, AfterViewInit, 
     position: string;
     reportComponent: ReportComponentConfig;
     format: TbReportFormat;
+    innerComponent: boolean;
     dragging: boolean;
     scale: number;
+    parentScale: number;
     width: number;
     pageMarginLeft: number;
     pageMarginRight: number;
     last: boolean;
-    edit: EventEmitter<any>;
+    context: ReportComponentContext;
+    edit: EventEmitter<ReportComponentConfig>;
+    childEdit: EventEmitter<ReportComponentConfig>;
     makeCopy: EventEmitter<any>;
     remove: EventEmitter<any>;
+    childRemove: EventEmitter<ReportComponentConfig>;
+    childrenChanged: EventEmitter<any>;
     reportPreviewContainer: TbAnchorComponent;
     typeData: ReportComponentTypeData;
     hovered: boolean;
     selected: boolean;
+    childSelected: boolean;
+    reportComponentsContainer: boolean;
     get isPlainFormat(): boolean;
     private editReportComponentTooltip;
     private reportComponentPreview;
     private reportComponentHeight;
+    private hostResize$;
     constructor(reportComponents: ReportComponentsComponent, elementRef: ElementRef<HTMLElement>, container: ViewContainerRef, renderer: Renderer2, destroyRef: DestroyRef, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
@@ -61,9 +74,12 @@ export declare class ReportComponentComponent implements OnInit, AfterViewInit, 
     private updateComponentSize;
     private updateComponentLayout;
     componentUpdated(): void;
+    childComponentUpdated(component: ReportComponentConfig): boolean;
+    childComponentSelected(component: ReportComponentConfig): boolean;
+    deselect(): void;
     private initEditReportComponentTooltip;
     static ɵfac: i0.ɵɵFactoryDeclaration<ReportComponentComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ReportComponentComponent, "tb-report-component", never, { "reportComponent": { "alias": "reportComponent"; "required": false; }; "format": { "alias": "format"; "required": false; }; "dragging": { "alias": "dragging"; "required": false; }; "scale": { "alias": "scale"; "required": false; }; "width": { "alias": "width"; "required": false; }; "pageMarginLeft": { "alias": "pageMarginLeft"; "required": false; }; "pageMarginRight": { "alias": "pageMarginRight"; "required": false; }; "last": { "alias": "last"; "required": false; }; "selected": { "alias": "selected"; "required": false; }; }, { "edit": "edit"; "makeCopy": "makeCopy"; "remove": "remove"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ReportComponentComponent, "tb-report-component", never, { "reportComponent": { "alias": "reportComponent"; "required": false; }; "format": { "alias": "format"; "required": false; }; "innerComponent": { "alias": "innerComponent"; "required": false; }; "dragging": { "alias": "dragging"; "required": false; }; "scale": { "alias": "scale"; "required": false; }; "parentScale": { "alias": "parentScale"; "required": false; }; "width": { "alias": "width"; "required": false; }; "pageMarginLeft": { "alias": "pageMarginLeft"; "required": false; }; "pageMarginRight": { "alias": "pageMarginRight"; "required": false; }; "last": { "alias": "last"; "required": false; }; "context": { "alias": "context"; "required": false; }; "selected": { "alias": "selected"; "required": false; }; "childSelected": { "alias": "childSelected"; "required": false; }; }, { "edit": "edit"; "childEdit": "childEdit"; "makeCopy": "makeCopy"; "remove": "remove"; "childRemove": "childRemove"; "childrenChanged": "childrenChanged"; }, never, never, false, never>;
 }
 export declare class EditReportComponentTooltipComponent implements AfterViewInit {
     element: ElementRef<HTMLElement>;
@@ -77,8 +93,10 @@ export declare class EditReportComponentTooltipComponent implements AfterViewIni
 }
 export declare abstract class AbstractReportComponentPreview<C extends ReportComponentConfig = ReportComponentConfig> implements OnInit {
     width: string;
+    context: ReportComponentContext;
     reportComponent: C;
     format: TbReportFormat;
+    scale: number;
     contentResized: EventEmitter<any>;
     get isPlainFormat(): boolean;
     protected cd: ChangeDetectorRef;
@@ -86,5 +104,19 @@ export declare abstract class AbstractReportComponentPreview<C extends ReportCom
     componentUpdated(): void;
     protected onComponentUpdated(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AbstractReportComponentPreview<any>, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<AbstractReportComponentPreview<any>, never, never, { "reportComponent": { "alias": "reportComponent"; "required": false; }; "format": { "alias": "format"; "required": false; }; }, { "contentResized": "contentResized"; }, never, never, false, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<AbstractReportComponentPreview<any>, never, never, { "context": { "alias": "context"; "required": false; }; "reportComponent": { "alias": "reportComponent"; "required": false; }; "format": { "alias": "format"; "required": false; }; "scale": { "alias": "scale"; "required": false; }; }, { "contentResized": "contentResized"; }, never, never, false, never>;
 }
+export declare abstract class AbstractReportComponentPreviewContainer<C extends ReportComponentConfig = ReportComponentConfig> extends AbstractReportComponentPreview<C> {
+    componentEdit: EventEmitter<ReportComponentConfig>;
+    componentsChanged: EventEmitter<any>;
+    componentRemoved: EventEmitter<ReportComponentConfig>;
+    childComponentUpdated(reportComponent: ReportComponentConfig): boolean;
+    deselectChildren(): void;
+    childComponentSelected(reportComponent: ReportComponentConfig): boolean;
+    abstract getAllChildReportComponentConfigs(): ReportComponentConfig[];
+    protected abstract getAllChildReportComponents(): IReportComponent[];
+    protected abstract findChildReportComponent(reportComponent: ReportComponentConfig): IReportComponent | undefined;
+    static ɵfac: i0.ɵɵFactoryDeclaration<AbstractReportComponentPreviewContainer<any>, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<AbstractReportComponentPreviewContainer<any>, never, never, {}, { "componentEdit": "componentEdit"; "componentsChanged": "componentsChanged"; "componentRemoved": "componentRemoved"; }, never, never, false, never>;
+}
+export declare const isReportComponentContainer: (component: AbstractReportComponentPreview) => component is AbstractReportComponentPreviewContainer;

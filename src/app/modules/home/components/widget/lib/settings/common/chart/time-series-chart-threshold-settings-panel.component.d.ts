@@ -20,6 +20,8 @@ export declare class TimeSeriesChartThresholdSettingsPanelComponent implements O
     yAxisIds: TimeSeriesChartYAxisId[];
     popover: TbPopoverComponent<TimeSeriesChartThresholdSettingsPanelComponent>;
     hideYAxis: boolean;
+    supportsUnitConversion: boolean;
+    reportMode: boolean;
     panelTitle: string;
     thresholdSettingsApplied: EventEmitter<Partial<TimeSeriesChartThreshold>>;
     thresholdSettingsFormGroup: UntypedFormGroup;
@@ -30,5 +32,5 @@ export declare class TimeSeriesChartThresholdSettingsPanelComponent implements O
     private updateValidators;
     private _labelPreviewFn;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesChartThresholdSettingsPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartThresholdSettingsPanelComponent, "tb-time-series-chart-threshold-settings-panel", never, { "thresholdSettings": { "alias": "thresholdSettings"; "required": false; }; "widgetConfig": { "alias": "widgetConfig"; "required": false; }; "yAxisIds": { "alias": "yAxisIds"; "required": false; }; "popover": { "alias": "popover"; "required": false; }; "hideYAxis": { "alias": "hideYAxis"; "required": false; }; "panelTitle": { "alias": "panelTitle"; "required": false; }; }, { "thresholdSettingsApplied": "thresholdSettingsApplied"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartThresholdSettingsPanelComponent, "tb-time-series-chart-threshold-settings-panel", never, { "thresholdSettings": { "alias": "thresholdSettings"; "required": false; }; "widgetConfig": { "alias": "widgetConfig"; "required": false; }; "yAxisIds": { "alias": "yAxisIds"; "required": false; }; "popover": { "alias": "popover"; "required": false; }; "hideYAxis": { "alias": "hideYAxis"; "required": false; }; "supportsUnitConversion": { "alias": "supportsUnitConversion"; "required": false; }; "reportMode": { "alias": "reportMode"; "required": false; }; "panelTitle": { "alias": "panelTitle"; "required": false; }; }, { "thresholdSettingsApplied": "thresholdSettingsApplied"; }, never, never, false, never>;
 }

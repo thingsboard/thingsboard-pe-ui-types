@@ -1,0 +1,36 @@
+import { AbstractReportComponentConfig } from '@home/pages/reporting/template/components/report-component-config.component';
+import { LatestChartReportComponentConfig } from '@shared/models/report-component.models';
+import { FormGroup } from '@angular/forms';
+import { WidgetConfigMode } from '@shared/models/widget.models';
+import { WidgetWithInfo } from '@home/models/widget-component.models';
+import { DoughnutLayout } from '@home/components/widget/lib/chart/doughnut-widget.models';
+import * as i0 from "@angular/core";
+export declare class LatestChartConfigComponent extends AbstractReportComponentConfig<LatestChartReportComponentConfig> {
+    legendPositions: import("@shared/models/widget.models").LegendPosition[];
+    legendPositionTranslationMap: Map<import("@shared/models/widget.models").LegendPosition, string>;
+    pieChartLabelPositions: import("@home/components/widget/lib/chart/chart.models").PieChartLabelPosition[];
+    pieChartLabelPositionTranslationMap: Map<import("@home/components/widget/lib/chart/chart.models").PieChartLabelPosition, string>;
+    doughnutHorizontal: boolean;
+    doughnutLayouts: DoughnutLayout[];
+    doughnutLayoutTranslationMap: Map<DoughnutLayout, string>;
+    doughnutLayoutImageMap: Map<DoughnutLayout, string>;
+    get doughnutTotalEnabled(): boolean;
+    imageWidthTypes: string[];
+    imageWidthTypeTranslations: Map<string, string>;
+    imageAlignments: string[];
+    imageAlignmentTranslations: Map<string, string>;
+    subType: string;
+    get widget(): WidgetWithInfo;
+    valuePreviewFn: any;
+    basicMode: WidgetConfigMode;
+    settingsTab: 'data' | 'layout';
+    protected buildForm(reportComponentConfig: LatestChartReportComponentConfig): FormGroup;
+    protected prepareOutputConfig(config: any): any;
+    private updateCustomWidth;
+    private getSeries;
+    private setSeries;
+    private updateValidators;
+    private _valuePreviewFn;
+    static ɵfac: i0.ɵɵFactoryDeclaration<LatestChartConfigComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<LatestChartConfigComponent, "tb-latest-chart-config", never, {}, {}, never, never, false, never>;
+}

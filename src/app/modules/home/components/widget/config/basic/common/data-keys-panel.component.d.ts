@@ -2,11 +2,11 @@ import { ChangeDetectorRef, DestroyRef, OnChanges, OnInit, SimpleChanges } from 
 import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { WidgetConfigComponent } from '@home/components/widget/widget-config.component';
-import { DataKey, DatasourceType, widgetType } from '@shared/models/widget.models';
+import { DataKey, DatasourceType, Widget, widgetType } from '@shared/models/widget.models';
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
 import { UtilsService } from '@core/services/utils.service';
-import { DataKeySettingsFunction } from '@home/components/widget/lib/settings/common/key/data-keys.component.models';
+import { DataKeySettingsFormFunction, DataKeySettingsFunction } from '@home/components/widget/lib/settings/common/key/data-keys.component.models';
 import { TimeSeriesChartYAxisId } from '@home/components/widget/lib/chart/time-series-chart.models';
 import { FormProperty } from '@shared/models/dynamic-form.models';
 import { WidgetConfigCallbacks } from '@home/components/widget/config/widget-config.component.models';
@@ -16,8 +16,15 @@ export interface DataKeysPanelOptions {
     widgetType?: widgetType;
     callbacks?: WidgetConfigCallbacks;
     settingsForm?: FormProperty[];
+    settingsFormFunction?: DataKeySettingsFormFunction;
+    settingsFormTrimDefaults?: boolean;
+    settingsDirective?: string;
+    settingsFunction?: DataKeySettingsFunction;
     latestSettingsForm?: FormProperty[];
+    latestSettingsFormFunction?: DataKeySettingsFormFunction;
+    latestSettingsFormTrimDefaults?: boolean;
     hasAdditionalLatestDataKeys?: boolean;
+    widget?: Widget;
 }
 export declare class DataKeysPanelComponent implements ControlValueAccessor, OnInit, OnChanges, Validator {
     private fb;
@@ -55,9 +62,15 @@ export declare class DataKeysPanelComponent implements ControlValueAccessor, OnI
     errorText: string;
     get widgetType(): widgetType;
     get callbacks(): WidgetConfigCallbacks;
+    get widget(): Widget;
     get hasAdditionalLatestDataKeys(): boolean;
     get dataKeySettingsForm(): FormProperty[];
+    get dataKeySettingsFormFunction(): DataKeySettingsFormFunction;
+    get dataKeySettingsFormTrimDefaults(): boolean;
+    get dataKeySettingsDirective(): string;
     get latestDataKeySettingsForm(): FormProperty[];
+    get latestDataKeySettingsFormFunction(): DataKeySettingsFormFunction;
+    get latestDataKeySettingsFormTrimDefaults(): boolean;
     get dataKeySettingsFunction(): DataKeySettingsFunction;
     get dragEnabled(): boolean;
     get noKeys(): boolean;

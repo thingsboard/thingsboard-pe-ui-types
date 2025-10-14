@@ -78,6 +78,7 @@ export interface DefaultTenantProfileConfiguration {
     queueStatsTtlDays: number;
     ruleEngineExceptionsTtlDays: number;
     blobEntityTtlDays: number;
+    reportTtlDays: number;
     maxCalculatedFieldsPerEntity: number;
     maxArgumentsPerCF: number;
     maxDataPointsPerRollingArg: number;

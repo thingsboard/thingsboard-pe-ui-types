@@ -9,6 +9,8 @@ export declare class TimeSeriesChartYAxesPanelComponent implements ControlValueA
     disabled: boolean;
     advanced: boolean;
     supportsUnitConversion: boolean;
+    stroked: boolean;
+    reportMode: boolean;
     axisRemoved: EventEmitter<string>;
     yAxesFormGroup: UntypedFormGroup;
     get dragEnabled(): boolean;
@@ -31,5 +33,5 @@ export declare class TimeSeriesChartYAxesPanelComponent implements ControlValueA
     addAxis(): void;
     private prepareAxesFormArray;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesChartYAxesPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartYAxesPanelComponent, "tb-time-series-chart-y-axes-panel", never, { "disabled": { "alias": "disabled"; "required": false; }; "advanced": { "alias": "advanced"; "required": false; }; "supportsUnitConversion": { "alias": "supportsUnitConversion"; "required": false; }; }, { "axisRemoved": "axisRemoved"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartYAxesPanelComponent, "tb-time-series-chart-y-axes-panel", never, { "disabled": { "alias": "disabled"; "required": false; }; "advanced": { "alias": "advanced"; "required": false; }; "supportsUnitConversion": { "alias": "supportsUnitConversion"; "required": false; }; "stroked": { "alias": "stroked"; "required": false; }; "reportMode": { "alias": "reportMode"; "required": false; }; }, { "axisRemoved": "axisRemoved"; }, never, never, false, never>;
 }

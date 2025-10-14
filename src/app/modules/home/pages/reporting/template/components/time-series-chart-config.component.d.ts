@@ -1,0 +1,36 @@
+import { FormGroup } from '@angular/forms';
+import { AbstractReportComponentConfig } from '@home/pages/reporting/template/components/report-component-config.component';
+import { TimeseriesChartReportComponentConfig } from '@shared/models/report-component.models';
+import { WidgetConfigMode } from '@shared/models/widget.models';
+import { TimeSeriesChartType, TimeSeriesChartYAxisId } from '@home/components/widget/lib/chart/time-series-chart.models';
+import { TbTimeSeriesChart } from '@home/components/widget/lib/chart/time-series-chart';
+import { WidgetWithInfo } from '@home/models/widget-component.models';
+import * as i0 from "@angular/core";
+export declare class TimeSeriesChartConfigComponent extends AbstractReportComponentConfig<TimeseriesChartReportComponentConfig> {
+    barChartWithLabels: boolean;
+    rangeChart: boolean;
+    chartType: TimeSeriesChartType;
+    TimeSeriesChartType: typeof TimeSeriesChartType;
+    get yAxisIds(): TimeSeriesChartYAxisId[];
+    get widget(): WidgetWithInfo;
+    TbTimeSeriesChart: typeof TbTimeSeriesChart;
+    imageWidthTypes: string[];
+    imageWidthTypeTranslations: Map<string, string>;
+    imageAlignments: string[];
+    imageAlignmentTranslations: Map<string, string>;
+    basicMode: WidgetConfigMode;
+    settingsTab: 'data' | 'layout';
+    seriesMode: string;
+    protected buildForm(reportComponentConfig: TimeseriesChartReportComponentConfig): FormGroup;
+    protected prepareOutputConfig(config: any): any;
+    seriesModeChange(seriesMode: string): void;
+    yAxisRemoved(yAxisId: TimeSeriesChartYAxisId): void;
+    private removeYaxisId;
+    private updateSeriesState;
+    private updateCustomWidth;
+    private getSeries;
+    private setSeries;
+    private updateValidators;
+    static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesChartConfigComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartConfigComponent, "tb-time-series-chart-config", never, { "barChartWithLabels": { "alias": "barChartWithLabels"; "required": false; }; "rangeChart": { "alias": "rangeChart"; "required": false; }; "chartType": { "alias": "chartType"; "required": false; }; }, {}, never, never, false, never>;
+}

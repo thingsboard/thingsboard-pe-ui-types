@@ -15,6 +15,7 @@ import { UtilsService } from '@core/services/utils.service';
 import { DialogService } from '@core/services/dialog.service';
 import { ReportService } from '@core/http/report.service';
 import { ReportComponentsComponent } from '@home/pages/reporting/template/components/report-components.component';
+import { Observable } from 'rxjs';
 import { DatePipe } from '@angular/common';
 import { CdkScrollable } from '@angular/cdk/overlay';
 import { ReportTemplateHeaderFooterComponent } from '@home/pages/reporting/template/report-template-header-footer.component';
@@ -38,7 +39,8 @@ export declare class ReportTemplatePageComponent extends PageComponent implement
     private cd;
     private popoverService;
     private viewContainerRef;
-    reportComponentTypeMap: Map<import("@shared/models/report-component.models").ReportComponentType, import("@home/pages/reporting/template/components/report-component.models").ReportComponentTypeData<ReportComponentConfig>>;
+    TbReportFormat: typeof TbReportFormat;
+    reportComponentTypesData: import("@home/pages/reporting/template/components/report-component.models").ReportComponentTypesData;
     get isDirty(): boolean;
     set isDirty(value: boolean);
     get showHeaderFooter(): boolean;
@@ -58,7 +60,7 @@ export declare class ReportTemplatePageComponent extends PageComponent implement
     isDirtyValue: boolean;
     isFullscreen: boolean;
     reportTemplate: ReportTemplate;
-    timePreview: string;
+    timeDataPattern: string;
     updateBreadcrumbs: EventEmitter<any>;
     prevReportComponent: ReportComponentConfig;
     editingReportComponent: ReportComponentConfig;
@@ -83,6 +85,8 @@ export declare class ReportTemplatePageComponent extends PageComponent implement
     scrollTop: boolean;
     private scrolling;
     private layoutResize$;
+    private timeDataPatternSubject;
+    timeDataPattern$: Observable<string>;
     private stateController;
     constructor(route: ActivatedRoute, userPermissionsService: UserPermissionsService, reportTemplateService: ReportTemplateService, reportService: ReportService, entityService: EntityService, utils: UtilsService, translate: TranslateService, destroyRef: DestroyRef, dialog: MatDialog, dialogService: DialogService, fb: FormBuilder, date: DatePipe, renderer: Renderer2, cd: ChangeDetectorRef, popoverService: TbPopoverService, viewContainerRef: ViewContainerRef);
     ngOnInit(): void;
@@ -116,6 +120,7 @@ export declare class ReportTemplatePageComponent extends PageComponent implement
     private updateScale;
     private init;
     private allReportComponentsComponents;
+    private selectEditingComponent;
     static ɵfac: i0.ɵɵFactoryDeclaration<ReportTemplatePageComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<ReportTemplatePageComponent, "tb-report-template-page", never, {}, {}, never, never, false, never>;
 }

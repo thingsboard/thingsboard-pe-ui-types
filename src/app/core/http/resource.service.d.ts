@@ -19,6 +19,7 @@ export declare class ResourceService {
     saveResources(resources: Resource[], config?: RequestConfig): Observable<Resource[]>;
     saveResource(resource: Resource, config?: RequestConfig): Observable<Resource>;
     deleteResource(resourceId: string, force?: boolean, config?: RequestConfig): Observable<Object>;
+    getResourcesByIds(ids: string[], config?: RequestConfig): Observable<Array<ResourceInfo>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<ResourceService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<ResourceService>;
 }

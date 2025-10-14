@@ -9,6 +9,8 @@ import { AppState } from '@core/core.state';
 import { PageLink } from '@shared/models/page/page-link';
 import { EntityAction } from '@home/models/entity/entity-component.models';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
+import { MatDialog } from "@angular/material/dialog";
+import { DialogService } from "@core/services/dialog.service";
 import * as i0 from "@angular/core";
 export declare class ResourcesLibraryTableConfigResolver {
     private store;
@@ -16,10 +18,12 @@ export declare class ResourcesLibraryTableConfigResolver {
     private userPermissionsService;
     private translate;
     private router;
+    private dialog;
+    private dialogService;
     private datePipe;
     private readonly config;
     private readonly resourceTypesTranslationMap;
-    constructor(store: Store<AppState>, resourceService: ResourceService, userPermissionsService: UserPermissionsService, translate: TranslateService, router: Router, datePipe: DatePipe);
+    constructor(store: Store<AppState>, resourceService: ResourceService, userPermissionsService: UserPermissionsService, translate: TranslateService, router: Router, dialog: MatDialog, dialogService: DialogService, datePipe: DatePipe);
     saveResource(resource: any): import("rxjs").Observable<Resource>;
     resolve(): EntityTableConfig<Resource, PageLink, ResourceInfo>;
     private openResource;
@@ -27,6 +31,8 @@ export declare class ResourcesLibraryTableConfigResolver {
     onResourceAction(action: EntityAction<ResourceInfo>): boolean;
     private detailsReadonly;
     private isResourceEditable;
+    private deleteResource;
+    private deleteResources;
     static ɵfac: i0.ɵɵFactoryDeclaration<ResourcesLibraryTableConfigResolver, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<ResourcesLibraryTableConfigResolver>;
 }

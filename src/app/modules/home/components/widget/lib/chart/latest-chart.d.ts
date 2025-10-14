@@ -16,6 +16,7 @@ export declare abstract class TbLatestChart<S extends LatestChartSettings> {
     protected translate: TranslateService;
     private autoResize;
     private readonly shapeResize$;
+    private showTotalValueInLegend;
     protected readonly settings: S;
     protected valueFormatter: ValueFormatProcessor;
     protected total: number;

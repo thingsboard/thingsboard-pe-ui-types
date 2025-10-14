@@ -1,6 +1,9 @@
 import { FormGroup } from '@angular/forms';
-import { EntityType, ReportTemplateType, SubReportReportComponentConfig, WidgetConfigMode } from '@app/shared/public-api';
+import { EntityType } from '@shared/models/entity-type.models';
+import { ReportTemplateType } from '@shared/models/report.models';
 import { AbstractReportComponentConfig } from '@home/pages/reporting/template/components/report-component-config.component';
+import { SubReportReportComponentConfig } from '@shared/models/report-component.models';
+import { WidgetConfigMode } from '@shared/models/widget.models';
 import * as i0 from "@angular/core";
 export declare class SubReportConfigComponent extends AbstractReportComponentConfig<SubReportReportComponentConfig> {
     EntityType: typeof EntityType;

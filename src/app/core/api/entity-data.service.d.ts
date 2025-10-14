@@ -7,6 +7,7 @@ import { UtilsService } from '@core/services/utils.service';
 import { EntityDataSubscription, EntityDataSubscriptionOptions } from '@core/api/entity-data-subscription';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { WidgetDataGenerationOptions } from '@core/api/widget-api.models';
 import * as i0 from "@angular/core";
 export interface EntityDataListener {
     subscriptionType: widgetType;
@@ -22,6 +23,7 @@ export interface EntityDataListener {
     updateRealtimeSubscription?: () => SubscriptionTimewindow;
     setRealtimeSubscription?: (subscriptionTimewindow: SubscriptionTimewindow) => void;
     subscriptionOptions?: EntityDataSubscriptionOptions;
+    dataGenerationOptions?: WidgetDataGenerationOptions;
     subscription?: EntityDataSubscription;
 }
 export interface EntityDataLoadResult {

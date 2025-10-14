@@ -1,0 +1,34 @@
+import { AfterViewInit, OnDestroy, ViewContainerRef } from '@angular/core';
+import { AbstractReportComponentPreview } from '@home/pages/reporting/template/components/report-component.component';
+import { LatestChartReportComponentConfig } from '@shared/models/report-component.models';
+import { IWidgetSubscription, WidgetSubscriptionCallbacks } from '@core/api/widget-api.models';
+import { ComponentStyle } from '@shared/models/widget-settings.models';
+import * as i0 from "@angular/core";
+export declare class LatestChartPreviewComponent extends AbstractReportComponentPreview<LatestChartReportComponentConfig> implements AfterViewInit, OnDestroy, WidgetSubscriptionCallbacks {
+    widgetContainer: ViewContainerRef;
+    private reportWidgetContextService;
+    private translate;
+    imageWidth: string;
+    imageHeightPx: number;
+    imageAlign: string;
+    showTitle: boolean;
+    title: string;
+    titleStyle: ComponentStyle;
+    hasData: boolean;
+    noDataMessage: string;
+    chartTypeTitle: string;
+    private viewInited;
+    private widgetContext;
+    private widgetComponentRef;
+    private widgetComponent;
+    private updateWidgetPreview;
+    onComponentUpdated(): void;
+    ngAfterViewInit(): void;
+    ngOnDestroy(): void;
+    onDataUpdated(_subscription: IWidgetSubscription, _detectChanges: boolean): void;
+    private destroyWidget;
+    private updateLatestWidgetPreview;
+    private prepareWidgetSettings;
+    static ɵfac: i0.ɵɵFactoryDeclaration<LatestChartPreviewComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<LatestChartPreviewComponent, "tb-latest-chart-preview", never, {}, {}, never, never, false, never>;
+}

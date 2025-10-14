@@ -1,9 +1,9 @@
 import { ActivatedRouteSnapshot, Route } from '@angular/router';
 import { Observable } from 'rxjs';
 import { BreadCrumbLabelFunction } from '@shared/components/breadcrumb';
-import { ReportTemplate } from '@shared/public-api';
 import { ReportTemplateService } from '@core/http/report-template.service';
 import { ReportTemplatePageComponent } from '@home/pages/reporting/template/report-template-page.component';
+import { ReportTemplate } from '@shared/models/report.models';
 import * as i0 from "@angular/core";
 export declare class ReportTemplateResolver {
     private reportTemplateService;

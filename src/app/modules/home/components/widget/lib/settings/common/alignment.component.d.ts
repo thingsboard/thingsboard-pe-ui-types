@@ -12,6 +12,7 @@ export declare class AlignmentComponent implements ControlValueAccessor {
     alignmentIcons: Map<string, string>;
     disabled: boolean;
     horizontal: boolean;
+    allowedAlignments: alignment[];
     modelValue: alignment;
     private propagateChange;
     constructor(popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef);
@@ -21,5 +22,5 @@ export declare class AlignmentComponent implements ControlValueAccessor {
     writeValue(value: alignment): void;
     openAlignmentPopup($event: Event, matButton: MatButton): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AlignmentComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AlignmentComponent, "tb-alignment", never, { "disabled": { "alias": "disabled"; "required": false; }; "horizontal": { "alias": "horizontal"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AlignmentComponent, "tb-alignment", never, { "disabled": { "alias": "disabled"; "required": false; }; "horizontal": { "alias": "horizontal"; "required": false; }; "allowedAlignments": { "alias": "allowedAlignments"; "required": false; }; }, {}, never, never, false, never>;
 }

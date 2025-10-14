@@ -10,6 +10,7 @@ import { WidgetConfigCallbacks } from '@home/components/widget/config/widget-con
 import * as i0 from "@angular/core";
 export interface DataSourcesOptions {
     maxDatasources?: number;
+    maxDataKeys?: number;
     datasourcesOptional?: boolean;
     widgetType?: widgetType;
     allowFunctions?: boolean;
@@ -95,6 +96,7 @@ export declare class DatasourcesComponent implements ControlValueAccessor, OnIni
     private get hasAdditionalLatestDataKeys();
     get widgetType(): widgetType;
     get datasourcesOptional(): boolean;
+    get maxDataKeys(): number;
     get allowFunctions(): boolean;
     get datasources(): Datasource[];
     static ɵfac: i0.ɵɵFactoryDeclaration<DatasourcesComponent, [null, null, null, { optional: true; }, null]>;

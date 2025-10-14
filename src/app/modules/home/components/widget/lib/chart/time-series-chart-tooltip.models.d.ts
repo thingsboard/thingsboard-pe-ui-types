@@ -5,6 +5,7 @@ import { Renderer2 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { CallbackDataParams } from 'echarts/types/dist/shared';
 import { Interval } from '@shared/models/time/time.models';
+import { TranslateService } from '@ngx-translate/core';
 export type TimeSeriesChartTooltipValueFormatFunction = (value: any, latestData: FormattedData, units?: string, decimals?: number) => string;
 export interface TimeSeriesChartTooltipWidgetSettings {
     showTooltip: boolean;
@@ -23,6 +24,7 @@ export interface TimeSeriesChartTooltipWidgetSettings {
     tooltipDateColor: string;
     tooltipBackgroundColor: string;
     tooltipBackgroundBlur: number;
+    tooltipStackedShowTotal?: boolean;
 }
 export declare enum TimeSeriesChartTooltipTrigger {
     point = "point",
@@ -36,11 +38,16 @@ export declare class TimeSeriesChartTooltip {
     private settings;
     private tooltipDateFormat;
     private valueFormatFunction;
-    constructor(renderer: Renderer2, sanitizer: DomSanitizer, settings: TimeSeriesChartTooltipWidgetSettings, tooltipDateFormat: DateFormatProcessor, valueFormatFunction: TimeSeriesChartTooltipValueFormatFunction);
+    private translate;
+    constructor(renderer: Renderer2, sanitizer: DomSanitizer, settings: TimeSeriesChartTooltipWidgetSettings, tooltipDateFormat: DateFormatProcessor, valueFormatFunction: TimeSeriesChartTooltipValueFormatFunction, translate: TranslateService);
     formatted(params: CallbackDataParams[] | CallbackDataParams, focusedSeriesIndex: number, series?: TimeSeriesChartDataItem[], interval?: Interval): HTMLElement;
     private buildItemsTooltip;
+    private shouldShowItem;
+    private createElement;
+    private applyFont;
     private constructTooltipDateElement;
     private constructTooltipSeriesElement;
+    private constructTooltipTotalStackedElement;
     private static mapTooltipParams;
     private static appendTooltipItem;
 }

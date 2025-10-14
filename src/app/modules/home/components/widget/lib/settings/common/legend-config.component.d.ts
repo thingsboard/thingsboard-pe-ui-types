@@ -6,6 +6,8 @@ export declare class LegendConfigComponent implements OnInit, OnDestroy, Control
     private fb;
     disabled: boolean;
     hideDirection: boolean;
+    hideValues: boolean;
+    hideSortDataKeys: boolean;
     legendConfigForm: UntypedFormGroup;
     legendDirection: typeof LegendDirection;
     legendDirections: string[];
@@ -28,5 +30,5 @@ export declare class LegendConfigComponent implements OnInit, OnDestroy, Control
     private getShowValues;
     private setShowValues;
     static ɵfac: i0.ɵɵFactoryDeclaration<LegendConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<LegendConfigComponent, "tb-legend-config", never, { "disabled": { "alias": "disabled"; "required": false; }; "hideDirection": { "alias": "hideDirection"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<LegendConfigComponent, "tb-legend-config", never, { "disabled": { "alias": "disabled"; "required": false; }; "hideDirection": { "alias": "hideDirection"; "required": false; }; "hideValues": { "alias": "hideValues"; "required": false; }; "hideSortDataKeys": { "alias": "hideSortDataKeys"; "required": false; }; }, {}, never, never, false, never>;
 }

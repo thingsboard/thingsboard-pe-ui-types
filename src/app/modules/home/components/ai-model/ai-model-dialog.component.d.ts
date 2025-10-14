@@ -7,8 +7,9 @@ import { Observable } from 'rxjs';
 import { StepperOrientation } from '@angular/cdk/stepper';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { EntityType } from '@shared/models/entity-type.models';
-import { AiModel, AiProvider } from '@shared/models/ai-model.models';
+import { AiModel, AiProvider, AuthenticationType } from '@shared/models/ai-model.models';
 import { AiModelService } from '@core/http/ai-model.service';
+import { TranslateService } from '@ngx-translate/core';
 import * as i0 from "@angular/core";
 export interface AIModelDialogData {
     AIModel?: AiModel;
@@ -22,6 +23,7 @@ export declare class AIModelDialogComponent extends DialogComponent<AIModelDialo
     data: AIModelDialogData;
     private fb;
     private aiModelService;
+    private translate;
     private dialog;
     readonly entityType: typeof EntityType;
     selectedIndex: number;
@@ -30,12 +32,18 @@ export declare class AIModelDialogComponent extends DialogComponent<AIModelDialo
     aiProvider: typeof AiProvider;
     providerMap: AiProvider[];
     providerTranslationMap: Map<AiProvider, string>;
+    AuthenticationType: typeof AuthenticationType;
     provider: AiProvider;
     aiModelForms: FormGroup;
     isAdd: boolean;
     readonly: boolean;
-    constructor(store: Store<AppState>, router: Router, dialogRef: MatDialogRef<AIModelDialogComponent, AiModel>, data: AIModelDialogData, fb: FormBuilder, aiModelService: AiModelService, dialog: MatDialog);
+    authenticationHint: string;
+    apiKeyRequired: boolean;
+    private readonly openAiDefaultBaseUrl;
+    constructor(store: Store<AppState>, router: Router, dialogRef: MatDialogRef<AIModelDialogComponent, AiModel>, data: AIModelDialogData, fb: FormBuilder, aiModelService: AiModelService, translate: TranslateService, dialog: MatDialog);
     fetchOptions(searchText: string): Observable<Array<string>>;
+    private updateApiKeyValidatorForOpenAIProvider;
+    private getAuthenticationHint;
     private updateValidation;
     get providerFieldsList(): string[];
     get modelFieldsList(): string[];

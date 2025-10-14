@@ -19,6 +19,7 @@ export interface SubscriptionDataKey {
     comparisonCustomIntervalValue?: number;
     comparisonResultType?: ComparisonResultType;
     funcBody: TbFunction;
+    builtInFunc?: DataKeyFunction;
     func?: CompiledTbFunction<DataKeyFunction>;
     postFuncBody: TbFunction;
     postFunc?: CompiledTbFunction<DataKeyPostFunction>;
@@ -49,6 +50,7 @@ export declare class EntityDataSubscription {
     private http;
     constructor(listener: EntityDataListener, telemetryService: TelemetryWebsocketService, utils: UtilsService, http: HttpClient);
     private entityDataSubscriptionOptions;
+    private dataGenerationOptions;
     private datasourceType;
     private history;
     private isFloatingTimewindow;

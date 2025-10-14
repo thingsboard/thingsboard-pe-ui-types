@@ -11,6 +11,7 @@ import { WidgetActionCallbacks, WidgetActionDescriptorInfo, WidgetActionsDatasou
 import { UtilsService } from '@core/services/utils.service';
 import { WidgetActionDescriptor, WidgetActionSource, WidgetActionType, widgetType } from '@shared/models/widget.models';
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
+import { DomSanitizer } from '@angular/platform-browser';
 import * as i0 from "@angular/core";
 export declare class ManageWidgetActionsComponent extends PageComponent implements OnInit, AfterViewInit, OnDestroy, ControlValueAccessor {
     private translate;
@@ -20,6 +21,7 @@ export declare class ManageWidgetActionsComponent extends PageComponent implemen
     private cd;
     private elementRef;
     private zone;
+    private sanitizer;
     disabled: boolean;
     widgetType: widgetType;
     defaultIconColor: string;
@@ -47,7 +49,7 @@ export declare class ManageWidgetActionsComponent extends PageComponent implemen
     paginator: MatPaginator;
     sort: MatSort;
     private propagateChange;
-    constructor(translate: TranslateService, utils: UtilsService, dialog: MatDialog, dialogs: DialogService, cd: ChangeDetectorRef, elementRef: ElementRef, zone: NgZone);
+    constructor(translate: TranslateService, utils: UtilsService, dialog: MatDialog, dialogs: DialogService, cd: ChangeDetectorRef, elementRef: ElementRef, zone: NgZone, sanitizer: DomSanitizer);
     ngOnInit(): void;
     ngOnDestroy(): void;
     ngAfterViewInit(): void;

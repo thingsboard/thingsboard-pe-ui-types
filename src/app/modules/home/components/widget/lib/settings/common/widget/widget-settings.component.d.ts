@@ -22,9 +22,11 @@ export declare class WidgetSettingsComponent implements ControlValueAccessor, On
     dashboard: Dashboard;
     widget: Widget;
     widgetConfig: WidgetConfigComponentData;
+    reportMode: boolean;
     private settingsDirective;
     definedDirectiveError: string;
     settingsForm?: FormProperty[];
+    settingsFormTrimDefaults?: boolean;
     widgetSettingsFormGroup: UntypedFormGroup;
     changeSubscription: Subscription;
     private definedSettingsComponentRef;
@@ -44,5 +46,5 @@ export declare class WidgetSettingsComponent implements ControlValueAccessor, On
     private validateDefinedDirective;
     validate(control: AbstractControl): ValidationErrors | null;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetSettingsComponent, "tb-widget-settings", never, { "disabled": { "alias": "disabled"; "required": false; }; "aliasController": { "alias": "aliasController"; "required": false; }; "callbacks": { "alias": "callbacks"; "required": false; }; "functionsOnly": { "alias": "functionsOnly"; "required": false; }; "dashboard": { "alias": "dashboard"; "required": false; }; "widget": { "alias": "widget"; "required": false; }; "widgetConfig": { "alias": "widgetConfig"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetSettingsComponent, "tb-widget-settings", never, { "disabled": { "alias": "disabled"; "required": false; }; "aliasController": { "alias": "aliasController"; "required": false; }; "callbacks": { "alias": "callbacks"; "required": false; }; "functionsOnly": { "alias": "functionsOnly"; "required": false; }; "dashboard": { "alias": "dashboard"; "required": false; }; "widget": { "alias": "widget"; "required": false; }; "widgetConfig": { "alias": "widgetConfig"; "required": false; }; "reportMode": { "alias": "reportMode"; "required": false; }; }, {}, never, never, false, never>;
 }

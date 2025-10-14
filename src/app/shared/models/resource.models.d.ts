@@ -6,7 +6,8 @@ export declare enum ResourceType {
     LWM2M_MODEL = "LWM2M_MODEL",
     PKCS_12 = "PKCS_12",
     JKS = "JKS",
-    JS_MODULE = "JS_MODULE"
+    JS_MODULE = "JS_MODULE",
+    GENERAL = "GENERAL"
 }
 export declare enum ResourceSubType {
     IMAGE = "IMAGE",
@@ -24,8 +25,8 @@ export interface TbResourceInfo<D> extends Omit<BaseData<TbResourceId>, 'name' |
     title?: string;
     resourceType: ResourceType;
     resourceSubType?: ResourceSubType;
-    fileName: string;
-    public: boolean;
+    fileName?: string;
+    public?: boolean;
     publicResourceKey?: string;
     readonly link?: string;
     readonly publicLink?: string;
@@ -33,7 +34,7 @@ export interface TbResourceInfo<D> extends Omit<BaseData<TbResourceId>, 'name' |
 }
 export type ResourceInfo = TbResourceInfo<any>;
 export interface Resource extends ResourceInfo {
-    data: string;
+    data?: string;
     name?: string;
 }
 export interface ImageDescriptor {

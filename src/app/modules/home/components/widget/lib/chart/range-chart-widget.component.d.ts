@@ -6,8 +6,9 @@ import { Observable } from 'rxjs';
 import { ImagePipe } from '@shared/pipe/image.pipe';
 import { DomSanitizer } from '@angular/platform-browser';
 import { WidgetComponent } from '@home/components/widget/widget.component';
+import { ChartWidgetComponent } from '@home/components/widget/lib/chart/chart.models';
 import * as i0 from "@angular/core";
-export declare class RangeChartWidgetComponent implements OnInit, OnDestroy, AfterViewInit {
+export declare class RangeChartWidgetComponent implements ChartWidgetComponent, OnInit, OnDestroy, AfterViewInit {
     widgetComponent: WidgetComponent;
     private imagePipe;
     private sanitizer;
@@ -17,6 +18,7 @@ export declare class RangeChartWidgetComponent implements OnInit, OnDestroy, Aft
     settings: RangeChartWidgetSettings;
     ctx: WidgetContext;
     widgetTitlePanel: TemplateRef<any>;
+    reportMode: boolean;
     showLegend: boolean;
     legendClass: string;
     backgroundStyle$: Observable<ComponentStyle>;
@@ -35,7 +37,8 @@ export declare class RangeChartWidgetComponent implements OnInit, OnDestroy, Aft
     ngOnDestroy(): void;
     onInit(): void;
     onDataUpdated(): void;
+    onLatestDataUpdated(): void;
     toggleRangeItem(item: RangeItem): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<RangeChartWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RangeChartWidgetComponent, "tb-range-chart-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<RangeChartWidgetComponent, [{ optional: true; }, null, null, null, null]>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RangeChartWidgetComponent, "tb-range-chart-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; "reportMode": { "alias": "reportMode"; "required": false; }; }, {}, never, never, false, never>;
 }

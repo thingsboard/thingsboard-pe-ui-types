@@ -130,3 +130,9 @@ export declare const createRadialOpacityGradient: (color: string, gradient: {
 export declare const createChartTextStyle: (font: Font, color: string, darkMode: boolean, colorKey?: string, fill?: boolean) => ComponentStyle;
 export declare const prepareChartThemeColor: (color: string, darkMode: boolean, colorKey?: string) => string;
 export declare const toAnimationOption: (ctx: WidgetContext, settings: ChartAnimationSettings) => AnimationOptionMixin;
+export interface ChartWidgetComponent {
+    reportMode: boolean;
+    ctx: WidgetContext;
+    onDataUpdated(): void;
+    onLatestDataUpdated?(): void;
+}

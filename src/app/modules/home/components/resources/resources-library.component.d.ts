@@ -14,8 +14,10 @@ export declare class ResourcesLibraryComponent extends EntityComponent<Resource>
     protected entitiesTableConfigValue: EntityTableConfig<Resource>;
     fb: FormBuilder;
     protected cd: ChangeDetectorRef;
+    standalone: boolean;
+    resourceTypes: ResourceType[];
+    defaultResourceType: ResourceType;
     readonly resourceType: typeof ResourceType;
-    readonly resourceTypes: ResourceType[];
     readonly resourceTypesTranslationMap: Map<ResourceType, string>;
     readonly maxResourceSize: number;
     private destroy$;
@@ -24,6 +26,7 @@ export declare class ResourcesLibraryComponent extends EntityComponent<Resource>
     ngOnDestroy(): void;
     hideDelete(): boolean;
     buildForm(entity: Resource): FormGroup;
+    mediaTypeChange(mediaType: string): void;
     updateForm(entity: Resource): void;
     updateFormState(): void;
     prepareFormValue(formValue: Resource): Resource;
@@ -33,6 +36,6 @@ export declare class ResourcesLibraryComponent extends EntityComponent<Resource>
     onResourceIdCopied(): void;
     private observeResourceTypeChange;
     private onResourceTypeChange;
-    static ɵfac: i0.ɵɵFactoryDeclaration<ResourcesLibraryComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ResourcesLibraryComponent, "tb-resources-library", never, {}, {}, never, never, false, never>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<ResourcesLibraryComponent, [null, null, { optional: true; }, { optional: true; }, null, null]>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ResourcesLibraryComponent, "tb-resources-library", never, { "standalone": { "alias": "standalone"; "required": false; }; "resourceTypes": { "alias": "resourceTypes"; "required": false; }; "defaultResourceType": { "alias": "defaultResourceType"; "required": false; }; }, {}, never, never, false, never>;
 }

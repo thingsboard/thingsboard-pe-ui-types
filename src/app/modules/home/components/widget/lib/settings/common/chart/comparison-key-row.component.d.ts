@@ -8,6 +8,7 @@ export declare class ComparisonKeyRowComponent implements ControlValueAccessor, 
     private destroyRef;
     disabled: boolean;
     datasourceType: DatasourceType;
+    reportMode: boolean;
     keyFormControl: UntypedFormControl;
     keyRowFormGroup: UntypedFormGroup;
     modelValue: DataKey;
@@ -21,5 +22,5 @@ export declare class ComparisonKeyRowComponent implements ControlValueAccessor, 
     private updateValidators;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<ComparisonKeyRowComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ComparisonKeyRowComponent, "tb-comparison-key-row", never, { "disabled": { "alias": "disabled"; "required": false; }; "datasourceType": { "alias": "datasourceType"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ComparisonKeyRowComponent, "tb-comparison-key-row", never, { "disabled": { "alias": "disabled"; "required": false; }; "datasourceType": { "alias": "datasourceType"; "required": false; }; "reportMode": { "alias": "reportMode"; "required": false; }; }, {}, never, never, false, never>;
 }

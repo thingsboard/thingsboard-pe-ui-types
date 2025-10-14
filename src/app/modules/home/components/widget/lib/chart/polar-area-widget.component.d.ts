@@ -4,12 +4,14 @@ import { WidgetComponent } from '@home/components/widget/widget.component';
 import { TranslateService } from '@ngx-translate/core';
 import { LatestChartComponent, LatestChartComponentCallbacks } from '@home/components/widget/lib/chart/latest-chart.component';
 import { PolarAreaChartWidgetSettings } from '@home/components/widget/lib/chart/polar-area-widget.models';
+import { ChartWidgetComponent } from '@home/components/widget/lib/chart/chart.models';
 import * as i0 from "@angular/core";
-export declare class PolarAreaWidgetComponent implements OnInit {
+export declare class PolarAreaWidgetComponent implements OnInit, ChartWidgetComponent {
     private widgetComponent;
     private translate;
     latestChart: LatestChartComponent;
     ctx: WidgetContext;
+    reportMode: boolean;
     widgetTitlePanel: TemplateRef<any>;
     settings: PolarAreaChartWidgetSettings;
     callbacks: LatestChartComponentCallbacks;
@@ -18,5 +20,5 @@ export declare class PolarAreaWidgetComponent implements OnInit {
     onInit(): void;
     onDataUpdated(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<PolarAreaWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PolarAreaWidgetComponent, "tb-polar-area-chart-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PolarAreaWidgetComponent, "tb-polar-area-chart-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; "reportMode": { "alias": "reportMode"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; }, {}, never, never, false, never>;
 }

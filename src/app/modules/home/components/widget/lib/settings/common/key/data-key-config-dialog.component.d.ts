@@ -14,11 +14,14 @@ import { ToggleHeaderOption } from '@shared/components/toggle-header.component';
 import { TranslateService } from '@ngx-translate/core';
 import { WidgetConfigCallbacks } from '@home/components/widget/config/widget-config.component.models';
 import { FormProperty } from '@shared/models/dynamic-form.models';
+import { DataKeySettingsFormFunction } from '@home/components/widget/lib/settings/common/key/data-keys.component.models';
 import * as i0 from "@angular/core";
 export interface DataKeyConfigDialogData {
     dataKey: DataKey;
     dataKeyConfigMode?: DataKeyConfigMode;
     dataKeySettingsForm: FormProperty[];
+    dataKeySettingsFormFunction?: DataKeySettingsFormFunction;
+    dataKeySettingsFormTrimDefaults?: boolean;
     dataKeySettingsDirective: string;
     dashboard: Dashboard;
     aliasController: IAliasController;

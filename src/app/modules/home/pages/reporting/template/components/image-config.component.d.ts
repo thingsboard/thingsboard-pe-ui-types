@@ -1,6 +1,8 @@
 import { FormGroup } from '@angular/forms';
-import { DataKeyType, ImageReportComponentConfig, WidgetConfigMode } from '@app/shared/public-api';
 import { AbstractReportComponentConfig } from '@home/pages/reporting/template/components/report-component-config.component';
+import { ImageReportComponentConfig } from '@shared/models/report-component.models';
+import { WidgetConfigMode } from '@shared/models/widget.models';
+import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
 import * as i0 from "@angular/core";
 export declare class ImageConfigComponent extends AbstractReportComponentConfig<ImageReportComponentConfig> {
     imageWidthTypes: string[];

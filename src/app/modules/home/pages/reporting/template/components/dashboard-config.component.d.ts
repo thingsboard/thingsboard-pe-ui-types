@@ -1,6 +1,7 @@
 import { FormGroup } from '@angular/forms';
-import { DashboardReportComponentConfig, WidgetConfigMode } from '@app/shared/public-api';
 import { AbstractReportComponentConfig } from '@home/pages/reporting/template/components/report-component-config.component';
+import { DashboardReportComponentConfig } from '@shared/models/report-component.models';
+import { WidgetConfigMode } from '@shared/models/widget.models';
 import * as i0 from "@angular/core";
 export declare class DashboardConfigComponent extends AbstractReportComponentConfig<DashboardReportComponentConfig> {
     imageWidthTypes: string[];

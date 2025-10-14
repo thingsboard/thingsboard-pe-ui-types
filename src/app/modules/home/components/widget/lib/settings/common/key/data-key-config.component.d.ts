@@ -1,4 +1,4 @@
-import { DestroyRef, ElementRef, OnInit } from '@angular/core';
+import { DestroyRef, ElementRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -8,6 +8,7 @@ import { UtilsService } from '@core/services/utils.service';
 import { TranslateService } from '@ngx-translate/core';
 import { MatDialog } from '@angular/material/dialog';
 import { EntityService } from '@core/http/entity.service';
+import { DataKeySettingsFormFunction } from './data-keys.component.models';
 import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
 import { Observable } from 'rxjs';
 import { JsFuncComponent } from '@shared/components/js-func.component';
@@ -21,7 +22,7 @@ import { WidgetConfigCallbacks } from '@home/components/widget/config/widget-con
 import { FormProperty } from '@shared/models/dynamic-form.models';
 import { ScriptLanguage } from '@shared/models/rule-node.models';
 import * as i0 from "@angular/core";
-export declare class DataKeyConfigComponent extends PageComponent implements OnInit, ControlValueAccessor, Validator {
+export declare class DataKeyConfigComponent extends PageComponent implements OnInit, ControlValueAccessor, Validator, OnChanges {
     protected store: Store<AppState>;
     private utils;
     private entityService;
@@ -52,6 +53,8 @@ export declare class DataKeyConfigComponent extends PageComponent implements OnI
     datasources: Datasource[];
     widgetType: widgetType;
     dataKeySettingsForm: FormProperty[];
+    dataKeySettingsFormFunction: DataKeySettingsFormFunction;
+    dataKeySettingsFormTrimDefaults: boolean;
     dataKeySettingsDirective: string;
     showPostProcessing: boolean;
     reportMode: boolean;
@@ -80,6 +83,7 @@ export declare class DataKeyConfigComponent extends PageComponent implements OnI
     functionScopeVariables: string[];
     constructor(store: Store<AppState>, utils: UtilsService, entityService: EntityService, dialog: MatDialog, translate: TranslateService, widgetService: WidgetService, widgetComponentService: WidgetComponentService, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
+    ngOnChanges(changes: SimpleChanges): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
@@ -106,5 +110,5 @@ export declare class DataKeyConfigComponent extends PageComponent implements OnI
     };
     private getDatasources;
     static ɵfac: i0.ɵɵFactoryDeclaration<DataKeyConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeyConfigComponent, "tb-data-key-config", never, { "dataKeyConfigMode": { "alias": "dataKeyConfigMode"; "required": false; }; "deviceId": { "alias": "deviceId"; "required": false; }; "entityAliasId": { "alias": "entityAliasId"; "required": false; }; "callbacks": { "alias": "callbacks"; "required": false; }; "dashboard": { "alias": "dashboard"; "required": false; }; "aliasController": { "alias": "aliasController"; "required": false; }; "widget": { "alias": "widget"; "required": false; }; "datasources": { "alias": "datasources"; "required": false; }; "widgetType": { "alias": "widgetType"; "required": false; }; "dataKeySettingsForm": { "alias": "dataKeySettingsForm"; "required": false; }; "dataKeySettingsDirective": { "alias": "dataKeySettingsDirective"; "required": false; }; "showPostProcessing": { "alias": "showPostProcessing"; "required": false; }; "reportMode": { "alias": "reportMode"; "required": false; }; "hideDataKeyName": { "alias": "hideDataKeyName"; "required": false; }; "hideDataKeyLabel": { "alias": "hideDataKeyLabel"; "required": false; }; "hideDataKeyColor": { "alias": "hideDataKeyColor"; "required": false; }; "hideDataKeyUnits": { "alias": "hideDataKeyUnits"; "required": false; }; "hideDataKeyDecimals": { "alias": "hideDataKeyDecimals"; "required": false; }; "supportsUnitConversion": { "alias": "supportsUnitConversion"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DataKeyConfigComponent, "tb-data-key-config", never, { "dataKeyConfigMode": { "alias": "dataKeyConfigMode"; "required": false; }; "deviceId": { "alias": "deviceId"; "required": false; }; "entityAliasId": { "alias": "entityAliasId"; "required": false; }; "callbacks": { "alias": "callbacks"; "required": false; }; "dashboard": { "alias": "dashboard"; "required": false; }; "aliasController": { "alias": "aliasController"; "required": false; }; "widget": { "alias": "widget"; "required": false; }; "datasources": { "alias": "datasources"; "required": false; }; "widgetType": { "alias": "widgetType"; "required": false; }; "dataKeySettingsForm": { "alias": "dataKeySettingsForm"; "required": false; }; "dataKeySettingsFormFunction": { "alias": "dataKeySettingsFormFunction"; "required": false; }; "dataKeySettingsFormTrimDefaults": { "alias": "dataKeySettingsFormTrimDefaults"; "required": false; }; "dataKeySettingsDirective": { "alias": "dataKeySettingsDirective"; "required": false; }; "showPostProcessing": { "alias": "showPostProcessing"; "required": false; }; "reportMode": { "alias": "reportMode"; "required": false; }; "hideDataKeyName": { "alias": "hideDataKeyName"; "required": false; }; "hideDataKeyLabel": { "alias": "hideDataKeyLabel"; "required": false; }; "hideDataKeyColor": { "alias": "hideDataKeyColor"; "required": false; }; "hideDataKeyUnits": { "alias": "hideDataKeyUnits"; "required": false; }; "hideDataKeyDecimals": { "alias": "hideDataKeyDecimals"; "required": false; }; "supportsUnitConversion": { "alias": "supportsUnitConversion"; "required": false; }; }, {}, never, never, false, never>;
 }

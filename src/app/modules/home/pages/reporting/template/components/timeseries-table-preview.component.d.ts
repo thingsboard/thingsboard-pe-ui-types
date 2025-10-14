@@ -6,9 +6,14 @@ import * as i0 from "@angular/core";
 export declare class TimeseriesTablePreviewComponent extends AbstractReportTablePreviewComponent<TimeseriesTableReportComponentConfig> {
     columns: DataKey[];
     private date;
+    private destroyRef;
+    private templatePage;
     private timestampColumn;
     private timestampPreview;
+    private createdTimePreview;
+    ngOnInit(): void;
     onComponentUpdated(): void;
+    private updateCreatedTimePreview;
     cellContent(column: DataKey): string;
     protected styleFromColumnSettings(column: DataKey, header?: boolean): ComponentStyle;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeseriesTablePreviewComponent, never>;

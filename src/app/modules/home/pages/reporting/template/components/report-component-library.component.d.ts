@@ -1,30 +1,39 @@
-import { ElementRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { CdkDragStart } from '@angular/cdk/drag-drop';
+import { AfterViewInit, ElementRef, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { ReportComponentContext, ReportComponentLibraryGroup, ReportComponentLibraryItem } from '@home/pages/reporting/template/components/report-component.models';
+import { CdkDragMove, CdkDragRelease, CdkDragStart, CdkDropList } from '@angular/cdk/drag-drop';
 import { TbReportFormat } from '@shared/models/report.models';
 import { TranslateService } from '@ngx-translate/core';
 import * as i0 from "@angular/core";
-export declare class ReportComponentLibraryComponent implements OnInit, OnChanges {
+export declare class ReportComponentLibraryComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy {
     private translate;
+    dropList?: CdkDropList;
+    get display(): "none" | "block";
     subReport: boolean;
+    nestedLibrary: boolean;
     format: TbReportFormat;
+    group: ReportComponentLibraryGroup;
     filter: string;
+    context: ReportComponentContext;
     libraryDragOriginList: import("@angular/core").Signal<ElementRef<any>>;
     libraryDragActiveList: import("@angular/core").Signal<ElementRef<any>>;
     reportComponentIds: string[];
-    reportComponentsLibrary: Map<string, import("@home/pages/reporting/template/components/report-component.models").ReportComponentLibraryItem<import("@shared/models/report-component.models").ReportComponentConfig>>;
+    reportComponentsLibrary: Map<string, ReportComponentLibraryItem>;
     private reportComponentsTitleMap;
     private itemDragEntered;
     constructor(translate: TranslateService);
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
+    ngAfterViewInit(): void;
+    ngOnDestroy(): void;
     dropListEnterPredicate(): boolean;
     dragStarted(event: CdkDragStart): void;
     dragEnded(): void;
     dragEntered(): void;
-    dragReleased(): void;
+    dragMoved(event: CdkDragMove): void;
+    dragReleased(event: CdkDragRelease): void;
     private updateReportComponentIds;
     private copyExistingLibItemsToActiveList;
     private setActiveListVisibility;
     static ɵfac: i0.ɵɵFactoryDeclaration<ReportComponentLibraryComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ReportComponentLibraryComponent, "tb-report-component-library", never, { "subReport": { "alias": "subReport"; "required": false; }; "format": { "alias": "format"; "required": false; }; "filter": { "alias": "filter"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ReportComponentLibraryComponent, "tb-report-component-library", never, { "subReport": { "alias": "subReport"; "required": false; }; "nestedLibrary": { "alias": "nestedLibrary"; "required": false; }; "format": { "alias": "format"; "required": false; }; "group": { "alias": "group"; "required": false; }; "filter": { "alias": "filter"; "required": false; }; "context": { "alias": "context"; "required": false; }; }, {}, never, never, false, never>;
 }

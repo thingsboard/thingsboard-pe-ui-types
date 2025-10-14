@@ -2,6 +2,7 @@ import { TimeService } from '@core/services/time.service';
 import moment_ from 'moment';
 import { IntervalType } from '@shared/models/telemetry/telemetry.models';
 import { FormGroup } from '@angular/forms';
+import { ToggleHeaderOption } from '@shared/components/toggle-header.component';
 export declare const SECOND = 1000;
 export declare const MINUTE: number;
 export declare const HOUR: number;
@@ -162,7 +163,7 @@ export declare const defaultTimewindow: (timeService: TimeService) => Timewindow
 export declare const initModelFromDefaultTimewindow: (value: Timewindow, quickIntervalOnly: boolean, historyOnly: boolean, timeService: TimeService) => Timewindow;
 export declare const toHistoryTimewindow: (timewindow: Timewindow, startTimeMs: number, endTimeMs: number, interval: Interval, timeService: TimeService) => Timewindow;
 export declare const timewindowTypeChanged: (newTimewindow: Timewindow, oldTimewindow: Timewindow) => boolean;
-export declare const updateFormValuesOnTimewindowTypeChange: (selectedTab: TimewindowType, quickIntervalOnly: boolean, timewindowForm: FormGroup, realtimeDisableCustomInterval: boolean, historyDisableCustomInterval: boolean, realtimeAdvancedParams?: TimewindowAdvancedParams, historyAdvancedParams?: TimewindowAdvancedParams) => void;
+export declare const updateFormValuesOnTimewindowTypeChange: (selectedTab: TimewindowType, timewindowForm: FormGroup, realtimeDisableCustomInterval: boolean, historyDisableCustomInterval: boolean, realtimeAdvancedParams: TimewindowAdvancedParams, historyAdvancedParams: TimewindowAdvancedParams, realtimeTimewindowOptions: ToggleHeaderOption[], historyTimewindowOptions: ToggleHeaderOption[]) => void;
 export declare const currentRealtimeTimewindow: (timewindow: Timewindow) => number;
 export declare const currentHistoryTimewindow: (timewindow: Timewindow) => number;
 export declare const realtimeAllowedAggIntervals: (timewindow: Timewindow, advancedParams: TimewindowAdvancedParams) => Array<Interval>;

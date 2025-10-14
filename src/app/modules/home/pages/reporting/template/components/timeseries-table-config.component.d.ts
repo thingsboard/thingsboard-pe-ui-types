@@ -1,14 +1,17 @@
 import { FormGroup } from '@angular/forms';
-import { TimeseriesTableReportComponentConfig, WidgetConfigMode } from '@app/shared/public-api';
 import { AbstractReportComponentConfig } from '@home/pages/reporting/template/components/report-component-config.component';
+import { TimeseriesTableReportComponentConfig } from '@shared/models/report-component.models';
+import { WidgetConfigMode } from '@shared/models/widget.models';
+import { DataKeySettingsFormFunction } from '@home/components/widget/lib/settings/common/key/data-keys.component.models';
 import * as i0 from "@angular/core";
 export declare class TimeseriesTableConfigComponent extends AbstractReportComponentConfig<TimeseriesTableReportComponentConfig> {
     get columnLabels(): string[];
     settingsTab: 'data' | 'layout';
     basicMode: WidgetConfigMode;
-    TableReportColumnSettingsForm: import("@app/shared/public-api").FormProperty[];
+    dataKeySettingsFormFunction: DataKeySettingsFormFunction;
     private dialog;
     private translate;
+    private getDataKeySettingsForm;
     protected buildForm(reportComponentConfig: TimeseriesTableReportComponentConfig): FormGroup;
     protected prepareOutputConfig(config: any): any;
     editTimestampColumnSettings(): void;

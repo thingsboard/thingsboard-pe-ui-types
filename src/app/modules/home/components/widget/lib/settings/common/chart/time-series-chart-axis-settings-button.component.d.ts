@@ -12,6 +12,7 @@ export declare class TimeSeriesChartAxisSettingsButtonComponent implements OnIni
     axisType: 'xAxis' | 'yAxis';
     panelTitle: string;
     advanced: boolean;
+    reportMode: boolean;
     private modelValue;
     private propagateChange;
     constructor(popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef);
@@ -22,5 +23,5 @@ export declare class TimeSeriesChartAxisSettingsButtonComponent implements OnIni
     writeValue(value: TimeSeriesChartAxisSettings): void;
     openAxisSettingsPopup($event: Event, matButton: MatButton): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesChartAxisSettingsButtonComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartAxisSettingsButtonComponent, "tb-time-series-chart-axis-settings-button", never, { "disabled": { "alias": "disabled"; "required": false; }; "axisType": { "alias": "axisType"; "required": false; }; "panelTitle": { "alias": "panelTitle"; "required": false; }; "advanced": { "alias": "advanced"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartAxisSettingsButtonComponent, "tb-time-series-chart-axis-settings-button", never, { "disabled": { "alias": "disabled"; "required": false; }; "axisType": { "alias": "axisType"; "required": false; }; "panelTitle": { "alias": "panelTitle"; "required": false; }; "advanced": { "alias": "advanced"; "required": false; }; "reportMode": { "alias": "reportMode"; "required": false; }; }, {}, never, never, false, never>;
 }

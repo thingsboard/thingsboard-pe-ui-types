@@ -33,7 +33,7 @@ export declare abstract class AbstractReportComponentConfig<C extends ReportComp
     widgetType: typeof widgetType;
     callbacks: WidgetConfigCallbacks;
     reportConfigForm: FormGroup;
-    private reportComponentConfig;
+    protected reportComponentConfig: C;
     private hasLayoutConfig;
     ngOnInit(): void;
     setupConfig(reportComponentConfig: C): FormGroup;

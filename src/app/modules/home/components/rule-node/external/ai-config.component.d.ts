@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { AiModel, ResponseFormat } from '@shared/models/ai-model.models';
 import { TranslateService } from '@ngx-translate/core';
 import { Operation, Resource } from '@shared/models/security.models';
+import { ResourceType } from "@shared/models/resource.models";
 import * as i0 from "@angular/core";
 export declare class AiConfigComponent extends RuleNodeConfigurationComponent {
     private fb;
@@ -13,6 +14,8 @@ export declare class AiConfigComponent extends RuleNodeConfigurationComponent {
     aiConfigForm: UntypedFormGroup;
     entityType: typeof EntityType;
     responseFormat: typeof ResponseFormat;
+    EntityType: typeof EntityType;
+    ResourceType: typeof ResourceType;
     readonly operation: typeof Operation;
     readonly resource: typeof Resource;
     constructor(fb: UntypedFormBuilder, translate: TranslateService, dialog: MatDialog);
@@ -20,10 +23,11 @@ export declare class AiConfigComponent extends RuleNodeConfigurationComponent {
     protected onConfigurationSet(configuration: RuleNodeConfiguration): void;
     protected validatorTriggers(): string[];
     protected updateValidators(emitEvent: boolean): void;
-    protected prepareOutputConfig(configuration: RuleNodeConfiguration): RuleNodeConfiguration;
+    protected prepareOutputConfig(): RuleNodeConfiguration;
     onEntityChange($event: AiModel): void;
     get getResponseFormatHint(): any;
     createModelAi(formControl: string): void;
+    createAiResources(name: string, formControl: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AiConfigComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<AiConfigComponent, "tb-external-node-ai-config", never, {}, {}, never, never, false, never>;
 }

@@ -418,6 +418,10 @@ export interface WidgetInfo extends WidgetTypeDescriptor, WidgetControllerDescri
     tags?: string[];
     componentType?: Type<IDynamicWidgetComponent>;
 }
+export interface WidgetWithInfo extends Widget {
+    widgetInfo: WidgetInfo;
+}
+export declare const isWidgetWithInfo: (widget: Widget) => widget is WidgetWithInfo;
 export interface WidgetConfigComponentData {
     widgetName: string;
     config: WidgetConfig;

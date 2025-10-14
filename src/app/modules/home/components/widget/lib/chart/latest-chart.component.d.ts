@@ -24,6 +24,7 @@ export declare class LatestChartComponent implements OnInit, OnDestroy, AfterVie
     chartShape: ElementRef<HTMLElement>;
     chartLegend: ElementRef<HTMLElement>;
     ctx: WidgetContext;
+    reportMode: boolean;
     callbacks: LatestChartComponentCallbacks;
     settings: LatestChartWidgetSettings;
     showLegend: boolean;
@@ -49,6 +50,6 @@ export declare class LatestChartComponent implements OnInit, OnDestroy, AfterVie
     onLegendItemLeave(item: LatestChartLegendItem): void;
     toggleLegendItem(item: LatestChartLegendItem): void;
     private onResize;
-    static ɵfac: i0.ɵɵFactoryDeclaration<LatestChartComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<LatestChartComponent, "tb-latest-chart", never, { "ctx": { "alias": "ctx"; "required": false; }; "callbacks": { "alias": "callbacks"; "required": false; }; "settings": { "alias": "settings"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<LatestChartComponent, [{ optional: true; }, null, null, null, null, null]>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<LatestChartComponent, "tb-latest-chart", never, { "ctx": { "alias": "ctx"; "required": false; }; "reportMode": { "alias": "reportMode"; "required": false; }; "callbacks": { "alias": "callbacks"; "required": false; }; "settings": { "alias": "settings"; "required": false; }; }, {}, never, never, false, never>;
 }

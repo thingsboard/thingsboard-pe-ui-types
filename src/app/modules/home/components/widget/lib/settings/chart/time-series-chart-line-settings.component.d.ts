@@ -22,6 +22,10 @@ export declare class TimeSeriesChartLineSettingsComponent implements OnInit, Con
     pointLabelPreviewFn: any;
     disabled: boolean;
     chartType: TimeSeriesChartType;
+    reportMode: boolean;
+    hideFillSettings: boolean;
+    decimals: number;
+    units: string;
     private modelValue;
     private propagateChange;
     lineSettingsFormGroup: UntypedFormGroup;
@@ -34,6 +38,6 @@ export declare class TimeSeriesChartLineSettingsComponent implements OnInit, Con
     private updateValidators;
     private updateModel;
     private _pointLabelPreviewFn;
-    static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesChartLineSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartLineSettingsComponent, "tb-time-series-chart-line-settings", never, { "disabled": { "alias": "disabled"; "required": false; }; "chartType": { "alias": "chartType"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesChartLineSettingsComponent, [null, { optional: true; }, null, null]>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartLineSettingsComponent, "tb-time-series-chart-line-settings", never, { "disabled": { "alias": "disabled"; "required": false; }; "chartType": { "alias": "chartType"; "required": false; }; "reportMode": { "alias": "reportMode"; "required": false; }; "hideFillSettings": { "alias": "hideFillSettings"; "required": false; }; "decimals": { "alias": "decimals"; "required": false; }; "units": { "alias": "units"; "required": false; }; }, {}, never, never, false, never>;
 }
