@@ -13,6 +13,7 @@ export declare class DoughnutBasicConfigComponent extends LatestChartBasicConfig
     protected widgetConfigComponent: WidgetConfigComponent;
     protected fb: UntypedFormBuilder;
     doughnutChartConfigTemplate: TemplateRef<any>;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, widgetConfigComponent: WidgetConfigComponent, fb: UntypedFormBuilder);
     protected defaultDataKeys(configData: WidgetConfigComponentData): DataKey[];
     protected defaultSettings(): DoughnutWidgetSettings;

@@ -38,7 +38,7 @@ export declare class MapDataLayerRowComponent implements ControlValueAccessor, O
     registerOnTouched(_fn: any): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: MapDataLayerSettings): void;
-    editKey(keyType: 'xKey' | 'yKey' | 'polygonKey' | 'circleKey'): void;
+    editKey(keyType: 'xKey' | 'yKey' | 'polygonKey' | 'circleKey' | 'polylineKey'): void;
     editDataLayer($event: Event, matButton: MatButton): void;
     private onDsTypeChanged;
     private updateValidators;

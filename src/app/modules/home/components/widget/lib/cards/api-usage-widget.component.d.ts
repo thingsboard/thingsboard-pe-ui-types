@@ -1,0 +1,36 @@
+import { ChangeDetectorRef, OnDestroy, OnInit, TemplateRef } from '@angular/core';
+import { WidgetContext } from '@home/models/widget-component.models';
+import { ComponentStyle } from '@shared/models/widget-settings.models';
+import { Observable } from 'rxjs';
+import { ImagePipe } from '@shared/pipe/image.pipe';
+import { DomSanitizer } from '@angular/platform-browser';
+import { UtilsService } from '@core/services/utils.service';
+import { ApiUsageWidgetSettings } from '@home/components/widget/lib/settings/cards/api-usage-settings.component.models';
+import * as i0 from "@angular/core";
+export declare class ApiUsageWidgetComponent implements OnInit, OnDestroy {
+    private imagePipe;
+    private utils;
+    private sanitizer;
+    private cd;
+    settings: ApiUsageWidgetSettings;
+    ctx: WidgetContext;
+    widgetTitlePanel: TemplateRef<any>;
+    backgroundStyle$: Observable<ComponentStyle>;
+    overlayStyle: ComponentStyle;
+    padding: string;
+    apiUsages: any[];
+    currentState: string;
+    noDataDisplayMessageText: string;
+    private contentResize$;
+    private powers;
+    constructor(imagePipe: ImagePipe, utils: UtilsService, sanitizer: DomSanitizer, cd: ChangeDetectorRef);
+    ngOnInit(): void;
+    private isFiniteNumber;
+    updateState($event: MouseEvent, stateName: string): void;
+    parseApiUsages(): void;
+    ngOnDestroy(): void;
+    private toShortNumber;
+    onInit(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<ApiUsageWidgetComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ApiUsageWidgetComponent, "tb-api-usage-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; }, {}, never, never, false, never>;
+}

@@ -7,6 +7,7 @@ export declare class UpdateJsonAttributeWidgetSettingsComponent extends WidgetSe
     protected store: Store<AppState>;
     private fb;
     updateJsonAttributeWidgetSettingsForm: UntypedFormGroup;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, fb: UntypedFormBuilder);
     protected settingsForm(): UntypedFormGroup;
     protected defaultSettings(): WidgetSettings;

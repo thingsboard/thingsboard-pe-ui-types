@@ -132,6 +132,7 @@ export interface IStateController {
     getStateIdAtIndex(index: number): string;
     getEntityId(entityParamName: string): EntityId;
     getCurrentStateName(): string;
+    reInit(): void;
 }
 export interface SubscriptionInfo {
     type: DatasourceType;

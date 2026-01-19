@@ -68,7 +68,7 @@ export declare class MobileSelfRegistrationComponent implements ControlValueAcce
     writeValue(params: MobileSelfRegistrationParams): void;
     validate(): ValidationErrors | null;
     editPolicy($event: Event, matButton: MatButton, isPrivacy?: boolean): void;
-    createTarget(): void;
+    createTarget(name?: string): void;
     private updateModel;
     private updatedCaptchaDisabledState;
     static ɵfac: i0.ɵɵFactoryDeclaration<MobileSelfRegistrationComponent, never>;

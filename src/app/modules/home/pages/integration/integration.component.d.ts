@@ -10,6 +10,8 @@ import { ConverterType } from '@shared/models/converter.models';
 import { IntegrationService } from '@core/http/integration.service';
 import { PageLink } from '@shared/models/page/page-link';
 import { EntityType } from '@shared/models/entity-type.models';
+import { AdditionalDebugActionConfig } from '@home/components/entity/debug/entity-debug-settings.model';
+import { MatDialog } from '@angular/material/dialog';
 import * as i0 from "@angular/core";
 export declare class IntegrationComponent extends EntityComponent<Integration, PageLink, IntegrationInfo> implements OnInit {
     protected store: Store<AppState>;
@@ -19,11 +21,12 @@ export declare class IntegrationComponent extends EntityComponent<Integration, P
     protected fb: UntypedFormBuilder;
     protected integrationService: IntegrationService;
     protected cd: ChangeDetectorRef;
+    private dialog;
     converterType: typeof ConverterType;
     integrationScope: 'tenant' | 'edges' | 'edge';
     EntityType: typeof EntityType;
     private integrationType;
-    constructor(store: Store<AppState>, translate: TranslateService, entityValue: Integration, entitiesTableConfigValue: EntityTableConfig<Integration, PageLink, IntegrationInfo>, fb: UntypedFormBuilder, integrationService: IntegrationService, cd: ChangeDetectorRef);
+    constructor(store: Store<AppState>, translate: TranslateService, entityValue: Integration, entitiesTableConfigValue: EntityTableConfig<Integration, PageLink, IntegrationInfo>, fb: UntypedFormBuilder, integrationService: IntegrationService, cd: ChangeDetectorRef, dialog: MatDialog);
     ngOnInit(): void;
     hideDelete(): boolean;
     buildForm(entity: Integration): UntypedFormGroup;
@@ -34,6 +37,8 @@ export declare class IntegrationComponent extends EntityComponent<Integration, P
     get isCheckConnectionAvailable(): boolean;
     get isRemoteIntegration(): boolean;
     get isEdgeTemplate(): boolean;
+    get additionalActionConfig(): AdditionalDebugActionConfig;
+    private openDebugEventsDialog;
     updateForm(entity: Integration): void;
     prepareFormValue(formValue: any): any;
     onIntegrationIdCopied(): void;

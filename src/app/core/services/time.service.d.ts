@@ -20,7 +20,7 @@ export declare class TimeService {
     avgInterval(timewindow: number): number;
     minIntervalLimit(timewindowMs: number): number;
     maxIntervalLimit(timewindowMs: number): number;
-    defaultTimewindow(): Timewindow;
+    defaultTimewindow(isDashboard?: boolean): Timewindow;
     private toBound;
     private toIntervalBound;
     getLocalBrowserTimezoneInfoPlaceholder(): TimezoneInfo;

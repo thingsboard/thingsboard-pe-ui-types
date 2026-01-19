@@ -14,6 +14,7 @@ export declare class LabelValueCardBasicConfigComponent extends BasicWidgetConfi
     onlyHistoryTimewindow(): boolean;
     labelValueCardWidgetConfigForm: UntypedFormGroup;
     valuePreviewFn: any;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, widgetConfigComponent: WidgetConfigComponent, fb: UntypedFormBuilder);
     protected configForm(): UntypedFormGroup;
     protected defaultDataKeys(configData: WidgetConfigComponentData): DataKey[];

@@ -9,3 +9,4 @@ export declare const getDefaultGetLocationFunction: () => string;
 export declare const getDefaultGetPhoneNumberFunction: () => string;
 export declare const getDefaultHandleEmptyResultFunction: (type: WidgetMobileActionType) => TbFunction;
 export declare const getDefaultHandleErrorFunction: (type: WidgetMobileActionType) => TbFunction;
+export declare const getDefaultHandleNonMobileFallBackFunction: () => string;

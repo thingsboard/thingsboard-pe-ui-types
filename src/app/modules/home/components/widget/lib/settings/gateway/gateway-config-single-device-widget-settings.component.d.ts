@@ -7,6 +7,7 @@ export declare class GatewayConfigSingleDeviceWidgetSettingsComponent extends Wi
     protected store: Store<AppState>;
     private fb;
     gatewayConfigSingleDeviceWidgetSettingsForm: UntypedFormGroup;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, fb: UntypedFormBuilder);
     protected settingsForm(): UntypedFormGroup;
     protected defaultSettings(): WidgetSettings;

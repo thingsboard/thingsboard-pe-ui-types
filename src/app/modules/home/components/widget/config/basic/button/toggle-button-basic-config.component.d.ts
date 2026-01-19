@@ -16,6 +16,7 @@ export declare class ToggleButtonBasicConfigComponent extends BasicWidgetConfigC
     valueType: typeof ValueType;
     buttonAppearanceType: ButtonAppearanceType;
     toggleButtonWidgetConfigForm: UntypedFormGroup;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, widgetConfigComponent: WidgetConfigComponent, fb: UntypedFormBuilder);
     protected configForm(): UntypedFormGroup;
     protected onConfigSet(configData: WidgetConfigComponentData): void;

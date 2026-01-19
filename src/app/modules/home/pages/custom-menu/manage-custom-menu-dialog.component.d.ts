@@ -15,6 +15,8 @@ import { UserService } from '@core/http/user.service';
 import { EntityInfoData } from '@shared/models/entity.models';
 import { TranslateService } from '@ngx-translate/core';
 import { DialogService } from '@core/services/dialog.service';
+import { StringItemsOption } from '@shared/components/string-items-list.component';
+import { EntityGroupService } from '@core/http/entity-group.service';
 import * as i0 from "@angular/core";
 export interface ManageCustomMenuDialogData {
     add: boolean;
@@ -33,6 +35,7 @@ export declare class ManageCustomMenuDialogComponent extends DialogComponent<Man
     dialogRef: MatDialogRef<ManageCustomMenuDialogComponent, ManageCustomMenuDialogResult>;
     private customMenuService;
     private userService;
+    private groupService;
     private dialogService;
     private translate;
     private fb;
@@ -48,7 +51,8 @@ export declare class ManageCustomMenuDialogComponent extends DialogComponent<Man
     customMenuScopes: CMScope[];
     assigneeTypes: CMAssigneeType[];
     fetchUsersFunction: any;
-    constructor(store: Store<AppState>, router: Router, data: ManageCustomMenuDialogData, dialogRef: MatDialogRef<ManageCustomMenuDialogComponent, ManageCustomMenuDialogResult>, customMenuService: CustomMenuService, userService: UserService, dialogService: DialogService, translate: TranslateService, fb: UntypedFormBuilder, destroyRef: DestroyRef);
+    fetchGroupsFunction: any;
+    constructor(store: Store<AppState>, router: Router, data: ManageCustomMenuDialogData, dialogRef: MatDialogRef<ManageCustomMenuDialogComponent, ManageCustomMenuDialogResult>, customMenuService: CustomMenuService, userService: UserService, groupService: EntityGroupService, dialogService: DialogService, translate: TranslateService, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     private updateAssigneeTypes;
     private updateAssignToList;
@@ -58,6 +62,7 @@ export declare class ManageCustomMenuDialogComponent extends DialogComponent<Man
     private updateAssignees;
     private handleMenuSaveOperation;
     fetchUsers(searchText?: string): Observable<Array<User>>;
+    fetchGroups(searchText?: string): Observable<Array<StringItemsOption>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<ManageCustomMenuDialogComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<ManageCustomMenuDialogComponent, "tb-manage-custom-menu-dialog", never, {}, {}, never, never, false, never>;
 }

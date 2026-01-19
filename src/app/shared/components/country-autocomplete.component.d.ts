@@ -1,22 +1,25 @@
-import { ElementRef, EventEmitter, OnInit } from '@angular/core';
+import { ElementRef, EventEmitter, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Country, CountryData } from '@shared/models/country.models';
 import { ControlValueAccessor, FormBuilder, FormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { SubscriptSizing, MatFormFieldAppearance } from '@angular/material/form-field';
+import { MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
 import { TranslateService } from '@ngx-translate/core';
+import { MatAutocompleteTrigger } from '@angular/material/autocomplete';
 import * as i0 from "@angular/core";
-export declare class CountryAutocompleteComponent implements OnInit, ControlValueAccessor, Validator {
+export declare class CountryAutocompleteComponent implements OnInit, OnChanges, ControlValueAccessor, Validator {
     private fb;
     private countryData;
     private translate;
     labelText: any;
     requiredText: any;
+    objectRequiredText: any;
     autocompleteHint: string;
     disabled: boolean;
     required: boolean;
     appearance: MatFormFieldAppearance;
     subscriptSizing: SubscriptSizing;
     countryInput: ElementRef;
+    autocompleteTrigger: MatAutocompleteTrigger;
     selectCountryCode: EventEmitter<string>;
     countryFormGroup: FormGroup;
     searchText: string;
@@ -28,6 +31,7 @@ export declare class CountryAutocompleteComponent implements OnInit, ControlValu
     private initSearchData;
     private dirty;
     constructor(fb: FormBuilder, countryData: CountryData, translate: TranslateService);
+    ngOnChanges(changes: SimpleChanges): void;
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -36,10 +40,11 @@ export declare class CountryAutocompleteComponent implements OnInit, ControlValu
     writeValue(country: string): void;
     displayCountryFn(country?: Country): string | undefined;
     onFocus(): void;
+    checkInputAndAutoSelect(): void;
     textIsNotEmpty(text: string): boolean;
     clear(): void;
     private fetchCountries;
     private updateView;
     static ɵfac: i0.ɵɵFactoryDeclaration<CountryAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CountryAutocompleteComponent, "tb-country-autocomplete", never, { "labelText": { "alias": "labelText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "autocompleteHint": { "alias": "autocompleteHint"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "required": { "alias": "required"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; }, { "selectCountryCode": "selectCountryCode"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CountryAutocompleteComponent, "tb-country-autocomplete", never, { "labelText": { "alias": "labelText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "objectRequiredText": { "alias": "objectRequiredText"; "required": false; }; "autocompleteHint": { "alias": "autocompleteHint"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "required": { "alias": "required"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; }, { "selectCountryCode": "selectCountryCode"; }, never, never, false, never>;
 }

@@ -24,6 +24,7 @@ export interface WhiteLabelingParams {
     uiHelpBaseUrl?: string;
     enableHelpLinks?: boolean;
     hideConnectivityDialog?: boolean;
+    overrideTrendzName?: boolean;
     showNameVersion?: boolean;
     platformName?: string;
     platformVersion?: string;

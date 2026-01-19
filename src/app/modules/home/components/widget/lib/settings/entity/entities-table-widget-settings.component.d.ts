@@ -8,6 +8,7 @@ export declare class EntitiesTableWidgetSettingsComponent extends WidgetSettings
     private fb;
     entitiesTableWidgetSettingsForm: UntypedFormGroup;
     pageStepSizeValues: any[];
+    predefinedValues: string[];
     constructor(store: Store<AppState>, fb: UntypedFormBuilder);
     protected settingsForm(): UntypedFormGroup;
     protected defaultSettings(): WidgetSettings;

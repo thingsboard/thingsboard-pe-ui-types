@@ -4,6 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { AuthService } from '@core/auth/auth.service';
 import { ColorPickerDialogResult } from '@shared/components/dialog/color-picker-dialog.component';
 import { MaterialIconsDialogResult } from '@shared/components/dialog/material-icons-dialog.component';
+import { EntityType } from '@shared/models/entity-type.models';
 import * as i0 from "@angular/core";
 export declare class DialogService {
     private translate;
@@ -15,6 +16,10 @@ export declare class DialogService {
     errorAlert(title: string, message: string, error: any, ok?: string, fullscreen?: boolean): Observable<boolean>;
     colorPicker(color: string, colorClearButton?: boolean, useThemePalette?: boolean, disableAlpha?: boolean): Observable<ColorPickerDialogResult>;
     materialIconPicker(icon: string, iconClearButton?: boolean): Observable<MaterialIconsDialogResult>;
+    entitiesLimitExceeded(entityLimitData: {
+        entityType: EntityType;
+        limit: number;
+    }): Observable<any>;
     permissionDenied(): void;
     forbidden(): Observable<boolean>;
     progress<T>(progressObservable: Observable<T>, progressText: string): Observable<T>;

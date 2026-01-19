@@ -1,7 +1,7 @@
 ///
 /// ThingsBoard, Inc. ("COMPANY") CONFIDENTIAL
 ///
-/// Copyright © 2016-2025 ThingsBoard, Inc. All Rights Reserved.
+/// Copyright © 2016-2026 ThingsBoard, Inc. All Rights Reserved.
 ///
 /// NOTICE: All information contained herein is, and remains
 /// the property of ThingsBoard, Inc. and its suppliers,
@@ -137,6 +137,7 @@ import * as TbErrorComponent from '@shared/components/tb-error.component';
 import * as TbCheatSheetComponent from '@shared/components/cheatsheet.component';
 import * as BreadcrumbComponent from '@shared/components/breadcrumb.component';
 import * as UserMenuComponent from '@shared/components/user-menu.component';
+import * as TimeUnitInputComponent from '@shared/components/time-unit-input.component';
 import * as TimewindowComponent from '@shared/components/time/timewindow.component';
 import * as TimewindowPanelComponent from '@shared/components/time/timewindow-panel.component';
 import * as TimeintervalComponent from '@shared/components/time/timeinterval.component';
@@ -194,6 +195,10 @@ import * as OtaPackageAutocompleteComponent from '@shared/components/ota-package
 import * as WidgetsBundleSearchComponent from '@shared/components/widgets-bundle-search.component';
 import * as CopyButtonComponent from '@shared/components/button/copy-button.component';
 import * as TogglePasswordComponent from '@shared/components/button/toggle-password.component';
+import * as WidgetButtonComponent from '@shared/components/button/widget-button.component';
+import * as WidgetButtonToggleComponent from '@shared/components/button/widget-button-toggle.component';
+import * as PhoneInputComponent from '@shared/components/phone-input.component';
+import * as TbPopoverService from '@shared/components/popover.service';
 import * as ProtobufContentComponent from '@shared/components/protobuf-content.component';
 import * as SlackConversationAutocompleteComponent from '@shared/components/slack-conversation-autocomplete.component';
 import * as StringItemsListComponent from '@shared/components/string-items-list.component';
@@ -206,7 +211,6 @@ import * as HintTooltipIconComponent from '@shared/components/hint-tooltip-icon.
 import * as ScrollGridComponent from '@shared/components/grid/scroll-grid.component';
 import * as GalleryImageInputComponent from '@shared/components/image/gallery-image-input.component';
 import * as MultipleGalleryImageInputComponent from '@shared/components/image/multiple-gallery-image-input.component';
-import * as TbPopoverService from '@shared/components/popover.service';
 import * as EntityGroupAutocompleteComponent from '@shared/components/group/entity-group-autocomplete.component';
 import * as OwnerAutocompleteComponent from '@shared/components/group/owner-autocomplete.component';
 import * as EntityGroupSelectComponent from '@shared/components/group/entity-group-select.component';
@@ -518,6 +522,7 @@ class ModulesMap implements IModulesMap {
     '@shared/components/cheatsheet.component': TbCheatSheetComponent,
     '@shared/components/breadcrumb.component': BreadcrumbComponent,
     '@shared/components/user-menu.component': UserMenuComponent,
+    '@shared/components/time-unit-input.component': TimeUnitInputComponent,
     '@shared/components/time/timewindow.component': TimewindowComponent,
     '@shared/components/time/timewindow-panel.component': TimewindowPanelComponent,
     '@shared/components/time/timeinterval.component': TimeintervalComponent,
@@ -582,6 +587,10 @@ class ModulesMap implements IModulesMap {
     '@shared/components/widgets-bundle-search.component': WidgetsBundleSearchComponent,
     '@shared/components/button/copy-button.component': CopyButtonComponent,
     '@shared/components/button/toggle-password.component': TogglePasswordComponent,
+    '@shared/components/button/widget-button.component': WidgetButtonComponent,
+    '@shared/components/button/widget-button-toggle.component': WidgetButtonToggleComponent,
+    '@shared/components/popover.service': TbPopoverService,
+    '@shared/components/phone-input.component': PhoneInputComponent,
     '@shared/components/protobuf-content.component': ProtobufContentComponent,
     '@shared/components/slack-conversation-autocomplete.component': SlackConversationAutocompleteComponent,
     '@shared/components/string-items-list.component': StringItemsListComponent,
@@ -603,7 +612,6 @@ class ModulesMap implements IModulesMap {
     '@shared/components/role/group-permissions.component': GroupPermissionsComponent,
     '@shared/components/role/group-permission-dialog.component': GroupPermissionDialogComponent,
     '@shared/components/group/share-entity-group.component': ShareEntityGroupComponent,
-    '@shared/components/popover.service': TbPopoverService,
     '@shared/components/secret-storage/secret-key-input.component': SecretKeyInputComponent,
     '@shared/components/secret-storage/secret-file-input.component': SecretFileInputComponent,
     '@shared/components/secret-storage/secret-storage-dialog.component': SecretStorageDialogComponent,

@@ -28,6 +28,7 @@ export interface DashboardContext {
     stateChanged: Observable<string>;
     stateId: Observable<string>;
     runChangeDetection: () => void;
+    dashboardCssClass?: string;
 }
 export interface IDashboardController {
     dashboardCtx: DashboardContext;

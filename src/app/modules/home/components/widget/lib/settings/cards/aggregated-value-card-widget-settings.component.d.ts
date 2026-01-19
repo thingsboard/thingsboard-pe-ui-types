@@ -10,6 +10,7 @@ export declare class AggregatedValueCardWidgetSettingsComponent extends WidgetSe
     private fb;
     aggregatedValueCardWidgetSettingsForm: UntypedFormGroup;
     datePreviewFn: any;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, $injector: Injector, fb: UntypedFormBuilder);
     protected settingsForm(): UntypedFormGroup;
     protected defaultSettings(): WidgetSettings;

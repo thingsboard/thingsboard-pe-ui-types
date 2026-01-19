@@ -1,0 +1,31 @@
+import { ChangeDetectorRef, Renderer2, ViewContainerRef } from '@angular/core';
+import { EntitiesTableComponent } from '@home/components/entity/entities-table.component';
+import { TranslateService } from '@ngx-translate/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DatePipe } from '@angular/common';
+import { ApiKeysTableConfig } from '@home/components/api-key/api-keys-table-config';
+import { ApiKeyService } from '@core/http/api-key.service';
+import { CustomTranslatePipe } from '@shared/pipe/custom-translate.pipe';
+import { TbPopoverService } from '@shared/components/popover.service';
+import { UserId } from '@shared/models/id/user-id';
+import { UserPermissionsService } from '@core/http/user-permissions.service';
+import * as i0 from "@angular/core";
+export declare class ApiKeysTableComponent {
+    private apiKeyService;
+    private translate;
+    private customTranslate;
+    private dialog;
+    private datePipe;
+    private cd;
+    private popoverService;
+    private renderer;
+    private viewContainerRef;
+    private userPermissionsService;
+    entitiesTable: EntitiesTableComponent;
+    active: import("@angular/core").InputSignal<boolean>;
+    userId: import("@angular/core").InputSignal<UserId>;
+    apiKeysTableConfig: ApiKeysTableConfig;
+    constructor(apiKeyService: ApiKeyService, translate: TranslateService, customTranslate: CustomTranslatePipe, dialog: MatDialog, datePipe: DatePipe, cd: ChangeDetectorRef, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, userPermissionsService: UserPermissionsService);
+    static ɵfac: i0.ɵɵFactoryDeclaration<ApiKeysTableComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ApiKeysTableComponent, "tb-api-keys-table", never, { "active": { "alias": "active"; "required": false; "isSignal": true; }; "userId": { "alias": "userId"; "required": false; "isSignal": true; }; }, {}, never, never, false, never>;
+}

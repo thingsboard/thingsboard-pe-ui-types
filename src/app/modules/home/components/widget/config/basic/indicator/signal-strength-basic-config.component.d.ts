@@ -21,6 +21,7 @@ export declare class SignalStrengthBasicConfigComponent extends BasicWidgetConfi
     datePreviewFn: any;
     tooltipValuePreviewFn: any;
     tooltipDatePreviewFn: any;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, widgetConfigComponent: WidgetConfigComponent, $injector: Injector, fb: UntypedFormBuilder);
     protected configForm(): UntypedFormGroup;
     protected defaultDataKeys(configData: WidgetConfigComponentData): DataKey[];

@@ -30,6 +30,7 @@ export declare class EntityVersionRestoreComponent extends PageComponent impleme
     entityDataInfo: EntityDataInfo;
     restoreFormGroup: UntypedFormGroup;
     errorMessage: SafeHtml;
+    EntityType: typeof EntityType;
     versionLoadResult$: Observable<VersionLoadResult>;
     private versionLoadResultSubscription;
     constructor(store: Store<AppState>, entitiesVersionControlService: EntitiesVersionControlService, cd: ChangeDetectorRef, translate: TranslateService, sanitizer: DomSanitizer, fb: UntypedFormBuilder);

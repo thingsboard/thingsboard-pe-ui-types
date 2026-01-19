@@ -5,6 +5,10 @@ import L from 'leaflet';
 import { TbMap } from '@home/components/widget/lib/maps/map';
 import { DataLayerColorProcessor, DataLayerPatternProcessor, TbDataLayerItem, TbMapDataLayer } from '@home/components/widget/lib/maps/data-layer/map-data-layer';
 import { MarkerDataProcessor } from '@home/components/widget/lib/maps/data-layer/markers-data-layer';
+export interface PointItem {
+    point: L.CircleMarker;
+    tooltip?: L.Popup;
+}
 declare class TbTripDataItem extends TbDataLayerItem<TripsDataLayerSettings, TbTripsDataLayer, L.FeatureGroup> {
     private rawRouteData;
     private latestData;

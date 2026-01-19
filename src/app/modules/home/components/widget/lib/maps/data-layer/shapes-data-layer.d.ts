@@ -19,6 +19,7 @@ export declare abstract class TbShapesDataLayer<S extends ShapeDataLayerSettings
     private shapePatternProcessor;
     private strokeColorProcessor;
     protected constructor(map: TbMap<any>, inputSettings: S);
+    getStrokeStyle(data: FormattedData<TbMapDatasource>, dsData: FormattedData<TbMapDatasource>[], fillPatternId: string): Observable<ShapeStyleInfo>;
     getShapeStyle(data: FormattedData<TbMapDatasource>, dsData: FormattedData<TbMapDatasource>[], fillPatternId: string): Observable<ShapeStyleInfo>;
     protected allColorSettings(): DataLayerColorSettings[];
     protected doSetup(): Observable<any>;

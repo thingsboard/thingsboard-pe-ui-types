@@ -4,11 +4,17 @@ import { Subject } from 'rxjs';
 import { EntityService } from '@core/http/entity.service';
 import { AttributeScope, DataKeyType } from '@shared/models/telemetry/telemetry.models';
 import { EntityFilter } from '@shared/models/query/query.models';
+import { TranslateService } from '@ngx-translate/core';
 import * as i0 from "@angular/core";
 export declare class EntityKeyAutocompleteComponent implements ControlValueAccessor, Validator, OnChanges {
     private fb;
     private entityService;
+    private translate;
     keyInput: ElementRef;
+    placeholder: any;
+    requiredText: any;
+    enableAutocomplete: boolean;
+    hideNoKeyOption: boolean;
     entityFilter: import("@angular/core").InputSignal<EntityFilter>;
     dataKeyType: import("@angular/core").InputSignal<DataKeyType>;
     keyScopeType: import("@angular/core").InputSignal<AttributeScope>;
@@ -19,13 +25,14 @@ export declare class EntityKeyAutocompleteComponent implements ControlValueAcces
     private cachedResult;
     keys$: import("rxjs").Observable<string[]>;
     filteredKeys$: import("rxjs").Observable<string[]>;
-    constructor(fb: FormBuilder, entityService: EntityService);
+    constructor(fb: FormBuilder, entityService: EntityService, translate: TranslateService);
     ngOnChanges(changes: SimpleChanges): void;
     clear(): void;
     registerOnChange(onChange: (value: string) => void): void;
     registerOnTouched(_: any): void;
     validate(): ValidationErrors | null;
     writeValue(value: string): void;
+    setDisabledState(isDisabled: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityKeyAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityKeyAutocompleteComponent, "tb-entity-key-autocomplete", never, { "entityFilter": { "alias": "entityFilter"; "required": true; "isSignal": true; }; "dataKeyType": { "alias": "dataKeyType"; "required": true; "isSignal": true; }; "keyScopeType": { "alias": "keyScopeType"; "required": false; "isSignal": true; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityKeyAutocompleteComponent, "tb-entity-key-autocomplete", never, { "placeholder": { "alias": "placeholder"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "enableAutocomplete": { "alias": "enableAutocomplete"; "required": false; }; "hideNoKeyOption": { "alias": "hideNoKeyOption"; "required": false; }; "entityFilter": { "alias": "entityFilter"; "required": true; "isSignal": true; }; "dataKeyType": { "alias": "dataKeyType"; "required": true; "isSignal": true; }; "keyScopeType": { "alias": "keyScopeType"; "required": false; "isSignal": true; }; }, {}, never, never, false, never>;
 }

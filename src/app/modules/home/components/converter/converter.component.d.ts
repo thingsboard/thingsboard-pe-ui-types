@@ -16,6 +16,8 @@ import { ConverterLibraryService } from '@core/http/converter-library.service';
 import { EntityType } from '@shared/models/entity-type.models';
 import { IntegrationService } from '@core/http/integration.service';
 import { StringItemsOption } from '@shared/components/string-items-list.component';
+import { AdditionalDebugActionConfig } from '@home/components/entity/debug/entity-debug-settings.model';
+import { UserPermissionsService } from '@core/http/user-permissions.service';
 import * as i0 from "@angular/core";
 export declare class ConverterComponent extends EntityComponent<Converter> implements OnInit {
     protected store: Store<AppState>;
@@ -30,6 +32,7 @@ export declare class ConverterComponent extends EntityComponent<Converter> imple
     protected fb: FormBuilder;
     protected cd: ChangeDetectorRef;
     private destroyRef;
+    private userPermissionsService;
     private predefinedConverterName;
     integrationWizardMode: boolean;
     interacted: boolean;
@@ -56,7 +59,7 @@ export declare class ConverterComponent extends EntityComponent<Converter> imple
     private integrationsConvertersInfo;
     private defaultUpdateOnlyKeysByIntegrationType;
     private defaultConverterV2Configuration;
-    constructor(store: Store<AppState>, translate: TranslateService, converterService: ConverterService, integrationService: IntegrationService, dialog: MatDialog, resourcesService: ResourcesService, converterLibraryService: ConverterLibraryService, entityValue: Converter, entitiesTableConfigValue: EntityTableConfig<Converter>, fb: FormBuilder, cd: ChangeDetectorRef, destroyRef: DestroyRef);
+    constructor(store: Store<AppState>, translate: TranslateService, converterService: ConverterService, integrationService: IntegrationService, dialog: MatDialog, resourcesService: ResourcesService, converterLibraryService: ConverterLibraryService, entityValue: Converter, entitiesTableConfigValue: EntityTableConfig<Converter>, fb: FormBuilder, cd: ChangeDetectorRef, destroyRef: DestroyRef, userPermissionsService: UserPermissionsService);
     onConverterTypeChange(type: ConverterSourceType): void;
     private updateIntegrationsInfo;
     ngOnInit(): void;
@@ -68,6 +71,8 @@ export declare class ConverterComponent extends EntityComponent<Converter> imple
     buildForm(entity: Converter): FormGroup;
     prepareFormValue(value: Converter): Converter;
     updatedValidators(): void;
+    get additionalActionConfig(): AdditionalDebugActionConfig;
+    private openDebugEventsDialog;
     private checkIsNewConverter;
     private updatedOnlyKeysValue;
     private updateDefaultConfiguration;
@@ -95,6 +100,6 @@ export declare class ConverterComponent extends EntityComponent<Converter> imple
     private getDefaultDebugIn;
     showConverterTestDialog(debugIn: ConverterDebugInput, setFirstTab?: boolean): void;
     private openTestDialog;
-    static ɵfac: i0.ɵɵFactoryDeclaration<ConverterComponent, [null, null, null, null, null, null, null, { optional: true; }, { optional: true; }, null, null, null]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<ConverterComponent, [null, null, null, null, null, null, null, { optional: true; }, { optional: true; }, null, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<ConverterComponent, "tb-converter", never, { "integrationWizardMode": { "alias": "integrationWizardMode"; "required": false; }; "interacted": { "alias": "interacted"; "required": false; }; "converterTypeValue": { "alias": "converterTypeValue"; "required": false; }; "converterName": { "alias": "converterName"; "required": false; }; "integrationName": { "alias": "integrationName"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -17,6 +17,7 @@ export declare class WidgetButtonAppearanceComponent implements OnInit, ControlV
     widgetButtonStateTranslationMap: Map<import("@shared/components/button/widget-button.models").WidgetButtonState, string>;
     modelValue: WidgetButtonAppearance;
     appearanceFormGroup: UntypedFormGroup;
+    predefinedValues: string[];
     private propagateChange;
     constructor(fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;

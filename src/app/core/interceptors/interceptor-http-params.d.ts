@@ -3,6 +3,6 @@ import { InterceptorConfig } from './interceptor-config';
 export declare class InterceptorHttpParams extends HttpParams {
     interceptorConfig: InterceptorConfig;
     constructor(interceptorConfig: InterceptorConfig, params?: {
-        [param: string]: string | string[];
+        [param: string]: string | number | boolean | ReadonlyArray<string | number | boolean>;
     });
 }

@@ -8,6 +8,7 @@ export declare class LabelValueCardWidgetSettingsComponent extends WidgetSetting
     private fb;
     labelValueCardWidgetSettingsForm: UntypedFormGroup;
     valuePreviewFn: any;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, fb: UntypedFormBuilder);
     protected settingsForm(): UntypedFormGroup;
     protected defaultSettings(): WidgetSettings;

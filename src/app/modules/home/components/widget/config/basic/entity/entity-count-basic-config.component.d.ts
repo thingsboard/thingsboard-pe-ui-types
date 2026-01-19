@@ -12,6 +12,7 @@ export declare class EntityCountBasicConfigComponent extends BasicWidgetConfigCo
     private utils;
     private fb;
     entityCountWidgetConfigForm: UntypedFormGroup;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, widgetConfigComponent: WidgetConfigComponent, utils: UtilsService, fb: UntypedFormBuilder);
     protected configForm(): UntypedFormGroup;
     protected setupDefaults(configData: WidgetConfigComponentData): void;

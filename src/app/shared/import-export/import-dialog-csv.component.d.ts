@@ -64,7 +64,6 @@ export declare class ImportDialogCsvComponent extends DialogComponent<ImportDial
     private processingColumnsParams;
     initEditor(): void;
     private createEditor;
-    private updateEditorSize;
     static ɵfac: i0.ɵɵFactoryDeclaration<ImportDialogCsvComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<ImportDialogCsvComponent, "tb-import-csv-dialog", never, {}, {}, never, never, false, never>;
 }

@@ -1,9 +1,8 @@
 import { AuthService } from '@core/auth/auth.service';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { PageComponent } from '@shared/components/page.component';
 import { FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { SignupService } from '@core/http/signup.service';
 import { DialogService } from '@core/services/dialog.service';
@@ -11,9 +10,11 @@ import { ReCaptcha2Component, ReCaptchaV3Service } from 'ngx-captcha';
 import { SelfRegistrationService } from '@core/http/self-register.service';
 import { WhiteLabelingService } from '@core/http/white-labeling.service';
 import { MatDialog } from '@angular/material/dialog';
+import { UserPasswordPolicy } from '@shared/models/settings.models';
 import * as i0 from "@angular/core";
-export declare class SignupComponent extends PageComponent {
-    protected store: Store<AppState>;
+export declare class SignupComponent {
+    private store;
+    private route;
     private router;
     private authService;
     private signupService;
@@ -25,21 +26,19 @@ export declare class SignupComponent extends PageComponent {
     private dialog;
     private fb;
     recaptchaComponent: ReCaptcha2Component;
+    private signupRequest;
     signup: import("@angular/forms").FormGroup<{
-        fields: import("@angular/forms").FormGroup<{
-            EMAIL: import("@angular/forms").FormControl<string>;
-            FIRST_NAME: import("@angular/forms").FormControl<string>;
-            LAST_NAME: import("@angular/forms").FormControl<string>;
-            PASSWORD: import("@angular/forms").FormControl<string>;
-        }>;
+        fields: import("@angular/forms").FormGroup<any>;
         recaptchaResponse: import("@angular/forms").FormControl<string>;
     }>;
-    passwordCheck: string;
     acceptPrivacyPolicy: boolean;
     acceptTermsOfUse: boolean;
+    acceptAll: boolean;
     signupParams: import("../../../../shared/models/self-register.models").SignUpSelfRegistrationParams;
+    passwordPolicy: UserPasswordPolicy;
+    isLoading: boolean;
     class: string;
-    constructor(store: Store<AppState>, router: Router, authService: AuthService, signupService: SignupService, wl: WhiteLabelingService, selfRegistrationService: SelfRegistrationService, dialogService: DialogService, translate: TranslateService, reCaptchaV3Service: ReCaptchaV3Service, dialog: MatDialog, fb: FormBuilder);
+    constructor(store: Store<AppState>, route: ActivatedRoute, router: Router, authService: AuthService, signupService: SignupService, wl: WhiteLabelingService, selfRegistrationService: SelfRegistrationService, dialogService: DialogService, translate: TranslateService, reCaptchaV3Service: ReCaptchaV3Service, dialog: MatDialog, fb: FormBuilder);
     signUp(): void;
     private executeSignup;
     private promptToResendEmailVerification;

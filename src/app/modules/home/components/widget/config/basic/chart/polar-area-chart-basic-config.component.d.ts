@@ -13,6 +13,7 @@ export declare class PolarAreaChartBasicConfigComponent extends LatestChartBasic
     protected widgetConfigComponent: WidgetConfigComponent;
     protected fb: UntypedFormBuilder;
     polarAreaChartConfigTemplate: TemplateRef<any>;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, widgetConfigComponent: WidgetConfigComponent, fb: UntypedFormBuilder);
     protected defaultDataKeys(configData: WidgetConfigComponentData): DataKey[];
     protected defaultSettings(): PolarAreaChartWidgetSettings;

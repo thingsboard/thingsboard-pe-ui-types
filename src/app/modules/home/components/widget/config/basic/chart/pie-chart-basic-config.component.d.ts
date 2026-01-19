@@ -13,6 +13,7 @@ export declare class PieChartBasicConfigComponent extends LatestChartBasicConfig
     protected widgetConfigComponent: WidgetConfigComponent;
     protected fb: UntypedFormBuilder;
     pieChartConfigTemplate: TemplateRef<any>;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, widgetConfigComponent: WidgetConfigComponent, fb: UntypedFormBuilder);
     protected defaultDataKeys(configData: WidgetConfigComponentData): DataKey[];
     protected defaultSettings(): PieChartWidgetSettings;

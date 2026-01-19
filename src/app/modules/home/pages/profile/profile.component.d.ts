@@ -7,7 +7,6 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { HasConfirmForm } from '@core/guards/confirm-on-exit.guard';
-import { TranslateService } from '@ngx-translate/core';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from '@core/auth/auth.service';
 import { UnitSystem } from '@shared/models/unit.models';
@@ -19,7 +18,6 @@ export declare class ProfileComponent extends PageComponent implements OnInit, H
     private route;
     private userService;
     private authService;
-    private translate;
     private unitService;
     private fb;
     private userPermissionsService;
@@ -30,7 +28,7 @@ export declare class ProfileComponent extends PageComponent implements OnInit, H
     UnitSystems: UnitSystem[];
     authState: import("../../../../core/public-api").AuthState;
     readonly: boolean;
-    constructor(store: Store<AppState>, route: ActivatedRoute, userService: UserService, authService: AuthService, translate: TranslateService, unitService: UnitService, fb: UntypedFormBuilder, userPermissionsService: UserPermissionsService);
+    constructor(store: Store<AppState>, route: ActivatedRoute, userService: UserService, authService: AuthService, unitService: UnitService, fb: UntypedFormBuilder, userPermissionsService: UserPermissionsService);
     ngOnInit(): void;
     private buildProfileForm;
     save(): void;

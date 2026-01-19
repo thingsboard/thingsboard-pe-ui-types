@@ -21,6 +21,7 @@ import { schedulerCalendarView } from '@home/components/scheduler/scheduler-even
 import { CalendarOptions } from '@fullcalendar/core';
 import { MatMenuTrigger } from '@angular/material/menu';
 import { ActivatedRoute, Router } from '@angular/router';
+import _moment from 'moment';
 import { FormBuilder } from '@angular/forms';
 import { WidgetComponent } from '@home/components/widget/widget.component';
 import { MatButton } from '@angular/material/button';
@@ -142,7 +143,7 @@ export declare class SchedulerEventsComponent extends PageComponent implements O
     private moveEvent;
     private eventSourceFunction;
     private toCalendarEvent;
-    private eventInfo;
+    eventInfo(event: SchedulerEventWithCustomerInfo, startTime?: _moment.Moment): string;
     unassignFromEdge($event: Event, schedulerEvent: SchedulerEventWithCustomerInfo): void;
     unassignFromEdgeSchedulerEvents($event: Event): void;
     isEnabled(schedulerEventWithCustomerInfo: SchedulerEventWithCustomerInfo): boolean;

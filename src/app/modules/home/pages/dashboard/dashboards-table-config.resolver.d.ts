@@ -44,6 +44,7 @@ export declare class DashboardsTableConfigResolver {
     importDashboard($event: Event, config: EntityTableConfig<DashboardInfo>): void;
     private editMissingAliases;
     exportDashboard($event: Event, dashboard: DashboardInfo): void;
+    importDashboardFile($event: Event, dashboard: DashboardInfo): Observable<boolean>;
     manageOwnerAndGroups($event: Event, dashboard: DashboardInfo, config: EntityTableConfig<DashboardInfo>): void;
     onDashboardAction(action: EntityAction<DashboardInfo>, config: EntityTableConfig<DashboardInfo>): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardsTableConfigResolver, never>;

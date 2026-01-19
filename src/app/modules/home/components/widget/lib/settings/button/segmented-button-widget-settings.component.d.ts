@@ -21,6 +21,7 @@ export declare class SegmentedButtonWidgetSettingsComponent extends WidgetSettin
     segmentedButtonLayoutBorderMap: Map<import("@home/components/widget/lib/button/segmented-button-widget.models").SegmentedButtonLayout, string>;
     valueType: typeof ValueType;
     segmentedButtonWidgetSettingsForm: UntypedFormGroup;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, fb: UntypedFormBuilder);
     protected settingsForm(): UntypedFormGroup;
     protected defaultSettings(): WidgetSettings;

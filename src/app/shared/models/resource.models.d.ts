@@ -34,7 +34,7 @@ export interface TbResourceInfo<D> extends Omit<BaseData<TbResourceId>, 'name' |
 }
 export type ResourceInfo = TbResourceInfo<any>;
 export interface Resource extends ResourceInfo {
-    data?: string;
+    data?: any;
     name?: string;
 }
 export interface ImageDescriptor {
@@ -90,6 +90,7 @@ export declare const prependTbResourcePrefix: (url: string) => string;
 export declare const isImageResourceUrl: (url: string) => boolean;
 export declare const isJSResourceUrl: (url: string) => boolean;
 export declare const isJSResource: (url: string) => boolean;
+export declare const isTbImage: (url: string) => boolean;
 export declare const extractParamsFromImageResourceUrl: (url: string) => {
     type: ImageResourceType;
     key: string;

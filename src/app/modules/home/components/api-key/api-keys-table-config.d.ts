@@ -1,0 +1,34 @@
+import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
+import { TranslateService } from '@ngx-translate/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Renderer2, ViewContainerRef } from '@angular/core';
+import { DatePipe } from '@angular/common';
+import { ApiKeyInfo } from '@shared/models/api-key.models';
+import { ApiKeyService } from '@core/http/api-key.service';
+import { CustomTranslatePipe } from '@shared/pipe/custom-translate.pipe';
+import { TbPopoverService } from '@shared/components/popover.service';
+import { UserId } from '@shared/models/id/user-id';
+import { UserPermissionsService } from '@core/http/user-permissions.service';
+import * as i0 from "@angular/core";
+export declare class ApiKeysTableConfig extends EntityTableConfig<ApiKeyInfo> {
+    private apiKeyService;
+    private translate;
+    private customTranslate;
+    private dialog;
+    private datePipe;
+    private popoverService;
+    private renderer;
+    private viewContainerRef;
+    private userId;
+    private userPermissionsService;
+    constructor(apiKeyService: ApiKeyService, translate: TranslateService, customTranslate: CustomTranslatePipe, dialog: MatDialog, datePipe: DatePipe, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, userId: UserId, userPermissionsService: UserPermissionsService);
+    private configureCellActions;
+    private addApiKey;
+    private apiKeyGenerated;
+    private toggleEnableMode;
+    private apiKeyStatus;
+    private apiKeyStatusStyle;
+    private updateApiKeyDescription;
+    static ɵfac: i0.ɵɵFactoryDeclaration<ApiKeysTableConfig, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<ApiKeysTableConfig>;
+}

@@ -6,7 +6,7 @@ import { DeviceCredentialsId } from '@shared/models/id/device-credentials-id';
 import { EntitySearchQuery } from '@shared/models/relation.models';
 import { DeviceProfileId } from '@shared/models/id/device-profile-id';
 import { RuleChainId } from '@shared/models/id/rule-chain-id';
-import { EntityInfoData, HasTenantId, HasVersion } from '@shared/models/entity.models';
+import { EntityInfoData, HasTenantId, HasVersion, SaveEntityWithGroupParams } from '@shared/models/entity.models';
 import { FilterPredicateValue, KeyFilter } from '@shared/models/query/query.models';
 import { TimeUnit } from '@shared/models/time/time.models';
 import { AbstractControl, ValidationErrors } from '@angular/forms';
@@ -322,6 +322,9 @@ export interface DeviceInfoFilter {
     includeCustomers?: boolean;
     deviceProfileId?: DeviceProfileId;
     active?: boolean;
+}
+export interface SaveDeviceParams extends SaveEntityWithGroupParams {
+    accessToken?: string;
 }
 export declare class DeviceInfoQuery {
     pageLink: PageLink;

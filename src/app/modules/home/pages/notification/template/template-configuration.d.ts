@@ -25,7 +25,6 @@ export declare abstract class TemplateConfiguration<T, R = any> extends DialogCo
     notificationTemplateTypeTranslateMap: Map<NotificationType, import("@shared/models/notification.models").NotificationTemplateTypeTranslate>;
     deliveryConfiguration: Partial<DeliveryMethodsTemplates>;
     protected readonly destroy$: Subject<void>;
-    protected deliveryMethodFormsMap: Map<NotificationDeliveryMethod, FormGroup>;
     private authUser;
     protected constructor(store: Store<AppState>, router: Router, dialogRef: MatDialogRef<T, R>, fb: FormBuilder);
     ngOnDestroy(): void;

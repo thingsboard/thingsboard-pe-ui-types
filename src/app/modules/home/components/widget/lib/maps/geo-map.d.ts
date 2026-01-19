@@ -1,4 +1,4 @@
-import { GeoMapSettings, TbCircleData, TbPolygonCoordinates, TbPolygonRawCoordinates } from '@shared/models/widget/maps/map.models';
+import { GeoMapSettings, TbCircleData, TbPolygonCoordinates, TbPolygonRawCoordinates, TbPolylineCoordinates, TbPolylineRawCoordinates } from '@shared/models/widget/maps/map.models';
 import { WidgetContext } from '@home/models/widget-component.models';
 import { DeepPartial } from '@shared/models/common';
 import { Observable } from 'rxjs';
@@ -27,4 +27,6 @@ export declare class TbGeoMap extends TbMap<GeoMapSettings> {
     coordinatesToPolygonData(coordinates: TbPolygonCoordinates): TbPolygonRawCoordinates;
     circleDataToCoordinates(circle: TbCircleData): TbCircleData;
     coordinatesToCircleData(center: L.LatLng, radius: number): TbCircleData;
+    polylineDataToCoordinates(expression: TbPolylineRawCoordinates): TbPolylineRawCoordinates;
+    coordinatesToPolylineData(coordinates: TbPolylineCoordinates): TbPolylineRawCoordinates;
 }

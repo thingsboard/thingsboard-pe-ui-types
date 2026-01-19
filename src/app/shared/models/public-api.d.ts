@@ -64,6 +64,6 @@ export * from './query/query.models';
 export * from './regex.constants';
 export * from './report-component.models';
 export * from './report.models';
-export * from './trendz-settings.models';
 export * from './secret-storage.models';
 export * from './ai-model.models';
+export * from './password.models';

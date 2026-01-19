@@ -13,6 +13,7 @@ export declare class MapBasicConfigComponent extends BasicWidgetConfigComponent 
     private fb;
     mapWidgetConfigForm: UntypedFormGroup;
     trip: boolean;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, widgetConfigComponent: WidgetConfigComponent, $injector: Injector, fb: UntypedFormBuilder);
     protected configForm(): UntypedFormGroup;
     protected setupConfig(widgetConfig: WidgetConfigComponentData): void;
@@ -23,6 +24,8 @@ export declare class MapBasicConfigComponent extends BasicWidgetConfigComponent 
     protected updateValidators(emitEvent: boolean, trigger?: string): void;
     private getCardButtons;
     private setCardButtons;
+    get displayTimewindowConfig(): boolean;
+    get onlyHistoryTimewindow(): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<MapBasicConfigComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<MapBasicConfigComponent, "tb-map-basic-config", never, {}, {}, never, never, false, never>;
 }

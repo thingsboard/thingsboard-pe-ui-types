@@ -4,6 +4,7 @@ import { AllowedPermissionsInfo, Operation, Resource } from '@shared/models/secu
 import { EntityId } from '@shared/models/id/entity-id';
 import { EntityType } from '@shared/models/entity-type.models';
 import { EntityGroup, EntityGroupInfo } from '@shared/models/entity-group.models';
+import { RequestConfig } from '@core/http/http-utils';
 import * as i0 from "@angular/core";
 export declare class UserPermissionsService {
     private http;
@@ -16,6 +17,7 @@ export declare class UserPermissionsService {
     private userOwnerId;
     constructor(http: HttpClient);
     loadPermissionsInfo(): Observable<AllowedPermissionsInfo>;
+    hasEntityPermission(entityId: EntityId, operation: Operation, config?: RequestConfig): Observable<boolean>;
     getOperationsByResource(resource: Resource): Operation[];
     getAllowedGroupRoleOperations(): Operation[];
     getAllowedResources(): Resource[];

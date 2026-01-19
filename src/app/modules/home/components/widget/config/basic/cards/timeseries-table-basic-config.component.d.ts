@@ -12,6 +12,7 @@ export declare class TimeseriesTableBasicConfigComponent extends BasicWidgetConf
     private fb;
     get datasource(): Datasource;
     timeseriesTableWidgetConfigForm: UntypedFormGroup;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, widgetConfigComponent: WidgetConfigComponent, fb: UntypedFormBuilder);
     protected configForm(): UntypedFormGroup;
     protected defaultDataKeys(configData: WidgetConfigComponentData): DataKey[];

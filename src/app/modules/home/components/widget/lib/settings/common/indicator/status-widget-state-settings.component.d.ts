@@ -11,6 +11,7 @@ export declare class StatusWidgetStateSettingsComponent implements OnInit, OnCha
     private modelValue;
     private propagateChange;
     stateSettingsFormGroup: UntypedFormGroup;
+    predefinedValues: string[];
     constructor(fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;

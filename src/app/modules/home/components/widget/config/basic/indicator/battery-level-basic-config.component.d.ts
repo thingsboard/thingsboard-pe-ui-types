@@ -20,6 +20,7 @@ export declare class BatteryLevelBasicConfigComponent extends BasicWidgetConfigC
     valuePreviewFn: any;
     get sectionsCountEnabled(): boolean;
     get datasource(): Datasource;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, widgetConfigComponent: WidgetConfigComponent, fb: UntypedFormBuilder);
     protected configForm(): UntypedFormGroup;
     protected defaultDataKeys(configData: WidgetConfigComponentData): DataKey[];

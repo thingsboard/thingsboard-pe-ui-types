@@ -1,0 +1,55 @@
+import { ControlValueAccessor, FormBuilder, ValidationErrors, Validator } from '@angular/forms';
+import { EntityId } from '@shared/models/id/entity-id';
+import { Observable } from 'rxjs';
+import { CalculatedFieldOutput, CalculatedFieldRelatedAggregationConfiguration, CalculatedFieldType, OutputType } from '@shared/models/calculated-field.models';
+import { ScriptLanguage } from '@app/shared/models/rule-node.models';
+import { EntitySearchDirection } from '@shared/models/relation.models';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import * as i0 from "@angular/core";
+export declare class RelatedEntitiesAggregationComponentComponent implements ControlValueAccessor, Validator {
+    private fb;
+    private store;
+    entityId: EntityId;
+    tenantId: string;
+    entityName: string;
+    testScript: (expression?: string) => Observable<string>;
+    isEditValue: boolean;
+    readonly: boolean;
+    readonly ScriptLanguage: typeof ScriptLanguage;
+    readonly CalculatedFieldType: typeof CalculatedFieldType;
+    readonly OutputType: typeof OutputType;
+    readonly Directions: Array<EntitySearchDirection>;
+    readonly PropagationDirectionTranslations: Map<EntitySearchDirection, string>;
+    readonly minAllowedDeduplicationIntervalInSecForCF: number;
+    readonly maxRelatedEntitiesToReturnPerCfArgument: number;
+    relatedAggregationConfiguration: import("@angular/forms").FormGroup<{
+        relation: import("@angular/forms").FormGroup<{
+            direction: import("@angular/forms").FormControl<EntitySearchDirection>;
+            relationType: import("@angular/forms").FormControl<string>;
+        }>;
+        arguments: import("@angular/forms").FormControl<{}>;
+        metrics: import("@angular/forms").FormControl<{}>;
+        deduplicationIntervalInSec: import("@angular/forms").FormControl<number>;
+        output: import("@angular/forms").FormControl<CalculatedFieldOutput>;
+        useLatestTs: import("@angular/forms").FormControl<boolean>;
+    }>;
+    arguments$: Observable<string[]>;
+    argumentsEditorCompleter$: Observable<import("../../../../../../shared/models/ace/completion.models").TbEditorCompleter>;
+    argumentsHighlightRules$: Observable<import("../../../../../../shared/models/ace/ace.models").AceHighlightRules>;
+    private readonly minAllowedScheduledUpdateIntervalInSecForCF;
+    private propagateChange;
+    constructor(fb: FormBuilder, store: Store<AppState>);
+    validate(): ValidationErrors | null;
+    writeValue(value: CalculatedFieldRelatedAggregationConfiguration): void;
+    registerOnChange(fn: (config: CalculatedFieldRelatedAggregationConfiguration) => void): void;
+    registerOnTouched(_: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    fetchOptions(searchText: string): Observable<Array<string>>;
+    private updatedModel;
+    private toggleScopeByOutputType;
+    static ɵfac: i0.ɵɵFactoryDeclaration<RelatedEntitiesAggregationComponentComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RelatedEntitiesAggregationComponentComponent, "tb-related-entities-aggregation-component", never, { "entityId": { "alias": "entityId"; "required": true; }; "tenantId": { "alias": "tenantId"; "required": true; }; "entityName": { "alias": "entityName"; "required": true; }; "testScript": { "alias": "testScript"; "required": true; }; "isEditValue": { "alias": "isEditValue"; "required": false; }; "readonly": { "alias": "readonly"; "required": false; }; }, {}, never, never, false, never>;
+    static ngAcceptInputType_isEditValue: unknown;
+    static ngAcceptInputType_readonly: unknown;
+}

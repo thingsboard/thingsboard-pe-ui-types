@@ -14,6 +14,7 @@ export declare class SingleSwitchWidgetSettingsComponent extends WidgetSettingsC
     singleSwitchLayoutImageMap: Map<import("@home/components/widget/lib/rpc/single-switch-widget.models").SingleSwitchLayout, string>;
     valueType: typeof ValueType;
     singleSwitchWidgetSettingsForm: UntypedFormGroup;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, fb: UntypedFormBuilder);
     protected settingsForm(): UntypedFormGroup;
     protected defaultSettings(): WidgetSettings;

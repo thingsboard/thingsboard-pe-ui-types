@@ -4,11 +4,13 @@ import { AxisPosition, TimeSeriesChartYAxisSettings } from '@home/components/wid
 import { MatButton } from '@angular/material/button';
 import { TbPopoverService } from '@shared/components/popover.service';
 import { TranslateService } from '@ngx-translate/core';
+import { TimeSeriesChartYAxesPanelComponent } from '@home/components/widget/lib/settings/common/chart/time-series-chart-y-axes-panel.component';
 import * as i0 from "@angular/core";
 export declare class TimeSeriesChartYAxisRowComponent implements ControlValueAccessor, OnInit {
     private fb;
     private translate;
     private popoverService;
+    private timeSeriesChartYAxesPanel;
     private renderer;
     private viewContainerRef;
     private cd;
@@ -23,15 +25,18 @@ export declare class TimeSeriesChartYAxisRowComponent implements ControlValueAcc
     axisFormGroup: UntypedFormGroup;
     modelValue: TimeSeriesChartYAxisSettings;
     private propagateChange;
-    constructor(fb: UntypedFormBuilder, translate: TranslateService, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, cd: ChangeDetectorRef, destroyRef: DestroyRef);
+    constructor(fb: UntypedFormBuilder, translate: TranslateService, popoverService: TbPopoverService, timeSeriesChartYAxesPanel: TimeSeriesChartYAxesPanelComponent, renderer: Renderer2, viewContainerRef: ViewContainerRef, cd: ChangeDetectorRef, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(_fn: any): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: TimeSeriesChartYAxisSettings): void;
     editAxis($event: Event, matButton: MatButton): void;
+    checkIsConstantLimit(limit: 'min' | 'max'): boolean;
     private updateValidators;
     private updateModel;
+    private createLimitFormGroup;
+    private normalizeLimit;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesChartYAxisRowComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartYAxisRowComponent, "tb-time-series-chart-y-axis-row", never, { "disabled": { "alias": "disabled"; "required": false; }; "advanced": { "alias": "advanced"; "required": false; }; "supportsUnitConversion": { "alias": "supportsUnitConversion"; "required": false; }; "reportMode": { "alias": "reportMode"; "required": false; }; }, { "axisRemoved": "axisRemoved"; }, never, never, false, never>;
 }

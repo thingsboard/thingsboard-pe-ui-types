@@ -100,9 +100,7 @@ export declare class EntitiesTableWidgetComponent extends PageComponent implemen
     columnHasCellClick(index: number): boolean;
     onRowClick($event: Event, entity: EntityData, isDouble?: boolean): void;
     onActionButtonClick($event: Event, entity: EntityData, actionDescriptor: WidgetActionDescriptor): void;
-    customDataExport(): Observable<{
-        [key: string]: any;
-    }[]>;
+    customDataExport(): Observable<Map<string, any>[]>;
     private includeColumnInExport;
     private queryEntityDataToExportedData;
     private clearCache;

@@ -11,6 +11,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { DialogService } from '@core/services/dialog.service';
 import { Filter, Filters } from '@shared/models/query/query.models';
 import { DashboardUtilsService } from '@core/services/dashboard-utils.service';
+import { ReportComponentConfig } from '@shared/models/report-component.models';
 import * as i0 from "@angular/core";
 export interface FiltersDialogData {
     filters: Filters;
@@ -21,6 +22,8 @@ export interface FiltersDialogData {
     singleFilter?: Filter;
     customTitle?: string;
     disableUserEdit?: boolean;
+    reportMode?: boolean;
+    reportComponents?: ReportComponentConfig[];
 }
 export declare class FiltersDialogComponent extends DialogComponent<FiltersDialogComponent, Filters> implements ErrorStateMatcher {
     protected store: Store<AppState>;

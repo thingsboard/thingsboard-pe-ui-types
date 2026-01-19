@@ -3,7 +3,7 @@ import { AggregationType, HistoryWindowType, Interval, QuickTimeInterval, Realti
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { FormControl, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { TimeService } from '@core/services/time.service';
 import { OverlayRef } from '@angular/cdk/overlay';
 import { ToggleHeaderOption } from '@shared/components/toggle-header.component';
@@ -19,6 +19,7 @@ export interface TimewindowPanelData {
     timezone: boolean;
     isEdit: boolean;
     panelMode: boolean;
+    showSaveAsDefault?: boolean;
 }
 export declare const TIMEWINDOW_PANEL_DATA: InjectionToken<any>;
 export declare class TimewindowPanelComponent extends PageComponent implements OnInit, OnDestroy {
@@ -46,6 +47,8 @@ export declare class TimewindowPanelComponent extends PageComponent implements O
     timewindowTypes: typeof TimewindowType;
     aggregationTypes: typeof AggregationType;
     result: Timewindow;
+    saveTimewindow: boolean;
+    saveTimewindowControl: FormControl;
     timewindowTypeOptions: ToggleHeaderOption[];
     realtimeTimewindowOptions: ToggleHeaderOption[];
     historyTimewindowOptions: ToggleHeaderOption[];
@@ -54,6 +57,7 @@ export declare class TimewindowPanelComponent extends PageComponent implements O
     historyTypeSelectionAvailable: boolean;
     historyIntervalSelectionAvailable: boolean;
     aggregationOptionsAvailable: boolean;
+    saveAsDefaultAvailable: boolean;
     realtimeDisableCustomInterval: boolean;
     realtimeDisableCustomGroupInterval: boolean;
     historyDisableCustomInterval: boolean;

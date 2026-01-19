@@ -18,6 +18,7 @@ import { Timewindow } from '@shared/models/time/time.models';
 import { DialogService } from '@core/services/dialog.service';
 import { UtilsService } from '@core/services/utils.service';
 import { FormBuilder } from '@angular/forms';
+import { WidgetComponent } from "@home/components/widget/widget.component";
 import * as i0 from "@angular/core";
 export declare class BlobEntitiesComponent extends PageComponent implements OnInit, AfterViewInit {
     protected store: Store<AppState>;
@@ -29,6 +30,7 @@ export declare class BlobEntitiesComponent extends PageComponent implements OnIn
     private cd;
     private fb;
     private zone;
+    widgetComponent: WidgetComponent;
     blobEntitiesWidgetContainerRef: ElementRef;
     searchInputField: ElementRef;
     paginator: MatPaginator;
@@ -57,7 +59,7 @@ export declare class BlobEntitiesComponent extends PageComponent implements OnIn
     textSearch: import("@angular/forms").FormControl<string>;
     private widgetResize$;
     private destroy$;
-    constructor(store: Store<AppState>, utils: UtilsService, translate: TranslateService, blobEntityService: BlobEntityService, userPermissionsService: UserPermissionsService, dialogService: DialogService, cd: ChangeDetectorRef, fb: FormBuilder, zone: NgZone);
+    constructor(store: Store<AppState>, utils: UtilsService, translate: TranslateService, blobEntityService: BlobEntityService, userPermissionsService: UserPermissionsService, dialogService: DialogService, cd: ChangeDetectorRef, fb: FormBuilder, zone: NgZone, widgetComponent: WidgetComponent);
     ngOnInit(): void;
     ngOnDestroy(): void;
     private initializeWidgetConfig;
@@ -72,7 +74,7 @@ export declare class BlobEntitiesComponent extends PageComponent implements OnIn
     deleteBlobEntity($event: Event, blobEntity: BlobEntityWithCustomerInfo): void;
     deleteBlobEntities($event: Event): void;
     downloadBlobEntity($event: any, blobEntity: BlobEntityWithCustomerInfo): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<BlobEntitiesComponent, never>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<BlobEntitiesComponent, [null, null, null, null, null, null, null, null, null, { optional: true; }]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<BlobEntitiesComponent, "tb-blob-entities", never, { "widgetMode": { "alias": "widgetMode"; "required": false; }; "ctx": { "alias": "ctx"; "required": false; }; }, {}, never, never, false, never>;
 }
 declare class BlobEntitiesDatasource implements DataSource<BlobEntityWithCustomerInfo> {

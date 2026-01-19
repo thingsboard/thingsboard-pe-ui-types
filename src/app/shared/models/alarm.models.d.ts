@@ -36,6 +36,7 @@ export declare const alarmSeverityTranslations: Map<AlarmSeverity, string>;
 export declare const alarmStatusTranslations: Map<AlarmStatus, string>;
 export declare const alarmSearchStatusTranslations: Map<AlarmSearchStatus, string>;
 export declare const alarmSeverityColors: Map<AlarmSeverity, string>;
+export declare const alarmSeverityBackgroundColors: Map<AlarmSeverity, string>;
 export interface Alarm extends BaseData<AlarmId> {
     tenantId: TenantId;
     customerId: CustomerId;
@@ -58,12 +59,26 @@ export declare enum AlarmCommentType {
     SYSTEM = "SYSTEM",
     OTHER = "OTHER"
 }
+export declare enum AlarmMessage {
+    ACKED_BY_USER = "alarm.system-comments.acked-by-user",
+    CLEARED_BY_USER = "alarm.system-comments.cleared-by-user",
+    ASSIGNED_TO_USER = "alarm.system-comments.assigned-to-user",
+    UNASSIGNED_BY_USER = "alarm.system-comments.unassigned-to-user",
+    UNASSIGNED_FROM_DELETED_USER = "alarm.system-comments.unassigned-from-deleted-user",
+    COMMENT_DELETED = "alarm.system-comments.comment-deleted",
+    SEVERITY_CHANGED = "alarm.system-comments.severity-changed"
+}
 export interface AlarmComment extends BaseData<AlarmCommentId> {
     alarmId: AlarmId;
     userId?: UserId;
     type: AlarmCommentType;
     comment: {
         text: string;
+        subtype?: keyof typeof AlarmMessage;
+        userName?: string;
+        assigneeName?: string;
+        oldSeverity?: AlarmSeverity;
+        newSeverity?: AlarmSeverity;
         edited?: boolean;
         editedOn?: number;
     };
@@ -76,6 +91,7 @@ export interface AlarmCommentInfo extends AlarmComment {
 export interface AlarmInfo extends Alarm {
     originatorName: string;
     originatorLabel: string;
+    originatorDisplayName?: string;
     assignee: AlarmAssignee;
 }
 export interface AlarmAssignee {

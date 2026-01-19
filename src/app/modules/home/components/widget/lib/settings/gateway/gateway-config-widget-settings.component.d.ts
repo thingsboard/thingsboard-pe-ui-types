@@ -7,6 +7,7 @@ export declare class GatewayConfigWidgetSettingsComponent extends WidgetSettings
     protected store: Store<AppState>;
     private fb;
     gatewayConfigWidgetSettingsForm: UntypedFormGroup;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, fb: UntypedFormBuilder);
     protected settingsForm(): UntypedFormGroup;
     protected defaultSettings(): WidgetSettings;

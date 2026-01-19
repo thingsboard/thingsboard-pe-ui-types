@@ -49,7 +49,8 @@ export declare class ConverterAutocompleteComponent implements ControlValueAcces
     private fetchEntities;
     clear(): void;
     textIsNotEmpty(text: string): boolean;
-    createConverter($event: Event, converterName: string): void;
+    openConverterDialog($event: Event, isEdit?: boolean, converterName?: string): void;
+    private openDialog;
     static ɵfac: i0.ɵɵFactoryDeclaration<ConverterAutocompleteComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<ConverterAutocompleteComponent, "tb-converter-autocomplete", never, { "useFullEntityId": { "alias": "useFullEntityId"; "required": false; }; "isEdgeTemplate": { "alias": "isEdgeTemplate"; "required": false; }; "addNewConverter": { "alias": "addNewConverter"; "required": false; }; "converterType": { "alias": "converterType"; "required": false; }; "excludeEntityIds": { "alias": "excludeEntityIds"; "required": false; }; "labelText": { "alias": "labelText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "showDetailsPageLink": { "alias": "showDetailsPageLink"; "required": false; }; "integrationType": { "alias": "integrationType"; "required": false; }; }, {}, never, never, false, never>;
 }

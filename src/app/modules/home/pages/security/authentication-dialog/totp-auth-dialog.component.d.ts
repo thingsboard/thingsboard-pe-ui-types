@@ -18,6 +18,7 @@ export declare class TotpAuthDialogComponent extends DialogComponent<TotpAuthDia
     private config;
     totpConfigForm: UntypedFormGroup;
     totpAuthURL: string;
+    totpAuthURLSecret: string;
     stepper: MatStepper;
     canvasRef: ElementRef<HTMLCanvasElement>;
     constructor(store: Store<AppState>, router: Router, twoFaService: TwoFactorAuthenticationService, dialogRef: MatDialogRef<TotpAuthDialogComponent>, fb: UntypedFormBuilder);

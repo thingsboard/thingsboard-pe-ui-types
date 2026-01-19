@@ -24,6 +24,7 @@ export declare class MaterialIconSelectComponent extends PageComponent implement
     backgroundColor: string;
     disabled: boolean;
     iconClearButton: boolean;
+    allowedCustomIcon: boolean;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
@@ -41,5 +42,5 @@ export declare class MaterialIconSelectComponent extends PageComponent implement
     openIconPopup($event: Event, matButton: MatButton): void;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<MaterialIconSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MaterialIconSelectComponent, "tb-material-icon-select", never, { "asBoxInput": { "alias": "asBoxInput"; "required": false; }; "label": { "alias": "label"; "required": false; }; "color": { "alias": "color"; "required": false; }; "backgroundColor": { "alias": "backgroundColor"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "iconClearButton": { "alias": "iconClearButton"; "required": false; }; "required": { "alias": "required"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MaterialIconSelectComponent, "tb-material-icon-select", never, { "asBoxInput": { "alias": "asBoxInput"; "required": false; }; "label": { "alias": "label"; "required": false; }; "color": { "alias": "color"; "required": false; }; "backgroundColor": { "alias": "backgroundColor"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "iconClearButton": { "alias": "iconClearButton"; "required": false; }; "allowedCustomIcon": { "alias": "allowedCustomIcon"; "required": false; }; "required": { "alias": "required"; "required": false; }; }, {}, never, never, false, never>;
 }

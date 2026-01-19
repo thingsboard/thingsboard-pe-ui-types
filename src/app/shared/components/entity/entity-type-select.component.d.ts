@@ -4,7 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { AliasEntityType, EntityType } from '@app/shared/models/entity-type.models';
 import { EntityService } from '@core/http/entity.service';
 import { Operation } from '@shared/models/security.models';
-import { MatFormFieldAppearance } from '@angular/material/form-field';
+import { MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class EntityTypeSelectComponent implements ControlValueAccessor, OnInit, OnChanges {
     private entityService;
@@ -19,13 +19,16 @@ export declare class EntityTypeSelectComponent implements ControlValueAccessor, 
     filterAllowedEntityTypes: boolean;
     overrideEntityTypeTranslations: Map<EntityType | AliasEntityType, string>;
     showLabel: boolean;
-    label: any;
+    private labelValue;
+    get label(): string;
+    set label(value: string);
     required: boolean;
     disabled: boolean;
     additionEntityTypes: {
         [key in string]: string;
     };
     appearance: MatFormFieldAppearance;
+    subscriptSizing: SubscriptSizing;
     inlineField: boolean;
     entityTypes: Array<EntityType | AliasEntityType | string>;
     private propagateChange;
@@ -38,6 +41,7 @@ export declare class EntityTypeSelectComponent implements ControlValueAccessor, 
     writeValue(value: EntityType | AliasEntityType | null): void;
     updateView(value: EntityType | AliasEntityType | null): void;
     displayEntityTypeFn(entityType?: EntityType | AliasEntityType | null): string | undefined;
+    markAsTouched(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityTypeSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityTypeSelectComponent, "tb-entity-type-select", never, { "allowedEntityTypes": { "alias": "allowedEntityTypes"; "required": false; }; "useAliasEntityTypes": { "alias": "useAliasEntityTypes"; "required": false; }; "operation": { "alias": "operation"; "required": false; }; "filterAllowedEntityTypes": { "alias": "filterAllowedEntityTypes"; "required": false; }; "overrideEntityTypeTranslations": { "alias": "overrideEntityTypeTranslations"; "required": false; }; "showLabel": { "alias": "showLabel"; "required": false; }; "label": { "alias": "label"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "additionEntityTypes": { "alias": "additionEntityTypes"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "inlineField": { "alias": "inlineField"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityTypeSelectComponent, "tb-entity-type-select", never, { "allowedEntityTypes": { "alias": "allowedEntityTypes"; "required": false; }; "useAliasEntityTypes": { "alias": "useAliasEntityTypes"; "required": false; }; "operation": { "alias": "operation"; "required": false; }; "filterAllowedEntityTypes": { "alias": "filterAllowedEntityTypes"; "required": false; }; "overrideEntityTypeTranslations": { "alias": "overrideEntityTypeTranslations"; "required": false; }; "showLabel": { "alias": "showLabel"; "required": false; }; "label": { "alias": "label"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "additionEntityTypes": { "alias": "additionEntityTypes"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "inlineField": { "alias": "inlineField"; "required": false; }; }, {}, never, never, false, never>;
 }

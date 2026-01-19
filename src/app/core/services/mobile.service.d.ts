@@ -22,7 +22,7 @@ export declare class MobileService {
     registerToggleLayoutFunction(toggleLayoutFunction: () => void): void;
     unregisterToggleLayoutFunction(): void;
     handleWidgetMobileAction<T extends MobileActionResult>(type: WidgetMobileActionType, ...args: any[]): Observable<WidgetMobileActionResult<T>>;
-    handleMobileNavigation(path?: string, params?: Params): void;
+    handleMobileNavigation(path?: string, params?: Params, queryParams?: Params): void;
     onRecaptchaLoaded(): void;
     handleReCaptchaResponse(recaptchaResponse: string): void;
     registerResetRecaptchaFunction(resetRecaptchaFunction: () => void): void;

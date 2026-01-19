@@ -1,0 +1,67 @@
+import { ControlValueAccessor, FormBuilder, ValidationErrors, Validator } from '@angular/forms';
+import { EntityId } from '@shared/models/id/entity-id';
+import { AggIntervalType, CalculatedFieldEntityAggregationConfiguration, CalculatedFieldOutput } from '@shared/models/calculated-field.models';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { Observable } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
+import * as i0 from "@angular/core";
+export declare class EntityAggregationComponentComponent implements ControlValueAccessor, Validator {
+    private fb;
+    private store;
+    private translate;
+    entityId: EntityId;
+    tenantId: string;
+    entityName: string;
+    testScript: (expression?: string) => Observable<string>;
+    isEditValue: boolean;
+    readonly: boolean;
+    readonly minAllowedAggregationIntervalInSecForCF: number;
+    readonly intermediateAggregationIntervalInSecForCF: number;
+    readonly DayInSec: number;
+    entityAggregationConfiguration: import("@angular/forms").FormGroup<{
+        arguments: import("@angular/forms").FormControl<{}>;
+        metrics: import("@angular/forms").FormControl<{}>;
+        interval: import("@angular/forms").FormGroup<{
+            type: import("@angular/forms").FormControl<AggIntervalType>;
+            tz: import("@angular/forms").FormControl<string>;
+            durationSec: import("@angular/forms").FormControl<number>;
+            allowOffsetSec: import("@angular/forms").FormControl<boolean>;
+            offsetSec: import("@angular/forms").FormControl<number>;
+        }>;
+        allowWatermark: import("@angular/forms").FormControl<boolean>;
+        watermark: import("@angular/forms").FormGroup<{
+            duration: import("@angular/forms").FormControl<number>;
+        }>;
+        produceIntermediateResult: import("@angular/forms").FormControl<boolean>;
+        output: import("@angular/forms").FormControl<CalculatedFieldOutput>;
+    }>;
+    arguments$: Observable<string[]>;
+    AggIntervalType: typeof AggIntervalType;
+    AggIntervalTypes: AggIntervalType[];
+    AggIntervalTypeTranslations: Map<AggIntervalType, string>;
+    hint: string;
+    private propagateChange;
+    constructor(fb: FormBuilder, store: Store<AppState>, translate: TranslateService);
+    validate(): ValidationErrors | null;
+    writeValue(value: CalculatedFieldEntityAggregationConfiguration): void;
+    registerOnChange(fn: (config: CalculatedFieldEntityAggregationConfiguration) => void): void;
+    registerOnTouched(_: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    get maxOffsetTime(): number;
+    private updatedModel;
+    private checkAggIntervalType;
+    private checkIntervalDuration;
+    private checkWatermark;
+    private checkProduceIntermediate;
+    private updatedOffsetHint;
+    private getTimeCategory;
+    private getCustomFormatString;
+    private formatAdditiveInterval;
+    private formatNextInterval;
+    private buildStandardIntervalString;
+    static ɵfac: i0.ɵɵFactoryDeclaration<EntityAggregationComponentComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityAggregationComponentComponent, "tb-entity-aggregation-component", never, { "entityId": { "alias": "entityId"; "required": true; }; "tenantId": { "alias": "tenantId"; "required": true; }; "entityName": { "alias": "entityName"; "required": true; }; "testScript": { "alias": "testScript"; "required": false; }; "isEditValue": { "alias": "isEditValue"; "required": false; }; "readonly": { "alias": "readonly"; "required": false; }; }, {}, never, never, false, never>;
+    static ngAcceptInputType_isEditValue: unknown;
+    static ngAcceptInputType_readonly: unknown;
+}

@@ -7,6 +7,7 @@ import { DataKey, Datasource, DatasourceData, WidgetActionDescriptor } from '@sh
 import { UtilsService } from '@core/services/utils.service';
 import { TranslateService } from '@ngx-translate/core';
 import { PageLink } from '@shared/models/page/page-link';
+import { SortOrder } from '@shared/models/page/sort-order';
 import { CollectionViewer, DataSource } from '@angular/cdk/collections';
 import { Observable } from 'rxjs';
 import { MatPaginator } from '@angular/material/paginator';
@@ -24,6 +25,7 @@ export interface TimeseriesTableWidgetSettings extends TableWidgetSettings {
     hideEmptyLines: boolean;
     dateFormat: DateFormatSettings;
     timestampExportOption: columnExportOptions;
+    sortOrder: SortOrder;
 }
 interface TimeseriesRow {
     actionCellButtons?: TableCellButtonActionDescriptor[];
@@ -58,6 +60,7 @@ interface TimeseriesTableSource {
     rowDataTemplate: {
         [key: string]: any;
     };
+    displayName: string;
 }
 export declare class TimeseriesTableWidgetComponent extends PageComponent implements OnInit, AfterViewInit, OnDestroy {
     protected store: Store<AppState>;
@@ -119,7 +122,8 @@ export declare class TimeseriesTableWidgetComponent extends PageComponent implem
     onLatestDataUpdated(): void;
     onEditModeChanged(): void;
     private initialize;
-    getTabLabel(source: TimeseriesTableSource): string;
+    private getTabLabel;
+    private sortDatasources;
     private updateDatasources;
     private editColumnsToDisplay;
     private prepareDisplayedColumn;
@@ -146,9 +150,7 @@ export declare class TimeseriesTableWidgetComponent extends PageComponent implem
     private loadCurrentSourceRow;
     private clearCache;
     private includeColumnInExport;
-    customDataExport(): Observable<{
-        [key: string]: any;
-    }[]>;
+    customDataExport(): Observable<Map<string, any>[]>;
     private checkProperty;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeseriesTableWidgetComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<TimeseriesTableWidgetComponent, "tb-timeseries-table-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; }, {}, never, never, false, never>;

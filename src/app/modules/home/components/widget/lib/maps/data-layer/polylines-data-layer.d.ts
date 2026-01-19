@@ -1,0 +1,55 @@
+import { MapDataLayerType, PolylinesDataLayerSettings, TbMapDatasource, TbPolylineCoordinates, TbPolylineRawCoordinates } from '@shared/models/widget/maps/map.models';
+import L from 'leaflet';
+import { DataKey, FormattedData } from '@shared/models/widget.models';
+import { TbShapesDataLayer } from '@home/components/widget/lib/maps/data-layer/shapes-data-layer';
+import { TbMap } from '@home/components/widget/lib/maps/map';
+import { Observable } from 'rxjs';
+import { TbLatestDataLayerItem, UnplacedMapDataItem } from '@home/components/widget/lib/maps/data-layer/latest-map-data-layer';
+declare class TbPolylineDataLayerItem extends TbLatestDataLayerItem<PolylinesDataLayerSettings, TbPolylineDataLayer> {
+    protected settings: PolylinesDataLayerSettings;
+    protected dataLayer: TbPolylineDataLayer;
+    private polylineContainer;
+    private polyline;
+    private polylineStyleInfo;
+    private editing;
+    constructor(data: FormattedData<TbMapDatasource>, dsData: FormattedData<TbMapDatasource>[], settings: PolylinesDataLayerSettings, dataLayer: TbPolylineDataLayer);
+    isEditing(): boolean;
+    updateBubblingMouseEvents(): void;
+    remove(): void;
+    protected create(data: FormattedData<TbMapDatasource>, dsData: FormattedData<TbMapDatasource>[]): L.Layer;
+    protected unbindLabel(): void;
+    protected bindLabel(content: L.Content): void;
+    protected doUpdate(data: FormattedData<TbMapDatasource>, dsData: FormattedData<TbMapDatasource>[]): void;
+    protected doInvalidateCoordinates(data: FormattedData<TbMapDatasource>, _dsData: FormattedData<TbMapDatasource>[]): void;
+    protected addItemClass(clazz: string): void;
+    protected removeItemClass(clazz: string): void;
+    protected enableDrag(): void;
+    protected disableDrag(): void;
+    protected onSelected(): L.TB.ToolbarButtonOptions[];
+    protected onDeselected(): void;
+    protected canDeselect(cancel?: boolean): boolean;
+    protected removeDataItemTitle(): string;
+    protected removeDataItem(): Observable<any>;
+    private enablePolylineEditMode;
+    private disablePolylineEditMode;
+    private enablePolylineCutMode;
+    private disablePolylineCutMode;
+    private enablePolylineRotateMode;
+    private disablePolylineRotateMode;
+    private savePolylineCoordinates;
+    private updatePolylineShape;
+}
+export declare class TbPolylineDataLayer extends TbShapesDataLayer<PolylinesDataLayerSettings, TbPolylineDataLayer> {
+    protected map: TbMap<any>;
+    constructor(map: TbMap<any>, inputSettings: PolylinesDataLayerSettings);
+    dataLayerType(): MapDataLayerType;
+    placeItem(item: UnplacedMapDataItem, layer: L.Layer): void;
+    extractPolylineCoordinates(data: FormattedData<TbMapDatasource>): TbPolylineRawCoordinates;
+    savePolylineCoordinates(data: FormattedData<TbMapDatasource>, coordinates: TbPolylineCoordinates): Observable<TbPolylineRawCoordinates>;
+    protected getDataKeys(): DataKey[];
+    protected defaultBaseSettings(map: TbMap<any>): Partial<PolylinesDataLayerSettings>;
+    protected doSetup(): Observable<any>;
+    protected isValidLayerData(layerData: FormattedData<TbMapDatasource>): boolean;
+    protected createLayerItem(data: FormattedData<TbMapDatasource>, dsData: FormattedData<TbMapDatasource>[]): TbPolylineDataLayerItem;
+}
+export {};

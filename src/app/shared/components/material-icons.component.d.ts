@@ -19,11 +19,13 @@ export declare class MaterialIconsComponent extends PageComponent implements OnI
     selectedIcon: string;
     iconClearButton: boolean;
     showTitle: boolean;
+    allowedCustomIcon: boolean;
     popover: TbPopoverComponent;
     iconSelected: EventEmitter<string>;
     iconRows$: Observable<MaterialIcon[][]>;
     showAllSubject: BehaviorSubject<boolean>;
     searchIconControl: UntypedFormControl;
+    isCustomIcon: boolean;
     iconsRowHeight: number;
     iconsPanelHeight: string;
     iconsPanelWidth: string;
@@ -31,10 +33,10 @@ export declare class MaterialIconsComponent extends PageComponent implements OnI
     constructor(store: Store<AppState>, resourcesService: ResourcesService, breakpointObserver: BreakpointObserver, cd: ChangeDetectorRef);
     ngOnInit(): void;
     clearSearch(): void;
-    selectIcon(icon: MaterialIcon): void;
+    selectIcon(icon: string): void;
     clearIcon(): void;
     private calculatePanelSize;
     private checkSize;
     static ɵfac: i0.ɵɵFactoryDeclaration<MaterialIconsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MaterialIconsComponent, "tb-material-icons", never, { "selectedIcon": { "alias": "selectedIcon"; "required": false; }; "iconClearButton": { "alias": "iconClearButton"; "required": false; }; "showTitle": { "alias": "showTitle"; "required": false; }; "popover": { "alias": "popover"; "required": false; }; }, { "iconSelected": "iconSelected"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MaterialIconsComponent, "tb-material-icons", never, { "selectedIcon": { "alias": "selectedIcon"; "required": false; }; "iconClearButton": { "alias": "iconClearButton"; "required": false; }; "showTitle": { "alias": "showTitle"; "required": false; }; "allowedCustomIcon": { "alias": "allowedCustomIcon"; "required": false; }; "popover": { "alias": "popover"; "required": false; }; }, { "iconSelected": "iconSelected"; }, never, never, false, never>;
 }

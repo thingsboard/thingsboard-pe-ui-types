@@ -21,7 +21,7 @@ export interface MapDataSourceSettings {
 export interface TbMapDatasource extends Datasource {
     mapDataIds: string[];
 }
-export declare const mapDataSourceSettingsToDatasource: (settings: MapDataSourceSettings, id?: string) => TbMapDatasource;
+export declare const mapDataSourceSettingsToDatasource: (settings: MapDataSourceSettings | MapDataLayerSettings, id?: string, includeDataKeys?: boolean, dataLayerType?: MapDataLayerType) => TbMapDatasource;
 export declare enum DataLayerPatternType {
     pattern = "pattern",
     function = "function"
@@ -68,7 +68,7 @@ export interface MapDataLayerSettings extends MapDataSourceSettings {
     edit: DataLayerEditSettings;
 }
 export declare const defaultBaseDataLayerSettings: (mapType: MapType) => Partial<MapDataLayerSettings>;
-export type MapDataLayerType = 'trips' | 'markers' | 'polygons' | 'circles';
+export type MapDataLayerType = 'trips' | 'markers' | 'polygons' | 'circles' | 'polylines';
 export declare const mapDataLayerTypes: MapDataLayerType[];
 export declare const mapDataLayerValid: (dataLayer: MapDataLayerSettings, type: MapDataLayerType) => boolean;
 export declare const mapDataLayerValidator: (type: MapDataLayerType) => ValidatorFn;
@@ -209,12 +209,17 @@ export interface CirclesDataLayerSettings extends ShapeDataLayerSettings {
 }
 export declare const defaultCirclesDataLayerSettings: (mapType: MapType, functionsOnly?: boolean) => CirclesDataLayerSettings;
 export declare const defaultBaseCirclesDataLayerSettings: (mapType: MapType) => Partial<CirclesDataLayerSettings>;
+export interface PolylinesDataLayerSettings extends ShapeDataLayerSettings {
+    polylineKey: DataKey;
+}
+export declare const defaultPolylinesDataLayerSettings: (mapType: MapType, functionsOnly?: boolean) => PolylinesDataLayerSettings;
+export declare const defaultBasePolylinesDataLayerSettings: (mapType: MapType) => Partial<PolylinesDataLayerSettings>;
 export declare const defaultMapDataLayerSettings: (mapType: MapType, dataLayerType: MapDataLayerType, functionsOnly?: boolean) => MapDataLayerSettings;
 export declare const defaultBaseMapDataLayerSettings: <T extends MapDataLayerSettings>(mapType: MapType, dataLayerType: MapDataLayerType) => T;
 export interface AdditionalMapDataSourceSettings extends MapDataSourceSettings {
     dataKeys: DataKey[];
 }
-export declare const additionalMapDataSourcesToDatasources: (additionalMapDataSources: AdditionalMapDataSourceSettings[]) => TbMapDatasource[];
+export declare const additionalMapDataSourcesToDatasources: (additionalMapDataSources: AdditionalMapDataSourceSettings[], includeDataKeys?: boolean) => TbMapDatasource[];
 export declare const mapDataSourceValid: (dataSource: MapDataSourceSettings) => boolean;
 export declare const mapDataSourceValidator: ValidatorFn;
 export declare const defaultMapDataSourceSettings: {
@@ -266,6 +271,7 @@ export interface BaseMapSettings {
     markers: MarkersDataLayerSettings[];
     polygons: PolygonsDataLayerSettings[];
     circles: CirclesDataLayerSettings[];
+    polylines: PolylinesDataLayerSettings[];
     additionalDataSources: AdditionalMapDataSourceSettings[];
     controlsPosition: MapControlsPosition;
     zoomActions: MapZoomAction[];
@@ -426,6 +432,11 @@ export type TbPolygonRawCoordinates = TbPolygonRawCoordinate[];
 export type TbPolyData = L.LatLngTuple[] | L.LatLngTuple[][] | L.LatLngTuple[][][];
 export type TbPolygonCoordinate = L.LatLng | L.LatLng[] | L.LatLng[][];
 export type TbPolygonCoordinates = TbPolygonCoordinate[];
+export type TbPolylineRawCoordinate = L.LatLngTuple | L.LatLngTuple[] | L.LatLngTuple[][];
+export type TbPolylineRawCoordinates = TbPolylineRawCoordinate[];
+export type TbPolylineData = L.LatLngTuple[] | L.LatLngTuple[][] | L.LatLngTuple[][][];
+export type TbPolylineCoordinate = L.LatLng | L.LatLng[] | L.LatLng[][];
+export type TbPolylineCoordinates = TbPolylineCoordinate[];
 export interface TbCircleData {
     latitude: number;
     longitude: number;

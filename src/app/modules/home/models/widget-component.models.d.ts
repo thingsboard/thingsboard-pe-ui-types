@@ -1,5 +1,5 @@
 import { IDashboardComponent } from '@home/models/dashboard-component.models';
-import { DataSet, Datasource, DatasourceData, FormattedData, Widget, WidgetActionDescriptor, WidgetActionSource, WidgetConfig, WidgetControllerDescriptor, WidgetExportType, WidgetHeaderActionButtonType, WidgetType, widgetType, WidgetTypeDescriptor, WidgetTypeDetails, WidgetTypeParameters } from '@shared/models/widget.models';
+import { DataSet, Datasource, DatasourceData, ExportRow, FormattedData, Widget, WidgetActionDescriptor, WidgetActionSource, WidgetConfig, WidgetControllerDescriptor, WidgetExportType, WidgetHeaderActionButtonType, WidgetType, widgetType, WidgetTypeDescriptor, WidgetTypeDetails, WidgetTypeParameters } from '@shared/models/widget.models';
 import { Timewindow, WidgetTimewindow } from '@shared/models/time/time.models';
 import { IAliasController, IStateController, IWidgetSubscription, IWidgetUtils, RpcApi, StateParams, SubscriptionEntityInfo, TimewindowFunctions, WidgetActionsApi, WidgetSubscriptionApi } from '@core/api/widget-api.models';
 import { ChangeDetectorRef, InjectionToken, Injector, NgZone, Renderer2, TemplateRef, Type, ViewContainerRef } from '@angular/core';
@@ -79,6 +79,7 @@ export interface WidgetAction extends IWidgetAction {
 }
 export interface IDashboardWidget {
     updateWidgetParams(): void;
+    updateParamsFromData(detectChanges?: boolean): void;
 }
 export declare class WidgetContext {
     dashboard: IDashboardComponent;
@@ -154,14 +155,11 @@ export declare class WidgetContext {
     toastTargetId: string;
     widgetNamespace?: string;
     subscriptionApi?: WidgetSubscriptionApi;
+    widgetCssClass?: string;
     actionsApi?: WidgetActionsApi;
     activeEntityInfo?: SubscriptionEntityInfo;
     exportWidgetData: (widgetExportType: WidgetExportType) => void;
-    customDataExport?: () => {
-        [key: string]: any;
-    }[] | RxJS.Observable<{
-        [key: string]: any;
-    }[]>;
+    customDataExport?: () => ExportRow[] | RxJS.Observable<ExportRow[]>;
     exportDateFormat?: string;
     datasources?: Array<Datasource>;
     data?: Array<DatasourceData>;
@@ -372,6 +370,7 @@ export declare class WidgetContext {
     detectChanges(updateWidgetParams?: boolean): void;
     detectContainerChanges(): void;
     updateWidgetParams(): void;
+    updateParamsFromData(detectChanges?: boolean): void;
     updateAliases(aliasIds?: Array<string>): void;
     reset(): void;
     destroy(): void;

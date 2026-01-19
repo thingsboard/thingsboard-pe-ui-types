@@ -11,6 +11,7 @@ export declare class CountWidgetSettingsComponent extends PageComponent implemen
     private destroyRef;
     disabled: boolean;
     alarmElseEntity: boolean;
+    predefinedValues: string[];
     private propagateChange;
     countCardLayouts: CountCardLayout[];
     countCardLayoutTranslationMap: Map<CountCardLayout, string>;
@@ -27,5 +28,5 @@ export declare class CountWidgetSettingsComponent extends PageComponent implemen
     protected readonly valueCardLayoutTranslations: Map<import("@home/components/widget/lib/cards/value-card-widget.models").ValueCardLayout, string>;
     protected readonly valueCardLayoutImages: Map<import("@home/components/widget/lib/cards/value-card-widget.models").ValueCardLayout, string>;
     static ɵfac: i0.ɵɵFactoryDeclaration<CountWidgetSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CountWidgetSettingsComponent, "tb-count-widget-settings", never, { "disabled": { "alias": "disabled"; "required": false; }; "alarmElseEntity": { "alias": "alarmElseEntity"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CountWidgetSettingsComponent, "tb-count-widget-settings", never, { "disabled": { "alias": "disabled"; "required": false; }; "alarmElseEntity": { "alias": "alarmElseEntity"; "required": false; }; "predefinedValues": { "alias": "predefinedValues"; "required": false; }; }, {}, never, never, false, never>;
 }

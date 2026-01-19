@@ -7,6 +7,7 @@ export declare class UpdateMultipleAttributesWidgetSettingsComponent extends Wid
     protected store: Store<AppState>;
     private fb;
     updateMultipleAttributesWidgetSettingsForm: UntypedFormGroup;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, fb: UntypedFormBuilder);
     protected settingsForm(): UntypedFormGroup;
     protected defaultSettings(): WidgetSettings;

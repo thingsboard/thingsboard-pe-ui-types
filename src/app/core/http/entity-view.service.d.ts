@@ -5,6 +5,7 @@ import { PageLink } from '@shared/models/page/page-link';
 import { PageData } from '@shared/models/page/page-data';
 import { EntitySubtype } from '@app/shared/models/entity-type.models';
 import { EntityView, EntityViewInfo, EntityViewSearchQuery } from '@app/shared/models/entity-view.models';
+import { SaveEntityWithGroupParams } from '@shared/models/entity.models';
 import * as i0 from "@angular/core";
 export declare class EntityViewService {
     private http;
@@ -18,6 +19,7 @@ export declare class EntityViewService {
     getCustomerEntityViewInfos(includeCustomers: boolean, customerId: string, pageLink: PageLink, type?: string, config?: RequestConfig): Observable<PageData<EntityViewInfo>>;
     getEntityViewInfo(entityViewId: string, config?: RequestConfig): Observable<EntityViewInfo>;
     saveEntityView(entityView: EntityView, entityGroupIds?: string | string[], config?: RequestConfig): Observable<EntityView>;
+    saveEntityView(entityView: EntityView, saveParams?: SaveEntityWithGroupParams, config?: RequestConfig): Observable<EntityView>;
     deleteEntityView(entityViewId: string, config?: RequestConfig): Observable<Object>;
     getEntityViewTypes(config?: RequestConfig): Observable<Array<EntitySubtype>>;
     findByQuery(query: EntityViewSearchQuery, config?: RequestConfig): Observable<Array<EntityView>>;

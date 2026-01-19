@@ -12,6 +12,7 @@ import { AliasEntityType, EntityType } from '@shared/models/entity-type.models';
 import { TranslateService } from '@ngx-translate/core';
 import { DialogService } from '@core/services/dialog.service';
 import { DashboardUtilsService } from '@core/services/dashboard-utils.service';
+import { ReportComponentConfig } from '@shared/models/report-component.models';
 import * as i0 from "@angular/core";
 export interface EntityAliasesDialogData {
     entityAliases: EntityAliases;
@@ -25,6 +26,7 @@ export interface EntityAliasesDialogData {
     disableResolveMultiple?: boolean;
     reportMode?: boolean;
     subReport?: boolean;
+    reportComponents?: ReportComponentConfig[];
 }
 export declare class EntityAliasesDialogComponent extends DialogComponent<EntityAliasesDialogComponent, EntityAliases> implements ErrorStateMatcher {
     protected store: Store<AppState>;

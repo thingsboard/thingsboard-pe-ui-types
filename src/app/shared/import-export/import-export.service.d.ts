@@ -3,12 +3,13 @@ import { TranslateService } from '@ngx-translate/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { BreakpointId, Dashboard, DashboardLayoutId } from '@shared/models/dashboard.models';
+import { DatePipe } from '@angular/common';
 import { EntityAliases } from '@shared/models/alias.models';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 import { DashboardUtilsService } from '@core/services/dashboard-utils.service';
 import { EntityService } from '@core/http/entity.service';
-import { Widget, WidgetTypeDetails } from '@shared/models/widget.models';
+import { ExportRow, Widget, WidgetTypeDetails } from '@shared/models/widget.models';
 import { ItemBufferService } from '@core/services/item-buffer.service';
 import { BulkImportRequest, BulkImportResult, ImportWidgetResult } from './import-export.models';
 import { EntityType } from '@shared/models/entity-type.models';
@@ -61,8 +62,9 @@ export declare class ImportExportService {
     private itembuffer;
     private calculatedFieldsService;
     private reportTemplateService;
+    private datePipe;
     private dialog;
-    constructor(document: Document, store: Store<AppState>, translate: TranslateService, dashboardService: DashboardService, dashboardUtils: DashboardUtilsService, widgetService: WidgetService, deviceProfileService: DeviceProfileService, assetProfileService: AssetProfileService, tenantProfileService: TenantProfileService, entityService: EntityService, ruleChainService: RuleChainService, converterService: ConverterService, deviceService: DeviceService, assetService: AssetService, edgeService: EdgeService, imageService: ImageService, utils: UtilsService, itembuffer: ItemBufferService, calculatedFieldsService: CalculatedFieldsService, reportTemplateService: ReportTemplateService, dialog: MatDialog);
+    constructor(document: Document, store: Store<AppState>, translate: TranslateService, dashboardService: DashboardService, dashboardUtils: DashboardUtilsService, widgetService: WidgetService, deviceProfileService: DeviceProfileService, assetProfileService: AssetProfileService, tenantProfileService: TenantProfileService, entityService: EntityService, ruleChainService: RuleChainService, converterService: ConverterService, deviceService: DeviceService, assetService: AssetService, edgeService: EdgeService, imageService: ImageService, utils: UtilsService, itembuffer: ItemBufferService, calculatedFieldsService: CalculatedFieldsService, reportTemplateService: ReportTemplateService, datePipe: DatePipe, dialog: MatDialog);
     exportFormProperties(properties: FormProperty[], fileName: string): void;
     importFormProperties(): Observable<FormProperty[]>;
     exportImage(type: ImageResourceType, key: string): void;
@@ -70,7 +72,7 @@ export declare class ImportExportService {
     exportReportTemplate(reportTemplateId: string): void;
     importReportTemplate(): Observable<ReportTemplate>;
     exportCalculatedField(calculatedFieldId: string): void;
-    openCalculatedFieldImportDialog(): Observable<CalculatedField>;
+    openCalculatedFieldImportDialog(importTitle?: string, importFileLabel?: string): Observable<CalculatedField>;
     exportDashboard(dashboardId: string): void;
     importDashboard(customerId: CustomerId, onEditMissingAliases: editMissingAliasesFunction, entityGroupId?: string): Observable<Dashboard>;
     exportWidget(dashboard: Dashboard, sourceState: string, sourceLayout: DashboardLayoutId, widget: Widget, widgetTitle: string, breakpoint: BreakpointId): void;
@@ -101,16 +103,10 @@ export declare class ImportExportService {
     exportAssetProfile(assetProfileId: string): void;
     importAssetProfile(): Observable<AssetProfile>;
     private processCSVCell;
-    exportCsv(data: {
-        [key: string]: any;
-    }[], filename: string, normalizeFileName?: boolean): void;
-    exportXls(data: {
-        [key: string]: any;
-    }[], filename: string, normalizeFileName?: boolean): void;
-    exportXlsx(data: {
-        [key: string]: any;
-    }[], filename: string, dateFormat?: string, normalizeFileName?: boolean): void;
-    private formatDataAccordingToLocale;
+    exportCsv(data: ExportRow[], filename: string, normalizeFileName?: boolean, dateFormat?: string): void;
+    exportXls(data: ExportRow[], filename: string, normalizeFileName?: boolean, dateFormat?: string): void;
+    exportXlsx(data: ExportRow[], filename: string, dateFormat?: string, normalizeFileName?: boolean): void;
+    private formatTimestampColumn;
     private validateImportedConverter;
     exportText(data: string | Array<string>, filename: string, normalizeFileName?: boolean): void;
     exportJSZip(data: object, filename: string, normalizeFileName?: boolean): Observable<void>;

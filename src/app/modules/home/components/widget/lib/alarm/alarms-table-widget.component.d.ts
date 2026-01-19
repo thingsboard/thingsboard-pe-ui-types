@@ -132,9 +132,7 @@ export declare class AlarmsTableWidgetComponent extends PageComponent implements
     private openAlarmActivity;
     private defaultContent;
     private defaultStyle;
-    customDataExport(): Observable<{
-        [key: string]: any;
-    }[]>;
+    customDataExport(): Observable<Map<string, any>[]>;
     private includeColumnInExport;
     private alarmDataToExportedData;
     private clearCache;

@@ -25,6 +25,7 @@ export declare class ValueCardBasicConfigComponent extends BasicWidgetConfigComp
     datePreviewFn: any;
     get dateEnabled(): boolean;
     get iconEnabled(): boolean;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, widgetConfigComponent: WidgetConfigComponent, cd: ChangeDetectorRef, $injector: Injector, fb: UntypedFormBuilder);
     protected configForm(): UntypedFormGroup;
     protected setupConfig(widgetConfig: WidgetConfigComponentData): void;

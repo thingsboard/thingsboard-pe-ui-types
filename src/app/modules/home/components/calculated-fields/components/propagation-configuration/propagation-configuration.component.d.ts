@@ -1,0 +1,55 @@
+import { ControlValueAccessor, FormBuilder, ValidationErrors, Validator } from '@angular/forms';
+import { EntityId } from '@shared/models/id/entity-id';
+import { Observable } from 'rxjs';
+import { CalculatedFieldOutput, CalculatedFieldPropagationConfiguration, CalculatedFieldType, OutputType, PropagationWithExpression } from '@shared/models/calculated-field.models';
+import { ScriptLanguage } from '@app/shared/models/rule-node.models';
+import { EntitySearchDirection } from '@shared/models/relation.models';
+import { Store } from "@ngrx/store";
+import { AppState } from "@core/core.state";
+import * as i0 from "@angular/core";
+export declare class PropagationConfigurationComponent implements ControlValueAccessor, Validator {
+    private fb;
+    private store;
+    entityId: EntityId;
+    tenantId: string;
+    entityName: string;
+    ownerId: EntityId;
+    readonly: boolean;
+    testScript: () => Observable<string>;
+    isEditValue: boolean;
+    readonly maxRelatedEntitiesToReturnPerCfArgument: number;
+    propagateConfiguration: import("@angular/forms").FormGroup<{
+        arguments: import("@angular/forms").FormControl<{}>;
+        applyExpressionToResolvedArguments: import("@angular/forms").FormControl<boolean>;
+        relation: import("@angular/forms").FormGroup<{
+            direction: import("@angular/forms").FormControl<EntitySearchDirection>;
+            relationType: import("@angular/forms").FormControl<string>;
+        }>;
+        expression: import("@angular/forms").FormControl<string>;
+        output: import("@angular/forms").FormControl<CalculatedFieldOutput>;
+    }>;
+    disabled: boolean;
+    readonly ScriptLanguage: typeof ScriptLanguage;
+    readonly CalculatedFieldType: typeof CalculatedFieldType;
+    readonly OutputType: typeof OutputType;
+    readonly Directions: Array<EntitySearchDirection>;
+    readonly PropagationDirectionTranslations: Map<EntitySearchDirection, string>;
+    functionArgs$: Observable<string[]>;
+    argumentsEditorCompleter$: Observable<import("../../../../../../shared/models/ace/completion.models").TbEditorCompleter>;
+    argumentsHighlightRules$: Observable<import("../../../../../../shared/models/ace/ace.models").AceHighlightRules>;
+    private propagateChange;
+    constructor(fb: FormBuilder, store: Store<AppState>);
+    validate(): ValidationErrors | null;
+    writeValue(value: PropagationWithExpression): void;
+    registerOnChange(fn: (config: CalculatedFieldPropagationConfiguration) => void): void;
+    registerOnTouched(_: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    onTestScript(): void;
+    fetchOptions(searchText: string): Observable<Array<string>>;
+    private updatedModel;
+    private updatedFormWithScript;
+    static ɵfac: i0.ɵɵFactoryDeclaration<PropagationConfigurationComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PropagationConfigurationComponent, "tb-propagation-configuration", never, { "entityId": { "alias": "entityId"; "required": true; }; "tenantId": { "alias": "tenantId"; "required": true; }; "entityName": { "alias": "entityName"; "required": true; }; "ownerId": { "alias": "ownerId"; "required": true; }; "readonly": { "alias": "readonly"; "required": false; }; "testScript": { "alias": "testScript"; "required": true; }; "isEditValue": { "alias": "isEditValue"; "required": false; }; }, {}, never, never, false, never>;
+    static ngAcceptInputType_readonly: unknown;
+    static ngAcceptInputType_isEditValue: unknown;
+}

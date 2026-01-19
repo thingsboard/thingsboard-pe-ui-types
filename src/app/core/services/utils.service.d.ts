@@ -61,7 +61,7 @@ export declare class UtilsService {
     base64toString(b64Encoded: string): string;
     objToBase64URI(obj: any): string;
     base64toObj(b64Encoded: string): any;
-    applyCssToElement(renderer: Renderer2, element: any, cssClassPrefix: string, css: string): string;
+    applyCssToElement(renderer: Renderer2, element: any, cssClassPrefix: string, css: string, addTbDefaultClass?: boolean): string;
     clearCssElement(renderer: Renderer2, cssClass: string, element?: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<UtilsService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<UtilsService>;

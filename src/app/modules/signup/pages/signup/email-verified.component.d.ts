@@ -1,15 +1,15 @@
 import { AuthService } from '@core/auth/auth.service';
-import { PageComponent } from '@shared/components/page.component';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { WhiteLabelingService } from '@core/http/white-labeling.service';
 import * as i0 from "@angular/core";
-export declare class EmailVerifiedComponent extends PageComponent {
+export declare class EmailVerifiedComponent {
     private route;
     private router;
     wl: WhiteLabelingService;
     private authService;
     activated: BehaviorSubject<boolean>;
+    isLoading: boolean;
     class: string;
     private emailCode;
     private loginResponse;

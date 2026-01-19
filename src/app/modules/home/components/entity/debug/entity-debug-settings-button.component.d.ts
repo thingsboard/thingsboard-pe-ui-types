@@ -15,6 +15,7 @@ export declare class EntityDebugSettingsButtonComponent implements ControlValueA
     private cd;
     additionalActionConfig: AdditionalDebugActionConfig;
     entityType: EntityType;
+    entityLabel: string;
     debugSettingsFormGroup: import("@angular/forms").FormGroup<{
         failuresEnabled: import("@angular/forms").FormControl<boolean>;
         allEnabled: import("@angular/forms").FormControl<boolean>;
@@ -35,5 +36,5 @@ export declare class EntityDebugSettingsButtonComponent implements ControlValueA
     writeValue(settings: EntityDebugSettings): void;
     setDisabledState(isDisabled: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityDebugSettingsButtonComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityDebugSettingsButtonComponent, "tb-entity-debug-settings-button", never, { "additionalActionConfig": { "alias": "additionalActionConfig"; "required": false; }; "entityType": { "alias": "entityType"; "required": true; }; }, {}, never, never, true, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityDebugSettingsButtonComponent, "tb-entity-debug-settings-button", never, { "additionalActionConfig": { "alias": "additionalActionConfig"; "required": false; }; "entityType": { "alias": "entityType"; "required": true; }; "entityLabel": { "alias": "entityLabel"; "required": false; }; }, {}, never, never, true, never>;
 }

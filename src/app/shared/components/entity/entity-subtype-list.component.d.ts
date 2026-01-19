@@ -1,4 +1,4 @@
-import { AfterViewInit, ElementRef, OnDestroy, OnInit } from '@angular/core';
+import { ElementRef, OnDestroy, OnInit } from '@angular/core';
 import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
@@ -10,11 +10,14 @@ import { AlarmService } from '@core/http/alarm.service';
 import { FloatLabelType, MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
 import { UtilsService } from '@core/services/utils.service';
 import { EntityService } from '@core/http/entity.service';
+import { CalculatedFieldType } from "@shared/models/calculated-field.models";
+import { CalculatedFieldsService } from "@core/http/calculated-fields.service";
 import * as i0 from "@angular/core";
-export declare class EntitySubTypeListComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnDestroy {
+export declare class EntitySubTypeListComponent implements ControlValueAccessor, OnInit, OnDestroy {
     private broadcast;
     translate: TranslateService;
     private alarmService;
+    private calculatedFieldsService;
     private utils;
     private fb;
     private entityService;
@@ -27,6 +30,7 @@ export declare class EntitySubTypeListComponent implements ControlValueAccessor,
     label: string;
     disabled: boolean;
     entityType: EntityType;
+    calculatedFieldType: CalculatedFieldType;
     emptyInputPlaceholder: string;
     filledInputPlaceholder: string;
     appearance: MatFormFieldAppearance;
@@ -48,12 +52,11 @@ export declare class EntitySubTypeListComponent implements ControlValueAccessor,
     private dirty;
     private propagateChange;
     private hasPageDataEntitySubTypes;
-    constructor(broadcast: BroadcastService, translate: TranslateService, alarmService: AlarmService, utils: UtilsService, fb: FormBuilder, entityService: EntityService);
+    constructor(broadcast: BroadcastService, translate: TranslateService, alarmService: AlarmService, calculatedFieldsService: CalculatedFieldsService, utils: UtilsService, fb: FormBuilder, entityService: EntityService);
     updateValidators(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
-    ngAfterViewInit(): void;
     ngOnDestroy(): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: Array<string> | null): void;
@@ -69,5 +72,5 @@ export declare class EntitySubTypeListComponent implements ControlValueAccessor,
     clear(value?: string): void;
     customTranslate(entity: string): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntitySubTypeListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntitySubTypeListComponent, "tb-entity-subtype-list", never, { "required": { "alias": "required"; "required": false; }; "floatLabel": { "alias": "floatLabel"; "required": false; }; "label": { "alias": "label"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "entityType": { "alias": "entityType"; "required": false; }; "emptyInputPlaceholder": { "alias": "emptyInputPlaceholder"; "required": false; }; "filledInputPlaceholder": { "alias": "filledInputPlaceholder"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "additionalClasses": { "alias": "additionalClasses"; "required": false; }; }, {}, never, ["[matSuffix]"], false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntitySubTypeListComponent, "tb-entity-subtype-list", never, { "required": { "alias": "required"; "required": false; }; "floatLabel": { "alias": "floatLabel"; "required": false; }; "label": { "alias": "label"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "entityType": { "alias": "entityType"; "required": false; }; "calculatedFieldType": { "alias": "calculatedFieldType"; "required": false; }; "emptyInputPlaceholder": { "alias": "emptyInputPlaceholder"; "required": false; }; "filledInputPlaceholder": { "alias": "filledInputPlaceholder"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "additionalClasses": { "alias": "additionalClasses"; "required": false; }; }, {}, never, ["[matSuffix]"], false, never>;
 }

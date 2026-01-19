@@ -14,6 +14,7 @@ export declare class EntitiesTableBasicConfigComponent extends BasicWidgetConfig
     onlyHistoryTimewindow(): boolean;
     get datasource(): Datasource;
     entitiesTableWidgetConfigForm: UntypedFormGroup;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, widgetConfigComponent: WidgetConfigComponent, fb: UntypedFormBuilder);
     protected configForm(): UntypedFormGroup;
     protected defaultDataKeys(configData: WidgetConfigComponentData): DataKey[];

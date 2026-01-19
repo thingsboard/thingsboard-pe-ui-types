@@ -97,6 +97,7 @@ export interface Timewindow {
     history?: HistoryWindow;
     aggregation?: Aggregation;
     timezone?: string;
+    hideSaveAsDefault?: boolean;
 }
 export interface SubscriptionAggregation extends Aggregation {
     interval?: Interval;
@@ -159,8 +160,8 @@ export declare const IntervalTypeValuesMap: Map<IntervalType, number>;
 export declare const forAllTimeInterval: () => Timewindow;
 export declare const historyInterval: (timewindowMs: number) => Timewindow;
 export declare const historyQuickInterval: (interval: QuickTimeInterval) => Timewindow;
-export declare const defaultTimewindow: (timeService: TimeService) => Timewindow;
-export declare const initModelFromDefaultTimewindow: (value: Timewindow, quickIntervalOnly: boolean, historyOnly: boolean, timeService: TimeService) => Timewindow;
+export declare const defaultTimewindow: (timeService: TimeService, isDashboard?: boolean) => Timewindow;
+export declare const initModelFromDefaultTimewindow: (value: Timewindow, quickIntervalOnly: boolean, historyOnly: boolean, timeService: TimeService, hasAggregation: boolean, isDashboard?: boolean) => Timewindow;
 export declare const toHistoryTimewindow: (timewindow: Timewindow, startTimeMs: number, endTimeMs: number, interval: Interval, timeService: TimeService) => Timewindow;
 export declare const timewindowTypeChanged: (newTimewindow: Timewindow, oldTimewindow: Timewindow) => boolean;
 export declare const updateFormValuesOnTimewindowTypeChange: (selectedTab: TimewindowType, timewindowForm: FormGroup, realtimeDisableCustomInterval: boolean, historyDisableCustomInterval: boolean, realtimeAdvancedParams: TimewindowAdvancedParams, historyAdvancedParams: TimewindowAdvancedParams, realtimeTimewindowOptions: ToggleHeaderOption[], historyTimewindowOptions: ToggleHeaderOption[]) => void;
@@ -172,6 +173,7 @@ export declare const realtimeDefaultAggInterval: (timewindow: Timewindow, advanc
 export declare const historyDefaultAggInterval: (timewindow: Timewindow, advancedParams: TimewindowAdvancedParams) => Interval;
 export declare const getTimezone: (tz: string) => moment_.Moment;
 export declare const calculateTsOffset: (timezone?: string) => number;
+export declare const toUtcDate: (ts: number | string) => Date;
 export declare const isHistoryTypeTimewindow: (timewindow: Timewindow) => boolean;
 export declare const getCurrentTime: (tz?: string) => moment_.Moment;
 export declare const calculateIntervalStartTime: (interval: QuickTimeInterval, currentDate: moment_.Moment) => moment_.Moment;
@@ -183,6 +185,7 @@ export declare const calculateIntervalComparisonStartTime: (interval: QuickTimeI
 export declare const calculateIntervalComparisonEndTime: (interval: QuickTimeInterval, comparisonStartDate: moment_.Moment, endDate: moment_.Moment) => number;
 export declare const createTimewindowForComparison: (subscriptionTimewindow: SubscriptionTimewindow, timeUnit: ComparisonDuration, customIntervalValue: number) => SubscriptionTimewindow;
 export declare const cloneSelectedTimewindow: (timewindow: Timewindow) => Timewindow;
+export declare const clearTimewindowConfig: (timewindow: Timewindow, quickIntervalOnly: boolean, historyOnly: boolean, hasAggregation: boolean, hasTimezone?: boolean) => Timewindow;
 export interface TimeInterval {
     name: string;
     translateParams: {

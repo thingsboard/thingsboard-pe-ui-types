@@ -12,6 +12,8 @@ import { EntityDebugSettingsService } from '@home/components/entity/debug/entity
 import { DatePipe } from '@angular/common';
 import { TbPopoverService } from '@shared/components/popover.service';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
+import { UtilsService } from "@core/services/utils.service";
+import { ActivatedRoute, Router } from '@angular/router';
 import * as i0 from "@angular/core";
 export declare class CalculatedFieldsTableComponent {
     private calculatedFieldsService;
@@ -23,7 +25,10 @@ export declare class CalculatedFieldsTableComponent {
     private renderer;
     private importExportService;
     private entityDebugSettingsService;
+    private utilsService;
     private destroyRef;
+    private route;
+    private router;
     private popoverService;
     private userPermissionsService;
     entitiesTable: EntitiesTableComponent;
@@ -34,7 +39,8 @@ export declare class CalculatedFieldsTableComponent {
     readonly: import("@angular/core").InputSignal<boolean>;
     hideClearEventAction: import("@angular/core").InputSignal<boolean>;
     calculatedFieldsTableConfig: CalculatedFieldsTableConfig;
-    constructor(calculatedFieldsService: CalculatedFieldsService, translate: TranslateService, dialog: MatDialog, store: Store<AppState>, datePipe: DatePipe, cd: ChangeDetectorRef, renderer: Renderer2, importExportService: ImportExportService, entityDebugSettingsService: EntityDebugSettingsService, destroyRef: DestroyRef, popoverService: TbPopoverService, userPermissionsService: UserPermissionsService);
+    pageMode: boolean;
+    constructor(calculatedFieldsService: CalculatedFieldsService, translate: TranslateService, dialog: MatDialog, store: Store<AppState>, datePipe: DatePipe, cd: ChangeDetectorRef, renderer: Renderer2, importExportService: ImportExportService, entityDebugSettingsService: EntityDebugSettingsService, utilsService: UtilsService, destroyRef: DestroyRef, route: ActivatedRoute, router: Router, popoverService: TbPopoverService, userPermissionsService: UserPermissionsService);
     static ɵfac: i0.ɵɵFactoryDeclaration<CalculatedFieldsTableComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<CalculatedFieldsTableComponent, "tb-calculated-fields-table", never, { "active": { "alias": "active"; "required": false; "isSignal": true; }; "entityId": { "alias": "entityId"; "required": false; "isSignal": true; }; "entityName": { "alias": "entityName"; "required": false; "isSignal": true; }; "ownerId": { "alias": "ownerId"; "required": false; "isSignal": true; }; "readonly": { "alias": "readonly"; "required": false; "isSignal": true; }; "hideClearEventAction": { "alias": "hideClearEventAction"; "required": false; "isSignal": true; }; }, {}, never, never, false, never>;
 }

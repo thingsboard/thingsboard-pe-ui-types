@@ -1,0 +1,34 @@
+import { ChangeDetectorRef, DestroyRef, EventEmitter, OnInit } from '@angular/core';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { DatasourceType, widgetType } from '@shared/models/widget.models';
+import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
+import { ApiUsageDataKeysSettings, ApiUsageSettingsContext } from "@home/components/widget/lib/settings/cards/api-usage-settings.component.models";
+import { Observable } from "rxjs";
+import * as i0 from "@angular/core";
+export declare class ApiUsageDataKeyRowComponent implements ControlValueAccessor, OnInit {
+    private fb;
+    private cd;
+    private destroyRef;
+    DatasourceType: typeof DatasourceType;
+    DataKeyType: typeof DataKeyType;
+    widgetType: typeof widgetType;
+    disabled: boolean;
+    dsEntityAliasId: string;
+    context: ApiUsageSettingsContext;
+    dataKeyRemoved: EventEmitter<any>;
+    dataKeyFormGroup: UntypedFormGroup;
+    modelValue: ApiUsageDataKeysSettings;
+    private propagateChange;
+    constructor(fb: UntypedFormBuilder, cd: ChangeDetectorRef, destroyRef: DestroyRef);
+    ngOnInit(): void;
+    registerOnChange(fn: any): void;
+    registerOnTouched(_fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    writeValue(value: ApiUsageDataKeysSettings): void;
+    editKey(keyType: 'status' | 'maxLimit' | 'current'): void;
+    private updateValidators;
+    private updateModel;
+    fetchDashboardStates(searchText?: string): Observable<Array<string>>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<ApiUsageDataKeyRowComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ApiUsageDataKeyRowComponent, "tb-api-usage-data-key-row", never, { "disabled": { "alias": "disabled"; "required": false; }; "dsEntityAliasId": { "alias": "dsEntityAliasId"; "required": false; }; "context": { "alias": "context"; "required": false; }; }, { "dataKeyRemoved": "dataKeyRemoved"; }, never, never, false, never>;
+}

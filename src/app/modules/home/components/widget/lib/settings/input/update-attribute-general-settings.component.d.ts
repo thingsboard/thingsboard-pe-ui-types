@@ -21,6 +21,7 @@ export declare class UpdateAttributeGeneralSettingsComponent extends PageCompone
     private destroyRef;
     disabled: boolean;
     hasLabelValue: boolean;
+    predefinedValues: string[];
     private modelValue;
     private propagateChange;
     updateAttributeGeneralSettingsFormGroup: UntypedFormGroup;

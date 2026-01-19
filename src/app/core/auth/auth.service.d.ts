@@ -37,6 +37,7 @@ export declare class AuthService {
     redirectUrl: string;
     oauth2Clients: Array<OAuth2ClientLoginInfo>;
     twoFactorAuthProviders: Array<TwoFaProviderInfo>;
+    forceTwoFactorAuthProviders: Array<TwoFactorAuthProviderType>;
     private refreshTokenSubject;
     private jwtHelper;
     private static _storeGet;
@@ -52,7 +53,7 @@ export declare class AuthService {
     activate(activateToken: string, password: string, sendActivationMail: boolean): Observable<LoginResponse>;
     resetPassword(resetToken: string, password: string): Observable<void>;
     changePassword(currentPassword: string, newPassword: string, config?: RequestConfig): Observable<LoginResponse>;
-    getUserPasswordPolicy(): Observable<UserPasswordPolicy>;
+    getUserPasswordPolicy(config?: RequestConfig): Observable<UserPasswordPolicy>;
     activateByEmailCode(emailCode: string): Observable<LoginResponse>;
     resendEmailActivation(email: string): Observable<Object>;
     loginAsUser(userId: string): Observable<LoginResponse>;
@@ -61,6 +62,7 @@ export declare class AuthService {
     gotoDefaultPlace(isAuthenticated: boolean): void;
     loadOAuth2Clients(): Observable<Array<OAuth2ClientLoginInfo>>;
     getAvailableTwoFaLoginProviders(): Observable<Array<TwoFaProviderInfo>>;
+    getAvailableTwoFaProviders(): Observable<Array<TwoFaProviderInfo>>;
     forceDefaultPlace(authState?: AuthState, path?: string, params?: any): boolean;
     defaultUrl(isAuthenticated: boolean, authState?: AuthState, path?: string, params?: any, data?: any): UrlTree;
     loadUserFromPublicId(publicId: string): Observable<AuthPayload>;

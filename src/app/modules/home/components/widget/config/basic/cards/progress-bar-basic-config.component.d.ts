@@ -19,6 +19,7 @@ export declare class ProgressBarBasicConfigComponent extends BasicWidgetConfigCo
     progressBarLayoutImageMap: Map<ProgressBarLayout, string>;
     progressBarWidgetConfigForm: UntypedFormGroup;
     valuePreviewFn: any;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, widgetConfigComponent: WidgetConfigComponent, fb: UntypedFormBuilder);
     protected configForm(): UntypedFormGroup;
     protected defaultDataKeys(configData: WidgetConfigComponentData): DataKey[];

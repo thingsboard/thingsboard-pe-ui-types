@@ -1,3 +1,4 @@
+export * from './button/public-api';
 export * from './dialog/color-picker-dialog.component';
 export * from './dialog/material-icons-dialog.component';
 export * from './page.component';
@@ -16,3 +17,4 @@ export * from './hint-tooltip-icon.component';
 export * from './grid/scroll-grid-datasource';
 export * from './grid/scroll-grid.component';
 export * from './table/table-datasource.abstract';
+export * from './phone-input.component';

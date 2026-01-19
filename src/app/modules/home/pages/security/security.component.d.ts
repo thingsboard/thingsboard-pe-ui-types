@@ -3,7 +3,7 @@ import { User } from '@shared/models/user.model';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { UntypedFormBuilder, UntypedFormGroup, FormGroupDirective } from '@angular/forms';
+import { FormGroupDirective, UntypedFormBuilder, UntypedFormGroup, ValidatorFn } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogService } from '@core/services/dialog.service';
@@ -50,8 +50,7 @@ export declare class SecurityComponent extends PageComponent implements OnInit, 
     private processTwoFactorAuthConfig;
     private buildChangePasswordForm;
     private loadPasswordPolicy;
-    private passwordStrengthValidator;
-    private samePasswordValidation;
+    passwordNotSameAsOld(): ValidatorFn;
     trackByProvider(i: number, provider: TwoFactorAuthProviderType): TwoFactorAuthProviderType;
     copyToken(): void;
     confirm2FAChange(event: MouseEvent, provider: TwoFactorAuthProviderType): void;
@@ -63,6 +62,7 @@ export declare class SecurityComponent extends PageComponent implements OnInit, 
     };
     onChangePassword(form: FormGroupDirective): void;
     discardChanges(form: FormGroupDirective, event?: MouseEvent): void;
+    openApiKeysTable(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SecurityComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<SecurityComponent, "tb-security", never, {}, {}, never, never, false, never>;
 }

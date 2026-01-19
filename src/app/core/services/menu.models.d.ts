@@ -77,7 +77,9 @@ export declare enum MenuId {
     domains = "domains",
     clients = "clients",
     audit_log = "audit_log",
+    alarms_center = "alarms_center",
     alarms = "alarms",
+    alarm_rules = "alarm_rules",
     dashboards = "dashboards",
     entities = "entities",
     devices = "devices",
@@ -88,6 +90,7 @@ export declare enum MenuId {
     device_profiles = "device_profiles",
     asset_profiles = "asset_profiles",
     customers = "customers",
+    calculated_fields = "calculated_fields",
     rule_chains = "rule_chains",
     edge_management = "edge_management",
     edges = "edges",
@@ -141,7 +144,8 @@ export declare enum MenuId {
     reporting = "reporting",
     report_templates = "report_templates",
     report_scheduling = "report_scheduling",
-    reports = "reports"
+    reports = "reports",
+    trendz_analytics = "trendz_analytics"
 }
 export declare const menuSectionMap: Map<MenuId, MenuSection>;
 export declare const defaultUserMenuMap: Map<Authority, MenuReference[]>;

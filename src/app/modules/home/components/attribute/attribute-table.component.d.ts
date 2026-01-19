@@ -23,6 +23,7 @@ import { WidgetService } from '@core/http/widget.service';
 import { EntityService } from '@core/http/entity.service';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { FormBuilder } from '@angular/forms';
+import { TimeService } from '@core/services/time.service';
 import * as i0 from "@angular/core";
 export declare class AttributeTableComponent extends PageComponent implements AfterViewInit, OnInit, OnDestroy {
     protected store: Store<AppState>;
@@ -42,6 +43,7 @@ export declare class AttributeTableComponent extends PageComponent implements Af
     private cd;
     private elementRef;
     private fb;
+    private timeService;
     telemetryTypeTranslationsMap: Map<TelemetryType, string>;
     isClientSideTelemetryTypeMap: Map<TelemetryType, boolean>;
     latestTelemetryTypes: typeof LatestTelemetry;
@@ -84,7 +86,7 @@ export declare class AttributeTableComponent extends PageComponent implements Af
     sort: MatSort;
     textSearch: import("@angular/forms").FormControl<string>;
     private destroy$;
-    constructor(store: Store<AppState>, attributeService: AttributeService, telemetryWsService: TelemetryWebsocketService, translate: TranslateService, dialog: MatDialog, overlay: Overlay, viewContainerRef: ViewContainerRef, dialogService: DialogService, entityService: EntityService, utils: UtilsService, dashboardUtils: DashboardUtilsService, widgetService: WidgetService, userPermissionsService: UserPermissionsService, zone: NgZone, cd: ChangeDetectorRef, elementRef: ElementRef, fb: FormBuilder);
+    constructor(store: Store<AppState>, attributeService: AttributeService, telemetryWsService: TelemetryWebsocketService, translate: TranslateService, dialog: MatDialog, overlay: Overlay, viewContainerRef: ViewContainerRef, dialogService: DialogService, entityService: EntityService, utils: UtilsService, dashboardUtils: DashboardUtilsService, widgetService: WidgetService, userPermissionsService: UserPermissionsService, zone: NgZone, cd: ChangeDetectorRef, elementRef: ElementRef, fb: FormBuilder, timeService: TimeService);
     ngOnInit(): void;
     ngOnDestroy(): void;
     attributeScopeChanged(attributeScope: TelemetryType): void;

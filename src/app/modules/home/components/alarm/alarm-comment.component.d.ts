@@ -52,6 +52,7 @@ export declare class AlarmCommentComponent implements OnInit {
     constructor(store: Store<AppState>, translate: TranslateService, alarmCommentService: AlarmCommentService, fb: FormBuilder, dialogService: DialogService, dateAgoPipe: DateAgoPipe, utilsService: UtilsService, datePipe: DatePipe, importExportService: ImportExportService);
     ngOnInit(): void;
     loadAlarmComments(): void;
+    private parseSystemComment;
     changeSortDirection(): void;
     exportAlarmActivity(): void;
     saveComment(): void;

@@ -2,10 +2,16 @@ import { DestroyRef, EventEmitter, OnInit } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { TimeSeriesChartYAxes } from '@home/components/widget/lib/chart/time-series-chart.models';
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
+import { IAliasController } from '@app/core/public-api';
+import { DataKeysCallbacks } from '@home/components/widget/lib/settings/common/key/data-keys.component.models';
+import { Datasource } from '@app/shared/public-api';
 import * as i0 from "@angular/core";
 export declare class TimeSeriesChartYAxesPanelComponent implements ControlValueAccessor, OnInit, Validator {
     private fb;
     private destroyRef;
+    aliasController: IAliasController;
+    dataKeyCallbacks: DataKeysCallbacks;
+    datasource: Datasource;
     disabled: boolean;
     advanced: boolean;
     supportsUnitConversion: boolean;
@@ -32,6 +38,10 @@ export declare class TimeSeriesChartYAxesPanelComponent implements ControlValueA
     removeAxis(index: number): void;
     addAxis(): void;
     private prepareAxesFormArray;
+    private checkLatestDataKeys;
+    private updateLatestDataKeys;
+    private isYAxisKey;
+    private normalizeAxisLimit;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesChartYAxesPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartYAxesPanelComponent, "tb-time-series-chart-y-axes-panel", never, { "disabled": { "alias": "disabled"; "required": false; }; "advanced": { "alias": "advanced"; "required": false; }; "supportsUnitConversion": { "alias": "supportsUnitConversion"; "required": false; }; "stroked": { "alias": "stroked"; "required": false; }; "reportMode": { "alias": "reportMode"; "required": false; }; }, { "axisRemoved": "axisRemoved"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartYAxesPanelComponent, "tb-time-series-chart-y-axes-panel", never, { "aliasController": { "alias": "aliasController"; "required": false; }; "dataKeyCallbacks": { "alias": "dataKeyCallbacks"; "required": false; }; "datasource": { "alias": "datasource"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "advanced": { "alias": "advanced"; "required": false; }; "supportsUnitConversion": { "alias": "supportsUnitConversion"; "required": false; }; "stroked": { "alias": "stroked"; "required": false; }; "reportMode": { "alias": "reportMode"; "required": false; }; }, { "axisRemoved": "axisRemoved"; }, never, never, false, never>;
 }

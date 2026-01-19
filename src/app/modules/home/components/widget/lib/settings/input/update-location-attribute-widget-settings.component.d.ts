@@ -7,6 +7,7 @@ export declare class UpdateLocationAttributeWidgetSettingsComponent extends Widg
     protected store: Store<AppState>;
     private fb;
     updateLocationAttributeWidgetSettingsForm: UntypedFormGroup;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, fb: UntypedFormBuilder);
     protected settingsForm(): UntypedFormGroup;
     protected defaultSettings(): WidgetSettings;

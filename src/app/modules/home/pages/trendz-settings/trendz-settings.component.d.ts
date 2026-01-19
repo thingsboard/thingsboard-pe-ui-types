@@ -1,0 +1,30 @@
+import { OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { PageComponent } from '@shared/components/page.component';
+import { TrendzService } from '@core/http/trendz.service';
+import { TrendzStatus, TrendzSynchronizationResultType, TrendzSynchronizationStatus } from '@shared/models/trendz-analytics.models';
+import { ActivatedRoute } from '@angular/router';
+import { DialogService } from '@core/services/dialog.service';
+import { TranslateService } from '@ngx-translate/core';
+import * as i0 from "@angular/core";
+export declare class TrendzSettingsComponent extends PageComponent implements OnInit {
+    private fb;
+    private trendzService;
+    private route;
+    private dialogService;
+    private translate;
+    trendzSettingsForm: FormGroup;
+    trendzSyncInfo: TrendzStatus;
+    TrendzSynchronizationStatus: typeof TrendzSynchronizationStatus;
+    TrendzSynchronizationResultType: typeof TrendzSynchronizationResultType;
+    TrendzSynchronizationResultTypeTranslationMap: Map<TrendzSynchronizationResultType, string>;
+    constructor(fb: FormBuilder, trendzService: TrendzService, route: ActivatedRoute, dialogService: DialogService, translate: TranslateService);
+    ngOnInit(): void;
+    save(): void;
+    retryDiscovery(): void;
+    private saveAndSync;
+    private updateTrendzStatus;
+    retryHealthcheck(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<TrendzSettingsComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TrendzSettingsComponent, "tb-trendz-settings", never, {}, {}, never, never, false, never>;
+}

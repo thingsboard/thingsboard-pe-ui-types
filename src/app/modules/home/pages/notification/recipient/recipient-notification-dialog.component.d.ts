@@ -13,6 +13,7 @@ export interface RecipientNotificationDialogData {
     target?: NotificationTarget;
     isAdd?: boolean;
     readonly?: boolean;
+    name?: string;
 }
 export declare class RecipientNotificationDialogComponent extends DialogComponent<RecipientNotificationDialogComponent, NotificationTarget> implements OnDestroy {
     protected store: Store<AppState>;

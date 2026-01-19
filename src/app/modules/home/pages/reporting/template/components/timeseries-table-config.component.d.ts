@@ -6,6 +6,7 @@ import { DataKeySettingsFormFunction } from '@home/components/widget/lib/setting
 import * as i0 from "@angular/core";
 export declare class TimeseriesTableConfigComponent extends AbstractReportComponentConfig<TimeseriesTableReportComponentConfig> {
     get columnLabels(): string[];
+    columnNameChanged: [string, string];
     settingsTab: 'data' | 'layout';
     basicMode: WidgetConfigMode;
     dataKeySettingsFormFunction: DataKeySettingsFormFunction;

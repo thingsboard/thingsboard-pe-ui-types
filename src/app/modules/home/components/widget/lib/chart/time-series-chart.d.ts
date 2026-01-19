@@ -56,16 +56,20 @@ export declare class TbTimeSeriesChart {
     private setupThresholds;
     private setupXAxes;
     private setupYAxes;
+    private processYAxisLimit;
     private setupVisualMap;
     private nextComponentId;
     private getYAxisIndex;
     private subscribeForEntityThresholds;
+    private subscribeForAxisLimits;
     private drawChart;
     private updateSeriesData;
+    private parseAxisLimitData;
     private updateSeries;
     private updateAxes;
     private updateAxisOffset;
     private updateYAxisScale;
+    private updateAxisLimits;
     private scaleYAxis;
     private minTopOffset;
     private minBottomOffset;
@@ -73,4 +77,5 @@ export declare class TbTimeSeriesChart {
     private onResize;
     private animationEnabled;
     private updateBarsAnimation;
+    private normalizeAxisLimit;
 }

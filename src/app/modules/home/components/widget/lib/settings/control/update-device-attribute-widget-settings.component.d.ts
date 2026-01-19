@@ -9,6 +9,7 @@ export declare class UpdateDeviceAttributeWidgetSettingsComponent extends Widget
     private fb;
     updateDeviceAttributeWidgetSettingsForm: UntypedFormGroup;
     contentTypes: typeof ContentType;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, fb: UntypedFormBuilder);
     protected settingsForm(): UntypedFormGroup;
     protected defaultSettings(): WidgetSettings;

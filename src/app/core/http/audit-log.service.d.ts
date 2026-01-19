@@ -3,16 +3,20 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { TimePageLink } from '@shared/models/page/page-link';
 import { PageData } from '@shared/models/page/page-data';
-import { AuditLog } from '@shared/models/audit-log.models';
+import { AuditLog, AuditLogFilter } from '@shared/models/audit-log.models';
 import { EntityId } from '@shared/models/id/entity-id';
 import * as i0 from "@angular/core";
 export declare class AuditLogService {
     private http;
     constructor(http: HttpClient);
     getAuditLogs(pageLink: TimePageLink, config?: RequestConfig): Observable<PageData<AuditLog>>;
+    getAuditLogs(pageLink: TimePageLink, filters: AuditLogFilter, config?: RequestConfig): Observable<PageData<AuditLog>>;
     getAuditLogsByCustomerId(customerId: string, pageLink: TimePageLink, config?: RequestConfig): Observable<PageData<AuditLog>>;
+    getAuditLogsByCustomerId(customerId: string, pageLink: TimePageLink, filters: AuditLogFilter, config?: RequestConfig): Observable<PageData<AuditLog>>;
     getAuditLogsByUserId(userId: string, pageLink: TimePageLink, config?: RequestConfig): Observable<PageData<AuditLog>>;
+    getAuditLogsByUserId(userId: string, pageLink: TimePageLink, filters: AuditLogFilter, config?: RequestConfig): Observable<PageData<AuditLog>>;
     getAuditLogsByEntityId(entityId: EntityId, pageLink: TimePageLink, config?: RequestConfig): Observable<PageData<AuditLog>>;
+    getAuditLogsByEntityId(entityId: EntityId, pageLink: TimePageLink, filters: AuditLogFilter, config?: RequestConfig): Observable<PageData<AuditLog>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<AuditLogService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<AuditLogService>;
 }

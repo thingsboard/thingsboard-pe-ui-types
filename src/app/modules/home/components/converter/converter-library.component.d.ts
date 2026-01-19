@@ -1,9 +1,9 @@
-import { ElementRef, EventEmitter, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { EventEmitter, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { ControlValueAccessor, FormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
-import { Observable, Subject, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { ConverterLibraryService } from '@core/http/converter-library.service';
 import { IntegrationType } from '@shared/models/integration.models';
-import { Converter, ConverterLibraryInfo, ConverterType, Model, Vendor } from '@shared/models/converter.models';
+import { Converter, ConverterLibraryInfo, ConverterType } from '@shared/models/converter.models';
 import * as i0 from "@angular/core";
 export declare class ConverterLibraryComponent implements ControlValueAccessor, Validator, OnChanges, OnDestroy, OnInit {
     private fb;
@@ -12,23 +12,13 @@ export declare class ConverterLibraryComponent implements ControlValueAccessor, 
     integrationType: IntegrationType;
     set interacted(interacted: boolean);
     converter: EventEmitter<Converter>;
-    modelInput: ElementRef;
-    vendorInput: ElementRef;
     libraryFormGroup: UntypedFormGroup;
-    vendors$: Observable<Array<Vendor>>;
-    models$: Observable<Model[]>;
     converter$: Subscription;
-    filteredModels$: Observable<Array<Model>>;
-    filteredVendors$: Observable<Array<Vendor>>;
-    vendorInputSubject: Subject<void>;
-    modelInputSubject: Subject<void>;
     private destroy$;
     private modelValue;
     private propagateChange;
     constructor(fb: FormBuilder, converterLibraryService: ConverterLibraryService);
     ngOnInit(): void;
-    get vendorValueChanges(): Observable<Vendor | string>;
-    get modelValueChanges(): Observable<Model | string>;
     ngOnChanges(changes: SimpleChanges): void;
     ngOnDestroy(): void;
     setDisabledState(isDisabled: boolean): void;
@@ -37,11 +27,6 @@ export declare class ConverterLibraryComponent implements ControlValueAccessor, 
     private updateView;
     writeValue(converterLibraryValue: ConverterLibraryInfo): void;
     validate(): ValidationErrors | null;
-    displayModelFn(model?: Model): string;
-    displayVendorFn(vendor?: Vendor): string;
-    onLinkClick(event: MouseEvent, url: string): void;
-    clearModel(): void;
-    clearVendor(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ConverterLibraryComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<ConverterLibraryComponent, "tb-converter-library", never, { "converterType": { "alias": "converterType"; "required": false; }; "integrationType": { "alias": "integrationType"; "required": false; }; "interacted": { "alias": "interacted"; "required": false; }; }, { "converter": "converter"; }, never, never, false, never>;
 }

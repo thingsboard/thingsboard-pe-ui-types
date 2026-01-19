@@ -9,6 +9,7 @@ export declare class GatewayEventsWidgetSettingsComponent extends WidgetSettings
     private fb;
     separatorKeysCodes: number[];
     gatewayEventsWidgetSettingsForm: UntypedFormGroup;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, fb: UntypedFormBuilder);
     protected settingsForm(): UntypedFormGroup;
     protected defaultSettings(): WidgetSettings;

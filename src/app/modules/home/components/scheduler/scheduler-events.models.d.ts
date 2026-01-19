@@ -28,6 +28,7 @@ export interface SchedulerEventsWidgetSettings {
     displayCreatedTime: boolean;
     displayType: boolean;
     displayCustomer: boolean;
+    displaySchedule?: boolean;
     displayPagination: boolean;
     defaultPageSize: number;
     pageStepIncrement: number;

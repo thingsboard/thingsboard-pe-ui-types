@@ -1,4 +1,4 @@
-import { OnDestroy, OnInit, QueryList } from '@angular/core';
+import { DestroyRef, OnInit, QueryList } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { HasConfirmForm } from '@core/guards/confirm-on-exit.guard';
 import { Store } from '@ngrx/store';
@@ -8,13 +8,15 @@ import { TwoFactorAuthenticationService } from '@core/http/two-factor-authentica
 import { TwoFactorAuthProviderType } from '@shared/models/two-factor-auth.models';
 import { MatExpansionPanel } from '@angular/material/expansion';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
+import { NotificationTargetConfigType } from '@shared/models/notification.models';
+import { EntityType } from '@shared/models/entity-type.models';
 import * as i0 from "@angular/core";
-export declare class TwoFactorAuthSettingsComponent extends PageComponent implements OnInit, HasConfirmForm, OnDestroy {
+export declare class TwoFactorAuthSettingsComponent extends PageComponent implements OnInit, HasConfirmForm {
     protected store: Store<AppState>;
     private twoFaService;
     private userPermissionsService;
     private fb;
-    private readonly destroy$;
+    private destroyRef;
     private readonly posIntValidation;
     authState: import("../../../../core/public-api").AuthState;
     authUser: import("../../../../shared/public-api").AuthUser;
@@ -22,11 +24,15 @@ export declare class TwoFactorAuthSettingsComponent extends PageComponent implem
     twoFaFormGroup: UntypedFormGroup;
     twoFactorAuthProviderType: typeof TwoFactorAuthProviderType;
     twoFactorAuthProvidersData: Map<TwoFactorAuthProviderType, import("@shared/models/two-factor-auth.models").TwoFactorAuthProviderData>;
+    notificationTargetConfigType: typeof NotificationTargetConfigType;
+    notificationTargetConfigTypes: NotificationTargetConfigType[];
+    notificationTargetConfigTypeInfoMap: Map<NotificationTargetConfigType, import("@shared/models/notification.models").NotificationTargetConfigTypeInfo>;
+    filterByTenants: boolean;
+    entityType: typeof EntityType;
     showMainLoadingBar: boolean;
     expansionPanel: QueryList<MatExpansionPanel>;
-    constructor(store: Store<AppState>, twoFaService: TwoFactorAuthenticationService, userPermissionsService: UserPermissionsService, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, twoFaService: TwoFactorAuthenticationService, userPermissionsService: UserPermissionsService, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
-    ngOnDestroy(): void;
     confirmForm(): UntypedFormGroup;
     isTenantAdmin(): boolean;
     save(): void;
@@ -34,11 +40,13 @@ export declare class TwoFactorAuthSettingsComponent extends PageComponent implem
     trackByElement(i: number, item: any): any;
     get providersForm(): UntypedFormArray;
     private build2faSettingsForm;
+    get atListOneProvider(): boolean;
     private setAuthConfigFormValue;
     private buildProvidersSettingsForm;
     private getByIndexPanel;
     private splitRateLimit;
     private joinRateLimit;
+    private allowNotificationTargetConfigTypes;
     static ɵfac: i0.ɵɵFactoryDeclaration<TwoFactorAuthSettingsComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<TwoFactorAuthSettingsComponent, "tb-2fa-settings", never, {}, {}, never, never, false, never>;
 }

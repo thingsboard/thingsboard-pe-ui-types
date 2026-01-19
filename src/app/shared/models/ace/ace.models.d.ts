@@ -1,7 +1,14 @@
 import { Ace } from 'ace-builds';
 import { Observable } from 'rxjs/internal/Observable';
+import { Renderer2 } from '@angular/core';
 export declare function getAce(): Observable<any>;
 export declare function getAceDiff(): Observable<any>;
+export declare function updateEditorSize(editorElement: any, content: string, editor: Ace.Editor, renderer: Renderer2, options?: {
+    showGutter?: boolean;
+    ignoreHeight?: boolean;
+    ignoreWidth?: boolean;
+    setMinHeight?: boolean;
+}): void;
 export declare class Range implements Ace.Range {
     start: Ace.Point;
     end: Ace.Point;

@@ -33,3 +33,4 @@ export * from './secret-storage-id';
 export * from './ai-model-id';
 export * from './report-template-id';
 export * from './report-id';
+export * from './api-key-id';

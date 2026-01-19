@@ -1,0 +1,31 @@
+import { DestroyRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ControlValueAccessor, FormBuilder, FormGroup, ValidationErrors, Validator } from '@angular/forms';
+import { EntityKeyValueType } from '@shared/models/query/query.models';
+import { CalculatedFieldArgument } from "@shared/models/calculated-field.models";
+import { AlarmRuleValue } from "@shared/models/alarm-rule.models";
+import { FormControlsFrom } from "@shared/models/tenant.model";
+import * as i0 from "@angular/core";
+export declare class AlarmRuleFilterPredicateValueComponent implements ControlValueAccessor, Validator, OnInit, OnChanges {
+    private fb;
+    private destroyRef;
+    arguments: Record<string, CalculatedFieldArgument>;
+    valueType: EntityKeyValueType;
+    argumentInUse: string;
+    valueTypeEnum: typeof EntityKeyValueType;
+    filterPredicateValueFormGroup: FormGroup<FormControlsFrom<AlarmRuleValue<string | number | boolean>>>;
+    dynamicModeControl: import("@angular/forms").FormControl<boolean>;
+    argumentsList: Array<string>;
+    private propagateChange;
+    constructor(fb: FormBuilder, destroyRef: DestroyRef);
+    ngOnInit(): void;
+    ngOnChanges(changes: SimpleChanges): void;
+    setDisabledState(isDisabled: boolean): void;
+    private updateValueModeValidators;
+    registerOnChange(fn: any): void;
+    registerOnTouched(fn: any): void;
+    validate(): ValidationErrors | null;
+    writeValue(predicateValue: AlarmRuleValue<string | number | boolean>): void;
+    private updateModel;
+    static ɵfac: i0.ɵɵFactoryDeclaration<AlarmRuleFilterPredicateValueComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmRuleFilterPredicateValueComponent, "tb-alarm-rule-filter-predicate-value", never, { "arguments": { "alias": "arguments"; "required": false; }; "valueType": { "alias": "valueType"; "required": false; }; "argumentInUse": { "alias": "argumentInUse"; "required": false; }; }, {}, never, never, false, never>;
+}

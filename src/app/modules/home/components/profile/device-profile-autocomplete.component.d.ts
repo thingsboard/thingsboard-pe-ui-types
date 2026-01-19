@@ -11,7 +11,7 @@ import { DeviceProfile, DeviceProfileInfo, DeviceTransportType } from '@shared/m
 import { DeviceProfileService } from '@core/http/device-profile.service';
 import { MatAutocomplete } from '@angular/material/autocomplete';
 import { Operation, Resource } from '@shared/models/security.models';
-import { SubscriptSizing } from '@angular/material/form-field';
+import { MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class DeviceProfileAutocompleteComponent implements ControlValueAccessor, OnInit, OnChanges {
     private store;
@@ -25,6 +25,7 @@ export declare class DeviceProfileAutocompleteComponent implements ControlValueA
     operation: typeof Operation;
     selectDeviceProfileFormGroup: UntypedFormGroup;
     modelValue: DeviceProfileId | null;
+    appearance: MatFormFieldAppearance;
     subscriptSizing: SubscriptSizing;
     selectDefaultProfile: boolean;
     selectFirstProfile: boolean;
@@ -36,6 +37,7 @@ export declare class DeviceProfileAutocompleteComponent implements ControlValueA
     required: boolean;
     disabled: boolean;
     hint: string;
+    inlineField: boolean;
     deviceProfileUpdated: EventEmitter<DeviceProfileId>;
     deviceProfileChanged: EventEmitter<DeviceProfileInfo>;
     deviceProfileInput: ElementRef;
@@ -70,5 +72,5 @@ export declare class DeviceProfileAutocompleteComponent implements ControlValueA
     editDeviceProfile($event: Event): void;
     openDeviceProfileDialog(deviceProfile: DeviceProfile, isAdd: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceProfileAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceProfileAutocompleteComponent, "tb-device-profile-autocomplete", never, { "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "selectDefaultProfile": { "alias": "selectDefaultProfile"; "required": false; }; "selectFirstProfile": { "alias": "selectFirstProfile"; "required": false; }; "displayAllOnEmpty": { "alias": "displayAllOnEmpty"; "required": false; }; "editProfileEnabled": { "alias": "editProfileEnabled"; "required": false; }; "addNewProfile": { "alias": "addNewProfile"; "required": false; }; "showDetailsPageLink": { "alias": "showDetailsPageLink"; "required": false; }; "transportType": { "alias": "transportType"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "hint": { "alias": "hint"; "required": false; }; }, { "deviceProfileUpdated": "deviceProfileUpdated"; "deviceProfileChanged": "deviceProfileChanged"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceProfileAutocompleteComponent, "tb-device-profile-autocomplete", never, { "appearance": { "alias": "appearance"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "selectDefaultProfile": { "alias": "selectDefaultProfile"; "required": false; }; "selectFirstProfile": { "alias": "selectFirstProfile"; "required": false; }; "displayAllOnEmpty": { "alias": "displayAllOnEmpty"; "required": false; }; "editProfileEnabled": { "alias": "editProfileEnabled"; "required": false; }; "addNewProfile": { "alias": "addNewProfile"; "required": false; }; "showDetailsPageLink": { "alias": "showDetailsPageLink"; "required": false; }; "transportType": { "alias": "transportType"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "hint": { "alias": "hint"; "required": false; }; "inlineField": { "alias": "inlineField"; "required": false; }; }, { "deviceProfileUpdated": "deviceProfileUpdated"; "deviceProfileChanged": "deviceProfileChanged"; }, never, never, false, never>;
 }

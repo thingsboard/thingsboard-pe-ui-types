@@ -13,6 +13,7 @@ export declare class SegmentedButtonBasicConfigComponent extends BasicWidgetConf
     protected widgetConfigComponent: WidgetConfigComponent;
     private fb;
     get targetDevice(): TargetDevice;
+    predefinedValues: string[];
     segmentedButtonAppearanceType: SegmentedButtonAppearanceType;
     segmentedButtonColorStylesType: SegmentedButtonColorStylesType;
     widgetButtonToggleStates: WidgetButtonToggleState[];

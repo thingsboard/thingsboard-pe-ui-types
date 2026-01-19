@@ -22,6 +22,8 @@ export declare class UserComponent extends GroupEntityComponent<UserInfo> {
     CMScope: typeof CMScope;
     CMAssigneeType: typeof CMAssigneeType;
     authority: typeof Authority;
+    languageList: any;
+    UnitSystems: import("@shared/models/unit.models").UnitSystem[];
     loginAsUserEnabled$: import("rxjs").Observable<boolean>;
     whiteLabelingAllowed$: import("rxjs").Observable<boolean>;
     isSysAdmin$: import("rxjs").Observable<boolean>;

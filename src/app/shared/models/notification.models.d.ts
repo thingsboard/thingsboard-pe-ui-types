@@ -290,6 +290,7 @@ interface NotificationButtonConfig {
     dashboardId?: string;
     dashboardState?: string;
     setEntityIdInState?: boolean;
+    entityType?: EntityType;
 }
 interface EmailDeliveryMethodNotificationTemplate {
     subject: string;
@@ -361,6 +362,8 @@ export declare enum NotificationType {
     ALARM_ASSIGNMENT = "ALARM_ASSIGNMENT",
     RULE_ENGINE_COMPONENT_LIFECYCLE_EVENT = "RULE_ENGINE_COMPONENT_LIFECYCLE_EVENT",
     ENTITIES_LIMIT = "ENTITIES_LIMIT",
+    ENTITIES_LIMIT_INCREASE_REQUEST = "ENTITIES_LIMIT_INCREASE_REQUEST",
+    ADDON_ACCESS_ERROR = "ADDON_ACCESS_ERROR",
     API_USAGE_LIMIT = "API_USAGE_LIMIT",
     NEW_PLATFORM_VERSION = "NEW_PLATFORM_VERSION",
     RULE_NODE = "RULE_NODE",
@@ -375,7 +378,6 @@ export declare enum NotificationType {
     REPORT_GENERATED = "REPORT_GENERATED"
 }
 export declare const NotificationTypeIcons: Map<NotificationType, string>;
-export declare const AlarmSeverityNotificationColors: Map<AlarmSeverity, string>;
 export declare enum ActionButtonLinkType {
     LINK = "LINK",
     DASHBOARD = "DASHBOARD"
@@ -415,5 +417,5 @@ export interface NotificationUserSetting {
         [key: string]: boolean;
     };
 }
-export declare const singleNotificationTypeTemplate: (type: NotificationType) => type is NotificationType.USER_ACTIVATED | NotificationType.USER_REGISTERED;
+export declare const singleNotificationTypeTemplate: (type: NotificationType) => type is NotificationType.ENTITIES_LIMIT_INCREASE_REQUEST | NotificationType.USER_ACTIVATED | NotificationType.USER_REGISTERED;
 export {};

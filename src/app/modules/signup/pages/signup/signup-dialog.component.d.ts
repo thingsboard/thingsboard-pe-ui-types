@@ -5,7 +5,6 @@ import { AppState } from '@core/core.state';
 import { DialogComponent } from '@shared/components/dialog.component';
 import { Router } from '@angular/router';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { SelfRegistrationService } from '@core/http/self-register.service';
 import { Observable } from 'rxjs/internal/Observable';
 import * as i0 from "@angular/core";
 export interface SignupDialogData {
@@ -16,13 +15,12 @@ export declare class SignupDialogComponent extends DialogComponent<SignupDialogC
     protected store: Store<AppState>;
     protected router: Router;
     data: SignupDialogData;
-    private selfRegistrationService;
     private domSanitizer;
     dialogRef: MatDialogRef<SignupDialogComponent, boolean>;
     class: string;
     title: string;
     dialogText: SafeHtml;
-    constructor(store: Store<AppState>, router: Router, data: SignupDialogData, selfRegistrationService: SelfRegistrationService, domSanitizer: DomSanitizer, dialogRef: MatDialogRef<SignupDialogComponent, boolean>);
+    constructor(store: Store<AppState>, router: Router, data: SignupDialogData, domSanitizer: DomSanitizer, dialogRef: MatDialogRef<SignupDialogComponent, boolean>);
     ngOnInit(): void;
     cancel(): void;
     accept(): void;

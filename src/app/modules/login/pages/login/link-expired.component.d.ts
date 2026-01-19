@@ -1,17 +1,13 @@
-import { Store } from '@ngrx/store';
-import { AppState } from '@core/core.state';
-import { PageComponent } from '@shared/components/page.component';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { WhiteLabelingService } from '@core/http/white-labeling.service';
 import * as i0 from "@angular/core";
-export declare class LinkExpiredComponent extends PageComponent {
-    protected store: Store<AppState>;
+export declare class LinkExpiredComponent {
     private route;
-    private router;
+    wl: WhiteLabelingService;
     isPasswordLinkExpired: boolean;
     title: string;
     message: string;
-    constructor(store: Store<AppState>, route: ActivatedRoute, router: Router);
-    navigateToLoginPage(): void;
+    constructor(route: ActivatedRoute, wl: WhiteLabelingService);
     static ɵfac: i0.ɵɵFactoryDeclaration<LinkExpiredComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<LinkExpiredComponent, "tb-link-expired", never, {}, {}, never, never, false, never>;
 }

@@ -19,7 +19,7 @@ export declare class MenuService {
     private currentCustomSection;
     private currentCustomChildSection;
     constructor(store: Store<AppState>, router: Router, customMenuService: CustomMenuService, userPermissionsService: UserPermissionsService);
-    private buildMenu;
+    buildMenu(): void;
     private updateOpenedMenuSections;
     private allMenuLinks;
     private allMenuSections;

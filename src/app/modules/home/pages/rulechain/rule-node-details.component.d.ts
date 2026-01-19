@@ -7,6 +7,7 @@ import { RuleNodeConfigComponent } from './rule-node-config.component';
 import { Router } from '@angular/router';
 import { RuleChainType } from '@app/shared/models/rule-chain.models';
 import { ServiceType } from '@shared/models/queue.models';
+import { AdditionalDebugActionConfig } from '@home/components/entity/debug/entity-debug-settings.model';
 import * as i0 from "@angular/core";
 export declare class RuleNodeDetailsComponent extends PageComponent implements OnInit, OnChanges, OnDestroy {
     private fb;
@@ -17,6 +18,7 @@ export declare class RuleNodeDetailsComponent extends PageComponent implements O
     ruleChainType: RuleChainType;
     disabled: boolean;
     isAdd: boolean;
+    additionalActionConfig: AdditionalDebugActionConfig;
     initRuleNode: EventEmitter<void>;
     changeScript: EventEmitter<void>;
     entityType: typeof EntityType;
@@ -36,5 +38,5 @@ export declare class RuleNodeDetailsComponent extends PageComponent implements O
     isSingleton(): boolean;
     isSingletonEditAllowed(): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<RuleNodeDetailsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RuleNodeDetailsComponent, "tb-rule-node", never, { "ruleNode": { "alias": "ruleNode"; "required": false; }; "ruleChainId": { "alias": "ruleChainId"; "required": false; }; "ruleChainType": { "alias": "ruleChainType"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "isAdd": { "alias": "isAdd"; "required": false; }; }, { "initRuleNode": "initRuleNode"; "changeScript": "changeScript"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RuleNodeDetailsComponent, "tb-rule-node", never, { "ruleNode": { "alias": "ruleNode"; "required": false; }; "ruleChainId": { "alias": "ruleChainId"; "required": false; }; "ruleChainType": { "alias": "ruleChainType"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "isAdd": { "alias": "isAdd"; "required": false; }; "additionalActionConfig": { "alias": "additionalActionConfig"; "required": false; }; }, { "initRuleNode": "initRuleNode"; "changeScript": "changeScript"; }, never, never, false, never>;
 }

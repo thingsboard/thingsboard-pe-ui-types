@@ -13,6 +13,7 @@ import { MobileAppService } from '@core/http/mobile-app.service';
 import * as i0 from "@angular/core";
 export interface MobileAppDialogData {
     platformType: PlatformType;
+    name?: string;
 }
 export declare class MobileAppDialogComponent extends DialogComponent<MobileAppDialogComponent, MobileApp> implements OnDestroy, AfterViewInit, ErrorStateMatcher {
     protected store: Store<AppState>;

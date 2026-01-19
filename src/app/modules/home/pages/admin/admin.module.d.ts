@@ -20,15 +20,14 @@ import * as i18 from "@home/pages/admin/queue/queue.component";
 import * as i19 from "@home/pages/admin/repository-admin-settings.component";
 import * as i20 from "@home/pages/admin/auto-commit-admin-settings.component";
 import * as i21 from "@home/pages/admin/two-factor-auth-settings.component";
-import * as i22 from "@home/pages/admin/trendz-settings.component";
-import * as i23 from "@angular/common";
-import * as i24 from "@app/shared/shared.module";
-import * as i25 from "@modules/home/components/home-components.module";
-import * as i26 from "./admin-routing.module";
-import * as i27 from "@home/pages/admin/oauth2/oauth2.module";
-import * as i28 from "@flowjs/ngx-flow";
+import * as i22 from "@angular/common";
+import * as i23 from "@app/shared/shared.module";
+import * as i24 from "@modules/home/components/home-components.module";
+import * as i25 from "./admin-routing.module";
+import * as i26 from "@home/pages/admin/oauth2/oauth2.module";
+import * as i27 from "@flowjs/ngx-flow";
 export declare class AdminModule {
     static ɵfac: i0.ɵɵFactoryDeclaration<AdminModule, never>;
-    static ɵmod: i0.ɵɵNgModuleDeclaration<AdminModule, [typeof i1.GeneralSettingsComponent, typeof i2.MailServerComponent, typeof i3.MailTemplatesComponent, typeof i4.SmsProviderComponent, typeof i5.SendTestSmsDialogComponent, typeof i6.WhiteLabelingComponent, typeof i7.SecuritySettingsComponent, typeof i8.PaletteComponent, typeof i9.PaletteDialogComponent, typeof i10.CustomCssDialogComponent, typeof i11.SelfRegistrationComponent, typeof i7.SecuritySettingsComponent, typeof i12.HomeSettingsComponent, typeof i13.ResourceTabsComponent, typeof i14.ResourceLibraryTabsComponent, typeof i15.ResourcesTableHeaderComponent, typeof i16.JsResourceComponent, typeof i17.JsLibraryTableHeaderComponent, typeof i18.QueueComponent, typeof i19.RepositoryAdminSettingsComponent, typeof i20.AutoCommitAdminSettingsComponent, typeof i21.TwoFactorAuthSettingsComponent, typeof i22.TrendzSettingsComponent], [typeof i23.CommonModule, typeof i24.SharedModule, typeof i25.HomeComponentsModule, typeof i26.AdminRoutingModule, typeof i27.OAuth2Module, typeof i28.NgxFlowModule], never>;
+    static ɵmod: i0.ɵɵNgModuleDeclaration<AdminModule, [typeof i1.GeneralSettingsComponent, typeof i2.MailServerComponent, typeof i3.MailTemplatesComponent, typeof i4.SmsProviderComponent, typeof i5.SendTestSmsDialogComponent, typeof i6.WhiteLabelingComponent, typeof i7.SecuritySettingsComponent, typeof i8.PaletteComponent, typeof i9.PaletteDialogComponent, typeof i10.CustomCssDialogComponent, typeof i11.SelfRegistrationComponent, typeof i7.SecuritySettingsComponent, typeof i12.HomeSettingsComponent, typeof i13.ResourceTabsComponent, typeof i14.ResourceLibraryTabsComponent, typeof i15.ResourcesTableHeaderComponent, typeof i16.JsResourceComponent, typeof i17.JsLibraryTableHeaderComponent, typeof i18.QueueComponent, typeof i19.RepositoryAdminSettingsComponent, typeof i20.AutoCommitAdminSettingsComponent, typeof i21.TwoFactorAuthSettingsComponent], [typeof i22.CommonModule, typeof i23.SharedModule, typeof i24.HomeComponentsModule, typeof i25.AdminRoutingModule, typeof i26.OAuth2Module, typeof i27.NgxFlowModule], never>;
     static ɵinj: i0.ɵɵInjectorDeclaration<AdminModule>;
 }

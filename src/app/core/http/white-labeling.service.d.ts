@@ -5,15 +5,15 @@ import { Observable } from 'rxjs';
 import { ColorPalette } from '@shared/models/material.models';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { DomSanitizer } from '@angular/platform-browser';
 import { RequestConfig } from '@core/http/http-utils';
 import { MailTemplatesSettings } from '@shared/models/settings.models';
+import { MenuService } from '@core/services/menu.service';
 import * as i0 from "@angular/core";
 export declare class WhiteLabelingService {
     private http;
     private store;
-    private sanitizer;
     private document;
+    private menuService;
     private changeWhiteLabelingSubject;
     private loginLogo;
     private loginLogoHeight;
@@ -43,7 +43,7 @@ export declare class WhiteLabelingService {
     private loginAccentPalette;
     private renderer;
     private readonly ROOT;
-    constructor(http: HttpClient, store: Store<AppState>, sanitizer: DomSanitizer, rendererFactory: RendererFactory2, document: Document);
+    constructor(http: HttpClient, store: Store<AppState>, rendererFactory: RendererFactory2, document: Document, menuService: MenuService);
     logoImageUrl(): string;
     logoImageUrl$(): Observable<string>;
     logoImageHeight(): number;
@@ -66,6 +66,7 @@ export declare class WhiteLabelingService {
     isShowVersion(): boolean;
     isShowVersion$(): Observable<boolean>;
     getPlatformName(): string;
+    getTrendzName(): string;
     getPlatformName$(): Observable<string>;
     getPlatformVersion(): string;
     getPlatformVersion$(): Observable<string>;

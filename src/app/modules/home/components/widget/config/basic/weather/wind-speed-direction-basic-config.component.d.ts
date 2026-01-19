@@ -23,6 +23,7 @@ export declare class WindSpeedDirectionBasicConfigComponent extends BasicWidgetC
     centerValuePreviewFn: any;
     get majorTicksFontEnabled(): boolean;
     get minorTicksFontEnabled(): boolean;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, widgetConfigComponent: WidgetConfigComponent, $injector: Injector, fb: UntypedFormBuilder);
     protected configForm(): UntypedFormGroup;
     protected defaultDataKeys(configData: WidgetConfigComponentData): DataKey[];

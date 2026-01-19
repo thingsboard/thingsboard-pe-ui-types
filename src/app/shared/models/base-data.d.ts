@@ -23,3 +23,4 @@ export interface GroupEntityInfo<T extends EntityId> extends BaseData<T> {
     groups?: EntityInfoData[];
 }
 export declare function hasIdEquals(id1: HasId, id2: HasId): boolean;
+export declare function getEntityDisplayName(entity: BaseData<EntityId>): string;

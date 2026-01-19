@@ -1,6 +1,5 @@
 import { AuthUser, User } from '@shared/models/user.model';
 import { UserSettings } from '@shared/models/user-settings.models';
-import { TrendzSettings } from '@shared/models/trendz-settings.models';
 export interface SysParamsState {
     userTokenAccessEnabled: boolean;
     allowedDashboardIds: string[];
@@ -16,12 +15,17 @@ export interface SysParamsState {
     maxDebugModeDurationMinutes: number;
     maxDataPointsPerRollingArg: number;
     maxArgumentsPerCF: number;
+    minAllowedDeduplicationIntervalInSecForCF: number;
+    minAllowedAggregationIntervalInSecForCF: number;
+    minAllowedScheduledUpdateIntervalInSecForCF: number;
+    maxRelationLevelPerCfArgument: number;
+    maxRelatedEntitiesToReturnPerCfArgument: number;
     ruleChainDebugPerTenantLimitsConfiguration?: string;
     calculatedFieldDebugPerTenantLimitsConfiguration?: string;
+    intermediateAggregationIntervalInSecForCF: number;
     integrationDebugPerTenantLimitsConfiguration?: string;
     converterDebugPerTenantLimitsConfiguration?: string;
     availableLocales: string[];
-    trendzSettings: TrendzSettings;
 }
 export interface SysParams extends SysParamsState {
     maxDatapointsLimit: number;

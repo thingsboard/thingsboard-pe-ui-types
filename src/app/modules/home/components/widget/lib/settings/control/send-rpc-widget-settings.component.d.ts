@@ -9,6 +9,7 @@ export declare class SendRpcWidgetSettingsComponent extends WidgetSettingsCompon
     private fb;
     sendRpcWidgetSettingsForm: UntypedFormGroup;
     contentTypes: typeof ContentType;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, fb: UntypedFormBuilder);
     protected settingsForm(): UntypedFormGroup;
     protected defaultSettings(): WidgetSettings;

@@ -45,8 +45,9 @@ export declare class EntityAutocompleteComponent implements ControlValueAccessor
     newTabDetailsButtonHint: string;
     subscriptSizing: SubscriptSizing;
     additionalClasses: Array<string>;
+    useEntityDisplayName: boolean;
     entityChanged: EventEmitter<BaseData<EntityId>>;
-    createNew: EventEmitter<void>;
+    createNew: EventEmitter<string>;
     entityInput: ElementRef;
     get requiredErrorText(): string;
     get label(): string;
@@ -66,9 +67,10 @@ export declare class EntityAutocompleteComponent implements ControlValueAccessor
     textIsNotEmpty(text: string): boolean;
     clear(): void;
     private checkEntityType;
-    createNewEntity($event: Event): void;
+    createNewEntity($event: Event, searchText?: string): void;
     openEntityDetailsNewTab($event: Event): void;
     get showEntityLink(): boolean;
+    markAsTouched(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityAutocompleteComponent, "tb-entity-autocomplete", never, { "entityType": { "alias": "entityType"; "required": false; }; "entitySubtype": { "alias": "entitySubtype"; "required": false; }; "excludeEntityIds": { "alias": "excludeEntityIds"; "required": false; }; "labelText": { "alias": "labelText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "placeholder": { "alias": "placeholder"; "required": false; }; "useFullEntityId": { "alias": "useFullEntityId"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "inlineField": { "alias": "inlineField"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "allowCreateNew": { "alias": "allowCreateNew"; "required": false; }; "newTabDetailsButton": { "alias": "newTabDetailsButton"; "required": false; }; "newTabDetailsButtonHint": { "alias": "newTabDetailsButtonHint"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "additionalClasses": { "alias": "additionalClasses"; "required": false; }; }, { "entityChanged": "entityChanged"; "createNew": "createNew"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityAutocompleteComponent, "tb-entity-autocomplete", never, { "entityType": { "alias": "entityType"; "required": false; }; "entitySubtype": { "alias": "entitySubtype"; "required": false; }; "excludeEntityIds": { "alias": "excludeEntityIds"; "required": false; }; "labelText": { "alias": "labelText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "placeholder": { "alias": "placeholder"; "required": false; }; "useFullEntityId": { "alias": "useFullEntityId"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "inlineField": { "alias": "inlineField"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "allowCreateNew": { "alias": "allowCreateNew"; "required": false; }; "newTabDetailsButton": { "alias": "newTabDetailsButton"; "required": false; }; "newTabDetailsButtonHint": { "alias": "newTabDetailsButtonHint"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "additionalClasses": { "alias": "additionalClasses"; "required": false; }; "useEntityDisplayName": { "alias": "useEntityDisplayName"; "required": false; }; }, { "entityChanged": "entityChanged"; "createNew": "createNew"; }, never, never, false, never>;
 }

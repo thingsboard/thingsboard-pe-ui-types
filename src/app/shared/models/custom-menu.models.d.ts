@@ -16,7 +16,8 @@ export declare enum CMAssigneeType {
     NO_ASSIGN = "NO_ASSIGN",
     ALL = "ALL",
     CUSTOMERS = "CUSTOMERS",
-    USERS = "USERS"
+    USERS = "USERS",
+    USER_GROUPS = "USER_GROUPS"
 }
 export declare const cmAssigneeTypeTranslations: (assigneeType: CMAssigneeType, scope: CMScope) => string;
 export interface CustomMenuInfo extends BaseData<CustomMenuId>, HasTenantId {
@@ -25,6 +26,7 @@ export interface CustomMenuInfo extends BaseData<CustomMenuId>, HasTenantId {
     name: string;
     scope: CMScope;
     assigneeType: CMAssigneeType;
+    userGroupNames?: string[];
 }
 export declare enum MenuItemType {
     DEFAULT = "DEFAULT",

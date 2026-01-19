@@ -7,6 +7,7 @@ import { IReportComponent, ReportComponentComponent } from '@home/pages/reportin
 import { alignment } from '@shared/models/widget-settings.models';
 import * as i0 from "@angular/core";
 export declare class ReportDropBlockComponent implements IReportComponent, OnInit, OnChanges, AfterViewInit, OnDestroy {
+    display: string;
     dropList?: CdkDropList;
     reportComponentComponents: QueryList<ReportComponentComponent>;
     context: ReportComponentContext;

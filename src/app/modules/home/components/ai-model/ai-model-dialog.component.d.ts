@@ -15,6 +15,7 @@ export interface AIModelDialogData {
     AIModel?: AiModel;
     isAdd?: boolean;
     readonly?: boolean;
+    name?: string;
 }
 export declare class AIModelDialogComponent extends DialogComponent<AIModelDialogComponent, AiModel> {
     protected store: Store<AppState>;

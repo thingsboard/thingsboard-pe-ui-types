@@ -7,6 +7,7 @@ export declare class UpdateBooleanAttributeWidgetSettingsComponent extends Widge
     protected store: Store<AppState>;
     private fb;
     updateBooleanAttributeWidgetSettingsForm: UntypedFormGroup;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, fb: UntypedFormBuilder);
     protected settingsForm(): UntypedFormGroup;
     protected defaultSettings(): WidgetSettings;

@@ -15,7 +15,6 @@ export declare class TaskParametersPanelComponent implements OnInit, OnDestroy {
     ngOnDestroy(): void;
     cancel(): void;
     private createEditor;
-    private updateEditorSize;
     static ɵfac: i0.ɵɵFactoryDeclaration<TaskParametersPanelComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<TaskParametersPanelComponent, "tb-task-parameters-panel", never, { "job": { "alias": "job"; "required": false; }; }, {}, never, never, false, never>;
 }

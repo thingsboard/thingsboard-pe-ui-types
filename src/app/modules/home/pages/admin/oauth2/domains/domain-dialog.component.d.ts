@@ -14,17 +14,22 @@ export declare class DomainDialogComponent extends DialogComponent<DomainDialogC
     protected store: Store<AppState>;
     protected router: Router;
     protected dialogRef: MatDialogRef<DomainDialogComponent, Domain>;
+    data: {
+        name?: string;
+    };
     private domainService;
     private errorStateMatcher;
     submitted: boolean;
     addTitle: string;
     helpId: string;
     domainComponent: DomainComponent;
-    constructor(store: Store<AppState>, router: Router, dialogRef: MatDialogRef<DomainDialogComponent, Domain>, domainService: DomainService, errorStateMatcher: ErrorStateMatcher);
+    constructor(store: Store<AppState>, router: Router, dialogRef: MatDialogRef<DomainDialogComponent, Domain>, data: {
+        name?: string;
+    }, domainService: DomainService, errorStateMatcher: ErrorStateMatcher);
     ngAfterViewInit(): void;
     isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     cancel(): void;
     save(): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<DomainDialogComponent, [null, null, null, null, { skipSelf: true; }]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<DomainDialogComponent, [null, null, null, null, null, { skipSelf: true; }]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<DomainDialogComponent, "tb-mobile-app-dialog", never, {}, {}, never, never, false, never>;
 }

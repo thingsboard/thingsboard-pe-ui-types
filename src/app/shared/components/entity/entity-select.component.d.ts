@@ -1,4 +1,4 @@
-import { AfterViewInit, DestroyRef, OnInit } from '@angular/core';
+import { DestroyRef, EventEmitter, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -8,13 +8,16 @@ import { EntityService } from '@core/http/entity.service';
 import { EntityId } from '@shared/models/id/entity-id';
 import { Operation } from '@shared/models/security.models';
 import { MatFormFieldAppearance } from '@angular/material/form-field';
+import { BaseData } from '@shared/models/base-data';
+import { EntityAutocompleteComponent } from '@shared/components/entity/entity-autocomplete.component';
 import * as i0 from "@angular/core";
-export declare class EntitySelectComponent implements ControlValueAccessor, OnInit, AfterViewInit {
+export declare class EntitySelectComponent implements ControlValueAccessor, OnInit {
     private store;
     private entityService;
     translate: TranslateService;
     private fb;
     private destroyRef;
+    entityAutocompleteComponent: EntityAutocompleteComponent;
     entitySelectFormGroup: UntypedFormGroup;
     modelValue: EntityId;
     allowedEntityTypes: Array<EntityType | AliasEntityType>;
@@ -26,19 +29,24 @@ export declare class EntitySelectComponent implements ControlValueAccessor, OnIn
         [entityType in string]: string;
     };
     appearance: MatFormFieldAppearance;
+    useEntityDisplayName: boolean;
+    filterAllowedEntityTypes: boolean;
+    defaultEntityType: AliasEntityType | EntityType;
+    entityTypeLabel: string;
+    entityChanged: EventEmitter<BaseData<EntityId>>;
     displayEntityTypeSelect: boolean;
     AliasEntityType: typeof AliasEntityType;
-    entityTypeNullUUID: Set<AliasEntityType | EntityType | string>;
-    private readonly defaultEntityType;
+    entityTypeNullUUID: Set<string>;
     private propagateChange;
     constructor(store: Store<AppState>, entityService: EntityService, translate: TranslateService, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
-    ngAfterViewInit(): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: EntityId | null): void;
     updateView(entityType: EntityType | AliasEntityType | null, entityId: string | null): void;
+    changeEntity(entity: BaseData<EntityId>): void;
+    entityAutocompleteMarkAsTouched(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntitySelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntitySelectComponent, "tb-entity-select", never, { "allowedEntityTypes": { "alias": "allowedEntityTypes"; "required": false; }; "useAliasEntityTypes": { "alias": "useAliasEntityTypes"; "required": false; }; "operation": { "alias": "operation"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "additionEntityTypes": { "alias": "additionEntityTypes"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntitySelectComponent, "tb-entity-select", never, { "allowedEntityTypes": { "alias": "allowedEntityTypes"; "required": false; }; "useAliasEntityTypes": { "alias": "useAliasEntityTypes"; "required": false; }; "operation": { "alias": "operation"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "additionEntityTypes": { "alias": "additionEntityTypes"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "useEntityDisplayName": { "alias": "useEntityDisplayName"; "required": false; }; "filterAllowedEntityTypes": { "alias": "filterAllowedEntityTypes"; "required": false; }; "defaultEntityType": { "alias": "defaultEntityType"; "required": false; }; "entityTypeLabel": { "alias": "entityTypeLabel"; "required": false; }; }, { "entityChanged": "entityChanged"; }, never, never, false, never>;
 }

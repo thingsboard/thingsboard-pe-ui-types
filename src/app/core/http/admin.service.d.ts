@@ -1,7 +1,7 @@
 import { RequestConfig } from './http-utils';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { AdminSettings, AutoCommitSettings, MailConfigTemplate, FeaturesInfo, JwtSettings, LicenseUsageInfo, MailServerSettings, RepositorySettings, RepositorySettingsInfo, SecuritySettings, TestSmsRequest, UpdateMessage } from '@shared/models/settings.models';
+import { AdminSettings, AutoCommitSettings, FeaturesInfo, JwtSettings, LicenseUsageInfo, MailConfigTemplate, MailServerSettings, RepositorySettings, RepositorySettingsInfo, SecuritySettings, TestSmsRequest, UpdateMessage } from '@shared/models/settings.models';
 import { EntitiesVersionControlService } from '@core/http/entities-version-control.service';
 import { LoginResponse } from '@shared/models/login.models';
 import * as i0 from "@angular/core";

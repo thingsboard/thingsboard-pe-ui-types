@@ -6,6 +6,7 @@ import { WidgetConfigMode } from '@shared/models/widget.models';
 import * as i0 from "@angular/core";
 export declare class AlarmTableConfigComponent extends AbstractReportComponentConfig<AlarmTableReportComponentConfig> {
     get columnLabels(): string[];
+    columnNameChanged: [string, string];
     settingsTab: 'data' | 'layout';
     basicMode: WidgetConfigMode;
     dataKeySettingsFormFunction: DataKeySettingsFormFunction;

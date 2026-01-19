@@ -42,8 +42,8 @@ export declare class SelfRegistrationComponent extends PageComponent implements 
     confirmForm(): UntypedFormGroup;
     onActivationLinkCopied(): void;
     domainChange(domain: BaseData<EntityId>): void;
-    createDomain(): void;
-    createTarget(): void;
+    createDomain(name: string): void;
+    createTarget(name: string): void;
     private onSelfRegistrationParamsLoaded;
     private selfRegistrationParamsFromFormValue;
     private convertTextToHTML;

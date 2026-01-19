@@ -5,6 +5,8 @@ import { PageLink } from '@shared/models/page/page-link';
 import { PageData } from '@shared/models/page/page-data';
 import { Notification, NotificationDeliveryMethod, NotificationRequest, NotificationRequestInfo, NotificationRequestPreview, NotificationRule, NotificationSettings, NotificationTarget, NotificationTemplate, NotificationType, NotificationUserSettings, SlackChanelType, SlackConversation } from '@shared/models/notification.models';
 import { User } from '@shared/models/user.model';
+import { EntityType } from '@shared/models/entity-type.models';
+import { AddonType } from '@shared/models/subscription.models';
 import * as i0 from "@angular/core";
 export declare class NotificationService {
     private http;
@@ -14,6 +16,7 @@ export declare class NotificationService {
     markNotificationAsRead(id: string, config?: RequestConfig): Observable<void>;
     markAllNotificationsAsRead(config?: RequestConfig): Observable<void>;
     createNotificationRequest(notification: NotificationRequest, config?: RequestConfig): Observable<NotificationRequest>;
+    sendEntitiesLimitIncreaseRequest(entityType: EntityType, config?: RequestConfig): Observable<void>;
     getNotificationRequestById(id: string, config?: RequestConfig): Observable<NotificationRequest>;
     getAvailableDeliveryMethods(config?: RequestConfig): Observable<Array<NotificationDeliveryMethod>>;
     deleteNotificationRequest(id: string, config?: RequestConfig): Observable<void>;
@@ -38,6 +41,7 @@ export declare class NotificationService {
     getNotificationTemplates(pageLink: PageLink, notificationTypes?: NotificationType, config?: RequestConfig): Observable<PageData<NotificationTemplate>>;
     getNotificationUserSettings(config?: RequestConfig): Observable<NotificationUserSettings>;
     saveNotificationUserSettings(settings: NotificationUserSettings, config?: RequestConfig): Observable<NotificationUserSettings>;
+    sendAddonAccessError(addonType: AddonType, config?: RequestConfig): Observable<void>;
     static ɵfac: i0.ɵɵFactoryDeclaration<NotificationService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<NotificationService>;
 }

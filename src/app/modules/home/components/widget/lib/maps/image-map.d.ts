@@ -1,4 +1,4 @@
-import { ImageMapSettings, TbCircleData, TbPolygonCoordinates, TbPolygonRawCoordinates } from '@shared/models/widget/maps/map.models';
+import { ImageMapSettings, TbCircleData, TbPolygonCoordinates, TbPolygonRawCoordinates, TbPolylineCoordinates, TbPolylineRawCoordinates } from '@shared/models/widget/maps/map.models';
 import { WidgetContext } from '@home/models/widget-component.models';
 import { DeepPartial } from '@shared/models/common';
 import { Observable } from 'rxjs';
@@ -39,4 +39,6 @@ export declare class TbImageMap extends TbMap<ImageMapSettings> {
     private loadImageLayerData;
     private imageFromUrl;
     private imageFromEntityData;
+    polylineDataToCoordinates(expression: TbPolylineRawCoordinates): TbPolylineRawCoordinates;
+    coordinatesToPolylineData(coordinates: TbPolylineCoordinates): TbPolylineRawCoordinates;
 }

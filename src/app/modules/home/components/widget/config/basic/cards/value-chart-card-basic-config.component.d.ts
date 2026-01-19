@@ -16,6 +16,7 @@ export declare class ValueChartCardBasicConfigComponent extends BasicWidgetConfi
     valueChartCardLayoutImageMap: Map<import("@home/components/widget/lib/cards/value-chart-card-widget.models").ValueChartCardLayout, string>;
     valueChartCardWidgetConfigForm: UntypedFormGroup;
     valuePreviewFn: any;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, widgetConfigComponent: WidgetConfigComponent, fb: UntypedFormBuilder);
     protected configForm(): UntypedFormGroup;
     protected defaultDataKeys(configData: WidgetConfigComponentData): DataKey[];

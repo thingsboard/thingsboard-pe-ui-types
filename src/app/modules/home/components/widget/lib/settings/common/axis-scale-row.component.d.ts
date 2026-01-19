@@ -1,0 +1,37 @@
+import { DestroyRef, OnInit } from '@angular/core';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
+import { ValueSourceConfig, ValueSourceType } from '@shared/models/widget-settings.models';
+import { Datasource, DatasourceType } from '@shared/models/widget.models';
+import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
+import { IAliasController } from '@core/api/widget-api.models';
+import { DataKeysCallbacks } from '@home/components/widget/lib/settings/common/key/data-keys.component.models';
+import * as i0 from "@angular/core";
+export declare class AxisScaleRowComponent implements ControlValueAccessor, OnInit, Validator {
+    private fb;
+    private destroyRef;
+    isPanelView: boolean;
+    aliasController: IAliasController;
+    callbacks: DataKeysCallbacks;
+    datasource: Datasource;
+    labelKey: string;
+    ValueSourceType: typeof ValueSourceType;
+    DataKeyType: typeof DataKeyType;
+    DatasourceType: typeof DatasourceType;
+    ValueSourceTypeTranslation: Map<ValueSourceType, string>;
+    ValueSourceTypes: ValueSourceType[];
+    limitForm: UntypedFormGroup;
+    latestKeyFormControl: UntypedFormControl;
+    entityKeyFormControl: UntypedFormControl;
+    private propagateChanges;
+    private modelValue;
+    constructor(fb: UntypedFormBuilder, destroyRef: DestroyRef);
+    ngOnInit(): void;
+    writeValue(value: ValueSourceConfig): void;
+    registerOnChange(fn: any): void;
+    registerOnTouched(fn: any): void;
+    validate(): ValidationErrors | null;
+    private updateValidators;
+    private updateModel;
+    static ɵfac: i0.ɵɵFactoryDeclaration<AxisScaleRowComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AxisScaleRowComponent, "tb-axis-scale-row", never, { "isPanelView": { "alias": "isPanelView"; "required": false; }; "aliasController": { "alias": "aliasController"; "required": false; }; "callbacks": { "alias": "callbacks"; "required": false; }; "datasource": { "alias": "datasource"; "required": false; }; "labelKey": { "alias": "labelKey"; "required": false; }; }, {}, never, never, false, never>;
+}

@@ -19,11 +19,13 @@ import { ToggleHeaderOption } from '@shared/components/toggle-header.component';
 import { DataKeySettingsFunction } from '@home/components/widget/lib/settings/common/key/data-keys.component.models';
 import { FormProperty } from '@shared/models/dynamic-form.models';
 import { WidgetService } from '@core/http/widget.service';
+import { TimeService } from '@core/services/time.service';
 import * as i0 from "@angular/core";
 export declare class WidgetConfigComponent extends PageComponent implements OnInit, OnDestroy, ControlValueAccessor, AsyncValidator {
     protected store: Store<AppState>;
     private utils;
     private entityService;
+    timeService: TimeService;
     private dialog;
     translate: TranslateService;
     private fb;
@@ -55,6 +57,7 @@ export declare class WidgetConfigComponent extends PageComponent implements OnIn
     private propagateChange;
     headerOptions: ToggleHeaderOption[];
     selectedOption: string;
+    predefinedValues: string[];
     displayDataExport: boolean;
     dataSettings: UntypedFormGroup;
     targetDeviceSettings: UntypedFormGroup;
@@ -74,7 +77,7 @@ export declare class WidgetConfigComponent extends PageComponent implements OnIn
     private advancedSettingsSubscription;
     private actionsSettingsSubscription;
     private defaultConfigFormsType;
-    constructor(store: Store<AppState>, utils: UtilsService, entityService: EntityService, dialog: MatDialog, translate: TranslateService, fb: UntypedFormBuilder, cd: ChangeDetectorRef, widgetService: WidgetService, destroyRef: DestroyRef);
+    constructor(store: Store<AppState>, utils: UtilsService, entityService: EntityService, timeService: TimeService, dialog: MatDialog, translate: TranslateService, fb: UntypedFormBuilder, cd: ChangeDetectorRef, widgetService: WidgetService, destroyRef: DestroyRef);
     ngOnInit(): void;
     ngOnDestroy(): void;
     private removeChangeSubscriptions;

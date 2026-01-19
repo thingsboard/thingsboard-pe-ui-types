@@ -20,6 +20,7 @@ export declare class SliderBasicConfigComponent extends BasicWidgetConfigCompone
     valueType: typeof ValueType;
     sliderWidgetConfigForm: UntypedFormGroup;
     valuePreviewFn: any;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, widgetConfigComponent: WidgetConfigComponent, fb: UntypedFormBuilder);
     protected configForm(): UntypedFormGroup;
     protected onConfigSet(configData: WidgetConfigComponentData): void;

@@ -6,6 +6,7 @@ import { PageData } from '@shared/models/page/page-data';
 import { EntitySubtype } from '@app/shared/models/entity-type.models';
 import { Asset, AssetInfo, AssetSearchQuery } from '@app/shared/models/asset.models';
 import { BulkImportRequest, BulkImportResult } from '@shared/import-export/import-export.models';
+import { SaveEntityWithGroupParams } from '@shared/models/entity.models';
 import * as i0 from "@angular/core";
 export declare class AssetService {
     private http;
@@ -19,6 +20,7 @@ export declare class AssetService {
     getCustomerAssetInfos(includeCustomers: boolean, customerId: string, pageLink: PageLink, assetProfileId?: string, config?: RequestConfig): Observable<PageData<AssetInfo>>;
     getAssetInfo(assetId: string, config?: RequestConfig): Observable<AssetInfo>;
     saveAsset(asset: Asset, entityGroupIds?: string | string[], config?: RequestConfig): Observable<Asset>;
+    saveAsset(asset: Asset, saveParams?: SaveEntityWithGroupParams, config?: RequestConfig): Observable<Asset>;
     deleteAsset(assetId: string, config?: RequestConfig): Observable<Object>;
     getAssetTypes(config?: RequestConfig): Observable<Array<EntitySubtype>>;
     findByQuery(query: AssetSearchQuery, config?: RequestConfig): Observable<Array<Asset>>;

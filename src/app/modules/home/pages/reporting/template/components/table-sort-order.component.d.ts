@@ -7,6 +7,7 @@ export declare class TableSortOrderComponent implements OnInit, ControlValueAcce
     private fb;
     private destroyRef;
     Direction: typeof Direction;
+    set columnNameChange(args: [string, string]);
     columns: string[];
     disabled: boolean;
     private modelValue;
@@ -22,5 +23,5 @@ export declare class TableSortOrderComponent implements OnInit, ControlValueAcce
     private updateModel;
     private checkColumn;
     static ɵfac: i0.ɵɵFactoryDeclaration<TableSortOrderComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TableSortOrderComponent, "tb-table-sort-order", never, { "columns": { "alias": "columns"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TableSortOrderComponent, "tb-table-sort-order", never, { "columnNameChange": { "alias": "columnNameChange"; "required": false; }; "columns": { "alias": "columns"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

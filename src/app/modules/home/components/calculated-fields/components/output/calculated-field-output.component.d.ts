@@ -1,0 +1,58 @@
+import { OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ControlValueAccessor, ValidationErrors, Validator } from '@angular/forms';
+import { AttributeScope } from '@shared/models/telemetry/telemetry.models';
+import { CalculatedFieldOutput, CalculatedFieldSimpleOutput, OutputStrategyType, OutputType } from '@shared/models/calculated-field.models';
+import { EntityId } from '@shared/models/id/entity-id';
+import { EntityType } from '@shared/models/entity-type.models';
+import * as i0 from "@angular/core";
+export declare class CalculatedFieldOutputComponent implements ControlValueAccessor, Validator, OnInit, OnChanges {
+    simpleMode: boolean;
+    hiddenName: boolean;
+    disableType: boolean;
+    containerInputClass: string | string[] | Record<string, boolean | undefined | null>;
+    entityId: EntityId;
+    disabled: boolean;
+    readonly outputTypes: OutputType[];
+    readonly OutputType: typeof OutputType;
+    readonly AttributeScope: typeof AttributeScope;
+    readonly OutputTypeTranslations: Map<OutputType, string>;
+    readonly EntityType: typeof EntityType;
+    readonly OutputStrategyType: typeof OutputStrategyType;
+    readonly OutputStrategyTypes: OutputStrategyType[];
+    readonly OutputStrategyTypeTranslations: Map<OutputStrategyType, string>;
+    private fb;
+    private destroyRef;
+    outputForm: import("@angular/forms").FormGroup<{
+        name: import("@angular/forms").FormControl<string>;
+        scope: import("@angular/forms").FormControl<AttributeScope>;
+        type: import("@angular/forms").FormControl<OutputType>;
+        decimalsByDefault: import("@angular/forms").FormControl<number>;
+        strategy: import("@angular/forms").FormGroup<{
+            type: import("@angular/forms").FormControl<OutputStrategyType>;
+            saveTimeSeries: import("@angular/forms").FormControl<boolean>;
+            saveLatest: import("@angular/forms").FormControl<boolean>;
+            saveAttribute: import("@angular/forms").FormControl<boolean>;
+            sendWsUpdate: import("@angular/forms").FormControl<boolean>;
+            processCfs: import("@angular/forms").FormControl<boolean>;
+            updateAttributesOnlyOnValueChange: import("@angular/forms").FormControl<boolean>;
+            sendAttributesUpdatedNotification: import("@angular/forms").FormControl<boolean>;
+            useCustomTtl: import("@angular/forms").FormControl<boolean>;
+            ttl: import("@angular/forms").FormControl<number>;
+        }>;
+    }>;
+    private propagateChange;
+    ngOnInit(): void;
+    ngOnChanges(changes: SimpleChanges): void;
+    validate(): ValidationErrors | null;
+    writeValue(value: CalculatedFieldOutput | CalculatedFieldSimpleOutput): void;
+    registerOnChange(fn: (config: CalculatedFieldOutput | CalculatedFieldSimpleOutput) => void): void;
+    registerOnTouched(_: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    private updatedModel;
+    private toggleScopeByOutputType;
+    private updatedFormWithMode;
+    private updatedStrategy;
+    private updateTimeSeriesTtl;
+    static ɵfac: i0.ɵɵFactoryDeclaration<CalculatedFieldOutputComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CalculatedFieldOutputComponent, "tb-calculate-field-output", never, { "simpleMode": { "alias": "simpleMode"; "required": false; }; "hiddenName": { "alias": "hiddenName"; "required": false; }; "disableType": { "alias": "disableType"; "required": false; }; "containerInputClass": { "alias": "containerInputClass"; "required": false; }; "entityId": { "alias": "entityId"; "required": true; }; }, {}, never, [".simpleMode"], false, never>;
+}

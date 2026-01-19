@@ -25,6 +25,7 @@ export declare class TimeSeriesChartBasicConfigComponent extends BasicWidgetConf
     tooltipDatePreviewFn: any;
     chartType: TimeSeriesChartType;
     seriesMode: string;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, widgetConfigComponent: WidgetConfigComponent, $injector: Injector, fb: UntypedFormBuilder);
     yAxisRemoved(yAxisId: TimeSeriesChartYAxisId): void;
     seriesModeChange(seriesMode: string): void;

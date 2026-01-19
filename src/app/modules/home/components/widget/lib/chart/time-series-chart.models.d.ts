@@ -125,8 +125,8 @@ export interface TimeSeriesChartYAxisSettings extends TimeSeriesChartAxisSetting
     decimals?: number;
     interval?: number;
     splitNumber?: number;
-    min?: number | string;
-    max?: number | string;
+    min?: number | string | ValueSourceConfig;
+    max?: number | string | ValueSourceConfig;
     ticksGenerator?: TimeSeriesChartTicksGenerator | string;
     ticksFormatter?: TimeSeriesChartTicksFormatter | string;
 }
@@ -277,6 +277,9 @@ export interface TimeSeriesChartAxis {
     id: string;
     settings: TimeSeriesChartAxisSettings;
     option: CartesianAxisOption;
+    minLatestDataKey?: DataKey;
+    maxLatestDataKey?: DataKey;
+    unitConvertor?: (value: number) => number;
 }
 export interface TimeSeriesChartYAxis extends TimeSeriesChartAxis {
     decimals: number;

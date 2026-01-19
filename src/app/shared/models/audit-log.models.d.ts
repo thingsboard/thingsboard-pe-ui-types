@@ -72,3 +72,7 @@ export interface AuditLog extends BaseData<AuditLogId> {
     actionStatus: ActionStatus;
     actionFailureDetails: string;
 }
+export interface AuditLogFilter {
+    actionTypes: string[];
+}
+export declare const auditLogFilterEquals: (filter1?: AuditLogFilter, filter2?: AuditLogFilter) => boolean;

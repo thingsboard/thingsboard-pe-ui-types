@@ -24,7 +24,7 @@ export declare class NotificationComponent implements OnInit {
     ngOnInit(): void;
     markRead($event: Event): void;
     navigate($event: Event): void;
-    alarmColorSeverity(alpha: number): string;
+    alarmColorSeverityBackground(): string;
     notificationColor(): string;
     notificationBackgroundColor(): string;
     notificationIconColor(): object;

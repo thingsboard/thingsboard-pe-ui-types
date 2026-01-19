@@ -1,0 +1,40 @@
+import { DestroyRef } from '@angular/core';
+import { ControlValueAccessor, FormArray, FormBuilder, ValidationErrors, Validator } from '@angular/forms';
+import { ComplexOperation, EntityKeyValueType } from '@shared/models/query/query.models';
+import { MatDialog } from '@angular/material/dialog';
+import { AlarmRuleFilter, areFilterAndPredicateArgumentsValid } from "@shared/models/alarm-rule.models";
+import { CalculatedFieldArgument } from "@shared/models/calculated-field.models";
+import * as i0 from "@angular/core";
+export declare class AlarmRuleFilterListComponent implements ControlValueAccessor, Validator {
+    private fb;
+    private dialog;
+    private destroyRef;
+    readonly: boolean;
+    arguments: Record<string, CalculatedFieldArgument>;
+    operation: ComplexOperation;
+    filterListFormGroup: import("@angular/forms").FormGroup<{
+        filters: FormArray<import("@angular/forms").FormControl<unknown>>;
+    }>;
+    disabled: boolean;
+    areFilterAndPredicateArgumentsValid: typeof areFilterAndPredicateArgumentsValid;
+    complexOperationTranslationMap: Map<ComplexOperation, string>;
+    entityKeyValueTypes: Map<EntityKeyValueType, import("@shared/models/query/query.models").EntityKeyValueTypeData>;
+    entityKeyValueTypeEnum: typeof EntityKeyValueType;
+    private propagateChange;
+    constructor(fb: FormBuilder, dialog: MatDialog, destroyRef: DestroyRef);
+    get filtersFormArray(): FormArray;
+    registerOnChange(fn: any): void;
+    registerOnTouched(fn: any): void;
+    validate(): ValidationErrors | null;
+    setDisabledState(isDisabled: boolean): void;
+    writeValue(filters: Array<AlarmRuleFilter>): void;
+    removeFilter(index: number): void;
+    addFilter(): void;
+    editFilter(index: number, readonly?: boolean): void;
+    private openFilterDialog;
+    get getUsedArguments(): Array<string>;
+    private updateModel;
+    static ɵfac: i0.ɵɵFactoryDeclaration<AlarmRuleFilterListComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmRuleFilterListComponent, "tb-alarm-rule-filter-list", never, { "readonly": { "alias": "readonly"; "required": false; }; "arguments": { "alias": "arguments"; "required": false; }; "operation": { "alias": "operation"; "required": false; }; }, {}, never, never, false, never>;
+    static ngAcceptInputType_readonly: unknown;
+}

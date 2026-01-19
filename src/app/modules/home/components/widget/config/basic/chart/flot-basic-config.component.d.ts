@@ -12,6 +12,7 @@ export declare class FlotBasicConfigComponent extends BasicWidgetConfigComponent
     private fb;
     get datasource(): Datasource;
     flotWidgetConfigForm: UntypedFormGroup;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, widgetConfigComponent: WidgetConfigComponent, fb: UntypedFormBuilder);
     protected configForm(): UntypedFormGroup;
     protected defaultDataKeys(configData: WidgetConfigComponentData): DataKey[];

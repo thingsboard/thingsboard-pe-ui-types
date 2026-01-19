@@ -1,9 +1,12 @@
 import { DestroyRef, OnInit } from '@angular/core';
-import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { AxisPosition, TimeSeriesChartAxisSettings, TimeSeriesChartYAxisSettings } from '@home/components/widget/lib/chart/time-series-chart.models';
 import { WidgetService } from '@core/http/widget.service';
+import { IAliasController } from '@app/core/public-api';
+import { Datasource } from '@app/shared/public-api';
+import { DataKeysCallbacks } from '@home/components/widget/lib/settings/common/key/data-keys.component.models';
 import * as i0 from "@angular/core";
-export declare class TimeSeriesChartAxisSettingsComponent implements OnInit, ControlValueAccessor {
+export declare class TimeSeriesChartAxisSettingsComponent implements OnInit, ControlValueAccessor, Validator {
     private fb;
     private widgetService;
     private destroyRef;
@@ -12,7 +15,10 @@ export declare class TimeSeriesChartAxisSettingsComponent implements OnInit, Con
     axisPositions: AxisPosition[];
     timeSeriesAxisPositionTranslations: Map<AxisPosition, string>;
     functionScopeVariables: string[];
-    defaultXAxisTicksFormat: import("../../../../../../../../shared/public-api").AutoDateFormatSettings;
+    defaultXAxisTicksFormat: import("@app/shared/public-api").AutoDateFormatSettings;
+    aliasController: IAliasController;
+    dataKeyCallbacks: DataKeysCallbacks;
+    datasource: Datasource;
     disabled: boolean;
     axisType: 'xAxis' | 'yAxis';
     advanced: boolean;
@@ -26,10 +32,11 @@ export declare class TimeSeriesChartAxisSettingsComponent implements OnInit, Con
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(_fn: any): void;
+    validate(): ValidationErrors | null;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: TimeSeriesChartAxisSettings | TimeSeriesChartYAxisSettings): void;
     private updateValidators;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesChartAxisSettingsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartAxisSettingsComponent, "tb-time-series-chart-axis-settings", never, { "alwaysExpanded": { "alias": "alwaysExpanded"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "axisType": { "alias": "axisType"; "required": false; }; "advanced": { "alias": "advanced"; "required": false; }; "hideUnits": { "alias": "hideUnits"; "required": false; }; "hideDecimals": { "alias": "hideDecimals"; "required": false; }; "reportMode": { "alias": "reportMode"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeSeriesChartAxisSettingsComponent, "tb-time-series-chart-axis-settings", never, { "alwaysExpanded": { "alias": "alwaysExpanded"; "required": false; }; "aliasController": { "alias": "aliasController"; "required": false; }; "dataKeyCallbacks": { "alias": "dataKeyCallbacks"; "required": false; }; "datasource": { "alias": "datasource"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "axisType": { "alias": "axisType"; "required": false; }; "advanced": { "alias": "advanced"; "required": false; }; "hideUnits": { "alias": "hideUnits"; "required": false; }; "hideDecimals": { "alias": "hideDecimals"; "required": false; }; "reportMode": { "alias": "reportMode"; "required": false; }; }, {}, never, never, false, never>;
 }

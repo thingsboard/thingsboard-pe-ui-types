@@ -1,6 +1,7 @@
 import { OnDestroy, OnInit } from '@angular/core';
 import { ControlValueAccessor, FormBuilder, FormControl, FormGroup, Validator } from '@angular/forms';
 import { DeviceCredentials, DeviceCredentialsType, DeviceTransportType } from '@shared/models/device.models';
+import { DeviceId } from "@shared/models/id/device-id";
 import * as i0 from "@angular/core";
 export declare class DeviceCredentialsComponent implements ControlValueAccessor, OnInit, Validator, OnDestroy {
     fb: FormBuilder;
@@ -14,6 +15,7 @@ export declare class DeviceCredentialsComponent implements ControlValueAccessor,
     deviceCredentialsType: typeof DeviceCredentialsType;
     credentialsTypes: DeviceCredentialsType[];
     credentialTypeNamesMap: Map<DeviceCredentialsType, string>;
+    deviceId: DeviceId;
     private propagateChange;
     private propagateChangePending;
     constructor(fb: FormBuilder);

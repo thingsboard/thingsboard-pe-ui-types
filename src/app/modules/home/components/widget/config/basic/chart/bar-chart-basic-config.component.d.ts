@@ -13,6 +13,7 @@ export declare class BarChartBasicConfigComponent extends LatestChartBasicConfig
     protected widgetConfigComponent: WidgetConfigComponent;
     protected fb: UntypedFormBuilder;
     barChartConfigTemplate: TemplateRef<any>;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, widgetConfigComponent: WidgetConfigComponent, fb: UntypedFormBuilder);
     protected defaultDataKeys(configData: WidgetConfigComponentData): DataKey[];
     protected defaultSettings(): BarChartWidgetSettings;

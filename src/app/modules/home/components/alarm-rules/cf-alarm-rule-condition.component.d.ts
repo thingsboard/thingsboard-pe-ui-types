@@ -1,0 +1,53 @@
+import { ChangeDetectorRef, OnChanges, SimpleChanges } from '@angular/core';
+import { AbstractControl, ControlValueAccessor, FormBuilder, ValidationErrors, Validator } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { TranslateService } from '@ngx-translate/core';
+import { AlarmRuleCondition, AlarmRuleExpressionType } from "@shared/models/alarm-rule.models";
+import { CalculatedFieldArgument } from "@shared/models/calculated-field.models";
+import { Observable } from "rxjs";
+import * as i0 from "@angular/core";
+export declare class CfAlarmRuleConditionComponent implements ControlValueAccessor, Validator, OnChanges {
+    private dialog;
+    private fb;
+    private cd;
+    private translate;
+    disabled: boolean;
+    required: boolean;
+    arguments: Record<string, CalculatedFieldArgument>;
+    isClearCondition: boolean;
+    testScript: (expression: string) => Observable<string>;
+    alarmRuleConditionFormGroup: import("@angular/forms").FormGroup<{
+        type: import("@angular/forms").FormControl<string>;
+        expression: import("@angular/forms").FormControl<{
+            type: AlarmRuleExpressionType;
+        }>;
+        schedule: import("@angular/forms").FormControl<any>;
+    }>;
+    specText: string;
+    filtersArgumentsValid: boolean;
+    schedulerArgumentsValid: boolean;
+    scheduleText: string;
+    private modelValue;
+    private propagateChange;
+    private onValidatorChange;
+    constructor(dialog: MatDialog, fb: FormBuilder, cd: ChangeDetectorRef, translate: TranslateService);
+    registerOnChange(fn: any): void;
+    registerOnTouched(fn: any): void;
+    registerOnValidatorChange(fn: () => void): void;
+    setDisabledState(isDisabled: boolean): void;
+    writeValue(value: AlarmRuleCondition): void;
+    ngOnChanges(changes: SimpleChanges): void;
+    private recalculateArgumentValidity;
+    private isScheduleArgumentValid;
+    private areFilterAndPredicateArgumentsValid;
+    conditionSet(): boolean;
+    validate(control: AbstractControl): ValidationErrors | null;
+    openFilterDialog($event: Event): void;
+    private updateConditionInfo;
+    private updateSpecText;
+    private updateModel;
+    openScheduleDialog($event: Event): void;
+    private updateScheduleText;
+    static ɵfac: i0.ɵɵFactoryDeclaration<CfAlarmRuleConditionComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CfAlarmRuleConditionComponent, "tb-cf-alarm-rule-condition", never, { "disabled": { "alias": "disabled"; "required": false; }; "required": { "alias": "required"; "required": false; }; "arguments": { "alias": "arguments"; "required": false; }; "isClearCondition": { "alias": "isClearCondition"; "required": false; }; "testScript": { "alias": "testScript"; "required": true; }; }, {}, never, never, false, never>;
+}

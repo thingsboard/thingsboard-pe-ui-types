@@ -86,3 +86,21 @@ export interface EntityTestScriptResult {
     error: string;
 }
 export type VersionedEntity = EntityInfoData & HasVersion | RuleChainMetaData;
+export declare enum NameConflictPolicy {
+    FAIL = "FAIL",
+    UNIQUIFY = "UNIQUIFY"
+}
+export declare enum UniquifyStrategy {
+    RANDOM = "RANDOM",
+    INCREMENTAL = "INCREMENTAL"
+}
+export interface SaveEntityParams {
+    nameConflictPolicy?: NameConflictPolicy;
+    uniquifyStrategy?: UniquifyStrategy;
+    uniquifySeparator?: string;
+}
+export interface SaveEntityWithGroupParams extends SaveEntityParams {
+    entityGroupId?: string;
+    entityGroupIds?: string[];
+}
+export declare function toSaveParams<T extends SaveEntityWithGroupParams>(params: string | string[] | T): T;

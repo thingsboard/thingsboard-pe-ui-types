@@ -27,6 +27,7 @@ export declare class RangeChartBasicConfigComponent extends BasicWidgetConfigCom
     pointLabelPreviewFn: any;
     tooltipValuePreviewFn: any;
     tooltipDatePreviewFn: any;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, widgetConfigComponent: WidgetConfigComponent, $injector: Injector, fb: UntypedFormBuilder);
     protected configForm(): UntypedFormGroup;
     protected defaultDataKeys(configData: WidgetConfigComponentData): DataKey[];

@@ -1,5 +1,5 @@
-import { ChangeDetectorRef, DestroyRef, ElementRef, InjectionToken, OnDestroy, OnInit, TemplateRef, ViewContainerRef } from '@angular/core';
-import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { ChangeDetectorRef, DestroyRef, ElementRef, InjectionToken, OnInit, TemplateRef, ViewContainerRef } from '@angular/core';
+import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { TranslateService } from '@ngx-translate/core';
 import { DeviceInfoFilter } from '@shared/models/device.models';
@@ -10,8 +10,9 @@ export declare const DEVICE_FILTER_CONFIG_DATA: InjectionToken<any>;
 export interface DeviceFilterConfigData {
     panelMode: boolean;
     deviceInfoFilter: DeviceInfoFilter;
+    initialFilterConfig?: DeviceInfoFilter;
 }
-export declare class DeviceInfoFilterComponent implements OnInit, OnDestroy, ControlValueAccessor {
+export declare class DeviceInfoFilterComponent implements OnInit, ControlValueAccessor {
     private data;
     private overlayRef;
     private fb;
@@ -25,29 +26,32 @@ export declare class DeviceInfoFilterComponent implements OnInit, OnDestroy, Con
     deviceFilterPanel: TemplateRef<any>;
     disabled: boolean;
     buttonMode: boolean;
+    initialDeviceFilterConfig: DeviceInfoFilter;
     panelMode: boolean;
     buttonDisplayValue: any;
-    deviceInfoFilterForm: UntypedFormGroup;
+    deviceInfoFilterForm: FormGroup;
     deviceFilterOverlayRef: OverlayRef;
     panelResult: DeviceInfoFilter;
     private deviceProfileInfo;
     private deviceInfoFilter;
+    private resizeWindows;
     private propagateChange;
-    constructor(data: DeviceFilterConfigData | undefined, overlayRef: OverlayRef, fb: UntypedFormBuilder, translate: TranslateService, overlay: Overlay, nativeElement: ElementRef, viewContainerRef: ViewContainerRef, deviceProfileService: DeviceProfileService, cd: ChangeDetectorRef, destroyRef: DestroyRef);
+    constructor(data: DeviceFilterConfigData | undefined, overlayRef: OverlayRef, fb: FormBuilder, translate: TranslateService, overlay: Overlay, nativeElement: ElementRef, viewContainerRef: ViewContainerRef, deviceProfileService: DeviceProfileService, cd: ChangeDetectorRef, destroyRef: DestroyRef);
     ngOnInit(): void;
-    ngOnDestroy(): void;
     registerOnChange(fn: any): void;
-    registerOnTouched(fn: any): void;
+    registerOnTouched(_fn: any): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(deviceInfoFilter?: DeviceInfoFilter): void;
-    private updateValidators;
     toggleDeviceFilterPanel($event: Event): void;
     cancel(): void;
     update(): void;
+    reset(): void;
     deviceProfileChanged(deviceProfileInfo: EntityInfoData): void;
+    private deviceInfoFilterConfigEquals;
     private updateDeviceInfoFilterForm;
     private deviceFilterUpdated;
     private updateButtonDisplayValue;
+    private deviceFilterFromFormValue;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceInfoFilterComponent, [{ optional: true; }, { optional: true; }, null, null, null, null, null, null, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceInfoFilterComponent, "tb-device-info-filter", never, { "disabled": { "alias": "disabled"; "required": false; }; "buttonMode": { "alias": "buttonMode"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceInfoFilterComponent, "tb-device-info-filter", never, { "disabled": { "alias": "disabled"; "required": false; }; "buttonMode": { "alias": "buttonMode"; "required": false; }; "initialDeviceFilterConfig": { "alias": "initialDeviceFilterConfig"; "required": false; }; }, {}, never, never, false, never>;
 }

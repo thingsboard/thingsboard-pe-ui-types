@@ -41,6 +41,7 @@ export declare class LiquidLevelCardBasicConfigComponent extends BasicWidgetConf
     tooltipValuePreviewFn: any;
     totalVolumeValuePreviewFn: any;
     datePreviewFn: any;
+    predefinedValues: string[];
     private keySearchText;
     private latestKeySearchTextResult;
     private functionTypeKeys;

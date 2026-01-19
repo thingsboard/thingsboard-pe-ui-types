@@ -7,6 +7,7 @@ export declare class UpdateImageAttributeWidgetSettingsComponent extends WidgetS
     protected store: Store<AppState>;
     private fb;
     updateImageAttributeWidgetSettingsForm: UntypedFormGroup;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, fb: UntypedFormBuilder);
     protected settingsForm(): UntypedFormGroup;
     protected defaultSettings(): WidgetSettings;

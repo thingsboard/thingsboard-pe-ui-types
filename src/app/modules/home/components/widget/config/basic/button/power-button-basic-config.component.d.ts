@@ -17,6 +17,7 @@ export declare class PowerButtonBasicConfigComponent extends BasicWidgetConfigCo
     powerButtonLayoutImageMap: Map<import("@home/components/widget/lib/rpc/power-button-widget.models").PowerButtonLayout, string>;
     valueType: typeof ValueType;
     powerButtonWidgetConfigForm: UntypedFormGroup;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, widgetConfigComponent: WidgetConfigComponent, fb: UntypedFormBuilder);
     protected configForm(): UntypedFormGroup;
     protected onConfigSet(configData: WidgetConfigComponentData): void;

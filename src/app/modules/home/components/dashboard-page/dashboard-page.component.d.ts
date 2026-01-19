@@ -2,7 +2,7 @@ import { AfterViewInit, ChangeDetectorRef, ElementRef, EventEmitter, Injector, N
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, UrlTree } from '@angular/router';
 import { UtilsService } from '@core/services/utils.service';
 import { Dashboard, DashboardConfiguration, LayoutType, WidgetLayout } from '@app/shared/models/dashboard.models';
 import { DashboardContext, DashboardPageLayoutContext, DashboardPageLayouts, IDashboardController } from './dashboard-page.models';
@@ -133,6 +133,7 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
         width: string;
         height: string;
     };
+    dashboardLogoLink: UrlTree;
     private dashboardLogoCache;
     private defaultDashboardLogo;
     private dashboardResize$;
@@ -245,6 +246,7 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     get currentBreakpointValue(): string;
     private parseBreakpointsResponse;
     private isMobileSize;
+    private getDashboardLogoLink;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardPageComponent, [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, { optional: true; }, null, null, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<DashboardPageComponent, "tb-dashboard-page", never, { "embedded": { "alias": "embedded"; "required": false; }; "currentState": { "alias": "currentState"; "required": false; }; "hideToolbar": { "alias": "hideToolbar"; "required": false; }; "syncStateWithQueryParam": { "alias": "syncStateWithQueryParam"; "required": false; }; "dashboard": { "alias": "dashboard"; "required": false; }; "parentDashboard": { "alias": "parentDashboard"; "required": false; }; "popoverComponent": { "alias": "popoverComponent"; "required": false; }; "parentAliasController": { "alias": "parentAliasController"; "required": false; }; }, {}, never, never, false, never>;
 }

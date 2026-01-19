@@ -7,6 +7,7 @@ import { EntityId } from '@shared/models/id/entity-id';
 import { EntityGroupService } from '@core/http/entity-group.service';
 import { EntityInfoData } from '@shared/models/entity.models';
 import { MatAutocomplete } from '@angular/material/autocomplete';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class OwnerAutocompleteComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnChanges {
     private store;
@@ -18,6 +19,7 @@ export declare class OwnerAutocompleteComponent implements ControlValueAccessor,
     placeholderText: string;
     notFoundText: string;
     requiredText: string;
+    appearance: MatFormFieldAppearance;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
@@ -51,5 +53,5 @@ export declare class OwnerAutocompleteComponent implements ControlValueAccessor,
     clear(): void;
     textIsNotEmpty(text: string): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<OwnerAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<OwnerAutocompleteComponent, "tb-owner-autocomplete", never, { "excludeOwnerIds": { "alias": "excludeOwnerIds"; "required": false; }; "placeholderText": { "alias": "placeholderText"; "required": false; }; "notFoundText": { "alias": "notFoundText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "required": { "alias": "required"; "required": false; }; "useOwnerInfoValue": { "alias": "useOwnerInfoValue"; "required": false; }; "defaultOwnerId": { "alias": "defaultOwnerId"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<OwnerAutocompleteComponent, "tb-owner-autocomplete", never, { "excludeOwnerIds": { "alias": "excludeOwnerIds"; "required": false; }; "placeholderText": { "alias": "placeholderText"; "required": false; }; "notFoundText": { "alias": "notFoundText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "required": { "alias": "required"; "required": false; }; "useOwnerInfoValue": { "alias": "useOwnerInfoValue"; "required": false; }; "defaultOwnerId": { "alias": "defaultOwnerId"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

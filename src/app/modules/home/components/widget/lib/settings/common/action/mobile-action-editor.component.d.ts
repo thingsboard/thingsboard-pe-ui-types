@@ -1,6 +1,6 @@
 import { DestroyRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
-import { WidgetActionType, WidgetMobileActionDescriptor, WidgetMobileActionType } from '@shared/models/widget.models';
+import { ActionConfig, ProvisionType, WidgetActionType, WidgetMobileActionDescriptor, WidgetMobileActionType } from '@shared/models/widget.models';
 import { WidgetService } from '@core/http/widget.service';
 import * as i0 from "@angular/core";
 export declare class MobileActionEditorComponent implements ControlValueAccessor, OnInit {
@@ -14,6 +14,10 @@ export declare class MobileActionEditorComponent implements ControlValueAccessor
     mobileActionFormGroup: UntypedFormGroup;
     mobileActionTypeFormGroup: UntypedFormGroup;
     functionScopeVariables: string[];
+    actionConfig: ActionConfig[];
+    commonActionConfig: ActionConfig[];
+    provisionTypes: string[];
+    provisionTypeTranslationMap: Map<ProvisionType, string>;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
@@ -27,6 +31,8 @@ export declare class MobileActionEditorComponent implements ControlValueAccessor
     writeValue(value: WidgetMobileActionDescriptor | null): void;
     private updateModel;
     private updateMobileActionType;
+    getActionConfigs(): void;
+    getCommonActionConfigs(): void;
     protected readonly WidgetActionType: typeof WidgetActionType;
     static ɵfac: i0.ɵɵFactoryDeclaration<MobileActionEditorComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<MobileActionEditorComponent, "tb-mobile-action-editor", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;

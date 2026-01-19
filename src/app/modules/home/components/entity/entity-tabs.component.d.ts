@@ -15,7 +15,6 @@ import { UntypedFormGroup } from '@angular/forms';
 import { PageLink } from '@shared/models/page/page-link';
 import * as i0 from "@angular/core";
 export declare abstract class EntityTabsComponent<T extends BaseData<HasId>, P extends PageLink = PageLink, L extends BaseData<HasId> = T, C extends EntityTableConfig<T, P, L> = EntityTableConfig<T, P, L>> extends PageComponent implements OnInit, AfterViewInit {
-    protected store: Store<AppState>;
     attributeScopes: typeof AttributeScope;
     latestTelemetryTypes: typeof LatestTelemetry;
     authorities: typeof Authority;
@@ -38,7 +37,8 @@ export declare abstract class EntityTabsComponent<T extends BaseData<HasId>, P e
     detailsForm: UntypedFormGroup;
     private entityTabsSubject;
     entityTabsChanged: import("rxjs").Observable<MatTab[]>;
-    protected constructor(store: Store<AppState>);
+    protected store: Store<AppState>;
+    protected constructor(...args: unknown[]);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     protected setEntity(entity: T): void;

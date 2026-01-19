@@ -7,6 +7,7 @@ export declare class SlideToggleWidgetSettingsComponent extends WidgetSettingsCo
     protected store: Store<AppState>;
     private fb;
     slideToggleWidgetSettingsForm: UntypedFormGroup;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, fb: UntypedFormBuilder);
     get targetDevice(): TargetDevice;
     protected settingsForm(): UntypedFormGroup;

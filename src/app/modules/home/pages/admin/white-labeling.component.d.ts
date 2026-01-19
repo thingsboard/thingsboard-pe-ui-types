@@ -57,7 +57,7 @@ export declare class WhiteLabelingComponent extends PageComponent implements OnI
     delete(form: FormGroupDirective): void;
     private setWhiteLabelingParams;
     domainChange(domain: BaseData<EntityId>): void;
-    createDomain(): void;
+    createDomain(name?: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<WhiteLabelingComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<WhiteLabelingComponent, "tb-white-labeling", never, {}, {}, never, never, false, never>;
 }

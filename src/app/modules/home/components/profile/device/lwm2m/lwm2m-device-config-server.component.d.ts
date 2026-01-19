@@ -19,8 +19,8 @@ export declare class Lwm2mDeviceConfigServerComponent implements OnInit, Control
     publicKeyOrIdTooltipNamesMap: Map<Lwm2mSecurityType, string>;
     currentSecurityMode: any;
     bootstrapDisabled: boolean;
-    shortServerIdMin: number;
-    shortServerIdMax: number;
+    readonly shortServerIdMin = 1;
+    readonly shortServerIdMax = 65534;
     isBootstrap: boolean;
     removeServer: EventEmitter<any>;
     isTransportWasRunWithBootstrapChange: EventEmitter<boolean>;

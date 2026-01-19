@@ -12,6 +12,7 @@ export declare class ScadaSymbolBasicConfigComponent extends BasicWidgetConfigCo
     private fb;
     get targetDevice(): TargetDevice;
     scadaSymbolWidgetConfigForm: UntypedFormGroup;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, widgetConfigComponent: WidgetConfigComponent, fb: UntypedFormBuilder);
     protected configForm(): UntypedFormGroup;
     protected onConfigSet(configData: WidgetConfigComponentData): void;

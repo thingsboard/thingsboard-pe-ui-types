@@ -1,0 +1,58 @@
+import { OnInit } from '@angular/core';
+import { TbPopoverComponent } from '@shared/components/popover.component';
+import { FormBuilder } from '@angular/forms';
+import { AggFunction, AggInputType, CalculatedFieldAggMetricValue } from '@shared/models/calculated-field.models';
+import { EntityFilter } from '@shared/models/query/query.models';
+import { ScriptLanguage } from '@shared/models/rule-node.models';
+import { TbEditorCompleter } from '@shared/models/ace/completion.models';
+import { AceHighlightRules } from '@shared/models/ace/ace.models';
+import { Observable } from "rxjs";
+import * as i0 from "@angular/core";
+export declare class CalculatedFieldMetricsPanelComponent implements OnInit {
+    private fb;
+    private popover;
+    buttonTitle: string;
+    metric: CalculatedFieldAggMetricValue;
+    usedNames: string[];
+    arguments: Array<string>;
+    simpleMode: boolean;
+    editorCompleter: TbEditorCompleter;
+    highlightRules: AceHighlightRules;
+    testScript: (expression?: string) => Observable<string>;
+    readonly: boolean;
+    metricDataApplied: import("@angular/core").OutputEmitterRef<CalculatedFieldAggMetricValue>;
+    filterExpanded: boolean;
+    functionArgs: Array<string>;
+    metricForm: import("@angular/forms").FormGroup<{
+        name: import("@angular/forms").FormControl<string>;
+        function: import("@angular/forms").FormControl<AggFunction>;
+        allowFilter: import("@angular/forms").FormControl<boolean>;
+        filter: import("@angular/forms").FormControl<string>;
+        input: import("@angular/forms").FormGroup<{
+            type: import("@angular/forms").FormControl<AggInputType>;
+            key: import("@angular/forms").FormControl<string>;
+            function: import("@angular/forms").FormControl<string>;
+        }>;
+        defaultValue: import("@angular/forms").FormControl<any>;
+    }>;
+    entityFilter: EntityFilter;
+    AggFunctions: AggFunction[];
+    readonly AggFunctionTranslations: Map<AggFunction, string>;
+    readonly ScriptLanguage: typeof ScriptLanguage;
+    readonly AggInputType: typeof AggInputType;
+    readonly AggInputTypes: AggInputType[];
+    readonly AggInputTypeTranslations: Map<AggInputType, string>;
+    constructor(fb: FormBuilder, popover: TbPopoverComponent<CalculatedFieldMetricsPanelComponent>);
+    ngOnInit(): void;
+    saveMetric(): void;
+    cancel(): void;
+    private updatedForm;
+    private observeFilterAllowChange;
+    private observeInputTypeChange;
+    private validateFilter;
+    private validateInputTypeFilter;
+    private validateInputKey;
+    onTestScript(scriptFunc: 'filter' | 'input.function'): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<CalculatedFieldMetricsPanelComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CalculatedFieldMetricsPanelComponent, "tb-calculated-field-metrics-panel", never, { "buttonTitle": { "alias": "buttonTitle"; "required": false; }; "metric": { "alias": "metric"; "required": false; }; "usedNames": { "alias": "usedNames"; "required": false; }; "arguments": { "alias": "arguments"; "required": false; }; "simpleMode": { "alias": "simpleMode"; "required": false; }; "editorCompleter": { "alias": "editorCompleter"; "required": false; }; "highlightRules": { "alias": "highlightRules"; "required": false; }; "testScript": { "alias": "testScript"; "required": true; }; "readonly": { "alias": "readonly"; "required": false; }; }, { "metricDataApplied": "metricDataApplied"; }, never, never, false, never>;
+}

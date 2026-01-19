@@ -39,7 +39,6 @@ export declare class AddDeviceProfileDialogComponent extends DialogComponent<Add
     deviceTransportTypeTranslations: Map<import("@shared/models/device.models").TransportType, string>;
     deviceProfileDetailsFormGroup: UntypedFormGroup;
     transportConfigFormGroup: UntypedFormGroup;
-    alarmRulesFormGroup: UntypedFormGroup;
     provisionConfigFormGroup: UntypedFormGroup;
     serviceType: ServiceType;
     edgeRuleChainType: RuleChainType;

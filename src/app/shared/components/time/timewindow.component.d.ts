@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, DestroyRef, ElementRef, OnChanges, OnInit, SimpleChanges, ViewContainerRef } from '@angular/core';
+import { ChangeDetectorRef, DestroyRef, ElementRef, EventEmitter, OnChanges, OnInit, SimpleChanges, ViewContainerRef } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { MillisecondsToTimeStringPipe } from '@shared/pipe/milliseconds-to-time-string.pipe';
@@ -45,6 +45,8 @@ export declare class TimewindowComponent implements ControlValueAccessor, OnInit
     timewindowStyle: TimewindowStyle;
     disabled: boolean;
     panelMode: boolean;
+    showSaveAsDefault: boolean;
+    saveAsDefault: EventEmitter<Timewindow>;
     innerValue: Timewindow;
     timewindowDisabled: boolean;
     computedTimewindowStyle: TimewindowStyle;
@@ -61,11 +63,11 @@ export declare class TimewindowComponent implements ControlValueAccessor, OnInit
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(obj: Timewindow): void;
-    notifyChanged(): void;
+    notifyChanged(notifySaveAsDefault?: boolean): void;
     displayValue(): string;
     updateDisplayValue(): void;
     private isTimewindowDisabled;
     private createPanel;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimewindowComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimewindowComponent, "tb-timewindow", never, { "historyOnly": { "alias": "historyOnly"; "required": false; }; "noMargin": { "alias": "noMargin"; "required": false; }; "noPadding": { "alias": "noPadding"; "required": false; }; "disablePanel": { "alias": "disablePanel"; "required": false; }; "forAllTimeEnabled": { "alias": "forAllTimeEnabled"; "required": false; }; "alwaysDisplayTypePrefix": { "alias": "alwaysDisplayTypePrefix"; "required": false; }; "quickIntervalOnly": { "alias": "quickIntervalOnly"; "required": false; }; "aggregation": { "alias": "aggregation"; "required": false; }; "timezone": { "alias": "timezone"; "required": false; }; "isToolbar": { "alias": "isToolbar"; "required": false; }; "asButton": { "alias": "asButton"; "required": false; }; "strokedButton": { "alias": "strokedButton"; "required": false; }; "flatButton": { "alias": "flatButton"; "required": false; }; "displayTimewindowValue": { "alias": "displayTimewindowValue"; "required": false; }; "hideLabel": { "alias": "hideLabel"; "required": false; }; "isEdit": { "alias": "isEdit"; "required": false; }; "tooltipPosition": { "alias": "tooltipPosition"; "required": false; }; "timewindowStyle": { "alias": "timewindowStyle"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "panelMode": { "alias": "panelMode"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimewindowComponent, "tb-timewindow", never, { "historyOnly": { "alias": "historyOnly"; "required": false; }; "noMargin": { "alias": "noMargin"; "required": false; }; "noPadding": { "alias": "noPadding"; "required": false; }; "disablePanel": { "alias": "disablePanel"; "required": false; }; "forAllTimeEnabled": { "alias": "forAllTimeEnabled"; "required": false; }; "alwaysDisplayTypePrefix": { "alias": "alwaysDisplayTypePrefix"; "required": false; }; "quickIntervalOnly": { "alias": "quickIntervalOnly"; "required": false; }; "aggregation": { "alias": "aggregation"; "required": false; }; "timezone": { "alias": "timezone"; "required": false; }; "isToolbar": { "alias": "isToolbar"; "required": false; }; "asButton": { "alias": "asButton"; "required": false; }; "strokedButton": { "alias": "strokedButton"; "required": false; }; "flatButton": { "alias": "flatButton"; "required": false; }; "displayTimewindowValue": { "alias": "displayTimewindowValue"; "required": false; }; "hideLabel": { "alias": "hideLabel"; "required": false; }; "isEdit": { "alias": "isEdit"; "required": false; }; "tooltipPosition": { "alias": "tooltipPosition"; "required": false; }; "timewindowStyle": { "alias": "timewindowStyle"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "panelMode": { "alias": "panelMode"; "required": false; }; "showSaveAsDefault": { "alias": "showSaveAsDefault"; "required": false; }; }, { "saveAsDefault": "saveAsDefault"; }, never, never, false, never>;
 }

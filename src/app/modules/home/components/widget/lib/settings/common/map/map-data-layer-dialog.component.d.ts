@@ -58,7 +58,7 @@ export declare class MapDataLayerDialogComponent extends DialogComponent<MapData
     private updateValidators;
     private updateMarkerTypeValidators;
     private updateFillTypeValidators;
-    editKey(keyType: 'xKey' | 'yKey' | 'polygonKey' | 'circleKey'): void;
+    editKey(keyType: 'xKey' | 'yKey' | 'polygonKey' | 'circleKey' | 'polylineKey'): void;
     private generateDataKey;
     cancel(): void;
     save(): void;

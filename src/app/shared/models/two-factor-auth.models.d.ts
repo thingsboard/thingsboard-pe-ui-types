@@ -1,4 +1,7 @@
+import { UsersFilter } from '@shared/models/notification.models';
 export interface TwoFactorAuthSettings {
+    enforceTwoFa: boolean;
+    enforcedUsersFilter: UsersFilter;
     maxVerificationFailuresBeforeUserLockout: number;
     providers: Array<TwoFactorAuthProviderConfig>;
     totalAllowedTimeForVerification: number;
@@ -7,10 +10,15 @@ export interface TwoFactorAuthSettings {
     minVerificationCodeSendPeriod: number;
 }
 export interface TwoFactorAuthSettingsForm extends TwoFactorAuthSettings {
+    enforceTwoFa: boolean;
+    enforcedUsersFilter: UsersFilterWithFilterByTenant;
     providers: Array<TwoFactorAuthProviderConfigForm>;
     verificationCodeCheckRateLimitEnable: boolean;
     verificationCodeCheckRateLimitNumber: number;
     verificationCodeCheckRateLimitTime: number;
+}
+export interface UsersFilterWithFilterByTenant extends UsersFilter {
+    filterByTenants?: boolean;
 }
 export type TwoFactorAuthProviderConfig = Partial<TotpTwoFactorAuthProviderConfig | SmsTwoFactorAuthProviderConfig | EmailTwoFactorAuthProviderConfig>;
 export type TwoFactorAuthProviderConfigForm = Partial<TotpTwoFactorAuthProviderConfig | SmsTwoFactorAuthProviderConfig | EmailTwoFactorAuthProviderConfig> & TwoFactorAuthProviderFormConfig;
@@ -77,4 +85,6 @@ export interface TwoFactorAuthProviderLoginData extends Omit<TwoFactorAuthProvid
 }
 export declare const twoFactorAuthProvidersData: Map<TwoFactorAuthProviderType, TwoFactorAuthProviderData>;
 export declare const twoFactorAuthProvidersLoginData: Map<TwoFactorAuthProviderType, TwoFactorAuthProviderLoginData>;
+export declare const twoFactorAuthProvidersEnterCodeCardTranslate: Map<TwoFactorAuthProviderType, Omit<TwoFactorAuthProviderData, "activatedHint">>;
+export declare const twoFactorAuthProvidersSuccessCardTranslate: Map<TwoFactorAuthProviderType, Omit<TwoFactorAuthProviderData, "activatedHint">>;
 export {};

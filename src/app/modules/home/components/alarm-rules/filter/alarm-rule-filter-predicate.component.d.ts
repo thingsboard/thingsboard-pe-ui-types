@@ -1,0 +1,48 @@
+import { DestroyRef } from '@angular/core';
+import { ControlValueAccessor, FormBuilder, ValidationErrors, Validator } from '@angular/forms';
+import { EntityKeyValueType } from '@shared/models/query/query.models';
+import { AlarmRuleBooleanOperation, AlarmRuleFilterPredicate, AlarmRuleFilterPredicateType, AlarmRuleNumericOperation, AlarmRuleStringOperation } from "@shared/models/alarm-rule.models";
+import { MatDialog } from "@angular/material/dialog";
+import { CalculatedFieldArgument } from "@shared/models/calculated-field.models";
+import * as i0 from "@angular/core";
+export declare class AlarmRuleFilterPredicateComponent implements ControlValueAccessor, Validator {
+    private fb;
+    private dialog;
+    private destroyRef;
+    disabled: boolean;
+    valueType: EntityKeyValueType;
+    arguments: Record<string, CalculatedFieldArgument>;
+    argumentInUse: string;
+    filterPredicateFormGroup: import("@angular/forms").FormGroup<{
+        operation: import("@angular/forms").FormControl<any>;
+        ignoreCase: import("@angular/forms").FormControl<boolean>;
+        predicates: import("@angular/forms").FormControl<any>;
+        value: import("@angular/forms").FormControl<any>;
+        duration: import("@angular/forms").FormControl<any>;
+    }>;
+    type: AlarmRuleFilterPredicateType;
+    filterPredicateType: typeof AlarmRuleFilterPredicateType;
+    stringOperations: string[];
+    stringOperation: typeof AlarmRuleStringOperation;
+    stringOperationTranslationMap: Map<AlarmRuleStringOperation, string>;
+    numericOperations: string[];
+    numericOperationEnum: typeof AlarmRuleNumericOperation;
+    numericOperationTranslations: Map<AlarmRuleNumericOperation, string>;
+    booleanOperations: string[];
+    booleanOperationEnum: typeof AlarmRuleBooleanOperation;
+    booleanOperationTranslations: Map<AlarmRuleBooleanOperation, string>;
+    predicateValid: boolean;
+    private propagateChange;
+    constructor(fb: FormBuilder, dialog: MatDialog, destroyRef: DestroyRef);
+    registerOnChange(fn: any): void;
+    registerOnTouched(fn: any): void;
+    validate(): ValidationErrors | null;
+    setDisabledState(isDisabled: boolean): void;
+    private isPredicateArgumentsValid;
+    writeValue(predicate: AlarmRuleFilterPredicate): void;
+    private updateModel;
+    openComplexFilterDialog(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<AlarmRuleFilterPredicateComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AlarmRuleFilterPredicateComponent, "tb-alarm-rule-filter-predicate", never, { "disabled": { "alias": "disabled"; "required": false; }; "valueType": { "alias": "valueType"; "required": false; }; "arguments": { "alias": "arguments"; "required": false; }; "argumentInUse": { "alias": "argumentInUse"; "required": false; }; }, {}, never, never, false, never>;
+    static ngAcceptInputType_disabled: unknown;
+}

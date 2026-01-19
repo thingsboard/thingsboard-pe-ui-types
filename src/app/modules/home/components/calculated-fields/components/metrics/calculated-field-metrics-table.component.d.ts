@@ -1,0 +1,67 @@
+import { AfterViewInit, ChangeDetectorRef, DestroyRef, OnInit, Renderer2, ViewContainerRef } from '@angular/core';
+import { ControlValueAccessor, FormBuilder, ValidationErrors, Validator } from '@angular/forms';
+import { CalculatedFieldAggMetric, CalculatedFieldAggMetricValue } from '@shared/models/calculated-field.models';
+import { MatButton } from '@angular/material/button';
+import { TbPopoverService } from '@shared/components/popover.service';
+import { TbTableDatasource } from '@shared/components/table/table-datasource.abstract';
+import { MatSort, SortDirection } from '@angular/material/sort';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { TbEditorCompleter } from '@shared/models/ace/completion.models';
+import { AceHighlightRules } from '@shared/models/ace/ace.models';
+import { Observable } from "rxjs";
+import * as i0 from "@angular/core";
+export declare class CalculatedFieldMetricsTableComponent implements OnInit, ControlValueAccessor, Validator, AfterViewInit {
+    private fb;
+    private popoverService;
+    private viewContainerRef;
+    private cd;
+    private renderer;
+    private destroyRef;
+    private store;
+    arguments: Array<string>;
+    editorCompleter: TbEditorCompleter;
+    highlightRules: AceHighlightRules;
+    simpleMode: boolean;
+    testScript: (expression?: string) => Observable<string>;
+    readonly: boolean;
+    sort: MatSort;
+    errorText: string;
+    metricsFormArray: import("@angular/forms").FormArray<import("@angular/forms").FormControl<CalculatedFieldAggMetricValue>>;
+    sortOrder: {
+        direction: SortDirection;
+        property: string;
+    };
+    dataSource: CalculatedFieldMetricsDatasource;
+    disable: boolean;
+    displayColumns: string[];
+    readonly AggFunctionTranslations: Map<import("@shared/models/calculated-field.models").AggFunction, string>;
+    readonly AggInputTypeTranslations: Map<import("@shared/models/calculated-field.models").AggInputType, string>;
+    readonly maxArgumentsPerCF: number;
+    private popoverComponent;
+    private propagateChange;
+    constructor(fb: FormBuilder, popoverService: TbPopoverService, viewContainerRef: ViewContainerRef, cd: ChangeDetectorRef, renderer: Renderer2, destroyRef: DestroyRef, store: Store<AppState>);
+    ngOnInit(): void;
+    ngAfterViewInit(): void;
+    registerOnChange(fn: (zonesObj: Record<string, CalculatedFieldAggMetric>) => void): void;
+    registerOnTouched(_fn: any): void;
+    validate(): ValidationErrors | null;
+    setDisabledState(isDisabled: boolean): void;
+    onDelete($event: Event, metric: CalculatedFieldAggMetricValue): void;
+    manageMetrics($event: Event, matButton: MatButton, metric?: CalculatedFieldAggMetricValue, readonly?: boolean): void;
+    private updateDataSource;
+    private updateErrorText;
+    private getMetricsObject;
+    writeValue(metrics: Record<string, CalculatedFieldAggMetric>): void;
+    private populateZonesFormArray;
+    private getSortValue;
+    private sortData;
+    static ɵfac: i0.ɵɵFactoryDeclaration<CalculatedFieldMetricsTableComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CalculatedFieldMetricsTableComponent, "tb-calculated-field-metrics-table", never, { "arguments": { "alias": "arguments"; "required": false; }; "editorCompleter": { "alias": "editorCompleter"; "required": false; }; "highlightRules": { "alias": "highlightRules"; "required": false; }; "simpleMode": { "alias": "simpleMode"; "required": false; }; "testScript": { "alias": "testScript"; "required": true; }; "readonly": { "alias": "readonly"; "required": false; }; }, {}, never, never, false, never>;
+    static ngAcceptInputType_simpleMode: unknown;
+    static ngAcceptInputType_readonly: unknown;
+}
+declare class CalculatedFieldMetricsDatasource extends TbTableDatasource<CalculatedFieldAggMetricValue> {
+    constructor();
+}
+export {};

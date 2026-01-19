@@ -18,6 +18,10 @@ export declare class ResourceService {
     downloadResource(resourceId: string): Observable<any>;
     saveResources(resources: Resource[], config?: RequestConfig): Observable<Resource[]>;
     saveResource(resource: Resource, config?: RequestConfig): Observable<Resource>;
+    uploadResources(resources: Resource[], config?: RequestConfig): Observable<Resource[]>;
+    uploadResource(resource: Resource, config?: RequestConfig): Observable<Resource>;
+    updatedResourceInfo(resourceId: string, updatedResources: Partial<Omit<Resource, 'data'>>, config?: RequestConfig): Observable<Resource>;
+    updatedResourceData(resourceId: string, data: File, config?: RequestConfig): Observable<Resource>;
     deleteResource(resourceId: string, force?: boolean, config?: RequestConfig): Observable<Object>;
     getResourcesByIds(ids: string[], config?: RequestConfig): Observable<Array<ResourceInfo>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<ResourceService, never>;

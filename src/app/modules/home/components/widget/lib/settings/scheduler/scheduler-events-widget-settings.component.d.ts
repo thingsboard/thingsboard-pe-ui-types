@@ -12,15 +12,18 @@ export declare class SchedulerEventsWidgetSettingsComponent extends WidgetSettin
     protected settingsForm(): UntypedFormGroup;
     protected defaultSettings(): WidgetSettings;
     protected prepareInputSettings(settings: WidgetSettings): WidgetSettings;
+    protected prepareOutputSettings(settings: WidgetSettings): WidgetSettings;
     protected onSettingsSet(settings: WidgetSettings): void;
     protected doUpdateSettings(settingsForm: UntypedFormGroup, settings: WidgetSettings): void;
     private prepareCustomEventTypesFormArray;
     customEventTypesFormArray(): UntypedFormArray;
-    trackByCustomEventType(index: number, customEventTypeControl: AbstractControl): any;
+    trackByCustomEventType(_index: number, customEventTypeControl: AbstractControl): any;
     removeCustomEventType(index: number): void;
     addCustomEventType(): void;
     protected validatorTriggers(): string[];
     protected updateValidators(emitEvent: boolean, trigger: string): void;
+    private getDisplayColumns;
+    private setDisplayColumns;
     static ɵfac: i0.ɵɵFactoryDeclaration<SchedulerEventsWidgetSettingsComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<SchedulerEventsWidgetSettingsComponent, "tb-scheduler-events-widget-settings", never, {}, {}, never, never, false, never>;
 }

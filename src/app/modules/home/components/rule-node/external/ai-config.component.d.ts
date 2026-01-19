@@ -26,7 +26,7 @@ export declare class AiConfigComponent extends RuleNodeConfigurationComponent {
     protected prepareOutputConfig(): RuleNodeConfiguration;
     onEntityChange($event: AiModel): void;
     get getResponseFormatHint(): any;
-    createModelAi(formControl: string): void;
+    createModelAi(name: string, formControl: string): void;
     createAiResources(name: string, formControl: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AiConfigComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<AiConfigComponent, "tb-external-node-ai-config", never, {}, {}, never, never, false, never>;

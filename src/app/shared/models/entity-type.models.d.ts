@@ -45,7 +45,8 @@ export declare enum EntityType {
     CALCULATED_FIELD = "CALCULATED_FIELD",
     ADMIN_SETTINGS = "ADMIN_SETTINGS",
     SECRET = "SECRET",
-    AI_MODEL = "AI_MODEL"
+    AI_MODEL = "AI_MODEL",
+    API_KEY = "API_KEY"
 }
 export declare enum AliasEntityType {
     CURRENT_CUSTOMER = "CURRENT_CUSTOMER",

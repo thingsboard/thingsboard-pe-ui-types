@@ -12,6 +12,7 @@ export declare class EntityDebugSettingsPanelComponent extends PageComponent imp
     private popover;
     failuresEnabled: boolean;
     allEnabled: boolean;
+    entityLabel: string;
     entityType: EntityType;
     allEnabledUntil: number;
     maxDebugModeDuration: number;
@@ -21,7 +22,6 @@ export declare class EntityDebugSettingsPanelComponent extends PageComponent imp
     maxMessagesCount: string;
     maxTimeFrameDuration: number;
     initialAllEnabled: boolean;
-    entityLabel: string;
     isDebugAllActive$: import("rxjs").Observable<boolean>;
     onSettingsApplied: EventEmitter<EntityDebugSettings>;
     constructor(fb: FormBuilder, cd: ChangeDetectorRef, popover: TbPopoverComponent<EntityDebugSettingsPanelComponent>);
@@ -31,7 +31,7 @@ export declare class EntityDebugSettingsPanelComponent extends PageComponent imp
     onReset(): void;
     private getByEntityTypeDebugLimit;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityDebugSettingsPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityDebugSettingsPanelComponent, "tb-entity-debug-settings-panel", never, { "failuresEnabled": { "alias": "failuresEnabled"; "required": false; }; "allEnabled": { "alias": "allEnabled"; "required": false; }; "entityType": { "alias": "entityType"; "required": false; }; "allEnabledUntil": { "alias": "allEnabledUntil"; "required": false; }; "maxDebugModeDuration": { "alias": "maxDebugModeDuration"; "required": false; }; "additionalActionConfig": { "alias": "additionalActionConfig"; "required": false; }; }, {}, never, never, true, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityDebugSettingsPanelComponent, "tb-entity-debug-settings-panel", never, { "failuresEnabled": { "alias": "failuresEnabled"; "required": false; }; "allEnabled": { "alias": "allEnabled"; "required": false; }; "entityLabel": { "alias": "entityLabel"; "required": false; }; "entityType": { "alias": "entityType"; "required": false; }; "allEnabledUntil": { "alias": "allEnabledUntil"; "required": false; }; "maxDebugModeDuration": { "alias": "maxDebugModeDuration"; "required": false; }; "additionalActionConfig": { "alias": "additionalActionConfig"; "required": false; }; }, {}, never, never, true, never>;
     static ngAcceptInputType_failuresEnabled: unknown;
     static ngAcceptInputType_allEnabled: unknown;
 }

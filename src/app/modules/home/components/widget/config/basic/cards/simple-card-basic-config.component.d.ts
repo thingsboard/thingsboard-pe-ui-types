@@ -13,6 +13,7 @@ export declare class SimpleCardBasicConfigComponent extends BasicWidgetConfigCom
     get displayTimewindowConfig(): boolean;
     onlyHistoryTimewindow(): boolean;
     simpleCardWidgetConfigForm: UntypedFormGroup;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, widgetConfigComponent: WidgetConfigComponent, fb: UntypedFormBuilder);
     protected configForm(): UntypedFormGroup;
     protected defaultDataKeys(configData: WidgetConfigComponentData): DataKey[];

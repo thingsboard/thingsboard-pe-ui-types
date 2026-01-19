@@ -23,6 +23,7 @@ import { WidgetConfigCallbacks } from '@home/components/widget/config/widget-con
 import { TbFunction } from '@shared/models/js-function.models';
 import { FormProperty } from '@shared/models/dynamic-form.models';
 import { TbUnit } from '@shared/models/unit.models';
+import { ImageResourceInfo } from '@shared/models/resource.models';
 import * as i0 from "@angular/core";
 export declare enum widgetType {
     timeseries = "timeseries",
@@ -40,6 +41,7 @@ export interface WidgetTypeData {
     configHelpLinkId: string;
     template: WidgetTypeTemplate;
 }
+export declare const widgetTitleAutocompleteValues: string[];
 export declare const widgetTypesData: Map<widgetType, WidgetTypeData>;
 export interface WidgetResource {
     url: string;
@@ -200,7 +202,6 @@ export interface DataKey extends KeyInfo {
     inLegend?: boolean;
     isAdditional?: boolean;
     origDataKeyIndex?: number;
-    _hash?: number;
 }
 export type CellClickColumnInfo = Pick<DataKey, 'name' | 'label'>;
 export declare enum DataKeyConfigMode {
@@ -255,6 +256,8 @@ export interface TargetDevice {
     entityAliasId?: string;
 }
 export declare const targetDeviceValid: (targetDevice?: TargetDevice) => boolean;
+export declare const widgetTypeHasTimewindow: (type: widgetType) => boolean;
+export declare const widgetTypeCanHaveTimewindow: (type: widgetType) => boolean;
 export declare const datasourcesHasAggregation: (datasources?: Array<Datasource>) => boolean;
 export declare const datasourcesHasOnlyComparisonAggregation: (datasources?: Array<Datasource>) => boolean;
 export interface FormattedData<D extends Datasource = Datasource> {
@@ -337,16 +340,34 @@ export declare enum WidgetMobileActionType {
     takeScreenshot = "takeScreenshot",
     deviceProvision = "deviceProvision"
 }
+export interface ActionConfig {
+    title: string;
+    formControlName: string;
+    functionName: string;
+    functionArgs: string[];
+    helpId?: string;
+}
+export declare enum ProvisionType {
+    auto = "auto",
+    wiFi = "wiFi",
+    ble = "ble",
+    softAp = "softAp"
+}
+export declare const provisionTypeTranslationMap: Map<ProvisionType, string>;
 export declare enum MapItemType {
     marker = "marker",
     polygon = "polygon",
     rectangle = "rectangle",
-    circle = "circle"
+    circle = "circle",
+    polyline = "polyline"
 }
 export declare const widgetActionTypes: WidgetActionType[];
 export declare const widgetActionTypeTranslationMap: Map<WidgetActionType, string>;
 export declare const widgetMobileActionTypeTranslationMap: Map<WidgetMobileActionType, string>;
 export declare const mapItemTypeTranslationMap: Map<MapItemType, string>;
+export type ExportRow = {
+    [key: string]: any;
+} | Map<string, any>;
 export declare enum WidgetExportType {
     csv = "csv",
     xls = "xls",
@@ -358,6 +379,7 @@ export interface MobileLaunchResult {
 }
 export interface MobileImageResult {
     imageUrl: string;
+    imageInfo?: ImageResourceInfo;
 }
 export interface MobileQrCodeResult {
     code: string;
@@ -379,9 +401,11 @@ export interface WidgetMobileActionResult<T extends MobileActionResult> {
 }
 export interface ProvisionSuccessDescriptor {
     handleProvisionSuccessFunction: TbFunction;
+    provisionType?: string;
 }
 export interface ProcessImageDescriptor {
     processImageFunction: TbFunction;
+    saveToGallery?: boolean;
 }
 export interface ProcessLaunchResultDescriptor {
     processLaunchResultFunction?: TbFunction;
@@ -403,6 +427,7 @@ export interface WidgetMobileActionDescriptor extends WidgetMobileActionDescript
     type: WidgetMobileActionType;
     handleErrorFunction?: TbFunction;
     handleEmptyResultFunction?: TbFunction;
+    handleNonMobileFallbackFunction?: TbFunction;
 }
 export interface CustomActionDescriptor {
     customFunction?: TbFunction;
@@ -448,6 +473,8 @@ export interface MapItemTooltips {
     finishRect?: string;
     startCircle?: string;
     finishCircle?: string;
+    startPolyline?: string;
+    finishPolyline?: string;
 }
 export declare const mapItemTooltipsTranslation: Required<MapItemTooltips>;
 export interface WidgetActionDescriptor extends WidgetAction {

@@ -1,4 +1,4 @@
-import { BaseMapSettings, DataKeyValuePair, MapBooleanFunction, MapType, TbCircleData, TbMapDatasource, TbPolygonCoordinates, TbPolygonRawCoordinates } from '@shared/models/widget/maps/map.models';
+import { BaseMapSettings, DataKeyValuePair, MapBooleanFunction, MapType, TbCircleData, TbMapDatasource, TbPolygonCoordinates, TbPolygonRawCoordinates, TbPolylineCoordinates, TbPolylineRawCoordinates } from '@shared/models/widget/maps/map.models';
 import { WidgetContext } from '@home/models/widget-component.models';
 import { DeepPartial } from '@shared/models/common';
 import L from 'leaflet';
@@ -45,12 +45,14 @@ export declare abstract class TbMap<S extends BaseMapSettings> {
     protected addRectangleButton: L.TB.ToolbarButton;
     protected addPolygonButton: L.TB.ToolbarButton;
     protected addCircleButton: L.TB.ToolbarButton;
+    protected addPolylineButton: L.TB.ToolbarButton;
     protected timeLineComponentRef: ComponentRef<MapTimelinePanelComponent>;
     protected timeLineComponent: MapTimelinePanelComponent;
     protected locationSnapFilterFunction: CompiledTbFunction<MapBooleanFunction>;
     protected addMarkerDataLayers: TbLatestMapDataLayer<any>[];
     protected addPolygonDataLayers: TbLatestMapDataLayer<any>[];
     protected addCircleDataLayers: TbLatestMapDataLayer<any>[];
+    protected addPolylineDataLayers: TbLatestMapDataLayer<any>[];
     protected shapePatternStorage: ShapePatternStorage;
     protected mapUuid: string;
     private readonly mapResize$;
@@ -73,6 +75,7 @@ export declare abstract class TbMap<S extends BaseMapSettings> {
     private drawRectangle;
     private drawPolygon;
     private drawCircle;
+    private drawPolyline;
     private placeItem;
     private selectEntityToPlace;
     private setupCustomActions;
@@ -81,6 +84,7 @@ export declare abstract class TbMap<S extends BaseMapSettings> {
     private createRectangle;
     private createPolygon;
     private createCircle;
+    private createPolyline;
     private createItem;
     private finishCreatedItem;
     private finishAdd;
@@ -143,6 +147,8 @@ export declare abstract class TbMap<S extends BaseMapSettings> {
     };
     abstract polygonDataToCoordinates(coordinates: TbPolygonRawCoordinates): TbPolygonRawCoordinates;
     abstract coordinatesToPolygonData(coordinates: TbPolygonCoordinates): TbPolygonRawCoordinates;
+    abstract polylineDataToCoordinates(coordinates: TbPolylineRawCoordinates): TbPolylineRawCoordinates;
+    abstract coordinatesToPolylineData(coordinates: TbPolylineCoordinates): TbPolylineRawCoordinates;
     abstract circleDataToCoordinates(circle: TbCircleData): TbCircleData;
     abstract coordinatesToCircleData(center: L.LatLng, radius: number): TbCircleData;
 }

@@ -62,7 +62,7 @@ export declare class MobileBundleDialogComponent extends DialogComponent<MobileB
     nextStep(): void;
     nextStepLabel(): string;
     changeStep($event: StepperSelectionEvent): void;
-    createApplication(formControl: string, platformType: PlatformType): void;
+    createApplication(name: string, formControl: string, platformType: PlatformType): void;
     createClient($event: Event): void;
     private get maxStepperIndex();
     private add;

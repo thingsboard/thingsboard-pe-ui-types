@@ -1,9 +1,12 @@
-import { OnInit, ElementRef } from '@angular/core';
-import { ControlValueAccessor, FormControl, FormBuilder } from '@angular/forms';
+import { ElementRef, OnInit } from '@angular/core';
+import { ControlValueAccessor, FormBuilder, FormControl, ValidatorFn } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
+export interface ErrorMessageConfig {
+    [errorKey: string]: string;
+}
 export declare class StringAutocompleteComponent implements ControlValueAccessor, OnInit {
     private fb;
     private translate;
@@ -19,6 +22,8 @@ export declare class StringAutocompleteComponent implements ControlValueAccessor
     panelWidth: string;
     tooltipClass: string;
     errorText: string;
+    controlValidators: ValidatorFn[];
+    errorMessages: ErrorMessageConfig;
     showInlineError: boolean;
     selectionFormControl: FormControl;
     modelValue: string | null;
@@ -35,6 +40,7 @@ export declare class StringAutocompleteComponent implements ControlValueAccessor
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
     clear(): void;
+    get getErrorMessage(): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<StringAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<StringAutocompleteComponent, "tb-string-autocomplete", never, { "disabled": { "alias": "disabled"; "required": false; }; "required": { "alias": "required"; "required": false; }; "fetchOptionsFn": { "alias": "fetchOptionsFn"; "required": false; }; "placeholderText": { "alias": "placeholderText"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "additionalClass": { "alias": "additionalClass"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "label": { "alias": "label"; "required": false; }; "panelWidth": { "alias": "panelWidth"; "required": false; }; "tooltipClass": { "alias": "tooltipClass"; "required": false; }; "errorText": { "alias": "errorText"; "required": false; }; "showInlineError": { "alias": "showInlineError"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<StringAutocompleteComponent, "tb-string-autocomplete", never, { "disabled": { "alias": "disabled"; "required": false; }; "required": { "alias": "required"; "required": false; }; "fetchOptionsFn": { "alias": "fetchOptionsFn"; "required": false; }; "placeholderText": { "alias": "placeholderText"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "additionalClass": { "alias": "additionalClass"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "label": { "alias": "label"; "required": false; }; "panelWidth": { "alias": "panelWidth"; "required": false; }; "tooltipClass": { "alias": "tooltipClass"; "required": false; }; "errorText": { "alias": "errorText"; "required": false; }; "controlValidators": { "alias": "controlValidators"; "required": false; }; "errorMessages": { "alias": "errorMessages"; "required": false; }; "showInlineError": { "alias": "showInlineError"; "required": false; }; }, {}, never, never, false, never>;
 }

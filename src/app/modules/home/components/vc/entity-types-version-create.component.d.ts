@@ -41,7 +41,6 @@ export declare class EntityTypesVersionCreateComponent extends PageComponent imp
     private updateEntityTypeValidators;
     entityTypesFormGroupArray(): UntypedFormGroup[];
     entityTypesFormGroupExpanded(entityTypeControl: AbstractControl): boolean;
-    trackByEntityType(index: number, entityTypeControl: AbstractControl): any;
     removeEntityType(index: number): void;
     addEnabled(): boolean;
     addEntityType(): void;

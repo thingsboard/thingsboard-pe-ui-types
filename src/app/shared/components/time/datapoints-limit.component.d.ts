@@ -11,6 +11,7 @@ export declare class DatapointsLimitComponent implements ControlValueAccessor, V
     get required(): boolean;
     set required(value: boolean);
     disabled: boolean;
+    private propagateChangeValue;
     private propagateChange;
     private destroy$;
     constructor(fb: FormBuilder, timeService: TimeService);
@@ -19,7 +20,6 @@ export declare class DatapointsLimitComponent implements ControlValueAccessor, V
     ngOnInit(): void;
     updateValidators(): void;
     setDisabledState(isDisabled: boolean): void;
-    private checkLimit;
     writeValue(value: number | null): void;
     updateView(value: number | null): void;
     validate(): ValidationErrors;

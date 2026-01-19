@@ -13,6 +13,7 @@ import * as i0 from "@angular/core";
 export interface TimewindowConfigDialogData {
     quickIntervalOnly: boolean;
     aggregation: boolean;
+    showSaveAsDefault: boolean;
     timewindow: Timewindow;
 }
 export declare class TimewindowConfigDialogComponent extends PageComponent implements OnInit, OnDestroy {
@@ -28,6 +29,7 @@ export declare class TimewindowConfigDialogComponent extends PageComponent imple
     viewContainerRef: ViewContainerRef;
     quickIntervalOnly: boolean;
     aggregation: boolean;
+    showSaveAsDefault: boolean;
     timewindowForm: FormGroup;
     historyTypes: typeof HistoryWindowType;
     realtimeTypes: typeof RealtimeWindowType;

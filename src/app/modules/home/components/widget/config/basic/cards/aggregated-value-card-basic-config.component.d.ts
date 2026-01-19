@@ -17,6 +17,7 @@ export declare class AggregatedValueCardBasicConfigComponent extends BasicWidget
     get keyName(): string;
     aggregatedValueCardWidgetConfigForm: UntypedFormGroup;
     datePreviewFn: any;
+    predefinedValues: string[];
     constructor(store: Store<AppState>, widgetConfigComponent: WidgetConfigComponent, cd: ChangeDetectorRef, $injector: Injector, fb: UntypedFormBuilder);
     protected configForm(): UntypedFormGroup;
     protected setupDefaults(configData: WidgetConfigComponentData): void;

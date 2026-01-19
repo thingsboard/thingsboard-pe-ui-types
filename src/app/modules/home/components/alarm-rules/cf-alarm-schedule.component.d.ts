@@ -1,0 +1,52 @@
+import { DestroyRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { AbstractControl, ControlValueAccessor, FormArray, FormBuilder, FormGroup, ValidationErrors, Validator } from '@angular/forms';
+import { AlarmRuleSchedule, AlarmRuleScheduleType } from "@shared/models/alarm-rule.models";
+import { CalculatedFieldArgument } from "@shared/models/calculated-field.models";
+import { MatChipSelectionChange } from "@angular/material/chips";
+import * as i0 from "@angular/core";
+export declare class CfAlarmScheduleComponent implements ControlValueAccessor, Validator, OnInit, OnChanges {
+    private fb;
+    private destroyRef;
+    disabled: boolean;
+    arguments: Record<string, CalculatedFieldArgument>;
+    dynamicMode: boolean;
+    alarmScheduleForm: FormGroup<{
+        staticValue: FormGroup<{
+            type: import("@angular/forms").FormControl<AlarmRuleScheduleType>;
+            timezone: import("@angular/forms").FormControl<string>;
+            daysOfWeek: import("@angular/forms").FormControl<number[]>;
+            startsOn: import("@angular/forms").FormControl<number | Date>;
+            endsOn: import("@angular/forms").FormControl<number | Date>;
+            items: FormArray<FormGroup<any>>;
+        }>;
+        dynamicValueArgument: import("@angular/forms").FormControl<string>;
+    }>;
+    alarmScheduleTypes: Array<AlarmRuleScheduleType>;
+    alarmScheduleType: typeof AlarmRuleScheduleType;
+    alarmScheduleTypeTranslate: Map<AlarmRuleScheduleType, string>;
+    dayOfWeekTranslationsArray: string[];
+    argumentsList: Array<string>;
+    allDays: number[];
+    private modelValue;
+    private defaultItems;
+    private propagateChange;
+    constructor(fb: FormBuilder, destroyRef: DestroyRef);
+    ngOnInit(): void;
+    ngOnChanges(changes: SimpleChanges): void;
+    validateItems(control: AbstractControl): ValidationErrors | null;
+    registerOnChange(fn: any): void;
+    registerOnTouched(fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    writeValue(value: AlarmRuleSchedule): void;
+    validate(control: FormGroup): ValidationErrors | null;
+    private updateModeValidators;
+    private updateValidators;
+    private updateModel;
+    private defaultItemsScheduler;
+    changeCustomScheduler($event: MatChipSelectionChange, index: number): void;
+    private disabledSelectedTime;
+    getSchedulerRangeText(control: FormGroup | AbstractControl): string;
+    get itemsSchedulerForm(): FormArray;
+    static ɵfac: i0.ɵɵFactoryDeclaration<CfAlarmScheduleComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CfAlarmScheduleComponent, "tb-cf-alarm-schedule", never, { "disabled": { "alias": "disabled"; "required": false; }; "arguments": { "alias": "arguments"; "required": false; }; "dynamicMode": { "alias": "dynamicMode"; "required": false; }; }, {}, never, never, false, never>;
+}
