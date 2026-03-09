@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, DestroyRef, ElementRef, EventEmitter, OnInit, Renderer2, ViewContainerRef } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { ScadaSymbolBehavior, ScadaSymbolBehaviorType } from '@home/components/widget/lib/scada/scada-symbol.models';
-import { MatButton } from '@angular/material/button';
+import { MatIconButton } from '@angular/material/button';
 import { TbPopoverService } from '@shared/components/popover.service';
 import { ScadaSymbolBehaviorsComponent } from '@home/pages/scada-symbol/metadata-components/scada-symbol-behaviors.component';
 import { IAliasController } from '@core/api/widget-api.models';
@@ -17,7 +17,7 @@ export declare class ScadaSymbolBehaviorRowComponent implements ControlValueAcce
     private behaviorsComponent;
     private destroyRef;
     idInput: ElementRef<HTMLInputElement>;
-    editButton: MatButton;
+    editButton: MatIconButton;
     scadaSymbolBehaviorTypes: ScadaSymbolBehaviorType[];
     scadaSymbolBehaviorTypeTranslations: Map<ScadaSymbolBehaviorType, string>;
     disabled: boolean;
@@ -34,7 +34,7 @@ export declare class ScadaSymbolBehaviorRowComponent implements ControlValueAcce
     registerOnTouched(_fn: any): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: ScadaSymbolBehavior): void;
-    editBehavior($event: Event, matButton: MatButton, add?: boolean, editCanceled?: () => void): void;
+    editBehavior($event: Event, matButton: MatIconButton, add?: boolean, editCanceled?: () => void): void;
     focus(): void;
     onAdd(onCanceled: () => void): void;
     validate(_c: UntypedFormControl): {

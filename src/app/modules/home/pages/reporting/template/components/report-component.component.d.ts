@@ -104,7 +104,7 @@ export declare abstract class AbstractReportComponentPreview<C extends ReportCom
     componentUpdated(): void;
     protected onComponentUpdated(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AbstractReportComponentPreview<any>, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<AbstractReportComponentPreview<any>, never, never, { "context": { "alias": "context"; "required": false; }; "reportComponent": { "alias": "reportComponent"; "required": false; }; "format": { "alias": "format"; "required": false; }; "scale": { "alias": "scale"; "required": false; }; }, { "contentResized": "contentResized"; }, never, never, false, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<AbstractReportComponentPreview<any>, never, never, { "context": { "alias": "context"; "required": false; }; "reportComponent": { "alias": "reportComponent"; "required": false; }; "format": { "alias": "format"; "required": false; }; "scale": { "alias": "scale"; "required": false; }; }, { "contentResized": "contentResized"; }, never, never, true, never>;
 }
 export declare abstract class AbstractReportComponentPreviewContainer<C extends ReportComponentConfig = ReportComponentConfig> extends AbstractReportComponentPreview<C> {
     componentEdit: EventEmitter<ReportComponentConfig>;
@@ -117,6 +117,6 @@ export declare abstract class AbstractReportComponentPreviewContainer<C extends 
     protected abstract getAllChildReportComponents(): IReportComponent[];
     protected abstract findChildReportComponent(reportComponent: ReportComponentConfig): IReportComponent | undefined;
     static ɵfac: i0.ɵɵFactoryDeclaration<AbstractReportComponentPreviewContainer<any>, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<AbstractReportComponentPreviewContainer<any>, never, never, {}, { "componentEdit": "componentEdit"; "componentsChanged": "componentsChanged"; "componentRemoved": "componentRemoved"; }, never, never, false, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<AbstractReportComponentPreviewContainer<any>, never, never, {}, { "componentEdit": "componentEdit"; "componentsChanged": "componentsChanged"; "componentRemoved": "componentRemoved"; }, never, never, true, never>;
 }
 export declare const isReportComponentContainer: (component: AbstractReportComponentPreview) => component is AbstractReportComponentPreviewContainer;

@@ -17,5 +17,5 @@ export declare class CustomDialogComponent extends PageComponent {
     fb: UntypedFormBuilder;
     constructor();
     static ɵfac: i0.ɵɵFactoryDeclaration<CustomDialogComponent, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<CustomDialogComponent, never, never, {}, {}, never, never, false, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<CustomDialogComponent, never, never, {}, {}, never, never, true, never>;
 }

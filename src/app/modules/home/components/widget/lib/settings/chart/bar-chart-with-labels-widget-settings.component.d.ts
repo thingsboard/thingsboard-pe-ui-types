@@ -18,6 +18,7 @@ export declare class BarChartWithLabelsWidgetSettingsComponent extends WidgetSet
     protected settingsForm(): UntypedFormGroup;
     protected defaultSettings(): WidgetSettings;
     protected onSettingsSet(settings: WidgetSettings): void;
+    protected onSettingsChanged(updated: WidgetSettings): void;
     protected validatorTriggers(): string[];
     protected updateValidators(emitEvent: boolean): void;
     private _tooltipValuePreviewFn;

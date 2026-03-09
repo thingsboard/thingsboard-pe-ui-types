@@ -33,6 +33,7 @@ export declare class RangeChartBasicConfigComponent extends BasicWidgetConfigCom
     protected defaultDataKeys(configData: WidgetConfigComponentData): DataKey[];
     protected onConfigSet(configData: WidgetConfigComponentData): void;
     protected prepareOutputConfig(config: any): WidgetConfigComponentData;
+    protected onConfigChanged(widgetConfig: WidgetConfigComponentData): void;
     protected validatorTriggers(): string[];
     protected updateValidators(emitEvent: boolean, trigger?: string): void;
     private getCardButtons;

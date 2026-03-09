@@ -29,6 +29,7 @@ export declare class RangeChartWidgetSettingsComponent extends WidgetSettingsCom
     protected onSettingsSet(settings: WidgetSettings): void;
     protected validatorTriggers(): string[];
     protected updateValidators(): void;
+    protected onSettingsChanged(updated: WidgetSettings): void;
     private _pointLabelPreviewFn;
     private _tooltipValuePreviewFn;
     private _tooltipDatePreviewFn;

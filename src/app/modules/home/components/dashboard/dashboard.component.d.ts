@@ -18,7 +18,6 @@ import { WhiteLabelingService } from '@core/http/white-labeling.service';
 import { UtilsService } from '@core/services/utils.service';
 import { WidgetComponentAction } from '@home/components/widget/widget-container.component';
 import { TbPopoverComponent } from '@shared/components/popover.component';
-import { displayGrids } from 'angular-gridster2/lib/gridsterConfig.interface';
 import { TbContextMenuEvent } from '@shared/models/jquery-event.models';
 import * as i0 from "@angular/core";
 export declare class DashboardComponent extends PageComponent implements IDashboardComponent, DoCheck, OnInit, OnDestroy, AfterViewInit, OnChanges {
@@ -41,7 +40,7 @@ export declare class DashboardComponent extends PageComponent implements IDashbo
     setGridSize: boolean;
     margin: number;
     outerMargin: boolean;
-    displayGrid: displayGrids;
+    displayGrid: 'always' | 'onDrag&Resize' | 'none';
     gridType: GridType;
     centerVertical: boolean;
     centerHorizontal: boolean;

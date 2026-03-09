@@ -1,7 +1,7 @@
 import { ActivationEnd, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Actions } from '@ngrx/effects';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateStore } from '@ngx-translate/core';
 import { SettingsActions } from './settings.actions';
 import { AppState } from '@app/core/core.state';
 import { LocalStorageService } from '@app/core/local-storage/local-storage.service';
@@ -19,10 +19,11 @@ export declare class SettingsEffects {
     private localStorageService;
     private titleService;
     private translate;
+    private translateStore;
     private document;
     private faviconService;
     private reportService;
-    constructor(actions$: Actions<SettingsActions>, store: Store<AppState>, utils: UtilsService, router: Router, localStorageService: LocalStorageService, titleService: TitleService, translate: TranslateService, document: Document, faviconService: FaviconService, reportService: DashboardReportService);
+    constructor(actions$: Actions<SettingsActions>, store: Store<AppState>, utils: UtilsService, router: Router, localStorageService: LocalStorageService, titleService: TitleService, translate: TranslateService, translateStore: TranslateStore, document: Document, faviconService: FaviconService, reportService: DashboardReportService);
     setTranslateServiceLanguage: import("rxjs").Observable<[import("./settings.actions").ActionSettingsChangeLanguage, import("./settings.models").SettingsState]> & import("@ngrx/effects").CreateEffectMetadata;
     setTitle: import("rxjs").Observable<ActivationEnd | SettingsActions> & import("@ngrx/effects").CreateEffectMetadata;
     setFavicon: import("rxjs").Observable<import("./settings.actions").ActionSettingsChangeWhiteLabeling> & import("@ngrx/effects").CreateEffectMetadata;

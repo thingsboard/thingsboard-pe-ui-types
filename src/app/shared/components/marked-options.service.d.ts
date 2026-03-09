@@ -7,7 +7,7 @@ export declare class MarkedOptionsService implements MarkedOptions {
     private clipboardService;
     private readonly window;
     private readonly document;
-    renderer: MarkedRenderer;
+    renderer: MarkedRenderer<string, string>;
     headerIds: boolean;
     gfm: boolean;
     breaks: boolean;
@@ -15,7 +15,7 @@ export declare class MarkedOptionsService implements MarkedOptions {
     smartLists: boolean;
     smartypants: boolean;
     mangle: boolean;
-    private renderer2;
+    private parser;
     private id;
     constructor(translate: TranslateService, clipboardService: Clipboard, window: Window, document: Document);
     private wrapDiv;

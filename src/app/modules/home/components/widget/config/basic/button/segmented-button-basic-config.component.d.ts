@@ -28,6 +28,8 @@ export declare class SegmentedButtonBasicConfigComponent extends BasicWidgetConf
     protected configForm(): UntypedFormGroup;
     protected onConfigSet(configData: WidgetConfigComponentData): void;
     protected prepareOutputConfig(config: any): WidgetConfigComponentData;
+    protected validatorTriggers(): string[];
+    protected updateValidators(emitEvent: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SegmentedButtonBasicConfigComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<SegmentedButtonBasicConfigComponent, "tb-segmented-button-basic-config", never, {}, {}, never, never, false, never>;
 }

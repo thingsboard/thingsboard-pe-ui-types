@@ -13,4 +13,4 @@ export declare class BrowserWindowRef extends WindowRef {
 export declare function windowFactory(browserWindowRef: BrowserWindowRef, platformId: object): Window | object;
 export declare const browserWindowProvider: ClassProvider;
 export declare const windowProvider: FactoryProvider;
-export declare const WINDOW_PROVIDERS: (ClassProvider | FactoryProvider)[];
+export declare const WINDOW_PROVIDERS: (FactoryProvider | ClassProvider)[];

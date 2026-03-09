@@ -36,7 +36,7 @@ export declare abstract class _ToggleBase extends PageComponent implements After
     ngOnDestroy(): void;
     private syncToggleHeaderOptions;
     static ɵfac: i0.ɵɵFactoryDeclaration<_ToggleBase, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<_ToggleBase, never, never, { "options": { "alias": "options"; "required": false; }; }, {}, ["toggleOptions"], never, false, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<_ToggleBase, never, never, { "options": { "alias": "options"; "required": false; }; }, {}, ["toggleOptions"], never, true, never>;
 }
 export declare class ToggleHeaderComponent extends _ToggleBase implements OnInit, AfterViewInit, AfterContentInit, AfterContentChecked, AfterViewChecked, OnDestroy {
     protected store: Store<AppState>;

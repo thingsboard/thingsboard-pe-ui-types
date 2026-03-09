@@ -1,7 +1,6 @@
 import { OnInit } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 import { FloatLabelType, MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
-import { MatDatetimepickerType } from '@mat-datetimepicker/core/datetimepicker/datetimepicker-type';
 import * as i0 from "@angular/core";
 export declare class DatetimeComponent implements OnInit, ControlValueAccessor {
     private requiredValue;
@@ -10,7 +9,7 @@ export declare class DatetimeComponent implements OnInit, ControlValueAccessor {
     floatLabel: FloatLabelType;
     subscriptSizing: SubscriptSizing;
     appearance: MatFormFieldAppearance;
-    type: MatDatetimepickerType;
+    type: 'date' | 'time' | 'month' | 'year' | 'datetime';
     disabled: boolean;
     dateText: string;
     showLabel: boolean;

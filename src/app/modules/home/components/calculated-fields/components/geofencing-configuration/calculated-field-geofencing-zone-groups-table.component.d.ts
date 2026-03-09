@@ -1,7 +1,7 @@
 import { AfterViewInit, ChangeDetectorRef, DestroyRef, Renderer2, ViewContainerRef } from '@angular/core';
 import { ControlValueAccessor, FormBuilder, ValidationErrors, Validator } from '@angular/forms';
 import { ArgumentEntityType, CalculatedFieldGeofencing, CalculatedFieldGeofencingValue } from '@shared/models/calculated-field.models';
-import { MatButton } from '@angular/material/button';
+import { MatIconButton } from '@angular/material/button';
 import { TbPopoverService } from '@shared/components/popover.service';
 import { EntityId } from '@shared/models/id/entity-id';
 import { EntityType } from '@shared/models/entity-type.models';
@@ -50,7 +50,7 @@ export declare class CalculatedFieldGeofencingZoneGroupsTableComponent implement
     validate(): ValidationErrors | null;
     setDisabledState(isDisabled: boolean): void;
     onDelete($event: Event, zone: CalculatedFieldGeofencingValue): void;
-    manageZone($event: Event, matButton: MatButton, zone?: CalculatedFieldGeofencingValue, readonly?: boolean): void;
+    manageZone($event: Event, matButton: MatIconButton, zone?: CalculatedFieldGeofencingValue, readonly?: boolean): void;
     private updateDataSource;
     private updateErrorText;
     private getZonesObject;

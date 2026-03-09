@@ -10,7 +10,7 @@ export declare const StrictPopoverPlacements: readonly ["topOnly", "topLeftOnly"
 type StrictPopoverPlacementTuple = typeof StrictPopoverPlacements;
 export type StrictPopoverPlacement = StrictPopoverPlacementTuple[number];
 export type PopoverPreferredPlacement = PopoverPlacement | PopoverPlacement[] | StrictPopoverPlacement | StrictPopoverPlacement[];
-export declare const DEFAULT_POPOVER_POSITIONS: import("@angular/cdk/overlay").ConnectionPositionPair[];
+export declare const DEFAULT_POPOVER_POSITIONS: import("@angular/cdk/overlay-module.d").ConnectionPositionPair[];
 export declare const isStrictPopoverPlacement: (placement: string) => boolean;
 export declare const convertStrictPopoverPlacement: (placement: StrictPopoverPlacement) => PopoverPlacement;
 export declare const getPlacementName: (position: ConnectedOverlayPositionChange) => PopoverPlacement | undefined;

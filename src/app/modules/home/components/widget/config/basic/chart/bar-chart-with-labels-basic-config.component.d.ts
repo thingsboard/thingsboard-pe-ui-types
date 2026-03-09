@@ -24,6 +24,7 @@ export declare class BarChartWithLabelsBasicConfigComponent extends BasicWidgetC
     protected configForm(): UntypedFormGroup;
     protected defaultDataKeys(configData: WidgetConfigComponentData): DataKey[];
     protected onConfigSet(configData: WidgetConfigComponentData): void;
+    protected onConfigChanged(widgetConfig: WidgetConfigComponentData): void;
     protected prepareOutputConfig(config: any): WidgetConfigComponentData;
     protected validatorTriggers(): string[];
     protected updateValidators(emitEvent: boolean, trigger?: string): void;

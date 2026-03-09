@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, DestroyRef, EventEmitter, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
-import { MatButton } from '@angular/material/button';
+import { MatIconButton } from '@angular/material/button';
 import { MapDataLayerSettings, MapDataLayerType, MapType } from '@shared/models/widget/maps/map.models';
 import { DatasourceType, widgetType } from '@shared/models/widget.models';
 import { EntityType } from '@shared/models/entity-type.models';
@@ -39,7 +39,7 @@ export declare class MapDataLayerRowComponent implements ControlValueAccessor, O
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: MapDataLayerSettings): void;
     editKey(keyType: 'xKey' | 'yKey' | 'polygonKey' | 'circleKey' | 'polylineKey'): void;
-    editDataLayer($event: Event, matButton: MatButton): void;
+    editDataLayer($event: Event, matButton: MatIconButton): void;
     private onDsTypeChanged;
     private updateValidators;
     private updateModel;

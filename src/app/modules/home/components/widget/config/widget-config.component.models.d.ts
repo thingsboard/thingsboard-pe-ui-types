@@ -52,5 +52,5 @@ export declare abstract class BasicWidgetConfigComponent extends PageComponent i
     protected abstract configForm(): UntypedFormGroup;
     protected abstract onConfigSet(configData: WidgetConfigComponentData): any;
     static ɵfac: i0.ɵɵFactoryDeclaration<BasicWidgetConfigComponent, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<BasicWidgetConfigComponent, never, never, {}, {}, never, never, false, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<BasicWidgetConfigComponent, never, never, {}, {}, never, never, true, never>;
 }

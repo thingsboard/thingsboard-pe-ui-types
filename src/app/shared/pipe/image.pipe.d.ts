@@ -12,7 +12,7 @@ export declare class ImagePipe implements PipeTransform {
     private sanitizer;
     private zone;
     constructor(imageService: ImageService, sanitizer: DomSanitizer, zone: NgZone);
-    transform(urlData: string | UrlHolder, args?: any): Observable<SafeUrl | string>;
+    transform(urlData: string | UrlHolder, args?: any, triggerUpdate?: number): Observable<SafeUrl | string>;
     static ɵfac: i0.ɵɵFactoryDeclaration<ImagePipe, never>;
     static ɵpipe: i0.ɵɵPipeDeclaration<ImagePipe, "image", false>;
 }

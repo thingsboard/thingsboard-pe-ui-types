@@ -22,5 +22,5 @@ export declare class CustomSchedulerEventConfigComponent extends PageComponent i
     validate(_control: AbstractControl): ValidationErrors | null;
     private doValidate;
     static ɵfac: i0.ɵɵFactoryDeclaration<CustomSchedulerEventConfigComponent, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<CustomSchedulerEventConfigComponent, never, never, {}, {}, never, never, false, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<CustomSchedulerEventConfigComponent, never, never, {}, {}, never, never, true, never>;
 }

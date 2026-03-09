@@ -84,6 +84,10 @@ export declare abstract class PowerButtonShape {
     protected offPowerSymbolLine: Path;
     protected onPowerSymbolCircle: Path;
     protected onPowerSymbolLine: Path;
+    private onIcon$;
+    private offIcon$;
+    protected onIconOffsetX: number;
+    protected onIconOffsetY: number;
     protected constructor(widgetContext: WidgetContext, svgShape: Svg, iconRegistry: MatIconRegistry, settings: PowerButtonWidgetSettings, value: boolean, disabled: boolean, onClick: () => void);
     createIconElement(icon: string, size: number): Observable<Element>;
     setValue(value: boolean): void;

@@ -17,5 +17,5 @@ export declare abstract class AbstractReportTablePreviewComponent<C extends Tabl
     cellContent(column: DataKey): string;
     protected styleFromColumnSettings(column: DataKey, header?: boolean): ComponentStyle;
     static ɵfac: i0.ɵɵFactoryDeclaration<AbstractReportTablePreviewComponent<any>, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<AbstractReportTablePreviewComponent<any>, never, never, {}, {}, never, never, false, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<AbstractReportTablePreviewComponent<any>, never, never, {}, {}, never, never, true, never>;
 }

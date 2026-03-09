@@ -53,6 +53,7 @@ export declare class TbPopoverComponent<T = any> implements OnDestroy, OnInit {
     cdr: ChangeDetectorRef;
     private renderer;
     private animationBuilder;
+    private injector;
     private directionality;
     overlay: CdkConnectedOverlay;
     popoverRoot: ElementRef<HTMLElement>;
@@ -106,6 +107,7 @@ export declare class TbPopoverComponent<T = any> implements OnDestroy, OnInit {
     preferredPlacement: PopoverPlacement;
     strictPosition: boolean;
     origin: CdkOverlayOrigin;
+    originElement: ElementRef;
     dir: Direction;
     classMap: {
         [klass: string]: any;
@@ -115,11 +117,12 @@ export declare class TbPopoverComponent<T = any> implements OnDestroy, OnInit {
     private parentScrollSubscription;
     private intersectionObserver;
     private _tbOverlayStyle;
-    constructor(cdr: ChangeDetectorRef, renderer: Renderer2, animationBuilder: AnimationBuilder, directionality: Directionality);
+    constructor(cdr: ChangeDetectorRef, renderer: Renderer2, animationBuilder: AnimationBuilder, injector: Injector, directionality: Directionality);
     ngOnInit(): void;
     ngOnDestroy(): void;
     closeButtonClick($event: Event): void;
     show(): void;
+    private doShow;
     hide(): void;
     updateByDirective(): void;
     resize(width: string, height: string, animationDurationMs?: number): void;
@@ -127,13 +130,13 @@ export declare class TbPopoverComponent<T = any> implements OnDestroy, OnInit {
     updatePosition(): void;
     onPositionChange(position: ConnectedOverlayPositionChange): void;
     updateStyles(): void;
-    setOverlayOrigin(origin: CdkOverlayOrigin): void;
+    setOriginElement(originElement: ElementRef): void;
     onClickOutside(event: MouseEvent): void;
     onComponentChange(component: ComponentRef<any>): void;
     animationDone(): void;
     private isTopOverlay;
     private updateVisibilityByContent;
     private isEmpty;
-    static ɵfac: i0.ɵɵFactoryDeclaration<TbPopoverComponent<any>, [null, null, null, { optional: true; }]>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<TbPopoverComponent<any>, [null, null, null, null, { optional: true; }]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<TbPopoverComponent<any>, "tb-popover", ["tbPopoverComponent"], {}, {}, never, never, false, never>;
 }

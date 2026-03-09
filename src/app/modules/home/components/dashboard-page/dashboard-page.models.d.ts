@@ -6,7 +6,6 @@ import { ILayoutController } from './layout/layout.models';
 import { DashboardContextMenuItem, WidgetContextMenuItem } from '@home/models/dashboard-component.models';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { EntityGroupInfo } from '@shared/models/entity-group.models';
-import { displayGrids } from 'angular-gridster2/lib/gridsterConfig.interface';
 import { ElementRef } from '@angular/core';
 export declare type DashboardPageScope = 'tenant' | 'customer';
 export interface DashboardPageInitData {
@@ -63,7 +62,7 @@ export interface DashboardPageLayoutContext {
     ctrl: ILayoutController;
     dashboardCtrl: IDashboardController;
     ignoreLoading: boolean;
-    displayGrid: displayGrids;
+    displayGrid: 'always' | 'onDrag&Resize' | 'none';
 }
 export interface DashboardPageLayout {
     show: boolean;

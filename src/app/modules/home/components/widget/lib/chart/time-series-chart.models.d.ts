@@ -14,6 +14,7 @@ import { UtilsService } from '@core/services/utils.service';
 import { ChartAnimationSettings, ChartBarSettings, ChartFillSettings, ChartLabelPosition, ChartLineType, ChartShape } from '@home/components/widget/lib/chart/chart.models';
 import { TimeSeriesChartTooltipValueFormatFunction, TimeSeriesChartTooltipWidgetSettings } from '@home/components/widget/lib/chart/time-series-chart-tooltip.models';
 import { TbUnit, TbUnitConverter } from '@shared/models/unit.models';
+import { DataKeysCallbacks } from '@home/components/widget/lib/settings/common/key/data-keys.component.models';
 type TimeSeriesChartDataEntry = [number, any, number, number];
 type TimeSeriesChartDataSet = {
     name: string;
@@ -301,4 +302,8 @@ export declare const calculateThresholdsOffset: (chart: ECharts, thresholdItems:
 export declare const parseThresholdData: (value: any, valueConvertor?: TbUnitConverter) => TimeSeriesChartThresholdValue;
 export declare const dataKeySeriesType: (settings: any) => TimeSeriesChartSeriesType;
 export declare const updateDarkMode: (options: EChartsOption, xAxisList: TimeSeriesChartXAxis[], yAxisList: TimeSeriesChartYAxis[], dataItems: TimeSeriesChartDataItem[], darkMode: boolean) => EChartsOption;
+export declare const checkLatestDataKeys: (yAxes: TimeSeriesChartYAxes, datasource: Datasource) => TimeSeriesChartYAxes;
+export declare const updateLatestDataKeys: (yAxes: TimeSeriesChartYAxisSettings[], datasource: Datasource, dataKeyCallbacks: DataKeysCallbacks) => void;
+export declare const isYAxisKey: (d: DataKey, limit: ValueSourceConfig) => boolean;
+export declare const normalizeAxisLimit: (limit: string | number | ValueSourceConfig) => ValueSourceConfig;
 export {};

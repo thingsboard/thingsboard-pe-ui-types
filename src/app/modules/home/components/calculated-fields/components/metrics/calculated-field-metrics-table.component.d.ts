@@ -1,7 +1,7 @@
 import { AfterViewInit, ChangeDetectorRef, DestroyRef, OnInit, Renderer2, ViewContainerRef } from '@angular/core';
 import { ControlValueAccessor, FormBuilder, ValidationErrors, Validator } from '@angular/forms';
 import { CalculatedFieldAggMetric, CalculatedFieldAggMetricValue } from '@shared/models/calculated-field.models';
-import { MatButton } from '@angular/material/button';
+import { MatIconButton } from '@angular/material/button';
 import { TbPopoverService } from '@shared/components/popover.service';
 import { TbTableDatasource } from '@shared/components/table/table-datasource.abstract';
 import { MatSort, SortDirection } from '@angular/material/sort';
@@ -48,7 +48,7 @@ export declare class CalculatedFieldMetricsTableComponent implements OnInit, Con
     validate(): ValidationErrors | null;
     setDisabledState(isDisabled: boolean): void;
     onDelete($event: Event, metric: CalculatedFieldAggMetricValue): void;
-    manageMetrics($event: Event, matButton: MatButton, metric?: CalculatedFieldAggMetricValue, readonly?: boolean): void;
+    manageMetrics($event: Event, matButton: MatIconButton, metric?: CalculatedFieldAggMetricValue, readonly?: boolean): void;
     private updateDataSource;
     private updateErrorText;
     private getMetricsObject;

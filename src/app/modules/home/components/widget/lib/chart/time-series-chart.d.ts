@@ -77,5 +77,4 @@ export declare class TbTimeSeriesChart {
     private onResize;
     private animationEnabled;
     private updateBarsAnimation;
-    private normalizeAxisLimit;
 }

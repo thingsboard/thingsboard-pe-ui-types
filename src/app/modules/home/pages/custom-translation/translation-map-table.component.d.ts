@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DataSource } from '@angular/cdk/collections';
 import { CustomTranslationEditInfo, CustomTranslationState } from '@shared/models/custom-translation.model';
 import { MatPaginator } from '@angular/material/paginator';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateStore } from '@ngx-translate/core';
 import * as i0 from "@angular/core";
 interface CustomTranslationMap {
     key: string;
@@ -30,6 +30,7 @@ export declare class TranslationMapTableComponent extends PageComponent implemen
     private router;
     private route;
     private translate;
+    private translateStore;
     private zone;
     searchInputField: ElementRef;
     sort: MatSort;
@@ -56,7 +57,7 @@ export declare class TranslationMapTableComponent extends PageComponent implemen
     private tableResize$;
     private destroy$;
     private defaultSortOrder;
-    constructor(store: Store<AppState>, fb: FormBuilder, customTranslationService: CustomTranslationService, cd: ChangeDetectorRef, elementRef: ElementRef, router: Router, route: ActivatedRoute, translate: TranslateService, zone: NgZone);
+    constructor(store: Store<AppState>, fb: FormBuilder, customTranslationService: CustomTranslationService, cd: ChangeDetectorRef, elementRef: ElementRef, router: Router, route: ActivatedRoute, translate: TranslateService, translateStore: TranslateStore, zone: NgZone);
     ngOnInit(): void;
     ngOnDestroy(): void;
     trackByLocale(index: number, translate: CustomTranslationMap): string;
@@ -84,12 +85,13 @@ export declare class CustomTranslationMapDatasource implements DataSource<Custom
     private localeCode;
     private cd;
     private translate;
+    private translateStore;
     private translationInfo;
     private totalPageDataSubject;
     dataLoading: boolean;
     private allTranslation;
     private defaultLang;
-    constructor(customTranslationService: CustomTranslationService, localeCode: string, cd: ChangeDetectorRef, translate: TranslateService);
+    constructor(customTranslationService: CustomTranslationService, localeCode: string, cd: ChangeDetectorRef, translate: TranslateService, translateStore: TranslateStore);
     connect(): Observable<CustomTranslationEditInfo[] | ReadonlyArray<CustomTranslationEditInfo>>;
     disconnect(): void;
     currentTranslations(): Array<CustomTranslationEditInfo>;

@@ -1,7 +1,7 @@
 import { AfterViewInit, ChangeDetectorRef, DestroyRef, OnChanges, Renderer2, SimpleChanges, ViewContainerRef } from '@angular/core';
 import { ControlValueAccessor, FormBuilder, ValidationErrors, Validator } from '@angular/forms';
 import { ArgumentEntityType, ArgumentType, CalculatedFieldArgument, CalculatedFieldArgumentValue, CalculatedFieldType } from '@shared/models/calculated-field.models';
-import { MatButton } from '@angular/material/button';
+import { MatIconButton } from '@angular/material/button';
 import { TbPopoverService } from '@shared/components/popover.service';
 import { EntityId } from '@shared/models/id/entity-id';
 import { EntityType } from '@shared/models/entity-type.models';
@@ -59,7 +59,7 @@ export declare class CalculatedFieldArgumentsTableComponent implements ControlVa
     validate(): ValidationErrors | null;
     setDisabledState(isDisabled: boolean): void;
     onDelete($event: Event, argument: CalculatedFieldArgumentValue): void;
-    manageArgument($event: Event, matButton: MatButton, argument?: CalculatedFieldArgumentValue, readonly?: boolean): void;
+    manageArgument($event: Event, matButton: MatIconButton, argument?: CalculatedFieldArgumentValue, readonly?: boolean): void;
     private updateDataSource;
     protected updateErrorText(): void;
     private getArgumentsObject;

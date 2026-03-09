@@ -3,7 +3,7 @@ import { ControlValueAccessor, UntypedFormControl } from '@angular/forms';
 import { DateFormatSettings } from '@shared/models/widget-settings.models';
 import { TranslateService } from '@ngx-translate/core';
 import { DatePipe } from '@angular/common';
-import { MatButton } from '@angular/material/button';
+import { MatIconButton } from '@angular/material/button';
 import { TbPopoverService } from '@shared/components/popover.service';
 import * as i0 from "@angular/core";
 export declare class DateFormatSelectComponent implements OnInit, ControlValueAccessor {
@@ -13,7 +13,7 @@ export declare class DateFormatSelectComponent implements OnInit, ControlValueAc
     private renderer;
     private viewContainerRef;
     private destroyRef;
-    customFormatButton: MatButton;
+    customFormatButton: MatIconButton;
     disabled: boolean;
     excludeLastUpdateAgo: boolean;
     includeAuto: boolean;
@@ -33,8 +33,8 @@ export declare class DateFormatSelectComponent implements OnInit, ControlValueAc
     writeValue(value: DateFormatSettings | string): void;
     updateModel(value: DateFormatSettings): void;
     dateFormatDisplayValue(value: DateFormatSettings): string;
-    openDateFormatSettingsPopup($event: Event, matButton: MatButton): void;
-    openAutoFormatSettingsPopup($event: Event, matButton: MatButton): void;
+    openDateFormatSettingsPopup($event: Event, matButton: MatIconButton): void;
+    openAutoFormatSettingsPopup($event: Event, matButton: MatIconButton): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DateFormatSelectComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<DateFormatSelectComponent, "tb-date-format-select", never, { "disabled": { "alias": "disabled"; "required": false; }; "excludeLastUpdateAgo": { "alias": "excludeLastUpdateAgo"; "required": false; }; "includeAuto": { "alias": "includeAuto"; "required": false; }; "includeMilliseconds": { "alias": "includeMilliseconds"; "required": false; }; "asStringFormat": { "alias": "asStringFormat"; "required": false; }; }, {}, never, never, false, never>;
 }

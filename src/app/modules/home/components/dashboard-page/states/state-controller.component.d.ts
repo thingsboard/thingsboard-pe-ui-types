@@ -74,5 +74,5 @@ export declare abstract class StateControllerComponent implements IStateControll
     abstract updateState(id?: string, params?: StateParams, openRightLayout?: boolean): void;
     abstract getCurrentStateName(): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<StateControllerComponent, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<StateControllerComponent, never, never, {}, {}, never, never, false, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<StateControllerComponent, never, never, {}, {}, never, never, true, never>;
 }

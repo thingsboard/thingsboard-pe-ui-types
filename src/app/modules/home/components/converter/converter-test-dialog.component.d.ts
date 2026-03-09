@@ -12,7 +12,7 @@ import { Converter, ConverterDebugInput, ConverterMsg } from '@shared/models/con
 import { ConverterService } from '@core/http/converter.service';
 import { WhiteLabelingService } from '@core/http/white-labeling.service';
 import { ScriptLanguage } from '@shared/models/rule-node.models';
-import { MatButton } from '@angular/material/button';
+import { MatIconButton } from '@angular/material/button';
 import { TbPopoverService } from '@shared/components/popover.service';
 import * as i0 from "@angular/core";
 export interface ConverterTestDialogData {
@@ -72,7 +72,7 @@ export declare class ConverterTestDialogComponent extends DialogComponent<Conver
     isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     cancel(): void;
     test(): void;
-    updateMsg($event: Event, matButton: MatButton): void;
+    updateMsg($event: Event, matButton: MatIconButton): void;
     private testConverter;
     private checkInputParamErrors;
     save(): void;

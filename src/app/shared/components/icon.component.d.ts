@@ -1,16 +1,10 @@
-import { CanColor } from '@angular/material/core';
 import { AfterContentInit, AfterViewChecked, ElementRef, ErrorHandler, OnDestroy, Renderer2 } from '@angular/core';
 import { MatIconLocation, MatIconRegistry } from '@angular/material/icon';
 import { ContentObserver } from '@angular/cdk/observers';
 import { ImagePipe } from '@shared/pipe/image.pipe';
 import { DomSanitizer } from '@angular/platform-browser';
 import * as i0 from "@angular/core";
-declare const _TbIconBase: import("@angular/material/core")._Constructor<CanColor> & import("@angular/material/core")._AbstractConstructor<CanColor> & {
-    new (_elementRef: ElementRef): {
-        _elementRef: ElementRef;
-    };
-};
-export declare class TbIconComponent extends _TbIconBase implements AfterContentInit, AfterViewChecked, CanColor, OnDestroy {
+export declare class TbIconComponent implements AfterContentInit, AfterViewChecked, OnDestroy {
     private contentObserver;
     private renderer;
     private _iconRegistry;
@@ -19,6 +13,11 @@ export declare class TbIconComponent extends _TbIconBase implements AfterContent
     private _location;
     private readonly _errorHandler;
     _iconNameContent: ElementRef;
+    readonly _elementRef: ElementRef<HTMLElement>;
+    private _defaultColor;
+    get color(): string | null | undefined;
+    set color(value: string | null | undefined);
+    private _color;
     private icon;
     get viewValue(): string;
     private _contentChanges;
@@ -32,7 +31,7 @@ export declare class TbIconComponent extends _TbIconBase implements AfterContent
     private _previousPath?;
     private _elementsWithExternalReferences?;
     private _currentIconFetch;
-    constructor(elementRef: ElementRef<HTMLElement>, contentObserver: ContentObserver, renderer: Renderer2, _iconRegistry: MatIconRegistry, imagePipe: ImagePipe, sanitizer: DomSanitizer, _location: MatIconLocation, _errorHandler: ErrorHandler);
+    constructor(contentObserver: ContentObserver, renderer: Renderer2, _iconRegistry: MatIconRegistry, imagePipe: ImagePipe, sanitizer: DomSanitizer, _location: MatIconLocation, _errorHandler: ErrorHandler);
     ngAfterContentInit(): void;
     ngAfterViewChecked(): void;
     ngOnDestroy(): void;
@@ -50,4 +49,3 @@ export declare class TbIconComponent extends _TbIconBase implements AfterContent
     static ɵfac: i0.ɵɵFactoryDeclaration<TbIconComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<TbIconComponent, "tb-icon", ["tbIcon"], { "color": { "alias": "color"; "required": false; }; }, {}, never, ["*"], false, never>;
 }
-export {};

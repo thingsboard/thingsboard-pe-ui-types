@@ -5,7 +5,7 @@ import { TbPopoverService } from '@shared/components/popover.service';
 import { TranslateService } from '@ngx-translate/core';
 import { CustomTranslatePipe } from '@shared/pipe/custom-translate.pipe';
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
-import { MatButton } from '@angular/material/button';
+import { MatButton, MatIconButton } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 import * as i0 from "@angular/core";
@@ -55,7 +55,7 @@ export declare class CustomMenuItemRowComponent implements ControlValueAccessor,
     validate(_c: UntypedFormControl): {
         invalidMenuItem: boolean;
     };
-    edit($event: Event, matButton: MatButton): void;
+    edit($event: Event, matButton: MatIconButton): void;
     cleanup(): void;
     delete(): void;
     pageDrop(event: CdkDragDrop<string[]>): void;

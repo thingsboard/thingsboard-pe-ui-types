@@ -48,5 +48,5 @@ export declare abstract class AbstractReportComponentConfig<C extends ReportComp
     protected prepareOutputConfig(config: any): C;
     protected getDataSources(): Datasource[];
     static ɵfac: i0.ɵɵFactoryDeclaration<AbstractReportComponentConfig<any>, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<AbstractReportComponentConfig<any>, never, never, { "context": { "alias": "context"; "required": false; }; }, { "reportConfigUpdated": "reportConfigUpdated"; }, never, never, false, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<AbstractReportComponentConfig<any>, never, never, { "context": { "alias": "context"; "required": false; }; }, { "reportConfigUpdated": "reportConfigUpdated"; }, never, never, true, never>;
 }

@@ -58,5 +58,5 @@ export declare abstract class LatestChartBasicConfigComponent<S extends LatestCh
     private _valuePreviewFn;
     private _tooltipValuePreviewFn;
     static ɵfac: i0.ɵɵFactoryDeclaration<LatestChartBasicConfigComponent<any>, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<LatestChartBasicConfigComponent<any>, never, never, {}, {}, never, never, false, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<LatestChartBasicConfigComponent<any>, never, never, {}, {}, never, never, true, never>;
 }

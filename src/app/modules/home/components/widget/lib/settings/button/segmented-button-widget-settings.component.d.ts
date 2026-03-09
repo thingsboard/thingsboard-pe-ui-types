@@ -26,6 +26,8 @@ export declare class SegmentedButtonWidgetSettingsComponent extends WidgetSettin
     protected settingsForm(): UntypedFormGroup;
     protected defaultSettings(): WidgetSettings;
     protected onSettingsSet(settings: WidgetSettings): void;
+    protected validatorTriggers(): string[];
+    protected updateValidators(emitEvent: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SegmentedButtonWidgetSettingsComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<SegmentedButtonWidgetSettingsComponent, "tb-segmented-button-widget-settings", never, {}, {}, never, never, false, never>;
 }
