@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { EntityType } from '@shared/models/entity-type.models';
 import { MobileApp, MobileAppStatus } from '@shared/models/mobile-app.models';
 import { PlatformType } from '@shared/models/oauth2.models';
-import { MatButton } from '@angular/material/button';
+import { MatIconButton } from '@angular/material/button';
 import { TbPopoverService } from '@shared/components/popover.service';
 import * as i0 from "@angular/core";
 export declare class MobileAppComponent extends EntityComponent<MobileApp> {
@@ -34,7 +34,7 @@ export declare class MobileAppComponent extends EntityComponent<MobileApp> {
     updateFormState(): void;
     prepareFormValue(value: MobileApp): MobileApp;
     generateAppSecret($event: Event): void;
-    editReleaseNote($event: Event, matButton: MatButton, isLatest: boolean): void;
+    editReleaseNote($event: Event, matButton: MatIconButton, isLatest: boolean): void;
     private base64Format;
     static ɵfac: i0.ɵɵFactoryDeclaration<MobileAppComponent, [null, null, { optional: true; }, { optional: true; }, null, null, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<MobileAppComponent, "tb-mobile-app", never, {}, {}, never, never, false, never>;

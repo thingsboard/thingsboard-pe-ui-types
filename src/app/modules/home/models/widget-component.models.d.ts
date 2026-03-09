@@ -178,6 +178,7 @@ export declare class WidgetContext {
     widgetTitleTooltip?: string;
     customHeaderActions?: Array<WidgetHeaderAction>;
     widgetActions?: Array<WidgetAction>;
+    widgetHeaderActionsPanel?: TemplateRef<any>;
     servicesMap?: Map<string, Type<any>>;
     $injector?: Injector;
     ngZone?: NgZone;
@@ -394,6 +395,7 @@ export declare class LabelVariablePattern {
 export declare const widgetContextToken: InjectionToken<WidgetContext>;
 export declare const widgetErrorMessagesToken: InjectionToken<string[]>;
 export declare const widgetTitlePanelToken: InjectionToken<TemplateRef<any>>;
+export declare const widgetHeaderActionsPanelToken: InjectionToken<TemplateRef<any>>;
 export interface IDynamicWidgetComponent {
     readonly ctx: WidgetContext;
     readonly errorMessages: string[];

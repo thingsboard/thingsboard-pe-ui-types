@@ -2,7 +2,7 @@ import { ChangeDetectorRef, EventEmitter, OnInit, Renderer2, ViewContainerRef } 
 import { ControlValueAccessor, FormBuilder, ValidationErrors, Validator } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { CustomMobilePage, DefaultMobilePage, MobilePageType } from '@shared/models/mobile-app.models';
-import { MatButton } from '@angular/material/button';
+import { MatIconButton } from '@angular/material/button';
 import { TbPopoverService } from '@shared/components/popover.service';
 import { TranslateService } from '@ngx-translate/core';
 import * as i0 from "@angular/core";
@@ -42,7 +42,7 @@ export declare class MobilePageItemRowComponent implements ControlValueAccessor,
     writeValue(value: DefaultMobilePage | CustomMobilePage): void;
     cleanup(): void;
     delete(): void;
-    edit($event: Event, matButton: MatButton): void;
+    edit($event: Event, matButton: MatIconButton): void;
     get itemName(): string;
     get itemNamePlaceholder(): string;
     private updateIconNameBlockWidth;

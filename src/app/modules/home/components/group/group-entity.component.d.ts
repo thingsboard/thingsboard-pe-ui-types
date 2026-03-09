@@ -24,5 +24,5 @@ export declare abstract class GroupEntityComponent<T extends BaseData<HasId>> ex
     protected isGroupMode(): boolean;
     canManageOwnerAndGroups(): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<GroupEntityComponent<any>, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<GroupEntityComponent<any>, never, never, {}, {}, never, never, false, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<GroupEntityComponent<any>, never, never, {}, {}, never, never, true, never>;
 }

@@ -3,7 +3,7 @@ import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@ang
 import { WidgetAction } from '@shared/models/widget.models';
 import { TbPopoverService } from '@shared/components/popover.service';
 import { MapSettingsContext } from '@home/components/widget/lib/settings/common/map/map-settings.component.models';
-import { MatButton } from '@angular/material/button';
+import { MatIconButton } from '@angular/material/button';
 import { TranslateService } from '@ngx-translate/core';
 import * as i0 from "@angular/core";
 export declare class MapTooltipTagActionsComponent implements ControlValueAccessor, OnInit {
@@ -24,8 +24,8 @@ export declare class MapTooltipTagActionsComponent implements ControlValueAccess
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
     removeAction(index: number): void;
-    addAction($event: Event, matButton: MatButton): void;
-    editAction($event: Event, matButton: MatButton, index: number): void;
+    addAction($event: Event, matButton: MatIconButton): void;
+    editAction($event: Event, matButton: MatIconButton, index: number): void;
     private openActionSettingsPopup;
     static ɵfac: i0.ɵɵFactoryDeclaration<MapTooltipTagActionsComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<MapTooltipTagActionsComponent, "tb-map-tooltip-tag-actions-panel", never, { "disabled": { "alias": "disabled"; "required": false; }; "context": { "alias": "context"; "required": false; }; }, {}, never, never, false, never>;

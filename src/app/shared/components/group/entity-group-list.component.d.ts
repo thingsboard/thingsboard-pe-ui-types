@@ -37,6 +37,7 @@ export declare class EntityGroupListComponent implements ControlValueAccessor, O
     useGroupInfoValue: boolean;
     createGroupFunction: CreateEntityGroupFunction;
     disabled: boolean;
+    syncIdsWithDB: boolean;
     entityGroupInput: ElementRef<HTMLInputElement>;
     matAutocomplete: MatAutocomplete;
     chipList: MatChipGrid;
@@ -67,5 +68,5 @@ export declare class EntityGroupListComponent implements ControlValueAccessor, O
     entityGroupEnter($event: KeyboardEvent): void;
     createEntityGroup($event: Event, groupName: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityGroupListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupListComponent, "tb-entity-group-list", never, { "groupType": { "alias": "groupType"; "required": false; }; "ownerId": { "alias": "ownerId"; "required": false; }; "excludeGroupAll": { "alias": "excludeGroupAll"; "required": false; }; "labelText": { "alias": "labelText"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "required": { "alias": "required"; "required": false; }; "useGroupInfoValue": { "alias": "useGroupInfoValue"; "required": false; }; "createGroupFunction": { "alias": "createGroupFunction"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityGroupListComponent, "tb-entity-group-list", never, { "groupType": { "alias": "groupType"; "required": false; }; "ownerId": { "alias": "ownerId"; "required": false; }; "excludeGroupAll": { "alias": "excludeGroupAll"; "required": false; }; "labelText": { "alias": "labelText"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "required": { "alias": "required"; "required": false; }; "useGroupInfoValue": { "alias": "useGroupInfoValue"; "required": false; }; "createGroupFunction": { "alias": "createGroupFunction"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "syncIdsWithDB": { "alias": "syncIdsWithDB"; "required": false; }; }, {}, never, never, false, never>;
 }

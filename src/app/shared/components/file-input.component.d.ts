@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { ControlValueAccessor } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { FlowDirective } from '@flowjs/ngx-flow';
+import { FlowConfig } from '@flowjs/ngx-flow';
 import { TranslateService } from '@ngx-translate/core';
 import { UtilsService } from '@core/services/utils.service';
 import { DialogService } from '@core/services/dialog.service';
@@ -44,7 +44,7 @@ export declare class FileInputComponent extends PageComponent implements AfterVi
     fileContent: any;
     files: File[];
     mediaType: string;
-    flow: FlowDirective;
+    flow: FlowConfig;
     flowInput: ElementRef;
     autoUploadSubscription: Subscription;
     private propagateChange;

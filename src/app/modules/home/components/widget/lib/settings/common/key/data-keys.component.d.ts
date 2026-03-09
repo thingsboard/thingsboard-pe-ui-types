@@ -12,7 +12,7 @@ import { UtilsService } from '@core/services/utils.service';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Dashboard } from '@shared/models/dashboard.models';
-import { DndDropEvent } from 'ngx-drag-drop/lib/dnd-dropzone.directive';
+import { DndDropEvent } from 'ngx-drag-drop';
 import { TbPopoverService } from '@shared/components/popover.service';
 import { WidgetConfigCallbacks } from '@home/components/widget/config/widget-config.component.models';
 import { FormProperty } from '@shared/models/dynamic-form.models';

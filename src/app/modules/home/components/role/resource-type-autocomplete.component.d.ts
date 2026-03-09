@@ -6,6 +6,7 @@ import { AppState } from '@app/core/core.state';
 import { TranslateService } from '@ngx-translate/core';
 import { Resource } from '@shared/models/security.models';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 interface ResourceTypeInfo {
     name: string;
@@ -22,6 +23,8 @@ export declare class ResourceTypeAutocompleteComponent implements ControlValueAc
     get required(): boolean;
     set required(value: boolean);
     disabled: boolean;
+    appearance: MatFormFieldAppearance;
+    label: string;
     resourceTypeInput: ElementRef<HTMLInputElement>;
     filteredResources: Observable<Array<ResourceTypeInfo>>;
     resources: Array<ResourceTypeInfo>;
@@ -43,6 +46,6 @@ export declare class ResourceTypeAutocompleteComponent implements ControlValueAc
     fetchResources(searchText?: string): Observable<Array<ResourceTypeInfo>>;
     clear(value?: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ResourceTypeAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ResourceTypeAutocompleteComponent, "tb-resource-type-autocomplete", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ResourceTypeAutocompleteComponent, "tb-resource-type-autocomplete", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "label": { "alias": "label"; "required": false; }; }, {}, never, never, false, never>;
 }
 export {};

@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, DestroyRef, ElementRef, EventEmitter, OnInit, Renderer2, ViewContainerRef } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
-import { MatButton } from '@angular/material/button';
+import { MatIconButton } from '@angular/material/button';
 import { TbPopoverService } from '@shared/components/popover.service';
 import { FormProperty, FormPropertyType } from '@shared/models/dynamic-form.models';
 import { DynamicFormPropertiesComponent } from '@home/components/widget/lib/settings/common/dynamic-form/dynamic-form-properties.component';
@@ -14,7 +14,7 @@ export declare class DynamicFormPropertyRowComponent implements ControlValueAcce
     private propertiesComponent;
     private destroyRef;
     idInput: ElementRef<HTMLInputElement>;
-    editButton: MatButton;
+    editButton: MatIconButton;
     formPropertyTypes: FormPropertyType[];
     formPropertyTypeTranslations: Map<FormPropertyType, string>;
     disabled: boolean;
@@ -30,7 +30,7 @@ export declare class DynamicFormPropertyRowComponent implements ControlValueAcce
     registerOnTouched(_fn: any): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: FormProperty): void;
-    editProperty($event: Event, matButton: MatButton, add?: boolean, editCanceled?: () => void): void;
+    editProperty($event: Event, matButton: MatIconButton, add?: boolean, editCanceled?: () => void): void;
     focus(): void;
     onAdd(onCanceled: () => void): void;
     validate(_c: UntypedFormControl): {

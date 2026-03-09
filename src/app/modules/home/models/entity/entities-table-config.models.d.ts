@@ -204,7 +204,7 @@ export declare class EntityTableConfig<T extends BaseData<HasId>, P extends Page
     setTable(table: IEntitiesTableComponent): void;
     getEntityDetailsPage(): IEntityDetailsPageComponent;
     setEntityDetailsPage(entityDetailsPage: IEntityDetailsPageComponent): void;
-    updateData(closeDetails?: boolean): void;
+    updateData(closeDetails?: boolean, reloadEntity?: boolean): void;
     toggleEntityDetails($event: Event, entity: T): void;
     isDetailsOpen(): boolean;
     getActivatedRoute(): ActivatedRoute;

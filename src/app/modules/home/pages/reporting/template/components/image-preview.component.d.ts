@@ -8,6 +8,8 @@ export declare class ImagePreviewComponent extends AbstractReportComponentPrevie
     imageUrl: string;
     imageWidth: string;
     imageAlign: string;
+    imagePlaceholder: string;
+    triggerUpdate: number;
     onComponentUpdated(): void;
     ngAfterViewInit(): void;
     ngOnDestroy(): void;

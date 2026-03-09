@@ -14,7 +14,6 @@ import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 import { TbCheatSheetComponent } from '@shared/components/cheatsheet.component';
 import { TbPopoverComponent } from '@shared/components/popover.component';
 import { ImagePipe } from '@shared/pipe/image.pipe';
-import { displayGrids } from 'angular-gridster2/lib/gridsterConfig.interface';
 import { TbContextMenuEvent } from '@shared/models/jquery-event.models';
 import * as i0 from "@angular/core";
 export declare class DashboardLayoutComponent extends PageComponent implements ILayoutController, DashboardCallbacks, OnInit, OnDestroy {
@@ -41,7 +40,7 @@ export declare class DashboardLayoutComponent extends PageComponent implements I
     get isMobileDisabled(): boolean;
     get mobielRowHeigth(): number;
     get columns(): number;
-    get displayGrid(): displayGrids;
+    get displayGrid(): 'always' | 'onDrag&Resize' | 'none';
     dashboardCtx: DashboardContext;
     isEdit: boolean;
     isEditingWidget: boolean;

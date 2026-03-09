@@ -6,7 +6,7 @@ import { AppState } from '@app/core/core.state';
 import { BranchInfo } from '@shared/models/vc.models';
 import { EntitiesVersionControlService } from '@core/http/entities-version-control.service';
 import { MatAutocomplete, MatAutocompleteTrigger } from '@angular/material/autocomplete';
-import { SubscriptSizing } from '@angular/material/form-field';
+import { MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class BranchAutocompleteComponent implements ControlValueAccessor, OnInit, AfterViewInit {
     private store;
@@ -25,6 +25,7 @@ export declare class BranchAutocompleteComponent implements ControlValueAccessor
     selectDefaultBranch: boolean;
     selectionMode: boolean;
     emptyPlaceholder: string;
+    appearance: MatFormFieldAppearance;
     matAutocomplete: MatAutocomplete;
     autoCompleteTrigger: MatAutocompleteTrigger;
     branchInput: ElementRef<HTMLInputElement>;
@@ -54,5 +55,5 @@ export declare class BranchAutocompleteComponent implements ControlValueAccessor
     private getBranches;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<BranchAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<BranchAutocompleteComponent, "tb-branch-autocomplete", never, { "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "selectDefaultBranch": { "alias": "selectDefaultBranch"; "required": false; }; "selectionMode": { "alias": "selectionMode"; "required": false; }; "emptyPlaceholder": { "alias": "emptyPlaceholder"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<BranchAutocompleteComponent, "tb-branch-autocomplete", never, { "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "selectDefaultBranch": { "alias": "selectDefaultBranch"; "required": false; }; "selectionMode": { "alias": "selectionMode"; "required": false; }; "emptyPlaceholder": { "alias": "emptyPlaceholder"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; }, {}, never, never, false, never>;
 }

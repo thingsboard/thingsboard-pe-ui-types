@@ -13,6 +13,7 @@ export declare enum ConverterType {
 }
 export declare const IntegrationTbelDefaultConvertersUrl: Map<IntegrationType, string>;
 export declare const IntegrationJSDefaultConvertersUrl: Map<IntegrationType, string>;
+export declare const IntegrationTbelDefaultEncodersUrl: Map<IntegrationType, string>;
 export declare const jsDefaultConvertersUrl: Map<ConverterType, string>;
 export declare const jsDefaultConvertersV2Url: Map<ConverterType, string>;
 export declare const tbelDefaultConvertersUrl: Map<ConverterType, string>;

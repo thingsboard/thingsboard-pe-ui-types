@@ -3,6 +3,7 @@ import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBui
 import { MapDataLayerSettings, MapDataLayerType, MapType } from '@shared/models/widget/maps/map.models';
 import { MapSettingsComponent } from '@home/components/widget/lib/settings/common/map/map-settings.component';
 import { MapSettingsContext } from '@home/components/widget/lib/settings/common/map/map-settings.component.models';
+import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import * as i0 from "@angular/core";
 export declare class MapDataLayersComponent implements ControlValueAccessor, OnInit, Validator {
     private mapSettingsComponent;
@@ -16,6 +17,7 @@ export declare class MapDataLayersComponent implements ControlValueAccessor, OnI
     dataLayersFormGroup: UntypedFormGroup;
     addDataLayerText: string;
     noDataLayersText: string;
+    get dragEnabled(): boolean;
     private propagateChange;
     constructor(mapSettingsComponent: MapSettingsComponent, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
@@ -31,6 +33,7 @@ export declare class MapDataLayersComponent implements ControlValueAccessor, OnI
     dataLayersFormArray(): UntypedFormArray;
     trackByDataLayer(index: number, dataLayerControl: AbstractControl): any;
     removeDataLayer(index: number): void;
+    layerDrop(event: CdkDragDrop<string[]>): void;
     addDataLayer(): void;
     private prepareDataLayersFormArray;
     static ɵfac: i0.ɵɵFactoryDeclaration<MapDataLayersComponent, never>;

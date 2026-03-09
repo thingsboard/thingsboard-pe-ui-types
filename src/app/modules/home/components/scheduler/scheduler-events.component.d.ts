@@ -22,8 +22,7 @@ import { CalendarOptions } from '@fullcalendar/core';
 import { MatMenuTrigger } from '@angular/material/menu';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder } from '@angular/forms';
-import { WidgetComponent } from '@home/components/widget/widget.component';
-import { MatButton } from '@angular/material/button';
+import { MatIconButton } from '@angular/material/button';
 import { TbPopoverService } from '@shared/components/popover.service';
 import { CustomTranslatePipe } from '@shared/pipe/custom-translate.pipe';
 import { DomSanitizer } from "@angular/platform-browser";
@@ -46,7 +45,6 @@ export declare class SchedulerEventsComponent extends PageComponent implements O
     private viewContainerRef;
     private destroyRef;
     private sanitizer;
-    widgetComponent: WidgetComponent;
     schedulerEventWidgetContainerRef: ElementRef;
     searchInputField: ElementRef;
     paginator: MatPaginator;
@@ -98,7 +96,7 @@ export declare class SchedulerEventsComponent extends PageComponent implements O
     private componentResize$;
     private backNavigationCommands?;
     private modeHandler;
-    constructor(store: Store<AppState>, customTranslatePipe: CustomTranslatePipe, translate: TranslateService, schedulerEventService: SchedulerEventService, userPermissionsService: UserPermissionsService, dialogService: DialogService, dialog: MatDialog, router: Router, route: ActivatedRoute, cd: ChangeDetectorRef, fb: FormBuilder, zone: NgZone, renderer: Renderer2, popoverService: TbPopoverService, viewContainerRef: ViewContainerRef, destroyRef: DestroyRef, sanitizer: DomSanitizer, widgetComponent: WidgetComponent);
+    constructor(store: Store<AppState>, customTranslatePipe: CustomTranslatePipe, translate: TranslateService, schedulerEventService: SchedulerEventService, userPermissionsService: UserPermissionsService, dialogService: DialogService, dialog: MatDialog, router: Router, route: ActivatedRoute, cd: ChangeDetectorRef, fb: FormBuilder, zone: NgZone, renderer: Renderer2, popoverService: TbPopoverService, viewContainerRef: ViewContainerRef, destroyRef: DestroyRef, sanitizer: DomSanitizer);
     ngOnInit(): void;
     private setupResizeObserver;
     private setupCalendarOptions;
@@ -147,8 +145,8 @@ export declare class SchedulerEventsComponent extends PageComponent implements O
     unassignFromEdgeSchedulerEvents($event: Event): void;
     isEnabled(schedulerEventWithCustomerInfo: SchedulerEventWithCustomerInfo): boolean;
     enableSchedulerEvent($event: Event, schedulerEvent: SchedulerEventWithCustomerInfo): void;
-    toggleVersionControl($event: Event, scheduled: SchedulerEventWithCustomerInfo, versionControlButton: MatButton): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<SchedulerEventsComponent, [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, { optional: true; }]>;
+    toggleVersionControl($event: Event, scheduled: SchedulerEventWithCustomerInfo, versionControlButton: MatIconButton): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<SchedulerEventsComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<SchedulerEventsComponent, "tb-scheduler-events", never, { "widgetMode": { "alias": "widgetMode"; "required": false; }; "ctx": { "alias": "ctx"; "required": false; }; "edgeId": { "alias": "edgeId"; "required": false; }; }, {}, never, never, false, never>;
 }
 declare class SchedulerEventsDatasource implements DataSource<SchedulerEventWithCustomerInfo> {

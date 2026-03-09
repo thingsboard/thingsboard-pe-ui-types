@@ -25,13 +25,9 @@ export declare class SignupComponent extends PageComponent {
     private dialog;
     private fb;
     recaptchaComponent: ReCaptcha2Component;
+    private signupRequest;
     signup: import("@angular/forms").FormGroup<{
-        fields: import("@angular/forms").FormGroup<{
-            EMAIL: import("@angular/forms").FormControl<string>;
-            FIRST_NAME: import("@angular/forms").FormControl<string>;
-            LAST_NAME: import("@angular/forms").FormControl<string>;
-            PASSWORD: import("@angular/forms").FormControl<string>;
-        }>;
+        fields: import("@angular/forms").FormGroup<any>;
         recaptchaResponse: import("@angular/forms").FormControl<string>;
     }>;
     passwordCheck: string;

@@ -36,5 +36,5 @@ export declare abstract class TemplateConfiguration<T, R = any> extends DialogCo
     protected updateValidators(): void;
     protected updateAttachReportValidators(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TemplateConfiguration<any, any>, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<TemplateConfiguration<any, any>, never, never, {}, {}, never, never, false, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<TemplateConfiguration<any, any>, never, never, {}, {}, never, never, true, never>;
 }

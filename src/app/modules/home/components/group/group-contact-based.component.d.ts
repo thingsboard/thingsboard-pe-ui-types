@@ -27,5 +27,5 @@ export declare abstract class GroupContactBasedComponent<T extends ContactBased<
     abstract buildEntityForm(entity: T): UntypedFormGroup;
     abstract updateEntityForm(entity: T): any;
     static ɵfac: i0.ɵɵFactoryDeclaration<GroupContactBasedComponent<any>, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<GroupContactBasedComponent<any>, never, never, {}, {}, never, never, false, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<GroupContactBasedComponent<any>, never, never, {}, {}, never, never, true, never>;
 }

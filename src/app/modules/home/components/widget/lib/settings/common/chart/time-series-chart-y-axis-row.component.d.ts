@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, DestroyRef, EventEmitter, OnInit, Renderer2, ViewContainerRef } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { AxisPosition, TimeSeriesChartYAxisSettings } from '@home/components/widget/lib/chart/time-series-chart.models';
-import { MatButton } from '@angular/material/button';
+import { MatIconButton } from '@angular/material/button';
 import { TbPopoverService } from '@shared/components/popover.service';
 import { TranslateService } from '@ngx-translate/core';
 import * as i0 from "@angular/core";
@@ -29,7 +29,7 @@ export declare class TimeSeriesChartYAxisRowComponent implements ControlValueAcc
     registerOnTouched(_fn: any): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: TimeSeriesChartYAxisSettings): void;
-    editAxis($event: Event, matButton: MatButton): void;
+    editAxis($event: Event, matButton: MatIconButton): void;
     private updateValidators;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeSeriesChartYAxisRowComponent, never>;

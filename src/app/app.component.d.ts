@@ -1,5 +1,5 @@
 import 'hammerjs';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateStore } from '@ngx-translate/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { LocalStorageService } from '@core/local-storage/local-storage.service';
@@ -11,12 +11,13 @@ import * as i0 from "@angular/core";
 export declare class AppComponent {
     private store;
     private storageService;
+    private translateStore;
     private translate;
     private matIconRegistry;
     private domSanitizer;
     private authService;
     private reportService;
-    constructor(store: Store<AppState>, storageService: LocalStorageService, translate: TranslateService, matIconRegistry: MatIconRegistry, domSanitizer: DomSanitizer, authService: AuthService, reportService: DashboardReportService);
+    constructor(store: Store<AppState>, storageService: LocalStorageService, translateStore: TranslateStore, translate: TranslateService, matIconRegistry: MatIconRegistry, domSanitizer: DomSanitizer, authService: AuthService, reportService: DashboardReportService);
     setupTranslate(): void;
     setupAuth(): void;
     onActivateComponent(_$event: any): void;

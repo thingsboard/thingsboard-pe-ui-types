@@ -47,5 +47,5 @@ export declare abstract class LatestChartWidgetSettingsComponent<S extends Lates
     private _valuePreviewFn;
     private _tooltipValuePreviewFn;
     static ɵfac: i0.ɵɵFactoryDeclaration<LatestChartWidgetSettingsComponent<any>, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<LatestChartWidgetSettingsComponent<any>, never, never, {}, {}, never, never, false, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<LatestChartWidgetSettingsComponent<any>, never, never, {}, {}, never, never, true, never>;
 }

@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { SignupRequest, SignUpResult } from '@shared/models/signup.models';
+import { SignupRequestValues, SignUpResult } from '@shared/models/signup.models';
 import { RequestConfig } from '@core/http/http-utils';
 import { Observable } from 'rxjs';
 import { LoginResponse } from '@shared/models/login.models';
@@ -10,7 +10,7 @@ export declare class SignupService {
     private store;
     private http;
     constructor(store: Store<AppState>, http: HttpClient);
-    signup(signupRequest: SignupRequest, config?: RequestConfig): Observable<SignUpResult>;
+    signup(signupRequest: SignupRequestValues, config?: RequestConfig): Observable<SignUpResult>;
     acceptPrivacyPolicy(config?: RequestConfig): Observable<LoginResponse>;
     deleteTenantAccount(config?: RequestConfig): Observable<any>;
     isDisplayWelcome(): Observable<boolean>;

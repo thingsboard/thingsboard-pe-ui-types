@@ -10,28 +10,33 @@ import { ConverterComponent } from '@home/components/converter/converter.compone
 import { ConverterService } from '@core/http/converter.service';
 import { IntegrationType } from '@shared/models/integration.models';
 import * as i0 from "@angular/core";
-export interface AddConverterDialogData {
+export interface ConverterDialogData {
+    isEdit: boolean;
+    convertor: ConverterData;
+}
+export interface ConverterData {
     name: string;
     edgeTemplate?: boolean;
     type: ConverterType;
     integrationType?: IntegrationType;
     disabledIntegrationType?: boolean;
 }
-export declare class AddConverterDialogComponent extends DialogComponent<AddConverterDialogComponent, BaseData<HasId>> implements OnInit, AfterViewInit {
+export declare class ConverterDialogComponent extends DialogComponent<ConverterDialogComponent, BaseData<HasId>> implements OnInit, AfterViewInit {
     protected store: Store<AppState>;
     protected router: Router;
-    data: AddConverterDialogData;
-    dialogRef: MatDialogRef<AddConverterDialogComponent, BaseData<HasId>>;
+    data: ConverterDialogData;
+    dialogRef: MatDialogRef<ConverterDialogComponent, BaseData<HasId>>;
     private converterService;
+    isEdit: boolean;
     dialogTitle: string;
     converter: Converter;
     converterComponent: ConverterComponent;
-    constructor(store: Store<AppState>, router: Router, data: AddConverterDialogData, dialogRef: MatDialogRef<AddConverterDialogComponent, BaseData<HasId>>, converterService: ConverterService);
+    constructor(store: Store<AppState>, router: Router, data: ConverterDialogData, dialogRef: MatDialogRef<ConverterDialogComponent, BaseData<HasId>>, converterService: ConverterService);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     helpLinkId(): string;
     cancel(): void;
     add(): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<AddConverterDialogComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AddConverterDialogComponent, "tb-add-converter-dialog", never, {}, {}, never, never, false, never>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<ConverterDialogComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ConverterDialogComponent, "tb-converter-dialog", never, {}, {}, never, never, false, never>;
 }

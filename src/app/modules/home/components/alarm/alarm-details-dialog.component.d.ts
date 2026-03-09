@@ -1,4 +1,3 @@
-import { OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -22,7 +21,7 @@ export interface AlarmDetailsDialogData {
     displayDetails: boolean;
     allowAssign: boolean;
 }
-export declare class AlarmDetailsDialogComponent extends DialogComponent<AlarmDetailsDialogComponent, boolean> implements OnInit {
+export declare class AlarmDetailsDialogComponent extends DialogComponent<AlarmDetailsDialogComponent, boolean> {
     protected store: Store<AppState>;
     protected router: Router;
     private datePipe;
@@ -48,7 +47,6 @@ export declare class AlarmDetailsDialogComponent extends DialogComponent<AlarmDe
     constructor(store: Store<AppState>, router: Router, datePipe: DatePipe, millisecondsToTimeStringPipe: MillisecondsToTimeStringPipe, translate: TranslateService, data: AlarmDetailsDialogData, alarmService: AlarmService, utils: UtilsService, dialogRef: MatDialogRef<AlarmDetailsDialogComponent, boolean>, fb: UntypedFormBuilder);
     loadAlarm(): void;
     loadAlarmFields(alarm: AlarmInfo): void;
-    ngOnInit(): void;
     close(): void;
     acknowledge(): void;
     clear(): void;
