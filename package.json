@@ -49,7 +49,7 @@
         "ngx-flowchart": "https://github.com/thingsboard/ngx-flowchart.git#release/3.0.0",
         "ngx-hm-carousel": "^19.0.0",
         "ngx-markdown": "^20.1.0",
-        "ngx-sharebuttons": "^17.0.6",
+        "ngx-sharebuttons": "^17.0.0",
         "rxjs": "~7.8.2",
         "ts-node": "^10.9.2",
         "zone.js": "~0.15.1"
