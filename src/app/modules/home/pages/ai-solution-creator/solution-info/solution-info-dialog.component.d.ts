@@ -1,0 +1,53 @@
+import { ChangeDetectorRef, ElementRef, Renderer2, ViewContainerRef } from '@angular/core';
+import { DialogComponent } from '@shared/components/dialog.component';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { Router } from '@angular/router';
+import { MatDialogRef } from '@angular/material/dialog';
+import { EntityResult, SolutionCreatorInfo } from '@shared/models/solution-creator.models';
+import { EntityType } from '@shared/models/entity-type.models';
+import { EntityId } from '@shared/models/id/entity-id';
+import { TranslateService } from '@ngx-translate/core';
+import { AuthService } from '@core/auth/auth.service';
+import { AlarmSeverity } from '@shared/models/alarm.models';
+import { AggregatedEntityResult, IssueStatus } from '@home/pages/ai-solution-creator/solution-info/issues-aggregation';
+import { TbPopoverService } from '@shared/components/popover.service';
+import * as i0 from "@angular/core";
+export interface SolutionInfoDialogData {
+    solution: SolutionCreatorInfo;
+}
+export declare class SolutionInfoDialogComponent extends DialogComponent<SolutionInfoDialogData, void> {
+    protected store: Store<AppState>;
+    protected router: Router;
+    protected dialogRef: MatDialogRef<SolutionInfoDialogData, void>;
+    data: SolutionInfoDialogData;
+    private translate;
+    private authService;
+    private popoverService;
+    private renderer;
+    private viewContainerRef;
+    private cd;
+    EntityType: typeof EntityType;
+    entityTypeTranslations: Map<EntityType | import("@shared/models/entity-type.models").AliasEntityType, import("@shared/models/entity-type.models").EntityTypeTranslation>;
+    entityTypes: EntityType[];
+    solution: SolutionCreatorInfo;
+    issueStatus: typeof IssueStatus;
+    currentUrl: string;
+    constructor(store: Store<AppState>, router: Router, dialogRef: MatDialogRef<SolutionInfoDialogData, void>, data: SolutionInfoDialogData, translate: TranslateService, authService: AuthService, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, cd: ChangeDetectorRef);
+    close(): void;
+    aggregatedFor(entityType: EntityType): AggregatedEntityResult[];
+    totalIssues(entry: AggregatedEntityResult): number;
+    issuesCountSummary(entry: AggregatedEntityResult): string;
+    entityLink(entityId: EntityId): string;
+    entityGroupLink(entity: EntityResult): string;
+    openDashboard(entity: EntityResult): void;
+    loginAsUser(userId: string): void;
+    getUserName(userId: string): string;
+    getUserAuthority(userId: string): string;
+    getAlarmSeverityColor(severity: AlarmSeverity): string;
+    getAlarmSeverityBackgroundColors(severity: AlarmSeverity): string;
+    openPopover($event: Event, entry: AggregatedEntityResult, element?: ElementRef): void;
+    private findUser;
+    static ɵfac: i0.ɵɵFactoryDeclaration<SolutionInfoDialogComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SolutionInfoDialogComponent, "tb-solution-info-dialog", never, {}, {}, never, never, false, never>;
+}

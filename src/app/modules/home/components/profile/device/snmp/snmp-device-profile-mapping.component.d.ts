@@ -2,15 +2,17 @@ import { OnDestroy, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { SnmpMapping } from '@shared/models/device.models';
 import { DataType } from '@shared/models/constants';
+import { GtSmBreakpointAwareDirective } from '@shared/components/gt-sm-breakpoint-aware.directive';
 import * as i0 from "@angular/core";
-export declare class SnmpDeviceProfileMappingComponent implements OnInit, OnDestroy, ControlValueAccessor, Validator {
+export declare class SnmpDeviceProfileMappingComponent extends GtSmBreakpointAwareDirective implements OnInit, OnDestroy, ControlValueAccessor, Validator {
     private fb;
     mappingsConfigForm: UntypedFormGroup;
     dataTypes: DataType[];
     dataTypesTranslationMap: Map<DataType, string>;
     disabled: boolean;
     private readonly oidPattern;
-    private destroy$;
+    private isDestroyed;
+    private destroyRef;
     private propagateChange;
     constructor(fb: UntypedFormBuilder);
     ngOnInit(): void;

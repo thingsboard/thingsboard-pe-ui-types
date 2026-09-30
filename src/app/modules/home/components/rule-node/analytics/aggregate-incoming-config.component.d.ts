@@ -7,14 +7,14 @@ export declare class AggregateIncomingConfigComponent extends RuleNodeConfigurat
     aggregateIncomingConfigForm: UntypedFormGroup;
     aggPeriodTimeUnits: TimeUnit[];
     timeUnitsTranslationMap: Map<TimeUnit, string>;
-    mathFunctions: string[];
+    mathFunctions: AggMathFunction[];
     mathFunctionsTranslationMap: Map<AggMathFunction, string>;
     aggIntervalType: typeof AggIntervalType;
-    aggIntervalTypes: string[];
+    aggIntervalTypes: AggIntervalType[];
     aggIntervalTypesTranslationMap: Map<AggIntervalType, string>;
-    intervalPersistPolicies: string[];
+    intervalPersistPolicies: IntervalPersistPolicy[];
     intervalPersistPolicyTranslationMap: Map<IntervalPersistPolicy, string>;
-    statePersistPolicies: string[];
+    statePersistPolicies: StatePersistPolicy[];
     statePersistPolicyTranslationMap: Map<StatePersistPolicy, string>;
     StatePersistPolicy: typeof StatePersistPolicy;
     constructor(fb: UntypedFormBuilder);

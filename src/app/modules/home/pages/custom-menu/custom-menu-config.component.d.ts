@@ -45,7 +45,6 @@ export declare class CustomMenuConfigComponent extends PageComponent implements 
     save(): void;
     menuItemDrop(event: CdkDragDrop<string[]>): void;
     visibleMenuItemsControls(): Array<AbstractControl>;
-    trackByMenuItem(_index: number, menuItemControl: AbstractControl): any;
     removeCustomMenuItem(index: number): void;
     isCustom(menuItemControl: AbstractControl): boolean;
     addCustomMenuItem(index?: number): void;

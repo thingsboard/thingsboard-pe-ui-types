@@ -10,7 +10,7 @@ export declare class RelationsQueryConfigOldComponent extends PageComponent impl
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
-    directionTypes: string[];
+    directionTypes: EntitySearchDirection[];
     directionTypeTranslations: Map<EntitySearchDirection, string>;
     relationsQueryFormGroup: FormGroup;
     private propagateChange;

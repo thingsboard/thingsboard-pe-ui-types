@@ -80,6 +80,7 @@ export interface JobFilter {
     types?: Array<JobType>;
     statuses?: Array<JobStatus>;
     entities?: Array<EntityId>;
+    includeCustomers?: boolean;
 }
 export interface TaskManagerConfig extends EntityTableConfig<Job, TimePageLink> {
     componentData?: {
@@ -91,7 +92,8 @@ export declare class JobQuery {
     types: JobType[];
     statuses: JobStatus[];
     entities: EntityId[];
-    constructor(pageLink: TimePageLink, jobFilter: JobFilter);
+    includeCustomers: boolean;
+    constructor(pageLink: TimePageLink, jobFilter: JobFilter, includeCustomers?: boolean);
     toQuery(): string;
 }
 export declare const processTask: (result: JobResult) => number;

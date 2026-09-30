@@ -14,6 +14,7 @@ import { TemplateConfiguration } from '@home/pages/notification/template/templat
 import { TranslateService } from '@ngx-translate/core';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { Router } from '@angular/router';
+import { EditorOptions } from 'hugerte';
 import * as i0 from "@angular/core";
 export interface RequestNotificationDialogData {
     request?: NotificationRequest;
@@ -38,7 +39,7 @@ export declare class SentNotificationDialogComponent extends TemplateConfigurati
     preview: NotificationRequestPreview;
     dialogTitle: string;
     showRefresh: boolean;
-    tinyMceOptions: Record<string, any>;
+    hugeRteOptions: Partial<EditorOptions>;
     private authState;
     private allowNotificationDeliveryMethods;
     constructor(store: Store<AppState>, router: Router, dialogRef: MatDialogRef<SentNotificationDialogComponent, NotificationRequest>, data: RequestNotificationDialogData, breakpointObserver: BreakpointObserver, fb: FormBuilder, notificationService: NotificationService, dialog: MatDialog, translate: TranslateService, userPermissionsService: UserPermissionsService);

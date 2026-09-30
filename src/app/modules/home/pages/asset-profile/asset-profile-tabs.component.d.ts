@@ -7,6 +7,7 @@ export declare class AssetProfileTabsComponent extends EntityTabsComponent<Asset
     protected store: Store<AppState>;
     constructor(store: Store<AppState>);
     ngOnInit(): void;
+    resolveTabIndex(tab: string): number;
     static ɵfac: i0.ɵɵFactoryDeclaration<AssetProfileTabsComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<AssetProfileTabsComponent, "tb-asset-profile-tabs", never, {}, {}, never, never, false, never>;
 }

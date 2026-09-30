@@ -1,5 +1,5 @@
 import { DestroyRef, OnChanges, OnInit, QueryList, SimpleChanges } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { ScadaSymbolTag } from '@home/components/widget/lib/scada/scada-symbol.models';
 import { ScadaSymbolMetadataTagComponent } from '@home/pages/scada-symbol/metadata-components/scada-symbol-metadata-tag.component';
 import { TbEditorCompleter } from '@shared/models/ace/completion.models';
@@ -30,7 +30,6 @@ export declare class ScadaSymbolMetadataTagsComponent implements ControlValueAcc
         };
     };
     tagsFormArray(): UntypedFormArray;
-    trackByTag(_index: number, tagControl: AbstractControl): any;
     editTagStateRenderFunction(tag: string): void;
     editTagClickAction(tag: string): void;
     private setupTags;

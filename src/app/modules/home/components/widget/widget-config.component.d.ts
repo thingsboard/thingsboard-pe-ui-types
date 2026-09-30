@@ -115,6 +115,7 @@ export declare class WidgetConfigComponent extends PageComponent implements OnIn
     onlyHistoryTimewindow(): boolean;
     generateDataKey(chip: any, type: DataKeyType, dataKeySettingsForm: FormProperty[], isLatestDataKey: boolean, dataKeySettingsFunction: DataKeySettingsFunction): DataKey;
     private genNextColor;
+    private fetchEntityAliases;
     private createEntityAlias;
     private editEntityAlias;
     private createFilter;

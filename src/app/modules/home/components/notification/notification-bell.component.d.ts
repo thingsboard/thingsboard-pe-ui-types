@@ -4,6 +4,7 @@ import { MatIconButton } from '@angular/material/button';
 import { TbPopoverService } from '@shared/components/popover.service';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
+import { WhiteLabelingService } from '@core/http/white-labeling.service';
 import * as i0 from "@angular/core";
 export declare class NotificationBellComponent implements OnDestroy {
     private notificationWsService;
@@ -13,11 +14,12 @@ export declare class NotificationBellComponent implements OnDestroy {
     private renderer;
     private viewContainerRef;
     private store;
+    wl: WhiteLabelingService;
     private notificationSubscriber;
     private notificationCountSubscriber;
     private countSubject;
     count$: import("rxjs").Observable<string | number>;
-    constructor(notificationWsService: NotificationWebsocketService, zone: NgZone, cd: ChangeDetectorRef, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, store: Store<AppState>);
+    constructor(notificationWsService: NotificationWebsocketService, zone: NgZone, cd: ChangeDetectorRef, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, store: Store<AppState>, wl: WhiteLabelingService);
     ngOnDestroy(): void;
     showNotification($event: Event, createVersionButton: MatIconButton): void;
     private initSubscription;

@@ -15,6 +15,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { EntityColumn, EntityData } from '@home/components/widget/lib/table-widget.models';
 import { Overlay } from '@angular/cdk/overlay';
 import { EntityDataPageLink, KeyFilter } from '@shared/models/query/query.models';
+import { SortColumnType } from '@shared/models/page/page-link';
 import { DatePipe } from '@angular/common';
 import { EntityService } from '@core/http/entity.service';
 import { FormBuilder } from '@angular/forms';
@@ -87,9 +88,7 @@ export declare class EntitiesTableWidgetComponent extends PageComponent implemen
     private enterFilterMode;
     exitFilterMode(): void;
     private updateData;
-    trackByColumnDef(index: any, column: EntityColumn): string;
     trackByEntityId(index: number, entity: EntityData): string;
-    trackByActionCellDescriptionId(index: number, action: WidgetActionDescriptor): string;
     headerStyle(key: EntityColumn): any;
     rowStyle(entity: EntityData, row: number): Observable<any>;
     cellStyle(entity: EntityData, key: EntityColumn, row: number): Observable<any>;
@@ -102,7 +101,9 @@ export declare class EntitiesTableWidgetComponent extends PageComponent implemen
     onActionButtonClick($event: Event, entity: EntityData, actionDescriptor: WidgetActionDescriptor): void;
     customDataExport(): Observable<Map<string, any>[]>;
     private includeColumnInExport;
-    private queryEntityDataToExportedData;
+    private queryEntityDataToEntity;
+    private entityToExportedData;
+    private sortEntitiesForExport;
     private clearCache;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntitiesTableWidgetComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<EntitiesTableWidgetComponent, "tb-entities-table-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; }, {}, never, never, false, never>;
@@ -121,6 +122,7 @@ declare class EntityDatasource implements DataSource<EntityData> {
     countCellButtonAction: number;
     private appliedPageLink;
     private appliedSortOrderLabel;
+    private appliedSortColumnType;
     private reserveSpaceForHiddenAction;
     private cellButtonActions;
     private usedShowCellActionFunction;
@@ -129,7 +131,7 @@ declare class EntityDatasource implements DataSource<EntityData> {
     private init;
     connect(collectionViewer: CollectionViewer): Observable<EntityData[] | ReadonlyArray<EntityData>>;
     disconnect(collectionViewer: CollectionViewer): void;
-    loadEntities(pageLink: EntityDataPageLink, sortOrderLabel: string, keyFilters: KeyFilter[]): void;
+    loadEntities(pageLink: EntityDataPageLink, sortOrderLabel: string, sortColumnType: SortColumnType, keyFilters: KeyFilter[]): void;
     private clear;
     dataUpdated(): void;
     private datasourceToEntityData;

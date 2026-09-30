@@ -221,6 +221,7 @@ export interface TimeSeriesChartSettings extends TimeSeriesChartTooltipWidgetSet
     thresholds: TimeSeriesChartThreshold[];
     darkMode: boolean;
     dataZoom: boolean;
+    dataZoomUpdateTimewindow: boolean;
     stack: boolean;
     grid: TimeSeriesChartGridSettings;
     yAxes: TimeSeriesChartYAxes;

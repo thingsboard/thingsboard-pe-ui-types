@@ -1,5 +1,5 @@
 import { DestroyRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { WidgetConfigComponent } from '@home/components/widget/widget-config.component';
 import { DataKey, DatasourceType } from '@shared/models/widget.models';
 import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
@@ -25,7 +25,6 @@ export declare class AggregatedDataKeysPanelComponent implements ControlValueAcc
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: DataKey[] | undefined): void;
     keysFormArray(): UntypedFormArray;
-    trackByKey(index: number, keyControl: AbstractControl): any;
     removeKey(index: number): void;
     addKey(): void;
     private prepareKeysFormArray;

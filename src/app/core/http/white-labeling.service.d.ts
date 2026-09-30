@@ -23,6 +23,7 @@ export declare class WhiteLabelingService {
     private showNameBottom;
     private platformName;
     private platformVersion;
+    private whiteLabelingEnabled;
     loginLogo$: Observable<string>;
     loginLogoHeight$: Observable<number>;
     loginPageBackgroundColor$: Observable<string>;
@@ -31,6 +32,7 @@ export declare class WhiteLabelingService {
     showNameBottom$: Observable<boolean>;
     platformName$: Observable<string>;
     platformVersion$: Observable<string>;
+    whiteLabelingEnabled$: Observable<boolean>;
     private currentWLParams;
     private currentLoginWLParams;
     private loginWlParams;
@@ -43,11 +45,16 @@ export declare class WhiteLabelingService {
     private loginAccentPalette;
     private renderer;
     private readonly ROOT;
+    private readonly BODY;
     constructor(http: HttpClient, store: Store<AppState>, rendererFactory: RendererFactory2, document: Document, menuService: MenuService);
     logoImageUrl(): string;
     logoImageUrl$(): Observable<string>;
+    isDefaultLogoImageUrl$(): Observable<boolean>;
     logoImageHeight(): number;
     logoImageHeight$(): Observable<number>;
+    collapsedLogoImageUrl(): string;
+    collapsedLogoImageUrl$(): Observable<string>;
+    isDefaultCollapsedLogoImageUrl$(): Observable<boolean>;
     appTitle(): string;
     appTitle$(): Observable<string>;
     faviconUrl(): string;
@@ -56,6 +63,8 @@ export declare class WhiteLabelingService {
     getAccentPalette(): ColorPalette;
     getLoginPrimaryPalette(): ColorPalette;
     getLoginAccentPalette(): ColorPalette;
+    isPrimaryColorPanels(): boolean;
+    isPrimaryColorPanels$(): Observable<boolean>;
     getDocsUrl(): string;
     getHelpLinkBaseUrl(): string;
     getHelpLinkBaseUrl$(): Observable<string>;
@@ -98,6 +107,7 @@ export declare class WhiteLabelingService {
     private configurePalette;
     private applyThemeColors;
     private applyPaletteColors;
+    private applyPrimaryPanelsColor;
     private asWhiteLabelingObservable;
     static ɵfac: i0.ɵɵFactoryDeclaration<WhiteLabelingService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<WhiteLabelingService>;

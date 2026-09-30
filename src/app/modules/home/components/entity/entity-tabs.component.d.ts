@@ -41,6 +41,7 @@ export declare abstract class EntityTabsComponent<T extends BaseData<HasId>, P e
     protected constructor(...args: unknown[]);
     ngOnInit(): void;
     ngAfterViewInit(): void;
+    resolveTabIndex(tab: string): number;
     protected setEntity(entity: T): void;
     protected setEntitiesTableConfig(entitiesTableConfig: C): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityTabsComponent<any, any, any, any>, never>;

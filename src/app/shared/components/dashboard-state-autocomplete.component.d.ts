@@ -6,6 +6,7 @@ import { DashboardService } from '@core/http/dashboard.service';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { TranslateService } from '@ngx-translate/core';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
 import { DashboardUtilsService } from '@core/services/dashboard-utils.service';
 import * as i0 from "@angular/core";
 export declare class DashboardStateAutocompleteComponent implements ControlValueAccessor, OnInit {
@@ -20,6 +21,7 @@ export declare class DashboardStateAutocompleteComponent implements ControlValue
     private dashboardStatesFetchObservable$;
     private propagateChange;
     label: string;
+    appearance: MatFormFieldAppearance;
     placeholder: string;
     private requiredValue;
     get required(): boolean;
@@ -49,5 +51,5 @@ export declare class DashboardStateAutocompleteComponent implements ControlValue
     private createFilterForDashboardState;
     private clearDashboardStateCache;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardStateAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardStateAutocompleteComponent, "tb-dashboard-state-autocomplete", never, { "label": { "alias": "label"; "required": false; }; "placeholder": { "alias": "placeholder"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "dashboardId": { "alias": "dashboardId"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DashboardStateAutocompleteComponent, "tb-dashboard-state-autocomplete", never, { "label": { "alias": "label"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "placeholder": { "alias": "placeholder"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "dashboardId": { "alias": "dashboardId"; "required": false; }; }, {}, never, never, false, never>;
 }

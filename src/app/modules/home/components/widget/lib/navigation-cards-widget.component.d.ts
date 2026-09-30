@@ -25,7 +25,8 @@ export declare class NavigationCardsWidgetComponent extends PageComponent implem
     ngOnInit(): void;
     resize(): void;
     private updateColumnCount;
-    navigate($event: Event, path: string): void;
+    sectionUrl(section: MenuSection): string;
+    navigate($event: Event, section: MenuSection): void;
     sectionPlaces(section: HomeSection): MenuSection[];
     private filterPlace;
     sectionColspan(section: HomeSection): number;

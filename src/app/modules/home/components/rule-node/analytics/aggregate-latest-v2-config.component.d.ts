@@ -5,7 +5,7 @@ import * as i0 from "@angular/core";
 export declare class AggregateLatestV2ConfigComponent extends RuleNodeConfigurationComponent {
     private fb;
     aggregateLatestV2ConfigForm: UntypedFormGroup;
-    directionTypes: string[];
+    directionTypes: EntitySearchDirection[];
     directionTypeTranslations: Map<EntitySearchDirection, string>;
     constructor(fb: UntypedFormBuilder);
     protected configForm(): UntypedFormGroup;

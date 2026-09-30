@@ -1,0 +1,35 @@
+import { OnInit } from '@angular/core';
+import { PageComponent } from '@shared/components/page.component';
+import { Authority } from '@shared/models/authority.enum';
+import { WidgetContext } from '@home/models/widget-component.models';
+import { IotHubApiService } from '@core/http/iot-hub-api.service';
+import { IotHubActionsService } from '@home/components/iot-hub/iot-hub-actions.service';
+import { MpItemVersionView } from '@shared/models/iot-hub/iot-hub-version.models';
+import { IotHubInstalledItem } from '@shared/models/iot-hub/iot-hub-installed-item.models';
+import { UserPermissionsService } from '@core/http/user-permissions.service';
+import * as i0 from "@angular/core";
+export declare class IotHubWidgetComponent extends PageComponent implements OnInit {
+    private iotHubApiService;
+    private iotHubActions;
+    private userPermissionsService;
+    ctx: WidgetContext;
+    authority: typeof Authority;
+    authUser: import("../../../../../../shared/public-api").AuthUser;
+    hasIotHubAccess: boolean;
+    solutionTemplates: MpItemVersionView[];
+    devices: MpItemVersionView[];
+    installedSolutionTemplates: IotHubInstalledItem[];
+    installedDeviceCounts: Record<string, number>;
+    constructor(iotHubApiService: IotHubApiService, iotHubActions: IotHubActionsService, userPermissionsService: UserPermissionsService);
+    ngOnInit(): void;
+    openItemDetail(item: MpItemVersionView): void;
+    getItemImage(item: MpItemVersionView): string | null;
+    isInstalled(item: MpItemVersionView): boolean;
+    showInstallCount(item: MpItemVersionView): boolean;
+    private findInstalledSolutionTemplate;
+    private findInstalledDeviceCount;
+    private load;
+    private reloadInstalled;
+    static ɵfac: i0.ɵɵFactoryDeclaration<IotHubWidgetComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<IotHubWidgetComponent, "tb-iot-hub-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; }, {}, never, never, false, never>;
+}

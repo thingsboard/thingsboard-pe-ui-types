@@ -28,6 +28,8 @@ export declare class CssComponent implements OnInit, OnDestroy, ControlValueAcce
     modelValue: string;
     hasErrors: boolean;
     private propagateChange;
+    private languageProvider;
+    private aceSubscription;
     constructor(elementRef: ElementRef, utils: UtilsService, translate: TranslateService, store: Store<AppState>, raf: RafService, cd: ChangeDetectorRef);
     ngOnInit(): void;
     ngOnDestroy(): void;

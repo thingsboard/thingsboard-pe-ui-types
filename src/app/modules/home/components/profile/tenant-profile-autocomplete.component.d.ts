@@ -10,6 +10,7 @@ import { TenantProfileService } from '@core/http/tenant-profile.service';
 import { TruncatePipe } from '@shared//pipe/truncate.pipe';
 import { TenantProfile } from '@shared/models/tenant.model';
 import { MatDialog } from '@angular/material/dialog';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class TenantProfileAutocompleteComponent implements ControlValueAccessor, OnInit {
     private store;
@@ -26,6 +27,7 @@ export declare class TenantProfileAutocompleteComponent implements ControlValueA
     set required(value: boolean);
     disabled: boolean;
     showDetailsPageLink: boolean;
+    appearance: MatFormFieldAppearance;
     tenantProfileUpdated: EventEmitter<TenantProfileId>;
     tenantProfileInput: ElementRef;
     filteredTenantProfiles: Observable<Array<EntityInfoData>>;
@@ -51,5 +53,5 @@ export declare class TenantProfileAutocompleteComponent implements ControlValueA
     editTenantProfile($event: Event): void;
     openTenantProfileDialog(tenantProfile: TenantProfile, isAdd: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TenantProfileAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TenantProfileAutocompleteComponent, "tb-tenant-profile-autocomplete", never, { "selectDefaultProfile": { "alias": "selectDefaultProfile"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "showDetailsPageLink": { "alias": "showDetailsPageLink"; "required": false; }; }, { "tenantProfileUpdated": "tenantProfileUpdated"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TenantProfileAutocompleteComponent, "tb-tenant-profile-autocomplete", never, { "selectDefaultProfile": { "alias": "selectDefaultProfile"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "showDetailsPageLink": { "alias": "showDetailsPageLink"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; }, { "tenantProfileUpdated": "tenantProfileUpdated"; }, never, never, false, never>;
 }

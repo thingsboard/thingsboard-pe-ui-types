@@ -9,6 +9,7 @@ import { CalculatedFieldsTableConfig } from '@home/components/calculated-fields/
 import { CalculatedFieldsService } from '@core/http/calculated-fields.service';
 import { ImportExportService } from '@shared/import-export/import-export.service';
 import { EntityDebugSettingsService } from '@home/components/entity/debug/entity-debug-settings.service';
+import { IotHubActionsService } from '@home/components/iot-hub/iot-hub-actions.service';
 import { DatePipe } from '@angular/common';
 import { TbPopoverService } from '@shared/components/popover.service';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
@@ -31,6 +32,7 @@ export declare class CalculatedFieldsTableComponent {
     private router;
     private popoverService;
     private userPermissionsService;
+    private iotHubActions;
     entitiesTable: EntitiesTableComponent;
     active: import("@angular/core").InputSignal<boolean>;
     entityId: import("@angular/core").InputSignal<EntityId>;
@@ -40,7 +42,7 @@ export declare class CalculatedFieldsTableComponent {
     hideClearEventAction: import("@angular/core").InputSignal<boolean>;
     calculatedFieldsTableConfig: CalculatedFieldsTableConfig;
     pageMode: boolean;
-    constructor(calculatedFieldsService: CalculatedFieldsService, translate: TranslateService, dialog: MatDialog, store: Store<AppState>, datePipe: DatePipe, cd: ChangeDetectorRef, renderer: Renderer2, importExportService: ImportExportService, entityDebugSettingsService: EntityDebugSettingsService, utilsService: UtilsService, destroyRef: DestroyRef, route: ActivatedRoute, router: Router, popoverService: TbPopoverService, userPermissionsService: UserPermissionsService);
+    constructor(calculatedFieldsService: CalculatedFieldsService, translate: TranslateService, dialog: MatDialog, store: Store<AppState>, datePipe: DatePipe, cd: ChangeDetectorRef, renderer: Renderer2, importExportService: ImportExportService, entityDebugSettingsService: EntityDebugSettingsService, utilsService: UtilsService, destroyRef: DestroyRef, route: ActivatedRoute, router: Router, popoverService: TbPopoverService, userPermissionsService: UserPermissionsService, iotHubActions: IotHubActionsService);
     static ɵfac: i0.ɵɵFactoryDeclaration<CalculatedFieldsTableComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<CalculatedFieldsTableComponent, "tb-calculated-fields-table", never, { "active": { "alias": "active"; "required": false; "isSignal": true; }; "entityId": { "alias": "entityId"; "required": false; "isSignal": true; }; "entityName": { "alias": "entityName"; "required": false; "isSignal": true; }; "ownerId": { "alias": "ownerId"; "required": false; "isSignal": true; }; "readonly": { "alias": "readonly"; "required": false; "isSignal": true; }; "hideClearEventAction": { "alias": "hideClearEventAction"; "required": false; "isSignal": true; }; }, {}, never, never, false, never>;
 }

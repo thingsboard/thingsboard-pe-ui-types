@@ -13,6 +13,7 @@ export declare class ChirpStackIntegrationFormComponent extends IntegrationForm 
     chirpStackIntegrationConfigForm: UntypedFormGroup;
     routingKey: string;
     private propagateChange;
+    private propagateChangePending;
     constructor(fb: UntypedFormBuilder, store: Store<AppState>, translate: TranslateService);
     ngOnInit(): void;
     writeValue(value: ChipStackIntegration): void;
@@ -24,6 +25,7 @@ export declare class ChirpStackIntegrationFormComponent extends IntegrationForm 
     validate(): ValidationErrors | null;
     onHttpEndpointCopied(): void;
     updatedValidationPrivateNetwork(): void;
+    updateDownlinkControlsState(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ChirpStackIntegrationFormComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<ChirpStackIntegrationFormComponent, "tb-chirp-stack-integration-form", never, { "routingKey": { "alias": "routingKey"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -6,12 +6,14 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { TranslateService } from '@ngx-translate/core';
 import { EntityType } from '@shared/models/entity-type.models';
+import { ResourceService } from '@core/http/resource.service';
 import * as i0 from "@angular/core";
 export declare class EntityTypesVersionCreateComponent extends PageComponent implements OnInit, ControlValueAccessor, Validator {
     protected store: Store<AppState>;
     private translate;
     private fb;
     private destroyRef;
+    private resourceService;
     disabled: boolean;
     private modelValue;
     private propagateChange;
@@ -23,7 +25,8 @@ export declare class EntityTypesVersionCreateComponent extends PageComponent imp
     loading: boolean;
     overrideEntityTypeTranslationsMap: Map<EntityType | import("@shared/models/entity-type.models").AliasEntityType, string>;
     readonly typesWithCalculatedFields: Set<EntityType | import("@shared/models/entity-type.models").AliasEntityType>;
-    constructor(store: Store<AppState>, translate: TranslateService, fb: UntypedFormBuilder, destroyRef: DestroyRef);
+    constructor(store: Store<AppState>, translate: TranslateService, fb: UntypedFormBuilder, destroyRef: DestroyRef, resourceService: ResourceService);
+    fetchTenantResourcesFunction: any;
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -49,6 +52,7 @@ export declare class EntityTypesVersionCreateComponent extends PageComponent imp
     allowedEntityTypes(entityTypeControl?: AbstractControl): Array<EntityType>;
     isGroupEntityType(entityType: EntityType): boolean;
     private updateModel;
+    private fetchTenantResources;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityTypesVersionCreateComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<EntityTypesVersionCreateComponent, "tb-entity-types-version-create", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

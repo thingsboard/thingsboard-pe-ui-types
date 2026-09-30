@@ -9,6 +9,7 @@ import { UtilsService } from '@core/services/utils.service';
 import { DashboardUtilsService } from '@core/services/dashboard-utils.service';
 import { EntityService } from '@core/http/entity.service';
 import { MobileService } from '@core/services/mobile.service';
+import { BreadcrumbService } from '@core/services/breadcrumb.service';
 import * as i0 from "@angular/core";
 export declare class DefaultStateControllerComponent extends StateControllerComponent implements OnInit, OnDestroy {
     protected router: Router;
@@ -20,7 +21,9 @@ export declare class DefaultStateControllerComponent extends StateControllerComp
     private entityService;
     private mobileService;
     private dashboardUtils;
-    constructor(router: Router, window: Window, route: ActivatedRoute, ngZone: NgZone, statesControllerService: StatesControllerService, utils: UtilsService, entityService: EntityService, mobileService: MobileService, dashboardUtils: DashboardUtilsService);
+    private breadcrumbService;
+    breadcrumbs$: import("rxjs").Observable<import("../../../../../shared/components/breadcrumb").BreadCrumb[]>;
+    constructor(router: Router, window: Window, route: ActivatedRoute, ngZone: NgZone, statesControllerService: StatesControllerService, utils: UtilsService, entityService: EntityService, mobileService: MobileService, dashboardUtils: DashboardUtilsService, breadcrumbService: BreadcrumbService);
     ngOnInit(): void;
     ngOnDestroy(): void;
     init(): void;

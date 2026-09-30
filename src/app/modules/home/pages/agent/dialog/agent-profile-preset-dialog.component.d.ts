@@ -1,0 +1,57 @@
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { Router } from '@angular/router';
+import { MatDialogRef } from '@angular/material/dialog';
+import { DialogComponent } from '@shared/components/dialog.component';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
+import { AgentService } from '@core/http/agent.service';
+import { AgentAppTemplate, AgentApplicationType, AgentProfile } from '@shared/models/agent.models';
+import { AgentProfileWizardData } from '@home/pages/agent/wizard/agent-profile-wizard.component';
+import * as i0 from "@angular/core";
+interface PresetTile {
+    appTypes: AgentApplicationType[];
+    icon: string;
+    labelKey: string;
+    descriptionKey: string;
+    defaultNameKey: string;
+}
+export declare class AgentProfilePresetDialogComponent extends DialogComponent<AgentProfilePresetDialogComponent, AgentProfile> {
+    protected store: Store<AppState>;
+    protected router: Router;
+    private fb;
+    private translate;
+    private agentService;
+    data: AgentProfileWizardData;
+    dialogRef: MatDialogRef<AgentProfilePresetDialogComponent, AgentProfile>;
+    tiles: PresetTile[];
+    selectedTile: PresetTile | null;
+    form: UntypedFormGroup;
+    mode: 'preset' | 'advanced';
+    advancedDefaults: Partial<AgentProfile> | null;
+    nameEditedByUser: boolean;
+    submitting: boolean;
+    templatesState: 'loading' | 'loaded';
+    latestTemplates: Partial<Record<AgentApplicationType, AgentAppTemplate>>;
+    missingTypes: AgentApplicationType[];
+    constructor(store: Store<AppState>, router: Router, fb: UntypedFormBuilder, translate: TranslateService, agentService: AgentService, data: AgentProfileWizardData, dialogRef: MatDialogRef<AgentProfilePresetDialogComponent, AgentProfile>);
+    private neededTypes;
+    private loadTemplates;
+    retryTemplates(): void;
+    tileDisabled(tile: PresetTile): boolean;
+    selectTile(tile: PresetTile | null): void;
+    onNameInput(): void;
+    appLabelWithVersion(type: AgentApplicationType): string;
+    versionChips(tile: PresetTile): string[];
+    get missingTypesLabel(): string;
+    get summaryBody(): string;
+    get canSubmit(): boolean;
+    advanced(): void;
+    onAdvancedFinished(profile: AgentProfile): void;
+    onAdvancedBack(): void;
+    cancel(): void;
+    submit(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<AgentProfilePresetDialogComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AgentProfilePresetDialogComponent, "tb-agent-profile-preset-dialog", never, {}, {}, never, never, false, never>;
+}
+export {};

@@ -9,10 +9,10 @@ import { TbAnchorComponent } from '@shared/components/tb-anchor.component';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { EntityAction } from '@home/models/entity/entity-component.models';
-import { CellActionDescriptor, EntityActionTableColumn, EntityColumn, EntityTableColumn, EntityTableConfig, GroupActionDescriptor, HeaderActionDescriptor } from '@home/models/entity/entities-table-config.models';
+import { CellActionDescriptor, EntityActionTableColumn, EntityColumnType, EntityColumnsType, EntityTableConfig, GroupActionDescriptor, HeaderActionDescriptor } from '@home/models/entity/entities-table-config.models';
 import { ActivatedRoute } from '@angular/router';
 import type { EntityDetailsPanelComponent } from '@home/components/entity/entity-details-panel.component';
-export type EntitiesTableAction = 'add';
+export type EntitiesTableAction = 'add' | 'aiAssistant';
 export interface IEntitiesTableComponent {
     entitiesTableConfig: EntityTableConfig<BaseData<HasId>>;
     translations: EntityTypeTranslation;
@@ -20,7 +20,7 @@ export interface IEntitiesTableComponent {
     groupActionDescriptors: Array<GroupActionDescriptor<BaseData<HasId>>>;
     cellActionDescriptors: Array<CellActionDescriptor<BaseData<HasId>>>;
     actionColumns: Array<EntityActionTableColumn<BaseData<HasId>>>;
-    entityColumns: Array<EntityTableColumn<BaseData<HasId>>>;
+    entityColumns: EntityColumnsType;
     displayedColumns: string[];
     headerCellStyleCache: Array<any>;
     cellContentCache: Array<SafeHtml>;
@@ -61,12 +61,11 @@ export interface IEntitiesTableComponent {
     resetSortAndFilter(update?: boolean, preserveTimewindow?: boolean): void;
     columnsUpdated(resetData?: boolean): void;
     cellActionDescriptorsUpdated(): void;
-    headerCellStyle(column: EntityColumn<BaseData<HasId>>): any;
+    headerCellStyle(column: EntityColumnType): any;
     clearCellCache(col: number, row: number): void;
-    cellContent(entity: BaseData<HasId>, column: EntityColumn<BaseData<HasId>>, row: number): any;
-    cellTooltip(entity: BaseData<HasId>, column: EntityColumn<BaseData<HasId>>, row: number): string;
-    cellStyle(entity: BaseData<HasId>, column: EntityColumn<BaseData<HasId>>, row: number): any;
-    trackByColumnKey(index: any, column: EntityTableColumn<BaseData<HasId>>): string;
+    cellContent(entity: BaseData<HasId>, column: EntityColumnType, row: number): any;
+    cellTooltip(entity: BaseData<HasId>, column: EntityColumnType, row: number): string;
+    cellStyle(entity: BaseData<HasId>, column: EntityColumnType, row: number): any;
     trackByEntityId(index: number, entity: BaseData<HasId>): string;
     detectChanges(): void;
 }

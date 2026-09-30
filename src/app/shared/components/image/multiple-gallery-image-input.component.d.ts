@@ -12,6 +12,7 @@ export declare class MultipleGalleryImageInputComponent extends PageComponent im
     private dialog;
     private cd;
     label: string;
+    hint: string;
     required: boolean;
     disabled: boolean;
     imageUrls: string[];
@@ -37,5 +38,5 @@ export declare class MultipleGalleryImageInputComponent extends PageComponent im
     imageDragEnd(): void;
     imageDrop(event: DndDropEvent): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<MultipleGalleryImageInputComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MultipleGalleryImageInputComponent, "tb-multiple-gallery-image-input", never, { "label": { "alias": "label"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MultipleGalleryImageInputComponent, "tb-multiple-gallery-image-input", never, { "label": { "alias": "label"; "required": false; }; "hint": { "alias": "hint"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -3,7 +3,7 @@ import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedForm
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { SubscriptSizing } from '@angular/material/form-field';
+import { MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class KeyValMapComponent extends PageComponent implements ControlValueAccessor, OnInit, OnDestroy, Validator {
     protected store: Store<AppState>;
@@ -17,6 +17,7 @@ export declare class KeyValMapComponent extends PageComponent implements Control
     singlePredefinedKey: string;
     isStrokedButton: boolean;
     subscriptSizing: SubscriptSizing;
+    appearance: MatFormFieldAppearance;
     kvListFormGroup: UntypedFormGroup;
     private destroy$;
     private propagateChange;
@@ -37,5 +38,5 @@ export declare class KeyValMapComponent extends PageComponent implements Control
     get isSinglePredefinedKey(): boolean;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<KeyValMapComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<KeyValMapComponent, "tb-key-val-map", never, { "disabled": { "alias": "disabled"; "required": false; }; "isValueRequired": { "alias": "isValueRequired"; "required": false; }; "titleText": { "alias": "titleText"; "required": false; }; "keyPlaceholderText": { "alias": "keyPlaceholderText"; "required": false; }; "valuePlaceholderText": { "alias": "valuePlaceholderText"; "required": false; }; "noDataText": { "alias": "noDataText"; "required": false; }; "singlePredefinedKey": { "alias": "singlePredefinedKey"; "required": false; }; "isStrokedButton": { "alias": "isStrokedButton"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<KeyValMapComponent, "tb-key-val-map", never, { "disabled": { "alias": "disabled"; "required": false; }; "isValueRequired": { "alias": "isValueRequired"; "required": false; }; "titleText": { "alias": "titleText"; "required": false; }; "keyPlaceholderText": { "alias": "keyPlaceholderText"; "required": false; }; "valuePlaceholderText": { "alias": "valuePlaceholderText"; "required": false; }; "noDataText": { "alias": "noDataText"; "required": false; }; "singlePredefinedKey": { "alias": "singlePredefinedKey"; "required": false; }; "isStrokedButton": { "alias": "isStrokedButton"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; }, {}, never, never, false, never>;
 }

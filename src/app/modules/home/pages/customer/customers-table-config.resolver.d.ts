@@ -41,6 +41,7 @@ export declare class CustomersTableConfigResolver {
     manageCustomerEntityViews($event: Event, customer: CustomerInfo, config: EntityTableConfig<CustomerInfo>): void;
     manageCustomerDashboards($event: Event, customer: CustomerInfo, config: EntityTableConfig<CustomerInfo>): void;
     manageCustomerEdges($event: Event, customer: CustomerInfo, config: EntityTableConfig<CustomerInfo>): void;
+    manageCustomerAgents($event: Event, customer: CustomerInfo, config: EntityTableConfig<CustomerInfo>): void;
     private navigateToChildCustomerPage;
     manageOwnerAndGroups($event: Event, customer: CustomerInfo, config: EntityTableConfig<CustomerInfo>): void;
     onCustomerAction(action: EntityAction<CustomerInfo>, config: EntityTableConfig<CustomerInfo>): boolean;

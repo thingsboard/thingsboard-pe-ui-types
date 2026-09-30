@@ -26,7 +26,6 @@ export declare class TenantProfileQueuesComponent implements ControlValueAccesso
     get queuesFormArray(): UntypedFormArray;
     setDisabledState(isDisabled: boolean): void;
     writeValue(queues: Array<QueueInfo> | null): void;
-    trackByQueue(index: number, queueControl: AbstractControl): any;
     removeQueue(index: number): void;
     addQueue(): void;
     getTitle(value: any): string;

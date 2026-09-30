@@ -6,7 +6,7 @@ export declare class SqsConfigComponent extends RuleNodeConfigurationComponent {
     private fb;
     sqsConfigForm: UntypedFormGroup;
     sqsQueueType: typeof SqsQueueType;
-    sqsQueueTypes: string[];
+    sqsQueueTypes: SqsQueueType[];
     sqsQueueTypeTranslationsMap: Map<SqsQueueType, string>;
     constructor(fb: UntypedFormBuilder);
     protected configForm(): UntypedFormGroup;

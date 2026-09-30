@@ -1,11 +1,11 @@
 import { DestroyRef, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl } from '@angular/forms';
-import { EditorOptions } from 'tinymce';
+import { EditorOptions } from 'hugerte';
 import { HtmlWithImagePipe } from '@shared/pipe/html-with-image.pipe';
 import { TranslateService } from '@ngx-translate/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ReportVariable } from '@home/pages/reporting/template/components/report-component.models';
-import { EditorComponent } from '@tinymce/tinymce-angular';
+import { EditorComponent } from '@hugerte/hugerte-angular';
 import { MatIconRegistry } from '@angular/material/icon';
 import * as i0 from "@angular/core";
 export declare class ReportRichTextComponent implements OnInit, ControlValueAccessor, OnChanges, OnDestroy {
@@ -19,7 +19,7 @@ export declare class ReportRichTextComponent implements OnInit, ControlValueAcce
     disabled: boolean;
     variables: ReportVariable[];
     background: string;
-    tinyMceOptions: Partial<EditorOptions>;
+    hugeRteOptions: Partial<EditorOptions>;
     richTextFormControl: UntypedFormControl;
     private modelValue;
     private propagateChange;

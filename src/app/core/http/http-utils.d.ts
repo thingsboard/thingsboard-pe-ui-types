@@ -1,5 +1,5 @@
 import { InterceptorHttpParams } from '../interceptors/interceptor-http-params';
-import { HttpHeaders } from '@angular/common/http';
+import { HttpHeaders, HttpParams } from '@angular/common/http';
 export type QueryParams = {
     [param: string]: any;
 };
@@ -9,6 +9,13 @@ export interface RequestConfig {
     resendRequest?: boolean;
     queryParams?: QueryParams;
     loadEntityDetails?: boolean;
+}
+export interface HttpOptionsResult {
+    headers: HttpHeaders;
+    params: HttpParams;
+}
+export interface HttpUploadOptionsResult {
+    params: HttpParams;
 }
 export declare function hasRequestConfig(config?: any): boolean;
 export declare function createDefaultHttpOptions(queryParamsOrConfig?: QueryParams | RequestConfig, config?: RequestConfig): {

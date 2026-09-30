@@ -5,6 +5,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { TranslateService } from '@ngx-translate/core';
 import { MessageType } from '@shared/models/rule-node.models';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class MessageTypeAutocompleteComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnDestroy {
     private store;
@@ -15,6 +16,7 @@ export declare class MessageTypeAutocompleteComponent implements ControlValueAcc
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
+    appearance: MatFormFieldAppearance;
     disabled: boolean;
     messageTypeInput: ElementRef;
     filteredMessageTypes: Observable<Array<MessageType | string>>;
@@ -35,5 +37,5 @@ export declare class MessageTypeAutocompleteComponent implements ControlValueAcc
     fetchMessageTypes(searchText?: string): Observable<Array<MessageType | string>>;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<MessageTypeAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MessageTypeAutocompleteComponent, "tb-message-type-autocomplete", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MessageTypeAutocompleteComponent, "tb-message-type-autocomplete", never, { "required": { "alias": "required"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

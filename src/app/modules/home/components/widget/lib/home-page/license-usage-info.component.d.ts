@@ -16,6 +16,8 @@ export declare class LicenseUsageInfoComponent extends PageComponent implements 
     authUser: import("../../../../../../shared/public-api").AuthUser;
     licenseUsageInfo: LicenseUsageInfo;
     isMdLg: boolean;
+    authState: import("../../../../../../core/public-api").AuthState;
+    showEdges: boolean;
     private observeBreakpointSubscription;
     constructor(store: Store<AppState>, cd: ChangeDetectorRef, adminService: AdminService, translate: TranslateService, breakpointObserver: BreakpointObserver);
     ngOnInit(): void;

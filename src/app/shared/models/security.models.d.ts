@@ -81,7 +81,12 @@ export declare enum Resource {
     SECRET = "SECRET",
     JOB = "JOB",
     AI_MODEL = "AI_MODEL",
-    API_KEY = "API_KEY"
+    AI = "AI",
+    API_KEY = "API_KEY",
+    AGENT = "AGENT",
+    AGENT_APP_PROFILE = "AGENT_APP_PROFILE",
+    AGENT_PROFILE = "AGENT_PROFILE",
+    AGENT_GROUP = "AGENT_GROUP"
 }
 export declare const resourceTypeTranslationMap: Map<Resource, string>;
 export declare const resourceByEntityType: Map<EntityType, Resource>;

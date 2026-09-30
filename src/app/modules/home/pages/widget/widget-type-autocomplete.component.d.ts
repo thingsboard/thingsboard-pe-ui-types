@@ -22,6 +22,8 @@ export declare class WidgetTypeAutocompleteComponent implements ControlValueAcce
     required: boolean;
     disabled: boolean;
     excludeWidgetTypeIds: Array<string>;
+    showHint: boolean;
+    showError: boolean;
     widgetTypeInput: ElementRef;
     filteredWidgetTypes: Observable<Array<WidgetTypeInfo>>;
     searchText: string;
@@ -41,5 +43,5 @@ export declare class WidgetTypeAutocompleteComponent implements ControlValueAcce
     clear(): void;
     textIsNotEmpty(text: string): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetTypeAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetTypeAutocompleteComponent, "tb-widget-type-autocomplete", never, { "label": { "alias": "label"; "required": false; }; "placeholder": { "alias": "placeholder"; "required": false; }; "floatLabel": { "alias": "floatLabel"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "excludeWidgetTypeIds": { "alias": "excludeWidgetTypeIds"; "required": false; }; }, {}, never, ["[tb-error]", "[tb-hint]"], false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetTypeAutocompleteComponent, "tb-widget-type-autocomplete", never, { "label": { "alias": "label"; "required": false; }; "placeholder": { "alias": "placeholder"; "required": false; }; "floatLabel": { "alias": "floatLabel"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "excludeWidgetTypeIds": { "alias": "excludeWidgetTypeIds"; "required": false; }; "showHint": { "alias": "showHint"; "required": false; }; "showError": { "alias": "showError"; "required": false; }; }, {}, never, ["[tb-error]", "[tb-hint]"], false, never>;
 }

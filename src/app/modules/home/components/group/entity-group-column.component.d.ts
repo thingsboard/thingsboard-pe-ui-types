@@ -1,4 +1,4 @@
-import { AfterViewInit, DestroyRef, EventEmitter, OnDestroy, OnInit } from '@angular/core';
+import { DestroyRef, EventEmitter, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -7,7 +7,7 @@ import { PageComponent } from '@shared/components/page.component';
 import { EntityGroupColumn, EntityGroupColumnType, EntityGroupEntityField, EntityGroupSortOrder } from '@shared/models/entity-group.models';
 import { MatDialog } from '@angular/material/dialog';
 import * as i0 from "@angular/core";
-export declare class EntityGroupColumnComponent extends PageComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnDestroy {
+export declare class EntityGroupColumnComponent extends PageComponent implements ControlValueAccessor, OnInit {
     protected store: Store<AppState>;
     private dialog;
     private fb;
@@ -25,17 +25,16 @@ export declare class EntityGroupColumnComponent extends PageComponent implements
         [fieldName: string]: EntityGroupEntityField;
     };
     entityFieldKeys: string[];
-    sortOrders: string[];
+    sortOrders: EntityGroupSortOrder[];
     entityGroupColumnTypeTranslations: Map<EntityGroupColumnType, string>;
     entityGroupSortOrderTranslations: Map<EntityGroupSortOrder, string>;
     constructor(store: Store<AppState>, dialog: MatDialog, fb: UntypedFormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
-    ngAfterViewInit(): void;
-    ngOnDestroy(): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: EntityGroupColumn | null): void;
+    private updateSortOrderEnabledState;
     private propagateChange;
     private updateModel;
     openColumn($event: Event): void;

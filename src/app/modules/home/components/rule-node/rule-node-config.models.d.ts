@@ -222,7 +222,7 @@ export declare enum AttributeScopeResult {
     SHARED_SCOPE = "SHARED_SCOPE",
     SERVER_SCOPE = "SERVER_SCOPE"
 }
-export declare const AttributeScopeMap: Map<AttributeScope, string>;
+export declare const AttributeScopeMap: Map<AttributeScope | AttributeScopeResult, string>;
 export declare enum PresenceMonitoringStrategy {
     ON_FIRST_MESSAGE = "ON_FIRST_MESSAGE",
     ON_EACH_MESSAGE = "ON_EACH_MESSAGE"

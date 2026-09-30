@@ -18,6 +18,7 @@ export declare class ReportComponentsComponent implements OnInit, OnChanges, Aft
     marginTop: number;
     marginBottom: number;
     reportComponents: ReportComponentConfig[];
+    readonly: boolean;
     context: ReportComponentContext;
     componentsChanged: EventEmitter<any>;
     componentRemoved: EventEmitter<ReportComponentConfig>;
@@ -48,5 +49,5 @@ export declare class ReportComponentsComponent implements OnInit, OnChanges, Aft
     componentDragEnded(): void;
     private updateListHeight;
     static ɵfac: i0.ɵɵFactoryDeclaration<ReportComponentsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ReportComponentsComponent, "tb-report-components", never, { "format": { "alias": "format"; "required": false; }; "background": { "alias": "background"; "required": false; }; "width": { "alias": "width"; "required": false; }; "scale": { "alias": "scale"; "required": false; }; "marginLeft": { "alias": "marginLeft"; "required": false; }; "marginRight": { "alias": "marginRight"; "required": false; }; "marginTop": { "alias": "marginTop"; "required": false; }; "marginBottom": { "alias": "marginBottom"; "required": false; }; "reportComponents": { "alias": "reportComponents"; "required": false; }; "context": { "alias": "context"; "required": false; }; }, { "componentsChanged": "componentsChanged"; "componentRemoved": "componentRemoved"; "componentEdit": "componentEdit"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ReportComponentsComponent, "tb-report-components", never, { "format": { "alias": "format"; "required": false; }; "background": { "alias": "background"; "required": false; }; "width": { "alias": "width"; "required": false; }; "scale": { "alias": "scale"; "required": false; }; "marginLeft": { "alias": "marginLeft"; "required": false; }; "marginRight": { "alias": "marginRight"; "required": false; }; "marginTop": { "alias": "marginTop"; "required": false; }; "marginBottom": { "alias": "marginBottom"; "required": false; }; "reportComponents": { "alias": "reportComponents"; "required": false; }; "readonly": { "alias": "readonly"; "required": false; }; "context": { "alias": "context"; "required": false; }; }, { "componentsChanged": "componentsChanged"; "componentRemoved": "componentRemoved"; "componentEdit": "componentEdit"; }, never, never, false, never>;
 }

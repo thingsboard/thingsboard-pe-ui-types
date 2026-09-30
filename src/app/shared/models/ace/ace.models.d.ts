@@ -1,8 +1,10 @@
 import { Ace } from 'ace-builds';
+import type { LanguageProvider } from 'ace-linters';
 import { Observable } from 'rxjs/internal/Observable';
 import { Renderer2 } from '@angular/core';
 export declare function getAce(): Observable<any>;
 export declare function getAceDiff(): Observable<any>;
+export declare function getCssLanguageProvider(): Observable<LanguageProvider>;
 export declare function updateEditorSize(editorElement: any, content: string, editor: Ace.Editor, renderer: Renderer2, options?: {
     showGutter?: boolean;
     ignoreHeight?: boolean;

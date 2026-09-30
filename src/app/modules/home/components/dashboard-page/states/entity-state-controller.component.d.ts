@@ -1,6 +1,7 @@
 import { NgZone, OnDestroy, OnInit } from '@angular/core';
 import { StateObject, StateParams } from '@core/api/widget-api.models';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { StateControllerComponent } from './state-controller.component';
 import { StatesControllerService } from '@home/components/dashboard-page/states/states-controller.service';
 import { EntityId } from '@app/shared/models/id/entity-id';
@@ -8,6 +9,7 @@ import { UtilsService } from '@core/services/utils.service';
 import { DashboardUtilsService } from '@core/services/dashboard-utils.service';
 import { EntityService } from '@core/http/entity.service';
 import { MobileService } from '@core/services/mobile.service';
+import { BreadcrumbService } from '@core/services/breadcrumb.service';
 import * as i0 from "@angular/core";
 export declare class EntityStateControllerComponent extends StateControllerComponent implements OnInit, OnDestroy {
     protected router: Router;
@@ -19,8 +21,10 @@ export declare class EntityStateControllerComponent extends StateControllerCompo
     private entityService;
     private mobileService;
     private dashboardUtils;
+    private breadcrumbService;
+    breadcrumbs$: Observable<import("../../../../../shared/components/breadcrumb").BreadCrumb[]>;
     selectedStateIndex: number;
-    constructor(router: Router, window: Window, route: ActivatedRoute, ngZone: NgZone, statesControllerService: StatesControllerService, utils: UtilsService, entityService: EntityService, mobileService: MobileService, dashboardUtils: DashboardUtilsService);
+    constructor(router: Router, window: Window, route: ActivatedRoute, ngZone: NgZone, statesControllerService: StatesControllerService, utils: UtilsService, entityService: EntityService, mobileService: MobileService, dashboardUtils: DashboardUtilsService, breadcrumbService: BreadcrumbService);
     ngOnInit(): void;
     ngOnDestroy(): void;
     init(): void;

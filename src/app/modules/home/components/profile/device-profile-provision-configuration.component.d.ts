@@ -12,7 +12,7 @@ export declare class DeviceProfileProvisionConfigurationComponent implements Con
     private destroyRef;
     provisionConfigurationFormGroup: UntypedFormGroup;
     deviceProvisionType: typeof DeviceProvisionType;
-    deviceProvisionTypes: string[];
+    deviceProvisionTypes: DeviceProvisionType[];
     deviceProvisionTypeTranslateMap: Map<DeviceProvisionType, string>;
     private requiredValue;
     get required(): boolean;

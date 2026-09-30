@@ -1,0 +1,43 @@
+import { EventEmitter, OnDestroy, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { TranslateService } from '@ngx-translate/core';
+import { AppState } from '@core/core.state';
+import { AgentService } from '@core/http/agent.service';
+import { AgentAppProfile, AgentApplicationType, VirtualAgentAppProfile } from '@shared/models/agent.models';
+import { EdgeTemplateCompatibilityService } from '@home/pages/agent/util/edge-template-compatibility.service';
+import * as i0 from "@angular/core";
+type QuickStartFilter = 'ALL' | AgentApplicationType;
+export declare class AgentAppProfileQuickStartComponent implements OnInit, OnDestroy {
+    private store;
+    private agentService;
+    private edgeTemplateCompatibility;
+    private translate;
+    private static readonly PROFILES_PAGE_SIZE;
+    reloadTrigger: Observable<void>;
+    profileCreated: EventEmitter<AgentAppProfile>;
+    loaded: boolean;
+    hasTemplates: boolean;
+    activeFilter: QuickStartFilter;
+    entries: VirtualAgentAppProfile[];
+    readonly filters: Array<{
+        key: QuickStartFilter;
+        label: string;
+    }>;
+    private creatingVersions;
+    private readonly reload$;
+    private readonly destroy$;
+    constructor(store: Store<AppState>, agentService: AgentService, edgeTemplateCompatibility: EdgeTemplateCompatibilityService, translate: TranslateService);
+    ngOnInit(): void;
+    ngOnDestroy(): void;
+    get visibleEntries(): VirtualAgentAppProfile[];
+    get allCreated(): boolean;
+    get noMatch(): boolean;
+    appIcon(appType: AgentApplicationType): string;
+    isCreating(entry: VirtualAgentAppProfile): boolean;
+    create(entry: VirtualAgentAppProfile): void;
+    private fetchEntries;
+    static ɵfac: i0.ɵɵFactoryDeclaration<AgentAppProfileQuickStartComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AgentAppProfileQuickStartComponent, "tb-agent-app-profile-quick-start", never, { "reloadTrigger": { "alias": "reloadTrigger"; "required": false; }; }, { "profileCreated": "profileCreated"; }, never, never, false, never>;
+}
+export {};

@@ -1,0 +1,33 @@
+import { AfterViewInit, ElementRef, EventEmitter, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
+import * as i0 from "@angular/core";
+export declare class AgentComposeDiffComponent implements AfterViewInit, OnChanges, OnDestroy {
+    left: string;
+    right: string;
+    readOnly: boolean;
+    syncScroll: boolean;
+    rightChange: EventEmitter<string>;
+    elmRef: ElementRef<HTMLElement>;
+    private differ;
+    private resizeObserver;
+    private building;
+    private ready;
+    private destroyed;
+    private settling;
+    private settleFrames;
+    private gutterRedrawHandle;
+    private rebuildHandle;
+    ngAfterViewInit(): void;
+    ngOnChanges(changes: SimpleChanges): void;
+    ngOnDestroy(): void;
+    private observeResize;
+    private resizeEditors;
+    private build;
+    private whenReady;
+    private scheduleRebuild;
+    private realign;
+    private alignScroll;
+    private bindScrollSync;
+    private scheduleGutterRedraw;
+    static ɵfac: i0.ɵɵFactoryDeclaration<AgentComposeDiffComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AgentComposeDiffComponent, "tb-agent-compose-diff", never, { "left": { "alias": "left"; "required": false; }; "right": { "alias": "right"; "required": false; }; "readOnly": { "alias": "readOnly"; "required": false; }; "syncScroll": { "alias": "syncScroll"; "required": false; }; }, { "rightChange": "rightChange"; }, never, never, false, never>;
+}

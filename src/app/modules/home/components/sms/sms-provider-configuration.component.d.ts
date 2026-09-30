@@ -9,7 +9,7 @@ export declare class SmsProviderConfigurationComponent implements ControlValueAc
     private fb;
     private destroyRef;
     smsProviderType: typeof SmsProviderType;
-    smsProviderTypes: string[];
+    smsProviderTypes: SmsProviderType[];
     smsProviderTypeTranslations: Map<SmsProviderType, string>;
     smsProviderConfigurationFormGroup: UntypedFormGroup;
     private requiredValue;

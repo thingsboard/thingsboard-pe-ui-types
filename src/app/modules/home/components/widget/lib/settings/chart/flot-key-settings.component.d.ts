@@ -1,5 +1,5 @@
 import { DestroyRef, OnInit } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
 import { ChartType, TbFlotKeySettings } from '@home/components/widget/lib/flot-widget.models';
 import { Store } from '@ngrx/store';
@@ -37,7 +37,6 @@ export declare class FlotKeySettingsComponent extends PageComponent implements O
     private updateModel;
     private updateValidators;
     thresholdsFormArray(): UntypedFormArray;
-    trackByThreshold(index: number, thresholdControl: AbstractControl): any;
     removeThreshold(index: number): void;
     addThreshold(): void;
     thresholdDrop(event: CdkDragDrop<string[]>): void;

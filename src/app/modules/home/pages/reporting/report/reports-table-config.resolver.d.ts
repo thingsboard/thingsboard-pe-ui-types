@@ -8,6 +8,7 @@ import { ReportInfo } from '@shared/models/report.models';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { ReportService } from '@core/http/report.service';
+import { MatDialog } from '@angular/material/dialog';
 import * as i0 from "@angular/core";
 export declare class ReportsTableConfigResolver {
     private store;
@@ -15,7 +16,8 @@ export declare class ReportsTableConfigResolver {
     private userPermissionsService;
     private translate;
     private datePipe;
-    constructor(store: Store<AppState>, reportService: ReportService, userPermissionsService: UserPermissionsService, translate: TranslateService, datePipe: DatePipe);
+    private dialog;
+    constructor(store: Store<AppState>, reportService: ReportService, userPermissionsService: UserPermissionsService, translate: TranslateService, datePipe: DatePipe, dialog: MatDialog);
     resolve(_route: ActivatedRouteSnapshot): EntityTableConfig<ReportInfo>;
     private configDefaults;
     private configureColumns;
@@ -23,7 +25,8 @@ export declare class ReportsTableConfigResolver {
     private configureCellActions;
     private configureGroupActions;
     private downloadReport;
-    onReportAction(action: EntityAction<ReportInfo>, _config: EntityTableConfig<ReportInfo>): boolean;
+    private changeReportPublicStatus;
+    onReportAction(action: EntityAction<ReportInfo>, config: EntityTableConfig<ReportInfo>): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<ReportsTableConfigResolver, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<ReportsTableConfigResolver>;
 }

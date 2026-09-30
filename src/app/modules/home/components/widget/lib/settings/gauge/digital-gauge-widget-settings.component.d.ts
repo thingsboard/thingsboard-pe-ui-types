@@ -1,5 +1,5 @@
 import { Datasource, WidgetSettings, WidgetSettingsComponent } from '@shared/models/widget.models';
-import { AbstractControl, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
@@ -27,7 +27,6 @@ export declare class DigitalGaugeWidgetSettingsComponent extends WidgetSettingsC
     protected doUpdateSettings(settingsForm: UntypedFormGroup, settings: WidgetSettings): void;
     private prepareTicksValueFormArray;
     tickValuesFormArray(): UntypedFormArray;
-    trackByTickValue(index: number, tickValueControl: AbstractControl): any;
     removeTickValue(index: number): void;
     addTickValue(): void;
     tickValueDrop(event: CdkDragDrop<string[]>): void;

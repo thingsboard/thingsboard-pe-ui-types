@@ -7,7 +7,7 @@ import * as i0 from "@angular/core";
 export declare class DetailsPanelComponent extends PageComponent implements OnDestroy {
     protected store: Store<AppState>;
     private cd;
-    color: string;
+    color: string | undefined;
     headerHeightPx: number;
     headerTitle: string;
     headerSubtitle: string;

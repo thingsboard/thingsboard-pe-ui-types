@@ -32,6 +32,7 @@ export declare class CoapIntegrationFormComponent extends IntegrationForm implem
     private integrationTypeChanged;
     private coapEndPointUrl;
     private onEndpointCopied;
+    getCoapSecurityModeTranslations(type: string): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<CoapIntegrationFormComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<CoapIntegrationFormComponent, "tb-coap-integration-form", never, { "routingKey": { "alias": "routingKey"; "required": false; }; }, {}, never, never, false, never>;
 }

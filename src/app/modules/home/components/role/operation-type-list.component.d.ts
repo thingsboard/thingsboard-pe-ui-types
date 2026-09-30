@@ -8,7 +8,7 @@ import { MatAutocomplete } from '@angular/material/autocomplete';
 import { MatChipGrid } from '@angular/material/chips';
 import { Operation, Resource } from '@shared/models/security.models';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
-import { FloatLabelType, MatFormFieldAppearance } from '@angular/material/form-field';
+import { FloatLabelType, MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 interface OperationTypeInfo {
     name: string;
@@ -29,8 +29,10 @@ export declare class OperationTypeListComponent implements ControlValueAccessor,
     set groupRoleOperations(value: boolean);
     resource: Resource;
     appearance: MatFormFieldAppearance;
+    subscriptSizing: SubscriptSizing;
     floatLabel: FloatLabelType;
     label: string;
+    emptyPlaceholder: string;
     operationTypeInput: ElementRef<HTMLInputElement>;
     operationTypeAutocomplete: MatAutocomplete;
     chipList: MatChipGrid;
@@ -42,6 +44,7 @@ export declare class OperationTypeListComponent implements ControlValueAccessor,
     searchText: string;
     private dirty;
     private propagateChange;
+    private propagateTouched;
     constructor(store: Store<AppState>, translate: TranslateService, userPermissionsService: UserPermissionsService, fb: UntypedFormBuilder);
     updateValidators(): void;
     registerOnChange(fn: any): void;
@@ -62,8 +65,10 @@ export declare class OperationTypeListComponent implements ControlValueAccessor,
     displayOperationTypeFn(operationType?: OperationTypeInfo): string | undefined;
     fetchOperationTypes(searchText?: string): Observable<Array<OperationTypeInfo>>;
     onFocus(): void;
+    onBlur(): void;
+    onAutocompleteClosed(): void;
     clear(value?: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<OperationTypeListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<OperationTypeListComponent, "tb-operation-type-list", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "groupRoleOperations": { "alias": "groupRoleOperations"; "required": false; }; "resource": { "alias": "resource"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "floatLabel": { "alias": "floatLabel"; "required": false; }; "label": { "alias": "label"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<OperationTypeListComponent, "tb-operation-type-list", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "groupRoleOperations": { "alias": "groupRoleOperations"; "required": false; }; "resource": { "alias": "resource"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "floatLabel": { "alias": "floatLabel"; "required": false; }; "label": { "alias": "label"; "required": false; }; "emptyPlaceholder": { "alias": "emptyPlaceholder"; "required": false; }; }, {}, never, never, false, never>;
 }
 export {};

@@ -1,3 +1,4 @@
+import { AiAssistantPanelConfig } from '@shared/models/ai-chat.models';
 import { BaseData, HasId } from '@shared/models/base-data';
 import { EntitiesDataSource, EntitiesFetchFunction } from '@home/models/datasource/entity-datasource';
 import { Observable } from 'rxjs';
@@ -15,7 +16,7 @@ import { EntityTabsComponent } from '../../components/entity/entity-tabs.compone
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { IEntitiesTableComponent } from '@home/models/entity/entity-table-component.models';
 import { IEntityDetailsPageComponent } from '@home/models/entity/entity-details-page-component.models';
-import { MatButton } from '@angular/material/button';
+import { MatButton, MatIconButton } from '@angular/material/button';
 import { EntityGroupParams } from '@shared/models/entity-group.models';
 import { GroupEntityComponent } from '@home/components/group/group-entity.component';
 import { GroupEntityTabsComponent } from '@home/components/group/group-entity-tabs.component';
@@ -62,7 +63,7 @@ export interface HeaderActionDescriptor {
     name: string;
     icon: string;
     isEnabled: () => boolean;
-    onAction: ($event: MouseEvent, headerButton?: MatButton) => void;
+    onAction: ($event: MouseEvent, headerButton?: MatButton | MatIconButton) => void;
 }
 export type EntityTableColumnType = 'content' | 'action' | 'link' | 'chart' | 'progressBar' | 'entityChips';
 export declare class BaseEntityTableColumn<T extends BaseData<HasId>> {
@@ -137,6 +138,10 @@ export declare class EntityChipsEntityTableColumn<T extends BaseData<HasId>> ext
     constructor(key: string, title: string, width?: string, entityURL?: (entity: any) => string);
 }
 export type EntityColumn<T extends BaseData<HasId>> = EntityTableColumn<T> | EntityActionTableColumn<T> | EntityLinkTableColumn<T> | ChartEntityTableColumn<T> | ProgressBarEntityTableColumn<T> | EntityChipsEntityTableColumn<T>;
+export type EntityColumnType = Omit<Partial<EntityTableColumn<BaseData<HasId>> & EntityLinkTableColumn<BaseData<HasId>> & EntityChipsEntityTableColumn<BaseData<HasId>>>, 'cellContentFunction'> & {
+    cellContentFunction?: (entity: BaseData<HasId>, key: string) => any;
+};
+export type EntityColumnsType = Array<EntityColumnType>;
 export declare class EntityTableConfig<T extends BaseData<HasId>, P extends PageLink = PageLink, L extends BaseData<HasId> = T> {
     groupParams?: EntityGroupParams;
     customerId: string;
@@ -161,6 +166,7 @@ export declare class EntityTableConfig<T extends BaseData<HasId>, P extends Page
     detailsPanelEnabled: boolean;
     hideDetailsTabsOnEdit: boolean;
     rowPointer: boolean;
+    aiAssistantConfig: AiAssistantPanelConfig;
     actionsColumnTitle: any;
     entityTranslations: EntityTypeTranslation;
     entityResources: EntityTypeResource<T>;
@@ -178,6 +184,7 @@ export declare class EntityTableConfig<T extends BaseData<HasId>, P extends Page
     groupActionDescriptors: Array<GroupActionDescriptor<L>>;
     headerActionDescriptors: Array<HeaderActionDescriptor>;
     addActionDescriptors: Array<HeaderActionDescriptor>;
+    headerButtonDescriptors: Array<HeaderActionDescriptor>;
     headerComponent: Type<EntityTableHeaderComponent<T, P, L>>;
     addEntity: CreateEntityOperation<T>;
     addDialogOwnerAndGroupWizard: boolean;
@@ -200,6 +207,7 @@ export declare class EntityTableConfig<T extends BaseData<HasId>, P extends Page
     entityUpdated: EntityVoidFunction<T>;
     entitiesDeleted: EntityIdsVoidFunction<T>;
     defaultEntity: () => T;
+    onDestroy: () => void;
     getTable(): IEntitiesTableComponent;
     setTable(table: IEntitiesTableComponent): void;
     getEntityDetailsPage(): IEntityDetailsPageComponent;

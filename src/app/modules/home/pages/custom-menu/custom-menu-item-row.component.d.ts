@@ -60,7 +60,6 @@ export declare class CustomMenuItemRowComponent implements ControlValueAccessor,
     delete(): void;
     pageDrop(event: CdkDragDrop<string[]>): void;
     visiblePagesControls(): Array<AbstractControl>;
-    trackByPage(_index: number, pageControl: AbstractControl): any;
     removeCustomPage(index: number): void;
     addCustomPage(button: MatButton): void;
     private afterMenuItemEdit;

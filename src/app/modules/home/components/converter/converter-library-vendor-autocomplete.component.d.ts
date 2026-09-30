@@ -4,6 +4,7 @@ import { ConverterType, Vendor } from '@shared/models/converter.models';
 import { Observable } from 'rxjs';
 import { ConverterLibraryService } from '@core/http/converter-library.service';
 import { IntegrationType } from '@shared/models/integration.models';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class ConverterLibraryVendorAutocompleteComponent implements OnInit, ControlValueAccessor {
     private fb;
@@ -23,6 +24,7 @@ export declare class ConverterLibraryVendorAutocompleteComponent implements OnIn
     get integrationType(): IntegrationType;
     set converterType(value: ConverterType);
     get converterType(): ConverterType;
+    appearance: MatFormFieldAppearance;
     constructor(fb: FormBuilder, converterLibraryService: ConverterLibraryService);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -37,5 +39,5 @@ export declare class ConverterLibraryVendorAutocompleteComponent implements OnIn
     private filterVendors;
     onBlur(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ConverterLibraryVendorAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ConverterLibraryVendorAutocompleteComponent, "tb-converter-library-vendor-autocomplete", never, { "integrationType": { "alias": "integrationType"; "required": false; }; "converterType": { "alias": "converterType"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ConverterLibraryVendorAutocompleteComponent, "tb-converter-library-vendor-autocomplete", never, { "integrationType": { "alias": "integrationType"; "required": false; }; "converterType": { "alias": "converterType"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; }, {}, never, never, false, never>;
 }

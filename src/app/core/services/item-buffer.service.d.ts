@@ -1,10 +1,10 @@
 import { BreakpointId, Dashboard, DashboardLayoutId } from '@app/shared/models/dashboard.models';
 import { AliasesInfo } from '@shared/models/alias.models';
-import { Widget, WidgetPosition, WidgetSize } from '@shared/models/widget.models';
+import { Widget, WidgetActionsMap, WidgetPosition, WidgetSize } from '@shared/models/widget.models';
 import { DashboardUtilsService } from '@core/services/dashboard-utils.service';
 import { UtilsService } from '@core/services/utils.service';
 import { Observable } from 'rxjs';
-import { FcRuleNode } from '@shared/models/rule-node.models';
+import { FcRuleNode, FcRuleNote } from '@shared/models/rule-node.models';
 import { RuleChainService } from '@core/http/rule-chain.service';
 import { RuleChainImport } from '@shared/models/rule-chain.models';
 import { FiltersInfo } from '@shared/models/query/query.models';
@@ -36,8 +36,11 @@ export interface RuleNodeConnection {
 export interface RuleNodesReference {
     nodes: FcRuleNode[];
     connections: RuleNodeConnection[];
+    notes?: FcRuleNote[];
     originX?: number;
     originY?: number;
+    minX?: number;
+    minY?: number;
 }
 export declare class ItemBufferService {
     private dashboardUtils;
@@ -50,13 +53,16 @@ export declare class ItemBufferService {
     copyWidget(dashboard: Dashboard, sourceState: string, sourceLayout: DashboardLayoutId, widget: Widget, breakpoint: BreakpointId): void;
     copyWidgetReference(dashboard: Dashboard, sourceState: string, sourceLayout: DashboardLayoutId, widget: Widget, breakpoint: BreakpointId): void;
     hasWidget(): boolean;
+    copyWidgetActions(actionsMap: WidgetActionsMap): void;
+    hasWidgetActions(): boolean;
+    pasteWidgetActions(): WidgetActionsMap;
     canPasteWidgetReference(dashboard: Dashboard, state: string, layout: DashboardLayoutId, breakpoint: string): boolean;
     pasteWidget(targetDashboard: Dashboard, targetState: string, targetLayout: DashboardLayoutId, breakpoint: string, position: WidgetPosition, onAliasesUpdateFunction: () => void, onFiltersUpdateFunction: () => void): Observable<Widget>;
     pasteWidgetReference(targetDashboard: Dashboard, targetState: string, targetLayout: DashboardLayoutId, breakpoint: string, position: WidgetPosition): Observable<Widget>;
     addWidgetToDashboard(dashboard: Dashboard, targetState: string, targetLayout: DashboardLayoutId, widget: Widget, aliasesInfo: AliasesInfo, filtersInfo: FiltersInfo, onAliasesUpdateFunction: () => void, onFiltersUpdateFunction: () => void, originalColumns: number, originalSize: WidgetSize, row: number, column: number, breakpoint?: string, widgetExportInfo?: any): Observable<Dashboard>;
-    copyRuleNodes(nodes: FcRuleNode[], connections: RuleNodeConnection[]): void;
-    hasRuleNodes(): boolean;
-    pasteRuleNodes(x: number, y: number): RuleNodesReference;
+    copyRuleChainObjects(nodes: FcRuleNode[], connections: RuleNodeConnection[], notes?: FcRuleNote[]): void;
+    hasRuleChainObjects(): boolean;
+    pasteRuleChainObjects(x: number, y: number): RuleNodesReference;
     hasRuleChainImport(): boolean;
     storeRuleChainImport(ruleChainImport: RuleChainImport): void;
     getRuleChainImport(): RuleChainImport;

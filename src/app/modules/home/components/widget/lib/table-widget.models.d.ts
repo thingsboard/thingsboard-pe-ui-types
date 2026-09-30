@@ -116,7 +116,7 @@ export declare function getTableCellButtonActions(widgetContext: WidgetContext):
 export declare function checkHasActions(cellButtonActions: TableCellButtonActionDescriptor[]): boolean;
 export declare function prepareTableCellButtonActions(widgetContext: WidgetContext, cellButtonActions: TableCellButtonActionDescriptor[], data: EntityData | AlarmDataInfo | FormattedData, reserveSpaceForHiddenAction?: boolean): TableCellButtonActionDescriptor[];
 export declare function noDataMessage(noDataDisplayMessage: string, defaultMessage: string, utils: UtilsService, translate: TranslateService): string;
-export declare function constructTableCssString(widgetConfig: WidgetConfig): string;
+export declare function constructTableCssString(widgetConfig: WidgetConfig, isTabsEnabled?: boolean): string;
 export declare function getHeaderTitle(dataKey: DataKey, keySettings: TableWidgetDataKeySettings | undefined, utils: UtilsService): string;
 export declare function buildPageStepSizeValues(pageStepCount: number, pageStepIncrement: number): Array<number>;
 export declare function isValidPageStepIncrement(value: number): boolean;

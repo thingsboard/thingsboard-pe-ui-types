@@ -1,0 +1,37 @@
+import { ChangeDetectorRef } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
+import { DialogComponent } from '@shared/components/dialog.component';
+import { AppState } from '@core/core.state';
+import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { TranslateService } from '@ngx-translate/core';
+import { NotificationService } from '@core/http/notification.service';
+import { WhiteLabelingService } from '@core/http/white-labeling.service';
+import * as i0 from "@angular/core";
+export declare class RequestWhiteLabelingDialogComponent extends DialogComponent<RequestWhiteLabelingDialogComponent> {
+    protected store: Store<AppState>;
+    protected router: Router;
+    protected dialogRef: MatDialogRef<RequestWhiteLabelingDialogComponent>;
+    private translate;
+    private notificationService;
+    private wl;
+    private cd;
+    authUser: import("../../public-api").AuthUser;
+    isOldLicense: boolean;
+    isSysAdmin: boolean;
+    isTenantAdmin: boolean;
+    wlRequested: boolean;
+    sendError: boolean;
+    sendNetworkError: boolean;
+    sendErrorMessage: string | null;
+    constructor(store: Store<AppState>, router: Router, dialogRef: MatDialogRef<RequestWhiteLabelingDialogComponent>, translate: TranslateService, notificationService: NotificationService, wl: WhiteLabelingService, cd: ChangeDetectorRef);
+    cancel(): void;
+    requestAccess($event: Event): void;
+    upgradePlan($event: Event): void;
+    private storeWlRequested;
+    private restoreWlRequested;
+    private clearSendErrors;
+    private onSendError;
+    static ɵfac: i0.ɵɵFactoryDeclaration<RequestWhiteLabelingDialogComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RequestWhiteLabelingDialogComponent, "tb-request-white-labeling-dialog", never, {}, {}, never, never, false, never>;
+}

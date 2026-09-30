@@ -17,6 +17,7 @@ export interface MenuSection extends MenuReference {
         [k: string]: any;
     };
     icon: string;
+    outlinedIcon?: string;
     pages?: Array<MenuSection>;
     opened?: boolean;
     rootOnly?: boolean;
@@ -27,15 +28,11 @@ export interface MenuSection extends MenuReference {
         [stateId: string]: boolean;
     };
     customTranslate?: boolean;
+    active?: boolean;
     homeDashboardId?: string;
     homeHideDashboardToolbar?: boolean;
 }
 export declare const sectionPath: (section: MenuSection) => string;
-export declare const filterOpenedMenuSection: (section: MenuSection, url: string, openedMenuSections: string[]) => boolean;
-export interface HomeSectionReference {
-    name: string;
-    places: Array<MenuId>;
-}
 export interface HomeSection {
     name: string;
     places: Array<MenuSection>;
@@ -43,6 +40,7 @@ export interface HomeSection {
 export declare enum MenuId {
     home = "home",
     tenants = "tenants",
+    tenants_section = "tenants_section",
     tenant_profiles = "tenant_profiles",
     resources = "resources",
     widget_library = "widget_library",
@@ -62,6 +60,8 @@ export declare enum MenuId {
     mobile_apps = "mobile_apps",
     mobile_bundles = "mobile_bundles",
     mobile_qr_code_widget = "mobile_qr_code_widget",
+    platform = "platform",
+    platform_section = "platform_section",
     settings = "settings",
     general = "general",
     mail_server = "mail_server",
@@ -70,6 +70,7 @@ export declare enum MenuId {
     repository_settings = "repository_settings",
     auto_commit_settings = "auto_commit_settings",
     queues = "queues",
+    license_management = "license_management",
     security_settings = "security_settings",
     security_settings_general = "security_settings_general",
     two_fa = "two_fa",
@@ -77,6 +78,7 @@ export declare enum MenuId {
     domains = "domains",
     clients = "clients",
     audit_log = "audit_log",
+    monitor = "monitor",
     alarms_center = "alarms_center",
     alarms = "alarms",
     alarm_rules = "alarm_rules",
@@ -89,13 +91,21 @@ export declare enum MenuId {
     profiles = "profiles",
     device_profiles = "device_profiles",
     asset_profiles = "asset_profiles",
+    customers_and_users = "customers_and_users",
     customers = "customers",
+    data_processing = "data_processing",
     calculated_fields = "calculated_fields",
     rule_chains = "rule_chains",
     edge_management = "edge_management",
     edges = "edges",
     edge_instances = "edge_instances",
     rulechain_templates = "rulechain_templates",
+    agents = "agents",
+    agent_all = "agent_all",
+    agent_groups = "agent_groups",
+    agent_shared = "agent_shared",
+    edge_profiles = "edge_profiles",
+    edge_templates = "edge_templates",
     features = "features",
     otaUpdates = "otaUpdates",
     version_control = "version_control",
@@ -109,7 +119,7 @@ export declare enum MenuId {
     dashboard_all = "dashboard_all",
     dashboard_groups = "dashboard_groups",
     dashboard_shared = "dashboard_shared",
-    solution_templates = "solution_templates",
+    ai_solution_creator = "ai_solution_creator",
     device_all = "device_all",
     device_groups = "device_groups",
     device_shared = "device_shared",
@@ -141,6 +151,7 @@ export declare enum MenuId {
     trendz_settings = "trendz_settings",
     secrets = "secrets",
     ai_models = "ai_models",
+    iot_hub = "iot_hub",
     reporting = "reporting",
     report_templates = "report_templates",
     report_scheduling = "report_scheduling",
@@ -150,7 +161,7 @@ export declare enum MenuId {
 export declare const menuSectionMap: Map<MenuId, MenuSection>;
 export declare const defaultUserMenuMap: Map<Authority, MenuReference[]>;
 export declare const buildUserMenu: (authState: AuthState, userPermissionsService: UserPermissionsService, customMenuConfig: CustomMenuConfig) => Array<MenuSection>;
-export declare const buildUserHome: (authState: AuthState, availableMenuSections: MenuSection[]) => Array<HomeSection>;
+export declare const buildUserHome: (currentMenuSections: MenuSection[]) => Array<HomeSection>;
 export declare const menuItemToMenuSection: (authState: AuthState, userPermissionsService: UserPermissionsService, allowedMenuIds: Array<MenuId | string>, customStateIds: {
     [stateId: string]: boolean;
 }, item: MenuItem) => MenuSection | undefined;

@@ -1,7 +1,7 @@
 import { BaseData, HasId } from '@shared/models/base-data';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { PageComponent } from '@shared/components/page.component';
-import { ChangeDetectorRef, EventEmitter, OnInit } from '@angular/core';
+import { ChangeDetectorRef, EventEmitter, OnInit, TemplateRef } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { EntityAction } from '@home/models/entity/entity-component.models';
@@ -17,6 +17,7 @@ export declare abstract class EntityComponent<T extends BaseData<HasId>, P exten
     entityForm: UntypedFormGroup;
     isEditValue: boolean;
     isDetailsPage: boolean;
+    headerExtensionTemplate?: TemplateRef<unknown>;
     set entitiesTableConfig(entitiesTableConfig: C);
     get entitiesTableConfig(): C;
     set isEdit(isEdit: boolean);

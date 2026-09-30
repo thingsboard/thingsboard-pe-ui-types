@@ -1,0 +1,32 @@
+import { AfterViewInit, NgZone, OnChanges, OnDestroy, SimpleChanges, ViewContainerRef } from '@angular/core';
+import { Overlay } from '@angular/cdk/overlay';
+import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+import { AgentService } from '@core/http/agent.service';
+import { AttributeService } from '@core/http/attribute.service';
+import { TelemetryWebsocketService } from '@core/ws/telemetry-websocket.service';
+import { EntitiesTableComponent } from '@home/components/entity/entities-table.component';
+import { AgentApplicationInfo } from '@shared/models/agent.models';
+import { AgentAppUnitTableConfig } from './agent-app-unit-table-config';
+import * as i0 from "@angular/core";
+export declare class AgentAppUnitTableComponent implements AfterViewInit, OnChanges, OnDestroy {
+    private agentService;
+    private attributeService;
+    private translate;
+    private overlay;
+    private viewContainerRef;
+    private telemetryWsService;
+    private zone;
+    private router;
+    application: AgentApplicationInfo;
+    active: boolean;
+    entitiesTable: EntitiesTableComponent;
+    tableConfig: AgentAppUnitTableConfig;
+    constructor(agentService: AgentService, attributeService: AttributeService, translate: TranslateService, overlay: Overlay, viewContainerRef: ViewContainerRef, telemetryWsService: TelemetryWebsocketService, zone: NgZone, router: Router);
+    ngAfterViewInit(): void;
+    ngOnChanges(changes: SimpleChanges): void;
+    ngOnDestroy(): void;
+    private rebuild;
+    static ɵfac: i0.ɵɵFactoryDeclaration<AgentAppUnitTableComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AgentAppUnitTableComponent, "tb-agent-app-unit-table", never, { "application": { "alias": "application"; "required": false; }; "active": { "alias": "active"; "required": false; }; }, {}, never, never, false, never>;
+}

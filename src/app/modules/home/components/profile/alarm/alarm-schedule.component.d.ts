@@ -8,7 +8,7 @@ export declare class AlarmScheduleComponent implements ControlValueAccessor, Val
     private destroyRef;
     disabled: boolean;
     alarmScheduleForm: UntypedFormGroup;
-    alarmScheduleTypes: string[];
+    alarmScheduleTypes: AlarmScheduleType[];
     alarmScheduleType: typeof AlarmScheduleType;
     alarmScheduleTypeTranslate: Map<AlarmScheduleType, string>;
     dayOfWeekTranslationsArray: string[];

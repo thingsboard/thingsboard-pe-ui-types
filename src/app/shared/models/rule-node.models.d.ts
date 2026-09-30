@@ -2,7 +2,7 @@ import { BaseData } from '@shared/models/base-data';
 import { RuleChainId } from '@shared/models/id/rule-chain-id';
 import { RuleNodeId } from '@shared/models/id/rule-node-id';
 import { ComponentDescriptor } from '@shared/models/component-descriptor.models';
-import { FcEdge, FcNode } from 'ngx-flowchart';
+import { FcEdge, FcNode, FcNote } from 'ngx-flowchart';
 import { Observable } from 'rxjs';
 import { PageComponent } from '@shared/components/page.component';
 import { AfterViewInit, DestroyRef, EventEmitter, OnInit } from '@angular/core';
@@ -138,6 +138,17 @@ export interface FcRuleNode extends FcRuleNodeType {
 }
 export interface FcRuleEdge extends FcEdge {
     labels?: string[];
+}
+export declare const FC_RULE_NOTE_DEFAULT_BACKGROUND_COLOR = "#FFF9C4";
+export declare const FC_RULE_NOTE_DEFAULT_BORDER_WIDTH = 1;
+export declare const FC_RULE_NOTE_DEFAULT_APPLY_MARKDOWN_STYLE = true;
+export interface FcRuleNote extends FcNote {
+    content?: string;
+    backgroundColor?: string;
+    borderColor?: string;
+    borderWidth?: number;
+    applyDefaultMarkdownStyle?: boolean;
+    markdownCss?: string;
 }
 export declare enum ScriptLanguage {
     JS = "JS",

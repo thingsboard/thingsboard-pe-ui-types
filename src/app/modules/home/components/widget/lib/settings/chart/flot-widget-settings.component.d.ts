@@ -35,7 +35,9 @@ export declare class FlotWidgetSettingsComponent extends PageComponent implement
     private updateModel;
     private updateValidators;
     dataKeysListForLabelsFormArray(): UntypedFormArray;
-    trackByLabelDataKey(index: number, labelDataKeyControl: AbstractControl): any;
+    get typedSelectOptions(): (AbstractControl & {
+        new?: boolean;
+    })[];
     removeLabelDataKey(index: number): void;
     addLabelDataKey(): void;
     labelDataKeyDrop(event: CdkDragDrop<string[]>): void;

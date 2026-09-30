@@ -45,6 +45,13 @@ export declare function entityKeyValueTypeToFilterPredicateType(valueType: Entit
 export declare function createDefaultFilterPredicateInfo(valueType: EntityKeyValueType, complex: boolean): KeyFilterPredicateInfo;
 export declare function createDefaultFilterPredicateUserInfo(): KeyFilterPredicateUserInfo;
 export declare function createDefaultFilterPredicate(valueType: EntityKeyValueType, complex: boolean): KeyFilterPredicate;
+export interface KeyFilterPredicateFormValue {
+    operation?: StringOperation | NumericOperation | BooleanOperation | ComplexOperation;
+    value?: FilterPredicateValue<string | number | boolean>;
+    ignoreCase?: boolean;
+    predicates?: KeyFilterPredicateInfo[];
+}
+export declare function toKeyFilterPredicate(type: FilterPredicateType, formValue: KeyFilterPredicateFormValue): KeyFilterPredicate;
 export declare function getDynamicSourcesForAllowUser(allow: boolean): DynamicValueSourceType[];
 export declare enum FilterPredicateType {
     STRING = "STRING",
@@ -151,13 +158,14 @@ export interface FilterInfo {
     filter: string;
     editable: boolean;
     keyFilters: Array<KeyFilterInfo>;
+    keyFiltersOperation?: ComplexOperation;
 }
 export interface FiltersInfo {
     datasourceFilters: {
         [datasourceIndex: number]: FilterInfo;
     };
 }
-export declare function keyFiltersToText(translate: TranslateService, datePipe: DatePipe, keyFilters: Array<KeyFilter>): string;
+export declare function keyFiltersToText(translate: TranslateService, datePipe: DatePipe, keyFilters: Array<KeyFilter>, operation?: ComplexOperation): string;
 export declare function keyFilterToText(translate: TranslateService, datePipe: DatePipe, keyFilter: KeyFilter, parentComplexOperation?: ComplexOperation): string;
 export declare function keyFilterPredicateToText(translate: TranslateService, datePipe: DatePipe, keyFilter: KeyFilter, keyFilterPredicate: KeyFilterPredicate, parentComplexOperation?: ComplexOperation): string;
 export declare function keyFilterInfosToKeyFilters(keyFilterInfos: Array<KeyFilterInfo>): Array<KeyFilter>;
@@ -221,6 +229,7 @@ export declare const singleEntityFilterFromDeviceId: (deviceId: string) => Entit
 export interface EntityCountQuery {
     entityFilter: EntityFilter;
     keyFilters?: Array<KeyFilter>;
+    keyFiltersOperation?: ComplexOperation;
 }
 export interface AbstractDataQuery<T extends EntityDataPageLink> extends EntityCountQuery {
     pageLink: T;

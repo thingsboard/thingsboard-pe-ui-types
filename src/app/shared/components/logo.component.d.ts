@@ -11,9 +11,10 @@ export declare class LogoComponent implements OnInit {
     src: string | UrlHolder;
     link: string | UrlTree;
     target: string;
+    embed: boolean;
     isExternal: boolean;
     constructor(authService: AuthService, store: Store<AppState>);
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<LogoComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<LogoComponent, "tb-logo", never, { "src": { "alias": "src"; "required": false; }; "link": { "alias": "link"; "required": false; }; "target": { "alias": "target"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<LogoComponent, "tb-logo", never, { "src": { "alias": "src"; "required": false; }; "link": { "alias": "link"; "required": false; }; "target": { "alias": "target"; "required": false; }; "embed": { "alias": "embed"; "required": false; }; }, {}, never, never, false, never>;
 }

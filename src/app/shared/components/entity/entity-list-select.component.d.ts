@@ -4,6 +4,7 @@ import { AliasEntityType, EntityType } from '@shared/models/entity-type.models';
 import { EntityService } from '@core/http/entity.service';
 import { EntityId } from '@shared/models/id/entity-id';
 import { Operation } from '@shared/models/security.models';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 interface EntityListSelectModel {
     entityType: EntityType | AliasEntityType;
@@ -27,6 +28,7 @@ export declare class EntityListSelectComponent implements ControlValueAccessor, 
         [key in string]: string;
     };
     useEntityDisplayName: boolean;
+    appearance: MatFormFieldAppearance;
     displayEntityTypeSelect: boolean;
     private defaultEntityType;
     private propagateChange;
@@ -40,7 +42,7 @@ export declare class EntityListSelectComponent implements ControlValueAccessor, 
     private compareIds;
     private toEntityIds;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityListSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityListSelectComponent, "tb-entity-list-select", never, { "allowedEntityTypes": { "alias": "allowedEntityTypes"; "required": false; }; "useAliasEntityTypes": { "alias": "useAliasEntityTypes"; "required": false; }; "operation": { "alias": "operation"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "inlineField": { "alias": "inlineField"; "required": false; }; "filterAllowedEntityTypes": { "alias": "filterAllowedEntityTypes"; "required": false; }; "predefinedEntityType": { "alias": "predefinedEntityType"; "required": false; }; "additionEntityTypes": { "alias": "additionEntityTypes"; "required": false; }; "useEntityDisplayName": { "alias": "useEntityDisplayName"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityListSelectComponent, "tb-entity-list-select", never, { "allowedEntityTypes": { "alias": "allowedEntityTypes"; "required": false; }; "useAliasEntityTypes": { "alias": "useAliasEntityTypes"; "required": false; }; "operation": { "alias": "operation"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "inlineField": { "alias": "inlineField"; "required": false; }; "filterAllowedEntityTypes": { "alias": "filterAllowedEntityTypes"; "required": false; }; "predefinedEntityType": { "alias": "predefinedEntityType"; "required": false; }; "additionEntityTypes": { "alias": "additionEntityTypes"; "required": false; }; "useEntityDisplayName": { "alias": "useEntityDisplayName"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; }, {}, never, never, false, never>;
     static ngAcceptInputType_required: unknown;
     static ngAcceptInputType_inlineField: unknown;
     static ngAcceptInputType_filterAllowedEntityTypes: unknown;

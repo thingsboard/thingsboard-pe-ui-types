@@ -15,7 +15,9 @@ export declare class LabelWidgetSettingsComponent extends WidgetSettingsComponen
     protected doUpdateSettings(settingsForm: UntypedFormGroup, settings: WidgetSettings): void;
     private prepareLabelsFormArray;
     labelsFormArray(): UntypedFormArray;
-    trackByLabelControl(index: number, labelControl: AbstractControl): any;
+    get typedSelectOptions(): (AbstractControl & {
+        new?: boolean;
+    })[];
     removeLabel(index: number): void;
     addLabel(): void;
     labelDrop(event: CdkDragDrop<string[]>): void;

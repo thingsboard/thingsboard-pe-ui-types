@@ -7,6 +7,8 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { EdgeInfo, EdgeInstructionsMethod } from '@shared/models/edge.models';
 import { EdgeService } from '@core/http/edge.service';
 import { AttributeService } from '@core/http/attribute.service';
+import { AgentApplicationType } from '@shared/models/agent.models';
+import { EntityId } from '@shared/models/id/entity-id';
 import * as i0 from "@angular/core";
 export interface EdgeInstructionsDialogData {
     edge: EdgeInfo;
@@ -22,15 +24,17 @@ export declare class EdgeInstructionsDialogComponent extends DialogComponent<Edg
     private edgeService;
     dialogTitle: string;
     showDontShowAgain: boolean;
-    loadedInstructions: boolean;
     notShowAgain: boolean;
     tabIndex: number;
     instructionsMethod: typeof EdgeInstructionsMethod;
     contentData: any;
+    agentAppType: AgentApplicationType;
     constructor(store: Store<AppState>, router: Router, data: EdgeInstructionsDialogData, dialogRef: MatDialogRef<EdgeInstructionsDialogComponent>, attributeService: AttributeService, edgeService: EdgeService);
     ngOnInit(): void;
+    get relatedEntity(): EntityId;
     ngOnDestroy(): void;
     close(): void;
+    private methodForTab;
     selectedTabChange(index: number): void;
     getInstructions(method: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EdgeInstructionsDialogComponent, never>;

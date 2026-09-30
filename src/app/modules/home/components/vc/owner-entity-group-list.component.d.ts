@@ -32,7 +32,6 @@ export declare class OwnerEntityGroupListComponent extends PageComponent impleme
     private createOwnerEntityGroupsControl;
     ownerEntityGroupsArray(): UntypedFormGroup[];
     entityGroupsTitle(): string;
-    trackByOwnerEntityGroups(index: number, ownerEntityGroupsControl: AbstractControl): any;
     excludeOwnerIds(ownerEntityGroupsControl: AbstractControl): Array<string>;
     removeOwnerEntityGroups(index: number): void;
     addOwnerEntityGroup(): void;

@@ -1,5 +1,5 @@
 import { EventEmitter, OnDestroy, OnInit } from '@angular/core';
-import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, FormControl, FormArray } from '@angular/forms';
 import { ServerSecurityConfig } from '@home/components/profile/device/lwm2m/lwm2m-profile-config.models';
 import { TranslateService } from '@ngx-translate/core';
 import { DialogService } from '@core/services/dialog.service';
@@ -25,10 +25,9 @@ export declare class Lwm2mBootstrapConfigServersComponent implements OnInit, Con
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
     ngOnDestroy(): void;
-    get serverConfigsFromArray(): UntypedFormArray;
+    get serverConfigsFromArray(): FormArray<FormControl>;
     setDisabledState(isDisabled: boolean): void;
     writeValue(serverConfigs: Array<ServerSecurityConfig> | null): void;
-    trackByParams(index: number): number;
     removeServerConfig($event: Event, index: number): void;
     addServerConfig(): void;
     updateIsTransportWasRunWithBootstrap(newValue: boolean): void;

@@ -95,6 +95,14 @@ export interface BaseComplexFilterPredicate<T extends AlarmRuleFilterPredicate> 
     predicates: Array<T>;
 }
 export type ComplexAlarmRuleFilterPredicate = BaseComplexFilterPredicate<AlarmRuleFilterPredicate>;
+export interface AlarmRuleFilterPredicateFormValue {
+    operation?: AlarmRuleStringOperation | AlarmRuleNumericOperation | AlarmRuleBooleanOperation | ComplexOperation;
+    value?: AlarmRuleValue<string | number | boolean>;
+    ignoreCase?: boolean;
+    predicates?: AlarmRuleFilterPredicate[];
+}
+export type ValueAlarmRuleFilterPredicateType = Exclude<AlarmRuleFilterPredicateType, AlarmRuleFilterPredicateType.NO_DATA>;
+export declare function toAlarmRuleFilterPredicate(type: ValueAlarmRuleFilterPredicateType, formValue: AlarmRuleFilterPredicateFormValue): Exclude<AlarmRuleFilterPredicate, NoDataAlarmRuleFilterPredicate>;
 export interface AlarmRuleFilterConfig {
     name?: Array<string>;
     entityType?: EntityType;

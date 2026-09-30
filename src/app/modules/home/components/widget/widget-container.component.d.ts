@@ -11,6 +11,7 @@ import { DashboardUtilsService } from '@core/services/dashboard-utils.service';
 import { TbContextMenuEvent } from '@shared/models/jquery-event.models';
 import { WidgetHeaderActionButtonType } from '@shared/models/widget.models';
 import { WidgetComponent } from '@home/components/widget/widget.component';
+import { WidgetAction } from '@home/models/widget-component.models';
 import * as i0 from "@angular/core";
 export declare enum WidgetComponentActionType {
     MOUSE_DOWN = 0,
@@ -75,6 +76,7 @@ export declare class WidgetContainerComponent extends PageComponent implements O
     onExport(event: MouseEvent): void;
     onRemove(event: MouseEvent): void;
     updateEditWidgetActionsTooltipState(): void;
+    actionVisible(action: WidgetAction): boolean;
     private initEditWidgetActionTooltip;
     private updateEditWidgetActionsTooltipSelectedState;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetContainerComponent, never>;

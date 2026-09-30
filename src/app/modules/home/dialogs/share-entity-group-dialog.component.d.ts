@@ -3,7 +3,7 @@ import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, FormGroupDirective, NgForm } from '@angular/forms';
+import { FormGroupDirective, NgForm, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { DialogComponent } from '@shared/components/dialog.component';
 import { Router } from '@angular/router';
 import { EntityGroupId } from '@shared/models/id/entity-group-id';
@@ -11,6 +11,7 @@ import { EntityGroupService } from '@core/http/entity-group.service';
 import * as i0 from "@angular/core";
 export interface ShareEntityGroupDialogData {
     entityGroupId: EntityGroupId;
+    isWriteAllowed?: boolean;
 }
 export declare class ShareEntityGroupDialogComponent extends DialogComponent<ShareEntityGroupDialogComponent, boolean> implements OnInit, ErrorStateMatcher {
     protected store: Store<AppState>;

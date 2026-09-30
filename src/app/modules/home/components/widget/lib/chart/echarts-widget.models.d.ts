@@ -15,4 +15,12 @@ export declare const measureAxisNameSize: (chart: ECharts, mainType: string, axi
 export declare const measureThresholdOffset: (chart: ECharts, axisId: string, thresholdId: string, value: any) => [number, number];
 export declare const getAxisExtent: (chart: ECharts, axisId: string) => [number, number];
 export declare const getFocusedSeriesIndex: (chart: ECharts) => number;
+export interface DataZoomEvent {
+    start: number;
+    end: number;
+    batch?: Array<{
+        start: number;
+        end: number;
+    }>;
+}
 export {};

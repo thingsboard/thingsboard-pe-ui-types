@@ -10,6 +10,7 @@ export declare class ReportComponentConfigComponent implements OnInit, OnChanges
     width: string;
     context: ReportComponentContext;
     reportComponent: ReportComponentConfig;
+    readonly: boolean;
     reportComponentUpdated: EventEmitter<any>;
     reportConfigContainer: TbAnchorComponent;
     reportConfigForm: FormGroup;
@@ -20,7 +21,7 @@ export declare class ReportComponentConfigComponent implements OnInit, OnChanges
     ngOnChanges(changes: SimpleChanges): void;
     private init;
     static ɵfac: i0.ɵɵFactoryDeclaration<ReportComponentConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ReportComponentConfigComponent, "tb-report-component-config", never, { "context": { "alias": "context"; "required": false; }; "reportComponent": { "alias": "reportComponent"; "required": false; }; }, { "reportComponentUpdated": "reportComponentUpdated"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ReportComponentConfigComponent, "tb-report-component-config", never, { "context": { "alias": "context"; "required": false; }; "reportComponent": { "alias": "reportComponent"; "required": false; }; "readonly": { "alias": "readonly"; "required": false; }; }, { "reportComponentUpdated": "reportComponentUpdated"; }, never, never, false, never>;
 }
 export declare abstract class AbstractReportComponentConfig<C extends ReportComponentConfig = ReportComponentConfig> implements OnInit {
     height: string;

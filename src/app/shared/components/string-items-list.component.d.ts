@@ -3,7 +3,7 @@ import { AbstractControl, ControlValueAccessor, FormBuilder, FormGroup } from '@
 import { MatChipInputEvent } from '@angular/material/chips';
 import { FloatLabelType, MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
 import { Observable } from 'rxjs';
-import { MatAutocompleteTrigger } from '@angular/material/autocomplete';
+import { MatAutocompleteSelectedEvent, MatAutocompleteTrigger } from '@angular/material/autocomplete';
 import * as i0 from "@angular/core";
 export interface StringItemsOption {
     name: string;
@@ -47,7 +47,7 @@ export declare class StringItemsListComponent implements ControlValueAccessor, O
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: Array<string> | null): void;
-    addOnBlur(event: FocusEvent): void;
+    onOptionSelected(event: MatAutocompleteSelectedEvent): void;
     addOnEnd(event: MatChipInputEvent): void;
     removeItems(item: StringItemsOption): void;
     onFocus(): void;

@@ -1,0 +1,37 @@
+import { OnDestroy } from '@angular/core';
+import { PopoverPreferredPlacement } from '@shared/components/popover.models';
+import * as i0 from "@angular/core";
+export declare class AiCreditsComponent implements OnDestroy {
+    expanded: import("@angular/core").InputSignal<boolean>;
+    asButton: import("@angular/core").InputSignal<boolean>;
+    active: import("@angular/core").InputSignal<boolean>;
+    popoverPlacement: import("@angular/core").InputSignal<PopoverPreferredPlacement>;
+    tooltipPosition: import("@angular/core").InputSignal<"after" | "before" | "above" | "below">;
+    resolvedTooltipPosition: import("@angular/core").Signal<"after" | "before" | "above" | "below">;
+    resolvedPopoverPlacement: import("@angular/core").Signal<PopoverPreferredPlacement>;
+    aiCreditsCount: import("@angular/core").WritableSignal<number>;
+    aiCreditsLimit: import("@angular/core").WritableSignal<number>;
+    aiApiState: import("@angular/core").WritableSignal<string>;
+    hasData: import("@angular/core").Signal<boolean>;
+    usagePercent: import("@angular/core").Signal<number>;
+    status: import("@angular/core").Signal<string>;
+    private shortNumber;
+    usedLabel: import("@angular/core").Signal<string>;
+    maxLabel: import("@angular/core").Signal<string>;
+    resetDate: import("@angular/core").Signal<Date>;
+    private telemetryWsService;
+    private zone;
+    private popoverService;
+    private renderer;
+    private viewContainerRef;
+    private telemetrySubscriber;
+    private cancelSubscription$;
+    private activeEffect;
+    ngOnDestroy(): void;
+    private unsubscribeFromCredits;
+    togglePopup(event: Event, trigger: Element): void;
+    onUpdatePlan($event?: Event): void;
+    private subscribeToCredits;
+    static ɵfac: i0.ɵɵFactoryDeclaration<AiCreditsComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AiCreditsComponent, "tb-ai-credits", never, { "expanded": { "alias": "expanded"; "required": false; "isSignal": true; }; "asButton": { "alias": "asButton"; "required": false; "isSignal": true; }; "active": { "alias": "active"; "required": false; "isSignal": true; }; "popoverPlacement": { "alias": "popoverPlacement"; "required": false; "isSignal": true; }; "tooltipPosition": { "alias": "tooltipPosition"; "required": false; "isSignal": true; }; }, {}, never, never, false, never>;
+}

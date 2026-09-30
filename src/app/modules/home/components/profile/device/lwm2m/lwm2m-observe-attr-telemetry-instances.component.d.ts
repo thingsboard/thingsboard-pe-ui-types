@@ -1,20 +1,24 @@
-import { OnDestroy } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
+import { ThemePalette } from '@angular/material/core';
 import { Instance, ResourceSettingTelemetry } from './lwm2m-profile-config.models';
 import { TranslateService } from '@ngx-translate/core';
+import { GtSmBreakpointAwareDirective } from '@shared/components/gt-sm-breakpoint-aware.directive';
 import * as i0 from "@angular/core";
-export declare class Lwm2mObserveAttrTelemetryInstancesComponent implements ControlValueAccessor, Validator, OnDestroy {
+export declare class Lwm2mObserveAttrTelemetryInstancesComponent extends GtSmBreakpointAwareDirective implements ControlValueAccessor, Validator {
     private fb;
     translate: TranslateService;
+    readonly resourceToggles: {
+        type: ResourceSettingTelemetry;
+        color: ThemePalette;
+        labelKey: string;
+    }[];
     instancesFormGroup: UntypedFormGroup;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
     disabled: boolean;
-    private destroy$;
     private propagateChange;
     constructor(fb: UntypedFormBuilder, translate: TranslateService);
-    ngOnDestroy(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
@@ -26,10 +30,10 @@ export declare class Lwm2mObserveAttrTelemetryInstancesComponent implements Cont
     private updateModel;
     changeInstanceResourcesCheckBox: (value: boolean, instance: AbstractControl, type: ResourceSettingTelemetry) => void;
     private updateValidators;
-    trackByParams: (index: number, instance: Instance) => number;
     getIndeterminate: (instance: AbstractControl, type: ResourceSettingTelemetry) => boolean;
     getChecked: (instance: AbstractControl, type: ResourceSettingTelemetry) => boolean;
     disableObserve(instance: AbstractControl): boolean;
+    isToggleDisabled(instance: AbstractControl, type: ResourceSettingTelemetry): boolean;
     get isExpend(): boolean;
     getNameInstance(instance: Instance): string;
     disableObserveInstance: (instance: AbstractControl) => boolean;

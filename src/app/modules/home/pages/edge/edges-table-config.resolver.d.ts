@@ -40,6 +40,7 @@ export declare class EdgesTableConfigResolver {
     configureCellActions(authUser: AuthUser, config: EntityTableConfig<EdgeInfo>): Array<CellActionDescriptor<EdgeInfo>>;
     configureGroupActions(config: EntityTableConfig<EdgeInfo>): Array<GroupActionDescriptor<EdgeInfo>>;
     configureAddActions(config: EntityTableConfig<EdgeInfo>): Array<HeaderActionDescriptor>;
+    autoProvisionEdge($event: Event, config: EntityTableConfig<EdgeInfo>): void;
     importEdges($event: Event, config: EntityTableConfig<EdgeInfo>): void;
     private openEdge;
     manageUsers($event: Event, edge: EdgeInfo, config: EntityTableConfig<EdgeInfo>): void;

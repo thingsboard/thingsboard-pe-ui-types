@@ -13,11 +13,13 @@ import { PageLink } from '@shared/models/page/page-link';
 import { MatSort } from '@angular/material/sort';
 import { DashboardInfo } from '@shared/models/dashboard.models';
 import { DashboardAutocompleteComponent } from '@shared/components/dashboard-autocomplete.component';
+import { UtilsService } from '@core/services/utils.service';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import * as i0 from "@angular/core";
 export declare class RecentDashboardsWidgetComponent extends PageComponent implements OnInit, AfterViewInit, OnDestroy {
     protected store: Store<AppState>;
     private cd;
+    private utils;
     private userPermissionsService;
     private userSettingService;
     ctx: WidgetContext;
@@ -33,10 +35,13 @@ export declare class RecentDashboardsWidgetComponent extends PageComponent imple
     starredDashboardValue: any;
     dashboardsLink: string;
     hasDashboardsAccess: boolean;
+    hasDevice: boolean;
     dirty: boolean;
     private isFullscreenMode;
-    constructor(store: Store<AppState>, cd: ChangeDetectorRef, userPermissionsService: UserPermissionsService, userSettingService: UserSettingsService);
+    private subscription;
+    constructor(store: Store<AppState>, cd: ChangeDetectorRef, utils: UtilsService, userPermissionsService: UserPermissionsService, userSettingService: UserSettingsService);
     ngOnInit(): void;
+    ngOnDestroy(): void;
     reload(): void;
     createDashboardUrl(id: string): string;
     toggleValueChange(value: 'last' | 'starred'): void;

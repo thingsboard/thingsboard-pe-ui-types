@@ -5,10 +5,10 @@ import { AppState } from '@core/core.state';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DialogComponent } from '@shared/components/dialog.component';
-import { CalculatedField, CalculatedFieldArgument, CalculatedFieldType } from '@shared/models/calculated-field.models';
+import { CalculatedFieldAlarmRule, CalculatedFieldArgument, CalculatedFieldType } from '@shared/models/calculated-field.models';
 import { EntityType } from '@shared/models/entity-type.models';
 import { ScriptLanguage } from '@shared/models/rule-node.models';
-import { CalculatedFieldsService } from '@core/http/calculated-fields.service';
+import { AlarmRulesService } from '@core/http/alarm-rules.service';
 import { EntityId } from '@shared/models/id/entity-id';
 import { AdditionalDebugActionConfig } from '@home/components/entity/debug/entity-debug-settings.model';
 import { AlarmRuleTestScriptFn } from "@shared/models/alarm-rule.models";
@@ -20,23 +20,23 @@ import { CalculatedFieldFormService } from '@core/services/calculated-field-form
 import { EntitySelectComponent } from '@shared/components/entity/entity-select.component';
 import * as i0 from "@angular/core";
 export interface AlarmRuleDialogData {
-    value?: CalculatedField;
+    value?: CalculatedFieldAlarmRule;
     buttonTitle: string;
     entityId: EntityId;
     tenantId: string;
     entityName?: string;
     ownerId: EntityId;
-    additionalDebugActionConfig: AdditionalDebugActionConfig<(calculatedField: CalculatedField) => void>;
+    additionalDebugActionConfig: AdditionalDebugActionConfig<(calculatedField: CalculatedFieldAlarmRule) => void>;
     isDirty?: boolean;
     readonly: boolean;
     getTestScriptDialogFn: AlarmRuleTestScriptFn;
 }
-export declare class AlarmRuleDialogComponent extends DialogComponent<AlarmRuleDialogComponent, CalculatedField> {
+export declare class AlarmRuleDialogComponent extends DialogComponent<AlarmRuleDialogComponent, CalculatedFieldAlarmRule> {
     protected store: Store<AppState>;
     protected router: Router;
     data: AlarmRuleDialogData;
-    protected dialogRef: MatDialogRef<AlarmRuleDialogComponent, CalculatedField>;
-    private calculatedFieldsService;
+    protected dialogRef: MatDialogRef<AlarmRuleDialogComponent, CalculatedFieldAlarmRule>;
+    private alarmRulesService;
     private destroyRef;
     private cfFormService;
     private userPermissionsService;
@@ -58,12 +58,12 @@ export declare class AlarmRuleDialogComponent extends DialogComponent<AlarmRuleD
     disabledClearRuleButton: boolean;
     disabledArguments: boolean;
     isLoading: boolean;
-    constructor(store: Store<AppState>, router: Router, data: AlarmRuleDialogData, dialogRef: MatDialogRef<AlarmRuleDialogComponent, CalculatedField>, calculatedFieldsService: CalculatedFieldsService, destroyRef: DestroyRef, cfFormService: CalculatedFieldFormService, userPermissionsService: UserPermissionsService);
+    constructor(store: Store<AppState>, router: Router, data: AlarmRuleDialogData, dialogRef: MatDialogRef<AlarmRuleDialogComponent, CalculatedFieldAlarmRule>, alarmRulesService: AlarmRulesService, destroyRef: DestroyRef, cfFormService: CalculatedFieldFormService, userPermissionsService: UserPermissionsService);
     get configFormGroup(): FormGroup;
     get arguments(): Record<string, CalculatedFieldArgument>;
     removeClearAlarmRule(): void;
     addClearAlarmRule(): void;
-    get fromGroupValue(): CalculatedField;
+    get fromGroupValue(): CalculatedFieldAlarmRule;
     cancel(): void;
     add(): void;
     private applyDialogData;

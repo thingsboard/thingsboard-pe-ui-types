@@ -1,4 +1,4 @@
-import { AbstractControl, ControlValueAccessor, FormBuilder, ValidationErrors, Validator } from '@angular/forms';
+import { ControlValueAccessor, FormBuilder, ValidationErrors, Validator } from '@angular/forms';
 import { SignUpField, SignUpFieldId } from '@shared/models/self-register.models';
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import * as i0 from "@angular/core";
@@ -17,7 +17,6 @@ export declare class MobileRegistrationFieldsPanelComponent implements ControlVa
     writeValue(registrationFields: Array<SignUpField>): void;
     get dragEnabled(): boolean;
     addFields(): void;
-    trackByFields(_index: number, fieldControl: AbstractControl): any;
     fieldDrop(event: CdkDragDrop<string[]>): void;
     removeField(index: number): void;
     private calculateAllowFields;

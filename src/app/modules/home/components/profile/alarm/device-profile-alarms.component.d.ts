@@ -1,5 +1,5 @@
 import { OnDestroy, OnInit } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { DeviceProfileAlarm } from '@shared/models/device.models';
@@ -24,7 +24,6 @@ export declare class DeviceProfileAlarmsComponent implements ControlValueAccesso
     get alarmsFormArray(): UntypedFormArray;
     setDisabledState(isDisabled: boolean): void;
     writeValue(alarms: Array<DeviceProfileAlarm> | null): void;
-    trackByAlarm(index: number, alarmControl: AbstractControl): string;
     removeAlarm(index: number): void;
     addAlarm(): void;
     validate(c: UntypedFormControl): {

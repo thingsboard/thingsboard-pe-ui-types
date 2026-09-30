@@ -1,0 +1,30 @@
+import { EventEmitter } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { MetricsSnapshot } from '@home/pages/agent/util/agent-metrics';
+import * as i0 from "@angular/core";
+export declare class AgentMetricsStripComponent {
+    private translate;
+    snapshot: MetricsSnapshot | null;
+    showChartsButton: boolean;
+    chartsActive: boolean;
+    compact: boolean;
+    aggregated: boolean;
+    toggleCharts: EventEmitter<void>;
+    constructor(translate: TranslateService);
+    private get scopeLabel();
+    get cpuLabel(): string;
+    get cpuTooltip(): string | null;
+    get memLabel(): string;
+    get memTooltip(): string | null;
+    get hasDisk(): boolean;
+    get diskLabel(): string;
+    get diskTooltip(): string | null;
+    get hasVolume(): boolean;
+    get volumeLabel(): string;
+    get volumeTooltip(): string | null;
+    private usedOfTotal;
+    private updatedAt;
+    onToggleCharts(event: Event): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<AgentMetricsStripComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AgentMetricsStripComponent, "tb-agent-metrics-strip", never, { "snapshot": { "alias": "snapshot"; "required": false; }; "showChartsButton": { "alias": "showChartsButton"; "required": false; }; "chartsActive": { "alias": "chartsActive"; "required": false; }; "compact": { "alias": "compact"; "required": false; }; "aggregated": { "alias": "aggregated"; "required": false; }; }, { "toggleCharts": "toggleCharts"; }, never, never, false, never>;
+}

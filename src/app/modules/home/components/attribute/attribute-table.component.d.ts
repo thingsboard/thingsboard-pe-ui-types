@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, ElementRef, NgZone, OnDestroy, OnInit, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, DestroyRef, ElementRef, NgZone, OnDestroy, OnInit, ViewContainerRef } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { PageLink } from '@shared/models/page/page-link';
 import { MatPaginator } from '@angular/material/paginator';
@@ -24,6 +24,7 @@ import { EntityService } from '@core/http/entity.service';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { FormBuilder } from '@angular/forms';
 import { TimeService } from '@core/services/time.service';
+import { AiDashboardGenerationService } from '@home/components/ai/ai-dashboard-generation.service';
 import * as i0 from "@angular/core";
 export declare class AttributeTableComponent extends PageComponent implements AfterViewInit, OnInit, OnDestroy {
     protected store: Store<AppState>;
@@ -44,6 +45,8 @@ export declare class AttributeTableComponent extends PageComponent implements Af
     private elementRef;
     private fb;
     private timeService;
+    private destroyRef;
+    private aiDashboardGenerationService;
     telemetryTypeTranslationsMap: Map<TelemetryType, string>;
     isClientSideTelemetryTypeMap: Map<TelemetryType, boolean>;
     latestTelemetryTypes: typeof LatestTelemetry;
@@ -73,6 +76,7 @@ export declare class AttributeTableComponent extends PageComponent implements Af
     private widgetResize$;
     private disableAttributeScopeSelectionValue;
     get disableAttributeScopeSelection(): boolean;
+    disableAddTelemetry: boolean;
     set disableAttributeScopeSelection(value: boolean);
     defaultAttributeScope: TelemetryType;
     set active(active: boolean);
@@ -85,8 +89,10 @@ export declare class AttributeTableComponent extends PageComponent implements Af
     paginator: MatPaginator;
     sort: MatSort;
     textSearch: import("@angular/forms").FormControl<string>;
+    isSysAdmin: boolean;
     private destroy$;
-    constructor(store: Store<AppState>, attributeService: AttributeService, telemetryWsService: TelemetryWebsocketService, translate: TranslateService, dialog: MatDialog, overlay: Overlay, viewContainerRef: ViewContainerRef, dialogService: DialogService, entityService: EntityService, utils: UtilsService, dashboardUtils: DashboardUtilsService, widgetService: WidgetService, userPermissionsService: UserPermissionsService, zone: NgZone, cd: ChangeDetectorRef, elementRef: ElementRef, fb: FormBuilder, timeService: TimeService);
+    selectAllModel: boolean;
+    constructor(store: Store<AppState>, attributeService: AttributeService, telemetryWsService: TelemetryWebsocketService, translate: TranslateService, dialog: MatDialog, overlay: Overlay, viewContainerRef: ViewContainerRef, dialogService: DialogService, entityService: EntityService, utils: UtilsService, dashboardUtils: DashboardUtilsService, widgetService: WidgetService, userPermissionsService: UserPermissionsService, zone: NgZone, cd: ChangeDetectorRef, elementRef: ElementRef, fb: FormBuilder, timeService: TimeService, destroyRef: DestroyRef, aiDashboardGenerationService: AiDashboardGenerationService);
     ngOnInit(): void;
     ngOnDestroy(): void;
     attributeScopeChanged(attributeScope: TelemetryType): void;
@@ -107,6 +113,8 @@ export declare class AttributeTableComponent extends PageComponent implements Af
     onWidgetsBundleChanged(widgetsBundle: WidgetsBundle): void;
     addWidgetToDashboard(): void;
     exitWidgetMode(): void;
+    generateDashboard($event: Event): void;
+    isAllowedDashboardGenerate(): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<AttributeTableComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AttributeTableComponent, "tb-attribute-table", never, { "disableAttributeScopeSelection": { "alias": "disableAttributeScopeSelection"; "required": false; }; "defaultAttributeScope": { "alias": "defaultAttributeScope"; "required": false; }; "active": { "alias": "active"; "required": false; }; "entityId": { "alias": "entityId"; "required": false; }; "entityName": { "alias": "entityName"; "required": false; }; "readonly": { "alias": "readonly"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AttributeTableComponent, "tb-attribute-table", never, { "disableAddTelemetry": { "alias": "disableAddTelemetry"; "required": false; }; "disableAttributeScopeSelection": { "alias": "disableAttributeScopeSelection"; "required": false; }; "defaultAttributeScope": { "alias": "defaultAttributeScope"; "required": false; }; "active": { "alias": "active"; "required": false; }; "entityId": { "alias": "entityId"; "required": false; }; "entityName": { "alias": "entityName"; "required": false; }; "readonly": { "alias": "readonly"; "required": false; }; }, {}, never, never, false, never>;
 }

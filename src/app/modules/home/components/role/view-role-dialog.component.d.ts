@@ -20,7 +20,7 @@ export declare class ViewRoleDialogComponent extends DialogComponent<ViewRoleDia
     roleFormGroup: UntypedFormGroup;
     role: Role;
     roleType: typeof RoleType;
-    roleTypes: string[];
+    roleTypes: RoleType[];
     roleTypeTranslations: Map<RoleType, string>;
     constructor(store: Store<AppState>, router: Router, data: ViewRoleDialogData, dialogRef: MatDialogRef<ViewRoleDialogComponent>, fb: UntypedFormBuilder);
     ngOnInit(): void;

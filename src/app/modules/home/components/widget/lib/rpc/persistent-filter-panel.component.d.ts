@@ -17,7 +17,7 @@ export declare class PersistentFilterPanelComponent {
     result: PersistentFilterPanelData;
     rpcSearchStatusTranslationMap: Map<RpcStatus, string>;
     rpcSearchPlaceholder: string;
-    persistentSearchStatuses: string[];
+    persistentSearchStatuses: RpcStatus[];
     constructor(data: PersistentFilterPanelData, overlayRef: OverlayRef, fb: UntypedFormBuilder, translate: TranslateService);
     update(): void;
     cancel(): void;

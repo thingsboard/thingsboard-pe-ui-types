@@ -6,6 +6,7 @@ import { AppState } from '@app/core/core.state';
 import { WidgetsBundle } from '@shared/models/widgets-bundle.model';
 import { WidgetService } from '@core/http/widget.service';
 import { MatDialog } from '@angular/material/dialog';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import * as i0 from "@angular/core";
 export declare class WidgetsBundleSelectComponent implements ControlValueAccessor, OnInit, OnChanges {
@@ -21,6 +22,7 @@ export declare class WidgetsBundleSelectComponent implements ControlValueAccesso
     disabled: boolean;
     excludeBundleIds: Array<string>;
     createNew: boolean;
+    appearance: MatFormFieldAppearance;
     widgetsBundles$: Observable<Array<WidgetsBundle>>;
     widgetsBundles: Array<WidgetsBundle>;
     widgetsBundle: WidgetsBundle | null;
@@ -41,5 +43,5 @@ export declare class WidgetsBundleSelectComponent implements ControlValueAccesso
     compareById(f1: WidgetsBundle, f2: WidgetsBundle): boolean;
     openWidgetsBundleDialog($event: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetsBundleSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetsBundleSelectComponent, "tb-widgets-bundle-select", never, { "bundlesScope": { "alias": "bundlesScope"; "required": false; }; "selectFirstBundle": { "alias": "selectFirstBundle"; "required": false; }; "selectBundleAlias": { "alias": "selectBundleAlias"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "excludeBundleIds": { "alias": "excludeBundleIds"; "required": false; }; "createNew": { "alias": "createNew"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetsBundleSelectComponent, "tb-widgets-bundle-select", never, { "bundlesScope": { "alias": "bundlesScope"; "required": false; }; "selectFirstBundle": { "alias": "selectFirstBundle"; "required": false; }; "selectBundleAlias": { "alias": "selectBundleAlias"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "excludeBundleIds": { "alias": "excludeBundleIds"; "required": false; }; "createNew": { "alias": "createNew"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; }, {}, never, never, false, never>;
 }

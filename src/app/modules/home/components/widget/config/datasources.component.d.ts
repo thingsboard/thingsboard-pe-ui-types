@@ -1,5 +1,5 @@
 import { DestroyRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, FormControl, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
+import { ControlValueAccessor, FormControl, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { WidgetConfigComponent } from '@home/components/widget/widget-config.component';
 import { Datasource, DatasourceType, WidgetConfigMode, widgetType } from '@shared/models/widget.models';
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
@@ -12,6 +12,7 @@ export interface DataSourcesOptions {
     maxDatasources?: number;
     maxDataKeys?: number;
     datasourcesOptional?: boolean;
+    dataKeysOptional?: boolean;
     widgetType?: widgetType;
     allowFunctions?: boolean;
 }
@@ -83,7 +84,6 @@ export declare class DatasourcesComponent implements ControlValueAccessor, OnIni
     private detectDatasourcesMode;
     get datasourcesFormArray(): UntypedFormArray;
     get datasourcesControls(): FormControl[];
-    trackByDatasource(index: number, datasourceControl: AbstractControl): any;
     private datasourcesUpdated;
     onDatasourceDrop(event: CdkDragDrop<string[]>): void;
     removeDatasource(index: number): void;
@@ -96,6 +96,7 @@ export declare class DatasourcesComponent implements ControlValueAccessor, OnIni
     private get hasAdditionalLatestDataKeys();
     get widgetType(): widgetType;
     get datasourcesOptional(): boolean;
+    get dataKeysOptional(): boolean;
     get maxDataKeys(): number;
     get allowFunctions(): boolean;
     get datasources(): Datasource[];

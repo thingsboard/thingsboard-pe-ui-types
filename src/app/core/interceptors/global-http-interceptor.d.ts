@@ -6,6 +6,7 @@ import { AppState } from '@core/core.state';
 import { DialogService } from '@core/services/dialog.service';
 import { TranslateService } from '@ngx-translate/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { SystemSetupService } from '@core/http/system-setup.service';
 import * as i0 from "@angular/core";
 export declare class GlobalHttpInterceptor implements HttpInterceptor {
     private store;
@@ -13,10 +14,12 @@ export declare class GlobalHttpInterceptor implements HttpInterceptor {
     private translate;
     private authService;
     private sanitizer;
+    private systemSetupService;
+    private document;
     private AUTH_SCHEME;
     private AUTH_HEADER_NAME;
     private activeRequests;
-    constructor(store: Store<AppState>, dialogService: DialogService, translate: TranslateService, authService: AuthService, sanitizer: DomSanitizer);
+    constructor(store: Store<AppState>, dialogService: DialogService, translate: TranslateService, authService: AuthService, sanitizer: DomSanitizer, systemSetupService: SystemSetupService, document: Document);
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>>;
     private jwtIntercept;
     private handleRequest;
@@ -24,8 +27,10 @@ export declare class GlobalHttpInterceptor implements HttpInterceptor {
     private retryRequest;
     private refreshTokenAndRetry;
     private updateAuthorizationHeader;
+    private addAcceptLanguageHeader;
     private isTokenBasedAuthEntryPoint;
     private updateLoadingState;
+    private handleLock;
     private showError;
     static ɵfac: i0.ɵɵFactoryDeclaration<GlobalHttpInterceptor, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<GlobalHttpInterceptor>;

@@ -1,0 +1,56 @@
+import { DestroyRef, ElementRef, EventEmitter, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { Observable } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
+import { EntityService } from '@core/http/entity.service';
+import { EntityType } from '@shared/models/entity-type.models';
+import { EntityId } from '@shared/models/id/entity-id';
+import { AgentApplicationType } from '@shared/models/agent.models';
+import { AgentService } from '@core/http/agent.service';
+import { EdgeCreateDialogService } from '@home/pages/edge/edge-create-dialog.service';
+import * as i0 from "@angular/core";
+interface RelatedOption {
+    id: string;
+    name: string;
+    entityType: EntityType;
+}
+export declare class AgentRelatedEntityAutocompleteComponent implements ControlValueAccessor, OnInit, OnChanges {
+    private entityService;
+    private agentService;
+    private translate;
+    private dialog;
+    private edgeCreateDialogService;
+    private fb;
+    private destroyRef;
+    appType: AgentApplicationType;
+    disabled: boolean;
+    labelKey: string;
+    required: boolean;
+    allowCreate: boolean;
+    relatedEntityNameChange: EventEmitter<string>;
+    selectFormGroup: UntypedFormGroup;
+    filteredOptions: Observable<RelatedOption[]>;
+    relatedEntityInput: ElementRef<HTMLInputElement>;
+    private dirty;
+    private propagateChange;
+    private modelValue;
+    constructor(entityService: EntityService, agentService: AgentService, translate: TranslateService, dialog: MatDialog, edgeCreateDialogService: EdgeCreateDialogService, fb: UntypedFormBuilder, destroyRef: DestroyRef);
+    ngOnInit(): void;
+    ngOnChanges(changes: SimpleChanges): void;
+    private updateRequiredValidator;
+    registerOnChange(fn: any): void;
+    registerOnTouched(_fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    writeValue(value: EntityId | null): void;
+    onFocus(): void;
+    displayOptionFn(option?: RelatedOption): string;
+    clear(): void;
+    createEntity($event: Event): void;
+    private onEntityCreated;
+    private fetchOptions;
+    private targetEntityType;
+    static ɵfac: i0.ɵɵFactoryDeclaration<AgentRelatedEntityAutocompleteComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AgentRelatedEntityAutocompleteComponent, "tb-agent-related-entity-autocomplete", never, { "appType": { "alias": "appType"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "labelKey": { "alias": "labelKey"; "required": false; }; "required": { "alias": "required"; "required": false; }; "allowCreate": { "alias": "allowCreate"; "required": false; }; }, { "relatedEntityNameChange": "relatedEntityNameChange"; }, never, never, false, never>;
+}
+export {};

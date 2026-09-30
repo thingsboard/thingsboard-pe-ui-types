@@ -52,7 +52,8 @@ export declare enum ActionType {
     CHANGE_OWNER = "CHANGE_OWNER",
     ASSIGNED_TO_EDGE = "ASSIGNED_TO_EDGE",
     UNASSIGNED_FROM_EDGE = "UNASSIGNED_FROM_EDGE",
-    SMS_SENT = "SMS_SENT"
+    SMS_SENT = "SMS_SENT",
+    NON_PRODUCTION_CONFIRMED = "NON_PRODUCTION_CONFIRMED"
 }
 export declare enum ActionStatus {
     SUCCESS = "SUCCESS",
@@ -76,3 +77,29 @@ export interface AuditLogFilter {
     actionTypes: string[];
 }
 export declare const auditLogFilterEquals: (filter1?: AuditLogFilter, filter2?: AuditLogFilter) => boolean;
+export interface AIAuditLog {
+    tenantId: TenantId;
+    id: AuditLogId;
+    createdTime: number;
+    userId: string;
+    userName: string;
+    sourceType: AiAuditLogSourceType;
+    sourceId: string;
+    origin: string;
+    step?: string;
+    handler?: string;
+    action: string;
+    success: boolean;
+    data: any;
+    error: string;
+    timingMs: number;
+}
+export declare enum AiAuditLogSourceType {
+    SOLUTION = "SOLUTION",
+    CHAT = "CHAT"
+}
+export declare enum AiAuditLogStatus {
+    ALL = "ALL",
+    SUCCESS = "SUCCESS",
+    FAILURE = "FAILURE"
+}

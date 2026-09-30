@@ -48,7 +48,6 @@ export declare class BatteryLevelWidgetComponent implements OnInit, OnDestroy, A
     onInit(): void;
     onDataUpdated(): void;
     parseBatteryFillValue(value: number): number;
-    trackBySection(index: number): number;
     cardClick($event: Event): void;
     private onResize;
     private setValueFontSize;

@@ -5,7 +5,7 @@ import { RuleNodeConfiguration, RuleNodeConfigurationComponent } from '@app/shar
 import * as i0 from "@angular/core";
 export declare class DeleteRelationConfigComponent extends RuleNodeConfigurationComponent {
     private fb;
-    directionTypes: string[];
+    directionTypes: EntitySearchDirection[];
     directionTypeTranslations: Map<EntitySearchDirection, string>;
     entityTypeNamePatternTranslation: Map<EntityType, string>;
     entityType: typeof EntityType;

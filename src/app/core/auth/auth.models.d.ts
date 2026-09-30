@@ -1,5 +1,6 @@
 import { AuthUser, User } from '@shared/models/user.model';
 import { UserSettings } from '@shared/models/user-settings.models';
+import { NullsOrderStrategy } from '@shared/models/page/page-link';
 export interface SysParamsState {
     userTokenAccessEnabled: boolean;
     allowedDashboardIds: string[];
@@ -26,6 +27,18 @@ export interface SysParamsState {
     integrationDebugPerTenantLimitsConfiguration?: string;
     converterDebugPerTenantLimitsConfiguration?: string;
     availableLocales: string[];
+    aiEnabled: boolean;
+    allowKeyFiltersOrConditions: boolean;
+    nullsOrderStrategy: NullsOrderStrategy;
+    edqsEnabled: boolean;
+    iotHubBaseUrl: string;
+    licenseVersion: number;
+    edgeEnabled: boolean;
+    trendzEnabled: boolean;
+    integrationsEnabled: boolean;
+    schedulerEnabled: boolean;
+    reportingEnabled: boolean;
+    communityGrantLicense: boolean;
 }
 export interface SysParams extends SysParamsState {
     maxDatapointsLimit: number;

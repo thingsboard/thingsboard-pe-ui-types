@@ -15,7 +15,7 @@ export declare class EntityGroupSettingsComponent extends PageComponent implemen
     pageStepSizeValues: any[];
     entityType: EntityType;
     disabled: boolean;
-    entityGroupDetailsModes: string[];
+    entityGroupDetailsModes: EntityGroupDetailsMode[];
     entityGroupDetailsModeTranslations: Map<EntityGroupDetailsMode, string>;
     entityTypes: typeof EntityType;
     constructor(store: Store<AppState>, fb: UntypedFormBuilder, destroyRef: DestroyRef);

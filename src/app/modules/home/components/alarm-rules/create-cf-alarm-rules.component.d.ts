@@ -23,9 +23,11 @@ export declare class CreateCfAlarmRulesComponent implements ControlValueAccessor
     }>;
     private usedSeverities;
     private propagateChange;
+    private onValidatorChange;
     constructor(fb: FormBuilder, destroyRef: DestroyRef);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
+    registerOnValidatorChange(fn: () => void): void;
     createAlarmRulesFormArray(): UntypedFormArray;
     setDisabledState(isDisabled: boolean): void;
     writeValue(createAlarmRules: Record<AlarmSeverity, AlarmRule>): void;

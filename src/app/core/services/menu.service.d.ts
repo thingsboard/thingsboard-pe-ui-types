@@ -14,6 +14,7 @@ export declare class MenuService {
     private currentMenuSections;
     private menuSections$;
     private homeSections$;
+    private _availableMenuSections;
     private availableMenuSections$;
     private availableMenuLinks$;
     private currentCustomSection;
@@ -27,6 +28,8 @@ export declare class MenuService {
     homeSections(): Observable<Array<HomeSection>>;
     getCurrentCustomSection(): MenuSection;
     getCurrentCustomChildSection(): MenuSection;
+    private updateActiveMenuSections;
+    private isSectionActive;
     private updateCurrentCustomSection;
     private detectCurrentCustomSection;
     private detectCurrentCustomChildSection;

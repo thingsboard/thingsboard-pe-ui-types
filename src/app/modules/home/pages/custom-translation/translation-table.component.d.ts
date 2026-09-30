@@ -33,6 +33,7 @@ export declare class TranslationTableComponent extends PageComponent implements 
     readonly: boolean;
     dataSource: TranslationInfoDatasource;
     pageLink: PageLink;
+    displayedHeaderColumns: string[];
     displayedColumns: string[];
     private destroy$;
     constructor(store: Store<AppState>, fb: FormBuilder, customTranslationService: CustomTranslationService, translate: TranslateService, dialogService: DialogService, dialog: MatDialog, router: Router, route: ActivatedRoute, userPermissionsService: UserPermissionsService);

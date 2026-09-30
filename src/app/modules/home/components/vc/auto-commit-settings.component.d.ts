@@ -32,7 +32,6 @@ export declare class AutoCommitSettingsComponent extends PageComponent implement
     ngOnInit(): void;
     entityTypesFormGroupArray(): UntypedFormGroup[];
     entityTypesFormGroupExpanded(entityTypeControl: AbstractControl): boolean;
-    trackByEntityType(index: number, entityTypeControl: AbstractControl): any;
     removeEntityType(index: number): void;
     addEnabled(): boolean;
     addEntityType(): void;

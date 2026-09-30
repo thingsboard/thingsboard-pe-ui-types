@@ -71,9 +71,6 @@ export declare const hereMapProviderTranslationMap: Map<HereMapProvider, string>
 export interface HereMapProviderSettings {
     mapProviderHere: HereMapProvider;
     credentials: {
-        useV3: boolean;
-        app_id: string;
-        app_code: string;
         apiKey: string;
     };
 }

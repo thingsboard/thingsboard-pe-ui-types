@@ -57,12 +57,12 @@ export declare const AiModelMap: Map<AiProvider, {
     providerFieldsList: string[];
     modelFieldsList: string[];
 }>;
-export declare const AiRuleNodeResponseFormatTypeOnlyText: AiProvider[];
 export declare enum ResponseFormat {
     TEXT = "TEXT",
     JSON = "JSON",
     JSON_SCHEMA = "JSON_SCHEMA"
 }
+export declare const aiRuleNodeResponseFormats: (provider: AiProvider) => ResponseFormat[];
 export interface AiModelWithUserMsg {
     userMessage: {
         contents: Array<{

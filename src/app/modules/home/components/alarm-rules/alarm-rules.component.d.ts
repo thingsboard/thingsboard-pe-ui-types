@@ -5,19 +5,19 @@ import { EntityComponent } from '@home/components/entity/entity.component';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { EntityType } from '@shared/models/entity-type.models';
 import { TranslateService } from '@ngx-translate/core';
-import { CalculatedFieldArgument, CalculatedFieldInfo, CalculatedFieldType } from '@shared/models/calculated-field.models';
+import { CalculatedFieldAlarmRuleInfo, CalculatedFieldArgument, CalculatedFieldType } from '@shared/models/calculated-field.models';
 import { EntityId } from '@shared/models/id/entity-id';
 import { BaseData } from '@shared/models/base-data';
 import { Observable } from 'rxjs';
-import { CalculatedFieldsTableConfig, CalculatedFieldsTableEntity } from '@home/components/calculated-fields/calculated-fields-table-config';
+import type { AlarmRulesTableConfig, AlarmRuleTableEntity } from '@home/components/alarm-rules/alarm-rules-table-config';
 import { StringItemsOption } from '@shared/components/string-items-list.component';
 import { EntityService } from '@core/http/entity.service';
 import * as i0 from "@angular/core";
-export declare class AlarmRulesComponent extends EntityComponent<CalculatedFieldsTableEntity> {
+export declare class AlarmRulesComponent extends EntityComponent<AlarmRuleTableEntity> {
     protected store: Store<AppState>;
     protected translate: TranslateService;
-    protected entityValue: CalculatedFieldInfo;
-    protected entitiesTableConfigValue: CalculatedFieldsTableConfig;
+    protected entityValue: CalculatedFieldAlarmRuleInfo;
+    protected entitiesTableConfigValue: AlarmRulesTableConfig;
     protected fb: FormBuilder;
     protected cd: ChangeDetectorRef;
     private entityService;
@@ -30,17 +30,17 @@ export declare class AlarmRulesComponent extends EntityComponent<CalculatedField
     readonly CalculatedFieldType: typeof CalculatedFieldType;
     private cfFormService;
     private destroyRef;
-    constructor(store: Store<AppState>, translate: TranslateService, entityValue: CalculatedFieldInfo, entitiesTableConfigValue: CalculatedFieldsTableConfig, fb: FormBuilder, cd: ChangeDetectorRef, entityService: EntityService);
+    constructor(store: Store<AppState>, translate: TranslateService, entityValue: CalculatedFieldAlarmRuleInfo, entitiesTableConfigValue: AlarmRulesTableConfig, fb: FormBuilder, cd: ChangeDetectorRef, entityService: EntityService);
     hideDelete(): boolean;
     additionalDebugActionConfig: {
         action: () => any;
         title: any;
     };
     get entityId(): EntityId;
-    get entitiesTableConfig(): CalculatedFieldsTableConfig;
+    get entitiesTableConfig(): AlarmRulesTableConfig;
     changeEntity(entity: BaseData<EntityId>): void;
-    buildForm(_entity?: CalculatedFieldInfo): FormGroup;
-    updateForm(entity: CalculatedFieldInfo): void;
+    buildForm(_entity?: CalculatedFieldAlarmRuleInfo): FormGroup;
+    updateForm(entity: CalculatedFieldAlarmRuleInfo): void;
     onTestScript(expression?: string): Observable<string>;
     updateFormState(): void;
     get arguments(): Record<string, CalculatedFieldArgument>;

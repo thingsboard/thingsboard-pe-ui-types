@@ -1,9 +1,9 @@
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { EntityTableHeaderComponent } from '@home/components/entity/entity-table-header.component';
+import { IncludeCustomersTableHeaderComponent } from '@home/components/entity/include-customers-table-header.component';
 import { ReportFilter, ScheduledReportInfo } from '@shared/models/report.models';
 import * as i0 from "@angular/core";
-export declare class ScheduledReportTableHeaderComponent extends EntityTableHeaderComponent<ScheduledReportInfo> {
+export declare class ScheduledReportTableHeaderComponent extends IncludeCustomersTableHeaderComponent<ScheduledReportInfo> {
     protected store: Store<AppState>;
     constructor(store: Store<AppState>);
     reportFilterChanged(filter: ReportFilter): void;

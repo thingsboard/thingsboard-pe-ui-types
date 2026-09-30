@@ -1,43 +1,51 @@
-import { AfterViewInit, ElementRef, OnDestroy, OnInit } from '@angular/core';
-import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { ElementRef, OnInit } from '@angular/core';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, Validator, AbstractControl, ValidationErrors } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
 import { TranslateService } from '@ngx-translate/core';
 import { Resource } from '@shared/models/security.models';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
-import { MatFormFieldAppearance } from '@angular/material/form-field';
+import { MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 interface ResourceTypeInfo {
     name: string;
     value: Resource;
 }
-export declare class ResourceTypeAutocompleteComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnDestroy {
+export declare class ResourceTypeAutocompleteComponent implements ControlValueAccessor, OnInit, Validator {
     private store;
     translate: TranslateService;
     private userPermissionsService;
     private fb;
     resourceTypeFormGroup: UntypedFormGroup;
     modelValue: Resource | null;
+    get resourceTypeControl(): AbstractControl;
+    get errorMessage(): string | null;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
     disabled: boolean;
     appearance: MatFormFieldAppearance;
+    subscriptSizing: SubscriptSizing;
     label: string;
+    set allowedResources(values: Resource[]);
+    inlineField: boolean;
     resourceTypeInput: ElementRef<HTMLInputElement>;
     filteredResources: Observable<Array<ResourceTypeInfo>>;
     resources: Array<ResourceTypeInfo>;
     searchText: string;
+    private onTouched;
     private dirty;
+    private resourceDuplicate;
     private propagateChange;
+    private onValidatorChange;
     constructor(store: Store<AppState>, translate: TranslateService, userPermissionsService: UserPermissionsService, fb: UntypedFormBuilder);
+    private buildDefaultResources;
     private sortResource;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
+    registerOnValidatorChange(fn: () => void): void;
     ngOnInit(): void;
-    ngAfterViewInit(): void;
-    ngOnDestroy(): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: Resource | null): void;
     onFocus(): void;
@@ -45,7 +53,8 @@ export declare class ResourceTypeAutocompleteComponent implements ControlValueAc
     displayResourceTypeFn(resource?: ResourceTypeInfo): string | undefined;
     fetchResources(searchText?: string): Observable<Array<ResourceTypeInfo>>;
     clear(value?: string): void;
+    validate(control: AbstractControl): ValidationErrors | null;
     static ɵfac: i0.ɵɵFactoryDeclaration<ResourceTypeAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ResourceTypeAutocompleteComponent, "tb-resource-type-autocomplete", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "label": { "alias": "label"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ResourceTypeAutocompleteComponent, "tb-resource-type-autocomplete", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "label": { "alias": "label"; "required": false; }; "allowedResources": { "alias": "allowedResources"; "required": false; }; "inlineField": { "alias": "inlineField"; "required": false; }; }, {}, never, never, false, never>;
 }
 export {};

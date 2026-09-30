@@ -21,6 +21,7 @@ export declare class ActionGuard {
     getAuthState(): Observable<AuthState>;
     canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | import("@angular/router").UrlTree>;
     performEntitiesLimitIncreaseRequest(authState: AuthState, route: ActivatedRouteSnapshot): Observable<any>;
+    performAddonAccessRequest(authState: AuthState, route: ActivatedRouteSnapshot): Observable<any>;
     performAddonAccessError(authState: AuthState, route: ActivatedRouteSnapshot): Observable<any>;
     private extractPath;
     private getLastChild;

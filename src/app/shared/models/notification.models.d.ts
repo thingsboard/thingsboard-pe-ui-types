@@ -13,6 +13,11 @@ import { ApiFeature, ApiUsageStateValue } from '@shared/models/api-usage.models'
 import { LimitedApi } from '@shared/models/limited-api.models';
 import { IntegrationType } from '@shared/models/integration.models';
 import { ReportTemplateId } from '@shared/models/id/report-template-id';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { TranslateService } from '@ngx-translate/core';
+import { UserPermissionsService } from '@core/http/user-permissions.service';
+import { AiAssistantPanelConfig, AiAssistantViewType } from '@shared/models/ai-chat.models';
 export interface Notification {
     readonly id: NotificationId;
     readonly requestId: NotificationRequestId;
@@ -363,7 +368,9 @@ export declare enum NotificationType {
     RULE_ENGINE_COMPONENT_LIFECYCLE_EVENT = "RULE_ENGINE_COMPONENT_LIFECYCLE_EVENT",
     ENTITIES_LIMIT = "ENTITIES_LIMIT",
     ENTITIES_LIMIT_INCREASE_REQUEST = "ENTITIES_LIMIT_INCREASE_REQUEST",
+    ADDON_ACCESS_REQUEST = "ADDON_ACCESS_REQUEST",
     ADDON_ACCESS_ERROR = "ADDON_ACCESS_ERROR",
+    PLAN_UPGRADE_REQUEST = "PLAN_UPGRADE_REQUEST",
     API_USAGE_LIMIT = "API_USAGE_LIMIT",
     NEW_PLATFORM_VERSION = "NEW_PLATFORM_VERSION",
     RULE_NODE = "RULE_NODE",
@@ -418,4 +425,5 @@ export interface NotificationUserSetting {
     };
 }
 export declare const singleNotificationTypeTemplate: (type: NotificationType) => type is NotificationType.ENTITIES_LIMIT_INCREASE_REQUEST | NotificationType.USER_ACTIVATED | NotificationType.USER_REGISTERED;
+export declare function notificationAiAssistantConfig(store: Store<AppState>, userPermissionsService: UserPermissionsService, translate: TranslateService, listView: AiAssistantViewType): AiAssistantPanelConfig | null;
 export {};

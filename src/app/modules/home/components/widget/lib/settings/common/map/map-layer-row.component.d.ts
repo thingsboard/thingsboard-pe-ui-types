@@ -16,8 +16,12 @@ export declare class MapLayerRowComponent implements ControlValueAccessor, OnIni
     MapProvider: typeof MapProvider;
     mapProviders: MapProvider[];
     mapProviderTranslationMap: Map<MapProvider, string>;
+    openFreeMapStyleTypes: import("@shared/models/widget/maps/map.models").OpenFreeMapStyleType[];
+    openFreeMapStyleTranslationMap: Map<import("@shared/models/widget/maps/map.models").OpenFreeMapStyleType, string>;
     openStreetLayerTypes: import("@shared/models/widget/maps/map.models").OpenStreetLayerType[];
     openStreetMapLayerTranslationMap: Map<import("@shared/models/widget/maps/map.models").OpenStreetLayerType, string>;
+    cartoLayerTypes: import("@shared/models/widget/maps/map.models").CartoLayerType[];
+    cartoLayerTranslationMap: Map<import("@shared/models/widget/maps/map.models").CartoLayerType, string>;
     googleMapLayerTypes: import("@shared/models/widget/maps/map.models").GoogleLayerType[];
     googleMapLayerTranslationMap: Map<import("@shared/models/widget/maps/map.models").GoogleLayerType, string>;
     hereLayerTypes: import("@shared/models/widget/maps/map.models").HereLayerType[];

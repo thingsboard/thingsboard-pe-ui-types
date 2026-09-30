@@ -10,11 +10,18 @@ import { GroupEntityTableConfig } from '@home/models/group/group-entities-table-
 import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { EdgeService } from "@core/http/edge.service";
+import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { AgentService } from '@core/http/agent.service';
+import { AgentApplication } from '@shared/models/agent.models';
 import * as i0 from "@angular/core";
 export declare class EdgeComponent extends GroupEntityComponent<EdgeInfo> {
     protected store: Store<AppState>;
     protected translate: TranslateService;
     private edgeService;
+    private agentService;
+    private router;
+    private dialog;
     protected entityValue: EdgeInfo;
     protected entitiesTableConfigValue: EntityTableConfig<EdgeInfo> | GroupEntityTableConfig<EdgeInfo>;
     fb: UntypedFormBuilder;
@@ -22,7 +29,11 @@ export declare class EdgeComponent extends GroupEntityComponent<EdgeInfo> {
     protected userPermissionsService: UserPermissionsService;
     entityType: typeof EntityType;
     upgradeAvailable: boolean;
-    constructor(store: Store<AppState>, translate: TranslateService, edgeService: EdgeService, entityValue: EdgeInfo, entitiesTableConfigValue: EntityTableConfig<EdgeInfo> | GroupEntityTableConfig<EdgeInfo>, fb: UntypedFormBuilder, cd: ChangeDetectorRef, userPermissionsService: UserPermissionsService);
+    managedApp: AgentApplication | null;
+    managedAppUpgradeAvailable: boolean;
+    licenseVersion: number;
+    legacyLicenseFields: boolean;
+    constructor(store: Store<AppState>, translate: TranslateService, edgeService: EdgeService, agentService: AgentService, router: Router, dialog: MatDialog, entityValue: EdgeInfo, entitiesTableConfigValue: EntityTableConfig<EdgeInfo> | GroupEntityTableConfig<EdgeInfo>, fb: UntypedFormBuilder, cd: ChangeDetectorRef, userPermissionsService: UserPermissionsService);
     ngOnInit(): void;
     hideDelete(): boolean;
     hideManageUsers(): boolean;
@@ -33,6 +44,9 @@ export declare class EdgeComponent extends GroupEntityComponent<EdgeInfo> {
     hideManageSchedulerEvents(): boolean;
     buildForm(entity: EdgeInfo): UntypedFormGroup;
     updateForm(entity: EdgeInfo): void;
+    private loadManagedApp;
+    openManagedApp($event: Event): void;
+    onUpgradeManagedApp($event: Event): void;
     updateFormState(): void;
     onEdgeIdCopied($event: any): void;
     onEdgeInfoCopied(type: string): void;

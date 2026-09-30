@@ -17,7 +17,9 @@ export declare class UpdateMultipleAttributesKeySettingsComponent extends Widget
     protected doUpdateSettings(settingsForm: UntypedFormGroup, settings: WidgetSettings): void;
     private prepareSelectOptionsFormArray;
     selectOptionsFormArray(): UntypedFormArray;
-    trackBySelectOption(index: number, selectOptionControl: AbstractControl): any;
+    get typedSelectOptions(): (AbstractControl & {
+        new?: boolean;
+    })[];
     removeSelectOption(index: number): void;
     addSelectOption(): void;
     selectOptionDrop(event: CdkDragDrop<any[]>): void;

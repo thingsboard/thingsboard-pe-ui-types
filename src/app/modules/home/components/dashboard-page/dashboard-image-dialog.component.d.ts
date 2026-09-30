@@ -8,6 +8,7 @@ import { DashboardId } from '@shared/models/id/dashboard-id';
 import { DashboardService } from '@core/http/dashboard.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { BehaviorSubject } from 'rxjs';
+import { DevelopmentService } from '@core/http/development.service';
 import * as i0 from "@angular/core";
 export interface DashboardImageDialogData {
     dashboardId: DashboardId;
@@ -24,7 +25,10 @@ export declare class DashboardImageDialogComponent extends DialogComponent<Dashb
     dialogRef: MatDialogRef<DashboardImageDialogComponent, DashboardImageDialogResult>;
     private dashboardService;
     private sanitizer;
+    private developmentService;
     private fb;
+    private destroyRef;
+    private translate;
     takingScreenshotSubject: BehaviorSubject<boolean>;
     takingScreenshot$: import("rxjs").Observable<boolean>;
     dashboardId: DashboardId;
@@ -32,7 +36,7 @@ export declare class DashboardImageDialogComponent extends DialogComponent<Dashb
     dashboardElement: HTMLElement;
     dashboardRectFormGroup: UntypedFormGroup;
     dashboardImageFormGroup: UntypedFormGroup;
-    constructor(store: Store<AppState>, router: Router, data: DashboardImageDialogData, dialogRef: MatDialogRef<DashboardImageDialogComponent, DashboardImageDialogResult>, dashboardService: DashboardService, sanitizer: DomSanitizer, fb: UntypedFormBuilder);
+    constructor(store: Store<AppState>, router: Router, data: DashboardImageDialogData, dialogRef: MatDialogRef<DashboardImageDialogComponent, DashboardImageDialogResult>, dashboardService: DashboardService, sanitizer: DomSanitizer, developmentService: DevelopmentService, fb: UntypedFormBuilder);
     private convertUserPercent;
     takeScreenShot(): void;
     cancel(): void;

@@ -6,6 +6,7 @@ import { AlarmCommentService } from '@core/http/alarm-comment.service';
 import { AbstractControl, FormBuilder, FormGroup } from '@angular/forms';
 import { DialogService } from '@core/services/dialog.service';
 import { AuthUser } from '@shared/models/user.model';
+import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { SortOrder } from '@shared/models/page/sort-order';
 import { DateAgoPipe } from '@shared/pipe/date-ago.pipe';
 import { AlarmComment } from '@shared/models/alarm.models';
@@ -23,6 +24,8 @@ interface AlarmCommentsDisplayData {
     editedTime?: string;
     editedDateAgo?: string;
     showActions?: boolean;
+    canEdit?: boolean;
+    canDelete?: boolean;
     commentText?: string;
     isSystemComment?: boolean;
     avatarBgColor?: string;
@@ -38,9 +41,11 @@ export declare class AlarmCommentComponent implements OnInit {
     private utilsService;
     private datePipe;
     private importExportService;
+    private userPermissionsService;
     alarmId: string;
     alarmActivityOnly: boolean;
     authUser: AuthUser;
+    hasAlarmWritePermission: boolean;
     alarmCommentFormGroup: FormGroup;
     alarmComments: Array<AlarmComment>;
     displayData: Array<AlarmCommentsDisplayData>;
@@ -49,7 +54,7 @@ export declare class AlarmCommentComponent implements OnInit {
     userDisplayName$: import("rxjs").Observable<string>;
     currentUserDisplayName: string;
     currentUserAvatarColor: string;
-    constructor(store: Store<AppState>, translate: TranslateService, alarmCommentService: AlarmCommentService, fb: FormBuilder, dialogService: DialogService, dateAgoPipe: DateAgoPipe, utilsService: UtilsService, datePipe: DatePipe, importExportService: ImportExportService);
+    constructor(store: Store<AppState>, translate: TranslateService, alarmCommentService: AlarmCommentService, fb: FormBuilder, dialogService: DialogService, dateAgoPipe: DateAgoPipe, utilsService: UtilsService, datePipe: DatePipe, importExportService: ImportExportService, userPermissionsService: UserPermissionsService);
     ngOnInit(): void;
     loadAlarmComments(): void;
     private parseSystemComment;
@@ -64,7 +69,7 @@ export declare class AlarmCommentComponent implements OnInit {
     getSortDirectionIcon(): "mdi:sort-descending" | "mdi:sort-ascending";
     getSortDirectionTooltipText(): any;
     isDirectionAscending(): boolean;
-    onCommentMouseEnter(commentId: string, displayDataIndex: number): void;
+    onCommentMouseEnter(displayDataIndex: number): void;
     onCommentMouseLeave(displayDataIndex: number): void;
     getUserInitials(userName: string): string;
     getCurrentUserBgColor(userDisplayName: string): string;

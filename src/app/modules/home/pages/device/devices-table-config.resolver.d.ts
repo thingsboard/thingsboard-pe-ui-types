@@ -1,3 +1,4 @@
+import { DestroyRef } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 import { CellActionDescriptor, EntityColumn, EntityTableConfig, GroupActionDescriptor, HeaderActionDescriptor } from '@home/models/entity/entities-table-config.models';
 import { TranslateService } from '@ngx-translate/core';
@@ -11,7 +12,6 @@ import { DeviceService } from '@app/core/http/device.service';
 import { CustomerService } from '@core/http/customer.service';
 import { BroadcastService } from '@core/services/broadcast.service';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogService } from '@core/services/dialog.service';
 import { HomeDialogsService } from '@home/dialogs/home-dialogs.service';
 import { UtilsService } from '@core/services/utils.service';
 import { AllEntitiesTableConfigService } from '@home/components/entity/all-entities-table-config.service';
@@ -20,6 +20,8 @@ import { AuthUser } from '@shared/models/user.model';
 import { PageLink } from '@shared/models/page/page-link';
 import { EntityId } from '@shared/models/id/entity-id';
 import { WhiteLabelingService } from '@core/http/white-labeling.service';
+import { AiDashboardGenerationService } from '@home/components/ai/ai-dashboard-generation.service';
+import { IotHubActionsService } from '@home/components/iot-hub/iot-hub-actions.service';
 import * as i0 from "@angular/core";
 export declare class DevicesTableConfigResolver {
     private allEntitiesTableConfigService;
@@ -28,7 +30,6 @@ export declare class DevicesTableConfigResolver {
     private broadcast;
     private deviceService;
     private customerService;
-    private dialogService;
     private homeDialogs;
     private translate;
     private datePipe;
@@ -36,7 +37,10 @@ export declare class DevicesTableConfigResolver {
     private router;
     private dialog;
     private wl;
-    constructor(allEntitiesTableConfigService: AllEntitiesTableConfigService<DeviceInfo>, store: Store<AppState>, userPermissionsService: UserPermissionsService, broadcast: BroadcastService, deviceService: DeviceService, customerService: CustomerService, dialogService: DialogService, homeDialogs: HomeDialogsService, translate: TranslateService, datePipe: DatePipe, utils: UtilsService, router: Router, dialog: MatDialog, wl: WhiteLabelingService);
+    private destroyRef;
+    private iotHubActions;
+    private aiDashboardGenerationService;
+    constructor(allEntitiesTableConfigService: AllEntitiesTableConfigService<DeviceInfo>, store: Store<AppState>, userPermissionsService: UserPermissionsService, broadcast: BroadcastService, deviceService: DeviceService, customerService: CustomerService, homeDialogs: HomeDialogsService, translate: TranslateService, datePipe: DatePipe, utils: UtilsService, router: Router, dialog: MatDialog, wl: WhiteLabelingService, destroyRef: DestroyRef, iotHubActions: IotHubActionsService, aiDashboardGenerationService: AiDashboardGenerationService);
     resolve(route: ActivatedRouteSnapshot): Observable<EntityTableConfig<DeviceInfo>>;
     configDefaults(config: EntityTableConfig<DeviceInfo>): void;
     onLoadAction(config: EntityTableConfig<DeviceInfo>, route: ActivatedRoute): void;
@@ -48,6 +52,7 @@ export declare class DevicesTableConfigResolver {
     configureCellActions(config: EntityTableConfig<DeviceInfo>): Array<CellActionDescriptor<DeviceInfo>>;
     configureGroupActions(config: EntityTableConfig<DeviceInfo>): Array<GroupActionDescriptor<DeviceInfo>>;
     configureAddActions(config: EntityTableConfig<DeviceInfo>): Array<HeaderActionDescriptor>;
+    addDeviceFromIotHub(config: EntityTableConfig<DeviceInfo>): void;
     private openDevice;
     importDevices($event: Event, config: EntityTableConfig<DeviceInfo>): void;
     deviceWizard($event: Event, config: EntityTableConfig<DeviceInfo>): void;
@@ -55,6 +60,7 @@ export declare class DevicesTableConfigResolver {
     manageOwnerAndGroups($event: Event, device: DeviceInfo, config: EntityTableConfig<DeviceInfo>): void;
     checkConnectivity($event: Event, deviceId: EntityId, afterAdd?: boolean, config?: EntityTableConfig<DeviceInfo>): void;
     onDeviceAction(action: EntityAction<DeviceInfo>, config: EntityTableConfig<DeviceInfo>): boolean;
+    generateDashboard($event: Event, device: DeviceInfo): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DevicesTableConfigResolver, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<DevicesTableConfigResolver>;
 }

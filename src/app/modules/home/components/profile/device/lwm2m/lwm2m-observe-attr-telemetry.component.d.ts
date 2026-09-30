@@ -1,9 +1,10 @@
-import { ChangeDetectorRef, OnDestroy } from '@angular/core';
+import { ChangeDetectorRef } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { ObjectLwM2M } from './lwm2m-profile-config.models';
 import { MatDialog } from '@angular/material/dialog';
+import { GtSmBreakpointAwareDirective } from '@shared/components/gt-sm-breakpoint-aware.directive';
 import * as i0 from "@angular/core";
-export declare class Lwm2mObserveAttrTelemetryComponent implements ControlValueAccessor, OnDestroy, Validator {
+export declare class Lwm2mObserveAttrTelemetryComponent extends GtSmBreakpointAwareDirective implements ControlValueAccessor, Validator {
     private fb;
     private dialog;
     private cd;
@@ -12,10 +13,8 @@ export declare class Lwm2mObserveAttrTelemetryComponent implements ControlValueA
     get required(): boolean;
     set required(value: boolean);
     disabled: boolean;
-    private destroy$;
     private propagateChange;
     constructor(fb: UntypedFormBuilder, dialog: MatDialog, cd: ChangeDetectorRef);
-    ngOnDestroy(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
@@ -26,7 +25,6 @@ export declare class Lwm2mObserveAttrTelemetryComponent implements ControlValueA
     private createModelFormGroup;
     private updateModel;
     private updateValidators;
-    trackByParams: (index: number, objectLwM2M: ObjectLwM2M) => number;
     /**
      * Instances: indicates whether this Object supports multiple Object Instances or not.
      * 1) Field in object: <MultipleInstances> == Multiple/Single
@@ -45,6 +43,7 @@ export declare class Lwm2mObserveAttrTelemetryComponent implements ControlValueA
      *   Object Instance ID cnt_max = cnt_min = 1 (there must always be one)
      */
     addInstances: ($event: Event, control: AbstractControl) => void;
+    openAddInstancesDialog(control: AbstractControl): void;
     private updateInstancesIds;
     private diffBetweenSet;
     private instancesToSetId;

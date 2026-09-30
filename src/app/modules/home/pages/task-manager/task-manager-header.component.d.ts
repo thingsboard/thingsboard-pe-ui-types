@@ -1,10 +1,10 @@
-import { EntityTableHeaderComponent } from '@home/components/entity/entity-table-header.component';
+import { IncludeCustomersTableHeaderComponent } from '@home/components/entity/include-customers-table-header.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { Job, JobFilter, TaskManagerConfig } from '@shared/models/job.models';
 import { TimePageLink } from '@shared/models/page/page-link';
 import * as i0 from "@angular/core";
-export declare class TaskManagerHeaderComponent extends EntityTableHeaderComponent<Job, TimePageLink> {
+export declare class TaskManagerHeaderComponent extends IncludeCustomersTableHeaderComponent<Job, TimePageLink> {
     protected store: Store<AppState>;
     get taskManagerTableConfig(): TaskManagerConfig;
     constructor(store: Store<AppState>);

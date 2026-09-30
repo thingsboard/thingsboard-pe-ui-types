@@ -7,6 +7,7 @@ import { TargetDevice, TargetDeviceType } from '@shared/models/widget.models';
 import { EntityType } from '@shared/models/entity-type.models';
 import { IAliasController } from '@core/api/widget-api.models';
 import { EntityAliasSelectCallbacks } from '@home/components/widget/lib/settings/common/alias/entity-alias-select.component.models';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class TargetDeviceComponent implements ControlValueAccessor, OnInit, Validator {
     private fb;
@@ -20,6 +21,7 @@ export declare class TargetDeviceComponent implements ControlValueAccessor, OnIn
     targetDeviceType: typeof TargetDeviceType;
     entityType: typeof EntityType;
     disabled: boolean;
+    appearance: MatFormFieldAppearance;
     widgetEditMode: boolean;
     targetDeviceFormGroup: UntypedFormGroup;
     private propagateChange;
@@ -37,5 +39,5 @@ export declare class TargetDeviceComponent implements ControlValueAccessor, OnIn
     private targetDeviceUpdated;
     private updateValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<TargetDeviceComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TargetDeviceComponent, "tb-target-device", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TargetDeviceComponent, "tb-target-device", never, { "disabled": { "alias": "disabled"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -7,7 +7,6 @@ export interface BreadCrumb extends HasUUID {
     label: string;
     customTranslate: boolean;
     labelFunction?: () => string;
-    icon: string;
     link: any[] | string;
     queryParams: Params;
 }
@@ -15,6 +14,9 @@ export type BreadCrumbLabelFunction<C> = (route: ActivatedRouteSnapshot, transla
 export interface BreadCrumbConfig<C> {
     labelFunction: BreadCrumbLabelFunction<C>;
     menuId?: MenuId;
+    menuIdByAuthority?: {
+        [authority: string]: MenuId;
+    };
     label?: string;
     icon?: string;
     skip: boolean;

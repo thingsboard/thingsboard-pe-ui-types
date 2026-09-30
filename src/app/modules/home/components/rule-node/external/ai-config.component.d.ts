@@ -14,6 +14,7 @@ export declare class AiConfigComponent extends RuleNodeConfigurationComponent {
     aiConfigForm: UntypedFormGroup;
     entityType: typeof EntityType;
     responseFormat: typeof ResponseFormat;
+    allowedResponseFormats: ResponseFormat[];
     EntityType: typeof EntityType;
     ResourceType: typeof ResourceType;
     readonly operation: typeof Operation;

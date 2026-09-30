@@ -23,7 +23,6 @@ export declare class GettingStartedWidgetComponent extends PageComponent impleme
     authUser: import("../../../../../../shared/public-api").AuthUser;
     gettingStarted: GettingStarted;
     allCompleted: boolean;
-    helpBaseUrl: string;
     docsLink: string;
     baseUrl: string;
     constructor(store: Store<AppState>, cd: ChangeDetectorRef, userSettingsService: UserSettingsService, wl: WhiteLabelingService, dialog: MatDialog);

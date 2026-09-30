@@ -1,5 +1,5 @@
 import { DestroyRef, OnInit } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { FormProperty } from '@shared/models/dynamic-form.models';
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import * as i0 from "@angular/core";
@@ -9,6 +9,7 @@ export declare class DynamicFormArrayComponent implements ControlValueAccessor, 
     disabled: boolean;
     itemProperty: FormProperty;
     title: string;
+    hint: string;
     propertiesFormGroup: UntypedFormGroup;
     get dragEnabled(): boolean;
     private propagateChange;
@@ -25,10 +26,9 @@ export declare class DynamicFormArrayComponent implements ControlValueAccessor, 
     };
     propertyDrop(event: CdkDragDrop<string[]>): void;
     propertiesFormArray(): UntypedFormArray;
-    trackByProperty(_index: number, propertyControl: AbstractControl): any;
     removeProperty(index: number, emitEvent?: boolean): void;
     addProperty(): void;
     private preparePropertiesFormArray;
     static ɵfac: i0.ɵɵFactoryDeclaration<DynamicFormArrayComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DynamicFormArrayComponent, "tb-dynamic-form-array", never, { "disabled": { "alias": "disabled"; "required": false; }; "itemProperty": { "alias": "itemProperty"; "required": false; }; "title": { "alias": "title"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DynamicFormArrayComponent, "tb-dynamic-form-array", never, { "disabled": { "alias": "disabled"; "required": false; }; "itemProperty": { "alias": "itemProperty"; "required": false; }; "title": { "alias": "title"; "required": false; }; "hint": { "alias": "hint"; "required": false; }; }, {}, never, never, false, never>;
 }

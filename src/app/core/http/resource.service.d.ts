@@ -10,7 +10,7 @@ export declare class ResourceService {
     private http;
     private resourcesService;
     constructor(http: HttpClient, resourcesService: ResourcesService);
-    getResources(pageLink: PageLink, resourceType?: ResourceType, resourceSubType?: ResourceSubType, config?: RequestConfig): Observable<PageData<ResourceInfo>>;
+    getResources(pageLink: PageLink, resourceType?: ResourceType | ResourceType[], resourceSubType?: ResourceSubType, config?: RequestConfig): Observable<PageData<ResourceInfo>>;
     getTenantResources(pageLink: PageLink, config?: RequestConfig): Observable<PageData<ResourceInfo>>;
     getResource(resourceId: string, config?: RequestConfig): Observable<Resource>;
     getResourceInfoById(resourceId: string, config?: RequestConfig): Observable<ResourceInfo>;

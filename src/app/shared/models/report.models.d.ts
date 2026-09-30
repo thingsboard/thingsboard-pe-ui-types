@@ -4,6 +4,7 @@ import { TenantId } from '@shared/models/id/tenant-id';
 import { CustomerId } from '@shared/models/id/customer-id';
 import { EntityInfoData, HasTenantId, HasVersion } from '@shared/models/entity.models';
 import { EntityId } from '@shared/models/id/entity-id';
+import { EntityType } from '@shared/models/entity-type.models';
 import { EntityAlias, EntityAliases } from '@shared/models/alias.models';
 import { Filter, Filters, KeyFilter } from '@shared/models/query/query.models';
 import { ReportComponentConfig } from '@shared/models/report-component.models';
@@ -12,12 +13,15 @@ import { UserId } from '@shared/models/id/user-id';
 import { PageLink } from '@shared/models/page/page-link';
 import { NotificationTemplateId } from '@shared/models/id/notification-template-id';
 import { SchedulerEventInfo } from '@shared/models/scheduler-event.models';
+export declare const reportOriginatorTypes: EntityType[];
 export interface Report extends BaseData<ReportId>, HasTenantId {
     tenantId?: TenantId;
     customerId?: CustomerId;
     name: string;
     format: TbReportFormat;
     userId: UserId;
+    public?: boolean;
+    publicKey?: string;
 }
 export interface ReportInfo extends Report {
     templateInfo: EntityInfoData;
@@ -132,6 +136,7 @@ export interface ReportRequest {
     originator?: EntityId;
     targets?: Array<string>;
     notificationTemplateId?: NotificationTemplateId;
+    makePublic?: boolean;
 }
 export interface ReportConfig {
     reportTemplateId: ReportTemplateId;
@@ -139,14 +144,17 @@ export interface ReportConfig {
     timezone: string;
     targets?: Array<string>;
     notificationTemplateId?: NotificationTemplateId;
+    makePublic?: boolean;
 }
 export interface ReportTemplateFilter {
+    includeCustomers?: boolean;
     formatList?: TbReportFormat[];
     typeList?: ReportTemplateType[];
 }
 export declare const reportTemplateFiltersEquals: (filter1?: ReportTemplateFilter, filter2?: ReportTemplateFilter) => boolean;
 export declare class ReportTemplateQuery {
     pageLink: PageLink;
+    includeCustomers: boolean;
     formatList: TbReportFormat[];
     typeList: ReportTemplateType[];
     constructor(pageLink: PageLink, reportTemplateFilter: ReportTemplateFilter);
@@ -162,12 +170,14 @@ export interface ScheduledReportInfo extends SchedulerEventInfo {
     customerTitle: string;
 }
 export interface ReportFilter {
+    includeCustomers?: boolean;
     reportTemplateId?: ReportTemplateId;
     userId?: UserId;
 }
 export declare const reportFiltersEquals: (filter1?: ReportFilter, filter2?: ReportFilter) => boolean;
 export declare class ReportQuery {
     pageLink: PageLink;
+    includeCustomers: boolean;
     reportTemplateId?: ReportTemplateId;
     userId?: UserId;
     constructor(pageLink: PageLink, reportFilter: ReportFilter);

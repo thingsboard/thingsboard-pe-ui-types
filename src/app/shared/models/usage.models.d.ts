@@ -19,4 +19,6 @@ export interface UsageInfo {
     maxSms: number;
     alarms: number;
     maxAlarms: number;
+    aiCredits: number;
+    maxAiCredits: number;
 }

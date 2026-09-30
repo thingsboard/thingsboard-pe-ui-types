@@ -3,7 +3,7 @@ import { PageComponent } from '@shared/components/page.component';
 import { TbPopoverComponent } from '@shared/components/popover.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { Notification, NotificationRequest } from '@shared/models/notification.models';
+import { Notification } from '@shared/models/notification.models';
 import { NotificationWebsocketService } from '@core/ws/notification-websocket.service';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Router } from '@angular/router';
@@ -24,7 +24,6 @@ export declare class ShowNotificationPopoverComponent extends PageComponent impl
     markAsRead(id: string): void;
     markAsAllRead($event: Event): void;
     viewAll($event: Event): void;
-    trackById(index: number, item: NotificationRequest): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<ShowNotificationPopoverComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<ShowNotificationPopoverComponent, "tb-show-notification-popover", never, { "onClose": { "alias": "onClose"; "required": false; }; "counter": { "alias": "counter"; "required": false; }; "popoverComponent": { "alias": "popoverComponent"; "required": false; }; }, {}, never, never, false, never>;
 }

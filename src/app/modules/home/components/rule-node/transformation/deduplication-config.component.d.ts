@@ -6,7 +6,7 @@ export declare class DeduplicationConfigComponent extends RuleNodeConfigurationC
     private fb;
     deduplicationConfigForm: FormGroup;
     deduplicationStrategie: typeof FetchMode;
-    deduplicationStrategies: string[];
+    deduplicationStrategies: FetchMode[];
     deduplicationStrategiesTranslations: Map<FetchMode, string>;
     constructor(fb: FormBuilder);
     protected configForm(): FormGroup;

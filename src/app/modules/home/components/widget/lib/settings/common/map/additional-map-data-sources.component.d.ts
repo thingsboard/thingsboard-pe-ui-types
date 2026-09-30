@@ -1,5 +1,5 @@
 import { DestroyRef, OnInit } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { AdditionalMapDataSourceSettings } from '@shared/models/widget/maps/map.models';
 import { MapSettingsContext } from '@home/components/widget/lib/settings/common/map/map-settings.component.models';
 import * as i0 from "@angular/core";
@@ -22,7 +22,6 @@ export declare class AdditionalMapDataSourcesComponent implements ControlValueAc
         };
     };
     dataSourcesFormArray(): UntypedFormArray;
-    trackByDataSource(index: number, dataSourceControl: AbstractControl): any;
     removeDataSource(index: number): void;
     addDataSource(): void;
     private prepareDataSourcesFormArray;

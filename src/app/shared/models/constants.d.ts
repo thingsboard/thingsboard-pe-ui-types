@@ -13,6 +13,7 @@ export declare const Constants: {
         itemNotFound: number;
         tooManyRequests: number;
         tooManyUpdates: number;
+        subscriptionViolation: number;
         entitiesLimitExceeded: number;
         passwordViolation: number;
     };
@@ -23,6 +24,7 @@ export declare const Constants: {
     };
 };
 export declare const serverErrorCodesTranslations: Map<number, string>;
+export declare const httpStatusMessageMap: Map<number, string>;
 export declare const MediaBreakpoints: {
     xs: string;
     sm: string;
@@ -32,11 +34,14 @@ export declare const MediaBreakpoints: {
     'lt-sm': string;
     'lt-md': string;
     'lt-lg': string;
+    'lt-xmd': string;
     'lt-xl': string;
     'gt-xs': string;
     'gt-sm': string;
     'gt-md': string;
+    'gt-xmd': string;
     'gt-lg': string;
+    'gt-xxl': string;
     'gt-xl': string;
     'md-lg': string;
 };
@@ -156,6 +161,27 @@ export declare const HelpLinks: {
         deviceProfiles: string;
         assetProfiles: string;
         edges: string;
+        agents: string;
+        agentInstall: string;
+        agentSelfUpgrade: string;
+        agentProfiles: string;
+        agentProfileAutoProvision: string;
+        agentProfileAssignAppProfiles: string;
+        agentProfileProvisionCommand: string;
+        agentApplications: string;
+        agentAppInstall: string;
+        agentAppEvents: string;
+        agentAppLogs: string;
+        agentAppProfiles: string;
+        agentAppProfileUse: string;
+        agentAppProfileVersions: string;
+        agentAppUpdate: string;
+        agentAppUpgrade: string;
+        agentAppDelete: string;
+        agentBulkActions: string;
+        agentBulkActionExecutions: string;
+        agentEdgeInstall: string;
+        agentGatewayInstall: string;
         assets: string;
         entityViews: string;
         entitiesImport: string;
@@ -269,7 +295,8 @@ export interface ContentTypeData {
 export declare enum ContentType {
     JSON = "JSON",
     TEXT = "TEXT",
-    BINARY = "BINARY"
+    BINARY = "BINARY",
+    HEX = "HEX"
 }
 export declare const contentTypesMap: Map<ContentType, ContentTypeData>;
 export declare const hidePageSizePixelValue = 550;

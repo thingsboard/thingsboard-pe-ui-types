@@ -51,6 +51,7 @@ export declare class FileInputComponent extends PageComponent implements AfterVi
     constructor(store: Store<AppState>, utils: UtilsService, translate: TranslateService, dialog: DialogService, fileSize: FileSizePipe);
     ngAfterViewInit(): void;
     private readerAsFile;
+    private buildResult;
     private checkMaxSize;
     private filterFile;
     ngOnDestroy(): void;

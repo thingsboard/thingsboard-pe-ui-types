@@ -1,7 +1,7 @@
 import { DestroyRef } from '@angular/core';
 import { ControlValueAccessor, FormBuilder, ValidationErrors, Validator } from '@angular/forms';
 import { EntityKeyValueType } from '@shared/models/query/query.models';
-import { AlarmRuleBooleanOperation, AlarmRuleFilterPredicate, AlarmRuleFilterPredicateType, AlarmRuleNumericOperation, AlarmRuleStringOperation } from "@shared/models/alarm-rule.models";
+import { AlarmRuleBooleanOperation, AlarmRuleFilterPredicate, AlarmRuleFilterPredicateType, AlarmRuleNumericOperation, AlarmRuleStringOperation, ValueAlarmRuleFilterPredicateType } from "@shared/models/alarm-rule.models";
 import { MatDialog } from "@angular/material/dialog";
 import { CalculatedFieldArgument } from "@shared/models/calculated-field.models";
 import * as i0 from "@angular/core";
@@ -20,7 +20,7 @@ export declare class AlarmRuleFilterPredicateComponent implements ControlValueAc
         value: import("@angular/forms").FormControl<any>;
         duration: import("@angular/forms").FormControl<any>;
     }>;
-    type: AlarmRuleFilterPredicateType;
+    type: ValueAlarmRuleFilterPredicateType;
     filterPredicateType: typeof AlarmRuleFilterPredicateType;
     stringOperations: string[];
     stringOperation: typeof AlarmRuleStringOperation;

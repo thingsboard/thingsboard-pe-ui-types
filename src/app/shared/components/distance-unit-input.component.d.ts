@@ -1,0 +1,43 @@
+import { DestroyRef, OnInit } from '@angular/core';
+import { ControlValueAccessor, FormBuilder, ValidationErrors, Validator } from '@angular/forms';
+import { RangeUnit } from '@home/components/rule-node/rule-node-config.models';
+import { MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
+import * as i0 from "@angular/core";
+export declare class DistanceUnitInputComponent implements ControlValueAccessor, Validator, OnInit {
+    private fb;
+    private destroyRef;
+    labelText: string;
+    hintText: string;
+    required: boolean;
+    requiredText: string;
+    minDistance: number;
+    minErrorText: string;
+    patternText: string;
+    subscriptSizing: SubscriptSizing;
+    appearance: MatFormFieldAppearance;
+    sameWidthInputs: boolean;
+    containerClass: string | string[] | Record<string, boolean | undefined | null>;
+    distanceUnits: RangeUnit[];
+    distanceUnitTranslations: Map<RangeUnit, string>;
+    distanceInputForm: import("@angular/forms").FormGroup<{
+        distance: import("@angular/forms").FormControl<number>;
+        distanceUnit: import("@angular/forms").FormControl<RangeUnit>;
+    }>;
+    minValueValidator: number;
+    private modelValue;
+    private propagateChange;
+    constructor(fb: FormBuilder, destroyRef: DestroyRef);
+    ngOnInit(): void;
+    get hasError(): string;
+    registerOnChange(fn: any): void;
+    registerOnTouched(_fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    writeValue(meters: number): void;
+    validate(): ValidationErrors | null;
+    private updatedModel;
+    private parseDistance;
+    private metersModel;
+    private refreshDistanceValidators;
+    static ɵfac: i0.ɵɵFactoryDeclaration<DistanceUnitInputComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DistanceUnitInputComponent, "tb-distance-unit-input", never, { "labelText": { "alias": "labelText"; "required": false; }; "hintText": { "alias": "hintText"; "required": false; }; "required": { "alias": "required"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "minDistance": { "alias": "minDistance"; "required": false; }; "minErrorText": { "alias": "minErrorText"; "required": false; }; "patternText": { "alias": "patternText"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "sameWidthInputs": { "alias": "sameWidthInputs"; "required": false; }; "containerClass": { "alias": "containerClass"; "required": false; }; }, {}, never, never, false, never>;
+}

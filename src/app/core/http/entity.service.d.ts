@@ -21,7 +21,7 @@ import { AliasInfo, StateParams, SubscriptionInfo } from '@core/api/widget-api.m
 import { DataKey, Datasource } from '@app/shared/models/widget.models';
 import { UtilsService } from '@core/services/utils.service';
 import { AliasFilterType, EntityAlias, EntityAliasFilter, EntityAliasFilterResult } from '@shared/models/alias.models';
-import { EntitiesKeysByQuery, EntityInfo, ImportEntitiesResultInfo, ImportEntityData } from '@shared/models/entity.models';
+import { EntitiesKeysByQuery, EntitiesKeysByQueryV2, EntityInfo, ImportEntitiesResultInfo, ImportEntityData } from '@shared/models/entity.models';
 import { EntityRelationService } from '@core/http/entity-relation.service';
 import { AttributeService } from '@core/http/attribute.service';
 import { ConverterService } from '@core/http/converter.service';
@@ -50,6 +50,7 @@ import { OAuth2Service } from '@core/http/oauth2.service';
 import { MobileAppService } from '@core/http/mobile-app.service';
 import { DomainService } from '@core/http/domain.service';
 import { AiModelService } from '@core/http/ai-model.service';
+import { AgentService } from '@core/http/agent.service';
 import { ReportTemplateService } from '@core/http/report-template.service';
 import { ReportService } from './report.service';
 import * as i0 from "@angular/core";
@@ -90,7 +91,8 @@ export declare class EntityService {
     private mobileAppService;
     private domainService;
     private aiModelService;
-    constructor(http: HttpClient, store: Store<AppState>, deviceService: DeviceService, assetService: AssetService, entityViewService: EntityViewService, edgeService: EdgeService, tenantService: TenantService, customerService: CustomerService, userService: UserService, ruleChainService: RuleChainService, dashboardService: DashboardService, entityRelationService: EntityRelationService, attributeService: AttributeService, otaPackageService: OtaPackageService, widgetService: WidgetService, deviceProfileService: DeviceProfileService, tenantProfileService: TenantProfileService, assetProfileService: AssetProfileService, converterService: ConverterService, integrationService: IntegrationService, schedulerEventService: SchedulerEventService, blobEntityService: BlobEntityService, reportTemplateService: ReportTemplateService, reportService: ReportService, roleService: RoleService, entityGroupService: EntityGroupService, userPermissionsService: UserPermissionsService, utils: UtilsService, queueService: QueueService, notificationService: NotificationService, alarmService: AlarmService, resourceService: ResourceService, oauth2Service: OAuth2Service, mobileAppService: MobileAppService, domainService: DomainService, aiModelService: AiModelService);
+    private agentService;
+    constructor(http: HttpClient, store: Store<AppState>, deviceService: DeviceService, assetService: AssetService, entityViewService: EntityViewService, edgeService: EdgeService, tenantService: TenantService, customerService: CustomerService, userService: UserService, ruleChainService: RuleChainService, dashboardService: DashboardService, entityRelationService: EntityRelationService, attributeService: AttributeService, otaPackageService: OtaPackageService, widgetService: WidgetService, deviceProfileService: DeviceProfileService, tenantProfileService: TenantProfileService, assetProfileService: AssetProfileService, converterService: ConverterService, integrationService: IntegrationService, schedulerEventService: SchedulerEventService, blobEntityService: BlobEntityService, reportTemplateService: ReportTemplateService, reportService: ReportService, roleService: RoleService, entityGroupService: EntityGroupService, userPermissionsService: UserPermissionsService, utils: UtilsService, queueService: QueueService, notificationService: NotificationService, alarmService: AlarmService, resourceService: ResourceService, oauth2Service: OAuth2Service, mobileAppService: MobileAppService, domainService: DomainService, aiModelService: AiModelService, agentService: AgentService);
     private getEntityObservable;
     private saveEntityObservable;
     getEntity(entityType: EntityType, entityId: string, config?: RequestConfig): Observable<BaseData<EntityId>>;
@@ -107,6 +109,7 @@ export declare class EntityService {
     getEntityGroupEntities(entityGroupId: string, entityGroupType: EntityType, pageSize: number, config?: RequestConfig): Observable<Array<BaseData<EntityId>>>;
     findEntityDataByQuery(query: EntityDataQuery, config?: RequestConfig): Observable<PageData<EntityData>>;
     findEntityKeysByQuery(query: EntityDataQuery, attributes?: boolean, timeseries?: boolean, scope?: AttributeScope, config?: RequestConfig): Observable<EntitiesKeysByQuery>;
+    findEntityKeysByQueryV2(query: EntityDataQuery, includeTimeseries?: boolean, includeAttributes?: boolean, scopes?: AttributeScope[], includeSamples?: boolean, config?: RequestConfig): Observable<EntitiesKeysByQueryV2>;
     findAlarmDataByQuery(query: AlarmDataQuery, config?: RequestConfig): Observable<PageData<AlarmData>>;
     findEntityInfosByFilterAndName(filter: EntityFilter, searchText: string, config?: RequestConfig): Observable<PageData<EntityInfo>>;
     findSingleEntityInfoByEntityFilter(filter: EntityFilter, config?: RequestConfig): Observable<EntityInfo>;

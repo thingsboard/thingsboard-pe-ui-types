@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { ImagePipe } from '@shared/pipe/image.pipe';
 import { DomSanitizer } from '@angular/platform-browser';
 import { UnreadNotificationWidgetSettings } from '@home/components/widget/lib/cards/unread-notification-widget.models';
-import { Notification, NotificationRequest } from '@shared/models/notification.models';
+import { Notification } from '@shared/models/notification.models';
 import { NotificationWebsocketService } from '@core/ws/notification-websocket.service';
 import { Router } from '@angular/router';
 import { Overlay } from '@angular/cdk/overlay';
@@ -53,7 +53,6 @@ export declare class UnreadNotificationWidgetComponent implements OnInit, OnDest
     markAsRead(id: string): void;
     markAsAllRead($event: Event): void;
     viewAll($event: Event): void;
-    trackById(index: number, item: NotificationRequest): string;
     private editNotificationTypeFilter;
     static ɵfac: i0.ɵɵFactoryDeclaration<UnreadNotificationWidgetComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<UnreadNotificationWidgetComponent, "tb-unread-notification-widget", never, { "ctx": { "alias": "ctx"; "required": false; }; "widgetTitlePanel": { "alias": "widgetTitlePanel"; "required": false; }; }, {}, never, never, false, never>;

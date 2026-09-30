@@ -10,7 +10,7 @@ export declare class TtnIntegrationFormComponent extends IntegrationForm impleme
     hostEdit: FormControl<string>;
     apiVersion: FormControl<boolean>;
     ThingsStartHostType: typeof ThingsStartHostType;
-    ThingsStartHostTypes: (string | ThingsStartHostType)[];
+    ThingsStartHostTypes: ThingsStartHostType[];
     ThingsStartHostTypeTranslation: Map<ThingsStartHostType, string>;
     IntegrationCredentialType: typeof IntegrationCredentialType;
     MqttVersion: typeof MqttVersion;
@@ -29,6 +29,7 @@ export declare class TtnIntegrationFormComponent extends IntegrationForm impleme
     private updateTtnVersionState;
     private updateDownlinkPattern;
     updatedValidationPrivateNetwork(): void;
+    getThingsStartHostTypeTranslation(type: number): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<TtnIntegrationFormComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<TtnIntegrationFormComponent, "tb-ttn-integration-form", never, {}, {}, never, never, false, never>;
 }

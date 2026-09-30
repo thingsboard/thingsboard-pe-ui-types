@@ -11,6 +11,7 @@ export interface Customer extends ContactBased<CustomerId>, HasTenantId, HasVers
     customMenuId?: CustomMenuId;
     additionalInfo?: any;
 }
+export declare const publicCustomer = "Public";
 export type CustomerInfo = Customer & GroupEntityInfo<CustomerId>;
 export interface ShortCustomerInfo {
     customerId: CustomerId;

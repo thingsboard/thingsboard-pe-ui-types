@@ -34,6 +34,7 @@ export declare class EntityGroupService {
     makeEntityGroupPublic(entityGroupId: string, config?: RequestConfig): Observable<any>;
     makeEntityGroupPrivate(entityGroupId: string, config?: RequestConfig): Observable<any>;
     shareEntityGroup(entityGroupId: string, shareGroupRequest: ShareGroupRequest, config?: RequestConfig): Observable<any>;
+    shareEntityGroupV2(entityGroupId: string, shareGroupRequest: ShareGroupRequest, config?: RequestConfig): Observable<any>;
     getEntityGroups(pageLink: PageLink, groupType: EntityType, includeShared?: boolean, config?: RequestConfig): Observable<PageData<EntityGroupInfo>>;
     getEntityGroupEntityInfos(pageLink: PageLink, groupType: EntityType, includeShared?: boolean, config?: RequestConfig): Observable<PageData<EntityInfoData>>;
     getAllEntityGroups(pageSize: number, groupType: EntityType, includeShared?: boolean, config?: RequestConfig): Observable<Array<EntityGroupInfo>>;

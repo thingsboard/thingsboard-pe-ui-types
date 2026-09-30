@@ -1,0 +1,36 @@
+import { ChangeDetectorRef } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { EntityComponent } from '@home/components/entity/entity.component';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { EntityType } from '@shared/models/entity-type.models';
+import { AgentProfileInfo, AgentProvisionType } from '@shared/models/agent.models';
+import { TranslateService } from '@ngx-translate/core';
+import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
+import { AgentService } from '@core/http/agent.service';
+import * as i0 from "@angular/core";
+export declare class AgentProfileComponent extends EntityComponent<AgentProfileInfo> {
+    protected store: Store<AppState>;
+    protected translate: TranslateService;
+    private agentService;
+    protected entityValue: AgentProfileInfo;
+    protected entitiesTableConfigValue: EntityTableConfig<AgentProfileInfo>;
+    fb: UntypedFormBuilder;
+    protected cd: ChangeDetectorRef;
+    standalone: boolean;
+    entityType: typeof EntityType;
+    agentProvisionTypes: AgentProvisionType[];
+    agentProvisionTypeTranslationMap: Map<AgentProvisionType, string>;
+    agentProvisionTypeDescriptionMap: Map<AgentProvisionType, string>;
+    readonly AgentProvisionType: typeof AgentProvisionType;
+    dockerCommand: string;
+    get autoInstallEnabled(): boolean;
+    constructor(store: Store<AppState>, translate: TranslateService, agentService: AgentService, entityValue: AgentProfileInfo, entitiesTableConfigValue: EntityTableConfig<AgentProfileInfo>, fb: UntypedFormBuilder, cd: ChangeDetectorRef);
+    hideDelete(): boolean;
+    buildForm(entity: AgentProfileInfo): UntypedFormGroup;
+    updateForm(entity: AgentProfileInfo): void;
+    onProfileIdCopied(): void;
+    onProvisioningCopied(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<AgentProfileComponent, [null, null, null, { optional: true; }, { optional: true; }, null, null]>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AgentProfileComponent, "tb-agent-profile", never, { "standalone": { "alias": "standalone"; "required": false; }; }, {}, never, never, false, never>;
+}

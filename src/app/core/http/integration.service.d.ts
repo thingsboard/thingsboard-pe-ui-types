@@ -23,6 +23,7 @@ export declare class IntegrationService {
     assignIntegrationToEdge(edgeId: string, integrationId: string, config?: RequestConfig): Observable<Integration>;
     unassignIntegrationFromEdge(edgeId: string, integrationId: string, config?: RequestConfig): Observable<Object>;
     getEdgeIntegrations(edgeId: string, pageLink: PageLink, config?: RequestConfig): Observable<PageData<IntegrationInfo>>;
+    exportIntegrationPackage(integrationId: string, config?: RequestConfig): Observable<Blob>;
     static ɵfac: i0.ɵɵFactoryDeclaration<IntegrationService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<IntegrationService>;
 }

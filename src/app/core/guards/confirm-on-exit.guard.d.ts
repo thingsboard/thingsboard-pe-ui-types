@@ -1,4 +1,4 @@
-import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot, Router, RouterStateSnapshot } from '@angular/router';
 import { UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -18,8 +18,9 @@ export interface HasDirtyFlag {
 export declare class ConfirmOnExitGuard {
     private store;
     private dialogService;
+    private router;
     private translate;
-    constructor(store: Store<AppState>, dialogService: DialogService, translate: TranslateService);
+    constructor(store: Store<AppState>, dialogService: DialogService, router: Router, translate: TranslateService);
     canDeactivate(component: HasConfirmForm & HasDirtyFlag, route: ActivatedRouteSnapshot, state: RouterStateSnapshot): true | Observable<boolean>;
     private getMessage;
     static ɵfac: i0.ɵɵFactoryDeclaration<ConfirmOnExitGuard, never>;

@@ -17,6 +17,7 @@ export declare class ReportConfigComponent extends PageComponent implements Cont
     reportConfigFormGroup: UntypedFormGroup;
     disabled: boolean;
     authUser: import("../../../../../shared/public-api").AuthUser;
+    showRecipients: boolean;
     entityType: typeof EntityType;
     ReportTemplateType: typeof ReportTemplateType;
     NotificationType: typeof NotificationType;

@@ -1,5 +1,5 @@
 import { WidgetSettings, WidgetSettingsComponent } from '@shared/models/widget.models';
-import { AbstractControl, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { FormArray, FormControl, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import * as i0 from "@angular/core";
@@ -16,8 +16,9 @@ export declare class SchedulerEventsWidgetSettingsComponent extends WidgetSettin
     protected onSettingsSet(settings: WidgetSettings): void;
     protected doUpdateSettings(settingsForm: UntypedFormGroup, settings: WidgetSettings): void;
     private prepareCustomEventTypesFormArray;
-    customEventTypesFormArray(): UntypedFormArray;
-    trackByCustomEventType(_index: number, customEventTypeControl: AbstractControl): any;
+    customEventTypesFormArray(): FormArray<FormControl & {
+        new: boolean;
+    }>;
     removeCustomEventType(index: number): void;
     addCustomEventType(): void;
     protected validatorTriggers(): string[];

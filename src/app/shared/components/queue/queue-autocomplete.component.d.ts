@@ -10,7 +10,7 @@ import { EntityService } from '@core/http/entity.service';
 import { TruncatePipe } from '@shared/pipe/truncate.pipe';
 import { QueueInfo, ServiceType } from '@shared/models/queue.models';
 import { QueueService } from '@core/http/queue.service';
-import { SubscriptSizing } from '@angular/material/form-field';
+import { MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class QueueAutocompleteComponent implements ControlValueAccessor, OnInit {
     private store;
@@ -30,6 +30,7 @@ export declare class QueueAutocompleteComponent implements ControlValueAccessor,
     set required(value: boolean);
     queueType: ServiceType;
     disabled: boolean;
+    appearance: MatFormFieldAppearance;
     queueInput: ElementRef;
     filteredQueues: Observable<Array<BaseData<EntityId>>>;
     searchText: string;
@@ -50,5 +51,5 @@ export declare class QueueAutocompleteComponent implements ControlValueAccessor,
     getDescription(value: any): any;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<QueueAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<QueueAutocompleteComponent, "tb-queue-autocomplete", never, { "labelText": { "alias": "labelText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "autocompleteHint": { "alias": "autocompleteHint"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "required": { "alias": "required"; "required": false; }; "queueType": { "alias": "queueType"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<QueueAutocompleteComponent, "tb-queue-autocomplete", never, { "labelText": { "alias": "labelText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "autocompleteHint": { "alias": "autocompleteHint"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "required": { "alias": "required"; "required": false; }; "queueType": { "alias": "queueType"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -13,7 +13,8 @@ export declare enum AuthActionTypes {
     UPDATE_MOBILE_QR_ENABLED = "[Auth] Update Mobile QR Enabled",
     UPDATE_OPENED_MENU_SECTION = "[Preferences] Update Opened Menu Section",
     PUT_USER_SETTINGS = "[Preferences] Put user settings",
-    DELETE_USER_SETTINGS = "[Preferences] Delete user settings"
+    DELETE_USER_SETTINGS = "[Preferences] Delete user settings",
+    UPDATE_LICENSE_PARAMS = "[Auth] Update License Parameters"
 }
 export declare class ActionAuthAuthenticated implements Action {
     readonly payload: AuthPayload;
@@ -94,4 +95,17 @@ export declare class ActionPreferencesDeleteUserSettings implements Action {
     readonly type = AuthActionTypes.DELETE_USER_SETTINGS;
     constructor(payload: Array<NestedKeyOf<UserSettings>>);
 }
-export type AuthActions = ActionAuthAuthenticated | ActionAuthUnauthenticated | ActionAuthLoadUser | ActionAuthUpdateUserDetails | ActionAuthUpdateLastPublicDashboardId | ActionAuthUpdateHasRepository | ActionPreferencesUpdateOpenedMenuSection | ActionPreferencesPutUserSettings | ActionPreferencesDeleteUserSettings | ActionAuthUpdateAuthUser | ActionUpdateMobileQrCodeEnabled;
+export declare class ActionUpdateLicenseParams implements Action {
+    readonly payload: {
+        edgeEnabled: boolean;
+        trendzEnabled: boolean;
+        communityGrantLicense: boolean;
+    };
+    readonly type = AuthActionTypes.UPDATE_LICENSE_PARAMS;
+    constructor(payload: {
+        edgeEnabled: boolean;
+        trendzEnabled: boolean;
+        communityGrantLicense: boolean;
+    });
+}
+export type AuthActions = ActionAuthAuthenticated | ActionAuthUnauthenticated | ActionAuthLoadUser | ActionAuthUpdateUserDetails | ActionAuthUpdateLastPublicDashboardId | ActionAuthUpdateHasRepository | ActionPreferencesUpdateOpenedMenuSection | ActionPreferencesPutUserSettings | ActionPreferencesDeleteUserSettings | ActionAuthUpdateAuthUser | ActionUpdateMobileQrCodeEnabled | ActionUpdateLicenseParams;

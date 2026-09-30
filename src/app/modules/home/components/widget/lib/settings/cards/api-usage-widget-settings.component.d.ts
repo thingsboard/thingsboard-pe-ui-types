@@ -17,7 +17,6 @@ export declare class ApiUsageWidgetSettingsComponent extends WidgetSettingsCompo
     ngOnInit(): void;
     protected doUpdateSettings(settingsForm: UntypedFormGroup, settings: WidgetSettings): void;
     dataKeysFormArray(): UntypedFormArray;
-    trackByDataKey(index: number): any;
     get dragEnabled(): boolean;
     layerDrop(event: CdkDragDrop<string[]>): void;
     removeDataKey(index: number): void;

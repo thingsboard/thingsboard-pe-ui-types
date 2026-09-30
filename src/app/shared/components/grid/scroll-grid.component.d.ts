@@ -37,7 +37,6 @@ export declare class ScrollGridComponent<T, F> implements OnInit, AfterViewInit,
     ngOnDestroy(): void;
     isObject(value: any): boolean;
     trackByItemsRow(index: number, itemsRow: T[]): number;
-    trackByItem(index: number, item: T): T;
     update(): void;
     updateItem(index: number, item: T): void;
     deleteItem(index: number): void;

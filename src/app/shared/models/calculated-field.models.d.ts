@@ -16,6 +16,7 @@ import { JobStatus } from '@shared/models/job.models';
 export declare const FORBIDDEN_NAMES: string[];
 interface BaseCalculatedField extends Omit<BaseData<CalculatedFieldId>, 'label'>, HasVersion, HasEntityDebugSettings, HasTenantId, ExportableEntity<CalculatedFieldId> {
     entityId: EntityId;
+    additionalInfo?: any;
 }
 export interface CalculatedFieldSimple extends BaseCalculatedField {
     type: CalculatedFieldType.SIMPLE;
@@ -42,9 +43,11 @@ export interface CalculatedFieldRelatedEntityAggregation extends BaseCalculatedF
     configuration: CalculatedFieldRelatedAggregationConfiguration;
 }
 export type CalculatedField = CalculatedFieldSimple | CalculatedFieldScript | CalculatedFieldGeofencing | CalculatedFieldPropagation | CalculatedFieldRelatedEntityAggregation | CalculatedFieldAlarmRule;
-export type CalculatedFieldInfo = CalculatedField & {
+export type WithCalculatedFieldInfo<T> = T & {
     entityName: string;
 };
+export type CalculatedFieldInfo = WithCalculatedFieldInfo<CalculatedField>;
+export type CalculatedFieldAlarmRuleInfo = WithCalculatedFieldInfo<CalculatedFieldAlarmRule>;
 export declare enum CalculatedFieldType {
     SIMPLE = "SIMPLE",
     SCRIPT = "SCRIPT",
@@ -113,7 +116,7 @@ interface BasePropagationConfiguration {
     arguments: Record<string, CalculatedFieldArgument>;
     output: CalculatedFieldOutput;
 }
-interface CalculatedFieldAlarmRuleConfiguration {
+export interface CalculatedFieldAlarmRuleConfiguration {
     type: CalculatedFieldType.ALARM;
     arguments: Record<string, CalculatedFieldArgument>;
     createRules: Record<AlarmSeverity, AlarmRule>;

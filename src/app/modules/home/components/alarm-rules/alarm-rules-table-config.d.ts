@@ -8,17 +8,18 @@ import { EntityId } from '@shared/models/id/entity-id';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { DestroyRef, Renderer2 } from '@angular/core';
-import { CalculatedFieldsService } from '@core/http/calculated-fields.service';
-import { CalculatedField, CalculatedFieldInfo, CalculatedFieldsQuery } from '@shared/models/calculated-field.models';
+import { AlarmRulesService } from '@core/http/alarm-rules.service';
+import { CalculatedFieldAlarmRule, CalculatedFieldAlarmRuleInfo, CalculatedFieldEventArguments, CalculatedFieldsQuery } from '@shared/models/calculated-field.models';
 import { ImportExportService } from '@shared/import-export/import-export.service';
 import { EntityDebugSettingsService } from '@home/components/entity/debug/entity-debug-settings.service';
 import { DatePipe } from '@angular/common';
 import { UtilsService } from "@core/services/utils.service";
 import { Router } from '@angular/router';
 import { UserPermissionsService } from "@core/http/user-permissions.service";
-type AlarmRuleTableEntity = CalculatedField | CalculatedFieldInfo;
+import { IotHubActionsService } from '@home/components/iot-hub/iot-hub-actions.service';
+export type AlarmRuleTableEntity = CalculatedFieldAlarmRule | CalculatedFieldAlarmRuleInfo;
 export declare class AlarmRulesTableConfig extends EntityTableConfig<AlarmRuleTableEntity> {
-    private calculatedFieldsService;
+    private alarmRulesService;
     private translate;
     private dialog;
     private datePipe;
@@ -35,6 +36,7 @@ export declare class AlarmRulesTableConfig extends EntityTableConfig<AlarmRuleTa
     private readonly;
     private hideClearEventAction;
     private userPermissionsService;
+    private iotHubActions;
     pageMode: boolean;
     readonly tenantId: string;
     additionalDebugActionConfig: {
@@ -42,7 +44,7 @@ export declare class AlarmRulesTableConfig extends EntityTableConfig<AlarmRuleTa
         action: (calculatedField: AlarmRuleTableEntity) => any;
     };
     alarmRuleFilterConfig: CalculatedFieldsQuery;
-    constructor(calculatedFieldsService: CalculatedFieldsService, translate: TranslateService, dialog: MatDialog, datePipe: DatePipe, entityId: EntityId, store: Store<AppState>, destroyRef: DestroyRef, renderer: Renderer2, entityName: string, ownerId: EntityId, importExportService: ImportExportService, entityDebugSettingsService: EntityDebugSettingsService, utilsService: UtilsService, router: Router, readonly: boolean, hideClearEventAction: boolean, userPermissionsService: UserPermissionsService, pageMode?: boolean);
+    constructor(alarmRulesService: AlarmRulesService, translate: TranslateService, dialog: MatDialog, datePipe: DatePipe, entityId: EntityId, store: Store<AppState>, destroyRef: DestroyRef, renderer: Renderer2, entityName: string, ownerId: EntityId, importExportService: ImportExportService, entityDebugSettingsService: EntityDebugSettingsService, utilsService: UtilsService, router: Router, readonly: boolean, hideClearEventAction: boolean, userPermissionsService: UserPermissionsService, iotHubActions: IotHubActionsService, pageMode?: boolean);
     fetchCalculatedFields(pageLink: PageLink): Observable<PageData<AlarmRuleTableEntity>>;
     private allowWritePermission;
     onOpenDebugConfig($event: Event, calculatedField: AlarmRuleTableEntity): void;
@@ -52,11 +54,11 @@ export declare class AlarmRulesTableConfig extends EntityTableConfig<AlarmRuleTa
     private openDebugEventsDialog;
     private openDebugTab;
     private exportAlarmRule;
+    private addAlarmRuleFromIotHub;
     private importCalculatedField;
     private updateImportedCalculatedField;
     private onDebugConfigChanged;
-    private getTestScriptDialog;
+    getTestScriptDialog(calculatedField: AlarmRuleTableEntity, argumentsObj?: CalculatedFieldEventArguments, openCalculatedFieldEdit?: boolean, expression?: string): Observable<string>;
     private openCalculatedField;
     private onCFAction;
 }
-export {};

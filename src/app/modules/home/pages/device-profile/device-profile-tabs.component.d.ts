@@ -17,6 +17,7 @@ export declare class DeviceProfileTabsComponent extends EntityTabsComponent<Devi
     alarmRulesOldVersion: boolean;
     constructor(store: Store<AppState>, destroyRef: DestroyRef, userPermissionsService: UserPermissionsService);
     ngOnInit(): void;
+    resolveTabIndex(tab: string): number;
     protected setEntity(entity: DeviceProfile): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceProfileTabsComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<DeviceProfileTabsComponent, "tb-device-profile-tabs", never, {}, {}, never, never, false, never>;

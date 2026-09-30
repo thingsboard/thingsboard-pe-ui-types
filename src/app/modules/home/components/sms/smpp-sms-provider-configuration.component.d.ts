@@ -14,13 +14,13 @@ export declare class SmppSmsProviderConfigurationComponent implements ControlVal
     smppVersions: {
         value: number;
     }[];
-    bindTypes: string[];
+    bindTypes: BindTypes[];
     bindTypesTranslation: Map<BindTypes, string>;
-    typeOfNumber: string[];
+    typeOfNumber: TypeOfNumber[];
     typeOfNumberMap: Map<TypeOfNumber, import("@shared/models/settings.models").TypeDescriptor>;
-    numberingPlanIdentification: string[];
+    numberingPlanIdentification: NumberingPlanIdentification[];
     numberingPlanIdentificationMap: Map<NumberingPlanIdentification, import("@shared/models/settings.models").TypeDescriptor>;
-    codingSchemes: string[];
+    codingSchemes: CodingSchemes[];
     codingSchemesMap: Map<CodingSchemes, import("@shared/models/settings.models").TypeDescriptor>;
     private propagateChange;
     ngOnInit(): void;

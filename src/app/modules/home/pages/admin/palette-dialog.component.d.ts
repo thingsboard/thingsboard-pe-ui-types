@@ -12,6 +12,8 @@ import { DialogService } from '@core/services/dialog.service';
 import * as i0 from "@angular/core";
 export interface PaletteDialogData {
     palette: Palette;
+    defaultPaletteInfo: ColorPalette;
+    defaultPaletteContrastColorKey: string;
 }
 export declare class PaletteDialogComponent extends DialogComponent<PaletteDialogComponent, ColorPalette> implements OnInit {
     protected store: Store<AppState>;

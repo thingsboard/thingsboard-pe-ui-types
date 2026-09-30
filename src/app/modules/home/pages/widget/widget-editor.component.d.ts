@@ -1,5 +1,5 @@
 import { PageComponent } from '@shared/components/page.component';
-import { ElementRef, EventEmitter, OnDestroy, OnInit, Renderer2, ViewContainerRef } from '@angular/core';
+import { ElementRef, OnDestroy, OnInit, Renderer2, ViewContainerRef } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { WidgetService } from '@core/http/widget.service';
@@ -13,11 +13,15 @@ import { TranslateService } from '@ngx-translate/core';
 import { Ace } from 'ace-builds';
 import { CancelAnimationFrame, RafService } from '@core/services/raf.service';
 import { MatDialog } from '@angular/material/dialog';
+import { Observable } from 'rxjs/internal/Observable';
 import { HttpClient } from '@angular/common/http';
 import { TbPopoverService } from '@shared/components/popover.service';
 import { MatIconButton } from '@angular/material/button';
 import { CustomTranslatePipe } from '@shared/pipe/custom-translate.pipe';
+import { BreadcrumbService } from '@core/services/breadcrumb.service';
+import { HomeService } from '@core/services/home.service';
 import Timeout = NodeJS.Timeout;
+import { WhiteLabelingService } from '@core/http/white-labeling.service';
 import * as i0 from "@angular/core";
 export declare class WidgetEditorComponent extends PageComponent implements OnInit, OnDestroy, HasDirtyFlag {
     protected store: Store<AppState>;
@@ -33,6 +37,9 @@ export declare class WidgetEditorComponent extends PageComponent implements OnIn
     private viewContainerRef;
     private customTranslate;
     private http;
+    private breadcrumbService;
+    wl: WhiteLabelingService;
+    homeService: HomeService;
     topPanelElmRef: ElementRef;
     topLeftPanelElmRef: ElementRef;
     topRightPanelElmRef: ElementRef;
@@ -79,12 +86,13 @@ export declare class WidgetEditorComponent extends PageComponent implements OnIn
     errorAnnotationId: number;
     saveWidgetTimeout: Timeout;
     hotKeys: Hotkey[];
-    updateBreadcrumbs: EventEmitter<any>;
+    breadcrumbs$: Observable<import("../../../../shared/components/breadcrumb").BreadCrumb[]>;
     private rxSubscriptions;
-    constructor(store: Store<AppState>, window: Window, route: ActivatedRoute, router: Router, widgetService: WidgetService, translate: TranslateService, raf: RafService, dialog: MatDialog, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, customTranslate: CustomTranslatePipe, http: HttpClient);
+    constructor(store: Store<AppState>, window: Window, route: ActivatedRoute, router: Router, widgetService: WidgetService, translate: TranslateService, raf: RafService, dialog: MatDialog, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, customTranslate: CustomTranslatePipe, http: HttpClient, breadcrumbService: BreadcrumbService, wl: WhiteLabelingService, homeService: HomeService);
     private init;
     ngOnInit(): void;
     ngOnDestroy(): void;
+    toggleSidenav(): void;
     private initHotKeys;
     private initSplitLayout;
     private initAceEditors;

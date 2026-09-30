@@ -134,10 +134,7 @@ export declare class TimeseriesTableWidgetComponent extends PageComponent implem
     private enterFilterMode;
     exitFilterMode(): void;
     private updateData;
-    trackByColumnIndex(index: any, header: TimeseriesHeader): number;
     trackByRowTimestamp(index: number): number;
-    trackByActionCellDescriptionId(index: number, action: WidgetActionDescriptor): string;
-    trackBySourcesIndex(index: number, source: TimeseriesTableSource): string;
     rowStyle(source: TimeseriesTableSource, row: TimeseriesRow, index: number): Observable<any>;
     cellStyle(source: TimeseriesTableSource, header: TimeseriesHeader, index: number, row: TimeseriesRow, value: any, rowIndex: number): Observable<any>;
     cellContent(source: TimeseriesTableSource, header: TimeseriesHeader, index: number, row: TimeseriesRow, value: any, rowIndex: number): Observable<SafeHtml>;

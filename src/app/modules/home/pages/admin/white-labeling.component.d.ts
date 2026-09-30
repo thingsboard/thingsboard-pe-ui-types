@@ -31,6 +31,7 @@ export declare class WhiteLabelingComponent extends PageComponent implements OnI
     private window;
     wlSettings: UntypedFormGroup;
     private whiteLabelingParams;
+    authUser: import("../../../../shared/public-api").AuthUser;
     isSysAdmin: boolean;
     isTenant: boolean;
     readonly: boolean;
@@ -44,8 +45,20 @@ export declare class WhiteLabelingComponent extends PageComponent implements OnI
     readonly EntityType: typeof EntityType;
     readonly operation: typeof Operation;
     readonly resource: typeof Resource;
+    get logoHeightPlaceholder(): string;
+    private get defaultLogoHeight();
+    get hasCustomCSS(): boolean;
+    get defaultLoginPageBackgroundColor(): string;
+    selectedPrimaryColor: string;
+    selectedAccentColor: string;
+    selectedLoginPageBackgroundColor: string;
+    selectedLoginPageForegroundColor: string;
+    private primaryColorPanelsUnset;
     constructor(store: Store<AppState>, route: ActivatedRoute, userPermissionsService: UserPermissionsService, whiteLabelingService: WhiteLabelingService, uiSettingsService: UiSettingsService, dialog: MatDialog, dialogService: DialogService, fb: UntypedFormBuilder, destroyRef: DestroyRef, translate: TranslateService, window: Window);
     ngOnInit(): void;
+    onLogoHeightKeydown(event: KeyboardEvent): void;
+    onLogoHeightMouseDown(event: MouseEvent): void;
+    private hasLogoHeightValue;
     private loadWhiteLabelingParams;
     buildWhiteLabelingSettingsForm(): void;
     private updateValidators;
@@ -58,6 +71,10 @@ export declare class WhiteLabelingComponent extends PageComponent implements OnI
     private setWhiteLabelingParams;
     domainChange(domain: BaseData<EntityId>): void;
     createDomain(name?: string): void;
+    private updatePaletteColors;
+    private colorFromPalette;
+    private updateLoginPageColors;
+    private updatePrimaryColorPanels;
     static ɵfac: i0.ɵɵFactoryDeclaration<WhiteLabelingComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<WhiteLabelingComponent, "tb-white-labeling", never, {}, {}, never, never, false, never>;
 }

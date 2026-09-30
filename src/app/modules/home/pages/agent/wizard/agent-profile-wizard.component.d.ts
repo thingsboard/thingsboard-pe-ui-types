@@ -1,0 +1,54 @@
+import { EventEmitter, OnInit } from '@angular/core';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { MatStepper } from '@angular/material/stepper';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { Observable } from 'rxjs';
+import { AgentApplicationType, AgentProfile, AgentProvisionType } from '@shared/models/agent.models';
+import { AgentService } from '@core/http/agent.service';
+import { UserPermissionsService } from '@core/http/user-permissions.service';
+import * as i0 from "@angular/core";
+export interface AgentProfileWizardData {
+    defaults?: Partial<AgentProfile>;
+    lockedAppType?: AgentApplicationType;
+    profile?: AgentProfile;
+}
+export declare class AgentProfileWizardComponent implements OnInit {
+    private agentService;
+    private userPermissionsService;
+    private fb;
+    private dialog;
+    private breakpointObserver;
+    data: AgentProfileWizardData | null;
+    dialogRef: MatDialogRef<AgentProfileWizardComponent, AgentProfile> | null;
+    embedded: boolean;
+    showBack: boolean;
+    defaults: Partial<AgentProfile> | null;
+    lockedAppType: AgentApplicationType | null;
+    finished: EventEmitter<AgentProfile>;
+    cancelled: EventEmitter<void>;
+    backClicked: EventEmitter<void>;
+    readonly AgentProvisionType: typeof AgentProvisionType;
+    agentProvisionTypes: AgentProvisionType[];
+    agentProvisionTypeTranslationMap: Map<AgentProvisionType, string>;
+    agentProvisionTypeDescriptionMap: Map<AgentProvisionType, string>;
+    isEdit: boolean;
+    step1Form: UntypedFormGroup;
+    step2Form: UntypedFormGroup;
+    submitting: boolean;
+    assignmentsLoadState: 'loading' | 'loaded' | 'failed';
+    stepper: MatStepper;
+    stepperLabelPosition: Observable<'bottom' | 'end'>;
+    readonly canCreateAppProfile: boolean;
+    constructor(agentService: AgentService, userPermissionsService: UserPermissionsService, fb: UntypedFormBuilder, dialog: MatDialog, breakpointObserver: BreakpointObserver, data: AgentProfileWizardData | null, dialogRef: MatDialogRef<AgentProfileWizardComponent, AgentProfile> | null);
+    ngOnInit(): void;
+    loadAssignedAppProfiles(): void;
+    cancel(): void;
+    back(): void;
+    canSubmit(): boolean;
+    submit(): void;
+    createAppProfile(): void;
+    private openAppProfileWizard;
+    static ɵfac: i0.ɵɵFactoryDeclaration<AgentProfileWizardComponent, [null, null, null, null, null, { optional: true; }, { optional: true; }]>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AgentProfileWizardComponent, "tb-agent-profile-wizard", never, { "embedded": { "alias": "embedded"; "required": false; }; "showBack": { "alias": "showBack"; "required": false; }; "defaults": { "alias": "defaults"; "required": false; }; "lockedAppType": { "alias": "lockedAppType"; "required": false; }; }, { "finished": "finished"; "cancelled": "cancelled"; "backClicked": "backClicked"; }, never, never, false, never>;
+}

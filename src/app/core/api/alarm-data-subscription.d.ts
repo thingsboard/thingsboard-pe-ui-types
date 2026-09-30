@@ -1,6 +1,6 @@
 import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
 import { DatasourceType } from '@shared/models/widget.models';
-import { AlarmDataPageLink, EntityFilter, KeyFilter } from '@shared/models/query/query.models';
+import { AlarmDataPageLink, ComplexOperation, EntityFilter, KeyFilter } from '@shared/models/query/query.models';
 import { SubscriptionTimewindow } from '@shared/models/time/time.models';
 import { AlarmDataListener } from '@core/api/alarm-data.service';
 import { TelemetryWebsocketService } from '@core/ws/telemetry-websocket.service';
@@ -15,6 +15,7 @@ export interface AlarmDataSubscriptionOptions {
     pageLink?: AlarmDataPageLink;
     keyFilters?: Array<KeyFilter>;
     additionalKeyFilters?: Array<KeyFilter>;
+    keyFiltersOperation?: ComplexOperation;
     subscriptionTimewindow?: SubscriptionTimewindow;
 }
 export declare class AlarmDataSubscription {

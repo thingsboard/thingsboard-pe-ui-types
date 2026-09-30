@@ -9,6 +9,7 @@ import { EntityService } from '@core/http/entity.service';
 import { MatAutocomplete, MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { MatChipInputEvent, MatChipGrid } from '@angular/material/chips';
 import { DataKeyType } from '@shared/models/telemetry/telemetry.models';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class EntityKeysListComponent implements ControlValueAccessor, OnInit, AfterViewInit {
     private store;
@@ -20,7 +21,9 @@ export declare class EntityKeysListComponent implements ControlValueAccessor, On
     entityIdValue: EntityId;
     set entityId(entityId: EntityId);
     keysText: string;
+    label: string;
     dataKeyType: DataKeyType;
+    appearance: MatFormFieldAppearance;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
@@ -49,5 +52,5 @@ export declare class EntityKeysListComponent implements ControlValueAccessor, On
     fetchKeys(searchText?: string): Observable<Array<string>>;
     clear(value?: string, emitEvent?: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityKeysListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityKeysListComponent, "tb-entity-keys-list", never, { "entityId": { "alias": "entityId"; "required": false; }; "keysText": { "alias": "keysText"; "required": false; }; "dataKeyType": { "alias": "dataKeyType"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityKeysListComponent, "tb-entity-keys-list", never, { "entityId": { "alias": "entityId"; "required": false; }; "keysText": { "alias": "keysText"; "required": false; }; "label": { "alias": "label"; "required": false; }; "dataKeyType": { "alias": "dataKeyType"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

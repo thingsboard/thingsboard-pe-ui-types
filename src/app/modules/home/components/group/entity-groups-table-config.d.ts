@@ -10,6 +10,7 @@ import { HomeDialogsService } from '@home/dialogs/home-dialogs.service';
 import { EntityType } from '@shared/models/entity-type.models';
 import { MatDialog } from '@angular/material/dialog';
 import { CustomTranslatePipe } from '@shared/pipe/custom-translate.pipe';
+import { AuthUser } from '@shared/models/user.model';
 export declare class EntityGroupsTableConfig extends EntityTableConfig<EntityGroupInfo> {
     private entityGroupService;
     private userPermissionsService;
@@ -20,11 +21,12 @@ export declare class EntityGroupsTableConfig extends EntityTableConfig<EntityGro
     private dialog;
     private homeDialogs;
     private customTranslate;
+    private authUser;
     private params;
     edgeId: string;
     groupType: EntityType;
     shared: boolean;
-    constructor(entityGroupService: EntityGroupService, userPermissionsService: UserPermissionsService, translate: TranslateService, datePipe: DatePipe, utils: UtilsService, router: Router, dialog: MatDialog, homeDialogs: HomeDialogsService, customTranslate: CustomTranslatePipe, params: EntityGroupParams);
+    constructor(entityGroupService: EntityGroupService, userPermissionsService: UserPermissionsService, translate: TranslateService, datePipe: DatePipe, utils: UtilsService, router: Router, dialog: MatDialog, homeDialogs: HomeDialogsService, customTranslate: CustomTranslatePipe, authUser: AuthUser, params: EntityGroupParams);
     private updateActionCellDescriptors;
     private entityGroupWizard;
     private assignEntityGroupsToEdge;

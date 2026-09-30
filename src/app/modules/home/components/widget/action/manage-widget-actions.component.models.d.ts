@@ -1,4 +1,5 @@
-import { CellClickColumnInfo, WidgetActionDescriptor, WidgetActionSource } from '@app/shared/models/widget.models';
+import { CellClickColumnInfo, WidgetActionDescriptor, WidgetActionSource, WidgetActionsMap, WidgetActionType } from '@app/shared/models/widget.models';
+import { EntityAlias } from '@shared/models/alias.models';
 import { CollectionViewer, DataSource } from '@angular/cdk/collections';
 import { Observable } from 'rxjs';
 import { PageData } from '@shared/models/page/page-data';
@@ -8,11 +9,10 @@ import { UtilsService } from '@core/services/utils.service';
 export interface WidgetActionCallbacks {
     fetchDashboardStates: (query: string) => Array<string>;
     fetchCellClickColumns: () => Array<CellClickColumnInfo>;
+    fetchEntityAliases?: () => Array<EntityAlias>;
 }
 export interface WidgetActionsData {
-    actionsMap: {
-        [actionSourceId: string]: Array<WidgetActionDescriptor>;
-    };
+    actionsMap: WidgetActionsMap;
     actionSources: {
         [actionSourceId: string]: WidgetActionSource;
     };
@@ -23,6 +23,15 @@ export interface WidgetActionDescriptorInfo extends WidgetActionDescriptor {
     typeName?: string;
 }
 export declare const toWidgetActionDescriptor: (action: WidgetActionDescriptorInfo) => WidgetActionDescriptor;
+export declare const stripRuntimeWidgetActionFields: <T extends WidgetActionDescriptor>(action: T) => T;
+export interface WidgetActionsImportResult {
+    imported: number;
+    skipped: number;
+    columnIndexesReset: number;
+}
+export declare const mergeWidgetActionsMap: (targetMap: WidgetActionsMap, importedMap: WidgetActionsMap, actionSources: {
+    [actionSourceId: string]: WidgetActionSource;
+}, allowedActionTypes: WidgetActionType[], fetchCellClickColumnsCount: () => number) => WidgetActionsImportResult;
 export declare class WidgetActionsDatasource implements DataSource<WidgetActionDescriptorInfo> {
     private translate;
     private utils;

@@ -37,7 +37,6 @@ export declare class TbMarkdownComponent implements OnChanges {
     private handlePlugins;
     private setPluginClass;
     private handleImages;
-    private sanitize;
     private destroyMarkdownInstanceResources;
     static ɵfac: i0.ɵɵFactoryDeclaration<TbMarkdownComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<TbMarkdownComponent, "tb-markdown", never, { "data": { "alias": "data"; "required": false; }; "context": { "alias": "context"; "required": false; }; "additionalCompileModules": { "alias": "additionalCompileModules"; "required": false; }; "markdownClass": { "alias": "markdownClass"; "required": false; }; "containerClass": { "alias": "containerClass"; "required": false; }; "style": { "alias": "style"; "required": false; }; "applyDefaultMarkdownStyle": { "alias": "applyDefaultMarkdownStyle"; "required": false; }; "additionalStyles": { "alias": "additionalStyles"; "required": false; }; "lineNumbers": { "alias": "lineNumbers"; "required": false; }; "fallbackToPlainMarkdown": { "alias": "fallbackToPlainMarkdown"; "required": false; }; "usePlainMarkdown": { "alias": "usePlainMarkdown"; "required": false; }; }, { "ready": "ready"; }, never, never, false, never>;

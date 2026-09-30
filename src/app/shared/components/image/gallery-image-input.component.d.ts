@@ -20,8 +20,10 @@ export declare class GalleryImageInputComponent extends PageComponent implements
     private cd;
     private destroyRef;
     label: string;
+    hint: string;
     required: boolean;
     detectImageSize: boolean;
+    noPadding: boolean;
     disabled: boolean;
     imageSize: EventEmitter<{
         width: number;
@@ -49,5 +51,5 @@ export declare class GalleryImageInputComponent extends PageComponent implements
     openGallery($event: Event): void;
     private imageLoaded;
     static ɵfac: i0.ɵɵFactoryDeclaration<GalleryImageInputComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<GalleryImageInputComponent, "tb-gallery-image-input", never, { "label": { "alias": "label"; "required": false; }; "required": { "alias": "required"; "required": false; }; "detectImageSize": { "alias": "detectImageSize"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, { "imageSize": "imageSize"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GalleryImageInputComponent, "tb-gallery-image-input", never, { "label": { "alias": "label"; "required": false; }; "hint": { "alias": "hint"; "required": false; }; "required": { "alias": "required"; "required": false; }; "detectImageSize": { "alias": "detectImageSize"; "required": false; }; "noPadding": { "alias": "noPadding"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, { "imageSize": "imageSize"; }, never, never, false, never>;
 }

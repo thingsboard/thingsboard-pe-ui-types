@@ -17,6 +17,7 @@ export declare class AwsKinesisIntegrationFormComponent extends IntegrationForm 
     private updateUsedMetadata;
     private updateEnhancedFanOut;
     private updateModels;
+    getInitialPositionInStreamTranslation(stream: string): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<AwsKinesisIntegrationFormComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<AwsKinesisIntegrationFormComponent, "tb-aws-kinesis-integration-form", never, {}, {}, never, never, false, never>;
 }

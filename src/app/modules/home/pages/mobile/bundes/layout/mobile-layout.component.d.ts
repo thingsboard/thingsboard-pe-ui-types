@@ -32,7 +32,6 @@ export declare class MobileLayoutComponent implements ControlValueAccessor, Vali
     get dragEnabled(): boolean;
     visibleMobilePagesControls(): Array<AbstractControl>;
     mobileItemDrop(event: CdkDragDrop<string[]>): void;
-    trackByMenuItem(_index: number, menuItemControl: AbstractControl): any;
     addCustomMobilePage(index?: number): void;
     isCustom(menuItemControl: AbstractControl): boolean;
     removeCustomPage(index: number): void;

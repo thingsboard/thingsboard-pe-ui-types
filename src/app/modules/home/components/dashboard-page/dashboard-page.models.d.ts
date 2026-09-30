@@ -34,9 +34,11 @@ export interface IDashboardController {
     dashboardContainer: ElementRef;
     dashboardContent: ElementRef;
     elRef: ElementRef;
+    aiConfigurableForDashboard: boolean;
     openRightLayout(): any;
     openDashboardState(stateId: string, openRightLayout: boolean): any;
     addWidget($event: Event, layoutCtx: DashboardPageLayoutContext): any;
+    configureWithAi($event: Event): any;
     editWidget($event: Event, layoutCtx: DashboardPageLayoutContext, widget: Widget): any;
     replaceReferenceWithWidgetCopy($event: Event, layoutCtx: DashboardPageLayoutContext, widget: Widget): any;
     exportWidget($event: Event, layoutCtx: DashboardPageLayoutContext, widget: Widget, widgetTitle: string): any;

@@ -1,4 +1,4 @@
-import { ComponentRef, OnInit } from '@angular/core';
+import { ComponentRef, OnInit, Type } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -11,15 +11,17 @@ import { TbAnchorComponent } from '@shared/components/tb-anchor.component';
 import * as i0 from "@angular/core";
 export declare class RouterTabsComponent extends PageComponent implements OnInit {
     protected store: Store<AppState>;
-    private activatedRoute;
+    activatedRoute: ActivatedRoute;
     router: Router;
     private menuService;
     private activeComponentService;
+    replaceComponentAnchor: TbAnchorComponent;
     tabsHeaderComponentAnchor: TbAnchorComponent;
     tabsHeaderComponentRef: ComponentRef<any>;
     hideCurrentTabs: boolean;
     replaceUrl: boolean;
     tabs$: Observable<Array<MenuSection>>;
+    replaceComponent: Type<any>;
     constructor(store: Store<AppState>, activatedRoute: ActivatedRoute, router: Router, menuService: MenuService, activeComponentService: ActiveComponentService);
     ngOnInit(): void;
     activeComponentChanged(activeComponent: any): void;

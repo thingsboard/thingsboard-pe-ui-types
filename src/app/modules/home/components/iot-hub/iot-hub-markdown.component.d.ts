@@ -1,0 +1,34 @@
+import { ElementRef, EventEmitter, OnChanges, OnInit, SimpleChanges, Type } from '@angular/core';
+import { IotHubApiService } from '@core/http/iot-hub-api.service';
+import { MpItemVersionView } from '@shared/models/iot-hub/iot-hub-version.models';
+import { DevicePackageInfo } from '@shared/models/iot-hub/device-package.models';
+import * as i0 from "@angular/core";
+export declare class TbIotHubMarkdownComponent implements OnInit, OnChanges {
+    private iotHubApiService;
+    private elementRef;
+    data: string | undefined;
+    item: MpItemVersionView | undefined;
+    packageInfo: DevicePackageInfo | undefined;
+    imageMap: Map<string, string> | undefined;
+    onResolveVariable: (key: string) => string | undefined;
+    lineNumbers: boolean;
+    fallbackToPlainMarkdown: boolean;
+    codeBlockMaxHeightPx: number;
+    ready: EventEmitter<HTMLElement>;
+    additionalStyles: string[];
+    parsedData: string;
+    readonly itemLinkCompileModules: Type<any>[];
+    constructor(iotHubApiService: IotHubApiService, elementRef: ElementRef<HTMLElement>);
+    ngOnInit(): void;
+    ngOnChanges(changes: SimpleChanges): void;
+    onReady(): void;
+    private parseData;
+    private forceLinksOpenInNewTab;
+    private prefixResourceUrls;
+    private resolveDocLinks;
+    private resolveImages;
+    private resolveImage;
+    private resolveVariables;
+    static ɵfac: i0.ɵɵFactoryDeclaration<TbIotHubMarkdownComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TbIotHubMarkdownComponent, "tb-iot-hub-markdown", never, { "data": { "alias": "data"; "required": false; }; "item": { "alias": "item"; "required": false; }; "packageInfo": { "alias": "packageInfo"; "required": false; }; "imageMap": { "alias": "imageMap"; "required": false; }; "onResolveVariable": { "alias": "onResolveVariable"; "required": false; }; "lineNumbers": { "alias": "lineNumbers"; "required": false; }; "fallbackToPlainMarkdown": { "alias": "fallbackToPlainMarkdown"; "required": false; }; "codeBlockMaxHeightPx": { "alias": "codeBlockMaxHeightPx"; "required": false; }; }, { "ready": "ready"; }, never, never, false, never>;
+}

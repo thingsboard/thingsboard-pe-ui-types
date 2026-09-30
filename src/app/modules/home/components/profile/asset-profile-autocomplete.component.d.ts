@@ -10,7 +10,7 @@ import { MatAutocomplete } from '@angular/material/autocomplete';
 import { AssetProfileId } from '@shared/models/id/asset-profile-id';
 import { AssetProfile, AssetProfileInfo } from '@shared/models/asset.models';
 import { AssetProfileService } from '@core/http/asset-profile.service';
-import { SubscriptSizing } from '@angular/material/form-field';
+import { MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
 import { Operation, Resource } from '@shared/models/security.models';
 import * as i0 from "@angular/core";
 export declare class AssetProfileAutocompleteComponent implements ControlValueAccessor, OnInit {
@@ -35,6 +35,7 @@ export declare class AssetProfileAutocompleteComponent implements ControlValueAc
     required: boolean;
     disabled: boolean;
     hint: string;
+    appearance: MatFormFieldAppearance;
     assetProfileUpdated: EventEmitter<AssetProfileId>;
     assetProfileChanged: EventEmitter<AssetProfileInfo>;
     assetProfileInput: ElementRef;
@@ -68,5 +69,5 @@ export declare class AssetProfileAutocompleteComponent implements ControlValueAc
     editAssetProfile($event: Event): void;
     openAssetProfileDialog(assetProfile: AssetProfile, isAdd: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AssetProfileAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AssetProfileAutocompleteComponent, "tb-asset-profile-autocomplete", never, { "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "selectDefaultProfile": { "alias": "selectDefaultProfile"; "required": false; }; "selectFirstProfile": { "alias": "selectFirstProfile"; "required": false; }; "displayAllOnEmpty": { "alias": "displayAllOnEmpty"; "required": false; }; "editProfileEnabled": { "alias": "editProfileEnabled"; "required": false; }; "addNewProfile": { "alias": "addNewProfile"; "required": false; }; "showDetailsPageLink": { "alias": "showDetailsPageLink"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "hint": { "alias": "hint"; "required": false; }; }, { "assetProfileUpdated": "assetProfileUpdated"; "assetProfileChanged": "assetProfileChanged"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AssetProfileAutocompleteComponent, "tb-asset-profile-autocomplete", never, { "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "selectDefaultProfile": { "alias": "selectDefaultProfile"; "required": false; }; "selectFirstProfile": { "alias": "selectFirstProfile"; "required": false; }; "displayAllOnEmpty": { "alias": "displayAllOnEmpty"; "required": false; }; "editProfileEnabled": { "alias": "editProfileEnabled"; "required": false; }; "addNewProfile": { "alias": "addNewProfile"; "required": false; }; "showDetailsPageLink": { "alias": "showDetailsPageLink"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "hint": { "alias": "hint"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; }, { "assetProfileUpdated": "assetProfileUpdated"; "assetProfileChanged": "assetProfileChanged"; }, never, never, false, never>;
 }

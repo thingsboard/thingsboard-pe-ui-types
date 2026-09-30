@@ -1,6 +1,7 @@
 import { OnDestroy, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { FullTimeUnit, TimeUnit, TimeUnitMilli } from '@shared/models/time/time.models';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class TimeUnitSelectComponent implements OnInit, OnDestroy, ControlValueAccessor, Validator {
     private fb;
@@ -16,6 +17,7 @@ export declare class TimeUnitSelectComponent implements OnInit, OnDestroy, Contr
     patternText: string;
     minTime: number;
     minText: string;
+    appearance: MatFormFieldAppearance;
     private propagateChange;
     constructor(fb: UntypedFormBuilder);
     ngOnInit(): void;
@@ -28,5 +30,5 @@ export declare class TimeUnitSelectComponent implements OnInit, OnDestroy, Contr
     private updateModel;
     private calculateTimeUnit;
     static ɵfac: i0.ɵɵFactoryDeclaration<TimeUnitSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TimeUnitSelectComponent, "tb-time-unit-select", never, { "disabled": { "alias": "disabled"; "required": false; }; "labelText": { "alias": "labelText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "patternText": { "alias": "patternText"; "required": false; }; "minTime": { "alias": "minTime"; "required": false; }; "minText": { "alias": "minText"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeUnitSelectComponent, "tb-time-unit-select", never, { "disabled": { "alias": "disabled"; "required": false; }; "labelText": { "alias": "labelText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "patternText": { "alias": "patternText"; "required": false; }; "minTime": { "alias": "minTime"; "required": false; }; "minText": { "alias": "minText"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; }, {}, never, never, false, never>;
 }

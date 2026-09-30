@@ -27,6 +27,7 @@ export declare class MqttDeviceProfileTransportConfigurationComponent implements
     private updateTransportPayloadBasedControls;
     private validationMQTTTopic;
     private uniqueDeviceTopicValidator;
+    getTransportPayloadType(type: string): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<MqttDeviceProfileTransportConfigurationComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<MqttDeviceProfileTransportConfigurationComponent, "tb-mqtt-device-profile-transport-configuration", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

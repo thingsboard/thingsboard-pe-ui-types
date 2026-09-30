@@ -11,6 +11,7 @@ import { ImportExportService } from '@shared/import-export/import-export.service
 import { BaseWidgetType, WidgetTypeDetails, WidgetTypeInfo } from '@shared/models/widget.models';
 import { MatDialog } from '@angular/material/dialog';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
+import { IotHubActionsService } from '@home/components/iot-hub/iot-hub-actions.service';
 import * as i0 from "@angular/core";
 export declare class WidgetTypesTableConfigResolver {
     private store;
@@ -21,11 +22,13 @@ export declare class WidgetTypesTableConfigResolver {
     private importExport;
     private datePipe;
     private router;
+    private iotHubActions;
     private readonly config;
-    constructor(store: Store<AppState>, dialog: MatDialog, widgetsService: WidgetService, userPermissionsService: UserPermissionsService, translate: TranslateService, importExport: ImportExportService, datePipe: DatePipe, router: Router);
+    constructor(store: Store<AppState>, dialog: MatDialog, widgetsService: WidgetService, userPermissionsService: UserPermissionsService, translate: TranslateService, importExport: ImportExportService, datePipe: DatePipe, router: Router, iotHubActions: IotHubActionsService);
     resolve(): EntityTableConfig<WidgetTypeInfo | WidgetTypeDetails>;
     isWidgetTypeEditable(widgetType: BaseWidgetType, authority: Authority): boolean;
     addWidgetType($event: Event): void;
+    addWidgetFromIotHub(): void;
     importWidgetType($event: Event): void;
     openWidgetEditor($event: Event, widgetType: BaseWidgetType): void;
     private openWidgetTypeDetails;

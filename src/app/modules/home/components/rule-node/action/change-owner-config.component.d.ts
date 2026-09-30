@@ -6,7 +6,7 @@ export declare class ChangeOwnerConfigComponent extends RuleNodeConfigurationCom
     private fb;
     changeOwnerConfigForm: UntypedFormGroup;
     ownerType: typeof OwnerType;
-    ownerTypes: string[];
+    ownerTypes: OwnerType[];
     ownerTypeTranslationsMap: Map<OwnerType, string>;
     constructor(fb: UntypedFormBuilder);
     protected configForm(): UntypedFormGroup;

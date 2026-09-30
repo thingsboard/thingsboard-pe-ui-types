@@ -21,9 +21,11 @@ export declare class CfAlarmRuleComponent implements ControlValueAccessor, OnIni
         dashboardId: import("@angular/forms").FormControl<any>;
     }>;
     private propagateChange;
+    private onValidatorChange;
     constructor(dialog: MatDialog, fb: FormBuilder, destroyRef: DestroyRef);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
+    registerOnValidatorChange(fn: () => void): void;
     ngOnInit(): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: AlarmRule): void;

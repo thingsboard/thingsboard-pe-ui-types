@@ -16,7 +16,9 @@ export declare class NotificationService {
     markNotificationAsRead(id: string, config?: RequestConfig): Observable<void>;
     markAllNotificationsAsRead(config?: RequestConfig): Observable<void>;
     createNotificationRequest(notification: NotificationRequest, config?: RequestConfig): Observable<NotificationRequest>;
-    sendEntitiesLimitIncreaseRequest(entityType: EntityType, config?: RequestConfig): Observable<void>;
+    sendEntitiesLimitIncreaseRequest(entityType: EntityType, subscriptionViolation?: boolean, config?: RequestConfig): Observable<void>;
+    sendAddonAccessRequest(addonType: AddonType, config?: RequestConfig): Observable<void>;
+    sendPlanUpgradeRequest(planName: string, config?: RequestConfig): Observable<void>;
     getNotificationRequestById(id: string, config?: RequestConfig): Observable<NotificationRequest>;
     getAvailableDeliveryMethods(config?: RequestConfig): Observable<Array<NotificationDeliveryMethod>>;
     deleteNotificationRequest(id: string, config?: RequestConfig): Observable<void>;

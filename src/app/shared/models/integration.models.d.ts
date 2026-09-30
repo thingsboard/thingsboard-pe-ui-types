@@ -64,6 +64,7 @@ export interface IntegrationTypeInfo {
 export declare const integrationTypeInfoMap: Map<IntegrationType, IntegrationTypeInfo>;
 export type IntegrationConfiguration = ApachePulsarIntegration | HttpIntegration | ThingParkIntegration | LoriotIntegration | MqttIntegration | AwsIotIntegration | AwsSqsIntegration | AwsKinesisIntegration | TtnIntegration | ChipStackIntegration | ParticleIntegration | KpnIntegration | AzureEventHubIntegration | AzureIotHubIntegration | OpcUaIntegration | UpdIntegration | TcpIntegration | KafkaIntegration | RabbitMqIntegration | PubSubIntegration | CoapIntegration | TuyaIntegration | CustomIntegration;
 export declare function getIntegrationHelpLink(integration: Integration): string;
+export declare function getIntegrationHelpLinkByType(type: IntegrationType): string;
 export interface IntegrationMetaData {
     metadata?: {
         [k: string]: string;
@@ -285,6 +286,7 @@ export interface ChipStackIntegration {
         applicationServerUrl: string;
         applicationServerAPIToken: string;
         useAPI4Plus: boolean;
+        allowDownlink: boolean;
     };
 }
 export interface ParticleIntegration {
@@ -301,7 +303,6 @@ export interface KpnIntegration {
     baseUrl: string;
     httpEndpoint: string;
     destinationSharedSecret: string;
-    gripTenantId: string;
     apiId: string;
     apiKey: string;
     enableSecurity?: boolean;

@@ -22,9 +22,9 @@ export declare class AggregateLatestMappingDialogComponent extends DialogCompone
     fb: UntypedFormBuilder;
     latestTelemetry: typeof LatestTelemetry;
     attributeScope: typeof AttributeScope;
-    attributeScopes: string[];
+    attributeScopes: AttributeScope[];
     telemetryTypeTranslationMap: Map<import("@shared/public-api").TelemetryType, string>;
-    mathFunctions: string[];
+    mathFunctions: AggMathFunction[];
     mathFunctionsTranslationMap: Map<AggMathFunction, string>;
     separatorKeysCodes: number[];
     aggLatestMappingFormGroup: UntypedFormGroup;

@@ -68,8 +68,9 @@ export interface MapDataLayerSettings extends MapDataSourceSettings {
     edit: DataLayerEditSettings;
 }
 export declare const defaultBaseDataLayerSettings: (mapType: MapType) => Partial<MapDataLayerSettings>;
-export type MapDataLayerType = 'trips' | 'markers' | 'polygons' | 'circles' | 'polylines';
-export declare const mapDataLayerTypes: MapDataLayerType[];
+export declare const mapDataLayerTypes: readonly ["trips", "markers", "polygons", "circles", "polylines"];
+export type MapDataLayerType = typeof mapDataLayerTypes[number];
+export declare const latestMapDataLayerTypes: MapDataLayerType[];
 export declare const mapDataLayerValid: (dataLayer: MapDataLayerSettings, type: MapDataLayerType) => boolean;
 export declare const mapDataLayerValidator: (type: MapDataLayerType) => ValidatorFn;
 export declare enum MarkerType {
@@ -291,7 +292,9 @@ export declare const DEFAULT_ZOOM_LEVEL = 8;
 export declare const defaultBaseMapSettings: BaseMapSettings;
 export declare const defaultMapActionButtonSettings: MapActionButtonSettings;
 export declare enum MapProvider {
+    openfreemap = "openfreemap",
     openstreet = "openstreet",
+    carto = "carto",
     google = "google",
     here = "here",
     tencent = "tencent",
@@ -319,9 +322,7 @@ export declare enum OpenStreetLayerType {
     openStreetHot = "OpenStreetMap.HOT",
     esriWorldStreetMap = "Esri.WorldStreetMap",
     esriWorldTopoMap = "Esri.WorldTopoMap",
-    esriWorldImagery = "Esri.WorldImagery",
-    cartoDbPositron = "CartoDB.Positron",
-    cartoDbDarkMatter = "CartoDB.DarkMatter"
+    esriWorldImagery = "Esri.WorldImagery"
 }
 export declare const openStreetLayerTypes: OpenStreetLayerType[];
 export declare const openStreetMapLayerTranslationMap: Map<OpenStreetLayerType, string>;
@@ -330,6 +331,30 @@ export interface OpenStreetMapLayerSettings extends MapLayerSettings {
     layerType: OpenStreetLayerType;
 }
 export declare const defaultOpenStreetMapLayerSettings: OpenStreetMapLayerSettings;
+export declare enum OpenFreeMapStyleType {
+    bright = "bright",
+    positron = "positron",
+    liberty = "liberty"
+}
+export declare const openFreeMapStyleTypes: OpenFreeMapStyleType[];
+export declare const openFreeMapStyleTranslationMap: Map<OpenFreeMapStyleType, string>;
+export interface OpenFreeMapLayerSettings extends MapLayerSettings {
+    provider: MapProvider.openfreemap;
+    layerType: OpenFreeMapStyleType;
+}
+export declare const defaultOpenFreeMapLayerSettings: OpenFreeMapLayerSettings;
+export declare enum CartoLayerType {
+    cartoPositron = "CartoDB.Positron",
+    cartoDarkMatter = "CartoDB.DarkMatter"
+}
+export declare const cartoLayerTypes: CartoLayerType[];
+export declare const cartoLayerTranslationMap: Map<CartoLayerType, string>;
+export interface CartoMapLayerSettings extends MapLayerSettings {
+    provider: MapProvider.carto;
+    layerType: CartoLayerType;
+    apiKey?: string;
+}
+export declare const defaultCartoMapLayerSettings: CartoMapLayerSettings;
 export declare enum GoogleLayerType {
     roadmap = "roadmap",
     satellite = "satellite",
@@ -358,6 +383,7 @@ export interface HereMapLayerSettings extends MapLayerSettings {
     apiKey: string;
 }
 export declare const defaultHereMapLayerSettings: HereMapLayerSettings;
+export declare const hereV3Provider: (layerType: string) => string;
 export declare enum TencentLayerType {
     tencentNormal = "Tencent.Normal",
     tencentSatellite = "Tencent.Satellite",
@@ -373,8 +399,13 @@ export declare const defaultTencentMapLayerSettings: TencentMapLayerSettings;
 export interface CustomMapLayerSettings extends MapLayerSettings {
     provider: MapProvider.custom;
     tileUrl: string;
+    vectorTiles?: boolean;
+    customAttribution?: string;
 }
 export declare const defaultCustomMapLayerSettings: CustomMapLayerSettings;
+export declare const mapProviderHasApiKey: (provider: MapProvider) => boolean;
+export declare const mapProviderRequiresApiKey: (provider: MapProvider) => boolean;
+export declare const normalizeMapLayerSettings: (layer: MapLayerSettings) => MapLayerSettings;
 export declare const defaultMapLayerSettings: (provider: MapProvider) => MapLayerSettings;
 export declare const defaultMapLayers: MapLayerSettings[];
 export interface GeoMapSettings extends BaseMapSettings {
@@ -391,6 +422,7 @@ export interface ImageMapSourceSettings {
     entityAliasId?: string;
     entityKey?: DataKey;
 }
+export declare const WEBGL_ERROR_EVENT = "gl-error";
 export declare const imageMapSourceSettingsValid: (imageSource: ImageMapSourceSettings) => boolean;
 export declare const imageMapSourceSettingsValidator: ValidatorFn;
 export declare const defaultImageMapSourceSettings: ImageMapSourceSettings;

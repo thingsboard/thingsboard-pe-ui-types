@@ -1,6 +1,6 @@
 import { AfterViewInit, ChangeDetectorRef, OnInit } from '@angular/core';
 import { TbPopoverComponent } from '@shared/components/popover.component';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, UntypedFormArray } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, UntypedFormArray } from '@angular/forms';
 import { ArgumentEntityType, CalculatedFieldGeofencing, CalculatedFieldGeofencingValue, CalculatedFieldType, GeofencingReportStrategy } from '@shared/models/calculated-field.models';
 import { AttributeScope, DataKeyType } from '@shared/models/telemetry/telemetry.models';
 import { EntityId } from '@shared/models/id/entity-id';
@@ -77,7 +77,6 @@ export declare class CalculatedFieldGeofencingZoneGroupsPanelComponent implement
     private observeEntityTypeChanges;
     private levelsRequired;
     levelsFormArray(): UntypedFormArray;
-    trackByKey(_index: number, keyControl: AbstractControl): any;
     removeKey(index: number): void;
     addKey(): void;
     keyDrop(event: CdkDragDrop<string[]>): void;

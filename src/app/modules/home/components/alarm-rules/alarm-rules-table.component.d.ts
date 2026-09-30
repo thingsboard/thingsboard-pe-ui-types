@@ -5,7 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { CalculatedFieldsService } from '@core/http/calculated-fields.service';
+import { AlarmRulesService } from '@core/http/alarm-rules.service';
 import { ImportExportService } from '@shared/import-export/import-export.service';
 import { EntityDebugSettingsService } from '@home/components/entity/debug/entity-debug-settings.service';
 import { DatePipe } from '@angular/common';
@@ -13,9 +13,10 @@ import { AlarmRulesTableConfig } from "@home/components/alarm-rules/alarm-rules-
 import { UtilsService } from "@core/services/utils.service";
 import { ActivatedRoute, Router } from "@angular/router";
 import { UserPermissionsService } from "@core/http/user-permissions.service";
+import { IotHubActionsService } from '@home/components/iot-hub/iot-hub-actions.service';
 import * as i0 from "@angular/core";
 export declare class AlarmRulesTableComponent {
-    private calculatedFieldsService;
+    private alarmRulesService;
     private translate;
     private dialog;
     private store;
@@ -29,6 +30,7 @@ export declare class AlarmRulesTableComponent {
     private route;
     private router;
     private userPermissionsService;
+    private iotHubActions;
     entitiesTable: EntitiesTableComponent;
     active: import("@angular/core").InputSignal<boolean>;
     entityId: import("@angular/core").InputSignal<EntityId>;
@@ -38,7 +40,7 @@ export declare class AlarmRulesTableComponent {
     hideClearEventAction: import("@angular/core").InputSignal<boolean>;
     alarmRulesTableConfig: AlarmRulesTableConfig;
     pageMode: boolean;
-    constructor(calculatedFieldsService: CalculatedFieldsService, translate: TranslateService, dialog: MatDialog, store: Store<AppState>, datePipe: DatePipe, cd: ChangeDetectorRef, renderer: Renderer2, importExportService: ImportExportService, entityDebugSettingsService: EntityDebugSettingsService, utilsService: UtilsService, destroyRef: DestroyRef, route: ActivatedRoute, router: Router, userPermissionsService: UserPermissionsService);
+    constructor(alarmRulesService: AlarmRulesService, translate: TranslateService, dialog: MatDialog, store: Store<AppState>, datePipe: DatePipe, cd: ChangeDetectorRef, renderer: Renderer2, importExportService: ImportExportService, entityDebugSettingsService: EntityDebugSettingsService, utilsService: UtilsService, destroyRef: DestroyRef, route: ActivatedRoute, router: Router, userPermissionsService: UserPermissionsService, iotHubActions: IotHubActionsService);
     static ɵfac: i0.ɵɵFactoryDeclaration<AlarmRulesTableComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<AlarmRulesTableComponent, "tb-alarm-rules-table", never, { "active": { "alias": "active"; "required": false; "isSignal": true; }; "entityId": { "alias": "entityId"; "required": false; "isSignal": true; }; "entityName": { "alias": "entityName"; "required": false; "isSignal": true; }; "ownerId": { "alias": "ownerId"; "required": false; "isSignal": true; }; "readonly": { "alias": "readonly"; "required": false; "isSignal": true; }; "hideClearEventAction": { "alias": "hideClearEventAction"; "required": false; "isSignal": true; }; }, {}, never, never, false, never>;
 }

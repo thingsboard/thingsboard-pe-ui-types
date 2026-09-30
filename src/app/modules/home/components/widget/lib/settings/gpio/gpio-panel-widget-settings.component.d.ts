@@ -14,7 +14,9 @@ export declare class GpioPanelWidgetSettingsComponent extends WidgetSettingsComp
     protected doUpdateSettings(settingsForm: UntypedFormGroup, settings: WidgetSettings): void;
     private prepareGpioListFormArray;
     gpioListFormArray(): UntypedFormArray;
-    trackByGpioItem(index: number, gpioItemControl: AbstractControl): any;
+    get typedSelectOptions(): (AbstractControl & {
+        new?: boolean;
+    })[];
     removeGpioItem(index: number): void;
     addGpioItem(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<GpioPanelWidgetSettingsComponent, never>;

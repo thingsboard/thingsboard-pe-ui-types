@@ -1,5 +1,5 @@
 import { ElementRef, OnDestroy, OnInit } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, FormGroup, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { ControlValueAccessor, FormGroup, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { ColorGradientSettings } from '@shared/models/widget-settings.models';
 import { TbPopoverComponent } from '@shared/components/popover.component';
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
@@ -41,7 +41,6 @@ export declare class GradientComponent implements OnInit, ControlValueAccessor, 
     private advancedGradientControl;
     get advancedGradientListFormArray(): UntypedFormArray;
     get advancedGradientListFormGroups(): FormGroup[];
-    trackByGradient(index: number, gradientControl: AbstractControl): any;
     removeGradient(index: number, advanced?: boolean): void;
     gradientDrop(event: CdkDragDrop<string[]>, advanced?: boolean): void;
     addGradient(advanced?: boolean): void;

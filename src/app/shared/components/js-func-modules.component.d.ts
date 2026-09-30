@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, EventEmitter, OnInit } from '@angular/core';
 import { TbPopoverComponent } from '@shared/components/popover.component';
-import { AbstractControl, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import * as i0 from "@angular/core";
 export declare class JsFuncModulesComponent implements OnInit {
     private fb;
@@ -19,7 +19,6 @@ export declare class JsFuncModulesComponent implements OnInit {
     applyModules(): void;
     moduleAliasUnique(alias: string, index: number): boolean;
     modulesFormArray(): UntypedFormArray;
-    trackByModule(_index: number, moduleControl: AbstractControl): any;
     removeModule(index: number, emitEvent?: boolean): void;
     addModule(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<JsFuncModulesComponent, never>;

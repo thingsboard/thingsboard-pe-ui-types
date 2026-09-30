@@ -7,6 +7,7 @@ import { DialogService } from '@core/services/dialog.service';
 import { TranslateService } from '@ngx-translate/core';
 import { TbPopoverService } from '@shared/components/popover.service';
 import { MatButton } from '@angular/material/button';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class MaterialIconSelectComponent extends PageComponent implements OnInit, ControlValueAccessor {
     protected store: Store<AppState>;
@@ -25,6 +26,7 @@ export declare class MaterialIconSelectComponent extends PageComponent implement
     disabled: boolean;
     iconClearButton: boolean;
     allowedCustomIcon: boolean;
+    appearance: MatFormFieldAppearance;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
@@ -42,5 +44,5 @@ export declare class MaterialIconSelectComponent extends PageComponent implement
     openIconPopup($event: Event, matButton: MatButton): void;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<MaterialIconSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MaterialIconSelectComponent, "tb-material-icon-select", never, { "asBoxInput": { "alias": "asBoxInput"; "required": false; }; "label": { "alias": "label"; "required": false; }; "color": { "alias": "color"; "required": false; }; "backgroundColor": { "alias": "backgroundColor"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "iconClearButton": { "alias": "iconClearButton"; "required": false; }; "allowedCustomIcon": { "alias": "allowedCustomIcon"; "required": false; }; "required": { "alias": "required"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MaterialIconSelectComponent, "tb-material-icon-select", never, { "asBoxInput": { "alias": "asBoxInput"; "required": false; }; "label": { "alias": "label"; "required": false; }; "color": { "alias": "color"; "required": false; }; "backgroundColor": { "alias": "backgroundColor"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "iconClearButton": { "alias": "iconClearButton"; "required": false; }; "allowedCustomIcon": { "alias": "allowedCustomIcon"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "required": { "alias": "required"; "required": false; }; }, {}, never, never, false, never>;
 }

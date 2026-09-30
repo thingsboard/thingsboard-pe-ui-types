@@ -1,5 +1,5 @@
 import { DestroyRef, OnInit } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { TimeSeriesChartStateSettings } from '@home/components/widget/lib/chart/time-series-chart.models';
 import * as i0 from "@angular/core";
 export declare class TimeSeriesChartStatesPanelComponent implements ControlValueAccessor, OnInit, Validator {
@@ -21,7 +21,6 @@ export declare class TimeSeriesChartStatesPanelComponent implements ControlValue
         };
     };
     statesFormArray(): UntypedFormArray;
-    trackByState(index: number, stateControl: AbstractControl): any;
     removeState(index: number): void;
     addState(): void;
     private prepareStatesFormArray;

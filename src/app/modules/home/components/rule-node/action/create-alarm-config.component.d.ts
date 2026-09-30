@@ -16,7 +16,7 @@ export declare class CreateAlarmConfigComponent extends RuleNodeConfigurationCom
     private translate;
     jsFuncComponent: JsFuncComponent;
     tbelFuncComponent: JsFuncComponent;
-    alarmSeverities: string[];
+    alarmSeverities: AlarmSeverity[];
     alarmSeverityTranslationMap: Map<AlarmSeverity, string>;
     createAlarmConfigForm: UntypedFormGroup;
     separatorKeysCodes: number[];

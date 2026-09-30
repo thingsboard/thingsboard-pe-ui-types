@@ -9,17 +9,17 @@ import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatExpansionPanel } from '@angular/material/expansion';
 import { DialogService } from '@core/services/dialog.service';
-import { AuthService } from '@core/auth/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RuleChain, RuleChainMetaData, RuleChainType } from '@shared/models/rule-chain.models';
 import { NgxFlowchartComponent, UserCallbacks } from 'ngx-flowchart';
-import { FcRuleEdge, FcRuleNode, FcRuleNodeType, LinkLabel, RuleNodeComponentDescriptor, RuleNodeType } from '@shared/models/rule-node.models';
+import { FcRuleEdge, FcRuleNode, FcRuleNodeType, FcRuleNote, LinkLabel, RuleNodeComponentDescriptor, RuleNodeType } from '@shared/models/rule-node.models';
 import { FcRuleNodeModel, FcRuleNodeTypeModel } from './rulechain-page.models';
 import { RuleChainService } from '@core/http/rule-chain.service';
 import { Observable } from 'rxjs';
 import { ISearchableComponent } from '../../models/searchable-component.models';
 import { RuleNodeDetailsComponent } from '@home/pages/rulechain/rule-node-details.component';
 import { RuleNodeLinkComponent } from './rule-node-link.component';
+import { RuleNoteEditorComponent } from './rule-note-editor.component';
 import { DialogComponent } from '@shared/components/dialog.component';
 import { MatMenuTrigger } from '@angular/material/menu';
 import { ItemBufferService } from '@core/services/item-buffer.service';
@@ -34,11 +34,9 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { AdditionalDebugActionConfig } from '@home/components/entity/debug/entity-debug-settings.model';
 import * as i0 from "@angular/core";
 export declare class RuleChainPageComponent extends PageComponent implements AfterViewInit, OnInit, OnDestroy, HasDirtyFlag, ISearchableComponent, AfterViewChecked {
-    protected store: Store<AppState>;
     private route;
     private router;
     private ruleChainService;
-    private authService;
     private translate;
     private itembuffer;
     private userPermissionsService;
@@ -88,9 +86,13 @@ export declare class RuleChainPageComponent extends PageComponent implements Aft
     ruleNodeTestButtonLabel: string;
     ruleNodeComponent: RuleNodeDetailsComponent;
     ruleNodeLinkComponent: RuleNodeLinkComponent;
+    ruleNoteComponent: RuleNoteEditorComponent;
     editingRuleNodeLink: FcRuleEdge;
     isEditingRuleNodeLink: boolean;
     editingRuleNodeLinkIndex: number;
+    editingNote: FcRuleNote;
+    isEditingNote: boolean;
+    editingNoteIndex: number;
     hotKeys: Hotkey[];
     enableHotKeys: boolean;
     ruleNodeSearch: string;
@@ -135,11 +137,12 @@ export declare class RuleChainPageComponent extends PageComponent implements Aft
         rightConnectorClass: string;
         canvasResizeThreshold: number;
         canvasResizeStep: number;
+        noteClass: string;
     };
     updateBreadcrumbs: EventEmitter<any>;
     private destroy$;
     private tooltipTimeout;
-    constructor(store: Store<AppState>, route: ActivatedRoute, router: Router, ruleChainService: RuleChainService, authService: AuthService, translate: TranslateService, itembuffer: ItemBufferService, userPermissionsService: UserPermissionsService, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, changeDetector: ChangeDetectorRef, sanitizer: DomSanitizer, dialog: MatDialog, dialogService: DialogService, fb: FormBuilder);
+    constructor(route: ActivatedRoute, router: Router, ruleChainService: RuleChainService, translate: TranslateService, itembuffer: ItemBufferService, userPermissionsService: UserPermissionsService, popoverService: TbPopoverService, renderer: Renderer2, viewContainerRef: ViewContainerRef, changeDetector: ChangeDetectorRef, sanitizer: DomSanitizer, dialog: MatDialog, dialogService: DialogService, fb: FormBuilder);
     ngOnInit(): void;
     ngAfterViewChecked(): void;
     ngAfterViewInit(): void;
@@ -165,8 +168,14 @@ export declare class RuleChainPageComponent extends PageComponent implements Aft
     openNodeDetails(node: FcRuleNode): void;
     openLinkDetails(edge: FcRuleEdge): void;
     private copyNode;
-    private copyRuleNodes;
-    private pasteRuleNodes;
+    private copyRuleChainObjects;
+    private pasteRuleChainObjects;
+    addNote(event?: MouseEvent): void;
+    private prepareNoteContextMenu;
+    private openNoteDetails;
+    saveNote(): void;
+    onRevertNoteEdit(): void;
+    onEditNoteClosed(): void;
     onDetailsDrawerClosed(): void;
     onEditRuleNodeClosed(): void;
     onEditRuleNodeLinkClosed(): void;
@@ -213,7 +222,7 @@ export interface AddRuleNodeLinkDialogData {
     allowCustomLabels: boolean;
     sourceRuleChainId: string;
 }
-export declare class AddRuleNodeLinkDialogComponent extends DialogComponent<AddRuleNodeLinkDialogComponent, FcRuleEdge> implements OnInit, ErrorStateMatcher {
+export declare class AddRuleNodeLinkDialogComponent extends DialogComponent<AddRuleNodeLinkDialogComponent, FcRuleEdge> implements ErrorStateMatcher {
     protected store: Store<AppState>;
     protected router: Router;
     data: AddRuleNodeLinkDialogData;
@@ -229,7 +238,6 @@ export declare class AddRuleNodeLinkDialogComponent extends DialogComponent<AddR
     sourceRuleChainId: string;
     submitted: boolean;
     constructor(store: Store<AppState>, router: Router, data: AddRuleNodeLinkDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<AddRuleNodeLinkDialogComponent, FcRuleEdge>, fb: UntypedFormBuilder);
-    ngOnInit(): void;
     isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     cancel(): void;
     add(): void;
@@ -241,7 +249,7 @@ export interface AddRuleNodeDialogData {
     ruleChainId: string;
     ruleChainType: RuleChainType;
 }
-export declare class AddRuleNodeDialogComponent extends DialogComponent<AddRuleNodeDialogComponent, FcRuleNode> implements OnInit, ErrorStateMatcher {
+export declare class AddRuleNodeDialogComponent extends DialogComponent<AddRuleNodeDialogComponent, FcRuleNode> implements ErrorStateMatcher {
     protected store: Store<AppState>;
     protected router: Router;
     data: AddRuleNodeDialogData;
@@ -253,7 +261,6 @@ export declare class AddRuleNodeDialogComponent extends DialogComponent<AddRuleN
     ruleChainType: RuleChainType;
     submitted: boolean;
     constructor(store: Store<AppState>, router: Router, data: AddRuleNodeDialogData, errorStateMatcher: ErrorStateMatcher, dialogRef: MatDialogRef<AddRuleNodeDialogComponent, FcRuleNode>);
-    ngOnInit(): void;
     isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean;
     helpLinkIdForRuleNodeType(): string;
     cancel(): void;
@@ -281,4 +288,16 @@ export declare class CreateNestedRuleChainDialogComponent extends DialogComponen
     add(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<CreateNestedRuleChainDialogComponent, [null, null, null, { skipSelf: true; }, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<CreateNestedRuleChainDialogComponent, "tb-create-nested-rulechain-dialog", never, {}, {}, never, never, false, never>;
+}
+export declare class AddNoteDialogComponent extends DialogComponent<AddNoteDialogComponent, Partial<FcRuleNote>> {
+    protected store: Store<AppState>;
+    protected router: Router;
+    data: FcRuleNote;
+    dialogRef: MatDialogRef<AddNoteDialogComponent, Partial<FcRuleNote>>;
+    ruleNoteComponent: RuleNoteEditorComponent;
+    constructor(store: Store<AppState>, router: Router, data: FcRuleNote, dialogRef: MatDialogRef<AddNoteDialogComponent, Partial<FcRuleNote>>);
+    cancel(): void;
+    save(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<AddNoteDialogComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AddNoteDialogComponent, "tb-add-note-dialog", never, {}, {}, never, never, false, never>;
 }

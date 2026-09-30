@@ -1,26 +1,26 @@
-import { OnDestroy, OnInit } from '@angular/core';
-import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
-import { EntityKeyType, KeyFilterInfo } from '@shared/models/query/query.models';
+import { DestroyRef, OnInit } from '@angular/core';
+import { ControlValueAccessor, FormArray, FormBuilder, FormControl, ValidationErrors, Validator } from '@angular/forms';
+import { ComplexOperation, EntityKeyType, KeyFilter, KeyFilterInfo } from '@shared/models/query/query.models';
 import { MatDialog } from '@angular/material/dialog';
 import { EntityId } from '@shared/models/id/entity-id';
 import * as i0 from "@angular/core";
-export declare class KeyFilterListComponent implements ControlValueAccessor, Validator, OnInit, OnDestroy {
+export declare class KeyFilterListComponent implements ControlValueAccessor, Validator, OnInit {
     private fb;
     private dialog;
+    private destroyRef;
     disabled: boolean;
     displayUserParameters: boolean;
     allowUserDynamicSource: boolean;
     telemetryKeysOnly: boolean;
     entityId: EntityId;
-    keyFilterListFormGroup: UntypedFormGroup;
+    operation: ComplexOperation;
+    complexOperationTranslationMap: Map<ComplexOperation, string>;
     entityKeyTypeTranslations: Map<EntityKeyType, string>;
-    keyFiltersControl: UntypedFormControl;
-    private destroy$;
+    keyFiltersFormArray: FormArray<FormControl<KeyFilterInfo>>;
+    keyFiltersControl: FormControl<Array<KeyFilter>>;
     private propagateChange;
-    constructor(fb: UntypedFormBuilder, dialog: MatDialog);
+    constructor(fb: FormBuilder, dialog: MatDialog, destroyRef: DestroyRef);
     ngOnInit(): void;
-    ngOnDestroy(): void;
-    get keyFiltersFormArray(): UntypedFormArray;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState?(isDisabled: boolean): void;
@@ -32,5 +32,5 @@ export declare class KeyFilterListComponent implements ControlValueAccessor, Val
     private openKeyFilterDialog;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<KeyFilterListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<KeyFilterListComponent, "tb-key-filter-list", never, { "disabled": { "alias": "disabled"; "required": false; }; "displayUserParameters": { "alias": "displayUserParameters"; "required": false; }; "allowUserDynamicSource": { "alias": "allowUserDynamicSource"; "required": false; }; "telemetryKeysOnly": { "alias": "telemetryKeysOnly"; "required": false; }; "entityId": { "alias": "entityId"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<KeyFilterListComponent, "tb-key-filter-list", never, { "disabled": { "alias": "disabled"; "required": false; }; "displayUserParameters": { "alias": "displayUserParameters"; "required": false; }; "allowUserDynamicSource": { "alias": "allowUserDynamicSource"; "required": false; }; "telemetryKeysOnly": { "alias": "telemetryKeysOnly"; "required": false; }; "entityId": { "alias": "entityId"; "required": false; }; "operation": { "alias": "operation"; "required": false; }; }, {}, never, ["[keyFilterHeaderActions]"], false, never>;
 }

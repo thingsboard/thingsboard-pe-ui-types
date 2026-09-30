@@ -1,5 +1,6 @@
 import { EntityAliasInfo } from '@shared/models/alias.models';
 import { FilterInfo } from '@shared/models/query/query.models';
+import { MapDataLayerType } from '@shared/models/widget/maps/map.models';
 import { WidgetModelDefinition } from '@shared/models/widget/widget-model.definition';
 interface AliasFilterPair {
     alias?: EntityAliasInfo;
@@ -13,12 +14,10 @@ interface MapDataLayerDsInfo extends AliasFilterPair {
 type ExportDataSourceInfo = {
     [dataLayerIndex: number]: MapDataLayerDsInfo;
 };
-interface MapDatasourcesInfo {
-    trips?: ExportDataSourceInfo;
-    markers?: ExportDataSourceInfo;
-    polygons?: ExportDataSourceInfo;
-    circles?: ExportDataSourceInfo;
+type MapDatasourcesInfo = {
+    [K in MapDataLayerType]?: ExportDataSourceInfo;
+} & {
     additionalDataSources?: ExportDataSourceInfo;
-}
+};
 export declare const MapModelDefinition: WidgetModelDefinition<MapDatasourcesInfo>;
 export {};

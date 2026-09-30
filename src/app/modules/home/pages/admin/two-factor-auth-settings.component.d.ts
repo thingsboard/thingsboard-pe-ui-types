@@ -37,7 +37,6 @@ export declare class TwoFactorAuthSettingsComponent extends PageComponent implem
     isTenantAdmin(): boolean;
     save(): void;
     toggleExtensionPanel($event: Event, index: number, currentState: boolean): void;
-    trackByElement(i: number, item: any): any;
     get providersForm(): UntypedFormArray;
     private build2faSettingsForm;
     get atListOneProvider(): boolean;

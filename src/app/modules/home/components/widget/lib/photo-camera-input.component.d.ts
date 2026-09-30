@@ -1,5 +1,4 @@
 import { ElementRef, OnDestroy, OnInit } from '@angular/core';
-import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { ImageService } from '@app/core/public-api';
 import { AppState } from '@core/core.state';
 import { AttributeService } from '@core/http/attribute.service';
@@ -14,8 +13,7 @@ export declare class PhotoCameraInputWidgetComponent extends PageComponent imple
     private imageService;
     private utils;
     private attributeService;
-    private sanitizer;
-    constructor(window: Window, store: Store<AppState>, imageService: ImageService, utils: UtilsService, attributeService: AttributeService, sanitizer: DomSanitizer);
+    constructor(window: Window, store: Store<AppState>, imageService: ImageService, utils: UtilsService, attributeService: AttributeService);
     get videoElement(): HTMLVideoElement;
     get canvasElement(): HTMLCanvasElement;
     get videoWidth(): number;
@@ -43,8 +41,8 @@ export declare class PhotoCameraInputWidgetComponent extends PageComponent imple
     isLoading: boolean;
     singleDevice: boolean;
     updatePhoto: boolean;
-    previewPhoto: SafeUrl;
-    lastPhoto: SafeUrl;
+    previewPhoto: string;
+    lastPhoto: string;
     datasourceDetected: boolean;
     private mimeType;
     private quality;

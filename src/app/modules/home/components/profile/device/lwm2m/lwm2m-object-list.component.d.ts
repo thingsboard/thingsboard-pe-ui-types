@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { ObjectLwM2M } from './lwm2m-profile-config.models';
 import { DeviceProfileService } from '@core/http/device-profile.service';
 import { MatAutocompleteTrigger } from '@angular/material/autocomplete';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class Lwm2mObjectListComponent implements ControlValueAccessor, OnInit, Validator {
     private deviceProfileService;
@@ -17,6 +18,7 @@ export declare class Lwm2mObjectListComponent implements ControlValueAccessor, O
     searchText: string;
     get required(): boolean;
     set required(value: boolean);
+    appearance: MatFormFieldAppearance;
     addList: EventEmitter<any>;
     removeList: EventEmitter<any>;
     objectInput: ElementRef<HTMLInputElement>;
@@ -38,5 +40,5 @@ export declare class Lwm2mObjectListComponent implements ControlValueAccessor, O
     textIsNotEmpty(text: string): boolean;
     private clear;
     static ɵfac: i0.ɵɵFactoryDeclaration<Lwm2mObjectListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mObjectListComponent, "tb-profile-lwm2m-object-list", never, { "required": { "alias": "required"; "required": false; }; }, { "addList": "addList"; "removeList": "removeList"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mObjectListComponent, "tb-profile-lwm2m-object-list", never, { "required": { "alias": "required"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; }, { "addList": "addList"; "removeList": "removeList"; }, never, never, false, never>;
 }

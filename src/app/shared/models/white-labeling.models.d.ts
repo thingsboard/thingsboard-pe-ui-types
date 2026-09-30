@@ -17,6 +17,7 @@ export interface PaletteSettings {
 export interface WhiteLabelingParams {
     logoImageUrl?: string;
     logoImageHeight?: number;
+    collapsedLogoImageUrl?: string;
     appTitle?: string;
     favicon?: Favicon;
     paletteSettings?: PaletteSettings;
@@ -25,10 +26,12 @@ export interface WhiteLabelingParams {
     enableHelpLinks?: boolean;
     hideConnectivityDialog?: boolean;
     overrideTrendzName?: boolean;
+    primaryColorPanels?: boolean;
     showNameVersion?: boolean;
     platformName?: string;
     platformVersion?: string;
     customCss?: string;
+    whiteLabelingEnabled?: boolean;
 }
 export interface LoginWhiteLabelingParams extends WhiteLabelingParams {
     pageBackgroundColor?: string;
@@ -38,6 +41,8 @@ export interface LoginWhiteLabelingParams extends WhiteLabelingParams {
     adminSettingsId?: string;
     showNameBottom?: boolean;
 }
+export declare const defaultImageUrl = "assets/logo_title_black.svg";
+export declare const defaultCollapsedImageUrl = "assets/small_logo_title_black.svg";
 export declare const defaultWLParams: WhiteLabelingParams;
 export declare const defaultLoginWlParams: LoginWhiteLabelingParams;
 export declare const tbPrimaryPalette: ColorPalette;

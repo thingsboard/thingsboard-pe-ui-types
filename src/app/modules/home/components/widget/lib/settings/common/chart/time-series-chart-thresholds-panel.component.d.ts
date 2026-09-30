@@ -1,5 +1,5 @@
 import { DestroyRef, OnInit } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { TimeSeriesChartThreshold, TimeSeriesChartYAxisId } from '@home/components/widget/lib/chart/time-series-chart.models';
 import { IAliasController } from '@core/api/widget-api.models';
 import { DataKeysCallbacks } from '@home/components/widget/lib/settings/common/key/data-keys.component.models';
@@ -32,7 +32,6 @@ export declare class TimeSeriesChartThresholdsPanelComponent implements ControlV
         };
     };
     thresholdsFormArray(): UntypedFormArray;
-    trackByThreshold(index: number, thresholdControl: AbstractControl): any;
     removeThreshold(index: number): void;
     addThreshold(): void;
     private prepareThresholdsFormArray;

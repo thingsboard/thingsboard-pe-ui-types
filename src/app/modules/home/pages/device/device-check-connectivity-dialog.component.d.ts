@@ -1,4 +1,4 @@
-import { NgZone, OnDestroy, OnInit } from '@angular/core';
+import { DestroyRef, NgZone, OnDestroy, OnInit } from '@angular/core';
 import { DialogComponent } from '@shared/components/dialog.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -10,6 +10,7 @@ import { TelemetryWebsocketService } from '@core/ws/telemetry-websocket.service'
 import { EntityId } from '@shared/models/id/entity-id';
 import { BasicTransportType, DeviceTransportType, NetworkTransportType, PublishTelemetryCommand } from '@shared/models/device.models';
 import { WhiteLabelingService } from '@core/http/white-labeling.service';
+import { AiDashboardGenerationService } from '@home/components/ai/ai-dashboard-generation.service';
 import * as i0 from "@angular/core";
 export interface DeviceCheckConnectivityDialogData {
     deviceId: EntityId;
@@ -24,6 +25,8 @@ export declare class DeviceCheckConnectivityDialogComponent extends DialogCompon
     private telemetryWsService;
     private wl;
     private zone;
+    private destroyRef;
+    private aiDashboardGenerationService;
     loadedCommand: boolean;
     status: boolean;
     latestTelemetry: Array<AttributeData>;
@@ -43,7 +46,7 @@ export declare class DeviceCheckConnectivityDialogComponent extends DialogCompon
     private telemetrySubscriber;
     private currentTime;
     private transportTypes;
-    constructor(store: Store<AppState>, router: Router, data: DeviceCheckConnectivityDialogData, dialogRef: MatDialogRef<DeviceCheckConnectivityDialogComponent>, deviceService: DeviceService, telemetryWsService: TelemetryWebsocketService, wl: WhiteLabelingService, zone: NgZone);
+    constructor(store: Store<AppState>, router: Router, data: DeviceCheckConnectivityDialogData, dialogRef: MatDialogRef<DeviceCheckConnectivityDialogComponent>, deviceService: DeviceService, telemetryWsService: TelemetryWebsocketService, wl: WhiteLabelingService, zone: NgZone, destroyRef: DestroyRef, aiDashboardGenerationService: AiDashboardGenerationService);
     ngOnInit(): void;
     ngOnDestroy(): void;
     close(): void;
@@ -52,6 +55,8 @@ export declare class DeviceCheckConnectivityDialogComponent extends DialogCompon
     private loadCommands;
     private subscribeToLatestTelemetry;
     private selectTabIndexForUserOS;
+    generateDashboard($event: Event): void;
+    isAllowedDashboardGenerate(): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceCheckConnectivityDialogComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<DeviceCheckConnectivityDialogComponent, "tb-device-check-connectivity-dialog", never, {}, {}, never, never, false, never>;
 }

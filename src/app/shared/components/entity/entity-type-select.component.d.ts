@@ -40,7 +40,7 @@ export declare class EntityTypeSelectComponent implements ControlValueAccessor, 
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: EntityType | AliasEntityType | null): void;
     updateView(value: EntityType | AliasEntityType | null): void;
-    displayEntityTypeFn(entityType?: EntityType | AliasEntityType | null): string | undefined;
+    displayEntityTypeFn(entityType?: EntityType | AliasEntityType | string | null): string | undefined;
     markAsTouched(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityTypeSelectComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<EntityTypeSelectComponent, "tb-entity-type-select", never, { "allowedEntityTypes": { "alias": "allowedEntityTypes"; "required": false; }; "useAliasEntityTypes": { "alias": "useAliasEntityTypes"; "required": false; }; "operation": { "alias": "operation"; "required": false; }; "filterAllowedEntityTypes": { "alias": "filterAllowedEntityTypes"; "required": false; }; "overrideEntityTypeTranslations": { "alias": "overrideEntityTypeTranslations"; "required": false; }; "showLabel": { "alias": "showLabel"; "required": false; }; "label": { "alias": "label"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "additionEntityTypes": { "alias": "additionEntityTypes"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "inlineField": { "alias": "inlineField"; "required": false; }; }, {}, never, never, false, never>;

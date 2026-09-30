@@ -259,6 +259,7 @@ export interface FeaturesInfo {
 export interface LicenseInfo {
     maxDevices: number;
     maxAssets: number;
+    maxEdges: number;
     whiteLabelingEnabled: boolean;
     development: boolean;
     plan: string;
@@ -266,6 +267,7 @@ export interface LicenseInfo {
 export interface LicenseUsageInfo extends LicenseInfo {
     devicesCount: number;
     assetsCount: number;
+    edgesCount: number;
     dashboardsCount: number;
     integrationsCount: number;
 }

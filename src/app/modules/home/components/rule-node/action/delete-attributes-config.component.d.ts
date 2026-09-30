@@ -8,7 +8,7 @@ export declare class DeleteAttributesConfigComponent extends RuleNodeConfigurati
     attributeChipList: MatChipGrid;
     deleteAttributesConfigForm: UntypedFormGroup;
     attributeScopeMap: typeof AttributeScope;
-    attributeScopes: string[];
+    attributeScopes: AttributeScope[];
     telemetryTypeTranslationsMap: Map<import("@shared/models/telemetry/telemetry.models").TelemetryType, string>;
     separatorKeysCodes: number[];
     constructor(fb: UntypedFormBuilder);

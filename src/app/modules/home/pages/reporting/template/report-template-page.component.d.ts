@@ -2,7 +2,6 @@ import { AfterViewInit, ChangeDetectorRef, DestroyRef, ElementRef, EventEmitter,
 import { PageComponent } from '@shared/components/page.component';
 import { HasDirtyFlag } from '@core/guards/confirm-on-exit.guard';
 import { HeaderFooter, PdfReportTemplateConfig, ReportTemplate, TbReportFormat } from '@shared/models/report.models';
-import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { ActivatedRoute } from '@angular/router';
 import { ReportTemplateService } from '@core/http/report-template.service';
 import { MatDialog } from '@angular/material/dialog';
@@ -19,12 +18,13 @@ import { Observable } from 'rxjs';
 import { DatePipe } from '@angular/common';
 import { CdkScrollable } from '@angular/cdk/overlay';
 import { ReportTemplateHeaderFooterComponent } from '@home/pages/reporting/template/report-template-header-footer.component';
-import { MatButton } from '@angular/material/button';
+import { MatButton, MatIconButton } from '@angular/material/button';
 import { TbPopoverService } from '@shared/components/popover.service';
+import { BreadcrumbService } from '@core/services/breadcrumb.service';
+import { HomeService } from '@core/services/home.service';
 import * as i0 from "@angular/core";
 export declare class ReportTemplatePageComponent extends PageComponent implements OnInit, AfterViewInit, OnDestroy, HasDirtyFlag {
     private route;
-    private userPermissionsService;
     private reportTemplateService;
     private reportService;
     private entityService;
@@ -39,6 +39,8 @@ export declare class ReportTemplatePageComponent extends PageComponent implement
     private cd;
     private popoverService;
     private viewContainerRef;
+    private breadcrumbService;
+    homeService: HomeService;
     TbReportFormat: typeof TbReportFormat;
     reportComponentTypesData: import("@home/pages/reporting/template/components/report-component.models").ReportComponentTypesData;
     get isDirty(): boolean;
@@ -87,8 +89,9 @@ export declare class ReportTemplatePageComponent extends PageComponent implement
     private layoutResize$;
     private timeDataPatternSubject;
     timeDataPattern$: Observable<string>;
+    breadcrumbs$: Observable<import("../../../../../shared/components/breadcrumb").BreadCrumb[]>;
     private stateController;
-    constructor(route: ActivatedRoute, userPermissionsService: UserPermissionsService, reportTemplateService: ReportTemplateService, reportService: ReportService, entityService: EntityService, utils: UtilsService, translate: TranslateService, destroyRef: DestroyRef, dialog: MatDialog, dialogService: DialogService, fb: FormBuilder, date: DatePipe, renderer: Renderer2, cd: ChangeDetectorRef, popoverService: TbPopoverService, viewContainerRef: ViewContainerRef);
+    constructor(route: ActivatedRoute, reportTemplateService: ReportTemplateService, reportService: ReportService, entityService: EntityService, utils: UtilsService, translate: TranslateService, destroyRef: DestroyRef, dialog: MatDialog, dialogService: DialogService, fb: FormBuilder, date: DatePipe, renderer: Renderer2, cd: ChangeDetectorRef, popoverService: TbPopoverService, viewContainerRef: ViewContainerRef, breadcrumbService: BreadcrumbService, homeService: HomeService);
     ngOnInit(): void;
     ngAfterViewInit(): void;
     ngOnDestroy(): void;
@@ -106,7 +109,7 @@ export declare class ReportTemplatePageComponent extends PageComponent implement
     saveReportComponent(): void;
     cancelReportComponentEdit(): void;
     openFilters($event: Event): void;
-    toggleVersionControl($event: Event, versionControlButton: MatButton): void;
+    toggleVersionControl($event: Event, versionControlButton: MatButton | MatIconButton): void;
     private createFilter;
     openEntityAliases($event: Event): void;
     private createEntityAlias;
@@ -114,6 +117,7 @@ export declare class ReportTemplatePageComponent extends PageComponent implement
     openReportTemplateSettings($event: Event): void;
     generateTestReport(): void;
     scrollBottomTop(): void;
+    toggleSidenav(): void;
     private updateReportTemplateSettings;
     private updatePageLayout;
     private layoutResize;

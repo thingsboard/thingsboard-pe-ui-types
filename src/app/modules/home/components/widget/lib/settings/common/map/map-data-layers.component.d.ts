@@ -1,5 +1,5 @@
 import { DestroyRef, OnInit } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { MapDataLayerSettings, MapDataLayerType, MapType } from '@shared/models/widget/maps/map.models';
 import { MapSettingsComponent } from '@home/components/widget/lib/settings/common/map/map-settings.component';
 import { MapSettingsContext } from '@home/components/widget/lib/settings/common/map/map-settings.component.models';
@@ -31,7 +31,6 @@ export declare class MapDataLayersComponent implements ControlValueAccessor, OnI
         };
     };
     dataLayersFormArray(): UntypedFormArray;
-    trackByDataLayer(index: number, dataLayerControl: AbstractControl): any;
     removeDataLayer(index: number): void;
     layerDrop(event: CdkDragDrop<string[]>): void;
     addDataLayer(): void;

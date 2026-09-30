@@ -59,7 +59,9 @@ export declare class DashboardLayoutComponent extends PageComponent implements I
     resetHighlight(): void;
     highlightWidget(widgetId: string, delay?: number): void;
     selectWidget(widgetId: string, delay?: number): void;
+    get aiConfigurableForDashboard(): boolean;
     addWidget($event: Event): void;
+    configureWithAi($event: Event): void;
     onEditWidget($event: Event, widget: Widget): void;
     replaceReferenceWithWidgetCopy($event: Event, widget: Widget): void;
     onExportWidget($event: Event, widget: Widget, widgetTitle: string): void;

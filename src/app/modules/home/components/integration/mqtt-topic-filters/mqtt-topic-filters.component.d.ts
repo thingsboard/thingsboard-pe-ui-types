@@ -5,7 +5,7 @@ import * as i0 from "@angular/core";
 export declare class MqttTopicFiltersComponent implements ControlValueAccessor, Validator, OnDestroy, OnChanges {
     private fb;
     mqttTopicFiltersForm: UntypedFormGroup;
-    mqttQosTypes: (string | MqttQos)[];
+    mqttQosTypes: MqttQos[];
     MqttQosTranslation: Map<MqttQos, string>;
     disabled: boolean;
     excludeQos: MqttQos[];
@@ -22,6 +22,7 @@ export declare class MqttTopicFiltersComponent implements ControlValueAccessor, 
     addTopicFilter(): void;
     private updateModel;
     validate(): ValidationErrors | null;
+    getMqttQosTranslation(mqttQoS: number): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<MqttTopicFiltersComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<MqttTopicFiltersComponent, "tb-mqtt-topic-filters", never, { "disabled": { "alias": "disabled"; "required": false; }; "excludeQos": { "alias": "excludeQos"; "required": false; }; }, {}, never, never, false, never>;
 }

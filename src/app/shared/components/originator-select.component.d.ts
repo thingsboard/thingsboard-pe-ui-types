@@ -1,4 +1,4 @@
-import { AfterViewInit, EventEmitter, OnDestroy, OnInit } from '@angular/core';
+import { EventEmitter, OnDestroy, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/core/core.state';
@@ -6,8 +6,10 @@ import { TranslateService } from '@ngx-translate/core';
 import { EntityId } from '@shared/models/id/entity-id';
 import { EntityType } from '@shared/models/entity-type.models';
 import { EntityGroupInfo } from '@shared/models/entity-group.models';
+import { ToggleHeaderOption } from '@shared/components/toggle-header.component';
 import * as i0 from "@angular/core";
-export declare class OriginatorSelectComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnDestroy {
+type OriginatorType = 'entity' | 'groupTenant' | 'ownerGroup';
+export declare class OriginatorSelectComponent implements ControlValueAccessor, OnInit, OnDestroy {
     private store;
     translate: TranslateService;
     private fb;
@@ -17,13 +19,8 @@ export declare class OriginatorSelectComponent implements ControlValueAccessor, 
     singleEntityText: string;
     groupOfEntitiesText: string;
     entitiesGroupOwnerText: string;
-    headerOptions: {
-        name: any;
-        value: string;
-    }[];
-    private requiredValue;
-    get required(): boolean;
-    set required(value: boolean);
+    headerOptions: ToggleHeaderOption[];
+    required: boolean;
     disabled: boolean;
     currentGroupType: EventEmitter<EntityType>;
     currentUser: import("../public-api").AuthUser;
@@ -31,10 +28,13 @@ export declare class OriginatorSelectComponent implements ControlValueAccessor, 
     private loadData;
     private propagateChange;
     constructor(store: Store<AppState>, translate: TranslateService, fb: UntypedFormBuilder);
+    get originator(): OriginatorType;
+    get isSingleEntityMode(): boolean;
+    get isSingleAllowedEntityType(): boolean;
+    get singleAllowedEntityType(): EntityType;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     ngOnInit(): void;
-    ngAfterViewInit(): void;
     ngOnDestroy(): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: EntityId | null): void;
@@ -47,3 +47,4 @@ export declare class OriginatorSelectComponent implements ControlValueAccessor, 
     static ɵfac: i0.ɵɵFactoryDeclaration<OriginatorSelectComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<OriginatorSelectComponent, "tb-originator-select", never, { "allowedEntityTypes": { "alias": "allowedEntityTypes"; "required": false; }; "singleEntityText": { "alias": "singleEntityText"; "required": false; }; "groupOfEntitiesText": { "alias": "groupOfEntitiesText"; "required": false; }; "entitiesGroupOwnerText": { "alias": "entitiesGroupOwnerText"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, { "currentGroupType": "currentGroupType"; }, never, never, false, never>;
 }
+export {};

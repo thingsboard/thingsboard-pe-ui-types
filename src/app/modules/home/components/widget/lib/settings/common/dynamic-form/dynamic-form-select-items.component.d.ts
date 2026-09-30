@@ -1,5 +1,5 @@
 import { DestroyRef, OnInit, QueryList } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import { TranslateService } from '@ngx-translate/core';
 import { FormSelectItem } from '@shared/models/dynamic-form.models';
@@ -10,7 +10,6 @@ export declare class DynamicFormSelectItemsComponent implements ControlValueAcce
     private destroyRef;
     private translate;
     styleDisplay: string;
-    styleOverflow: string;
     selectItemRows: QueryList<DynamicFormSelectItemRowComponent>;
     disabled: boolean;
     selectItemsFormGroup: UntypedFormGroup;
@@ -31,7 +30,6 @@ export declare class DynamicFormSelectItemsComponent implements ControlValueAcce
     selectItemValueUnique(value: any, index: number): boolean;
     selectItemDrop(event: CdkDragDrop<string[]>): void;
     selectItemsFormArray(): UntypedFormArray;
-    trackBySelectItem(_index: number, selectItemControl: AbstractControl): any;
     removeSelectItem(index: number, emitEvent?: boolean): void;
     addSelectItem(): void;
     private prepareSelectItemsFormArray;

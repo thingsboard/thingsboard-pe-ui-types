@@ -19,6 +19,7 @@ export declare class AssetComponent extends GroupEntityComponent<AssetInfo> {
     protected cd: ChangeDetectorRef;
     protected userPermissionsService: UserPermissionsService;
     entityType: typeof EntityType;
+    readonly isTenantAdmin: boolean;
     constructor(store: Store<AppState>, translate: TranslateService, entityValue: AssetInfo, entitiesTableConfigValue: EntityTableConfig<AssetInfo> | GroupEntityTableConfig<AssetInfo>, fb: UntypedFormBuilder, cd: ChangeDetectorRef, userPermissionsService: UserPermissionsService);
     ngOnInit(): void;
     hideDelete(): boolean;

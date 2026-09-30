@@ -1,5 +1,5 @@
 import { OnDestroy, OnInit } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { EntityType } from '@shared/models/entity-type.models';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
@@ -27,7 +27,6 @@ export declare class EntityGroupColumnsComponent extends PageComponent implement
     addColumn(): void;
     defaultSortOrderChanged(index: number, sortOrder?: EntityGroupSortOrder): void;
     updateColumn(index: number, column: EntityGroupColumn): void;
-    trackByColumnControl(index: number, columnControl: AbstractControl): any;
     onDrop(event: CdkDragDrop<string[]>): void;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityGroupColumnsComponent, never>;

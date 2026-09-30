@@ -3,6 +3,7 @@ import { ControlValueAccessor, FormBuilder, FormControl } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
 import { Overlay } from '@angular/cdk/overlay';
+import { RafService } from '@core/services/raf.service';
 import * as i0 from "@angular/core";
 export declare class StringPatternAutocompleteComponent implements ControlValueAccessor, OnInit, OnChanges {
     private fb;
@@ -11,6 +12,7 @@ export declare class StringPatternAutocompleteComponent implements ControlValueA
     private viewContainerRef;
     private destroyRef;
     private cd;
+    private raf;
     inputRef: ElementRef;
     highlightTextRef: ElementRef;
     autocompleteTemplate: TemplateRef<any>;
@@ -37,16 +39,19 @@ export declare class StringPatternAutocompleteComponent implements ControlValueA
     private modelValue;
     private overlayRef;
     private predefinedValuesButtonMode;
+    private scrollSyncCancel;
     private propagateChange;
-    constructor(fb: FormBuilder, overlay: Overlay, translate: TranslateService, viewContainerRef: ViewContainerRef, destroyRef: DestroyRef, cd: ChangeDetectorRef);
+    constructor(fb: FormBuilder, overlay: Overlay, translate: TranslateService, viewContainerRef: ViewContainerRef, destroyRef: DestroyRef, cd: ChangeDetectorRef, raf: RafService);
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
     writeValue(option?: string): void;
     onFocus(): void;
+    onBlur(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(_fn: any): void;
     setDisabledState(isDisabled: boolean): void;
-    onInputScroll(event: Event): void;
+    private startScrollSync;
+    private stopScrollSync;
     optionSelected(value: string): void;
     openValues($event: MouseEvent): void;
     private updateView;

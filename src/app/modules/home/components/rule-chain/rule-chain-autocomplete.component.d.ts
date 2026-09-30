@@ -11,6 +11,7 @@ import { TruncatePipe } from '@shared/pipe/truncate.pipe';
 import { RuleChainService } from '@core/http/rule-chain.service';
 import { MatAutocompleteTrigger } from '@angular/material/autocomplete';
 import { RuleChainType } from '@app/shared/models/rule-chain.models';
+import { MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class RuleChainAutocompleteComponent implements ControlValueAccessor, OnInit {
     private store;
@@ -24,10 +25,13 @@ export declare class RuleChainAutocompleteComponent implements ControlValueAcces
     labelText: string;
     requiredText: string;
     ruleChainType: RuleChainType;
+    appearance: MatFormFieldAppearance;
+    subscriptSizing: SubscriptSizing;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
     disabled: boolean;
+    showHint: boolean;
     ruleChainInput: ElementRef;
     ruleChainAutocomplete: MatAutocompleteTrigger;
     filteredRuleChains: Observable<Array<BaseData<EntityId>>>;
@@ -52,5 +56,5 @@ export declare class RuleChainAutocompleteComponent implements ControlValueAcces
     clear(): void;
     createDefaultRuleChain($event: Event, ruleChainName: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<RuleChainAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RuleChainAutocompleteComponent, "tb-rule-chain-autocomplete", never, { "labelText": { "alias": "labelText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "ruleChainType": { "alias": "ruleChainType"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, ["[tb-hint]"], false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RuleChainAutocompleteComponent, "tb-rule-chain-autocomplete", never, { "labelText": { "alias": "labelText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "ruleChainType": { "alias": "ruleChainType"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "showHint": { "alias": "showHint"; "required": false; }; }, {}, never, ["[tb-hint]"], false, never>;
 }

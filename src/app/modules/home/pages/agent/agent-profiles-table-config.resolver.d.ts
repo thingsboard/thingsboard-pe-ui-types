@@ -1,0 +1,36 @@
+import { ActivatedRouteSnapshot, Router } from '@angular/router';
+import { EntityTableColumn, EntityTableConfig } from '@home/models/entity/entities-table-config.models';
+import { TranslateService } from '@ngx-translate/core';
+import { DatePipe } from '@angular/common';
+import { EntityAction } from '@home/models/entity/entity-component.models';
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { MatDialog } from '@angular/material/dialog';
+import { AgentProfileInfo } from '@shared/models/agent.models';
+import { AgentService } from '@core/http/agent.service';
+import { AgentProfileCreateDialogService } from '@home/pages/agent/agent-profile-create-dialog.service';
+import { DialogService } from '@core/services/dialog.service';
+import * as i0 from "@angular/core";
+export declare class AgentProfilesTableConfigResolver {
+    private store;
+    private agentService;
+    private translate;
+    private datePipe;
+    private router;
+    private dialog;
+    private dialogService;
+    private agentProfileCreateDialogService;
+    private readonly config;
+    constructor(store: Store<AppState>, agentService: AgentService, translate: TranslateService, datePipe: DatePipe, router: Router, dialog: MatDialog, dialogService: DialogService, agentProfileCreateDialogService: AgentProfileCreateDialogService);
+    private openAddWizard;
+    private openProfileCreatedInstructions;
+    resolve(route: ActivatedRouteSnapshot): Observable<EntityTableConfig<AgentProfileInfo>>;
+    configureColumns(): Array<EntityTableColumn<AgentProfileInfo>>;
+    private setDefaultAgentProfile;
+    private provisionTypeLabel;
+    onProfileAction(action: EntityAction<AgentProfileInfo>): boolean;
+    private openAgentProfile;
+    static ɵfac: i0.ɵɵFactoryDeclaration<AgentProfilesTableConfigResolver, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<AgentProfilesTableConfigResolver>;
+}

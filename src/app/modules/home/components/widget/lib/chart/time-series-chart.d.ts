@@ -1,4 +1,4 @@
-import { WidgetContext } from '@home/models/widget-component.models';
+import { WidgetAction, WidgetContext } from '@home/models/widget-component.models';
 import { TimeSeriesChartSettings, TimeSeriesChartType } from '@home/components/widget/lib/chart/time-series-chart.models';
 import { DataKey } from '@shared/models/widget.models';
 import { Renderer2 } from '@angular/core';
@@ -23,6 +23,12 @@ export declare class TbTimeSeriesChart {
     private thresholdItems;
     private hasVisualMap;
     private visualMapSelectedRanges;
+    private dataZoomResetting;
+    private dataZoomUpdatePending;
+    private dataZoomDebounce;
+    private lastDataZoomStart;
+    private lastDataZoomEnd;
+    private timewindowChanged;
     private timeSeriesChart;
     private timeSeriesChartOptions;
     private readonly tooltipDateFormat;
@@ -52,6 +58,7 @@ export declare class TbTimeSeriesChart {
     resize(): void;
     setDarkMode(darkMode: boolean): void;
     isDarkMode(): boolean;
+    getWidgetActions(): WidgetAction[];
     private setupData;
     private setupThresholds;
     private setupXAxes;
@@ -71,6 +78,7 @@ export declare class TbTimeSeriesChart {
     private updateYAxisScale;
     private updateAxisLimits;
     private scaleYAxis;
+    private maxTickLabelHalfHeight;
     private minTopOffset;
     private minBottomOffset;
     private _onParentScroll;

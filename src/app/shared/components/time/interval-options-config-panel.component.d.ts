@@ -31,7 +31,6 @@ export declare class IntervalOptionsConfigPanelComponent implements OnInit {
     minAggInterval(interval: TimewindowInterval): number;
     maxAggInterval(interval: TimewindowInterval): number;
     private getIntervalMs;
-    trackByElement(i: number, item: any): any;
     update(): void;
     cancel(): void;
     reset(): void;

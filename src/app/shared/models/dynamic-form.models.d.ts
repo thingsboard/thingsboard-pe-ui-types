@@ -121,10 +121,10 @@ export declare enum FormPropertyContainerType {
 export interface FormPropertyContainerBase {
     type: FormPropertyContainerType;
     label: string;
+    hint?: string;
     visible: boolean;
 }
 export interface FormPropertyRow extends FormPropertyContainerBase {
-    hint?: string;
     properties?: FormProperty[];
     switch?: FormProperty;
     rowClass?: string;

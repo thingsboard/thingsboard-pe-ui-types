@@ -32,7 +32,6 @@ export declare class WidgetsBundleWidgetsComponent extends PageComponent impleme
     addWidgetFormControl: FormControl<any>;
     constructor(store: Store<AppState>, router: Router, route: ActivatedRoute, widgetsService: WidgetService, importExport: ImportExportService, cd: ChangeDetectorRef, dialog: MatDialog);
     ngOnInit(): void;
-    trackByWidget(index: number, widget: WidgetTypeBundle): any;
     widgetDrop(event: CdkDragDrop<string[]>): void;
     addWidgetMode(): void;
     cancelAddWidgetMode(): void;

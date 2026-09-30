@@ -9,6 +9,9 @@ export declare class MarkdownEditorComponent implements OnInit, ControlValueAcce
     disabled: boolean;
     readonly: boolean;
     helpId: string;
+    helpPopupStyle: {
+        [klass: string]: any;
+    };
     required: boolean;
     markdownEditorElmRef: ElementRef;
     editorMode: boolean;
@@ -32,5 +35,5 @@ export declare class MarkdownEditorComponent implements OnInit, ControlValueAcce
     private updateView;
     private onAceEditorResize;
     static ɵfac: i0.ɵɵFactoryDeclaration<MarkdownEditorComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MarkdownEditorComponent, "tb-markdown-editor", never, { "label": { "alias": "label"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "readonly": { "alias": "readonly"; "required": false; }; "helpId": { "alias": "helpId"; "required": false; }; "required": { "alias": "required"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MarkdownEditorComponent, "tb-markdown-editor", never, { "label": { "alias": "label"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "readonly": { "alias": "readonly"; "required": false; }; "helpId": { "alias": "helpId"; "required": false; }; "helpPopupStyle": { "alias": "helpPopupStyle"; "required": false; }; "required": { "alias": "required"; "required": false; }; }, {}, never, never, false, never>;
 }

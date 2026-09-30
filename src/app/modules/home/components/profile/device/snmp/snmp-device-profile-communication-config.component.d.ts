@@ -1,5 +1,5 @@
 import { OnDestroy, OnInit } from '@angular/core';
-import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, Validator, FormArray, FormGroup } from '@angular/forms';
 import { SnmpCommunicationConfig, SnmpSpecType } from '@shared/models/device.models';
 import * as i0 from "@angular/core";
 export declare class SnmpDeviceProfileCommunicationConfigComponent implements OnInit, OnDestroy, ControlValueAccessor, Validator {
@@ -14,7 +14,7 @@ export declare class SnmpDeviceProfileCommunicationConfigComponent implements On
     constructor(fb: UntypedFormBuilder);
     ngOnInit(): void;
     ngOnDestroy(): void;
-    get communicationConfigFormArray(): UntypedFormArray;
+    get communicationConfigFormArray(): FormArray<FormGroup>;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;

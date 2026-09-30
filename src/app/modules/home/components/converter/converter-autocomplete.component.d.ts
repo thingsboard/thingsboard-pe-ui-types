@@ -8,6 +8,7 @@ import { MatAutocompleteTrigger } from '@angular/material/autocomplete';
 import { MatDialog } from '@angular/material/dialog';
 import { Operation, Resource } from '@shared/models/security.models';
 import { IntegrationType } from '@shared/models/integration.models';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class ConverterAutocompleteComponent implements ControlValueAccessor, OnInit, OnChanges {
     private converterService;
@@ -26,6 +27,7 @@ export declare class ConverterAutocompleteComponent implements ControlValueAcces
     disabled: boolean;
     showDetailsPageLink: boolean;
     integrationType: IntegrationType;
+    appearance: MatFormFieldAppearance;
     converterInput: ElementRef<HTMLElement>;
     converterAutocomplete: MatAutocompleteTrigger;
     filteredEntities: Observable<Array<Converter>>;
@@ -52,5 +54,5 @@ export declare class ConverterAutocompleteComponent implements ControlValueAcces
     openConverterDialog($event: Event, isEdit?: boolean, converterName?: string): void;
     private openDialog;
     static ɵfac: i0.ɵɵFactoryDeclaration<ConverterAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ConverterAutocompleteComponent, "tb-converter-autocomplete", never, { "useFullEntityId": { "alias": "useFullEntityId"; "required": false; }; "isEdgeTemplate": { "alias": "isEdgeTemplate"; "required": false; }; "addNewConverter": { "alias": "addNewConverter"; "required": false; }; "converterType": { "alias": "converterType"; "required": false; }; "excludeEntityIds": { "alias": "excludeEntityIds"; "required": false; }; "labelText": { "alias": "labelText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "showDetailsPageLink": { "alias": "showDetailsPageLink"; "required": false; }; "integrationType": { "alias": "integrationType"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ConverterAutocompleteComponent, "tb-converter-autocomplete", never, { "useFullEntityId": { "alias": "useFullEntityId"; "required": false; }; "isEdgeTemplate": { "alias": "isEdgeTemplate"; "required": false; }; "addNewConverter": { "alias": "addNewConverter"; "required": false; }; "converterType": { "alias": "converterType"; "required": false; }; "excludeEntityIds": { "alias": "excludeEntityIds"; "required": false; }; "labelText": { "alias": "labelText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "showDetailsPageLink": { "alias": "showDetailsPageLink"; "required": false; }; "integrationType": { "alias": "integrationType"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; }, {}, never, never, false, never>;
 }

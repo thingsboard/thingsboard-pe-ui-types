@@ -1,5 +1,5 @@
 import { ControlValueAccessor, FormBuilder, FormGroup, Validator } from '@angular/forms';
-import { SubscriptSizing } from '@angular/material/form-field';
+import { MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 interface MessageType {
     name: string;
@@ -9,6 +9,7 @@ export declare class OutputMessageTypeAutocompleteComponent implements ControlVa
     private fb;
     subscriptSizing: SubscriptSizing;
     disabled: boolean;
+    appearance: MatFormFieldAppearance;
     set required(value: boolean);
     get required(): boolean;
     messageTypeFormGroup: FormGroup;
@@ -28,6 +29,6 @@ export declare class OutputMessageTypeAutocompleteComponent implements ControlVa
     private updateValidators;
     private updateMessageTypeValue;
     static ɵfac: i0.ɵɵFactoryDeclaration<OutputMessageTypeAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<OutputMessageTypeAutocompleteComponent, "tb-output-message-type-autocomplete", never, { "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "required": { "alias": "required"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<OutputMessageTypeAutocompleteComponent, "tb-output-message-type-autocomplete", never, { "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "required": { "alias": "required"; "required": false; }; }, {}, never, never, false, never>;
 }
 export {};

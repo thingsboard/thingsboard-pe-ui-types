@@ -67,7 +67,8 @@ declare enum MobileMenuPath {
     DASHBOARD = "DASHBOARD",
     AUDIT_LOGS = "AUDIT_LOGS",
     CUSTOMERS = "CUSTOMERS",
-    NOTIFICATIONS = "NOTIFICATIONS"
+    NOTIFICATIONS = "NOTIFICATIONS",
+    LIVE_LOCATION_TRACKING = "LIVE_LOCATION_TRACKING"
 }
 export declare enum MobilePageType {
     DEFAULT = "DEFAULT",
@@ -119,6 +120,7 @@ export interface MobileAppBundleInfo extends MobileAppBundle {
 export declare const hideDefaultMenuItems: MobileMenuPath[];
 export declare const getDefaultMobileMenuItem: () => DefaultMobilePage[];
 export declare const isDefaultMobileMenuItem: (item: MobilePage) => item is DefaultMobilePage;
+export declare const mergeMissingDefaultMobilePages: (pages: MobilePage[]) => MobilePage[];
 export declare const isDefaultMobilePagesConfig: (items: MobilePage[]) => boolean;
 export declare const mobileMenuDividers: Map<number, string>;
 export declare const defaultMobilePageMap: Map<MobileMenuPath, Omit<DefaultMobilePage, "type" | "visible">>;

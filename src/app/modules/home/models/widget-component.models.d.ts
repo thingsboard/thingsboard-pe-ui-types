@@ -1,7 +1,7 @@
 import { IDashboardComponent } from '@home/models/dashboard-component.models';
 import { DataSet, Datasource, DatasourceData, ExportRow, FormattedData, Widget, WidgetActionDescriptor, WidgetActionSource, WidgetConfig, WidgetControllerDescriptor, WidgetExportType, WidgetHeaderActionButtonType, WidgetType, widgetType, WidgetTypeDescriptor, WidgetTypeDetails, WidgetTypeParameters } from '@shared/models/widget.models';
 import { Timewindow, WidgetTimewindow } from '@shared/models/time/time.models';
-import { IAliasController, IStateController, IWidgetSubscription, IWidgetUtils, RpcApi, StateParams, SubscriptionEntityInfo, TimewindowFunctions, WidgetActionsApi, WidgetSubscriptionApi } from '@core/api/widget-api.models';
+import { IAliasController, IStateController, IWidgetHttpUtils, IWidgetSubscription, IWidgetUtils, RpcApi, StateParams, SubscriptionEntityInfo, TimewindowFunctions, WidgetActionsApi, WidgetSubscriptionApi } from '@core/api/widget-api.models';
 import { ChangeDetectorRef, InjectionToken, Injector, NgZone, Renderer2, TemplateRef, Type, ViewContainerRef } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { RafService } from '@core/services/raf.service';
@@ -75,12 +75,13 @@ export interface WidgetHeaderAction extends IWidgetAction {
     showWidgetHeaderActionFunction: CompiledTbFunction<ShowWidgetHeaderActionFunction>;
 }
 export interface WidgetAction extends IWidgetAction {
-    show: boolean;
+    show: boolean | (() => boolean);
 }
 export interface IDashboardWidget {
     updateWidgetParams(): void;
     updateParamsFromData(detectChanges?: boolean): void;
 }
+export type WidgetDestroyCallback = () => void;
 export declare class WidgetContext {
     dashboard: IDashboardComponent;
     private dashboardWidget;
@@ -143,6 +144,7 @@ export declare class WidgetContext {
     timewindowFunctions: TimewindowFunctions;
     controlApi: RpcApi;
     utils: IWidgetUtils;
+    httpUtils: IWidgetHttpUtils;
     $widgetElement: JQuery<HTMLElement>;
     $container: JQuery<HTMLElement>;
     $containerParent: JQuery<HTMLElement>;
@@ -357,11 +359,13 @@ export declare class WidgetContext {
         config: RxJS.GlobalConfig;
         onErrorResumeNextWith: typeof RxJS.onErrorResumeNextWith;
     };
+    private destroyCallbacks;
     registerPopoverComponent(popoverComponent: TbPopoverComponent): void;
     updatePopoverPositions(): void;
     setPopoversHidden(hidden: boolean): void;
     registerLabelPattern(label: string, label$: Observable<string>): Observable<string>;
     updateLabelPatterns(): void;
+    registerDestroyCallback(destroyCallback: WidgetDestroyCallback): void;
     showSuccessToast(message: string, duration?: number, verticalPosition?: NotificationVerticalPosition, horizontalPosition?: NotificationHorizontalPosition, target?: string, modern?: boolean): void;
     showInfoToast(message: string, verticalPosition?: NotificationVerticalPosition, horizontalPosition?: NotificationHorizontalPosition, target?: string, modern?: boolean): void;
     showWarnToast(message: string, verticalPosition?: NotificationVerticalPosition, horizontalPosition?: NotificationHorizontalPosition, target?: string, modern?: boolean): void;

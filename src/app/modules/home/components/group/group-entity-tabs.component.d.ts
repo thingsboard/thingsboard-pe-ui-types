@@ -18,7 +18,9 @@ export declare class GroupEntityTabsComponent<T extends BaseData<HasId>> extends
     entityResource: Resource;
     constructor(userPermissionsService: UserPermissionsService, store: Store<AppState>);
     ngOnInit(): void;
+    resolveTabIndex(tab: string): number;
     hasVersionControl(): boolean;
+    hasEventsTab(): boolean;
     protected setEntitiesTableConfig(entitiesTableConfig: EntityTableConfig<T> | GroupEntityTableConfig<T>): void;
     protected isGroupMode(): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<GroupEntityTabsComponent<any>, never>;

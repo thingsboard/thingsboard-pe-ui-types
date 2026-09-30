@@ -11,6 +11,7 @@ export declare class WidgetActionsPanelComponent implements ControlValueAccessor
     private widgetConfigComponent;
     private destroyRef;
     disabled: boolean;
+    strokedPanel: boolean;
     actionsFormGroup: UntypedFormGroup;
     private propagateChange;
     constructor(fb: UntypedFormBuilder, dialog: MatDialog, cd: ChangeDetectorRef, widgetConfigComponent: WidgetConfigComponent, destroyRef: DestroyRef);
@@ -26,5 +27,5 @@ export declare class WidgetActionsPanelComponent implements ControlValueAccessor
     get hasWidgetActions(): boolean;
     manageWidgetActions(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetActionsPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetActionsPanelComponent, "tb-widget-actions-panel", never, { "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetActionsPanelComponent, "tb-widget-actions-panel", never, { "disabled": { "alias": "disabled"; "required": false; }; "strokedPanel": { "alias": "strokedPanel"; "required": false; }; }, {}, never, never, false, never>;
 }

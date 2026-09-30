@@ -12,6 +12,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { UtilsService } from '@core/services/utils.service';
 import { CustomTranslatePipe } from '@shared/pipe/custom-translate.pipe';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
+import { IotHubActionsService } from '@home/components/iot-hub/iot-hub-actions.service';
 import * as i0 from "@angular/core";
 export declare class RuleChainsTableConfigResolver {
     private ruleChainService;
@@ -26,7 +27,8 @@ export declare class RuleChainsTableConfigResolver {
     private customTranslate;
     private utils;
     private userPermissionsService;
-    constructor(ruleChainService: RuleChainService, dialogService: DialogService, dialog: MatDialog, importExport: ImportExportService, itembuffer: ItemBufferService, edgeService: EdgeService, translate: TranslateService, datePipe: DatePipe, router: Router, customTranslate: CustomTranslatePipe, utils: UtilsService, userPermissionsService: UserPermissionsService);
+    private iotHubActions;
+    constructor(ruleChainService: RuleChainService, dialogService: DialogService, dialog: MatDialog, importExport: ImportExportService, itembuffer: ItemBufferService, edgeService: EdgeService, translate: TranslateService, datePipe: DatePipe, router: Router, customTranslate: CustomTranslatePipe, utils: UtilsService, userPermissionsService: UserPermissionsService, iotHubActions: IotHubActionsService);
     resolve(route: ActivatedRouteSnapshot): EntityTableConfig<RuleChain>;
     resolveRuleChainsTableConfig(params: ActivatedRouteSnapshot | RuleChainParams): EntityTableConfig<RuleChain>;
     static ɵfac: i0.ɵɵFactoryDeclaration<RuleChainsTableConfigResolver, never>;

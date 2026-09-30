@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Injector, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Injector, OnDestroy, OnInit, TemplateRef } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
@@ -28,6 +28,7 @@ export declare class EntityDetailsPageComponent extends EntityDetailsPanelCompon
     backNavigationCommands?: any[];
     set entitiesTableConfig(entitiesTableConfig: EntityTableConfig<BaseData<HasId>>);
     get entitiesTableConfig(): EntityTableConfig<BaseData<HasId>>;
+    get headerExtensionTemplate(): TemplateRef<unknown> | null;
     'tb-absolute-fill': any;
     constructor(route: ActivatedRoute, router: Router, injector: Injector, cd: ChangeDetectorRef, broadcast: BroadcastService, translate: TranslateService, dialogService: DialogService, store: Store<AppState>);
     ngOnInit(): void;

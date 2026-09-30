@@ -16,6 +16,7 @@ export declare class IFrameViewComponent implements OnInit, OnDestroy {
     ngOnInit(): void;
     private isDashboard;
     private resolveDashboard;
+    private parseDashboardParams;
     ngOnDestroy(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<IFrameViewComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<IFrameViewComponent, "tb-iframe-view", never, {}, {}, never, never, false, never>;

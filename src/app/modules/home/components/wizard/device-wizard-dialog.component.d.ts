@@ -35,6 +35,7 @@ export declare class DeviceWizardDialogComponent extends DialogComponent<DeviceW
     credentialsOptionalStep: boolean;
     showNext: boolean;
     entityType: typeof EntityType;
+    readonly isTenantAdmin: boolean;
     deviceWizardFormGroup: FormGroup;
     credentialsFormGroup: FormGroup;
     initialOwnerId: EntityId;

@@ -1,5 +1,5 @@
 import { DestroyRef, OnInit } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import { MapLayerSettings } from '@shared/models/widget/maps/map.models';
 import * as i0 from "@angular/core";
@@ -23,7 +23,6 @@ export declare class MapLayersComponent implements ControlValueAccessor, OnInit,
     };
     layerDrop(event: CdkDragDrop<string[]>): void;
     layersFormArray(): UntypedFormArray;
-    trackByLayer(index: number, layerControl: AbstractControl): any;
     removeLayer(index: number): void;
     addLayer(): void;
     private prepareLayersFormArray;

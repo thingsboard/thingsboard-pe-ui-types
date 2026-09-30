@@ -8,6 +8,7 @@ import { BaseEventBody } from '@shared/models/event.models';
 import { EventId } from '@shared/models/id/event-id';
 import { HasTenantId, HasVersion } from '@shared/models/entity.models';
 import { EntityType } from '@shared/models/entity-type.models';
+import { AuthUser } from '@shared/models/user.model';
 export interface Edge extends BaseData<EdgeId>, HasTenantId, HasVersion {
     tenantId?: TenantId;
     customerId?: CustomerId;
@@ -22,6 +23,7 @@ export interface Edge extends BaseData<EdgeId>, HasTenantId, HasVersion {
     rootRuleChainId?: RuleChainId;
 }
 export type EdgeInfo = Edge & GroupEntityInfo<EdgeId>;
+export declare const edgeCreationAllowed: (authUser: AuthUser) => boolean;
 export interface EdgeSearchQuery extends EntitySearchQuery {
     edgeTypes: Array<string>;
 }

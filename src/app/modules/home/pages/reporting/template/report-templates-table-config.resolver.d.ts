@@ -12,10 +12,12 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { ImportExportService } from '@shared/import-export/import-export.service';
 import { MatDialog } from '@angular/material/dialog';
+import { ReportService } from '@core/http/report.service';
 import * as i0 from "@angular/core";
 export declare class ReportTemplatesTableConfigResolver {
     private store;
     private reportTemplateService;
+    private reportService;
     private importExport;
     private userPermissionsService;
     private dialog;
@@ -23,10 +25,10 @@ export declare class ReportTemplatesTableConfigResolver {
     private utils;
     private router;
     private datePipe;
-    constructor(store: Store<AppState>, reportTemplateService: ReportTemplateService, importExport: ImportExportService, userPermissionsService: UserPermissionsService, dialog: MatDialog, translate: TranslateService, utils: UtilsService, router: Router, datePipe: DatePipe);
+    constructor(store: Store<AppState>, reportTemplateService: ReportTemplateService, reportService: ReportService, importExport: ImportExportService, userPermissionsService: UserPermissionsService, dialog: MatDialog, translate: TranslateService, utils: UtilsService, router: Router, datePipe: DatePipe);
     resolve(_route: ActivatedRouteSnapshot): EntityTableConfig<ReportTemplateInfo>;
     configDefaults(config: EntityTableConfig<ReportTemplateInfo>): void;
-    configureColumns(_authUser: AuthUser, config: EntityTableConfig<ReportTemplateInfo>): Array<EntityColumn<ReportTemplateInfo>>;
+    configureColumns(authUser: AuthUser, config: EntityTableConfig<ReportTemplateInfo>): Array<EntityColumn<ReportTemplateInfo>>;
     configureEntityFunctions(config: EntityTableConfig<ReportTemplateInfo>): void;
     configureCellActions(config: EntityTableConfig<ReportTemplateInfo>): Array<CellActionDescriptor<ReportTemplateInfo>>;
     configureGroupActions(_config: EntityTableConfig<ReportTemplateInfo>): Array<GroupActionDescriptor<ReportTemplateInfo>>;
@@ -34,6 +36,7 @@ export declare class ReportTemplatesTableConfigResolver {
     openReportTemplate($event: Event, reportTemplate: ReportTemplateInfo, config: EntityTableConfig<ReportTemplateInfo>): void;
     importReportTemplate(_$event: Event, config: EntityTableConfig<ReportTemplateInfo>): void;
     exportReportTemplate($event: Event, reportTemplate: ReportTemplateInfo): void;
+    private generateReport;
     private scheduleReport;
     onReportTemplateAction(action: EntityAction<ReportTemplateInfo>, config: EntityTableConfig<ReportTemplateInfo>): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<ReportTemplatesTableConfigResolver, never>;

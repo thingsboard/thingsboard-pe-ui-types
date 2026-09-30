@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 import { IAliasController } from '@core/api/widget-api.models';
 import { TargetDevice } from '@shared/models/widget.models';
 import { EntityService } from '@core/http/entity.service';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class DeviceKeyAutocompleteComponent extends PageComponent implements OnInit, ControlValueAccessor, OnChanges {
     protected store: Store<AppState>;
@@ -25,6 +26,7 @@ export declare class DeviceKeyAutocompleteComponent extends PageComponent implem
     requiredText: string;
     required: boolean;
     inlineField: boolean;
+    appearance: MatFormFieldAppearance;
     dataKeyType: typeof DataKeyType;
     private modelValue;
     private propagateChange;
@@ -49,5 +51,5 @@ export declare class DeviceKeyAutocompleteComponent extends PageComponent implem
     private fetchEntityKeys;
     private createKeyFilter;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceKeyAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceKeyAutocompleteComponent, "tb-device-key-autocomplete", never, { "disabled": { "alias": "disabled"; "required": false; }; "aliasController": { "alias": "aliasController"; "required": false; }; "targetDevice": { "alias": "targetDevice"; "required": false; }; "keyType": { "alias": "keyType"; "required": false; }; "attributeScope": { "alias": "attributeScope"; "required": false; }; "attributeLabel": { "alias": "attributeLabel"; "required": false; }; "timeseriesLabel": { "alias": "timeseriesLabel"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "required": { "alias": "required"; "required": false; }; "inlineField": { "alias": "inlineField"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DeviceKeyAutocompleteComponent, "tb-device-key-autocomplete", never, { "disabled": { "alias": "disabled"; "required": false; }; "aliasController": { "alias": "aliasController"; "required": false; }; "targetDevice": { "alias": "targetDevice"; "required": false; }; "keyType": { "alias": "keyType"; "required": false; }; "attributeScope": { "alias": "attributeScope"; "required": false; }; "attributeLabel": { "alias": "attributeLabel"; "required": false; }; "timeseriesLabel": { "alias": "timeseriesLabel"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "required": { "alias": "required"; "required": false; }; "inlineField": { "alias": "inlineField"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; }, {}, never, never, false, never>;
 }

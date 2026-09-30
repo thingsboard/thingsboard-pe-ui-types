@@ -33,7 +33,7 @@ export declare class GroupPermissionDialogComponent extends DialogComponent<Grou
     isUserGroup: boolean;
     groupPermission: GroupPermissionFullInfo;
     roleType: typeof RoleType;
-    roleTypes: string[];
+    roleTypes: RoleType[];
     roleTypeTranslations: Map<RoleType, string>;
     entityType: typeof EntityType;
     submitted: boolean;

@@ -28,6 +28,7 @@ export declare class Lwm2mAttributesComponent implements ControlValueAccessor, O
     get tooltipButton(): string;
     get iconButton(): string;
     editAttributesLwm2m: ($event: Event) => void;
+    openAttributesDialog(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<Lwm2mAttributesComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mAttributesComponent, "tb-profile-lwm2m-attributes", never, { "isAttributeTelemetry": { "alias": "isAttributeTelemetry"; "required": false; }; "modelName": { "alias": "modelName"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "isResource": { "alias": "isResource"; "required": false; }; "required": { "alias": "required"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mAttributesComponent, "tb-profile-lwm2m-attributes", ["tbLwm2mAttributes"], { "isAttributeTelemetry": { "alias": "isAttributeTelemetry"; "required": false; }; "modelName": { "alias": "modelName"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "isResource": { "alias": "isResource"; "required": false; }; "required": { "alias": "required"; "required": false; }; }, {}, never, never, false, never>;
 }

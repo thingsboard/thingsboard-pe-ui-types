@@ -8,7 +8,7 @@ export declare class MathFunctionConfigComponent extends RuleNodeConfigurationCo
     MathFunction: typeof MathFunction;
     ArgumentTypeResult: typeof ArgumentTypeResult;
     argumentTypeResultMap: Map<ArgumentTypeResult, import("../rule-node-config.models").ArgumentTypeData>;
-    attributeScopeMap: Map<import("../rule-node-config.models").AttributeScope, string>;
+    attributeScopeMap: Map<import("../rule-node-config.models").AttributeScope | AttributeScopeResult, string>;
     argumentsResult: ArgumentTypeResult[];
     attributeScopeResult: AttributeScopeResult[];
     constructor(fb: UntypedFormBuilder);

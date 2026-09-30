@@ -2,10 +2,12 @@ import { EventEmitter, OnInit } from '@angular/core';
 import { Notification, NotificationType } from '@shared/models/notification.models';
 import { UtilsService } from '@core/services/utils.service';
 import { Router } from '@angular/router';
+import { DomSanitizer } from '@angular/platform-browser';
 import * as i0 from "@angular/core";
 export declare class NotificationComponent implements OnInit {
     private utils;
     private router;
+    private sanitizer;
     notification: Notification;
     onClose: () => void;
     markAsRead: EventEmitter<string>;
@@ -20,7 +22,7 @@ export declare class NotificationComponent implements OnInit {
     currentDate: number;
     title: string;
     message: string;
-    constructor(utils: UtilsService, router: Router);
+    constructor(utils: UtilsService, router: Router, sanitizer: DomSanitizer);
     ngOnInit(): void;
     markRead($event: Event): void;
     navigate($event: Event): void;

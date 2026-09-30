@@ -19,7 +19,7 @@ export declare class HomeDialogsService {
     constructor(dialog: MatDialog, translate: TranslateService, dialogService: DialogService, entityGroupService: EntityGroupService);
     confirm(title: string, message: string, cancel?: string, ok?: string, fullscreen?: boolean): Observable<boolean>;
     importEntities(customerId: CustomerId, entityType: EntityType, entityGroupId: string): Observable<boolean>;
-    shareEntityGroup($event: Event, entityGroup: EntityGroupInfo): Observable<boolean>;
+    shareEntityGroup($event: Event, entityGroup: EntityGroupInfo, isWriteAllowed?: boolean): Observable<boolean>;
     makeEntityGroupPublic($event: Event, entityGroup: EntityGroupInfo): Observable<boolean>;
     makeEntityGroupPrivate($event: Event, entityGroup: EntityGroupInfo): Observable<boolean>;
     manageOwnerAndGroups($event: Event, groupEntity: GroupEntityInfo<EntityId>): Observable<boolean>;

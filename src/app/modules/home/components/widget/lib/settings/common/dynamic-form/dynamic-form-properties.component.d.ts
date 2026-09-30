@@ -1,5 +1,5 @@
 import { DestroyRef, OnInit, QueryList } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import { TranslateService } from '@ngx-translate/core';
 import { FormProperty } from '@shared/models/dynamic-form.models';
@@ -42,7 +42,6 @@ export declare class DynamicFormPropertiesComponent implements ControlValueAcces
     propertyIdUnique(id: string, index: number): boolean;
     propertyDrop(event: CdkDragDrop<string[]>): void;
     propertiesFormArray(): UntypedFormArray;
-    trackByProperty(_index: number, propertyControl: AbstractControl): any;
     removeProperty(index: number, emitEvent?: boolean): void;
     addProperty(): void;
     export($event: Event): void;

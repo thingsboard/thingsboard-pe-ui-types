@@ -12,9 +12,15 @@ import { TimeUnit } from '@shared/models/time/time.models';
 import { AbstractControl, ValidationErrors } from '@angular/forms';
 import { OtaPackageId } from '@shared/models/id/ota-package-id';
 import { DashboardId } from '@shared/models/id/dashboard-id';
+import { EntityId } from '@shared/models/id/entity-id';
 import { DataType } from '@shared/models/constants';
 import { PowerMode } from '@home/components/profile/device/lwm2m/lwm2m-profile-config.models';
 import { PageLink } from '@shared/models/page/page-link';
+import type { Store } from '@ngrx/store';
+import type { AppState } from '@core/core.state';
+import type { TranslateService } from '@ngx-translate/core';
+import type { UserPermissionsService } from '@core/http/user-permissions.service';
+import { AiAssistantPanelConfig, AiAssistantViewType } from '@shared/models/ai-chat.models';
 export declare enum DeviceProfileType {
     DEFAULT = "DEFAULT",
     SNMP = "SNMP"
@@ -396,3 +402,4 @@ export declare const dayOfWeekTranslations: string[];
 export declare const timeOfDayToUTCTimestamp: (date: Date | number) => number;
 export declare const utcTimestampToTimeOfDay: (time?: number) => Date;
 export declare const getAlarmScheduleRangeText: (startsOn: Date | number, endsOn: Date | number) => string;
+export declare function deviceAiAssistantConfig(store: Store<AppState>, userPermissionsService: UserPermissionsService, translate: TranslateService, hasDevicePermission: boolean, entityView?: AiAssistantViewType, listView?: AiAssistantViewType, listEntityId?: EntityId): AiAssistantPanelConfig | null;

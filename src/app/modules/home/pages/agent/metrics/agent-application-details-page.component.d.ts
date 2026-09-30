@@ -1,0 +1,34 @@
+import { ChangeDetectorRef, NgZone, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { TelemetryWebsocketService } from '@core/ws/telemetry-websocket.service';
+import { AgentService } from '@core/http/agent.service';
+import { AgentApplicationId } from '@shared/models/id/agent-application-id';
+import { MetricsSnapshot } from '@home/pages/agent/util/agent-metrics';
+import { EntityDetailsPageComponent } from '@home/components/entity/entity-details-page.component';
+import { MetricsEntityRef } from './agent-multi-entity-metrics-panel.component';
+import * as i0 from "@angular/core";
+export declare class AgentApplicationDetailsPageComponent implements OnInit, OnDestroy {
+    private route;
+    private telemetryWsService;
+    private zone;
+    private cdr;
+    private agentService;
+    appEntityId: AgentApplicationId | null;
+    snapshot: MetricsSnapshot;
+    chartsOpen: boolean;
+    entities: MetricsEntityRef[];
+    detailsPage?: EntityDetailsPageComponent;
+    private destroy$;
+    private subscription;
+    private loadedUnitsForAppId;
+    constructor(route: ActivatedRoute, telemetryWsService: TelemetryWebsocketService, zone: NgZone, cdr: ChangeDetectorRef, agentService: AgentService);
+    get entity(): any;
+    get entitiesTableConfig(): any;
+    ngOnInit(): void;
+    private fetchUnits;
+    ngOnDestroy(): void;
+    toggleCharts(): void;
+    closeCharts(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<AgentApplicationDetailsPageComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AgentApplicationDetailsPageComponent, "tb-agent-application-details-page", never, {}, {}, never, never, false, never>;
+}

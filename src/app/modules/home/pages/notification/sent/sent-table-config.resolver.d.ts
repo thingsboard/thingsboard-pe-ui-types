@@ -1,5 +1,7 @@
 import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
 import { NotificationRequest, NotificationRequestInfo } from '@shared/models/notification.models';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
 import { NotificationService } from '@core/http/notification.service';
 import { TranslateService } from '@ngx-translate/core';
 import { MatDialog } from '@angular/material/dialog';
@@ -9,13 +11,14 @@ import { ActivatedRouteSnapshot } from '@angular/router';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import * as i0 from "@angular/core";
 export declare class SentTableConfigResolver {
+    private store;
     private notificationService;
     private translate;
     private dialog;
     private datePipe;
     private userPermissionsService;
     private readonly config;
-    constructor(notificationService: NotificationService, translate: TranslateService, dialog: MatDialog, datePipe: DatePipe, userPermissionsService: UserPermissionsService);
+    constructor(store: Store<AppState>, notificationService: NotificationService, translate: TranslateService, dialog: MatDialog, datePipe: DatePipe, userPermissionsService: UserPermissionsService);
     resolve(route: ActivatedRouteSnapshot): EntityTableConfig<NotificationRequest, PageLink, NotificationRequestInfo>;
     private configureCellActions;
     private createRequest;

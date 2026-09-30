@@ -22,6 +22,7 @@ export declare class TableColumnsAssignmentComponent implements OnInit, ControlV
     private valid;
     private propagateChangePending;
     private propagateChange;
+    private readonly legacyEdgeFieldsRequired;
     constructor(elementRef: ElementRef, store: Store<AppState>);
     ngOnInit(): void;
     registerOnChange(fn: any): void;

@@ -17,6 +17,7 @@ export declare class KvMapConfigComponent implements ControlValueAccessor, OnIni
     valText: string;
     valRequiredText: string;
     hintText: string;
+    emptyText: string;
     popupHelpLink: string;
     required: boolean;
     constructor(injector: Injector, fb: FormBuilder, destroyRef: DestroyRef);
@@ -48,5 +49,5 @@ export declare class KvMapConfigComponent implements ControlValueAccessor, OnIni
     };
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<KvMapConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<KvMapConfigComponent, "tb-kv-map-config", never, { "disabled": { "alias": "disabled"; "required": false; }; "uniqueKeyValuePairValidator": { "alias": "uniqueKeyValuePairValidator"; "required": false; }; "labelText": { "alias": "labelText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "keyText": { "alias": "keyText"; "required": false; }; "keyRequiredText": { "alias": "keyRequiredText"; "required": false; }; "valText": { "alias": "valText"; "required": false; }; "valRequiredText": { "alias": "valRequiredText"; "required": false; }; "hintText": { "alias": "hintText"; "required": false; }; "popupHelpLink": { "alias": "popupHelpLink"; "required": false; }; "required": { "alias": "required"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<KvMapConfigComponent, "tb-kv-map-config", never, { "disabled": { "alias": "disabled"; "required": false; }; "uniqueKeyValuePairValidator": { "alias": "uniqueKeyValuePairValidator"; "required": false; }; "labelText": { "alias": "labelText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "keyText": { "alias": "keyText"; "required": false; }; "keyRequiredText": { "alias": "keyRequiredText"; "required": false; }; "valText": { "alias": "valText"; "required": false; }; "valRequiredText": { "alias": "valRequiredText"; "required": false; }; "hintText": { "alias": "hintText"; "required": false; }; "emptyText": { "alias": "emptyText"; "required": false; }; "popupHelpLink": { "alias": "popupHelpLink"; "required": false; }; "required": { "alias": "required"; "required": false; }; }, {}, never, never, false, never>;
 }

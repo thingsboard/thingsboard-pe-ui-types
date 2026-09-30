@@ -24,6 +24,7 @@ export declare class TbPopoverDirective implements OnChanges, OnDestroy, AfterVi
         [klass: string]: any;
     };
     tbPopoverBackdrop: boolean;
+    tbPopoverMenu: boolean;
     readonly visibleChange: EventEmitter<boolean>;
     component?: TbPopoverComponent;
     private readonly destroy$;
@@ -47,7 +48,7 @@ export declare class TbPopoverDirective implements OnChanges, OnDestroy, AfterVi
     private removeTriggerListeners;
     private clearTogglingTimer;
     static ɵfac: i0.ɵɵFactoryDeclaration<TbPopoverDirective, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<TbPopoverDirective, "[tb-popover]", ["tbPopover"], { "content": { "alias": "tbPopoverContent"; "required": false; }; "context": { "alias": "tbPopoverContext"; "required": false; }; "trigger": { "alias": "tbPopoverTrigger"; "required": false; }; "placement": { "alias": "tbPopoverPlacement"; "required": false; }; "origin": { "alias": "tbPopoverOrigin"; "required": false; }; "visible": { "alias": "tbPopoverVisible"; "required": false; }; "showCloseButton": { "alias": "tbPopoverShowCloseButton"; "required": false; }; "mouseEnterDelay": { "alias": "tbPopoverMouseEnterDelay"; "required": false; }; "mouseLeaveDelay": { "alias": "tbPopoverMouseLeaveDelay"; "required": false; }; "overlayClassName": { "alias": "tbPopoverOverlayClassName"; "required": false; }; "overlayStyle": { "alias": "tbPopoverOverlayStyle"; "required": false; }; "tbPopoverBackdrop": { "alias": "tbPopoverBackdrop"; "required": false; }; }, { "visibleChange": "tbPopoverVisibleChange"; }, never, never, false, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<TbPopoverDirective, "[tb-popover]", ["tbPopover"], { "content": { "alias": "tbPopoverContent"; "required": false; }; "context": { "alias": "tbPopoverContext"; "required": false; }; "trigger": { "alias": "tbPopoverTrigger"; "required": false; }; "placement": { "alias": "tbPopoverPlacement"; "required": false; }; "origin": { "alias": "tbPopoverOrigin"; "required": false; }; "visible": { "alias": "tbPopoverVisible"; "required": false; }; "showCloseButton": { "alias": "tbPopoverShowCloseButton"; "required": false; }; "mouseEnterDelay": { "alias": "tbPopoverMouseEnterDelay"; "required": false; }; "mouseLeaveDelay": { "alias": "tbPopoverMouseLeaveDelay"; "required": false; }; "overlayClassName": { "alias": "tbPopoverOverlayClassName"; "required": false; }; "overlayStyle": { "alias": "tbPopoverOverlayStyle"; "required": false; }; "tbPopoverBackdrop": { "alias": "tbPopoverBackdrop"; "required": false; }; "tbPopoverMenu": { "alias": "tbPopoverMenu"; "required": false; }; }, { "visibleChange": "tbPopoverVisibleChange"; }, never, never, false, never>;
 }
 export declare class TbPopoverComponent<T = any> implements OnDestroy, OnInit {
     cdr: ChangeDetectorRef;
@@ -74,6 +75,7 @@ export declare class TbPopoverComponent<T = any> implements OnDestroy, OnInit {
         [klass: string]: any;
     };
     tbBackdrop: boolean;
+    tbMenu: boolean;
     tbMouseEnterDelay?: number;
     tbMouseLeaveDelay?: number;
     tbHideOnClickOutside: boolean;

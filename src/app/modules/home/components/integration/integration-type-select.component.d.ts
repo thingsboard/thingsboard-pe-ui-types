@@ -4,7 +4,7 @@ import { IntegrationType, IntegrationTypeInfo } from '@shared/models/integration
 import { Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { MatAutocompleteTrigger } from '@angular/material/autocomplete';
-import { FloatLabelType } from '@angular/material/form-field';
+import { FloatLabelType, MatFormFieldAppearance } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 type IntegrationInfo = IntegrationTypeInfo & {
     type: IntegrationType;
@@ -26,6 +26,7 @@ export declare class IntegrationTypeSelectComponent implements ControlValueAcces
     disabled: boolean;
     floatLabel: FloatLabelType;
     placeholder: any;
+    appearance: MatFormFieldAppearance;
     private propagateChange;
     constructor(fb: FormBuilder, translate: TranslateService);
     ngOnInit(): void;
@@ -41,6 +42,6 @@ export declare class IntegrationTypeSelectComponent implements ControlValueAcces
     private fetchIntegrationTypes;
     private filterIntegrationType;
     static ɵfac: i0.ɵɵFactoryDeclaration<IntegrationTypeSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<IntegrationTypeSelectComponent, "tb-integration-type-select", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "floatLabel": { "alias": "floatLabel"; "required": false; }; "placeholder": { "alias": "placeholder"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<IntegrationTypeSelectComponent, "tb-integration-type-select", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "floatLabel": { "alias": "floatLabel"; "required": false; }; "placeholder": { "alias": "placeholder"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; }, {}, never, never, false, never>;
 }
 export {};

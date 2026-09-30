@@ -6,7 +6,7 @@ import * as i0 from "@angular/core";
 export declare class KvMapConfigOldComponent extends PageComponent implements ControlValueAccessor, OnInit, Validator {
     translate: TranslateService;
     private injector;
-    private fb;
+    protected fb: FormBuilder;
     private destroyRef;
     disabled: boolean;
     uniqueKeyValuePairValidator: boolean;
@@ -16,12 +16,14 @@ export declare class KvMapConfigOldComponent extends PageComponent implements Co
     valText: string;
     valRequiredText: string;
     hintText: string;
+    description: string;
+    emptyText: string;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
     kvListFormGroup: FormGroup;
     ngControl: NgControl;
-    private propagateChange;
+    propagateChange: any;
     constructor(translate: TranslateService, injector: Injector, fb: FormBuilder, destroyRef: DestroyRef);
     ngOnInit(): void;
     keyValsFormArray(): FormArray;
@@ -46,7 +48,7 @@ export declare class KvMapConfigOldComponent extends PageComponent implements Co
         kvMapRequired?: undefined;
         kvFieldsRequired?: undefined;
     };
-    private updateModel;
+    protected updateModel(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<KvMapConfigOldComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<KvMapConfigOldComponent, "tb-kv-map-config-old", never, { "disabled": { "alias": "disabled"; "required": false; }; "uniqueKeyValuePairValidator": { "alias": "uniqueKeyValuePairValidator"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "keyText": { "alias": "keyText"; "required": false; }; "keyRequiredText": { "alias": "keyRequiredText"; "required": false; }; "valText": { "alias": "valText"; "required": false; }; "valRequiredText": { "alias": "valRequiredText"; "required": false; }; "hintText": { "alias": "hintText"; "required": false; }; "required": { "alias": "required"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<KvMapConfigOldComponent, "tb-kv-map-config-old", never, { "disabled": { "alias": "disabled"; "required": false; }; "uniqueKeyValuePairValidator": { "alias": "uniqueKeyValuePairValidator"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "keyText": { "alias": "keyText"; "required": false; }; "keyRequiredText": { "alias": "keyRequiredText"; "required": false; }; "valText": { "alias": "valText"; "required": false; }; "valRequiredText": { "alias": "valRequiredText"; "required": false; }; "hintText": { "alias": "hintText"; "required": false; }; "description": { "alias": "description"; "required": false; }; "emptyText": { "alias": "emptyText"; "required": false; }; "required": { "alias": "required"; "required": false; }; }, {}, never, never, false, never>;
 }

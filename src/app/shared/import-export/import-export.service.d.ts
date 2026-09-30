@@ -9,7 +9,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 import { DashboardUtilsService } from '@core/services/dashboard-utils.service';
 import { EntityService } from '@core/http/entity.service';
-import { ExportRow, Widget, WidgetTypeDetails } from '@shared/models/widget.models';
+import { ExportRow, Widget, WidgetActionsMap, WidgetTypeDetails } from '@shared/models/widget.models';
 import { ItemBufferService } from '@core/services/item-buffer.service';
 import { BulkImportRequest, BulkImportResult, ImportWidgetResult } from './import-export.models';
 import { EntityType } from '@shared/models/entity-type.models';
@@ -39,6 +39,7 @@ import { CalculatedFieldsService } from '@core/http/calculated-fields.service';
 import { CalculatedField } from '@shared/models/calculated-field.models';
 import { ReportTemplateService } from '@core/http/report-template.service';
 import { ReportTemplate } from '@shared/models/report.models';
+import { DevelopmentService } from '@core/http/development.service';
 import * as i0 from "@angular/core";
 export type editMissingAliasesFunction = (widgets: Array<Widget>, isSingleWidget: boolean, customTitle: string, missingEntityAliases: EntityAliases) => Observable<EntityAliases>;
 export declare class ImportExportService {
@@ -62,11 +63,14 @@ export declare class ImportExportService {
     private itembuffer;
     private calculatedFieldsService;
     private reportTemplateService;
+    private developmentService;
     private datePipe;
     private dialog;
-    constructor(document: Document, store: Store<AppState>, translate: TranslateService, dashboardService: DashboardService, dashboardUtils: DashboardUtilsService, widgetService: WidgetService, deviceProfileService: DeviceProfileService, assetProfileService: AssetProfileService, tenantProfileService: TenantProfileService, entityService: EntityService, ruleChainService: RuleChainService, converterService: ConverterService, deviceService: DeviceService, assetService: AssetService, edgeService: EdgeService, imageService: ImageService, utils: UtilsService, itembuffer: ItemBufferService, calculatedFieldsService: CalculatedFieldsService, reportTemplateService: ReportTemplateService, datePipe: DatePipe, dialog: MatDialog);
+    constructor(document: Document, store: Store<AppState>, translate: TranslateService, dashboardService: DashboardService, dashboardUtils: DashboardUtilsService, widgetService: WidgetService, deviceProfileService: DeviceProfileService, assetProfileService: AssetProfileService, tenantProfileService: TenantProfileService, entityService: EntityService, ruleChainService: RuleChainService, converterService: ConverterService, deviceService: DeviceService, assetService: AssetService, edgeService: EdgeService, imageService: ImageService, utils: UtilsService, itembuffer: ItemBufferService, calculatedFieldsService: CalculatedFieldsService, reportTemplateService: ReportTemplateService, developmentService: DevelopmentService, datePipe: DatePipe, dialog: MatDialog);
     exportFormProperties(properties: FormProperty[], fileName: string): void;
     importFormProperties(): Observable<FormProperty[]>;
+    exportWidgetActions(actionsMap: WidgetActionsMap, fileName: string): void;
+    importWidgetActions(): Observable<WidgetActionsMap>;
     exportImage(type: ImageResourceType, key: string): void;
     importImage(): Observable<ImageResourceInfo>;
     exportReportTemplate(reportTemplateId: string): void;
@@ -102,7 +106,17 @@ export declare class ImportExportService {
     importDeviceProfile(): Observable<DeviceProfile>;
     exportAssetProfile(assetProfileId: string): void;
     importAssetProfile(): Observable<AssetProfile>;
+    private clearMissingRuleChainsAndSave;
+    private clearMissingProfileRuleChains;
     private processCSVCell;
+    /**
+     * Resolves the deployment mode, then lets the export place the notice where its own format wants it.
+     *
+     * IF THE MODE CANNOT BE ESTABLISHED, NO FILE IS PRODUCED - the same choice the thumbnail capture makes. These
+     * files are saved and mailed on, so an unmarked one leaks a development deployment and a wrongly marked one
+     * lies about a production system. Declining asserts neither, and retrying re-probes because failures are not cached.
+     */
+    private withDevelopmentMode;
     exportCsv(data: ExportRow[], filename: string, normalizeFileName?: boolean, dateFormat?: string): void;
     exportXls(data: ExportRow[], filename: string, normalizeFileName?: boolean, dateFormat?: string): void;
     exportXlsx(data: ExportRow[], filename: string, dateFormat?: string, normalizeFileName?: boolean): void;
@@ -119,6 +133,7 @@ export declare class ImportExportService {
     private sumObject;
     private handleExportError;
     private validateImportedFormProperties;
+    private validateImportedWidgetActions;
     private validateImportedImage;
     private validateImportedReportTemplate;
     private validateImportedDashboard;

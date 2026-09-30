@@ -3,6 +3,9 @@ import { PageData } from '@shared/models/page/page-data';
 import { SortDirection } from '@angular/material/sort';
 import { EntitiesTableAction } from '@home/models/entity/entity-table-component.models';
 export declare const MAX_SAFE_PAGE_SIZE = 2147483647;
+export type NullsOrderStrategy = 'default' | 'nulls_first' | 'nulls_last';
+export declare function setNullsOrderStrategy(value: NullsOrderStrategy): void;
+export declare function setEdqsEnabled(value: boolean): void;
 export type PageLinkSearchFunction<T> = (entity: T, textSearch: string, searchProperty?: string) => boolean;
 export interface PageQueryParam extends Partial<SortOrder> {
     textSearch?: string;
@@ -11,7 +14,8 @@ export interface PageQueryParam extends Partial<SortOrder> {
     action?: EntitiesTableAction;
 }
 export declare function defaultPageLinkSearchFunction(searchProperty?: string): PageLinkSearchFunction<any>;
-export declare function sortItems(item1: any, item2: any, property: string, asc: boolean): number;
+export type SortColumnType = 'entityField' | 'attribute' | 'timeseries';
+export declare function sortItems(item1: any, item2: any, property: string, asc: boolean, columnType?: SortColumnType): number;
 export declare class PageLink {
     textSearch: string;
     pageSize: number;

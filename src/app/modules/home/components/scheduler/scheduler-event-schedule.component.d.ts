@@ -54,6 +54,8 @@ export declare class SchedulerEventScheduleComponent extends PageComponent imple
     private updateEnabledState;
     writeValue(value: SchedulerEventSchedule | null): void;
     validate(control: AbstractControl): ValidationErrors | null;
+    getSchedulerTimeUnitTranslations(timeUnit: string): string;
+    getSchedulerRepeatTypeTranslations(repeatType: string): string;
     private toSchedulerEventScheduleConfig;
     private fromSchedulerEventScheduleConfig;
     private createDefaultSchedulerEventScheduleConfig;

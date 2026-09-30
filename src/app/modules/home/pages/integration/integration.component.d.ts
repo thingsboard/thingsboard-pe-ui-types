@@ -43,6 +43,8 @@ export declare class IntegrationComponent extends EntityComponent<Integration, P
     prepareFormValue(formValue: any): any;
     onIntegrationIdCopied(): void;
     onIntegrationInfoCopied(type: string): void;
+    isExistingIntegration(): boolean;
+    exportToIotHub(): void;
     onIntegrationCheck(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<IntegrationComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<IntegrationComponent, "tb-integration", never, {}, {}, never, never, false, never>;

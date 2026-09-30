@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, DestroyRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { WidgetConfigComponent } from '@home/components/widget/widget-config.component';
 import { DataKey, DatasourceType, Widget, widgetType } from '@shared/models/widget.models';
@@ -90,7 +90,6 @@ export declare class DataKeysPanelComponent implements ControlValueAccessor, OnI
     };
     keyDrop(event: CdkDragDrop<string[]>): void;
     keysFormArray(): UntypedFormArray;
-    trackByKey(index: number, keyControl: AbstractControl): any;
     removeKey(index: number): void;
     addKey(): void;
     private prepareKeysFormArray;

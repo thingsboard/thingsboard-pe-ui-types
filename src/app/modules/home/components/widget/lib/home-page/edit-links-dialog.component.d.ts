@@ -2,7 +2,7 @@ import { OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { AbstractControl, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { DialogComponent } from '@shared/components/dialog.component';
 import { Router } from '@angular/router';
 import { DocumentationLink, DocumentationLinks, QuickLinks } from '@shared/models/user-settings.models';
@@ -30,7 +30,6 @@ export declare class EditLinksDialogComponent extends DialogComponent<EditLinksD
     constructor(store: Store<AppState>, router: Router, data: EditLinksDialogData, dialogRef: MatDialogRef<EditLinksDialogComponent, boolean>, fb: UntypedFormBuilder, userSettingsService: UserSettingsService);
     ngOnInit(): void;
     linksFormArray(): UntypedFormArray;
-    trackByLink(index: number, linkControl: AbstractControl): any;
     linkDrop(event: CdkDragDrop<string[]>): void;
     addLink(): void;
     linkAdded(link: DocumentationLink | string): void;

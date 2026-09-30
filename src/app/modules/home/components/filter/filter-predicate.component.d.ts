@@ -1,28 +1,41 @@
-import { DestroyRef, OnInit } from '@angular/core';
-import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
-import { EntityKeyValueType, FilterPredicateType, KeyFilterPredicateInfo } from '@shared/models/query/query.models';
+import { DestroyRef } from '@angular/core';
+import { ControlValueAccessor, UntypedFormBuilder, ValidationErrors, Validator } from '@angular/forms';
+import { EntityKeyValueType, FilterPredicateType, KeyFilterPredicateInfo, BooleanOperation, NumericOperation, StringOperation } from '@shared/models/query/query.models';
+import { MatDialog } from '@angular/material/dialog';
 import * as i0 from "@angular/core";
-export declare class FilterPredicateComponent implements ControlValueAccessor, Validator, OnInit {
+export declare class FilterPredicateComponent implements ControlValueAccessor, Validator {
     private fb;
     private destroyRef;
+    private dialog;
     disabled: boolean;
     valueType: EntityKeyValueType;
     key: string;
     displayUserParameters: boolean;
     allowUserDynamicSource: boolean;
     onlyUserDynamicSource: boolean;
-    filterPredicateFormGroup: UntypedFormGroup;
+    filterPredicateFormGroup: import("@angular/forms").UntypedFormGroup;
     type: FilterPredicateType;
     filterPredicateType: typeof FilterPredicateType;
+    stringOperations: string[];
+    stringOperationEnum: typeof StringOperation;
+    stringOperationTranslations: Map<StringOperation, string>;
+    numericOperations: string[];
+    numericOperationEnum: typeof NumericOperation;
+    numericOperationTranslations: Map<NumericOperation, string>;
+    booleanOperations: string[];
+    booleanOperationEnum: typeof BooleanOperation;
+    booleanOperationTranslations: Map<BooleanOperation, string>;
     private propagateChange;
-    constructor(fb: UntypedFormBuilder, destroyRef: DestroyRef);
-    ngOnInit(): void;
+    constructor(fb: UntypedFormBuilder, destroyRef: DestroyRef, dialog: MatDialog);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     setDisabledState(isDisabled: boolean): void;
     validate(): ValidationErrors | null;
     writeValue(predicate: KeyFilterPredicateInfo): void;
+    private updateValidators;
     private updateModel;
+    openComplexFilterDialog(): void;
+    openFilterUserInfoDialog(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<FilterPredicateComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<FilterPredicateComponent, "tb-filter-predicate", never, { "disabled": { "alias": "disabled"; "required": false; }; "valueType": { "alias": "valueType"; "required": false; }; "key": { "alias": "key"; "required": false; }; "displayUserParameters": { "alias": "displayUserParameters"; "required": false; }; "allowUserDynamicSource": { "alias": "allowUserDynamicSource"; "required": false; }; "onlyUserDynamicSource": { "alias": "onlyUserDynamicSource"; "required": false; }; }, {}, never, never, false, never>;
 }

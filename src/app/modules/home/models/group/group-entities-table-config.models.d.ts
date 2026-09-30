@@ -13,6 +13,7 @@ import { Dashboard } from '@shared/models/dashboard.models';
 import { User } from '@shared/models/user.model';
 import { Customer } from '@shared/models/customer.model';
 import { Edge } from '@shared/models/edge.models';
+import { AgentInfo } from '@shared/models/agent.models';
 export declare const ASSET_GROUP_CONFIG_FACTORY: InjectionToken<EntityGroupStateConfigFactory<Asset>>;
 export declare const DEVICE_GROUP_CONFIG_FACTORY: InjectionToken<EntityGroupStateConfigFactory<Device>>;
 export declare const ENTITY_VIEW_GROUP_CONFIG_FACTORY: InjectionToken<EntityGroupStateConfigFactory<EntityView>>;
@@ -20,6 +21,7 @@ export declare const EDGE_GROUP_CONFIG_FACTORY: InjectionToken<EntityGroupStateC
 export declare const DASHBOARD_GROUP_CONFIG_FACTORY: InjectionToken<EntityGroupStateConfigFactory<Dashboard>>;
 export declare const USER_GROUP_CONFIG_FACTORY: InjectionToken<EntityGroupStateConfigFactory<User>>;
 export declare const CUSTOMER_GROUP_CONFIG_FACTORY: InjectionToken<EntityGroupStateConfigFactory<Customer>>;
+export declare const AGENT_GROUP_CONFIG_FACTORY: InjectionToken<EntityGroupStateConfigFactory<AgentInfo>>;
 export declare const groupConfigFactoryTokenMap: Map<EntityType, InjectionToken<EntityGroupStateConfigFactory<BaseData<HasId>>>>;
 export interface EntityGroupStateConfigFactory<T extends BaseData<HasId>> {
     createConfig(params: EntityGroupParams, entityGroup: EntityGroupStateInfo<T>): Observable<GroupEntityTableConfig<T>>;

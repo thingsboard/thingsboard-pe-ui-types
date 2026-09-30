@@ -43,6 +43,7 @@ export declare class TimeUnitInputComponent implements ControlValueAccessor, Val
     validate(): ValidationErrors | null;
     private updatedModel;
     private parseTime;
+    private secondsModel;
     private createStepMultipleOfValidator;
     private updatedAllowTimeUnitInterval;
     private refreshTimeValidators;

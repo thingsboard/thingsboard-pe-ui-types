@@ -21,10 +21,13 @@ export interface DefaultTenantProfileConfiguration {
     maxIntegrations: number;
     maxConverters: number;
     maxSchedulerEvents: number;
+    maxAgents: number;
+    maxAgentApplications: number;
     maxGeneratedReports: number;
     maxResourcesInBytes: number;
     maxOtaPackagesInBytes: number;
     maxResourceSize: number;
+    maxReportSizeInBytes: number;
     transportTenantMsgRateLimit?: string;
     transportTenantTelemetryMsgRateLimit?: string;
     transportTenantTelemetryDataPointsRateLimit?: string;
@@ -55,6 +58,7 @@ export interface DefaultTenantProfileConfiguration {
     maxSms: number;
     smsEnabled: boolean;
     maxCreatedAlarms: number;
+    maxAiCredits: number;
     maxDebugModeDurationMinutes: number;
     tenantServerRestLimitsConfiguration: string;
     customerServerRestLimitsConfiguration: string;
@@ -76,6 +80,10 @@ export interface DefaultTenantProfileConfiguration {
     edgeEventRateLimitsPerEdge?: string;
     edgeUplinkMessagesRateLimits?: string;
     edgeUplinkMessagesRateLimitsPerEdge?: string;
+    agentEventRateLimits?: string;
+    agentEventRateLimitsPerAgent?: string;
+    agentLogChunkRateLimits?: string;
+    agentLogChunkRateLimitsPerAgent?: string;
     defaultStorageTtlDays: number;
     alarmsTtlDays: number;
     rpcTtlDays: number;
@@ -97,6 +105,7 @@ export interface DefaultTenantProfileConfiguration {
     maxStateSizeInKBytes: number;
     maxSingleValueArgumentSizeInKBytes: number;
     calculatedFieldDebugEventsRateLimit: string;
+    aiChatRequestsPerTenantRateLimit: string;
 }
 export type TenantProfileConfigurations = DefaultTenantProfileConfiguration;
 export interface TenantProfileConfiguration extends TenantProfileConfigurations {

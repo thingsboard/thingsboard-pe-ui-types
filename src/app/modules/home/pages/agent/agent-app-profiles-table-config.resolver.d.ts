@@ -1,0 +1,35 @@
+import { ActivatedRouteSnapshot, Router } from '@angular/router';
+import { EntityTableColumn, EntityTableConfig } from '@home/models/entity/entities-table-config.models';
+import { TranslateService } from '@ngx-translate/core';
+import { DatePipe } from '@angular/common';
+import { EntityAction } from '@home/models/entity/entity-component.models';
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { AgentAppProfile } from '@shared/models/agent.models';
+import { AgentService } from '@core/http/agent.service';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogService } from '@core/services/dialog.service';
+import * as i0 from "@angular/core";
+export declare class AgentAppProfilesTableConfigResolver {
+    private store;
+    private agentService;
+    private translate;
+    private datePipe;
+    private router;
+    private dialog;
+    private dialogService;
+    private readonly config;
+    private templateCache;
+    constructor(store: Store<AppState>, agentService: AgentService, translate: TranslateService, datePipe: DatePipe, router: Router, dialog: MatDialog, dialogService: DialogService);
+    resolve(route: ActivatedRouteSnapshot): Observable<EntityTableConfig<AgentAppProfile>>;
+    configureColumns(): Array<EntityTableColumn<AgentAppProfile>>;
+    private templateCell;
+    private enrichWithTemplates;
+    private appTypeBadge;
+    private openProfileWizard;
+    private showAssignedAppsPropagationHint;
+    onProfileAction(action: EntityAction<AgentAppProfile>): boolean;
+    static ɵfac: i0.ɵɵFactoryDeclaration<AgentAppProfilesTableConfigResolver, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<AgentAppProfilesTableConfigResolver>;
+}

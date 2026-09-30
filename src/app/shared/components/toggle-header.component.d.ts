@@ -1,4 +1,4 @@
-import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, ChangeDetectorRef, ElementRef, EventEmitter, NgZone, OnChanges, OnDestroy, OnInit, QueryList, SimpleChanges } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, ChangeDetectorRef, ElementRef, EventEmitter, NgZone, OnChanges, OnDestroy, OnInit, QueryList, SimpleChanges, TemplateRef } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -10,6 +10,7 @@ import * as i0 from "@angular/core";
 export interface ToggleHeaderOption {
     name: string;
     value: any;
+    template?: TemplateRef<any>;
     error$?: Observable<string>;
 }
 export type ToggleHeaderAppearance = 'fill' | 'fill-invert' | 'stroked';
@@ -17,6 +18,7 @@ export type ScrollDirection = 'after' | 'before';
 export declare class ToggleOption implements OnChanges, OnDestroy {
     private _element;
     value: any;
+    template: TemplateRef<any>;
     error: string;
     currentError: ReplaySubject<string>;
     get viewValue(): string;
@@ -24,7 +26,7 @@ export declare class ToggleOption implements OnChanges, OnDestroy {
     ngOnChanges(changes: SimpleChanges): void;
     ngOnDestroy(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ToggleOption, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<ToggleOption, "tb-toggle-option", never, { "value": { "alias": "value"; "required": false; }; "error": { "alias": "error"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<ToggleOption, "tb-toggle-option", never, { "value": { "alias": "value"; "required": false; }; "template": { "alias": "template"; "required": false; }; "error": { "alias": "error"; "required": false; }; }, {}, never, never, false, never>;
 }
 export declare abstract class _ToggleBase extends PageComponent implements AfterContentInit, OnDestroy {
     protected store: Store<AppState>;
@@ -79,7 +81,6 @@ export declare class ToggleHeaderComponent extends _ToggleBase implements OnInit
     ngAfterViewInit(): void;
     ngAfterContentChecked(): void;
     ngAfterViewChecked(): void;
-    trackByHeaderOption(index: number, option: ToggleHeaderOption): any;
     handlePaginatorClick(direction: ScrollDirection, $event: Event): void;
     handlePaginatorTouchStart(direction: ScrollDirection, $event: Event): void;
     private startObservePagination;

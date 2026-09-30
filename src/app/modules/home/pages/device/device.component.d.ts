@@ -15,6 +15,7 @@ import { OtaUpdateType } from '@shared/models/ota-package.models';
 import { EntityTableConfig } from '@home/models/entity/entities-table-config.models';
 import { UserPermissionsService } from '@core/http/user-permissions.service';
 import { WhiteLabelingService } from '@core/http/white-labeling.service';
+import { AiDashboardGenerationService } from '@home/components/ai/ai-dashboard-generation.service';
 import * as i0 from "@angular/core";
 export declare class DeviceComponent extends GroupEntityComponent<DeviceInfo> {
     protected store: Store<AppState>;
@@ -28,10 +29,11 @@ export declare class DeviceComponent extends GroupEntityComponent<DeviceInfo> {
     protected userPermissionsService: UserPermissionsService;
     private destroyRef;
     private wl;
+    private aiDashboardGenerationService;
     entityType: typeof EntityType;
     deviceCredentials$: Subject<DeviceCredentials>;
     otaUpdateType: typeof OtaUpdateType;
-    constructor(store: Store<AppState>, translate: TranslateService, deviceService: DeviceService, clipboardService: ClipboardService, entityValue: DeviceInfo, entitiesTableConfigValue: EntityTableConfig<DeviceInfo> | GroupEntityTableConfig<DeviceInfo>, fb: UntypedFormBuilder, cd: ChangeDetectorRef, userPermissionsService: UserPermissionsService, destroyRef: DestroyRef, wl: WhiteLabelingService);
+    constructor(store: Store<AppState>, translate: TranslateService, deviceService: DeviceService, clipboardService: ClipboardService, entityValue: DeviceInfo, entitiesTableConfigValue: EntityTableConfig<DeviceInfo> | GroupEntityTableConfig<DeviceInfo>, fb: UntypedFormBuilder, cd: ChangeDetectorRef, userPermissionsService: UserPermissionsService, destroyRef: DestroyRef, wl: WhiteLabelingService, aiDashboardGenerationService: AiDashboardGenerationService);
     ngOnInit(): void;
     hideDelete(): boolean;
     showConnectivityDialog(): boolean;
@@ -41,6 +43,8 @@ export declare class DeviceComponent extends GroupEntityComponent<DeviceInfo> {
     onDeviceIdCopied($event: any): void;
     onDeviceProfileUpdated(): void;
     onDeviceProfileChanged(deviceProfile: DeviceProfileInfo): void;
+    generateDashboard($event: Event): void;
+    isAllowedDashboardGenerate(): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<DeviceComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<DeviceComponent, "tb-device", never, {}, {}, never, never, false, never>;
 }

@@ -1,5 +1,5 @@
 import { DestroyRef, OnInit, QueryList } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
 import { ScadaSymbolBehavior } from '@home/components/widget/lib/scada/scada-symbol.models';
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import { ScadaSymbolBehaviorRowComponent } from '@home/pages/scada-symbol/metadata-components/scada-symbol-behavior-row.component';
@@ -35,7 +35,6 @@ export declare class ScadaSymbolBehaviorsComponent implements ControlValueAccess
     behaviorIdUnique(id: string, index: number): boolean;
     behaviorDrop(event: CdkDragDrop<string[]>): void;
     behaviorsFormArray(): UntypedFormArray;
-    trackByBehavior(index: number, behaviorControl: AbstractControl): any;
     removeBehavior(index: number, emitEvent?: boolean): void;
     addBehavior(): void;
     private prepareBehaviorsFormArray;

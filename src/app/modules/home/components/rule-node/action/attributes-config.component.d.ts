@@ -7,7 +7,7 @@ import * as i0 from "@angular/core";
 export declare class AttributesConfigComponent extends RuleNodeConfigurationComponent {
     private fb;
     attributeScopeMap: typeof AttributeScope;
-    attributeScopes: string[];
+    attributeScopes: AttributeScope[];
     telemetryTypeTranslationsMap: Map<import("@app/shared/models/telemetry/telemetry.models").TelemetryType, string>;
     ProcessingType: typeof ProcessingType;
     processingStrategies: ProcessingType[];

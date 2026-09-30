@@ -5,7 +5,7 @@ import { EntityType } from '@app/shared/models/entity-type.models';
 import * as i0 from "@angular/core";
 export declare class CreateRelationConfigComponent extends RuleNodeConfigurationComponent {
     private fb;
-    directionTypes: string[];
+    directionTypes: EntitySearchDirection[];
     directionTypeTranslations: Map<EntitySearchDirection, string>;
     entityType: typeof EntityType;
     entityTypeNamePatternTranslation: Map<EntityType, string>;

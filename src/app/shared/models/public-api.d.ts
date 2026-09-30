@@ -50,6 +50,7 @@ export * from './rule-chain.models';
 export * from './rule-node.models';
 export * from './scheduler-event.models';
 export * from './settings.models';
+export * from './solution-creator.models';
 export * from './tenant.model';
 export * from './user.model';
 export * from './unit.models';

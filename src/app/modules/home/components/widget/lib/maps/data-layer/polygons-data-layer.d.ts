@@ -20,7 +20,7 @@ declare class TbPolygonDataLayerItem extends TbLatestDataLayerItem<PolygonsDataL
     protected unbindLabel(): void;
     protected bindLabel(content: L.Content): void;
     protected doUpdate(data: FormattedData<TbMapDatasource>, dsData: FormattedData<TbMapDatasource>[]): void;
-    protected doInvalidateCoordinates(data: FormattedData<TbMapDatasource>, _dsData: FormattedData<TbMapDatasource>[]): void;
+    protected doInvalidateCoordinates(data: FormattedData<TbMapDatasource>, dsData: FormattedData<TbMapDatasource>[]): void;
     protected addItemClass(clazz: string): void;
     protected removeItemClass(clazz: string): void;
     protected enableDrag(): void;

@@ -28,6 +28,8 @@ export declare abstract class WebsocketService<T extends WsSubscriber> implement
     wsUri: string;
     dataStream: WebSocketSubject<CmdWrapper | CmdUpdateMsg | AuthWsCmd>;
     errorName: string;
+    private reconnectAttempts;
+    private lastShownCloseCode;
     protected constructor(store: Store<AppState>, authService: AuthService, ngZone: NgZone, apiEndpoint: string, cmdWrapper: CmdWrapper, window: Window, reportService?: DashboardReportService);
     abstract subscribe(subscriber: WsSubscriber, skipPublish?: boolean): any;
     abstract update(subscriber: T): any;

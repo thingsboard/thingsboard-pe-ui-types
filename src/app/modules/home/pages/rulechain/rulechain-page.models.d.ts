@@ -20,6 +20,6 @@ export interface RuleChainMenuContextInfo {
     icon: string;
     iconUrl?: string;
     title: string;
-    subtitle: string;
+    subtitle?: string;
     menuItems: RuleChainMenuItem[];
 }

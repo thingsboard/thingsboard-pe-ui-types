@@ -1,18 +1,17 @@
-import { OnDestroy } from '@angular/core';
 import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { ResourceLwM2M } from '@home/components/profile/device/lwm2m/lwm2m-profile-config.models';
+import { GtSmBreakpointAwareDirective } from '@shared/components/gt-sm-breakpoint-aware.directive';
 import * as i0 from "@angular/core";
-export declare class Lwm2mObserveAttrTelemetryResourcesComponent implements ControlValueAccessor, OnDestroy, Validator {
+export declare class Lwm2mObserveAttrTelemetryResourcesComponent extends GtSmBreakpointAwareDirective implements ControlValueAccessor, Validator {
     private fb;
     resourcesFormGroup: UntypedFormGroup;
+    private destroyRef;
     disabled: boolean;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
-    private destroy$;
     private propagateChange;
     constructor(fb: UntypedFormBuilder);
-    ngOnDestroy(): void;
     registerOnTouched(fn: any): void;
     registerOnChange(fn: any): void;
     writeValue(value: ResourceLwM2M[]): void;
@@ -23,7 +22,6 @@ export declare class Lwm2mObserveAttrTelemetryResourcesComponent implements Cont
     private updatedResources;
     private createdResourceFormGroup;
     private updateModel;
-    trackByParams(index: number, resource: ResourceLwM2M): number;
     isDisabledObserve(index: number): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<Lwm2mObserveAttrTelemetryResourcesComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<Lwm2mObserveAttrTelemetryResourcesComponent, "tb-profile-lwm2m-observe-attr-telemetry-resource", never, { "disabled": { "alias": "disabled"; "required": false; }; "required": { "alias": "required"; "required": false; }; }, {}, never, never, false, never>;

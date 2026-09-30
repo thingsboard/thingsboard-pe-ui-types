@@ -1,0 +1,30 @@
+import { AfterViewInit, OnChanges, SimpleChanges, ViewContainerRef } from '@angular/core';
+import { DatePipe } from '@angular/common';
+import { Overlay } from '@angular/cdk/overlay';
+import { MatDialog } from '@angular/material/dialog';
+import { TranslateService } from '@ngx-translate/core';
+import { AgentService } from '@core/http/agent.service';
+import { DialogService } from '@core/services/dialog.service';
+import { EntitiesTableComponent } from '@home/components/entity/entities-table.component';
+import { AgentApplicationInfo } from '@shared/models/agent.models';
+import { AgentAppEventTableConfig } from './agent-app-event-table-config';
+import * as i0 from "@angular/core";
+export declare class AgentAppEventTableComponent implements AfterViewInit, OnChanges {
+    private agentService;
+    private dialogService;
+    private dialog;
+    private translate;
+    private datePipe;
+    private overlay;
+    private viewContainerRef;
+    application: AgentApplicationInfo;
+    active: boolean;
+    entitiesTable: EntitiesTableComponent;
+    tableConfig: AgentAppEventTableConfig;
+    constructor(agentService: AgentService, dialogService: DialogService, dialog: MatDialog, translate: TranslateService, datePipe: DatePipe, overlay: Overlay, viewContainerRef: ViewContainerRef);
+    ngAfterViewInit(): void;
+    ngOnChanges(changes: SimpleChanges): void;
+    private rebuild;
+    static ɵfac: i0.ɵɵFactoryDeclaration<AgentAppEventTableComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AgentAppEventTableComponent, "tb-agent-app-event-table", never, { "application": { "alias": "application"; "required": false; }; "active": { "alias": "active"; "required": false; }; }, {}, never, never, false, never>;
+}

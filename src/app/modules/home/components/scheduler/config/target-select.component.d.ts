@@ -10,6 +10,7 @@ import { DeviceProfileInfo } from '@shared/models/device.models';
 import { DeviceId } from '@shared/models/id/device-id';
 import { DeviceProfileId } from '@shared/models/id/device-profile-id';
 import { EntityGroupId } from '@shared/models/id/entity-group-id';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 type TargetType = 'entity' | 'deviceProfile' | 'groupTenant' | 'ownerGroup';
 interface FormValue {
@@ -37,6 +38,7 @@ export declare class TargetSelectComponent implements ControlValueAccessor, OnDe
     get required(): boolean;
     set required(value: boolean);
     disabled: boolean;
+    appearance: MatFormFieldAppearance;
     currentEntity: EventEmitter<EntityId | EntityGroupInfo>;
     private propagateChange;
     constructor(store: Store<AppState>, translate: TranslateService, fb: UntypedFormBuilder);
@@ -50,6 +52,6 @@ export declare class TargetSelectComponent implements ControlValueAccessor, OnDe
     deviceLoaded(device: any): void;
     updateView(value: FormValue | null): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TargetSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TargetSelectComponent, "tb-target-select", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, { "currentEntity": "currentEntity"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TargetSelectComponent, "tb-target-select", never, { "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; }, { "currentEntity": "currentEntity"; }, never, never, false, never>;
 }
 export {};

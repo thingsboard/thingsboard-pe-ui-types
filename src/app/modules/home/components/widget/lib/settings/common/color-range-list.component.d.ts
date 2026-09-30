@@ -32,8 +32,6 @@ export declare class ColorRangeListComponent implements OnInit, ControlValueAcce
     private colorRangeControl;
     get rangeListFormArray(): UntypedFormArray;
     get rangeListFormGroups(): FormGroup[];
-    trackByRange(index: number, rangeControl: AbstractControl): any;
-    trackByAdvancedRange(index: number, advancedRangeControl: AbstractControl): any;
     removeAdvancedRange(index: number): void;
     get advancedRangeFormArray(): UntypedFormArray;
     get advancedRangeControls(): FormControl[];

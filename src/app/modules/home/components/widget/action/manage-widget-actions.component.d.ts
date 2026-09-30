@@ -9,9 +9,11 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { WidgetActionCallbacks, WidgetActionDescriptorInfo, WidgetActionsDatasource } from '@home/components/widget/action/manage-widget-actions.component.models';
 import { UtilsService } from '@core/services/utils.service';
-import { WidgetActionDescriptor, WidgetActionSource, WidgetActionType, widgetType } from '@shared/models/widget.models';
+import { WidgetActionSource, WidgetActionsMap, WidgetActionType, widgetType } from '@shared/models/widget.models';
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ImportExportService } from '@shared/import-export/import-export.service';
+import { ItemBufferService } from '@core/services/item-buffer.service';
 import * as i0 from "@angular/core";
 export declare class ManageWidgetActionsComponent extends PageComponent implements OnInit, AfterViewInit, OnDestroy, ControlValueAccessor {
     private translate;
@@ -22,8 +24,12 @@ export declare class ManageWidgetActionsComponent extends PageComponent implemen
     private elementRef;
     private zone;
     private sanitizer;
+    private importExportService;
+    private itembuffer;
     disabled: boolean;
     widgetType: widgetType;
+    widgetName: string;
+    widgetTitle: string;
     defaultIconColor: string;
     callbacks: WidgetActionCallbacks;
     actionSources: {
@@ -49,13 +55,27 @@ export declare class ManageWidgetActionsComponent extends PageComponent implemen
     paginator: MatPaginator;
     sort: MatSort;
     private propagateChange;
-    constructor(translate: TranslateService, utils: UtilsService, dialog: MatDialog, dialogs: DialogService, cd: ChangeDetectorRef, elementRef: ElementRef, zone: NgZone, sanitizer: DomSanitizer);
+    constructor(translate: TranslateService, utils: UtilsService, dialog: MatDialog, dialogs: DialogService, cd: ChangeDetectorRef, elementRef: ElementRef, zone: NgZone, sanitizer: DomSanitizer, importExportService: ImportExportService, itembuffer: ItemBufferService);
     ngOnInit(): void;
     ngOnDestroy(): void;
     ngAfterViewInit(): void;
     private updateData;
     dropAction(event: CdkDragDrop<WidgetActionsDatasource>): void;
     addAction($event: Event): void;
+    get hasActions(): boolean;
+    importActions($event: Event): void;
+    copyAction($event: Event, action: WidgetActionDescriptorInfo): void;
+    pasteActions($event: Event): void;
+    get hasActionsInBuffer(): boolean;
+    private get allowedActionTypes();
+    private prepareActionForTransfer;
+    private applyImportedActions;
+    duplicateAction($event: Event, action: WidgetActionDescriptorInfo): void;
+    clearActions($event: Event): void;
+    exportActions($event: Event): void;
+    copyAllActions($event: Event): void;
+    private prepareActionsMap;
+    exportAction($event: Event, action: WidgetActionDescriptorInfo): void;
     editAction($event: Event, action: WidgetActionDescriptorInfo): void;
     private openWidgetActionDialog;
     private saveAction;
@@ -67,10 +87,8 @@ export declare class ManageWidgetActionsComponent extends PageComponent implemen
     registerOnChange(fn: any): void;
     registerOnTouched(_fn: any): void;
     setDisabledState(isDisabled: boolean): void;
-    writeValue(actions?: {
-        [actionSourceId: string]: Array<WidgetActionDescriptor>;
-    }): void;
+    writeValue(actions?: WidgetActionsMap): void;
     private onActionsUpdated;
     static ɵfac: i0.ɵɵFactoryDeclaration<ManageWidgetActionsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ManageWidgetActionsComponent, "tb-manage-widget-actions", never, { "disabled": { "alias": "disabled"; "required": false; }; "widgetType": { "alias": "widgetType"; "required": false; }; "defaultIconColor": { "alias": "defaultIconColor"; "required": false; }; "callbacks": { "alias": "callbacks"; "required": false; }; "actionSources": { "alias": "actionSources"; "required": false; }; "actionTypes": { "alias": "actionTypes"; "required": false; }; "customFunctionArgs": { "alias": "customFunctionArgs"; "required": false; }; "isEntityGroup": { "alias": "isEntityGroup"; "required": false; }; "outlinedBorder": { "alias": "outlinedBorder"; "required": false; }; "additionalWidgetActionTypes": { "alias": "additionalWidgetActionTypes"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ManageWidgetActionsComponent, "tb-manage-widget-actions", never, { "disabled": { "alias": "disabled"; "required": false; }; "widgetType": { "alias": "widgetType"; "required": false; }; "widgetName": { "alias": "widgetName"; "required": false; }; "widgetTitle": { "alias": "widgetTitle"; "required": false; }; "defaultIconColor": { "alias": "defaultIconColor"; "required": false; }; "callbacks": { "alias": "callbacks"; "required": false; }; "actionSources": { "alias": "actionSources"; "required": false; }; "actionTypes": { "alias": "actionTypes"; "required": false; }; "customFunctionArgs": { "alias": "customFunctionArgs"; "required": false; }; "isEntityGroup": { "alias": "isEntityGroup"; "required": false; }; "outlinedBorder": { "alias": "outlinedBorder"; "required": false; }; "additionalWidgetActionTypes": { "alias": "additionalWidgetActionTypes"; "required": false; }; }, {}, never, never, false, never>;
 }

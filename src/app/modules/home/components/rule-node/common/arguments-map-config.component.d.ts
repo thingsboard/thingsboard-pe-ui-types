@@ -17,7 +17,7 @@ export declare class ArgumentsMapConfigComponent extends PageComponent implement
     mathFunctionMap: Map<MathFunction, import("./../rule-node-config.models").FunctionData>;
     ArgumentType: typeof ArgumentType;
     argumentsFormGroup: FormGroup;
-    attributeScopeMap: Map<AttributeScope, string>;
+    attributeScopeMap: Map<AttributeScope | import("./../rule-node-config.models").AttributeScopeResult, string>;
     argumentTypeMap: Map<ArgumentType, import("./../rule-node-config.models").ArgumentTypeData>;
     arguments: ArgumentType[];
     attributeScope: AttributeScope[];

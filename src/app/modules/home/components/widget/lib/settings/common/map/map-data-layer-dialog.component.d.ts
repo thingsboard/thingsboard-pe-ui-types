@@ -45,7 +45,7 @@ export declare class MapDataLayerDialogComponent extends DialogComponent<MapData
     dataLayerFormGroup: UntypedFormGroup;
     settings: MapDataLayerSettings;
     mapType: MapType;
-    dataLayerType: MapDataLayerType;
+    dataLayerType: "markers" | "trips" | "polygons" | "circles" | "polylines";
     context: MapSettingsContext;
     generateAdditionalDataKey: any;
     functionScopeVariables: string[];

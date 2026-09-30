@@ -19,14 +19,14 @@ export declare class RoleComponent extends EntityComponent<Role> {
     protected cd: ChangeDetectorRef;
     private destroyRef;
     roleType: typeof RoleType;
-    roleTypes: string[];
+    roleTypes: RoleType[];
     roleTypeTranslations: Map<RoleType, string>;
     constructor(store: Store<AppState>, translate: TranslateService, dialog: MatDialog, entityValue: Role, entitiesTableConfigValue: EntityTableConfig<Role>, fb: UntypedFormBuilder, cd: ChangeDetectorRef, destroyRef: DestroyRef);
     ngOnInit(): void;
     hideDelete(): boolean;
     buildForm(entity: Role): UntypedFormGroup;
     private roleTypeChanged;
-    private updateValidators;
+    private togglePermissionControls;
     updateForm(entity: Role): void;
     prepareFormValue(formValue: any): any;
     onRoleIdCopied($event: any): void;

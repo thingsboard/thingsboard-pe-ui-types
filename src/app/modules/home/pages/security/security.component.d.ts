@@ -51,7 +51,6 @@ export declare class SecurityComponent extends PageComponent implements OnInit, 
     private buildChangePasswordForm;
     private loadPasswordPolicy;
     passwordNotSameAsOld(): ValidatorFn;
-    trackByProvider(i: number, provider: TwoFactorAuthProviderType): TwoFactorAuthProviderType;
     copyToken(): void;
     confirm2FAChange(event: MouseEvent, provider: TwoFactorAuthProviderType): void;
     private createdNewAuthConfig;

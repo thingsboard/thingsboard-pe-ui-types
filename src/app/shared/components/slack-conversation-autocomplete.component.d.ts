@@ -8,6 +8,7 @@ import { EntityService } from '@core/http/entity.service';
 import { TruncatePipe } from '@shared/pipe/truncate.pipe';
 import { SlackChanelType, SlackConversation } from '@shared/models/notification.models';
 import { NotificationService } from '@core/http/notification.service';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
 export declare class SlackConversationAutocompleteComponent implements ControlValueAccessor, OnInit, OnChanges {
     private store;
@@ -25,6 +26,7 @@ export declare class SlackConversationAutocompleteComponent implements ControlVa
     disabled: boolean;
     slackChanelType: SlackChanelType;
     token: string;
+    appearance: MatFormFieldAppearance;
     slackInput: ElementRef;
     slackConversation$: Observable<Array<SlackConversation>>;
     slackSearchText: string;
@@ -50,5 +52,5 @@ export declare class SlackConversationAutocompleteComponent implements ControlVa
     private clearSlackCache;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SlackConversationAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SlackConversationAutocompleteComponent, "tb-slack-conversation-autocomplete", never, { "labelText": { "alias": "labelText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "slackChanelType": { "alias": "slackChanelType"; "required": false; }; "token": { "alias": "token"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SlackConversationAutocompleteComponent, "tb-slack-conversation-autocomplete", never, { "labelText": { "alias": "labelText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "slackChanelType": { "alias": "slackChanelType"; "required": false; }; "token": { "alias": "token"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; }, {}, never, never, false, never>;
 }

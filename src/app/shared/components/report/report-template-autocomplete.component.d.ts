@@ -19,6 +19,7 @@ export declare class ReportTemplateAutocompleteComponent implements ControlValue
     modelValue: ReportTemplateId | null;
     type: ReportTemplateType;
     format: TbReportFormat;
+    includeCustomers: boolean;
     floatLabel: FloatLabelType;
     appearance: MatFormFieldAppearance;
     subscriptSizing: SubscriptSizing;
@@ -27,6 +28,8 @@ export declare class ReportTemplateAutocompleteComponent implements ControlValue
     disabled: boolean;
     placeholder: string;
     newTabDetailsButton: boolean;
+    showHint: boolean;
+    showError: boolean;
     reportTemplateInput: ElementRef;
     reportTemplateAutocomplete: MatAutocompleteTrigger;
     filteredReportTemplates: Observable<Array<ReportTemplateInfo>>;
@@ -54,5 +57,5 @@ export declare class ReportTemplateAutocompleteComponent implements ControlValue
     textIsNotEmpty(text: string): boolean;
     openReportTemplateNewTab($event: Event): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ReportTemplateAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ReportTemplateAutocompleteComponent, "tb-report-template-autocomplete", never, { "type": { "alias": "type"; "required": false; }; "format": { "alias": "format"; "required": false; }; "floatLabel": { "alias": "floatLabel"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "inlineField": { "alias": "inlineField"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "placeholder": { "alias": "placeholder"; "required": false; }; "newTabDetailsButton": { "alias": "newTabDetailsButton"; "required": false; }; }, {}, never, ["[tb-error]", "[tb-hint]"], false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ReportTemplateAutocompleteComponent, "tb-report-template-autocomplete", never, { "type": { "alias": "type"; "required": false; }; "format": { "alias": "format"; "required": false; }; "includeCustomers": { "alias": "includeCustomers"; "required": false; }; "floatLabel": { "alias": "floatLabel"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "inlineField": { "alias": "inlineField"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "placeholder": { "alias": "placeholder"; "required": false; }; "newTabDetailsButton": { "alias": "newTabDetailsButton"; "required": false; }; "showHint": { "alias": "showHint"; "required": false; }; "showError": { "alias": "showError"; "required": false; }; }, {}, never, ["[tb-error]", "[tb-hint]"], false, never>;
 }

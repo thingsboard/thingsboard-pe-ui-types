@@ -1,11 +1,14 @@
 export interface UserSettings {
     openedMenuSections?: string[];
+    menuCollapsed?: boolean;
     notDisplayConnectivityAfterAddDevice?: boolean;
     notDisplayInstructionsAfterAddEdge?: boolean;
     notDisplayConfigurationAfterAddMobileBundle?: boolean;
+    notDisplayLicenseHandOff?: boolean;
     includeBundleWidgetsInExport?: boolean;
     includeResourcesInExportWidgetTypes?: boolean;
     includeResourcesInExportDashboard?: boolean;
+    isSolutionSidebarExpanded?: boolean;
 }
 export declare const initialUserSettings: UserSettings;
 export declare enum UserSettingsType {

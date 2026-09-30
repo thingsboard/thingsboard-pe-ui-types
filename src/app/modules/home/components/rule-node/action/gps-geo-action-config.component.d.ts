@@ -6,13 +6,13 @@ export declare class GpsGeoActionConfigComponent extends RuleNodeConfigurationCo
     private fb;
     geoActionConfigForm: UntypedFormGroup;
     perimeterType: typeof PerimeterType;
-    perimeterTypes: string[];
+    perimeterTypes: PerimeterType[];
     perimeterTypeTranslationMap: Map<PerimeterType, string>;
-    rangeUnits: string[];
+    rangeUnits: RangeUnit[];
     rangeUnitTranslationMap: Map<RangeUnit, string>;
     presenceMonitoringStrategies: Map<import("../rule-node-config.models").PresenceMonitoringStrategy, import("../rule-node-config.models").PresenceMonitoringStrategyData>;
     presenceMonitoringStrategyKeys: import("../rule-node-config.models").PresenceMonitoringStrategy[];
-    timeUnits: string[];
+    timeUnits: TimeUnit[];
     timeUnitsTranslationMap: Map<TimeUnit, string>;
     defaultPaddingEnable: boolean;
     constructor(fb: UntypedFormBuilder);

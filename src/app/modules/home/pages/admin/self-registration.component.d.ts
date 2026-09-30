@@ -12,7 +12,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { BaseData } from '@shared/models/base-data';
 import { EntityId } from '@shared/models/id/entity-id';
 import { Operation, Resource } from '@shared/models/security.models';
-import { EditorOptions } from 'tinymce';
+import { EditorOptions } from 'hugerte';
 import { DialogService } from '@core/services/dialog.service';
 import * as i0 from "@angular/core";
 export declare class SelfRegistrationComponent extends PageComponent implements OnInit, HasConfirmForm {
@@ -28,7 +28,7 @@ export declare class SelfRegistrationComponent extends PageComponent implements 
     registerLink: string;
     entityTypes: typeof EntityType;
     deleteDisabled: boolean;
-    tinyMceOptions: Partial<EditorOptions>;
+    hugeRteOptions: Partial<EditorOptions>;
     showMainLoadingBar: boolean;
     readonly EntityType: typeof EntityType;
     readonly operation: typeof Operation;

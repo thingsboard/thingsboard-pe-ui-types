@@ -43,6 +43,7 @@ export declare class ReportComponentComponent implements IReportComponent, OnIni
     pageMarginLeft: number;
     pageMarginRight: number;
     last: boolean;
+    readonly: boolean;
     context: ReportComponentContext;
     edit: EventEmitter<ReportComponentConfig>;
     childEdit: EventEmitter<ReportComponentConfig>;
@@ -79,7 +80,7 @@ export declare class ReportComponentComponent implements IReportComponent, OnIni
     deselect(): void;
     private initEditReportComponentTooltip;
     static ɵfac: i0.ɵɵFactoryDeclaration<ReportComponentComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ReportComponentComponent, "tb-report-component", never, { "reportComponent": { "alias": "reportComponent"; "required": false; }; "format": { "alias": "format"; "required": false; }; "innerComponent": { "alias": "innerComponent"; "required": false; }; "dragging": { "alias": "dragging"; "required": false; }; "scale": { "alias": "scale"; "required": false; }; "parentScale": { "alias": "parentScale"; "required": false; }; "width": { "alias": "width"; "required": false; }; "pageMarginLeft": { "alias": "pageMarginLeft"; "required": false; }; "pageMarginRight": { "alias": "pageMarginRight"; "required": false; }; "last": { "alias": "last"; "required": false; }; "context": { "alias": "context"; "required": false; }; "selected": { "alias": "selected"; "required": false; }; "childSelected": { "alias": "childSelected"; "required": false; }; }, { "edit": "edit"; "childEdit": "childEdit"; "makeCopy": "makeCopy"; "remove": "remove"; "childRemove": "childRemove"; "childrenChanged": "childrenChanged"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ReportComponentComponent, "tb-report-component", never, { "reportComponent": { "alias": "reportComponent"; "required": false; }; "format": { "alias": "format"; "required": false; }; "innerComponent": { "alias": "innerComponent"; "required": false; }; "dragging": { "alias": "dragging"; "required": false; }; "scale": { "alias": "scale"; "required": false; }; "parentScale": { "alias": "parentScale"; "required": false; }; "width": { "alias": "width"; "required": false; }; "pageMarginLeft": { "alias": "pageMarginLeft"; "required": false; }; "pageMarginRight": { "alias": "pageMarginRight"; "required": false; }; "last": { "alias": "last"; "required": false; }; "readonly": { "alias": "readonly"; "required": false; }; "context": { "alias": "context"; "required": false; }; "selected": { "alias": "selected"; "required": false; }; "childSelected": { "alias": "childSelected"; "required": false; }; }, { "edit": "edit"; "childEdit": "childEdit"; "makeCopy": "makeCopy"; "remove": "remove"; "childRemove": "childRemove"; "childrenChanged": "childrenChanged"; }, never, never, false, never>;
 }
 export declare class EditReportComponentTooltipComponent implements AfterViewInit {
     element: ElementRef<HTMLElement>;

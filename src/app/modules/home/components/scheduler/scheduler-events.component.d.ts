@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, DestroyRef, ElementRef, NgZone, OnChanges, OnDestroy, OnInit, Renderer2, SimpleChanges, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, DestroyRef, ElementRef, NgZone, OnChanges, OnDestroy, OnInit, Renderer2, SimpleChanges, Type, ViewContainerRef } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -27,9 +27,10 @@ import { MatIconButton } from '@angular/material/button';
 import { TbPopoverService } from '@shared/components/popover.service';
 import { CustomTranslatePipe } from '@shared/pipe/custom-translate.pipe';
 import { DomSanitizer } from "@angular/platform-browser";
+import { TbAnchorComponent } from '@shared/components/tb-anchor.component';
 import * as i0 from "@angular/core";
 export declare class SchedulerEventsComponent extends PageComponent implements OnInit, AfterViewInit, OnChanges, OnDestroy {
-    store: Store<AppState>;
+    protected store: Store<AppState>;
     private customTranslatePipe;
     private translate;
     private schedulerEventService;
@@ -46,6 +47,8 @@ export declare class SchedulerEventsComponent extends PageComponent implements O
     private viewContainerRef;
     private destroyRef;
     private sanitizer;
+    replaceComponent: Type<any>;
+    replaceComponentAnchor: TbAnchorComponent;
     schedulerEventWidgetContainerRef: ElementRef;
     searchInputField: ElementRef;
     paginator: MatPaginator;
@@ -57,6 +60,7 @@ export declare class SchedulerEventsComponent extends PageComponent implements O
     ctx: WidgetContext;
     edgeId: string;
     authUser: import("../../../../shared/public-api").AuthUser;
+    reportingEnabled: boolean;
     editEnabled: boolean;
     vcEnabled: boolean;
     addEnabled: boolean;

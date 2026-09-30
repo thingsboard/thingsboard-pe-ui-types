@@ -110,6 +110,7 @@ export interface DashboardSettings {
     showDashboardTimewindow?: boolean;
     showDashboardExport?: boolean;
     showUpdateDashboardImage?: boolean;
+    showConfigureWithAi?: boolean;
     toolbarAlwaysOpen?: boolean;
     hideToolbar?: boolean;
     titleColor?: string;
@@ -143,6 +144,7 @@ export interface Dashboard extends BaseData<DashboardId>, HasTenantId, HasVersio
 export type DashboardInfo = Dashboard & GroupEntityInfo<DashboardId>;
 export interface HomeDashboard extends Dashboard {
     hideDashboardToolbar: boolean;
+    isSystemDashboard?: boolean;
 }
 export interface HomeDashboardInfo {
     dashboardId: DashboardId;

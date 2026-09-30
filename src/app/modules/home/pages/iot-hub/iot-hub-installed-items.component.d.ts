@@ -1,0 +1,34 @@
+import { OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+import { TbIotHubInstalledItemsTableComponent } from '@home/components/iot-hub/iot-hub-installed-items-table.component';
+import * as i0 from "@angular/core";
+export declare class TbIotHubInstalledItemsComponent implements OnInit, OnDestroy {
+    private translate;
+    private route;
+    private router;
+    textSearch: string;
+    appliedTextSearch: string;
+    typeFilters: string[];
+    activeTypeFilters: Set<string>;
+    allItemTypes: string[];
+    tableComponent: TbIotHubInstalledItemsTableComponent;
+    private searchSubject;
+    private destroy$;
+    constructor(translate: TranslateService, route: ActivatedRoute, router: Router);
+    ngOnInit(): void;
+    ngOnDestroy(): void;
+    navigateToMarketplace(): void;
+    onSearchChange(value: string): void;
+    isTypeFilterActive(type: string): boolean;
+    toggleTypeFilter(type: string): void;
+    removeTypeFilter(type: string): void;
+    clearAllFilters(): void;
+    hasActiveFilters(): boolean;
+    getItemTypeLabel(itemType: string): string;
+    checkForUpdates(): void;
+    get isCheckingUpdates(): boolean;
+    get updatesChecked(): boolean;
+    static ɵfac: i0.ɵɵFactoryDeclaration<TbIotHubInstalledItemsComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TbIotHubInstalledItemsComponent, "tb-iot-hub-installed-items", never, {}, {}, never, never, false, never>;
+}

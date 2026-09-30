@@ -13,6 +13,7 @@ export declare class HomeLinksComponent implements OnInit {
     homeSections$: import("rxjs").Observable<HomeSection[]>;
     cols: number;
     homeDashboard: HomeDashboard;
+    hideMainToolbar: boolean;
     constructor(menuService: MenuService, breakpointObserver: BreakpointObserver, cd: ChangeDetectorRef, route: ActivatedRoute);
     ngOnInit(): void;
     private updateColumnCount;

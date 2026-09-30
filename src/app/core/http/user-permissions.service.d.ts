@@ -5,9 +5,12 @@ import { EntityId } from '@shared/models/id/entity-id';
 import { EntityType } from '@shared/models/entity-type.models';
 import { EntityGroup, EntityGroupInfo } from '@shared/models/entity-group.models';
 import { RequestConfig } from '@core/http/http-utils';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
 import * as i0 from "@angular/core";
 export declare class UserPermissionsService {
     private http;
+    private store;
     private operationsByResource;
     private allowedGroupRoleOperations;
     private allowedGroupOwnerOnlyOperations;
@@ -15,7 +18,7 @@ export declare class UserPermissionsService {
     private allowedResources;
     private userPermissions;
     private userOwnerId;
-    constructor(http: HttpClient);
+    constructor(http: HttpClient, store: Store<AppState>);
     loadPermissionsInfo(): Observable<AllowedPermissionsInfo>;
     hasEntityPermission(entityId: EntityId, operation: Operation, config?: RequestConfig): Observable<boolean>;
     getOperationsByResource(resource: Resource): Operation[];
@@ -26,6 +29,8 @@ export declare class UserPermissionsService {
     hasSharedReadGroupsPermission(entityType: EntityType): boolean;
     hasReadGenericPermission(resource: Resource): boolean;
     hasGenericPermission(resource: Resource, operation: Operation): boolean;
+    isAiEnabled(): boolean;
+    private isResourceAllowed;
     hasGenericPermissionByEntityGroupType(operation: Operation, groupType: EntityType): boolean;
     hasGenericEntityGroupTypePermission(operation: Operation, groupType: EntityType): boolean;
     hasGenericEntityGroupPermission(operation: Operation, entityGroup: EntityGroup): boolean;
@@ -35,6 +40,7 @@ export declare class UserPermissionsService {
     isOwnedGroup(entityGroup: EntityGroupInfo): boolean;
     getUserOwnerId(): EntityId;
     isDirectOwner(ownerId: EntityId): boolean;
+    hasEntityTypeOperationPermission(entityType: EntityType, operation: Operation, entityGroup?: EntityGroupInfo): boolean;
     hasResourcesGenericPermission(resource: Resource | Resource[], operation: Operation | Operation[]): boolean;
     private hasGenericResourcesPermission;
     private hasGenericOperationsPermission;

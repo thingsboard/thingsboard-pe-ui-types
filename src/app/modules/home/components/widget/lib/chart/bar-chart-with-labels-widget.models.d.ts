@@ -6,6 +6,7 @@ import { ChartAnimationSettings, ChartFillSettings } from '@home/components/widg
 import { TimeSeriesChartTooltipWidgetSettings } from '@home/components/widget/lib/chart/time-series-chart-tooltip.models';
 export interface BarChartWithLabelsWidgetSettings extends TimeSeriesChartTooltipWidgetSettings {
     dataZoom: boolean;
+    dataZoomUpdateTimewindow: boolean;
     showBarLabel: boolean;
     barLabelFont: Font;
     barLabelColor: string;

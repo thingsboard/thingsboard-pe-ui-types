@@ -5,7 +5,7 @@ import { AggregationType, ComparisonDuration, Timewindow } from '@shared/models/
 import { EntityType } from '@shared/models/entity-type.models';
 import { DataKeyType } from './telemetry/telemetry.models';
 import { EntityId } from '@shared/models/id/entity-id';
-import { AlarmFilter, AlarmFilterConfig, EntityDataPageLink, EntityFilter, KeyFilter } from '@shared/models/query/query.models';
+import { AlarmFilter, AlarmFilterConfig, ComplexOperation, EntityDataPageLink, EntityFilter, KeyFilter } from '@shared/models/query/query.models';
 import { PopoverPlacement } from '@shared/components/popover.models';
 import { PageComponent } from '@shared/components/page.component';
 import { AfterViewInit, DestroyRef, EventEmitter, OnInit, Type } from '@angular/core';
@@ -24,6 +24,7 @@ import { TbFunction } from '@shared/models/js-function.models';
 import { FormProperty } from '@shared/models/dynamic-form.models';
 import { TbUnit } from '@shared/models/unit.models';
 import { ImageResourceInfo } from '@shared/models/resource.models';
+import { GetLocationDescriptor, MobileLocationResult, SaveBrowserLocationDescriptor, StartLiveLocationDescriptor } from '@shared/models/location.models';
 import * as i0 from "@angular/core";
 export declare enum widgetType {
     timeseries = "timeseries",
@@ -238,6 +239,7 @@ export interface Datasource {
     origDatasourceIndex?: number;
     pageLink?: EntityDataPageLink;
     keyFilters?: Array<KeyFilter>;
+    keyFiltersOperation?: ComplexOperation;
     entityFilter?: EntityFilter;
     alarmFilterConfig?: AlarmFilterConfig;
     alarmFilter?: AlarmFilter;
@@ -327,7 +329,8 @@ export declare enum WidgetActionType {
     customPretty = "customPretty",
     mobileAction = "mobileAction",
     openURL = "openURL",
-    placeMapItem = "placeMapItem"
+    placeMapItem = "placeMapItem",
+    saveBrowserLocation = "saveBrowserLocation"
 }
 export declare enum WidgetMobileActionType {
     takePictureFromGallery = "takePictureFromGallery",
@@ -337,6 +340,8 @@ export declare enum WidgetMobileActionType {
     scanQrCode = "scanQrCode",
     makePhoneCall = "makePhoneCall",
     getLocation = "getLocation",
+    startLiveLocation = "startLiveLocation",
+    stopLiveLocation = "stopLiveLocation",
     takeScreenshot = "takeScreenshot",
     deviceProvision = "deviceProvision"
 }
@@ -385,10 +390,6 @@ export interface MobileQrCodeResult {
     code: string;
     format: string;
 }
-export interface MobileLocationResult {
-    latitude: number;
-    longitude: number;
-}
 export interface MobileDeviceProvisionResult {
     deviceName: string;
 }
@@ -419,10 +420,7 @@ export interface ScanQrCodeDescriptor {
 export interface MakePhoneCallDescriptor extends ProcessLaunchResultDescriptor {
     getPhoneNumberFunction: TbFunction;
 }
-export interface GetLocationDescriptor {
-    processLocationFunction: TbFunction;
-}
-export type WidgetMobileActionDescriptors = ProcessImageDescriptor & LaunchMapDescriptor & ScanQrCodeDescriptor & MakePhoneCallDescriptor & GetLocationDescriptor & ProvisionSuccessDescriptor;
+export type WidgetMobileActionDescriptors = ProcessImageDescriptor & LaunchMapDescriptor & ScanQrCodeDescriptor & MakePhoneCallDescriptor & GetLocationDescriptor & StartLiveLocationDescriptor & ProvisionSuccessDescriptor;
 export interface WidgetMobileActionDescriptor extends WidgetMobileActionDescriptors {
     type: WidgetMobileActionType;
     handleErrorFunction?: TbFunction;
@@ -463,6 +461,7 @@ export interface WidgetAction extends CustomActionDescriptor {
     url?: string;
     mapItemType?: MapItemType;
     mapItemTooltips?: MapItemTooltips;
+    saveBrowserLocation?: SaveBrowserLocationDescriptor;
 }
 export interface MapItemTooltips {
     placeMarker?: string;
@@ -494,6 +493,9 @@ export interface WidgetActionDescriptor extends WidgetAction {
     showWidgetActionFunction?: TbFunction;
     columnIndex?: number;
 }
+export type WidgetActionsMap = {
+    [actionSourceId: string]: Array<WidgetActionDescriptor>;
+};
 export declare const actionDescriptorToAction: (descriptor: WidgetActionDescriptor) => WidgetAction;
 export declare const defaultWidgetAction: (isEntityGroup?: boolean, setEntityId?: boolean) => WidgetAction;
 export interface WidgetComparisonSettings {
@@ -553,9 +555,7 @@ export interface WidgetConfig {
     decimals?: number;
     noDataDisplayMessage?: string;
     pageSize?: number;
-    actions?: {
-        [actionSourceId: string]: Array<WidgetActionDescriptor>;
-    };
+    actions?: WidgetActionsMap;
     settings?: WidgetSettings;
     alarmSource?: Datasource;
     alarmFilterConfig?: AlarmFilterConfig;

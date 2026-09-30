@@ -42,6 +42,7 @@ export declare class ConverterComponent extends EntityComponent<Converter> imple
     get converterTypeValue(): ConverterSourceType;
     set converterName(value: string);
     integrationName: string;
+    hideDownlink: boolean;
     converterType: typeof ConverterType;
     converterTypes: ConverterType[];
     converterTypeTranslations: Map<ConverterType, string>;

@@ -1,0 +1,38 @@
+import { ChangeDetectorRef } from '@angular/core';
+import { DialogComponent } from '@shared/components/dialog.component';
+import { Store } from '@ngrx/store';
+import { AppState } from '@core/core.state';
+import { Router } from '@angular/router';
+import { MatDialogRef } from '@angular/material/dialog';
+import { TranslateService } from '@ngx-translate/core';
+import { NotificationService } from '@core/http/notification.service';
+import { WhiteLabelingService } from '@core/http/white-labeling.service';
+import * as i0 from "@angular/core";
+export declare class RequestPackWhiteLabelingDialogComponent extends DialogComponent<RequestPackWhiteLabelingDialogComponent> {
+    protected store: Store<AppState>;
+    protected router: Router;
+    protected dialogRef: MatDialogRef<RequestPackWhiteLabelingDialogComponent>;
+    private translate;
+    private notificationService;
+    private wl;
+    private cd;
+    authUser: import("../../public-api").AuthUser;
+    isSysAdmin: boolean;
+    isTenantAdmin: boolean;
+    isCustomerUser: boolean;
+    pePackRequested: boolean;
+    sendError: boolean;
+    sendNetworkError: boolean;
+    sendErrorMessage: string | null;
+    constructor(store: Store<AppState>, router: Router, dialogRef: MatDialogRef<RequestPackWhiteLabelingDialogComponent>, translate: TranslateService, notificationService: NotificationService, wl: WhiteLabelingService, cd: ChangeDetectorRef);
+    cancel(): void;
+    requestAccess($event: Event): void;
+    addToLicense($event: Event): void;
+    gotoPage(page: string): void;
+    private storePePackRequested;
+    private restorePePackRequested;
+    private clearSendErrors;
+    private onSendError;
+    static ɵfac: i0.ɵɵFactoryDeclaration<RequestPackWhiteLabelingDialogComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RequestPackWhiteLabelingDialogComponent, "tb-request-pack-white-labeling-dialog", never, {}, {}, never, never, false, never>;
+}

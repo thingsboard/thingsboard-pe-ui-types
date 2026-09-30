@@ -1,0 +1,68 @@
+import { EventEmitter, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
+import { DatePipe } from '@angular/common';
+import { MatDialog } from '@angular/material/dialog';
+import { AgentService } from '@core/http/agent.service';
+import { AgentAppEventInfo, AgentProcessingStatus, AgentAppProfile, AgentBulkAction, AgentProfileInfo } from '@shared/models/agent.models';
+import { TranslateService } from '@ngx-translate/core';
+import * as i0 from "@angular/core";
+type StatusFilter = 'ALL' | 'ERROR' | 'RUNNING';
+interface StatusCounts {
+    total: number;
+    done: number;
+    error: number;
+    running: number;
+    pending: number;
+}
+export declare class AgentExecutionsSidePanelComponent implements OnChanges, OnDestroy {
+    private agentService;
+    private datePipe;
+    private dialog;
+    private translate;
+    agentProfile: AgentProfileInfo;
+    appProfile: AgentAppProfile;
+    bulkAction: AgentBulkAction;
+    closePanel: EventEmitter<void>;
+    openFullDetails: EventEmitter<void>;
+    events: AgentAppEventInfo[];
+    counts: StatusCounts;
+    filter: StatusFilter;
+    loading: boolean;
+    pageIndex: number;
+    pageSize: number;
+    readonly pageSizeOptions: number[];
+    private readonly destroy$;
+    private pollSub;
+    constructor(agentService: AgentService, datePipe: DatePipe, dialog: MatDialog, translate: TranslateService);
+    ngOnChanges(changes: SimpleChanges): void;
+    ngOnDestroy(): void;
+    get filteredEvents(): AgentAppEventInfo[];
+    get pagedEvents(): AgentAppEventInfo[];
+    onPageChange(e: {
+        pageIndex: number;
+        pageSize: number;
+    }): void;
+    get successPct(): number;
+    get donePct(): number;
+    get errorPct(): number;
+    get runningPct(): number;
+    setFilter(f: StatusFilter): void;
+    close(): void;
+    openDetails(): void;
+    refreshNow(): void;
+    isEventClickable(event: AgentAppEventInfo): boolean;
+    openEventProgress(event: AgentAppEventInfo): void;
+    private openProgressDialog;
+    formatTime(ts: number): string;
+    statusLabel(status: AgentProcessingStatus): string;
+    statusColor(status: AgentProcessingStatus): string;
+    private pctOf;
+    private clampPageIndex;
+    private refresh;
+    private allEventsTerminal;
+    private computeCounts;
+    private startPolling;
+    private stopPolling;
+    static ɵfac: i0.ɵɵFactoryDeclaration<AgentExecutionsSidePanelComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AgentExecutionsSidePanelComponent, "tb-agent-executions-side-panel", never, { "agentProfile": { "alias": "agentProfile"; "required": false; }; "appProfile": { "alias": "appProfile"; "required": false; }; "bulkAction": { "alias": "bulkAction"; "required": false; }; }, { "closePanel": "closePanel"; "openFullDetails": "openFullDetails"; }, never, never, false, never>;
+}
+export {};

@@ -1,4 +1,4 @@
-import { AfterViewInit, OnDestroy } from '@angular/core';
+import { AfterViewInit, OnDestroy, OnInit } from '@angular/core';
 import { PageComponent } from '@shared/components/page.component';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
@@ -6,10 +6,12 @@ import { ControlValueAccessor } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Palette } from '@shared/models/white-labeling.models';
 import * as i0 from "@angular/core";
-export declare class PaletteComponent extends PageComponent implements AfterViewInit, OnDestroy, ControlValueAccessor {
+export declare class PaletteComponent extends PageComponent implements OnInit, AfterViewInit, OnDestroy, ControlValueAccessor {
     protected store: Store<AppState>;
     private dialog;
     label: string;
+    isLogin: boolean;
+    isPrimary: boolean;
     private requiredValue;
     get required(): boolean;
     set required(value: boolean);
@@ -17,7 +19,10 @@ export declare class PaletteComponent extends PageComponent implements AfterView
     palette: Palette;
     palettes: Palette[];
     private propagateChange;
+    private defaultPaletteInfo;
+    private defaultPaletteContrastColorKey;
     constructor(store: Store<AppState>, dialog: MatDialog);
+    ngOnInit(): void;
     ngAfterViewInit(): void;
     ngOnDestroy(): void;
     registerOnChange(fn: any): void;
@@ -33,5 +38,5 @@ export declare class PaletteComponent extends PageComponent implements AfterView
     private updatePaletteColors;
     private updateModel;
     static ɵfac: i0.ɵɵFactoryDeclaration<PaletteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PaletteComponent, "tb-palette", never, { "label": { "alias": "label"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PaletteComponent, "tb-palette", never, { "label": { "alias": "label"; "required": false; }; "isLogin": { "alias": "isLogin"; "required": false; }; "isPrimary": { "alias": "isPrimary"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, never, never, false, never>;
 }

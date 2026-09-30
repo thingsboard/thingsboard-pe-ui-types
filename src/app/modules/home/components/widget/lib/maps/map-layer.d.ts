@@ -1,4 +1,4 @@
-import { CustomMapLayerSettings, GoogleMapLayerSettings, HereMapLayerSettings, MapLayerSettings, OpenStreetMapLayerSettings, TencentMapLayerSettings } from '@shared/models/widget/maps/map.models';
+import { CartoMapLayerSettings, CustomMapLayerSettings, GoogleMapLayerSettings, HereMapLayerSettings, MapLayerSettings, OpenFreeMapLayerSettings, OpenStreetMapLayerSettings, TencentMapLayerSettings } from '@shared/models/widget/maps/map.models';
 import { WidgetContext } from '@home/models/widget-component.models';
 import { DeepPartial } from '@shared/models/common';
 import { Observable } from 'rxjs';
@@ -6,7 +6,7 @@ import L from 'leaflet';
 export declare abstract class TbMapLayer<S extends MapLayerSettings> {
     protected ctx: WidgetContext;
     protected inputSettings: DeepPartial<MapLayerSettings>;
-    static fromSettings(ctx: WidgetContext, inputSettings: DeepPartial<MapLayerSettings>): TbOpenStreetMapLayer | TbGoogleMapLayer | TbTencentMapLayer | TbHereMapLayer | TbCustomMapLayer;
+    static fromSettings(ctx: WidgetContext, inputSettings: DeepPartial<MapLayerSettings>): TbOpenFreeMapLayer | TbOpenStreetMapLayer | TbCartoMapLayer | TbGoogleMapLayer | TbTencentMapLayer | TbHereMapLayer | TbCustomMapLayer;
     protected settings: S;
     protected constructor(ctx: WidgetContext, inputSettings: DeepPartial<MapLayerSettings>);
     loadLayer(theMap: L.Map): Observable<L.TB.LayerData>;
@@ -22,6 +22,20 @@ declare class TbOpenStreetMapLayer extends TbMapLayer<OpenStreetMapLayerSettings
     protected inputSettings: DeepPartial<MapLayerSettings>;
     constructor(ctx: WidgetContext, inputSettings: DeepPartial<MapLayerSettings>);
     protected defaultSettings(): OpenStreetMapLayerSettings;
+    protected createLayer(): Observable<L.Layer>;
+}
+declare class TbOpenFreeMapLayer extends TbMapLayer<OpenFreeMapLayerSettings> {
+    protected ctx: WidgetContext;
+    protected inputSettings: DeepPartial<MapLayerSettings>;
+    constructor(ctx: WidgetContext, inputSettings: DeepPartial<MapLayerSettings>);
+    protected defaultSettings(): OpenFreeMapLayerSettings;
+    protected createLayer(): Observable<L.Layer>;
+}
+declare class TbCartoMapLayer extends TbMapLayer<CartoMapLayerSettings> {
+    protected ctx: WidgetContext;
+    protected inputSettings: DeepPartial<MapLayerSettings>;
+    constructor(ctx: WidgetContext, inputSettings: DeepPartial<MapLayerSettings>);
+    protected defaultSettings(): CartoMapLayerSettings;
     protected createLayer(): Observable<L.Layer>;
 }
 declare class TbGoogleMapLayer extends TbMapLayer<GoogleMapLayerSettings> {

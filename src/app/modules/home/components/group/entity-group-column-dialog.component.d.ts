@@ -38,7 +38,7 @@ export declare class EntityGroupColumnDialogComponent extends DialogComponent<En
         [fieldName: string]: EntityGroupEntityField;
     };
     entityFieldKeys: string[];
-    sortOrders: string[];
+    sortOrders: EntityGroupSortOrder[];
     entityGroupColumnTypeTranslations: Map<EntityGroupColumnType, string>;
     entityGroupSortOrderTranslations: Map<EntityGroupSortOrder, string>;
     submitted: boolean;

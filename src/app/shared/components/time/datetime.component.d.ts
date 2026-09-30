@@ -5,7 +5,7 @@ import * as i0 from "@angular/core";
 export declare class DatetimeComponent implements OnInit, ControlValueAccessor {
     private requiredValue;
     get required(): boolean;
-    set required(value: boolean);
+    set required(value: unknown);
     floatLabel: FloatLabelType;
     subscriptSizing: SubscriptSizing;
     appearance: MatFormFieldAppearance;
