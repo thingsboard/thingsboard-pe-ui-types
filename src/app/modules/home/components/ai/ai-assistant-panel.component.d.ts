@@ -1,6 +1,6 @@
 import { OnInit } from '@angular/core';
 import { ChatMessage } from '@shared/models/solution-creator.models';
-import { AiAssistantPromptExample, ApprovalResult, ChatInfo, ToolExecutionResult } from '@shared/models/ai-chat.models';
+import { AiAssistantPromptExample, AiPromptMessage, ApprovalResult, ChatInfo, ToolExecutionResult } from '@shared/models/ai-chat.models';
 import { AiAssistantPanelService } from '@core/services/ai-assistant-panel.service';
 import { AiPromptInputComponent } from '@home/components/ai/ai-prompt-input.component';
 import { MatButton } from '@angular/material/button';
@@ -37,6 +37,9 @@ export declare class AiAssistantPanelComponent implements OnInit {
     private cancelMessage$;
     private sessionAffectedEntities;
     private messageCancelled;
+    private resumeOnOpen;
+    private static readonly RESUME_ATTEMPTS;
+    private static readonly RESUME_DELAY_MS;
     private openEffect;
     private lastContextKey;
     private contextSwitchEffect;
@@ -47,7 +50,7 @@ export declare class AiAssistantPanelComponent implements OnInit {
     setMenuWidth(triggerEl: MatButton): void;
     selectChat(chat: ChatInfo): void;
     useExample(example: AiAssistantPromptExample): void;
-    sendMsgFromUser(msg: string): void;
+    sendMsgFromUser(prompt: AiPromptMessage): void;
     reset(createNew?: boolean): void;
     private cancelActiveMessage;
     private suspendOnClose;
@@ -58,12 +61,16 @@ export declare class AiAssistantPanelComponent implements OnInit {
     private selectLastChat;
     private sendMessage;
     private resolveClientContextToSend;
+    private showHistory;
+    private resumeTurn;
+    private dropRunningReply;
+    private isConnectionLost;
     private handleChatEvent;
     private handleChatTitleGenerated;
     private handleToolApproval;
     private initLoadingState;
     private stopLoadingState;
-    private showErrorMessage;
+    showErrorMessage(error: any): void;
     private showErrorToast;
     static ɵfac: i0.ɵɵFactoryDeclaration<AiAssistantPanelComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<AiAssistantPanelComponent, "tb-ai-assistant-panel", never, {}, {}, never, never, false, never>;

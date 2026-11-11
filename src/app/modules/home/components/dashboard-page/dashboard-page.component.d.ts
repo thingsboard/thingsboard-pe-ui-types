@@ -85,6 +85,7 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     private hideToolbarValue;
     set hideToolbar(hideToolbar: boolean);
     get hideToolbar(): boolean;
+    get isHtml(): boolean;
     hideMainToolbar: boolean;
     syncStateWithQueryParam: boolean;
     dashboard: Dashboard;
@@ -238,6 +239,7 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     saveWidget(): void;
     onEditWidgetClosed(): void;
     editWidget($event: Event, layoutCtx: DashboardPageLayoutContext, widget: Widget): void;
+    editHtmlPage($event: Event): void;
     showLayoutConfigInEdit(layoutCtx: DashboardPageLayoutContext): boolean;
     replaceReferenceWithWidgetCopy($event: Event, layoutCtx: DashboardPageLayoutContext, widget: Widget): void;
     copyWidget($event: Event, layoutCtx: DashboardPageLayoutContext, widget: Widget): void;
@@ -259,6 +261,7 @@ export declare class DashboardPageComponent extends PageComponent implements IDa
     private parseBreakpointsResponse;
     private isMobileSize;
     private getDashboardLogoLink;
+    private prepareWidgetEdit;
     static ɵfac: i0.ɵɵFactoryDeclaration<DashboardPageComponent, [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, { optional: true; }, null, null, null, null, null]>;
     static ɵcmp: i0.ɵɵComponentDeclaration<DashboardPageComponent, "tb-dashboard-page", never, { "embedded": { "alias": "embedded"; "required": false; }; "currentState": { "alias": "currentState"; "required": false; }; "hideToolbar": { "alias": "hideToolbar"; "required": false; }; "hideMainToolbar": { "alias": "hideMainToolbar"; "required": false; }; "syncStateWithQueryParam": { "alias": "syncStateWithQueryParam"; "required": false; }; "dashboard": { "alias": "dashboard"; "required": false; }; "parentDashboard": { "alias": "parentDashboard"; "required": false; }; "popoverComponent": { "alias": "popoverComponent"; "required": false; }; "parentAliasController": { "alias": "parentAliasController"; "required": false; }; }, {}, never, never, false, never>;
 }

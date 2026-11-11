@@ -32,6 +32,9 @@ export declare class DashboardLayoutComponent extends PageComponent implements I
     set layoutCtx(val: DashboardPageLayoutContext);
     get layoutCtx(): DashboardPageLayoutContext;
     get isScada(): boolean;
+    get isHtml(): boolean;
+    get widgetLayoutEditable(): boolean;
+    get disableMargins(): boolean;
     get outerMargin(): boolean;
     get margin(): number;
     get autoFillHeight(): boolean;

@@ -1,4 +1,4 @@
-import { InjectionToken, OnDestroy, OnInit } from '@angular/core';
+import { ElementRef, InjectionToken, OnDestroy, OnInit } from '@angular/core';
 import { OverlayRef } from '@angular/cdk/overlay';
 import { TimeseriesDeleteStrategy } from '@shared/models/telemetry/telemetry.models';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -12,12 +12,14 @@ export interface DeleteTimeseriesPanelResult {
 }
 export declare class DeleteTimeseriesPanelComponent implements OnInit, OnDestroy {
     private overlayRef;
+    private elementRef;
     private fb;
     deleteTimeseriesFormGroup: FormGroup;
     result: DeleteTimeseriesPanelResult;
     strategiesTranslationsMap: Map<TimeseriesDeleteStrategy, string>;
     private destroy$;
-    constructor(overlayRef: OverlayRef, fb: FormBuilder);
+    private resizeObserver;
+    constructor(overlayRef: OverlayRef, elementRef: ElementRef<HTMLElement>, fb: FormBuilder);
     ngOnInit(): void;
     ngOnDestroy(): void;
     delete(): void;

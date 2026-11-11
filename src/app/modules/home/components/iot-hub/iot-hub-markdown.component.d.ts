@@ -18,6 +18,7 @@ export declare class TbIotHubMarkdownComponent implements OnInit, OnChanges {
     additionalStyles: string[];
     parsedData: string;
     readonly itemLinkCompileModules: Type<any>[];
+    readonly readmeGallerySelector = "img:not(.tb-gallery-images img):not(.clipboard-btn img):not(tb-iot-hub-item-link-card img):not(a img)";
     constructor(iotHubApiService: IotHubApiService, elementRef: ElementRef<HTMLElement>);
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;

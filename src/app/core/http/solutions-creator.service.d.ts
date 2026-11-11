@@ -10,7 +10,7 @@ export declare class SolutionsCreatorService {
     startSolution(config?: RequestConfig): Observable<SolutionCreatorInfo>;
     clearStep(solutionId: string, step: SolutionStep, config?: RequestConfig): Observable<void>;
     createSolution(solutionId: string, config?: RequestConfig): Observable<SolutionCreatorInfo>;
-    chatSolution(solutionId: string, step: SolutionStep, msg: string, config?: RequestConfig): Observable<SolutionCreatorInfo>;
+    chatSolution(solutionId: string, step: SolutionStep, msg: string, config?: RequestConfig, resources?: string[]): Observable<SolutionCreatorInfo>;
     updateSolutionData(solutionId: string, dataKey: SolutionDataKey, msg: SolutionDataValues, config?: RequestConfig): Observable<SolutionCreatorInfo>;
     installSolution(solutionId: string, config?: RequestConfig): Observable<SolutionInstallResult>;
     uninstallSolution(solutionId: string, config?: RequestConfig): Observable<SolutionCreatorInfo>;

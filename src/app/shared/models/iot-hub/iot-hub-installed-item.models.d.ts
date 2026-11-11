@@ -5,12 +5,6 @@ export interface WidgetInstalledItemDescriptor {
         id: string;
     };
 }
-export interface DashboardInstalledItemDescriptor {
-    type: 'DASHBOARD';
-    dashboardId: {
-        id: string;
-    };
-}
 export interface CalculatedFieldInstalledItemDescriptor {
     type: 'CALCULATED_FIELD';
     calculatedFieldId: {
@@ -67,7 +61,7 @@ export interface SolutionTemplateInstalledItemDescriptor {
     mainDashboardPublic: boolean;
     details: string;
 }
-export type IotHubInstalledItemDescriptor = WidgetInstalledItemDescriptor | DashboardInstalledItemDescriptor | CalculatedFieldInstalledItemDescriptor | AlarmRuleInstalledItemDescriptor | RuleChainInstalledItemDescriptor | DeviceInstalledItemDescriptor | SolutionTemplateInstalledItemDescriptor;
+export type IotHubInstalledItemDescriptor = WidgetInstalledItemDescriptor | CalculatedFieldInstalledItemDescriptor | AlarmRuleInstalledItemDescriptor | RuleChainInstalledItemDescriptor | DeviceInstalledItemDescriptor | SolutionTemplateInstalledItemDescriptor;
 export interface InstallItemVersionResult {
     success: boolean;
     errorMessage: string;

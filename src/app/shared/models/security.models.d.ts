@@ -27,7 +27,8 @@ export declare enum Operation {
     SHARE_GROUP = "SHARE_GROUP",
     ASSIGN_TO_TENANT = "ASSIGN_TO_TENANT",
     READ_CALCULATED_FIELD = "READ_CALCULATED_FIELD",
-    WRITE_CALCULATED_FIELD = "WRITE_CALCULATED_FIELD"
+    WRITE_CALCULATED_FIELD = "WRITE_CALCULATED_FIELD",
+    INVOKE = "INVOKE"
 }
 export declare const operationTypeTranslationMap: Map<Operation, string>;
 export declare enum Resource {

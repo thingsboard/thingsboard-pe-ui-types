@@ -14,6 +14,11 @@ export declare class TbIotHubItemCardComponent {
     showTypeChip: boolean;
     showSubtype: boolean;
     mode: 'default' | 'add';
+    /**
+     * `auto`: compact row for the types with nothing to preview (single-type grids widen their
+     * cells for it). `preview`: the tall card for every type, for grids that mix types.
+     */
+    layout: 'auto' | 'preview';
     cardClick: EventEmitter<MpItemVersionView>;
     creatorClick: EventEmitter<string>;
     installClick: EventEmitter<MpItemVersionView>;
@@ -39,5 +44,5 @@ export declare class TbIotHubItemCardComponent {
     onGuideClick(event: MouseEvent): void;
     onCreatorClick(event: Event): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<TbIotHubItemCardComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TbIotHubItemCardComponent, "tb-iot-hub-item-card", never, { "item": { "alias": "item"; "required": false; }; "installedItem": { "alias": "installedItem"; "required": false; }; "installedItemsCount": { "alias": "installedItemsCount"; "required": false; }; "showCreator": { "alias": "showCreator"; "required": false; }; "showTypeChip": { "alias": "showTypeChip"; "required": false; }; "showSubtype": { "alias": "showSubtype"; "required": false; }; "mode": { "alias": "mode"; "required": false; }; }, { "cardClick": "cardClick"; "creatorClick": "creatorClick"; "installClick": "installClick"; "updateClick": "updateClick"; "deleteClick": "deleteClick"; "addClick": "addClick"; "guideClick": "guideClick"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TbIotHubItemCardComponent, "tb-iot-hub-item-card", never, { "item": { "alias": "item"; "required": false; }; "installedItem": { "alias": "installedItem"; "required": false; }; "installedItemsCount": { "alias": "installedItemsCount"; "required": false; }; "showCreator": { "alias": "showCreator"; "required": false; }; "showTypeChip": { "alias": "showTypeChip"; "required": false; }; "showSubtype": { "alias": "showSubtype"; "required": false; }; "mode": { "alias": "mode"; "required": false; }; "layout": { "alias": "layout"; "required": false; }; }, { "cardClick": "cardClick"; "creatorClick": "creatorClick"; "installClick": "installClick"; "updateClick": "updateClick"; "deleteClick": "deleteClick"; "addClick": "addClick"; "guideClick": "guideClick"; }, never, never, false, never>;
 }

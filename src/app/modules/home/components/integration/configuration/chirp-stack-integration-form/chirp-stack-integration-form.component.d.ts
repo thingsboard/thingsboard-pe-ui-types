@@ -12,20 +12,25 @@ export declare class ChirpStackIntegrationFormComponent extends IntegrationForm 
     private translate;
     chirpStackIntegrationConfigForm: UntypedFormGroup;
     routingKey: string;
+    set isSetDownlink(value: boolean);
+    get isSetDownlink(): boolean;
+    private isSetDownlinkValue;
     private propagateChange;
     private propagateChangePending;
+    private validatorChange;
     constructor(fb: UntypedFormBuilder, store: Store<AppState>, translate: TranslateService);
     ngOnInit(): void;
     writeValue(value: ChipStackIntegration): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
+    registerOnValidatorChange(fn: () => void): void;
     setDisabledState(isDisabled: boolean): void;
     private endPointUrl;
     private updateModels;
     validate(): ValidationErrors | null;
     onHttpEndpointCopied(): void;
     updatedValidationPrivateNetwork(): void;
-    updateDownlinkControlsState(): void;
+    private updateCredentialsValidators;
     static ɵfac: i0.ɵɵFactoryDeclaration<ChirpStackIntegrationFormComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ChirpStackIntegrationFormComponent, "tb-chirp-stack-integration-form", never, { "routingKey": { "alias": "routingKey"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ChirpStackIntegrationFormComponent, "tb-chirp-stack-integration-form", never, { "routingKey": { "alias": "routingKey"; "required": false; }; "isSetDownlink": { "alias": "isSetDownlink"; "required": false; }; }, {}, never, never, false, never>;
 }

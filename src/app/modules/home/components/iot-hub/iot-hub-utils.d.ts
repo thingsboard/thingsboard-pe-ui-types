@@ -3,6 +3,8 @@ import { MpItemVersionView } from '@shared/models/iot-hub/iot-hub-version.models
 import { IotHubApiService } from '@core/http/iot-hub-api.service';
 export declare const IOT_HUB_FILTER_GROUPING_THRESHOLD = 11;
 export declare const IOT_HUB_FILTER_POPULAR_LIMIT = 10;
+/** Above this many options a filter list scrolls, and the search page's facet gets a search box. */
+export declare const IOT_HUB_FILTER_SCROLL_THRESHOLD = 8;
 /**
  * Primary action offered for an IoT Hub item:
  *  - `open`    — the item is built-in, the tenant already has it, so we navigate to the local copy;
@@ -25,6 +27,9 @@ export interface IotHubFilterGroup {
     label: string;
     items: FilterParamInfo[];
 }
+export declare function filterByLabel<T>(items: T[], search: string, labelOf: (item: T) => string): T[];
 export declare function filterIotHubItemsBySearch(items: FilterParamInfo[], search: string): FilterParamInfo[];
+/** Column count of a CSS grid, from its computed tracks (`repeat(...)` before first layout). */
+export declare function measureGridColumns(el: HTMLElement): number;
 export declare function groupIotHubFilterItems(items: FilterParamInfo[], search: string): IotHubFilterGroup[];
 export declare function resolveIotHubItemImageUrl(item: MpItemVersionView, api: IotHubApiService): string | null;

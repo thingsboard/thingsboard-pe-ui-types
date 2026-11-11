@@ -149,4 +149,7 @@ export type AlarmRuleTestScriptFn = (calculatedField: CalculatedField, arguments
 export declare function checkPredicates(predicates: any[], validSet: Set<string>): boolean;
 export declare function areFilterAndPredicateArgumentsValid(obj: any, args: Record<string, CalculatedFieldArgument>): boolean;
 export declare function areFiltersAndPredicateArgumentsValid(obj: any, args: Record<string, CalculatedFieldArgument>): boolean;
+export declare function areAlarmRuleConditionFilterArgumentsValid(condition: AlarmRuleCondition, args: Record<string, CalculatedFieldArgument>): boolean;
+export declare function isAlarmRuleConditionScheduleArgumentValid(condition: AlarmRuleCondition, args: Record<string, CalculatedFieldArgument>): boolean;
+export declare function areAlarmRuleArgumentsValid(alarmRule: AlarmRule, args: Record<string, CalculatedFieldArgument>): boolean;
 export declare function isPredicateArgumentsValid(predicates: any, args: Record<string, CalculatedFieldArgument>): boolean;

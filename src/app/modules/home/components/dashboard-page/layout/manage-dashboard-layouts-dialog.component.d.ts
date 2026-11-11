@@ -36,6 +36,8 @@ export declare class ManageDashboardLayoutsDialogComponent extends DialogCompone
     private dialogs;
     tooltip: MatTooltip;
     layoutsFormGroup: UntypedFormGroup;
+    private readonly initialLayoutType;
+    private readonly htmlPageConfig;
     layoutWidthType: typeof LayoutWidthType;
     layoutPercentageSize: typeof LayoutPercentageSize;
     layoutFixedSize: typeof LayoutFixedSize;
@@ -53,6 +55,7 @@ export declare class ManageDashboardLayoutsDialogComponent extends DialogCompone
     openLayoutSettings(layoutId: DashboardLayoutId, breakpointId?: BreakpointId): void;
     cancel(): void;
     save(): void;
+    private applyLayouts;
     buttonFlexValue(): number;
     formatSliderTooltipLabel(value: number): string | number;
     private layoutControlChange;
@@ -62,6 +65,9 @@ export declare class ManageDashboardLayoutsDialogComponent extends DialogCompone
     layoutButtonText(side: DashboardLayoutId): string;
     showPreviewInputs(side: DashboardLayoutId): boolean;
     get isDividerLayout(): boolean;
+    private countLayoutWidgets;
+    get isHtmlLayout(): boolean;
+    get isBreakpointsLayout(): boolean;
     addBreakpoint(): void;
     deleteBreakpoint($event: Event, breakpointId: BreakpointId): void;
     private createdNewBreakpoint;

@@ -2,7 +2,6 @@ import { ChangeDetectorRef } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
-import { EntityType } from '@shared/models/entity-type.models';
 import { TranslateService } from '@ngx-translate/core';
 import { AssetInfo } from '@shared/models/asset.models';
 import { GroupEntityComponent } from '@home/components/group/group-entity.component';
@@ -18,7 +17,6 @@ export declare class AssetComponent extends GroupEntityComponent<AssetInfo> {
     protected fb: UntypedFormBuilder;
     protected cd: ChangeDetectorRef;
     protected userPermissionsService: UserPermissionsService;
-    entityType: typeof EntityType;
     readonly isTenantAdmin: boolean;
     constructor(store: Store<AppState>, translate: TranslateService, entityValue: AssetInfo, entitiesTableConfigValue: EntityTableConfig<AssetInfo> | GroupEntityTableConfig<AssetInfo>, fb: UntypedFormBuilder, cd: ChangeDetectorRef, userPermissionsService: UserPermissionsService);
     ngOnInit(): void;

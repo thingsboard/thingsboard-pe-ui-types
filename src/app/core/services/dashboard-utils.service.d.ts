@@ -29,7 +29,7 @@ export declare class DashboardUtilsService {
     validateAndUpdateDatasources(datasources?: Datasource[]): Datasource[];
     getWidgetDatasources(widget: Widget): Datasource[];
     createDefaultLayoutData(): DashboardLayout;
-    private createDefaultGridSettings;
+    createDefaultGridSettings(): GridSettings;
     createDefaultLayouts(): DashboardStateLayouts;
     createDefaultState(name: string, root: boolean): DashboardState;
     createSingleEntityFilter(entityId: EntityId): Observable<EntityAliasFilter>;
@@ -47,6 +47,7 @@ export declare class DashboardUtilsService {
     private getBreakpointLayoutData;
     getWidgetsArray(dashboard: Dashboard): Array<Widget>;
     isEmptyDashboard(dashboard: Dashboard): boolean;
+    isHtmlPageState(state: DashboardState): boolean;
     addWidgetToLayout(dashboard: Dashboard, targetState: string, targetLayout: DashboardLayoutId, widget: Widget, originalColumns?: number, originalSize?: WidgetSize, row?: number, column?: number, breakpoint?: string): void;
     private widgetPossiblePosition;
     private hasWidgetCollision;

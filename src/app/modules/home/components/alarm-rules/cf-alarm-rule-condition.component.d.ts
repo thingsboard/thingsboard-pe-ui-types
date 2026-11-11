@@ -29,17 +29,13 @@ export declare class CfAlarmRuleConditionComponent implements ControlValueAccess
     scheduleText: string;
     private modelValue;
     private propagateChange;
-    private onValidatorChange;
     constructor(dialog: MatDialog, fb: FormBuilder, cd: ChangeDetectorRef, translate: TranslateService);
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
-    registerOnValidatorChange(fn: () => void): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: AlarmRuleCondition): void;
     ngOnChanges(changes: SimpleChanges): void;
     private recalculateArgumentValidity;
-    private isScheduleArgumentValid;
-    private areFilterAndPredicateArgumentsValid;
     conditionSet(): boolean;
     validate(control: AbstractControl): ValidationErrors | null;
     openFilterDialog($event: Event): void;

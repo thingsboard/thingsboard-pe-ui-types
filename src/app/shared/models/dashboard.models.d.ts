@@ -2,13 +2,14 @@ import { BaseData, ExportableEntity, GroupEntityInfo } from '@shared/models/base
 import { DashboardId } from '@shared/models/id/dashboard-id';
 import { TenantId } from '@shared/models/id/tenant-id';
 import { ShortCustomerInfo } from '@shared/models/customer.model';
-import { Widget } from './widget.models';
+import { Widget, WidgetActionsMap, WidgetConfig } from './widget.models';
 import { Timewindow } from '@shared/models/time/time.models';
 import { EntityAliases } from './alias.models';
 import { CustomerId } from '@shared/models/id/customer-id';
 import { Filters } from '@shared/models/query/query.models';
 import { MatDialogRef } from '@angular/material/dialog';
 import { HasTenantId, HasVersion } from '@shared/models/entity.models';
+import { HtmlContainerWidgetSettings } from '@shared/models/html-container.models';
 export interface WidgetLayout {
     sizeX?: number;
     sizeY?: number;
@@ -27,7 +28,8 @@ export interface WidgetLayouts {
 export declare enum LayoutType {
     default = "default",
     scada = "scada",
-    divider = "divider"
+    divider = "divider",
+    html = "html"
 }
 export declare const layoutTypes: LayoutType[];
 export declare const layoutTypeTranslationMap: Map<LayoutType, string>;
@@ -37,6 +39,12 @@ export declare enum ViewFormatType {
 }
 export declare const viewFormatTypes: ViewFormatType[];
 export declare const viewFormatTypeTranslationMap: Map<ViewFormatType, string>;
+export declare const htmlPageDefaultConfig: WidgetConfig;
+export interface HtmlPageConfig {
+    settings: HtmlContainerWidgetSettings;
+    actions?: WidgetActionsMap;
+}
+export declare const htmlPageWidgetId: (stateId: string) => string;
 export interface GridSettings {
     layoutType?: LayoutType;
     backgroundColor?: string;
@@ -53,6 +61,7 @@ export interface GridSettings {
     mobileRowHeight?: number;
     mobileDisplayLayoutFirst?: boolean;
     layoutDimension?: LayoutDimension;
+    htmlPageConfig?: HtmlPageConfig;
 }
 export interface DashboardLayout {
     widgets: WidgetLayouts;
@@ -68,6 +77,7 @@ export interface BreakpointLayoutInfo {
     widgetIds?: string[];
     widgetLayouts?: WidgetLayouts;
     gridSettings?: GridSettings;
+    widget?: Widget;
 }
 export declare type BreakpointSystemId = 'default' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 export declare type BreakpointId = BreakpointSystemId | string;

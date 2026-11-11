@@ -1,14 +1,16 @@
 import { OnDestroy } from '@angular/core';
 import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validator } from '@angular/forms';
 import { OpcUaSubscription } from '@shared/models/integration.models';
+import { TranslateService } from '@ngx-translate/core';
 import * as i0 from "@angular/core";
 export declare class OpcUaSubscriptionComponent implements ControlValueAccessor, Validator, OnDestroy {
     private fb;
+    private translate;
     opcSubscriptionForm: UntypedFormGroup;
     disabled: boolean;
     private destroy$;
     private propagateChange;
-    constructor(fb: UntypedFormBuilder);
+    constructor(fb: UntypedFormBuilder, translate: TranslateService);
     ngOnDestroy(): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
@@ -19,6 +21,7 @@ export declare class OpcUaSubscriptionComponent implements ControlValueAccessor,
     get opcSubscriptionArrayControls(): UntypedFormGroup[];
     addSubscriptionTag(emitEvent?: boolean): void;
     private createFormGroup;
+    pathWarning(path: string): string;
     removeSubscriptionTag(index: number): void;
     private updateModels;
     static ɵfac: i0.ɵɵFactoryDeclaration<OpcUaSubscriptionComponent, never>;

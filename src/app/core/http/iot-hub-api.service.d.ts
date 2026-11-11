@@ -24,8 +24,13 @@ export declare class IotHubApiService {
     get baseUrl(): string;
     resolveResourceUrl(path: string): string;
     getPublishedVersions(query: MpItemVersionQuery, config?: IotHubRequestConfig): Observable<PageData<MpItemVersionView>>;
+    /** What this platform can install: items of every edition, nothing built for a newer ThingsBoard. */
+    private platformScope;
+    /** Fills in the platform scope wherever the caller did not set it. */
+    private applyPlatformFilters;
+    private platformScopeParams;
     getFilterInfo(itemType: ItemType, config?: IotHubRequestConfig): Observable<ItemTypeFilterInfo>;
-    getWidgetCategories(textSearch?: string, scadaFirst?: boolean, config?: IotHubRequestConfig): Observable<WidgetCategory[]>;
+    getWidgetCategories(textSearch?: string, scadaFirst?: boolean, creatorVerified?: boolean, config?: IotHubRequestConfig): Observable<WidgetCategory[]>;
     getVersionInfo(versionId: string, config?: IotHubRequestConfig): Observable<MpItemVersionView>;
     getPublishedVersion(itemId: string, config?: IotHubRequestConfig): Observable<MpItemVersionView>;
     /**

@@ -34,6 +34,7 @@ export declare class CustomerComponent extends GroupContactBasedComponent<Custom
     hideManageDevices(): boolean;
     hideManageEntityViews(): boolean;
     hideManageEdges(): boolean;
+    hideManageAgents(): boolean;
     hideManageDashboards(): boolean;
     buildEntityForm(entity: CustomerInfo): UntypedFormGroup;
     updateEntityForm(entity: CustomerInfo): void;

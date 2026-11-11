@@ -9,6 +9,7 @@ export declare class SigfoxIntegrationFormComponent extends HttpIntegrationFormC
     protected fb: UntypedFormBuilder;
     protected store: Store<AppState>;
     protected translate: TranslateService;
+    showReplaceNoContentToOk: boolean;
     protected integrationType: IntegrationType;
     constructor(fb: UntypedFormBuilder, store: Store<AppState>, translate: TranslateService);
     static ɵfac: i0.ɵɵFactoryDeclaration<SigfoxIntegrationFormComponent, never>;

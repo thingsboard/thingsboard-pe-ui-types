@@ -81,6 +81,11 @@ export interface ColorRangeSettings extends AdvancedColorMode {
     range?: ColorRange[];
     rangeAdvanced?: AdvancedColorRange[];
 }
+/**
+ * Converts any stored rangeList shape to ColorRangeSettings. Always returns a new deep copy (null/undefined pass through),
+ * so callers may mutate the result freely.
+ */
+export declare const normalizeColorRangeSettings: (rangeList: ColorRangeSettings | ColorRange[]) => ColorRangeSettings;
 export interface ColorGradientSettings extends AdvancedColorMode {
     gradient?: string[];
     gradientAdvanced?: AdvancedGradient[];

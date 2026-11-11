@@ -20,7 +20,6 @@ export declare class DefaultStateControllerComponent extends StateControllerComp
     protected utils: UtilsService;
     private entityService;
     private mobileService;
-    private dashboardUtils;
     private breadcrumbService;
     breadcrumbs$: import("rxjs").Observable<import("../../../../../shared/components/breadcrumb").BreadCrumb[]>;
     constructor(router: Router, window: Window, route: ActivatedRoute, ngZone: NgZone, statesControllerService: StatesControllerService, utils: UtilsService, entityService: EntityService, mobileService: MobileService, dashboardUtils: DashboardUtilsService, breadcrumbService: BreadcrumbService);

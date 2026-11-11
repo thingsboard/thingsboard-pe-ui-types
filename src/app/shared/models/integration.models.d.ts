@@ -286,7 +286,6 @@ export interface ChipStackIntegration {
         applicationServerUrl: string;
         applicationServerAPIToken: string;
         useAPI4Plus: boolean;
-        allowDownlink: boolean;
     };
 }
 export interface ParticleIntegration {
@@ -330,7 +329,7 @@ export interface HttpIntegration {
     headersFilter?: {
         [key: string]: string;
     } | null;
-    replaceNoContentToOk: boolean;
+    replaceNoContentToOk?: boolean;
 }
 export interface KafkaIntegration {
     clientConfiguration: {
@@ -485,7 +484,6 @@ export interface ThingParkIntegration {
     baseUrl: string;
     httpEndpoint: string;
     enableSecurity: boolean;
-    replaceNoContentToOk: boolean;
     downlinkUrl?: string;
     enableSecurityNew: boolean;
     asId?: string;

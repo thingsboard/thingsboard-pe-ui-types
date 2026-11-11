@@ -4,7 +4,7 @@ import { TbPopoverComponent } from '@shared/components/popover.component';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
-import { DataToValueType, GetValueAction, GetValueSettings } from '@shared/models/action-widget-settings.models';
+import { DataToValueType, GetValueAction, GetValueSettings, RpcParamsType } from '@shared/models/action-widget-settings.models';
 import { ValueType } from '@shared/models/constants';
 import { TargetDevice, widgetType } from '@shared/models/widget.models';
 import { AttributeScope, DataKeyType } from '@shared/models/telemetry/telemetry.models';
@@ -36,6 +36,7 @@ export declare class GetValueActionSettingsPanelComponent extends PageComponent 
     attributeScopes: AttributeScope[];
     dataKeyType: typeof DataKeyType;
     dataToValueType: typeof DataToValueType;
+    rpcParamsType: typeof RpcParamsType;
     functionScopeVariables: string[];
     ValueType: typeof ValueType;
     getValueSettingsFormGroup: UntypedFormGroup;

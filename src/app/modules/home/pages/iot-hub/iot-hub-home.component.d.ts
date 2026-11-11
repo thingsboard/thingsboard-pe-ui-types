@@ -1,6 +1,7 @@
 import { OnInit, OnDestroy, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatAutocompleteTrigger } from '@angular/material/autocomplete';
+import { MatOptionSelectionChange } from '@angular/material/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { MpItemVersionView } from '@shared/models/iot-hub/iot-hub-version.models';
 import { ItemType } from '@shared/models/iot-hub/iot-hub-item.models';
@@ -22,10 +23,6 @@ interface HeroTypeConfig {
     color: string;
     icon: string;
 }
-interface SearchResultGroup {
-    type: ItemType;
-    items: MpItemVersionView[];
-}
 export declare class TbIotHubHomeComponent implements OnInit, OnDestroy {
     private router;
     private iotHubApiService;
@@ -33,11 +30,14 @@ export declare class TbIotHubHomeComponent implements OnInit, OnDestroy {
     private translate;
     private breakpointObserver;
     readonly ItemType: typeof ItemType;
+    readonly isCompactType: (type?: string | null) => boolean;
     searchText: string;
     searchResults: MpItemVersionView[];
-    searchResultGroups: SearchResultGroup[];
+    /** Everything the search matched, for the footer's "See all N results". */
+    searchTotal: number;
     searchLoaded: boolean;
     searchLoading: boolean;
+    searchFailed: boolean;
     searchAutoTrigger: MatAutocompleteTrigger;
     searchInputRef: ElementRef;
     private searchSubject;
@@ -77,13 +77,19 @@ export declare class TbIotHubHomeComponent implements OnInit, OnDestroy {
     onSearchFocus(): void;
     searchDisplayFn: (value: any) => string;
     clearSearch(): void;
-    onSearch(): void;
+    onRowSelected(event: MatOptionSelectionChange, item: MpItemVersionView): void;
+    onFooterSelected(event: MatOptionSelectionChange): void;
+    /**
+     * Enter in the field opens the search page - unless the autocomplete has just used this press
+     * to select a highlighted row, which it marks with preventDefault before this handler runs.
+     */
+    onSearchEnter(event: KeyboardEvent): void;
     seeAllResults(): void;
-    isCompactType(type: ItemType): boolean;
     getCompactIcon(item: MpItemVersionView): string;
     getItemImage(item: MpItemVersionView): string | null;
     getItemTypeIcon(type: ItemType): string;
-    getSearchGroupLabel(type: ItemType): string;
+    getItemTypeColor(type: ItemType): string;
+    getItemTypeLabel(type: ItemType): string;
     navigateToBrowse(type: ItemType): void;
     hasAnyPopularItems(): boolean;
     private getTypeRoute;
@@ -102,7 +108,6 @@ export declare class TbIotHubHomeComponent implements OnInit, OnDestroy {
     private updateCardCounts;
     retryLoadPopularItems(): void;
     private loadPopularItems;
-    private groupSearchResults;
     static ɵfac: i0.ɵɵFactoryDeclaration<TbIotHubHomeComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<TbIotHubHomeComponent, "tb-iot-hub-home", never, {}, {}, never, never, false, never>;
 }

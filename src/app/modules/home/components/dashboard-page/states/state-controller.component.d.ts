@@ -7,6 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { StatesControllerService } from '@home/components/dashboard-page/states/states-controller.service';
 import { EntityId } from '@app/shared/models/id/entity-id';
 import { StateObject, StateParams } from '@app/core/api/widget-api.models';
+import { DashboardUtilsService } from '@core/services/dashboard-utils.service';
 import { UtilsService } from '@core/services/utils.service';
 import * as i0 from "@angular/core";
 export declare abstract class StateControllerComponent implements IStateControllerComponent, OnInit, OnDestroy {
@@ -16,6 +17,7 @@ export declare abstract class StateControllerComponent implements IStateControll
     protected window: Window;
     protected ngZone: NgZone;
     protected statesControllerService: StatesControllerService;
+    protected dashboardUtils: DashboardUtilsService;
     private stateChangedSubject;
     protected stateIdSubject: Subject<string>;
     stateObject: StateControllerState;
@@ -44,9 +46,10 @@ export declare abstract class StateControllerComponent implements IStateControll
     syncStateWithQueryParam: boolean;
     private rxSubscriptions;
     private inited;
-    protected constructor(router: Router, route: ActivatedRoute, utils: UtilsService, window: Window, ngZone: NgZone, statesControllerService: StatesControllerService);
+    protected constructor(router: Router, route: ActivatedRoute, utils: UtilsService, window: Window, ngZone: NgZone, statesControllerService: StatesControllerService, dashboardUtils: DashboardUtilsService);
     ngOnInit(): void;
     ngOnDestroy(): void;
+    protected normalizeStateObject(stateObject: StateControllerState): StateControllerState;
     protected updateStateParam(newState: string, replaceCurrentHistoryUrl?: boolean): void;
     stateChanged(): Observable<string>;
     stateId(): Observable<string>;

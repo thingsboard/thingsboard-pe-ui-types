@@ -71,6 +71,7 @@ export declare class WhiteLabelingComponent extends PageComponent implements OnI
     private setWhiteLabelingParams;
     domainChange(domain: BaseData<EntityId>): void;
     createDomain(name?: string): void;
+    onShowConnectivityDialogChange(checked: boolean): void;
     private updatePaletteColors;
     private colorFromPalette;
     private updateLoginPageColors;

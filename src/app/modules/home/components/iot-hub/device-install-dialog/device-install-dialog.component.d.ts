@@ -6,6 +6,7 @@ import { AppState } from '@core/core.state';
 import { DialogComponent } from '@shared/components/dialog.component';
 import { UntypedFormGroup } from '@angular/forms';
 import { MatStepper } from '@angular/material/stepper';
+import { StepperSelectionEvent } from '@angular/cdk/stepper';
 import { TranslateService } from '@ngx-translate/core';
 import { MpItemVersionView } from '@shared/models/iot-hub/iot-hub-version.models';
 import { IotHubApiService } from '@core/http/iot-hub-api.service';
@@ -96,6 +97,7 @@ export declare class TbDeviceInstallDialogComponent extends DialogComponent<TbDe
     get nextWizardStepLabel(): string;
     previousStep(): void;
     nextStep(): void;
+    onStepSelectionChange(event: StepperSelectionEvent): void;
     get primaryEntityAction(): {
         url: string;
         label: string;

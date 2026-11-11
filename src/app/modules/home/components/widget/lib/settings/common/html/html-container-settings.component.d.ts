@@ -1,7 +1,7 @@
 import { AfterViewInit, DestroyRef, ElementRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validator } from '@angular/forms';
-import { HtmlContainerWidgetSettings, HtmlContainerWidgetType } from '@home/components/widget/lib/html/html-container-widget.models';
 import { WidgetService } from '@core/http/widget.service';
+import { HtmlContainerWidgetSettings, HtmlContainerWidgetType } from '@shared/models/html-container.models';
 import * as i0 from "@angular/core";
 export declare class HtmlContainerSettingsComponent implements OnInit, AfterViewInit, ControlValueAccessor, Validator {
     private fb;

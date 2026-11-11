@@ -11,6 +11,7 @@ export declare class AiChatMessagesComponent implements OnChanges {
     completedExecutions: Record<string, ToolExecutionResult>;
     autoApprove: boolean;
     approvalAction: EventEmitter<ApprovalResult>;
+    resourceError: EventEmitter<any>;
     waitApproval: boolean;
     constructor(elementRef: ElementRef<HTMLElement>);
     getApprovalData(msg: ApprovalChatMessage): ToolExecutionRequested;
@@ -24,5 +25,5 @@ export declare class AiChatMessagesComponent implements OnChanges {
     private isNearBottom;
     private isValidJson;
     static ɵfac: i0.ɵɵFactoryDeclaration<AiChatMessagesComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AiChatMessagesComponent, "tb-ai-chat-messages", never, { "messages": { "alias": "messages"; "required": false; }; "loading": { "alias": "loading"; "required": false; }; "loadingLongTime": { "alias": "loadingLongTime"; "required": false; }; "additionalStyles": { "alias": "additionalStyles"; "required": false; }; "completedExecutions": { "alias": "completedExecutions"; "required": false; }; "autoApprove": { "alias": "autoApprove"; "required": false; }; }, { "approvalAction": "approvalAction"; }, never, ["[loadingLongTime]"], false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AiChatMessagesComponent, "tb-ai-chat-messages", never, { "messages": { "alias": "messages"; "required": false; }; "loading": { "alias": "loading"; "required": false; }; "loadingLongTime": { "alias": "loadingLongTime"; "required": false; }; "additionalStyles": { "alias": "additionalStyles"; "required": false; }; "completedExecutions": { "alias": "completedExecutions"; "required": false; }; "autoApprove": { "alias": "autoApprove"; "required": false; }; }, { "approvalAction": "approvalAction"; "resourceError": "resourceError"; }, never, ["[loadingLongTime]"], false, never>;
 }

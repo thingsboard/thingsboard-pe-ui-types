@@ -58,6 +58,7 @@ export declare class LicenseManagementComponent extends PageComponent implements
     gotoManageLicense(refresh?: boolean): void;
     itemLimitWarn(count: number, max: number): boolean;
     itemLimitCritical(count: number, max: number): boolean;
+    itemMeterWidth(count: number, max: number): number;
     itemLimitClass(itemType: UsageItemType, count: number, max: number): string;
     addItems($event: Event, itemType: UsageItemType): void;
     upgradePlanForItems($event: Event, itemType: UsageItemType): void;

@@ -9,6 +9,7 @@ export declare class CalculatedFieldFormService {
     private calculatedFieldsService;
     buildForm(): FormGroup;
     buildAlarmRuleForm(): FormGroup;
+    private alarmRulesArgumentsValidator;
     setupTypeChange(form: FormGroup, destroyRef: DestroyRef, isEditActive?: () => boolean): void;
     prepareConfig(configuration: CalculatedFieldConfiguration): CalculatedFieldConfiguration;
     testScript(calculatedFieldId: string, formValue: CalculatedField, testDialogFn: (calculatedField: CalculatedFieldsTableEntity, argumentsObj?: CalculatedFieldEventArguments, openCalculatedFieldEdit?: boolean, expression?: string) => Observable<string>, destroyRef: DestroyRef, expression?: string): Observable<string>;

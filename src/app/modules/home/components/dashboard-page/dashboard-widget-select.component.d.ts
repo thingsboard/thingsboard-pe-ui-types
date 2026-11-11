@@ -3,12 +3,11 @@ import { WidgetsBundle } from '@shared/models/widgets-bundle.model';
 import { IAliasController } from '@core/api/widget-api.models';
 import { WidgetService } from '@core/http/widget.service';
 import { DeprecatedFilter, WidgetInfo, widgetType, WidgetTypeInfo } from '@shared/models/widget.models';
-import { Direction } from '@shared/models/page/sort-order';
 import { GridEntitiesFetchFunction, ScrollGridColumns } from '@shared/components/grid/scroll-grid-datasource';
 import { ItemSizeStrategy } from '@shared/components/grid/scroll-grid.component';
 import { TranslateService } from '@ngx-translate/core';
 import { MpItemVersionView } from '@shared/models/iot-hub/iot-hub-version.models';
-import { FilterParamInfo, WidgetCategory } from '@shared/models/iot-hub/iot-hub-item.models';
+import { FilterParamInfo, SortOption, WidgetCategory } from '@shared/models/iot-hub/iot-hub-item.models';
 import { IotHubApiService } from '@core/http/iot-hub-api.service';
 import { IotHubActionsService } from '@home/components/iot-hub/iot-hub-actions.service';
 import { IotHubFilterGroup } from '@home/components/iot-hub/iot-hub-utils';
@@ -21,11 +20,6 @@ import * as i0 from "@angular/core";
 type selectWidgetMode = 'installed' | 'iotHub';
 type installedSubMode = 'default' | 'allWidgets';
 type iotHubSubMode = 'default' | 'allWidgets' | 'installed' | 'category';
-interface WidgetSelectSortOption {
-    value: string;
-    label: string;
-    direction: Direction;
-}
 interface WidgetsFilter {
     search: string;
     filter: widgetType[];
@@ -58,8 +52,7 @@ export declare class DashboardWidgetSelectComponent {
     iotHubSelectedCategory: string;
     includeDeprecated: boolean;
     searchFocused: boolean;
-    iotHubSortOptions: WidgetSelectSortOption[];
-    iotHubSelectedSortIndex: number;
+    private iotHubSelectedSortValue;
     aliasController: IAliasController;
     scadaFirst: boolean;
     set search(search: string);
@@ -102,6 +95,7 @@ export declare class DashboardWidgetSelectComponent {
     iotHubAppliedWidgetTypes: Set<string>;
     iotHubAppliedCategories: Set<string>;
     iotHubAppliedUseCases: Set<string>;
+    iotHubVerifiedCreatorsOnly: boolean;
     iotHubWidgetTypeOptions: FilterParamInfo[];
     iotHubCategoryOptions: FilterParamInfo[];
     iotHubUseCaseOptions: FilterParamInfo[];
@@ -130,9 +124,13 @@ export declare class DashboardWidgetSelectComponent {
     toggleIotHubWidgetType(key: string): void;
     toggleIotHubCategory(key: string): void;
     toggleIotHubUseCase(key: string): void;
+    toggleIotHubVerifiedCreators(): void;
     clearIotHubFilters(): void;
     private onIotHubFiltersChanged;
-    onIotHubSortChange(index: number): void;
+    get iotHubSortOptions(): SortOption[];
+    /** The chosen sort, or the list's first option where the chosen one is not offered. */
+    get iotHubSelectedSort(): SortOption;
+    onIotHubSortChange(option: SortOption): void;
     get totalFilterCount(): number;
     hasActiveFilters(): boolean;
     clearAllFilters(): void;

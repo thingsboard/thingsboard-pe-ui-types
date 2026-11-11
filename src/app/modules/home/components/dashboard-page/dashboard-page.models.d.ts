@@ -76,12 +76,14 @@ export declare type DashboardPageLayouts = {
 export declare class LayoutWidgetsArray implements Iterable<Widget> {
     private dashboardCtx;
     private widgetIds;
+    private widget;
     private loaded;
     constructor(dashboardCtx: DashboardContext);
     size(): number;
     isLoading(): boolean;
     isEmpty(): boolean;
     setWidgetIds(widgetIds: string[]): void;
+    setWidget(widget: Widget): void;
     addWidgetId(widgetId: string): void;
     removeWidgetId(widgetId: string): boolean;
     [Symbol.iterator](): Iterator<Widget>;

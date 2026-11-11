@@ -20,6 +20,19 @@ export interface RpcSettings {
     requestPersistent: boolean;
     persistentPollingInterval: number;
 }
+export declare enum RpcParamsType {
+    NONE = "NONE",
+    CONSTANT = "CONSTANT",
+    FUNCTION = "FUNCTION"
+}
+export interface RpcParamsSettings {
+    type: RpcParamsType;
+    constantValue?: any;
+    paramsFunction?: TbFunction;
+}
+export interface GetValueRpcSettings extends RpcSettings {
+    params?: RpcParamsSettings;
+}
 export interface AlarmStatusSettings {
     severityList: Array<AlarmSeverity>;
     typeList: Array<string>;
@@ -48,7 +61,7 @@ export interface ValueActionSettings {
 export interface GetValueSettings<V> extends ValueActionSettings {
     action: GetValueAction;
     defaultValue: V;
-    executeRpc?: RpcSettings;
+    executeRpc?: GetValueRpcSettings;
     getAttribute: GetAttributeValueSettings;
     getTimeSeries: TelemetryValueSettings;
     getAlarmStatus: AlarmStatusSettings;

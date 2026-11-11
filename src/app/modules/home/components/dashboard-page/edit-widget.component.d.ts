@@ -25,6 +25,7 @@ export declare class EditWidgetComponent extends PageComponent implements OnInit
     widgetLayout: WidgetLayout;
     showLayoutConfig: boolean;
     isDefaultBreakpoint: boolean;
+    isHtmlPage: boolean;
     applyWidgetConfig: EventEmitter<void>;
     revertWidgetConfig: EventEmitter<void>;
     widgetFormGroup: UntypedFormGroup;
@@ -40,5 +41,5 @@ export declare class EditWidgetComponent extends PageComponent implements OnInit
     onRevertWidgetConfig(): void;
     private loadWidgetConfig;
     static ɵfac: i0.ɵɵFactoryDeclaration<EditWidgetComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EditWidgetComponent, "tb-edit-widget", never, { "dashboard": { "alias": "dashboard"; "required": false; }; "aliasController": { "alias": "aliasController"; "required": false; }; "stateController": { "alias": "stateController"; "required": false; }; "widgetEditMode": { "alias": "widgetEditMode"; "required": false; }; "widget": { "alias": "widget"; "required": false; }; "widgetLayout": { "alias": "widgetLayout"; "required": false; }; "showLayoutConfig": { "alias": "showLayoutConfig"; "required": false; }; "isDefaultBreakpoint": { "alias": "isDefaultBreakpoint"; "required": false; }; }, { "applyWidgetConfig": "applyWidgetConfig"; "revertWidgetConfig": "revertWidgetConfig"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EditWidgetComponent, "tb-edit-widget", never, { "dashboard": { "alias": "dashboard"; "required": false; }; "aliasController": { "alias": "aliasController"; "required": false; }; "stateController": { "alias": "stateController"; "required": false; }; "widgetEditMode": { "alias": "widgetEditMode"; "required": false; }; "widget": { "alias": "widget"; "required": false; }; "widgetLayout": { "alias": "widgetLayout"; "required": false; }; "showLayoutConfig": { "alias": "showLayoutConfig"; "required": false; }; "isDefaultBreakpoint": { "alias": "isDefaultBreakpoint"; "required": false; }; "isHtmlPage": { "alias": "isHtmlPage"; "required": false; }; }, { "applyWidgetConfig": "applyWidgetConfig"; "revertWidgetConfig": "revertWidgetConfig"; }, never, never, false, never>;
 }

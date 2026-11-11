@@ -38,6 +38,7 @@ export declare class TbIotHubItemDetailDialogComponent extends DialogComponent<T
     installedItem?: IotHubInstalledItem;
     installedItemsCount: number;
     carouselImages: string[];
+    lightboxOpen: boolean;
     carouselIndex: number;
     versionLabel: string;
     constructor(store: Store<AppState>, router: Router, dialogRef: MatDialogRef<TbIotHubItemDetailDialogComponent>, data: IotHubItemDetailDialogData, dialog: MatDialog, translate: TranslateService, iotHubApiService: IotHubApiService, iotHubActions: IotHubActionsService);
@@ -55,6 +56,8 @@ export declare class TbIotHubItemDetailDialogComponent extends DialogComponent<T
     isInstalled(): boolean;
     shouldShowChangelog(): boolean;
     hasUpdate(): boolean;
+    /** The tracking row keeps the item's current name; a version keeps the one it was published under. */
+    get itemTitle(): string;
     /** Runs whatever the item's action mode calls for: open the local copy, connect, or install. */
     runPrimaryAction(): void;
     /**
@@ -75,6 +78,7 @@ export declare class TbIotHubItemDetailDialogComponent extends DialogComponent<T
     goToNextSlide(): void;
     close(): void;
     private buildCarouselImages;
+    private resourceUrl;
     private loadReadme;
     static ɵfac: i0.ɵɵFactoryDeclaration<TbIotHubItemDetailDialogComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<TbIotHubItemDetailDialogComponent, "tb-iot-hub-item-detail-dialog", never, {}, {}, never, never, false, never>;

@@ -2,7 +2,7 @@ import { TelemetryType } from '@shared/models/telemetry/telemetry.models';
 import { WidgetContext } from '@home/models/widget-component.models';
 import { Observable, Observer } from 'rxjs';
 import { AfterViewInit, ChangeDetectorRef, OnDestroy, OnInit, TemplateRef } from '@angular/core';
-import { DataToValueSettings, GetAttributeValueSettings, GetValueSettings, SetValueSettings, TelemetryValueSettings, ValueActionSettings, ValueToDataSettings } from '@shared/models/action-widget-settings.models';
+import { DataToValueSettings, GetAttributeValueSettings, GetValueSettings, RpcParamsSettings, SetValueSettings, TelemetryValueSettings, ValueActionSettings, ValueToDataSettings } from '@shared/models/action-widget-settings.models';
 import { ValueType } from '@shared/models/constants';
 import { EntityId } from '@shared/models/id/entity-id';
 import { HttpClient } from '@angular/common/http';
@@ -87,6 +87,13 @@ export declare class DefaultValueGetter<V> extends ValueGetter<V> {
     constructor(ctx: WidgetContext, settings: GetValueSettings<V>, valueType: ValueType, valueObserver: Partial<Observer<V>>, simulated: boolean);
     protected doGetValue(): Observable<V>;
 }
+export declare class RpcParamsConverter {
+    private http;
+    private settings;
+    private readonly paramsFunction$;
+    constructor(http: HttpClient, settings: RpcParamsSettings);
+    params(): Observable<any>;
+}
 export declare class ExecuteRpcValueGetter<V> extends ValueGetter<V> {
     protected ctx: WidgetContext;
     protected settings: GetValueSettings<V>;
@@ -94,6 +101,7 @@ export declare class ExecuteRpcValueGetter<V> extends ValueGetter<V> {
     protected valueObserver: Partial<Observer<V>>;
     protected simulated: boolean;
     private readonly executeRpcSettings;
+    private readonly rpcParamsConverter;
     constructor(ctx: WidgetContext, settings: GetValueSettings<V>, valueType: ValueType, valueObserver: Partial<Observer<V>>, simulated: boolean);
     protected doGetValue(): Observable<V>;
 }

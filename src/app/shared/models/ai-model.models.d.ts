@@ -3,6 +3,7 @@ import { HasTenantId } from '@shared/models/entity.models';
 import { AiModelId } from '@shared/models/id/ai-model-id';
 export interface AiModel extends Omit<BaseData<AiModelId>, 'label'>, HasTenantId, ExportableEntity<AiModelId> {
     modelType: ModelType;
+    customerAccessEnabled?: boolean;
     configuration: {
         provider: AiProvider;
         providerConfig: {

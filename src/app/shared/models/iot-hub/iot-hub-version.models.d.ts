@@ -68,7 +68,10 @@ export interface ListingItemVersionNotFound {
     minTbVersionRequired?: number;
 }
 export interface MpItemVersionQueryOptions {
+    /** Single item type, for a surface pinned to one (the type pages, the add-item dialog). */
     type?: string;
+    /** Several item types at once, sent as a repeated `type` parameter. */
+    types?: string[];
     ceOnly?: boolean;
     creatorId?: string;
     categories?: string[];
@@ -81,7 +84,9 @@ export interface MpItemVersionQueryOptions {
     connectivity?: string[];
     vendors?: string[];
     scadaFirst?: boolean;
+    creatorVerified?: boolean;
 }
+/** A paged read: the filters, and the page to cut out of them. */
 export declare class MpItemVersionQuery {
     pageLink: PageLink;
     options: MpItemVersionQueryOptions;

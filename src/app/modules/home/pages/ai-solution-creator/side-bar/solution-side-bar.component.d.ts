@@ -7,6 +7,7 @@ import { DialogService } from '@core/services/dialog.service';
 import { TranslateService } from '@ngx-translate/core';
 import { AppState } from '@core/core.state';
 import { Store } from '@ngrx/store';
+import { DomSanitizer } from '@angular/platform-browser';
 import * as i0 from "@angular/core";
 export declare class SolutionSideBarComponent extends PageComponent implements OnInit {
     private solutionCreator;
@@ -15,6 +16,7 @@ export declare class SolutionSideBarComponent extends PageComponent implements O
     private router;
     private route;
     protected store: Store<AppState>;
+    private sanitizer;
     isExpanded: import("@angular/core").WritableSignal<boolean>;
     solutions: import("@angular/core").WritableSignal<SolutionInfo[]>;
     enableTransition: boolean;
@@ -23,7 +25,7 @@ export declare class SolutionSideBarComponent extends PageComponent implements O
         solutionId: string;
         installed: boolean;
     }>;
-    constructor(solutionCreator: SolutionsCreatorService, dialog: DialogService, translate: TranslateService, router: Router, route: ActivatedRoute, store: Store<AppState>);
+    constructor(solutionCreator: SolutionsCreatorService, dialog: DialogService, translate: TranslateService, router: Router, route: ActivatedRoute, store: Store<AppState>, sanitizer: DomSanitizer);
     ngOnInit(): void;
     toggleSidebar($event: Event): void;
     expandSidebar(): void;
@@ -31,6 +33,7 @@ export declare class SolutionSideBarComponent extends PageComponent implements O
     addNewSolutionTemplate(solution: SolutionInfo): void;
     renameSolution(solution: SolutionInfo): void;
     uninstallSolution(solution: SolutionInfo): void;
+    private showError;
     updateSolutionField(solution: SolutionInfo | {
         id: string;
     }, fields: Partial<SolutionInfo>): void;

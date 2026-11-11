@@ -10,6 +10,7 @@ export declare class TMobileIotIntegrationFormComponent extends HttpIntegrationF
     protected store: Store<AppState>;
     protected translate: TranslateService;
     showSecurity: boolean;
+    showReplaceNoContentToOk: boolean;
     protected integrationType: IntegrationType;
     constructor(fb: UntypedFormBuilder, store: Store<AppState>, translate: TranslateService);
     ngOnInit(): void;

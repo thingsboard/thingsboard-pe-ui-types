@@ -45,6 +45,7 @@ export interface AnalogueGaugeSettings {
 interface BaseGaugeModel extends BaseGauge {
     _value?: number;
 }
+export declare const getGaugeValueText: (value: any) => string;
 export declare abstract class TbBaseGauge<S, O extends GenericOptions> {
     protected ctx: WidgetContext;
     private gauge;

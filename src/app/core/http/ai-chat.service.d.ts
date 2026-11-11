@@ -15,6 +15,12 @@ export declare class AiChatService {
     generateDashboard(deviceId: string, timeseriesKeys?: string[], config?: RequestConfig): Observable<string>;
     resolveToolApproval(result: ApprovalResult, config?: RequestConfig): Observable<ToolApprovalResult>;
     sendChatMessage(chatId: string, request: SendChatMessageRequest, config?: RequestConfig): Observable<ChatEvent>;
+    /**
+     * Follows the reply still running in the chat: a 'turnResumed' event, every event of the reply so far, then the
+     * live ones. Completes with no events when nothing is running.
+     */
+    resumeChat(chatId: string, config?: RequestConfig): Observable<ChatEvent>;
+    private streamEvents;
     private parseEventStrings;
     private parseSingleEvent;
     static ɵfac: i0.ɵɵFactoryDeclaration<AiChatService, never>;

@@ -32,6 +32,12 @@ export declare class TbIotHubUpdateDialogComponent extends DialogComponent<TbIot
     entityDetailsUrl: string | null;
     constructor(store: Store<AppState>, router: Router, dialogRef: MatDialogRef<TbIotHubUpdateDialogComponent, string | boolean>, data: IotHubUpdateDialogData, dialog: MatDialog, dialogService: DialogService, translate: TranslateService, iotHubApiService: IotHubApiService);
     getTypeLabel(): string;
+    /**
+     * Updating a solution template is a delete + reinstall of every entity it created, and unlike the other item
+     * types it is not stopped by the modified-entity check, so the tenant's own edits to those dashboards, devices
+     * and rule chains are lost. Say that instead of the generic "replace the current version" wording.
+     */
+    get updateDescKey(): string;
     update(force?: boolean): void;
     openEntityDetails(): void;
     close(): void;

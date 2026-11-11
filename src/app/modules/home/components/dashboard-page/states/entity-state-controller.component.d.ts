@@ -20,7 +20,6 @@ export declare class EntityStateControllerComponent extends StateControllerCompo
     protected utils: UtilsService;
     private entityService;
     private mobileService;
-    private dashboardUtils;
     private breadcrumbService;
     breadcrumbs$: Observable<import("../../../../../shared/components/breadcrumb").BreadCrumb[]>;
     selectedStateIndex: number;

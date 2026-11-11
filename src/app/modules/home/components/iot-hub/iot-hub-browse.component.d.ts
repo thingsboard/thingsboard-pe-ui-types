@@ -1,7 +1,6 @@
 import { AfterViewInit, ElementRef, EventEmitter, NgZone, OnDestroy, OnInit } from '@angular/core';
-import { Direction } from '@shared/models/page/sort-order';
 import { MpItemVersionView } from '@shared/models/iot-hub/iot-hub-version.models';
-import { ItemType, FilterParamInfo } from '@shared/models/iot-hub/iot-hub-item.models';
+import { FilterParamInfo, ItemType } from '@shared/models/iot-hub/iot-hub-item.models';
 import { IotHubInstalledItem } from '@shared/models/iot-hub/iot-hub-installed-item.models';
 import { IotHubApiService } from '@core/http/iot-hub-api.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -9,11 +8,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { IotHubActionsService } from '@home/components/iot-hub/iot-hub-actions.service';
 import { IotHubFilterGroup } from '@home/components/iot-hub/iot-hub-utils';
 import * as i0 from "@angular/core";
-interface SortOption {
-    value: string;
-    label: string;
-    direction: Direction;
-}
 export declare class TbIotHubBrowseComponent implements OnInit, AfterViewInit, OnDestroy {
     private iotHubApiService;
     private iotHubActions;
@@ -23,6 +17,7 @@ export declare class TbIotHubBrowseComponent implements OnInit, AfterViewInit, O
     private zone;
     private static typeTabLabel;
     readonly ItemType: typeof ItemType;
+    readonly scrollThreshold = 8;
     creatorId: string;
     embedded: boolean;
     hideTabs: boolean;
@@ -62,7 +57,8 @@ export declare class TbIotHubBrowseComponent implements OnInit, AfterViewInit, O
     activeConnectivity: Set<string>;
     activeHardwareTypes: Set<string>;
     activeVendors: Set<string>;
-    sortOptions: SortOption[];
+    verifiedCreatorsOnly: boolean;
+    readonly sortOptions: import("@shared/models/iot-hub/iot-hub-item.models").SortOption[];
     typeTabs: {
         type: ItemType;
         label: string;
@@ -112,6 +108,7 @@ export declare class TbIotHubBrowseComponent implements OnInit, AfterViewInit, O
     onHardwareTypeToggle(value: string): void;
     isHardwareTypeActive(value: string): boolean;
     onVendorToggle(vendor: string): void;
+    onVerifiedCreatorsToggle(): void;
     isVendorActive(vendor: string): boolean;
     getActiveVendorsArray(): string[];
     getActiveConnectivityArray(): string[];
@@ -158,4 +155,3 @@ export declare class TbIotHubBrowseComponent implements OnInit, AfterViewInit, O
     static ɵfac: i0.ɵɵFactoryDeclaration<TbIotHubBrowseComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<TbIotHubBrowseComponent, "tb-iot-hub-browse", never, { "creatorId": { "alias": "creatorId"; "required": false; }; "embedded": { "alias": "embedded"; "required": false; }; "hideTabs": { "alias": "hideTabs"; "required": false; }; "mode": { "alias": "mode"; "required": false; }; "fixedSubType": { "alias": "fixedSubType"; "required": false; }; "activeType": { "alias": "activeType"; "required": false; }; }, { "addItem": "addItem"; "installedItemsChanged": "installedItemsChanged"; }, never, never, false, never>;
 }
-export {};

@@ -12,6 +12,7 @@ export declare class HttpIntegrationFormComponent extends IntegrationForm implem
     protected translate: TranslateService;
     baseHttpIntegrationConfigForm: UntypedFormGroup;
     showSecurity: boolean;
+    showReplaceNoContentToOk: boolean;
     routingKey: string;
     protected integrationType: IntegrationType;
     private propagateChangePending;
